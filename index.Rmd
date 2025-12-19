@@ -1,0 +1,239 @@
+--- 
+site: bookdown::bookdown_site
+documentclass: book
+classoption: openany
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+mainfont: Times New Roman
+fontsize: 11pt
+url: https://bookdown.org/mathsresources/stats/
+cover-image: cover.png
+description: |
+  This textbook is designed to support the Advanced Higher Statistics course.
+link-citations: no
+header-includes:
+- \AtBeginDocument{\frontmatter}
+---
+
+\mainmatter
+
+# Introduction {-}
+
+Statistics is the science of collecting, organising, presenting and analysing data. It is vital in helping us develop a better understanding of the world, and to allow decisions to be made in a rational manner based on the information that is available to us. Governments, organisations, businesses and individuals across a diverse range of fields rely on statistics and statisticians.
+
+The *Advanced Higher Statistics* course aims to equip learners with a sound foundation of statistical knowledge. This textbook has been created to serve as a source of key facts, examples, and exercises to support progress through the course.
+
+
+#### Population Parameters and Sample Statistics {-}
+
+\begin{center}
+\begin{tikzpicture}
+\draw[semithick,fill=black!10] (0,0) rectangle (8,5);
+\node at (4,5.3) {Population};
+\draw[semithick,fill=black!10] (12,2.5) circle (1.5);
+\node at (12,4.3) {Sample};
+
+\draw[very thick,fill=black!10] (7,4.65) circle (0.35);
+\draw[very thick,fill=black!10] (4,4.05) circle (0.35);
+\draw[very thick,fill=black!10] (2,3.45) circle (0.35);
+\draw[very thick,fill=black!10] (7,2.25) circle (0.35);
+\draw[very thick,fill=black!10] (2.5,1.05) circle (0.35);
+\draw[very thick,fill=black!10] (6,0.45) circle (0.35);
+
+\node[alice,minimum size=0.04cm] at (11.5,2.75) {};
+\node[alice,minimum size=0.04cm] at (12,1.4) {};
+\node[alice,minimum size=0.04cm] at (11,2) {};
+\node[alice,minimum size=0.04cm] at (12.25,2.3) {};
+\node[alice,minimum size=0.04cm] at (13,2.85) {};
+\node[alice,minimum size=0.04cm] at (12.1,3.5) {};
+
+\node[alice,minimum size=0.04cm] at (0.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (0.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (0.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (0.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (0.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (0.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (0.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (0.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (1,0.45) {};
+\node[alice,minimum size=0.04cm] at (1,1.05) {};
+\node[alice,minimum size=0.04cm] at (1,1.65) {};
+\node[alice,minimum size=0.04cm] at (1,2.25) {};
+\node[alice,minimum size=0.04cm] at (1,2.85) {};
+\node[alice,minimum size=0.04cm] at (1,3.45) {};
+\node[alice,minimum size=0.04cm] at (1,4.05) {};
+\node[alice,minimum size=0.04cm] at (1,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (1.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (1.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (1.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (1.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (1.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (1.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (1.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (1.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (2,0.45) {};
+\node[alice,minimum size=0.04cm] at (2,1.05) {};
+\node[alice,minimum size=0.04cm] at (2,1.65) {};
+\node[alice,minimum size=0.04cm] at (2,2.25) {};
+\node[alice,minimum size=0.04cm] at (2,2.85) {};
+\node[alice,minimum size=0.04cm] at (2,3.45) {};
+\node[alice,minimum size=0.04cm] at (2,4.05) {};
+\node[alice,minimum size=0.04cm] at (2,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (2.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (2.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (2.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (2.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (2.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (2.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (2.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (2.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (3,0.45) {};
+\node[alice,minimum size=0.04cm] at (3,1.05) {};
+\node[alice,minimum size=0.04cm] at (3,1.65) {};
+\node[alice,minimum size=0.04cm] at (3,2.25) {};
+\node[alice,minimum size=0.04cm] at (3,2.85) {};
+\node[alice,minimum size=0.04cm] at (3,3.45) {};
+\node[alice,minimum size=0.04cm] at (3,4.05) {};
+\node[alice,minimum size=0.04cm] at (3,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (3.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (3.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (3.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (3.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (3.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (3.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (3.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (3.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (4,0.45) {};
+\node[alice,minimum size=0.04cm] at (4,1.05) {};
+\node[alice,minimum size=0.04cm] at (4,1.65) {};
+\node[alice,minimum size=0.04cm] at (4,2.25) {};
+\node[alice,minimum size=0.04cm] at (4,2.85) {};
+\node[alice,minimum size=0.04cm] at (4,3.45) {};
+\node[alice,minimum size=0.04cm] at (4,4.05) {};
+\node[alice,minimum size=0.04cm] at (4,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (4.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (4.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (4.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (4.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (4.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (4.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (4.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (4.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (5,0.45) {};
+\node[alice,minimum size=0.04cm] at (5,1.05) {};
+\node[alice,minimum size=0.04cm] at (5,1.65) {};
+\node[alice,minimum size=0.04cm] at (5,2.25) {};
+\node[alice,minimum size=0.04cm] at (5,2.85) {};
+\node[alice,minimum size=0.04cm] at (5,3.45) {};
+\node[alice,minimum size=0.04cm] at (5,4.05) {};
+\node[alice,minimum size=0.04cm] at (5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (5.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (5.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (5.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (5.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (5.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (5.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (5.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (5.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (6,0.45) {};
+\node[alice,minimum size=0.04cm] at (6,1.05) {};
+\node[alice,minimum size=0.04cm] at (6,1.65) {};
+\node[alice,minimum size=0.04cm] at (6,2.25) {};
+\node[alice,minimum size=0.04cm] at (6,2.85) {};
+\node[alice,minimum size=0.04cm] at (6,3.45) {};
+\node[alice,minimum size=0.04cm] at (6,4.05) {};
+\node[alice,minimum size=0.04cm] at (6,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (6.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (6.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (6.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (6.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (6.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (6.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (6.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (6.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (7,0.45) {};
+\node[alice,minimum size=0.04cm] at (7,1.05) {};
+\node[alice,minimum size=0.04cm] at (7,1.65) {};
+\node[alice,minimum size=0.04cm] at (7,2.25) {};
+\node[alice,minimum size=0.04cm] at (7,2.85) {};
+\node[alice,minimum size=0.04cm] at (7,3.45) {};
+\node[alice,minimum size=0.04cm] at (7,4.05) {};
+\node[alice,minimum size=0.04cm] at (7,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (7.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (7.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (7.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (7.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (7.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (7.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (7.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (7.5,4.65) {};
+
+\draw[semithick,dashed] (7,4.65) -- (12.1,3.5);
+\draw[semithick,dashed] (4,4.05) -- (13,2.85);
+\draw[semithick,dashed] (11.5,2.75) -- (2,3.45);
+\draw[semithick,dashed] (12.25,2.3) -- (7,2.25);
+\draw[semithick,dashed] (11,2) -- (2.5,1.05);
+\draw[semithick,dashed] (6,0.45) -- (12,1.4);
+
+\draw[semithick,-stealth] (12,0.8) -- (12,0);
+\node at (12,-0.4) {\textit{Sample Statistics}};
+\draw[semithick,-stealth] (10,-0.4) -- (6.5,-0.4);
+\node at (4,-0.4) {\textit{Population Parameters}};
+\node at (8.25,-0.8) {\textbf{Statistical Inference}};
+
+\node at (12,-0.9) {\textit{e.g.  }$\bar{x}$};
+\node at (4,-0.9) {\textit{e.g.  }$\mu$};
+
+
+\end{tikzpicture}
+\end{center}
+
+The diagram above gives a quick overview of the typical role of a statistician wishing to answer questions related to a *population* of interest. This is often in the form of wishing to know more about some *population parameter* such as a population mean, $\mu$. Since it is generally impractical to take a *census* of the entire population, a *sample* is instead obtained from that population, from which *sample statistics* may be calculated, such as the sample mean, $\bar{x}$. *Statistical inference* is the process by which claims about population parameters can be tested using sample statistics.
+
+This course, and textbook, will cover all of the key stages involved in statistical research and investigations, including:
+
+- Gathering data using appropriate *sampling techniques*.
+
+- Initial exploration of data using *descriptive statistics*, including:
+
+    - Visualising data with charts and graphs. 
+    
+    - Calculating sample statistics.
+
+- Using *statistical inference* to assess the evidence for claims about population parameters, including:
+
+    - An introduction to \textit{probability theory}, which underpins all statistical inference
+
+    - Conducting hypothesis tests
+    
+    - Constructing confidence intervals
+    
+Techniques suitable for a range of contexts will be covered, and it is expected that by the end of the course students should have sufficient knowledge and confidence to collect their own data and conduct their own statistical investigations. 
+
+\pagebreak
+
+## Suggested Use Of The Book {-}
+
+## Other Resources {-}
+
+## Acknowledgements {-}
+
+
+
+
+
+

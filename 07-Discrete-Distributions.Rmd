@@ -1,0 +1,733 @@
+# Discrete Distributions
+
+\begin{center}
+\say{\textit{All models are wrong, but some models are useful.}}
+\end{center}
+
+### Models, Conditions and Assumptions {-}
+
+The above quote, attributed to the statistician George Box, highlights that no mathematical or statistical *model* can perfectly describe the behaviour of something in the real world. Nevertheless, if a model can get *close enough* then results obtained using it can be sufficiently accurate, and useful.
+
+In this chapter, three *discrete probability distributions* that can model real-life data will be introduced:
+
+\begin{itemize}
+    \item The Discrete Uniform Distribution
+    \item The Binomial Distribution
+    \item The Poisson Distribution
+\end{itemize}
+
+Studying a problem in context and identifying an appropriate model to use is an important skill for anyone working with data. The validity of the use of a model is based on a number of *conditions* being sufficiently met. When using a model it is vital to consider the conditions required for its use, and specifically whether they are each satisfied. In this chapter, and subsequent chapters introducing more probability distributions and hypothesis testing, the *conditions for the valid use* of models and tests are clearly indicated as they are introduced.
+
+Sometimes it will be clear that a particular condition has been met, but there will be times when it is unclear. Whenever it is not clear that a condition has been met, statisticians must ask whether they can reasonably make an *assumption* that the condition is satisfied. It should always be recognised when an assumption is required, and it may be necessary to *justify* the use of an assumption in a context.
+
+\pagebreak
+
+## The Discrete Uniform Distribution
+
+Consider the discrete random variables $X$ and $Y$, representing the scores obtained from a cubical die numbered $\{1,2,3,4,5,6\}$ and a tetrahedral die numbered $\{1,2,3,4\}$ respectively. Their probability distributions have been tabulated and graphed below, and the expectation and variance calculated for each:
+
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}{.45\textwidth}
+\begin{center}
+\bgroup
+\def\arraystretch{1.5}
+\begin{tabular}{ c | c c c c c c }
+      $x$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$\\
+  \hline
+      $\text{P}(X=x)$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$
+\end{tabular}
+\egroup
+\end{center}
+
+\begin{tikzpicture}
+\pgfplotsset{
+    standard/.style={
+    axis line style = thick,
+    trig format=rad,
+    enlargelimits,
+    axis x line=middle,
+    axis y line=middle,
+    every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
+    every axis y label/.style={at={(current axis.above origin)},anchor=south east}
+    }
+}
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 4cm, width = 8cm, ybar,bar width=20pt, xmin=0.5,xmax=6.5,ymin=0,ymax=0.4, xtick={1,2,3,4,5,6},,ytick={0,0.1666},yticklabels={0,$\frac{1}{6}$},xlabel=$x$,ylabel=probability]
+        \addplot[fill=black!25, draw=black] coordinates {
+    (1,0.1666) 
+    (2,0.1666) 
+    (3,0.1666)
+    (4,0.1666) 
+    (5,0.1666) 
+    (6,0.1666) 
+};
+    \end{axis}
+\end{tikzpicture}
+
+\captionof{figure}{$\text{E}(X)=3.5\text{ and }\text{V}(X)=\frac{35}{12}$}
+  \label{fig:test1}
+
+\end{minipage}%
+  \centering
+\begin{minipage}{.1\textwidth}
+  \centering
+\end{minipage}%
+  \centering
+\begin{minipage}{.45\textwidth}
+  \centering
+
+\begin{center}
+\bgroup
+\def\arraystretch{1.5}
+\begin{tabular}{ c | c c c c }
+      $y$ & $1$ & $2$ & $3$ & $4$\\
+  \hline
+      $\text{P}(Y=y)$ & $\frac{1}{4}$ & $\frac{1}{4}$ & $\frac{1}{4}$ & $\frac{1}{4}$
+\end{tabular}
+\egroup
+\end{center}
+  
+\begin{tikzpicture}
+\pgfplotsset{
+    standard/.style={
+    axis line style = thick,
+    trig format=rad,
+    enlargelimits,
+    axis x line=middle,
+    axis y line=middle,
+    every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
+    every axis y label/.style={at={(current axis.above origin)},anchor=south east}
+    }
+}
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 4cm, width = 8cm, ybar,bar width=20pt, xmin=4.5,xmax=8.5,ymin=0,ymax=0.4, xtick={5,6,7,8},xticklabels={1,2,3,4},ytick={0,0.25},yticklabels={0,$\frac{1}{4}$},xlabel=$x$,ylabel=probability]
+        \addplot[fill=black!25, draw=black] coordinates {
+    (5,0.25)
+    (6,0.25) 
+    (7,0.25) 
+    (8,0.25) 
+};
+    \end{axis}
+\end{tikzpicture}
+
+\captionof{figure}{$\text{E}(Y)=2.5\text{ and }\text{V}(Y)=\frac{5}{4}$}
+  \label{fig:test1}
+
+\end{minipage}
+\end{figure}
+
+Whilst $X$ and $Y$ do not follow the exact same distribution, they share key characteristics, namely that they both take a *finite number of discrete values*, $\{1,2,3,\dots,k\}$, and that *each of these values is equally likely*. It is these *shared characteristics* that define the *discrete uniform distribution*.
+
+\vspace{0.5cm}
+
+\begin{centering}
+\tcbset{width=11cm}
+\begin{tcolorbox}[adjusted title=The Discrete Uniform Distribution:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{itemize}
+    \item Notated $X\sim \text{U}(k)$.
+    \item Defined by one parameter, $k$.
+    \item Takes $k$ discrete values from $1$ to $k$: $\{1,2,3,\dots,k\}$. 
+    \item Each value is \textit{equally likely}, with probability $\dfrac{1}{k}$.
+\end{itemize}
+\end{tcolorbox}
+\end{centering}
+
+\vspace{0.5cm}
+
+Parameters define the precise distribution that random variables take within *"families"* of distributions. Here, we can say that $X$ *"is distributed uniformly*" with parameter $k=6$ (with values from $1$ to $6$). Using $\sim$, or *"tilde"*, to mean *"is distributed..."*, such statements can be notated more efficiently:
+
+$$X\sim \text{U}(6)\quad\text{ and }\quad Y\sim \text{U}(4)$$
+
+The SQA Data Booklet gives the formulae to calculate *expectation* and *variance* for the discrete uniform distribution. For $X\sim \text{U}(k)$:
+
+$$\text{E}(X)=\frac{k+1}{2}\quad \text{ and }\quad \text{V}(X)=\frac{k^2-1}{12}$$
+
+The previously stated values for the expectation and variance of $X$ and $Y$ can be quickly obtained using these formulae.
+
+\pagebreak
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} Given $T\sim \text{U}(10)$ and $W=3T+1$, calculate $\text{E}(W)$ and $\text{V}(W)$.
+
+\tcblower
+\textbf{Solution:}
+
+\vspace{-0.5cm}
+\begin{multicols}{2}
+\begin{align*}
+\text{(a)}\quad \text{E}(T)&=\frac{10+1}{2}=5.5 &\\
+\text{E}(W)&=\text{E}(3T+1)\\
+&=3\text{E}(T)+1\\
+&=3\times 5.5 + 1\\
+&=17.5
+\end{align*}
+
+\begin{align*}
+\text{(b)}\quad \text{V}(T)&=\frac{10^2-1}{12}=8.25 &\\
+\text{V}(W)&=\text{V}(3T+1)\\
+&=3^2\text{V}(T)\\
+&=9\times 8.25\\
+&=74.25
+\end{align*}
+\end{multicols}
+
+\end{tcolorbox}
+
+[]{#ex71q}
+
+#### [Exercise 7.1](#ex71a) {-}
+
+\begin{enumerate}
+    \item Let $X\sim \text{U}(5)$. Calculate the mean and variance of $X$.
+    \item Let $X\sim \text{U}(15)$. Calculate the mean and variance of $X$.
+    \item A discrete random variable is uniformly distributed such that $\text{P}(X=x)=\frac{1}{k}$, with $k=8$.
+    \begin{enumerate}
+        \item Calculate $\text{E}(X)$ and $\text{V}(X)$.
+        \item Evaluate $\text{E}(2X+5)$ and $\text{V}(2X+5)$.
+    \end{enumerate}
+    \item A regular, unbiased icosahedral die is rolled. Let the random variable $X$ be the score on the top most face.
+    \begin{enumerate}
+        \item State the distribution of $X$.
+        \item Determine the values of $\text{E}(X)$ and $\text{V}(X)$.
+        \item Evaluate $\text{E}(1-3X)$ and $\text{V}(1-3X)$.
+    \end{enumerate}
+    \item Two independent random variables $X$ and $Y$ are defined such that $X\sim \text{U}(3)$ and $Y \sim \text{U}(5)$.
+    \begin{enumerate}
+        \item Calculate $\text{E}(X-Y)$.
+        \item Calculate $\text{V}(X-Y)$.
+    \end{enumerate}
+    \item Given $X\sim \text{U}(k)$ such that $\text{E}(X)=5.5$:
+    \begin{enumerate}
+        \item Determine the value of $k$.
+        \item State $\text{P}(2\leqslant X<6)$.
+        \item Find the standard deviation of $X$.
+    \end{enumerate}
+    \item Given $Y \sim \text{U}(k)$ such that the standard deviation of $Y$ is $\frac{\sqrt{21}}{2}$:
+    \begin{enumerate}
+        \item Determine the value of $k$.
+        \item Find $\text{E}(1-2Y)$.
+    \end{enumerate}
+    \item Discrete, independent random variables $X$ and $Y$ are uniformly distributed such that:
+    \begin{itemize}
+        \item $\text{P}(X=1)<\text{P}(Y=1)$
+        \item $\text{E}(X-Y)=2$ and $\text{V}(X-Y)=14$
+    \end{itemize}
+    Determine the distributions of $X$ and $Y$.
+\end{enumerate}
+
+\pagebreak
+
+## The Binomial Distribution
+
+A *Bernoulli trial* is an experiment in which each trial has only two possible outcomes, such as a coin landing on either *heads* or *tails*, or asking a *yes or no* question in a survey. These responses can be more generally referred to as *successes* or *failures*. If random variable $X$ represents the **number of successes** in **_n_** **trials**, each trial having **probability of success** **_p_**, then $X$ is **binomially distributed**.
+
+\begin{centering}
+\tcbset{width=10.5cm}
+\begin{tcolorbox}[adjusted title=The Binomial Distribution:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{itemize}
+    \item Notated $X\sim \text{B}(n,p)$.
+    \item Defined by two parameters, $n$ and $p$.
+    \item Random variable $X$ represents the number of successes\ in a \textbf{fixed} number of trials, $n$.
+    \item Each trial has the \textbf{same} probability of success, $p$.
+    \item Each trial must be \textbf{independent}.
+\end{itemize}
+\end{tcolorbox}
+\end{centering}
+
+Consider a spinning wheel that lands on a shaded sector with probability $\frac{2}{5}$, or $0.4$. Let random variable $X$ represent the number of times the wheel will land on the shaded sector *out of 6 trials*, with possible values from $0$ to $6$. Here $X$ is *binomially distributed*, with $n=6$ (number of trials) and $p=0.4$ (probability of success), or: $X\sim \text{B}(6,0.4)$
+
+\vspace{-0.5cm}
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}{.4\textwidth}
+
+\begin{tikzpicture}
+\fill[black!25] (0,0) -- (50:2.5) arc (50:122:2.5) -- (0,0);
+\fill[black!25] (0,0) -- (122:2.5) arc (122:194:2.5) -- (0,0);
+\draw[thick] (0,0) circle (2.5)
+      (50:2.5) -- (0,0)
+      (122.13:2.5) -- (0,0)
+      (194.13:2.5) -- (0,0)
+      (266.13:2.5) -- (0,0)
+      (338.13:2.5) -- (0,0);
+\fill[black] (0,0) circle (0.15);
+\draw[-stealth, line width = 1mm] (0,0) -- (0,2); 
+\end{tikzpicture}
+
+\end{minipage}%
+  \centering
+\begin{minipage}{.1\textwidth}
+  \centering
+\end{minipage}%
+  \centering
+\begin{minipage}{.5\textwidth}
+  \centering
+\begin{tikzpicture}
+\pgfplotsset{
+    standard/.style={
+    axis line style = thick,
+    trig format=rad,
+    enlargelimits,
+    axis x line=middle,
+    axis y line=middle,
+    every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
+    every axis y label/.style={at={(current axis.above origin)},anchor=south east}
+    }
+}
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 6cm, width = 8cm, ybar,bar width=10pt, xmin=1,xmax=9,ymin=0,ymax=0.4, xtick={2,3,4,5,6,7,8},xticklabels={0,1,2,3,4,5,6},ytick={0,0.1,0.2,0.3},xlabel=$x$,ylabel=probability]
+        \addplot[fill=black!25, draw=black] coordinates {
+    (2,0.047)
+    (3,0.187) 
+    (4,0.311) 
+    (5,0.276)
+    (6,0.138)
+    (7,0.037)
+    (8,0.004)
+};
+    \end{axis}
+\end{tikzpicture}
+\end{minipage}
+\end{figure}
+
+\vspace{-0.5cm}
+To calculate the probability of *exactly two successes*, consider the probability of the first two spins resulting in success followed by four failures. Since each trial is independent:
+
+$$\text{P}(success,success,fail,fail,fail,fail)=0.4\times0.4\times0.6\times0.6\times0.6\times0.6=0.4^2\times0.6^4=0.0207$$
+
+However there are a number of other possible *combinations* of successes and failures that *also* give exactly two successes, *each* with probability $0.0207$. The number of possible combinations from $n$ trials resulting in $x$ successes can be calculated using the *binomial coefficient*, ${}^{n}C_{x}$. For $6$ trials of which $2$ are successes, a calculator will provide the value of ${}^{6}C_{2}$.
+
+$$\text{P}(X=2)={}^{6}C_{2}\times0.4^2\times0.6^4=0.3110$$
+
+The SQA Data Booklet gives the **formula** to calculate *individual* probabilities for the binomial distribution:
+
+$$\text{Given }X\sim \text{B}(n,p)\text{: }\qquad \text{P}(X=x)={}^{n}C_{x}\times p^x\times q^{n-x}$$
+\pagebreak
+
+\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\textbf{Problem:} Given $X\sim \text{B}(7,\frac{1}{3})$, calculate $\text{P}(X=1)$.
+
+\tcblower
+\textbf{Solution:} 
+
+\vspace{-1cm}
+
+\begin{center}
+\begin{equation*}
+\text{P}(X=1)={}^{7}C_{1}\times \left(\frac{1}{3}\right)^1\times \left(\frac{2}{3}\right)^6=0.2048
+\end{equation*}
+\end{center}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\textbf{Problem:} 12 students each take it in turns to select a playing card from a pack at random, before returning it. Calculate the probability that the card drawn is a Spade for fewer than 2 of the students. 
+
+\tcblower
+\textbf{Solution:} 
+
+Let random variable $X$ represent the number of times that the card drawn is spades from the 12 draws.
+
+\vspace{-0.5cm}
+
+\begin{center}
+\begin{align*}
+X&\sim B\left(12,\frac{1}{4}\right)\\[1em]
+\text{P}(X<2)&=\text{P}(X=0)+\text{P}(X=1)\\[1em]
+&={}^{12}C_{0}\times \left(\frac{1}{4}\right)^0\times \left(\frac{3}{4}\right)^{12}+{}^{12}C_{1}\times \left(\frac{1}{4}\right)^1\times \left(\frac{3}{4}\right)^{11}\\[1em]
+&=0.0317+0.1267\\[1em]
+&=0.1584
+\end{align*}
+\end{center}
+
+\end{tcolorbox}
+
+[]{#ex72q}
+
+#### [Exercise 7.2](#ex72a) {-}
+
+\begin{enumerate}
+    \item Given that $X\sim \text{B}(10,0.25)$, calculate $\text{P}(X=3)$.
+    \item Given that $X\sim \text{B}(8,0.6)$, calculate $\text{P}(X=5)$.
+    \item Given that $Y\sim \text{B}(13,0.4)$, calculate $\text{P}(Y\leqslant2)$.
+    \item 5\% of bluebells have white flowers. The remainder have blue flowers. Determine the probability that a random sample of twelve bluebell plants includes exactly one with white flowers.
+    \item Amongst a group of four friends, let random variable $X$ represent the number of them that were born on a Tuesday.
+    \begin{enumerate}
+        \item State the distribution of $X$.
+        \item Calculate the probability that only one of the four was born on a Tuesday.
+    \end{enumerate}
+    \item In Bob's form class of 20 pupils, their form teacher assigns each pupil a number from 1 to 20 using the order listed on the register and, each morning, uses a random number generator to select which pupil should be responsible for read out notices. Calculate the probability that Bob is picked exactly twice in one week.
+\end{enumerate}
+
+\pagebreak
+
+## Binomial Calculations using Tables and Calculators
+
+In practice, it will seldom be necessary to calculate binomial probabilities using the formula. Graphical calculators can be used to calculate both *individual* ($\text{P}(X=x)$) and *cumulative* ($\text{P}(X\leqslant x)$) probabilities. The Data Booklet provides **cumulative probability tables**, giving **"less than or equal to"** probabilities.
+
+It is therefore important to be able to write any given probability that uses an inequality in terms of a *less than or equal to* probability.
+
+Consider discrete random variable $X$ taking values $x=\{0,1,2,3,4,5,6\}$:
+
+\vspace{-1cm}
+\begin{center}
+\begin{align*}
+\text{P}(X<5)=&\text{P}(X\leqslant 4) & & \color{black!25}\{\color{black}0,1,2,3,4\color{black!25},5,6\}\\
+\text{P}(X>5)=&1-\text{P}(X\leqslant 5) & & \color{black!25}\{0,1,2,3,4,5,\color{black}6\color{black!25}\}\\
+\text{P}(X=5)=&\text{P}(X\leqslant 5)-\text{P}(X\leqslant 4) & & \color{black!25}\{0,1,2,3,4,\color{black}5\color{black!25}\color{black!25},6\}\\
+\text{P}(1<X<5)=&\text{P}(X\leqslant 4) - \text{P}(X\leqslant 1) & & \color{black!25}\{0,1,\color{black}2,3,4\color{black!25},5,6\}
+\end{align*}
+\end{center}
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} It is estimated that around 10\% of people are left-handed. Taking this percentage to be accurate, calculate the probability that, in a random sample of 12 people, at least two of them will be left-handed.
+
+\tcblower
+\textbf{Solution:} \textit{(Define a random variable, in context, and define the problem in probability terms.)}\\
+
+Let random variable $X$ represent the number of left-handed people out of the sample of 12.\\[1em]
+$p=0.1$ and $n=12$\\[1em]
+$X\sim \text{B}(12,0.1)$\\[1em]
+$\text{P}(X\geqslant 2)=1-\text{P}(X\leqslant 1)=1-0.6590=0.3410$
+
+\end{tcolorbox}
+
+[]{#ex73q}
+
+#### [Exercise 7.3](#ex73a) {-}
+
+\begin{enumerate}
+    \item Given that $X\sim \text{B}(10,0.3)$, calculate:
+    \begin{enumerate}
+        \begin{multicols}{5}
+        \item $\text{P}(X\leqslant6)$
+        \item $\text{P}(X=6)$
+        \item $\text{P}(X<6)$
+        \item $\text{P}(X>6)$
+        \item $\text{P}(X\geqslant6)$
+        \end{multicols}
+    \end{enumerate}
+    \item Given that $X\sim \text{B}(6,0.15)$, calculate:
+    \begin{enumerate}
+        \begin{multicols}{3}
+        \item $\text{P}(X\leqslant2)$
+        \item $\text{P}(X\geqslant2)$
+        \item $\text{P}(1\leqslant X<3)$
+        \end{multicols}
+    \end{enumerate}
+    \item Given that $X\sim \text{B}(14,0.45)$, calculate:
+    \begin{enumerate}
+        \begin{multicols}{3}
+        \item $\text{P}(X<8)$
+        \item $\text{P}(X>12)$
+        \item $\text{P}(3<X\leqslant6)$
+        \end{multicols}
+    \end{enumerate}
+    \item Given that $X\sim \text{B}(8,0.8)$, calculate:
+    \begin{enumerate}
+        \begin{multicols}{3}
+        \item $\text{P}(X=5)$
+        \item $\text{P}(X\geqslant7)$
+        \item $\text{P}(3<X<6)$
+        \end{multicols}
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+## The Mean and Variance of the Binomial Distribution
+
+The SQA Data Booklet gives the formulae for the *mean* and *variance* of binomial distribution.
+
+Given random variable $X$ such that $X\sim \text{B}(n,p)$:
+
+$$\text{E}(X)=np \qquad \text{and} \qquad \text{V}(X)=npq$$
+
+Where $q=1-p$, representing the *probability of failure*.
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} A multiple choice quiz is comprised of eight questions, each with four choices to pick from. Let random variable $X$ represent the number of correct answers obtained out of eight from a student guessing completely at random. Calculate the mean and variance of $X$.
+
+\tcblower
+\textbf{Solution:}
+
+$X\sim \text{B}(8,0.25)$\\[1em]
+$\text{E}(X)=np=8\times 0.25=2$\\[1em]
+$\text{V}(X)=npq=8\times 0.25 \times 0.75=1.5$
+
+\end{tcolorbox}
+
+[]{#ex74q}
+
+#### [Exercise 7.4](#ex74a) {-}
+
+\begin{enumerate}
+    \item Calculate the mean and variance for each random variable:
+    \begin{enumerate}
+    \begin{multicols}{4}
+        \item $X\sim \text{B}(4,0.2)$
+        \item $Y\sim \text{B}(6,\frac{1}{3})$
+        \item $X\sim \text{B}(4,0.1)$
+        \item $Y\sim \text{B}(30,0.4)$
+    \end{multicols}
+    \end{enumerate}
+    \item An octahedral die numbered 1 to 8 is rolled ten times. Let the random variable $S$ represent the number of times the die shows a square number from the ten rolls.
+    \begin{enumerate}
+        \item State the distribution of $S$.
+        \item Calculate $\text{E}(S)$ and $\text{V}(S)$.
+        \item Determine $\text{P}(S>5)$.
+    \end{enumerate}
+    \item Given that $X\sim \text{B}(6,p)$ such that $\text{E}(X)=1.2$:
+    \begin{enumerate}
+        \item Determine the value of $p$.
+        \item Calculate $\text{SD}(X)$.
+    \end{enumerate}
+    \item Given that $Y\sim \text{B}(12,p)$ such that $\text{V}(Y)=\frac{8}{3}$ and $p>0.5$:
+    \begin{enumerate}
+        \item Determine the value of $p$.
+        \item Calculate $\text{E}(Y)$.
+    \end{enumerate}
+    \item Given that $X\sim \text{B}(n,p)$ such that $X$ has mean and variance of 16 and 3.2 respectively:
+    \begin{enumerate}
+        \item Determine the values of $n$ and $p$.
+        \item Calculate $\text{P}(5<X<10)$.
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+## The Poisson Distribution
+
+Consider a mobile network's customer support department looking at how many call agents to have on duty at any one time. The mean rate of calls may be well known, such as 2.5 per hour. However, in any one hour there may be 4 calls, 10 calls, no calls at all, and so on. Letting the random variable $X$ represent the number of calls in any particular hour, if certain conditions are satisfied then $X$ follows a **Poisson distribution** with mean rate $\lambda=2.5$.
+
+\begin{centering}
+\tcbset{width=12.5cm}
+\begin{tcolorbox}[adjusted title=The Poisson Distribution:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{itemize}
+    \item Notated $X\sim \text{Po}(\lambda)$.
+    \item Defined by one parameter $\lambda$ \textit{("lambda")}.
+    \item Random variable $X$ represents the number of events occurring\ in a set amount of time or space.
+    \item $\lambda$ represents the \textbf{mean rate of events per unit of time or space}.
+    \item Each event must be \textbf{independent} and \textbf{occur singly}.
+    \item The mean rate must be \textbf{constant across the time period/space}.
+\end{itemize}
+\end{tcolorbox}
+\end{centering}
+
+Assume that the mean rate of 2.5 phone calls per hour is *constant* across the opening hours of the customer support department, and that there isn't some major network-wide event causing the calls to no longer be *independent*. The Poisson distribution can then be used to calculate, for example, the probability that there are exactly 4 calls in any one hour. Note that the graph below is truncated, and the Poisson distribution has non-zero probabilities for any non-negative integer $\{0,1,2,3,\dots\}$.
+
+\begin{center}
+\begin{tikzpicture}
+\pgfplotsset{
+    standard/.style={
+    axis line style = thick,
+    trig format=rad,
+    enlargelimits,
+    axis x line=middle,
+    axis y line=middle,
+    every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
+    every axis y label/.style={at={(current axis.above origin)},anchor=south east}
+    }
+}
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 5cm, width = 10cm, ybar,bar width=10pt, xmin=1,xmax=12,ymin=0,ymax=0.35, xtick={2,3,4,5,6,7,8,9,10,11},xticklabels={0,1,2,3,4,5,6,7,8,9},ytick={0,0.1,0.2,0.3},xlabel=$x$,ylabel=probability]
+        \addplot[fill=black!25, draw=black] coordinates {
+    (2,0.0821)
+    (3,0.2502)
+    (4,0.2565) 
+    (5,0.2138)
+    (6,0.1336)
+    (7,0.0668)
+    (8,0.0278)
+    (9,0.0099)
+    (10,0.0031)
+    (11,0.0009)
+};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+As with the binomial distribution, individual Poisson probabilities can calculated using a formula, provided in the SQA Data Booklet.
+
+Given random variable $X\sim \text{Po}(\lambda)$:
+
+$$\text{P}(X=x)=\frac{e^{-\lambda} \times \lambda^x}{x!}$$
+
+For example $\text{P}(X=4)$ in the probability distribution above can be calculated as:
+
+$$\text{P}(X=4)=\frac{e^{-2.5} \times 2.5^4}{4!}=0.1336$$
+
+\pagebreak
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} During a spell of rain, drops of rain fall on a lawn at a constant mean rate of 6 drops per square metre per second. Calculate the probability that exactly 10 drops fall in one square metres of the lawn in a second.
+
+\tcblower
+\textbf{Solution:} \textit{(Define a random variable, in context, and define the problem in probability terms.)}\\
+
+Let random variable $X$ represent the number of drops of rain.\\[1em]
+
+$X\sim \text{Po}(6)$
+
+\vspace{-0.5cm}
+
+$$\text{P}(X=10)=\frac{e^{-6} \times 6^{10}}{10!}=0.0413$$
+
+\end{tcolorbox}
+
+[]{#ex75q}
+
+#### [Exercise 7.5](#ex75a) {-}
+
+\begin{enumerate}
+    \item Given random variable $X$ such that $X\sim \text{Po}(2.5)$, use the formula to calculate:
+    \begin{enumerate}
+        \item $\text{P}(X=4)$.
+        \item $\text{P}(X=0)$.
+        \item $\text{P}(X<2)$.
+        \item $\text{P}(X\geqslant2)$.
+    \end{enumerate}
+    \item Let random variable $X$ represent the number of goals in a game of Sunday League football, known to follow a Poisson distribution with a mean of 4 goals.
+    \begin{enumerate}
+        \item State the distribution of $X$.
+        \item Use the formula to calculate the probability that a game finishes without any goals being scored.
+    \end{enumerate}
+\end{enumerate}
+
+### Poisson Calculations using Tables and Calculators
+
+As with the binomial distribution, in general it is far quicker to use the cumulative probability tables in the SQA Data Booklet, or a grapical calculator, to calculate Poisson probabilities.
+
+[]{#ex76q}
+
+#### [Exercise 7.6](#ex76a) {-}
+
+\begin{enumerate}
+    \item The random variable $X$ follows a Poisson distribution with mean 6. Use the tables to calculate:
+    \begin{enumerate}
+    \begin{multicols}{4}
+        \item $\text{P}(X<4)$.
+        \item $\text{P}(X>5)$.
+        \item $\text{P}(X\leqslant2)$.
+        \item $\text{P}(X\geqslant7)$.
+    \end{multicols}
+    \end{enumerate}
+    \item The random variable $Y$ follows a Poisson distribution with mean 1.5. Use the tables to calculate:
+    \begin{enumerate}
+    \begin{multicols}{4}
+        \item $\text{P}(Y<1)$.
+        \item $\text{P}(3<Y<6)$.
+        \item $\text{P}(1\leqslant Y\leqslant 6)$.
+        \item $\text{P}(Y\geqslant3)$.
+    \end{multicols}
+    \end{enumerate}
+    \item Whilst watching a section of the night sky, the number of visible shooting stars is known to follow a Poisson distribution with a mean rate of one per hour. Let random variable $X$ represent the number of shooting stars seen in an hour.
+    \begin{enumerate}
+        \item State the distribution of $X$.
+        \item Calculate the probability of more than three shooting stars being seen in any given hour.
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+## The Mean and Variance of the Poisson Distribution
+
+The mean and variance of a Poisson distribution are stated in the SQA Data Booklet. Given $X\sim \text{Po}(\lambda)$:
+
+$$\text{E}(X)=\text{V}(X)=\lambda \qquad \text{and} \qquad \text{SD}(X)=\sqrt{\lambda}$$
+
+Given two **independent** random variables $X$ and $Y$ such that $X\sim \text{Po}(\lambda_X)$ and $Y\sim \text{Po}(\lambda_Y)$:
+
+$$X+Y\sim \text{Po}(\lambda_X+\lambda_Y)$$
+
+The same result can be used to extend, or shorten, the time period of interest for a Poisson distribution, provided there is a *constant mean rate* throughout the entire time period. 
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} Betty has observed that the number of work emails she receives on weekdays between 10am and 11am follows a Poisson distribution with a mean rate of 7 emails. The number of personal emails she receives in this time is also Poisson distributed with a mean rate of 3 emails. Calculate the probability that she receives fewer than 8 emails in total on a weekday between 10am and 11am. 
+
+\tcblower
+\textbf{Solution:}
+
+Let random variable $X$ represent the number of work emails, and $Y$ the number of personal emails.\\[1em]
+
+$\lambda_X=7$ and $X\sim \text{Po}(7)$\\
+
+$\lambda_Y=3$ and $Y\sim \text{Po}(3)$\\
+
+$\lambda_X+\lambda_Y=7+3=10$, so $X+Y\sim \text{Po}(10)$\\
+
+$\text{P}(X+Y<8)=0.2202$
+
+\end{tcolorbox}
+
+[]{#ex71q}
+
+#### [Exercise 7.7](#ex77a) {-}
+
+\begin{enumerate}
+    \item Given independent random variables $X$,$Y$ such that $X\sim \text{Po}(1.6)$ and $Y\sim \text{Po}(0.4)$, calculate $\text{P}(X+Y\leqslant4)$.
+    \item Given $F\sim \text{Po}(3.3)$ and $G\sim \text{Po}(1.2)$, with $F$ and $G$ independent, calculate $\text{P}(F+G\geqslant2)$.
+    \item For a restaurant's Glasgow branch, the number of bottles of champagne sold on a Saturday night follows a Poisson distribution with a mean rate of 3 per night. The number sold for their Edinburgh branch is Poisson distributed with a mean of 5 per night. Stating an assumption required, calculate the probability at least 10 but fewer than 15 bottles of champagne are sold on a Saturday night between the two branches.
+    \item Shooting stars can be seen in a section of night sky at a mean rate of 1 per hour, and the number visible in an hour is Poisson distributed. Calculate the probability of watching the night sky for two hours and not seeing a single shooting star.
+    \item A data storage company using a large number of hard drives has seen that the number of drives failing per day follows a Poisson distribution with a constant mean rate of 1.5 per day. The company has staff monitoring the servers that contain the drives 24 hours per day, working in three separate 8 hour shifts each. Calculate the probability of more than 2 drives failing during one shift.
+\end{enumerate}
+
+\pagebreak
+
+[]{#re7q}
+
+## [Review Exercise](#re7a) {-}
+
+\begin {enumerate}
+    \item Given that $X\sim \text{U}(8)$, calculate:
+    \begin{enumerate}
+        \item $\text{P}(X<6)$.
+        \item The mean and variance of $X$.
+    \end{enumerate}
+    \item Given that $X\sim \text{B}(12,0.35)$:
+    \begin{enumerate}
+        \item Find $\text{P}(X=3)$.
+        \item Find $\text{P}(5<X<9)$.
+    \end{enumerate}
+    \item $X$ and $Y$ are independent random variables such that $X\sim \text{Po}(1.7)$ and $Y\sim \text{Po}(6.8)$, find:
+    \begin{enumerate}
+        \item $\text{P}(X+Y=7)$.
+        \item $\text{P}(X+Y\geqslant9)$
+    \end{enumerate}
+    \item The random variable $X$ follows a Poisson distribution with standard deviation 2. Find $\text{P}(X\leqslant3)$.
+    \item A gardener plants seeds in batches of 20 and knows that only 85\% of seeds actually germinate.
+    \begin{enumerate}
+        \item Find the chance of more that 15 seeds in the batch germinating.
+        \item Find the mean and standard deviation of the number of seeds that germinate.
+        \item State one assumption required for the valid use of the probability distribution used.
+    \end{enumerate}
+    \item A restaurant has two food mixers, A and B. The number of times per week that mixer A breaks down has a Poisson distribution with mean 0.4, while independently the number of times that mixer B breaks down has a Poisson distribution with probability 0.1. Calculate the probability that in the next three weeks:
+    \begin{enumerate}
+        \item Mixer A will not break down at all.
+        \item There will be a total of 2 breakdowns.
+    \end{enumerate}
+    \item A restaurant menu contains 20 dishes, consisting of starters, main courses and desserts. The table below breaks down the number of dishes for each course and by whether or not they are vegetarian:
+    \begin{center}
+    \begin{tabular}{c|ccc}
+         & Starter & Main & Dessert\\
+      \hline
+        Vegetarian & 2 & 2 & 6\\
+      \hline
+        Not Vegetarian & 4 & 6 & 0\\
+    \end{tabular}
+    \end{center}
+    Each week, the owner chooses one dish at random to check that the quality is up to standard. Each dish is equally likely to be selected, and a dish being chosen one week does not change the probability that is will be chosen in the following weeks.
+    \begin{enumerate}
+        \item[(a) ] Given that a dish selected to be checked is vegetarian, state the probability that it is a main course.
+    \end{enumerate}
+    Let random variable $X$ represent the number of the dishes checked over a 8 week period that are desserts.
+    \begin{enumerate}
+        \item[(b) ] State the distribution of $X$.
+        \item[(c) ] Calculate the probability that more than half of the dishes checked in the 8 week period are dessert dishes.
+    \end{enumerate}
+    \item For each random variable, calculate the probability of the value of an observation being more than one standard deviation above the mean.
+    \begin{enumerate}
+        \item $X\sim \text{U}(20)$.
+        \item $Y\sim \text{Po}(6)$.
+        \item $Q\sim \text{B}(16,0.2)$.
+    \end{enumerate}
+\end{enumerate}

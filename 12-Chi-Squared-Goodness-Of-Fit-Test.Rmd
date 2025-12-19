@@ -1,0 +1,930 @@
+# Chi-Squared Goodness-Of-Fit Test
+
+The **chi-squared distribution**, $\chi^2_\nu$, describes the distribution of *sums* of *scaled, squared random variables*. \mbox{$\chi^2$ hypothesis tests} offer a way to analyse categorical data, and are a type of **non-parametric** test.
+
+## $\chi^2$ Goodness-of-Fit Test
+
+A *goodness-of-fit* test assesses how well observed data, which can be broken down into categories, fits a hypothesised model. In this course, the data examined will be either *categorical* or, as in the following example, *discrete*. Suppose a statistics teacher's cubical die is suspected of being not *fair* and their students roll the die 48 times to check for any bias. The number of times each outcome occurs, or the **observed frequencies**, are recorded in a frequency table:
+
+\begin{center}
+\begin{tabular}{| c | c c c c c c |} 
+  \hline
+     Outcome & 1 & 2 & 3 & 4 & 5 & 6\\ 
+  \hline
+     Observed Frequencies ($O_i$) & 7 & 8 & 5 & 10 & 7 & 11\\ 
+  \hline
+\end{tabular}
+\end{center}
+
+With the null hypothesis being that the die *is* fair, a third row of **expected frequencies** can be added to the table by dividing the total count of 48 *observations* by the 6 equally-likely outcomes:
+
+\begin{center}
+\begin{tabular}{| c | c c c c c c |} 
+  \hline
+     Outcome & 1 & 2 & 3 & 4 & 5 & 6\\ 
+  \hline
+     Observed Frequencies ($O_i$) & 7 & 8 & 5 & 10 & 7 & 11\\ 
+  \hline
+     Expected Frequencies ($E_i$) & 8 & 8 & 8 & 8 & 8 & 8\\
+  \hline
+\end{tabular}
+\end{center}
+
+The $\chi^2$ goodness-of-fit test asks whether the **observed values** are so *significantly* different than the **expected values**, under the model described in the null hypothesis, that there is evidence to suggest *the model is in fact incorrect*.
+
+\begin{center}
+\begin{tabular}{r c l}
+    $\text{H}_0:$ & \quad & \textit{The die is fair / the data follows a }$\text{U}(6)$\textit{ distribution}\\
+    $\text{H}_1:$ & \quad & \textit{The die is not fair / the data is distributed differently.}
+\end{tabular}
+\end{center}
+
+The theory underpinning the test statistic used for a goodness-of-fit test is beyond the scope of the Advanced Higher Statistics course. However, a glimpse into the rationale may be found by noting that the test statistic, on the next page, takes the *sum* of *squared differences* between the observed and expected frequencies, *scaled* by the expected frequencies.
+
+\pagebreak
+
+\begin{centering}
+\tcbset{width=15cm}
+\begin{tcolorbox}[adjusted title=For a $\chi^2$ goodness-of-fit test:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+Test statistic: $X^2=\cfrac{(O_1-E_1)^2}{E_1}+\cfrac{(O_2-E_2)^2}{E_2}+...+\cfrac{(O_n-E_n)^2}{E_n}=\sum{\cfrac{(O_i-E_i)^2}{E_i}}$
+\end{tcolorbox}
+\end{centering}
+
+The test statistic follows a $\chi^2_\nu$ distribution with degrees of freedom $\nu=c-1-m$, where:
+
+\begin{itemize}
+    \item $c$ is the number of \textit{categories}.
+    \item $m$ is the number of \textit{model parameters} estimated using the observed data.
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}[c]{.45\textwidth}
+  \centering
+\begin{tikzpicture}[
+    declare function={gamma(\z)=
+    (2.506628274631*sqrt(1/\z) + 0.20888568*(1/\z)^(1.5) + 0.00870357*(1/\z)^(2.5) - (174.2106599*(1/\z)^(3.5))/25920 - (715.6423511*(1/\z)^(4.5))/1244160)*exp((-ln(1/\z)-1)*\z);},
+    declare function={gammapdf(\x,\k,\theta) = \x^(\k-1)*exp(-\x/\theta) / (\theta^\k*gamma(\k));}
+]
+
+\begin{axis}[
+    axis lines=left,
+    height=5cm,
+    ytick=\empty,
+    enlargelimits=upper,
+    samples=50,
+    legend entries={$\nu=3$,$\nu=5$,$\nu=7$}
+]
+\addplot [smooth, domain=0:20, black!25, dashed, line width=1 ] {gammapdf(x,1.5,2)};
+\addplot [smooth, domain=0:20, line width=2] {gammapdf(x,2.5,2)};
+\addplot [smooth, domain=0:20, black!25, dash dot, line width=1] {gammapdf(x,3.5,2)};
+\end{axis}
+\end{tikzpicture}
+\captionof{figure}{$\chi^2_\nu$ distributions with $\nu$ degrees of freedom}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}[c]{.01\textwidth}
+  \centering
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.54\textwidth}
+  \centering
+\begin{centering}
+\begin{tcolorbox}[adjusted title=The decision rule for $\chi^2$ tests:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+If \textbf{test statistic} $>$ \textbf{critical value}, \textit{reject }$\text{H}_0$.\\
+\vspace{0.5cm}
+If \textbf{test statistic} $<$ \textbf{critical value}, \textit{do not reject }$\text{H}_0$.\\
+\end{tcolorbox}
+\end{centering}
+\end{minipage}
+\end{figure}
+
+For the *"fair"* die, the test statistic can now be calculated:
+
+$$X^2=\frac{(7-8)^2}{8}+\frac{(8-8)^2}{8}+\frac{(5-8)^2}{8}+\frac{(10-8)^2}{8}+\frac{(7-8)^2}{8}+\frac{(11-8)^2}{8}=3$$
+
+There are six categories, so $c=6$, and no parameters of the model were calculated using the data, so $m=0$. The degrees of freedom are therefore $\nu=6-1-0=5$, and the test statistic can be compared against the $\chi^2$ critical values from **page 14** of the data booklet. With $\nu=5$ and taking $\alpha=0.05$, the critical value of $\chi^2_{5,0.95}=11.070$ can be found. 
+
+The smallest possible observed test statistic is 0, representing data that perfectly matches the model, and for $\nu=5$ less than 5\% of test statistics exceed 11.070 by random chance. Note that chi-squared tests are always *one-tailed*.
+
+Since $3<11.070$ the students should *not* reject the null hypothesis at the 5\% level of significance.\par There is *insufficient evidence* to suggest that the model is not correct, and that the die is not fair.
+
+\begin{centering}
+\tcbset{width=14cm}
+\begin{tcolorbox}[adjusted title=Conditions for valid use of a goodness-of-fit test:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{itemize}
+    \item No \textbf{expected} values should be \emph{less than 1}.
+    \item At least 80\% of the \textbf{expected} values should be \emph{at least 5}.
+\end{itemize}
+\end{tcolorbox}
+\end{centering}
+
+The data for teacher's die met the criteria for the valid use of a goodness-of-fit test, which is given on **page 6 of the data booklet**. Both conditions need to be verified before test statistics, degrees of freedom and critical values can be calculated.
+
+\pagebreak
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} A chocolatier says that their boxes are randomly filled with caramel, coffee and strawberry flavoured chocolates in the ratio $2:2:1$. Suspecting that this is not true, a chocolate-fan counts the number of chocolates of each flavour in a box and finds 8 are caramel, 13 are coffee and 11 are strawberry. Perform a non-parametric hypothesis test to assess the evidence at the 10\% significance level that the flavours are not distributed as claimed by the chocolatier. 
+\tcblower
+\textbf{Solution:}
+
+\vspace{0.1cm}
+\begin{math}
+\begin{array}{ll}
+      \text{H}_0: & \text{the chocolates are distributed in the ratio 2:2:1}\\
+      \text{H}_1: & \text{the chocolates are distributed differently}
+    \end{array}
+\left]
+    \begin{array}{l}
+      \alpha=0.1\\
+      \textnormal{One-tailed}
+    \end{array}
+  \right.
+\end{math}
+
+\vspace{0.1cm}
+
+\begin{center}
+\begin{tabular}{| c | c c c |} 
+  \hline
+     Flavour & caramel & chocolate & strawberry\\ 
+  \hline
+     Observed Frequencies ($O_i$) & 8 & 13 & 11\\ 
+  \hline
+     Expected Frequencies ($E_i$) & 12.8 & 12.8 & 6.4\\ 
+  \hline
+\end{tabular}
+\end{center}
+
+\vspace{0.1cm}
+
+$\nu=3-1-0=2$\\
+
+Test statistic: $X^2=\frac{(8-12.8)^2}{12.8}+\frac{(13-12.8)^2}{12.8}+\frac{(11-6.4)^2}{6.4}=5.109$\\
+
+Critical value: $\chi^2_{2,0.9}=4.605$
+\hspace{6.5cm}
+\begin{tikzpicture}[overlay, 
+    declare function={gamma(\z)=
+    (2.506628274631*sqrt(1/\z) + 0.20888568*(1/\z)^(1.5) + 0.00870357*(1/\z)^(2.5) - (174.2106599*(1/\z)^(3.5))/25920 - (715.6423511*(1/\z)^(4.5))/1244160)*exp((-ln(1/\z)-1)*\z);},
+    declare function={gammapdf(\x,\k,\theta) = \x^(\k-1)*exp(-\x/\theta) / (\theta^\k*gamma(\k));}
+]
+\begin{axis}[
+  no markers, 
+  domain=0:10, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [smooth, domain=0:10] {gammapdf(x,1.5,2)};
+\addplot [draw=none, fill=black!50, domain=4.6:10] {gammapdf(x,1.5,2)} \closedcycle;
+\draw [semithick, black]  (axis cs:4.6,0) -- (axis cs: 4.6,0.0865);
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 4,0.13)  {$\chi^2_2$};
+\node[below] at (axis cs: 4.6, 0) {$4.605$};
+\node[above] at (axis cs: 7,0.06) {10\%};
+\end{axis}
+\end{tikzpicture}\\
+
+Since $5.109>4.605$, reject $\text{H}_0$ at the 10\% level of significance.\\ There is evidence to suggest that the flavours are not distributed in the ratio stated by the chocolatier.
+
+\end{tcolorbox}
+
+#### Exercise 12.1 {-}
+
+\begin{enumerate}
+    \item A fair, tetrahedral die with faces numbered 1 to 4 is rolled 24 times. The results obtained are:
+\begin{center}
+\begin{tabular}{| c | c c c c |} 
+  \hline
+     Outcome & 1 & 2 & 3 & 4\\ 
+  \hline
+     Observed Frequencies & 6 & 1 & 8 & 9\\ 
+  \hline
+\end{tabular}
+\end{center}
+Perform a goodness-of-fit test at the 5\% level of significance to assess whether there is evidence to support a claim that the die is biased.
+    \item A question in an old textbook states that a person is equally likely to be born on any day of the week. A student asks a random sample of 49 people which day of the week they were born on, and records the results.
+    \begin{center}
+\begin{tabular}{| c | c c c c c c c |} 
+  \hline
+     Day & Mon & Tue & Wed & Thurs & Fri & Sat & Sun\\ 
+  \hline
+     Frequency & 11 & 9 & 4 & 9 & 7 & 3 & 6 \\ 
+  \hline
+\end{tabular}
+\end{center}
+Perform a non-parametric test at the 10\% significance level to test whether the data supports the textbook's statement.
+    \item A local council has previously monitored the numbers of cars entering a city, classifying each as either internal combustion engine (ICE), hybrid or fully electric. The ratio of cars in each category was found to be to be 5:2:1 respectively. Interested in whether this has since changed, a random sample is taken of 80 cars entering the city, with the results: 43 ICE, 16 hybrid and the remaining cars fully electric. Perform a hypothesis test at the 1\% level of significance to test the claim the the ratio has changed from what it was previously.
+\end{enumerate}
+    
+\pagebreak
+
+## Combining Columns
+
+If the expected categories do not meet the conditions stated on Page 151 then two or more categories should be *"combined"* (or *"collapsed"*) until the conditions are satisfied. The degrees of freedom for the test should be calculated based on the *final combined frequency table* rather than the original table. Whilst it is recommended to combine those categories with the smallest expected values, it may at times be more intuitive to instead collapse those categories that more naturally can be grouped. 
+
+\begin{tcolorbox}[height=20cm,title=Example 1,title filled, colframe=black!50]
+\textbf{Problem:} An video game allows players to buy in-game ``loot boxes'' with real money, each containing one in-game item. The game's publisher states that 60\% of loot boxes contain a ``Regular'' item, 25\% contain a ``Premium'' item, 10\% contain a ``Rare' item and the remaining 5\% contain an ``Ultra Rare'' item. A player records the types of item contained in each of a series of loot boxes and records the results in the frequency table below.
+
+\vspace{0.3cm}
+
+\begin{center}
+\begin{tabular}{| c | c c c c |} 
+  \hline
+     Type & Regular & Premium & Rare & Ultra Rare\\ 
+  \hline
+     Observed Frequencies ($O_i$) & 33 & 16 & 1 & 0\\ 
+  \hline
+\end{tabular}
+\end{center}
+
+\vspace{0.3cm}
+
+Perform a $\chi^2$ goodness-of-fit test to determine whether there is evidence at the 1\% significance level to suggest the publisher's claim is not correct. 
+
+\tcblower
+\textbf{Solution:}
+
+\vspace{0.3cm}
+\begin{math}
+\begin{array}{ll}
+      \text{H}_0: & \text{the items types are distributed as claimed}\\
+      \text{H}_1: & \text{they are distributed differently}
+    \end{array}
+\left]
+    \begin{array}{l}
+      \alpha=0.01\\
+      \textnormal{One-tailed}
+    \end{array}
+  \right.
+\end{math}
+
+\vspace{0.3cm}
+
+\begin{center}
+\begin{tabular}{| c | c c c c |} 
+  \hline
+     Type & Regular & Premium & Rare & Ultra Rare\\ 
+  \hline
+     Observed Frequencies ($O_i$) & 33 & 16 & 1 & 0\\ 
+  \hline
+     Expected Frequencies ($E_i$) & 30 & 12.5 & 5 & 2.5\\ 
+  \hline
+\end{tabular}
+\end{center}
+
+\vspace{0.3cm}
+
+\textit{(Since only 75\% of }\textbf{\textit{expected}}\textit{ values are 5 or greater, which is less than the required 80\%, the last two columns must be combined.)}
+
+\vspace{0.3cm}
+
+\begin{center}
+\begin{tabular}{| c | c c c |} 
+  \hline
+     Type & Regular & Premium & Rare/Ultra Rare\\ 
+  \hline
+     Observed Frequencies ($O_i$) & 33 & 16 & 1\\ 
+  \hline
+     Expected Frequencies ($E_i$) & 30 & 12.5 & 7.5\\ 
+  \hline
+\end{tabular}
+\end{center}
+
+\vspace{0.3cm}
+
+$\nu=3-1-0=2$\\
+
+\vspace{0.3cm}
+
+Test statistic: $X^2=\frac{(33-30)^2}{30}+\frac{(16-12.5)^2}{12.5}+\frac{(1-7.5)^2}{7.5}=6.913$\\
+
+\vspace{0.3cm}
+
+Critical value: $\chi^2_{2,0.99}=9.210$
+\hspace{6.5cm}
+\begin{tikzpicture}[overlay, 
+    declare function={gamma(\z)=
+    (2.506628274631*sqrt(1/\z) + 0.20888568*(1/\z)^(1.5) + 0.00870357*(1/\z)^(2.5) - (174.2106599*(1/\z)^(3.5))/25920 - (715.6423511*(1/\z)^(4.5))/1244160)*exp((-ln(1/\z)-1)*\z);},
+    declare function={gammapdf(\x,\k,\theta) = \x^(\k-1)*exp(-\x/\theta) / (\theta^\k*gamma(\k));}
+]
+\begin{axis}[
+  no markers, 
+  domain=0:10, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [smooth, domain=0:10] {gammapdf(x,1.5,2)};
+\addplot [draw=none, fill=black!50, domain=9.2:10] {gammapdf(x,1.5,2)} \closedcycle;
+\draw [semithick, black]  (axis cs:9.2,0) -- (axis cs: 9.2,0.0121);
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 4,0.13)  {$\chi^2$};
+\node[below] at (axis cs: 9.2, 0) {$9.210$};
+\node[above] at (axis cs: 9.5,0.01) {1\%};
+\end{axis}
+\end{tikzpicture}\\
+
+\vspace{0.3cm}
+
+Since $6.913<9.210$, do not reject $\text{H}_0$ at the 1\% level of significance.\\ There is insufficient evidence to suggest that the item types are not distributed as stated by the game's publisher.
+
+\end{tcolorbox}
+
+\pagebreak
+
+#### Exercise 12.2 {-}
+
+\begin{enumerate}
+    \item Historically, grades attained (\textit{A}, \textit{B}, \textit{C}, \textit{D} and \textit{No Award})  by pupils in a school course's end of year exam have been distributed following the ratio $4:5:3:2:1$. Following a change in the teaching resources used, the results of 40 students are recorded as follows:
+    \begin{center}
+\begin{tabular}{| c | c | c | c | c|c| } 
+    \hline
+     Grade & \textit{A} & \textit{B} & \textit{C} & \textit{D} & \textit{No Award}\\ 
+    \hline
+     Frequency & 13 & 19 & 6 & 0 & 2\\
+    \hline
+\end{tabular}
+\end{center}
+    Perform a chi-squared test to assess, at the 10\% level of significance, whether the data provides evidence to suggest the distribution of grades attained has changed.
+    \item The proportion of people in the USA with each eye colour is as follows:
+    \begin{center}
+    \begin{tabular}{| c | c | c | c | c| c | } 
+    \hline
+     Eye Colour & \textit{Brown} & \textit{Blue} & \textit{Hazel} & \textit{Green} & \textit{Other}\\ 
+    \hline
+     Proportion & 0.45 & 0.27 & 0.18 & 0.09 & 0.01\\
+    \hline
+    \end{tabular}
+    \end{center}
+    A random sample of 58 people living in San Francisco have their eye colour recorded. The results are shown in the table below:
+    \begin{center}
+    \begin{tabular}{| c | c | c | c | c| c | } 
+    \hline
+     Eye Colour & \textit{Brown} & \textit{Blue} & \textit{Hazel} & \textit{Green} & \textit{Other}\\ 
+    \hline
+     Frequency & 29 & 13 & 10 & 2 & 4\\
+    \hline
+    \end{tabular}
+    \end{center}
+    Perform a chi-squared goodness-of-fit test to assess at the 1\% significance level whether there is evidence of a difference in distribution of eye colours in San Francisco.
+    \item A coffee shop sells five of types of coffee. Historically, the five types of coffee have been sold in the following proportions:
+    \begin{center}
+        \begin{itemize}
+        \item 34\% cappuccinos
+        \item 27\% lattes
+        \item 18\% espressos
+        \item 11\% flat whites
+        \item 10\% americanos
+        \end{itemize}
+    \end{center}
+    Suspecting that these proportions are may have changed, the coffee shop records the type of coffee sold for a random sample of 40 individual orders:
+\begin{center}
+\begin{tabular}{ |c | c | c | c | c |} 
+  \hline
+     Cappuccinos & Lattes & Espressos & Flat whites & Americanos\\ 
+  \hline
+     7 & 8 & 7 & 9 & 9\\
+  \hline
+\end{tabular}
+\end{center}
+Perform a non-parametric test to assess at the 5\% level of significance the claim that the historical proportions of each type of coffee sold are no longer accurate.
+\end{enumerate}
+
+\pagebreak
+
+## Goodness-of-fit and Binomial Distributions
+
+A goodness-of-fit test can also be performed to assess whether observed data fits a *binomial* distribution, in which the **total observed frequencies** will be split in proportion to the *calculated binomial probabilities*.
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} A supermarket randomly samples boxes of duck eggs delivered by a supplier, each containing four eggs, and counts how many of the four eggs are broken for each box. The results of this are:
+
+\vspace{0.05cm}
+
+\begin{center}
+\begin{tabular}{| c | c c c c c |} 
+  \hline
+     Eggs broken & 0 & 1 & 2 & 3 & 4\\ 
+  \hline
+     Observed Frequencies ($O_i$) & 122 & 10 & 0 & 4 & 8\\ 
+  \hline
+\end{tabular}
+\end{center}
+
+\vspace{0.05cm}
+
+To better predict the occurrences of damaged eggs, the supermarket decides that the number of eggs broken in each box of four follows a binomial distribution, with $p=0.1$. Perform a hypothesis test to assess this claim and comment on the findings with reference to the assumptions required for a binomial model.
+
+\tcblower
+\textbf{Solution:}\\
+
+\begin{math}
+\begin{array}{ll}
+      \text{H}_0: & \text{No. of eggs broken per box follows a } \text{B}(4,0.1) \text{ distribution.}\\
+      \text{H}_1: & \text{No. of eggs broken per box follows a different distribution.}
+    \end{array}
+\left]
+    \begin{array}{l}
+      \alpha=0.05\\
+      \textnormal{One-tailed}
+    \end{array}
+  \right.
+\end{math}\\
+
+\vspace{0.1cm}
+
+Total observations $=\mathbf{144}$. Letting random variable $X$ represent the number of eggs broken in a box:\\
+
+\vspace{-0.3cm}
+
+\begin{center}
+\begin{tabular}{c c c c}
+    $\text{P}(X=0)=0.6561$ & $\text{P}(X=1)=0.2916$ & $\text{P}(X=2)=0.0486$ & $\cdots$\\[1em]
+    $0.6561\times\mathbf{144}=94.48$ & $0.2916\times\mathbf{144}=41.99$ & $0.0486\times\mathbf{144}=7.00$ & $\cdots$
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{| c | c c c c c |} 
+  \hline
+     Eggs broken & 0 & 1 & 2 & 3 & 4\\ 
+  \hline
+     Observed Frequencies ($O_i$) & 122 & 10 & 0 & 4 & 8\\ 
+  \hline
+     Expected Frequencies ($E_i$) & 94.48 & 41.99 & 7.00 & 0.52 & 0.01\\
+  \hline
+\end{tabular}
+\end{center}
+
+\textit{(Combining the final three columns is necessary here to satisfy the conditions for expected frequencies.)}
+
+\begin{center}
+\begin{tabular}{| c | c c c |} 
+  \hline
+     Eggs broken & 0 & 1 & 2 or more\\ 
+  \hline
+     Observed Frequencies ($O_i$) & 122 & 10 & 12\\ 
+  \hline
+     Expected Frequencies ($E_i$) & 94.48 & 41.99 & 7.53\\
+  \hline
+\end{tabular}
+\end{center}
+
+$\nu=3-1-0=2$\\
+
+\vspace{0.1cm}
+
+Test statistic: $X^2=\frac{(122-94.48)^2}{94.48}+\frac{(10-41.99)^2}{41.99}+\frac{(12-7.53)^2}{7.53}=35.041$\\
+
+\vspace{0.1cm}
+
+Critical value: $\chi^2_{2,0.95}=5.991$
+\hspace{6.8cm}
+\begin{tikzpicture}[overlay, 
+    declare function={gamma(\z)=
+    (2.506628274631*sqrt(1/\z) + 0.20888568*(1/\z)^(1.5) + 0.00870357*(1/\z)^(2.5) - (174.2106599*(1/\z)^(3.5))/25920 - (715.6423511*(1/\z)^(4.5))/1244160)*exp((-ln(1/\z)-1)*\z);},
+    declare function={gammapdf(\x,\k,\theta) = \x^(\k-1)*exp(-\x/\theta) / (\theta^\k*gamma(\k));}
+]
+\begin{axis}[
+  no markers, 
+  domain=0:10, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [smooth, domain=0:10] {gammapdf(x,1.5,2)};
+\addplot [draw=none, fill=black!50, domain=6:10] {gammapdf(x,1.5,2)} \closedcycle;
+\draw [semithick, black]  (axis cs:6,0) -- (axis cs: 6,0.04865);
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 4,0.13)  {$\chi^2_2$};
+\node[below] at (axis cs: 6, 0) {$5.991$};
+\node[above] at (axis cs: 8,0.05) {5\%};
+\end{axis}
+\end{tikzpicture}\\
+
+Since $35.041>5.991$, reject $\text{H}_0$ at the 5\% level of significance.\\
+There is evidence to suggest that the number of eggs broken per box does not follow a $\text{B}(4,0.1)$ distribution.
+
+\vspace{0.1cm}
+
+A condition for a binomial model is that each trial is independent. Since broken eggs most likely occur together, this condition may not be satisfied and a binomial model is unlikely to be suitable.
+
+\end{tcolorbox}
+
+Note that estimating the parameter $p$ from *the data itself* would require an additional degree of freedom to be subtracted (since $m=1$). However this is rarely assessed in this course.
+
+\pagebreak
+
+#### Exercise 12.3 {-}
+
+\begin{enumerate}
+    \item A manufacturer of festive products sells Christmas crackers, in boxes of four. Since 20\% of all crackers they produce are known to be faulty, failing to produce the required ``\text{crack}'' when pulled, they wish to test whether the number of faulty crackers in a box could be modelled using a binomial distribution. 
+    \begin{enumerate}
+        \item State the distribution of $X$, representing the number of faulty crackers in a box.
+        \item Calculate:
+        \begin{enumerate}
+            \begin{multicols}{5}
+            \item $\text{P}(X=0)$
+            \item $\text{P}(X=1)$
+            \item $\text{P}(X=2)$
+            \item $\text{P}(X=3)$
+            \item $\text{P}(X=4)$
+            \end{multicols}
+        \end{enumerate}
+    \end{enumerate}
+    The manufacturer tests 60 boxes of crackers, and records the number of faulty crackets in each box, with the results shown in the table below:
+    \begin{center}
+    \begin{tabular}{| c | c | c | c | c|c| } 
+    \hline
+     No of Faulty Crackers & 0 & 1 & 2 & 3 & 4\\ 
+    \hline
+     Frequency & 34 & 17 & 4 & 2 & 3\\
+    \hline
+    \end{tabular}
+    \end{center}
+    \begin{enumerate}[resume]
+        \item Use a suitable hypothesis test to assess at the 10\% level of significance whether the use of a binomial distribution is supported by the data.
+    \end{enumerate}
+    \item A school's mathematics department runs a short multiple choice festive revision quiz, which requires students to choose the correct answer from one of four options. The quiz contains five questions in total.\\[1em]
+    Teachers in the department suspect that, instead of carefully working using their knowledge to work out the answers to the mathematical questions, the students are simply guessing each question at random. 
+    \begin{enumerate}
+        \item State the distribution of $X$, the number of correct answers out of 5, assuming that a student is guessing at random for every question.
+    \end{enumerate}
+    To investigate these, the number of correct answers out of five for each of the 80 students is first set out in a table:
+    \begin{center}
+    \begin{tabular}{| c | c | c | c | c|c|c| } 
+    \hline
+     No. of Correct Answers & 0 & 1 & 2 & 3 & 4 & 5\\ 
+    \hline
+     Frequency & 9 & 1 & 29 & 25 & 10 & 6\\
+    \hline
+    \end{tabular}
+    \end{center}
+    \begin{enumerate}[resume]
+        \item Perform a chi-squared test to determine if the teachers' suspicious are backed by the data.
+    \end{enumerate}
+    \item A car mechanic has established that the proportion of tyres with tread that is below the legal minimum, for cars coming in for a service, is 15\%. They are interested in whether the number of the four tyres on a car brought in for a service that have less than the legal minimum tread, and thus need to be replaced, may be modelled using a binomial distribution: $X\sim\text{B}(4,0.15)$.\\[1em]
+    The number of tyres needing replaced for low tread for a random sample of cars brought in for a service are recorded:
+    \begin{center}
+    \begin{tabular}{| c | c | c | c | c|c| } 
+    \hline
+     No. of Tyres & 0 & 1 & 2 & 3 & 4\\ 
+    \hline
+     Frequency & 41 & 20 & 8 & 1 & 2\\
+    \hline
+    \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item Perform a chi-squared test to assess whether the binomial distribution may be suitable, at the 5\% significance level.
+        \item If the proportion of faulty tyres had not been known, and an estimate had instead been obtained using the data, explain how this would affect the calculation of the degrees of freedom,$\nu$ , for the test.
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+## Goodness-of-fit and Poisson Distributions
+
+Just as with a binomial distribution, using a Poisson distribution as a model for a goodness-of-fit test requires the total observations to be split according to calculated probabilities. Should the only parameter for a Poisson distribution, $\lambda$, be required to be *estimated from the data*, an additional degree of freedom will be *subtracted*, since $m=1$. 
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} It is generally said that the number of goals scored in a game of football follows a Poisson distribution. A football fan decides to see whether this statement is still reasonable, and records the number of goals scored in every game across a weekend in each of the top four tiers of English football:
+
+\begin{center}
+\begin{tabular}{| c | c c c c c c c c |} 
+  \hline
+     Goals & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 or more\\ 
+  \hline
+     Observed Frequencies ($O_i$) & 4 & 8 & 13 & 9 & 8 & 2 & 2 & 0\\ 
+  \hline
+\end{tabular}
+\end{center}
+
+Perform a non-parametric tests at the 1\% level of significance to assess whether there is evidence to suggest the model is longer valid.
+
+\tcblower
+\textbf{Solution:} $\lambda=\frac{\text{total no. of goals}}{\text{total no. of games}}=\frac{115}{46}=2.5$\\
+
+\begin{math}
+\begin{array}{ll}
+      \text{H}_0: & \text{No. of goals per game follows a Poisson distribution (with }\lambda=2.5)\\
+      \text{H}_1: & \text{No. of goals per game follows a different distribution.}
+    \end{array}
+\left]
+    \begin{array}{l}
+      \alpha=0.01\\
+      \textnormal{One-tailed}
+    \end{array}
+  \right.
+\end{math}\\
+
+Total observations$ =46$.\\
+$\text{P}(X=0)=0.0821$\\
+Expected frequency for 0 goals $=0.0821\times46=3.777$
+
+\begin{center}
+\begin{tabular}{| c | c c c c c c c c |} 
+  \hline
+     Goals & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 or more\\ 
+  \hline
+     Observed Frequencies ($O_i$) & 4 & 8 & 13 & 9 & 8 & 2 & 2 & 0\\ 
+  \hline
+     Expected Frequencies ($E_i$) & 3.777 & 9.439 & 11.799 & 9.835 & 6.146 & 3.073 & 1.279 & 0.652\\ 
+  \hline
+\end{tabular}
+\end{center}
+
+\textit{(Combining the final three columns is necessary here to satisfy the conditions for expected frequencies.)}
+
+\begin{center}
+\begin{tabular}{| c | c c c c c c |} 
+  \hline
+     Goals & 0 & 1 & 2 & 3 & 4 & 5 or more\\ 
+  \hline
+     Observed Frequencies ($O_i$) & 4 & 8 & 13 & 9 & 8 & 4\\ 
+  \hline
+     Expected Frequencies ($E_i$) & 3.777 & 9.439 & 11.799 & 9.835 & 6.146 & 5.004\\ 
+  \hline
+\end{tabular}
+\end{center}
+
+\textit{(Since } $\lambda$ \textit{ was calculated using the data, subtract an additional degree of freedom.)}\\
+
+$\nu=6-1-1=4$\\
+
+Test statistic: $X^2=\frac{(4-3.777)^2}{3.777}+...+\frac{(4-5.004)^2}{5.004}=1.186$\\
+
+Critical value: $\chi^2_{4,0.99}=13.277$
+\hspace{6cm}
+\begin{tikzpicture}[overlay, 
+    declare function={gamma(\z)=
+    (2.506628274631*sqrt(1/\z) + 0.20888568*(1/\z)^(1.5) + 0.00870357*(1/\z)^(2.5) - (174.2106599*(1/\z)^(3.5))/25920 - (715.6423511*(1/\z)^(4.5))/1244160)*exp((-ln(1/\z)-1)*\z);},
+    declare function={gammapdf(\x,\k,\theta) = \x^(\k-1)*exp(-\x/\theta) / (\theta^\k*gamma(\k));}
+]
+\begin{axis}[
+  no markers, 
+  domain=0:15, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [smooth, domain=0:15] {gammapdf(x,2,2)};
+\addplot [draw=none, fill=black!50, domain=9.5:15] {gammapdf(x,2,2)} \closedcycle;
+\draw [semithick, black]  (axis cs: 9.5,0) -- (axis cs: 9.5,0.0205);
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 6,0.1)  {$\chi^2_4$};
+\node[below] at (axis cs: 9.5,0) {$13.277$};
+\node[above] at (axis cs: 12,0.03) {1\%};
+\end{axis}
+\end{tikzpicture}\\
+
+Since $1.186<13.277$, do not reject $\text{H}_0$ at the 1\% level of significance.\\
+There is insufficient evidence to suggest that the number of goals scored per football game does not follow a Poisson distribution, so the model still seems reasonable.\\
+
+\end{tcolorbox}
+
+Note that whilst the $\chi^2$ test statistic is a measure of how well the data fits a model, the goodness-of-fit test does not show evidence *for* the model - only that the data does or does not *contradict* it.
+
+\pagebreak
+
+#### Exercise 12.4 {-}
+
+\begin{enumerate}
+    \item A keen amateur astronomer recalls hearing during a statistics class that shooting stars can be seen in a local section of night sky at a mean rate of 1 per hour, and the number visible in an hour is Poisson distributed. Over the course of a year they carefully watch the night sky on clear nights, and record the number of shooting starts they see within each hour. The data they obtain for the total of 70 hours spent watching for shooting stars is shown in the table below:
+    \begin{center}
+    \begin{tabular}{| c | c | c | c | c|} 
+    \hline
+     Number of Shooting Stars & 0 & 1 & 2 & 3 or more\\ 
+    \hline
+     Frequency & 23 & 20 & 15 & 12\\
+    \hline
+    \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item If the number of shooting stars visible in a section of sky in an hour is distributed as they were told in the statistics class, calculate the probability of seeing, in any given hour:
+        \begin{enumerate}
+            \item No shooting stars.
+            \item Exactly one shooting star.
+            \item Exactly two shooting stars.
+            \item Three or more shooting stars.
+        \end{enumerate}
+        \item Use a non-parametric test to determine whether there is evidence at the 5\% significance level that the distribution stated during the statistics class is not correct.
+    \end{enumerate}
+    \item A restaurant had generally understood that the number of bottles of wine sold on any given night could be modelled by a Poisson distribution with parameter $\lambda$. Suspecting this is no longer the case, the restaurant recorded the number of bottles sold on 50 randomly selected nights. The table below shows the data obtained:
+    \begin{center}
+    \begin{tabular}{| c | c | c | c | c|c|c|} 
+    \hline
+     Number of Bottles & 0 & 1 & 2 & 3 & 4 & 5 or more\\ 
+    \hline
+     Frequency & 2 & 13 & 19 & 15 & 1 & 0 \\
+    \hline
+    \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item Calculate a suitable estimate for the value of $\lambda$.
+        \item Use a hypothesis test to show that there is evidence at the 1\% level of significance to suggest that a Poisson distribution is no longer an appropriate model for the number of bottles of wine sold.
+    \end{enumerate}
+    \item It is often stated that the number of goals scored in a game of football follows a Poisson distribution with a parameter of 2.5. To explore this, a sports statistician obtains the relevant data for all 380 games of the 2023-24 English Premier League season:
+    \begin{center}
+    \begin{tabular}{| c | c | c | c | c|c|c|c|c|c|c|} 
+    \hline
+     Number of Goals & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 or more\\ 
+    \hline
+     Frequency & 11 & 42 & 81 & 80 & 81 & 48 & 24 & 10 & 3 & 0\\
+    \hline
+    \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item Perform a chi-squared test to assess whether the data suggests a Poisson model with a parameter of 2.5 is suitable.
+    \end{enumerate}
+    It is subsequently claimed that a Poisson model is still appropriate, but that the value of the parameter has changed.
+    \begin{enumerate}[resume]
+        \item Calculate an estimated value for $\lambda$ using the data, to 2 decimal places.
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+## Review Exercise {-}
+
+\begin{enumerate}
+    \item The population of the United Kingdom can be approximately split between those living in England, Scotland, Wales and Northern Ireland in the ratio $30:3:2:1$. Out of a random sample of 117 people who applied to take part in a UK-wide television show, 102 lived in England, 4 lived in Scotland, and 1 lived in Northern Ireland.\\[1em]
+    Perform a non-parametric test to assess whether there is evidence to suggest the distribution of people applying for the TV show differs from that of the wider UK population, at the 5\% level of significance.
+    \item A football team practises for the possibility of a penalty shootout each training session by having their five chosen penalty takers take one penalty each. They know that 15\% of all penalties taken as part of this training will result in a failure to score. Over the course of a season, the number of \textit{failed attempts} for each of the 60 sets of five penalties is recorded:
+    \begin{center}
+    \begin{tabular}{| c | c | c | c | c|c|c|} 
+    \hline
+     Number of Failed Attempts & 0 & 1 & 2 & 3 & 4 & 5\\ 
+    \hline
+     Frequency & 33 & 12 & 7 & 5 & 3 & 0\\
+    \hline
+    \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item Perform a test at the 10\% significance level to assess the evidence that the data fits a binomial distribution where $p=0.15$.
+        \item A coach comments that some of the five penalty takes are clearly better at taking penalties than others. Explain why this would mean that a binomial would be inappropriate.
+    \end{enumerate}
+    \item A supermarket chain is monitoring concerns regarding shoplifting in one of its stores. It is proposed that a Poisson distribution may be used to model the number of incidents of shoplifting recorded in any given day.\\[1em] 
+    The table below shows \textit{observed} frequencies of the numbers of incidents recorded per day across a period of time, with some \textit{expected} frequencies calculated using a Poisson distribution estimating its parameter from the observed data.
+    \begin{center}
+    \begin{tabular}{| c | c | c | c | c|c|c|c|} 
+    \hline
+     Incidents & 0 & 1 & 2 & 3 & 4 & 5 & 6 or more\\ 
+    \hline
+     Observed & 19 & 37 & 27 & 10 & 6 & 1 & 0\\
+    \hline
+    Expected & 22.31 & 33.47 &  & 12.55 & 4.71 & 1.41 & \\
+    \hline
+    \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item Calculate the mean of the Poisson distribution used.
+        \item Determine the missing expected values.
+        \item Carry out a non-parametric test at the 1\% significance level to determine whether a Poisson distribution is an appropriate model for the data.
+    \end{enumerate}
+    It is suggested that the same mean number of incidents of shoplifting per day obtained in part (a) was already known to be the appropriate value to use for the Poisson distribution.
+    \begin{enumerate}[resume]
+        \item Had this been known before the test was conducted, state what the test statistic and critical value would have been.
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+\begin{multicols}{2}
+
+\textbf{Exercise 12.1}
+
+\begin{enumerate}
+    \item $6.333<7.815$, do not reject $\text{H}_0$
+    \item $7.143<10.645$, do not reject $\text{H}_0$
+    \item $13.88>9.210$, reject $\text{H}_0$
+\end{enumerate}
+
+\textbf{Exercise 12.2}
+
+\begin{enumerate}
+    \item $7.779<9.488$, do not reject $\text{H}_0$
+    \item $3.049<11.345$, do not reject $\text{H}_0$
+    \item $14.906>7.815$, reject $\text{H}_0$
+\end{enumerate}
+
+\textbf{Exercise 12.3}
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $X\sim \text{B}(4,0.2)$
+        \item
+        \begin{enumerate}
+            \item $0.4096$
+            \item $0.4096$
+            \item $0.1536$
+            \item $0.0256$
+            \item $0.0016$
+        \end{enumerate}
+        \item $6.266>4.605$, reject $\text{H}_0$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $X\sim \text{B}(5,0.25)$
+        \item $257.862>9.488$, reject $\text{H}_0$ at the 5\% level
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $3,144<5.991$, do not reject $\text{H}_0$
+        \item An additional $1$ must be subtracted from the number of categories to obtain the degrees of freedom.
+    \end{enumerate}
+\end{enumerate}
+
+\textbf{Exercise 12.4}
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item
+        \begin{enumerate}
+            \item $0.3679$
+            \item $0.3679$
+            \item $0.1839$
+            \item $0.0803$
+        \end{enumerate}
+        \item $9.173>7.815$, reject $\text{H}_0$
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $\lambda=2$
+        \item $14.839>11.345$, reject $\text{H}_0$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $98.443>14.067$, reject $\text{H}_0$ at the 5\% level
+        \item $\lambda=3.28$
+    \end{enumerate}
+\end{enumerate}
+
+\textbf{Review Exercise}
+
+\begin{enumerate}
+    \item $3.759<5.991$, do not reject $\text{H}_0$
+    \item 
+    \begin{enumerate}
+        \item $9.790>4.605$, reject $\text{H}_0$
+        \item Some players being better penalty takers than others would mean the probability of success for each trial (penalty attempt) would not be equal, and hence a binomial distribution would not be appropriate.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\lambda=1.5$
+        \item $25.10,0.45$
+        \item $1.553>11.345$, reject $\text{H}_0$
+        \item The test statistic would still be $1.553$, whilst the critical value would instead be $13.277$
+    \end{enumerate}
+\end{enumerate}
+
+\end{multicols}
+

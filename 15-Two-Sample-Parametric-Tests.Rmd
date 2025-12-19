@@ -1,0 +1,905 @@
+# Two-Sample Parametric Tests
+
+Chapter 10 introduced three hypothesis tests which use a single sample of data to assess the evidence for claims relating to the population mean. For example, a study to assess the longevity of a brand's light bulbs might check a random sample of such bulbs, to assess whether the mean lifespan is greater than 1000 hours. The data from the sample is shown below, with the sample mean $\bar{x}$ indicated:
+
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}[c]{.2\textwidth}
+  \centering
+
+\begin{center}
+\begin{math}
+\begin{array}{ll}
+      \text{H}_0: & \mu=1000\\[0.5em]
+      \text{H}_1: & \mu>1000
+    \end{array}
+\end{math}
+\end{center}
+
+\end{minipage}%
+\begin{minipage}[c]{.1\textwidth}
+  \centering
+  \qquad \qquad
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.7\textwidth}
+  \centering
+
+\begin{center}
+\begin{tikzpicture}
+
+\draw[semithick] (0,0) -- (10,0);
+\foreach \x in {0.5,1.5,...,9.5}
+\draw[semithick] (\x,0) -- (\x,-0.1);
+\foreach \x in {900,1000,...,1200}
+\node at (0.03*\x-26.5,-0.3) {\x};
+\draw[semithick,dashed] (0.03*1056.25-26.5,0) -- (0.03*1056.25-26.5,1.2);
+\node at (0.03*1056.25-26.5,1.4) {$\bar{x}$};
+
+\draw[fill=black!25] (0.03*955-26.5,0.5) circle (3pt);
+\draw[fill=black!25] (0.03*920-26.5,0.5) circle (3pt);
+\draw[fill=black!25] (0.03*1030-26.5,0.5) circle (3pt);
+\draw[fill=black!25] (0.03*1110-26.5,0.5) circle (3pt);
+\draw[fill=black!25] (0.03*1165-26.5,0.5) circle (3pt);
+\draw[fill=black!25] (0.03*1065-26.5,0.5) circle (3pt);
+\draw[fill=black!25] (0.03*1010-26.5,0.5) circle (3pt);
+\draw[fill=black!25] (0.03*1195-26.5,0.5) circle (3pt);
+
+\end{tikzpicture}
+\end{center}
+
+\end{minipage}
+\end{figure}
+
+This use of a *single sample* of data, assessing a *single* population parameter, is an example of a **one-sample test**.
+
+Should a study instead wish to compare the longevity of *two different brands' light bulbs* they would instead check *two samples* of data: one sample from *Brand A* and one sample from *Brand B*. In such a case, a typical set of hypotheses might instead ask whether there is evidence to suggest that there is a difference between the population mean lifespan for Brand A, $\mu_A$, and the population mean lifespan for Brand B, $\mu_B$. The data from the samples are shown below, with the sample means $\bar{x}_A$ and $\bar{x}_B$ indicated:
+
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}[c]{.2\textwidth}
+  \centering
+
+\begin{center}
+\begin{math}
+\begin{array}{ll}
+      \text{H}_0: & \mu_A=\mu_B\\[0.5em]
+      \text{H}_1: & \mu_A\ne\mu_B
+    \end{array}
+\end{math}
+\end{center}
+
+\end{minipage}%
+\begin{minipage}[c]{.1\textwidth}
+  \centering
+  \qquad \qquad
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.7\textwidth}
+  \centering
+
+\begin{center}
+\begin{tikzpicture}
+
+\draw[semithick] (10,0) -- (0,0) node[left] {\textit{Brand A}};
+\foreach \x in {0.5,2,...,9.5}
+\draw[semithick] (\x,0) -- (\x,-0.1);
+\foreach \x in {900,1000,...,1200}
+\node at (0.03*\x-26.5,-0.3) {\x};
+\draw[semithick,dashed] (0.03*1010-26.5,0) -- (0.03*1010-26.5,1.2);
+\node at (0.03*1010-26.5,1.4) {$\bar{x}_A$};
+
+\draw[fill=black!25] (0.03*925-26.5,0.5) circle (3pt);
+\draw[fill=black!25] (0.03*960-26.5,0.5) circle (3pt);
+\draw[fill=black!25] (0.03*1020-26.5,0.5) circle (3pt);
+\draw[fill=black!25] (0.03*1105-26.5,0.5) circle (3pt);
+\draw[fill=black!25] (0.03*1130-26.5,0.5) circle (3pt);
+\draw[fill=black!25] (0.03*905-26.5,0.5) circle (3pt);
+\draw[fill=black!25] (0.03*1030-26.5,0.5) circle (3pt);
+\draw[fill=black!25] (0.03*1045-26.5,0.5) circle (3pt);
+
+\draw[semithick] (10,-3) -- (0,-3) node[left] {\textit{Brand B}};
+\foreach \x in {0.5,2,...,9.5}
+\draw[semithick] (\x,-3) -- (\x,-3.1);
+\foreach \x in {900,1000,...,1200}
+\node at (0.03*\x-26.5,-3.3) {\x};
+\draw[semithick,dashed] (0.03*1059-26.5,-3) -- (0.03*1059-26.5,-1.8);
+\node at (0.03*1059-26.5,-1.6) {$\bar{x}_B$};
+
+\draw[fill=black!25] (0.03*950-26.5,-2.5) circle (3pt);
+\draw[fill=black!25] (0.03*970-26.5,-2.5) circle (3pt);
+\draw[fill=black!25] (0.03*995-26.5,-2.5) circle (3pt);
+\draw[fill=black!25] (0.03*1045-26.5,-2.5) circle (3pt);
+\draw[fill=black!25] (0.03*1070-26.5,-2.5) circle (3pt);
+\draw[fill=black!25] (0.03*1095-26.5,-2.5) circle (3pt);
+\draw[fill=black!25] (0.03*1155-26.5,-2.5) circle (3pt);
+\draw[fill=black!25] (0.03*1190-26.5,-2.5) circle (3pt);
+
+
+\end{tikzpicture}
+\end{center}
+
+\end{minipage}
+\end{figure}
+
+Such a test, comparing the parameters of *two* populations by using *two samples*, is an example of a **two-sample test**.
+
+\pagebreak
+
+## Two-Sample \textit{z}-test for Population Means
+
+If random samples of data are obtained from each of two populations then, given certain conditions are met, a *two-sample $z$-test* may be used to explore evidence for a difference in the population means.
+
+\begin{centering}
+\tcbset{width=14cm}
+\begin{tcolorbox}[adjusted title=Conditions for valid use of the two-sample $z$-test for population means:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{itemize}
+    \item The \textit{populations} are \textbf{normally distributed}.
+    \item The \textit{population standard deviations}, $\sigma_1$ and $\sigma_2$, are \textbf{known}.
+    \item The data was obtained through \textbf{random} and \textbf{independent samples}.
+\end{itemize}
+\end{tcolorbox}
+\end{centering}
+
+When the sample sizes $n_1$ and $n_2$ are greater than 20 the *Central Limit Theorem* can be invoked, so the sample means are at least approximately normally distributed regardless of the distribution of the underlying population. Also for sample sizes greater than 20, the sample standard deviations $s_1$ and $s_2$ provide *sufficiently accurate estimates* for the *population* standard deviations $\sigma_1$ and $\sigma_2$.
+
+Given the conditions are satisfied, then the sample means can be described as independent random variables $\overline{X}_1$ and $\overline{X}_2$:
+
+$$\overline{X}_1\sim \text{N}\left(\mu_1,\frac{\sigma_1^2}{n_1}\right) \qquad \text{and} \qquad \overline{X}_2\sim \text{N}\left(\mu_2,\frac{\sigma_2^2}{n_2}\right)$$
+
+The *difference* between the sample means is also therefore normally distributed:
+
+$$\overline{X}_1-\overline{X}_2\sim \text{N}\left(\mu_1-\mu_2,\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}\right)$$
+
+The distribution of the test statistic is provided in the SQA Data Booklet as:
+
+$$Z=\dfrac{(\overline{X}_1-\overline{X}_2)-(\mu_1-\mu_2)}{\sqrt{\dfrac{\sigma_1^2}{n_1}+\dfrac{\sigma_2^2}{n_2}}}$$
+
+Taking a null hypothesis that *the difference between the population means is zero*, or $\mu_1-\mu_2=0$, a more streamlined version can be obtained:
+
+\begin{centering}
+\tcbset{width=10cm}
+\begin{tcolorbox}[adjusted title=For a two-sample $z$-test for population means:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+Test statistic: $z=\dfrac{\overline{x}_1-\overline{x}_2}{\sqrt{\dfrac{\sigma_1^2}{n_1}+\dfrac{\sigma_2^2}{n_2}}}$
+\end{tcolorbox}
+\end{centering}
+
+The null hypothesis above can be rewritten as $\mu_1=\mu_2$, and either one-tailed or two-tailed tests can be performed:
+
+\vspace{-0.5cm}
+
+\begin{center}
+    \begin{tabular}{ccccc}
+        $\text{H}_0:\mu_1=\mu_2$ & \qquad \qquad & $\text{H}_0:\mu_1 = \mu_2$ & \qquad \qquad & $\text{H}_0:\mu_1=\mu_2$\\
+        $\text{H}_1:\mu_1 \ne \mu_2$ & & $\text{H}_1:\mu_1>\mu_2$ & & $\text{H}_1:\mu_1<\mu_2$ 
+    \end{tabular}
+\end{center}
+
+\vspace{-0.5cm}
+
+\pagebreak
+
+\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\textbf{Problem:} To compare the longevity of two brands' light bulbs, a random sample of eight bulbs from \textit{AlwaysBrite} and eight bulbs from \textit{BulbCity} are tested. The sample of AlwaysBrite bulbs had have a mean lifespan 1015 hours, with a sample mean of 1059 hours before failure for BulbCity.\\
+
+Assuming that the lifespan for both populations of bulbs is known to be normally distributed, with a standard deviation of 84 hours, use a parametric test to determine whether there is evidence for a difference in longevity between the brands.
+
+\tcblower
+\textbf{Solution:}
+$\bar{x}_A=1015$, $\bar{x}_B=1059$, $\sigma_A=84$, $\sigma_B=84$ $n_A=8$, $n_B=8$\\[0.1em]
+
+\begin{math}
+\begin{array}{ll}
+      H_0: & \mu_A=\mu_B\\
+      H_1: & \mu_A\ne \mu_B
+    \end{array}
+\left]
+    \begin{array}{l}
+      \alpha=0.05\\
+      \textnormal{Two-tailed}
+    \end{array}
+  \right.
+\end{math}
+
+\vspace{0.5cm}
+
+Test statistic: $z=\dfrac{1015-1059}{\sqrt{\dfrac{84^2}{8}+\dfrac{84^2}{8}}}=-1.05$
+\hspace{4cm}
+\begin{tikzpicture}[overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [draw=none, fill=black!50, domain=-3:-1.96] {gauss(x, 0, 1)} \closedcycle;
+\addplot [draw=none, fill=black!50, domain=1.96:3] {gauss(x, 0, 1)} \closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(-1.96,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\pgfmathsetmacro\valueC{gauss(1.96,0,1)}
+\draw [semithick, black]  (axis cs:-1.96,0) -- (axis cs:-1.96,\valueA);
+\draw [semithick, black]  (axis cs:1.96,0) -- (axis cs:1.96,\valueC);
+\node[below] at (axis cs: 0,0)  {$0$}; 
+\node[below] at (axis cs: -1.96, 0) {$-1.96$};
+\node[above] at (axis cs: -2.4,\valueA) {2.5\%};
+\node[below] at (axis cs: 1.96, 0) {$1.96$};
+\node[above] at (axis cs: 2.4,\valueC) {2.5\%};
+\node[above] at (axis cs: 0,\valueB)  {$z$};
+\end{axis}
+\end{tikzpicture}\\[0.1em]
+
+Critical value: $z_{0.025}=-1.96$\\
+
+Since $-1.05>-1.96$, do not reject $\text{H}_0$ at the 5\% level of significance. There is insufficient evidence to suggest that there is a difference in the mean lifespans of the two brands of light bulbs.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\textbf{Problem:} A survey found that the mean hotel room rate in Edinburgh is £88.42 and that the mean room rate in Glasgow is £80.61. The data was obtained from samples of 50 hotels each and the sample standard deviations were £5.62 and £4.83 respectively. Assess the evidence at the 5\% level of significance that mean hotel room rates are more expensive in Edinburgh, stating any assumption made.
+
+\tcblower
+\textbf{Solution:}
+$\bar{x}_e=88.42$, $\bar{x}_g=80.61$, $s_e=5.62$, $s_g=4.83$ $n_e=50$, $n_g=50$\\[0.1em]
+
+Since both samples sizes are greater than 20, both sample means are approximately normally distributed due to the Central Limit Theorem, and both sample standard deviations of hotel room rate may be considered sufficiently accurate estimators for their respective population standard deviations.\\[0.1em]
+
+Assume that the samples of hotels for each city were random.\\[0.1em]
+
+\begin{math}
+\begin{array}{ll}
+      H_0: & \mu_e=\mu_g\\
+      H_1: & \mu_e > \mu_g
+    \end{array}
+\left]
+    \begin{array}{l}
+      \alpha=0.05\\
+      \textnormal{One-tailed}
+    \end{array}
+  \right.
+\end{math}
+
+\vspace{0.5cm}
+
+Test statistic: $z=\dfrac{88.42-80.61}{\sqrt{\dfrac{5.62^2}{50}+\dfrac{4.83^2}{50}}}=7.45$
+\hspace{3cm}
+\begin{tikzpicture}[overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [draw=none, fill=black!50, domain=1.64:3] {gauss(x, 0, 1)} \closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(1.64,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\draw [semithick, black]  (axis cs:1.64,0) -- (axis cs:1.64,\valueA);
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 0,\valueB)  {$z$};
+\node[below] at (axis cs: 1.64, 0) {$1.64$};
+\node[above] at (axis cs: 1.9,\valueA) {5\%};
+\end{axis}
+\end{tikzpicture}\\
+
+Critical value: $z_{0.95}=1.64$\\
+
+Since $7.45>1.64$, reject $\text{H}_0$ at the 5\% level of significance. There is evidence to suggest that the mean hotel room rate in Edinburgh is more expensive than in Glasgow.
+
+\end{tcolorbox}
+
+\pagebreak
+
+#### Exercise 15A {-}
+
+\begin{enumerate}
+    \item The alkalinity, in milligrams per litre, of water in the upper reaches of rivers in a particular region is known to be normally distributed with a standard deviation of 10 mg/l. Alkalinity readings in the lower reaches of rivers in the same region are also known to be normally distributed, but with a standard deviation of 25 mg/l.  Ten alkalinity readings are made in the upper reaches of rivers in the region and fifteen in the lower reaches with sample means of 80.5 mg/l and 99.0 mg/l respectively. Test, at the 1\% level of significance, the claim that the true mean alkalinity of water in the lower reaches of this river is greater than that in the upper reaches, stating an assumption made.
+    \item The mass of crisps delivered into bags by a machine is known to be normally distributed with a standard deviation of 0.5 g. Prior to a minor overhaul of the machine, the contents, in grams, of a random sample of six bags are as follows:
+\vspace{-0.3cm}
+\begin{center}
+\begin{tabular}{cccccc}
+    151.7 & 152.6 & 150.8 & 151.9 & 152.3 & 151.5
+\end{tabular}
+\end{center}
+\vspace{-0.3cm}
+After the overhaul, which from past experience is known not to affect the standard deviation, the contents of a random sample of twelve bags were measured with the results as follows:
+\vspace{-0.3cm}
+\begin{center}
+\begin{tabular}{cccccc}
+    151.1 & 150.7 & 149.0 & 150.3 & 151.3 & 151.4\\[0.1em]
+		150.8 & 149.5 & 150.2 & 150.6 & 150.9 & 151.3
+\end{tabular}
+\end{center}
+\vspace{-0.3cm}
+Test the hypothesis that the minor overhaul has had no effect on the mean mass of crisps delivered by the machine.
+    \item The same test was given to randomly selected groups of 100 scouts and 144 guides. The mean score for the scouts was 27.53 and the mean score for the guides was 26.81. Assuming a common population standard deviation of 3.48, test, using a 5\% level of significance, whether the scouts’ performance in the test was better than that of the guides.
+    \item The manager of a lemonade bottling plant is interested in comparing the performances of two production lines, one of which has only recently been installed.  For each line she selects 10 one-hour periods at random and records the number of crates completed in each hour. The table below gives the results:
+    \vspace{-0.3cm}
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+      \hline
+        Production Line & \multicolumn{10}{c|}{Number of crates completed per hour}\\
+      \hline
+        1 (Old) & 74 & 77 & 78 & 70 & 87 & 83 & 76 & 78 & 81 & 76\\
+      \hline
+        2 (New) & 78 & 87 & 79 & 82 & 87 & 81 & 85 & 80 & 82 & 83\\
+      \hline
+    \end{tabular}
+    \end{center}
+    \vspace{-0.3cm}
+    From past experience with this kind of equipment, it is known that the variance in these figures will be 25 for Line 1 and 10 for Line 2. Assuming that these samples came from normal populations with these variances, test the hypothesis that the two populations have the same mean.
+    \item A medical researcher wishes to see whether the pulse rates of smokers are higher than the pulse rates of non-smokers.  Random samples of 100 smokers and 100 non-smokers are selected and the results shown below.
+    \begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+        Smokers & Non-smokers\\
+        \hline
+        $\bar{x}_1=90$ & $\bar{x}_2$\\
+        \hline
+        $s_1=5$ & $s_2=6$\\
+        \hline
+        $n_1=100$ & $n_2=100$\\
+        \hline
+    \end{tabular}
+    \end{center}
+    Determine if the researcher has evidence at the 1\% level that smokers have higher pulse rates than non-smokers.
+    \item It is believed that the lengths of new-born babies are normally distributed.  The lengths of a random sample of 44 new-born boys at the maternity hospital in Glasgow were measured with sample mean 51.97cm and standard deviation 2.02cm. A random sample of 41 baby girls was also taken and the measurements of their lengths gave a sample mean of 50.21cm and standard deviation of 1.88cm. Test at the 5\% level the hypothesis that the mean length of the baby boys was longer than that of the baby girls. 
+\end{enumerate}
+
+\pagebreak
+
+## Two-Sample \textit{z}-test for Population Proportions
+
+If random, independent samples of data are obtained from each of *two populations*, and the two \textbf{sample proportions} $\hat{p}_1$ and $\hat{p}_2$ are obtained, then a *two-sample* $z$*-test for population proportions* may be used to explore evidence for a difference in the \textbf{population proportions}, $p_1$ and $p_2$.  
+
+\begin{centering}
+\tcbset{width=14cm}
+\begin{tcolorbox}[adjusted title=Conditions for valid use of the two-sample $z$-test for population proportions:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{itemize}
+    \item Each of $n_1 \hat{p}_1,n_1 \hat{q}_1,n_2 \hat{p}_2$ and $n_2 \hat{q}_2$ are \textbf{greater than 5}.
+    \item The data was obtained through \textbf{random} and \textbf{independent samples}.
+\end{itemize}
+\end{tcolorbox}
+\end{centering}
+
+This parametric test can take one-tailed or two-tailed hypotheses which relation to the population proportions, $p_1$ and $p_2$:
+
+\begin{center}
+    \begin{tabular}{ccccc}
+        $\text{H}_0:p_1=p_2$ & \qquad \qquad & $\text{H}_0:p_1 = p_2$ & \qquad \qquad & $\text{H}_0:p_1=p_2$\\
+        $\text{H}_1:p_1 \ne p_2$ & & $\text{H}_1:p_1>p_2$ & & $\text{H}_1:p_1<p_2$ 
+    \end{tabular}
+\end{center}
+
+The test statistic is provided in the SQA Data Booklet, and it uses an *estimate of the pooled population proportion*, $\hat{p}$:
+
+\begin{centering}
+\tcbset{width=13cm}
+\begin{tcolorbox}[adjusted title=For a two-sample $z$-test for population proportions:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+Test statistic: $z=\dfrac{\hat{p}_1-\hat{p}_2}{\sqrt{\hat{p} \hat{q} \left( \dfrac{1}{n_1}+ \dfrac{1}{n_2}\right)}}$ \qquad where \qquad $\hat{p}=\dfrac{\hat{p_1}n_1+n_2\hat{p}_2}{n_1+n_2}$
+\end{tcolorbox}
+\end{centering}
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} A sample of 50 randomly selected men with high triglyceride levels consumed 2 tablespoons of oat bran daily for 6 weeks. After 6 weeks, 60\% of the men had lowered their triglyceride levels. A sample of 80 men consumed 2 tablespoons of wheat bran for 6 weeks. After 6 weeks 25\% had lower triglyceride levels. Assess the evidence for a difference in the proportions at the 1\% significance level.
+
+\tcblower
+\textbf{Solution:}
+$\hat{p}_{oat}=0.6$, $\hat{p}_{wheat}=0.25$, $n_{oat}=50$, $n_{wheat}=80$\\[0.1em]
+
+\begin{math}
+\begin{array}{ll}
+      H_0: & p_{oat}=p_{wheat}\\
+      H_1: & p_{oat} \ne p_{wheat}
+    \end{array}
+\left]
+    \begin{array}{l}
+      \alpha=0.01\\
+      \textnormal{Two-tailed}
+    \end{array}
+  \right.
+\end{math}
+
+\vspace{0.5cm}
+
+Estimate of pooled population proportion: $\hat{p}=\dfrac{0.6\times50+0.25\times80}{50+80}=0.385$
+
+\vspace{0.5cm}
+
+Test statistic: $z=\dfrac{0.6-0.25}{\sqrt{0.385 \times 0.615 \left( \dfrac{1}{50}+ \dfrac{1}{80}\right)}}=3.99$
+\hspace{3cm}
+\begin{tikzpicture}[overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [draw=none, fill=black!50, domain=1.96:3] {gauss(x, 0, 1)} \closedcycle;
+\addplot [draw=none, fill=black!50, domain=-3:-1.96] {gauss(x, 0, 1)} \closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(1.96,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\draw [semithick, black]  (axis cs:1.96,0) -- (axis cs:1.96,\valueA);
+\draw [semithick, black]  (axis cs:-1.96,0) -- (axis cs:-1.96,\valueA);
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 0,\valueB)  {$z$};
+\node[below] at (axis cs: 1.96, 0) {$2.58$};
+\node[above] at (axis cs: 2.2,\valueA) {0.5\%};
+\node[below] at (axis cs: -1.96, 0) {$-2.58$};
+\node[above] at (axis cs: -2.2,\valueA) {0.5\%};
+\end{axis}
+\end{tikzpicture}\\
+
+Critical value: $z_{0.995}=2.58$\\
+
+Since $3.99>2.58$, reject $\text{H}_0$ at the 1\% level of significance. There is evidence to suggest that the proportions of men who experience a reduction in triglyceride levels by consuming oat bran or wheat bran daily are not the same. 
+
+\end{tcolorbox}
+
+\pagebreak
+
+#### Exercise 15B {-}
+
+\begin{enumerate}
+    \item In a random sample of 70 students, 45 are able to identify a certain brand of cola. In a random sample of 80 teachers, 35 are able to identify the same brand of cola. Test at the 5\% significance level the hypothesis that the students are better at identifying the cola and confirm the results given below.
+    \item A coffee shop chain has launched a new blend of coffee and wishes to investigate whether their younger customers prefer the new blend of coffee more than their older customers. In a random sample of 60 customers aged under 25, 16 preferred the old blend over the new blend, whereas in a random sample of 80 customers aged over 50, 35 preferred the old blend. Test at the 5\% significance level the hypothesis that there is a difference in preference between the age groups. 
+    \item A sample of 150 people from a certain industrial community showed that 80 people suffered from a lung disease. A sample of 100 people from a rural community showed that 30 suffered from the same lung disease. Test at the 1\% significance level if there is a difference between the proportions of people who suffer from the disease in the two communities, stating an assumption made.
+    \item In a random sample of 100 store customers, 46 used a Mastercard. In another random sample of 100, 58 used a Visa card. Assess the data for evidence of a difference in the proportion of people who use each type of credit card.
+    \item A recent survey of people living in Glasgow showed that in a sample of 120 people, 35\% had visited Disney World.  In another sample of 140 people, 25\% had visited Disneyland. Test at the 5\% significance level the hypothesis that more people visit Disney World stating any assumptions made.
+    \item The Trial Urban District Assessment (TUDA) is a study sponsored by the US government of student achievement in large urban school district. In 2009, 1311 of a random sample of 1900 eighth-graders from Houston performed at or above the basic level in mathematics. In 2011, 1440 of a random sample of 2000 eighth-graders from Houston performed at or above the basic level. Assess the evidence for an increase in the proportion of eighth-graders who performed at or above the basic level in mathematics from 2009 to 2011 at the 5\% significance level.
+\end{enumerate}
+
+\pagebreak
+
+## Two-Sample \textit{t}-test for Population Means
+
+When sample sizes are fewer than 20 and population standard deviations are unknown, a one-sample $z$-test for population means is not appropriate. Instead, a *two-sample* $t$*-test for population means* may be used, given certain conditions are met:
+
+\begin{centering}
+\tcbset{width=13cm}
+\begin{tcolorbox}[adjusted title=Conditions for valid use of the two-sample $t$-test for population means:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{itemize}
+    \item The \textit{populations} are \textbf{normally distributed}.
+    \item The populations have \textbf{equal variance}.
+    \item The data was obtained through \textbf{random} and \textbf{independent samples}.
+\end{itemize}
+\end{tcolorbox}
+\end{centering}
+
+The test statistic is provided in the SQA Data Booklet, and follows a $t$-distribution with $\nu=n_1+n_2-2$ degrees of freedom. It requires calculation of a *pooled estimate of the variance*, $s^2$, and as with the two-sample $z$-test, a more streamline version of the test statistic under a null hypothesis of $\mu_1=\mu_2$ is as follows:
+
+\begin{centering}
+\tcbset{width=15.5cm}
+\begin{tcolorbox}[adjusted title=For a two-sample $t$-test for population means:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+Test statistic: $t_{n_1+n_2-2}=\dfrac{\bar{x}_1-\bar{x}_2}{s\sqrt{\dfrac{1}{n_1}+ \dfrac{1}{n_2}}}$ \qquad where \qquad $s^2=\dfrac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}$
+\end{tcolorbox}
+\end{centering}
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} It is known that the volume of hot drinks dispensed by a type of machine is normally distributed. A random sample of 10 hot drinks from Dispenser A has a mean volume of 203 ml and a standard deviation of 3 ml. A random sample of 15 hot drinks from Dispenser B has corresponding values of 206 ml and 5 ml. Test, at the 5\% significance level, the hypothesis that there is no difference in the mean volume dispensed by the two machines.  
+
+\tcblower
+\textbf{Solution:}
+$\bar{x}_A=203$, $\bar{x}_B=206$, $s_A=3$, $s_B=5$, $n_A=10$, $n_B=15$\\[0.1em]
+
+\begin{math}
+\begin{array}{ll}
+      H_0: & \mu_A=\mu_B\\
+      H_1: & \mu_A \ne \mu_B
+    \end{array}
+\left]
+    \begin{array}{l}
+      \alpha=0.05\\
+      \textnormal{Two-tailed}
+    \end{array}
+  \right.
+\end{math}
+
+\vspace{0.5cm}
+
+Estimate of pooled variance: $s^2=\dfrac{(10-1)\times 3^2+(15-1)\times 5^2}{10+15-2}=18.739$\\[0.1em]
+
+$s=\sqrt{18.739}=4.329$
+
+\vspace{0.5cm}
+
+Test statistic: $t=\dfrac{203-206}{4.329 \times \sqrt{\dfrac{1}{10}+ \dfrac{1}{15}}}=-1.697$
+\hspace{3cm}
+\begin{tikzpicture}[overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [draw=none, fill=black!50, domain=-3:-2.2] {gauss(x, 0, 1)} \closedcycle;
+\addplot [draw=none, fill=black!50, domain=2.2:3] {gauss(x, 0, 1)} \closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(-2.2,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\draw [semithick, black]  (axis cs:-2.2,0) -- (axis cs:-2.2,\valueA);
+\draw [semithick, black]  (axis cs:2.2,0) -- (axis cs:2.2,\valueA);
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 0,\valueB)  {$t_23$};
+\node[below] at (axis cs: -2.2, 0) {$-2.069$};
+\node[above] at (axis cs: -2.4,\valueA) {2.5\%};
+\node[below] at (axis cs: 2.2, 0) {$2.069$};
+\node[above] at (axis cs: 2.4,\valueA) {2.5\%};
+\end{axis}
+\end{tikzpicture}\\
+
+Critical value: $t_{23,0.975}=-2.069$\\
+
+Since $-1.697>-2.069$, do not reject $\text{H}_0$ at the 5\% level of significance. There is insufficient evidence to suggest that the mean volume dispensed by the two machines is different.
+
+\end{tcolorbox}
+
+\pagebreak
+
+#### Exercise 15C {-}
+
+\begin{enumerate}
+    \item A random sample of 10 yellow grapefruit is weighed and the mean mass is found to be 201.4g. The value of an unbiased estimate for the population variance is 234.1$\text{g}^2$. The corresponding figures for a random sample of 8 pink grapefruit are 221.8g and 281.9$\text{g}^2$.\\[1em]
+Determine, using a 1\% significance level whether there is evidence that pink grapefruit weigh more than yellow grapefruit. State any assumptions made.
+    \item The times (in minutes) it took six randomly selected field mice to learn to run a simple maze and the times it took six randomly selected house mice to learn to run the same maze are given. 
+    \begin{center}
+    \begin{tabular}{|c|cccccc|}
+      \hline
+        Field Mice & 18 & 24 & 12 & 20 & 13 & 15\\
+      \hline
+        House Mice & 25 & 16 & 10 & 19 & 14 & 16\\
+      \hline
+    \end{tabular}
+    \end{center}
+    Use a parametric test to determine if there is a difference in learning rate between the two types of mice.
+    \item Mr Brown is the owner of a small bakery in a large town. He believes that the smell of fresh baking will encourage customers to purchase goods from his bakery. To investigate this belief, he records the daily sales for 10 days when all the bakery’s windows are open and the daily sales for another 10 days when all the windows are closed. The following sales, in £s, are recorded.
+    \begin{center}
+    \begin{tabular}{c|cccccccccc}
+        Windows open & 202.0 & 204.5 & 207.0 & 215.5 & 190.8 & 215.6 & 208.8 & 187.8 & 204.1 & 185.7\\
+        \hline
+        Windows closed & 193.5 & 192.2 & 199.4 & 177.6 & 205.4 & 200.6 & 181.6 & 169.2 & 172.2 & 192.8
+    \end{tabular}
+    \end{center}
+    Assuming that these data may be deemed to be random samples from normal populations with the same variance, investigate the baker’s belief.
+    \item A microbiologist wishes to determine whether there is any difference in the time it takes to make yoghurt from the two different starters: lactobacillus acidophilus (A) and bulgarius (B). Seven batches of yoghurt were made with each of the starters. The table below shows the time taken, in hours, to make each batch along with corresponding summary data.
+    \begin{center}
+    \begin{tabular}{c|ccccccc}
+        Starter A & 6.8 & 6.3 & 7.4 & 6.1 & 8.2 & 7.3 & 6.9\\
+        \hline
+        Starter B & 6.1 & 6.4 & 5.7 & 5.5 & 6.9 & 6.3 & 6.7
+    \end{tabular}
+    \end{center}
+    \begin{center}
+    \begin{tabular}{ccccc}
+        Variable & N & Mean & SE Mean & StDev\\
+        \hline
+        Starter A & 7 & 7.000 & 0.269 & 0.712\\
+        Starter B & 7 & 6.229 & 0.191 & 0.506
+    \end{tabular}
+    \end{center}
+    Assuming that both sets of times may be considered to be random samples from normal populations with the same variance, test at the 5\% significance level the hypothesis that the mean time taken to make yoghurt is the same for both starters. Comment on any different to the conclusion if a 1\% significance level had been used instead.
+\end{enumerate}
+
+\pagebreak
+
+\begin{enumerate}[resume]
+    \item An investigation was conducted into the dust content in the flue gases of two types of solid-fuel boilers. Thirteen boilers of type A and nine boilers of type B were used under identical fuelling and extraction conditions. Over a similar period, the following quantities, in grams, of dust were deposited in similar traps inserted in each of the twenty-two flues.
+    \begin{center}
+    \begin{tabular}{c|ccccccccccccc}
+        Type A & 73.1 & 56.4 & 82.1 & 67.2 & 55.2 & 78.7 & 75.1 & 48.0 & 60.6 & 63.1 & 53.3 & 55.5 & 61.5\\
+        \hline
+        Type B & 53.0 & 39.3 & 55.8 & 46.0 & 56.4 & 58.8 & 41.2 & 66.6 & 58.9  &  &  &  & 	
+    \end{tabular}
+    \end{center}
+    A test for equality of population means was performed at the 5\% level of significance.\vspace{0.5cm}\\
+    \texttt{two sample t-test}\\
+    \texttt{alternative hypothesis: true difference in means is not equal to 0}\\
+    \texttt{t = 2.52}\qquad \texttt{df=20} \qquad \texttt{p-value = 0.020}\\
+    \texttt{sample estimates:}\\
+    \texttt{mean of A = 63.8}\qquad \texttt{mean of B = 52.89}\\
+    \texttt{sd of A = 10.6} \qquad \texttt{sd of B = 9.00}\\
+    \vspace{0.5cm}
+    Confirm the test statistic by calculating the pooled estimate of variance and draw a suitable conclusion for the test, stating any assumption required.
+    \item As part of a research study into pattern recognition, subjects were asked to examine a picture and see if they could distinguish a word. The picture contained the word ‘technology’ written backwards and camouflaged by an elaborate pattern. Of the 23 randomly selected librarians who took part, 11 succeeded in recognising the word whilst of 19 randomly selected designers, 13 succeeded. The times, in seconds, for the successful subjects to recognise the word were as follows:
+    \begin{center}
+    \begin{tabular}{c|ccccccccccccc}
+        Librarians & 55 & 18 & 99 & 54 & 87 & 11 & 62 & 68 & 27 & 90 & 57  &   & \\
+        \hline
+        Designers & 23 & 69 & 34 & 27 & 51 & 29 & 45 & 42 & 48 & 74 & 31 & 30 & 31	
+    \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item Stating any necessary assumptions, investigate whether the mean 	time for the librarians is longer than for the designers.
+        \item Suggest another parametric hypothesis test that could be carried 	out using this data and perform this test.
+    \end{enumerate}
+    \item A council official wants to compare two brands of paint used for painting stripes on local roads. Twenty locations are selected for the road stripes. The first brand is used on ten randomly selected locations and the second brand on the remaining 10. The number of months each brand lasts is shown below.
+    \begin{center}
+    \begin{tabular}{c|cccccccccc}
+        Brand A & 35.6 & 36.1 & 37.0 & 35.8 & 34.9 & 34.9 & 36.0 & 37.8 & 36.6 & 36.5\\
+        \hline
+        Brand B & 37.2 & 36.4 & 39.7 & 37.5 & 37.2 & 40.5 & 38.8 & 38.2 & 37.7 & 36.6
+    \end{tabular}
+    \end{center}
+    Carry out a hypothesis test making clear any assumptions made.
+    \item The U.S. Bureau of Labour Statistics conducts monthly surveys to estimate hourly earnings of nonsupervisory employees in various industry groups. Results of the surveys can be found in Employment and Earnings. Independent random samples of 14 mine workers and 17 construction workers yielded the following statistics.
+    \begin{center}
+    \begin{tabular}{c|cc}
+        Industry & Mean & Standard Deviation\\
+        \hline
+        Mining & \$13.93 & \$2.25\\
+        Construction & \$14.42 & \$2.36
+    \end{tabular}
+    \end{center}
+    Assuming that the hourly earnings of the employees are normally distributed, determine at the 5\% significance level if the data provide sufficient evidence to conclude that mine workers earn less on average than construction workers.
+\end{enumerate}
+
+\newpage
+
+## Paired \textit{t}-test for the Population Mean Difference
+
+Suppose six randomly selected athletes have their times to complete a 100 metres sprint recorded, then they each repeat the sprint a month later after some training on technique. Here the two sets of data, *time before* and *time after*, are *not independent*. Instead, each value from the first set of data pairs with a value from the second set; this is called *paired data*. In such a case, the previous two-sample tests in this chapter would be inappropriate. Instead, a single sample of *differences*, $d_i$, for each pair should be calculated and the mean difference assessed using a *paired* $t$*-test*. Possible hypotheses would then related to the population mean difference, $\mu_d$:
+
+\begin{center}
+    \begin{tabular}{ccccc}
+        $\text{H}_0:\mu_d=0$ & \qquad \qquad & $\text{H}_0:\mu_d=0$ & \qquad \qquad & $\text{H}_0:\mu_d=0$\\
+        $\text{H}_1:\mu_d \ne 0$ & & $\text{H}_1:\mu_d>0$ & & $\text{H}_1:\mu_d<0$ 
+    \end{tabular}
+\end{center}
+
+The test statistic derives from the one-sample $t$-test covered in Chapter 10, with $\bar{d}$ (or $\bar{x}_d$) representing the sample mean difference and  $s_d$ the sample standard deviation in differences.
+
+\begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.33\textwidth}
+  \centering
+\begin{centering}
+\tcbset{width=6cm,height=2.7cm}
+\begin{tcolorbox}[adjusted title=For a paired $t$-test:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+Test statistic: $t_{n-1}=\dfrac{\bar{d}-\mu_d}{\dfrac{s_d}{\sqrt{n}}}$
+\end{tcolorbox}
+\end{centering}
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.66\textwidth}
+  \centering
+\tcbset{width=11cm,height=2.7cm}
+\begin{tcolorbox}[adjusted title=Conditions for valid use of a paired $t$-test:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{itemize}
+    \item The \textit{populations of differences} is \textbf{normally distributed}.
+    \item The data was obtained through \textbf{random sampling}.
+\end{itemize}
+\end{tcolorbox}
+\end{minipage}
+\end{figure}
+
+Careful attention to how the sample differences was created is needed for one-tailed hypotheses.
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} Six randomly selected children have their IQ measured before and after starting a regular programme of exercise.
+\begin{center}
+\begin{tabular}{l|cccccc}
+      IQ before programme & 132 & 98 & 112 & 99 & 168 & 125\\
+      \hline
+      IQ after programme & 134 & 94 & 117 & 103 & 165 & 129
+\end{tabular}
+\end{center}
+Assess whether there evidence that exercise affects IQ measurement, at the 5\% level of significance.
+\tcblower
+\textbf{Solution:}
+
+\vspace{-0.3cm}
+
+\begin{center}
+\begin{tabular}{c|cccccc}
+      Differences (after$-$before) & 2 & -4 & 5 & 4 & -3 & 4
+\end{tabular}
+\end{center}
+
+\vspace{-0.3cm}
+
+$\bar{d}=1.33$, $s_d=3.88$, $n=6$\\[0.1em]
+
+\begin{math}
+\begin{array}{ll}
+      H_0: & \mu_d=0\\
+      H_1: & \mu_d \ne 0
+    \end{array}
+\left]
+    \begin{array}{l}
+      \alpha=0.05\\
+      \textnormal{Two-tailed}
+    \end{array}
+  \right.
+\end{math}
+
+\vspace{0.3cm}
+
+$\nu=6-1=5$
+
+\vspace{0.3cm}
+
+Test statistic: $t=\dfrac{1.33-0}{\dfrac{3.88}{\sqrt{6}}}=0.840$
+\hspace{3cm}
+\begin{tikzpicture}[overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [draw=none, fill=black!50, domain=-3:-2.2] {gauss(x, 0, 1)} \closedcycle;
+\addplot [draw=none, fill=black!50, domain=2.2:3] {gauss(x, 0, 1)} \closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(-2.2,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\draw [semithick, black]  (axis cs:-2.2,0) -- (axis cs:-2.2,\valueA);
+\draw [semithick, black]  (axis cs:2.2,0) -- (axis cs:2.2,\valueA);
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 0,\valueB)  {$t_5$};
+\node[below] at (axis cs: -2.2, 0) {$-2.571$};
+\node[above] at (axis cs: -2.4,\valueA) {2.5\%};
+\node[below] at (axis cs: 2.2, 0) {$2.571$};
+\node[above] at (axis cs: 2.4,\valueA) {2.5\%};
+\end{axis}
+\end{tikzpicture}\\[0.1em]
+
+Critical value: $t_{5,0.975}=2.571$\\
+
+Since $0.840<2.571$, do not reject $\text{H}_0$ at the 5\% level of significance. There is insufficient evidence to suggest that the mean difference in IQ measurement is not zero, and so no evidence that exercise affects IQ measurement.
+
+\end{tcolorbox}
+
+\pagebreak
+
+#### Exercise 15D {-}
+
+\begin{enumerate}
+    \item Eight amateur runners are selected to study the effects of consuming energy gels before running on runners' performances at middle-distances. Each has their finish time recorded for a 5000m run without consuming energy gels beforehand, then a month later their time is recorded again for a 5000m run before which each consumed two energy gels. The data is shown in the table below, with times recorded to the nearest minute.
+    \begin{center}
+        \begin{tabular}{c|cccccccc}
+            \hline
+              Runners & A & B & C & D & E & F & G & H\\
+            \hline
+              Without gels & 24 & 19 & 21 & 17 & 26 & 32 & 18 & 20\\
+            \hline
+              With gels  & 22 & 19 & 20 & 18 & 23 & 28 & 15 & 20\\
+            \hline
+        \end{tabular}
+    \end{center}
+    Perform a hypothesis test at the 5\% level of significance to assess whether the data supports a conclusion that consuming energy gels improves performances for runners.
+    \item A group of 8 patients with a particular illness were given a special diet and it was desired to test the mass gain in kg at the end of a 2-week period. Their masses are shown below.
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+      \hline
+        Person & A & B & C & D & E & F & G & H\\
+      \hline
+        Before & 82.27 & 78.18 & 86.36 & 85.00 & 95.45 & 75.45 & 83.18 & 83.64\\
+      \hline
+        After & 82.87 & 79.54 & 87.36 & 86.10 & 94.99 & 75.48 & 83.54 & 82.15\\
+      \hline
+    \end{tabular}
+    \end{center}
+    A hypothesis test is conducted to assess the data, with the computer output produced shown below.\vspace{0.5cm}\\
+    \texttt{paired t-test}\\
+    \texttt{alternative hypothesis: true difference in means is greater than 0}\\
+    \texttt{t = 0.94}\qquad \texttt{df=7} \qquad \texttt{p-value = 0.189}\\
+    \texttt{sample estimates:}\\
+    \texttt{mean of differences = 0.313}\qquad \texttt{standard deviation of differences = 0.941}\\[1em]
+    Confirm the test statistic given and determine if there is evidence at the 5\% level that the diet has resulted in significant mass gain, stating any assumptions made.
+    \item 2.	The percentage body fat of 25 randomly selected eleven-year-old boys was measured before and after an exercise program. The difference for each boy was calculated and the summary statistics were calculated:  
+    \begin{center}
+    \begin{tabular}{cc}
+        $\Sigma d=-30.2$ & $\Sigma d^2=286.92$
+    \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item Test the hypothesis, at the 1\% significance level, that the exercise program has made no difference to the percentage of body fat, stating any assumption made.
+        \item Calculate a 99\% confidence interval for the mean decrease in percentage body fat and comment on your answer with respect to part a).
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+## Review Exercise {-}
+
+\begin{enumerate}
+    \item An estate agent compares the selling prices of homes in two neighbouring villages to see if there is a difference in price. The results of the study are shown below, measured in pounds.
+    \begin{center}
+    \begin{tabular}{|c|c|}
+      \hline
+        Village 1 & Village 2\\
+      \hline
+        $\bar{x}_1=281904$ & $\bar{x}_2=265872$\\
+      \hline
+        $s_1=30267$ & $s_2=41092$\\
+      \hline
+        $n_1=35$ & $n_2=40$\\
+      \hline
+    \end{tabular}
+    \end{center}
+    Determine if there is evidence at the 1\% level to reject the claim that the mean cost of homes in both villages is the same, stating any assumptions made.
+    \item A random sample of eleven students sat a Chemistry examination consisting of one theory paper and one practical paper. Their marks out of 100 are given in the table below:
+    \begin{center}
+    \begin{tabular}{|c|ccccccccccc|}
+      \hline
+        Student & A & B & C & D & E & F & G & H & I & J & K\\
+      \hline
+        Theory Mark & 30 & 42 & 49 & 50 & 63 & 38 & 43 & 36 & 54 & 42 & 26\\
+      \hline
+        Practical Mark & 52 & 58 & 42 & 67 & 94 & 68 & 22 & 34 & 55 & 48 & 17\\
+      \hline
+    \end{tabular}
+    \end{center}
+    Assuming the differences in pairs to be normally distributed, test, at the 5\% level of significance the hypothesis of no difference in the mean mark on the two papers.
+    \item Blood pressure levels were measured in a random sample of 19 men with a particular illness, aged 50 to 59 years. The sample mean systolic blood pressure was 146.6 mmHg and the sample standard deviation was 17.9 mmHG. In a second random sample of 15 men, aged 50 to 59 years, in good health, the mean systolic blood pressure reading was 137.4 mmHg and the standard deviation was 15.1 mmHG.\\[1em]
+Assess the evidence at the 5\% level that the mean systolic blood pressure in men with the illness is greater than that of men in good health.
+    \item In a random sample of 120 workers from a factory in city A, it was found that 5\% were unable to read, while in a random sample of 200 workers from a similar factory in city B, it was found that 11\% were unable to read. Determine whether it be concluded that there is a difference in the proportions of non-readers in the two cities. Test at the 10\% significance level.\\[1em]
+    Re-test at the 5\% significance level and comment.
+    \item The standard deviation of the scores obtained on a particular test of mathematical ability is known to be 15. A school experiments with a new method of teaching which is supposed to increase general mathematical awareness. A group of 36 students are randomly assigned to one of two classes. The 20 students in Class A are given the new method of teaching while the other 16 students in Class B are taught in the standard way.\\[1em]
+At the end of the year, the two classes are given the same test of mathematical ability. The mean for Class A is 120.4 and the mean for Class B is 113.1. Test at the 5\% significance level the hypothesis that the new method leads to a higher mean performance.
+\end{enumerate}
+
+\pagebreak

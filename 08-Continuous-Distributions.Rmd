@@ -1,0 +1,1917 @@
+# Continuous Distributions
+
+Data that results from measuring is often continuous, such as the height of a person, the mass of a piece of fruit or the volume of tea in a cup. *Continuous* means that if there were no limits to the accuracy of the measuring device, there would be an infinite set of possible values in any given range. A **continuous random variable** takes a *range* of real numbers, instead of a list. For example, the time taken to complete a task could take *any real, positive number*, or $\{x\in R,x>0\}$.
+
+### Probability and Continuous Distributions {-}
+
+Since a continuous random variable can take an infinite set of values, it is not possible for any *particular* value to be assigned a non-zero probability. This leads to the somewhat counter-intuitive result that, for any given value $x$, $\text{P}(X=x)=0$. Instead, probabilities are assigned to *ranges of values*. For example, letting random variable $X$ represent the time taken to complete a task, measured in seconds, an example of probabilities for this continuous random variable could be:
+
+$$\text{P}(X=26)=0\quad \textit{ but }\quad \text{P}(24<X<28.5)=0.5328$$
+
+This also means that for continuous random variables: $\text{P}(X\leqslant a)=\text{P}(X<a)$.
+
+Probabilities are calculated not from the *height* of the graphed probability distributions as with discrete random variables, but instead from the **area under the curve** within the required interval. In this course, graphical calculators and tables of values mean that calculus will not be required to calculate these areas through integration.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=4cm, 
+  width=11cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=black!20, domain=-1:0.5] {gauss(x, 0, 1)} \closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(-1,0,1)}
+\pgfmathsetmacro\valueB{gauss(0.5,0,1)}
+\pgfmathsetmacro\valueC{gauss(0,0,1)}
+\node[below] at (axis cs: -1,0)  {$24$};
+\node[below] at (axis cs: 0.5,0)  {$28.5$};
+\node[above] at (axis cs: -0.25,0.1)  {$0.5328$};
+\fill[black!20] (axis cs: -1,-0.01) rectangle (axis cs: 0.5,0.05);
+\draw [semithick, black]  (axis cs:-1,-0.01) -- (axis cs:-1,\valueA);
+\draw [semithick, black]  (axis cs:0.5,-0.01) -- (axis cs:0.5,\valueB);
+\draw[semithick] (axis cs: -1,0) -- (axis cs: -1,0.05);
+\draw[semithick] (axis cs: 0.5,0) -- (axis cs: 0.5,0.05);
+\draw[semithick] (axis cs: -3,-0.01) -- (axis cs: 3,-0.01);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+The height of the curve is referred to as *probability density*, and indicates the "relative likelihood" of different values in the range. **The total area under the curve for any continuous distribution is 1.** 
+
+\pagebreak
+
+## The Continuous Uniform Distribution
+
+If random variable $X$ can take *any real value* between $a$ and $b$ with a *constant probability density* then it follows a **continuous uniform distribution** with *two* parameters: $a$ and $b$. This should not be confused with the *discrete uniform distribution*, which takes a *single* parameter only. Since graphing this distribution produces a rectangle, it is often also called a *rectangular distribution*.
+
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}{.4\textwidth}
+
+\begin{center}
+\begin{tikzpicture}
+\pgfplotsset{
+    standard/.style={
+    axis line style = thick,
+    trig format=rad,
+    enlargelimits,
+    axis x line=middle,
+    axis y line=middle,
+    every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
+    every axis y label/.style={at={(current axis.above origin)},anchor=south east}
+    }
+}
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 4cm, width = 6cm, ybar,bar width=10pt, xmin=1,xmax=9,ymin=0,ymax=0.4, xtick={2,7},xticklabels={a,b},ytick={0.3},yticklabels={k},xlabel=$x$,ylabel=probability density]
+\fill[black!25] (axis cs: 2,0) rectangle (axis cs: 7,0.3);
+\draw[thick] (axis cs: 2,0) rectangle (axis cs: 7,0.3);
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\end{minipage}%
+  \centering
+\begin{minipage}{.1\textwidth}
+  \centering
+\end{minipage}%
+  \centering
+\begin{minipage}{.5\textwidth}
+  \centering
+
+\begin{centering}
+\tcbset{width=7.5cm}
+\begin{tcolorbox}[adjusted title=The Continuous Uniform Distribution:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{itemize}
+    \item Notated $X\sim \text{U}(a,b)$.
+    \item Defined by two parameters, $a$ and $b$.
+    \item Real, \textbf{continuous} values from $a$ to $b$.
+    \item Constant probability density of $k$.
+\end{itemize}
+\end{tcolorbox}
+\end{centering}
+
+\end{minipage}
+\end{figure}
+
+The probability for any range of values can be calculated simply as the area of the rectangle enclosed. The value of $k$ can be calculated using the formula given in the SQA Data Booklet, derived from the area under any "curve" for any continuous distribution being **equal to 1**. The formulae for the **expectation** and **variance** for the continuous uniform distribution are also given for $X\sim \text{U}(a,b)$:
+
+$$k=\frac{1}{b-a}\quad \qquad \quad \text{E}(X)=\frac{a+b}{2}\quad \qquad \quad \text{V}(X)=\frac{(b-a)^2}{12}$$
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} Given random variable $T$ such that $T\sim \text{U}(27,42)$, calculate $\text{P}(31<T<34)$.
+
+\tcblower
+\textbf{Solution:} \textit{(A sketch can help here.)}
+
+\vspace{0.5cm}
+
+$k=\frac{1}{b-a}=\frac{1}{42-27}=\frac{1}{15}$
+
+\vspace{0.5cm}
+
+$\text{P}(31<T<34)=3\times \frac{1}{15}=\frac{3}{15}=\frac{1}{5}$
+\hspace{3cm}
+\begin{tikzpicture}[overlay]
+\pgfplotsset{
+    standard/.style={
+    axis line style = thick,
+    trig format=rad,
+    enlargelimits,
+    axis x line=middle,
+    axis y line=middle,
+    every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
+    every axis y label/.style={at={(current axis.above origin)},anchor=south east}
+    }
+}
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3cm, width = 8cm, ybar,bar width=10pt, xmin=2,xmax=5,ymin=0,ymax=0.4, xtick={2.7,3.1,3.4,4.2},xticklabels={27,31,34,42},ytick={0.3},yticklabels={k},xlabel=$t$,ylabel=probability density]
+\fill[black!25] (axis cs: 2.7,0) rectangle (axis cs: 4.2,0.3);
+\fill[black!50] (axis cs: 3.1,0) rectangle (axis cs: 3.4,0.3);
+\draw[thick] (axis cs: 2.7,0) rectangle (axis cs: 4.2,0.3);
+\draw[thick] (axis cs: 3.1,0) rectangle (axis cs: 3.4,0.3);
+    \end{axis}
+\end{tikzpicture}
+
+\vspace{1cm}
+
+\end{tcolorbox}
+
+\vspace{0.7cm}
+
+[]{#ex81q}
+
+#### [Exercise 8.1](#ex81a) {-}
+
+\begin{enumerate}[itemsep=12pt]
+    \item The continuous random variable $X$ is uniformly distributed over the interval $(6,15)$. Find:
+    \begin{enumerate}
+        \item $\text{P}(X<12)$.
+        \item $\text{P}(X>8.1)$.
+        \item $\text{P}(9.3<X<10.2)$.
+    \end{enumerate}
+    \item The continuous random variable $X$ is uniformly distributed over the interval $(24,36)$. Find:
+    \begin{enumerate}
+        \item $\text{P}(X\geqslant32)$.
+        \item $\text{P}(X=29.5)$.
+        \item $\text{P}(26.1\leqslant X\leqslant34)$.
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+\begin{enumerate}[resume]
+    \item The continuous random variable $Y$ is uniformly distributed over the interval $(1.6,4)$. Find:
+    \begin{enumerate}
+        \item $\text{P}(Y<2)$.
+        \item $\text{P}(2<Y<5)$.
+        \item $\text{P}(Y+1>4)$.
+    \end{enumerate}
+    \item The continuous random variable $X$ is uniformly distributed over the interval $(-4,6)$.
+    \begin{enumerate}
+        \item Evaluate the mean and standard deviation of $X$.
+        \item Calculate $\text{E}(3X-1)$ and $\text{V}(5-2X)$.
+        \item Find $\text{P}(X\leqslant 2.4)$.
+        \item Find $\text{P}(-3<X-5<3)$.
+    \end{enumerate}
+    \item The amount of time, in minutes, that a person must wait for a bus is uniformly distributed between 0 and 15 minutes, inclusive.
+    \begin{enumerate}
+        \item Find the probability that a person waits for less than 12.5 minutes.
+        \item Find the average amount of time that a person waits.
+        \item Find the standard deviation of the waiting time.
+    \end{enumerate}
+    \item The average number of donuts a nine-year old child eats per month is uniformly distributed from 0.5 to 4 donuts. Find the probability that a randomly chosen nine-year old child eats more than two donuts on average per month.
+    \item A manufacturer produces sweets of length $L$ millimetres, where $L$ has a continuous uniform distribution with range $(15,30)$.
+    \begin{enumerate}
+        \item[(a) ] Find the probability that a randomly selected sweet has a length greater than 24 millimetres.
+    \end{enumerate}
+    These sweets are randomly packed into bags containing 20 sweets.
+    \begin{enumerate}
+        \item[(b) ] Find the probability that a randomly selected bag will contain at least eight sweets of length greater than 24 millimetres.
+    \end{enumerate}
+    \item Given continuous random variable $X$ such that $X\sim \text{U}(1,15)$:
+    \begin{enumerate}
+        \item Find $\mu$, the mean of $X$.
+        \item Find $\sigma$, the standard deviation of $X$.
+        \item Determine $\text{P}(X>\mu)$.
+        \item Find the probability that an observation from $X$ falls within one standard deviation of the mean.
+    \end{enumerate}
+    \item Given that continuous random variable $X$ is uniformly distributed with a mean of 8 and a maximum value of 14:
+    \begin{enumerate}
+        \item State the distribution of $X$.
+        \item Find the standard deviation of $X$.
+        \item Determine $\text{P}(X<7)$.
+    \end{enumerate}
+    \item Given that continuous random variable $Y$ is uniformly distributed such that $\text{E}(Y)=19$ and $\text{SD}(Y)=\sqrt{3}$:
+    \begin{enumerate}
+        \item Find the distribution of $Y$.
+        \item Determine $\text{P}(\text{E}(Y)-\text{SD}(Y)<Y<\text{E}(Y)+\text{SD}(Y))$.
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+## The Normal Distribution
+
+The **normal distribution**, also sometimes called the *Gaussian Distribution*, is one of the most important probability distributions in statistics. One of the reasons for this is that many continuous variables, from the mass of an animal to the time taken to complete a task, have been observed to be **normally distributed**.
+
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}{.39\textwidth}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=4cm, 
+  width=8cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+ \closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(0,0,1)}
+\draw [semithick,dashed, black]  (axis cs:0,0) -- (axis cs:0,\valueA);
+\node[above] at (axis cs: 0,\valueA)  {$\text{N}(\mu,\sigma^2)$};
+\node[below] at (axis cs: 0,0)  {$\mu$};
+\draw[semithick] (axis cs: -3,-0.01) -- (axis cs: 3,-0.01);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{equation*}
+\textbf{pdf: }\quad\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}
+\end{equation*}
+\end{center}
+
+\end{minipage}%
+  \centering
+\begin{minipage}{.01\textwidth}
+  \centering
+\end{minipage}%
+  \centering
+\begin{minipage}{.6\textwidth}
+  \centering
+
+\begin{centering}
+\tcbset{width=10cm}
+\begin{tcolorbox}[adjusted title=The Normal Distribution:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{itemize}
+    \item Notated $X\sim \text{N}(\mu,\sigma^2)$.
+    \item Defined by two parameters, $\mu$ and $\sigma^2$.
+    \item Often described as a \textit{"bell-shaped curve"}.
+    \item $\mu$, or the \textbf{mean}, gives the \textit{location} of the curve.
+    \item The curve is \textit{symmetrical about the mean}.
+    \item $\sigma^2$, or the \textbf{variance}, gives the \textit{spread} of the curve.
+\end{itemize}
+\end{tcolorbox}
+\end{centering}
+
+\end{minipage}
+\end{figure}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=0:100, 
+  samples=1000,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=4cm, 
+  width=16cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+ \closedcycle;
+ \addplot[domain=0:32,semithick] {gauss(x, 16, 4)};
+ \addplot[domain=36:100,semithick] {gauss(x, 68, 9)};
+ \pgfmathsetmacro\valueA{gauss(19,19,4)}
+ \pgfmathsetmacro\valueB{gauss(67,67,9)}
+\node[anchor=south] at (axis cs: 16,\valueA) {$\text{N}(16,4^2)$};
+\node[anchor=south] at (axis cs: 68,\valueB) {$\text{N}(68,9^2)$};
+\draw[semithick] (axis cs: 0,-0.004) -- (axis cs: 32,-0.004);
+\draw[semithick] (axis cs: 36,-0.004) -- (axis cs: 100,-0.004);
+\node[anchor=north] at (axis cs: 0,-0.004) {$0$};
+\node[anchor=north] at (axis cs: 10,-0.004) {$10$};
+\node[anchor=north] at (axis cs: 20,-0.004) {$20$};
+\node[anchor=north] at (axis cs: 30,-0.004) {$30$};
+\node[anchor=north] at (axis cs: 40,-0.004) {$40$};
+\node[anchor=north] at (axis cs: 50,-0.004) {$50$};
+\node[anchor=north] at (axis cs: 60,-0.004) {$60$};
+\node[anchor=north] at (axis cs: 70,-0.004) {$70$};
+\node[anchor=north] at (axis cs: 80,-0.004) {$80$};
+\node[anchor=north] at (axis cs: 90,-0.004) {$90$};
+\node[anchor=north] at (axis cs: 100,-0.004) {$100$};
+\draw (axis cs: 0,-0.008) -- (axis cs: 0,-0.004);
+\draw (axis cs: 10,-0.008) -- (axis cs: 10,-0.004);
+\draw (axis cs: 20,-0.008) -- (axis cs: 20,-0.004);
+\draw (axis cs: 30,-0.008) -- (axis cs: 30,-0.004);
+\draw (axis cs: 40,-0.008) -- (axis cs: 40,-0.004);
+\draw (axis cs: 50,-0.008) -- (axis cs: 50,-0.004);
+\draw (axis cs: 60,-0.008) -- (axis cs: 60,-0.004);
+\draw (axis cs: 70,-0.008) -- (axis cs: 70,-0.004);
+\draw (axis cs: 80,-0.008) -- (axis cs: 80,-0.004);
+\draw (axis cs: 90,-0.008) -- (axis cs: 90,-0.004);
+\draw (axis cs: 100,-0.008) -- (axis cs: 100,-0.004);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+The shape of the curve illustrates that values closer to the mean are more likely to be observed, whilst those further from the mean are less likely. Whilst *any real value* is possible under the model, for **every normal distribution**:
+
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}{.4\textwidth}
+
+\begin{itemize}
+    \item 68.27\% of observed values lie within \\\textbf{one} standard deviation of the mean.
+    \item 95.45\% of observed values lie within \\\textbf{two} standard deviations of the mean.
+    \item 99.73\% of observed values lie within \\\textbf{three} standard deviations of the mean.
+\end{itemize}
+
+\end{minipage}%
+  \centering
+\begin{minipage}{.1\textwidth}
+  \centering
+\end{minipage}%
+  \centering
+\begin{minipage}{.5\textwidth}
+  \centering
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3.2:3.2, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=4cm, 
+  width=9cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=black!10, domain=-3:3] {gauss(x, 0, 1)}
+\closedcycle;
+\addplot [draw=none, fill=black!25, domain=-2:2] {gauss(x, 0, 1)}
+\closedcycle;
+\addplot [draw=none, fill=black!40, domain=-1:1] {gauss(x, 0, 1)}
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(0,0,1)}
+\pgfmathsetmacro\valueB{gauss(-1,0,1)}
+\pgfmathsetmacro\valueC{gauss(1,0,1)}
+\pgfmathsetmacro\valueD{gauss(-2,0,1)}
+\pgfmathsetmacro\valueE{gauss(2,0,1)}
+\pgfmathsetmacro\valueF{gauss(-3,0,1)}
+\pgfmathsetmacro\valueG{gauss(3,0,1)}
+\draw [semithick, black]  (axis cs:0,0) -- (axis cs:0,\valueA);
+\draw [semithick, black]  (axis cs:-1,0) -- (axis cs:-1,\valueB);
+\draw [semithick, black]  (axis cs:1,0) -- (axis cs:1,\valueC);
+\draw [semithick, black]  (axis cs:-2,0) -- (axis cs:-2,\valueD);
+\draw [semithick, black]  (axis cs:2,0) -- (axis cs:2,\valueE);
+\node[below] at (axis cs: -1,0)  {$-1\sigma$};
+\node[below] at (axis cs: 1,0)  {$+1\sigma$};
+\node[below] at (axis cs: -2,0)  {$-2\sigma$};
+\node[below] at (axis cs: 2,0)  {$+2\sigma$};
+\node[below] at (axis cs: -3,0)  {$-3\sigma$};
+\node[below] at (axis cs: 3,0)  {$+3\sigma$};
+\node[above] at (axis cs: 0,\valueA)  {$\mu$};
+\fill[black!10] (axis cs: -3,-0.01) rectangle (axis cs: 3,0);
+\fill[black!25] (axis cs: -2,-0.01) rectangle (axis cs: 2,0);
+\fill[black!40] (axis cs: -1,-0.01) rectangle (axis cs: 1,0);
+\draw [semithick, black]  (axis cs:0,-0.01) -- (axis cs:0,\valueA);
+\draw [semithick, black]  (axis cs:-1,-0.01) -- (axis cs:-1,\valueB);
+\draw [semithick, black]  (axis cs:1,-0.01) -- (axis cs:1,\valueC);
+\draw [semithick, black]  (axis cs:-2,-0.01) -- (axis cs:-2,\valueD);
+\draw [semithick, black]  (axis cs:2,-0.01) -- (axis cs:2,\valueE);
+\draw [semithick, black]  (axis cs:-3,-0.01) -- (axis cs:-3,\valueF);
+\draw [semithick, black]  (axis cs:3,-0.01) -- (axis cs:3,\valueG);
+\draw[semithick] (axis cs: -3.2,-0.01) -- (axis cs: 3.2,-0.01);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\end{minipage}
+\end{figure}
+
+[]{#ex82q}
+
+#### [Exercise 8.2](#ex82a) {-}
+
+*For each, sketch the distribution, labelling the mean and two standard deviations either side of the mean.*
+\begin{multicols}{2}
+\begin{enumerate}[itemsep=0pt]
+    \item
+    \begin{enumerate}
+        \begin{multicols}{2}
+        \item[(a)] $X\sim \text{N}(60,16)$
+        \item[(c)] $X\sim \text{N}(8,1.3^2)$
+        \item[(b)] $X\sim \text{N}(243,9)$
+        \item[(d)] $X\sim \text{N}(15,1.44)$
+        \end{multicols}
+    \end{enumerate}
+    \item The mass of a variety of pumpkin is normally distributed with mean 7kg and standard deviation 2kg.
+    \item The time taken to polish a spoon is normally distributed with mean 8 seconds and standard deviation 1.5 seconds.
+    \item The depth of water in a city's puddles after heavy rain is normally distributed with mean 32mm and standard deviation 9mm.
+\end{enumerate}
+\end{multicols}
+
+\pagebreak
+
+## The Standard Normal Distribution \textit{Z}
+
+The random variable $Z$ is specifically defined as normally distributed, with $\mu=0$ and $\sigma=1$:
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=8cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(0,0,1)}
+\pgfmathsetmacro\valueB{gauss(-1,0,1)}
+\pgfmathsetmacro\valueC{gauss(1,0,1)}
+\pgfmathsetmacro\valueD{gauss(-2,0,1)}
+\pgfmathsetmacro\valueE{gauss(2,0,1)}
+\pgfmathsetmacro\valueF{gauss(-3,0,1)}
+\pgfmathsetmacro\valueG{gauss(3,0,1)}
+\draw [semithick, black, dashed]  (axis cs:0,0) -- (axis cs:0,\valueA);
+\draw [semithick, black, dashed]  (axis cs:-1,0) -- (axis cs:-1,\valueB);
+\draw [semithick, black, dashed]  (axis cs:1,0) -- (axis cs:1,\valueC);
+\draw [semithick, black, dashed]  (axis cs:-2,0) -- (axis cs:-2,\valueD);
+\draw [semithick, black, dashed]  (axis cs:2,0) -- (axis cs:2,\valueE);
+\draw [semithick, black, dashed]  (axis cs:-3,0) -- (axis cs:-3,\valueF);
+\draw [semithick, black, dashed]  (axis cs:3,0) -- (axis cs:3,\valueG);
+\node[below] at (axis cs: -1,0)  {$-1$};
+\node[below] at (axis cs: 1,0)  {$1$};
+\node[below] at (axis cs: -2,0)  {$-2$};
+\node[below] at (axis cs: 2,0)  {$2$};
+\node[below] at (axis cs: -3,0)  {$-3$};
+\node[below] at (axis cs: 3,0)  {$3$};
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 0,\valueA)  {$Z\sim \text{N}(0,1)$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+$Z$ is called the **standard normal distribution**, and it is used to calculate probabilities for **any** normal distribution. Probabilities for the $Z$ distribution can be obtained using the **cumulative probability table** on Page 11 of the SQA Data Booklet, or directly from a graphical calculator. Since the cumulative table only gives probabilities for **positive** $\mathbf{z}$**-values**, negative $z$-values require consideration of the symmetry of the normal distribution. 
+
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}[t]{.5\textwidth}
+
+\vspace{0cm}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=8cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=black!20, domain=-3:1.24] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(1.24,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[black!20] (axis cs: -3,-0.02) rectangle (axis cs: 1.24,0);
+\draw [semithick, black]  (axis cs:1.24,-0.02) -- (axis cs:1.24,\valueA);
+\node[below] at (axis cs: 1.24,0)  {$1.24$};
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-1cm}
+
+\begin{align*}
+\text{P}(Z<1.24)=&0.8925
+\end{align*}
+
+\end{minipage}%
+  \centering
+\begin{minipage}[t]{.1\textwidth}
+  \centering
+\end{minipage}%
+  \centering
+\begin{minipage}[t]{.5\textwidth}
+  \centering
+
+\vspace{0cm}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=8cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=black!20, domain=0.71:3] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(0.71,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[black!20] (axis cs: 0.71,-0.02) rectangle (axis cs: 3,0);
+\draw [semithick, black]  (axis cs:0.71,-0.02) -- (axis cs:0.71,\valueA);
+\node[below] at (axis cs: 0.71,0)  {$0.71$};
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-1cm}
+
+\begin{align*}
+\text{P}(Z>0.71)=&1-\text{P}(Z<0.71)\\
+=&1-0.7611\\
+=&0.2389
+\end{align*}
+
+\end{minipage}
+\end{figure}
+
+\vspace{-0.5cm}
+
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}[t]{.5\textwidth}
+
+\vspace{0cm}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=8cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=black!20, domain=-1.05:3] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(-1.05,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[black!20] (axis cs: -1.05,-0.02) rectangle (axis cs: 3,0);
+\draw [semithick, black]  (axis cs:-1.05,-0.02) -- (axis cs:-1.05,\valueA);
+\node[below] at (axis cs: -1.05,0)  {$-1.05$};
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-1cm}
+
+\begin{align*}
+\text{P}(Z>-1.05)=&\text{P}(Z<1.05)\\
+=&0.8531
+\end{align*}
+
+\end{minipage}%
+  \centering
+\begin{minipage}[t]{.1\textwidth}
+  \centering
+\end{minipage}%
+  \centering
+\begin{minipage}[t]{.5\textwidth}
+  \centering
+
+\vspace{0cm}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=8cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=black!20, domain=0.7:1.5] {gauss(x, 0, 1)}
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(0.7,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\pgfmathsetmacro\valueC{gauss(1.5,0,1)}
+\fill[black!20] (axis cs: 0.7,-0.02) rectangle (axis cs: 1.5,0);
+\draw [semithick, black]  (axis cs:0.7,-0.02) -- (axis cs:0.7,\valueA);
+\draw [semithick, black]  (axis cs:1.5,-0.02) -- (axis cs:1.5,\valueC);
+\node[below] at (axis cs: 0.7,0)  {$0.7$};
+\node[below] at (axis cs: 1.5,0)  {$1.5$};
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{-1cm}
+
+\begin{align*}
+\text{P}(0.7<Z<1.5)=&\text{P}(Z<1.5)-\text{P}(Z<0.7)\\
+=&0.9332-0.7580\\
+=&0.1752
+\end{align*}
+
+\end{minipage}
+\end{figure}
+
+\vspace{-0.5cm}
+
+[]{#ex83q}
+
+#### [Exercise 8.3](#ex83a) {-}
+
+\begin{enumerate}[itemsep=0pt]
+    \item Find:
+    \begin{multicols}{4}
+    \begin{enumerate}
+        \item[(a)] $\text{P}(Z=1.72)$
+        \item[(e)] $\text{P}(Z<0.35)$
+        \item[(i)] $\text{P}(Z<-1.19)$
+        \item[(b)] $\text{P}(Z<1.72)$
+        \item[(f)] $\text{P}(Z<2.03)$
+        \item[(j)] $\text{P}(Z>-0.56)$
+        \item[(c)] $\text{P}(Z\leqslant1.72)$
+        \item[(g)] $\text{P}(Z>2.03)$
+        \item[(k)] $\text{P}(Z>-1.44)$
+        \item[(d)] $\text{P}(Z<0)$
+        \item[(h)] $\text{P}(Z>1.19)$
+        \item[(l)] $\text{P}(Z<-0.57)$
+    \end{enumerate}
+    \end{multicols}
+    \item Find:
+    \begin{multicols}{3}
+    \begin{enumerate}
+        \item[(a)] $\text{P}(1.3<Z<2)$
+        \item[(d)] $\text{P}(-1.54<Z<-0.76)$
+        \item[(g)] $\text{P}(-2<Z<2)$
+        \item[(b)] $\text{P}(0.48<Z<1.93)$
+        \item[(e)] $\text{P}(-0.7<Z<1.3)$
+        \item[(h)] $\text{P}(-1.96<Z<1.96)$
+        \item[(c)] $\text{P}(-2.3<Z<-1.7)$
+        \item[(f)] $\text{P}(-1<Z<1)$
+        \item[(i)] $\text{P}(-1.64<Z<1.64)$
+    \end{enumerate}
+    \end{multicols}
+\end{enumerate}
+
+\pagebreak
+
+## The \textit{Z}-Transformation
+
+A linear transformation of a normally distributed random variable will result in *another* normally distributed random variable, with the laws of expectation and variance applying as usual. In this way, any normal distributed can be related to the *standard normal distribution*, $Z$. Consider a random variable $X$ with mean $\mu$ and variance $\sigma^2$:
+
+$$X\sim \text{N}(\mu,\sigma^2)$$
+
+Multiplying $Z$ by $\sigma$ and adding $\mu$ results in a normally distributed random variable:
+
+\begin{equation*}
+  \begin{split}
+    \text{E}(\sigma Z + \mu) &= \sigma \text{E}(Z)+\mu\\[10pt]
+    &= \sigma \times 0 + \mu\\[10pt]
+    &= \mu
+  \end{split}
+\quad\quad\quad\quad
+  \begin{split}
+    \text{V}(\sigma Z + \mu) &= \sigma^2 \text{V}(Z)\\[10pt]
+    &= \sigma^2 \times 1\\[10pt]
+    &= \sigma^2
+  \end{split}
+\end{equation*}
+
+Hence $X=\sigma Z + \mu$, which can be rearranged to obtain the $\mathbf{z}$**-transformation**:
+
+\begin{centering}
+\tcbset{width=9cm}
+\begin{tcolorbox}[adjusted title=The $z$-transformation:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+$Z=\dfrac{X-\mu}{\text{$\sigma$}}$
+\end{tcolorbox}
+\end{centering}
+
+A useful way of thinking about the result of a $z$-transformation is that it is a measure of *how many standard deviations from the mean any given* $x$*-value is*, which then can be used to calculate a probability. 
+
+For example, consider normally distributed random variable $X$ with a mean of 20 and standard deviation of 6. The probability that a random observation of $X$ results in a value less than 29 can be sketched on the distribution of $X$, and compared to the *transformed value* of 1.5 on the distribution of $Z$. Note that 29 is 1.5 standard deviations over the mean of 20.
+
+$$z=\frac{\text{$x-\mu$}}{\text{$\sigma$}}=\frac{\text{$29-20$}}{\text{$6$}}=1.5$$
+
+Hence, a probability statement about $X$ can be rewritten as a probability statement about $Z$:
+
+$$\text{P}(X<29)=\text{P}\left(Z<\dfrac{X-\mu}{\sigma}\right)=\text{P}\left(Z<\dfrac{29-20}{6}\right)=\text{P}(Z<1.5)$$
+
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}[t]{.5\textwidth}
+
+\vspace{0cm}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=8cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=black!20, domain=-3:1.5] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(1.5,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[black!20] (axis cs: -3,-0.02) rectangle (axis cs: 1.5,0);
+\draw [semithick, black]  (axis cs:1.5,-0.02) -- (axis cs:1.5,\valueA);
+\node[below] at (axis cs: 1.5,0)  {$29$};
+\node[below] at (axis cs: 0,0)  {$20$};
+\node[above] at (axis cs: 0,\valueB)  {$X$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+$\text{P}(X<29)=0.9332$
+\end{center}
+
+\end{minipage}%
+  \centering
+\begin{minipage}[t]{.1\textwidth}
+  \centering
+\end{minipage}%
+  \centering
+\begin{minipage}[t]{.6\textwidth}
+  \centering
+
+\vspace{0cm}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=8cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=black!20, domain=-3:1.5] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(1.5,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[black!20] (axis cs: -3,-0.02) rectangle (axis cs: 1.5,0);
+\draw [semithick, black]  (axis cs:1.5,-0.02) -- (axis cs:1.5,\valueA);
+\node[below] at (axis cs: 1.5,0)  {$1.5$};
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+$\text{P}(Z<1.5)=0.9332$
+\end{center}
+
+\end{minipage}
+\end{figure}
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} The mass of an adult red squirrel in an area of woodland is normally distributed with a mean of 295g and a standard deviation of 15g. Calculate the probability that a squirrel chosen at random has a mass greater than 300g.
+
+\tcblower
+\textbf{Solution:}\textit{ Defining the random variable clearly is important, and a sketch can be helpful.}
+
+\vspace{0.5cm}
+
+Let random variable $X$ represent the mass of a squirrel.
+
+\vspace{0.5cm}
+
+$X\sim \text{N}(295,15^2)$
+
+\vspace{0.5cm}
+
+$\text{P}(X>300)=\text{P}(Z>\frac{\text{$X-\mu$}}{\text{$\sigma$}})=\text{P}(Z>\frac{\text{$300-295$}}{\text{$15$}})=\text{P}(Z>0.33)=0.3707$
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=8cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=black!20, domain=0.33:3] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(0.33,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[black!20] (axis cs: 0.33,-0.02) rectangle (axis cs: 3,0);
+\draw [semithick, black]  (axis cs:0.33,-0.02) -- (axis cs:0.33,\valueA);
+\node[below] at (axis cs: 0.33,0)  {$0.33$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\end{tcolorbox}
+
+[]{#ex84q}
+
+#### [Exercise 8.4](#ex84a) {-}
+
+\begin{enumerate}
+    \item Given $X\sim \text{N}(24,9)$, find:
+    \begin{multicols}{4}
+    \begin{enumerate}
+        \item $\text{P}(X<26)$
+        \item $\text{P}(X\leqslant21)$
+        \item $\text{P}(X>23)$
+        \item $\text{P}(21<X<25)$
+    \end{enumerate}
+    \end{multicols}
+    \item Given that random variable $X$ is normally distributed with mean 80 and standard deviation 4, find:
+    \begin{multicols}{4}
+    \begin{enumerate}
+        \item $\text{P}(X>83.1)$
+        \item $\text{P}(X<79.3)$
+        \item $\text{P}(X>72.7)$
+        \item $\text{P}(81<X<89)$
+    \end{enumerate}
+    \end{multicols}
+    \item Let random variable $X$ represent the tail length of a certain breed of mouse, which follows a normal distribution with a mean of 67.4mm and a standard deviation of 6mm.
+    \begin{enumerate}
+        \item State the distribution of $X$.
+        \item Find the probability that a mouse chosen at random will have a tail length:
+        \begin{multicols}{3}
+        \begin{enumerate}
+            \item Less than 70mm.
+            \item More than 65mm.
+            \item Between 61mm and 66mm.
+        \end{enumerate}
+        \end{multicols}
+    \end{enumerate}
+    \item In a crop of 900 turnips harvested by a farmer, the mass of each is normally distributed with a mean of 150g and a standard deviation of 12g. 
+    \begin{enumerate}
+        \item Calculate the probability that a turnip chosen at random will have a mass:
+        \begin{multicols}{2}
+        \begin{enumerate}
+            \item Less than 165.36g.
+            \item Between 126.48g and 173.52g.
+        \end{enumerate}
+        \end{multicols}
+        \item Estimate the number of turnips of the 900 that have a mass:
+        \begin{multicols}{3}
+        \begin{enumerate}
+            \item Greater than 162g.
+            \item Less than 155g.
+            \item Between 140g and 160g.
+        \end{enumerate}
+        \end{multicols}
+    \end{enumerate}
+\end{enumerate}
+\pagebreak
+
+## Working Backwards
+
+"Working backwards" means calculating a value for a normally distributed random variable when a **probability relating to this value is given**. For example, if random variable $X$ is normally distributed with mean $280$ and variance $16$, it may be desired to calculate the value only exceeded by 10\% of the observations. Typical steps are:
+
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}{.3\textwidth}
+
+\begin{itemize}
+    \item Write a probability statement..
+    \item Determine the $z$-value.
+    \item Use the $z$-transformation.
+\end{itemize}
+
+\end{minipage}%
+  \centering
+\begin{minipage}{.1\textwidth}
+  \centering
+\end{minipage}%
+  \centering
+\begin{minipage}{.6\textwidth}
+  \centering
+
+\vspace{-0.5cm}
+\begin{align*}
+\text{P}(Z<1.28)=&0.9 &\\
+1.28=&\frac{x-280}{4}\hspace{1cm}
+\begin{tikzpicture}[overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=7cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=black!20, domain=-3:1.28] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(1.28,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[black!20] (axis cs: -3,-0.02) rectangle (axis cs: 1.28,0);
+\draw [semithick, black]  (axis cs:1.28,-0.02) -- (axis cs:1.28,\valueA);
+\node[below] at (axis cs: 1.28,0)  {$1.28$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node at (axis cs: 0,\valueA)  {$90\%$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}\\
+x=&285.12
+\end{align*}
+
+\end{minipage}
+\end{figure}
+
+Hence, in the long run only 10\% of observations exceed 285.12.
+
+\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\textbf{Problem:} The time before failure of a model of TV is normally distributed with mean 31 months and standard deviation 4 months. Calculate the minimum warranty length, in months, such that fewer than 5\% of TVs will be expected to fail under warranty.
+
+\tcblower
+\textbf{Solution:}
+
+Let random variable $X$ represent the time taken for a TV to fail.
+\begin{align*}
+X\sim &\text{N}(31,4^2)\\
+\text{P}(Z<a)=&0.05 &\\
+-1.64=&\frac{x-31}{4}\hspace{3cm}
+\begin{tikzpicture}[overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=7cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=black!20, domain=-1.64:3] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(1.28,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\pgfmathsetmacro\valueC{gauss(1.64,0,1)}
+\fill[black!20] (axis cs: -1.64,-0.02) rectangle (axis cs: 3,0);
+\draw [semithick, black]  (axis cs:-1.64,-0.02) -- (axis cs:-1.64,\valueC);
+\node[below] at (axis cs: -1.64,0)  {$-1.64$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node at (axis cs: 0,\valueA)  {$95\%$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}\\
+x=&24.44
+\end{align*}
+
+Hence, a 25 month warranty should expect to see less than 5\% of TVs fail under warranty.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\textbf{Problem:} The diameter of the apples grown in a garden are normally distributed with a mean of 7cm and a standard deviation of 0.25cm. Calculate the range of values, symmetrical about the mean, within which the diameters of 95\% of the apples lie.
+
+\tcblower
+\textbf{Solution:}
+
+Let random variable $X$ represent the diameter of an apple.
+\begin{align*}
+X\sim & \text{N}(7,0.25^2)\\
+\text{P}(Z<a)=&0.975 &\\
+1.96=&\frac{x-7}{0.25}\\
+x=&7+1.96\times 0.25\hspace{3cm}
+\begin{tikzpicture}[overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=7cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=black!20, domain=-1.96:1.96] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(1.28,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\pgfmathsetmacro\valueC{gauss(1.96,0,1)}
+\fill[black!20] (axis cs: -1.96,-0.02) rectangle (axis cs: 1.96,0);
+\draw [semithick, black]  (axis cs:-1.96,-0.02) -- (axis cs:-1.96,\valueC);
+\draw [semithick, black]  (axis cs:1.96,-0,02) -- (axis cs:1.96,\valueC);
+\node[below] at (axis cs: 1.96,0)  {$1.96$};
+\node[below] at (axis cs: -1.96,0)  {$-1.96$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node at (axis cs: 0,\valueA)  {$95\%$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}\\
+x=&7.49
+\end{align*}
+
+Whilst the higher value for the diameter of an apple is given by $7+1.96\times0.25=7.49$,\\ the lower value is given by $7-1.96\times0.25=6.51$.
+
+Hence, 95\% of the apples grown have a diameter between 6.51cm and 7.49cm.
+
+\end{tcolorbox}
+
+\pagebreak
+
+\begin{tcolorbox}[title=Example 3,title filled, colframe=black!50]
+\textbf{Problem:} The masses of pumpkins grown in a farmer's field are normally distributed, with a mean of 6.8kg. Given that only one in every 1000 pumpkins has a mass greater than 10kg, calculate the standard deviation of the mass of a pumpkin.
+
+\tcblower
+\textbf{Solution:}
+
+Let random variable $X$ represent the mass of a pumpkin.
+\begin{align*}
+X\sim & \text{N}(6.8,\sigma^2)\\
+\text{P}(Z<a)=&0.999 &\\
+3.09=&\frac{10-6.8}{\sigma}\\
+3.09\sigma=&3.2\\
+\sigma=&\frac{3.2}{3.09}\hspace{3cm}
+\begin{tikzpicture}[overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3.2:3.2, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=7cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=black!20, domain=-3.2:3.09] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(1.96,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\pgfmathsetmacro\valueC{gauss(3.09,0,1)}
+\fill[black!20] (axis cs: -3.2,-0.02) rectangle (axis cs: 3.09,0);
+\draw [semithick, black]  (axis cs:3.09,-0,02) -- (axis cs:3.09,\valueC);
+\node[below] at (axis cs: 3.09,0)  {$3.09$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node at (axis cs: 0,\valueA)  {$99.9\%$};
+\draw[semithick] (axis cs: -3.2,-0.02) -- (axis cs: 3.2,-0.02);
+\end{axis}
+\end{tikzpicture}\\
+\sigma=&1.04
+\end{align*}
+
+Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
+
+\end{tcolorbox}
+
+[]{#ex85q}
+
+#### [Exercise 8.5](#ex85a) {-}
+
+\begin{enumerate}
+    \item Given $Z\sim \text{N}(0,1)$, find the value of $a$ if:
+    \begin{multicols}{4}
+    \begin{enumerate}
+        \item[(a)] $\text{P}(Z>a)=0.1$
+        \item[(e)] $\text{P}(Z<a)=0.995$
+        \item[(i)] $\text{P}(Z>a)=0.975$
+        \item[(b)] $\text{P}(Z>a)=0.05$
+        \item[(f)] $\text{P}(Z<a)=0.025$
+        \item[(j)] $\text{P}(Z<a)=0.999$
+        \item[(c)] $\text{P}(Z>a)=0.001$
+        \item[(g)] $\text{P}(Z<a)=0.005$
+        \item[(k)] $\text{P}(Z<a)=0.791$
+        \item[(d)] $\text{P}(Z<a)=0.99$
+        \item[(h)] $\text{P}(Z>a)=0.9$
+        \item[(l)] $\text{P}(Z>a)=0.003$
+    \end{enumerate}
+    \end{multicols}
+    \item Let random variable $X$ represent the total volume of petrol used by a motorist on their daily commute to and from work. The amount of petrol used is normally distributed with a mean of 2.4 litres and standard deviation 0.2 litres.
+    \begin{enumerate}
+        \item State the distribution of $X$.
+        \item Calculate the probability that less than 2 litres of petrol is used on a daily commute to and from work.
+        \item The motorist wishes to know the amount of petrol only exceeded on 1\% of daily commutes. Find this value.
+    \end{enumerate}
+    \item The time taken for a particular type of steak to be cooked until it is medium rare is normally distributed with a mean of 8.2 minutes and a standard deviation of 0.3 minutes.
+    \begin{enumerate}
+        \item Find the time needed, in minutes, such that 95\% of such steaks will have reached medium rare.
+        \item Determine the range of times, symmetrical around the mean, between which 95\% of all such steaks will reach medium rare.
+    \end{enumerate}
+    \item In a Maths exam, the scores obtained by candidates are normally distributed with a mean of 57.3. Given that 5\% of pupils fail to gain a grade from A to D, and that a score of 41 is required to gain a D, calculate the standard deviation.
+    \item In a Physics exam, the scores obtained by candidates are normally distributed. Given that 25\% of pupils gain a grade A with a mark of 74 required, and 10\% of pupils didn't get the 46 marks required for a grade C, calculate the mean and standard deviation. 
+\end{enumerate}
+
+\pagebreak
+
+## Combining Normal Random Variables
+
+**Sums and differences** of normally distributed random variables  *are themselves normally distributed*, under the condition that **the normal random variables are independent**. For example, given **independent** normally distributed random variables $X$ and $Y$ with means of $\mu_X$ and $\mu_Y$ and standard deviations of $\sigma_X$ and $\sigma_Y$ respectively:
+
+$$X+Y\sim \text{N}(\mu_X+\mu_Y,\sigma_X^2+\sigma_Y^2)\quad\text{   and   }\quad X-Y\sim \text{N}(\mu_X-\mu_Y,\sigma_X^2+\sigma_Y^2)$$
+
+The mean and variance of these *combined normal random variables* can be calculated using the laws of expectation and variance as usual. 
+
+It is important to remember that $2X$ is **not** the sum of two independent observations of $X$. Instead, the sum of $n$ independent observations of $X$ is $X_1+X_2+...+X_n$.
+
+\begin{align*}
+\text{E}(X_1+X_2+...+X_n)=&\text{E}(X_1)+\text{E}(X_2)+...+\text{E}(X_n)=n\text{E}(X)\\
+\text{V}(X_1+X_2+...+X_n)=&\text{V}(X_1)+\text{V}(X_2)+...+\text{V}(X_n)=n\text{V}(X)
+\end{align*}
+
+When calculating probabilities relating to combined normal random variables, it can be helpful to name the new random variable using some logical letter choice, such as $T$ for *"Total"*, $D$ for *"Difference"* and so on.
+
+\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\textbf{Problem:} The actual volume of paint contained within tins marked as containing 25 litres is normally distributed with a mean of 25.2 litres and a standard deviation of 0.3 litres. Calculate the probability that 4 such tins contain less than 100 litres in total.
+
+\tcblower
+\textbf{Solution:}
+
+\vspace{0.1cm}
+
+Let random variable $X$ represent the volume of paint in a tin.
+
+\vspace{0.1cm}
+
+$X\sim \text{N}(25.2,0.3^2)$
+
+\vspace{0.1cm}
+
+Let $T$ represent the total volume of paint in the four tins.
+
+\vspace{0.1cm}
+
+Assuming the volume of paint in each tin is independent:
+
+\vspace{0.1cm}
+
+$T=X_1+X_2+X_3+X_4$
+
+\vspace{0.1cm}
+
+$\text{E}(T)=\text{E}(X_1+X_2+X_3+X_4)=\text{E}(X_1)+\text{E}(X_2)+\text{E}(X_3)+\text{E}(X_4)=4\times25.2=100.8$
+
+\vspace{0.1cm}
+
+$\text{V}(T)=\text{V}(X_1+X_2+X_3+X_4)=\text{V}(X_1)+\text{V}(X_2)+\text{V}(X_3)+\text{V}(X_4)=4\times0.3^2=0.36$
+
+\vspace{0.1cm}
+
+$T\sim \text{N}(100.8,0.36)$
+
+\vspace{0.1cm}
+
+\begin{align*}
+\text{P}(T<100)=&\text{P}\left(Z<\frac{100-100.8}{\sqrt{0.36}}\right)\\
+=&\text{P}(Z<-1.33)\\
+=&0.0918
+\end{align*}
+
+\end{tcolorbox}
+
+\pagebreak
+
+\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\textbf{Problem:} The time taken for a washing machine cycle to complete is normally distributed, with mean 57 minutes and standard deviation 2 minutes. The time taken for the owner of the washing machine to start the cycle, run 10 kilometres on their treadmill and get back to the washing machine is normally distributed with mean 58 minutes and standard deviation 3 minutes. Stating an assumption required, calculate the probability that the washing machine cycle is still running when the owner returns to it.
+
+\tcblower
+\textbf{Solution:} \textit{ Define the random variables used.}
+
+\vspace{0.1cm}
+
+Let random variable $X$ represent the time taken for the washing machine cycle, and random variable $Y$ represent the time taken for the owner to complete their run.
+
+\vspace{0.1cm}
+
+$X\sim \text{N}(57,2^2)$ and $Y\sim \text{N}(58,3^2)$
+
+\vspace{0.1cm}
+
+Assuming the time taken for the cycle to complete and the time taken for the owner to complete their run are independent:
+
+\vspace{0.1cm}
+
+\begin{align*}
+\text{P}(X>Y)=&\text{P}(X-Y>0) &\qquad\qquad\qquad \text{E}(X-Y)&=\text{E}(X)-\text{E}(Y)=57-58=-1\\
+=&\text{P}\left(Z>\frac{0-(-1)}{\sqrt{13}}\right) & \text{V}(X-Y)&=\text{V}(X)+\text{V}(Y)=2^2+3^2=13\\
+=&\text{P}(Z>0.28) & X-Y&\sim \text{N}(-1,13)\\
+=&0.3897
+\end{align*}
+\begin{tikzpicture}[overlay]
+\draw[semithick,-stealth] (4.5,3.7) arc (110:70:5);
+\end{tikzpicture}
+
+\end{tcolorbox}
+
+[]{#ex86q}
+
+#### [Exercise 8.6](#ex86a) {-}
+
+\begin{enumerate}
+    \item Bob observes that making his usual portion of mashed potatoes can be broken down into three distinct processes. The time taken to peel the potatoes is normally distributed with a mean of 5 minutes and a standard deviation of 1.2 minutes. The time taken to boil the potatoes is also normally distributed with a mean of 27 minutes and a standard deviation of 3.4 minutes. Finally, the mean time taken to mash and season the potatoes is 2 minutes with a standard deviation of 0.3 minutes.
+    \begin{enumerate}
+        \item Find the distribution of the time taken for Bob to make a portion of mash, stating two assumptions required.
+        \item Calculate the probability that it takes Bob under 35 minutes to make a portion.
+    \end{enumerate}
+    \item The bar staff in a hotel ignore legal requirements to carefully measure any alcohol poured, and instead just estimate the amount of champagne to pour into each glass. The amount they pour is normally distributed with a mean of 127ml and a standard deviation of 5ml. Assuming that the amount of champagne poured in each of a series of glasses is independent, determine the probability that the total volume in five glasses is less than 625ml.
+    \item The amount of milk a school's Maths department uses per week is normally distributed, with a mean of 3.5 litres and a standard deviation of 0.4 litres. The Business department's milk use is also normally distributed, with a mean of 2.8 litres and a standard deviation of 0.5 litres. In any given week, calculate the probability that the Business department uses more milk than the Maths department, stating any assumptions required.
+    \item The length of a best-of-five match of tennis is normally distributed with a mean of 165 minutes and a standard deviation of 21 minutes, whilst the length of a best-of-three match has a mean of 95 minutes and a standard deviation of 10 minutes. A tournament has two best-of-five matches and one best-of-three match scheduled to be played on Court 7, beginning at 10am. Find the probability that the three matches will be completed by 4pm, stating two assumptions required.
+\end{enumerate}
+
+\pagebreak
+
+## Normal Approximation to the Binomial Distribution
+
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}{.33\textwidth}
+
+\begin{center}
+\begin{tikzpicture}
+\pgfplotsset{
+    standard/.style={
+    axis line style = thick,
+    trig format=rad,
+    enlargelimits,
+    axis x line=middle,
+    axis y line=middle,
+    every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
+    every axis y label/.style={at={(current axis.above origin)},anchor=south east}
+    }
+}
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3cm, width = 6cm, ybar,bar width=10pt, xmin=1,xmax=11,ymin=0,ymax=0.4, xtick={2,3,4,5,6,7,8,9,10},xticklabels={0,1,2,3,4,5,6,7,8},yticklabels=\empty,xlabel=$x$,ylabel=probability,ytick=\empty]
+        \addplot[fill=black!25, draw=black] coordinates {
+    (2,0.168)
+    (3,0.336) 
+    (4,0.294) 
+    (5,0.147)
+    (6,0.046)
+    (7,0.009)
+    (8,0.001)
+    (9,0.00008)
+    (10,0.000003)
+};
+    \end{axis}
+\end{tikzpicture}
+\captionof{figure}{$B(8,0.2)$}
+  \label{fig:test1}
+\end{center}
+
+\end{minipage}%
+  \centering
+\begin{minipage}{.33\textwidth}
+  \centering
+  
+\begin{center}
+\begin{tikzpicture}
+\pgfplotsset{
+    standard/.style={
+    axis line style = thick,
+    trig format=rad,
+    enlargelimits,
+    axis x line=middle,
+    axis y line=middle,
+    every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
+    every axis y label/.style={at={(current axis.above origin)},anchor=south east}
+    }
+}
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3cm, width = 6cm, ybar,bar width=3pt, xmin=1,xmax=28,ymin=0,ymax=0.2, xtick={2,7,12,17,22,27},xticklabels={0,5,10,15,20,25},yticklabels=\empty,xlabel=$x$,ylabel=probability,ytick=\empty]
+        \addplot[fill=black!25, draw=black] coordinates {
+    (2,0.0000028)
+    (3,0.00005) 
+    (4,0.0004) 
+    (5,0.0019)
+    (6,0.044)
+    (7,0.08)
+    (8,0.12)
+    (9,0.151)
+    (10,0.161)
+    (11,0.1465)
+    (12,0.114)
+    (13,0.076)
+    (14,0.043)
+    (15,0.02)
+    (16,0.0088)
+    (17,0.003)
+    (18,0.0009)
+    (19,0.0002)
+    (20,0.000045)
+    (21,0.000007)
+    (22,0.00000087)
+    (23,0.0000003)
+    (24,0.0000001)
+    (25,0.00000007)
+    (26,0.00000002)
+    (27,0.0000000001)
+};
+    \end{axis}
+\end{tikzpicture}
+\captionof{figure}{$B(25,0.4)$}
+  \label{fig:test1}
+\end{center}
+  
+\end{minipage}%
+  \centering
+\begin{minipage}{.33\textwidth}
+  \centering
+
+\begin{center}
+\begin{tikzpicture}[
+    declare function={binom(\k,\n,\p)=\n!/(\k!*(\n-\k)!)*\p^\k*(1-\p)^(\n-\k);}
+]
+\begin{axis}[axis x line=middle,
+    axis y line=middle,
+    samples at={0,...,60},
+    ybar=0pt, bar width=1,every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
+    every axis y label/.style={at={(current axis.above origin)},anchor=south east},x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3cm, width = 6cm,xlabel=$x$,ylabel=probability,ytick=\empty,yticklabels=\empty
+]
+\addplot [fill=black!25, fill opacity=0.5] {binom(x,60,0.5)}; 
+\end{axis}
+\end{tikzpicture}
+\captionof{figure}{$B(60,0.5)$}
+  \label{fig:test1}
+\end{center}
+
+\end{minipage}
+\end{figure}
+
+Under certain conditions the *discrete* binomial distribution can begin to resemble a *continuous* normal distribution.. Given random variable $X\sim B(n,p)$, **a normal distribution can approximate the binomial distribution**, with *sufficiently accuracy*, when:   
+
+\begin{centering}
+\tcbset{width=12cm}
+\begin{tcolorbox}[adjusted title=Conditions for normal approximation to binomial distributions :, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{center}
+$np>5$\quad \text{ and } \quad $nq>5$
+\end{center}
+\end{tcolorbox}
+\end{centering}
+
+The mean and variance of the *approximate* normal distribution are, as usual for a binomial distribution, \mbox{$\text{E}(X)=np$} and $\text{V}(X)=npq$. Using '$\approx$' instead of '$\sim$' is important to show that the normal distribution is only an *approximation* to the actual binomial distribution. 
+
+$$\text{If } X\sim B(n,p) \text{ then } X\approx \text{N}(np,npq)$$
+
+Historically, the ability to approximate the binomial distribution using the normal distribution will have prevented the need for extensive tables of binomial probabilities. Additionally, binomial distribution calculations tend to be more computationally-intensive than normal distributions calculations. Whilst modern computing power may seem to render this argument null, it can still be desirable to speed up computation in return for a trivial loss in accuracy. 
+
+Approximating probabilities for a *discrete* distribution using a *continuous* distribution may lead to inaccuracy unless a **continuity correction** is applied. For example, consider random variable $X\sim B(24,0.5)$, with its normal approximation $X\approx \text{N}(12,6)$ overlaid and the *continous* probability $\text{P}(X<14)$ shaded:
+
+\begin{center}
+\hspace{-1cm}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  height=5cm,
+  width=7cm,
+  domain=12:15.5, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [draw=none, fill=black!20, domain=11.5:14] {gauss(x, 12, 6)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x,12,6)};
+\pgfmathsetmacro\valueA{gauss(12,12,6)}
+\pgfmathsetmacro\valueB{gauss(13,12,6)}
+\pgfmathsetmacro\valueC{gauss(14,12,6)}
+\pgfmathsetmacro\valueD{gauss(15,12,6)}
+\draw [semithick, black]  (axis cs:14,0) -- (axis cs:14,\valueC);
+\node[below] at (axis cs: 12,0)  {$12$};
+\node[below] at (axis cs: 13,0)  {$13$};
+\node[below] at (axis cs: 14,0)  {$14$};
+\node[below] at (axis cs: 15,0)  {$15$};
+\draw[semithick] (axis cs: 11.5,0) rectangle (axis cs: 12.5,\valueA);
+\draw[semithick] (axis cs: 12.5,0) rectangle (axis cs: 13.5,\valueB);
+\draw[semithick] (axis cs: 13.5,0) rectangle (axis cs: 14.5,\valueC);
+\draw[semithick] (axis cs: 14.5,0) rectangle (axis cs: 15.5,\valueD);
+\draw [semithick, black,dashed]  (axis cs:14.5,-0.01) -- (axis cs:14.5,\valueA+0.01);
+\node[below] at (axis cs: 14.5,-0.01)  {\text{\small{$14.5$}}};
+\draw [semithick, black,dashed]  (axis cs:13.5,-0.01) -- (axis cs:13.5,\valueA+0.01);
+\node[below] at (axis cs: 13.5,-0.01)  {\text{\small{$13.5$}}};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+When calculating the discrete probability $\text{P}(X\leqslant 14)$, the bar representing the discrete integer 14 ought to be included. The continuous probability $\text{P}(X<14.5)$, making a **continuity correction**, would provide a more accurate estimate of the desired probability. For the discrete probability $\text{P}(X<14)$, with the discrete integer value of 14 not to be included, the continuous probability $\text{P}(X<13.5)$ would be more accurate.
+
+\pagebreak
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} A quiz contains 40 multiple choice questions, with four answers for every question. If a pupil picks answers entirely at random, use a suitable approximation to calculate the probability that they get at least half of the questions correct, and justify the suitability of the approximation used.  
+
+\tcblower
+\textbf{Solution:} \textit{"Suitable approximation" highlights that the normal approximation should be used, even if a graphical calculator can obtain the precise probability.}
+
+\vspace{0.5cm}
+
+Let random variable $X$ represent the number of questions answered correctly.
+
+\vspace{0.1cm}
+
+$X\sim B(40,0.25)$ 
+
+\vspace{0.1cm}
+
+$np=40\times 0.25=10$, $nq=40\times 0.75=30$\\
+$np>5$ and $nq>5$ therefore a normal approximation is appropriate.
+
+\vspace{0.1cm}
+
+$\text{E}(X)=np=10$ \quad \text{ and } \quad $\text{V}(X)=npq=40\times 0.25 \times 0.75=7.5$
+
+\vspace{0.1cm}
+
+$X\approx \text{N}(10,7.5)$
+
+\vspace{0.1cm}
+
+\begin{align*}
+\text{P}(X\geqslant 20)= &\text{P}(X>19.5) &\\
+= &\text{P}\left(Z>\frac{19.5-10}{\sqrt{7.5}}\right)\\
+= &\text{P}(Z>3.47)\\
+= &0.0003
+\end{align*}
+
+\end{tcolorbox}
+
+[]{#ex87q}
+
+#### [Exercise 8.7](#ex87a) {-}
+
+\begin{enumerate}[itemsep=0pt]
+    \item Given $X\sim B(40,0.4)$:
+    \begin{enumerate}[itemsep=0pt]
+        \item Show that a normal approximation is appropriate.
+        \item Find:
+        \begin{multicols}{3}
+        \begin{enumerate}
+            \item $\text{P}(X\leqslant20)$
+            \item $\text{P}(25\leqslant X\leqslant28)$
+            \item $\text{P}(X>31)$
+        \end{enumerate}
+        \end{multicols}
+    \end{enumerate}
+    \item Given $Y\sim B(81,\frac{2}{3})$:
+    \begin{enumerate}[itemsep=0pt]
+        \item Show that a normal approximation is appropriate.
+        \item Find:
+        \begin{multicols}{3}
+        \begin{enumerate}
+            \item $\text{P}(Y\geqslant56)$
+            \item $\text{P}(Y=48)$
+            \item $\text{P}(50<Y<60)$
+        \end{enumerate}
+        \end{multicols}
+    \end{enumerate}
+    \item To complete the mandatory online training required by a large corporation, 600 employees in an office each try to log on to the corporation's online training portal. The probability of an employee managing to successfully log in on their first attempt is 85\%. Let the random variable $X$ represent the number of employees that manage to log in successfully on their first attempt. State the distribution of $X$ and use a suitable approximation to estimate the probability of over 100 of the 600 employees not managing to log in successfully on their first attempt, justifying its use.
+    \item A farmer believes that 60\% of the apples that are brought into her grading shed are classified as Grade A. Assuming she is right, use a suitable approximation to estimate the probability that, in a random sample of 120 apples, there are more than 75 Grade A apples.
+    \item 200 people are randomly picked as part of a survey and asked whether or not they plan to vote for the party currently in power in an upcoming election. It is generally thought that 54\% of people will vote for this party. Using a suitable approximation, calculate the probability that less than 45\% of the people sampled indicate that they will vote for the party currently in power, and comment on what this might suggest should it happen.
+\end{enumerate}
+        
+
+\pagebreak
+
+## Normal Approximation to the Poisson Distribution
+
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}{.33\textwidth}
+
+\begin{center}
+\begin{tikzpicture}
+\pgfplotsset{
+    standard/.style={
+    axis line style = thick,
+    trig format=rad,
+    enlargelimits,
+    axis x line=middle,
+    axis y line=middle,
+    every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
+    every axis y label/.style={at={(current axis.above origin)},anchor=south east}
+    }
+}
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3cm, width = 6cm, ybar,bar width=10pt, xmin=1,xmax=11,ymin=0,ymax=0.4, xtick={2,3,4,5,6,7,8,9,10},xticklabels={0,1,2,3,4,5,6,7,8},yticklabels=\empty,xlabel=$x$,ylabel=probability,ytick=\empty]
+        \addplot[fill=black!25, draw=black] coordinates {
+    (2,0.223)
+    (3,0.335) 
+    (4,0.251) 
+    (5,0.126)
+    (6,0.047)
+    (7,0.014)
+    (8,0.004)
+    (9,0.0008)
+    (10,0.0001)
+};
+    \end{axis}
+\end{tikzpicture}
+\captionof{figure}{$Po(1.5)$}
+  \label{fig:test1}
+\end{center}
+
+\end{minipage}%
+  \centering
+\begin{minipage}{.33\textwidth}
+  \centering
+  
+\begin{center}
+\begin{tikzpicture}[
+    declare function={pois(\k,\n)=((e^(-\n)*(\n^\k))/(\k!);}
+]
+\begin{axis}[axis x line=middle,
+    axis y line=middle,
+    samples at={0,...,16},
+    ybar=0pt, bar width=1,every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
+    every axis y label/.style={at={(current axis.above origin)},anchor=south east},x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3cm, width = 6cm,xtick={0,8,16},,xticklabels={0,8,16},xlabel=$x$,ylabel=probability,ymax=0.2,ytick=\empty,yticklabels=\empty
+]
+\addplot [fill=black!25, fill opacity=0.5] {pois(x,8)}; 
+\end{axis}
+\end{tikzpicture}
+\captionof{figure}{$Po(8)$}
+  \label{fig:test1}
+\end{center}
+  
+\end{minipage}%
+  \centering
+\begin{minipage}{.33\textwidth}
+  \centering
+
+\begin{center}
+\begin{tikzpicture}[
+    declare function={pois(\k,\n)=((e^(-\n)*(\n^\k))/(\k!);}
+]
+\begin{axis}[axis x line=middle,
+    axis y line=middle,
+    samples at={0,...,50},
+    ybar=0pt, bar width=1,every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
+    every axis y label/.style={at={(current axis.above origin)},anchor=south east},x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3cm, width = 6cm,xtick={0,25,50},,xticklabels={0,25,50},xlabel=$x$,ylabel=probability,ytick=\empty,yticklabels=\empty
+]
+\addplot [fill=black!25, fill opacity=0.5] {pois(x,25)}; 
+\end{axis}
+\end{tikzpicture}
+\captionof{figure}{$Po(25)$}
+  \label{fig:test1}
+\end{center}
+
+\end{minipage}
+\end{figure}
+
+As with the binomial distribution, under certain conditions the *discrete* Poisson distribution can also begin to resemble a *continuous* normal distribution. Given random variable $X\sim Po(\lambda)$, **a normal distribution can approximate the Poisson distribution**, with *sufficiently accuracy*, when:   
+
+\begin{centering}
+\tcbset{width=12cm}
+\begin{tcolorbox}[adjusted title=Conditions for normal approximation to Poisson distributions :, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{center}
+$\lambda>10$
+\end{center}
+\end{tcolorbox}
+\end{centering}
+
+The mean and variance of the *approximate* normal distribution are $\text{E}(X)=\text{V}(X)=\lambda$.
+.
+$$\text{If } X\sim Po(\lambda) \text{ then } X\approx \text{N}(\lambda,\lambda)$$
+
+Since again this is a *continuous approximation* to a *discrete distribution*, any probabilities calculated will not be sufficiently accurate unless a **continuity correction** is applied. For a continuous approximation to a discrete distribution taking integers values, as is the case with both such approximations encountered in this chapter, continuity corrections will always require an addition or subtraction of 0.5. 
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} In a football league, goals occur at a constant mean rate of 2.5 goals per game. A full weekend of fixtures includes 10 games. Using a suitable approximation, and justifying its use, calculate the probability that there will be between 15 and 20 goals in total, inclusive, in a full weekend of fixtures. 
+
+\tcblower
+\textbf{Solution:}
+
+\vspace{0.1cm}
+
+Let random variable $T$ represent the number of goals across the 10 games, with $\lambda=2.5\times 10=25$:
+$T\sim Po(25)$ 
+
+\vspace{0.1cm}
+
+Since $\lambda>10$, a normal approximation is appropriate.
+
+\vspace{0.1cm}
+
+$\text{E}(T)=\text{V}(T)=25$
+
+\vspace{0.1cm}
+
+$T\approx \text{N}(25,25)$
+
+\vspace{0.1cm}
+
+\begin{align*}
+\text{P}(15\leqslant T \leqslant 20)= &\text{P}(14.5<T<20.5) &\\
+= &\text{P}\left(\frac{14.5-25}{\sqrt{25}}<Z<\frac{20.5-25}{\sqrt{25}}\right)\\
+= &\text{P}(-2.1<Z<-0.9)\\
+= &\text{P}(Z<-0.9)-\text{P}(Z<-2.1)\\
+= &0.1841-0.0179\\
+= &0.1662\\
+\end{align*}
+
+\vspace{-0.5cm}
+
+\end{tcolorbox}
+
+\pagebreak
+
+[]{#ex88q}
+
+#### [Exercise 8.8](#ex88a) {-}
+
+\begin{enumerate}
+    \item Given $X\sim Po(24)$, use the normal approximation to find:
+    \begin{multicols}{3}
+    \begin{enumerate}
+        \item $\text{P}(X\leqslant25)$
+        \item $\text{P}(X=21)$
+        \item $\text{P}(X>23)$
+    \end{enumerate}
+    \end{multicols}
+    \item Given $X\sim Po(60)$, use the normal approximation to find:
+    \begin{multicols}{3}
+    \begin{enumerate}
+        \item $\text{P}(X\geqslant57)$
+        \item $\text{P}(50< X \leqslant 56)$
+        \item $\text{P}(62<X<66)$
+    \end{enumerate}
+    \end{multicols}
+    \item The number of calls received by an office switchboard per hour follows a Poisson distribution with a parameter 30. Using the normal approximation to the Poisson distribution, find the probability that in one hour:
+    \begin{enumerate}
+        \item There are more than 33 calls.
+        \item There are between 25 and 28 calls, inclusive.
+        \item There are exactly 34 calls.
+    \end{enumerate}
+    \item In a certain factory the number of incidents occurring in a month follows a Poisson distribution with mean 4. Find the probability that there will be at least 40 incidents during one year.
+    \item The number of bacteria on a plate viewed under a microscope follows a Poisson distribution with parameter 60.
+    \begin{enumerate}
+        \item Find the probability that there are between 55 and 75 bacteria, inclusive, on a plate.
+        \item A plate is rejected if fewer than 38 bacteria are found. If 2000 plates are viewed, determine the expected number of plates that will be rejected.
+    \end{enumerate}
+    \item In an experiment with a radioactive substance, the number of particles reaching a counter over a given period of time follows a Poisson distribution with mean 22. Find the probability that the number of particles reaching the counter over the given period of time is:
+    \begin{enumerate}
+        \item Fewer than 22.
+        \item Between 25 and 30, not inclusive.
+        \item 18 or more.
+    \end{enumerate}
+    \item The number of accidents on a certain railway line occurs at an average rate of one every 2 months. Justifying your method, estimate the probability that there are:
+    \begin{enumerate}
+        \item 28 or more accidents in 4 years.
+        \item Fewer than 30 accidents in 5 years.
+    \end{enumerate}
+    \item The number of eggs laid by an insect follows a Poisson distribution with parameter 200. Estimate the probability that between 180 and 220 eggs, inclusive, are laid.
+\end{enumerate}
+
+\pagebreak
+
+[]{#re8q}
+
+## [Review Exercise](#re8a) {-}
+
+\begin{enumerate}[itemsep=10pt]
+    \item Given $X\sim \text{U}(1,7)$, find:
+    \begin{enumerate}
+        \item $\text{E}(X)$
+        \item $\text{V}(3-X)$
+        \item $\text{P}(X<3)$
+    \end{enumerate}
+    \item Given $X\sim \text{N}(20,6)$, find:
+    \begin{enumerate}
+        \item $\text{P}(X<25)$
+        \item $\text{P}(14<X<20)$
+    \end{enumerate}
+    \item The height of an adult giraffe is normally distributed with a mean of 18.1 feet and a standard deviation of 0.7 feet. Let random variable $H$ represent the height of an adult giraffe, in feet.
+    \begin{enumerate}
+        \item State the distribution of $H$.
+        \item Find $\text{P}(H>20)$.
+        \item A biologist wishes to know the height only exceeded by 5\% of giraffes. Find this height.
+    \end{enumerate}
+    \item A guitar player experiences broken strings at a constant mean rate of 2 per month.
+    \begin{enumerate}
+        \item Find the probability that no strings break in one month.
+        \item Use a suitable approximation to estimate the probability that exactly 26 strings break in one year.
+    \end{enumerate}
+    \item For continuous random variable $X\sim \text{N}(\mu,3^2)$, $\text{P}(X<16)=0.1$. Determine the value of $\mu$ for $X$. 
+    \item A continuous uniform distribution is defined over the interval 10 to 20.
+    \begin{enumerate}
+        \item For a single observation from this distribution, calculate the probability of obtaining a value not greater than 13.
+        \item If a random sample of size 10 is taken from the distribution, calculate the probability of at least 3 of the observations resulting in value not greater than 13.
+        \item If a random sample of size 100 is taken from the distribution, use a suitable approximation to estimate the probability that over 30 of the observations result in a value not greater than 13.
+    \end{enumerate}
+    \item A sports scientist is interested in the time taken for 800 metre runners to complete each of the two laps that make up the distance. They observe that the time it takes for an athlete they are studying to complete each lap is normally distributed, with a mean of 53.2 seconds with a standard deviation of 1.3 seconds.
+    \begin{enumerate}
+        \item Find the probability that the athlete completes the two laps in under 1 minute and 44 seconds.
+        \item An important assumption is required to calculate the answer for part (a). State the assumption and explain whether or not it is likely to have been met.
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak

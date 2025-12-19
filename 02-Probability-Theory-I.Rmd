@@ -1,0 +1,913 @@
+# An Introduction to Probability Theory
+
+The purpose of statistics is to make sense of the world by analysing data. Typically however, it is only possible to obtain data from a random sample of the full population of interest, creating an element of uncertainty that must be navigated carefully. For this reason, developing an understanding of statistical analysis begins with learning about probability theory.
+
+#### Key definitions {-}
+
+In probability theory, an experiment for which all of the possible *outcomes* can be defined, and yet the actual outcome of any given *trial* cannot be known in advance, is called a *random experiment*. The set of all possible outcomes is called the *sample space* of the random experiment. Probability is assigned to individual outcomes or to sets of outcomes, called *events*. Probability itself is defined as the **long-run relative frequency** of an outcome or event occurring, and values range from 0 (*impossible, and will never happen*) to 1 (*certain, and will happen every time*).
+
+\begin{wrapfigure}{r}{0.15\textwidth}
+\centering
+\includegraphics[width=0.15\textwidth]{dice}
+\end{wrapfigure}
+
+For example, in the context of rolling a fair, cubical die:
+
+- the procedure of rolling the die and observing the result is a **random experiment**.
+
+- each roll of the die may be referred to as a **trial**.
+
+- the **sample space** consists of a list of all of the possible **outcomes**: $\{1,2,3,4,5,6\}$
+
+- the **probability** of a $5$ is $\frac{1}{6}$ since *in the long-run* it can be expected to occur $\frac{1}{6}$ of the time.
+
+- a possible **event** of interest may be that the outcome is *prime*: $\{2,3,5\}$ 
+
+#### Probability notation {-}
+
+The probability that a die  lands on 5 is *one-in-six*, or $\frac{1}{6}$. Using probability notation:
+
+$$\text{P}(5)=\dfrac{1}{6}$$
+
+\pagebreak
+
+## Types of Probability
+
+### Experimental Probability {-}
+
+The probability of an event can be estimated through repeated trials - this is referred to as the \mbox{\textit{experimental probability}} of the event. For example, if a motorist passes a set of traffic lights every morning and wishes to know the probability of having to wait at a red light on any given morning, they could record the *proportion* of times they have to wait at a red light over a period of time. If, over the course of 200 mornings, they have to wait at a red light 114 times:
+
+$$\text{P}(\text{red light})\approx\frac{114}{200}=0.57$$
+
+### Theoretical Probability {-}
+
+When each of the outcomes in the sample space of a random experiment can be reasonably assumed to be \mbox{\textbf{equally likely}} then the probability of any outcomes or events can be determined. This is called *theoretical probability*.
+
+Equally likely outcomes typically arise from the symmetry of a physical object (such as a coin or die) or a reasonable assumption. The probability of any one *individual outcome* in a sample space containing $N$ equally likely outcomes is $\frac{1}{N}$.
+
+For example, if a playing card is picked at random from a standard pack of 52 cards, containing no jokers, then the probability of picking the Queen of Hearts is $\frac{1}{52}$.
+
+An **event** is a set of one or more outcomes from the sample space. The probability of an event is given by:
+
+$$\text{P}(\text{event})=\frac{\text{number of outcomes from the sample space in the event}}{\text{total number of outcomes in the sample space}}$$
+
+\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\textbf{Problem:} A bag contains 13 red counters, 5 blue counters and 4 green counters. A counter is chosen at random. Find the probability that the counter is green.
+
+\tcblower
+\textbf{Solution:}
+$$\text{P}(\text{green})=\frac{4}{22}=\frac{2}{11}$$
+\end{tcolorbox}
+
+In this course, probabilities will be given as simplified fractions or **rounded to four decimal places**.
+In probability theory, *"and"* means that *both* events are true, and *"or"* means that *at least one of* the events are true.
+
+\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\textbf{Problem:} A car dealership has 80 cars in its showroom. They have a mix of electric, hybrid, petrol and diesel cars, both new and second-hand. The table below shows the numbers of each type.
+
+\begin{center}
+    \begin{tabular}{| c|c c c c|} 
+      \hline
+          & electric & hybrid & petrol & diesel\\ 
+      \hline
+         new & 15 & 17 & 28 & 3\\ 
+         second-hand & 1 & 7 & 4 & 5\\ 
+     \hline
+    \end{tabular}
+\end{center}
+
+A car is selected at random. Determine the probability that the car selected is a second-hand hybrid car.
+
+\tcblower
+\textbf{Solution:}
+$$\text{P}(\text{second-hand and hybrid})=\dfrac{7}{80}=0.0875$$
+\end{tcolorbox}
+
+\pagebreak
+
+[]{#ex21q}
+
+#### [Exercise 2.1](#ex21a) {-}
+
+\begin{enumerate}
+    \item A letter of the English alphabet is chosen at random. State the probability that the letter chosen is:
+    \begin{multicols}{3}
+    \begin{enumerate}
+        \item A vowel.
+        \item A consonant.
+        \item In the word \textit{statistics}.
+    \end{enumerate}
+    \end{multicols}
+    \item A bag contains four blue, five green and six red counters. Find the probability that a randomly chosen counter is:
+    \begin{multicols}{3}
+    \begin{enumerate}
+        \item Blue.
+        \item Either green or red.
+        \item Not red.
+    \end{enumerate}
+    \end{multicols}
+    \item A box of chocolates contains chocolates of three different flavours. Five are caramel, four are orange and three are strawberry. A chocolate is chosen at random. State the value of:
+    \begin{multicols}{3}
+    \begin{enumerate}
+        \item \text{P}(orange).
+        \item \text{P}(orange and strawberry).
+        \item \text{P}(not caramel)
+    \end{enumerate}
+    \end{multicols}
+    \item As of 2024, the UK contains 76 cities, of which 55 are in England, 8 in Scotland, 7 in Wales and 6 in Northern Ireland. If a city in the UK is selected at random, find the probability that the chosen city is:
+    \begin{multicols}{3}
+    \begin{enumerate}
+        \item In Scotland.
+        \item In Wales or Northern Ireland.
+        \item Not in England.
+    \end{enumerate}
+    \end{multicols}
+    \item A board game uses green counters numbered from 1 to 8, blue counters numbered from 1 to 6 and red counters numbered from 1 to 4. A counter is chosen at random. Determine the probability that the counter selected is:
+    \begin{multicols}{3}
+    \begin{enumerate}
+        \item The blue numbered 5.
+        \item Numbered 5.
+        \item Blue or numbered 5.
+    \end{enumerate}
+    \end{multicols}
+    \item A restaurant grades the fruit contained in a delivery as good or bad. The contents of the previous delivery are shown in the table below.
+    \begin{center}
+    \begin{tabular}{| c|c c c|} 
+      \hline
+          & Apples & Tangerines & Kiwi\\ 
+      \hline
+         Good & 27 & 19 & 26 \\ 
+         Bad & 3 & 1 & 4 \\ 
+     \hline
+    \end{tabular}
+    \end{center}
+    Letting $G$ represent that the event the fruit chosen is \textit{good}, and $A$ the event that it is an \textit{apple}, find:
+    \begin{multicols}{3}
+    \begin{enumerate}
+        \item $\text{P}(G)$
+        \item $\text{P}(G\text{ and }A)$
+        \item $\text{P}(\text{Not }A)$
+    \end{enumerate}
+    \end{multicols}
+    \item A hospital contains a number of doctors, nurses, allied health professionals and support staff, who are each assigned to work on one of Wards 1 to 3. The breakdown of this is shown in the table below.
+    \begin{center}
+    \begin{tabular}{| c|c c c c|} 
+      \hline  
+          & Doctor & Nurse & Allied & Support\\ 
+      \hline
+         Ward 1 & 3 & 7 & 5 & 8\\ 
+         Ward 2 & 4 & 10 & 2 & 9\\
+         Ward 3 & 2 & 8 & 1 & 5\\
+     \hline
+    \end{tabular}
+    \end{center}
+    If member of staff working at the hospital is chosen at random, find the probability that they are:
+    \begin{multicols}{3}
+    \begin{enumerate}
+        \item A nurse.
+        \item Not on Ward 2.
+        \item On Ward 2 but not a doctor
+    \end{enumerate}
+    \end{multicols}
+\end{enumerate}
+
+\pagebreak
+
+## Sample Spaces as Lists and Grids
+
+It can help to write out sample spaces. Some sample spaces can be easily described using a simple list, but more organisation may be needed for more complicated sample spaces, such as approaching the list in a structured manner or using a grid. Sample spaces are generally useful only if each of the outcomes is equally likely. 
+
+If two coins are tossed, it may be tempting to suggest that the probability of both landing tails is one-in-three, since the experiment can result in either no coins landing tails, only one coin landing tails or two coins landing tails. However a list of the four possible *equally likely* outcomes in the sample space shows that this is not the case:
+
+*Not equally likely outcomes:* $\{\text{no tails},\text{one tail},\textbf{two tails}\}$
+
+*Equally likely outcomes:* $\{\text{HH},\text{HT},\text{TH},\textbf{TT}\}$
+
+The probability of both coins landing tails is therefore *one-in-four*, or $\text{P}(\text{both tails})=\frac{1}{4}$.
+
+\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\textbf{Problem:} Three coins are tossed at the same time. Find the probability that exactly two of the coins land tails.
+
+\tcblower
+\textbf{Solution: }\textit{A list of equally likely outcomes will help here. Note there are $2\times 2\times 2=8$ outcomes.}
+
+$$HHH \quad HHT \quad HTH \quad \underbrace{HTT} \quad THH \quad \underbrace{THT} \quad \underbrace{TTH} \quad TTT$$
+
+$$\text{P}(\text{exactly two tails})=\dfrac{3}{8}$$
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\textbf{Problem:} Two fair dice are rolled. Determine the probability that the sum obtained is at least nine.
+
+\tcblower
+\textbf{Solution: }\textit{A grid of outcomes will help here. Note there are $6\times 6=36$ outcomes.}\vspace{0.5cm}
+
+\begin{tikzpicture}
+\fill [gray!40] (-3,-3) rectangle (-2,4);
+\fill [gray!40] (-2,3) rectangle (4,4);
+\draw[step=1cm,color=gray] (-3,-3) grid (4,4);
+\node at (0.5,4.5) {\textbf{first die}};
+\node at (-4.5,0.5) {\textbf{second die}};
+\node at (-2.5,3.5) {\textbf{+}};
+\node at (-1.5,3.5) {\textbf{1}};
+\node at (-0.5,3.5) {\textbf{2}};
+\node at (0.5,3.5) {\textbf{3}};
+\node at (1.5,3.5) {\textbf{4}};
+\node at (2.5,3.5) {\textbf{5}};
+\node at (3.5,3.5) {\textbf{6}};
+\node at (-2.5,2.5) {\textbf{1}};
+\node at (-2.5,1.5) {\textbf{2}};
+\node at (-2.5,0.5) {\textbf{3}};
+\node at (-2.5,-0.5) {\textbf{4}};
+\node at (-2.5,-1.5) {\textbf{5}};
+\node at (-2.5,-2.5) {\textbf{6}};
+\node at (-1.5,2.5) {2};
+\node at (-0.5,2.5) {3};
+\node at (0.5,2.5) {4};
+\node at (1.5,2.5) {5};
+\node at (2.5,2.5) {6};
+\node at (3.5,2.5) {7};
+\node at (-1.5,1.5) {3};
+\node at (-1.5,0.5) {4};
+\node at (-1.5,-0.5) {5};
+\node at (-1.5,-1.5) {6};
+\node at (-1.5,-2.5) {7};
+\node at (-0.5,1.5) {4};
+\node at (0.5,1.5) {5};
+\node at (1.5,1.5) {6};
+\node at (2.5,1.5) {7};
+\node at (3.5,1.5) {8};
+\node at (-0.5,0.5) {5};
+\node at (-0.5,-0.5) {6};
+\node at (-0.5,-1.5) {7};
+\node at (-0.5,-2.5) {8};
+\node at (0.5,0.5) {6};
+\node at (0.5,-0.5) {7};
+\node at (0.5,-1.5) {8};
+\node at (0.5,-2.5) {9};
+\draw (0.5,-2.5) circle (0.4);
+\node at (1.5,0.5) {7};
+\node at (2.5,0.5) {8};
+\node at (3.5,0.5) {9};
+\draw (3.5,0.5) circle (0.4);
+\node at (1.5,-0.5) {8};
+\node at (2.5,-0.5) {9};
+\draw (2.5,-0.5) circle (0.4);
+\node at (3.5,-0.5) {10};
+\draw (3.5,-0.5) circle (0.4);
+\node at (1.5,-1.5) {9};
+\draw (1.5,-1.5) circle (0.4);
+\node at (1.5,-2.5) {10};
+\draw (1.5,-2.5) circle (0.4);
+\node at (2.5,-1.5) {10};
+\draw (2.5,-1.5) circle (0.4);
+\node at (3.5,-1.5) {11};
+\draw (3.5,-1.5) circle (0.4);
+\node at (2.5,-2.5) {11};
+\draw (2.5,-2.5) circle (0.4);
+\node at (3.5,-2.5) {12};
+\draw (3.5,-2.5) circle (0.4);
+\node at (7,0.5) {$\text{P}(\text{sum}\geqslant9)=\dfrac{10}{36}=\dfrac{5}{18}$};
+\end{tikzpicture}
+\end{tcolorbox}
+
+\pagebreak
+
+[]{#ex22q}
+
+#### [Exercise 2.2](#ex22a) {-}
+
+For most of the following questions, it is recommended to write out a full list of all the possible equally likely outcomes. There may be times when a full list would be excessive in length, in which case careful multiplication can reveal the *number* of outcomes, and only the *relevant* ones may be needed to be listed.
+
+\begin{enumerate}
+    \item A coin is tossed and a cubical, fair die numbered 1 to 6 is rolled. Write down:
+    \begin{enumerate}
+        \item A list of all outcomes.
+        \item $\text{P}(\text{even and tails})$
+    \end{enumerate}
+    \item Each morning, a teacher picks at random whether to start the day with tea, coffee or apple juice, and also picks at random which one of museli, granola, toast or porridge to eat for breakfast. By first writing down all the possible ways the teacher may start their day, determine the probability that on any particular morning the teacher has:
+        \begin{enumerate}
+            \item Tea and toast.
+            \item Museli but not coffee.
+            \item Neither porridge nor tea.
+        \end{enumerate}
+    \item A coin is tossed three times. Find the probability that it shows:
+    \begin{tikzpicture}[remember picture,overlay]
+        \node[xshift=2cm,yshift=0.5cm,anchor=north west] {%
+        \includegraphics[width=0.3\textwidth]{threecoins.png}};
+        \end{tikzpicture}
+    \begin{enumerate}
+        \item Tails twice in a row.
+        \item Tails at least twice.
+    \end{enumerate}   
+    \item A random number is chosen from 1 to 140, inclusive. By writing down all relevant results, determine the probability of the number chosen having digits that sum to 3.
+    \item Two fair, cubical dice are rolled. Find the probability that the product of the numbers obtained is less than 5.
+    \item A tetrahedral (four-sided) die numbered 1 to 4 and a cubical die numbered 1 to 6 are rolled. Find the probability that at least one of the numbers obtained is 2 or less.
+    \item Five coins are placed in a bag, with values of 1p, 2p, 5p, 10p and 20p. Two coins are chosen at random, one after another, with the second selected without the first being replaced. Calculate:
+    \begin{tikzpicture}[remember picture,overlay]
+    \node[xshift=0cm,yshift=0cm,anchor=north west] {%
+    \includegraphics[width=0.25\textwidth]{coins.png}};
+    \end{tikzpicture}
+    \begin{enumerate}
+        \item $\text{P}(\text{the 20p is selected first})$
+        \item $\text{P}(\text{the 20p is selected as one of the two coins})$
+        \item $\text{P}(\text{total of the two coins}\geqslant\text{15p})$
+        \item $\text{P}(\text{total of the two coins}<\text{12p})$
+    \end{enumerate}
+    \item Two friends, Alex and Charlie, are part of a class which contains eight pupils in total. One pupil from the class is randomly chosen to hand out mini-whiteboards, and different pupil is chosen to hand out pens.
+    \begin{enumerate}
+        \item Determine the number of possible ways the two tasks can be assigned to two pupils.
+        \item Hence, find the probability that:
+        \begin{enumerate}
+            \item Alex is chosen to hand out the mini-whiteboards, and Charlie is chosen to hand out the pens.
+            \item Neither Alex nor Charlie are chosen for either task.
+            \item At least one of Alex and Charlie are chosen to perform a task.
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+## Tree Diagrams
+
+Tree diagrams can be created to map out the possible results of a random experiment, and they are especially useful when considering two or more events. For example, consider a game involving rolling a cubical die and picking a playing card at random from a standard set, with an interest in the chance of the die landing on a *six* and the card picked being a *diamond*:
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[grow=right]
+\tikzstyle{level 1}=[level distance=3.5cm, sibling distance=3.5cm]
+\tikzstyle{level 2}=[level distance=3.5cm, sibling distance=1.75cm]
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+\node[bag] {}
+    child {
+        node[bag] {not six}        
+            child {
+                node[end, label=right:
+                    {diamond}] {}
+                edge from parent
+                node[above] {}
+                node[below]  {$\frac{1}{4}$}
+            }
+            child {
+                node[end, label=right:
+                    {not diamond}] {}
+                edge from parent
+                node[above] {$\frac{3}{4}$}
+                node[below]  {}
+            }
+            edge from parent 
+            node[above] {}
+            node[below]  {$\frac{5}{6}$}
+    }
+    child {
+        node[bag] {six}        
+        child {
+                node[end, label=right:
+                    {diamond\hspace{1.4cm}$\text{P}(\text{six }\textbf{and}\text{  diamond})=\frac{1}{6}\times\frac{1}{4}=\frac{1}{24}$}] {}
+                edge from parent
+                node[above] {}
+                node[below]  {$\frac{1}{4}$}
+            }
+            child {
+                node[end, label=right:
+                    {not diamond}] {}
+                edge from parent
+                node[above] {$\frac{3}{4}$}
+                node[below]  {}
+            }
+        edge from parent         
+            node[above] {$\frac{1}{6}$}
+            node[below]  {}
+    };
+\end{tikzpicture}
+\end{figure}
+
+- Every branch must be clearly labelled with a probability.
+- The end of each branch must be clearly described, such as *"not diamond"*.
+- Sibling branches must add to 1.
+- Multiplying the probabilities along branches gives the probability of those events occurring together.
+
+Note that in the tree diagram above the probability of the card being a diamond does not change depending on whether the roll of a die gives a six or not. In the following example the probabilities on the second stage of the tree diagram do change depending on the result of the first stage.
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} From a bag containing four blue and six red cubes one is drawn at random, followed by another without replacing the first. Find the probability that two red cubes are drawn.
+
+\tcblower
+\textbf{Solution: }
+
+\begin{tikzpicture}[grow=right]
+\tikzstyle{level 1}=[level distance=3.5cm, sibling distance=3.5cm]
+\tikzstyle{level 2}=[level distance=3.5cm, sibling distance=1.75cm]
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+\node[bag] {}
+    child {
+        node[bag] {red}        
+            child {
+                node[end, label=right:
+                    {red\hspace{1.2cm}$\text{P}(\text{both red})=\frac{6}{10}\times\frac{5}{9}=\frac{30}{90}=\frac{1}{3}$}] {}
+                edge from parent
+                node[above] {}
+                node[below]  {$\frac{5}{9}$}
+            }
+            child {
+                node[end, label=right:
+                    {blue}] {}
+                edge from parent
+                node[above] {$\frac{4}{9}$}
+                node[below]  {}
+            }
+            edge from parent 
+            node[above] {}
+            node[below]  {$\frac{6}{10}$}
+    }
+    child {
+        node[bag] {blue}        
+        child {
+                node[end, label=right:
+                    {red}] {}
+                edge from parent
+                node[above] {}
+                node[below]  {$\frac{6}{9}$}
+            }
+            child {
+                node[end, label=right:
+                    {blue}] {}
+                edge from parent
+                node[above] {$\frac{3}{9}$}
+                node[below]  {}
+            }
+        edge from parent         
+            node[above] {$\frac{4}{10}$}
+            node[below]  {}
+    };
+\end{tikzpicture}
+
+\end{tcolorbox}
+
+\pagebreak
+
+[]{#ex23q}
+
+#### [Exercise 2.3](#ex23a) {-}
+
+*Construct a tree diagram for each question*.
+
+\begin{enumerate}
+    \item A counter is selected at random from a bag containing four green counters and five yellow counters, and then a second counter is selected from the bag without replacing the first counter that was taken.
+    \begin{enumerate}
+        \item Construct a tree diagram to represent the possible results.
+        \item Find the probability that both counters selected are green.
+        \item Find the probability that at least one of the counters selected is green.
+    \end{enumerate}
+    \item A game involves a player randomly selecting one card then a second card from a set of six blue cards and four red cards, with replacement. Calculate the probability of a player selecting two cards of the same colour.
+    \item In Scotland, 41\% of the population have the blood type \textit{O positive (O+)}. A doctor in Scotland randomly selects two of their patients and asks for them to take part in a blood screening trial, as part of which their blood type will be checked. Calculate the probability that neither of the two patients has blood type \textit{O+}.
+    \item A type of component manufactured for use in wind turbines is tested at two points in the production process, and marked as either \textit{sufficient quality} or \textit{insufficient quality} on the first testing point and then \textit{pass} or \textit{fail} at the second testing point. A component that is not of sufficient quality at the first testing point will continue to be developed and may still pass at the second testing point. Three-quarters of the components are marked as \textit{sufficient quality} initially, of which nine-tenths go on to pass. Of those initially marked as \textit{insufficient quality}, only three-fifths go on to pass.
+    \begin{enumerate}
+        \item Construct a tree diagram to represent this information.
+        \item Determine the probability that a component selected at random passes at the second testing point.
+    \end{enumerate}
+    \item A bus for a particular route that is scheduled to run once per day is cancelled on 3\% of days. On the days when it is running, it is running late 12\% of the time.
+    \begin{enumerate}
+        \item Construct a tree diagram to represent this information.
+        \item Calculate the probability that the bus is running on time on any given day.
+    \end{enumerate}
+    \item A pencil case contains pencils of three different types: four HB pencils, two 2B pencils and one 2H pencil. Two pencils are selected at random, without replacement.
+    \begin{enumerate}
+        \item Construct a tree diagram to represent the types of the two pencils selected.
+        \item Find the probability that both pencils selected are of the same type.
+        \item Determine the probability that the two pencils selected are both of a different type.
+        \item Find the probability that neither pencil selected is an HB pencil.
+    \end{enumerate}
+    \item A motorist passes through three sets of traffic lights on their way to work each day. If the probability of having to stop at a red light for each set of lights is 0.6, 0.2 and 0.3 respectively then find the probability that:
+    \begin{enumerate}
+        \item The motorist does not have to stop.
+        \item The motorist has to stop at least once.
+        \item The motorist has to stop at exactly two of the sets of lights.
+    \end{enumerate}
+\end{enumerate}
+\vspace{0.8cm}
+
+\pagebreak
+
+## Venn Diagrams and Set Notation
+
+Venn diagrams are used to show which elements of a set belong or don't belong to one or more subsets. They can offer an alternative way of representing information about a sample space that might otherwise be shown in a table. For instance, the table below shows the twelve dishes from a restaurant's main course menu, broken down by whether or not each is *gluten-free* ($G$) and whether or not each is *vegan* ($V$). Beside it is a Venn diagram showing the same information.
+
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}{.5\textwidth}
+  \centering
+    \begin{tabular}{| c|c c|} 
+      \hline
+          & vegan & not vegan\\ 
+      \hline
+         gluten-free & 2 & 1\\ 
+         not gluten-free & 3 & 6\\ 
+     \hline
+    \end{tabular}
+\captionof{figure}{\textit{Table}}
+  \label{fig:test1}
+\end{minipage}%
+  \centering
+\begin{minipage}{.5\textwidth}
+  \centering
+\begin{tikzpicture}[fill=white, line width=0.5pt, font=\footnotesize]
+\draw (-0.3,-0.2) circle (1.2) (-0.3,0.9)  node [text=black,above] {$G$};
+\draw (1.3,-0.2) circle (1.2) (1.3,0.9)  node [text=black,above] {$V$};
+\draw (-2.5,-1.8) rectangle (3.5,1.8) node [text=black,above] {$S$};
+\draw[fill=black] (-0.6,-0.1) circle (0.06);
+\draw[fill=black] (0.5,0.1) circle (0.06);
+\draw[fill=black] (0.6,-0.4) circle (0.06);
+\draw[fill=black] (1.3,0) circle (0.06);
+\draw[fill=black] (1.7,0.3) circle (0.06);
+\draw[fill=black] (1.9,-0.4) circle (0.06);
+\draw[fill=black] (-2,-0.7) circle (0.06);
+\draw[fill=black] (-1,1.3) circle (0.06);
+\draw[fill=black] (0.5,1.4) circle (0.06);
+\draw[fill=black] (2,1.5) circle (0.06);
+\draw[fill=black] (2.8,0.4) circle (0.06);
+\draw[fill=black] (3,-1) circle (0.06);
+\end{tikzpicture}
+\captionof{figure}{\textit{Venn diagram}}
+  \label{fig:test1}
+\end{minipage}
+\end{figure}
+
+### Complements, Intersections and Unions {-}
+
+So far, *descriptive* words have been used to refer to different sets of outcomes. Using *set notation*:
+
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+            Description & Set notation & Name\\
+        \hline \rule{0pt}{3ex}  
+            \textit{not} $A$ & $\overline{A}$ or $A'$ & Complement of $A$\\
+            $A$ \textit{and} $B$ & $A\cap B$ & Intersection of $A$ and $B$\\
+            $A$ \textit{or} $B$ & $A\cup B$ & Union of $A$ and $B$\\[1ex]
+        \hline
+    \end{tabular}
+\end{center}
+
+Venn diagrams help illustrate these. Note that *capital letters* are commonly used to represent events.
+
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}[t]{.33\textwidth}
+  \centering
+\begin{tikzpicture}[line width=0.5pt, font=\footnotesize]
+\fill [gray!15] (-2.1,-1.7) rectangle (3.1,1.5);
+\fill [white] (-0.3,-0.2) circle (1.2);
+\draw (-0.3,-0.2) circle (1.2) (-0.3,0.9)  node [text=black,above] {$A$};
+\draw (1.3,-0.2) circle (1.2) (1.3,0.9)  node [text=black,above] {$B$};
+\draw (-2.1,-1.7) rectangle (3.1,1.5) node [text=black,above] {$S$};
+\end{tikzpicture}
+\captionof{figure}{$\overline{A}$ or $A'$}
+  \label{fig:test1}
+  \label{fig:test1}
+\end{minipage}%
+  \centering
+\begin{minipage}[t]{.33\textwidth}
+  \centering
+\begin{tikzpicture}[fill=white, line width=0.5pt, font=\footnotesize]
+\scope
+\clip (-0.3,-0.2) circle (1.2);
+\fill[gray!15] (1.3,-0.2) circle (1.2);
+\endscope
+\draw (-0.3,-0.2) circle (1.2) (-0.3,0.9)  node [text=black,above] {$A$};
+\draw (1.3,-0.2) circle (1.2) (1.3,0.9)  node [text=black,above] {$B$}
+      (-2.1,-1.7) rectangle (3.1,1.5) node [text=black,above] {$S$};
+\end{tikzpicture}
+\captionof{figure}{$A\cap B$}
+  \label{fig:test1}
+\end{minipage}%
+  \centering
+\begin{minipage}[t]{.33\textwidth}
+  \centering
+\begin{tikzpicture}[fill=white, line width=0.5pt, font=\footnotesize]
+\fill[gray!15] (-0.3,-0.2) circle (1.2) (-0.3,0.9);
+\draw[fill=gray!15] (1.3,-0.2) circle (1.2) (1.3,0.9)  node [text=black,above] {$B$};
+\draw (-0.3,-0.2) circle (1.2) (-0.3,0.9)  node [text=black,above] {$A$};
+\draw (-2.1,-1.7) rectangle (3.1,1.5) node [text=black,above] {$S$};
+\end{tikzpicture}
+\captionof{figure}{$A\cup B$}
+  \label{fig:test1}
+\end{minipage}
+\end{figure}
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} A dish is picked at random from the twelve on the main course menu shown in the Venn diagram above. State the value of $\text{P}(G\cap V)$.
+
+\tcblower
+\textbf{Solution:}
+
+$\text{P}(G\cap V)=\dfrac{2}{12}=\dfrac{1}{6}$
+
+\end{tcolorbox}
+
+\pagebreak
+
+[]{#ex24q}
+
+#### [Exercise 2.4](#ex24a) {-}
+
+\begin{enumerate}
+    \item One of the nine elements shown on the Venn diagram below is selected at random. State:
+    \begin{multicols}{2}
+    \null\vfill
+    \vspace{-0.4cm}
+        \begin{enumerate}
+        \begin{multicols}{2}
+            \item $\text{P}(A)$
+            \item $\text{P}(B)$
+            \item $\text{P}(\overline{A})$
+            \item $\text{P}(\overline{B})$
+            \item $\text{P}(A\cap B)$
+            \item $\text{P}(A\cup B)$
+            \item $\text{P}(\overline{A}\cap B)$
+            \item $\text{P}(A\cap \overline{B})$
+        \end{multicols}
+        \end{enumerate}  
+    \vfill\null
+    \columnbreak
+    \begin{center}
+    \begin{tikzpicture}[fill=white, line width=0.5pt, font=\footnotesize]
+        \draw (-0.7,0) circle (1.2) (-0.7,1.2)  node [text=black,above] {\text{A}};
+        \draw (0.7,0) circle (1.2) (0.7,1.2)  node [text=black,above] {\text{B}}
+              (-2.8,-1.5) rectangle (2.8,1.7) node [text=black,below right] {$S$};
+        \draw[fill=black] (-2.2,0.4) circle (0.08);
+        \draw[fill=black] (-1.9,-0.8) circle (0.08);
+        \draw[fill=black] (0,0.4) circle (0.08);
+        \draw[fill=black] (-0.9,-0.6) circle (0.08);
+        \draw[fill=black] (-0.8,0.1) circle (0.08);
+        \draw[fill=black] (0.9,-0.2) circle (0.08);
+        \draw[fill=black] (0.2,0.1) circle (0.08);
+        \draw[fill=black] (2.1,0.2) circle (0.08);
+        \draw[fill=black] (0.1,-0.5) circle (0.08);
+    \end{tikzpicture}
+    \end{center}
+    \end{multicols}
+    \vspace{-0.4cm}
+    \item The Venn diagram below, containing events $M$ and $N$, shows the \textit{probabilities} associated with each subset.
+    \begin{multicols}{2}
+    \begin{center}
+    \begin{tikzpicture}[fill=white, line width=0.5pt, font=\footnotesize]
+    \draw (-0.7,0) circle (1.2) (-0.7,1.2)  node [text=black,above] {$M$};
+    \draw (0.7,0) circle (1.2) (0.7,1.2)  node [text=black,above] {$N$}
+      (-2.5,-1.7) rectangle (2.5,1.7) node [text=black,below right] {$S$};
+    \node at (-2,-1.3) {$0.3$};
+    \node at (-1,0.5) {$0.15$};
+    \node at (1.1,-0.2) {$0.2$};
+    \node at (0,0) {$x$};
+    \end{tikzpicture}
+    \end{center}
+    \columnbreak
+    \null
+    \vspace{-0.3cm}
+    \begin{enumerate}
+        \item State the value of $x$.
+        \item State:
+        \begin{enumerate}
+            \item \text{P}($N$).
+            \item \text{P}($\overline{M}$).
+            \item \text{P}($M\cup N$).
+        \end{enumerate}
+    \end{enumerate}
+    \vfill\null
+    \end{multicols}
+    \vspace{-0.5cm}
+    \item Copy the Venn diagram below, writing each of the integers from 1 to 16 inclusive in an appropriate position. Then, given that an integer from 1 to 16 inclusive is selected at random, state the value of:
+    \begin{multicols}{2}
+    \begin{center}
+        \begin{tikzpicture}[fill=white, line width=0.5pt, font=\footnotesize]
+        \draw (-0.9,0) circle (1.2) (-0.9,1.2)  node [text=black,above] {\text{prime}};
+        \draw (0.9,0) circle (1.2) (0.9,1.2)  node [text=black,above] {\text{odd}}
+        (-3.2,-1.6) rectangle (3.2,1.8) node [text=black,below right] {$S$};
+    \end{tikzpicture}
+    \end{center}
+    \columnbreak
+    \null\vfill
+    \vspace{-0.2cm}
+    \begin{enumerate}
+        \begin{multicols}{2}
+            \item \text{P}(prime)
+            \item \text{P}(odd)
+            \item \text{P}( $\overline{\text{prime}}$ )
+            \item \text{P}( $\overline{\text{odd}}$ )
+            \item \text{P}(prime $\cap$ odd)
+            \item \text{P}(prime $\cup$ odd)
+            \item \text{P}($\overline{\text{prime}}$ $\cap$ odd)
+            \item \text{P}(prime $\cap$ $\overline{\text{odd}}$)
+        \end{multicols}
+    \end{enumerate}
+    \vfill\null
+    \end{multicols}
+    \vspace{-0.5cm}
+    \item 100 pupils are asked whether or not they love cats, and whether or not they love dogs, with the results shown in the table below. One pupil is to be selected at random. Let event $C$ represent "a pupil who loves cats is selected", and event $D$ represent "a pupil who loves dogs is selected". By first representing this information on a Venn diagram, find: 
+    \begin{multicols}{2}
+    \begin{enumerate}
+    \begin{multicols}{2}
+        \item \text{P}($C\cap D$)
+        \item \text{P}($C\cup D$)
+        \item \text{P}($\overline{C}\cap\overline{D}$)
+        \item \text{P}($\overline{C}\cup\overline{D}$)
+        \item \text{P}($C\cap\overline{D}$)
+        \item \text{P}($\overline{C}\cap D$)
+        \item \text{P}($C\cup\overline{D}$)
+        \item \text{P}($\overline{C}\cup D$)
+    \end{multicols}
+    \end{enumerate}
+    \columnbreak
+    \begin{center}
+    \begin{tabular}{ c|c c }
+           & love cats & do not love cats\\ 
+      \hline
+         love dogs & 34 & 12\\ 
+         do not love dogs & 45 & 9
+    \end{tabular}
+    \end{center}
+    \vfill\null
+    \end{multicols}
+    \vspace{-0.2cm}
+    \item Amongst a class of 24 pupils, seven are studying biology \textit{but not chemistry}, five are studying chemistry \textit{but not biology}, and six are studying neither biology nor chemistry. Find the probability that a pupil chosen at random is studying biology.
+    \item Of the twenty air pollution monitoring stations in an urban area, nine are showing high levels of particulate matter (PM) in the air and eight are showing high levels of nitrogen dioxide (NO$_2$) in the air, whilst five are not showing high levels of either pollutant. Determine the probability that one of the twenty stations chosen at random is showing high levels of PM \textit{and} NO$_2$.
+\end{enumerate}
+
+\pagebreak
+
+## The Addition Rule for the Union
+
+If two sets $A$ and $B$ are such that *no elements lie in both* $A$ *and* $B$, then they are said to be **mutually exclusive**. This is sometimes visualised on a digram by two *disjoint* circles, that do not intersect. In terms of probability theory, this means that the probability of the event "$A$ *and* $B$ " is 0 (impossible).
+
+\begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.5\textwidth}
+  \centering
+\begin{tikzpicture}[line width=0.5pt, font=\footnotesize]
+\draw (-0.8,-0.2) circle (1.2) (-0.8,0.9)  node [text=black,above] {$A$};
+\draw (1.8,-0.2) circle (1.2) (1.8,0.9)  node [text=black,above] {$B$};
+\draw (-2.6,-1.7) rectangle (3.6,1.5) node [text=black,below right] {$S$};
+\end{tikzpicture}
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.5\textwidth}
+  \centering
+\begin{tcolorbox}[adjusted title=For Mutually Exclusive events $A$ and $B$:,colback=black!5,colframe=black!75, halign = center,halign title = center,width=8cm,height=1.8cm]
+$\text{P}(A\cap B)=0$
+\end{tcolorbox}
+\end{minipage}
+\end{figure}
+
+If two sets $A$ and $B$ are such that *every element lies in at least one of* $A$ *or* $B$, then they are said to be **exhaustive**. This can be visualised on a Venn digram by crossing out the area of the sample space outside of the two circles. This means that the probability of the event "$A$ *or* $B$ " is 1 (certain).
+
+\begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.5\textwidth}
+  \centering
+\begin{tikzpicture}[line width=0.5pt, font=\footnotesize]
+\fill[pattern=north east lines] (-2.6,-1.7) rectangle (3.6,1.5);
+\fill[white] (-0.4,-0.2) circle (1.2);
+\fill[white] (1.4,-0.2) circle (1.2);
+\draw (-0.4,-0.2) circle (1.2) (-0.4,0.9)  node [text=black,above] {$A$};
+\draw (1.4,-0.2) circle (1.2) (1.4,0.9)  node [text=black,above] {$B$};
+\draw (-2.6,-1.7) rectangle (3.6,1.5) node [text=black,below right] {$S$};
+\end{tikzpicture}
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.5\textwidth}
+  \centering
+\begin{tcolorbox}[adjusted title=For Exhaustive events $A$ and $B$:,colback=black!5,colframe=black!75, halign = center,halign title = center,width=8cm,height=1.8cm]
+$\text{P}(A\cup B)=1$
+\end{tcolorbox}
+\end{minipage}
+\end{figure}
+
+As well as the two rules above which apply depending on whether $A$ and $B$ are know to be mutually exclusive, exhaustive, or both, the two formulae below apply for *all events* $A,B$:
+
+\begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.4\textwidth}
+  \centering
+\begin{tcolorbox}[adjusted title=The Complement of $A$:,colback=black!5,colframe=black!75, halign = center,halign title = center,width=6cm,height=1.8cm]
+$\text{P}(A)+\text{P}(\overline{A})=1$
+\end{tcolorbox}
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.6\textwidth}
+  \centering
+\begin{tcolorbox}[adjusted title=The Addition Rule for events $A$ and $B$:, halign title = center,colback=black!5,colframe=black!75, halign = center,width=9cm,height=1.8cm]
+$\text{P}(A \cup B)=\text{P}(A)+\text{P}(B)-\text{P}(A \cap B)$
+\end{tcolorbox}
+\end{minipage}
+\end{figure}
+
+It should be noted that there are generally numerous different ways to approach probability problems, including using a Venn diagram, a tree diagram or formulae. Whilst the problems on the next page have been designed to allow practice using formulae, a flexible approach may help.
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} Given events $F$ and $G$ such that ${\text{P}(\overline{F})=0.3}$, ${\text{P}(G)=0.4}$ and ${\text{P}(F\cap G)=0.1}$ show that $F$ and $G$ are exhaustive.
+
+\tcblower
+\textbf{Solution:} \begin{align*}
+\text{P}(F\cup G) & = \text{P}(F)+\text{P}(G)-\text{P}(F \cap G)\vspace{-0.5cm}\\
+& = 0.7+0.4-0.1\\
+& = 1\hspace{0.5cm}\therefore\text{ events $F$ and $G$ are exhaustive}
+\end{align*}
+\end{tcolorbox}
+
+\pagebreak
+
+[]{#ex25q}
+
+#### [Exercise 2.5](#ex25a) {-}
+
+\begin{enumerate}
+    \item Given events $X$ and $Y$ such that $\text{P}(X\cap Y)=0.3$, $\text{P}(X)=0.4$ and $\text{P}(Y)=0.5$, find $\text{P}(X\cup Y)$.
+    \item If $\text{P}(\overline{A})=\dfrac{1}{5}$, $\text{P}(B)=\dfrac{2}{3}$ and $\text{P}(A\cap B)=\dfrac{1}{2}$, determine the value of $\text{P}(A\cup B)$.
+    \item Calculate the value of $\text{P}(E\cup F)$ given $\text{P}(E)=0.32$, $\text{P}(F)=0.29$ and that events $E$ and $F$ are \textit{mutually exclusive}.
+    \item Given mutually exclusive events $C$ and $D$ such that $\text{P}(\overline{C})=\dfrac{5}{7}$ and $\text{P}(D)=\dfrac{1}{2}$, find $\text{P}(C\cup D)$.
+    \item Calculate the value of $\text{P}(A\cap B)$ if $\text{P}(A)=0.591$, $\text{P}(B)=0.472$ and $\text{P}(A\cup B)=0.9$.
+    \item If $\text{P}(\overline{X})=\dfrac{17}{80}$, $\text{P}(\overline{Y})=\dfrac{29}{40}$ and $\text{P}(X\cup Y)=\dfrac{19}{20}$, determine $\text{P}(X\cap Y)$.
+    \item Given \textit{exhaustive} events $V$ and $W$ such that $\text{P}(V)=0.4$ and $\text{P}(\overline{W})=0.2$, find $\text{P}(V\cap W)$.
+    \item Given events $H$ and $J$ such that $\text{P}(H)=\dfrac{3}{8}$, \mbox{\text{$\text{P}(H\cup J)=\dfrac{7}{9}$}} and $\text{P}(H\cap J)=\dfrac{1}{2}$, find $\text{P}(\overline{J})$.
+    \item If $X$ and $Y$ are mutually exclusive, $\text{P}(X)=0.3$ and $\text{P}(\overline{Y})=0.4$, calculate $\text{P}(X\cup Y)$.
+    \item Events $A$ and $B$ are exhaustive. If $\text{P}(A)=\dfrac{1}{3}$ and $\text{P}(B\cap A)=\dfrac{1}{6}$, calculate $\text{P}(\overline{B})$.
+    \item In a fish and chip shop, the probability that a customer's order includes both fish and chips is 0.7, whilst the probability that an order will at least include at least one of fish or chips is 0.95. If the probability that an order contains chips is 0.8, calculate the probability that an order contains fish.
+    \item If, for exhaustive events $M$ and $N$, $\text{P}(M\cap N)=\dfrac{1}{4}$ and $\text{P}(M)=\text{P}(N)$, calculate $\text{P}(\overline{N})$.
+    \item Given events $R$ and $Q$ such that $\text{P}(\overline{Q})=0.11$, $\text{P}(R\cap Q)=0.75$ and $\text{P}(R\cup Q)=0.95$, find $\text{P}(\overline{R})$.
+    \item For each pair of events, determine whether they are exhaustive or not:
+    \begin{enumerate}
+        \item $X$ and $Y$ given $\text{P}(X)=0.4$, $\text{P}(Y)=0.7$ and $\text{P}(X \cap Y)=0.2$.
+        \item $R$ and $T$ given $\text{P}(R)=\dfrac{4}{5}$, $\text{P}(\overline{T})=\dfrac{1}{10}$ and $\text{P}(T \cap R)=\dfrac{7}{10}$.
+        \item $E$ and $F$ given $\text{P}(E)=0.31$, $\text{P}(F)=0.82$ and $\text{P}(E \cap F)=0.28$.
+    \end{enumerate}
+    \item For each pair of events, determine whether they are mutually exclusive or not:
+    \begin{enumerate}
+        \item $W$ and $V$ given $\text{P}(W)=0.35$, $\text{P}(V)=0.45$ and $\text{P}(W \cup V)=0.5$.
+        \item $X$ and $Y$ given $\text{P}(X)=\dfrac{1}{3}$, $\text{P}(\overline{Y})=\dfrac{4}{5}$ and $\text{P}(X \cup Y)=\dfrac{8}{15}$.
+        \item $A$ and $B$ given $\text{P}(\overline{A})=0.5$, $\text{P}(\overline{B})=0.8$ and $\text{P}(\overline{B} \cap \overline{A})=0.3$.
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+[]{#re2q}
+
+## [Review Exercise](#re2a) {-}
+
+\begin{enumerate}
+    \item A box contains five red balls numbered from 1 to 5, and four yellow balls numbered from 1 to 4. A ball is selected at random from the box. Let \textit{yellow} be the event "the ball selected is yellow".
+    \begin{enumerate}
+        \item State \text{P}($\overline{\text{yellow}}$ $\cup$ 1).
+    \end{enumerate}
+    The ball previously selected is returned to the box. Two balls are then randomly taken from the box, without replacement.
+    \begin{enumerate}[resume]
+        \item Determine the probability that neither of the two balls taken from the box are yellow.
+    \end{enumerate}
+    \item The table below shows the pupil numbers within a school corridor during a particular period, broken down by subject and course level.
+    \begin{center}
+    \begin{tabular}{| c|c c|}
+        \hline
+             & National 5 & Higher\\
+        \hline
+            English & 21 & 15\\
+            History & 17 & 11\\
+        \hline
+    \end{tabular}
+    \end{center}
+    A pupil is selected at random to run an errand. State:
+    \begin{enumerate}
+        \item \text{P}(\text{English} $\cap$ \text{National 5})
+        \item \text{P}(\text{History} $\cup$ \text{Higher})
+    \end{enumerate}
+    \item For the exhaustive events $E$ and $F$, such that $\text{P}(F\cap E)=0.7$ and $\text{P}(\overline{E})=0.2$, determine $\text{P}(F)$.
+    \item A parking ticket machine in a remote location in the Cairngorms National Park takes payment by contactless card reader, which connects to the banking network via a 3G phone signal. One some days, the connection fails and the machine cannot take payment. When the humidity is high, the connection will fail on 18\% of days. When the humidity is not high, the connection will fail on 7\% of days. Humidity is high in the area on 34\% of days. Determine the probability on a randomly selected day of the year that the parking machine can take payment.
+    \item A board game begins with an \textit{defending} player rolling a tetrahedral die with sides numbered from 1 to 4, and a \textit{attacking} player rolling a cubical die with sides numbered from 1 to 6. The player who obtains the highest number earns a point, with a tie leading to the dice being rolled again.
+    \begin{enumerate}
+        \item Find the probability that the the first point is earned, by either player, without the dice having to be rolled again following a tie.
+        \item Find the probability that the attacking player earns the first point.
+    \end{enumerate}
+    If the attacking player wins three points in a row, they are then awarded a \textit{bonus roll} in which they roll \textit{both} dice and gain a bonus point if the product of the numbers obtained is greater than 16.
+    \begin{enumerate}[resume]
+        \item Determine the probability that a bonus roll results in a bonus point.
+    \end{enumerate}
+    \item The 100 members of an orchestra are shown in the table below, broken down by the section they are in and whether they can attend the upcoming concert.
+    \begin{center}
+    \begin{tabular}{| c|c c c c|}
+        \hline
+             & String & Woodwind & Brass & Percussion\\
+        \hline
+            attend & 56 & 12 & 10 & 4\\
+            not attend & 8 & 4 & 5 & 1\\
+        \hline
+    \end{tabular}
+    \end{center}
+    A member of the orchestra is selected at random. Let $B$ be the event the member selected is in the \textit{brass} section and $A$ that they can \textit{attend} the upcoming concert. State $\text{P}(B\cup \overline{A})$.
+    \item Exhaustive events $A$, $B$ and $C$ are such that $\text{P}(A)=0.25$, $\text{P}(A\cap B)=0.1$, $\text{P}(\overline{B})=0.3$ and $\text{P}(A\cup C)=0.6$. Events $A$ and $C$ are mutually exclusive. Determine the value of $\text{P}(B\cap C)$.
+\end{enumerate}
+
+\pagebreak

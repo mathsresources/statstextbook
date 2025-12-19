@@ -1,0 +1,585 @@
+# Confidence Intervals
+
+From a random sample of data from a population, the sample mean could be calculated and used as a *point estimate* for the true, unknown value of the population mean. If the sample was very small, or the variability of the data is very high, then it would not be appropriate to have a great deal of confidence in the *precision* of this value. To avoid the misleading sense of precision that point estimates on their own can give, many institutions will require *confidence intervals* to routinely be stated as part of any statistical analysis. Statistical software will often also report a confidence interval whenever a hypothesis test is performed.
+
+\begin{center}
+\textit{"A 95\% confidence interval for the mean weight of an adult pine marten, in kg, is (1.42 , 1.58)"}
+\end{center}
+
+A common misconception is that such a confidence interval can be interpreted as *"There is a 95\% probability that the true mean weight is between 1.42 and 1.58."* Care should be taken to *avoid* interpreting the significance level used as a probability relating to any particular generated confidence interval and the parameter it relates to. Instead, *"95\% confidence"* refers to the **long-run success rate of the procedure** used to generate the interval. If random samples are repeatedly taken from a distribution with population mean $\mu$, and a confidence interval produced from each, in the long-run 95\% of these intervals will contain $\mu$. The figure below shows twenty 95\% confidence intervals generated using simulated data, one of which does not contain the true value of the population mean, $\mu$, in the interval.
+
+\begin{figure}[H]
+  \centering
+\begin{tikzpicture}
+\draw[thick,dashed] (-2,0) -- (12.5,0);
+\draw (13,0) node {$\mu$};
+\draw (1/2,0.1-1.96) -- (1/2,0.1+1.96);
+\draw (2/2,0.78-1.96) -- (2/2,0.78+1.96);
+\draw (3/2,1.59-1.96) -- (3/2,1.59+1.96);
+\draw (4/2,-0.39-1.96) -- (4/2,-0.39+1.96);
+\draw (5/2,0.3-1.96) -- (5/2,0.3+1.96);
+\draw (6/2,-0.46-1.96) -- (6/2,-0.46+1.96);
+\draw (7/2,0.07-1.96) -- (7/2,0.07+1.96);
+\draw[very thick] (8/2,2.09-1.96) -- (8/2,2.09+1.96);
+\draw (9/2,-0.61-1.96) -- (9/2,-0.61+1.96);
+\draw (10/2,-1.21-1.96) -- (10/2,-1.21+1.96);
+\draw (11/2,1.16-1.96) -- (11/2,1.16+1.96);
+\draw (12/2,0.27-1.96) -- (12/2,0.27+1.96);
+\draw (13/2,-0.67-1.96) -- (13/2,-0.67+1.96);
+\draw (14/2,0.06-1.96) -- (14/2,0.06+1.96);
+\draw (15/2,-0.57-1.96) -- (15/2,-0.57+1.96);
+\draw (16/2,-0.49-1.96) -- (16/2,-0.49+1.96);
+\draw (17/2,0.38-1.96) -- (17/2,0.38+1.96);
+\draw (18/2,0.07-1.96) -- (18/2,0.07+1.96);
+\draw (19/2,1.19-1.96) -- (19/2,1.19+1.96);
+\draw (20/2,-0.55-1.96) -- (20/2,-0.55+1.96);
+\end{tikzpicture}
+\captionsetup[figure]{labelformat=empty}%
+  \centering
+\end{figure}
+
+\pagebreak
+
+## A \textit{z}-Confidence Interval for the Population Mean
+
+Given a *random sample* from an distribution that is *normally distributed* with *known population standard deviation* $\sigma$, a $(1-\alpha)\%$ $z$-*confidence interval* for the population mean, $\mu$, can be calculated:
+
+\begin{centering}
+\tcbset{width=10cm}
+\begin{tcolorbox}[adjusted title=A $z$-confidence interval for the population mean:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+A $(1-\alpha)\%$ CI for $\mu$ is: $\bar{x}\pm z_{1-\alpha/2} \times \cfrac{\sigma}{\sqrt{n}}$
+\end{tcolorbox}
+\end{centering}
+
+Note that the conditions required match those for a $z$-test for the population mean. 
+
+A sketch can be used to help find the required $z$-value. In this course, only *two-tailed* confidence intervals will calculated.
+
+\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\textbf{Problem:} The masses of ceramic dishes sold by a kitchenware shop are known to be normally distributed with a standard deviation of 12g. A random sample of 15 such ceramic dishes are weighed and the sample mean is 430 grams. Obtain a 95\% confidence interval for the mean mass of a ceramic dish.
+
+\tcblower
+\textbf{Solution:}
+$\bar{x}=430$, $n=15$, $\sigma=12$\\
+
+\vspace{-0.8cm}
+
+\hspace{10cm}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [draw=none, fill=black!50, domain=-3:-1.96] {gauss(x, 0, 1)} \closedcycle;
+\addplot [draw=none, fill=black!50, domain=1.96:3] {gauss(x, 0, 1)} \closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(-1.96,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\pgfmathsetmacro\valueC{gauss(1.96,0,1)}
+\draw [semithick, black]  (axis cs:-1.96,0) -- (axis cs:-1.96,\valueA);
+\draw [semithick, black]  (axis cs:1.96,0) -- (axis cs:1.96,\valueC);
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 0,\valueB)  {$z$};
+\node[below] at (axis cs: -1.96, 0) {$-1.96$};
+\node[above] at (axis cs: -2.3,\valueA) {2.5\%};
+\node[below] at (axis cs: 1.96, 0) {$1.96$};
+\node[above] at (axis cs: 2.3,\valueC) {2.5\%};
+\node[above] at (axis cs: 0,\valueC) {95\%};
+\end{axis}
+\end{tikzpicture}
+
+\vspace{0.2cm}
+
+A $95\%$ CI for $\mu$ is: \hspace{0.5cm}$430 \pm 1.96 \times \cfrac{12}{\sqrt{15}}$\hspace{0.5cm}=\hspace{0.5cm}$430 \pm 6.07$\\
+
+Therefore a 95\% confidence interval for the population mean dish mass, in grams, is $(423.93 , 436.07)$.\\
+
+\end{tcolorbox}
+
+It should be observed that the $z$-confidence interval is symmetrical with the **sample mean at its centre**. The width of the interval is determined by the **standard error** and the confidence level required.
+
+\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\textbf{Problem:} An airline picks a random sample of 25 of their flights and records how long it takes for all the passengers to depart the plane from the time the cabin doors are opened. The sample mean of 6.5 minutes is obtained, and a sample standard deviation of 0.8 minutes. Determine a 90\% confidence interval for the mean time taken for all passengers to depart one of the airline's planes, and interpret this confidence interval.
+
+\tcblower
+\textbf{Solution:}
+$\bar{x}=6.5$, $n=25$, $s=0.8$\\
+
+Since $n>20$ a $z$-confidence interval is appropriate, and $\sigma\approx0.8$.\\
+
+\vspace{-1.6cm}
+
+\hspace{11cm}
+\vspace{-0.5cm}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [draw=none, fill=black!50, domain=-3:-1.64] {gauss(x, 0, 1)} \closedcycle;
+\addplot [draw=none, fill=black!50, domain=1.64:3] {gauss(x, 0, 1)} \closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(-1.64,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\pgfmathsetmacro\valueC{gauss(1.64,0,1)}
+\draw [semithick, black]  (axis cs:-1.64,0) -- (axis cs:-1.64,\valueA);
+\draw [semithick, black]  (axis cs:1.64,0) -- (axis cs:1.64,\valueC);
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 0,\valueB)  {$z$};
+\node[below] at (axis cs: -1.64, 0) {$-1.64$};
+\node[above] at (axis cs: -2.1,\valueA) {5\%};
+\node[below] at (axis cs: 1.64, 0) {$1.64$};
+\node[above] at (axis cs: 2.1,\valueC) {5\%};
+\node[above] at (axis cs: 0,\valueC) {90\%};
+\end{axis}
+\end{tikzpicture}
+
+\vspace{0.4cm}
+
+A $90\%$ CI for $\mu$ is: \hspace{0.5cm}$6.5 \pm 1.64 \times \cfrac{0.8}{\sqrt{25}}$\hspace{0.5cm}=\hspace{0.5cm}$6.5 \pm 0.26\quad \therefore\quad (6.24 , 6.76)$\\
+
+90\% of all confidence intervals generated by this procedure will contain the value of the population mean.
+
+\end{tcolorbox}
+
+\pagebreak
+
+#### Exercise 11.1 {-}
+
+\begin{enumerate}
+    \item The height of a red panda is known to be normally distributed with a standard deviation of 2cm. A random sample of 8 red pandas have their heights measured, with a sample mean of 57cm obtained. Obtain a 99\% confidence interval for the mean height of a red panda. 
+    \item An airline knows from historical data that the mass of the hold baggage for a passenger is normally distributed with a standard deviation of 2.1kg. The mass of the hold baggage is measured for a random sample of 11 passengers, with a sample mean of 13.8kg calculated. Assuming that the standard deviation remains unchanged, obtain a 90\% confidence interval for the mean mass of the hold luggage for the airline's passengers.
+    \item The time taken for a chef to make a particular dish from their restaurant's main course menu is normally distributed, with the standard deviation known to be 0.9 minutes. On 7 randomly chosen occasions, the time it takes to make the dish is measured, with a sample mean of 15.2 minutes obtained. Calculate a 95\% confidence interval for the mean amount of time it takes for the chef to make the dish.
+    \item The speeds of heavy goods vehicles (HGVs) crossing an old, rural bridge are normally distributed, with a historically observed standard deviation of 2.6 mph. Following improvements to the surface of the road on the bridge, the local council wishes to know what the mean speed of HGVs crossing the bridge is. The speeds of 17 randomly selected HGVs are recorded, with a sample mean of 39 mph. Obtain a 99\% confidence interval for the mean speed of HGVs crossing the bridge, stating one assumption required.
+    \item The masses of the eggs laid by the chickens on a farm are normally distributed. The farmer weighs 25 randomly chosen eggs, in grams, obtaining the following summary statistics:
+    \begin{center}
+    \begin{tabular}{c c c} 
+      $n=25$ & $\Sigma x=1254$ & $\Sigma x^2=63186$\\ 
+    \end{tabular}
+    \end{center}
+    Obtain a 90\% confidence interval for the mean mass of the chicken eggs laid by the chickens at the farm.
+    \item A restaurant manager is concerned about the time a table has to wait to have a drinks order taken once they have been seated. On 30 random occasions throughout a week, the time taken is recorded, in minutes. The manager puts the data into some statistical software and obtains the following summary data:\vspace{0.5cm}\\
+    \texttt{x -> drinks order wait data}\\
+    \texttt{n = 30}\qquad \texttt{sum of x = 171}\qquad \texttt{x bar = 5.7}\qquad \texttt{SD of x = 0.8}\vspace{0.5cm}\\
+    Obtain a 95\% confidence interval for the mean wait time.
+    \item A workers' rights organisation wishes to understand the number of hours worked per week by full-time employees of the local council. A random sample of 24 employees gives a sample mean of 38.2 hours and a standard deviation of 1.4 hours.
+    \begin{enumerate}
+        \item Obtain a 95\% confidence interval for the mean number of hours worked by full-time employees of the local council.
+        \item The organisation would like a narrower confidence interval, and one organisation member suggests that obtaining instead a 99\% confidence interval will provide this. Calculate the width of a 99\% confidence interval for the mean hours worked and comment on the member's suggestion.
+        \item The organisation finally decides to stick with a 95\% confidence interval, but to extend the sample size to obtain a confidence interval with width no greater than 1. Determine the minimum number of \textbf{additional} full-time workers that must be included in the sample in order to obtain this, assuming the sample standard deviation remains at 1.4 hours.
+    \end{enumerate}
+    \item For a 90\% $z$-confidence interval for the population mean to have a width of 12.4, based on a sample of size 7, calculate the value of $\sigma$.
+\end{enumerate}
+
+\pagebreak
+
+## Confidence Intervals and Hypothesis Testing
+
+The calculations involved in calculating a *two-tailed* $z$-confidence interval for the population mean correspond with those for a *two-tailed* $z$-test for the population mean. Such a confidence interval could therefore allow inferences to be made about the population mean, $\mu$.
+
+\begin{centering}
+\tcbset{width=17cm}
+\begin{tcolorbox}[adjusted title=Inference using confidence intervals:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+If a given value for $\mu$ is \textbf{outwith a calculated confidence interval} then this would \textit{support a claim} that it is \textit{not the true value of the population mean}.\\
+\vspace{0.5cm}
+If a given value for $\mu$ is \textbf{within a calculated confidence interval} then this would \textit{not support a claim} that it is not the true value of the population mean.
+\end{tcolorbox}
+\end{centering}
+
+In this course, it should be noted that an instruction to perform a \textit{test} requires a hypothesis test to be conducted using either a $p$-value or a test statistic, rather than a confidence interval.
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} The mass of food eaten each day by a family's cat is normally distributed with a mean of 280 grams and a standard deviation of 13 grams. Recently, they notice that their cat doesn't seem to eat the same amount of food as it used to. On 14 randomly chosen days they measure the mass of food that their cat eats, obtaining a mean of 273 grams per day. Stating an assumption required, obtain a 95\% confidence interval for the mass of food eaten daily by their cat, and comment on their concern that their cat doesn't eat the same amount of the food as it did previously.
+
+\tcblower
+\textbf{Solution:}
+$\bar{x}=273$, $n=14$, $\sigma=13$\\
+
+\vspace{0.1cm}
+
+\textit{Assume that the standard deviation of mass of food eaten per day is unchanged from 13 grams.}
+
+\vspace{0.1cm}
+
+\hspace{5cm}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [draw=none, fill=black!50, domain=-3:-1.96] {gauss(x, 0, 1)} \closedcycle;
+\addplot [draw=none, fill=black!50, domain=1.96:3] {gauss(x, 0, 1)} \closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(-1.96,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\pgfmathsetmacro\valueC{gauss(1.96,0,1)}
+\draw [semithick, black]  (axis cs:-1.96,0) -- (axis cs:-1.96,\valueA);
+\draw [semithick, black]  (axis cs:1.96,0) -- (axis cs:1.96,\valueC);
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 0,\valueB)  {$z$};
+\node[below] at (axis cs: -1.96, 0) {$-1.96$};
+\node[above] at (axis cs: -2.4,\valueA) {-2.5\%};
+\node[below] at (axis cs: 1.96, 0) {$1.96$};
+\node[above] at (axis cs: 2.4,\valueC) {2.5\%};
+\node[above] at (axis cs: 0,\valueC) {95\%};
+\end{axis}
+\end{tikzpicture}
+
+\vspace{0.5cm}
+A $95\%$ CI for $\mu$ is: \hspace{0.5cm}$273 \pm 1.96 \times \cfrac{13}{\sqrt{14}}$\hspace{0.5cm}=\hspace{0.5cm}$273 \pm 6.81$\\
+
+\vspace{0.1cm}
+
+Therefore a 95\% confidence interval for the mean mass of food now being eaten daily by their cat, in grams, is $(266.19 , 279.81)$.\\
+
+\vspace{0.1cm}
+
+Since 280 lies outwith the confidence interval, this supports their concern that the cat is not eating the same mean daily mass of 280 grams as it was before.
+
+\end{tcolorbox}
+
+\pagebreak
+
+#### Exercise 11.2 {-}
+
+\begin{enumerate}[itemsep=16pt]
+    \item A packing process packages ground coffee into bags. The mass of each bag is normally distributed with standard deviation 15g. A random sample of 25 bags is taken and the sample mean is found to be 505g. Obtain a 95\% confidence interval for the mean mass of ground coffee in a bag, and comment on the claim that the mean mass being dispensed is not the 500g that it is supposed to be.
+    \item The lengths of metal bars produced by a particular machine are normally distributed with standard deviation 12cm. The machine is serviced, after which a random sample of 80 bars gives a mean length of 423cm.
+    \begin{enumerate}
+        \item Obtain a 99\% confidence interval for the mean length of the bars now produced, assuming the standard deviation remains the same.
+        \item Comment on the concern that that the mean bar length produced by the machine is no longer the 420cm that it was prior to it being serviced.
+    \end{enumerate}
+    \item A large school is studying the amount of money its teachers spend on photocopying as it prepares its budget for the next academic year. A random sample of 23 teachers gives a mean spend of £10.90 per year and a standard deviation of £2.30. Obtain a 90\% confidence interval for the mean spend per teacher each year, and comment on the suggestion that the figure of £12 used previously is still accurate.
+    \item A sports statistician is analysing the number of goals scored in games of football. A random sample of 35 games gives a sample mean of 2.7 goals and a sample standard deviation of 0.6 goals. Obtain a 99\% confidence interval for the mean number of goals scored in a game, and comment on their claim that the number of goals scored has changed from the historically observed mean of 2.5 goals per game.
+    \item Extensive records of the heights of mature oak trees throughout the 1970s and 1980s in some woodland show that they are normally distributed with a mean of 21 metres and a standard deviation of 1.5 metres. Recently, a random sample of 30 mature oak trees in the woodland trees yielded a sample mean of 20.4 metres.
+    \begin{enumerate}
+        \item Stating one assumption required, obtain a 90\% confidence interval for the mean height of mature oak trees in the woodland now.
+        \item Comment on the suggestion that the mean height of mature oak trees in the woodland has changed.
+    \end{enumerate}
+    \item A researcher is examining a statistical report on the salaries of delivery drivers in a city. She sees that a random sample of full-time delivery drivers in the city were asked their annual salaries. The report includes computer output related to a $z$-test on the hypothesis that the mean salaries for the delivery drivers is different to the national mean of £30 000. The report concludes that there is not sufficient evidence to suggest that the mean salary of delivery drivers in the city is different to the that seen nationally.\vspace{0.5cm}\\
+    \texttt{z-test for the population mean}\\
+    \texttt{n = 22}\qquad \texttt{sample mean = 29300}\qquad \texttt{sample SD = 1720}\\
+    \texttt{alternative hypothesis: true mean is not equal to 30000}\\
+    \texttt{z = -1.91}\qquad \texttt{p-value = 0.0563}\\
+    \vspace{0.3cm}
+    \begin{enumerate}
+        \item Obtain a 95\% confidence interval for the mean annual salary of delivery drivers in the city.
+        \item With reference to the confidence interval, comment on whether this confidence interval supports the conclusion made by the report.
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+## A \textit{t}-Confidence Interval for the Population Mean
+
+Given a random sample of data from an underlying population that is *normally distributed*, a $t$-confidence interval can be calculated using the *sample standard deviation*, $s$. The conditions for valid use of the a $t$-confidence interval match those for a one-sample $t$-test, with the degrees of freedom calculated as $\nu=n-1$.
+
+\begin{centering}
+\tcbset{width=10cm}
+\begin{tcolorbox}[adjusted title=A $t$-confidence interval for the population mean:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+A $(1-\alpha)\%$ CI for $\mu$ is: $\bar{x}\pm t_{n-1,1-\alpha/2} \times \cfrac{s}{\sqrt{n}}$
+\end{tcolorbox}
+\end{centering}
+
+As with a $z$-confidence interval, a $t$*-confidence interval* can be used in a similar way to **_two-tailed_** *one sample *$t$*-test for the population mean*. 
+
+\vspace{0.5cm}
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} Seven mid-terrace houses in Fife are randomly chosen to have their electricity usage for 24 hours recorded. The results, in kWh, are:
+
+  \begin{center}
+  \begin{tabular}{c c c c c c c} 
+      7.8 & 10.1 & 8.4 & 9.8 & 8.3 & 9.4 & 7.3\\ 
+  \end{tabular}
+  \end{center}
+
+Stating any assumption required, determine a 99\% confidence interval for the mean daily electricity usage of mid-terrace houses in Fife, and comment on the claim that their electricity consumption is not the same as the mean of 9.7 kWh used by \textit{semi-detached} houses in Fife. 
+
+\tcblower
+\textbf{Solution:}
+$\bar{x}=8.729$, $n=7$, $s=1.055$\\
+
+\textit{Assume the underlying population of daily energy usage is normally distributed.}\\
+
+\hspace{5cm}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [draw=none, fill=black!50, domain=-3:-2.5] {gauss(x, 0, 1)} \closedcycle;
+\addplot [draw=none, fill=black!50, domain=2.5:3] {gauss(x, 0, 1)} \closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(-2.5,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\pgfmathsetmacro\valueC{gauss(2.5,0,1)}
+\draw [semithick, black]  (axis cs:-2.5,0) -- (axis cs:-2.5,\valueA);
+\draw [semithick, black]  (axis cs:2.5,0) -- (axis cs:2.5,\valueC);
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 0,\valueB)  {$t_6$};
+\node[below] at (axis cs: -2.5, 0) {$-3.707$};
+\node[above] at (axis cs: -2.8,\valueA) {0.5\%};
+\node[below] at (axis cs: 2.5, 0) {$3.707$};
+\node[above] at (axis cs: 2.8,\valueC) {0.5\%};
+\node[above] at (axis cs: 0,\valueC) {99\%};
+\end{axis}
+\end{tikzpicture}
+
+\vspace{0.5cm}
+A $99\%$ CI for $\mu$ is: \hspace{0.5cm}$8.729 \pm 3.707 \times \cfrac{1.055}{\sqrt{7}}$\hspace{0.5cm}=\hspace{0.5cm}$8.729 \pm 1.478$\\
+
+\vspace{0.1cm}
+
+Therefore a 99\% CI for the mean daily electricity usage of mid-terrace houses in Fife, in kWh, is $(7.251 , 10.207)$.\\
+
+\vspace{0.1cm}
+
+Since 9.7 kWh is within the confidence interval, there is insufficient evidence here to support the claim that mid-terrace houses and semi-detached houses in Fife use different mean amounts of electricity.
+
+\end{tcolorbox}
+
+\pagebreak
+
+#### Exercise 11.3 {-}
+
+\begin{enumerate}[itemsep=16pt]
+    \item As part of a project to better understand acidity levels in lakes in England, a random sample of 8 lakes are selected and the pH level of each measured. The pH levels observed were:
+    \begin{center}
+    \begin{tabular}{c c c c c c c c} 
+      6.7 & 7.1 & 8.3 & 7.4 & 7.6 & 6.8 & 7.0 & 8.1\\ 
+    \end{tabular}
+    \end{center}
+    Obtain a 95\% confidence interval for the mean pH level of lakes in England.
+    \item EnergyPower makes replacement phone batteries. The capacity of the batteries is normally distributed with a mean of 4500 mAH. A phone repair store is concerned that a recent large delivery of EnergyPower batteries may not be genuine, and measures the capacity of a random sample of 7 batteries. The results, in mAH, are:
+    \begin{center}
+    \begin{tabular}{c c c c c c c} 
+      4780 & 4120 & 4340 & 4360 & 4110 & 4570 & 4390\\ 
+    \end{tabular}
+    \end{center}
+    Obtain a 99\% confidence interval for the mean capacity of the batteries delivered and comment on their concern that they are not genuine EnergyPower batteries.
+    \item The lifespan of a type of light bulb made by a brand is normally distributed. A consumer watchdog records the lifespan of a random sample of ten such bulbs and obtains the following summary statistics, in hours:
+    \begin{center}
+    \begin{tabular}{c c c} 
+      $n=10$ & $\Sigma x=9920$ & $\Sigma x^2=9868100$\\ 
+    \end{tabular}
+    \end{center}
+    Obtain a 90\% confidence interval for the mean lifespan of the bulbs.
+    \item A camera tripod can supposedly safely hold masses of up to 4.5kg. A photography shop disputes this figure, and randomly selects 10 tripods. Each is loaded progressively with heavier masses until it fails. The results, in kg are summarised in the following computer output:\vspace{0.5cm}\\
+    \texttt{summary(tripod mass data)}\\
+    \texttt{n = 10}\quad \texttt{median = 4.05}\quad \texttt{mean = 4.05}\quad\\ \texttt{sum of x = 40.5}\quad \texttt{sum of x squared = 165.49}\\ \texttt{min = 3.40}\quad \texttt{max = 4.70}\\
+    \vspace{0.3cm}
+    \begin{enumerate}
+        \item State an assumption required in order to calculate a confidence interval for the mean mass a tripod can withstand before failure.
+        \item Obtain a 99\% confidence interval for the mean mass the tripods can support, and comment on the claim that the 4.5kg figure stated is not correct.
+    \end{enumerate}
+    \item The amount of sugar contained in frozen pizzas, per 100g, is normally distributed. A random sample of 8 brands of frozen pizza gives the following sugar content per 100g, measuring in grams:
+    \begin{center}
+    \begin{tabular}{c c c c c c c c} 
+      3.5 & 2.1 & 5.3 & 4.4 & 3.4 & 2.2 & 4.1 & 5.0\\ 
+    \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item Obtain a 95\% confidence interval for the mean sugar content of frozen pizzas, and comment on a statement on a nutrition website that the mean amount is 5 grams.
+        \item Determine the minimum sample size required for an interval of width 0.5 grams, if the sample standard deviation remains the same.
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+## A \textit{z}-Confidence Interval for the Population Proportion
+
+In Chapter 9 a *normal approximation* to the distribution of the sample proportion, $\hat{P}$, was introduced, with a standard error of $\sqrt{\cfrac{pq}{n}}$, where $p$ is the null-hypothesised *population proportion*. When calculating a $z$-confidence interval for the population proportion, it is necessary to instead use the \textbf{sample proportion}, $\hat{p}$, to \textit{estimate} the standard error as $\sqrt{\cfrac{\hat{p}\hat{q}}{n}}$.
+
+\vspace{0.5cm}
+
+\begin{centering}
+\tcbset{width=10cm}
+\begin{tcolorbox}[adjusted title=A $z$-confidence interval for the population proportion:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+A $(1-\alpha)\%$ CI for $p$ is: $\hat{p}\pm z_{1-\alpha/2} \times \sqrt{\cfrac{\hat{p}\hat{q}}{n}}$
+\end{tcolorbox}
+\end{centering}
+
+\vspace{0.5cm}
+
+As for a $z$-test for proportion, the conditions for validity are that the data is from a *random sample* and that $n\hat{p},n\hat{q}>5$. Since a *normal approximation to the binomial distribution* is being used (see Chapter 10, Section 10.8), it is often referred to as an *approximate confidence interval*.
+
+\vspace{0.5cm}
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} A tech website surveys a random selection of its subscribers and finds that 41 out of 50 of them have changed the password for their WiFi router from the default one as recommended by experts. Obtain an approximate 95\% confidence interval for the proportion of its subscribers that have changed their router's password.   
+
+\vspace{0.5cm}
+
+\tcblower
+\textbf{Solution:}
+$\hat{p}=\frac{41}{50}=0.82$, $\hat{q}=0.18$, $n=50$\\
+
+\hspace{5cm}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [draw=none, fill=black!50, domain=-3:-1.96] {gauss(x, 0, 1)} \closedcycle;
+\addplot [draw=none, fill=black!50, domain=1.96:3] {gauss(x, 0, 1)} \closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(-1.96,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\pgfmathsetmacro\valueC{gauss(1.96,0,1)}
+\draw [semithick, black]  (axis cs:-1.96,0) -- (axis cs:-1.96,\valueA);
+\draw [semithick, black]  (axis cs:1.96,0) -- (axis cs:1.96,\valueC);
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 0,\valueB)  {$z$};
+\node[below] at (axis cs: -1.96, 0) {$-1.96$};
+\node[above] at (axis cs: -2.4,\valueA) {-2.5\%};
+\node[below] at (axis cs: 1.96, 0) {$1.96$};
+\node[above] at (axis cs: 2.4,\valueC) {2.5\%};
+\node[above] at (axis cs: 0,\valueC) {95\%};
+\end{axis}
+\end{tikzpicture}
+
+\vspace{0.5cm}
+
+A $95\%$ CI for $p$ is: \hspace{0.5cm} = $0.82 \pm 1.96 \times \sqrt{\cfrac{0.82\times0.18}{50}}$\hspace{0.5cm}=\hspace{0.5cm}$0.82 \pm 0.060$\\
+
+\vspace{0.1cm}
+
+Therefore an approximate 95\% confidence interval for the proportion of the website's readers that have changed their router's password is $(0.760 , 0.880)$\\
+
+\end{tcolorbox}
+
+\vspace{0.5cm}
+
+Given the potential for confusion between the population proportion $p$ and the sample proportion $\hat{p}$, as well as $q$ and $\hat{q}$, it is recommended to check all working carefully to ensure the correct notation is being used.
+
+\newpage
+
+#### Exercise 11.4 {-}
+
+\begin{enumerate}[itemsep=18pt]
+    \item A newspaper conducts a survey to explore the proportion of its readers that are car owners. In a random sample of 312 readers there are 208 car owners. Obtain an approximate 99\% confidence interval for the proportion of car owners amongst the newspaper's readers, justifying the method used.
+    \item A sample of 25 pupils in a school are asked whether they prefer cats or dogs, and only 7 prefer cats. Obtain a 90\% confidence interval for the proportion of pupils in the school that prefer cats, stating an assumption required.
+    \item In a public opinion poll, 1000 randomly chosen electors were asked whether they would vote for the 'Purple Party' at the next election, and 357 replied 'yes'. Obtain an approximate 95\% confidence interval for the true proportion of electors that intend to vote for the 'Purple Party' at the next election.
+    \item The proportion of left-handed people in the general population is 10\%. A random sample of 400 professional artists found that 47 were left-handed. Obtain a 95\% confidence interval for the proportion of professional artists that are left-handed, and comment on the claim that the proportion of left-handed artists is not the same as that seen in the general population.
+    \item A seed company sells pansy seeds in mixed packets and claims that 20\% of the resulting plants will have red flowers. A packet of seeds is sown by a gardener who finds that only 9 out of 82 plants have red flowers. Obtain an approximate 99\% confidence interval for the proportion of plants that have red flowers, and comment on whether this supports the seed company's claim.
+    \item A particular gene is historically thought to be present in the DNA of 4\% of people. Taking advantage of the increased affordability and availability of genetic testing, a charity randomly selects 240 people to be tested for the gene. Of the 240 people in the sample, 13 are found to have the gene. Obtain an approximate 95\% confidence interval for the proportion of people that have the gene, and comment on the suggestion that the 4\% figure is not correct.
+    \item The proportion of students at a university that subscribe to a music streaming service is thought to be between 45\% and 75\%. A random sample of $n$ students gives a sample proportion of 58\%. Determine the minimum sample size $n$ such that a 95\% confidence interval may be argued to support a claim that a majority of students at the university subscribe to a music streaming service.
+    \item A guitar website hosts a forum in which its users can advertise their guitars as for sale. The website claims that one in every three of the guitars listed on the forum are vintage instruments from the 1950s, 1960s and 1970s. A forum user selects at random one of the ten most recently listed guitars, then every tenth guitar after that until they have looked back over the last three months of for-sale guitars. The decade of manufacture of every guitar in the sample is recorded. The results are:
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+      \hline
+        1950s & 1960s & 1970s & 1980s & 1990s & 2000s & 2010s & 2020s\\
+      \hline
+        7 & 14 & 17 & 9 & 7 & 15 & 31 & 7\\
+      \hline
+    \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item State the type of sampling used by the forum user.
+        \item Obtain an approximate 95\% confidence interval for the proportion of guitars for sale that are vintage, manufactured in the 1950s, 1960s and 1970s.
+        \item Comment on whether the confidence interval supports the website's claim.
+    \end{enumerate}
+\end{enumerate}
+        
+
+\pagebreak
+
+## Review Exercise {-}
+
+\begin{enumerate}[itemsep=20pt]
+    \item A road safety researcher randomly selects eight cars passing by on a motorway and records their speed, in mph. The following results are obtained:
+    \begin{center}
+    \begin{tabular}{c c c c c c c c} 
+      63 & 74 & 57 & 84 & 80 & 68 & 70 & 91\\ 
+    \end{tabular}
+    \end{center}
+    Obtain a 95\% confidence interval for the mean speed of the cars passing by on the motorway, stating an assumption required.
+    \item A random sample of 50 residents of a town are asked whether or not they are aware that a proposal for a large retail park on the outskirts of the town is currently being considered by the local council. 14 of the 50 residents were aware of the proposals, whilst the rest were not. Obtain an approximate 99\% confidence interval for the proportion of the town's residents that are aware of the proposals.
+    \item The volume of wine served when a restaurant's customer orders a small glass of wine is normally distributed with a standard deviation of 1.7ml. A random sample of 32 small glasses of wine served by the restaurant gives a mean of 126.3ml per glass.
+    \begin{enumerate}
+        \item Obtain a 90\% confidence interval for the mean volume of wine served when a small glass of wine is ordered by a customer in the restaurant, stating an assumption required.
+        \item Comment on the suggestion that the mean volume served is not the correct measure of 125ml, stated on the restaurant's wine list.
+    \end{enumerate}
+    \item A pharmaceutical company has developed a drug designed to reduce the recovery time needed for a specific type of operation. Following trials involving treating 25 randomly selected patients admitted to hospital for the operation with the drug, it is found that the mean recovery time for these patients is 11.4 days. Computer output summarising this data, measured in days, is as follows:\vspace{0.5cm}\\
+    \texttt{summary(recovery time in days)}\\
+    \texttt{n = 25}\quad \texttt{mean = 11.4}\quad\\           \texttt{A 95\% z-confidence interval for the mean is:}\\
+    \texttt{(10.3 , ******)}\\
+    \vspace{0.3cm}
+    \begin{enumerate}
+        \item State the value from the computer output that has been replaced by ******.
+        \item The sample standard deviation was considered a reliable estimator for the population standard deviation recovery time, since the sample was sufficiently large. Determine the value of the sample standard deviation used to calculate the confidence interval.
+    \end{enumerate}
+    \item A driving instructor posts an advert online stating nine out of ten of their students pass their driving test first time. A random sample of 60 students taught by the instructor reveals that only 47 of them passed their driving test first time. Obtain an approximate 95\% confidence interval for the proportion of the instructor's students that pass first time, and comment on the claim that the true proportion is not the nine out of ten claimed by the instructor.
+\end{enumerate}
+
+\pagebreak

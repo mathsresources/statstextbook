@@ -1,0 +1,2275 @@
+# Answers {-}
+
+\setstretch{1.0}
+\raggedright
+
+\newpage
+
+### Chapter 1 Answers - Exploratory Data Analysis {-}
+
+\begingroup
+\footnotesize
+
+[]{#ex11a}
+
+#### [Exercise 1.1](#ex11q) {-}
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \begin{multicols}{6}
+        \item Quantitative
+        \item Qualitative
+        \item Quantitative
+        \item Qualitative
+        \item Quantitative
+        \item Qualitative
+        \end{multicols}
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \begin{multicols}{6}
+        \item Discrete
+        \item Continuous
+        \item Discrete
+        \item Discrete
+        \item Continuous
+        \item Continuous
+        \end{multicols}
+    \end{enumerate}
+    \item Categorical: \textit{activity level} and \textit{smoker}. Continuous: \textit{height} and \textit{mass}. Discrete: \textit{pulse}.
+\end{enumerate}
+
+[]{#ex12a}
+
+#### [Exercise 1.2](#ex12q) {-}
+
+\begin{enumerate}
+    \begin{multicols}{3}
+    \item Population parameter (population mean)
+    \item Sample statistic (sample mean)
+    \item Sample statistic (sample mean)
+    \end{multicols}
+\end{enumerate}
+
+[]{#ex13a}
+
+#### [Exercise 1.3](#ex13q) {-}
+
+\begin{enumerate}
+    \begin{multicols}{4}
+    \item $\bar{x}=35.9,s=15.74$
+    \item $\bar{f}=5.8,s=2.145$
+    \item $\bar{x}=29.125,s=7.586$
+    \item $\text{median}=40.5,\text{IQR}=27.5$
+    \end{multicols}
+\end{enumerate}
+
+[]{#ex14a}
+
+#### [Exercise 1.4](#ex14q) {-}
+
+\begin{enumerate}
+    \item 
+    \begin{multicols}{3}
+    \begin{tikzpicture}[baseline=(current bounding box.north)]
+        \draw (0.6*12,0) -- (0.6*20,0);
+        \foreach \x in {12,14,...,20}{
+        \node[below] at (0.6*\x,0) {\x};
+        }
+        \foreach \x in {12,13,...,20}{
+        \draw (0.6*\x,0) -- (0.6*\x,-0.1);
+        }
+        \draw[fill] (0.6*16,0.4) circle (2pt);
+        \draw[fill] (0.6*14,0.4) circle (2pt);
+        \draw[fill] (0.6*19,0.4) circle (2pt);
+        \draw[fill] (0.6*13,0.4) circle (2pt);
+        \draw[fill] (0.6*14,0.8) circle (2pt);
+        \draw[fill] (0.6*17,0.4) circle (2pt);
+        \draw[fill] (0.6*16,0.8) circle (2pt);
+        \draw[fill] (0.6*19,0.8) circle (2pt);
+        \draw[fill] (0.6*16,1.2) circle (2pt);
+        \draw[fill] (0.6*17,0.8) circle (2pt);
+        \draw[fill] (0.6*12,0.4) circle (2pt);
+        \draw[fill] (0.6*16,1.6) circle (2pt);
+        \draw[fill] (0.6*14,1.2) circle (2pt);
+        \draw[fill] (0.6*19,1.2) circle (2pt);
+        \node at (0.6*16,-0.8) {age (years)};
+        \node at (0.6*16,2.2) {dot plot of golfer ages};
+    \end{tikzpicture}
+    \item 
+    \begin{tikzpicture}[baseline=(current bounding box.north)]
+        \draw (0.5,3.7) -- (0.5,1.8);
+        \node at (0,3.5) {$0$};
+        \node at (0,3) {$1$};
+        \node at (0,2.5) {$2$};
+        \node at (0,2) {$3$};
+        \node at (1,3.5) {$90$};
+        \node at (1,3) {$40$};
+        \node at (1.7,3) {$50$};
+        \node at (2.4,3) {$50$};
+        \node at (3.1,3) {$70$};
+        \node at (3.8,3) {$80$};
+        \node at (4.5,3) {$90$};
+        \node at (1,2.5) {$00$};
+        \node at (1.7,2.5) {$10$};
+        \node at (2.4,2.5) {$20$};
+        \node at (3.1,2.5) {$50$};
+        \node at (1,2) {$60$};
+        \node at (2.5,4.6) {stem-and-leaf diagram};
+        \node at (2.5,4.1) {(ice cream cost)};
+        \node[left] at (5,1) {$2|50$ represents £2.50};
+        \node[left] at (5,1.5) {$n=12$};
+    \end{tikzpicture}
+    \item 
+    \begin{tikzpicture}[baseline=(current bounding box.north)]
+        \draw (0.7*10,0) -- (0.7*16,0);
+        \foreach \x in {10,11,...,22}{
+        \draw (0.7*0.5*\x+0.7*5,-0.1) -- (0.7*0.5*\x+0.7*5,0);
+        }
+        \foreach \x in {10,12,...,22}{
+        \node[below] at (0.7*0.5*\x+0.7*5,0) {\x};
+        }
+        \node at (0.7*13,2) {box plot of luggage masses};
+        \node at (0.7*13,-1) {mass (kg)};
+        \draw (0.7*10,1) -- (0.7*16,1);
+        \draw (0.7*10,0.7) -- (0.7*10,1.3);
+        \draw (0.7*16,0.7) -- (0.7*16,1.3);
+        \draw[fill=black!20] (0.7*12,0.7) rectangle (0.7*14.5,1.3);
+        \draw (0.7*13.25,0.7) -- (0.7*13.25,1.3);
+    \end{tikzpicture}
+    \end{multicols}
+\end{enumerate}
+
+[]{#ex15a}
+
+#### [Exercise 1.5](#ex15q) {-}
+
+\begin{enumerate}
+    \item $\frac{23}{94}$ or $0.2447$
+    \item A clear key/legend linked to the plot, numbers/scale on the $y$ axis.
+    \item The proportions of pupils in year group taking the bus seem to be broadly similar.
+    \item Approximately 15 minutes.
+    \item 7
+\end{enumerate}
+
+[]{#ex16a}
+
+#### [Exercise 1.6](#ex16q) {-}
+
+\begin{enumerate}
+    \begin{multicols}{2}
+    \item Lower fence $=7.5$ and upper fence $=51.5$. Since all values lie within this interval, there are no outliers.
+    \item 
+    \begin{enumerate}
+        \item Lower fence $=6.5$ and upper fence $=22.5$. Since both 4 and 27 lie outwith this interval, they are outliers.
+        \item 
+        \begin{tikzpicture}[baseline=(current bounding box.north)]
+        \draw (0,0) -- (0.2*30,0);
+        \foreach \x in {0,1,...,30}{
+        \draw (0.2*\x,-0.1) -- (0.2*\x,0);
+        }
+        \foreach \x in {0,5,...,30}{
+        \node[below] at (0.2*\x,0) {\x};
+        }
+        \node at (3,2) {box plot of studying time};
+        \node at (3,-1) {time (hours)};
+        \draw (0.2*4,1) circle (2pt);
+        \draw (0.2*27,1) circle (2pt);
+        \draw (0.2*9,1) -- (0.2*18,1);
+        \draw (0.2*9,0.7) -- (0.2*9,1.3);
+        \draw (0.2*18,0.7) -- (0.2*18,1.3);
+        \draw[fill=black!20] (0.2*12.75,0.7) rectangle (0.2*16.25,1.3);
+        \draw (0.2*15,0.7) -- (0.2*15,1.3);
+        \end{tikzpicture}
+    \end{enumerate}
+    \end{multicols}
+    \item 
+    \begin{enumerate}
+        \item Upper fence $=26.5$. Since both circled points shown on the box plot are greater than 26.25, they are outliers.
+        \item If the lengths of their stays were incorrectly recorded in the hospital's records, it would be valid to remove them from the data set before conducting any further analysis. \textit{Other valid reasons are possible.}
+    \end{enumerate}
+\end{enumerate}
+
+[]{#ex17a}
+
+#### [Exercise 1.7](#ex17q) {-}
+
+\begin{enumerate}
+    \item The population of hazelnuts masses appear to follow a positively skewed distribution.
+    \item The population of tree heights appear to be normally distributed.
+    \item The population of waiting times appear to be uniformly distributed.
+    \item The population of number of successful passes appears to follow a bimodal distribution.
+\end{enumerate}
+
+[]{#ex18a}
+
+#### [Exercise 1.8](#ex18q) {-}
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+    \begin{multicols}{2}
+        \item $\bar{x}_A=301.3,s_A=4.57$\\
+        $\bar{x}_B=302.3,s_B=12.3$
+        \item The median volume of coffee dispensed by Model B is greater.\\
+        The amount of coffee dispensed by Model B is more varied.
+    \end{multicols}
+    \end{enumerate}
+    \item The median score awarded by judge A was higher.\\
+    The higher interquartile range for judge A shows that their scores were more varied.
+    \item 
+    \begin{enumerate}
+        \item The daily 2pm temperature was more varied in January than in June, as shown by the slightly higher standard deviation.\\
+        The median 2pm temperature in June was higher.
+        \item Consistent scales have not been used for the box plots, making the location and spread of each less easily comparable.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item A legend should be provided for the diagram, such as $3|2=3.2\text{ metres}$.
+        \item The stem-and-leaf diagram shows that trees in Woodland A were taller, on average.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+    \item 
+    \begin{tikzpicture}[baseline=(current bounding box.north)]
+        \draw (0.8*70,0) -- (0.8*87,0);
+        \foreach \x in {70,71,...,87}{
+        \draw (0.8*\x,-0.1) -- (0.8*\x,0) node[below] {\x};
+        }
+        \draw (0.8*70,2) -- (0.8*87,2);
+        \foreach \x in {70,71,...,87}{
+        \draw (0.8*\x,1.9) -- (0.8*\x,2) node[below] {\x};
+        }
+        \node at (0.8*78.5,3.7) {Production line data};
+        \node at (0.8*68.5,2.3) {New};
+        \node at (0.8*68.5,0.3) {Old};
+        \node at (0.8*78.5,-0.8) {Crates completed (per hour)};
+        \draw[fill] (0.8*74,0.3) circle (2pt);
+        \draw[fill] (0.8*77,0.3) circle (2pt);
+        \draw[fill] (0.8*78,0.3) circle (2pt);
+        \draw[fill] (0.8*70,0.3) circle (2pt);
+        \draw[fill] (0.8*87,0.3) circle (2pt);
+        \draw[fill] (0.8*83,0.3) circle (2pt);
+        \draw[fill] (0.8*76,0.3) circle (2pt);
+        \draw[fill] (0.8*78,0.6) circle (2pt);
+        \draw[fill] (0.8*81,0.3) circle (2pt);
+        \draw[fill] (0.8*76,0.6) circle (2pt);
+        \draw[fill] (0.8*78,2.3) circle (2pt);
+        \draw[fill] (0.8*87,2.3) circle (2pt);
+        \draw[fill] (0.8*79,2.3) circle (2pt);
+        \draw[fill] (0.8*82,2.3) circle (2pt);
+        \draw[fill] (0.8*87,2.6) circle (2pt);
+        \draw[fill] (0.8*81,2.3) circle (2pt);
+        \draw[fill] (0.8*85,2.3) circle (2pt);
+        \draw[fill] (0.8*80,2.3) circle (2pt);
+        \draw[fill] (0.8*82,2.6) circle (2pt);
+        \draw[fill] (0.8*83,2.3) circle (2pt);
+    \end{tikzpicture}
+    \item $\bar{x}_{\text{new}}=82.4,s_{\text{new}}=3.13$\\
+    $\bar{x}_{\text{old}}=78,s_{\text{old}}=4.76$
+    \item The mean number of crates completed per hours was higher for the new production line.\\
+    The number of crates completed per hour was more consistent for the new production line.
+    \end{enumerate}
+\end{enumerate}
+
+[]{#re1a}
+
+#### [Chapter 1 Review Exercise](#re1q) {-}
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item 
+        \begin{enumerate}
+            \begin{multicols}{3}
+            \item Track; artist.
+            \item Release year; no. of streams.
+            \item Length.
+            \end{multicols}
+        \end{enumerate}
+        \item Fences could be calculated to determine whether it is an outlier.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+    \begin{multicols}{2}
+    \item 
+    \begin{tikzpicture}[baseline=(current bounding box.north)]
+    \draw (4,0) -- (11,0);
+    \foreach \x in {4,5,...,11}{
+    \draw (\x,-0.1) -- (\x,0) node[below] {\x};
+    }
+    \node at (7.5,-0.8) {Shoe sizes}; 
+    \node at (7.5,1.5) {Running shoe sales};
+    \draw[fill] (4,0.3) circle (2pt);
+    \draw[fill] (7,0.3) circle (2pt);
+    \draw[fill] (9,0.3) circle (2pt);
+    \draw[fill] (11,0.3) circle (2pt);
+    \draw[fill] (6,0.3) circle (2pt);
+    \draw[fill] (9,0.6) circle (2pt);
+    \draw[fill] (8,0.3) circle (2pt);
+    \draw[fill] (4,0.6) circle (2pt);
+    \draw[fill] (10,0.3) circle (2pt);
+    \draw[fill] (9,0.9) circle (2pt);
+    \draw[fill] (6,0.6) circle (2pt);
+    \draw[fill] (5,0.3) circle (2pt);
+    \end{tikzpicture}
+    \item $\text{mean}=7.33$ and $\text{sd}=2.35$
+    \item Shoe sizes are discrete data.
+    \end{multicols}
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item The fences are $1.13$ and $1.85$. Since both the minimum value of $1.00$ and the maximum of $1.90$ lie outwith this interval, the \textit{iris setosa} data contains at least two outliers.
+        \item The median length of \textit{iris versicolor} petals appears to be greater than the length of \textit{iris setosa} petals. The length of \textit{iris versicolor} petals appears to be more varied than those of the \textit{iris setosa} species, as seen by their interquartile ranges of $0.18$ and $0.60$ centimetres respectively.
+    \end{enumerate}
+\end{enumerate}
+
+\endgroup
+
+\pagebreak
+
+### Chapter 2 Answers - An Introduction to Probability Theory {-}
+
+\begingroup
+\footnotesize
+
+[]{#ex21a}
+
+#### [Exercise 2.1](#ex21q) {-}
+
+
+\begin{multicols}{3}
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\text{P}(\text{vowel})=\dfrac{5}{26}$
+        \item $\text{P}(\text{consonant})=\dfrac{21}{26}$
+        \item $\text{P}(\text{statistics})=\dfrac{5}{26}$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\text{P}(\text{blue})=\dfrac{4}{15}$
+        \item $\text{P}(\text{green or red})=\dfrac{11}{15}$
+        \item $\text{P}(\text{not red})=\dfrac{3}{5}$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\text{P}(\text{orange})=\dfrac{1}{3}$
+        \item $\text{P}(\text{orange and strawberry})=0$
+        \item $\text{P}(\text{not caramel})=\dfrac{7}{12}$
+    \end{enumerate}
+    \newcolumn
+    \item
+    \begin{enumerate}
+        \item $\text{P}(\text{Scotland})=\dfrac{2}{19}$
+        \item $\text{P}(\text{Wales or NI})=\dfrac{13}{76}$
+        \item $\text{P}(\text{not England})=\dfrac{21}{76}$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\text{P}(\text{blue and 5})=\dfrac{1}{18}$
+        \item $\text{P}(\text{5})=\dfrac{1}{9}$
+        \item $\text{P}(\text{blue or 5})=\dfrac{7}{18}$
+    \end{enumerate}
+    \newcolumn
+    \item
+    \begin{enumerate}
+        \item $\text{P}(G)=\dfrac{9}{10}$
+        \item $\text{P}(G\text{ and }A)=\dfrac{27}{80}$
+        \item $\text{P}(\text{not }A)=\dfrac{5}{8}$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\text{P}(\text{nurse})=\dfrac{25}{64}$
+        \item $\text{P}(\text{not ward 2})=\dfrac{39}{64}$
+        \item $\text{P}(\text{ward 2 and not doctor})=\dfrac{21}{64}$
+    \end{enumerate}
+\end{enumerate}
+\end{multicols}
+
+[]{#ex22a}
+
+#### [Exercise 2.2](#ex22q) {-}
+
+\begin{multicols}{3}
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item \{H1,H2,H3,H4,H5,H6\\
+        T1,T2,T3,T4,T5,T6\}
+        \item $\text{P}(\text{even and tails})=\dfrac{1}{4}$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\text{P}(\text{tea and toast})=\dfrac{1}{12}$
+        \item $\text{P}(\text{museli and not coffee})=\dfrac{1}{6}$
+        \item $\text{P}(\text{not porridge and not tea})=\dfrac{1}{2}$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\text{P}(\text{tails twice in a row})=\dfrac{3}{8}$
+        \item $\text{P}(\text{tails at least twice})=\dfrac{1}{2}$
+    \end{enumerate}
+    \newcolumn
+    \item $\text{P}(\text{sum}=3)=\dfrac{1}{20}$
+    \item $\text{P}(\text{product}<5)=\dfrac{2}{9}$
+    \item $\text{P}(\text{at least one number}\leqslant 2)=\dfrac{2}{3}$
+    \item
+    \begin{enumerate}
+        \item $\text{P}(\text{20p first})=\dfrac{1}{5}$ 
+        \item $\text{P}(\text{20p selected})=\dfrac{2}{5}$
+        \item $\text{P}(\text{total}\geqslant15\text{p})=\dfrac{1}{2}$
+        \item $\text{P}(\text{total}<12\text{p})=\dfrac{2}{5}$
+    \end{enumerate}
+    \newcolumn
+    \item 
+    \begin{enumerate}
+        \item $56$ 
+        \item
+          \begin{enumerate}
+              \item $\text{P}(\text{A:whiteboard and C:pens})=\dfrac{1}{56}$
+              \item $\text{P}(\text{neither chosen})=\dfrac{15}{28}$
+              \item $\text{P}(\text{at least one chosen})=\dfrac{13}{28}$
+          \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+\end{multicols}
+
+[]{#ex23a}
+
+#### [Exercise 2.3](#ex23q) {-}
+
+\begin{multicols}{3}
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item 
+        \hspace{-1.8cm}
+        \begin{tikzpicture}[grow=right,baseline=(current bounding box.north)]
+\tikzstyle{level 1}=[level distance=2cm, sibling distance=2.5cm]
+\tikzstyle{level 2}=[level distance=2cm, sibling distance=1.2cm]
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+\node[bag] {}
+    child {
+        node[bag] {yellow}        
+            child {
+                node[end, label=right:
+                    {yellow}] {}
+                edge from parent
+                node[above] {}
+                node[below]  {$\frac{4}{8}$}
+            }
+            child {
+                node[end, label=right:
+                    {green}] {}
+                edge from parent
+                node[above] {$\frac{4}{8}$}
+                node[below]  {}
+            }
+            edge from parent 
+            node[above] {}
+            node[below]  {$\frac{5}{9}$}
+    }
+    child {
+        node[bag] {green}        
+        child {
+                node[end, label=right:
+                    {yellow}] {}
+                edge from parent
+                node[above] {}
+                node[below]  {$\frac{5}{8}$}
+            }
+            child {
+                node[end, label=right:
+                    {green}] {}
+                edge from parent
+                node[above] {$\frac{3}{8}$}
+                node[below]  {}
+            }
+        edge from parent         
+            node[above] {$\frac{4}{9}$}
+            node[below]  {}
+    };
+\end{tikzpicture}
+        \item $\text{P}(\text{both green})=\frac{1}{6}$
+        \item $\text{P}(\text{at least one green})=\frac{13}{18}$
+    \end{enumerate}
+    \item $\text{P}(\text{both same colour})=\frac{9}{19}$
+    \newcolumn
+    \item $\text{P}(\text{neither O}_+)=0.4281$
+    \item
+    \begin{enumerate}
+        \item 
+        \hspace{-1.8cm}
+        \begin{tikzpicture}[grow=right,baseline=(current bounding box.north)]
+\tikzstyle{level 1}=[level distance=2cm, sibling distance=2.5cm]
+\tikzstyle{level 2}=[level distance=2cm, sibling distance=1.2cm]
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+\node[bag] {}
+    child {
+        node[bag] {insufficient quality}        
+            child {
+                node[end, label=right:
+                    {fail}] {}
+                edge from parent
+                node[above] {}
+                node[below]  {$\frac{2}{5}$}
+            }
+            child {
+                node[end, label=right:
+                    {pass}] {}
+                edge from parent
+                node[above] {$\frac{3}{5}$}
+                node[below]  {}
+            }
+            edge from parent 
+            node[above] {}
+            node[below]  {$\frac{1}{4}$}
+    }
+    child {
+        node[bag] {sufficient quality}        
+        child {
+                node[end, label=right:
+                    {fail}] {}
+                edge from parent
+                node[above] {}
+                node[below]  {$\frac{1}{10}$}
+            }
+            child {
+                node[end, label=right:
+                    {pass}] {}
+                edge from parent
+                node[above] {$\frac{9}{10}$}
+                node[below]  {}
+            }
+        edge from parent         
+            node[above] {$\frac{3}{4}$}
+            node[below]  {}
+    };
+\end{tikzpicture}
+        \item $\text{P}(\text{both pass})=0.825$
+    \end{enumerate}
+    \newcolumn
+    \item
+    \begin{enumerate}
+        \item 
+        \hspace{-1.8cm}
+        \begin{tikzpicture}[grow=right,baseline=(current bounding box.north)]
+\tikzstyle{level 1}=[level distance=2cm, sibling distance=2.5cm]
+\tikzstyle{level 2}=[level distance=2cm, sibling distance=1.2cm]
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+\node[bag] {}
+    child {
+        node[bag] {cancelled}        
+            edge from parent 
+            node[above] {}
+            node[below]  {$0.03$}
+    }
+    child {
+        node[bag] {running}        
+        child {
+                node[end, label=right:
+                    {late}] {}
+                edge from parent
+                node[above] {}
+                node[below]  {$0.12$}
+            }
+            child {
+                node[end, label=right:
+                    {on time}] {}
+                edge from parent
+                node[above] {$0.88$}
+                node[below]  {}
+            }
+        edge from parent         
+            node[above] {$0.97$}
+            node[below]  {}
+    };
+\end{tikzpicture}
+        \item $\text{P}(\text{on time})=0.8536$
+    \end{enumerate}
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{3}
+\begin{enumerate}[resume]
+    \item 
+    \begin{enumerate}
+        \item 
+        \hspace{-1.8cm}
+        \begin{tikzpicture}[grow=right,baseline=(current bounding box.north)]
+\tikzstyle{level 1}=[level distance=2.5cm, sibling distance=2.5cm]
+\tikzstyle{level 2}=[level distance=2.5cm, sibling distance=0.9cm]
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+\node[bag] {}
+    child {
+        node[bag] {2H}        
+            child {
+                node[end, label=right:
+                    {2B}] {}
+                edge from parent
+                node[above] {}
+                node[below]  {$\frac{2}{6}$}
+            }
+            child {
+                node[end, label=right:
+                    {HB}] {}
+                edge from parent
+                node[above] {$\frac{4}{6}$}
+                node[below]  {}
+            }
+            edge from parent 
+            node[above] {}
+            node[below]  {$\frac{1}{7}$}
+    }
+    child {
+        node[bag] {2B}        
+            child {
+                node[end, label=right:
+                    {2H}] {}
+                edge from parent
+                node[above] {}
+                node[below]  {$\frac{1}{6}$}
+            }
+            child {
+                node[end, label=right:
+                    {2B}] {}
+                edge from parent
+                node[above] {$\frac{1}{6}$}
+                node[below]  {}
+            }
+            child {
+                node[end, label=right:
+                    {HB}] {}
+                edge from parent
+                node[above] {$\frac{4}{6}$}
+                node[below]  {}
+            }
+            edge from parent 
+            node[above] {$\frac{2}{7}$}
+            node[below]  {}
+    }
+    child {
+        node[bag] {HB}        
+        child {
+                node[end, label=right:
+                    {2H}] {}
+                edge from parent
+                node[above] {}
+                node[below]  {$\frac{1}{6}$}
+            }
+            child {
+                node[end, label=right:
+                    {2B}] {}
+                edge from parent
+                node[above] {$\frac{2}{6}$}
+                node[below]  {}
+            }
+            child {
+                node[end, label=right:
+                    {HB}] {}
+                edge from parent
+                node[above] {$\frac{3}{6}$}
+                node[below]  {}
+            }
+        edge from parent         
+            node[above] {$\frac{4}{7}$}
+            node[below]  {}
+    };
+\end{tikzpicture}
+        \item $\text{P}(\text{both same})=\frac{1}{3}$ 
+        \item $\text{P}(\text{different})=\frac{2}{3}$
+        \item $\text{P}(\text{neither HB})=\frac{1}{7}$
+    \end{enumerate}
+    \newcolumn
+    \item 
+    \begin{enumerate}
+        \item $\text{P}(\text{no stops})=0.224$
+        \item $\text{P}(\text{at least one stop})=0.776$
+        \item $\text{P}(\text{exactly two stops})=0.252$
+    \end{enumerate}
+\end{enumerate}
+\end{multicols}
+
+[]{#ex24a}
+
+#### [Exercise 2.4](#ex24q) {-}
+
+\begin{multicols}{3}
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $\text{P}(A)=\frac{5}{9}$ 
+        \item $\text{P}(B)=\frac{4}{9}$ 
+        \item $\text{P}(\bar{A})=\frac{4}{9}$ 
+        \item $\text{P}(\bar{B})=\frac{5}{9}$ 
+        \item $\text{P}(A\cap B)=\frac{1}{3}$ 
+        \item $\text{P}(A \cup B)=\frac{2}{3}$ 
+        \item $\text{P}(\bar{A} \cap B)=\frac{1}{9}$ 
+        \item $\text{P}(A \cap \bar{B})=\frac{2}{9}$ 
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $x=0.35$
+        \item 
+        \begin{enumerate}
+            \item $\text{P}(N)=0.55$ 
+            \item $\text{P}(\bar{M})=0.5$
+            \item $\text{P}(M \cup N)=0.7$
+        \end{enumerate}
+    \end{enumerate}
+    \newcolumn
+    \item 
+    \begin{enumerate}
+        \item $\text{P}(\text{prime} \text{})=\frac{3}{8}$
+        \item $\text{P}(\text{odd} \text{})=\frac{1}{2}$
+        \item $\text{P}(\overline{\text{prime}} \text{})=\frac{5}{8}$
+        \item $\text{P}(\overline{\text{odd}} \text{})=\frac{1}{2}$
+        \item $\text{P}(\text{prime} \cap \text{odd})=\frac{5}{16}$
+        \item $\text{P}(\text{prime} \cup \text{odd})=\frac{9}{16}$
+        \item $\text{P}(\overline{\text{prime}} \cap \text{odd})=\frac{3}{16}$
+        \item $\text{P}(\text{prime} \cap \overline{\text{odd}})=\frac{1}{16}$
+    \end{enumerate}
+    \newcolumn
+    \item 
+    \begin{enumerate}
+        \item $\text{P}(C \cap D)=0.34$
+        \item $\text{P}(C \cup D)=0.91$
+        \item $\text{P}(\bar{C} \cap \bar{D})=0.09$
+        \item $\text{P}(\bar{C} \cup \bar{D})=0.66$
+        \item $\text{P}(C \cap \bar{D})=0.45$
+        \item $\text{P}(\bar{C}\cap D)=0.12$
+        \item $\text{P}(C \cup \bar{D})=0.88$
+        \item $\text{P}(\bar{C} \cup D)=0.55$
+    \end{enumerate}
+    \item $\text{P}(\text{biology})=\frac{13}{24}$
+    \item $\text{P}(\text{PM}\cap \text{NO}_2)=\frac{1}{10}$
+\end{enumerate}
+\end{multicols}
+
+[]{#ex25a}
+
+#### [Exercise 2.5](#ex25q) {-}
+
+\begin{multicols}{3}
+    \begin{enumerate}
+        \item $\text{P}(X \cup Y)=0.6$
+        \item $\text{P}(A \cup B)=\frac{29}{30}$
+        \item $\text{P}(E \cup F)=0.61$
+        \item $\text{P}(C \cup D)=\frac{11}{14}$
+        \item $\text{P}(A \cap B)=0.163$
+        \item $\text{P}(X \cap Y)=\frac{9}{80}$
+        \item $\text{P}(V \cap W)=0.2$
+        \item $\text{P}(\bar{J})=\frac{7}{72}$
+        \item $\text{P}(X \cup Y)=0.9$
+        \item $\text{P}(\bar{B})=\frac{1}{6}$
+        \item $\text{P}(\text{fish})=0.85$
+        \item $\text{P}(\bar{N})=\frac{3}{8}$
+        \item $\text{P}(\bar{R})=0.19$
+        \item
+        \begin{enumerate}
+            \item $\text{P}(X \cup Y)=0.9\ne1$\\$\therefore X,Y\text{ not exhaustive}$
+            \item $\text{P}(R \cup T)=1$\\$\therefore R,T\text{ exhaustive}$
+            \item $\text{P}(E \cup F)=0.85\ne 1$\\$\therefore E,F\text{ not exhaustive}$
+        \end{enumerate}
+        \item
+        \begin{enumerate}
+            \item $\text{P}(W \cup V)=0.3\ne0$\\$\therefore W,V\text{ not mutually exclusive}$
+            \item $\text{P}(X \cap Y)=0$\\$\therefore X,Y\text{ mutually exclusive}$
+            \item $\text{P}(A \cap B)=0$\\$\therefore A,B\text{ mutually exclusive}$
+        \end{enumerate}
+    \end{enumerate}
+\end{multicols}
+
+[]{#re2a}
+
+#### [Chapter 2 Review Exercise](#re2q) {-}
+
+\begin{multicols}{3}
+    \begin{enumerate}
+        \item 
+        \begin{enumerate}
+            \item $\text{P}(\overline{\text{yellow}}\cup 1)=\frac{2}{3}$
+            \item $\text{P}(\text{neither yellow})=\frac{5}{18}$
+        \end{enumerate}
+        \item 
+        \begin{enumerate}
+            \item $\text{P}(\text{English}\cap \text{N5})=\frac{21}{64}$
+            \item $\text{P}(\text{History}\cup \text{Higher})=\frac{43}{64}$
+        \end{enumerate}
+        \item $\text{P}(\text{}F)=0.9$
+        \item $\text{P}(\text{takes payment})=0.8926$
+        \item 
+        \begin{enumerate}
+            \item $\text{P}(\text{not a tie})=\frac{5}{6}$
+            \item $\text{P}(\text{attacker wins})=\frac{7}{12}$
+            \item $\text{P}(\text{bonus point})=\frac{1}{8}$
+        \end{enumerate}
+        \item $\text{P}(\text{}N \cup \bar{A})=\frac{7}{25}$
+        \item $\text{P}(\text{}B \cap C)=0.2$
+    \end{enumerate}
+\end{multicols}
+
+\endgroup
+
+\newpage
+
+### Chapter 3 Answers - Sampling Theory {-}
+
+\begingroup
+\footnotesize
+
+\textbf{Note:} Whilst the answers included here are intended to include an appropriate level of detail, variations in the amount and type of information given in exam questions will require a flexible and common-sense approach to be used in any exam. Past exam questions and marking schemes should be used as a guide, as well as course reports and relevant CPD events.
+
+[]{#ex31a}
+
+#### [Exercise 3.1](#ex31q) {-}
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item
+        \begin{enumerate}
+            \item People who use his local supermarket.
+            \item All shoppers who use the self-checkout tills on that Sunday morning.
+        \end{enumerate}
+        \item The sampling frame excludes people who prefer to shop at other times, such as during the evening or midweek. It also only includes those using self-checkout tills, likely excluding those who have a large trolly of shopping. Both of these issues are likely to make the sample unrepresentative of the target population, and may introduce bias.
+        \item The sampling methods is non-random and so will likely introduce bias to the data, making it unsuitable.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item There may be so many flowers that it is too time-consuming and impractical to make a sampling frame comprised of individual flowers.
+        \item A better choice of sampling unit for the sampling frame may be square metres of field, forming a numbered grid.
+        \item A random number generator will help avoid possible bias in the selection of square metres to include in the sample, by ensuring it is random and not influenced by the botanist. It should help produce a sample that is more representative of the population of wildflowers.
+    \end{enumerate}
+\end{enumerate}
+
+[]{#ex32a}
+
+#### [Exercise 3.2](#ex32q) {-}
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item One-stage cluster sampling.
+        \item Stratified sampling.
+        \item Systematic sampling.
+        \item Simple random sampling.
+        \item Quota sampling.
+        \item Convenience Sampling.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item Each of the different types of room may have their own distinct characteristics in terms of ageing or the quality of maintenance. Stratified sampling will ensure that a proportionate number from each type of room will be included in the sample.
+        \item 30 out of 360 cabins means 1 in every 12 cabins should be sampled, so the sample should contain: 2 Deluxe cabins; 6 Premium cabins and 22 Standard cabins. To sample the Deluxe cabins, a numbered list of those cabins should be obtained as a suitable sampling frame, and then a random number generator used to produce 2 different random numbers. Those cabins corresponding to the numbers selected should be included in the sample. This process should then be repeated for the Premium cabins and the Standard cabins, using a numbered sampling frame for each and randomly selecting the appropriate number of cabins of each type. Combining all of the selected cabins will make a stratified sample.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item Convenience sampling.
+        \item He only samples coral reefs close to his town, ignoring that those near other towns or villages, or rural locations, may have a different level of health. This means the sample is unlikely to be representative of the the population of coral reefs along the West Coast of Scotland. (Alternatively, the non-random selection method may be discussed.)
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item Using cluster sampling means less physical travelling to a larger number of petrol stations, which would cost more and take more time.
+        \item To sample 40 pumps, 5 petrol stations are needed if one-stage cluster sampling is used. A sampling frame of all the petrol stations numbered from 1 to 126 should be drawn up. A random number generator can then be used to select 5 numbers, and the petrol stations corresponding to those numbers should be included in the sample. From each of those petrol stations, all of the pumps should be sampled.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item Systematic sampling.
+        \item She didn't use a random starting point, so it is not a true random sampling process that is being used.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item Quota sampling.
+        \item This is a non-random sampling method which is liable to produce a sample not representative of the target population, and may introduce bias into the data gathered. 
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+[]{#re3a}
+
+#### [Chapter 3 Review Exercise](#re3q) {-}
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item
+        \begin{enumerate}
+            \item Convenience sampling.
+            \item This is a non-random sampling method which may produce a sample that is not representative of the target population, and may introduce bias to the data.
+        \end{enumerate}
+        \item
+        \begin{enumerate}
+            \item Simple random sampling.
+            \item With the 150 employees in an ordered list, the random cell selection tool could be used to select the first employee to be included in the sample. From there, every 5th employee on the list could be selected, looping back around to the start of the list if needed until the sample of size 30 has been obtained.
+        \end{enumerate}
+        \item
+        \begin{enumerate}
+            \item A numbered list of the restaurants in the chain could be obtained. A random number generator could be used to pick several numbers, and those restaurants corresponding to the numbers could be selected to be sampled. For a one-stage cluster sample, all employees at those restaurants should be sampled.
+            \item One advantage of this method is that it will require less restaurants to be visted for an equivalent sample size, reducing travel costs. One disadvantage is that visiting less restaurants may make it more likely than any restaurants in the chain experiencing problems have none of their employees included in the sample.
+        \end{enumerate}
+    \end{enumerate}
+    \item For an overall sample size of 150 out of 5000 (3\%), the sample needs to include 3 people from Management, 12 from Sales and 135 from the Shop Floor. For each strata, an ordered sampling frame should be obtained, and numbers assigned. For the Management sample, a random number generator should be used to choose 3 numbers, and those staff corresponding to those numbers should be selected to be in the sample. The same process should be repeated to choose 12 from the Sales samling frame, and 135 from the Shop Floor sampling frame. Put together, this will make a sample of size 150 with proportions from each strata matching those of the target population.
+    \item The pizzas sampled will only be those from takeaway restaurants, and may not be representative of pizzas sold in the UK as a whole. Additionally, only those takeaways with a presence on social media will be included.
+    \item
+    \begin{enumerate}
+        \item It is unlikely to be possible for the researcher to obtain a list of all pupils in Scotland studying Higher Mathematics.
+        \item From an ordered list of all centres in Scotland which  presents pupils for Higher Maths, simple random sampling could be used to select a number of schools. For each of those schools selected, an ordered list of all pupils taking Higher Maths should be obtained, and used to selected a random number of pupils from each selected school. Each of those pupils selected should be included in the overall sample.
+    \end{enumerate}
+    \item A random letter selector and a random number generator could be used together to select a letter and a number, to correspond to grids, such as 'C' and '5' to select grid C5. This process could be repeated to create a list of grids to for the botanist to visit and study the health of flowers in those grids.
+\end{enumerate}
+
+\endgroup
+
+\newpage
+
+### Chapter 4 Answers - Further Probability Theory {-}
+
+\begingroup
+\footnotesize
+
+[]{#ex41a}
+
+#### [Exercise 4.1](#ex41q) {-}
+
+\begin{multicols}{3}
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\text{P}(X)=\dfrac{5}{9}$
+        \item $\text{P}(X|Y)=\dfrac{3}{4}$
+        \item $\text{P}(X\cap Y)=\dfrac{1}{3}$
+        \item $\text{P}(X\cup Y)=\dfrac{2}{3}$
+        \item $\text{P}(Y)=\dfrac{4}{9}$
+        \item $\text{P}(Y|X)=\dfrac{3}{5}$
+        \item $\text{P}(Y\cap X)=\dfrac{1}{3}$
+        \item $\text{P}(Y\cup X)=\dfrac{2}{3}$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\text{P}(\text{scored})=\dfrac{73}{135}$
+        \item $\text{P}(\text{scored }|\text{ 3-pointer})=\dfrac{15}{41}$
+        \item $\text{P}(\text{3-pointer})=\dfrac{41}{135}$
+        \item $\text{P}(\text{3-pointer }|\text{ scored})=\dfrac{15}{73}$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item P(rainy)$=0.3$
+        \item P(not rainy)$=0.7$
+        \item P(leaves | rainy)$=0.4$
+        \item P(does not leave | rainy)$=0.6$
+        \item P(leaves | not rainy)$=0.9$
+        \item P(does not leave | not rainy)$=0.1$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\text{P}(A)=\dfrac{2}{5}$
+        \item $\text{P}(B)=\dfrac{2}{5}$
+        \item $\text{P}(C)=\dfrac{1}{3}$
+        \item $\text{P}(A\cap B)=\dfrac{2}{15}$
+        \item $\text{P}(B \cup C)=\dfrac{3}{5}$
+        \item $\text{P}(A \cap B \cap C)=\dfrac{1}{15}$
+        \item $\text{P}(A | C)=\dfrac{3}{5}$
+        \item $\text{P}(C | B)=\dfrac{1}{3}$
+        \item $\text{P}(\overline{B} | C)=\dfrac{3}{5}$
+        \item $\text{P}(C | \overline{A})=\dfrac{2}{9}$
+        \item $\text{P}((A \cap B) | C)=\dfrac{1}{5}$
+    \end{enumerate}
+\end{enumerate}
+\end{multicols}
+
+[]{#ex42a}
+
+#### [Exercise 4.2](#ex42q) {-}
+
+\begin{multicols}{3}
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\text{P}(A|B)=0.2$
+        \item $\text{P}(\text{red }|\text{ blue})=0.4849$
+        \item $\text{P}(X|Y)=\dfrac{2}{3}$
+        \item $\text{P}(M|N)=0.3233$
+        \item
+        \begin{enumerate}
+            \item $\text{P}(\overline{A}|B)=0.8$
+            \item $\text{P}(\text{}\overline{\text{red}\text{ }}|\text{ blue})=0.5151$
+            \item $\text{P}(\overline{X}|Y)=\dfrac{1}{3}$
+            \item $\text{P}(\overline{M}|N)=0.6767$
+        \end{enumerate}
+    \end{enumerate}
+    \item $\text{P}(\overline{V}|W)=0.3$
+    \item $\text{P}(\text{5 }|\text{ yellow})=0.2$
+    \item $\text{P}(\text{lose }|\text{ concede}\geq2)=\dfrac{5}{8}$
+    \item $\text{P}(M|N)=0.25$
+    \item $\text{P}(V \cup W)=0.725$
+\end{enumerate}
+\end{multicols}
+
+[]{#ex43a}
+
+#### [Exercise 4.3](#ex43q) {-}
+
+\begin{multicols}{3}
+    \begin{enumerate}
+        \item
+        \begin{enumerate}
+            \item Independent.
+            \item Not independent.
+        \end{enumerate}
+        \item
+        \begin{enumerate}
+            \item Not independent.
+            \item Independent.
+            \item Independent.
+        \end{enumerate}
+        \item
+        \begin{enumerate}
+            \item Show e.g. $\text{P}(V)=\text{P}(V|W)$
+            \item Show e.g. $\text{P}(T)\ne\text{P}(T|W)$
+        \end{enumerate}
+    \end{enumerate}
+\end{multicols}
+
+[]{#ex44a}
+
+#### [Exercise 4.4](#ex44q) {-}
+
+\begin{multicols}{3}
+    \begin{enumerate}
+        \item
+        \begin{enumerate}
+            \item $\text{P}(X\cap Y)=0.072$
+            \item $\text{P}(\text{blue}\cap \text{yellow})=\dfrac{3}{8}$
+            \item $\text{P}(E\cap F)=0.246$
+        \end{enumerate}
+        \item
+        \begin{enumerate}
+            \item $\text{P}(A \cap B)=0.392$
+        \item $\text{P}(A \cup B)=0.708$
+        \end{enumerate}
+        \item $\text{P}(X\cup Y)=0.88$
+        \item $\text{P}(\text{working }\cap\text{ Calculo})=0.12$
+        \item $\text{P}(\text{out-of-date }\cap\text{ weak})=0.096$
+        \item $\text{P}(\text{blue }\cap\text{ pink})=0.38$
+    \end{enumerate}
+\end{multicols}
+
+[]{#ex45a}
+
+#### [Exercise 4.5](#ex45q) {-}
+
+\begin{multicols}{3}
+    \begin{enumerate}
+    \item 
+    \begin{enumerate}
+    \item $\text{P}(X|Y)=\dfrac{7}{12}$
+    \item $\text{P}(V|W)=0.625$
+    \end{enumerate}
+    \item $\text{P}(\text{1 }|\text{ red})=0.6$
+    \item $\text{P}(\text{gene }|\text{ positive})=0.2186$
+    \item 
+    \begin{enumerate}
+        \item $\text{P}(M|N)=\dfrac{8}{15}$
+        \item $\text{P}(\overline{M}|N)=\dfrac{7}{15}$
+    \end{enumerate}
+    \item $\text{P}(\text{pass }|\text{ car})=0.8446$
+    \item $\text{P}(\text{Pacific 525 }|\text{ music})=0.7467$
+    \item $\text{P}(\overline{E}|F)=0.1946$
+\end{enumerate}
+\end{multicols}
+
+\pagebreak
+
+[]{#ex46a}
+
+#### [Exercise 4.6](#ex46q) {-}
+
+\begin{multicols}{3}
+    \begin{enumerate}
+        \item $\text{P}(\text{UK})=0.8708$
+        \item $\text{P}(\text{survives})=0.6745$
+        \item $\text{P}(\text{win})=0.695$
+        \item $\text{P}(\text{likes})=0.54$
+        \item $\text{P}(\text{not make second part})=0.28$
+        \item $\text{P}(\text{do not survive})=0.268$
+        \item $\text{P}(\text{win})=0.3882$
+    \end{enumerate}
+\end{multicols}
+
+[]{#ex47a}
+
+#### [Exercise 4.7](#ex47q) {-}
+
+\begin{multicols}{3}
+    \begin{enumerate}
+        \item
+        \begin{enumerate}
+            \item $\text{P}(\text{damaged})=0.0655$
+            \item $\text{P}(\text{express }|\text{ damaged})=0.1069$
+        \end{enumerate}
+        \item
+        \begin{enumerate}
+            \item $\text{P}(\text{flagged})=0.0308$
+            \item $\text{P}(\text{malicious }|\text{ flagged})=0.3584$
+        \end{enumerate}
+        \item $\text{P}(\text{guessed }|\text{ wrong})=0.7273$
+        \item 
+        \begin{enumerate}
+            \item $\text{P}(\text{visits})=0.033$
+            \item $\text{P}(\text{social media }|\text{ visits})=0.8409$
+        \end{enumerate}
+        \item $\text{P}(\text{lost }|\text{ rest day})=0.0559$
+        \item $\text{P}(\text{flaw }|\text{ doesn't leave})=0.8048$
+        \item
+        \begin{enumerate}
+            \item $\text{P}(\text{has condition }|\text{ positive})=0.4580$
+            \item $\text{P}(\text{has condition }|\text{ positive test})=0.4975$
+        \end{enumerate}
+    \end{enumerate}
+\end{multicols}
+
+[]{#re4a}
+
+#### [Chapter 4 Review Exercise](#re4q) {-}
+
+\begin{multicols}{3}
+    \begin{enumerate}
+        \item $\text{P}(E|F)=\dfrac{7}{9}$
+        \item 
+        \begin{enumerate}
+            \item 
+            \begin{enumerate}
+                \item $\text{P}(W\cup A)=\dfrac{17}{20}$
+                \item $\text{P}(\overline{W}\cap B)=\dfrac{1}{8}$
+            \end{enumerate}
+            \item $\text{P}(\text{power})=0.825$
+            \item $\text{P}(\text{Mac }|\text{ }\overline{\text{power}})=\dfrac{1}{7}$
+        \end{enumerate}
+        \item 
+        \begin{enumerate}
+            \item $\text{P}(\text{wins})=0.3917$
+            \item $\text{P}(\text{1st }|\text{ lost})=0.1370$
+        \end{enumerate}
+        \item $\text{P}(M|B)=\dfrac{1}{5}=\text{P}(M)$\\hence $P,M$ are independent
+        \item 
+        \begin{enumerate}
+            \item $\text{P}(\text{incorrect})=0.2875$
+            \item $\text{P}(\text{cat }|\text{ incorrect})=0.2348$
+        \end{enumerate}
+    \end{enumerate}
+\end{multicols}
+
+\endgroup
+
+\newpage
+
+\begin{multicols}{4}
+\begin{enumerate}
+    \item Hi
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{4}
+\begin{enumerate}
+    \item[1a) ] $0.9\implies$not exhaustive
+    \item[1b) ] $1\implies$exhaustive
+    \item[1c) ] $0.15\implies$not exhaustive
+    \item[1d) ] $\frac{5}{6}\implies$not exhaustive
+    \item[2a) ] $0.3\implies$not mutually exclusive
+    \item[2b) ] $\frac{3}{5}\implies$not mutually exclusive
+    \item[2c) ] $0.6\implies$not mutually exclusive
+    \item[2d) ] $0\implies$mutually exclusive
+    \item[3a) ] $0.64$
+    \item[3b) ] $0.82$
+    \item[3c) ] $0.56$
+    \item[3d) ] $0.9$
+    \item[4) ] $\frac{47}{72}$
+    \item[5) ] $0.9$
+    \item[6) ] $\frac{1}{6}$
+    \item[7) ] $0.85$
+    \item[8) ] $\frac{5}{8}$
+    \item[9) ] $1$
+    \item[10a) ] $0.89$
+    \item[10b) ] $0.05$
+    \item[10c) ] $0.19$
+    \item[11) ] $P(E\cup F)=\frac{71}{60}>1$ Probabilities cannot be\\ greater than 1.
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{4}
+\begin{enumerate}
+    \item[1b ] $\frac{1}{6}$
+    \item[1c ] $\frac{13}{18}$
+    \item[2 ] $\frac{9}{19}$
+    \item[3 ] $0.4281$
+    \item[4b ] $0.825$
+    \item[5b ] $0.8536$
+    \item[6b ] $\frac{1}{3}$
+    \item[6c ] $\frac{2}{3}$
+    \item[6d ] $\frac{1}{7}$
+    \item[7a ] $0.224$
+    \item[7b ] $0.776$
+    \item[7c ] $0.252$
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{4}
+\begin{enumerate}
+    \item[1a) ] $0.9\implies$not exhaustive
+    \item[1b) ] $1\implies$exhaustive
+    \item[1c) ] $0.15\implies$not exhaustive
+    \item[1d) ] $\frac{5}{6}\implies$not exhaustive
+    \item[2a) ] $0.3\implies$not mutually exclusive
+    \item[2b) ] $\frac{3}{5}\implies$not mutually exclusive
+    \item[2c) ] $0.6\implies$not mutually exclusive
+    \item[2d) ] $0\implies$mutually exclusive
+    \item[3a) ] $0.64$
+    \item[3b) ] $0.82$
+    \item[3c) ] $0.56$
+    \item[3d) ] $0.9$
+    \item[4) ] $\frac{47}{72}$
+    \item[5) ] $0.9$
+    \item[6) ] $\frac{1}{6}$
+    \item[7) ] $0.85$
+    \item[8) ] $\frac{5}{8}$
+    \item[9) ] $1$
+    \item[10a) ] $0.89$
+    \item[10b) ] $0.05$
+    \item[10c) ] $0.19$
+    \item[11) ] $P(E\cup F)=\frac{71}{60}>1$ Probabilities cannot be\\ greater than 1.
+\end{enumerate}
+\end{multicols}
+
+\begin{multicols}{4}
+\begin{enumerate}
+    \item[1a)i) ] $\frac{5}{9}$
+    \item[1a)ii) ] $\frac{4}{9}$
+    \item[1a)iii) ] $\frac{3}{4}$
+    \item[1a)iv) ] $\frac{3}{5}$
+    \item[1a)v) ] $\frac{1}{3}$
+    \item[1b) ] $\frac{3}{4}$
+    \item[2a) ] $0.3616$
+    \item[2b) ] $0.2044$
+    \item[3a) ] $0.7$
+    \item[3b) ] $0.3$
+    \item[4) ] $0.4$
+    \item[5) ] $0.25$
+    \item[6a)i) ] $\frac{2}{15}$
+    \item[6a)ii) ] $\frac{4}{5}$
+    \item[6a)iii) ] $\frac{4}{15}$
+    \item[6a)iv) ] $\frac{2}{3}$
+    \item[6a)v) ] $\frac{1}{5}$
+    \item[6b)i) ] $\frac{2}{7}$
+    \item[6b)ii) ] $\frac{4}{7}$
+    \item[6b)iii) ] $\frac{4}{7}$
+    \item[6b)iv) ] $\frac{3}{7}$
+    \item[6b)v) ] $\frac{3}{8}$
+    \item[7) ] $0.725$
+    \item[8) ] $P(\text{express})=0.35$\\$P(\text{regular})=0.65$\\$P(\text{undamaged}|\text{express})=0.98$\\$P(\text{undamaged}|\text{express})=0.91$
+\end{enumerate}
+\end{multicols}
+
+\newpage
+
+### Chapter 5 - An Introduction to Linear Regression {-}
+
+\begin{multicols}{4}
+\begin{enumerate}
+    \item Hi
+\end{enumerate}
+\end{multicols}
+
+\newpage
+
+### Chapter 6 - Random Variables {-}
+
+\begin{multicols}{4}
+\begin{enumerate}
+    \item Hi
+\end{enumerate}
+\end{multicols}
+
+\newpage
+
+### Chapter 7 - Discrete Distributions {-}
+
+\begin{multicols}{3}
+\textbf{Exercise 6A}
+\begin{enumerate}
+    \item $E(X)=3$ and $V(X)=2$
+    \item $E(X)=8$ and $V(X)=\frac{56}{3}$
+    \item
+    \begin{enumerate}
+        \item $E(X)=4.5$ and $V(X)=5.25$
+        \item $E(2X+5)=14$ and $V(2X+5)=21$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $X\sim U(20)$
+        \item $E(X)=10.5$ and $V(X)=33.25$
+        \item $E(1-3X)=-30.5$ and $V(1-3X)=299.25$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $E(X-Y)=-1$
+        \item $V(X-Y)=\frac{8}{3}$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $k=10$
+        \item $P(2\leqslant X<6)=0.4$
+        \item $SD(X)=\frac{\sqrt{33}}{2}$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $k=8$
+        \item $E(1-2Y)=-8$
+    \end{enumerate}
+    \item $X\sim U(11)$ and $Y\sim U(7)$
+\end{enumerate}
+
+\textbf{Exercise 6B}
+\begin{enumerate}
+    \item $0.2503$
+    \item $0.2787$
+    \item $0.0579$
+    \item $0.0988$
+    \item
+    \begin{enumerate}
+        \item $X\sim B(4,\frac{1}{7})$
+        \item $0.3599$
+    \end{enumerate}
+    \item 0.0214
+\end{enumerate}
+
+\textbf{Exercise 6C}
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item $0.9894$
+        \item $0.0367$
+        \item $0.9527$
+        \item $0.0106$
+        \item $0.0473$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $0.9527$
+        \item $0.2235$
+        \item $0.5756$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $0.7414$
+        \item $0.0003$
+        \item $0.4829$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $0.1468$
+        \item $0.5033$
+        \item $0.1927$
+    \end{enumerate}
+\end{enumerate}
+    
+\textbf{Exercise 6D}
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\mu=0.8,\sigma^2=0.64$
+        \item $\mu=2,\sigma^2=\frac{4}{3}$
+        \item $\mu=0.4,\sigma^2=0.36$
+        \item $\mu=12,\sigma^2=7.2$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $S\sim B(10,\frac{1}{4})$
+        \item $E(S)=2.5$ and $V(S)=1.875$
+        \item $0.0197$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $p=0.2$
+        \item $SD(X)=0.96$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $p=\frac{2}{3}$
+        \item $E(Y)=8$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $n=20$ and $p=\frac{4}{5}$
+        \item $P(5<X<10)=0.0006$
+    \end{enumerate}
+\end{enumerate}
+
+\textbf{Exercise 6E}
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $0.1336$
+        \item $0.0821$
+        \item $0.2873$
+        \item $0.7127$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $X\sim Po(4)$
+        \item $0.0183$
+    \end{enumerate}
+\end{enumerate}
+
+\textbf{Exercise 6F}
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $0.01512$
+        \item $0.5543$
+        \item $0.0620$
+        \item $0.3937$
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $0.02231$
+        \item $0.0611$
+        \item $0.4412$
+        \item $0.1912$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $X\sim Po(1)$
+        \item $0.0190$
+    \end{enumerate}
+\end{enumerate}
+
+\textbf{Exercise 6G}
+\begin{enumerate}
+    \item $0.9473$
+    \item $0.9389$
+    \item $0.2661$
+    \item $0.1353$
+    \item $0.0144$
+\end{enumerate}
+
+\textbf{Review Exercise}
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\frac{5}{8}$
+        \item $E(X)=4.5$ and $V(X)=5.25$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $0.1954$
+        \item $0.2071$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $0.1294$
+        \item $0.4769$
+    \end{enumerate}
+    \item $0.4335$
+    \item
+    \begin{enumerate}
+        \item $0.8298$
+        \item $\mu=17$ and $\sigma=1.597$
+        \item The germination of the seeds is independent.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $0.6703$
+        \item $0.1954$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $P(M|V)=0.2$
+        \item $X\sim B(8,0.3)$
+        \item $0.0580$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $0.2$
+        \item $0.1528$
+        \item $0.0267$
+    \end{enumerate}
+\end{enumerate}
+\end{multicols}
+
+\newpage
+
+### Chapter 8 Answers - Continuous Distributions {-}
+
+\begingroup
+\footnotesize
+
+[]{#ex81a}
+
+#### [Exercise 8.1](#ex81q) {-}
+
+\begin{multicols}{3}
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\frac{2}{3}$
+        \item $0.7667$
+        \item $0.1$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\frac{1}{3}$
+        \item $0$
+        \item $0.6583$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\frac{1}{6}$
+        \item $\frac{5}{6}$
+        \item $\frac{5}{12}$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item \mbox{$E(X)=1,$} \mbox{$SD(X)=2.89$}
+        \item \mbox{$E(3X-1)=2,$} \mbox{$V(5-2X)=\frac{100}{3}$}
+        \item $0.64$
+        \item $0.4$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\frac{5}{6}$
+        \item $7.5$ mins
+        \item $4.33$ mins
+    \end{enumerate}
+    \item $\frac{4}{7}$
+    \item
+    \begin{enumerate}
+        \item $0.4$
+        \item \mbox{$X\sim B(20,0.4),$}$0.5841$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $8$
+        \item $4.04$
+        \item $0.5$
+        \item $0.5771$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $X\sim U(2,14)$
+        \item $\sqrt{12}$
+        \item $\frac{5}{12}$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $Y\sim U(16,22)$
+        \item $0.4082$
+    \end{enumerate}
+\end{enumerate}
+\end{multicols}
+
+[]{#ex82a}
+
+#### [Exercise 8.2](#ex82q) {-}
+
+\begin{multicols}{3}
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item $52,60,68$ marked
+        \item $237,243,249$ marked
+        \item $5.4,8,10.6$ marked
+        \item $12.6,15,17.4$ marked
+    \end{enumerate}
+    \item $3,7,11$ marked
+    \item $5,8,11$ marked
+    \item $26,32,38$ marked
+\end{enumerate}
+\end{multicols}
+
+[]{#ex83a}
+
+#### [Exercise 8.3](#ex83q) {-}
+
+\begin{multicols}{3}
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item $0$
+        \item $0.9573$
+        \item $0.9573$
+        \item $0.5$
+        \item $0.6368$
+        \item $0.9788$
+        \item $0.0212$
+        \item $0.1170$
+        \item $0.1170$
+        \item $0.7123$
+        \item $0.9251$
+        \item $0.2843$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $0.0740$
+        \item $0.2888$
+        \item $0.0339$
+        \item $0.1618$
+        \item $0.6612$
+        \item $0.6826$
+        \item $0.9544$
+        \item $0.9500$
+        \item $0.8990$
+    \end{enumerate}
+\end{enumerate}
+\end{multicols}
+
+[]{#ex84a}
+
+#### [Exercise 8.4](#ex84q) {-}
+
+\begin{multicols}{3}
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item $0.7475$
+        \item $0.1587$
+        \item $0.6306$
+        \item $0.4719$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $0.1587$
+        \item $0.4305$
+        \item $0.9660$
+        \item $0.3891$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $X\sim N(67.4,6^2)$
+        \item
+        \begin{enumerate}
+            \item $0.6676$
+            \item $0.6554$
+            \item $0.2647$
+        \end{enumerate}
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item
+        \begin{enumerate}
+            \item $0.8997$
+            \item $0.9500$
+        \end{enumerate}
+        \item
+        \begin{enumerate}
+            \item $143$
+            \item $595$
+            \item $536$
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+\end{multicols}
+
+[]{#ex85a}
+
+#### [Exercise 8.5](#ex85q) {-}
+
+\begin{multicols}{3}
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item $1.28$
+        \item $1.64$
+        \item $3.09$
+        \item $2.33$
+        \item $2.58$
+        \item $-1.96$
+        \item $-2.58$
+        \item $-1.28$
+        \item $-1.96$
+        \item $3.09$
+        \item $0.81$
+        \item $2.75$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $X\sim N(2.4,0.2^2)$
+        \item $0.0228$
+        \item $2.866$ litres
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $8.692$ mins
+        \item $7.612$ to $8.788$ mins
+    \end{enumerate}
+    \item $\sigma=9.9$
+    \item $\mu=64.1,\sigma=14.8$
+\end{enumerate}
+\end{multicols}
+
+[]{#ex86a}
+
+#### [Exercise 8.6](#ex86q) {-}
+
+\begin{multicols}{3}
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item $N(34,13.09)$
+        \item $0.6103$
+    \end{enumerate}
+    \item $0.1867$
+    \item $0.1379$
+    \item $0.0192$
+\end{enumerate}
+\end{multicols}
+
+[]{#ex87a}
+
+#### [Exercise 8.7](#ex87q) {-}
+
+\begin{multicols}{3}
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item $np=16,nq=24$ $np,nq>5$
+        \item
+        \begin{enumerate}
+            \item $0.9265$
+            \item $0.0031$
+            \item $\approx0$
+        \end{enumerate}
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $np=54,nq=27$ $np,nq>5$
+        \item
+        \begin{enumerate}
+            \item $0.3632$
+            \item $0.0338$
+            \item $0.6971$
+        \end{enumerate}
+    \end{enumerate}
+    \item $X\sim B(600,0.85)$ $0.1151$
+    \item $0.2578$
+    \item $0.0044$
+\end{enumerate}
+\end{multicols}
+
+[]{#ex88a}
+
+#### [Exercise 8.8](#ex88q) {-}
+
+\begin{multicols}{3}
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item $0.6217$
+        \item $0.0661$
+        \item $0.5398$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $0.6736$
+        \item $0.5640$
+        \item $0.1357$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $0.2611$
+        \item $0.2349$
+        \item $0.0550$
+    \end{enumerate}
+    \item $0.8907$
+    \item
+    \begin{enumerate}
+        \item $0.7384$
+        \item $3.8$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $0.4562$
+        \item $0.1718$
+        \item $0.8315$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $0.2389$
+        \item $0.4641$
+    \end{enumerate}
+    \item $0.8529$
+\end{enumerate}
+\end{multicols}
+
+[]{#re8a}
+
+#### [Chapter 8 Review Exercise](#re8q) {-}
+
+\begin{multicols}{3}
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item $4$
+        \item $3$
+        \item $\frac{1}{3}$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $0.7977$
+        \item $0.3413$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $H\sim N(18.1,0.7^2)$
+        \item $0.0033$
+        \item $19.248$ feet
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $0.1353$
+        \item $0.0733$
+    \end{enumerate}
+    \item $22.99$
+    \item 
+    \begin{enumerate}
+        \item $0.3$
+        \item $0.6172$
+        \item $0.4562$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $0.0951$
+    \end{enumerate}
+\end{enumerate}
+\end{multicols}
+
+\endgroup
+
+\newpage
+
+### Chapter 9 - Distribution of the Sample Mean {-}
+
+\chead{ANSWERS}
+
+\begin{multicols}{3}
+\textbf{Exercise 9.1}
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item
+        \begin{enumerate}
+            \item $0.3821$
+            \item $0.4404$
+        \end{enumerate}
+        \item
+        \begin{enumerate}
+            \item $N(24,\frac{4^2}{3})$
+            \item $0.3015$
+            \item $0.3974$
+        \end{enumerate}
+    \end{enumerate}
+    \item $0.1922$
+    \item
+    \begin{enumerate}
+        \item $0.3085$
+        \item $0.1170$
+    \end{enumerate}
+    \item $0.0228$
+    \item
+    \begin{enumerate}
+        \item $0.0082$
+        \item $0.3974$
+    \end{enumerate}
+    \item $0.9992$
+\end{enumerate}
+
+\vfill\null
+\columnbreak
+
+\textbf{Exercise 9.2}
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item $X\approx N(2.3,\frac{5^2}{40})$
+        \item $Y\sim N(83,\frac{9}{25})$
+        \item $D\sim N(126,\frac{10}{7})$
+        \item Comment.
+    \end{enumerate}
+    \item $0.9857$
+    \item $0.0071$
+    \item $0.1038$
+    \item $0.3758$
+    \item
+    \begin{enumerate}
+        \item $0.0526$
+    \end{enumerate}
+\end{enumerate}
+
+\vfill\null
+\columnbreak
+
+\textbf{Review Exercise}
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\bar{X}\sim N(15,\frac{3^2}{8})$
+        \item $0.9706$
+    \end{enumerate}
+    \item $0.9981$
+    \item
+    \begin{enumerate}
+        \item Comment.
+        \item $\bar{X}\approx N(600,\frac{70^2}{40})$
+        \item $0.1489$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item
+        \begin{enumerate}
+            \item $X\sim N(60,2^2)$
+            \item $0.3085$
+        \end{enumerate}
+        \item
+        \begin{enumerate}
+            \item $\bar{X}\sim N(60, \frac{2^2}{8})$
+            \item $0.1271$
+        \end{enumerate}
+        \item Comment.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $X\sim Po(4.5)$
+        \item $0.1736$
+        \item $X\approx N(4.5,\frac{4.5}{30})$
+        \item $0.0985$
+    \end{enumerate}
+\end{enumerate}
+\end{multicols}
+
+\newpage
+
+### Chapter 10 - An Introduction to Hypothesis Testing {-}
+
+\chead{ANSWERS}
+
+\begin{multicols}{2}
+
+\textbf{Exercise 10.1}
+\begin{enumerate}
+    \item $H_0:\mu=8.6$\\
+    $H_1: \mu>8.6$
+    \item $H_0:\mu=12$\\
+    $H_1: \mu>12$
+    \item $H_0:\mu=4.2$\\
+    $H_1: \mu<4.2$
+    \item $H_0:\mu=2.5$\\
+    $H_1: \mu\ne2.5$
+    \item $H_0:\mu=65$\\
+    $H_1: \mu>65$
+    \item $H_0:\mu=15.7$\\
+    $H_1: \mu\ne15.7$
+\end{enumerate}
+
+\textbf{Exercise 10.2}
+\begin{enumerate}
+    \item $0.0162<0.05\implies \textit{reject }H_0$
+    \item $0.1056>0.01\implies \textit{do not reject }H_0$
+    \item $0.0485<0.1\implies \textit{reject }H_0$
+    \item $0.0764>0.05\implies \textit{do not reject }H_0$
+\end{enumerate}
+
+\textbf{Exercise 10.3}
+\begin{enumerate}
+    \item $0.0286<0.1\implies \textit{reject }H_0$
+    \item $0.0702>0.001\implies \textit{do not reject }H_0$
+    \item $0.0485<0.05\implies \textit{reject }H_0$
+    \item $0.0220<0.1\implies \textit{reject }H_0$
+    \item $0.0294<0.05\implies \textit{reject }H_0$
+    \item $0.0488>0.01\implies \textit{do not reject }H_0$
+    \item $0.0023<0.05\implies \textit{reject }H_0$
+    \item $0.0250>0.01\implies \textit{do not reject }H_0$
+\end{enumerate}
+
+\textbf{Exercise 10.4}
+\begin{enumerate}
+    \item $1.67<1.96\implies \textit{do not reject }H_0$
+    \item $-2.5<-1.64\implies \textit{reject }H_0$
+    \item $2.24<2.33\implies \textit{do not reject }H_0$
+    \item $-0.77>-2.33\implies \textit{do not reject }H_0$
+    \item $2.00>1.96\implies \textit{reject }H_0$
+\end{enumerate}
+
+\textbf{Exercise 10.5}
+\begin{enumerate}
+    \item $-2.985<-1.895\implies \textit{reject }H_0$
+    \item $0.636<1.476\implies \textit{do not reject }H_0$
+    \item $2.317<2.447\implies \textit{do not reject }H_0$
+    \item $-3.531<-2.821\implies \textit{reject }H_0$
+\end{enumerate}
+
+\textbf{Exercise 10.6}
+\begin{enumerate}
+    \item $1.52<1.64\implies \textit{do not reject }H_0$
+    \item $2.42>2.33\implies \textit{reject }H_0$
+    \item $-2.78<-1.64\implies \textit{reject }H_0$
+    \item $1.17<1.96\implies \textit{do not reject }H_0$
+    \item $-2.04>-2.58\implies \textit{do not reject }H_0$
+    \item $-2.2<-1.64\implies \textit{reject }H_0$
+\end{enumerate}
+
+\textbf{Review Exercise}
+\begin{enumerate}
+    \item $-2.54<-2.33\implies \textit{reject }H_0$
+    \item $2.158<2.365\implies \textit{do not reject }H_0$
+    \item $-1.94<-1.64\implies \textit{reject }H_0$
+    \item $-3.00<-2.33\implies \textit{reject }H_0$
+    \item $-2.170<-1.895\implies \textit{reject }H_0$
+\end{enumerate}
+\end{multicols}
+
+\newpage
+
+### Chapter 11 - Confidence Intervals {-}
+
+\chead{ANSWERS}
+
+\begin{multicols}{2}
+
+\textbf{Exercise 10.1}
+\begin{enumerate}
+    \item $(55.18 ,58.82)$
+    \item $(12.76 ,14.84)$
+    \item $(14.53 ,15.87)$
+    \item $(37.38 ,40.62)$
+    \item $(49.03 ,51.29)$
+    \item $(5.41 ,5.99)$
+    \item
+    \begin{enumerate}
+        \item $(37.64 ,38.76)$
+        \item $(37.46 ,38.94)$
+        \item $31$
+    \end{enumerate}
+    \item $10.0$
+\end{enumerate}
+
+\textbf{Exercise 10.2}
+\begin{enumerate}
+    \item $(499.1,510.9)\implies \text{within, comment}$
+    \item $(419.5,426.5)\implies \text{within, comment}$
+    \item $(10.11,11.69)\implies \text{outwith, comment}$
+    \item $(2.439,2.961)\implies \text{within, comment}$
+    \item $(19.95,20.85)\implies \text{outwith, comment}$
+    \item $(28580,30020\implies \text{within, comment})$
+\end{enumerate}
+
+\textbf{Exercise 10.3}
+\begin{enumerate}
+    \item $(6.88,7.87)$
+    \item $(4048.5,4714.4)\implies \text{within, comment}$
+    \item $(960.0,1024.0)$
+    \item $(3.636,4.464)\implies \text{outwith, comment}$
+    \item $(2.760,4.740)\implies \text{outwith, comment}$
+\end{enumerate}
+
+\textbf{Exercise 10.4}
+\begin{enumerate}
+    \item $(0.598,0.736)$
+    \item $(0.133,0.427)$
+    \item $(0.327,0.387)$
+    \item $(0.086,0.149)\implies \text{within, comment}$
+    \item $(0.021,0.199)\implies \text{outwith, comment}$
+    \item $(0.026,0.083)\implies \text{within, comment}$
+    \item $n=147$
+    \item 
+    \begin{enumerate}
+        \item Systematic sampling
+        \item $(0.264,0.446)\implies \text{within, comment}$
+    \end{enumerate}
+\end{enumerate}
+
+\textbf{Review Exercise}
+\begin{enumerate}
+    \item $(63.98,82.77)$
+    \item $(0.116,0.444)$
+    \item 
+    \begin{enumerate}
+        \item $(125.8,126.8)$
+        \item Outwith, comment
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $12.5$
+        \item $s=25.77$
+    \end{enumerate}
+    \item $(0.679,0.888)\implies \text{outwith, comment}$
+\end{enumerate}
+\end{multicols}
+
+\newpage
+
+### Chapter 12 - Control Charts {-}
+
+\textbf{Exercise 12E}
+\begin{enumerate}
+    \item[2. ] $3.324<6.635 \implies \textit{do not reject } H_0$
+    \item[3. ] $2.326<4.605 \implies \textit{do not reject } H_0$
+\end{enumerate}
+
+\newpage
+
+### Chapter 12 - Chi-Squared Goodness-of-Fit Test {-}
+
+\textbf{Exercise 12E}
+\begin{enumerate}
+    \item[2. ] $3.324<6.635 \implies \textit{do not reject } H_0$
+    \item[3. ] $2.326<4.605 \implies \textit{do not reject } H_0$
+\end{enumerate}
+
+\newpage
+
+### Chapter 14 - Chi-Squared Test for Association {-}
+
+\begin{multicols}{4}
+\begin{enumerate}
+    \item Hi
+\end{enumerate}
+\end{multicols}
+
+\newpage
+
+### Chapter 15 - Two-Sample Parametric Tests {-}
+
+\begin{multicols}{4}
+\begin{enumerate}
+    \item Hi
+\end{enumerate}
+\end{multicols}
+
+\newpage
+
+#### Chapter 16 - Wilcoxon Signed Rank Test {-}
+
+*For any questions for which a level of significance is not specified, a 5\% level of significance has been used. Full answers should include, of course, conclusions in context*
+
+#### Exercise 16A {-}
+\begin{enumerate}
+    \item $9>3\implies\text{ do not reject }H_0$
+    \item $5.5<3\implies\text{ reject }H_0$
+    \item $8>5\implies\text{ do not reject }H_0$
+    \item $7.5>5\implies\text{ do not reject }H_0$
+    \item $10\leqslant 10\implies\text{ reject }H_0$
+    \item $9<10\implies\text{ reject }H_0$
+    \item $6.5>5\implies\text{ do not reject }H_0$
+\end{enumerate}
+
+#### Exercise 16B {-}
+\begin{enumerate}
+    \item $8.5<13\implies\text{ reject }H_0$
+    \item $11>5\implies\text{ do not reject }H_0$
+    \item $46>21\implies\text{ do not reject }H_0$
+    \item $1.5<2\implies\text{ reject }H_0$
+    \item $4<8\implies\text{ reject }H_0$
+\end{enumerate}
+
+#### Exercise 16C {-}
+\begin{enumerate}
+    \item $-0.34>-1.96\implies\text{ do not reject }H_0$
+    \item $-1.67<-1.64\implies\text{ reject }H_0$
+    \item $-0.27>-1.64\implies\text{ do not reject }H_0$
+    \item $W=80.5$
+    \item $W=55$
+\end{enumerate}
+
+#### Review Exercise {-}
+\begin{enumerate}
+    \item $5\leqslant5\implies\text{ reject }H_0$
+    \item $14>8\implies\text{ do not reject }H_0$
+    \item $-2.40>-1.96\implies\text{ reject }H_0$
+\end{enumerate}
+
+\newpage
+
+### Chapter 17 - Mann Whitney Rank Sum Test {-}
+
+\begin{multicols}{4}
+\begin{enumerate}
+    \item Hi
+\end{enumerate}
+\end{multicols}
+
+\newpage
+
+### Chapter 18 - Further Linear Regression {-}
+
+\begin{multicols}{4}
+\begin{enumerate}
+    \item Hi
+\end{enumerate}
+\end{multicols}
+
+
+### Spare
+
+\newpage
+
+\begin{enumerate}
+    \item[1a) ] Independent
+    \item[1b) ] Not independent
+    \item[2a) ] Independent
+    \item[2b) ] Not independent
+    \item[2c) ] Not independent
+\end{enumerate}
+\vspace{0.5cm}
+\textbf{Exercise 1G}
+\begin{enumerate}
+    \item[1) ] $0.8708$
+    \item[2) ] $0.6745$
+    \item[3) ] $0.695$
+    \item[4) ] $0.268$
+    \item[5) ] $0.3882$
+\end{enumerate}
+\vspace{0.5cm}
+\textbf{Exercise 1H}
+\begin{enumerate}
+    \item[1a) ] $0.4524$
+    \item[1b) ] $0.2836$
+    \item[1c) ] $0.6735$
+    \item[1d) ] $0.3333$
+    \item[1e) ] $0.0787$
+    \item[2) ] $0.8409$
+    \item[3) ] $0.7273$
+    \item[4) ] $0.0559$
+    \item[5) ] $0.3043$
+    \item[6) ] $0.3667$
+    \item[7) ] $0.8048$
+\end{enumerate}
+\vspace{0.5cm}
+\textbf{Exercise 1I}
+\begin{enumerate}
+    \item[1) ] $\frac{7}{12}$
+    \item[2a) ] $0.625$
+    \item[2b) ] $0.375$
+    \item[4) ] $0.3584$
+\end{enumerate}
+\vspace{0.5cm}
+\textbf{Review Exercise}
+\begin{enumerate}
+    \item[1) ] $\frac{7}{9}$
+    \item[2a) ] $\frac{17}{20}$
+    \item[2b)i) ] $\frac{37}{40}$
+    \item[2b)ii) ] $\frac{1}{8}$
+    \item[3a) ] $0.3917$
+    \item[3b) ] $0.1370$
+    \item[4) ] $P(M|B)=P(M)\therefore$ independent
+    \item[5a) ] $0.6525$
+    \item[5b) ] $0.3669$
+\end{enumerate}
+\end{multicols}
+
+\newpage

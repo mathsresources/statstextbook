@@ -1,0 +1,685 @@
+# Chi-Squared Test for Association
+
+Categorical variables can be described as *independent* if knowledge about one of the variables reveals nothing about the other. Another way of saying this is that there is **no association** between the variables. For example, knowing a person's *favourite colour* reveals nothing about whether or not they are *left-handed or right-handed*, and so there is no association between the someone's favourite colour and their handedness. 
+
+On the other hand, knowing whether or not someone *enjoys camping* is likely to help in predicting whether or not they *own a tent*, and so these variables are *not independent*. Another way of saying this is that there **is an association** between enjoying camping and owning a tent.
+
+Suppose a researcher wishes to investigate whether there is a link between someone's *handedness* and whether they have colour vision deficiency (*CVD*), often known as *colour-blindness*. Data is obtained for a random sample of 800 people, and the data is displayed in a *contingency table*: 
+
+\begin{center}
+\begin{tabular}{ c | c c} 
+     \textbf{Observed} & CVD & No CVD\\ 
+  \hline
+     Left-handed & 4 & 76\\
+     Right-handed & 58 & 662
+\end{tabular}
+\end{center}
+
+The contingency table shows that 5\% (4 out of 80) of left-handed people had colour-blindness, whilst slightly over 8\% (58 out of 720) of right-handed people had colour-blindness. However, this difference in proportions may have occurred due to an association between colour-blindness and handedness, or through *random chance*, since this is a *random sample* of individuals.
+
+A hypothesis test is required to assess whether the data in the contingency table gives evidence to suggest that there is in fact an association between handedness and colour-blindness.
+
+The hypotheses for this test will be as follows:
+
+\begin{center}
+\begin{tabular}{r c l}
+    $\text{H}_0:$ & \quad & There is \textbf{no association} between \textit{handedness} and \textit{colour-blindness}.\\[0.5em]
+    $\text{H}_1:$ & \quad & There is an \textbf{association} between \textit{handedness} and \textit{colour-blindness}.
+\end{tabular}
+\end{center}
+
+\pagebreak
+
+## $\chi^2$ Test for Association
+
+The $\chi^2$ test for association is used to explore a possible *association* between *two categorical variables*, the data for which are typically displayed in a **contingency table**. 
+
+The hypotheses for this **non-parametric** test should be stated *in context*.
+
+\vspace{0.3cm}
+
+\begin{centering}
+\tcbset{width=15cm}
+\begin{tcolorbox}[adjusted title=$\chi^2$ Test for Association hypotheses:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{center}
+\begin{tabular}{r l}
+    $\text{H}_0:$ & There is \textbf{no association} between the variables.\\[0.5em]
+    $\text{H}_1:$ & There is an \textbf{association} between the variables.
+\end{tabular}
+\end{center}
+\end{tcolorbox}
+\end{centering}
+
+\vspace{0.3cm}
+
+The test uses the *same test statistic and conditions for validity* as the $\chi^2$ goodness-of-fit test, given on page 6 of the SQA Data Booklet. The decision rule also matches that for the goodness-of-fit test, stated in Chapter 13.
+
+Returning to the data on handedness and colour-blindness, a $\chi^2$ test for association can now be performed. The first step is to include *marginal totals* for each row and column of the contingency table, as well as an total number of observations. The expected value for each cell can then be calculated by multiplying marginal totals and dividing by the total frequency, as shown below:
+
+\vspace{0.5cm}
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}[c]{.45\textwidth}
+  \centering
+\begin{center}
+\begin{tabular}{ c | c c | c } 
+     \textbf{Observed} & CVD & No CVD & \\ 
+  \hline
+     Left-handed & 4 & 76 &  \textit{80}\\ 
+     Right-handed & 58 & 662 & \textit{720}\\ 
+  \hline
+      & \textit{62} & \textit{738} & \textit{800}\\ 
+\end{tabular}
+\end{center}
+\end{minipage}%
+\begin{minipage}[c]{.1\textwidth}
+  \centering
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.45\textwidth}
+  \centering
+\begin{center}
+\begin{tabular}{ c | c c | c } 
+     \textbf{Expected} & CVD & No CVD & \\ 
+  \hline
+     Left-handed & 6.2 & 73.8 &  \textit{80}\\ 
+     Right-handed & 55.8 & 664.2 & \textit{720}\\ 
+  \hline
+      & \textit{62} & \textit{738} & \textit{800}\\ 
+\end{tabular}
+\end{center}
+\end{minipage}
+\end{figure}
+\begin{tikzpicture}[overlay]
+    \draw[stealth-] (15.3,2.6) -- (16.5,3.5) node[right] {$\dfrac{80\times 738}{800}$};
+    \node at (0,0) {};
+\end{tikzpicture}
+
+\vspace{-0.5cm}The expected values produced meet the required conditions, in that all are at least 1, and at least 80\% are at least 5. Note that these expected values can also be produced quickly using some graphical calculators, as can the $\chi^2$ test statistic:
+
+$$X^2=\frac{(4-6.2)^2}{6.2}+\frac{(76-73.8)^2}{73.8}+\frac{(58-55.8)^2}{55.8}+\frac{(662-664.2)^2}{664.2}=0.940$$
+
+The number of *degrees of freedom* for the test statistic is calculated as $\nu=(r-1)(c-1)$, where $r$ is the number of rows and $c$ is the number of columns of data in the contingency table, *not including marginal rows and columns*.
+
+Here there are *two rows* ($r=2$) and *two columns* ($c=2$), so $\nu=(2-1)(2-1)=1$. The $\chi^2_1$ critical value, taking a 5\% level of significance, can be obtained from Page 14 of the Data Booklet:  
+
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}[c]{.45\textwidth}
+  \centering
+\begin{center}
+Critical value: $\chi^2_{1,0.95}=3.841$
+\end{center}
+\end{minipage}%
+\begin{minipage}[c]{.1\textwidth}
+  \centering
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.45\textwidth}
+  \centering
+\begin{center}
+\begin{tikzpicture}[ 
+    declare function={gamma(\z)=
+    (2.506628274631*sqrt(1/\z) + 0.20888568*(1/\z)^(1.5) + 0.00870357*(1/\z)^(2.5) - (174.2106599*(1/\z)^(3.5))/25920 - (715.6423511*(1/\z)^(4.5))/1244160)*exp((-ln(1/\z)-1)*\z);},
+    declare function={gammapdf(\x,\k,\theta) = \x^(\k-1)*exp(-\x/\theta) / (\theta^\k*gamma(\k));}
+]
+\begin{axis}[
+  no markers, 
+  domain=0:15, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [smooth, domain=0:15] {gammapdf(x,2,2)};
+\addplot [draw=none, fill=black!50, domain=9.5:15] {gammapdf(x,2,2)} \closedcycle;
+\draw [semithick, black]  (axis cs: 9.5,0) -- (axis cs: 9.5,0.0205);
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 6,0.1)  {$\chi^2_1$};
+\node[below] at (axis cs: 9.5,0) {$3.841$};
+\node[above] at (axis cs: 12,0.03) {5\%};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{figure}
+
+Since $0.940<3.841$, $\text{H}_0$ is not rejected at the 5\% level of significance.
+
+There is insufficient evidence to suggest that there is an association between handedness and colour-blindness. 
+
+\pagebreak
+
+\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\textbf{Problem:} Researchers working for an educational organisation wish to explore a possible connection between playing a musical instrument and learning a foreign language in school-age teenagers. They randomly select three schools within the region and then, within each school, select a number of S4 pupils to interview.\\[0.5em]
+During the interview, each pupil is asked whether or not they play at least one musical instrument, and whether or not they are studying at least one modern language at National 5 level. The results are summarised in the contingency table below:
+
+\vspace{0.3cm}
+
+\begin{center}
+\begin{tabular}{ c | c c } 
+      & Modern language & No modern language\\ 
+  \hline
+     Plays an instrument & 32 & 18\\ 
+     Doesn't play an instrument & 10 & 20\\ 
+\end{tabular}
+\end{center}
+
+\vspace{0.3cm}
+
+Perform a $\chi^2$ test at the 1\% level of significance to assess whether there is evidence to suggest that there is an association between playing a musical instrument and learning a language.
+
+\tcblower
+\textbf{Solution:}
+
+\vspace{0.8cm}
+
+\begin{math}
+\begin{array}{ll}
+      \text{H}_0: & \text{There is no association between playing a musical instrument and learning a language.}\\[0.5em]
+      \text{H}_1: & \text{There is an association between playing a musical instrument and learning a language.}
+    \end{array}
+\left]
+    \begin{array}{l}
+      \alpha=0.01\\[0.5em]
+      \textnormal{One-tailed}
+    \end{array}
+  \right.
+\end{math}\\
+
+\vspace{0.8cm}
+
+\begin{center}
+\begin{tabular}{ c | c c | c c c |  c c | c} 
+     \textbf{Observed} & Language & No language & & \qquad \qquad & \textbf{Expected} & Language & No language & \\
+  \cline{1-4}
+  \cline{6-9}
+     Instrument & 32 & 18 & \textit{50} & \qquad & Instrument & 26.25 & 23.75 & \textit{50}\\
+     No instrument & 10 & 20 & \textit{30} & \qquad & No instrument & 15.75 & 14.25 & \textit{30}\\
+  \cline{1-4}
+  \cline{6-9}
+      & \textit{42} & \textit{38} & \textit{80} & \qquad \qquad &  & \textit{42} & \textit{38} & \textit{80}\\
+\end{tabular}
+\end{center}
+
+\vspace{0.8cm}
+
+$\nu=(r-1)(c-1)=(2-1)(2-1)=1$\\
+
+\vspace{0.8cm}
+
+Test statistic: $X^2=\dfrac{(32-26.24)^2}{26.25}+...+\dfrac{(20-14.25)^2}{14.25}=7.071$\\
+
+\vspace{0.8cm}
+
+Critical value: $\chi^2_{1,0.99}=6.635$
+\hspace{7cm}
+\begin{tikzpicture}[overlay, 
+    declare function={gamma(\z)=
+    (2.506628274631*sqrt(1/\z) + 0.20888568*(1/\z)^(1.5) + 0.00870357*(1/\z)^(2.5) - (174.2106599*(1/\z)^(3.5))/25920 - (715.6423511*(1/\z)^(4.5))/1244160)*exp((-ln(1/\z)-1)*\z);},
+    declare function={gammapdf(\x,\k,\theta) = \x^(\k-1)*exp(-\x/\theta) / (\theta^\k*gamma(\k));}
+]
+\begin{axis}[
+  no markers, 
+  domain=0:10, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [smooth, domain=0:10] {gammapdf(x,1.5,2)};
+\addplot [draw=none, fill=black!50, domain=6:10] {gammapdf(x,1.5,2)} \closedcycle;
+\draw [semithick, black]  (axis cs:6,0) -- (axis cs: 6,0.04865);
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 4,0.13)  {$\chi^2_1$};
+\node[below] at (axis cs: 6, 0) {$6.635$};
+\node[above] at (axis cs: 8,0.05) {1\%};
+\end{axis}
+\end{tikzpicture}\\
+
+\vspace{0.8cm}
+
+Since $7.017>6.635$, reject $\text{H}_0$ at the 1\% level of significance. There is evidence to suggest that there is an association between playing a musical instrument and learning a language.
+
+\end{tcolorbox}
+
+A vital check carried out before calculating degrees of freedom and the test statistic was that the conditions for validity were met. Here, none of the expected values were less than 1 and at least 80\% were at least 5.
+
+Marginal totals are helpful when manually calculating expected values. When a graphical calculator is available, expected values can be quickly produced using matrices.
+
+\pagebreak
+
+It should be noted that since the test's purpose of looking for evidence for an *association* is the same thing as looking for a *lack of independence*, the wording of a question may be framed in that manner, as below. 
+
+In such cases, reworded yet equivalent hypothesis should be used for the test for consistency.
+
+\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\textbf{Problem:} The outcomes for a random sample of 80 driving tests sat in three different test centres located across Lancashire are recorded. The organisation responsible for overseeing driving test standards is seeking to explore a claim made that the centres do not use the same standards, and that the outcome of driver's test is not independent to location chosen.
+
+
+\begin{center}
+\begin{tabularx}{15cm}{ >{\centering\arraybackslash}X >{\centering\arraybackslash}X | >{\centering\arraybackslash}X|  >{\centering\arraybackslash}X |>{\centering\arraybackslash}X| } 
+    \cline{3-5}
+ & & \multicolumn{3}{|c|}{Test Centre} \\
+  \cline{3-5}
+     & & Blackburn & Preston & Chorley\\ 
+  \hline
+    \multicolumn{1}{|c|}{\multirow{2}{4em}{Outcome}} & \multicolumn{1}{|c|}{Pass} & 19 & 15 & 2\\ 
+     \cline{2-5}
+ \multicolumn{1}{|c|}{}& \multicolumn{1}{|c|}{Fail} & 13 & 21 & 10\\ 
+    \hline
+\end{tabularx}
+\end{center}
+
+\vspace{0.3cm}
+
+Use a suitable non-parametric test to assess the data in the contingency table at the 10\% level of significance, and hence comment on whether the data supports the claim.
+
+\tcblower
+\textbf{Solution:}\\  
+
+\vspace{0.5cm}
+
+\begin{math}
+\begin{array}{ll}
+      \text{H}_0: & \text{The test outcome and test centre used are independent.}\\[0.5em]
+      \text{H}_1: & \text{The test outcome and test centre used are not independent.}
+    \end{array}
+\left]
+    \begin{array}{l}
+      \alpha=0.1\\[0.5em]
+      \textnormal{One-tailed}
+    \end{array}
+  \right.
+\end{math}\\
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{tabular}{ c | c c c c c |  c c c} 
+     \textbf{Observed} & Blackburn & Preston & Chorley & \qquad \qquad & \textbf{Expected} & Blackburn & Preston & Chorley\\
+  \cline{1-4}
+  \cline{6-9}
+     Pass & 19 & 15 & 2  & \qquad & Pass & 14.4 & 16.2 & 5.4 \\
+     Fail & 13 & 21 & 10  & \qquad & Fail & 17.6 & 19.8 & 6.6 \\
+\end{tabular}
+\end{center}
+
+\vspace{0.5cm}
+
+$\nu=(r-1)(c-1)=(2-1)(3-1)=2$\\
+
+\vspace{0.5cm}
+
+Test statistic: $X^2=\dfrac{(17-14.4)^2}{14.4}+...+\dfrac{(9-6.6)^2}{6.6}=6.726$\\
+
+\vspace{0.5cm}
+
+Critical value: $\chi^2_{2,0.9}=4.605$
+\hspace{6.5cm}
+\begin{tikzpicture}[overlay, 
+    declare function={gamma(\z)=
+    (2.506628274631*sqrt(1/\z) + 0.20888568*(1/\z)^(1.5) + 0.00870357*(1/\z)^(2.5) - (174.2106599*(1/\z)^(3.5))/25920 - (715.6423511*(1/\z)^(4.5))/1244160)*exp((-ln(1/\z)-1)*\z);},
+    declare function={gammapdf(\x,\k,\theta) = \x^(\k-1)*exp(-\x/\theta) / (\theta^\k*gamma(\k));}
+]
+\begin{axis}[
+  no markers, 
+  domain=0:10, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [smooth, domain=0:10] {gammapdf(x,1.5,2)};
+\addplot [draw=none, fill=black!50, domain=4.6:10] {gammapdf(x,1.5,2)} \closedcycle;
+\draw [semithick, black]  (axis cs:4.6,0) -- (axis cs: 4.6,0.0865);
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 4,0.13)  {$\chi^2_2$};
+\node[below] at (axis cs: 4.6, 0) {$4.605$};
+\node[above] at (axis cs: 7,0.06) {10\%};
+\end{axis}
+\end{tikzpicture}\\
+
+\vspace{0.5cm}
+
+Since $6.726<4.605$, reject $\text{H}_0$ at the 10\% level of significance.\\
+There is evidence to suggest the driving centre used and the outcome of the test are not independent. This suggests the claim may be true (although there could be other reasons apart from a difference in standards applied by the centres).\\
+
+\end{tcolorbox}
+
+Note that an equivalent conclusion would be that there is evidence to suggest that there is an *association* between driving centre used and the outcome of the test. However, it is generally preferable for a solution to mirror the language used in the question.
+\pagebreak
+
+#### Exercise 14A {-}
+
+\begin{enumerate}
+    \item For all the games in the last 12 months, an ice hockey team records whether they won or lost, as well as whether the game was played at the weekend or on a weekday. The results were collated using a contingency table:
+    \begin{center}
+      \begin{tabularx}{7.5cm}{>{\centering\arraybackslash}X|  >{\centering\arraybackslash}X >{\centering\arraybackslash}X } 
+         & Won & Lost\\ 
+        \hline
+        Weekend & 13 & 8\\
+        Weekday & 7 & 14
+      \end{tabularx}
+    \end{center}
+  Perform a $\chi^2$ test, at the 10\% level of significance, to assess whether there is evidence of an association between when a game is played and the result for the team.
+    \item A police service gives motorists caught speeding a choice between attending a speed awareness course and a fine together with points added to their licence. A random sample of such motorists has their records checked to see whether they committed a further offence in the following 12 months. The data is recorded in a contingency table:
+    \begin{center}
+      \begin{tabularx}{10.5cm}{>{\centering\arraybackslash}X|  >{\centering\arraybackslash}X >{\centering\arraybackslash}X } 
+         & Awareness course & Fine and points\\ 
+        \hline
+        Further offence & 12 & 16\\
+        No further offence & 7 & 5
+      \end{tabularx}
+    \end{center}
+  Carry out a non-parametric test, at the 5\% level of significance, to determine if there is an association between the choice of speeding penalty and whether a further speeding offence is committed.
+  \item A sports scientist is studying the effects of caffeine on the performance of professional darts players. 40 players are each randomly allocated to be given either a \textit{caffeinated} or \textit{caffeine-free} drink, each identical in appearance and taste. They are then given one attempt to hit a bullseye on a dart board. The results are as follows:
+    \begin{center}
+      \begin{tabularx}{7.5cm}{>{\centering\arraybackslash}X|  >{\centering\arraybackslash}X >{\centering\arraybackslash}X } 
+         & Caffeinated & Caffeine-free\\ 
+        \hline
+        Hit & 7 & 15\\
+        Miss & 17 & 11
+      \end{tabularx}
+    \end{center}
+    The sports scientist claims that this shows that caffeine has an effect on the performance of darts players. Perform a $\chi^2$ test of association to determine whether the data supports the claim, at the 10\% level of significance.
+    \item Some modern cameras allow greater control over the sound the shutter makes when taking a photograph; however, some photographers claim that for one particular model there is an association between the shutter mode used and autofocus performance. 90 photos are taken with this model using the three different shutter modes, and each photograph is carefully checked to see whether it was in focus or not.
+    \begin{center}
+      \begin{tabularx}{9cm}{>{\centering\arraybackslash}X|  >{\centering\arraybackslash}X >{\centering\arraybackslash}X } 
+         & In focus & Not in focus\\ 
+        \hline
+        Normal mode & 11 & 4\\
+        Quiet mode & 13 & 5\\
+        Silent mode & 19 & 8
+      \end{tabularx}
+    \end{center}
+    Assess whether the data in the contingency table shows evidence for the claim, at the 5\% level of significance.
+    \item Over the course of a month, a number of employees working at a company's office are selected at random each day to have their arrival time and their mode of transport noted. No employee is asked more than once. The results are shown in the contingency table below:
+    \begin{center}
+      \begin{tabularx}{12cm}{>{\centering\arraybackslash}X|  >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X} 
+         & Car & Bus & Cycle & Walk\\ 
+        \hline
+        On time & 48 & 37 & 12 & 23\\
+        Late & 11 & 9 & 3 & 7
+      \end{tabularx}
+    \end{center}
+    Perform a chi-squared test at the 1\% level of significance to test whether there is an association between the mode of transport an employee uses and whether they make it into work on time.
+\end{enumerate}
+
+\pagebreak
+
+## Combining Columns or Rows
+
+Where the conditions for validity for a $\chi^2$ test of association are not met, it may be still possible to carry out a test by *combining rows and/or columns*. It is generally advised to collapse those which most naturally may be combined.
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} A pharmaceutical company arranges for a random sample of 120 patients to take part in a trial of a new pain relief medication. Some will be given the new medication, whilst others will instead be given a placebo treatment that is identical in appearance and packaging. At the end of the week, each patient will be asked whether they experienced a reduction, an increase in pain, or no change. The data collected is shown in the table below:
+\begin{center}
+\begin{tabularx}{15cm}{ >{\centering\arraybackslash}X >{\centering\arraybackslash}X | >{\centering\arraybackslash}X|  >{\centering\arraybackslash}X |>{\centering\arraybackslash}X| } 
+    \cline{3-5}
+ & & \multicolumn{3}{|c|}{Pain reported} \\
+  \cline{3-5}
+     & & Reduction & No change & Increase\\ 
+  \hline
+    \multicolumn{1}{|c|}{\multirow{2}{4em}{Treatment}} & \multicolumn{1}{|c|}{Medication} & 45 & 17 & 4\\ 
+     \cline{2-5}
+ \multicolumn{1}{|c|}{}& \multicolumn{1}{|c|}{Placebo} & 28 & 23 & 3\\ 
+    \hline
+\end{tabularx}
+\end{center}
+Assess at the 5\% level of significance whether there is evidence of an association between the treatment given and the pain reported by the patient.
+
+\tcblower
+\textbf{Solution:}\\  
+
+\begin{math}
+\begin{array}{ll}
+      \text{H}_0: & \text{There is no association between the treatment given and pain reported.}\\[0.5em]
+      \text{H}_1: & \text{There is an association between the treatment given and pain reported.}
+    \end{array}
+\left]
+    \begin{array}{l}
+      \alpha=0.05\\[0.5em]
+      \textnormal{One-tailed}
+    \end{array}
+  \right.
+\end{math}\\
+
+\begin{center}
+\begin{tabular}{ c | c c c  c c | c c c }
+    \textbf{Observed} & Reduction & No change & Increase & $\qquad$ & \textbf{Expected} & Reduction & No change & Increase\\
+    \cline{1-4}
+    \cline{6-9}
+    Medication & 45 & 17 & 4 & & Medication & 40.15 & 22 & 3.85\\
+    Placebo & 28 & 23 & 3 & & Placebo & 32.85 & 18 & 3.15\\
+\end{tabular}
+\end{center}
+
+\textit{Since less than 80\% of expected values are at least 5, the last two columns should be combined.}
+
+\begin{center}
+\begin{tabular}{ c | c c  c c | c c }
+    \textbf{Observed} & Reduction & No reduction & $\qquad$ & \textbf{Expected} & Reduction & No reduction\\
+    \cline{1-3}
+    \cline{5-7}
+    Medication & 45 & 21 & & Medication & 40.15 & 25.85\\
+    Placebo & 28 & 26 & & Placebo & 32.85 & 21.15\\
+\end{tabular}
+\end{center}
+
+$\nu=(r-1)(c-1)=(2-1)(2-1)=1$\\
+
+\vspace{0.5cm}
+
+Test statistic: $X^2=\dfrac{(45-40)^2}{40}+...+\dfrac{(26-21.15)^2}{21.15}=3.324$\\
+
+\vspace{0.5cm}
+
+Critical value: $\chi^2_{1,0.95}=3.841$
+\hspace{6.5cm}
+\begin{tikzpicture}[overlay, 
+    declare function={gamma(\z)=
+    (2.506628274631*sqrt(1/\z) + 0.20888568*(1/\z)^(1.5) + 0.00870357*(1/\z)^(2.5) - (174.2106599*(1/\z)^(3.5))/25920 - (715.6423511*(1/\z)^(4.5))/1244160)*exp((-ln(1/\z)-1)*\z);},
+    declare function={gammapdf(\x,\k,\theta) = \x^(\k-1)*exp(-\x/\theta) / (\theta^\k*gamma(\k));}
+]
+\begin{axis}[
+  no markers, 
+  domain=0:10, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [smooth, domain=0:10] {gammapdf(x,1.5,2)};
+\addplot [draw=none, fill=black!50, domain=4.6:10] {gammapdf(x,1.5,2)} \closedcycle;
+\draw [semithick, black]  (axis cs:4.6,0) -- (axis cs: 4.6,0.0865);
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 4,0.13)  {$\chi^2_1$};
+\node[below] at (axis cs: 4.6, 0) {$3.841$};
+\node[above] at (axis cs: 7,0.06) {5\%};
+\end{axis}
+\end{tikzpicture}\\
+
+\vspace{0.5cm}
+
+Since $3.324<3.841$, do not reject $\text{H}_0$ at the 5\% level of significance.\\
+There is insufficient evidence to suggest that there is an association between the treatment given and the pain reported by patients.
+
+\end{tcolorbox}
+
+As with all all hypothesis tests, a decision to not reject $\text{H}_0$ does not mean there is evidence that it is true - only that there is insufficient evidence to suggest that it is *not* true in favour of $\text{H}_1$.
+
+\pagebreak
+
+#### Exercise 14B{-}
+
+\begin{enumerate}
+    \item A random sample of residents listed on the electoral register in four Scottish cities are selected and contacted to find out whether they voted in the most recent UK General Election, and the results shown in a contingency table. A \textit{spoiled vote} means they deliberately left their ballot paper blank or otherwise voided it, often seen as a `protest vote'.
+\begin{center}
+\begin{tabular}{ C{2cm} | C{1cm} C{1cm} C{1.2cm} C{1.2cm} C{0.5cm} C{2cm} | C{1cm} C{1cm} C{1.2cm} C{1.2cm}} 
+     Observed & Perth & Stirling & Glasgow & Dundee & & Expected & Perth & Stirling & Glasgow & Dundee\\ 
+  \cline{1-5}
+  \cline{7-11}
+     Voted & 51 & 43 & 27 & 40 & & Voted & 47.24 & 40.58 & 31.27 & 41.91\\ 
+     Didn't vote & 17 & 11 & 18 & 22 & & Didn't vote & 19.95 & 17.14 & 13.21 & 17.7\\
+     Spoiled & 3 & 7 & 2 & 1 & & Spoiled & 3.81 & 3.28 & 2.52 & 3.38
+\end{tabular}
+\end{center}
+Perform a test at the 5\% level of significance to assess whether there a difference in voting habits between the cities.
+\vspace{1cm}
+    \item Data is collected from a random sample of people living across the United Kingdom on how many teaspoons (\text{tsp}) of sugar they typically add to a cup of tea. The contingency table below shows the results:
+    \begin{center}
+    \begin{tabular}{c | c c c c c c | c c c c}
+        Observed & 0 tsp & 1 tsp & 2 tsp & 3+ tsp & & Expected & 0 tsp & 1 tsp & 2 tsp & 3+ tsp\\
+        \cline{1-5}
+        \cline{7-11}
+        England & 132 & 34 & 11 & 7 & \qquad \qquad & England & 132 & 34 & 11 & 7\\
+        Scotland & 52 & 27 & 13 & 4 & & Scotland & 52 & 27 & 13 & 4\\
+        Wales & 36 & 11 & 10 & 3 & & Wales & 36 & 11 & 10 & 3\\
+        N. Ireland & 27 & 16 & 5 & 0 & & N. Ireland & 27 & 16 & 5 & 0
+    \end{tabular}
+    \end{center}
+    Use a chi-squared test to assess, at the 5\% level of significance, whether there is a difference in the amount of sugar the residents of the various parts of the United Kingdom prefer in their tea.
+    \vspace{1cm}
+    \item A researcher studying a medical condition claims there is a link between having the condition and someone's blood type. A random sample of 620 patients registered with a local doctor have their blood tested, with the test revealing both which of the four major blood types they belong to and whether they test positive or negative for the condition.
+\begin{center}
+\begin{tabular}{ C{3cm} | C{1cm} C{1cm} C{1cm} C{1cm}} 
+      & O & A & B & AB\\ 
+  \hline
+     Positive & 7 & 24 & 10 & 2\\ 
+     Negative & 318 & 188 & 50 & 21
+\end{tabular}
+\end{center}
+Perform a non-parametric test at the 10\% level of significance to assess whether there is evidence to support a claim that there is an association between a patient's blood type and testing positive for the medical condition.
+\end{enumerate}
+
+\vspace{1cm}
+
+\pagebreak
+
+## Review Exercise {-}
+
+\begin{enumerate}
+    \item In statistician Ronald Fisher's 1935 book, `\textit{A Design of Experiments}', he details setting up a test to judge a claim made by the scientist Muriel Bristol: that she could tell whether milk was added to a cup \textit{before} tea, or \textit{after}. A statistics student, whose friend claims to only like tea when the milk is added first, decides to set up a similar experiment for herself, disbelieving that her friend can really tell the difference.\\[1em]
+    Over the course of a term, she makes 24 cups of tea for her friend, each time randomly selecting whether the milk is added before or after. Her friend then states whether he likes it or not, without knowing which method was used. The results are shown in a contingency table:
+    \begin{center}
+\begin{tabularx}{15cm}{ >{\centering\arraybackslash}X >{\centering\arraybackslash}X | >{\centering\arraybackslash}X|  >{\centering\arraybackslash}X |} 
+    \cline{3-4}
+ & & \multicolumn{2}{|c|}{Verdict} \\
+  \cline{3-4}
+     & & Likes the tea & Dislikes the tea\\ 
+  \hline
+    \multicolumn{1}{|c|}{\multirow{2}{4em}{Method}} & \multicolumn{1}{|c|}{Milk first} & 9 & 4\\ 
+     \cline{2-4}
+ \multicolumn{1}{|c|}{}& \multicolumn{1}{|c|}{Milk second} & 2 & 9\\ 
+    \hline
+\end{tabularx}
+\end{center}
+    Perform a non-parametric hypothesis test to assess at the 10\% level of significance the evidence for an association between the order the milk is added in and whether her friend likes the tea.
+    \item Two bird feeders are placed in a garden, with a different type of bird food in each: \textit{sunflower hearts} and \textit{mealworms}. The garden's owner observes the number of each species of bird that visit each of the two feeders over the course of a week:
+    \begin{center}
+    \begin{tabular}{c | c  c c c}
+     & Robins & Blue tits & Goldfinches & Bullfinches\\
+        \hline
+        Sunflower hearts & 5 & 34 & 7 & 1\\
+        Mealworms & 23 & 11 & 2 & 3
+    \end{tabular}
+    \end{center}
+    Perform a non-parametric hypothesis test to assess at the 2.5\% level of significance the evidence for an association between the species of the bird and the bird feeder it visits.
+    \item Two types of nutritional supplement, \textit{A} and \textit{B}, are given to newly hatched chicks. The growth over the next six months for each chick is categorised \textit{high}, \textit{medium} or \textit{low}, with the results displayed in a contingency table set up as below:
+    \begin{center}
+    \begin{tabular}{c | c c c}
+         & High & Medium & Low\\
+        \hline
+        Feed A & 17 & 11 & 7\\
+        Feed B & 13 & 18 & 5 
+    \end{tabular}
+    \end{center}
+    Computer output for a hypothesis test conducted on this data is shown below:\\[0.5em]
+    \texttt{chi-squared test for association}\\
+    \texttt{n = 71}\qquad \qquad \texttt{df = 2}\\
+    \texttt{alternative hypothesis: there is an asociation between the variables}\\
+    \texttt{test statistic = 2.543}\qquad \texttt{critical value = 4.605}\qquad \texttt{p-value = 0.2804}\\[0.5em]
+    \begin{enumerate}
+        \item Use the degrees of freedom (\textit{df}) to explain whether any columns or rows were combined.
+        \item State the significance level used.
+        \item State a suitable null hypothesis for the test.
+        \item Use the $p$-value to write a suitable conclusion to the test.
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+\textbf{Exercise 14A}
+
+\begin{enumerate}
+    \item $3.436>2.706$, reject $\text{H}_0$
+    \item $0.807<3.841$, do not reject $\text{H}_0$
+    \item $4.121>2.706$, reject $\text{H}_0$
+    \item $0.0465<5.991$, do not reject $\text{H}_0$
+    \item $0.282<11.345$, do not reject $\text{H}_0$
+\end{enumerate}
+
+\textbf{Exercise 14B}
+
+\begin{enumerate}
+    \item $3.328>7.815$, do not reject $\text{H}_0$
+    \item $15.737>12.592$, reject $\text{H}_0$
+    \item $25.106>4.605$, reject $\text{H}_0$
+\end{enumerate}
+
+\textbf{Review Exercise}
+
+\begin{enumerate}
+    \item $6.254>2.706$, reject $\text{H}_0$
+    \item $23.478>7.378$, reject $\text{H}_0$
+    \item 
+    \begin{enumerate}
+        \item No, with justification
+        \item 10\%
+        \item There is no association between the type of feed used and the growth of a chick.
+        \item $0.2804>0.1$, do not reject $\text{H}_0$, with context
+    \end{enumerate}
+\end{enumerate}

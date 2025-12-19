@@ -1,0 +1,197 @@
+## Standardisation using the Normal Distribution
+
+Many institutions that run exams (such as SATs) need to change the questions asked on a regular basis to maintain the integrity of the exam, whilst also retaining the ability to compare exam performances over time. Under the reasonable assumptions that exam scores are normally distributed and that each cohort of students is broadly the same in terms of ability, the $z$-transformation can be used to **standardise** exam scores.
+
+A typical approach could be to **scale** exam scores each year to a normal distribution with mean $\mu_s=50$ and standard deviation $\sigma_s=10$. For example, consider a student achieving an exam score of $x_e=71$ in an exam with normally distributed scores with mean $\mu_e=62$ and standard deviation $\sigma_e=9$. 
+
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}{.35\textwidth}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(1,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\draw [semithick, black]  (axis cs:1,-0.02) -- (axis cs:1,\valueA);
+\draw [semithick, black, dashed]  (axis cs:0,0) -- (axis cs:0,\valueB);
+\node[below] at (axis cs: 1,0)  {$71$};
+\node[below] at (axis cs: 0,0)  {$62$};
+\node[above] at (axis cs: 0,\valueB)  {$X_e\sim \text{N}(62,9^2)$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\end{minipage}%
+  \centering
+\begin{minipage}{.35\textwidth}
+  \centering
+  
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(1,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\draw [semithick, black]  (axis cs:1,-0.02) -- (axis cs:1,\valueA);
+\draw [semithick, black, dashed]  (axis cs:0,0) -- (axis cs:0,\valueB);
+\node[below] at (axis cs: 1,0)  {$1$};
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 0,\valueB)  {$Z\sim \text{N}(0,1)$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+  
+\end{minipage}%
+  \centering
+\begin{minipage}{.35\textwidth}
+  \centering
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(1,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\draw [semithick, black]  (axis cs:1,-0.02) -- (axis cs:1,\valueA);
+\draw [semithick, black, dashed]  (axis cs:0,0) -- (axis cs:0,\valueB);
+\node[below] at (axis cs: 1,0)  {$60$};
+\node[below] at (axis cs: 0,0)  {$50$};
+\node[above] at (axis cs: 0,\valueB)  {$X_s\sim \text{N}(50,10^2)$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\end{minipage}
+\end{figure}
+
+The **scaled score**, $x_s=60$, can be calculated using the *equated $z$-transformations* of the scores:
+
+\begin{align*}
+\frac{x_s-\mu_s}{\sigma_s}=&\frac{x_e-\mu_e}{\sigma_e}\\
+\frac{x_s-50}{10}=&\frac{71-62}{9}\\
+x_s=&1\times 10 + 50\\
+x_s=&60
+\end{align*}
+
+\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\textbf{Problem:} Marks in a national exam are standardised each year to have a mean of 55 marks and a standard deviation of 8 marks. The mean mark in the year Sophie sat the exam was 51 and the standard deviation was 11. Given that she scored 81 in this exam, calculate her standardised mark, stating two assumptions required.
+
+\tcblower
+\textbf{Solution:}
+
+Assuming both the standardised marks and exam marks are normally distributed:
+
+\begin{align*}
+\frac{x_s-\mu_s}{\sigma_s}=&\frac{x_e-\mu_e}{\sigma_e}\\
+\frac{x_s-55}{8}=&\frac{81-51}{11}\\
+x_s=&\frac{30}{11}\times 8 + 55\\
+x_s=&76.8
+\end{align*}
+
+Hence Sophie's standardised mark is 76.8.
+
+\end{tcolorbox}
+
+\pagebreak
+
+\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\textbf{Problem:} Marks in a national exam are standardised each year to have a mean of 50 marks and a standard deviation of 10 marks. The mean mark in the exam one year is 48 and the standard deviation is 5.
+
+Find the transformation required to convert the exam score, $x_e$, to the scaled score, $x_s$.
+
+\tcblower
+\textbf{Solution:}
+
+Assuming both the standardised marks and exam marks are normally distributed:
+
+\begin{align*}
+\frac{x_s-\mu_s}{\sigma_s}=&\frac{x_e-\mu_e}{\sigma_e}\\
+\frac{x_s-50}{10}=&\frac{x_e-48}{5}\\
+x_s=&\frac{x_e-48}{5}\times 10 + 50\\
+=&2x_e-96+50\\
+=&2x_e-46
+\end{align*}
+
+Hence the transformation $x_s=2x_e-46$ can be used to convert an exam score to a scaled score.
+
+\end{tcolorbox}
+
+#### Exercise 8F {-}
+
+\begin{enumerate}
+    \item Modern IQ tests, in which raw test scores obtained are normally distributed, are scaled to have a mean of 100 and a standard deviation of 15 for reporting an IQ.
+    \begin{enumerate}
+        \item The raw scores obtained from an IQ test called IQCheck are found to have a mean of 104 and a standard deviation of 13. Determine the IQ that ought to be reported for someone who achieves a mark of 112 in the test. 
+        \item The raw scores obtained from an IQ test called SeeMyIQ are found to have a mean of 96 and a standard deviation of 20. Determine the IQ that ought to be reported for someone who achieves a mark of 94 in the test.
+        \item The raw scores obtained from an IQ test called IQ4U are found to have a mean of 101 and a standard deviation of 9. Determine the the raw score required in the test to be given a reported IQ of 130. 
+    \end{enumerate}
+    \item Marks for a national exam are normally distributed, and are scaled to have a mean of 60 and a standard deviation of 15. Paul obtains a score of 71 in an exam in which the mean that year was 62 and the standard deviation was 14.
+    \begin{enumerate}
+        \item Obtain the transformation required to calculate a scaled score, $x_s$, from an exam score, $x_e$.
+        \item Calculate Paul's scaled score, to the nearest whole mark.
+        \item Molly sat the same exam as Paul and obtained a scaled score of 57. Determine her raw exam score, to the nearest whole mark.
+    \end{enumerate}
+    \item In a year in which the mean score in an exam was 57, Sophie's exam score of 61 resulted in a standardised score of 63. Given that the exam board standardises all scores to have a mean of 60 and a standard deviation of 10, determine the standard deviation of the exam scores in the year in which Sophie sat it. 
+\end{enumerate}
+
+\pagebreak

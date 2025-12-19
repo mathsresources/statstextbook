@@ -1,0 +1,1086 @@
+# Mann-Whitney Rank Sum Test
+
+The Mann-Whitney Rank Sum test is a \textbf{two-sample} test, which is \textbf{non-parametric}. It is an example of a \textit{permutation test}, which are those that can be approached by considering every possible equally-likely arrangement of sample data. Consider random samples of two mice of species $A$ and four of species $B$, which will ordered from lightest to heaviest, and then ranks from $1$ to $6$ assigned. Below are each of the $15$ possible arrangements of ranks for the six mice, and alongside each arrangement is the \textit{sum of the ranks} obtained by the two mice of species $A$:
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    Arrangement & Rank Sum & Arrangement & Rank Sum & Arrangement & Rank Sum\\
+    \hline
+    $AABBBB$ & $1+2=3$ & $ABBBAB$ & $1+5=6$ & $BBABAB$ & $3+5=8$\\
+    $ABABBB$ & $1+3=4$ & $ABBBBA$ & $1+6=7$ & $BBABBA$ & $3+6=9$\\
+    $ABBABB$ & $1+4=5$ & $BABBAB$ & $2+5=7$ & $BBBAAB$ & $4+5=9$\\
+    $BAABBB$ & $2+3=5$ & $BBAABB$ & $3+4=7$ & $BBBABA$ & $4+6=10$\\
+    $BABABB$ & $2+4=6$ & $BABBBA$ & $2+6=8$ & $BBBBAA$ & $5+6=11$\\
+    \hline
+    \end{tabular}
+\end{center}
+
+If the population distributions of mass for mice from species $A$ and mice from species $B$ are \textit{identical} then the probability of obtaining for $A$ a rank sum less than or equal to 4 (for example) by random chance can be calculated:
+
+$$\text{P}(\text{rank sum obtained}\leqslant4)=\dfrac{2}{15}=0.1333$$
+
+If it is assumed that the two population distributions of mice masses have the \textit{same shape and variance} then hypotheses may be formed which focus on a possible difference in the \textit{medians}, $\eta_A$ and $\eta_B$, of the distributions. Hypotheses for this two-sample test may be one-tailed or two-tailed. Here, a one-tailed example is given:
+
+\begin{center}
+\begin{math}
+\begin{array}{ll}
+      \text{H}_0: & \eta_A=\eta_B\\[0.5em]
+      \text{H}_1: & \eta_A< \eta_B
+    \end{array}
+\left]
+    \begin{array}{l}
+      \alpha=0.05\\
+      \textnormal{One-tailed}
+    \end{array}
+  \right.
+\end{math}
+\end{center}
+
+The $p$\text{-value} of 0.1333 obtained about would not provide evidence to suggest, at the 5\% level of significance, that the median mass of a mouse of species $A$ is less than the median mass of a mouse of species $B$ (since $0.1333>0.05$).
+
+Since the process of listing possible arrangements would become excessively time-consuming for anything other than small samples, Mann-Whitney tests will be typically conducted using \textit{critical values} from the SQA Data Booklet, and \textit{test statistics}. However it is also necessary to be able to perform the test \textit{from first principles} as above, covered on Page 200.
+
+\pagebreak
+
+## Mann-Whitney Rank Sum Test
+
+Given two independent samples, the non-parametric **Mann-Whitney Rank Sum test** can be used to assess whether the two population distributions have different *medians*. It is typically used in place of a two-sample $t$-test where the two distributions are not *normal* and sample sizes are small. Instead a required assumption is that the population distributions have the *same shape and variance*, to test whether there is evidence of a difference in *locations*:
+
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}[t]{.5\textwidth}
+\begin{center}
+\begin{tikzpicture}[ 
+    declare function={gamma(\z)=
+    (2.506628274631*sqrt(1/\z) + 0.20888568*(1/\z)^(1.5) + 0.00870357*(1/\z)^(2.5) - (174.2106599*(1/\z)^(3.5))/25920 - (715.6423511*(1/\z)^(4.5))/1244160)*exp((-ln(1/\z)-1)*\z);},
+    declare function={gammapdf(\x,\k,\theta) = \x^(\k-1)*exp(-\x/\theta) / (\theta^\k*gamma(\k));}
+]
+\begin{axis}[
+  no markers, 
+  domain=0:15, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [smooth, domain=0:15] {gammapdf(x,2,2)};
+\draw [semithick, black,dashed]  (axis cs: 3.3,0) -- (axis cs: 3.3,0.158);
+\node[below] at (axis cs: 3.3,0)  {$\eta_1$};
+\draw[semithick] (axis cs: -0.5,0) -- (axis cs: 18,0);
+\draw[semithick] (axis cs: -0.5,-0.3) -- (axis cs: 18,-0.3);
+\addplot [smooth, domain=0:15] {gammapdf(x,2,2)-0.3};
+\draw [semithick, black,dashed]  (axis cs: 3.3,-0.3) -- (axis cs: 3.3,-0.142);
+\node[below] at (axis cs: 3.3,-0.3)  {$\eta_2$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\captionof{figure}{\textit{Same locations:} $\eta_1=\eta_2$}
+  \label{fig:test1}
+\end{minipage}%
+  \centering
+\begin{minipage}[t]{.5\textwidth}
+\begin{center}
+\begin{tikzpicture}[ 
+    declare function={gamma(\z)=
+    (2.506628274631*sqrt(1/\z) + 0.20888568*(1/\z)^(1.5) + 0.00870357*(1/\z)^(2.5) - (174.2106599*(1/\z)^(3.5))/25920 - (715.6423511*(1/\z)^(4.5))/1244160)*exp((-ln(1/\z)-1)*\z);},
+    declare function={gammapdf(\x,\k,\theta) = \x^(\k-1)*exp(-\x/\theta) / (\theta^\k*gamma(\k));}
+]
+\begin{axis}[
+  no markers, 
+  domain=0:15, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [smooth, domain=4:18] {gammapdf({x-4},2,2)};
+\draw [semithick, black,dashed]  (axis cs: 7.3,0) -- (axis cs: 7.3,0.158);
+\node[below] at (axis cs: 7.3,0)  {$\eta_1$};
+\draw[semithick] (axis cs: -0.5,0) -- (axis cs: 18,0);
+\draw[semithick] (axis cs: -0.5,-0.3) -- (axis cs: 18,-0.3);
+\addplot [smooth, domain=0:15] {gammapdf(x,2,2)-0.3};
+\draw [semithick, black,dashed]  (axis cs: 3.3,-0.3) -- (axis cs: 3.3,-0.142);
+\node[below] at (axis cs: 3.3,-0.3)  {$\eta_2$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\captionof{figure}{\textbf{Different locations:} $\eta_1\ne\eta_2$}
+  \label{fig:test1}
+\end{minipage}
+\end{figure}
+
+\begin{centering}
+\tcbset{width=16cm}
+\begin{tcolorbox}[adjusted title=Conditions for valid use of the Mann-Whitney Rank Sum Test:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{itemize}
+    \item The two distributions of the underlying populations have \textbf{the same shape and variance}.
+    \item The data were obtained through \textbf{random} and \textbf{independent samples}
+\end{itemize}
+\end{tcolorbox}
+\end{centering}
+
+Consider two independent samples taken from populations $A$ and $B$ and the following hypotheses:
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[left] at (-0.20,0.3) {$\text{H}_0:\eta_A=\eta_B$};
+        \node[left] at (-0.2,-0.3) {$\text{H}_0:\eta_A\ne\eta_B$};
+        \draw [decorate,
+	decoration = {brace}] (0,0.5) --  (0,-0.5);
+        \node[right] at (0.2,0.3) {$\alpha=0.05$};
+        \node[right] at (0.2,-0.3) {Two-tailed};
+        \draw (3.2,0) -- (9.3,0);
+        \draw (4,-0.5) -- (4,0.5);
+        \node at (3.6,0.3) {$A$};
+        \node at (3.6,-0.3) {$B$};
+        \node at (4.4,0.3) {2.8};
+        \node at (5.3,0.3) {3.2};
+        \node at (6.2,0.3) {3.3};
+        \node at (7.1,0.3) {3.7};
+        \node at (8,0.3) {4.1};
+        \node at (8.9,0.3) {4.5};
+        \node at (4.4,-0.3) {2.6};
+        \node at (5.3,-0.3) {3.5};
+        \node at (6.2,-0.3) {3.9};
+        \node at (7.1,-0.3) {4.0};
+        \node at (8,-0.3) {4.2};
+        \draw (10,0) -- (15,0);
+        \foreach \x in {10,10.5,...,15}{
+        \draw (\x,0.1) -- (\x,-0.1);
+        }
+        \draw[fill=black!50] (10.2,-0.3) circle (2pt);
+        \draw[fill=black!20] (10.6,0.3) circle (2pt);
+        \draw[fill=black!20] (11.4,0.3) circle (2pt);
+        \draw[fill=black!20] (11.6,0.3) circle (2pt);
+        \draw[fill=black!50] (12,-0.3) circle (2pt);
+        \draw[fill=black!20] (12.4,0.3) circle (2pt);
+        \draw[fill=black!50] (12.8,-0.3) circle (2pt);
+        \draw[fill=black!50] (13,-0.3) circle (2pt);
+        \draw[fill=black!20] (13.2,0.3) circle (2pt);
+        \draw[fill=black!50] (13.4,-0.3) circle (2pt);
+        \draw[fill=black!20] (14,0.3) circle (2pt);
+    \end{tikzpicture}
+\end{center}
+
+To perform the test using a test statistic and critical value approach, first the samples are combined, ordered and ranked, with **rank sums** $W_A$ and $W_B$ obtained:
+
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}[c]{.75\textwidth}
+  \centering
+
+\begin{center}
+\begin{tabular}{c|ccccccccccc}
+    Values & 2.6 & 2.8 & 3.2 & 3.3 & 3.5 & 3.7 & 3.8 & 4.0 &  4.1 & 4.2 & 4.5\\  
+    Sample & B & A & A & A & B & A & B & B & A & B & A\\
+    Ranks & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11
+\end{tabular}
+\end{center}
+
+\end{minipage}%
+\begin{minipage}[c]{.02\textwidth}
+  \centering
+  \qquad \qquad
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.23\textwidth}
+  \centering
+
+\begin{center}
+\begin{tabular}{l}
+    $W_A=35$\\
+    $W_B=31$
+\end{tabular}
+\end{center}
+
+\end{minipage}
+\end{figure}
+
+The test statistic, $W$, is the *smallest possible rank sum that can be obtained for the smaller sample*, here $B$. A time-consuming approach would be to reorder the values and rerank them to check if this produces a smaller rank sum $W_B$.
+
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}[c]{.75\textwidth}
+  \centering
+
+\begin{center}
+\begin{tabular}{c|ccccccccccc}
+    Values & 4.5 & 4.2 & 4.1 & 4.0 & 3.8 & 3.7 & 3.5 & 3.3 &  3.2 & 2.8 & 2.6\\ 
+    Sample & A & B & A & B & B & A & B & A & A & A & B\\
+    Ranks & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11
+\end{tabular}
+\end{center}
+
+\end{minipage}%
+\begin{minipage}[c]{.02\textwidth}
+  \centering
+  \qquad \qquad
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.23\textwidth}
+  \centering
+
+\begin{center}
+\begin{tabular}{l}
+    $W_A=37$\\
+    $W_B=29$
+\end{tabular}
+\end{center}
+
+\end{minipage}
+\end{figure}
+
+Hence, the test statistic can now be confirmed as $W=29$. However this value can be obtained without reordering using the formula $m(m+n+1)-W_m$, where $m$ and $n$ represent the sizes of the smaller and larger samples respectively:
+
+$$5(5+6+1)-31=29$$
+
+\pagebreak
+
+\begin{centering}
+\tcbset{width=14cm}
+\begin{tcolorbox}[adjusted title=For a Mann-Whitney Rank Sum test:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{itemize}
+    \item The \textbf{test statistic}, denoted $W$, is the \textit{lower} of $W_m$ and $m(m+n+1)-W_m$. 
+    \item The \textbf{critical value} can be obtained from Page 16 of the Data Booklet.
+    \item $\text{H}_0$ is rejected if the test statistic $W$ is \textbf{less than or equal to} the critical value.
+\end{itemize}
+\end{tcolorbox}
+\end{centering}
+
+Taking as the test statistic the value $W=29$, the test can now be concluded.
+
+From page 16 of the SQA Data Booklet the critical value of $18$ can be obtained, using $m=5$, $n=6$ and a two-tailed test at the 5\% significance level. 
+
+Since $29>18$, $\text{H}_0$ can not be rejected at the 5\% level of significance. There is insufficient evidence to suggest that the two distributions have different population medians.
+
+Note that whilst only the rank sum for the \textit{smaller sample} is required, to minimise errors it is recommended to calculate rank sums for both samples and check that they add to the required total of $\frac{1}{2}(m+n)(m+n+1)$. Here $\frac{1}{2}\times 11\times 12=66$, and it should be observed that for each pair of rank sums the total is $66$.
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} Times taken to run 5km for a random sample of 7 hockey players and a random sample of 5 rugby players are recorded. The table below gives the results, to the nearest minute:
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw (-7.6,0) -- (-0.9,0);
+        \draw (-6,-0.6) -- (-6,0.6);
+        \node[left] at (-6,0.3) {Hockey};
+        \node[left] at (-6,-0.3) {Rugby};
+        \foreach \x in {0,0.5,...,7.5}{
+        \draw (\x,0.1) -- (\x,-0.1);
+        }
+        \node at (0,-0.3) {18};
+        \node at (7.5,0.3) {33};
+        \node at (-5.5,0.3) {18};
+        \node at (-4.8,0.3) {19};
+        \node at (-4.1,0.3) {20};
+        \node at (-3.4,0.3) {22};
+        \node at (-2.7,0.3) {23};
+        \node at (-2,0.3) {24};
+        \node at (-1.3,0.3) {27};
+        \node at (-5.5,-0.3) {23};
+        \node at (-4.8,-0.3) {28};
+        \node at (-4.1,-0.3) {29};
+        \node at (-3.4,-0.3) {30};
+        \node at (-2.7,-0.3) {33};
+        \draw (0,0) -- (7.5,0);
+        \draw[fill=black!20] (0,0.4) circle (2pt);
+        \draw[fill=black!20] (0.5,0.4) circle (2pt);
+        \draw[fill=black!20] (1,0.4) circle (2pt);
+        \draw[fill=black!20] (2,0.4) circle (2pt);
+        \draw[fill=black!20] (2.5,0.4) circle (2pt);
+        \draw[fill=black!20] (3,0.4) circle (2pt);
+        \draw[fill=black!20] (4.5,0.4) circle (2pt);
+        \draw[fill=black!50] (2.5,-0.4) circle (2pt);
+        \draw[fill=black!50] (5,-0.4) circle (2pt);
+        \draw[fill=black!50] (5.5,-0.4) circle (2pt);
+        \draw[fill=black!50] (6,-0.4) circle (2pt);
+        \draw[fill=black!50] (7.5,-0.4) circle (2pt);
+    \end{tikzpicture}
+\end{center}
+
+Stating an assumption required, perform a non-parametric test to assess the data for evidence of a difference in the median time taken for hockey and rugby players to run 5km.
+\tcblower
+\textbf{Solution:} \textit{Assume the distributions of time taken to run 5km for hockey players and rugbey players have the same shape and variance.}\\
+
+\begin{math}
+\begin{array}{ll}
+      \text{H}_0: & \eta_{\text{hockey}}=\eta_{\text{rugby}}\\[0.5em]
+      \text{H}_1: & \eta_{\text{hockey}}\ne \eta_{\text{rugby}}
+    \end{array}
+\left]
+    \begin{array}{l}
+      \alpha=0.05\\
+      \textnormal{Two-tailed}
+    \end{array}
+  \right.
+\end{math}
+
+\begin{center}
+\begin{tabular}{c c c c c c c c c c c c c} 
+    Values & 18 & 19 & 20 & 22 & 23 & 23 & 24 & 27 & 28 & 29 & 30 & 33\\
+    Sample & H & H & H & H & R & H & H & H & R & R & R & R\\
+    Ranks & 1 & 2 & 3 & 4 & 5.5 & 5.5 & 7 & 8 & 9 & 10 & 11 & 12 
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{l c l c r}
+    $n=7$ & \qquad & $W_H=30.5$ & \qquad & $\frac{1}{2}\times 12 \times 13=78$\\[0.5em]
+    $m=5$ & \qquad & $W_R=47.5$ & & \textit{Check: }$39.5+5.5=45$
+\end{tabular}
+\end{center}
+
+\textit{Check: }$5\times 13-47.5=17.5$\\
+
+\begin{tabular}{l l l }
+Test statistic: & $W=17.5$ & \\[0.5em]
+Critical value: & $CV=20$ & \quad ($\alpha=0.05$, $m=5,n=7$ \text{and two-tailed.})
+\end{tabular}\\
+
+Since $17.5<20$, reject $H_0$ at the 5\% level of significance. 
+There is evidence to suggest that the median time taken for rugby players to run 5km is different than the median time taken for hockey players.
+
+\end{tcolorbox}
+
+\pagebreak
+
+#### Exercise 17A {-}
+
+\begin{enumerate}
+    \item One year on World Maths Day (14th March) pupils across all the year groups in a school attempt a times tables speed challenge. A teacher checks the scores obtained by five randomly selected First Year pupils and seven randomly selected Third Year pupils. Their results are shown below.
+    \begin{center}
+        \begin{tabular}{c|ccccccc}
+            First Year & 14 & 6 & 14 & 15 & 20 & & \\
+          \hline
+            Third Year & 12 & 9 & 6 & 13 & 2 & 14 & 4
+        \end{tabular}
+    \end{center}
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[-stealth] (0,0) -- (11,0);
+            \node[right] at (11,0) {higher};
+            \node[above] at (-1,0.2) {First Year};
+            \node[below] at (-1,-0.2) {Third Year};
+            \draw[fill=black!20] (7,0.25) circle (3pt);
+            \draw[fill=black!20] (3,0.4) circle (3pt);
+            \draw[fill=black!20] (7,0.55) circle (3pt);
+            \draw[fill=black!20] (7.5,0.4) circle (3pt);
+            \draw[fill=black!20] (10,0.4) circle (3pt);
+            \draw[fill=black!50] (6,-0.4) circle (3pt);
+            \draw[fill=black!50] (4.5,-0.4) circle (3pt);
+            \draw[fill=black!50] (3,-0.4) circle (3pt);
+            \draw[fill=black!50] (6.5,-0.4) circle (3pt);
+            \draw[fill=black!50] (1,-0.4) circle (3pt);
+            \draw[fill=black!50] (7,-0.4) circle (3pt);
+            \draw[fill=black!50] (2,-0.4) circle (3pt);
+        \end{tikzpicture}
+    \end{center}
+    A Mann-Whitney test is performed to assess whether the median score for First Year pupils is greater than that of Third Year pupils.
+    \begin{enumerate}
+        \item Use the data provided in the table to verify the test statistic of 20.5. 
+        \item Conclude the test at the 5\% level of significance.
+    \end{enumerate}
+    \item A highways official wants to compare two brands of paint used for road markings. Twenty similar locations are selected and at ten of them brand A is used and at the others brand B. The number of months the markings last for were recorded and the
+results shown below.
+    \begin{center}
+        \begin{tabular}{ccccccccccc}
+            Brand A & 35.6 & 36.1 & 37.0 & 35.8 & 34.9 & 34.9 & 36.0 & 37.8 & 36.6 & 36.5\\
+            \hline
+            Brand B & 37.2 & 36.4 & 39.7 & 37.5 & 37.2 & 40.5 & 38.8 & 38.2 & 37.7 & 36.6
+        \end{tabular}
+    \end{center}
+    Perform a Mann-Whitney test, using the rank sum for Brand A of 65.5, to determine whether there is a difference between the two brands' durability. 
+    \item The durability of two brands of power lawn mowers are to be compared. For independent random samples from each brand, the number of years each lawn mower lasted before breaking down beyond repair is recorded:
+      \begin{center}
+      \begin{tabular}{c|cccccc}
+          Brand X & 2.3 & 3.7 & 1.9 & 6.8 & 3.5 & 4.4\\
+          \hline
+          Brand Y & 5.9 & 3.8 & 6.4 & 5.6 & 4.9 & 5.9 
+      \end{tabular}
+      \end{center}
+      Test at the 10\% level of significance whether the data indicates that there is a difference in median number of year that power lawn mowers from each brand last.
+      \item The contents of a random sample of six pots of ‘Extrafrute’ jam were measured. The results, in grams, were:
+      \begin{center}
+      \begin{tabular}{cccccc}
+      342 & 354 & 349 & 350 & 347 & 356
+      \end{tabular}
+      \end{center}
+      The results for a random sample of eight pots of ‘Jambo’ jam were:
+      \begin{center}
+      \begin{tabular}{cccccccc}
+      340 & 341 & 348 & 342 & 346 & 347 & 342 & 344
+      \end{tabular}
+      \end{center}
+      Use a non-parametric test to assess the evidence that the pots of the ‘Extrafrute’ brand have more jam in them.
+      \pagebreak
+      \item A farmer decides to test a new diet for egg production. A group of twelve hens is randomly divided into two groups of six. One group is fed the new diet and the other the old. The egg yields recorded in the first year of the test are displayed in the stem-and-leaf diagram below.
+      \begin{center}
+          \begin{tikzpicture}
+              \draw (-0.4,0.3) -- (-0.4,-2.4);
+              \draw (0.4,0.3) -- (0.4,-2.4);
+              \node at (0,0) {$22$};
+              \node at (0,-0.5) {$23$};
+              \node at (0,-1) {$24$};
+              \node at (0,-1.5) {$25$};
+              \node at (0,-2) {$26$};
+              \node at (1,-1) {$5$};
+              \node at (1.5,-1) {$8$};
+              \node at (1,-1.5) {$5$};
+              \node at (1.5,-1.5) {$8$};
+              \node at (2,-1.5) {$9$};
+              \node at (1,-2) {$0$};
+              \node at (-1,0) {$7$};
+              \node at (-1,-0.5) {$0$};
+              \node at (-1,-1) {$2$};
+              \node at (-1.5,-1) {$4$};
+              \node at (-1,-1.5) {$0$};
+              \node at (-1,-2) {$1$};
+              \node[above] at (-2,0.3) {Old Diet};
+              \node[above] at (2,0.3) {New Diet};
+              \draw (5.4,-2.1) -- (5.4,-1.4);
+              \node at (5.1,-1.75) {$24$};
+              \node at (7.52,-1.79) {$8$ represents 248 grams};
+        \end{tikzpicture}
+      \end{center}
+      Use a Mann-Whitney test at the 5\% level to test the hypothesis that the new diet
+leads to improved egg production.
+      \item The times (in minutes) it took six randomly selected field mice to learn to run a simple maze and the times it took six randomly selected house mice to learn to run the same maze are given. 
+      \begin{multicols}{2}
+    \begin{center}
+    \begin{tabular}{c|c}
+        Field Mice & House Mice\\
+      \hline
+        18 & 24\\
+        24 & 16\\
+        12 & 10\\
+        20 & 19\\
+        13 & 14\\
+        15 & 16
+    \end{tabular}
+    \end{center}
+    \columnbreak
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[-stealth] (5,0) -- (12.5,0);
+            \node[right] at (12.5,0) {faster};
+            \node[above] at (8.5,1) {Field Mice};
+            \node[below] at (8.5,-1) {House Mice};
+            \draw[fill=black!20] (9,0.4) circle (3pt);
+            \draw[fill=black!20] (12,0.4) circle (3pt);
+            \draw[fill=black!20] (6,0.4) circle (3pt);
+            \draw[fill=black!20] (10,0.4) circle (3pt);
+            \draw[fill=black!20] (6.5,0.4) circle (3pt);
+            \draw[fill=black!20] (7.5,0.4) circle (3pt);
+            \draw[fill=black!60] (12,-0.4) circle (3pt);
+            \draw[fill=black!60] (8,-0.4) circle (3pt);
+            \draw[fill=black!60] (5,-0.4) circle (3pt);
+            \draw[fill=black!60] (9.5,-0.4) circle (3pt);
+            \draw[fill=black!60] (7,-0.4) circle (3pt);
+            \draw[fill=black!60] (8,-0.4) circle (3pt);
+        \end{tikzpicture}
+    \end{center}
+    \end{multicols}
+    Stating an assumption required, use a non-parametric test to determine if there is a difference in learning rate between the two types of mice.
+    \item An investigation was conducted into the dust content in the flue gases of two types of solid-fuel boilers. Thirteen boilers of type A and nine boilers of type B were used under identical fuelling and extraction conditions. Over a similar period, the following quantities, in grams, of dust were deposited in similar traps inserted in each of the twenty-two flues.
+    \begin{center}
+    \begin{tabular}{c|ccccccccccccc}
+        Type A & 73.1 & 56.4 & 82.1 & 67.2 & 55.2 & 78.7 & 75.1 & 48.0 & 60.6 & 63.1 & 53.3 & 55.5 & 61.5\\
+        \hline
+        Type B & 53.0 & 39.3 & 55.8 & 46.0 & 56.4 & 58.8 & 41.2 & 66.6 & 58.9  &  &  &  & 	
+    \end{tabular}
+    \end{center}
+    A non-parametric test for a difference in population medians was performed at the 5\% level of significance.\vspace{0.5cm}\\
+    \texttt{Mann-Whitney rank sum test}\\
+    \texttt{data: TypeA and TypeB}\\
+    \texttt{alternative hypothesis: true location shift is not equal to 0}\\
+    \texttt{W for TypeB = 134.5}\qquad \texttt{p-value = 0.0416}\\[1em]
+    \begin{enumerate}
+        \item State the suitable null and alternative hypotheses the the test conducted.
+        \item By performing the usual check and the rank sum for Type B given in the computer output, obtain the required test statistic.
+        \item Use the answer from (b) to complete the hypothesis test and interpret the result.
+        \item State three assumptions required for the test performed to be valid.
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+## Normal Approximation to the Mann-Whitney Rank Sum Test
+
+The Data Booklet only provides Mann-Whitney critical values for sample sizes where $n\leqslant 20$ and $m\leqslant 20$. When dealing with larger samples, where $m,n>20$, a Mann-Whitney Rank Sum Test may still be performed using a **normal approximation**. Page 16 of the Data Booklet  provides the required properties of the distribution of the test statistic, $W$:
+
+$$\text{E}(W)=\frac{1}{2}m(m+n+1) \quad \text{and} \quad \text{V}(W)=\frac{1}{12}mn(m+n+1)$$
+
+Since here a *discrete* distribution is being approximated by the *continuous* normal distribution, a **continuity correction** is required. If the test statistic $W$ is taken as the lowest possible rank sum $W_m$ *for the smaller sample*, a continuity correction of $+0.5$ should be used.
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} 26 Atlantic herrings and 24 North Sea herrings were caught and their lengths measured in cm. The 50 lengths were ordered from smallest to largest and the ranks summed: 
+	 \begin{center}
+	 \begin{tabular}{ccc}
+   $W_{\text{Atlantic}}=503$ & \qquad & $W_{\text{North Sea}}=772$
+   \end{tabular}
+   \end{center}
+	Assess at the 5\% significance level whether Atlantic and North Sea herrings differ in median length.
+
+\tcblower
+\textbf{Solution:}
+
+\vspace{0.3cm}
+
+\begin{math}
+\begin{array}{ll}
+      H_0: & \eta_{\text{Atlantic}}=\eta_{\text{North Sea}}\\
+      H_1: & \eta_{\text{Atlantic}}\ne \eta_{\text{North Sea}}
+    \end{array}
+\left]
+    \begin{array}{l}
+      \alpha=0.05\\
+      \textnormal{Two-tailed}
+    \end{array}
+  \right.
+\end{math}
+
+\vspace{0.3cm}
+
+Check that the rank sums for the smaller sample:\\
+
+$m=24,n=26,W_m=772$\\
+
+$24\times(24+26+1)-772=452$\\
+    
+Note that $452<772$\\
+    
+Hence $W=452$\\[0.5em]
+
+$\text{E}(W)=\dfrac{1}{2}\times 24\times (24+26+1)=612$\\
+
+$\text{V}(W)=\dfrac{1}{12}\times 24\times 26 \times (24+26+1)=2652$\\
+
+$W\approx \text{N}(612,2652)$
+
+Test statistic: $z=\dfrac{452.5-612}{\sqrt{2652}}=-3.10$\\
+
+\vspace{0.3cm}
+
+Critical value: $-1.96$
+\hspace{4cm}
+\begin{tikzpicture}[overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [draw=none, fill=black!50, domain=-3:-1.96] {gauss(x, 0, 1)} \closedcycle;
+\addplot [draw=none, fill=black!50, domain=1.96:3] {gauss(x, 0, 1)} \closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(-1.96,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\pgfmathsetmacro\valueC{gauss(1.96,0,1)}
+\draw [semithick, black]  (axis cs:-1.96,0) -- (axis cs:-1.96,\valueA);
+\draw [semithick, black]  (axis cs:1.96,0) -- (axis cs:1.96,\valueC);
+\node[below] at (axis cs: 0,0)  {$0$}; 
+\node[below] at (axis cs: -1.96, 0) {$-1.96$};
+\node[above] at (axis cs: -2.4,\valueA) {2.5\%};
+\node[below] at (axis cs: 1.96, 0) {$1.96$};
+\node[above] at (axis cs: 2.4,\valueC) {2.5\%};
+\node[above] at (axis cs: 0,\valueB)  {$z$};
+\end{axis}
+\end{tikzpicture}\\
+
+\vspace{0.5cm}
+
+Since $-3.10<-1.95$, reject $H_0$ at the 5\% level of significance. 
+There is evidence to suggest that the median length of an Atlantic herring differs from that of a North Sea herring.
+
+\end{tcolorbox}
+
+\pagebreak
+
+#### Exercise 17B {-}
+
+\begin{enumerate}
+    \item A commuter made a number of car journeys, on weekday mornings, from Perth to Glasgow. She believed that journeys on wet days would take longer, on average, than journeys on dry days. Journey length (in minutes) and weather conditions (either \textit{dry}, D, or \textit{wet}, W) for 48 randomly chosen days throughout the Autumn months, of which 21 were classified as \textit{dry}. The results are shown below.
+    \begin{center}
+    \begin{tabular}{c|ccc|ccc|ccc|ccc|ccc|c}
+    40&D&\qquad&50&D&\qquad&55&D&\qquad&59&D&\qquad&61&W&\qquad&70&W\\
+    44&D&\qquad&51&W&\qquad&56&W&\qquad&59&W&\qquad&62&W&\qquad&72&W\\
+    45&W&\qquad&51&W&\qquad&56&D&\qquad&59&W&\qquad&63&W&\qquad&73&W\\
+    45&D&\qquad&52&D&\qquad&56&D&\qquad&59&D&\qquad&63&W&\qquad&74&D\\
+    47&D&\qquad&52&D&\qquad&57&D&\qquad&60&W&\qquad&63&W&\qquad&77&W\\
+    47&W&\qquad&54&W&\qquad&57&W&\qquad&61&W&\qquad&68&W&\qquad&77&W\\
+    48&D&\qquad&54&W&\qquad&58&W&\qquad&61&W&\qquad&68&W&\qquad&82&D\\
+    50&D&\qquad&55&D&\qquad&58&W&\qquad&61&D&\qquad&70&W&\qquad&86&W 
+    \end{tabular}
+    \end{center}
+    The data were ranked with the shortest time given rank 1, and the rank sum for the \textit{dry} days was 399.
+    \begin{enumerate}
+        \item Perform a Mann-Whitney test at the 1\% significance level to determine whether or not her belief is supported by the data.
+        \item State an assumption required for the Mann-Whitney test conducted in part (a) to be valid.
+    \end{enumerate}
+    \item Archaeologists determined the silver content (\%Ag) of random samples of 30 coins discovered in Cyprus from each of the first and second mintages of the reign of King Manuel I. The data were ranked and ranks sums obtained:
+    \begin{center}
+        \begin{tabular}{ccc}
+        First mintage rank sum $=1015$ \qquad \qquad & Second mintage rank sum $=815$
+        \end{tabular}
+    \end{center}
+    Carry out a hypothesis test to compare the medians of the silver content for the two mintages.
+    \item During the development of a new adhesive, a research team tested the tensile strength ($N/m^2$) of random samples of 21 bonds made with Formulation A and 25 bonds made with Formulation B. The results were ranked and ranks sums were:
+    \begin{center}
+    \begin{tabular}{ccc}
+        $W_A = 583$ & \qquad \qquad & $W_B = 498$
+    \end{tabular}
+    \end{center}
+    Perform a non-parametric hypothesis test to determine whether or not the data provide evidence that Formulation A makes stronger bands than Formulation B.
+    \item A factory which makes electric heaters has two manufacturing lines in operation, one older and one newer. A quality control inspector wishing to compare the performance of each line selects a random sample of 28 heaters from the old line and 24 heaters from the new line. A quality rating is given for each heater from 0 (terrible) to 10 (flawless), and the results displayed in the dot plots below.
+    \begin{center}
+        \begin{tikzpicture}
+            \draw (0,0) -- (10,0);
+            \foreach \x in {0,1,...,10}{
+            \draw (\x,0) -- (\x,-0.1);
+            }
+            \foreach \x in {0,1,...,10}{
+            \node[below] at (\x,0) {\x};
+            }
+            \draw (0,-2) -- (10,-2);
+            \foreach \x in {0,1,...,10}{
+            \draw (\x,-2) -- (\x,-2.1);
+            }
+            \foreach \x in {0,1,...,10}{
+            \node[below] at (\x,-2) {\x};
+            }
+        \node[left] at (0,1) {old line};
+        \node[left] at (0,-1) {new line};
+        \draw[fill=black] (0,0.2) circle (2pt);
+        \draw[fill=black] (0,0.4) circle (2pt);
+        \draw[fill=black] (1,0.2) circle (2pt);
+        \draw[fill=black] (1,0.4) circle (2pt);
+        \draw[fill=black] (1,0.6) circle (2pt);
+        \draw[fill=black] (1,0.8) circle (2pt);
+        \draw[fill=black] (2,0.2) circle (2pt);
+        \draw[fill=black] (2,0.4) circle (2pt);
+        \draw[fill=black] (3,0.2) circle (2pt);
+        \draw[fill=black] (4,0.2) circle (2pt);
+        \draw[fill=black] (5,0.2) circle (2pt);
+        \draw[fill=black] (5,0.4) circle (2pt);
+        \draw[fill=black] (5,0.6) circle (2pt);
+        \draw[fill=black] (6,0.2) circle (2pt);
+        \draw[fill=black] (6,0.4) circle (2pt);
+        \draw[fill=black] (6,0.6) circle (2pt);
+        \draw[fill=black] (6,0.8) circle (2pt);
+        \draw[fill=black] (7,0.2) circle (2pt);
+        \draw[fill=black] (7,0.4) circle (2pt);
+        \draw[fill=black] (7,0.6) circle (2pt);
+        \draw[fill=black] (7,0.8) circle (2pt);
+        \draw[fill=black] (7,1.0) circle (2pt);
+        \draw[fill=black] (8,0.2) circle (2pt);
+        \draw[fill=black] (8,0.4) circle (2pt);
+        \draw[fill=black] (8,0.6) circle (2pt);
+        \draw[fill=black] (8,0.8) circle (2pt);
+        \draw[fill=black] (9,0.2) circle (2pt);
+        \draw[fill=black] (9,0.4) circle (2pt);
+        \draw[fill=black] (0,-1.8) circle (2pt);
+        \draw[fill=black] (1,-1.8) circle (2pt);
+        \draw[fill=black] (1,-1.6) circle (2pt);
+        \draw[fill=black] (2,-1.8) circle (2pt);
+        \draw[fill=black] (2,-1.6) circle (2pt);
+        \draw[fill=black] (2,-1.4) circle (2pt);
+        \draw[fill=black] (3,-1.8) circle (2pt);
+        \draw[fill=black] (5,-1.8) circle (2pt);
+        \draw[fill=black] (6,-1.8) circle (2pt);
+        \draw[fill=black] (6,-1.6) circle (2pt);
+        \draw[fill=black] (6,-1.4) circle (2pt);
+        \draw[fill=black] (7,-1.8) circle (2pt);
+        \draw[fill=black] (7,-1.6) circle (2pt);
+        \draw[fill=black] (7,-1.4) circle (2pt);
+        \draw[fill=black] (8,-1.8) circle (2pt);
+        \draw[fill=black] (8,-1.6) circle (2pt);
+        \draw[fill=black] (8,-1.4) circle (2pt);
+        \draw[fill=black] (8,-1.2) circle (2pt);
+        \draw[fill=black] (8,-1) circle (2pt);
+        \draw[fill=black] (9,-1.8) circle (2pt);
+        \draw[fill=black] (9,-1.6) circle (2pt);
+        \draw[fill=black] (9,-1.4) circle (2pt);
+        \draw[fill=black] (9,-1.2) circle (2pt);
+        \draw[fill=black] (10,-1.8) circle (2pt);
+        \end{tikzpicture}
+    \end{center}
+    \begin{enumerate}
+        \item Explain why the dot plots suggest a Mann-Whitney test would be more appropriate for this data than a $t$-test.
+    \end{enumerate}
+    The rank sum for the new line is found to be 562.5.
+    \begin{enumerate}[resume]
+        \item Carry out a Mann-Whitney test to determine if there is evidence, at the 10\% level of significance, that the median quality rating for heaters produced by the new line is higher than that of the old line.
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+## Mann-Whitney from First Principles
+
+In Chapter 10, hypothesis tests were initially introduced using $p$-values, which can be compared directly to the chosen significance level to conclude a test. Exact $p$-values can also be calculated directly for Mann-Whitney tests using an approach introduced on the first page of this chapter. The conditions required for a Mann-Whitney test using the \textit{first principles} method are the same as when using critical values, but with the addition that the data must contain \textit{no tied values}, and hence no shared ranks. 
+
+The standard steps involved in performing a one-tailed test in this manner are, for samples of size $m$ and $n$ (where $m\leqslant n$):
+
+\begin{itemize}
+    \item Use $ ^{m+n}C_m$ to calculate the number of possible arrangements of the $m+n$ values.
+    \item Use the observed data to obtain the rank sum for the smaller sample (of size $m$) as usual.
+    \item Typically by listing all relevant \textit{subsets} of ranks for the smaller sample, determine the number of possible such subsets that results in a rank sum equal to or less than the rank sum obtained from the data.
+    \item The $p$-value for the test can be calculated using the values from the previous steps as $\dfrac{\text{relevant arrangements}}{\text{possible arrangements}}$.
+\end{itemize}
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} Three randomly selected cameras from Brand A and seven from Brand B are tested for reliability, with the number of \textit{shutter actuations} before failure recorded. When ranked with 10 as the most reliable (greatest number of actuations) to 1 as the least reliable (least number of actuations), a rank sum of 9 is obtained for Brand A.\\[0.1em]
+
+By considering possible arrangements of rankings, and stating any assumptions required, perform a Mann-Whitney test at the 10\% significance level to assess whether the data suggests Brand A's cameras are less reliable.
+
+\tcblower
+\textbf{Solution:}
+
+\vspace{0.1cm}
+
+Assume that the population distributions of number of actuations for each brand's cameras have the same shape and variance.
+
+\vspace{0.2cm}
+
+\begin{math}
+\begin{array}{ll}
+      H_0: & \eta_{\text{A}}=\eta_{\text{B}}\\
+      H_1: & \eta_{\text{A}}< \eta_{\text{B}}
+    \end{array}
+\left]
+    \begin{array}{l}
+      \alpha=0.1\\
+      \textnormal{One-tailed}
+    \end{array}
+  \right.
+\end{math}
+
+\vspace{0.3cm}
+
+$\text{Number of possible arrangements}={}^{10}C_3=120.$\\
+
+Subsets of relevant arrangements with a rank sum for A$\leqslant9$:
+
+\begin{center}
+    \begin{tabular}{|c|c|}
+    \hline
+    Ranks for A & Rank Sum\\
+    \hline
+    $1,2,3$ & $6$\\
+    $1,2,4$ & $7$\\
+    $1,2,5$ & $8$\\
+    $1,2,6$ & $9$\\
+    $1,3,4$ & $8$\\
+    $1,3,5$ & $9$\\
+    $2,3,4$ & $9$\\
+    \hline
+    \end{tabular}
+\end{center}
+
+$p\text{-value}=\text{P}(\text{rank sum}\leqslant9)=\dfrac{7}{120}=0.0583$\\
+
+Since $0.0583<0.1$, reject $H_0$ at the 10\% level of significance. 
+There is evidence to suggest that the median number of shutter actuations before failure for Brand A is less than that for Brand B, and so Brand A's cameras are less reliable.
+
+\end{tcolorbox}
+
+\pagebreak
+
+#### Exercise 17C {-}
+
+\begin{enumerate}
+    \item A Mann-Whitney test is to be performed using two independent samples of sizes 3 and 5. Once data for the samples have been collected and ordered, a rank sum will be obtained for the smaller sample.
+    \begin{enumerate}
+        \item Determine the number of possible arrangements of the 8 values.
+        \item List all the possible subsets of rankings for the smaller sample which would result in a rank sum of 8 or lower.
+        \item Hence determine $\text{P}(\text{rank sum}\leqslant 8)$.
+    \end{enumerate}
+    \item A Mann-Whitney test is to be performed using two independent samples of sizes 4 and 5. Once data for the samples have been collected and ordered, a rank sum will be obtained for the smaller sample.
+    \begin{enumerate}
+        \item Determine the number of possible arrangements of the 9 values.
+        \item List all the possible subsets of rankings for the smaller sample which would result in a rank sum of 12 or lower.
+        \item Hence determine $\text{P}(\text{rank sum}\leqslant 12)$.
+    \end{enumerate}
+    \item To investigate the effects of caffeine on reaction times, four students from a group of eleven are randomly chosen to be given a soft drink containing caffeine, whilst the remaining seven are given the caffeine-free version of the soft drink. The students will be unaware which they have consumed.\\[0.5em]
+    The reaction time of each student is then tested using an online test, with the results shown on the dot plot below.
+    \begin{center}
+        \begin{tikzpicture}
+            \draw (0,0) rectangle (10,2);
+            \draw (0,1) -- (10,1);
+            \foreach \x in {0,50,...,500}{
+            \draw (0.02*\x,0) -- (0.02*\x,-0.1);
+            }
+            \foreach \x in {0,100,...,500}{
+            \node[below] at (0.02*\x,0) {\x};
+            }
+            \node[below] at (5,-1) {Reaction time (ms)};
+            \node[left] at (-0.5,1.5) {Caffeine};
+            \node[left] at (-0.5,0.5) {Caffeine-free};
+            \draw[fill=black] (3.8,0.2) circle (2pt);
+            \draw[fill=black] (5.1,0.2) circle (2pt);
+            \draw[fill=black] (5.3,0.2) circle (2pt);
+            \draw[fill=black] (5.8,0.2) circle (2pt);
+            \draw[fill=black] (7.2,0.2) circle (2pt);
+            \draw[fill=black] (7.7,0.2) circle (2pt);
+            \draw[fill=black] (8.2,0.2) circle (2pt);
+            \draw[fill=black] (2.9,1.2) circle (2pt);
+            \draw[fill=black] (3.4,1.2) circle (2pt);
+            \draw[fill=black] (4.6,1.2) circle (2pt);
+            \draw[fill=black] (6.3,1.2) circle (2pt);
+        \end{tikzpicture}
+    \end{center}
+    \begin{enumerate}
+        \item Show the calculation required to obtain the rank sum of 15 for the caffeine group.
+        \item List all of the subsets of ranks for the caffeine group which would produce a value equal to or less than 15. 
+    \end{enumerate}
+    A non-parametric hypothesis test is to be conducted under the following hypotheses:
+    \begin{center}
+        \begin{tabular}{c}
+            $\text{H}_0:\eta_{\text{caffeine}}=\eta_{\text{caffeine-free}}$\\[0.5em]
+            $\text{H}_0:\eta_{\text{caffeine}}<\eta_{\text{caffeine-free}}$
+        \end{tabular}
+    \end{center}
+    \begin{enumerate}[resume]
+        \item State an assumption required for the test.
+        \item Under the null hypothesis, calculate the probability of the rank sum for the caffeine group being equal to or less than 15.
+        \item Use your answer to part (c) to conclude the test at the 5\% level of significance. 
+    \end{enumerate}
+    \item A 800m race between four hockey players and eight rugby players results in the hockey players finishing first, second, fourth and sixth. Assume that the population distributions of times for each group have the same shape and are equal in variance.
+    \begin{enumerate}
+        \item By considering possible arrangements and relevant subsets, calculate the $p$-value for a Mann-Whitney test with an alternative hypothesis that hockey players are faster over 800m than rugby platers.
+        \item Use your answer from (a) to conclude the test at the 10\% level of significance.
+        \item State an assumption required for the test to be valid.
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+## Review Exercise {-}
+
+\begin{enumerate}
+    \item A wildlife enthusiast sets up a remote camera which is configured to take a photo when movement is detected. Sometimes it is placed in some local woods, whilst at other times it is positioned beside a pond. The photos are later reviewed and the number of animals spotted each day by the camera is recorded. The number of animal sightings at each location over the last two weeks is shown below.
+    \begin{center}
+        \begin{tabular}{c|cccccccc}
+            Woods & 7 & 3 & 6 & 2 & 10 & 8 & & \\
+            \hline
+            Pond & 6 & 4 & 1 & 7 & 3 & 1 & 4 & 3
+        \end{tabular}
+    \end{center}
+    Perform a non-parametric hypothesis test at the 5\% level of significance to determine whether there is a difference in the median number of wildlife sightings between the two camera locations.
+    \item 23 red wines and 23 white wines in stock at a large supermarket are randomly chosen to have their alcohol content (\%ABV) recorded. The results are displayed in the stem-and-leaf diagram below.
+    \begin{center}
+        \begin{tikzpicture}
+            \node[above] at (-2,15.3) {white};
+            \node[above] at (2,15.3) {red};
+            \draw (-0.4,15.3) -- (-0.4,12.1);
+            \draw (0.4,15.3) -- (0.4,12.1);
+            \node at (0,15) {15};
+            \node at (0,14.5) {14};
+            \node at (0,14) {13};
+            \node at (0,13.5) {12};
+            \node at (0,13) {11};
+            \node at (0,12.5) {10};
+            \node at (0.8,15) {0};
+            \node at (1.3,15) {0};
+            \node at (2.8,14.5) {8};
+            \node at (2.3,14.5) {5};
+            \node at (1.8,14.5) {5};
+            \node at (1.3,14.5) {2};
+            \node at (0.8,14.5) {0};
+            \node at (0.8,14) {0};
+            \node at (1.3,14) {0};
+            \node at (1.8,14) {5};
+            \node at (2.3,14) {5};
+            \node at (2.8,14) {5};
+            \node at (3.3,14) {5};
+            \node at (3.8,14) {5};
+            \node at (4.3,14) {8};
+            \node at (0.8,13.5) {0};
+            \node at (1.3,13.5) {5};
+            \node at (1.8,13.5) {5};
+            \node at (2.3,13.5) {8};
+            \node at (2.8,13.5) {8};
+            \node at (0.8,13) {0};
+            \node at (1.3,13) {5};
+            \node at (0.8,12.5) {5};
+            \node at (-0.8,14.5) {0};
+            \node at (-2.3,14) {5};
+            \node at (-1.8,14) {3};
+            \node at (-2.8,14) {5};
+            \node at (-1.3,14) {0};
+            \node at (-0.8,14) {0};
+            \node at (-0.8,13.5) {0};
+            \node at (-1.3,13.5) {0};
+            \node at (-1.8,13.5) {5};
+            \node at (-2.3,13.5) {5};
+            \node at (-2.8,13.5) {5};
+            \node at (-3.3,13.5) {5};
+            \node at (-3.8,13.5) {8};
+            \node at (-4.3,13.5) {9};
+            \node at (-0.8,13) {0};
+            \node at (-1.3,13) {0};
+            \node at (-1.8,13) {3};
+            \node at (-2.3,13) {5};
+            \node at (-2.8,13) {5};
+            \node at (-3.3,13) {8};
+            \node at (-0.8,12.5) {2};
+            \node at (-1.3,12.5) {5};
+            \node at (-1.8,12.5) {5};
+            \node at (6,12.5) {$12\text{ }|\text{ }8\text{ }\text{represents }12.8\%$};
+        \end{tikzpicture}
+    \end{center}
+    \begin{enumerate}
+        \item Comment on what the stem-and-leaf diagram shows.
+    \end{enumerate}
+    The data are ranked from lowest to highest, and a rank sum for the white wines of 401.5 is obtained.
+    \begin{enumerate}[resume]
+        \item Perform a Mann-Whitney test to assess at the 10\% level of significance whether there is evidence to suggest the median alcohol content differs between white and red wines.
+    \end{enumerate}
+    A $t$-test was also considered for a comparison of the alcohol content of the two types of wine.
+    \begin{enumerate}[resume]
+        \item Comment on what the stem-and-leaf diagram may suggest about the suitability of both a $t$-test and a Mann-Whitney test.
+    \end{enumerate}
+    \item Independent random samples, of sizes 4 and 9 respectively, are taken from populations $A$ and $B$. A non-parametric hypothesis test is to be performed at the 1\% significance level with the hypotheses as follows:
+    \begin{center}
+        \begin{tabular}{c}
+        $\text{H}_0:\eta_a=\eta_B$\\
+        $\text{H}_1:\eta_A<\eta_B$
+        \end{tabular}
+    \end{center}
+    When the data from the two samples are ranked from 1 (smallest) to 13 (largest), a rank sum of 12 is obtained for $A$, with no values tied.
+    \begin{enumerate}
+        \item State an assumption required for the test to be performed.
+        \item Find the number of possible arrangements of rankings for the 13 values.
+        \item List all relevant subsets which provide a rank sum for $A$ of 12 or less.
+        \item Hence find the $p$-value for the test, and state an appropriate conclusion.
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+#### Chapter 17 Answers{-}
+
+*For any questions for which a level of significance is not specified, a 5\% level of significance has been used. Full answers should include, of course, conclusions in context*
+
+#### Exercise 17A {-}
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Rank sum of 20.5, or rank sum of 44.5 leading to smaller value of 20.5.
+        \item $20.5<21\implies\text{ reject }H_0$
+    \end{enumerate}
+    \item $65.5<78\implies\text{ reject }H_0$
+    \item $28\leqslant28\implies\text{ reject }H_0$
+    \item $27.5<31\implies\text{ reject }H_0$
+    \item $29>28\implies\text{ do not reject }H_0$
+    \item Assume distributions of learning times for each type of mouse have the same shape and variance.\\
+    $38.5>26\implies\text{ do not reject }H_0$
+    \item 
+    \begin{enumerate}
+        \item $\text{H}_0:\eta_A=\eta_B$ and $\text{H}_1:\eta_A\ne\eta_B$
+        \item $72.5>73\implies\text{ reject }H_0$
+        \item Assume the distributions of mass of dust deposited for each boiler type have the same shape and variance. Assume the samples of boilers are random. Assume the samples are independent.
+    \end{enumerate}
+\end{enumerate}
+
+#### Exercise 17B {-}
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $-2.39<-2.33\implies\text{ reject }H_0$
+        \item Assume that the distributions of driving times for each weather condition have the same shape and variance.
+    \end{enumerate}
+    \item $-1.47>-1.96\implies\text{ do not reject }H_0$
+    \item $-1.96>-1.64\implies\text{ do not reject }H_0$
+    \item 
+    \begin{enumerate}
+        \item The distributions of gradings for each line appear to have the same shape and variance, to a Mann-Whitney test is appropriate. The distributions do not appear to be normal, so a $t$-test would not be appropriate.
+        \item $-1.34<-1.28\implies\text{ reject }H_0$
+    \end{enumerate}
+\end{enumerate}
+
+#### Exercise 17C {-}
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item 56
+        \item $\{1,2,3\},\{1,2,4\},\{1,2,5\},\{1,3,4\}$
+        \item $\frac{4}{56}=\frac{1}{14}\text{ or }0.0714$
+    \end{enumerate}
+    \begin{enumerate}
+        \item 126
+        \item $\{1,2,3,4\},\{1,2,3,5\},\{1,2,3,6\},\{1,2,4,5\}$
+        \item $\frac{4}{126}=\frac{2}{63}\text{ or }0.0317$
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $1+2+4+8=15$
+        \item $\{1,2,3,4\},\{1,2,3,5\},\{1,2,3,6\},\{1,2,3,7\},\{1,2,3,8\}$\\
+        $\{1,2,3,9\},\{1,2,4,5\},\{1,2,4,6\},\{1,2,4,7\},\{1,2,4,8\}$\\
+        $\{1,2,5,6\},\{1,2,5,7\},\{1,3,4,5\},\{1,3,4,6\},\{1,3,4,7\}$\\
+        $\{1,3,5,6\},\{2,3,4,5\},\{2,3,4,6\}$
+        \item Assume that the population distributions of reactions times for each group have the same shape and variance.
+        \item $\frac{18}{330}=\frac{3}{55}\text{ or }0.0545$
+        \item $0.0545>0.05\implies\text{ do not reject }H_0$
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $\frac{7}{495}=0.0141$
+        \item $0.0141<0.1\implies\text{ reject }H_0$
+        \item Assume that the samples of hockey and rugby players are random.
+    \end{enumerate}
+\end{enumerate}
+
+#### Review Exercise {-}
+\begin{enumerate}
+    \item $34>29\implies\text{ do not reject }H_0$
+    \item 
+    \begin{enumerate}
+        \item The stem-and-leaf diagram shows that red wines seem to contain more alcohol on average than white wines.
+        \item $-3.04<-1.64\implies\text{ reject }H_0$
+        \item Since the stem-and-leaf diagram seems to suggest that the distributions of alcohol content for the two groups have the same shape and variance, a Mann-Whitney test would be appropriate. Since the distributions both appear to be normal-like, a $t$-test would also be appropriate.
+    \item 
+    \begin{enumerate}
+        \item Assume that the distributions of $A$ and $B$ have the same shape and variance.
+        \item 715 
+        \item $\{1,2,3,4\},\{1,2,3,5\},\{1,2,3,6\},\{1,2,4,5\}$
+        \item $0.0056<0.01\implies\text{ reject }H_0$
+    \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+

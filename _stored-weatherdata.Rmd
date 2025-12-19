@@ -1,0 +1,225 @@
+---
+title: "_stored-weatherdata"
+output: html_document
+---
+
+The weather station on the roof of the Playfair Building at Dollar Academy records a wide range of data, including wind strength, temperature and rainfall. Some tables and plots produced using some of the data collected are shown below.
+
+The temperature sensors record the temperature on a regular basis throughout every day. **Table 1** shows some summary statistics for the July 2023, with the highest temperature reached on each day of the month recorded.
+
+\begin{center}
+\begin{tabular}{ccccccccccccc}
+Variable & N & Minimum & Q1 & median & Q3 & Maximum & IQR\\
+  \hline
+July 23 daily high temp (C) & 31 & 14.6 & 16.6 & 18.2 & \textbf{****} & 23.8 & 3\\
+\end{tabular}\\\vspace{0.2cm}
+\textbf{Table 1}
+\end{center}
+
+Total rainfall is measured each day, in millimetres. Some summary statistics are shown for July 2023 in **Table 2**.
+
+\begin{center}
+\begin{tabular}{ccccccccccccc}
+Variable & N & Minimum & Q1 & median & Q3 & Maximum\\
+  \hline
+July 23 daily rain (mm) & 31 & 0.00 & 0.05 & 2.50 & 8.50 & 169.80\\
+\end{tabular}\\\vspace{0.2cm}
+\textbf{Table 2}
+\end{center}
+
+An alternative to considering the highest temperature reached each day is to record the *mean* temperature for each day, using all readings taken throughout the day. **Figure 1** shows a comparison between May, August and December in 2023 using this data.
+
+\begin{center}
+\begin{tikzpicture}
+\node at (5,4) {\text{2023 Dollar Mean Temperatures}};
+\node at (5,0) {\text{Daily Mean Temp (degrees C)}};
+
+\draw[semithick] (-1.5,1) -- (10,1);
+\foreach \x in {-1.5,-1,...,10}
+  \draw (\x,1) -- (\x,0.8);
+\node at (0,0.5) {$0$};
+\node at (2.5,0.5) {$5$};
+\node at (5,0.5) {$10$};
+\node at (7.5,0.5) {$15$};
+\node at (10,0.5) {$20$};
+
+\draw[semithick,fill=black!60] (1.6,1.2) rectangle (4,1.8);
+\node[anchor=west] at (5.25,1.5) {\text{December}};
+\draw[semithick] (-1.2,1.3) -- (-1.2,1.7);
+\draw[semithick] (-1.2,1.5) -- (1.6,1.5);
+\draw[semithick] (2.7,1.2) -- (2.7,1.8);
+\draw[semithick] (4,1.5) -- (5.25,1.5);
+\draw[semithick] (5.25,1.3) -- (5.25,1.7);
+
+\draw[semithick,fill=black!10] (6.7,2) rectangle (8.1,2.6);
+\node[anchor=west] at (9.8,2.3) {\text{August}};
+\draw[semithick] (6.35,2.1) -- (6.35,2.5);
+\draw[semithick] (6.35,2.3) -- (6.7,2.3);
+\draw[semithick] (7.45,2) -- (7.45,2.6);
+\draw[semithick] (8.1,2.3) -- (9.8,2.3);
+\draw[semithick] (9.8,2.1) -- (9.8,2.5);
+
+\draw[semithick,fill=black!30] (5.6,2.8) rectangle (6.44,3.4);
+\node[anchor=west] at (7.6,3.1) {\text{May}};
+\draw[semithick] (4.1,2.9) -- (4.1,3.3);
+\draw[semithick] (4.1,3.1) -- (5.6,3.1);
+\draw[semithick] (6.2,2.8) -- (6.2,3.4);
+\draw[semithick] (6.4,3.1) -- (7.6,3.1);
+\draw[semithick] (7.6,2.9) -- (7.6,3.3);
+\end{tikzpicture}\\
+\textbf{Figure 1}
+\end{center}
+
+\begin{enumerate}
+    \item[1. ] One of the values from \textbf{Table 1} has been replaced by \textbf{****}. Calculate the missing value.
+    \item[2. ] Using \textbf{Table 2} show that at least one of the days from July 2023 is an outlier in terms of daily rainfall.
+    \item [3. ] For each of the following statements, state \textit{what part(s) of} \textbf{Figure 1} could justify the following suggested conclusions. 
+    \begin{enumerate}
+        \item[A. ] August was generally warmer than May.
+        \item[B. ] Mean daily temperatures in December were more varied than they were in May.
+        \item[C. ] The distribution of mean daily temperatures in May shows signs of a negative skew. 
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+It was generally felt by many Dollar residents and visitors that the weather in July 2023 was much worse than that in July 2022. Data from the weather station, considering both mean daily temperatures and highest daily temperatures, have been used to produce **Figure 2** and **Figure 3**.
+
+\begin{center}
+\begin{tikzpicture}
+\node at (11.5,0) {\text{Daily highest temp (degrees C)}};
+
+\draw[semithick] (7,1) -- (16,1);
+\foreach \x in {7,7.5,...,16}
+  \draw (\x,1) -- (\x,0.8);
+\node at (7.5,0.5) {$15$};
+\node at (10,0.5) {$20$};
+\node at (12.5,0.5) {$25$};
+\node at (15,0.5) {$30$};
+
+\draw[semithick,fill=black!10] (8.3,1.2) rectangle (9.8,1.8);
+\node[anchor=west] at (11.9,1.5) {\text{July 2023}};
+\draw[semithick] (7.3,1.3) -- (7.3,1.7);
+\draw[semithick] (7.3,1.5) -- (8.3,1.5);
+\draw[semithick] (9.1,1.2) -- (9.1,1.8);
+\draw[semithick] (9.8,1.5) -- (11.9,1.5);
+\draw[semithick] (11.9,1.3) -- (11.9,1.7);
+
+\draw[semithick,fill=black!60] (9.1,2) rectangle (10.9,2.6);
+\node[anchor=west] at (15.55,2.3) {\text{July 2022}};
+\draw[semithick] (8.05,2.1) -- (8.05,2.5);
+\draw[semithick] (8.05,2.3) -- (9.1,2.3);
+\draw[semithick] (10.1,2) -- (10.1,2.6);
+\draw[semithick] (10.9,2.3) -- (15.55,2.3);
+\draw[semithick] (15.55,2.1) -- (15.55,2.5);
+
+\end{tikzpicture}\\
+\textbf{Figure 2}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+\draw[semithick] (6,0.1) -- (12,0.1);
+\draw[semithick] (6,1.4) -- (12,1.4);
+\node at (4,2.1) {July 22 Daily Mean};
+\node at (4,0.6) {July 23 Daily Mean};
+\node at (9,-0.6) {\text{Daily mean temperature (degrees C)}};
+\node at (6,-0.1) {$12$};
+\node at (7,-0.1) {$14$};
+\node at (8,-0.1) {$16$};
+\node at (9,-0.1) {$18$};
+\node at (10,-0.1) {$20$};
+\node at (11,-0.1) {$22$};
+\node at (12,-0.1) {$24$};
+
+\draw[semithick,fill=black!40] (6.1,0.2) circle (0.05);
+\draw[semithick,fill=black!40] (6.2,0.2) circle (0.05);
+\draw[semithick,fill=black!40] (6.3,0.2) circle (0.05);
+\draw[semithick,fill=black!40] (6.6,0.2) circle (0.05);
+\draw[semithick,fill=black!40] (6.7,0.2) circle (0.05);
+\draw[semithick,fill=black!40] (6.7,0.4) circle (0.05);
+\draw[semithick,fill=black!40] (6.9,0.2) circle (0.05);
+\draw[semithick,fill=black!40] (6.9,0.4) circle (0.05);
+\draw[semithick,fill=black!40] (7.0,0.2) circle (0.05);
+\draw[semithick,fill=black!40] (7.1,0.2) circle (0.05);
+\draw[semithick,fill=black!40] (7.1,0.4) circle (0.05);
+\draw[semithick,fill=black!40] (7.1,0.6) circle (0.05);
+\draw[semithick,fill=black!40] (7.2,0.2) circle (0.05);
+\draw[semithick,fill=black!40] (7.2,0.4) circle (0.05);
+\draw[semithick,fill=black!40] (7.2,0.6) circle (0.05);
+\draw[semithick,fill=black!40] (7.3,0.2) circle (0.05);
+\draw[semithick,fill=black!40] (7.3,0.4) circle (0.05);
+\draw[semithick,fill=black!40] (7.3,0.6) circle (0.05);
+\draw[semithick,fill=black!40] (7.3,0.8) circle (0.05);
+\draw[semithick,fill=black!40] (7.3,1.0) circle (0.05);
+\draw[semithick,fill=black!40] (7.4,0.2) circle (0.05);
+\draw[semithick,fill=black!40] (7.4,0.4) circle (0.05);
+\draw[semithick,fill=black!40] (7.4,0.6) circle (0.05);
+\draw[semithick,fill=black!40] (7.4,0.8) circle (0.05);
+\draw[semithick,fill=black!40] (7.5,0.2) circle (0.05);
+\draw[semithick,fill=black!40] (7.6,0.2) circle (0.05);
+\draw[semithick,fill=black!40] (7.9,0.2) circle (0.05);
+\draw[semithick,fill=black!40] (8.0,0.2) circle (0.05);
+\draw[semithick,fill=black!40] (8.1,0.2) circle (0.05);
+\draw[semithick,fill=black!40] (8.7,0.2) circle (0.05);
+\draw[semithick,fill=black!40] (8.7,0.4) circle (0.05);
+\draw[semithick,fill=black!40] (9.5,0.2) circle (0.05);
+
+\draw[semithick,fill=black!40] (6.6,1.5) circle (0.05);
+\draw[semithick,fill=black!40] (6.7,1.5) circle (0.05);
+\draw[semithick,fill=black!40] (6.9,1.5) circle (0.05);
+\draw[semithick,fill=black!40] (7.2,1.5) circle (0.05);
+\draw[semithick,fill=black!40] (7.2,1.7) circle (0.05);
+\draw[semithick,fill=black!40] (7.2,1.9) circle (0.05);
+\draw[semithick,fill=black!40] (7.2,2.1) circle (0.05);
+\draw[semithick,fill=black!40] (7.2,2.3) circle (0.05);
+\draw[semithick,fill=black!40] (7.2,2.5) circle (0.05);
+\draw[semithick,fill=black!40] (7.2,2.7) circle (0.05);
+\draw[semithick,fill=black!40] (7.4,1.5) circle (0.05);
+\draw[semithick,fill=black!40] (7.5,1.5) circle (0.05);
+\draw[semithick,fill=black!40] (7.6,1.5) circle (0.05);
+\draw[semithick,fill=black!40] (7.7,1.5) circle (0.05);
+\draw[semithick,fill=black!40] (7.7,1.7) circle (0.05);
+\draw[semithick,fill=black!40] (7.9,1.5) circle (0.05);
+\draw[semithick,fill=black!40] (7.9,1.7) circle (0.05);
+\draw[semithick,fill=black!40] (7.9,1.9) circle (0.05);
+\draw[semithick,fill=black!40] (8.0,1.5) circle (0.05);
+\draw[semithick,fill=black!40] (8.1,1.5) circle (0.05);
+\draw[semithick,fill=black!40] (8.3,1.5) circle (0.05);
+\draw[semithick,fill=black!40] (8.4,1.5) circle (0.05);
+\draw[semithick,fill=black!40] (8.5,1.5) circle (0.05);
+\draw[semithick,fill=black!40] (8.5,1.7) circle (0.05);
+\draw[semithick,fill=black!40] (8.7,1.5) circle (0.05);
+\draw[semithick,fill=black!40] (9.2,1.5) circle (0.05);
+\draw[semithick,fill=black!40] (9.2,1.7) circle (0.05);
+\draw[semithick,fill=black!40] (9.2,1.9) circle (0.05);
+\draw[semithick,fill=black!40] (9.6,1.5) circle (0.05);
+\draw[semithick,fill=black!40] (11.1,1.5) circle (0.05);
+\draw[semithick,fill=black!40] (11.4,1.5) circle (0.05);
+
+\end{tikzpicture}\\
+\textbf{Figure 3}
+\end{center}
+
+**Table 3** shows some summary statistics relating the data represented in Figure 3.
+
+\begin{center}
+\begin{tabular}{ccc}
+    Variable & Mean & Standard Deviation\\
+  \hline
+    July 22 & 16.1 & 2.3\\
+    July 23 & 14.6 & 1.4
+\end{tabular}\\
+\textbf{Table 3}
+\end{center}
+
+\begin{enumerate}
+    \item [4. ] For each of the following statements, use \textbf{Figure 2} to determine whether each of the following statements comparing mean daily temperatures in July 2022 and July 2023 are true or false. 
+    \begin{enumerate}
+        \item[A. ] On average, the daily temperature was higher in 2023.
+        \item[B. ] The upper quartile for 2023 is lower than the median for 2022.
+        \item[C. ] The daily temperature was more varied in 2023.
+        \item [D. ] The highest temperature in 2023 was more than 31$^{\circ}C$.
+    \end{enumerate}
+    \item[5. ] Using \textbf{Figure 3}, showing daily mean temperatures, write three true statements.
+\end{enumerate}

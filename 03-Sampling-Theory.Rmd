@@ -1,0 +1,1316 @@
+# Sampling Theory
+
+*"Garbage In, Garbage Out"* is a phrase used in computer science that may equally be applied to statistics. It should be discouraged to think that the task of a statistician begins with raw data; the manner of the collection of the data itself is of fundamental importance. Any statistical inferences made on the basis of data that has not be collected with an appropriate *sampling method* should not be trusted.
+
+### Populations and Samples {-}
+
+To recap from chapter 1, the term **population** refers to the entire set of objects in which we are interested. A **sample** is a selection of some objects chosen from the population. 
+
+\begin{center}
+\begin{tikzpicture}
+\draw[semithick,fill=black!10] (0,0) rectangle (8,5);
+\node at (4,5.3) {Population};
+\draw[semithick,fill=black!10] (12,2.5) circle (1.5);
+\node at (12,4.3) {Sample};
+
+\draw[very thick,fill=black!10] (7,4.65) circle (0.35);
+\draw[very thick,fill=black!10] (4,4.05) circle (0.35);
+\draw[very thick,fill=black!10] (2,3.45) circle (0.35);
+\draw[very thick,fill=black!10] (7,2.25) circle (0.35);
+\draw[very thick,fill=black!10] (2.5,1.05) circle (0.35);
+\draw[very thick,fill=black!10] (6,0.45) circle (0.35);
+
+\node[alice,minimum size=0.04cm] at (11.5,2.75) {};
+\node[alice,minimum size=0.04cm] at (12,1.4) {};
+\node[alice,minimum size=0.04cm] at (11,2) {};
+\node[alice,minimum size=0.04cm] at (12.25,2.3) {};
+\node[alice,minimum size=0.04cm] at (13,2.85) {};
+\node[alice,minimum size=0.04cm] at (12.1,3.5) {};
+
+\node[alice,minimum size=0.04cm] at (0.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (0.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (0.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (0.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (0.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (0.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (0.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (0.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (1,0.45) {};
+\node[alice,minimum size=0.04cm] at (1,1.05) {};
+\node[alice,minimum size=0.04cm] at (1,1.65) {};
+\node[alice,minimum size=0.04cm] at (1,2.25) {};
+\node[alice,minimum size=0.04cm] at (1,2.85) {};
+\node[alice,minimum size=0.04cm] at (1,3.45) {};
+\node[alice,minimum size=0.04cm] at (1,4.05) {};
+\node[alice,minimum size=0.04cm] at (1,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (1.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (1.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (1.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (1.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (1.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (1.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (1.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (1.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (2,0.45) {};
+\node[alice,minimum size=0.04cm] at (2,1.05) {};
+\node[alice,minimum size=0.04cm] at (2,1.65) {};
+\node[alice,minimum size=0.04cm] at (2,2.25) {};
+\node[alice,minimum size=0.04cm] at (2,2.85) {};
+\node[alice,minimum size=0.04cm] at (2,3.45) {};
+\node[alice,minimum size=0.04cm] at (2,4.05) {};
+\node[alice,minimum size=0.04cm] at (2,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (2.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (2.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (2.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (2.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (2.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (2.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (2.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (2.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (3,0.45) {};
+\node[alice,minimum size=0.04cm] at (3,1.05) {};
+\node[alice,minimum size=0.04cm] at (3,1.65) {};
+\node[alice,minimum size=0.04cm] at (3,2.25) {};
+\node[alice,minimum size=0.04cm] at (3,2.85) {};
+\node[alice,minimum size=0.04cm] at (3,3.45) {};
+\node[alice,minimum size=0.04cm] at (3,4.05) {};
+\node[alice,minimum size=0.04cm] at (3,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (3.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (3.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (3.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (3.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (3.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (3.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (3.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (3.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (4,0.45) {};
+\node[alice,minimum size=0.04cm] at (4,1.05) {};
+\node[alice,minimum size=0.04cm] at (4,1.65) {};
+\node[alice,minimum size=0.04cm] at (4,2.25) {};
+\node[alice,minimum size=0.04cm] at (4,2.85) {};
+\node[alice,minimum size=0.04cm] at (4,3.45) {};
+\node[alice,minimum size=0.04cm] at (4,4.05) {};
+\node[alice,minimum size=0.04cm] at (4,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (4.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (4.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (4.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (4.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (4.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (4.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (4.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (4.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (5,0.45) {};
+\node[alice,minimum size=0.04cm] at (5,1.05) {};
+\node[alice,minimum size=0.04cm] at (5,1.65) {};
+\node[alice,minimum size=0.04cm] at (5,2.25) {};
+\node[alice,minimum size=0.04cm] at (5,2.85) {};
+\node[alice,minimum size=0.04cm] at (5,3.45) {};
+\node[alice,minimum size=0.04cm] at (5,4.05) {};
+\node[alice,minimum size=0.04cm] at (5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (5.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (5.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (5.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (5.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (5.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (5.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (5.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (5.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (6,0.45) {};
+\node[alice,minimum size=0.04cm] at (6,1.05) {};
+\node[alice,minimum size=0.04cm] at (6,1.65) {};
+\node[alice,minimum size=0.04cm] at (6,2.25) {};
+\node[alice,minimum size=0.04cm] at (6,2.85) {};
+\node[alice,minimum size=0.04cm] at (6,3.45) {};
+\node[alice,minimum size=0.04cm] at (6,4.05) {};
+\node[alice,minimum size=0.04cm] at (6,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (6.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (6.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (6.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (6.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (6.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (6.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (6.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (6.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (7,0.45) {};
+\node[alice,minimum size=0.04cm] at (7,1.05) {};
+\node[alice,minimum size=0.04cm] at (7,1.65) {};
+\node[alice,minimum size=0.04cm] at (7,2.25) {};
+\node[alice,minimum size=0.04cm] at (7,2.85) {};
+\node[alice,minimum size=0.04cm] at (7,3.45) {};
+\node[alice,minimum size=0.04cm] at (7,4.05) {};
+\node[alice,minimum size=0.04cm] at (7,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (7.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (7.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (7.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (7.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (7.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (7.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (7.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (7.5,4.65) {};
+
+\draw[semithick,dashed] (7,4.65) -- (12.1,3.5);
+\draw[semithick,dashed] (4,4.05) -- (13,2.85);
+\draw[semithick,dashed] (11.5,2.75) -- (2,3.45);
+\draw[semithick,dashed] (12.25,2.3) -- (7,2.25);
+\draw[semithick,dashed] (11,2) -- (2.5,1.05);
+\draw[semithick,dashed] (6,0.45) -- (12,1.4);
+
+
+\end{tikzpicture}
+\end{center}
+
+A **census** is used to collect information from a full population and a **sample survey** is used to collect data on a sample. 
+
+It is usually very difficult to carry out a census as it is time consuming, expensive, and requires an accurate and complete list of every member of the population.  In some cases, investigating an entire population would destroy it all, such as the burn time of candles. It is therefore usually preferable that a sample survey is carried out and, if representative of the population, it should give an accurate indication of the characteristics of the population.
+
+\newpage
+
+## Sampling Considerations
+
+Samples are used to infer information about the populations from which they are taken, and sample data collected using higher quality sampling techniques should tend to lead to more reliable inferences. There are several key considerations and pitfalls to be aware of whenever the collection of sample data is being planned.
+
+### Sample Size {-}
+
+Parameters, such as the *population mean*, are generally considered as fixed, but usually unknown values. If samples are repeatedly taken from a population and their means are are obtained, the values of those sample means will sometimes be higher than that of the true population mean and sometimes lower. This comes from *random sampling error* which, despite its name, is a natural effect due to chance variation.
+
+The figure below shows two sets of sample means for random samples taken from the same distribution with a population mean of $\mu=50$. For one set a sample size of $n=5$ was used, with $n=20$ for the other.
+
+\begin{tikzpicture}
+        \draw (0,0) -- (8,0);
+        \foreach \x in {30,40,...,70}{
+        \node[below] at (0.2*\x-6,-0.1) {\x};
+        }
+        \foreach \x in {0,1,...,8}{
+        \draw (\x,0) -- (\x,-0.1);
+        }
+        \draw[thick] (4,0) -- (4,3) node[above] {$\mu$};
+        \draw[fill] (53*0.2-6,1) circle (1.5pt);
+        \draw[fill] (63*0.2-6,1) circle (1.5pt);
+        \draw[fill] (49*0.2-6,1) circle (1.5pt);
+        \draw[fill] (41*0.2-6,1) circle (1.5pt);
+        \draw[fill] (62*0.2-6,1) circle (1.5pt);
+        \draw[fill] (44*0.2-6,1) circle (1.5pt);
+        \draw[fill] (65*0.2-6,1) circle (1.5pt);
+        \draw[fill] (57*0.2-6,1) circle (1.5pt);
+        \draw[fill] (48*0.2-6,1) circle (1.5pt);
+        \draw[fill] (36*0.2-6,1) circle (1.5pt);
+        \draw[stealth-] (8,1) -- (10,1) node[right] {sample means $\bar{x}_i$ for ten samples with $n=5$};
+        \draw[fill] (53.6*0.2-6,2) circle (1.5pt);
+        \draw[fill] (44.3*0.2-6,2) circle (1.5pt);
+        \draw[fill] (54.7*0.2-6,2) circle (1.5pt);
+        \draw[fill] (50.5*0.2-6,2) circle (1.5pt);
+        \draw[fill] (55.4*0.2-6,2) circle (1.5pt);
+        \draw[fill] (45.1*0.2-6,2) circle (1.5pt);
+        \draw[fill] (46.4*0.2-6,2) circle (1.5pt);
+        \draw[fill] (48*0.2-6,2) circle (1.5pt);
+        \draw[fill] (47*0.2-6,2) circle (1.5pt);
+        \draw[fill] (52.8*0.2-6,2) circle (1.5pt);
+        \draw[stealth-] (8,2) -- (10,2) node[right] {sample means $\bar{x}_i$ for ten samples with $n=20$};
+\end{tikzpicture}
+
+It can be seen that larger sample sizes tend to produce sample statistics that better represent the population parameters they are used to estimate. Larger samples are therefore generally preferred, and statistical studies conducting using only small samples of data should typically be treated with more caution than those based on larger samples. When small samples are used, the reasons are usually one or more of cost, time, and availability of data.
+
+### Bias {-}
+
+Poor sampling technique may lead to samples that are not *representative* of the population from which they are drawn. The most common effect of this is that *bias* is introduced: a tendency for sample statistics calculated from these samples to overestimate, or underestimate, the population parameter they aim to represent. The diagrams below illustrate the effects various sampling techniques may have on sample means obtained from repeated sampling; the techniques used for the left and right diagrams are causing bias, whilst the sample means obtained for the middle diagram are *unbiased*.
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw (0,0) -- (5,0);
+        \draw[dashed] (0.6,0) -- (0.6,1) node[above] at (0.6,1) {${\scriptstyle \bar{x}_1}$};
+        \draw[dashed] (2.9,0) -- (2.9,1) node[above] at (2.9,1) {${\scriptstyle \bar{x}_2}$};
+        \draw[dashed] (1,0) -- (1,1) node[above] at (1,1) {${\scriptstyle \bar{x}_3}$};
+        \draw[dashed] (0.1,0) -- (0.1,1) node[above] at (0.1,1) {${\scriptstyle \bar{x}_4}$};
+        \draw[dashed] (2,0) -- (2,1) node[above] at (2,1) {${\scriptstyle \bar{x}_5}$};
+        \draw[thick] (2.5,-0.2) -- (2.5,1.5) node[above] at (2.5,1.5) {$\mu$};
+        \node at (2.5,-0.5) {\textit{biased} (tending to underestimate)};
+        \draw (6,0) -- (11,0);
+        \draw[dashed] (8.8,0) -- (8.8,1) node[above] at (8.8,1) {${\scriptstyle \bar{x}_1}$};
+        \draw[dashed] (10.1,0) -- (10.1,1) node[above] at (10.1,1) {${\scriptstyle \bar{x}_2}$};
+        \draw[dashed] (6.6,0) -- (6.6,1) node[above] at (6.6,1) {${\scriptstyle \bar{x}_3}$};
+        \draw[dashed] (8,0) -- (8,1) node[above] at (8,1) {${\scriptstyle \bar{x}_4}$};
+        \draw[dashed] (9.2,0) -- (9.2,1) node[above] at (9.2,1) {${\scriptstyle \bar{x}_5}$};
+        \draw[thick] (8.5,-0.2) -- (8.5,1.5) node[above] at (8.5,1.5) {$\mu$};
+        \node at (8.5,-0.5) {\textit{unbiased} (reliable estimation)};
+        \draw (12,0) -- (17,0);
+        \draw[dashed] (16.8,0) -- (16.8,1) node[above] at (16.8,1) {${\scriptstyle \bar{x}_1}$};
+        \draw[dashed] (15,0) -- (15,1) node[above] at (15,1) {${\scriptstyle \bar{x}_2}$};
+        \draw[dashed] (14,0) -- (14,1) node[above] at (14,1) {${\scriptstyle \bar{x}_3}$};
+        \draw[dashed] (16.3,0) -- (16.3,1) node[above] at (16.3,1) {${\scriptstyle \bar{x}_4}$};
+        \draw[dashed] (15.7,0) -- (15.7,1) node[above] at (15.7,1) {${\scriptstyle \bar{x}_5}$};
+        \draw[thick] (14.5,-0.2) -- (14.5,1.5) node[above] at (14.5,1.5) {$\mu$};
+        \node at (14.5,-0.5) {\textit{biased} (tending to overestimate)};
+    \end{tikzpicture}
+\end{center}
+
+It is very difficult to identify that bias has been introduced, and effectively impossible to correct it. The only reliable way to avoid introducing bias is through application of *appropriate random sampling techniques*.
+
+\pagebreak
+
+### Sampling Frames {-}
+
+Any real-life experience of sampling for any kind of study is likely to quickly reveal that it is not quite as straight-forward as *"just choosing at random"*. Several key elements must be identified and problems considered.
+
+*For example, consider the context of wishing to use registration time one morning to survey a sample of pupils at a large secondary school for their views on the school cafeteria.*
+
+\begin{multicols}{2}
+
+\begin{center}
+\begin{tikzpicture}
+\draw[thick] (0,0) circle (4cm);
+\draw[thick,fill=black!10] (0,-0.5) circle (3.5cm);
+\draw[thick,fill=black!20] (0,-2.5) circle (1.5cm);
+\node[below] at (0,3.8) {Population};
+\node[below] at (0,2.6) {Sampling Frame};
+\node[below] at (0,-1.2) {Sample};
+\end{tikzpicture}
+\end{center}
+
+The \textbf{target population} is the \textit{group being studied}. 
+
+\textit{e.g. all of the pupils who attend a school}
+
+\vspace{0.3cm}
+
+The \textbf{sampling frame} is the part of the target population, of size $N$, from which a sample can be taken, typically in the form of an ordered list.
+
+\textit{e.g. a numbered list of the school roll}
+
+\vspace{0.3cm}
+
+The \textbf{sample} consists of the subset of the sampling frame  selected to be studied, with size $n$.
+
+\textit{e.g. those pupils selected to be surveyed}
+
+\vspace{0.3cm}
+
+\textbf{Sampling units}, which make up the sampling frame, may be individual people, buildings, measurements taken at different times, square grids on a map, and so on. 
+
+\end{multicols}
+
+The \textit{sampling method} is the way in which sampling units are selected from the sampling frame to create the sample.
+
+Care should be taken to ensure that sampling frames are representative of the target population. For example, if walking habits are being studied, a sampling frame containing only residents of Glasgow city centre is likely to be *not representative* of an intended target population of people living in Scotland.
+
+The impact to a study of an ill-defined target population, an unrepresentative samplng frame or a poor sampling technique is likely to be data which is *biased* and *not representative* of the population, and *unreliable conclusions*.
+
+[]{#ex31q}
+
+#### [Exercise 3.1](#ex31a) {-}
+
+\begin{enumerate}
+    \item A researcher wants to study the shopping habits of those who use his local supermarket. To collect data, he plans to stand at the exit of the self-checkout area one Sunday morning and ask shoppers if he can take a photo of their receipt. Since he will not have time to ask everyone, he will pick only those he feels are most likely to agree to this.
+    \begin{enumerate}
+        \item Identify:
+        \begin{enumerate}
+            \item The target population.
+            \item The sampling frame.
+        \end{enumerate}
+        \item Suggest two problems with the sampling frame chosen, and explain the impact this may have on their data.
+        \item Comment on the suitability of the sampling method the researcher plans to use.
+    \end{enumerate}
+    \item A large field is full of many wildflowers. A botanist wishes to conduct a survey to assess the health and variety of species of the wildflowers. A random number generator will be used to help obtain a sample.
+    \begin{enumerate}
+        \item Identify one problem with a proposal to use individual flowers as sampling units, to make up a numbered sampling frame from which to draw a sample.
+        \item Suggest an alternative sampling unit for the botanist to use instead.
+        \item Explain the purpose of a random number generator in producing a sample.
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+## Six Sampling Methods
+
+In this course, knowledge is required of *four random samplng methods* and *two non-random sampling methods*.
+
+### Simple Random Sampling (Random) {-}
+
+With *simple random sampling* each unit of the sampling frame is *equally likely* to be selected, such as by drawing names out of a hat. In general, a simple random sample of size $n$ can be selected from a population of size $N$ by numbering the units in the sampling frame from 1 to $N$, then selecting $n$ unique random numbers using a random number generator. Those units in the sampling frame corresponding to those numbers generated are then selected to form the sample.
+
+For example, simple random sample of 15 pupils from a year group of 120 can be made by numbering a list of pupils from the year group from 1 to 120, then selecting 15 random numbers using a random number generator. 
+
+\begin{center}
+\begin{tikzpicture}
+\draw[semithick,fill=black!10] (0,0) rectangle (8,5);
+\node at (4,5.3) {Sampling Frame, $N=120$};
+\draw[semithick,fill=black!10] (12,2.5) circle (1.5);
+\node at (12,4.3) {Sample, $n=15$};
+
+\draw[very thick,fill=black!10] (7,4.65) circle (0.35);
+\draw[very thick,fill=black!10] (4,4.05) circle (0.35);
+\draw[very thick,fill=black!10] (2,3.45) circle (0.35);
+\draw[very thick,fill=black!10] (7,2.25) circle (0.35);
+\draw[very thick,fill=black!10] (2.5,1.05) circle (0.35);
+\draw[very thick,fill=black!10] (6,0.45) circle (0.35);
+\draw[very thick,fill=black!10] (1,4.65) circle (0.35);
+\draw[very thick,fill=black!10] (1.5,1.65) circle (0.35);
+\draw[very thick,fill=black!10] (6,2.85) circle (0.35);
+\draw[very thick,fill=black!10] (5,2.25) circle (0.35);
+\draw[very thick,fill=black!10] (3.5,1.65) circle (0.35);
+\draw[very thick,fill=black!10] (4.5,4.05) circle (0.35);
+
+\node[alice,minimum size=0.04cm] at (11.5,1.5) {};
+\node[alice,minimum size=0.04cm] at (12.5,1.5) {};
+\node[alice,minimum size=0.04cm] at (12,1.9) {};
+\node[alice,minimum size=0.04cm] at (12,3.1) {};
+\node[alice,minimum size=0.04cm] at (11,2) {};
+\node[alice,minimum size=0.04cm] at (13,2) {};
+\node[alice,minimum size=0.04cm] at (11.5,2.5) {};
+\node[alice,minimum size=0.04cm] at (12.5,2.5) {};
+\node[alice,minimum size=0.04cm] at (11.1,3) {};
+\node[alice,minimum size=0.04cm] at (12.9,3) {};
+\node[alice,minimum size=0.04cm] at (11.5,3.5) {};
+\node[alice,minimum size=0.04cm] at (12.5,3.5) {};
+\node[alice,minimum size=0.04cm] at (12,3.7) {};
+\node[alice,minimum size=0.04cm] at (12,1.3) {};
+\node[alice,minimum size=0.04cm] at (12,2.5) {};
+
+
+\node[alice,minimum size=0.04cm] at (0.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (0.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (0.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (0.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (0.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (0.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (0.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (0.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (1,0.45) {};
+\node[alice,minimum size=0.04cm] at (1,1.05) {};
+\node[alice,minimum size=0.04cm] at (1,1.65) {};
+\node[alice,minimum size=0.04cm] at (1,2.25) {};
+\node[alice,minimum size=0.04cm] at (1,2.85) {};
+\node[alice,minimum size=0.04cm] at (1,3.45) {};
+\node[alice,minimum size=0.04cm] at (1,4.05) {};
+\node[alice,minimum size=0.04cm] at (1,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (1.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (1.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (1.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (1.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (1.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (1.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (1.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (1.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (2,0.45) {};
+\node[alice,minimum size=0.04cm] at (2,1.05) {};
+\node[alice,minimum size=0.04cm] at (2,1.65) {};
+\node[alice,minimum size=0.04cm] at (2,2.25) {};
+\node[alice,minimum size=0.04cm] at (2,2.85) {};
+\node[alice,minimum size=0.04cm] at (2,3.45) {};
+\node[alice,minimum size=0.04cm] at (2,4.05) {};
+\node[alice,minimum size=0.04cm] at (2,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (2.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (2.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (2.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (2.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (2.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (2.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (2.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (2.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (3,0.45) {};
+\node[alice,minimum size=0.04cm] at (3,1.05) {};
+\node[alice,minimum size=0.04cm] at (3,1.65) {};
+\node[alice,minimum size=0.04cm] at (3,2.25) {};
+\node[alice,minimum size=0.04cm] at (3,2.85) {};
+\node[alice,minimum size=0.04cm] at (3,3.45) {};
+\node[alice,minimum size=0.04cm] at (3,4.05) {};
+\node[alice,minimum size=0.04cm] at (3,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (3.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (3.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (3.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (3.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (3.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (3.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (3.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (3.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (4,0.45) {};
+\node[alice,minimum size=0.04cm] at (4,1.05) {};
+\node[alice,minimum size=0.04cm] at (4,1.65) {};
+\node[alice,minimum size=0.04cm] at (4,2.25) {};
+\node[alice,minimum size=0.04cm] at (4,2.85) {};
+\node[alice,minimum size=0.04cm] at (4,3.45) {};
+\node[alice,minimum size=0.04cm] at (4,4.05) {};
+\node[alice,minimum size=0.04cm] at (4,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (4.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (4.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (4.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (4.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (4.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (4.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (4.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (4.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (5,0.45) {};
+\node[alice,minimum size=0.04cm] at (5,1.05) {};
+\node[alice,minimum size=0.04cm] at (5,1.65) {};
+\node[alice,minimum size=0.04cm] at (5,2.25) {};
+\node[alice,minimum size=0.04cm] at (5,2.85) {};
+\node[alice,minimum size=0.04cm] at (5,3.45) {};
+\node[alice,minimum size=0.04cm] at (5,4.05) {};
+\node[alice,minimum size=0.04cm] at (5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (5.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (5.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (5.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (5.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (5.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (5.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (5.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (5.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (6,0.45) {};
+\node[alice,minimum size=0.04cm] at (6,1.05) {};
+\node[alice,minimum size=0.04cm] at (6,1.65) {};
+\node[alice,minimum size=0.04cm] at (6,2.25) {};
+\node[alice,minimum size=0.04cm] at (6,2.85) {};
+\node[alice,minimum size=0.04cm] at (6,3.45) {};
+\node[alice,minimum size=0.04cm] at (6,4.05) {};
+\node[alice,minimum size=0.04cm] at (6,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (6.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (6.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (6.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (6.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (6.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (6.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (6.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (6.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (7,0.45) {};
+\node[alice,minimum size=0.04cm] at (7,1.05) {};
+\node[alice,minimum size=0.04cm] at (7,1.65) {};
+\node[alice,minimum size=0.04cm] at (7,2.25) {};
+\node[alice,minimum size=0.04cm] at (7,2.85) {};
+\node[alice,minimum size=0.04cm] at (7,3.45) {};
+\node[alice,minimum size=0.04cm] at (7,4.05) {};
+\node[alice,minimum size=0.04cm] at (7,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (7.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (7.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (7.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (7.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (7.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (7.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (7.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (7.5,4.65) {};
+
+\foreach \x in {1,...,15}
+\node at (0.5*\x,4.55) {\tiny$\x$};
+\foreach \x in {16,...,30}
+\node at (0.5*\x-7.5,3.95) {\tiny$\x$};
+\foreach \x in {31,...,45}
+\node at (0.5*\x-15,3.35) {\tiny$\x$};
+\foreach \x in {46,...,60}
+\node at (0.5*\x-22.5,2.75) {\tiny$\x$};
+\foreach \x in {61,...,75}
+\node at (0.5*\x-30,2.15) {\tiny$\x$};
+\foreach \x in {76,...,90}
+\node at (0.5*\x-37.5,1.55) {\tiny$\x$};
+\foreach \x in {91,...,105}
+\node at (0.5*\x-45,0.95) {\tiny$\x$};
+\foreach \x in {106,...,120}
+\node at (0.5*\x-52.5,0.35) {\tiny$\x$};
+
+\draw[semithick,dashed,-stealth] (8.3,2.5) -- (10.2,2.5);
+
+\node[above] at (9.25,2.5) {random};
+\node[below] at (9.25,2.5) {selection};
+
+\end{tikzpicture}
+\end{center}
+
+### Systematic Sampling (Random) {-}
+
+*Systematic sampling* involves using an orderly *pattern* to select units, starting from a randomly selected point. In general, for a numbered sampling frame of size $N$, a random number generator may select a number from 1 to $N$, with the corresponding sampling unit selected. After that initial selection, *every subsequent* $\frac{N}{n}th$ *unit is selected*, looping back to the start of the sampling frame as necessary to complete the sample of size $n$.
+
+For example, a systematic sample of 15 pupils from a year group of 120 can be made by first selecting a random starting point, such as the  $83rd$ pupil, in an alphabetised list of pupils in the year group. From there, every $\frac{120}{15}=8th$ pupil from the list is chosen, looping back round at the end of the list until 15 pupils have been chosen.
+
+\begin{center}
+\begin{tikzpicture}
+\draw[semithick,fill=black!10] (0,0) rectangle (8,5);
+\node at (4,5.3) {Sampling Frame, $N=120$};
+\draw[semithick,fill=black!10] (12,2.5) circle (1.5);
+\node at (12,4.3) {Sample, $n=15$};
+
+\draw[very thick,fill=black!10] (4,1.65) circle (0.35);
+\draw[very thick,fill=black!10] (0.5,1.05) circle (0.35);
+\draw[very thick,fill=black!10] (4.5,1.05) circle (0.35);
+\draw[very thick,fill=black!10] (1,0.45) circle (0.35);
+\draw[very thick,fill=black!10] (5,0.45) circle (0.35);
+\draw[very thick,fill=black!10] (1.5,4.65) circle (0.35);
+\draw[very thick,fill=black!10] (5.5,4.65) circle (0.35);
+\draw[very thick,fill=black!10] (2,4.05) circle (0.35);
+\draw[very thick,fill=black!10] (6,4.05) circle (0.35);
+\draw[very thick,fill=black!10] (2.5,3.45) circle (0.35);
+\draw[very thick,fill=black!10] (6.5,3.45) circle (0.35);
+\draw[very thick,fill=black!10] (3,2.85) circle (0.35);
+\draw[very thick,fill=black!10] (7,2.85) circle (0.35);
+\draw[very thick,fill=black!10] (3.5,2.25) circle (0.35);
+\draw[very thick,fill=black!10] (7.5,2.25) circle (0.35);
+
+\draw[semithick] (4,1.65) -- (4.5,-0.5);
+\node at (4.5,-0.7) {random starting point};
+
+\node[alice,minimum size=0.04cm] at (11.5,1.5) {};
+\node[alice,minimum size=0.04cm] at (12.5,1.5) {};
+\node[alice,minimum size=0.04cm] at (12,1.9) {};
+\node[alice,minimum size=0.04cm] at (12,3.1) {};
+\node[alice,minimum size=0.04cm] at (11,2) {};
+\node[alice,minimum size=0.04cm] at (13,2) {};
+\node[alice,minimum size=0.04cm] at (11.5,2.5) {};
+\node[alice,minimum size=0.04cm] at (12.5,2.5) {};
+\node[alice,minimum size=0.04cm] at (11.1,3) {};
+\node[alice,minimum size=0.04cm] at (12.9,3) {};
+\node[alice,minimum size=0.04cm] at (11.5,3.5) {};
+\node[alice,minimum size=0.04cm] at (12.5,3.5) {};
+\node[alice,minimum size=0.04cm] at (12,3.7) {};
+\node[alice,minimum size=0.04cm] at (12,1.3) {};
+\node[alice,minimum size=0.04cm] at (12,2.5) {};
+
+
+\node[alice,minimum size=0.04cm] at (0.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (0.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (0.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (0.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (0.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (0.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (0.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (0.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (1,0.45) {};
+\node[alice,minimum size=0.04cm] at (1,1.05) {};
+\node[alice,minimum size=0.04cm] at (1,1.65) {};
+\node[alice,minimum size=0.04cm] at (1,2.25) {};
+\node[alice,minimum size=0.04cm] at (1,2.85) {};
+\node[alice,minimum size=0.04cm] at (1,3.45) {};
+\node[alice,minimum size=0.04cm] at (1,4.05) {};
+\node[alice,minimum size=0.04cm] at (1,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (1.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (1.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (1.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (1.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (1.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (1.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (1.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (1.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (2,0.45) {};
+\node[alice,minimum size=0.04cm] at (2,1.05) {};
+\node[alice,minimum size=0.04cm] at (2,1.65) {};
+\node[alice,minimum size=0.04cm] at (2,2.25) {};
+\node[alice,minimum size=0.04cm] at (2,2.85) {};
+\node[alice,minimum size=0.04cm] at (2,3.45) {};
+\node[alice,minimum size=0.04cm] at (2,4.05) {};
+\node[alice,minimum size=0.04cm] at (2,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (2.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (2.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (2.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (2.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (2.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (2.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (2.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (2.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (3,0.45) {};
+\node[alice,minimum size=0.04cm] at (3,1.05) {};
+\node[alice,minimum size=0.04cm] at (3,1.65) {};
+\node[alice,minimum size=0.04cm] at (3,2.25) {};
+\node[alice,minimum size=0.04cm] at (3,2.85) {};
+\node[alice,minimum size=0.04cm] at (3,3.45) {};
+\node[alice,minimum size=0.04cm] at (3,4.05) {};
+\node[alice,minimum size=0.04cm] at (3,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (3.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (3.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (3.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (3.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (3.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (3.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (3.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (3.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (4,0.45) {};
+\node[alice,minimum size=0.04cm] at (4,1.05) {};
+\node[alice,minimum size=0.04cm] at (4,1.65) {};
+\node[alice,minimum size=0.04cm] at (4,2.25) {};
+\node[alice,minimum size=0.04cm] at (4,2.85) {};
+\node[alice,minimum size=0.04cm] at (4,3.45) {};
+\node[alice,minimum size=0.04cm] at (4,4.05) {};
+\node[alice,minimum size=0.04cm] at (4,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (4.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (4.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (4.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (4.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (4.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (4.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (4.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (4.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (5,0.45) {};
+\node[alice,minimum size=0.04cm] at (5,1.05) {};
+\node[alice,minimum size=0.04cm] at (5,1.65) {};
+\node[alice,minimum size=0.04cm] at (5,2.25) {};
+\node[alice,minimum size=0.04cm] at (5,2.85) {};
+\node[alice,minimum size=0.04cm] at (5,3.45) {};
+\node[alice,minimum size=0.04cm] at (5,4.05) {};
+\node[alice,minimum size=0.04cm] at (5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (5.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (5.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (5.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (5.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (5.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (5.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (5.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (5.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (6,0.45) {};
+\node[alice,minimum size=0.04cm] at (6,1.05) {};
+\node[alice,minimum size=0.04cm] at (6,1.65) {};
+\node[alice,minimum size=0.04cm] at (6,2.25) {};
+\node[alice,minimum size=0.04cm] at (6,2.85) {};
+\node[alice,minimum size=0.04cm] at (6,3.45) {};
+\node[alice,minimum size=0.04cm] at (6,4.05) {};
+\node[alice,minimum size=0.04cm] at (6,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (6.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (6.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (6.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (6.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (6.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (6.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (6.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (6.5,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (7,0.45) {};
+\node[alice,minimum size=0.04cm] at (7,1.05) {};
+\node[alice,minimum size=0.04cm] at (7,1.65) {};
+\node[alice,minimum size=0.04cm] at (7,2.25) {};
+\node[alice,minimum size=0.04cm] at (7,2.85) {};
+\node[alice,minimum size=0.04cm] at (7,3.45) {};
+\node[alice,minimum size=0.04cm] at (7,4.05) {};
+\node[alice,minimum size=0.04cm] at (7,4.65) {};
+
+\node[alice,minimum size=0.04cm] at (7.5,0.45) {};
+\node[alice,minimum size=0.04cm] at (7.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (7.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (7.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (7.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (7.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (7.5,4.05) {};
+\node[alice,minimum size=0.04cm] at (7.5,4.65) {};
+
+\foreach \x in {1,...,15}
+\node at (0.5*\x,4.55) {\tiny$\x$};
+\foreach \x in {16,...,30}
+\node at (0.5*\x-7.5,3.95) {\tiny$\x$};
+\foreach \x in {31,...,45}
+\node at (0.5*\x-15,3.35) {\tiny$\x$};
+\foreach \x in {46,...,60}
+\node at (0.5*\x-22.5,2.75) {\tiny$\x$};
+\foreach \x in {61,...,75}
+\node at (0.5*\x-30,2.15) {\tiny$\x$};
+\foreach \x in {76,...,90}
+\node at (0.5*\x-37.5,1.55) {\tiny$\x$};
+\foreach \x in {91,...,105}
+\node at (0.5*\x-45,0.95) {\tiny$\x$};
+\foreach \x in {106,...,120}
+\node at (0.5*\x-52.5,0.35) {\tiny$\x$};
+
+\draw[semithick,dashed,-stealth] (8.3,2.5) -- (10.2,2.5);
+
+\node[above] at (9.25,2.5) {systematic};
+\node[below] at (9.25,2.5) {selection};
+
+\end{tikzpicture}
+\end{center}
+
+\pagebreak
+
+### Stratified Sampling (Random) {-}
+
+If a target population contains distinct *strata*, where each stratum may have its own distinct characteristics, *stratified sampling* ensures that each strata will be *proportionally represented*. In general, this involves obtaining an ordered sampling frame for *each stratum* and using the proportions of each stratum in the population to determine how many to sample from each, using simple random sampling. Finally, these samples from the strata are combined.
+
+For example, a hospital wishing to survey its staff about the food in the staff canteen may split the $N=120$ staff into management, doctors/nurses and support staff. For a sample of size $n=12$, covering $\frac{1}{10}th$ of the sampling frame, simple random sampling is used to select $\frac{1}{10}$ of the staff *from each group*. These are then collected to form the stratified sample. 
+
+\begin{center}
+\begin{tikzpicture}
+\draw[semithick,fill=black!10] (0,0) rectangle (8,5);
+\node at (4,5.3) {Stratified Sampling Frames, $N=120$};
+\draw[semithick,fill=black!10] (12,2.5) ellipse (1 and 2);
+\node[above] at (12,4.5) {Sample, $n=12$};
+\node[left] at (0,4.35) {$30$};
+\node[left] at (0,2.5) {$60$};
+\node[left] at (0,0.75) {$30$};
+
+\draw[semithick] (0,3.75) -- (8,3.75);
+\draw[semithick] (0,1.35) -- (8,1.35);
+
+\foreach \x in {1,...,15}
+\draw[semithick,fill=black!50,pattern=north west lines] (0.5*\x-0.15,0.3) rectangle (0.5*\x+0.15,0.6);
+
+\foreach \x in {1,...,15}
+\draw[semithick,fill=black!50,pattern=north west lines] (0.5*\x-0.15,0.9) rectangle (0.5*\x+0.15,1.2);
+
+\foreach \x in {1,...,15}
+\draw[semithick,fill=white] (0.5*\x,1.65) circle (0.15);
+
+\foreach \x in {1,...,15}
+\draw[semithick,fill=white] (0.5*\x,2.25) circle (0.15);
+
+\foreach \x in {1,...,15}
+\draw[semithick,fill=white] (0.5*\x,2.85) circle (0.15);
+
+\foreach \x in {1,...,15}
+\draw[semithick,fill=white] (0.5*\x,3.45) circle (0.15);
+
+\foreach \x in {1,...,15}
+\draw[semithick,fill=black!25] (0.5*\x-0.15,3.9) -- (0.5*\x+0.15,3.9) -- (0.5*\x,4.2) -- cycle;
+
+\foreach \x in {1,...,15}
+\draw[semithick,fill=black!25] (0.5*\x-0.15,4.5) -- (0.5*\x+0.15,4.5) -- (0.5*\x,4.8) -- cycle;
+
+\draw[semithick,dashed,-stealth] (8.3,4) -- (10.2,3.8);
+
+\draw[semithick,dashed,-stealth] (8.3,2.5) -- (10.2,2.5);
+
+\draw[semithick,dashed,-stealth] (8.3,1) -- (10.2,1.2);
+
+\draw[semithick,fill=black!50,pattern=north west lines] (11.35,1.2) rectangle (11.65,1.5);
+\draw[semithick,fill=black!50,pattern=north west lines] (12.35,1.2) rectangle (12.65,1.5);
+\draw[semithick,fill=black!50,pattern=north west lines] (11.85,1.2) rectangle (12.15,1.5);
+
+
+\draw[semithick,fill=white] (11.5,2.2) circle (0.15);
+\draw[semithick,fill=white] (12,2.2) circle (0.15);
+\draw[semithick,fill=white] (12.5,2.2) circle (0.15);
+\draw[semithick,fill=white] (11.5,2.8) circle (0.15);
+\draw[semithick,fill=white] (12,2.8) circle (0.15);
+\draw[semithick,fill=white] (12.5,2.8) circle (0.15);
+
+\draw[semithick,fill=black!25] (11.35,3.5) -- (11.65,3.5) -- (11.5,3.8) -- cycle;
+\draw[semithick,fill=black!25] (12.35,3.5) -- (12.65,3.5) -- (12.5,3.8) -- cycle;
+\draw[semithick,fill=black!25] (11.85,3.5) -- (12.15,3.5) -- (12,3.8) -- cycle;
+
+\draw[very thick] (2.5,0.45) circle (0.35);
+\draw[very thick] (4.5,0.45) circle (0.35);
+\draw[very thick] (6,1.05) circle (0.35);
+\draw[very thick] (0.5,1.65) circle (0.35);
+\draw[very thick] (3,2.25) circle (0.35);
+\draw[very thick] (5.5,2.25) circle (0.35);
+\draw[very thick] (7,2.25) circle (0.35);
+\draw[very thick] (1.5,3.45) circle (0.35);
+\draw[very thick] (3,2.85) circle (0.35);
+\draw[very thick] (4,4.05) circle (0.35);
+\draw[very thick] (6,4.05) circle (0.35);
+\draw[very thick] (7.5,4.65) circle (0.35);
+
+
+\node[above] at (9.25,2.5) {\small{random}};
+\node[below] at (9.25,2.5) {\small{$\frac{1}{10}$ of each}};
+
+
+\end{tikzpicture}
+\end{center}
+
+### Cluster Sampling (Random) {-}
+
+If a target population is split into clusters, and each cluster represents a similar mix of characteristics to the full population, *cluster sampling* may be useful. For a *one-stage* cluster sample, one or more clusters are randomly selected, from a sampling frame of clusters, and then *all individual* within those clusters form the sample. For a *two-stage* cluster sample, an additional level of sampling takes place to only sample *some* of the individuals within each cluster.
+
+For example, a hospital wishing to survey its staff about the food in the staff canteen may recognise that staff are split into hospital wards $A$ to $H$. Several wards are randomly selected ($A$, $C$ and $D$) and each member of staff working there surveyed. For a two-stage sampling method, simple random sampling could be used to select only *some* of the ward staff from the selected clusters to sample rather than everyone.
+
+\begin{center}
+\begin{tikzpicture}
+
+\node (A) at (1.5,1) {};
+\node (B) at (1.5,3.5) {};
+\node (C) at (2.75,2.25) {};
+\node (D) at (4,1) {};
+\node (E) at (4,3.5) {};
+\node (F) at (5.25,2.25) {};
+\node (G) at (6.5,1) {};
+\node (H) at (6.5,3.5) {};
+\node (I) at (9.8,2.9) {};
+\node (J) at (10.7,1.5-0.3) {};
+\node (K) at (11.6,2.9) {};
+\node (L) at (9.8+5.4,2.9) {};
+\node (M) at (10.7+5.4,1.5-0.3) {};
+\node (N) at (11.6+5.4,2.9) {};
+
+\node[above] at ([shift={(0,0.8)}]A) {\tiny{F}};
+\node[above] at ([shift={(0,0.8)}]B) {\tiny{A}};
+\node[above] at ([shift={(0,0.8)}]C) {\tiny{D}};
+\node[above] at ([shift={(0,0.8)}]D) {\tiny{G}};
+\node[above] at ([shift={(0,0.8)}]E) {\tiny{B}};
+\node[above] at ([shift={(0,0.8)}]F) {\tiny{E}};
+\node[above] at ([shift={(0,0.8)}]G) {\tiny{H}};
+\node[above] at ([shift={(0,0.8)}]H) {\tiny{C}};
+\node[above] at ([shift={(0,0.8)}]I) {\tiny{A}};
+\node[above] at ([shift={(0,0.8)}]J) {\tiny{D}};
+\node[above] at ([shift={(0,0.8)}]K) {\tiny{C}};
+\node[above] at ([shift={(0,0.8)}]L) {\tiny{A}};
+\node[above] at ([shift={(0,0.8)}]M) {\tiny{D}};
+\node[above] at ([shift={(0,0.8)}]N) {\tiny{C}};
+
+\draw[thick,fill=black!40] (B) circle (0.85);
+\draw[thick,fill=black!40] (C) circle (0.85);
+\draw[thick,fill=black!40] (H) circle (0.85);
+\draw[thick,fill=black!40] (I) circle (0.85);
+\draw[thick,fill=black!40] (J) circle (0.85);
+\draw[thick,fill=black!40] (K) circle (0.85);
+
+
+\draw[semithick,fill=black!5] (1.5,1) circle (0.8);
+\draw[semithick,fill=black!5] (1.5,3.5) circle (0.8);
+\draw[semithick,fill=black!5] (2.75,2.25) circle (0.8);
+\draw[semithick,fill=black!5] (4,1) circle (0.8);
+\draw[semithick,fill=black!5] (4,3.5) circle (0.8);
+\draw[semithick,fill=black!5] (5.25,2.25) circle (0.8);
+\draw[semithick,fill=black!5] (6.5,1) circle (0.8);
+\draw[semithick,fill=black!5] (6.5,3.5) circle (0.8);
+\draw[semithick,fill=white] (L) circle (0.8);
+\draw[semithick,fill=white] (M) circle (0.8);
+\draw[semithick,fill=white] (N) circle (0.8);
+
+\node[below] at (4,5.2) {Clustered Sampling Frame};
+
+\node[below,text width=3cm,align=center] at (10.7,5.2) {One-stage cluster sample};
+\draw[semithick,fill=black!10] (9.8,3.1-0.2) circle (0.8);
+\draw[semithick,fill=black!10] (10.7,1.5-0.3) circle (0.8);
+\draw[semithick,fill=black!10] (11.6,3.1-0.2) circle (0.8);
+
+\node[below,text width=3cm,align=center] at (16.1,5.2) {Two-stage cluster sample};
+
+\draw[semithick,dashed,-stealth] (7,2.25) -- (9,2.25);
+\node at (8,2.55) {random};
+\node at (8,1.95) {clusters};
+
+\draw[semithick,dashed,-stealth] (12.4,2.25) -- (14.4,2.25);
+\node at (13.4,2.55) {random};
+\node at (13.4,1.95) {individuals};
+
+\draw[semithick,fill=black!50,pattern=north west lines] ([shift={(-0.15-0.28,-0.15-0.28)}]A) rectangle ([shift={(0.15-0.28,0.15-0.28)}]A);
+\draw[semithick,fill=black!50,pattern=north west lines] ([shift={(-0.15-0.28,-0.15+0.28)}]A) rectangle ([shift={(0.15-0.28,0.15+0.28)}]A);
+\draw[semithick,fill=black!50,pattern=north west lines] ([shift={(-0.15-0.28,-0.15-0.28)}]B) rectangle ([shift={(0.15-0.28,0.15-0.28)}]B);
+\draw[semithick,fill=black!50,pattern=north west lines] ([shift={(-0.15-0.28,-0.15+0.28)}]C) rectangle ([shift={(0.15-0.28,0.15+0.28)}]C);
+\draw[semithick,fill=black!50,pattern=north west lines] ([shift={(-0.15+0.28,-0.15-0.28)}]C) rectangle ([shift={(0.15+0.28,0.15-0.28)}]C);
+\draw[semithick,fill=black!50,pattern=north west lines] ([shift={(-0.15+0.28,-0.15+0.28)}]E) rectangle ([shift={(0.15+0.28,0.15+0.28)}]E);
+\draw[semithick,fill=black!50,pattern=north west lines] ([shift={(-0.15-0.28,-0.15-0.28)}]F) rectangle ([shift={(0.15-0.28,0.15-0.28)}]F);
+\draw[semithick,fill=black!50,pattern=north west lines] ([shift={(-0.15+0.28,-0.15-0.28)}]F) rectangle ([shift={(0.15+0.28,0.15-0.28)}]F);
+\draw[semithick,fill=black!50,pattern=north west lines] ([shift={(-0.15-0.28,-0.15-0.28)}]G) rectangle ([shift={(0.15-0.28,0.15-0.28)}]G);
+\draw[semithick,fill=black!50,pattern=north west lines] ([shift={(-0.15-0.28,-0.15+0.28)}]G) rectangle ([shift={(0.15-0.28,0.15+0.28)}]G);
+\draw[semithick,fill=black!50,pattern=north west lines] ([shift={(-0.15+0.28,-0.15-0.28)}]H) rectangle ([shift={(0.15+0.28,0.15-0.28)}]H);
+
+\draw[semithick,fill=black!25] (1.5-0.15+0.28,1-0.15-0.28) -- (1.5+0.15+0.28,1-0.15-0.28) -- (1.5+0.28,1+0.15-0.28) -- cycle;
+\draw[semithick,fill=black!25] (1.5-0.15+0.28,3.5-0.15+0.28) -- (1.5+0.15+0.28,3.5-0.15+0.28) -- (1.5+0.28,3.5+0.15+0.28) -- cycle;
+\draw[semithick,fill=black!25] (2.75-0.15+0.28,2.25-0.15+0.28) -- (2.75+0.15+0.28,2.25-0.15+0.28) -- (2.75+0.28,2.25+0.15+0.28) -- cycle;
+\draw[semithick,fill=black!25] (4-0.15+0.28,1-0.15-0.28) -- (4+0.15+0.28,1-0.15-0.28) -- (4+0.28,1+0.15-0.28) -- cycle;
+\draw[semithick,fill=black!25] (4-0.15-0.28,1-0.15-0.28) -- (4+0.15-0.28,1-0.15-0.28) -- (4-0.28,1+0.15-0.28) -- cycle;
+\draw[semithick,fill=black!25] (4-0.15+0.28,3.5-0.15-0.28) -- (4+0.15+0.28,3.5-0.15-0.28) -- (4+0.28,3.5+0.15-0.28) -- cycle;
+\draw[semithick,fill=black!25] (5.25-0.15+0.28,2.25-0.15+0.28) -- (5.25+0.15+0.28,2.25-0.15+0.28) -- (5.25+0.28,2.25+0.15+0.28) -- cycle;
+\draw[semithick,fill=black!25] (6.5-0.15+0.28,1-0.15-0.28) -- (6.5+0.15+0.28,1-0.15-0.28) -- (6.5+0.28,1+0.15-0.28) -- cycle;
+\draw[semithick,fill=black!25] (6.5-0.15-0.28,3.5-0.15+0.28) -- (6.5+0.15-0.28,3.5-0.15+0.28) -- (6.5-0.28,3.5+0.15+0.28) -- cycle;
+
+
+\draw[semithick,fill=white] ([shift={(45:0.4)}]A) circle (0.15);
+\draw[semithick,fill=white] ([shift={(135:0.4)}]B) circle (0.15);
+\draw[semithick,fill=white] ([shift={(225:0.4)}]C) circle (0.15);
+\draw[semithick,fill=white] ([shift={(45:0.4)}]D) circle (0.15);
+\draw[semithick,fill=white] ([shift={(135:0.4)}]D) circle (0.15);
+\draw[semithick,fill=white] ([shift={(315:0.4)}]B) circle (0.15);
+\draw[semithick,fill=white] ([shift={(135:0.4)}]F) circle (0.15);
+\draw[semithick,fill=white] ([shift={(45:0.4)}]G) circle (0.15);
+\draw[semithick,fill=white] ([shift={(225:0.4)}]H) circle (0.15);
+\draw[semithick,fill=white] ([shift={(45:0.4)}]H) circle (0.15);
+\draw[semithick,fill=white] ([shift={(225:0.4)}]E) circle (0.15);
+\draw[semithick,fill=white] ([shift={(135:0.4)}]E) circle (0.15);
+
+\draw[very thick,fill=black!10] ([shift={(45:0.4)}]L) circle (0.3);
+\draw[very thick,fill=black!10] ([shift={(225:0.4)}]L) circle (0.3);
+\draw[very thick,fill=black!10] ([shift={(225:0.4)}]M) circle (0.3);
+\draw[very thick,fill=black!10] ([shift={(315:0.4)}]M) circle (0.3);
+\draw[very thick,fill=black!10] ([shift={(225:0.4)}]N) circle (0.3);
+\draw[very thick,fill=black!10] ([shift={(45:0.4)}]N) circle (0.3);
+
+\draw[semithick,fill=white] ([shift={(135:0.4)}]I) circle (0.15);
+\draw[semithick,fill=white] ([shift={(315:0.4)}]I) circle (0.15);
+\draw[semithick,fill=white] ([shift={(225:0.4)}]J) circle (0.15);
+\draw[semithick,fill=white] ([shift={(225:0.4)}]K) circle (0.15);
+\draw[semithick,fill=white] ([shift={(45:0.4)}]K) circle (0.15);
+
+\draw[semithick,fill=black!50,pattern=north west lines] ([shift={(-0.15-0.28,-0.15-0.28)}]I) rectangle ([shift={(0.15-0.28,0.15-0.28)}]I);
+\draw[semithick,fill=black!50,pattern=north west lines] ([shift={(-0.15-0.28,-0.15+0.28)}]J) rectangle ([shift={(0.15-0.28,0.15+0.28)}]J);
+\draw[semithick,fill=black!50,pattern=north west lines] ([shift={(-0.15+0.28,-0.15-0.28)}]J) rectangle ([shift={(0.15+0.28,0.15-0.28)}]J);
+\draw[semithick,fill=black!50,pattern=north west lines] ([shift={(-0.15+0.28,-0.15-0.28)}]K) rectangle ([shift={(0.15+0.28,0.15-0.28)}]K);
+
+\draw[semithick,fill=black!25] (9.8-0.15+0.28,3.1-0.15+0.28-0.2) -- (9.8+0.15+0.28,3.1-0.15+0.28-0.2) -- (9.8+0.28,3.1+0.15+0.28-0.2) -- cycle;
+\draw[semithick,fill=black!25] (10.7-0.15+0.28,1.5-0.15+0.28-0.3) -- (10.7+0.15+0.28,1.5-0.15+0.28-0.3) -- (10.7+0.28,1.5+0.15+0.28-0.3) -- cycle;
+\draw[semithick,fill=black!25] (11.6-0.15-0.28,3.1-0.15+0.28-0.2) -- (11.6+0.15-0.28,3.1-0.15+0.28-0.2) -- (11.6-0.28,3.1+0.15+0.28-0.2) -- cycle;
+
+\draw[semithick,fill=white] ([shift={(135:0.4)}]L) circle (0.15);
+\draw[semithick,fill=white] ([shift={(315:0.4)}]L) circle (0.15);
+\draw[semithick,fill=white] ([shift={(225:0.4)}]M) circle (0.15);
+\draw[semithick,fill=white] ([shift={(225:0.4)}]N) circle (0.15);
+\draw[semithick,fill=white] ([shift={(45:0.4)}]N) circle (0.15);
+
+\draw[semithick,fill=black!50,pattern=north west lines] ([shift={(-0.15-0.28+5.4,-0.15-0.28)}]I) rectangle ([shift={(0.15-0.28+5.4,0.15-0.28)}]I);
+\draw[semithick,fill=black!50,pattern=north west lines] ([shift={(-0.15-0.28+5.4,-0.15+0.28)}]J) rectangle ([shift={(0.15-0.28+5.4,0.15+0.28)}]J);
+\draw[semithick,fill=black!50,pattern=north west lines] ([shift={(-0.15+0.28+5.4,-0.15-0.28)}]J) rectangle ([shift={(0.15+0.28+5.4,0.15-0.28)}]J);
+\draw[semithick,fill=black!50,pattern=north west lines] ([shift={(-0.15+0.28+5.4,-0.15-0.28)}]K) rectangle ([shift={(0.15+0.28+5.4,0.15-0.28)}]K);
+
+\draw[semithick,fill=black!25] (9.8-0.15+0.28+5.4,3.1-0.15+0.28-0.2) -- (9.8+0.15+0.28+5.4,3.1-0.15+0.28-0.2) -- (9.8+0.28+5.4,3.1+0.15+0.28-0.2) -- cycle;
+\draw[semithick,fill=black!25] (10.7-0.15+0.28+5.4,1.5-0.15+0.28-0.3) -- (10.7+0.15+0.28+5.4,1.5-0.15+0.28-0.3) -- (10.7+0.28+5.4,1.5+0.15+0.28-0.3) -- cycle;
+\draw[semithick,fill=black!25] (11.6-0.15-0.28+5.4,3.1-0.15+0.28-0.2) -- (11.6+0.15-0.28+5.4,3.1-0.15+0.28-0.2) -- (11.6-0.28+5.4,3.1+0.15+0.28-0.2) -- cycle;
+
+\end{tikzpicture}
+\end{center}
+
+\pagebreak
+
+The following sampling methods are *non-random*. Whilst they may seem helpful in some instances for quickly gathering data, their lack of random process may lead to *bias*, and any inferences made using such sampling methods may be considered unreliable.
+
+### Convenience Sampling (Non-random) {-}
+
+Taking a sample of a target population taken from an easily obtainable group, with no random process taking place, is called *convenience sampling*. For example, a teacher wishes to investigate the heights of pupils in a particular year group and uses pupils within their class in that year group as the sample.
+
+\begin{center}
+\begin{tikzpicture}
+\node at (3.5,4.65) {Population};
+\draw[semithick,fill=black!10] (12,2.5) circle (1.5);
+\node at (12,4.3) {Sample};
+
+\draw[thick,fill=black!10] (6.5,2.25) circle (0.35);
+\draw[thick,fill=black!10] (6.5,2.85) circle (0.35);
+\draw[thick,fill=black!10] (6,3.45) circle (0.35);
+\draw[thick,fill=black!10] (6,2.85) circle (0.35);
+\draw[thick,fill=black!10] (6,2.25) circle (0.35);
+\draw[thick,fill=black!10] (6,1.65) circle (0.35);
+\draw[thick,fill=black!10] (5.5,1.05) circle (0.35);
+\draw[thick,fill=black!10] (5.5,1.65) circle (0.35);
+\draw[thick,fill=black!10] (5.5,2.25) circle (0.35);
+\draw[thick,fill=black!10] (5.5,2.85) circle (0.35);
+\draw[thick,fill=black!10] (5.5,3.45) circle (0.35);
+\draw[thick,fill=black!10] (5.5,4.05) circle (0.35);
+
+\node[alice,minimum size=0.04cm] at (11.5,1.5) {};
+\node[alice,minimum size=0.04cm] at (12.5,1.5) {};
+\node[alice,minimum size=0.04cm] at (12,1.9) {};
+\node[alice,minimum size=0.04cm] at (12,3.1) {};
+\node[alice,minimum size=0.04cm] at (11,2) {};
+\node[alice,minimum size=0.04cm] at (13,2) {};
+\node[alice,minimum size=0.04cm] at (11.5,2.5) {};
+\node[alice,minimum size=0.04cm] at (12.5,2.5) {};
+\node[alice,minimum size=0.04cm] at (11.1,3) {};
+\node[alice,minimum size=0.04cm] at (12.9,3) {};
+\node[alice,minimum size=0.04cm] at (11.5,3.5) {};
+\node[alice,minimum size=0.04cm] at (12.5,3.5) {};
+
+
+\node[alice,minimum size=0.04cm] at (0.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (0.5,2.85) {};
+
+\node[alice,minimum size=0.04cm] at (1,1.65) {};
+\node[alice,minimum size=0.04cm] at (1,2.25) {};
+\node[alice,minimum size=0.04cm] at (1,2.85) {};
+\node[alice,minimum size=0.04cm] at (1,3.45) {};
+
+\node[alice,minimum size=0.04cm] at (1.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (1.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (1.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (1.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (1.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (1.5,4.05) {};
+
+\node[alice,minimum size=0.04cm] at (2,1.05) {};
+\node[alice,minimum size=0.04cm] at (2,1.65) {};
+\node[alice,minimum size=0.04cm] at (2,2.25) {};
+\node[alice,minimum size=0.04cm] at (2,2.85) {};
+\node[alice,minimum size=0.04cm] at (2,3.45) {};
+\node[alice,minimum size=0.04cm] at (2,4.05) {};
+
+\node[alice,minimum size=0.04cm] at (2.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (2.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (2.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (2.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (2.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (2.5,4.05) {};
+
+\node[alice,minimum size=0.04cm] at (3,1.05) {};
+\node[alice,minimum size=0.04cm] at (3,1.65) {};
+\node[alice,minimum size=0.04cm] at (3,2.25) {};
+\node[alice,minimum size=0.04cm] at (3,2.85) {};
+\node[alice,minimum size=0.04cm] at (3,3.45) {};
+\node[alice,minimum size=0.04cm] at (3,4.05) {};
+
+\node[alice,minimum size=0.04cm] at (3.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (3.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (3.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (3.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (3.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (3.5,4.05) {};
+
+\node[alice,minimum size=0.04cm] at (4,1.05) {};
+\node[alice,minimum size=0.04cm] at (4,1.65) {};
+\node[alice,minimum size=0.04cm] at (4,2.25) {};
+\node[alice,minimum size=0.04cm] at (4,2.85) {};
+\node[alice,minimum size=0.04cm] at (4,3.45) {};
+\node[alice,minimum size=0.04cm] at (4,4.05) {};
+
+\node[alice,minimum size=0.04cm] at (4.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (4.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (4.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (4.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (4.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (4.5,4.05) {};
+
+\node[alice,minimum size=0.04cm] at (5,1.05) {};
+\node[alice,minimum size=0.04cm] at (5,1.65) {};
+\node[alice,minimum size=0.04cm] at (5,2.25) {};
+\node[alice,minimum size=0.04cm] at (5,2.85) {};
+\node[alice,minimum size=0.04cm] at (5,3.45) {};
+\node[alice,minimum size=0.04cm] at (5,4.05) {};
+
+\node[alice,minimum size=0.04cm] at (5.5,1.05) {};
+\node[alice,minimum size=0.04cm] at (5.5,1.65) {};
+\node[alice,minimum size=0.04cm] at (5.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (5.5,2.85) {};
+\node[alice,minimum size=0.04cm] at (5.5,3.45) {};
+\node[alice,minimum size=0.04cm] at (5.5,4.05) {};
+
+\node[alice,minimum size=0.04cm] at (6,1.65) {};
+\node[alice,minimum size=0.04cm] at (6,2.25) {};
+\node[alice,minimum size=0.04cm] at (6,2.85) {};
+\node[alice,minimum size=0.04cm] at (6,3.45) {};
+
+\node[alice,minimum size=0.04cm] at (6.5,2.25) {};
+\node[alice,minimum size=0.04cm] at (6.5,2.85) {};
+
+\draw[semithick,dashed,-stealth] (8.5,2.8) -- (7,3.5);
+\draw[semithick,dashed,-stealth] (8.5,2.65) -- (7,3);
+\draw[semithick,dashed,-stealth] (8.5,2.5) -- (7,2.5);
+\draw[semithick,dashed,-stealth] (8.5,2.35) -- (7,2);
+\draw[semithick,dashed,-stealth] (8.5,2.2) -- (7,1.5);
+
+\node[dave,mirrored,minimum size=0.04cm] at (9,2.5) {};
+\draw[thick] (8.75,2.15) rectangle (9.25,2.85);
+\draw[semithick,dashed,stealth-] (9,2.05) -- (9.25,1.05);
+\node[below] at (9.25,1.15) {Researcher}; 
+
+\end{tikzpicture}
+\end{center}
+
+### Quota Sampling (Non-random) {-}
+
+Where a population contains distinct strata, *quota sampling* sets a target number of individuals from within each stratum to sample. It differs from stratified sampling in that the number sampled from each stratum is according to a set *quota* rather than proportional to their size, and the selection is often *non-random*. This means that ordered *sampling frames are not required* for each stratum, and the proportion that each makes up within the population may not be known.
+
+\begin{center}
+\begin{tikzpicture}
+\node at (4,5.3) {Stratified Population};
+\draw[semithick,fill=black!10] (12,2.5) ellipse (1 and 2);
+\node[above] at (12,4.5) {Sample};
+
+\foreach \x in {1,...,12}
+\draw[semithick,fill=black!50,pattern=north west lines] (0.5*\x-0.15,0.3) rectangle (0.5*\x+0.15,0.6);
+
+\foreach \x in {1,...,15}
+\draw[semithick,fill=black!50,pattern=north west lines] (0.5*\x-0.15,0.9) rectangle (0.5*\x+0.15,1.2);
+
+\foreach \x in {1,...,12}
+\draw[semithick,fill=white] (0.5*\x,1.65) circle (0.15);
+
+\foreach \x in {1,...,15}
+\draw[semithick,fill=white] (0.5*\x,2.25) circle (0.15);
+
+\foreach \x in {1,...,15}
+\draw[semithick,fill=white] (0.5*\x,2.85) circle (0.15);
+
+\foreach \x in {1,...,15}
+\draw[semithick,fill=white] (0.5*\x,3.45) circle (0.15);
+
+\foreach \x in {1,...,12}
+\draw[semithick,fill=black!25] (0.5*\x-0.15,3.9) -- (0.5*\x+0.15,3.9) -- (0.5*\x,4.2) -- cycle;
+
+\foreach \x in {1,...,15}
+\draw[semithick,fill=black!25] (0.5*\x-0.15,4.5) -- (0.5*\x+0.15,4.5) -- (0.5*\x,4.8) -- cycle;
+
+\foreach \x in {13,13.5,...,15}
+\draw (0.5*\x,0.35) circle (0.8pt);
+
+\foreach \x in {13,13.5,...,15}
+\draw (0.5*\x,1.55) circle (0.8pt);
+
+\foreach \x in {13,13.5,...,15}
+\draw (0.5*\x,3.95) circle (0.8pt);
+
+\draw[semithick,dashed,-stealth] (8.3,4) -- (10.2,3.8);
+
+\draw[semithick,dashed,-stealth] (8.3,2.5) -- (10.2,2.5);
+
+\draw[semithick,dashed,-stealth] (8.3,1) -- (10.2,1.2);
+
+\draw[semithick,fill=black!50,pattern=north west lines] (11.35,1.2) rectangle (11.65,1.5);
+\draw[semithick,fill=black!50,pattern=north west lines] (12.35,1.2) rectangle (12.65,1.5);
+\draw[semithick,fill=black!50,pattern=north west lines] (11.85,1.2) rectangle (12.15,1.5);
+
+
+\draw[semithick,fill=white] (11.7,2.2) circle (0.15);
+\draw[semithick,fill=white] (12.3,2.2) circle (0.15);
+\draw[semithick,fill=white] (11.7,2.8) circle (0.15);
+\draw[semithick,fill=white] (12.3,2.8) circle (0.15);
+
+\draw[semithick,fill=black!25] (11.35,3.5) -- (11.65,3.5) -- (11.5,3.8) -- cycle;
+\draw[semithick,fill=black!25] (12.35,3.5) -- (12.65,3.5) -- (12.5,3.8) -- cycle;
+\draw[semithick,fill=black!25] (11.85,3.5) -- (12.15,3.5) -- (12,3.8) -- cycle;
+\draw[semithick,fill=black!25] (11.6,3.9) -- (11.9,3.9) -- (11.75,4.2) -- cycle;
+\draw[semithick,fill=black!25] (12.1,3.9) -- (12.4,3.9) -- (12.25,4.2) -- cycle;
+
+\draw[very thick] (0.5,4.65) circle (0.25);
+\draw[very thick] (1,4.65) circle (0.25);
+\draw[very thick] (1.5,4.65) circle (0.25);
+\draw[very thick] (2,4.65) circle (0.25);
+\draw[very thick] (2.5,4.65) circle (0.25);
+
+\draw[very thick] (0.5,3.45) circle (0.25);
+\draw[very thick] (1,3.45) circle (0.25);
+\draw[very thick] (1.5,3.45) circle (0.25);
+\draw[very thick] (2,3.45) circle (0.25);
+
+\draw[very thick] (0.5,1.05) circle (0.25);
+\draw[very thick] (1,1.05) circle (0.25);
+\draw[very thick] (1.5,1.05) circle (0.25);
+
+
+\node[above] at (9.25,2.5) {\small{non-random}};
+\node[below] at (9.25,2.5) {\small{quota of each}};
+
+\end{tikzpicture}
+\end{center}
+
+For example, a council wishing to know local opinion of proposed changes to a park may see the population as split into strata including pensioners, teenagers, parents of pre-school children, and so on. Interviewer are placed on the town's main shopping street and speak to people who pass, choosing for themselves who to interview from their allocated strata.
+
+### Advantages and Disadvantages {-}
+
+The possible advantages and disadvantages of sampling methods depend on the context in which they are used. However, desired *advantages* of a sampling method may include it being: cheap to administer; quick to administer; free from bias due to the use of a random process; representative of the full population; easy to obtain a suitable sampling frame for. Conversely, *disadvantages* may include it being: expensive; time-consuming; non-random, possibly introducing bias; not representative of the full population; difficult to obtain a suitable sampling frame for.
+
+The method of collecting data may also impact the quality of the data obtained. For example, *emailing* selected individuals with a questionnaire to complete may introduce bias by excluding those who don't use email and allowing *self-selection*. 
+
+\pagebreak
+
+[]{#ex32q}
+
+#### [Exercise 3.2](#ex32a) {-}
+
+\begin{enumerate}
+  \item For each, state the sampling method that is being described.
+  \begin{enumerate}
+  \item The population is made up of groups, each of which contains broadly similar characteristics to each other, and the population. One or more of these groups are randomly selected, and everyone in those selected groups are chosen to make up the sample.
+  \item It is recognised that the population contains a number of subgroups, each of which may have their own distinct characteristics. Individuals are randomly selected from each subgroup, such that the proportions of each subgroup in the sample match those proportions of the population.
+  \item Once a first random individual from the popualtion has been selected, subsequent individuals are selected at regular intervals until a sample has been obtained.
+  \item Individuals are selected from the population at random, with each having an equal chance of being selected.
+  \item It is recognised that the population contains a number of subgroups, each of which may have their own distinct characteristics. Ten individuals from each subgroup are selected, without the use of a random process.
+  \item The individuals most readily available are selected.
+  \end{enumerate}
+  \item The operators of a cruise ship wish to survey the condition of the fittings in the cabins on board by carefully examining a sample of rooms. Of the 360 cabins, 24 are classed as \textit{Deluxe}, 72 are \textit{Premuim} and the remaining are \textit{Standard}.
+\begin{enumerate}
+\item Explain why the ship's operators might wish to use stratified sampling for their survey.
+        \item  Describe the steps involved in sampling 30 of the ship's cabins.
+\end{enumerate}
+\item A marine biologist is interested in the health of the coral reefs on the West Coast of Scotland. On his next scuba dive near the coastal town in which he lives, he takes some time to photograph the animals and plants on and around the coral reef surface. Based on the survey, he concludes that the health of coral reefs on the West Coast of Scotland has deteriorated.
+\begin{enumerate}
+\item State the type of sampling method used by the marine biologist.
+\item Suggest one reason why the conclusion he reached may not be reliable.
+\end{enumerate}
+\item The owners of a nationwide chain of petrol stations wish to measure the accuracy of fuel delivery by its pumps. They own 126 petrol stations, each containing typically 8 pumps, and they wish to sample approximately 40 pumps.
+\begin{enumerate}
+\item State one advantage of using cluster sampling for the survey.
+\item Describe the steps involved in creating a one-stage cluster sample of 40 pumps.
+\end{enumerate}
+\item A music lover has a collection of vinyl records, arranged along a single shelf across one wall. Concerned that some of the actual records may be missing from their sleeves, she checks the one on the far left of the shelf and then every 10th record until she reaches the end of the shelf.
+\begin{enumerate}
+\item State the sampling method which most closely matches the method used.
+\item Identify one way in which the steps taken do not match the ideal process of the sampling method stated in part (a).
+\end{enumerate}
+\item A school wishes to survey the views of pupils, parents and staff on their opinions of a proposed new school emblem design. Wanting to ensure each group is included, during the annual Sports Day questionnaires are given to twelve of the pupils and twelve of the  parents standing in the queue to register, and to the eight members of staff helping run the event.
+\begin{enumerate}
+\item[(a) ] State the sampling method used.
+\item[(b) ] State one disadvantage of this sampling method and describe the impact this may have on the data obtained.
+\end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+[]{#re3q}
+
+## [Review Exercise](#re3a) {-}
+
+\begin{enumerate}
+    \item The owners of a chain of nine restaurants, located in various cities around Scotland, wish to interview a sample of the employees working in those restaurants. 
+    \begin{enumerate}
+        \item One of the owners suggests that he asks to interview any employees that he sees when he dines at one of the restaurants next week.
+        \begin{enumerate}
+            \item State the type of sampling method that he is suggesting the owners use.
+            \item State one disadvantage of this sampling method.
+        \end{enumerate}
+        \item Another owner proposes instead that they could type the name of each of the 150 employees into a spreadsheet and use a random cell selection tool to pick those to be interviewed.
+        \begin{enumerate}
+            \item State the type of sampling method that she is proposing.
+            \item Describe how the owners could instead use systematic sampling to select 30 employees.
+        \end{enumerate}
+        \item It is pointed out by the HR Director that the employees can be broken down into three categories, each of which may have their own distinct views on what it is like to work in the restaurant chain:
+        \begin{itemize}
+            \item Managers and supervisors.
+            \item Kitchen staff.
+            \item Waiting and bar staff.
+        \end{itemize}
+        Each of the restaurants contains a similar mix of the different types of staff.
+        \begin{enumerate}
+            \item Describe how a one-stage cluster sample could be conducted.
+            \item Suggest one advantage and one disadvantage of using this method, compared to using systematic sampling.
+        \end{enumerate}
+    \end{enumerate}
+    \item A company employs the following personnel:
+    \begin{center}
+    \begin{tabular}{|c|c|c|}
+      \hline
+        Management & Sales staff & Shop floor staff\\
+      \hline
+        100 & 400 & 4500\\
+      \hline
+    \end{tabular}
+    \end{center}
+    Explain how a stratified sample of 150 employees could be obtained, ensuring that each type of employee is proportionally represented.
+    \item A nutritionist is studying the calorific contents of pizzas sold in the UK, having read that the salt content is much higher than it is in Italy. They obtain a list of the takeaways which sell pizza in their local area by searching on social media, and randomly select twelve for their study. Suggest two reasons why the sampling frame may not be sufficiently representative of the target population.
+    \item A researcher wishes to interview a random sample of pupils taking Higher Mathematics to investigate the proportion of them that are interested in pursuing a career in a mathematical field.  
+    \begin{enumerate}
+        \item Suggest a reason why taking a simple random sample of all pupils taking Higher Mathematics in Scotland would not be feasible. 
+        \item Explain how a two-stage cluster sample could be taken. 
+    \end{enumerate}
+    \item A wildflower meadow contains many different species of wildflowers growing together. A botanist wishes to assess the health of the wildflowers in the meadow by studying a sample of the flowers. They have access to a map of the meadow, broken down into boxes with grid references such as A7, and B2. Explain how the botanist could use simple random sampling to obtain a sample.
+\end{enumerate}
+
+\pagebreak
+

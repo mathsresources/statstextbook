@@ -1,0 +1,830 @@
+# Control Charts
+
+In any manufacturing process, performance must be monitored to ensure that the products being manufactured are not faulty or that the process is not flawed in some way. A common tool used to monitor performance is a *control chart*, in which a series of samples are taken, measured and plotted against calculated limits to observe for signs of a problem.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \node at (5,3) {\textit{A simplified control chart:}};
+    \draw (0,0) -- (12,0);
+    \node[left] at (0,0) {$\mu$};
+    \draw[dashed] (0,2) -- (12,2);
+    \node[left] at (0,2) {Upper Control Limit};
+    \draw[dashed] (0,-2) -- (12,-2);
+    \node[left] at (0,-2) {Lower Control Limit};
+    \coordinate (A) at (1,0.3);
+    \coordinate (B) at (2,0.6);
+    \coordinate (C) at (3,-0.1);
+    \coordinate (D) at (4,-0.3);
+    \coordinate (E) at (5,0.4);
+    \coordinate (F) at (6,-0.6);
+    \coordinate (G) at (7,0.2);
+    \coordinate (H) at (8,-0.2);
+    \coordinate (I) at (9,-2.3);
+    \coordinate (J) at (10,-2.4);
+    \coordinate (K) at (11,-2.6);
+    \draw[fill=black] (A) circle (2pt);
+    \draw[fill=black] (B) circle (2pt);
+    \draw[fill=black] (C) circle (2pt);
+    \draw[fill=black] (D) circle (2pt);
+    \draw[fill=black] (E) circle (2pt);
+    \draw[fill=black] (F) circle (2pt);
+    \draw[fill=black] (G) circle (2pt);
+    \draw[fill=black] (H) circle (2pt);
+    \draw[fill=black] (I) circle (2pt);
+    \draw[fill=black] (J) circle (2pt);
+    \draw[fill=black] (K) circle (2pt);
+    \draw (A) -- (B)-- (C) -- (D) -- (E) -- (F) -- (G) -- (H) -- (I) -- (J) -- (K);
+    \draw[decoration={brace,mirror},decorate]
+  (0.7,-3.2) -- (8.3,-3.2);
+  \draw[decoration={brace,mirror},decorate]
+  (8.7,-3.2) -- (11.3,-3.2);
+    \node[below] at (4.5,-3.3) {Process};
+    \node[below] at (4.5,-3.8) {\textit{under control}};
+    \node[below] at (10,-3.3) {Process};
+    \node[below] at (10,-3.8) {\textit{out of control}};
+\end{tikzpicture}
+\end{center}
+
+Variation naturally occurs as a result of random causes in any manufacturing process, referred to as *common cause variation*, and often there is no need for this to be investigated or addressed. This could be, for example, because the variation is within tolerable limits, or the cost of reducing the variation would outweigh the potential benefit of doing so. A process performing in this manner could be described as *under control*.
+
+However, if something occurs within the manufacturing process that results in a significant change in the output, a system, such as a control chart, needs to be in place to raise the alarm that the process may be *out of control*. The process can then be reviewed and any possible *special cause variation* investigated, such as machine wear and tear, poor raw materials, poorly trained operatives, or an accident or malfunction.
+
+\pagebreak
+
+## The Principle of a Control Chart {-}
+
+The control chart was invented in the 1920’s by Walter Shewart, who was working for a communications company whose engineers wanted to improve the reliability of their telephone transmission systems. His theory was based around the normal distribution bell curve.
+
+The Advanced Higher Statistics course covers two types of control charts:
+
+\begin{itemize}
+    \item A Shewart $x$-bar chart for the sample \textbf{mean}.
+    \item A Shewart $p$ chart for the sample \textbf{proportion}.
+\end{itemize}
+
+In either case, random samples of the product are taken at regular intervals and the sample means or sample proportions are plotted onto the control chart. A line on the chart is drawn to indicate the target value for the population mean or population proportion, as well as $1$-sigma , $2$-sigma and $3$-sigma lines either side of the target value.
+
+The $3$-sigma ($3\sigma$) limits are often referred to as the *upper* and *lower control limits*, with the other limits called *warning lines*.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9,declare function={gaussy(\x,\y,\z)=1/(\y*sqrt(2*pi))*exp(-((\x-\z)^2)/(2*\y^2));}]
+\draw[smooth,domain=-4.8:4.8]  plot ({25*gaussy(\x,1.5,0)+11.2},\x);
+    \draw[very thick] (0,0) -- (9,0);
+    \node[above right] at (0,0) {$\mathbf{CL}$};
+    \node[below right] at (0,0) {Centre Line};
+    \draw[very thick, dashed] (0,4.5) -- (9,4.5);
+    \node[above right] at (0,4.5) {$\mathbf{UCL}$};
+    \node[below right] at (0,4.5) {Upper Control Limit};
+    \draw[very thick, dashed] (0,-4.5) -- (9,-4.5);
+    \node[above right] at (0,-4.5) {$\mathbf{LCL}$};
+    \node[below right] at (0,-4.5) {Lower Control Limit};
+    \node[right] at (9,4.5) {$+3\sigma$};
+    \node[right] at (9,3) {$+2\sigma$};
+    \node[right] at (9,1.5) {$+1\sigma$};
+    \node[right] at (9,0) {\textit{mean}};
+    \node[right] at (9,-1.5) {$-1\sigma$};
+    \node[right] at (9,-3) {$-2\sigma$};
+    \node[right] at (9,-4.5) {$-3\sigma$};
+    \draw[dash dot] (0,3) -- (9,3);
+    \draw[dash dot] (0,1.5) -- (9,1.5);
+    \draw[dash dot] (0,-1.5) -- (9,-1.5);
+    \draw[dash dot] (0,-3) -- (9,-3);
+    \coordinate (A) at (1,0.5);
+    \coordinate (B) at (2,1.2);
+    \coordinate (C) at (3,0.3);
+    \coordinate (D) at (4,-1.7);
+    \coordinate (E) at (5,-0.4);
+    \coordinate (F) at (6,2.6);
+    \coordinate (G) at (7,0.3);
+    \coordinate (H) at (8,-0.4);
+    \coordinate (I) at (9,0.5);
+    \draw[fill=black] (A) circle (3pt);
+    \draw[fill=black] (B) circle (3pt);
+    \draw[fill=black] (C) circle (3pt);
+    \draw[fill=black] (D) circle (3pt);
+    \draw[fill=black] (E) circle (3pt);
+    \draw[fill=black] (F) circle (3pt);
+    \draw[fill=black] (G) circle (3pt);
+    \draw[fill=black] (H) circle (3pt);
+    \draw[fill=black] (I) circle (3pt);
+    \draw (A) -- (B)-- (C) -- (D) -- (E) -- (F) -- (G) -- (H)-- (I);
+    \draw[very thick] (10.5,0) -- (17.75,0);
+    \draw[dash dot] (10.5,1.5) -- (14.75,1.5);
+    \draw[dash dot] (10.5,-1.5) -- (14.75,-1.5);
+    \draw[dash dot] (10.5,3) -- (11.9,3);
+    \draw[dash dot] (10.5,-3) -- (11.9,-3);
+    \draw[very thick, dashed] (10.5,4.5) -- (11.1,4.5);
+    \draw[very thick, dashed] (10.5,-4.5) -- (11.1,-4.5);
+    \draw[decorate, 
+	decoration = {brace,
+		amplitude=5pt}] (14.95,1.5) --  (14.95,-1.5);
+        \draw[white,fill=white] (14.7,-0.7) rectangle (15.35,0.7);
+        \node[rotate=270] at (15.05,0) {68.3\%};
+    \draw [decorate, 
+	decoration = {brace,
+		amplitude=6pt}] (11.95,3) --  (11.95,-3);
+        \draw[white,fill=white] (11.7,-0.7) rectangle (12.35,0.7);
+        \node[rotate=270] at (12.05,0) {95.5\%};
+    \draw [decorate, 
+	decoration = {brace,
+		amplitude=7pt}] (11.1,4.5) --  (11.1,-4.5);
+        \draw[white,fill=white] (10.85,-0.7) rectangle (11.5,0.7);
+        \node[rotate=270] at (11.2,0) {99.7\%};
+\end{tikzpicture}
+\end{center}
+
+The Western Electric Company Rules (*WECO Rules*) are commonly used to determine whether the production process is *in or out of statistical control*, and are provided on Page 4 of the SQA booklet of Formulae and Tables.
+
+A process maybe out of statistical control when:
+
+\begin{itemize}
+  \item \textit{Any} single data point falls outside a $3\sigma$ limit.
+  \item \textit{Two out of three} consecutive points fall beyond the \textit{same }$2\sigma$ limit.
+  \item \textit{Four out of five} consecutive points fall beyond the \textit{same }$1\sigma$ limit.
+  \item \textit{Eight consecutive} points fall on the \textit{same side of the centre line}.
+\end{itemize}
+
+\pagebreak
+
+## Applying the WECO Rules
+
+Each rule must be carefully checked for to determine whether a process is *in statistical control*. If it is *not* in statistical control, it is often necessary to identify the relevant WECO rule and at which point this could be declared. The following examples focus on context-free control charts for the purpose of practising *applying the WECO rules*.
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} For the control chart below, determine whether the process is in control. If it is out of control, identify at which sample this could be determined, with justification.
+
+\begin{center}
+\begin{tikzpicture}
+    \node[text width = 7.35cm] at (12,0) {\textbf{Solution:} The process is out of control, as two out of the three values from samples 5 to 7 lie below the same $2\sigma$ limit ($-2\sigma$). The process could have been identified as out of control at sample 7.};
+    \coordinate (A) at (0.6,0.3);
+    \coordinate (B) at (1.2,1);
+    \coordinate (C) at (1.8,-0.4);
+    \coordinate (D) at (2.4,0.3);
+    \coordinate (E) at (3,-1.5);
+    \coordinate (F) at (3.6,-0.3);
+    \coordinate (G) at (4.2,-1.4);
+    \coordinate (H) at (4.8,-0.9);
+    \coordinate (I) at (5.4,-0.75);
+    \draw[very thick] (0,0) -- (6,0);
+    \draw[very thick, dashed] (0,1.8) -- (6,1.8);
+    \draw[very thick, dashed] (0,-1.8) -- (6,-1.8);
+    \node[right] at (6,1.8) {\small{$+3\sigma$}};
+    \node[right] at (6,1.2) {\small{$+2\sigma$}};
+    \node[right] at (6,0.6) {\small{$+1\sigma$}};
+    \node[right] at (6,0) {\small{\text{mean}}};
+    \node[right] at (6,-0.6) {\small{$-1\sigma$}};
+    \node[right] at (6,-1.2) {\small{$-2\sigma$}};
+    \node[right] at (6,-1.8) {\small{$-3\sigma$}};
+    \draw[dash dot] (0,1.2) -- (6,1.2);
+    \draw[dash dot] (0,0.6) -- (6,0.6);
+    \draw[dash dot] (0,-0.6) -- (6,-0.6);
+    \draw[dash dot] (0,-1.2) -- (6,-1.2);
+    \draw[fill=black] (A) circle (2pt);
+    \draw[fill=black] (B) circle (2pt);
+    \draw[fill=black] (C) circle (2pt);
+    \draw[fill=black] (D) circle (2pt);
+    \draw[fill=black] (E) circle (2pt);
+    \draw[fill=black] (F) circle (2pt);
+    \draw[fill=black] (G) circle (2pt);
+    \draw[fill=black] (H) circle (2pt);
+    \draw[fill=black] (I) circle (2pt);
+    \draw (A) -- (B)-- (C) -- (D) -- (E) -- (F) -- (G) -- (H)-- (I);
+    \node[anchor=east] at (0.2,-2.4) {\small{sample}};
+    \foreach \x in {1,2,...,9}{
+    \node at (0.6*\x,-2.4) {\small{\x}};
+    }
+\end{tikzpicture}
+\end{center}
+
+\end{tcolorbox}
+
+#### Exercise 13.1 {-}
+
+*For each control charts below, determine whether the process is in control. If it is out of control, identify at which sample this could be determined, with justification.*
+
+\begin{multicols}{2}
+
+\begin{center}
+\begin{tikzpicture}
+    \coordinate (A) at (0.6,-0.4);
+    \coordinate (B) at (1.2,1);
+    \coordinate (C) at (1.8,0.3);
+    \coordinate (D) at (2.4,0.9);
+    \coordinate (E) at (3,-0.8);
+    \coordinate (F) at (3.6,-2);
+    \coordinate (G) at (4.2,0.5);
+    \coordinate (H) at (4.8,0.9);
+    \coordinate (I) at (5.4,-0.3);
+    \draw[very thick] (0,0) -- (6,0);
+    \draw[very thick, dashed] (0,1.8) -- (6,1.8);
+    \draw[very thick, dashed] (0,-1.8) -- (6,-1.8);
+    \node[right] at (6,1.8) {\small{$+3\sigma$}};
+    \node[right] at (6,1.2) {\small{$+2\sigma$}};
+    \node[right] at (6,0.6) {\small{$+1\sigma$}};
+    \node[right] at (6,0) {\small{\text{mean}}};
+    \node[right] at (6,-0.6) {\small{$-1\sigma$}};
+    \node[right] at (6,-1.2) {\small{$-2\sigma$}};
+    \node[right] at (6,-1.8) {\small{$-3\sigma$}};
+    \draw[dash dot] (0,1.2) -- (6,1.2);
+    \draw[dash dot] (0,0.6) -- (6,0.6);
+    \draw[dash dot] (0,-0.6) -- (6,-0.6);
+    \draw[dash dot] (0,-1.2) -- (6,-1.2);
+    \draw[fill=black] (A) circle (2pt);
+    \draw[fill=black] (B) circle (2pt);
+    \draw[fill=black] (C) circle (2pt);
+    \draw[fill=black] (D) circle (2pt);
+    \draw[fill=black] (E) circle (2pt);
+    \draw[fill=black] (F) circle (2pt);
+    \draw[fill=black] (G) circle (2pt);
+    \draw[fill=black] (H) circle (2pt);
+    \draw[fill=black] (I) circle (2pt);
+    \draw (A) -- (B)-- (C) -- (D) -- (E) -- (F) -- (G) -- (H)-- (I);
+    \node[anchor=east] at (0.2,-2.4) {\small{sample}};
+    \foreach \x in {1,2,...,9}{
+    \node at (0.6*\x,-2.4) {\small{\x}};
+    }
+    \draw[white] (-1.5,-2.8) rectangle (7.5,2.5);
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+    \coordinate (A) at (0.6,-1);
+    \coordinate (B) at (1.2,-0.3);
+    \coordinate (C) at (1.8,0.9);
+    \coordinate (D) at (2.4,0.8);
+    \coordinate (E) at (3,0.2);
+    \coordinate (F) at (3.6,-0.4);
+    \coordinate (G) at (4.2,0.5);
+    \coordinate (H) at (4.8,0.9);
+    \coordinate (I) at (5.4,-0.3);
+    \draw[very thick] (0,0) -- (6,0);
+    \draw[very thick, dashed] (0,1.8) -- (6,1.8);
+    \draw[very thick, dashed] (0,-1.8) -- (6,-1.8);
+    \node[right] at (6,1.8) {\small{$+3\sigma$}};
+    \node[right] at (6,1.2) {\small{$+2\sigma$}};
+    \node[right] at (6,0.6) {\small{$+1\sigma$}};
+    \node[right] at (6,0) {\small{\text{mean}}};
+    \node[right] at (6,-0.6) {\small{$-1\sigma$}};
+    \node[right] at (6,-1.2) {\small{$-2\sigma$}};
+    \node[right] at (6,-1.8) {\small{$-3\sigma$}};
+    \draw[dash dot] (0,1.2) -- (6,1.2);
+    \draw[dash dot] (0,0.6) -- (6,0.6);
+    \draw[dash dot] (0,-0.6) -- (6,-0.6);
+    \draw[dash dot] (0,-1.2) -- (6,-1.2);
+    \draw[fill=black] (A) circle (2pt);
+    \draw[fill=black] (B) circle (2pt);
+    \draw[fill=black] (C) circle (2pt);
+    \draw[fill=black] (D) circle (2pt);
+    \draw[fill=black] (E) circle (2pt);
+    \draw[fill=black] (F) circle (2pt);
+    \draw[fill=black] (G) circle (2pt);
+    \draw[fill=black] (H) circle (2pt);
+    \draw[fill=black] (I) circle (2pt);
+    \draw (A) -- (B)-- (C) -- (D) -- (E) -- (F) -- (G) -- (H)-- (I);
+    \node[anchor=east] at (0.2,-2.4) {\small{sample}};
+    \foreach \x in {1,2,...,9}{
+    \node at (0.6*\x,-2.4) {\small{\x}};
+    }
+    \draw[white] (-1.5,-2.8) rectangle (7.5,2.5);
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+    \coordinate (A) at (0.6,0.95);
+    \coordinate (B) at (1.2,-1.6);
+    \coordinate (C) at (1.8,-0.9);
+    \coordinate (D) at (2.4,0.85);
+    \coordinate (E) at (3,0.75);
+    \coordinate (F) at (3.6,0.8);
+    \coordinate (G) at (4.2,-0.4);
+    \coordinate (H) at (4.8,1.4);
+    \coordinate (I) at (5.4,-1);
+    \draw[very thick] (0,0) -- (6,0);
+    \draw[very thick, dashed] (0,1.8) -- (6,1.8);
+    \draw[very thick, dashed] (0,-1.8) -- (6,-1.8);
+    \node[right] at (6,1.8) {\small{$+3\sigma$}};
+    \node[right] at (6,1.2) {\small{$+2\sigma$}};
+    \node[right] at (6,0.6) {\small{$+1\sigma$}};
+    \node[right] at (6,0) {\small{\text{mean}}};
+    \node[right] at (6,-0.6) {\small{$-1\sigma$}};
+    \node[right] at (6,-1.2) {\small{$-2\sigma$}};
+    \node[right] at (6,-1.8) {\small{$-3\sigma$}};
+    \draw[dash dot] (0,1.2) -- (6,1.2);
+    \draw[dash dot] (0,0.6) -- (6,0.6);
+    \draw[dash dot] (0,-0.6) -- (6,-0.6);
+    \draw[dash dot] (0,-1.2) -- (6,-1.2);
+    \draw[fill=black] (A) circle (2pt);
+    \draw[fill=black] (B) circle (2pt);
+    \draw[fill=black] (C) circle (2pt);
+    \draw[fill=black] (D) circle (2pt);
+    \draw[fill=black] (E) circle (2pt);
+    \draw[fill=black] (F) circle (2pt);
+    \draw[fill=black] (G) circle (2pt);
+    \draw[fill=black] (H) circle (2pt);
+    \draw[fill=black] (I) circle (2pt);
+    \draw (A) -- (B)-- (C) -- (D) -- (E) -- (F) -- (G) -- (H)-- (I);
+    \node[anchor=east] at (0.2,-2.4) {\small{sample}};
+    \foreach \x in {1,2,...,9}{
+    \node at (0.6*\x,-2.4) {\small{\x}};
+    }
+    \draw[white] (-1.5,-2.8) rectangle (7.5,2.5);
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+    \coordinate (A) at (0.6,-0.9);
+    \coordinate (B) at (1.2,1);
+    \coordinate (C) at (1.8,0.8);
+    \coordinate (D) at (2.4,0.2);
+    \coordinate (E) at (3,0.75);
+    \coordinate (F) at (3.6,1.6);
+    \coordinate (G) at (4.2,0.4);
+    \coordinate (H) at (4.8,0.9);
+    \coordinate (I) at (5.4,0.25);
+    \draw[very thick] (0,0) -- (6,0);
+    \draw[very thick, dashed] (0,1.8) -- (6,1.8);
+    \draw[very thick, dashed] (0,-1.8) -- (6,-1.8);
+    \node[right] at (6,1.8) {\small{$+3\sigma$}};
+    \node[right] at (6,1.2) {\small{$+2\sigma$}};
+    \node[right] at (6,0.6) {\small{$+1\sigma$}};
+    \node[right] at (6,0) {\small{\text{mean}}};
+    \node[right] at (6,-0.6) {\small{$-1\sigma$}};
+    \node[right] at (6,-1.2) {\small{$-2\sigma$}};
+    \node[right] at (6,-1.8) {\small{$-3\sigma$}};
+    \draw[dash dot] (0,1.2) -- (6,1.2);
+    \draw[dash dot] (0,0.6) -- (6,0.6);
+    \draw[dash dot] (0,-0.6) -- (6,-0.6);
+    \draw[dash dot] (0,-1.2) -- (6,-1.2);
+    \draw[fill=black] (A) circle (2pt);
+    \draw[fill=black] (B) circle (2pt);
+    \draw[fill=black] (C) circle (2pt);
+    \draw[fill=black] (D) circle (2pt);
+    \draw[fill=black] (E) circle (2pt);
+    \draw[fill=black] (F) circle (2pt);
+    \draw[fill=black] (G) circle (2pt);
+    \draw[fill=black] (H) circle (2pt);
+    \draw[fill=black] (I) circle (2pt);
+    \draw (A) -- (B)-- (C) -- (D) -- (E) -- (F) -- (G) -- (H)-- (I);
+    \node[anchor=east] at (0.2,-2.4) {\small{sample}};
+    \foreach \x in {1,2,...,9}{
+    \node at (0.6*\x,-2.4) {\small{\x}};
+    }
+    \draw[white] (-1.5,-2.8) rectangle (7.5,2.5);
+\end{tikzpicture}
+\end{center}
+
+\end{multicols}
+
+\pagebreak
+
+## Shewart \textit{x}-bar Charts with a Known Population Mean
+
+Suppose that a manufacturing process is working properly and its performance is normally distributed, with mean $\mu$ and standard deviation $\sigma$. If samples of size $n$ are taken regularly from the product, and the mean obtained for each sample, then:
+
+\vspace{-0.5cm}
+
+$$\overline{X}\sim N\left(\mu,\dfrac{\sigma^2}{n}\right)$$
+
+\vspace{-0.5cm}
+
+Sigma limits can be calculated as:
+
+\vspace{-0.5cm}
+
+\begin{center}
+    \begin{tikzpicture}
+        \node at (-5,0) {$1\sigma \text{ limits: }\mu \text{ }\pm \text{ }\dfrac{\sigma}{\sqrt{n}}$};
+        \node at (0,0) {$2\sigma \text{ limits: }\mu \text{ }\pm \text{ }\dfrac{2\sigma}{\sqrt{n}}$};
+        \node at (5,0) {$3\sigma \text{ limits: }\mu \text{ }\pm \text{ }\dfrac{3\sigma}{\sqrt{n}}$};
+        \draw[decorate, 
+	decoration = {brace,
+		amplitude=7pt}] (1.8,-0.8) --  (-6.8,-0.8);
+        \node[below] at (-2.5,-1) {\textit{Warning lines}};
+        \draw[decorate, 
+	decoration = {brace,
+		amplitude=7pt}] (6.8,-0.8) --  (3.2,-0.8);
+        \node[below] at (5,-1) {\textit{UCL}\text{ and }\textit{LCL}};
+    \end{tikzpicture}
+\end{center}
+
+\vspace{-0.5cm}
+
+A control chart is created with horizontal lines indicating the population mean and each of the 6 sigma limits calculated. The sample mean for each of the samples drawn at regular intervals is plotted on the chart, and the *WECO rules* applied to determine if or when the production process is out of control. 
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} A machine fills cans of soda with mean volume 350ml and standard deviation 5ml. Every hour a sample of 3 cans is taken, their volumes measured, and the sample mean calculated before being added to an $x$-bar chart. 
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Sample number & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
+        \hline
+        Sample mean & 347.67 & 341.67 & 353.67 & 358 & 350.67 & 340.33 & 340.67 & 351.67\\
+        \hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tikzpicture}
+        \foreach \x in {1,2,...,8}{
+        \draw[very thin] (1.5*\x,0.25*340-340*0.25) -- (1.5*\x,0.25*360-340*0.25) node[below] at (1.5*\x,0) {\x};
+        }
+        \foreach \y in {340,360}{
+        \draw[very thin] (1.5*1,0.25*\y-340*0.25) -- (1.5*9,0.25*\y-340*0.25) node[left] at (1.5*1,0.25*\y-340*0.25) {\y}; 
+        }
+        \draw[very thin] (1.5*9,340*0.25-0.25*340) -- (1.5*9,360*0.25-0.25*340);
+        \node[below] at (1.5*5,-0.5) {sample number};
+        \node[rotate=90] at (0,350*0.25-0.25*340) {sample mean (ml)};
+        \node[above] at (1.5*5,361*0.25-0.25*340) {$x$-bar chart of soda can volume};
+        \draw[very thick, densely dashed] (1.5*1,0.25*358.66-340*0.25) -- (1.5*9,0.25*358.66-340*0.25) node[right] {$+3\sigma=358.66$};
+        \draw[very thick, dashed] (1.5*1,0.25*355.77-340*0.25) -- (1.5*9,0.25*355.77-340*0.25) node[right] {$+2\sigma=355.77$};
+        \draw[very thick,dashed] (1.5*1,0.25*352.89-340*0.25) -- (1.5*9,0.25*352.89-340*0.25) node[right] {$+1\sigma=352.89$};
+        \draw[very thick] (1.5*1,0.25*350-340*0.25) -- (1.5*9,0.25*350-340*0.25) node[right] {$\mu=350$};
+        \draw[very thick,dashed] (1.5*1,0.25*347.11-340*0.25) -- (1.5*9,0.25*347.11-340*0.25) node[right] {$-1\sigma=347.11$};
+        \draw[very thick,dashed] (1.5*1,0.25*344.23-340*0.25) -- (1.5*9,0.25*344.23-340*0.25) node[right] {$-2\sigma=344.23$};
+        \draw[very thick, densely dashed] (1.5*1,0.25*341.34-340*0.25) -- (1.5*9,0.25*341.34-340*0.25) node[right] {$-3\sigma=341.34$};
+        \coordinate (A) at (1.5*1,-340*0.25+0.25*347.67);
+        \coordinate (B) at (1.5*2,-340*0.25+0.25*341.67);
+        \coordinate (C) at (1.5*3,-340*0.25+0.25*353.67);
+        \coordinate (D) at (1.5*4,-340*0.25+0.25*358);
+        \coordinate (E) at (1.5*5,-340*0.25+0.25*350.67);
+        \coordinate (F) at (1.5*6,-340*0.25+0.25*340.33);
+        \coordinate (G) at (1.5*7,-340*0.25+0.25*340.67);
+        \coordinate (H) at (1.5*8,-340*0.25+0.25*351.67);
+        \draw[fill=black] (A) circle (2pt);
+    \draw[fill=black] (B) circle (2pt);
+    \draw[fill=black] (C) circle (2pt);
+    \draw[fill=black] (D) circle (2pt);
+    \draw[fill=black] (E) circle (2pt);
+    \draw[fill=black] (F) circle (2pt);
+    \draw[fill=black] (G) circle (2pt);
+    \draw[fill=black] (H) circle (2pt);
+    \draw (A) -- (B)-- (C) -- (D) -- (E) -- (F) -- (G) -- (H);
+    \end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+    \item[(a)] Confirm the 2-sigma limits on the control chart.
+    \item[(b)] Determine when the process is out of control.
+\end{enumerate}
+
+\tcblower
+\textbf{Solution:}
+
+\begin{enumerate}
+    \item[(a)] $2\sigma$ limits: $\mu \text{ }\pm \text{ } \dfrac{2\sigma}{\sqrt{n}}=350\text{ }\pm\text{ }\dfrac{2\times 5}{\sqrt{3}}=350\text{ }\pm\text{ }5.77$, so $344.23$ and $355.77$.
+    \item[(b)] The process is out of control for samples 6 and 7 as the sample means both lie below the lower control limit ($-3\sigma$ limit). The process needs to be investigated.
+\end{enumerate}
+
+\end{tcolorbox}
+
+\pagebreak
+
+#### Exercise 13.2 {-}
+
+\begin{enumerate}
+    \item A machine dispenses crisps into sharing-sized bags with a mean mass of 150g and a standard deviation of 2g. It is known that the mass of the crisps is normally distributed. A random sample of 5 of the sharing-sized bags of crisps is taken every hour to check that the machine is in statistical control. A control chart showing 12 consecutive samples from a particular shift is shown.
+  
+\begin{center}
+    \begin{tikzpicture}[scale=0.8]
+        \draw (0,-3.5) rectangle (12,3.5);
+        \node at (6,-4.5) {sample number};
+        \node[rotate=90] at (-1.5,0) {sample mean (g)};
+        \node at (6,4) {control chart of mean mass of crisps};
+        \draw[thick, densely dashed] (0.1,3) -- (11.9,3);
+        \draw[dashed] (0.1,2) -- (11.9,2);
+        \draw[dashed] (0.1,1) -- (11.9,1);
+        \draw[thick] (0.1,0) -- (11.9,0);
+        \draw[dashed] (0.1,-1) -- (11.9,-1);
+        \draw[dashed] (0.1,-2) -- (11.9,-2);
+        \draw[thick, densely dashed] (0.1,-3) -- (11.9,-3);
+        \node[left] at (13.2,3) {UCL};
+        \node[left] at (13.2,2) {$+2\sigma$};
+        \node[left] at (13.2,1) {$+1\sigma$};
+        \node[left] at (13.2,0) {$\mu$};
+        \node[left] at (13.2,-1) {$-1\sigma$};
+        \node[left] at (13.2,-2) {$-2\sigma$};
+        \node[left] at (13.2,-3) {LCL};
+        \node[right] at (13,3) {$=152.683$};
+        \node[right] at (13,2) {$=151.789$};
+        \node[right] at (13,1) {$=150.894$};
+        \node[right] at (13,0) {$=150$};
+        \node[right] at (13,-1) {$=149.106$};
+        \node[right] at (13,-2) {$=148.211$};
+        \node[right] at (13,-3) {$=147.317$};
+        \foreach \x in {1,2,...,12}{
+        \draw (\x-0.5,-3.5) -- (\x-0.5,-3.7) node[below] {\x};
+        }
+        \node[left] at (0,3*1.118568) {153};
+        \node[left] at (0,2*1.118568) {152};
+        \node[left] at (0,1*1.118568) {151};
+        \node[left] at (0,0*1.118568) {150};
+        \node[left] at (0,-1*1.118568) {149};
+        \node[left] at (0,-2*1.118568) {148};
+        \node[left] at (0,-3*1.118568) {147};
+        \coordinate (A) at (1-0.5,0.15);
+        \coordinate (B) at (2-0.5,-0.2);
+        \coordinate (C) at (3-0.5,0.8);
+        \coordinate (D) at (4-0.5,-1.3);
+        \coordinate (E) at (5-0.5,0.2);
+        \coordinate (F) at (6-0.5,0.85);
+        \coordinate (G) at (7-0.5,-0.45);
+        \coordinate (H) at (8-0.5,0.8);
+        \coordinate (I) at (9-0.5,2.15);
+        \coordinate (J) at (10-0.5,1.3);
+        \coordinate (K) at (11-0.5,2.34);
+        \coordinate (L) at (12-0.5,-0.2);
+        \draw[fill=black] (A) circle (2pt);
+        \draw[fill=black] (B) circle (2pt);
+        \draw[fill=black] (C) circle (2pt);
+        \draw[fill=black] (D) circle (2pt);
+        \draw[fill=black] (E) circle (2pt);
+        \draw[fill=black] (F) circle (2pt);
+        \draw[fill=black] (G) circle (2pt);
+        \draw[fill=black] (H) circle (2pt);
+        \draw[fill=black] (I) circle (2pt);
+        \draw[fill=black] (J) circle (2pt);
+        \draw[fill=black] (K) circle (2pt);
+        \draw[fill=black] (L) circle (2pt);
+        \draw (A) -- (B)-- (C) -- (D) -- (E) -- (F) -- (G) -- (H) -- (I) -- (J) -- (K) -- (L);
+        \end{tikzpicture}
+\end{center}
+
+Confirm the $2\sigma$ limits shown on the chart and determine if the machine was in control for the whole shift.
+    \item A packing process packages ground coffee into bags. The mass of each bag is normally distributed with mean 500g and standard deviation 15g. Random samples of 8 coffee bags are taken at regular intervals and weighed. The control chart shown gives 16 consecutive sample means. 
+    
+\begin{center}
+    \begin{tikzpicture}[scale=0.8]
+        \draw (0,-3.5) rectangle (12,3.5);
+        \node at (6,-4.5) {sample number};
+        \node[rotate=90] at (-1.5,0) {sample mean};
+        \node at (6,4) {x-bar chart of mass of coffee (g)};
+        \draw[thick, densely dashed] (0.1,3) -- (11.9,3);
+        \draw[dashed] (0.1,2) -- (11.9,2);
+        \draw[dashed] (0.1,1) -- (11.9,1);
+        \draw[thick] (0.1,0) -- (11.9,0);
+        \draw[dashed] (0.1,-1) -- (11.9,-1);
+        \draw[dashed] (0.1,-2) -- (11.9,-2);
+        \draw[thick, densely dashed] (0.1,-3) -- (11.9,-3);
+        \node[left] at (13.2,3) {UCL};
+        \node[left] at (13.2,2) {$+2\sigma$};
+        \node[left] at (13.2,1) {$+1\sigma$};
+        \node[left] at (13.2,0) {$\mu$};
+        \node[left] at (13.2,-1) {$-1\sigma$};
+        \node[left] at (13.2,-2) {$-2\sigma$};
+        \node[left] at (13.2,-3) {LCL};
+        \node[right] at (13,3) {$=515.91$};
+        \node[right] at (13,2) {$=510.61$};
+        \node[right] at (13,1) {$=505.30$};
+        \node[right] at (13,0) {$=500$};
+        \node[right] at (13,-1) {$=494.70$};
+        \node[right] at (13,-2) {$=489.39$};
+        \node[right] at (13,-3) {$=484.09$};
+        \foreach \x in {1,3,...,15}{
+        \draw (0.7*\x,-3.5) -- (0.7*\x,-3.7) node[below] {\x};
+        }
+        \node[left] at (0,1*1.885) {510};
+        \node[left] at (0,0*1.885) {500};
+        \node[left] at (0,-1*1.885) {490};
+        \coordinate (A) at (1*0.7,0.4);
+        \coordinate (B) at (2*0.7,-0.5);
+        \coordinate (C) at (3*0.7,0.15);
+        \coordinate (D) at (4*0.7,-0.4);
+        \coordinate (E) at (5*0.7,-2.1);
+        \coordinate (F) at (6*0.7,-0.9);
+        \coordinate (G) at (7*0.7,0.45);
+        \coordinate (H) at (8*0.7,0.8);
+        \coordinate (I) at (9*0.7,0.15);
+        \coordinate (J) at (10*0.7,1.05);
+        \coordinate (K) at (11*0.7,-2.3);
+        \coordinate (L) at (12*0.7,-0.6);
+        \coordinate (M) at (13*0.7,1.2);
+        \coordinate (N) at (14*0.7,0.4);
+        \coordinate (O) at (15*0.7,2.1);
+        \coordinate (P) at (16*0.7,0.6);
+        \draw[fill=black] (A) circle (2pt);
+        \draw[fill=black] (B) circle (2pt);
+        \draw[fill=black] (C) circle (2pt);
+        \draw[fill=black] (D) circle (2pt);
+        \draw[fill=black] (E) circle (2pt);
+        \draw[fill=black] (F) circle (2pt);
+        \draw[fill=black] (G) circle (2pt);
+        \draw[fill=black] (H) circle (2pt);
+        \draw[fill=black] (I) circle (2pt);
+        \draw[fill=black] (J) circle (2pt);
+        \draw[fill=black] (K) circle (2pt);
+        \draw[fill=black] (L) circle (2pt);
+        \draw[fill=black] (M) circle (2pt);
+        \draw[fill=black] (N) circle (2pt);
+        \draw[fill=black] (O) circle (2pt);
+        \draw[fill=black] (P) circle (2pt);
+        \draw (A) -- (B)-- (C) -- (D) -- (E) -- (F) -- (G) -- (H) -- (I) -- (J) -- (K) -- (L) -- (M) -- (N) -- (O) -- (P);
+        \end{tikzpicture}
+\end{center}
+
+Confirm the $1\sigma$ limits shown on the chart and determine if the packing process was in control for all the samples given.
+\end{enumerate}
+
+\pagebreak
+
+\begin{enumerate}[resume]
+    \item When a process for cracking crude oil is working to specification it yields petrol for which random samples give octane ratings which are normally distributed with mean 87.0 and standard deviation 0.40.
+  
+\includegraphics[scale=0.4]{images/1223.png}
+
+Given that each sample is of size 4, confirm the upper and lower control limits shown on the chart and determine if the process was in control for all the samples given. 
+    \item A machine dispenses sea salt flakes into bags. The mass of salt in the bags is known to be normally distributed with mean 200 grams and standard deviation 12g. Samples of 5 bags are taken every 30 minutes and the sample mean plotted on a Shewart $x$-bar chart.
+    
+\includegraphics[scale=0.4]{images/1224.png}
+
+Confirm the 1 and 2 sigma limits on the chart and determine whether the process was in statistical control for the samples shown. State an assumption that has been made.
+\end{enumerate}
+
+\pagebreak
+
+\begin{enumerate}[resume]
+    \item When a medical manufacturing process is in a state of statistical control, it produces tablets with masses which are normally distributed with mean 6.0mg and standard deviation 0.13mg. Random samples of 5 tablets are taken at regular intervals and the mean mass recorded. The sample means obtained during a day’s production, used to produce a control chart, are shown in the table below.
+  
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{Sample number} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8}\\
+        \hline
+        Mass (mg) & 6.04 & 5.89 & 5.99 & 6.06 & 5.96 & 6.08 & 5.87 & 6.25\\
+        \hline
+        \textbf{Sample number} & \textbf{9} & \textbf{10} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16}\\
+        \hline
+        Mass (mg) & 6.05 & 5.86 & 5.96 & 6.08 & 6.19 & 6.05 & 5.92 & 5.90\\
+        \hline
+    \end{tabular}
+\end{center}
+
+Calculate the upper and lower control limits and determine if the process is in statistical control for the day sampled.
+\end{enumerate}
+
+## Shewart \textit{x}-bar Charts with an Unknown Population Mean {-}
+
+If the population mean is unknown, the value for $\mu$ must be estimated from the *mean of the mean* of the first few sample measurements, known as $\bar{\bar{x}}$. This situation would be common when a control chart for a manufacturing process is being set up for the first time. 
+When $\mu$ is unknown, often $\sigma$ is also unknown. It goes beyond the syllabus for this course to estimate the value of $\sigma$ so it will be stated in the question.
+
+\begin{enumerate}[resume]
+    \item A new medical manufacturing process is set up to produce a new tablet. In order to ensure the process is in statistical control, a control chart is created from random samples of size 5. The first ten sample means were used to create the target value $\bar{\bar{x}}$ for the chart, and it is known that $\sigma = 0.06\text{ mg}$.
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{Sample number} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10}\\
+        \hline
+        Mass (mg) & 4.92	& 4.94 &	5.04 &	5.01 &	4.98 &	5.07	& 4.97	& 4.99 &	5.06 &	5.02\\
+        \hline
+        \textbf{Sample number} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{17} & \textbf{18} & \textbf{19} & \textbf{20}\\
+        \hline
+        Mass (mg) & 4.99 & 4.98 &	4.92 &	4.95 &	4.93 &	4.97 &	4.91 &	5.01 &	5.04 &	4.98 \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tikzpicture}
+        \foreach \x in {1,2,...,8}{
+        \draw[very thin] (1.5*\x,0.25*340-340*0.25) -- (1.5*\x,0.25*360-340*0.25) node[below] at (1.5*\x,0) {\x};
+        }
+        \foreach \y in {340,345,...,360}{
+        \draw[very thin] (1.5*1,0.25*\y-340*0.25) -- (1.5*9,0.25*\y-340*0.25) node[left] at (1.5*1,0.25*\y-340*0.25) {\y}; 
+        }
+        \draw[very thin] (1.5*9,340*0.25-0.25*340) -- (1.5*9,360*0.25-0.25*340);
+        \node[below] at (1.5*5,-0.5) {sample number};
+        \node[rotate=90] at (0,350*0.25-0.25*340) {sample mean (ml)};
+        \node[above] at (1.5*5,361*0.25-0.25*340) {$x$-bar chart of soda can volume};
+        \draw[very thick, densely dashed] (1.5*1,0.25*358.66-340*0.25) -- (1.5*9,0.25*358.66-340*0.25) node[right] {$+3\sigma=358.66$};
+        \draw[very thick, dashed] (1.5*1,0.25*355.77-340*0.25) -- (1.5*9,0.25*355.77-340*0.25) node[right] {$+2\sigma=355.77$};
+        \draw[very thick,dashed] (1.5*1,0.25*352.89-340*0.25) -- (1.5*9,0.25*352.89-340*0.25) node[right] {$+1\sigma=352.89$};
+        \draw[very thick] (1.5*1,0.25*350-340*0.25) -- (1.5*9,0.25*350-340*0.25) node[right] {$\mu=350$};
+        \draw[very thick,dashed] (1.5*1,0.25*347.11-340*0.25) -- (1.5*9,0.25*347.11-340*0.25) node[right] {$-1\sigma=347.11$};
+        \draw[very thick,dashed] (1.5*1,0.25*344.23-340*0.25) -- (1.5*9,0.25*344.23-340*0.25) node[right] {$-2\sigma=344.23$};
+        \draw[very thick, densely dashed] (1.5*1,0.25*341.34-340*0.25) -- (1.5*9,0.25*341.34-340*0.25) node[right] {$-3\sigma=341.34$};
+        \coordinate (A) at (1.5*1,-340*0.25+0.25*347.67);
+        \coordinate (B) at (1.5*2,-340*0.25+0.25*341.67);
+        \coordinate (C) at (1.5*3,-340*0.25+0.25*353.67);
+        \coordinate (D) at (1.5*4,-340*0.25+0.25*358);
+        \coordinate (E) at (1.5*5,-340*0.25+0.25*350.67);
+        \coordinate (F) at (1.5*6,-340*0.25+0.25*340.33);
+        \coordinate (G) at (1.5*7,-340*0.25+0.25*340.67);
+        \coordinate (H) at (1.5*8,-340*0.25+0.25*351.67);
+        \draw[fill=black] (A) circle (2pt);
+    \draw[fill=black] (B) circle (2pt);
+    \draw[fill=black] (C) circle (2pt);
+    \draw[fill=black] (D) circle (2pt);
+    \draw[fill=black] (E) circle (2pt);
+    \draw[fill=black] (F) circle (2pt);
+    \draw[fill=black] (G) circle (2pt);
+    \draw[fill=black] (H) circle (2pt);
+    \draw (A) -- (B)-- (C) -- (D) -- (E) -- (F) -- (G) -- (H);
+    \end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+    \item[(a)] Confirm the value $\bar{\bar{x}}=5\text{ mg}$ using the first 10 sample means.
+    \item[(b)] Determine if the process is in statistical control for the initial 20 samples.
+\end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+## Shewart \textit{p}-Charts for a Proportion
+
+For some quality control processes the attribute of interest will be a *quality* rather than a numerical value, meaning calculating a mean is not possible. For such cases, a control chart for $x$-bar is not appropriate. Such a *quality* may typically take the form of a binary outcome, such as *defective* or *not defective*. The *proportion* of products within each sample that take a particular outcome (such as *defective*) may instead be calculated, and a control chart for proportion, or $p$-chart, created.
+
+For $np,nq>5$ the distribution of the sample proportion may be described by $\hat{P}\approx N\left(p,\dfrac{pq}{n}\right)$.
+
+This leads to the 3-sigma control limits for a $p$-chart being given, for population proportion $p$, by $p\text{ }\pm \text{ }3\sqrt{\dfrac{pq}{n}}$.
+
+Similarly, the $1\sigma$ and $2\sigma$ limits be be calculated respectively as $p\text{ }\pm \text{ }\sqrt{\dfrac{pq}{n}}$ and $p\text{ }\pm \text{ }2\sqrt{\dfrac{pq}{n}}$.
+
+It should be noted that, depending on the value of $p$, it is not unusual for the lower control limit to be negative or the upper control limit to be greater than 1. When this happens the lower control limit should be given as 0 or the upper control limit given as 1.
+
+If no historical value of the population proportion has been suggested, then $p$ must be estimated from the sample data provided, and $\hat{p}$ used.
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} A machine fills Christmas crackers. 30\% of the crackers are supposed to contain joke A. Every 30 minutes a sample of 50 crackers is taken and the number containing joke A is found. The proportion of each sample that has joke A is plotted on a $p$-chart.
+
+\includegraphics[scale=0.4]{images/1225e.png}
+
+Verify the $3\sigma$ limits on the chart and determine if the $p$-chart is in statistical control for the samples given.
+
+\tcblower
+\textbf{Solution:}
+
+$3\sigma$ limits: $p \text{ }\pm \text{ } 3\times\sqrt{\dfrac{pq}{n}}=0.3\text{ }\pm\text{ }3\times\sqrt{\dfrac{0.3\times0.7}{50}}=0.3\text{ }\pm\text{ }0.1944$, so $0.1056$ and $0.4944$.\\
+The process is out of statistical control at sample 6 as two out of three consecutive sample means lie above the upper $2\sigma$ limit. The process needs to be investigated.
+
+\end{tcolorbox}
+
+\newpage
+
+#### Exercise 13.3 {-}
+
+\begin{enumerate}
+    \item A manufacturer of orange juice cans claims that, historically, 10\% of the cans produced are defective. 24 samples, each of 50 cans were taken from the production line at daily intervals, and the number of defective cans in the samples were plotted on a $p$-chart.
+  
+\includegraphics[scale=0.4]{images/1231.png}
+
+\begin{enumerate}
+    \item Confirm the 1 sigma limits given on the $p$-chart above. 
+    \item Explain the value of the lower control limit.
+    \item Determine if the $p$-chart was in statistical control for all 24 days. 
+\end{enumerate}
+    \item A factory machine produces fuses. Historically 3\% of these fuses are defective. Random samples of 100 are taken hourly and the number of defective fuses counted. The p-chart below was created for 24 samples. 
+    
+\includegraphics[scale=0.4]{images/1232.png}
+
+\begin{enumerate}
+    \item Confirm the upper and lower control limits. 
+    \item Determine if the $p$-chart was in statistical control.
+\end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+\begin{enumerate}[resume]
+    \item A food retailer insists that the packaging for foodstuffs is produced to a very high-level standard. One of the main supermarkets has asked for evidence of this claim and has sent a manager to the food retailer to inspect the packaging production process. It was decided to create a $p$-chart using random samples of 250 of a particular type of cardboard food container. The target value was estimated using the first 10 samples. 
+    
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{Sample no.} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10}\\
+        \hline
+        No. of defective containers & 25	& 27 &	31 &	28 &	22 &	35	& 25	& 24 &	26 &	27\\
+        \hline
+        \textbf{Sample no.} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{17} & \textbf{18} & \textbf{19} & \textbf{20}\\
+        \hline
+        No. of defective containers & 23 & 39 &	33 &	22 &	23 &	24 &	26 &	20 &	19 &	21 \\
+        \hline
+    \end{tabular}
+\end{center}
+  
+\includegraphics[scale=0.4]{images/1233.png}
+
+
+\begin{enumerate}
+    \item Confirm the estimated target value of $\hat{p}=0.108$ using the first 10 samples.
+    \item Determine if the supermarket manager will be satisfied with the results of his inspection.
+\end{enumerate}
+ 
+  \item Every hour, 100 small packets of biscuits are randomly sampled from a production line and weighed. A packet is deemed satisfactory if its mass of 25 grams or more, and it is known historically that 92\% of biscuit packets are classed as satisfactory. The proportion of satisfactory packets in 20 successive samples are plotted on the $p$-chart below. 
+
+\includegraphics[scale=0.4]{images/1234.png}
+
+\begin{enumerate}
+    \item Comment on the upper control limit given on the $p$-chart.
+    \item Determine if the process is in control during throughout the period sampled.
+\end{enumerate}
+
+\end{enumerate}
+
+\pagebreak
+
+

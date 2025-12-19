@@ -1,0 +1,3166 @@
+# Further Linear Regression
+
+Linear regression, first introduced in Chapter 5, will be explored in much more detail in this chapter.
+
+## The Method of Least Squares Regression
+
+A straight-line relationship can be valuable in many situations in establishing and summarising the dependence of one variable on another, and in making predictions.
+
+In most experiments, it is assumed that $x$ is under the control of the experimenter and can be known exactly. In such cases $x$ is called the \textit{predictor} (or \textit{independent}) variable. $Y$ is known as the \textit{response} (or \textit{dependent}) variable, and since it is conditional on $x$, $Y$ is a random variable.
+
+The (conditional) expected value and variance of $Y$ is commonly of interest.
+
+$$Y_i=\alpha+\beta x_i+\varepsilon_i$$
+ 
+$\varepsilon$ is a random variables called the \textbf{error} that describes how far $Y$ is from its expected value. $\alpha$ and $\beta$ are fixed parameters whose value cannot be known exactly without examining all possible occurrences of $Y$ and $x$. However the sample observations $(x_i,y_i)$ can be used to give estimates $a$ and $b$ of $\alpha$ and $\beta$. This leads to the relationship $\hat{Y}_i=a+bx_i$, where $\hat{Y}_i$ denotes the predicted value of $Y_i$ for a given $x_i$.
+
+The method of least squares gives formulae for $a$ and $b$ derived by considering how $\sum \varepsilon_i^2$ might be minimised:
+
+$$b=\dfrac{S_{xy}}{S_{xx}} \qquad \text{and} \qquad a=\bar{y}-b\bar{x}$$
+
+The above estimates, given on Page 5 of the Data Booklet, rely on several assumptions about the errors, $\varepsilon_i$:
+
+\begin{center}
+    \begin{itemize}
+        \item $\varepsilon_i$, are independent.
+        \item $\text{E}(\varepsilon_i)=0$
+        \item $\text{V}(\varepsilon_i)=\sigma^2$ where $\text{V}(Y)=\sigma^2$
+    \end{itemize}
+\end{center}
+
+\pagebreak
+
+## Contexts for Exercises
+
+The following example and contexts 1 to 5 were all introduced in Chapter 5, and will be used throughout this chapter. For convenience, key summary data and sample statistics previously calculated are provided.
+
+\textbf{Example:} A biology exam consists of two papers: theoretical ($x$) and practical ($y$). The marks scored on each test is obtained for a random sample of 12 students who sat the exam, and a scatterplot is constructed to display the results.
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[right] at (7,3.9) {Summary data for sample:};
+        \node[right] at (7,3.4) {$\Sigma x=132$};
+        \node[right] at (7,2.9) {$\Sigma x^2=1742$};
+        \node[right] at (7,2.4) {$\Sigma y=147$};
+        \node[right] at (7,1.9) {$\Sigma y^2=2057$};
+        \node[right] at (7,1.4) {$\Sigma xy=1872$};
+        \node[right] at (10,3.4) {$S_{xx}=290$};
+        \node[right] at (10,2.9) {$S_{yy}=256.25$};
+        \node[right] at (10,2.4) {$S_{xy}=255$};
+        \node[right] at (10,1.5) {$n=12$};
+        \node[right] at (7,0.7) {Sample correlation coefficient};
+        \node[right] at (7,0.2) {$r=0.935$};
+        \node[right] at (7,-0.5) {Equation of $y$ on $x$ regression line:};
+        \node[right] at (7,-1) {$\hat{Y}=2.581+0.879x$};
+        \draw[white] (-4,-1.3) rectangle (14.4,4.2);
+        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
+        \draw[-stealth] (0,0) -- (0,3.25) node[above] {$y$}; 
+        \node at (2.5,-1) {Theoretical mark};
+        \node at (-2,1.75) {Practical};
+        \node at (-2,1.25) {mark};
+        \foreach \x in {0,1,...,5}{
+        \draw (\x,0) -- (\x,-0.1);
+        }
+        \foreach \y in {0,0.6,...,3}{
+        \draw (0,\y) -- (-0.1,\y);
+        }
+        \node[left] at (0,0) {0};
+        \node[left] at (0,0.6) {5};
+        \node[left] at (0,1.2) {10};
+        \node[left] at (0,1.8) {15};
+        \node[left] at (0,2.4) {20};
+        \node[left] at (0,3.0) {25};
+        \node[below] at (0,0) {0};
+        \node[below] at (1,0) {5};
+        \node[below] at (2,0) {10};
+        \node[below] at (3,0) {15};
+        \node[below] at (4,0) {20};
+        \node[below] at (5,0) {25};
+\draw[fill=black] (5*0.2,6*0.12) circle (0.05);
+\draw[fill=black] (9*0.2,8*0.12) circle (0.05);
+\draw[fill=black] (7*0.2,9*0.12) circle (0.05);
+\draw[fill=black] (11*0.2,13*0.12) circle (0.05);
+\draw[fill=black] (20*0.2,20*0.12) circle (0.05);
+\draw[fill=black] (4*0.2,9*0.12) circle (0.05);
+\draw[fill=black] (6*0.2,8*0.12) circle (0.05);
+\draw[fill=black] (17*0.2,17*0.12) circle (0.05);
+\draw[fill=black] (12*0.2,14*0.12) circle (0.05);
+\draw[fill=black] (10*0.2,8*0.12) circle (0.05);
+\draw[fill=black] (15*0.2,17*0.12) circle (0.05);
+\draw[fill=black] (16*0.2,18*0.12) circle (0.05);
+\draw[semithick] (3*0.2,5.488*0.12) -- (22*0.2,22.189*0.12);
+    \end{tikzpicture}
+\end{center}
+
+\textbf{Context 1:} Six metal plates were immersed in a weak acid solution for various lengths of time. Their percentage losses in mass were then measured and a scatterplot drawn of time in solution ($x$ hours) against mass loss ($y$\%). 
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[right] at (7,3.9) {Summary data for sample:};
+        \node[right] at (7,3.4) {$\Sigma x=1800$};
+        \node[right] at (7,2.9) {$\Sigma x^2=645000$};
+        \node[right] at (7,2.4) {$\Sigma y=10.2$};
+        \node[right] at (7,1.9) {$\Sigma y^2=19.94$};
+        \node[right] at (7,1.4) {$\Sigma xy=3570$};
+        \node[right] at (10,3.4) {$S_{xx}=105000$};
+        \node[right] at (10,2.9) {$S_{yy}=2.6$};
+        \node[right] at (10,2.4) {$S_{xy}=510$};
+        \node[right] at (10,1.5) {$n=6$};
+        \node[right] at (7,0.7) {Sample correlation coefficient};
+        \node[right] at (7,0.2) {$r=0.976$};
+        \node[right] at (7,-0.5) {Equation of $y$ on $x$ regression line:};
+        \node[right] at (7,-1) {$\hat{Y}=0.243+0.00486x$};
+        \draw[white] (-4,-1.3) rectangle (14.4,4.2);
+        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
+        \draw[-stealth] (0,0) -- (0,3.25) node[above] {$y$}; 
+        \node at (2.5,-1) {Time in solution (hours)};
+        \node at (-2,1.8) {Mass loss};
+        \node at (-2,1.2) {(\%)};
+        \foreach \x in {0,1,...,5}{
+        \draw (\x,0) -- (\x,-0.1);
+        }
+        \foreach \y in {0,0.5,...,3}{
+        \draw (0,\y) -- (-0.1,\y);
+        }
+        \node[left] at (0,0) {0};
+        \node[left] at (0,1) {1.0};
+        \node[left] at (0,2) {2.0};
+        \node[left] at (0,3) {3.0};
+        \node[below] at (0,0) {0};
+        \node[below] at (1,0) {100};
+        \node[below] at (2,0) {200};
+        \node[below] at (3,0) {300};
+        \node[below] at (4,0) {400};
+        \node[below] at (5,0) {500};
+        \draw[fill=black] (0.01*150,0.8) circle (0.05);
+        \draw[fill=black] (0.01*200,1.2) circle (0.05);
+        \draw[fill=black] (0.01*200,1.4) circle (0.05);
+        \draw[fill=black] (0.01*300,1.7) circle (0.05);
+        \draw[fill=black] (0.01*450,2.6) circle (0.05);
+        \draw[fill=black] (0.01*500,2.5) circle (0.05);
+        \draw[semithick] (0.01*100,0.00486*100+0.243) -- (0.01*510,0.00486*510+0.243);
+    \end{tikzpicture}
+\end{center}
+
+\textbf{Context 2:} A researcher is wanting to know if there is a link between the number of calories ($x$) and the carbohydrate content ($y$) of different types of caffeinated drinks available at coffee shops. The summary statistics below are from a random sample of 22 caffeinated drink options from a range of coffee shops. 
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[right] at (7,3.9) {Summary data for sample:};
+        \node[right] at (7,3.4) {$\Sigma x=5880$};
+        \node[right] at (7,2.9) {$\Sigma x^2=1738200$};
+        \node[right] at (7,2.4) {$\Sigma y=916$};
+        \node[right] at (7,1.9) {$\Sigma y^2=45282$};
+        \node[right] at (7,1.4) {$\Sigma xy=278040$};
+        \node[right] at (10,3.4) {$S_{xx}=166636$};
+        \node[right] at (10,2.9) {$S_{yy}=7143.1$};
+        \node[right] at (10,2.4) {$S_{xy}=33218$};
+        \node[right] at (10,1.5) {$n=22$};
+        \node[right] at (7,0.7) {Sample correlation coefficient};
+        \node[right] at (7,0.2) {$r=0.963$};
+        \node[right] at (7,-0.5) {Equation of $y$ on $x$ regression line:};
+        \node[right] at (7,-1) {$\hat{Y}=-11.6+0.199x$};
+        \draw[white] (-4,-1.3) rectangle (14.4,4.2);
+        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
+        \draw[-stealth] (0,0) -- (0,3.25) node[above] {$y$}; 
+        \node at (2.5,-1) {Calories (kcal)};
+        \node at (-2,2) {Carbohydrate};
+        \node at (-2,1.5) {content};
+        \node at (-2,1) {(g)};
+        \foreach \x in {0,1,...,5}{
+        \draw (\x,0) -- (\x,-0.1);
+        }
+        \foreach \y in {0,0.5,...,3}{
+        \draw (0,\y) -- (-0.1,\y);
+        }
+        \node[left] at (0,0) {0};
+        \node[left] at (0,1) {30};
+        \node[left] at (0,2) {60};
+        \node[left] at (0,3) {90};
+        \node[below] at (0,0) {0};
+        \node[below] at (1,0) {100};
+        \node[below] at (2,0) {200};
+        \node[below] at (3,0) {300};
+        \node[below] at (4,0) {400};
+        \node[below] at (5,0) {500};
+        \draw[fill=black] (1.9,18/30) circle (0.05);
+\draw[fill=black] (2.6,41/30) circle (0.05);
+\draw[fill=black] (2.6,41/30) circle (0.05);
+\draw[fill=black] (2.4,34/30) circle (0.05);
+\draw[fill=black] (2.6,40/30) circle (0.05);
+\draw[fill=black] (2.5,36/30) circle (0.05);
+\draw[fill=black] (1.3,13/30) circle (0.05);
+\draw[fill=black] (2.0,35/30) circle (0.05);
+\draw[fill=black] (2.30,33/30) circle (0.05);
+\draw[fill=black] (2.60,52/30) circle (0.05);
+\draw[fill=black] (4.00,72/30) circle (0.05);
+\draw[fill=black] (2.50,44/30) circle (0.05);
+\draw[fill=black] (1.10,12/30) circle (0.05);
+\draw[fill=black] (2.80,51/30) circle (0.05);
+\draw[fill=black] (3.40,55/30) circle (0.05);
+\draw[fill=black] (3.30,57/30) circle (0.05);
+\draw[fill=black] (4.70,78/30) circle (0.05);
+\draw[fill=black] (3.10,49/30) circle (0.05);
+\draw[fill=black] (1.80,18/30) circle (0.05);
+\draw[fill=black] (1.80,18/30) circle (0.05);
+\draw[fill=black] (3.50,58/30) circle (0.05);
+\draw[fill=black] (4.00,61/30) circle (0.05);
+        \draw[semithick] (0.7,0.07766) -- (5,2.93);
+    \end{tikzpicture}
+\end{center}
+
+\pagebreak
+
+\textbf{Context 3:} The systolic blood pressure in mmHg ($x$) and percentage body fat ($y$) of six randomly selected patients with the same consultant were recorded, and the data shown in the scatterplot below. 
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[right] at (7,3.9) {Summary data for sample:};
+        \node[right] at (7,3.4) {$\Sigma x=790$};
+        \node[right] at (7,2.9) {$\Sigma x^2=105050$};
+        \node[right] at (7,2.4) {$\Sigma y=115$};
+        \node[right] at (7,1.9) {$\Sigma y^2=2375$};
+        \node[right] at (7,1.4) {$\Sigma xy=15460$};
+        \node[right] at (10,3.4) {$S_{xx}=1033.3$};
+        \node[right] at (10,2.9) {$S_{yy}=170.83$};
+        \node[right] at (10,2.4) {$S_{xy}=318.33$};
+        \node[right] at (10,1.5) {$n=6$};
+        \node[right] at (7,0.7) {Sample correlation coefficient};
+        \node[right] at (7,0.2) {$r=0.758$};
+        \node[right] at (7,-0.5) {Equation of $y$ on $x$ regression line:};
+        \node[right] at (7,-1) {$\hat{Y}=-21.4+0.308x$};
+        \draw[white] (-4,-1.3) rectangle (14.4,4.2);
+        \draw[-stealth] (0.1,0) -- (5.25,0) node[right] {$x$};
+        \draw[-stealth] (0,0.1) -- (0,3.25) node[above] {$y$}; 
+        \node at (2.5,-1) {Systolic blood pressure (mmHg)};
+        \node at (-2,1.8) {Body fat};
+        \node at (-2,1.2) {(\%)};
+        \foreach \x in {0.5,1,...,5}{
+        \draw (\x,0) -- (\x,-0.1);
+        }
+        \foreach \y in {0.5,1,...,3}{
+        \draw (0,\y) -- (-0.1,\y);
+        }
+        \node[left] at (0,0.5) {10};
+        \node[left] at (0,1.5) {20};
+        \node[left] at (0,2.5) {30};
+        \node[below] at (1,0) {110};
+        \node[below] at (2,0) {120};
+        \node[below] at (3,0) {130};
+        \node[below] at (4,0) {140};
+        \node[below] at (5,0) {150};
+        \draw[fill=black] (0.1*110-10,0.1*16-0.5) circle (0.05);
+\draw[fill=black] (0.1*120-10,0.1*9-0.5) circle (0.05);
+\draw[fill=black] (0.1*135-10,0.1*20-0.5) circle (0.05);
+\draw[fill=black] (0.1*135-10,0.1*22-0.5) circle (0.05);
+\draw[fill=black] (0.1*140-10,0.1*25-0.5) circle (0.05);
+\draw[fill=black] (0.1*150-10,0.1*23-0.5) circle (0.05);
+        \draw[semithick] (0.5,0.1*10.94-0.5) -- (5,0.1*24.8-0.5);
+    \end{tikzpicture}
+\end{center}
+
+\textbf{Context 4:} Researchers collect marks for 9 students randomly selected from a group of students taking both a maths test ($x$) and a physics test ($y$). The results are shown in the scatterplot below.
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[right] at (7,3.9) {Summary data for sample:};
+        \node[right] at (7,3.4) {$\Sigma x=549$};
+        \node[right] at (7,2.9) {$\Sigma x^2=35225$};
+        \node[right] at (7,2.4) {$\Sigma y=622$};
+        \node[right] at (7,1.9) {$\Sigma y^2=43780$};
+        \node[right] at (7,1.4) {$\Sigma xy=38370$};
+        \node[right] at (10,3.4) {$S_{xx}=1736$};
+        \node[right] at (10,2.9) {$S_{yy}=792.89$};
+        \node[right] at (10,2.4) {$S_{xy}=428$};
+        \node[right] at (10,1.5) {$n=9$};
+        \node[right] at (7,0.7) {Sample correlation coefficient};
+        \node[right] at (7,0.2) {$r=0.365$};
+        \node[right] at (7,-0.5) {Equation of $y$ on $x$ regression line:};
+        \node[right] at (7,-1) {$\hat{Y}=54.1+0.247x$};
+        \draw[white] (-4,-1.3) rectangle (14.4,4.2);
+        \draw[-stealth] (0.1,0) -- (5.25,0) node[right] {$x$};
+        \draw[-stealth] (0,0) -- (0,3.25) node[above] {$y$}; 
+        \node at (2.5,-1) {Maths test};
+        \node at (-2,1.5) {Physics test};
+        \foreach \x in {0.5,1,...,5}{
+        \draw (\x,0) -- (\x,-0.1);
+        }
+        \foreach \y in {0,0.5,...,3}{
+        \draw (0,\y) -- (-0.1,\y);
+        }
+        \node[left] at (0,0) {40};
+        \node[left] at (0,1) {60};
+        \node[left] at (0,2) {80};
+        \node[left] at (0,3) {100};
+        \node[below] at (1,0) {20};
+        \node[below] at (2,0) {40};
+        \node[below] at (3,0) {60};
+        \node[below] at (4,0) {80};
+        \node[below] at (5,0) {100};
+        \draw[fill=black] (5.5/2,7/2-2) circle (0.05);
+\draw[fill=black] (6.6/2,4.8/2-2) circle (0.05);
+\draw[fill=black] (4.2/2,3-2) circle (0.05);
+\draw[fill=black] (7.3/2,7.3/2-2) circle (0.05);
+\draw[fill=black] (8.1/2,7.9/2-2) circle (0.05);
+\draw[fill=black] (5.7/2,3.6-2) circle (0.05);
+\draw[fill=black] (3.2,6.9/2-2) circle (0.05);
+\draw[fill=black] (3.7,8.1/2-2) circle (0.05);
+\draw[fill=black] (3.7/2,3.5-2) circle (0.05);
+        \draw[semithick] (1,0.95) -- (4.5,1.816);
+    \end{tikzpicture}
+\end{center}
+
+\textbf{Context 5:} A scientist is investigating the effectiveness of a particular weed killer. She uses different concentrations of weed killer (mg/litre, $x$) and counts the number of surviving weeds (per 10 square metres, $y$) in a fixed area. The results were as follows.
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[right] at (7,3.9) {Summary data for sample:};
+        \node[right] at (7,3.4) {$\Sigma x=64$};
+        \node[right] at (7,2.9) {$\Sigma x^2=680$};
+        \node[right] at (7,2.4) {$\Sigma y=140$};
+        \node[right] at (7,1.9) {$\Sigma y^2=2882$};
+        \node[right] at (7,1.4) {$\Sigma xy=852$};
+        \node[right] at (10,3.4) {$S_{xx}=168$};
+        \node[right] at (10,2.9) {$S_{yy}=432$};
+        \node[right] at (10,2.4) {$S_{xy}=-268$};
+        \node[right] at (10,1.5) {$n=8$};
+        \node[right] at (7,0.7) {Sample correlation coefficient};
+        \node[right] at (7,0.2) {$r=-0.995$};
+        \node[right] at (7,-0.5) {Equation of $y$ on $x$ regression line:};
+        \node[right] at (7,-1) {$\hat{Y}=30.26-1.595x$};
+        \draw[white] (-4,-1.3) rectangle (14.4,4.2);
+        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
+        \draw[-stealth] (0,0) -- (0,3.25) node[above] {$y$}; 
+        \node at (2.5,-1) {Concentration (mg/L)};
+        \node at (-2.2,1.8) {No. of weeds};
+        \node at (-2.2,1.2) {(per 10$\text{m}^2$)};
+        \foreach \x in {0,0.5,...,5}{
+        \draw (\x,0) -- (\x,-0.1);
+        }
+        \foreach \y in {0,0.5,...,3}{
+        \draw (0,\y) -- (-0.1,\y);
+        }
+        \node[left] at (0,0) {0};
+        \node[left] at (0,1) {10};
+        \node[left] at (0,2) {20};
+        \node[left] at (0,3) {30};
+        \node[below] at (0,0) {0};
+        \node[below] at (1,0) {3};
+        \node[below] at (2,0) {6};
+        \node[below] at (3,0) {9};
+        \node[below] at (4,0) {12};
+        \node[below] at (5,0) {15};
+        \draw[fill=black] (0.33*1,3) circle (0.05);
+        \draw[fill=black] (0.33*3,2.4) circle (0.05);
+        \draw[fill=black] (0.33*5,2.2) circle (0.05);
+        \draw[fill=black] (0.33*7,1.9) circle (0.05);
+        \draw[fill=black] (0.33*9,1.6) circle (0.05);
+        \draw[fill=black] (0.33*11,1.3) circle (0.05);
+        \draw[fill=black] (0.33*13,1.0) circle (0.05);
+        \draw[fill=black] (0.33*15,0.6) circle (0.05);
+        \draw[semithick] (0.333,2.8666) -- (5,0.6337);
+    \end{tikzpicture}
+\end{center}
+
+\pagebreak
+
+## Calculating the Value of a Residual
+
+For any given $x_i$, the equation of the least squares regression line $\hat{Y_i}=a+bx_i$ gives a \textit{predicted} corresponding value $\hat{Y_i}$, referred to as a \textit{fitted} value, or \textbf{fit}. For any observed data point $(x_i,y_i)$, the value of $y_i$ may be called the \textbf{data} value.
+
+The difference between an observed data value $y_i$ and a corresponding fitted value $\hat{Y_i}$ is called a \textbf{residual}:
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[fill=black!10] (8.2,0.8) rectangle (13,2.3);
+        \draw[semithick] (6,0) -- (0,2) node[left] {$\hat{Y_i}=a+bx_i$};
+        \draw[fill=black] (3,2) circle (2pt) node[above] {$(x_i,y_i)$};
+        \draw[dashed] (3,1) -- (3,2);
+        \draw[-stealth] (4.5,2) -- (3.2,2);
+        \node[right] at (4.5,2) {Data, $y_i$};
+        \draw[-stealth] (4.5,1) -- (3.2,1);
+        \node[right] at (4.5,1) {Fit, $\hat{Y_i}$};
+        \draw[stealth-,dashed] (3.2,1.5) -- (8,1.5);
+        \node at (9.2,1.9) {Residual};
+        \node at (10.25,1.85) {$=$};
+        \node at (10.95,1.9) {Data};
+        \node at (11.67,1.85) {$-$};
+        \node at (12.25,1.9) {Fit};
+        \node at (10.25,1.15) {$=$};
+        \node at (10.95,1.2) {$y_i$};
+        \node at (11.67,1.15) {$-$};
+        \node at (12.25,1.2) {$\hat{Y_i}$};
+    \end{tikzpicture}
+\end{center}
+
+For data points which lie \textit{above} the regression line, their residual is \textit{positive}.
+
+For those which lie \textit{below} the line, their residual is \textit{negative}.
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} Students sitting a biology exam are given a mark for each of the two papers: theoretical ($x$) and practical ($y$). From a random sample of 12 students, the $y$ on $x$ regression line is calculated as $\hat{Y}=2.581+0.879x$. Calculate the residual for a student who gains:\\
+
+\text{(a)   } 16 in the theoretical test and 18 in the practical test.\\
+\text{(b)   } 10 in the theoretical test and 8 in the practical test.
+
+\tcblower
+\textbf{Solution:}
+
+\vspace{-0.8cm}
+\begin{center}
+    \begin{tikzpicture}
+        \node[right] at (6,3.5) {(a)};
+        \node[right] at (6,3) { $\hat{Y}=2.581+0.879\times 16=16.645$};
+        \node[right] at (6,2.5) {Residual $=18-16.645=1.355$};
+        \node[right] at (6,1.5) {(b)};
+        \node[right] at (6,1) { $\hat{Y}=2.581+0.879\times 10=11.371$};
+        \node[right] at (6,0.5) {Residual $=8-11.371=-3.371$};
+        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
+        \draw[-stealth] (0,0) -- (0,3.25) node[above] {$y$}; 
+        \node at (2.5,-1) {Theoretical mark};
+        \node at (-2,1.75) {Practical};
+        \node at (-2,1.25) {mark};
+        \foreach \x in {0,1,...,5}{
+        \draw (\x,0) -- (\x,-0.1);
+        }
+        \foreach \y in {0,0.6,...,3}{
+        \draw (0,\y) -- (-0.1,\y);
+        }
+        \node[left] at (0,0) {0};
+        \node[left] at (0,0.6) {5};
+        \node[left] at (0,1.2) {10};
+        \node[left] at (0,1.8) {15};
+        \node[left] at (0,2.4) {20};
+        \node[left] at (0,3.0) {25};
+        \node[below] at (0,0) {0};
+        \node[below] at (1,0) {5};
+        \node[below] at (2,0) {10};
+        \node[below] at (3,0) {15};
+        \node[below] at (4,0) {20};
+        \node[below] at (5,0) {25};
+\draw[fill=black] (5*0.2,6*0.12) circle (0.02);
+\draw[fill=black] (9*0.2,8*0.12) circle (0.02);
+\draw[fill=black] (7*0.2,9*0.12) circle (0.02);
+\draw[fill=black] (11*0.2,13*0.12) circle (0.02);
+\draw[fill=black] (20*0.2,20*0.12) circle (0.02);
+\draw[fill=black] (4*0.2,9*0.12) circle (0.02);
+\draw[fill=black] (6*0.2,8*0.12) circle (0.02);
+\draw[fill=black] (17*0.2,17*0.12) circle (0.02);
+\draw[fill=black] (12*0.2,14*0.12) circle (0.02);
+\draw[fill=black] (10*0.2,8*0.12) circle (0.03);
+\draw[thick] (10*0.2,8*0.12) -- (10*0.2,11.6*0.12);
+\draw[fill=black] (15*0.2,17*0.12) circle (0.02);
+\draw[fill=black] (16*0.2,18*0.12) circle (0.03);
+\draw[thick] (16*0.2,18*0.12) -- (16*0.2,16.8*0.12);
+\draw[semithick] (3*0.2,5.488*0.12) -- (22*0.2,22.189*0.12);
+\draw[stealth-] (10.6*0.2,9.5*0.12) -- (12*0.2,9*0.12) node[right] {$-3.371$};
+\draw[stealth-] (15.3*0.2,18.1*0.12) -- (13.6*0.2,20*0.12) node[left] {$1.355$};
+    \end{tikzpicture}
+\end{center}
+
+\end{tcolorbox}
+
+#### Exercise 18A {-}
+
+Referring to Contexts 1 to 5, calculate the residual for each of the following:
+
+\begin{enumerate}
+    \item From Context 1: A metal plate in the acid solution for 200 hours with 1.4\% mass loss.
+    \item From Context 2: A caffeinated drink with 400 calories and a carbohydrate content of 61 grams.
+    \item From Context 3: A patient with systolic blood pressure of 110 and body fat \% of 16.
+    \item From Context 4: A student who gained a maths mark of 74 and a physics mark of 81.
+    \item From Context 5: A weed killer concentration of 3 and 24 surviving weeds counted.
+\end{enumerate}
+
+\pagebreak
+
+## Estimating the Error Variance
+
+One of the assumptions made for the least squares regression model is that the variance of the errors is a constant for all $x_i$ (and $Y_i$), or:
+
+\vspace{-0.7cm}
+$$\text{V}(\varepsilon_i)=\sigma^2 \qquad \left(\text{where }\text{V}(Y_i)=\sigma^2\right) $$
+
+The error variance $\sigma^2$ is estimated by:
+
+\vspace{-0.7cm}
+$$s^2=\dfrac{SSR}{n-2}$$
+
+Where the (always positive) \textit{sum of squared residuals}, $SSR$, is calculated as: 
+
+\vspace{-0.3cm}
+$$SSR=\sum{ \left(y_i-\hat{Y_i}\right)^2} \qquad \text{or} \qquad SSR=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}$$
+
+\vspace{-0.2cm}
+Both the formula for estimating the error variance $\sigma^2$ and the more convenient second formula for the sum of squared residuals $SSR$ are given on page 5 of the SQA Data Booklet.
+
+\begin{tcolorbox}[title=Example,title filled,colframe=black!50]
+\textbf{Problem:} Students sitting a biology exam are given a mark for each of the two papers: theoretical ($x$) and practical ($y$). From a random sample of 12 students: $S_{xx}=290,S_{yy}=256.25,S_{xy}=255$.\\
+
+\text{(a)   } Calculate the sum of squared residuals for this data set.\\[0.1em]
+\text{(b)   } Obtain an estimate of the error variance.
+
+\tcblower
+\textbf{Solution:}
+
+\text{(a)   } $SSR=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=256.25-\dfrac{255^2}{290}=32.026$\\[0.5em]
+\text{(b)   } $s^2=\dfrac{SRR}{n-2}=\dfrac{32.026}{12-2}=3.203$
+\end{tcolorbox}
+
+#### Exercise 18B {-}
+
+\begin{enumerate}
+    \item Calculate the sum of squared residuals and hence estimate the error variance for each of Contexts 1 to 5.
+    \item The age in months of 30 randomly selected primary school pupils ($x$) and the length of their right foot in centimetres ($y$) were recorded, with the following results:
+     \begin{center}
+    \begin{tikzpicture}
+        \node[right] at (7,2.9) {Summary data for sample:};
+        \node[right] at (7,2.4) {$\Sigma x=2964$};
+        \node[right] at (7,1.9) {$\Sigma x^2=294248$};
+        \node[right] at (7,1.4) {$\Sigma y=577.3$};
+        \node[right] at (7,0.9) {$\Sigma y^2=11152.71$};
+        \node[right] at (7,0.4) {$\Sigma xy=57262.7$};
+        \node[right] at (7,-0.1) {$n=30$};
+        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
+        \draw[-stealth] (0,0.1) -- (0,3.25) node[above] {$y$}; 
+        \node at (2.5,-1) {Age (months)};
+        \node at (-2,1.75) {Foot length};
+        \node at (-2,1.25) {(cm)};
+        \foreach \x in {0,1,...,5}{
+        \draw (\x,0) -- (\x,-0.1);
+        }
+        \foreach \y in {0.5,1,...,3}{
+        \draw (0,\y) -- (-0.1,\y);
+        }
+        \node[left] at (0,0.5) {17};
+        \node[left] at (0,1) {18};
+        \node[left] at (0,1.5) {19};
+        \node[left] at (0,2) {20};
+        \node[left] at (0,2.5) {21};
+        \node[left] at (0,3) {22};
+        \node[below] at (0,0) {85};
+        \node[below] at (1,0) {90};
+        \node[below] at (2,0) {95};
+        \node[below] at (3,0) {100};
+        \node[below] at (4,0) {105};
+        \node[below] at (5,0) {110};
+\draw (1,1) circle (0.05);
+\draw (0.2,0.75) circle (0.05);
+\draw (4,2.1) circle (0.05);
+\draw (1.2,1.2) circle (0.05);
+\draw (0.4,0.699999999999999) circle (0.05);
+\draw (3.4,2.25) circle (0.05);
+\draw (0.6,0.75) circle (0.05);
+\draw (2,1.05) circle (0.05);
+\draw (4.2,2.2) circle (0.05);
+\draw (3.8,2.65) circle (0.05);
+\draw (1.8,1.15) circle (0.05);
+\draw (0.8,0.949999999999999) circle (0.05);
+\draw (3,1.5) circle (0.05);
+\draw (5,2.65) circle (0.05);
+\draw (4.4,2.05) circle (0.05);
+\draw (2.6,1.65) circle (0.05);
+\draw (3,1.75) circle (0.05);
+\draw (2,1.1) circle (0.05);
+\draw (4.2,2.15) circle (0.05);
+\draw (2.4,1.2) circle (0.05);
+\draw (4.8,2.55) circle (0.05);
+\draw (2.4,0.800000000000001) circle (0.05);
+\draw (3,1.6) circle (0.05);
+\draw (1.8,1.4) circle (0.05);
+\draw (2.8,1.75) circle (0.05);
+\draw (4.2,2) circle (0.05);
+\draw (3.4,2.2) circle (0.05);
+\draw (2,1.2) circle (0.05);
+\draw (3.8,2.35) circle (0.05);
+\draw (4.6,2) circle (0.05);
+\draw[semithick] (0.2*86-17,-8+0.5*16.986) -- (0.2*110-17,-8+0.5*20.986);
+    \end{tikzpicture}
+\end{center}
+    \begin{enumerate}
+        \item Find the equation of the least squares regression line of $y$ on $x$.
+        \item Estimate the error variance.
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+## Test for the Slope Parameter $\beta$
+
+There are three possibilities for the slope parameter $\beta$:
+
+\begin{center}
+        \begin{tikzpicture}
+            \draw[-stealth] (0,0.3) -- (4,0.3) node[right] {$x$};
+            \draw[-stealth] (6,0.3) -- (10,0.3) node[right] {$x$};
+            \draw[-stealth] (12,0.3) -- (16,0.3) node[right] {$x$};
+            \draw[-stealth] (0,0.3) -- (0,3) node[above] {$y$};
+            \draw[-stealth] (6,0.3) -- (6,3) node[above] {$y$};
+            \draw[-stealth] (12,0.3) -- (12,3) node[above] {$y$};
+            \node at (2,-0.2) {$\beta<0$};
+            \node at (8,-0.2) {$\beta=0$};
+            \node at (14,-0.2) {$\beta>0$};
+            \draw[thick] (0.5,0.5) -- (3.5,3.3);
+            \draw[thick] (6.5,1.5) -- (9.5,1.5);
+            \draw[thick] (12.5,2.8) -- (15.5,0.5);
+            \draw[fill=black!20] (1.0,0.9) circle (0.05);
+            \draw[fill=black!20] (1.2,1.5) circle (0.05);
+            \draw[fill=black!20] (1.6,1.2) circle (0.05);
+            \draw[fill=black!20] (1.9,1.9) circle (0.05);
+            \draw[fill=black!20] (2.2,2.5) circle (0.05);
+            \draw[fill=black!20] (2.6,2.1) circle (0.05);
+            \draw[fill=black!20] (2.8,2.7) circle (0.05);
+            \draw[fill=black!20] (3.1,2.6) circle (0.05);
+            \draw[fill=black!20] (6.7,2.1) circle (0.05);
+            \draw[fill=black!20] (7,1.2) circle (0.05);
+            \draw[fill=black!20] (7.6,2.2) circle (0.05);
+            \draw[fill=black!20] (7.8,0.8) circle (0.05);
+            \draw[fill=black!20] (8.1,1.6) circle (0.05);
+            \draw[fill=black!20] (8.5,1.2) circle (0.05);
+            \draw[fill=black!20] (8.9,2.7) circle (0.05);
+            \draw[fill=black!20] (9.2,1.9) circle (0.05);
+            \draw[fill=black!20] (12.9,2.5) circle (0.05);
+            \draw[fill=black!20] (13.1,1.9) circle (0.05);
+            \draw[fill=black!20] (13.5,1.8) circle (0.05);
+            \draw[fill=black!20] (13.8,2.1) circle (0.05);
+            \draw[fill=black!20] (14.1,1.3) circle (0.05);
+            \draw[fill=black!20] (14.5,1.8) circle (0.05);
+            \draw[fill=black!20] (14.8,1.3) circle (0.05);
+            \draw[fill=black!20] (15.2,0.5) circle (0.05);
+        \end{tikzpicture}    
+\end{center}
+
+In the case where $\beta=0$ it can be seen that knowing $x_i$ has no value in predicting $y_i$. In other words, a linear regression model is only \textbf{useful for prediction} in cases where the slope parameter is \textit{non-zero}, or $\beta \ne 0$. The \textit{parametric} \textbf{Test for Beta} assesses whether data from a sample provide evidence to suggest that this is the case. The test statistic below follows a $t$-distribution with $n-2$ degrees of freedom, and in this course the test will always be \textit{two-tailed}.
+
+\begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.33\textwidth}
+  \centering
+\begin{centering}
+\tcbset{width=6cm,height=2.6cm}
+\begin{tcolorbox}[adjusted title=Test for $\beta$ test statistic:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\vspace{0.1cm}
+$t_{n-2}=\dfrac{b\sqrt{S_{xx}}}{s}$
+\end{tcolorbox}
+\end{centering}
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.66\textwidth}
+  \centering
+\tcbset{width=12cm,height=2.6cm}
+\begin{tcolorbox}[adjusted title=Conditions for valid use of a test for $\beta$:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{itemize}
+    \item $\varepsilon_i$ are independent and identically distributed as $\text{N}(0,\sigma^2)$.
+    \item The data was obtained through random sampling.
+\end{itemize}
+\end{tcolorbox}
+\end{minipage}
+\end{figure}
+
+The conclusion must comment on the evidence for the model being useful for prediction in the given context.
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} A bivariate sample has summary statistics:
+
+\vspace{-0.3cm}
+\begin{center}
+  \begin{tabular}{ccccccccccc}
+      $\sum x=117$ & \quad & $\sum x^2=1869$ & \quad & $\sum y=660$ & \quad & $\sum y^2=54638$ & \quad & $\sum xy=9519$ & \quad & $n=8$
+  \end{tabular}
+\end{center}
+
+\vspace{-0.3cm}
+Test at the 1\% significance level for evidence that a linear regression model would be useful for prediction.
+
+\tcblower
+\textbf{Solution:}\\
+
+\begin{math}
+\begin{array}{ll}
+      H_0: & \beta=0\\
+      H_1: & \beta \ne 0
+    \end{array}
+\left]
+    \begin{array}{l}
+      \alpha=0.01\\
+      \textnormal{Two-tailed}
+    \end{array}
+  \right.
+\end{math}
+
+\vspace{0.2cm}
+
+$S_{xx}=157.875 \qquad  S_{yy}=188 \qquad S_{xy}=-133.5 \qquad b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{-133.5}{157.875}=-0.8456$\\[0.5em]
+
+$SSR=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=188-\dfrac{(-133.5)^2}{157.875}=75.11, \quad s=\sqrt{\dfrac{SSR}{n-2}}=\sqrt{\dfrac{75.11}{8-2}}=3.538$\\[1em]
+
+Test statistic: $t=\dfrac{b\sqrt{S_{xx}}}{s}=\dfrac{-0.8456\times \sqrt{157.875}}{3.538}=-3.003$
+\hspace{2.5cm}
+\begin{tikzpicture}[overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [draw=none, fill=black!70, domain=-3:-2.2] {gauss(x, 0, 1)} \closedcycle;
+\addplot [draw=none, fill=black!70, domain=2.2:3] {gauss(x, 0, 1)} \closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(-2.2,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\draw [semithick, black]  (axis cs:-2.2,0) -- (axis cs:-2.2,\valueA);
+\draw [semithick, black]  (axis cs:2.2,0) -- (axis cs:2.2,\valueA);
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 0,\valueB)  {$t_6$};
+\node[below] at (axis cs: -2.2, 0) {$-3.707$};
+\node[above] at (axis cs: -2.4,\valueA) {0.5\%};
+\node[below] at (axis cs: 2.2, 0) {$3.707$};
+\node[above] at (axis cs: 2.4,\valueA) {0.5\%};
+\end{axis}
+\end{tikzpicture}\\
+
+Critical value: $t_{6,0.995}=-3.707$\\
+
+Since $-3.003>-3.707$, do not reject $\text{H}_0$ at the 1\% level of significance. There is insufficient evidence to suggest that the slope parameter is not zero, and so no evidence that a linear model would be useful for prediction.
+
+\end{tcolorbox}
+
+\pagebreak
+
+#### Exercise 18C {-}
+
+\begin{enumerate}
+    \item Six metal plates were immersed in a weak acid solution for various lengths of time. Their percentage losses in mass were then measured and a scatterplot drawn of time in solution ($x$ hours) against mass loss ($y$\%). The equation of the least squares regression line for $y$ on $x$ was obtained.\\[0.5em] 
+    \textit{(See Context 1)}\\[0.5em]
+    Perform a test at the 5\% level of significance to assess whether there is evidence to suggest that a linear model is useful for prediction.
+    \item A scientist is investigating the effectiveness of a particular weed killer. She uses different concentrations of weed killer (mg/litre, $x$) and counts the number of surviving weeds (per 10 square metres, $y$) in a fixed area. The equation of the least squares regression line for $y$ on $x$ was obtained.\\[0.5em] 
+    \textit{(See Context 5)}\\[0.5em]
+    Assess at the 10\% level of significance whether the linear model is useful for prediction.
+    \item The age in months of 30 randomly selected primary school pupils ($x$) and the length of their right foot in centimetres ($y$) were recorded, with the following results:
+     \begin{center}
+    \begin{tikzpicture}
+        \node[right] at (7,2.9) {Summary data for sample:};
+        \node[right] at (7,2.4) {$\Sigma x=2964$};
+        \node[right] at (7,1.9) {$\Sigma x^2=294248$};
+        \node[right] at (7,1.4) {$\Sigma y=577.3$};
+        \node[right] at (7,0.9) {$\Sigma y^2=11152.71$};
+        \node[right] at (7,0.4) {$\Sigma xy=57262.7$};
+        \node[right] at (7,-0.1) {$n=30$};
+        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
+        \draw[-stealth] (0,0.1) -- (0,3.25) node[above] {$y$}; 
+        \node at (2.5,-1) {Age (months)};
+        \node at (-2,1.75) {Foot length};
+        \node at (-2,1.25) {(cm)};
+        \foreach \x in {0,1,...,5}{
+        \draw (\x,0) -- (\x,-0.1);
+        }
+        \foreach \y in {0.5,1,...,3}{
+        \draw (0,\y) -- (-0.1,\y);
+        }
+        \node[left] at (0,0.5) {17};
+        \node[left] at (0,1) {18};
+        \node[left] at (0,1.5) {19};
+        \node[left] at (0,2) {20};
+        \node[left] at (0,2.5) {21};
+        \node[left] at (0,3) {22};
+        \node[below] at (0,0) {85};
+        \node[below] at (1,0) {90};
+        \node[below] at (2,0) {95};
+        \node[below] at (3,0) {100};
+        \node[below] at (4,0) {105};
+        \node[below] at (5,0) {110};
+\draw (1,1) circle (0.05);
+\draw (0.2,0.75) circle (0.05);
+\draw (4,2.1) circle (0.05);
+\draw (1.2,1.2) circle (0.05);
+\draw (0.4,0.699999999999999) circle (0.05);
+\draw (3.4,2.25) circle (0.05);
+\draw (0.6,0.75) circle (0.05);
+\draw (2,1.05) circle (0.05);
+\draw (4.2,2.2) circle (0.05);
+\draw (3.8,2.65) circle (0.05);
+\draw (1.8,1.15) circle (0.05);
+\draw (0.8,0.949999999999999) circle (0.05);
+\draw (3,1.5) circle (0.05);
+\draw (5,2.65) circle (0.05);
+\draw (4.4,2.05) circle (0.05);
+\draw (2.6,1.65) circle (0.05);
+\draw (3,1.75) circle (0.05);
+\draw (2,1.1) circle (0.05);
+\draw (4.2,2.15) circle (0.05);
+\draw (2.4,1.2) circle (0.05);
+\draw (4.8,2.55) circle (0.05);
+\draw (2.4,0.800000000000001) circle (0.05);
+\draw (3,1.6) circle (0.05);
+\draw (1.8,1.4) circle (0.05);
+\draw (2.8,1.75) circle (0.05);
+\draw (4.2,2) circle (0.05);
+\draw (3.4,2.2) circle (0.05);
+\draw (2,1.2) circle (0.05);
+\draw (3.8,2.35) circle (0.05);
+\draw (4.6,2) circle (0.05);
+\draw[semithick] (0.2*86-17,-8+0.5*16.986) -- (0.2*110-17,-8+0.5*20.986);
+    \end{tikzpicture}
+\end{center}
+    Test at the 1\% significance level for evidence that the model is useful for prediction, stating any assumption made.
+    \item James Forbes was a Scottish physicist who, amongst other things, was interested in finding a way to estimate altitude from measurements of the boiling temperature of water. Some of his observations on boiling point ($y$, in $F^{\circ}$) and barometric pressure ($x$, in inches of mercury) are summarised below and shown in the scatterplot.
+    \begin{center}
+    \begin{tikzpicture}
+        \node[right] at (7,2.9) {Summary data for sample:};
+        \node[right] at (7,1.9) {$S_{xx}=145.94$};
+        \node[right] at (7,1.4) {$S_{yy}=530.78$};
+        \node[right] at (7,0.9) {$S_{xy}=277.54$};
+        \node[right] at (7,-0.1) {$n=17$};
+        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
+        \draw[-stealth] (0,0.1) -- (0,3.25) node[above] {$y$}; 
+        \node at (2.5,-1) {Barometric pressure (inches of mercury)};
+        \node at (-2.5,1.75) {Boiling point};
+        \node at (-2.5,1.25) {($F^{\circ}$)};
+        \foreach \x in {0.25,0.75,...,4.75}{
+        \draw (\x,0) -- (\x,-0.1);
+        }
+        \foreach \y in {0.5,1,...,3}{
+        \draw (0,\y) -- (-0.1,\y);
+        }
+        \node[left] at (0,0.5) {195};
+        \node[left] at (0,1.5) {205};
+        \node[left] at (0,2.5) {215};
+        \node[below] at (0.25,0) {21};
+        \node[below] at (1.25,0) {23};
+        \node[below] at (2.25,0) {25};
+        \node[below] at (3.25,0) {27};
+        \node[below] at (4.25,0) {29};
+        \draw[fill=black] (0.145,0.45) circle (0.03);
+\draw[fill=black] (0.145,0.430000000000001) circle (0.03);
+\draw[fill=black] (0.949999999999999,0.790000000000001) circle (0.03);
+\draw[fill=black] (1.085,0.840000000000001) circle (0.03);
+\draw[fill=black] (1.325,0.940000000000001) circle (0.03);
+\draw[fill=black] (1.425,0.990000000000001) circle (0.03);
+\draw[fill=black] (1.695,1.09) circle (0.03);
+\draw[fill=black] (1.745,1.11) circle (0.03);
+\draw[fill=black] (1.76,1.14) circle (0.03);
+\draw[fill=black] (1.755,1.13) circle (0.03);
+\draw[fill=black] (2.32,1.36) circle (0.03);
+\draw[fill=black] (3.035,1.46) circle (0.03);
+\draw[fill=black] (3.995,1.95) circle (0.03);
+\draw[fill=black] (3.63,1.86) circle (0.03);
+\draw[fill=black] (4.27,2.07) circle (0.03);
+\draw[fill=black] (4.69,2.19) circle (0.03);
+\draw[fill=black] (4.78,2.22) circle (0.03);
+\draw[semithick] (20.8*0.5-10.25,194.82*0.1-19) -- (30.5*0.5-10.25,213.25*0.1-19);
+    \end{tikzpicture}
+\end{center}
+The least squares regression line of $\hat{Y}=155.29+1.9018x$ was fitted. Test at the 1\% significance level if there is any evidence that the model is useful for prediction, stating any assumption made. 
+\end{enumerate}
+
+\pagebreak
+
+## Test for the Product Moment Correlation Coefficient $\rho$
+
+Pearson's Product Moment Correlation Coefficient, $r$, is a sample statistic which measures the strength of the linear association between two variables. It is an estimate of the population parameter $\rho$ (\textit{``rho''}), where $-1\leqslant \rho \leqslant 1$. If $\rho=0$ then there is no \textit{linear} relationship between the variables. Given a sample of bivariate data for which there exists \textit{no} linear relationship between the variables, it is regardless common for the sample to give a \textit{non-zero} value for $r$:
+
+\vspace{-0.3cm}
+\begin{center}
+        \begin{tikzpicture}
+            \draw[-stealth] (0,0) -- (5,0) node[right] {$x$};
+            \draw[-stealth] (0,0) -- (0,3) node[above] {$y$};
+            \node at (6.4,2.5) {Population:};
+            \node at (6.4,2) {$\rho=0$};
+            \node at (6.4,1.2) {Sample:};
+            \node at (6.4,0.7) {$r=0.639$};
+            \draw[-stealth] (10,0) -- (15,0) node[right] {$x$};
+            \draw[-stealth] (10,0) -- (10,3) node[above] {$y$};
+            \node at (16.4,2.5) {Population:};
+            \node at (16.4,2) {$\rho=0.791$};
+            \node at (16.4,1.2) {Sample:};
+            \node at (16.4,0.7) {$r=0.634$};
+            \draw[fill=black] (0.1,2.34770818082416) circle (0.02);
+\draw[fill=black] (0.22,2.79368786956234) circle (0.02);
+\draw[fill=black] (0.34,1.37527333327185) circle (0.02);
+\draw[fill=black] (0.46,0.462863826927576) circle (0.02);
+\draw[fill=black] (0.58,0.832120547559426) circle (0.02);
+\draw[fill=black] (0.7,0.977466672444625) circle (0.02);
+\draw[fill=black] (0.82,2.13562919813977) circle (0.02);
+\draw[fill=black] (0.94,2.43461909410002) circle (0.02);
+\draw[fill=black] (1.06,2.09021474968536) circle (0.02);
+\draw[fill=black] (1.18,0.180524842244121) circle (0.02);
+\draw[fill=black] (1.3,0.29299449616255) circle (0.02);
+\draw[fill=black] (1.42,1.27723060493561) circle (0.02);
+\draw[fill=black] (1.54,2.26889903753227) circle (0.02);
+\draw[fill=black] (1.66,0.458779206338241) circle (0.02);
+\draw[fill=black] (1.78,0.873953494127608) circle (0.02);
+\draw[fill=black] (1.9,0.69485592989896) circle (0.02);
+\draw[fill=black] (2.02,1.99165058618927) circle (0.02);
+\draw[fill=black] (2.14,2.70537869157037) circle (0.02);
+\draw[fill=black] (2.26,0.911159873945723) circle (0.02);
+\draw[fill=black] (2.38,0.343437834610027) circle (0.02);
+\draw[fill=black] (2.5,0.557157729405706) circle (0.02);
+\draw[fill=black] (2.62,1.61801022319613) circle (0.02);
+\draw[fill=black] (2.74,0.988658047087572) circle (0.02);
+\draw[fill=black] (2.86,0.490841646265215) circle (0.02);
+\draw[fill=black] (2.98,2.03704038064222) circle (0.02);
+\draw[fill=black] (3.1,0.828369120758586) circle (0.02);
+\draw[fill=black] (3.22,0.255044879456399) circle (0.02);
+\draw[fill=black] (3.34,0.356683970507042) circle (0.02);
+\draw[fill=black] (3.46,0.38503797313537) circle (0.02);
+\draw[fill=black] (3.58,2.57084235378016) circle (0.02);
+\draw[fill=black] (3.7,1.8831899790632) circle (0.02);
+\draw[fill=black] (3.82,2.59773248488414) circle (0.02);
+\draw[fill=black] (3.94,0.768841445829067) circle (0.02);
+\draw[fill=black] (4.06,1.39736107573322) circle (0.02);
+\draw[fill=black] (4.18,1.79240257409739) circle (0.02);
+\draw[fill=black] (4.3,0.549641875704002) circle (0.02);
+\draw[fill=black] (4.42,2.3441048789179) circle (0.02);
+\draw[fill=black] (4.54,1.07642296727348) circle (0.02);
+\draw[fill=black] (4.66,2.11526280943585) circle (0.02);
+\draw[fill=black] (4.78,2.61825807702573) circle (0.02);
+\draw[fill=black] (0.46,0.462863826927576) circle (0.06);
+\draw[fill=black] (0.58,0.832120547559426) circle (0.06);
+\draw[fill=black] (0.7,0.977466672444625) circle (0.06);
+\draw[fill=black] (1.42,1.27723060493561) circle (0.06);
+\draw[fill=black] (2.02,1.99165058618927) circle (0.06);
+\draw[fill=black] (2.14,2.70537869157037) circle (0.06);
+\draw[fill=black] (4.06,1.39736107573322) circle (0.06);
+\draw[fill=black] (4.42,2.3441048789179) circle (0.06);
+\draw[fill=black] (10.1,1.83764270356315) circle (0.02);
+\draw[fill=black] (10.22,1.39512528159486) circle (0.02);
+\draw[fill=black] (10.34,0.635258127572712) circle (0.02);
+\draw[fill=black] (10.46,1.87717140919239) circle (0.02);
+\draw[fill=black] (10.58,1.0279379293256) circle (0.02);
+\draw[fill=black] (10.7,0.675517790591569) circle (0.02);
+\draw[fill=black] (10.82,1.3710081475637) circle (0.02);
+\draw[fill=black] (10.94,1.1806849704819) circle (0.02);
+\draw[fill=black] (11.06,2.29027427917029) circle (0.02);
+\draw[fill=black] (11.18,1.99873382401404) circle (0.02);
+\draw[fill=black] (11.3,1.36225280764894) circle (0.02);
+\draw[fill=black] (11.42,1.77785802334281) circle (0.02);
+\draw[fill=black] (11.54,2.36147713659167) circle (0.02);
+\draw[fill=black] (11.66,2.29573535266873) circle (0.02);
+\draw[fill=black] (11.78,2.16563895911224) circle (0.02);
+\draw[fill=black] (11.9,1.86269471658907) circle (0.02);
+\draw[fill=black] (12.02,1.40291617402445) circle (0.02);
+\draw[fill=black] (12.14,1.41286893105611) circle (0.02);
+\draw[fill=black] (12.26,2.4547302410674) circle (0.02);
+\draw[fill=black] (12.38,2.27149215547395) circle (0.02);
+\draw[fill=black] (12.5,1.77844443686967) circle (0.02);
+\draw[fill=black] (12.62,1.61101022218317) circle (0.02);
+\draw[fill=black] (12.74,2.46) circle (0.02);
+\draw[fill=black] (12.86,2.35988240451072) circle (0.02);
+\draw[fill=black] (12.98,2.96580898968512) circle (0.02);
+\draw[fill=black] (13.1,2.29002142856586) circle (0.02);
+\draw[fill=black] (13.22,2.16092793310216) circle (0.02);
+\draw[fill=black] (13.34,3) circle (0.02);
+\draw[fill=black] (13.46,2.8) circle (0.02);
+\draw[fill=black] (13.58,2.5) circle (0.02);
+\draw[fill=black] (13.7,2.85159982097693) circle (0.02);
+\draw[fill=black] (13.82,2.48784457600194) circle (0.02);
+\draw[fill=black] (13.94,2.52841333461772) circle (0.02);
+\draw[fill=black] (14.06,2.98) circle (0.02);
+\draw[fill=black] (14.18,2.79507796051394) circle (0.02);
+\draw[fill=black] (14.3,3) circle (0.02);
+\draw[fill=black] (14.42,2.5) circle (0.02);
+\draw[fill=black] (14.54,2.9) circle (0.02);
+\draw[fill=black] (14.66,2.75732038574758) circle (0.02);
+\draw[fill=black] (14.78,2.6) circle (0.02);
+\draw[fill=black] (10.46,1.87717140919239) circle (0.06);
+\draw[fill=black] (11.06,1.3) circle (0.06);
+\draw[fill=black] (11.54,2.36147713659167) circle (0.06);
+\draw[fill=black] (12.38,2.27149215547395) circle (0.06);
+\draw[fill=black] (12.98,2.96580898968512) circle (0.06);
+\draw[fill=black] (13.34,1.7) circle (0.06);
+\draw[fill=black] (13.7,2.85159982097693) circle (0.06);
+\draw[fill=black] (14.18,2.79507796051394) circle (0.06);
+        \end{tikzpicture}    
+\end{center}
+
+\vspace{-0.3cm}
+The \textit{parametric} \textbf{Test for Rho} assesses a sample of bivariate data for evidence of a \textbf{linear association} between the variables, or $\rho\ne 0$. The test statistic below follows a $t_{n-2}$ distribution, and in this course the test will always be \textit{two-tailed}.
+
+\begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.33\textwidth}
+  \centering
+\begin{centering}
+\tcbset{width=6cm,height=2.6cm}
+\begin{tcolorbox}[adjusted title=Test for $\rho$ test statistic:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+$t_{n-2}=\dfrac{r\sqrt{n-2}}{\sqrt{1-r^2}}$
+\end{tcolorbox}
+\end{centering}
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.66\textwidth}
+  \centering
+\tcbset{width=12cm,height=2.6cm}
+\begin{tcolorbox}[adjusted title=Conditions for valid use of a test for $\rho$:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{itemize}
+    \item $\varepsilon_i$ are independent and identically distributed as $\text{N}(0,\sigma^2)$.
+    \item The data was obtained through random sampling.
+\end{itemize}
+\end{tcolorbox}
+\end{minipage}
+\end{figure}
+
+The conclusion must comment on the evidence for a linear association between the two variables in the given context.
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} A bivariate sample has summary statistics:
+
+\begin{center}
+  \begin{tabular}{ccccccccccc}
+      $\sum x=117$ & \quad & $\sum x^2=1869$ & \quad & $\sum y=660$ & \quad & $\sum y^2=54638$ & \quad & $\sum xy=9519$ & \quad & $n=8$
+  \end{tabular}
+\end{center}
+
+Test at the 1\% significance level for evidence of a linear association between $x$ and $y$.
+
+\tcblower
+\textbf{Solution:}\\[0.1em]
+
+\begin{math}
+\begin{array}{ll}
+      H_0: & \rho=0\\
+      H_1: & \rho \ne 0
+    \end{array}
+\left]
+    \begin{array}{l}
+      \alpha=0.01\\
+      \textnormal{Two-tailed}
+    \end{array}
+  \right.
+\end{math}
+
+\vspace{0.3cm}
+
+$S_{xx}=157.875 \qquad S_{yy}=188 \qquad S_{xy}=-133.5$\\[0.1em]
+
+$r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}=\dfrac{-133.5}{\sqrt{157.875\times 188}}=-0.7749$\\[1em]
+
+Test statistic: $t=\dfrac{r\sqrt{n-2}}{\sqrt{1-r^2}}=\dfrac{-0.7749\sqrt{8-2}}{\sqrt{1-(-0.7749)^2}}=-3.003$
+\hspace{1cm}
+\begin{tikzpicture}[overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [draw=none, fill=black!70, domain=-3:-2.2] {gauss(x, 0, 1)} \closedcycle;
+\addplot [draw=none, fill=black!70, domain=2.2:3] {gauss(x, 0, 1)} \closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(-2.2,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\draw [semithick, black]  (axis cs:-2.2,0) -- (axis cs:-2.2,\valueA);
+\draw [semithick, black]  (axis cs:2.2,0) -- (axis cs:2.2,\valueA);
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 0,\valueB)  {$t_6$};
+\node[below] at (axis cs: -2.2, 0) {$-3.707$};
+\node[above] at (axis cs: -2.4,\valueA) {0.5\%};
+\node[below] at (axis cs: 2.2, 0) {$3.707$};
+\node[above] at (axis cs: 2.4,\valueA) {0.5\%};
+\end{axis}
+\end{tikzpicture}\\
+
+Critical value: $t_{6,0.995}=-3.707$\\
+
+Since $-3.003>-3.707$, do not reject $\text{H}_0$ at the 1\% level of significance. There is insufficient evidence to suggest that there is a linear relationship between thw two variables.
+
+\end{tcolorbox}
+
+\pagebreak
+
+#### Exercise 18D {-}
+
+\begin{enumerate}
+    \item A researcher is wanting to know if there is a link between the number of calories ($x$) and the carbohydrate content ($y$) of different types of caffeinated drinks available at coffee shops. Summary statistics are obtained from a random sample of 22 caffeinated drink options from a range of coffee shops. \\[0.5em] 
+    \textit{(See Context 2)}\\[0.5em]
+    Perform a test at the 5\% level of significance to assess whether there is evidence to suggest that there is a linear relationship between the number of calories a caffeinated drink contains and its carbohydrate content.
+    \item Researchers collect marks for 9 students randomly selected from a group of students taking both a maths test ($x$) and a physics test ($y$).\\[0.5em] 
+    \textit{(See Context 4)}\\[0.5em]
+    Perform a test at the 10\% level of significance to assess the linear association.
+    \item A researcher laid a transect from the base of a tree and placed a quadrat at one metre intervals along the transect line. The number of seed dropped by the tree contained in each quadrat was recorded.
+     \begin{center}
+    \begin{tikzpicture}
+        \node[right] at (7,2.9) {Summary data for sample:};
+        \node[right] at (7,2.2) {$\Sigma x=21$};
+        \node[right] at (7,1.5) {$\Sigma x^2=91$};
+        \node[right] at (7,0.8) {$S_{yy}=54.833$};
+        \node[right] at (7,0.1) {$S_{xy}=3.5$};
+        \node[right] at (7,-0.6) {$n=30$};
+        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
+        \draw[-stealth] (0,0) -- (0,3.25) node[above] {$y$}; 
+        \node at (2.5,-1) {Distance from base (metres)};
+        \node at (-2,1.5) {No. of seeds};
+        \foreach \x in {0,0.8,...,4.8}{
+        \draw (\x,0) -- (\x,-0.1);
+        }
+        \foreach \y in {0,0.6,...,3}{
+        \draw (0,\y) -- (-0.1,\y);
+        }
+        \node[left] at (0,0) {0};
+        \node[left] at (0,0.6) {2};
+        \node[left] at (0,1.2) {4};
+        \node[left] at (0,1.8) {6};
+        \node[left] at (0,2.4) {8};
+        \node[left] at (0,3) {10};
+        \node[below] at (0,0) {0};
+        \node[below] at (0.8,0) {1};
+        \node[below] at (1.6,0) {2};
+        \node[below] at (2.4,0) {3};
+        \node[below] at (3.2,0) {4};
+        \node[below] at (4.0,0) {5};
+        \node[below] at (4.8,0) {6};
+        \draw[fill=black] (0.8,0*0.3) circle (0.06);
+        \draw[fill=black] (1.6,9*0.3) circle (0.06);
+        \draw[fill=black] (2.4,4*0.3) circle (0.06);
+        \draw[fill=black] (3.2,3*0.3) circle (0.06);
+        \draw[fill=black] (4,7*0.3) circle (0.06);
+        \draw[fill=black] (4.8,3*0.3) circle (0.06);
+    \end{tikzpicture}
+\end{center}
+        Calculate the sample product moment correlation coefficient and test at the 10\% significance level for a linear association between the variables.
+    \item When a type of metal bar is heated it expands. The amount by which it expands (in mm) and the increase in temperature (in $^{\circ}\text{C}$) for a random sample of 6 such bars heated to specific temperatures is recorded.
+    \begin{center}
+    \begin{tikzpicture}
+        \node[right] at (7,2.9) {Summary data for sample:};
+        \node[right] at (7,2.2) {$r=0.981$};
+        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
+        \draw[-stealth] (0,0) -- (0,3.25) node[above] {$y$}; 
+        \node at (2.5,-1) {Temperature rise ($^{\circ}\text{C}$)};
+        \node at (-2.5,1.5) {Expansion (mm)};
+        \foreach \x in {0,0.4,...,4.8}{
+        \draw (\x,0) -- (\x,-0.1);
+        }
+        \foreach \y in {0,0.5,...,3}{
+        \draw (0,\y) -- (-0.1,\y);
+        }
+        \node[left] at (0,0) {0};
+        \node[left] at (0,1) {10};
+        \node[left] at (0,2) {20};
+        \node[left] at (0,3) {30};
+        \node[below] at (0,0) {0};
+        \node[below] at (1.6,0) {100};
+        \node[below] at (3.2,0) {200};
+        \node[below] at (4.8,0) {300};
+        \draw[fill=black] (0.8,0.35) circle (0.06);
+        \draw[fill=black] (1.6,0.85) circle (0.06);
+        \draw[fill=black] (2.4,1.2) circle (0.06);
+        \draw[fill=black] (3.2,1.54) circle (0.06);
+        \draw[fill=black] (4,1.92) circle (0.06);
+        \draw[fill=black] (4.8,2.32) circle (0.06);
+    \end{tikzpicture}
+\end{center}
+        Use a parametric hypothesis test to assess, at the 0.1\% level of significance, the evidence for a linear association between temperature rise and expansion.
+\end{enumerate}
+
+\pagebreak
+
+## The Coefficient of Determination
+
+The *coefficient of determination*, $R^2$,is the proportion of the total variation in the response variable, $Y$, that is explained by the linear regression model.
+
+\begin{center}
+        \begin{tikzpicture}
+        \draw[fill=black!10] (6,2) rectangle (11,3.4);
+            \draw[-stealth] (0,0) -- (5,0) node[right] {$x$};
+            \draw[-stealth] (0,0) -- (0,3) node[above] {$y$};
+            \node at (2.5,0.7) {$R^2=0.1246$};
+            \draw[thick] (0.2,1.87+0.13*0.2) -- (4.8,1.87+0.13*4.8);
+            \draw[fill=black] (0.2,1.53373841023011) circle (0.03);
+\draw[fill=black] (0.4,1.20717964535332) circle (0.03);
+\draw[fill=black] (0.6,1.72251067887986) circle (0.03);
+\draw[fill=black] (0.8,2.11648810666721) circle (0.03);
+\draw[fill=black] (1,1.97650101823779) circle (0.03);
+\draw[fill=black] (1.2,1.52303291760533) circle (0.03);
+\draw[fill=black] (1.4,1.58992089360673) circle (0.03);
+\draw[fill=black] (1.6,2.80483627736993) circle (0.03);
+\draw[fill=black] (1.8,2.74061040424513) circle (0.03);
+\draw[fill=black] (2,2.84559934643717) circle (0.03);
+\draw[fill=black] (2.2,2.90524254023335) circle (0.03);
+\draw[fill=black] (2.4,2.38201538321828) circle (0.03);
+\draw[fill=black] (2.6,1.59873854386617) circle (0.03);
+\draw[fill=black] (2.8,2.90173502441664) circle (0.03);
+\draw[fill=black] (3,2.59999938622566) circle (0.03);
+\draw[fill=black] (3.2,2.5591860521887) circle (0.03);
+\draw[fill=black] (3.4,1.76705018101233) circle (0.03);
+\draw[fill=black] (3.6,1.86661649309301) circle (0.03);
+\draw[fill=black] (3.8,3.00434568581749) circle (0.03);
+\draw[fill=black] (4,2.29277113670136) circle (0.03);
+\draw[fill=black] (4.2,2.21107850467089) circle (0.03);
+\draw[fill=black] (4.4,2.02013969791051) circle (0.03);
+\draw[fill=black] (4.6,2.5745743227038) circle (0.03);
+\draw[fill=black] (4.8,1.98816925972809) circle (0.03);
+            \draw[-stealth] (12,0) -- (17,0) node[right] {$x$};
+            \draw[-stealth] (12,0) -- (12,3) node[above] {$y$};
+            \node at (16,2.5) {$R^2=0.9604$};
+            \draw[fill=black] (12.2,2.85798900535176) circle (0.03);
+            \draw[thick] (12.2,3-0.54*0.2) -- (16.8,3-0.54*4.8);
+\draw[fill=black] (12.4,2.60537287961341) circle (0.03);
+\draw[fill=black] (12.6,2.77018510784324) circle (0.03);
+\draw[fill=black] (12.8,2.66349862608913) circle (0.03);
+\draw[fill=black] (13,2.35990060265767) circle (0.03);
+\draw[fill=black] (13.2,2.30035706778736) circle (0.03);
+\draw[fill=black] (13.4,2.08602522426643) circle (0.03);
+\draw[fill=black] (13.6,2.25084122059611) circle (0.03);
+\draw[fill=black] (13.8,2.14551272622872) circle (0.03);
+\draw[fill=black] (14,1.81146604663732) circle (0.03);
+\draw[fill=black] (14.2,2.08407903013156) circle (0.03);
+\draw[fill=black] (14.4,1.50565270007012) circle (0.03);
+\draw[fill=black] (14.6,1.46149356269359) circle (0.03);
+\draw[fill=black] (14.8,1.39099215853279) circle (0.03);
+\draw[fill=black] (15,1.64671625827524) circle (0.03);
+\draw[fill=black] (15.2,1.21641922001981) circle (0.03);
+\draw[fill=black] (15.4,1.46251390454929) circle (0.03);
+\draw[fill=black] (15.6,0.938058516930767) circle (0.03);
+\draw[fill=black] (15.8,0.825017334308726) circle (0.03);
+\draw[fill=black] (16,0.823330020748936) circle (0.03);
+\draw[fill=black] (16.2,0.687053814962354) circle (0.03);
+\draw[fill=black] (16.4,0.731984300904749) circle (0.03);
+\draw[fill=black] (16.6,0.450020978572811) circle (0.03);
+\draw[fill=black] (16.8,0.301613948412619) circle (0.03);
+\node at (8.5,2.7) {$R^2=\dfrac{\text{explained variation}}{\text{total variantion}}$};
+\node at (8.5,0.8) {$\left(R^2=\dfrac{b^2S_{xx}}{S_{yy}}=\dfrac{(S_{xy})^2}{S_{xx}S_{yy}}\right)$};
+        \end{tikzpicture}    
+\end{center}
+
+For the linear regression models covered in this course, the coefficient of determination is connected to the *correlation coefficient*, $r$, by a simple relationship:
+
+\begin{center}
+        \begin{tikzpicture}
+        \draw[fill=black!10] (3.8,-0.5) rectangle (5.9,0.5);
+        \node[left] at (0,0) {$r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$};
+        \node at (2,0) {$\implies$};
+        \node[right] at (4,0) {$r^2=R^2$};
+        \end{tikzpicture}    
+\end{center}
+
+Everything above implies that $0\leqslant R^2 \leqslant 1$.
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} Students sitting a biology exam are given a mark for each of the two papers: theoretical ($x$) and practical ($y$). From a random sample of 12 students, the following summary statistics are obtained:
+
+\begin{center}
+    \begin{tabular}{ccccc}
+        $S_{xx}=290$ & $S_{yy}=256.25$ & $S_{xy}=255$ & $n=12$ & $r=0.935$
+    \end{tabular}
+\end{center}
+
+A linear regression model is proposed, and an equation for the regression line of $y$ on $x$ is obtained:
+
+\begin{center}
+    \begin{tabular}{c}
+        $\hat{Y}=2.581+0.879x$
+    \end{tabular}
+\end{center}
+
+Calculate the coefficient of determination and interpret this value in context.
+
+\tcblower
+\textbf{Solution:}\\
+
+$R^2=0.935^2=0.8742$.\\
+
+This suggests that 87.4\% of the total variation in practical scores can be explained by the linear model.
+
+\end{tcolorbox}
+
+#### Exercise 18E {-}
+
+\begin{enumerate}
+    \item For each of Contexts 1 to 5, calculate the coefficient of determination and interpret it in context.
+    \item The age in months of 30 randomly selected primary school pupils ($x$) and the length of their right foot in centimetres ($y$) were recorded, with the following summary data obtained:
+     \begin{center}
+        \begin{tabular}{cccccc}
+            $\Sigma x=2964$ & $\Sigma x^2=294248$ & $\Sigma y=577.3$ & $\Sigma y^2=11152.71$ & $\Sigma xy=57262.7$ & $n=30$
+        \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item Calculate the coefficient of determination.
+        \item Interpret the result from (a).
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+## Regression Line of $x$ on $y$
+
+All of the equations of least square regression lines calculated so far have been $y$ *on* $x$ regression lines, calculated with a goal of minimising errors when predicting $y$ *values*.
+
+If there is a need to predict an $x$ *value* based on a $y$ value then it is instead necessary to determine the equation of an $x$ *on* $y$ regression line. This takes the form:
+
+$$\hat{X}=a+by$$
+
+Where the values of $a$ and $b$ for differ from those required for an $y$ on $x$ line, and are given instead by:
+
+$$b=\dfrac{S_{xy}}{S_{yy}} \quad and \quad a=\bar{x}-b\bar{y}$$
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} Students sitting a biology exam are given a mark for each of the two papers: theoretical ($x$) and practical ($y$). From a random sample of 12 students, the following summary statistics are obtained:
+
+\begin{center}
+    \begin{tabular}{ccccc}
+        $\Sigma x=132$ & $\Sigma x^2 =1742$ & $\Sigma y=147$ & $\Sigma y^2=2057$ & $\Sigma xy=1872$\\[1em]
+        $S_{xx}=290$ & $S_{yy}=256.25$ & $S_{xy}=255$ & $n=12$ & $r=0.935$
+    \end{tabular}
+\end{center}
+
+Determine the equation for the least squares regression line of $x$ on $y$.
+
+\tcblower
+\textbf{Solution:}\\
+
+$b=\dfrac{S_{xy}}{S_{yy}}=\dfrac{255}{256.25}=0.995$\\[1em]
+
+$a=\bar{x}-b\bar{y}=\dfrac{132}{12}-0.995\times \dfrac{147}{12}=-1.189$\\[1em]
+
+$\hat{X}=-1.189+0.995y$
+
+\end{tcolorbox}
+
+#### Exercise 18F {-}
+
+For each of Contexts 1 to 5, determine the equation of the least squares regression line for $x$ on $y$, and hence calculate predicted values for each of the following.
+
+\begin{enumerate}
+    \item From Context 1: The time a metal plate spent in the acid solution if the mass loss was 2.1\%.
+    \item From Context 2: The calories contained in a caffeinated drink which has a carbohydrate content of 34 grams.
+    \item From Context 3: The systolic blood pressure of a patient whose body fat \% is 11.
+    \item From Context 4: The maths mark of a student who gained a physics mark of 75.
+    \item From Context 5: The weed killer concentration used if the area contained 8 weeds per $10\text{m}^2$.
+\end{enumerate}
+
+\pagebreak
+
+## Residual Plots
+
+When considering the use of a linear regression model for bivariate data, it is recommended to produce a plot of *residuals* ($\varepsilon_i$) against *fitted values* ($\hat{Y_i}$), which have been calculated using the sample regression line. The purpose of this is both to ascertain whether a linear regression model is *the most appropriate* model, as well as to judge the validity of several commonly required assumptions, including those required to obtain the estimates for $\alpha$ and $\beta$:
+
+\begin{center}
+    \begin{tabular}{ccc}
+        $\text{E}(\varepsilon_i)=0$ & $\quad$ \text{and} $\quad$ & $\text{V}(\varepsilon_i)=\sigma^2$
+    \end{tabular}
+\end{center}
+
+Below is an illustration of a standard scatterplot showing a sample of bivariate data on the left, with a $y$ on $x$ regression line included, and a residual plot for the same data on the right. The data points highlighted with larger circles on the $y$ against $x$ scatterplot have their residuals similarly highlighted on the residual plot.
+
+\begin{multicols}{2}
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[-stealth] (0,0.5) -- (8,0.5) node[right] {$x$};
+        \draw[-stealth] (0,0.5) -- (0,5.8) node[above] {$y$};
+        \draw[black!70,fill=black!70] (0.1,5.26251575069661) circle (0.08);
+\draw[black!70,fill=black!70] (0.2,2.54518519387378) circle (0.08);
+\draw[black!70,fill=black!70] (0.3,4.94397456083367) circle (0.08);
+\draw[black!70,fill=black!70] (0.4,4.3077337012418) circle (0.08);
+\draw[black!70,fill=black!70] (0.5,3.02631947164413) circle (0.03);
+\draw[black!70,fill=black!70] (0.6,4.5294872721478) circle (0.03);
+\draw[black!70,fill=black!70] (0.7,3.24048316054741) circle (0.03);
+\draw[black!70,fill=black!70] (0.8,5.3047077855341) circle (0.03);
+\draw[black!70,fill=black!70] (0.9,4.74669409179348) circle (0.03);
+\draw[black!70,fill=black!70] (1,5.09523102462853) circle (0.03);
+\draw[black!70,fill=black!70] (1.1,5.13549756912607) circle (0.03);
+\draw[black!70,fill=black!70] (1.2,3.05061338885558) circle (0.03);
+\draw[black!70,fill=black!70] (1.3,3.6882207300188) circle (0.03);
+\draw[black!70,fill=black!70] (1.4,2.72389332978817) circle (0.03);
+\draw[black!70,fill=black!70] (1.5,4.85712276110114) circle (0.03);
+\draw[black!70,fill=black!70] (1.6,2.82532100313241) circle (0.03);
+\draw[black!70,fill=black!70] (1.7,5.7341406876898) circle (0.03);
+\draw[black!70,fill=black!70] (1.8,4.18689238406436) circle (0.03);
+\draw[black!70,fill=black!70] (1.9,4.67967361262992) circle (0.03);
+\draw[black!70,fill=black!70] (2,3.42808713334134) circle (0.03);
+\draw[black!70,fill=black!70] (2.1,2.00440661310245) circle (0.03);
+\draw[black!70,fill=black!70] (2.2,3.90843892538833) circle (0.03);
+\draw[black!70,fill=black!70] (2.3,3.28174669022882) circle (0.03);
+\draw[black!70,fill=black!70] (2.4,2.81525019073297) circle (0.03);
+\draw[black!70,fill=black!70] (2.5,3.39493823522295) circle (0.03);
+\draw[black!70,fill=black!70] (2.6,1.49144950349502) circle (0.03);
+\draw[black!70,fill=black!70] (2.7,4.12241189212662) circle (0.03);
+\draw[black!70,fill=black!70] (2.8,3.80042522256035) circle (0.03);
+\draw[black!70,fill=black!70] (2.9,4.35847363577588) circle (0.03);
+\draw[black!70,fill=black!70] (3,2.75533180822776) circle (0.03);
+\draw[black!70,fill=black!70] (3.1,2.98380887888615) circle (0.03);
+\draw[black!70,fill=black!70] (3.2,4.70135631193438) circle (0.03);
+\draw[black!70,fill=black!70] (3.3,1.45574088705854) circle (0.03);
+\draw[black!70,fill=black!70] (3.4,1.30310826056333) circle (0.03);
+\draw[black!70,fill=black!70] (3.5,2.59618984278549) circle (0.03);
+\draw[black!70,fill=black!70] (3.6,3.14741346693877) circle (0.03);
+\draw[black!70,fill=black!70] (3.7,3.49681509372844) circle (0.03);
+\draw[black!70,fill=black!70] (3.8,2.13795847007679) circle (0.03);
+\draw[black!70,fill=black!70] (3.9,2.5303416081698) circle (0.03);
+\draw[black!70,fill=black!70] (4,3.47889408357835) circle (0.03);
+\draw[black!70,fill=black!70] (4.1,1.38925571181777) circle (0.03);
+\draw[black!70,fill=black!70] (4.2,2.87696661484075) circle (0.03);
+\draw[black!70,fill=black!70] (4.3,4.62927706442189) circle (0.03);
+\draw[black!70,fill=black!70] (4.4,2.16204943571132) circle (0.03);
+\draw[black!70,fill=black!70] (4.5,2.97386123031649) circle (0.03);
+\draw[black!70,fill=black!70] (4.6,1.49155291809845) circle (0.03);
+\draw[black!70,fill=black!70] (4.7,2.8242397712238) circle (0.03);
+\draw[black!70,fill=black!70] (4.8,1.4720351925848) circle (0.03);
+\draw[black!70,fill=black!70] (4.9,1.85109577233009) circle (0.03);
+\draw[black!70,fill=black!70] (5,1.86021115008274) circle (0.03);
+\draw[black!70,fill=black!70] (5.1,2.30823054267415) circle (0.03);
+\draw[black!70,fill=black!70] (5.2,2.44010102249791) circle (0.03);
+\draw[black!70,fill=black!70] (5.3,1.42544494849851) circle (0.03);
+\draw[black!70,fill=black!70] (5.4,3.92509731490062) circle (0.03);
+\draw[black!70,fill=black!70] (5.5,2.25618984933457) circle (0.03);
+\draw[black!70,fill=black!70] (5.6,2.11359871307397) circle (0.03);
+\draw[black!70,fill=black!70] (5.7,1.74370065581412) circle (0.03);
+\draw[black!70,fill=black!70] (5.8,2.92192459434618) circle (0.03);
+\draw[black!70,fill=black!70] (5.9,3.84201099346021) circle (0.03);
+\draw[black!70,fill=black!70] (5.99999999999999,2.74732751193524) circle (0.03);
+\draw[black!70,fill=black!70] (6.09999999999999,3.07296956676919) circle (0.03);
+\draw[black!70,fill=black!70] (6.19999999999999,1.34696874975073) circle (0.03);
+\draw[black!70,fill=black!70] (6.29999999999999,2.29676736680231) circle (0.03);
+\draw[black!70,fill=black!70] (6.39999999999999,3.227649512938) circle (0.03);
+\draw[black!70,fill=black!70] (6.49999999999999,2.042060581004) circle (0.03);
+\draw[black!70,fill=black!70] (6.59999999999999,3.0074357480903) circle (0.03);
+\draw[black!70,fill=black!70] (6.69999999999999,2.56795566351627) circle (0.03);
+\draw[black!70,fill=black!70] (6.79999999999999,3.02830338295161) circle (0.03);
+\draw[black!70,fill=black!70] (6.89999999999999,1.29077763477967) circle (0.03);
+\draw[black!70,fill=black!70] (6.99999999999999,1.68912715107096) circle (0.03);
+\draw[black!70,fill=black!70] (7.09999999999999,2.24577005125475) circle (0.03);
+\draw[black!70,fill=black!70] (7.19999999999999,3.57708965705952) circle (0.03);
+\draw[black!70,fill=black!70] (7.29999999999999,3.31715586550522) circle (0.03);
+\draw[black!70,fill=black!70] (7.39999999999999,1.30438727167411) circle (0.03);
+\draw[black!70,fill=black!70] (7.49999999999999,1.73644640890972) circle (0.03);
+\draw[black!70,fill=black!70] (7.59999999999999,0.695651117483512) circle (0.03);
+\draw[black!70,fill=black!70] (7.69999999999999,0.532005292091219) circle (0.03);
+\draw[black!70,fill=black!70] (7.79999999999999,2.57028258591851) circle (0.03);
+\draw[black!70,fill=black!70] (7.89999999999999,1.97901943239127) circle (0.03);
+    \draw[thick] (0.1,4.23-0.3*0.1) -- (7.9,4.23-0.3*7.9) node[right] {$\hat{Y}$};
+    \node at (4,6.05) {\textbf{Scatterplot of $y$ against $x$}};
+    \end{tikzpicture}
+\end{center}
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw (3,-2.5) rectangle (9,2.55);
+        \draw[dashed] (3,0) -- (9,0);
+        \draw[black!70,fill=black!70] (8.39307409253776,1.06597870442773) circle (0.08);
+\draw[black!70,fill=black!70] (8.32968519061489,-1.61965740143367) circle (0.08);
+\draw[black!70,fill=black!70] (8.26629628869203,0.810826416487654) circle (0.08);
+\draw[black!70,fill=black!70] (8.20290738676917,0.20628000785721) circle (0.08);
+\draw[black!70,fill=black!70] (8.13951848484631,-1.04343977077903) circle (0.03);
+\draw[black!70,fill=black!70] (8.07612958292345,0.491422480686081) circle (0.03);
+\draw[black!70,fill=black!70] (8.01274068100058,-0.76588717995288) circle (0.03);
+\draw[black!70,fill=black!70] (7.94935177907772,1.33003189599524) circle (0.03);
+\draw[black!70,fill=black!70] (7.88596287715486,0.803712653216053) circle (0.03);
+\draw[black!70,fill=black!70] (7.822573975232,1.18394403701253) circle (0.03);
+\draw[black!70,fill=black!70] (7.75918507330913,1.2559050324715) circle (0.03);
+\draw[black!70,fill=black!70] (7.69579617138627,-0.797284696837558) circle (0.03);
+\draw[black!70,fill=black!70] (7.63240726946341,-0.127982904712902) circle (0.03);
+\draw[black!70,fill=black!70] (7.56901836754055,-1.0606158539821) circle (0.03);
+\draw[black!70,fill=black!70] (7.50562946561769,1.10430802829229) circle (0.03);
+\draw[black!70,fill=black!70] (7.44224056369482,-0.895799278715006) circle (0.03);
+\draw[black!70,fill=black!70] (7.37885166177196,2.04471485680382) circle (0.03);
+\draw[black!70,fill=black!70] (7.3154627598491,0.529161004139815) circle (0.03);
+\draw[black!70,fill=black!70] (7.25207385792624,1.0536366836668) circle (0.03);
+\draw[black!70,fill=black!70] (7.18868495600337,-0.166255344660351) circle (0.03);
+\draw[black!70,fill=black!70] (7.12529605408051,-1.55824141393781) circle (0.03);
+\draw[black!70,fill=black!70] (7.06190715215765,0.377485349309505) circle (0.03);
+\draw[black!70,fill=black!70] (6.99851825023479,-0.217512434888576) circle (0.03);
+\draw[black!70,fill=black!70] (6.93512934831192,-0.652314483422991) circle (0.03);
+\draw[black!70,fill=black!70] (6.87174044638906,-0.0409319879715797) circle (0.03);
+\draw[black!70,fill=black!70] (6.8083515444662,-1.91272626873808) circle (0.03);
+\draw[black!70,fill=black!70] (6.74496264254334,0.74993057085495) circle (0.03);
+\draw[black!70,fill=black!70] (6.68157374062048,0.459638352250112) circle (0.03);
+\draw[black!70,fill=black!70] (6.61818483869761,1.04938121642708) circle (0.03);
+\draw[black!70,fill=black!70] (6.55479593677475,-0.522066160159615) circle (0.03);
+\draw[black!70,fill=black!70] (6.49140703485189,-0.26189463853979) circle (0.03);
+\draw[black!70,fill=black!70] (6.42801813292903,1.48734724546986) circle (0.03);
+\draw[black!70,fill=black!70] (6.36462923100616,-1.72657372844454) circle (0.03);
+\draw[black!70,fill=black!70] (6.3012403290833,-1.84751190397833) circle (0.03);
+\draw[black!70,fill=black!70] (6.23785142716044,-0.522735870794731) circle (0.03);
+\draw[black!70,fill=black!70] (6.17446252523758,0.0601822043199776) circle (0.03);
+\draw[black!70,fill=black!70] (6.11107362331472,0.441278282071078) circle (0.03);
+\draw[black!70,fill=black!70] (6.04768472139185,-0.88588389061914) circle (0.03);
+\draw[black!70,fill=black!70] (5.98429581946899,-0.461806301564692) circle (0.03);
+\draw[black!70,fill=black!70] (5.92090691754613,0.51844062480529) circle (0.03);
+\draw[black!70,fill=black!70] (5.85751801562327,-1.53950329599386) circle (0.03);
+\draw[black!70,fill=black!70] (5.79412911370041,-0.0200979420094498) circle (0.03);
+\draw[black!70,fill=black!70] (5.73074021177754,1.76390695853312) circle (0.03);
+\draw[black!70,fill=black!70] (5.66735130985468,-0.671626219216023) circle (0.03);
+\draw[black!70,fill=black!70] (5.60396240793182,0.171880026350582) circle (0.03);
+\draw[black!70,fill=black!70] (5.54057350600896,-1.27873383490603) circle (0.03);
+\draw[black!70,fill=black!70] (5.4771846040861,0.0856474691807509) circle (0.03);
+\draw[black!70,fill=black!70] (5.41379570216323,-1.23486265849681) circle (0.03);
+\draw[black!70,fill=black!70] (5.35040680024037,-0.8241076277901) circle (0.03);
+\draw[black!70,fill=black!70] (5.28701789831751,-0.783297799076014) circle (0.03);
+\draw[black!70,fill=black!70] (5.22362899639465,-0.303583955523175) circle (0.03);
+\draw[black!70,fill=black!70] (5.16024009447178,-0.140019024737982) circle (0.03);
+\draw[black!70,fill=black!70] (5.09685119254892,-1.12298064777596) circle (0.03);
+\draw[black!70,fill=black!70] (5.03346229062606,1.40836616958759) circle (0.03);
+\draw[black!70,fill=black!70] (4.9700733887032,-0.228846845017033) circle (0.03);
+\draw[black!70,fill=black!70] (4.90668448678034,-0.339743530316203) circle (0.03);
+\draw[black!70,fill=black!70] (4.84329558485748,-0.67794713661462) circle (0.03);
+\draw[black!70,fill=black!70] (4.77990668293461,0.531971252878876) circle (0.03);
+\draw[black!70,fill=black!70] (4.71651778101175,1.48375210295433) circle (0.03);
+\draw[black!70,fill=black!70] (4.65312887908889,0.420763072390794) circle (0.03);
+\draw[black!70,fill=black!70] (4.58973997716603,0.77809957818618) circle (0.03);
+\draw[black!70,fill=black!70] (4.52635107524316,-0.916206787870849) circle (0.03);
+\draw[black!70,fill=black!70] (4.4629621733203,0.0652862801421619) circle (0.03);
+\draw[black!70,fill=black!70] (4.39957327139744,1.02786287723927) circle (0.03);
+\draw[black!70,fill=black!70] (4.33618436947458,-0.126031603733287) circle (0.03);
+\draw[black!70,fill=black!70] (4.27279546755172,0.871038014314441) circle (0.03);
+\draw[black!70,fill=black!70] (4.20940656562886,0.463252380701839) circle (0.03);
+\draw[black!70,fill=black!70] (4.14601766370599,0.955294551098615) circle (0.03);
+\draw[black!70,fill=black!70] (4.08262876178313,-0.750536746111899) circle (0.03);
+\draw[black!70,fill=black!70] (4.01923985986027,-0.320492778859177) circle (0.03);
+\draw[black!70,fill=black!70] (3.95585095793741,0.267844572286051) circle (0.03);
+\draw[black!70,fill=black!70] (3.89246205601455,1.63085862905224) circle (0.03);
+\draw[black!70,fill=black!70] (3.82907315409168,1.40261928845938) circle (0.03);
+\draw[black!70,fill=black!70] (3.76568425216882,-0.578454854410304) circle (0.03);
+\draw[black!70,fill=black!70] (3.70229535024596,-0.114701266213262) circle (0.03);
+\draw[black!70,fill=black!70] (3.6389064483231,-1.12380210667804) circle (0.03);
+\draw[black!70,fill=black!70] (3.57551754640024,-1.2557534811089) circle (0.03);
+\draw[black!70,fill=black!70] (3.51212864447737,0.814218263679825) circle (0.03);
+\draw[black!70,fill=black!70] (3.44873974255451,0.254649561114014) circle (0.03);
+    \node at (6,-3) {Fitted values};
+    \node at (6,3.05) {\textbf{Residual plot}};
+    \node[rotate=90] at (2.2,0) {Residuals};
+    \node[left] at (3,0) {$0$};
+    \end{tikzpicture}
+\end{center}
+
+\end{multicols}
+
+\vspace{-1cm}
+It should be observed that the residual plot broadly appears to show:
+
+\vspace{-0.2cm}
+\begin{center}
+    \begin{tabular}{ccc}
+        A random scatter of points... & $\qquad$ & \\
+        ...centred on zero... & & $\text{E}(\varepsilon_i)=0$\\
+        ...with a constant variance. & & $\text{V}(\varepsilon_i)=\sigma^2$
+    \end{tabular}
+\end{center}
+
+\vspace{-0.2cm}
+This means that the residual plot would give no reason to doubt the assumptions made regarding the errors. This *ideal* residual plot would suggest that the linear regression model is **appropriate**.
+
+The following residual plots are accompanied with relevant comments and suitable conclusions. Note that if *any* of *"random scatter"*, *"centred on zero"* or *"constant variance"* are contradicted then the linear model is *not appropriate*.
+
+\begin{multicols}{2}
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw (3,-1.75) rectangle (9,1.75);
+        \draw[dashed] (3,0) -- (9,0);
+\draw[black!70,fill=black!70] (3.1,-0.00034972250223477) circle (0.03);
+\draw[black!70,fill=black!70] (3.15,0.00192969140648186) circle (0.03);
+\draw[black!70,fill=black!70] (3.2,0.0148089692536681) circle (0.03);
+\draw[black!70,fill=black!70] (3.25,0.0713688682843461) circle (0.03);
+\draw[black!70,fill=black!70] (3.3,-0.00857312285369944) circle (0.03);
+\draw[black!70,fill=black!70] (3.35,-0.0271590084373389) circle (0.03);
+\draw[black!70,fill=black!70] (3.4,0.0478702243070361) circle (0.03);
+\draw[black!70,fill=black!70] (3.45,-0.0722265212108785) circle (0.03);
+\draw[black!70,fill=black!70] (3.5,0.0251847089194961) circle (0.03);
+\draw[black!70,fill=black!70] (3.55,-0.0669249309989143) circle (0.03);
+\draw[black!70,fill=black!70] (3.6,-0.0452533303039277) circle (0.03);
+\draw[black!70,fill=black!70] (3.65,0.00920662060688498) circle (0.03);
+\draw[black!70,fill=black!70] (3.7,-0.046939325265794) circle (0.03);
+\draw[black!70,fill=black!70] (3.75,-0.0518107918051613) circle (0.03);
+\draw[black!70,fill=black!70] (3.8,0.150302302582964) circle (0.03);
+\draw[black!70,fill=black!70] (3.85,0.1019755248277) circle (0.03);
+\draw[black!70,fill=black!70] (3.9,0.0778428960945765) circle (0.03);
+\draw[black!70,fill=black!70] (3.95,-0.0184552344121524) circle (0.03);
+\draw[black!70,fill=black!70] (4,-0.0975288261662665) circle (0.03);
+\draw[black!70,fill=black!70] (4.05,0.200179194670449) circle (0.03);
+\draw[black!70,fill=black!70] (4.1,0.034936142135171) circle (0.03);
+\draw[black!70,fill=black!70] (4.15,0.154869593035252) circle (0.03);
+\draw[black!70,fill=black!70] (4.2,0.0639033986725278) circle (0.03);
+\draw[black!70,fill=black!70] (4.25,0.105681421038329) circle (0.03);
+\draw[black!70,fill=black!70] (4.3,-0.258471996749209) circle (0.03);
+\draw[black!70,fill=black!70] (4.35,0.107655221345588) circle (0.03);
+\draw[black!70,fill=black!70] (4.4,0.00735116751424428) circle (0.03);
+\draw[black!70,fill=black!70] (4.45,-0.0679236978518175) circle (0.03);
+\draw[black!70,fill=black!70] (4.5,-0.0143314360624302) circle (0.03);
+\draw[black!70,fill=black!70] (4.55,-0.0118375612454906) circle (0.03);
+\draw[black!70,fill=black!70] (4.6,-0.174152376981727) circle (0.03);
+\draw[black!70,fill=black!70] (4.65,0.0884037270756294) circle (0.03);
+\draw[black!70,fill=black!70] (4.69999999999999,0.309123767057477) circle (0.03);
+\draw[black!70,fill=black!70] (4.74999999999999,-0.119632848129943) circle (0.03);
+\draw[black!70,fill=black!70] (4.79999999999999,-0.225049309186489) circle (0.03);
+\draw[black!70,fill=black!70] (4.84999999999999,0.0979180454474191) circle (0.03);
+\draw[black!70,fill=black!70] (4.89999999999999,-0.252517512840939) circle (0.03);
+\draw[black!70,fill=black!70] (4.94999999999999,-0.232258842697809) circle (0.03);
+\draw[black!70,fill=black!70] (4.99999999999999,-0.0131110720555114) circle (0.03);
+\draw[black!70,fill=black!70] (5.04999999999999,-0.223958977330593) circle (0.03);
+\draw[black!70,fill=black!70] (5.09999999999999,-0.193420134114141) circle (0.03);
+\draw[black!70,fill=black!70] (5.14999999999999,-0.000422672843190733) circle (0.03);
+\draw[black!70,fill=black!70] (5.19999999999999,-0.258135683411092) circle (0.03);
+\draw[black!70,fill=black!70] (5.24999999999999,-0.0194366195422005) circle (0.03);
+\draw[black!70,fill=black!70] (5.29999999999999,0.135618009884928) circle (0.03);
+\draw[black!70,fill=black!70] (5.34999999999999,0.317019248276691) circle (0.03);
+\draw[black!70,fill=black!70] (5.39999999999999,0.126596591350242) circle (0.03);
+\draw[black!70,fill=black!70] (5.44999999999999,-0.111064496121585) circle (0.03);
+\draw[black!70,fill=black!70] (5.49999999999999,0.159303744785198) circle (0.03);
+\draw[black!70,fill=black!70] (5.54999999999999,0.0327119611583428) circle (0.03);
+\draw[black!70,fill=black!70] (5.59999999999999,-0.505784137428986) circle (0.03);
+\draw[black!70,fill=black!70] (5.64999999999999,0.0922150479331485) circle (0.03);
+\draw[black!70,fill=black!70] (5.69999999999999,0.0406060416536237) circle (0.03);
+\draw[black!70,fill=black!70] (5.74999999999999,-0.540268674356122) circle (0.03);
+\draw[black!70,fill=black!70] (5.79999999999999,0.157100928483834) circle (0.03);
+\draw[black!70,fill=black!70] (5.84999999999999,0.811682308082173) circle (0.03);
+\draw[black!70,fill=black!70] (5.89999999999999,-0.185695964403589) circle (0.03);
+\draw[black!70,fill=black!70] (5.94999999999999,-0.289610493028936) circle (0.03);
+\draw[black!70,fill=black!70] (5.99999999999999,0.141172111597721) circle (0.03);
+\draw[black!70,fill=black!70] (6.04999999999999,0.620429005927803) circle (0.03);
+\draw[black!70,fill=black!70] (6.09999999999999,0.00995260255082819) circle (0.03);
+\draw[black!70,fill=black!70] (6.14999999999999,0.107405239652283) circle (0.03);
+\draw[black!70,fill=black!70] (6.19999999999999,-0.423741707925348) circle (0.03);
+\draw[black!70,fill=black!70] (6.24999999999999,0.309911430830035) circle (0.03);
+\draw[black!70,fill=black!70] (6.29999999999999,0.00326324555336061) circle (0.03);
+\draw[black!70,fill=black!70] (6.34999999999999,-0.2961767895931) circle (0.03);
+\draw[black!70,fill=black!70] (6.39999999999999,-0.321912258683097) circle (0.03);
+\draw[black!70,fill=black!70] (6.44999999999999,0.0657868580096549) circle (0.03);
+\draw[black!70,fill=black!70] (6.49999999999999,-0.386146922618539) circle (0.03);
+\draw[black!70,fill=black!70] (6.54999999999999,-0.0343312205723217) circle (0.03);
+\draw[black!70,fill=black!70] (6.59999999999999,-0.133169790006484) circle (0.03);
+\draw[black!70,fill=black!70] (6.64999999999999,0.239968022262098) circle (0.03);
+\draw[black!70,fill=black!70] (6.69999999999999,0.572893577158608) circle (0.03);
+\draw[black!70,fill=black!70] (6.74999999999999,-0.448858978078512) circle (0.03);
+\draw[black!70,fill=black!70] (6.79999999999999,0.332582949273135) circle (0.03);
+\draw[black!70,fill=black!70] (6.84999999999999,-0.363329575072144) circle (0.03);
+\draw[black!70,fill=black!70] (6.89999999999999,-1.37797551487362) circle (0.03);
+\draw[black!70,fill=black!70] (6.94999999999999,-0.208801296942612) circle (0.03);
+\draw[black!70,fill=black!70] (6.99999999999999,-0.295905138013014) circle (0.03);
+\draw[black!70,fill=black!70] (7.04999999999999,-0.720899086098805) circle (0.03);
+\draw[black!70,fill=black!70] (7.09999999999999,-0.278711412791372) circle (0.03);
+\draw[black!70,fill=black!70] (7.14999999999999,0.190324468716567) circle (0.03);
+\draw[black!70,fill=black!70] (7.19999999999999,0.261479527647582) circle (0.03);
+\draw[black!70,fill=black!70] (7.24999999999999,-0.362615609077132) circle (0.03);
+\draw[black!70,fill=black!70] (7.29999999999999,-0.300319610899738) circle (0.03);
+\draw[black!70,fill=black!70] (7.34999999999999,0.0673155337699674) circle (0.03);
+\draw[black!70,fill=black!70] (7.39999999999999,0.191570320272909) circle (0.03);
+\draw[black!70,fill=black!70] (7.44999999999999,-0.196934947498563) circle (0.03);
+\draw[black!70,fill=black!70] (7.49999999999998,-0.0920820988444061) circle (0.03);
+\draw[black!70,fill=black!70] (7.54999999999998,-0.242768278853417) circle (0.03);
+\draw[black!70,fill=black!70] (7.59999999999998,0.990393439631816) circle (0.03);
+\draw[black!70,fill=black!70] (7.64999999999998,0.0191929699963674) circle (0.03);
+\draw[black!70,fill=black!70] (7.69999999999998,-0.463954727572601) circle (0.03);
+\draw[black!70,fill=black!70] (7.74999999999998,0.169641646453077) circle (0.03);
+\draw[black!70,fill=black!70] (7.79999999999998,0.250467363785865) circle (0.03);
+\draw[black!70,fill=black!70] (7.84999999999998,0.129927759179955) circle (0.03);
+\draw[black!70,fill=black!70] (7.89999999999998,-0.361179220564038) circle (0.03);
+\draw[black!70,fill=black!70] (7.94999999999998,1.1026194001674) circle (0.03);
+\draw[black!70,fill=black!70] (7.99999999999998,-0.202497605186944) circle (0.03);
+\draw[black!70,fill=black!70] (8.04999999999998,-0.49817575072237) circle (0.03);
+\draw[black!70,fill=black!70] (8.09999999999998,0.57585022238818) circle (0.03);
+\draw[black!70,fill=black!70] (8.14999999999998,0.46643933060969) circle (0.03);
+\draw[black!70,fill=black!70] (8.19999999999999,-0.0931933748537046) circle (0.03);
+\draw[black!70,fill=black!70] (8.24999999999999,-0.0276384036373174) circle (0.03);
+\draw[black!70,fill=black!70] (8.29999999999999,-0.535400977369201) circle (0.03);
+\draw[black!70,fill=black!70] (8.34999999999999,-0.406704038330915) circle (0.03);
+\draw[black!70,fill=black!70] (8.39999999999999,0.281286903817935) circle (0.03);
+\draw[black!70,fill=black!70] (8.44999999999999,0.468589452205537) circle (0.03);
+\draw[black!70,fill=black!70] (8.49999999999999,-0.0992232750178363) circle (0.03);
+\draw[black!70,fill=black!70] (8.54999999999999,-0.383720530720638) circle (0.03);
+\draw[black!70,fill=black!70] (8.59999999999999,0.33609467423378) circle (0.03);
+\draw[black!70,fill=black!70] (8.64999999999999,0.426939436102022) circle (0.03);
+\draw[black!70,fill=black!70] (8.69999999999999,0.207700896492861) circle (0.03);
+\draw[black!70,fill=black!70] (8.74999999999999,0.479406179949091) circle (0.03);
+\draw[black!70,fill=black!70] (8.79999999999999,0.0387539608917498) circle (0.03);
+\draw[black!70,fill=black!70] (8.84999999999999,-0.732430816447603) circle (0.03);
+\draw[black!70,fill=black!70] (8.9,0.324599319218126) circle (0.03);
+\draw[black!70,fill=black!70] (8.95,) circle (0.03);
+
+    \node at (6,-2) {Fitted value};
+    \node at (6,2) {\textbf{Residual plot}};
+    \node[rotate=90] at (2.2,0) {Residual};
+    \node[left] at (3,0) {$0$};
+    \end{tikzpicture}
+\end{center}
+
+
+The residual plot appears to show a `funnel' shaped pattern of points centred on zero, with variance increasing as the fitted value increases. 
+
+\vspace{-1cm}
+\begin{center}
+    \begin{align*}
+        \text{E}(\varepsilon_i)&=0\\
+        \text{V}(\varepsilon_i)&\ne\sigma^2
+    \end{align*}
+\end{center}
+
+This suggests the that linear regression model proposed is \textbf{not appropriate}.
+
+\vfill
+\null
+
+\end{multicols}
+
+\pagebreak
+
+\begin{multicols}{2}
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw (3,-1.75) rectangle (9,1.75);
+        \draw[dashed] (3,0) -- (9,0);
+\draw[black!70,fill=black!70] (3.1,0.0957234768572514) circle (0.03);
+\draw[black!70,fill=black!70] (3.15,0.250897898398128) circle (0.03);
+\draw[black!70,fill=black!70] (3.2,0.549015550254991) circle (0.03);
+\draw[black!70,fill=black!70] (3.25,0.921812731909147) circle (0.03);
+\draw[black!70,fill=black!70] (3.3,0.624719506835696) circle (0.03);
+\draw[black!70,fill=black!70] (3.35,0.214437444885203) circle (0.03);
+\draw[black!70,fill=black!70] (3.4,0.755319217147431) circle (0.03);
+\draw[black!70,fill=black!70] (3.45,0.453212457257857) circle (0.03);
+\draw[black!70,fill=black!70] (3.5,0.26629569599309) circle (0.03);
+\draw[black!70,fill=black!70] (3.55,0.162125997088862) circle (0.03);
+\draw[black!70,fill=black!70] (3.6,-0.106984723716704) circle (0.03);
+\draw[black!70,fill=black!70] (3.65,0.0327184961824284) circle (0.03);
+\draw[black!70,fill=black!70] (3.7,0.477129691354533) circle (0.03);
+\draw[black!70,fill=black!70] (3.75,-0.40697304778277) circle (0.03);
+\draw[black!70,fill=black!70] (3.8,0.681736938088095) circle (0.03);
+\draw[black!70,fill=black!70] (3.85,0.477278364178531) circle (0.03);
+\draw[black!70,fill=black!70] (3.9,0.100693029004122) circle (0.03);
+\draw[black!70,fill=black!70] (3.95,0.213470817036979) circle (0.03);
+\draw[black!70,fill=black!70] (4,0.0166990252494032) circle (0.03);
+\draw[black!70,fill=black!70] (4.05,-0.400614766816104) circle (0.03);
+\draw[black!70,fill=black!70] (4.1,-0.495574353513935) circle (0.03);
+\draw[black!70,fill=black!70] (4.15,-0.524528892543882) circle (0.03);
+\draw[black!70,fill=black!70] (4.2,-1.15383850033091) circle (0.03);
+\draw[black!70,fill=black!70] (4.25,-0.0591001494163814) circle (0.03);
+\draw[black!70,fill=black!70] (4.3,-0.834971122636269) circle (0.03);
+\draw[black!70,fill=black!70] (4.35,-0.624274068715496) circle (0.03);
+\draw[black!70,fill=black!70] (4.4,-0.543628893982297) circle (0.03);
+\draw[black!70,fill=black!70] (4.45,-0.277223577910448) circle (0.03);
+\draw[black!70,fill=black!70] (4.5,-0.565107191609186) circle (0.03);
+\draw[black!70,fill=black!70] (4.55,-0.50194261516935) circle (0.03);
+\draw[black!70,fill=black!70] (4.6,-0.569822582626364) circle (0.03);
+\draw[black!70,fill=black!70] (4.65,-0.720117265006321) circle (0.03);
+\draw[black!70,fill=black!70] (4.69999999999999,-0.892758183482579) circle (0.03);
+\draw[black!70,fill=black!70] (4.74999999999999,-0.677251923837776) circle (0.03);
+\draw[black!70,fill=black!70] (4.79999999999999,-0.680435411862231) circle (0.03);
+\draw[black!70,fill=black!70] (4.84999999999999,-0.656229116103396) circle (0.03);
+\draw[black!70,fill=black!70] (4.89999999999999,-1.08916037177996) circle (0.03);
+\draw[black!70,fill=black!70] (4.94999999999999,-0.823817739552821) circle (0.03);
+\draw[black!70,fill=black!70] (4.99999999999999,-1.20146116185517) circle (0.03);
+\draw[black!70,fill=black!70] (5.04999999999999,-0.631043282641765) circle (0.03);
+\draw[black!70,fill=black!70] (5.09999999999999,-1.05915015387687) circle (0.03);
+\draw[black!70,fill=black!70] (5.14999999999999,-0.814453727235177) circle (0.03);
+\draw[black!70,fill=black!70] (5.19999999999999,-0.795711788795537) circle (0.03);
+\draw[black!70,fill=black!70] (5.24999999999999,-0.622476703514592) circle (0.03);
+\draw[black!70,fill=black!70] (5.29999999999999,-0.691296434207391) circle (0.03);
+\draw[black!70,fill=black!70] (5.34999999999999,-0.994099021729204) circle (0.03);
+\draw[black!70,fill=black!70] (5.39999999999999,-0.87045312100855) circle (0.03);
+\draw[black!70,fill=black!70] (5.44999999999999,-0.615982197063083) circle (0.03);
+\draw[black!70,fill=black!70] (5.49999999999999,-0.585985346216478) circle (0.03);
+\draw[black!70,fill=black!70] (5.54999999999999,-1.19279540550664) circle (0.03);
+\draw[black!70,fill=black!70] (5.59999999999999,-1.02767088636714) circle (0.03);
+\draw[black!70,fill=black!70] (5.64999999999999,-0.725809158336932) circle (0.03);
+\draw[black!70,fill=black!70] (5.69999999999999,-0.871293582002121) circle (0.03);
+\draw[black!70,fill=black!70] (5.74999999999999,-0.537559409726947) circle (0.03);
+\draw[black!70,fill=black!70] (5.79999999999999,-1.30646884746374) circle (0.03);
+\draw[black!70,fill=black!70] (5.84999999999999,-0.630773323787775) circle (0.03);
+\draw[black!70,fill=black!70] (5.89999999999999,-1.45056464874137) circle (0.03);
+\draw[black!70,fill=black!70] (5.94999999999999,-1.38007244173688) circle (0.03);
+\draw[black!70,fill=black!70] (5.99999999999999,-1.06864073660127) circle (0.03);
+\draw[black!70,fill=black!70] (6.04999999999999,-1.34890165837844) circle (0.03);
+\draw[black!70,fill=black!70] (6.09999999999999,-0.944106368768568) circle (0.03);
+\draw[black!70,fill=black!70] (6.14999999999999,-1.14384893088633) circle (0.03);
+\draw[black!70,fill=black!70] (6.19999999999999,-1.1457299103927) circle (0.03);
+\draw[black!70,fill=black!70] (6.24999999999999,-0.771206811553292) circle (0.03);
+\draw[black!70,fill=black!70] (6.29999999999999,-1.16798075665476) circle (0.03);
+\draw[black!70,fill=black!70] (6.34999999999999,-1.11540642429355) circle (0.03);
+\draw[black!70,fill=black!70] (6.39999999999999,-1.29581635836404) circle (0.03);
+\draw[black!70,fill=black!70] (6.44999999999999,-0.606436008976687) circle (0.03);
+\draw[black!70,fill=black!70] (6.49999999999999,-0.791900259303988) circle (0.03);
+\draw[black!70,fill=black!70] (6.54999999999999,-0.620785105813463) circle (0.03);
+\draw[black!70,fill=black!70] (6.59999999999999,-0.886549085126495) circle (0.03);
+\draw[black!70,fill=black!70] (6.64999999999999,-0.93572348404161) circle (0.03);
+\draw[black!70,fill=black!70] (6.69999999999999,-0.898550183114697) circle (0.03);
+\draw[black!70,fill=black!70] (6.74999999999999,-0.871787455988179) circle (0.03);
+\draw[black!70,fill=black!70] (6.79999999999999,-0.239240821498809) circle (0.03);
+\draw[black!70,fill=black!70] (6.84999999999999,-1.22293266313875) circle (0.03);
+\draw[black!70,fill=black!70] (6.89999999999999,-0.743598453369918) circle (0.03);
+\draw[black!70,fill=black!70] (6.94999999999999,-0.922078417934162) circle (0.03);
+\draw[black!70,fill=black!70] (6.99999999999999,-1.05974389443667) circle (0.03);
+\draw[black!70,fill=black!70] (7.04999999999999,-0.635498502852055) circle (0.03);
+\draw[black!70,fill=black!70] (7.09999999999999,-0.78242839208038) circle (0.03);
+\draw[black!70,fill=black!70] (7.14999999999999,-0.827897754048222) circle (0.03);
+\draw[black!70,fill=black!70] (7.19999999999999,-0.75332509695906) circle (0.03);
+\draw[black!70,fill=black!70] (7.24999999999999,-0.470965676939677) circle (0.03);
+\draw[black!70,fill=black!70] (7.29999999999999,-0.358021278142882) circle (0.03);
+\draw[black!70,fill=black!70] (7.34999999999999,-0.264852944149487) circle (0.03);
+\draw[black!70,fill=black!70] (7.39999999999999,-0.275693438781079) circle (0.03);
+\draw[black!70,fill=black!70] (7.44999999999999,0.0727726368663636) circle (0.03);
+\draw[black!70,fill=black!70] (7.49999999999998,0.0495770611163833) circle (0.03);
+\draw[black!70,fill=black!70] (7.54999999999998,-0.364157531256705) circle (0.03);
+\draw[black!70,fill=black!70] (7.59999999999998,-0.437193120747397) circle (0.03);
+\draw[black!70,fill=black!70] (7.64999999999998,-0.0803045096418913) circle (0.03);
+\draw[black!70,fill=black!70] (7.69999999999998,0.250303230079621) circle (0.03);
+\draw[black!70,fill=black!70] (7.74999999999998,-0.367002205613146) circle (0.03);
+\draw[black!70,fill=black!70] (7.79999999999998,-0.290981981318245) circle (0.03);
+\draw[black!70,fill=black!70] (7.84999999999998,-0.226252894086801) circle (0.03);
+\draw[black!70,fill=black!70] (7.89999999999998,-0.0110346150680577) circle (0.03);
+\draw[black!70,fill=black!70] (7.94999999999998,-0.26529374430293) circle (0.03);
+\draw[black!70,fill=black!70] (7.99999999999998,0.200140988229374) circle (0.03);
+\draw[black!70,fill=black!70] (8.04999999999998,-0.276008678986515) circle (0.03);
+\draw[black!70,fill=black!70] (8.09999999999998,0.470531939789404) circle (0.03);
+\draw[black!70,fill=black!70] (8.14999999999998,-0.612573181547273) circle (0.03);
+\draw[black!70,fill=black!70] (8.19999999999999,0.197541894930568) circle (0.03);
+\draw[black!70,fill=black!70] (8.24999999999999,0.463092102810649) circle (0.03);
+\draw[black!70,fill=black!70] (8.29999999999999,0.435659334237141) circle (0.03);
+\draw[black!70,fill=black!70] (8.34999999999999,0.06194425078418) circle (0.03);
+\draw[black!70,fill=black!70] (8.39999999999999,0.737240993312342) circle (0.03);
+\draw[black!70,fill=black!70] (8.44999999999999,0.911750502991053) circle (0.03);
+\draw[black!70,fill=black!70] (8.49999999999999,0.821987566010107) circle (0.03);
+\draw[black!70,fill=black!70] (8.54999999999999,0.663821565322192) circle (0.03);
+\draw[black!70,fill=black!70] (8.59999999999999,0.253861435808969) circle (0.03);
+\draw[black!70,fill=black!70] (8.64999999999999,0.446102932715478) circle (0.03);
+\draw[black!70,fill=black!70] (8.69999999999999,0.37344367161708) circle (0.03);
+\draw[black!70,fill=black!70] (8.74999999999999,0.662554192220943) circle (0.03);
+\draw[black!70,fill=black!70] (8.79999999999999,0.791387305692009) circle (0.03);
+\draw[black!70,fill=black!70] (8.84999999999999,1.35895988803665) circle (0.03);
+\draw[black!70,fill=black!70] (8.9,0.263712646277711) circle (0.03);
+\draw[black!70,fill=black!70] (8.95,) circle (0.03);
+
+    \node at (6,-2) {Fitted value};
+    \node at (6,2) {\textbf{Residual plot}};
+    \node[rotate=90] at (2.2,0) {Residual};
+    \node[left] at (3,0) {$0$};
+    \end{tikzpicture}
+\end{center}
+
+
+The residual plot appears to show a pattern of points following a curve, with constant variance.
+
+\vspace{-1cm}
+\begin{center}
+    \begin{align*}
+        \text{E}(\varepsilon_i)&\ne0\\
+        \text{V}(\varepsilon_i)&=\sigma^2
+    \end{align*}
+\end{center}
+
+This suggests that the linear regression model proposed is \textbf{not appropriate}.
+
+\vfill
+\null
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw (3,-1.75) rectangle (9,1.75);
+        \draw[dashed] (3,0) -- (9,0);
+\draw[black!70,fill=black!70] (3.1,0.683536373282331) circle (0.03);
+\draw[black!70,fill=black!70] (3.15,-0.488838334364612) circle (0.03);
+\draw[black!70,fill=black!70] (3.2,-0.747523529701013) circle (0.03);
+\draw[black!70,fill=black!70] (3.25,-0.521861573356327) circle (0.03);
+\draw[black!70,fill=black!70] (3.3,-0.953027097819764) circle (0.03);
+\draw[black!70,fill=black!70] (3.35,0.249314465896175) circle (0.03);
+\draw[black!70,fill=black!70] (3.4,-0.782484174079824) circle (0.03);
+\draw[black!70,fill=black!70] (3.45,-0.69961569903241) circle (0.03);
+\draw[black!70,fill=black!70] (3.5,-0.959119271577643) circle (0.03);
+\draw[black!70,fill=black!70] (3.55,-0.902386847548343) circle (0.03);
+\draw[black!70,fill=black!70] (3.6,-0.738470447239268) circle (0.03);
+\draw[black!70,fill=black!70] (3.65,-0.939877746861345) circle (0.03);
+\draw[black!70,fill=black!70] (3.7,-0.470264772433535) circle (0.03);
+\draw[black!70,fill=black!70] (3.75,-0.319084353081377) circle (0.03);
+\draw[black!70,fill=black!70] (3.8,-0.277691413945334) circle (0.03);
+\draw[black!70,fill=black!70] (3.85,-0.716451539433565) circle (0.03);
+\draw[black!70,fill=black!70] (3.9,-0.13375758347268) circle (0.03);
+\draw[black!70,fill=black!70] (3.95,-0.516826118932507) circle (0.03);
+\draw[black!70,fill=black!70] (4,-0.840107302544631) circle (0.03);
+\draw[black!70,fill=black!70] (4.05,-0.865738403762191) circle (0.03);
+\draw[black!70,fill=black!70] (4.1,-0.486896915608413) circle (0.03);
+\draw[black!70,fill=black!70] (4.15,0.0358689408025165) circle (0.03);
+\draw[black!70,fill=black!70] (4.2,-1.20290889181249) circle (0.03);
+\draw[black!70,fill=black!70] (4.25,0.153387655155509) circle (0.03);
+\draw[black!70,fill=black!70] (4.3,0.16725105537204) circle (0.03);
+\draw[black!70,fill=black!70] (4.35,0.097760175950102) circle (0.03);
+\draw[black!70,fill=black!70] (4.4,-0.0372643342140805) circle (0.03);
+\draw[black!70,fill=black!70] (4.45,-0.298190619153396) circle (0.03);
+\draw[black!70,fill=black!70] (4.5,-0.561386672775028) circle (0.03);
+\draw[black!70,fill=black!70] (4.55,-0.278429156553736) circle (0.03);
+\draw[black!70,fill=black!70] (4.6,0.311086979128315) circle (0.03);
+\draw[black!70,fill=black!70] (4.65,-0.119189569324126) circle (0.03);
+\draw[black!70,fill=black!70] (4.69999999999999,-0.292376166914779) circle (0.03);
+\draw[black!70,fill=black!70] (4.74999999999999,0.312731653044293) circle (0.03);
+\draw[black!70,fill=black!70] (4.79999999999999,-0.313834559201875) circle (0.03);
+\draw[black!70,fill=black!70] (4.84999999999999,0.0774584363856665) circle (0.03);
+\draw[black!70,fill=black!70] (4.89999999999999,0.192707800117331) circle (0.03);
+\draw[black!70,fill=black!70] (4.94999999999999,0.199060143848976) circle (0.03);
+\draw[black!70,fill=black!70] (4.99999999999999,0.863221914212009) circle (0.03);
+\draw[black!70,fill=black!70] (5.04999999999999,-0.439515848829832) circle (0.03);
+\draw[black!70,fill=black!70] (5.09999999999999,-0.298271948451707) circle (0.03);
+\draw[black!70,fill=black!70] (5.14999999999999,-0.152062182678615) circle (0.03);
+\draw[black!70,fill=black!70] (5.19999999999999,-0.17479201230648) circle (0.03);
+\draw[black!70,fill=black!70] (5.24999999999999,0.361245436439133) circle (0.03);
+\draw[black!70,fill=black!70] (5.29999999999999,-0.691312105302657) circle (0.03);
+\draw[black!70,fill=black!70] (5.34999999999999,-0.593027866504447) circle (0.03);
+\draw[black!70,fill=black!70] (5.39999999999999,-0.400604741097413) circle (0.03);
+\draw[black!70,fill=black!70] (5.44999999999999,0.0424549074364235) circle (0.03);
+\draw[black!70,fill=black!70] (5.49999999999999,0.528599754362388) circle (0.03);
+\draw[black!70,fill=black!70] (5.54999999999999,0.143772772679689) circle (0.03);
+\draw[black!70,fill=black!70] (5.59999999999999,0.140266752724901) circle (0.03);
+\draw[black!70,fill=black!70] (5.64999999999999,-0.596434832333684) circle (0.03);
+\draw[black!70,fill=black!70] (5.69999999999999,0.325109644971877) circle (0.03);
+\draw[black!70,fill=black!70] (5.74999999999999,0.358233120376727) circle (0.03);
+\draw[black!70,fill=black!70] (5.79999999999999,-0.437354089526835) circle (0.03);
+\draw[black!70,fill=black!70] (5.84999999999999,0.46815841773981) circle (0.03);
+\draw[black!70,fill=black!70] (5.89999999999999,0.36765831762116) circle (0.03);
+\draw[black!70,fill=black!70] (5.94999999999999,0.395290591253769) circle (0.03);
+\draw[black!70,fill=black!70] (5.99999999999999,0.242113975872463) circle (0.03);
+\draw[black!70,fill=black!70] (6.04999999999999,-0.21805811433145) circle (0.03);
+\draw[black!70,fill=black!70] (6.09999999999999,0.121546055435297) circle (0.03);
+\draw[black!70,fill=black!70] (6.14999999999999,0.170629347344899) circle (0.03);
+\draw[black!70,fill=black!70] (6.19999999999999,-0.13632233960759) circle (0.03);
+\draw[black!70,fill=black!70] (6.24999999999999,0.502605151806769) circle (0.03);
+\draw[black!70,fill=black!70] (6.29999999999999,-0.0169301751459912) circle (0.03);
+\draw[black!70,fill=black!70] (6.34999999999999,-0.554387826788336) circle (0.03);
+\draw[black!70,fill=black!70] (6.39999999999999,-0.51903012344521) circle (0.03);
+\draw[black!70,fill=black!70] (6.44999999999999,0.0289476419604155) circle (0.03);
+\draw[black!70,fill=black!70] (6.49999999999999,-0.546289585616387) circle (0.03);
+\draw[black!70,fill=black!70] (6.54999999999999,-0.181606742678715) circle (0.03);
+\draw[black!70,fill=black!70] (6.59999999999999,-0.0414639535794923) circle (0.03);
+\draw[black!70,fill=black!70] (6.64999999999999,0.127118422281666) circle (0.03);
+\draw[black!70,fill=black!70] (6.69999999999999,0.250097447276774) circle (0.03);
+\draw[black!70,fill=black!70] (6.74999999999999,-0.131777981299284) circle (0.03);
+\draw[black!70,fill=black!70] (6.79999999999999,-0.347250530428252) circle (0.03);
+\draw[black!70,fill=black!70] (6.84999999999999,0.0779438272782744) circle (0.03);
+\draw[black!70,fill=black!70] (6.89999999999999,-0.200568145184855) circle (0.03);
+\draw[black!70,fill=black!70] (6.94999999999999,0.0153984676224568) circle (0.03);
+\draw[black!70,fill=black!70] (6.99999999999999,-0.528978571492874) circle (0.03);
+\draw[black!70,fill=black!70] (7.04999999999999,-0.187658264349706) circle (0.03);
+\draw[black!70,fill=black!70] (7.09999999999999,0.154617290024675) circle (0.03);
+\draw[black!70,fill=black!70] (7.14999999999999,-0.279184952742109) circle (0.03);
+\draw[black!70,fill=black!70] (7.19999999999999,-0.189086174777861) circle (0.03);
+\draw[black!70,fill=black!70] (7.24999999999999,-0.208078179192292) circle (0.03);
+\draw[black!70,fill=black!70] (7.29999999999999,-0.161537983476337) circle (0.03);
+\draw[black!70,fill=black!70] (7.34999999999999,-0.191198418922419) circle (0.03);
+\draw[black!70,fill=black!70] (7.39999999999999,-0.312322532006953) circle (0.03);
+\draw[black!70,fill=black!70] (7.44999999999999,-0.301783875317789) circle (0.03);
+\draw[black!70,fill=black!70] (7.49999999999998,-0.203338561166984) circle (0.03);
+\draw[black!70,fill=black!70] (7.54999999999998,-0.226449208484975) circle (0.03);
+\draw[black!70,fill=black!70] (7.59999999999998,-0.0599454684913402) circle (0.03);
+\draw[black!70,fill=black!70] (7.64999999999998,-0.221473354156945) circle (0.03);
+\draw[black!70,fill=black!70] (7.69999999999998,-0.244639490168193) circle (0.03);
+\draw[black!70,fill=black!70] (7.74999999999998,-0.170438506751691) circle (0.03);
+\draw[black!70,fill=black!70] (7.79999999999998,-0.318998184033726) circle (0.03);
+\draw[black!70,fill=black!70] (7.84999999999998,-0.378391749093761) circle (0.03);
+\draw[black!70,fill=black!70] (7.89999999999998,-0.351909372509707) circle (0.03);
+\draw[black!70,fill=black!70] (7.94999999999998,-0.431262547325205) circle (0.03);
+\draw[black!70,fill=black!70] (7.99999999999998,-0.102617438783539) circle (0.03);
+\draw[black!70,fill=black!70] (8.04999999999998,-0.519638840957845) circle (0.03);
+\draw[black!70,fill=black!70] (8.09999999999998,-0.466606838591917) circle (0.03);
+\draw[black!70,fill=black!70] (8.14999999999998,-0.552011816993735) circle (0.03);
+\draw[black!70,fill=black!70] (8.19999999999999,-0.586084117384825) circle (0.03);
+\draw[black!70,fill=black!70] (8.24999999999999,-0.491611187633632) circle (0.03);
+\draw[black!70,fill=black!70] (8.29999999999999,-0.527028632552207) circle (0.03);
+\draw[black!70,fill=black!70] (8.34999999999999,-0.581681055008957) circle (0.03);
+\draw[black!70,fill=black!70] (8.39999999999999,-0.565058442875747) circle (0.03);
+\draw[black!70,fill=black!70] (8.44999999999999,-0.593824788383026) circle (0.03);
+\draw[black!70,fill=black!70] (8.49999999999999,-0.625147468907101) circle (0.03);
+\draw[black!70,fill=black!70] (8.54999999999999,-0.6822645406602) circle (0.03);
+\draw[black!70,fill=black!70] (8.59999999999999,-0.667504493806603) circle (0.03);
+\draw[black!70,fill=black!70] (8.64999999999999,-0.700788960824055) circle (0.03);
+\draw[black!70,fill=black!70] (8.69999999999999,-0.730948460018786) circle (0.03);
+\draw[black!70,fill=black!70] (8.74999999999999,-0.752671839665586) circle (0.03);
+\draw[black!70,fill=black!70] (8.79999999999999,-0.790639677383648) circle (0.03);
+\draw[black!70,fill=black!70] (8.84999999999999,-0.84454240842857) circle (0.03);
+\draw[black!70,fill=black!70] (8.9,-0.861565970150315) circle (0.03);
+\draw[black!70,fill=black!70] (8.95,) circle (0.03);
+
+    \node at (6,-2) {Fitted value};
+    \node at (6,2) {\textbf{Residual plot}};
+    \node[rotate=90] at (2.2,0) {Residual};
+    \node[left] at (3,0) {$0$};
+    \end{tikzpicture}
+\end{center}
+
+
+The residual plot appears to show a pattern of points following a curve, with variance decreasing as the fitted value increases.
+
+\vspace{-1cm}
+\begin{center}
+    \begin{align*}
+        \text{E}(\varepsilon_i)&\ne0\\
+        \text{V}(\varepsilon_i)&\ne \sigma^2
+    \end{align*}
+\end{center}
+
+This suggests that the linear regression model proposed is \textbf{not appropriate}.
+
+\vfill
+\null
+
+\end{multicols}
+
+#### Exercise 18G {-}
+
+*For each of the following residual plots, comment on the validity of the linear model from which they were produced.*
+
+\begin{multicols}{3}
+
+\begin{center}
+    \begin{tikzpicture}
+    \node[right] at (-1,2.25) {(a)};
+        \draw (0,-2) rectangle (5,2);
+        \draw[dashed] (0,0) -- (5,0);
+        \node at (2.5,2.25) {Residual plot};
+        \node[rotate=90] at (-0.75,0) {Residuals};
+        \node[left] at (0,0) {$0$};
+        \node at (2.5,-2.25) {Fitted values};
+        \draw[black!70,fill=black!70] (0.05,-0.906121041891409) circle (0.03);
+\draw[black!70,fill=black!70] (0.15,0.592482546999063) circle (0.03);
+\draw[black!70,fill=black!70] (0.25,-0.207959965383013) circle (0.03);
+\draw[black!70,fill=black!70] (0.35,0.220200550205853) circle (0.03);
+\draw[black!70,fill=black!70] (0.45,-0.263445698718367) circle (0.03);
+\draw[black!70,fill=black!70] (0.55,0.786719495068843) circle (0.03);
+\draw[black!70,fill=black!70] (0.65,0.107743106454408) circle (0.03);
+\draw[black!70,fill=black!70] (0.75,-0.572888007148639) circle (0.03);
+\draw[black!70,fill=black!70] (0.85,-0.0995750888083255) circle (0.03);
+\draw[black!70,fill=black!70] (0.95,-0.347286286205294) circle (0.03);
+\draw[black!70,fill=black!70] (1.05,0.331599853334431) circle (0.03);
+\draw[black!70,fill=black!70] (1.15,0.935102869035569) circle (0.03);
+\draw[black!70,fill=black!70] (1.25,-1.0108990912401033) circle (0.03);
+\draw[black!70,fill=black!70] (1.35,0.234206399563337) circle (0.03);
+\draw[black!70,fill=black!70] (1.45,-1.0357834330679036) circle (0.03);
+\draw[black!70,fill=black!70] (1.55,0.148782356915799) circle (0.03);
+\draw[black!70,fill=black!70] (1.65,0.11506696234908) circle (0.03);
+\draw[black!70,fill=black!70] (1.75,0.140036970276926) circle (0.03);
+\draw[black!70,fill=black!70] (1.85,-0.0448615342652612) circle (0.03);
+\draw[black!70,fill=black!70] (1.95,-0.190969000124008) circle (0.03);
+\draw[black!70,fill=black!70] (2.05,-0.866631945304852) circle (0.03);
+\draw[black!70,fill=black!70] (2.15,-0.469144896754502) circle (0.03);
+\draw[black!70,fill=black!70] (2.25,0.262268806380172) circle (0.03);
+\draw[black!70,fill=black!70] (2.35,0.706361642857381) circle (0.03);
+\draw[black!70,fill=black!70] (2.45,-0.114201977405459) circle (0.03);
+\draw[black!70,fill=black!70] (2.55,-0.287608025388268) circle (0.03);
+\draw[black!70,fill=black!70] (2.65,0.15230505242049) circle (0.03);
+\draw[black!70,fill=black!70] (2.75,-0.834604553800406) circle (0.03);
+\draw[black!70,fill=black!70] (2.85,0.515918067596663) circle (0.03);
+\draw[black!70,fill=black!70] (2.95,0.767965926768554) circle (0.03);
+\draw[black!70,fill=black!70] (3.05,-0.696849405566194) circle (0.03);
+\draw[black!70,fill=black!70] (3.15,0.267430131188963) circle (0.03);
+\draw[black!70,fill=black!70] (3.25,0.319997014944772) circle (0.03);
+\draw[black!70,fill=black!70] (3.35,-0.59327453852991) circle (0.03);
+\draw[black!70,fill=black!70] (3.45,0.264969819984465) circle (0.03);
+\draw[black!70,fill=black!70] (3.55,0.805672402534947) circle (0.03);
+\draw[black!70,fill=black!70] (3.65,-0.691666112989794) circle (0.03);
+\draw[black!70,fill=black!70] (3.75,0.8644353522632) circle (0.03);
+\draw[black!70,fill=black!70] (3.85,-0.00507196061450596) circle (0.03);
+\draw[black!70,fill=black!70] (3.95,-0.268008048534896) circle (0.03);
+\draw[black!70,fill=black!70] (4.05,-0.185557093580767) circle (0.03);
+\draw[black!70,fill=black!70] (4.15,-0.869135252212507) circle (0.03);
+\draw[black!70,fill=black!70] (4.25,0.445407627105327) circle (0.03);
+\draw[black!70,fill=black!70] (4.35,0.471233088860872) circle (0.03);
+\draw[black!70,fill=black!70] (4.45,-0.215513709234647) circle (0.03);
+\draw[black!70,fill=black!70] (4.55,-0.0166040010828692) circle (0.03);
+\draw[black!70,fill=black!70] (4.65,0.663536447422046) circle (0.03);
+\draw[black!70,fill=black!70] (4.75,-0.271787371852113) circle (0.03);
+\draw[black!70,fill=black!70] (4.85,0.211155590013259) circle (0.03);
+\draw[black!70,fill=black!70] (4.95,-1.06118703972627) circle (0.03);
+
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+    \begin{tikzpicture}
+    \node[right] at (-1,2.25) {(d)};
+        \draw (0,-2) rectangle (5,2);
+        \draw[dashed] (0,0) -- (5,0);
+        \node at (2.5,2.25) {Residual plot};
+        \node[rotate=90] at (-0.75,0) {Residuals};
+        \node[left] at (0,0) {$0$};
+        \node at (2.5,-2.25) {Fitted values};
+        \draw[black!70,fill=black!70] (0.05,-1.72529393324037) circle (0.03);
+\draw[black!70,fill=black!70] (1,0.115272863236486) circle (0.03);
+\draw[black!70,fill=black!70] (0.45,-1.16066961738614) circle (0.03);
+\draw[black!70,fill=black!70] (0.85,-0.732808586552162) circle (0.03);
+\draw[black!70,fill=black!70] (3.85,-0.0702539168465979) circle (0.03);
+\draw[black!70,fill=black!70] (1.25,-0.384585405999348) circle (0.03);
+\draw[black!70,fill=black!70] (1.65,0.550534233625816) circle (0.03);
+\draw[black!70,fill=black!70] (2.45,1.020455606295232) circle (0.03);
+\draw[black!70,fill=black!70] (3.35,1.158800614260409) circle (0.03);
+\draw[black!70,fill=black!70] (3.05,1.200839868907444) circle (0.03);
+\draw[black!70,fill=black!70] (3.65,0.55339398177373) circle (0.03);
+\draw[black!70,fill=black!70] (3.85,0.46835703578762) circle (0.03);
+\draw[black!70,fill=black!70] (4.25,-0.646555112110195) circle (0.03);
+\draw[black!70,fill=black!70] (4.45,-0.766095635207417) circle (0.03);
+\draw[black!70,fill=black!70] (4.85,-1.66156285632649) circle (0.03);
+
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+    \begin{tikzpicture}
+    \node[right] at (-1,2.25) {(b)};
+        \draw (0,-2) rectangle (5,2);
+        \draw[dashed] (0,0) -- (5,0);
+        \node at (2.5,2.25) {Residual plot};
+        \node[rotate=90] at (-0.75,0) {Residuals};
+        \node[left] at (0,0) {$0$};
+        \node at (2.5,-2.25) {Fitted values};
+        \draw[black!70,fill=black!70] (0.05,0.178133558574358) circle (0.03);
+\draw[black!70,fill=black!70] (0.15,0.898792716980769) circle (0.03);
+\draw[black!70,fill=black!70] (0.25,0.356469424136709) circle (0.03);
+\draw[black!70,fill=black!70] (0.35,0.696856350045002) circle (0.03);
+\draw[black!70,fill=black!70] (0.45,-0.0776542628369659) circle (0.03);
+\draw[black!70,fill=black!70] (0.55,0.348091554126996) circle (0.03);
+\draw[black!70,fill=black!70] (0.65,0.402248681915753) circle (0.03);
+\draw[black!70,fill=black!70] (0.75,0.986130012935858) circle (0.03);
+\draw[black!70,fill=black!70] (0.85,0.882143904510889) circle (0.03);
+\draw[black!70,fill=black!70] (0.95,0.81906418997552) circle (0.03);
+\draw[black!70,fill=black!70] (1.05,0.815795535266645) circle (0.03);
+\draw[black!70,fill=black!70] (1.15,1.28645290506976) circle (0.03);
+\draw[black!70,fill=black!70] (1.25,1.0887485250016) circle (0.03);
+\draw[black!70,fill=black!70] (1.35,0.929299467690195) circle (0.03);
+\draw[black!70,fill=black!70] (1.45,0.474874281372839) circle (0.03);
+\draw[black!70,fill=black!70] (1.55,0.865157229087026) circle (0.03);
+\draw[black!70,fill=black!70] (1.65,1.5875859025381) circle (0.03);
+\draw[black!70,fill=black!70] (1.75,1.27619601271253) circle (0.03);
+\draw[black!70,fill=black!70] (1.85,0.418285037712833) circle (0.03);
+\draw[black!70,fill=black!70] (1.95,-0.426798101715494) circle (0.03);
+\draw[black!70,fill=black!70] (2.05,1.05445938838782) circle (0.03);
+\draw[black!70,fill=black!70] (2.15,0.300441210947143) circle (0.03);
+\draw[black!70,fill=black!70] (2.25,1.09705757456528) circle (0.03);
+\draw[black!70,fill=black!70] (2.35,0.444194096379439) circle (0.03);
+\draw[black!70,fill=black!70] (2.45,0.422626996516987) circle (0.03);
+\draw[black!70,fill=black!70] (2.55,0.58142643959481) circle (0.03);
+\draw[black!70,fill=black!70] (2.65,-0.0860690930409178) circle (0.03);
+\draw[black!70,fill=black!70] (2.75,-0.516226009986183) circle (0.03);
+\draw[black!70,fill=black!70] (2.85,-0.489608646366949) circle (0.03);
+\draw[black!70,fill=black!70] (2.95,0.459485787002017) circle (0.03);
+\draw[black!70,fill=black!70] (3.05,-0.208621398227048) circle (0.03);
+\draw[black!70,fill=black!70] (3.15,0.26980143134063) circle (0.03);
+\draw[black!70,fill=black!70] (3.25,-0.0598248311341504) circle (0.03);
+\draw[black!70,fill=black!70] (3.35,-0.402145876640498) circle (0.03);
+\draw[black!70,fill=black!70] (3.45,0.495752705249398) circle (0.03);
+\draw[black!70,fill=black!70] (3.55,-0.450815197049424) circle (0.03);
+\draw[black!70,fill=black!70] (3.65,-0.753962317913187) circle (0.03);
+\draw[black!70,fill=black!70] (3.75,-0.569557106334683) circle (0.03);
+\draw[black!70,fill=black!70] (3.85,-0.0157885105030687) circle (0.03);
+\draw[black!70,fill=black!70] (3.95,-0.589930085774705) circle (0.03);
+\draw[black!70,fill=black!70] (4.05,-0.174057032972493) circle (0.03);
+\draw[black!70,fill=black!70] (4.15,-1.02930959433648) circle (0.03);
+\draw[black!70,fill=black!70] (4.25,-0.855448174579443) circle (0.03);
+\draw[black!70,fill=black!70] (4.35,-1.09871149235885) circle (0.03);
+\draw[black!70,fill=black!70] (4.45,-1.10454226238269) circle (0.03);
+\draw[black!70,fill=black!70] (4.55,-1.41502706887256) circle (0.03);
+\draw[black!70,fill=black!70] (4.65,-0.268378362986471) circle (0.03);
+\draw[black!70,fill=black!70] (4.75,-1.97099405171954) circle (0.03);
+\draw[black!70,fill=black!70] (4.85,-1.24155340954418) circle (0.03);
+\draw[black!70,fill=black!70] (4.95,-1.40240809311068) circle (0.03);
+
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+    \begin{tikzpicture}
+    \node[right] at (-1,2.25) {(e)};
+        \draw (0,-2) rectangle (5,2);
+        \draw[dashed] (0,0) -- (5,0);
+        \node at (2.5,2.25) {Residual plot};
+        \node[rotate=90] at (-0.75,0) {Residuals};
+        \node[left] at (0,0) {$0$};
+        \node at (2.5,-2.25) {Fitted values};
+        \draw[black!70,fill=black!70] (0.05,-1.03352537336223) circle (0.03);
+\draw[black!70,fill=black!70] (0.15,-0.794600624866511+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (0.25,-0.531414015170233+0.25) circle (0.03);
+
+\draw[black!70,fill=black!70] (0.45,-0.365432618088521+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (0.55,-0.166931821566736+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (0.75,-0.134956564507489+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (0.85,-0.056836135009489+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (0.95,-0.0647269413716729+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (1.15,-0.143655961915959+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (1.25,0.180239603672553+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (1.35,-0.180974139874654+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (1.45,0.104844649878651+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (1.55,-0.204525185813443+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (1.65,0.163308132806857+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (1.75,-0.21299245797462+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (1.85,0.1413916872299362+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (1.95,-0.239344249673097+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (2.05,0.384139073368358+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (2.15,0.4384141068412178+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (2.25,0.233178564138878+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (2.35,-0.8560486330332221+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (2.45,-0.277084757404422+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (2.55,-0.236240817527724+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (2.65,-0.527852323462033+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (2.75,-0.93759610292317+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (2.85,0.65171513280834+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (2.95,0.789980439093455+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (3.05,-0.551662691027295+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (3.15,0.69676649008313+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (3.25,-0.784000123285517+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (3.35,0.799368082871598+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (3.45,-0.849158329698065+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (3.55,-0.96902535213886+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (3.65,-0.831694205323118+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (3.75,-0.754514789195398+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (3.85,-1.62349320420753+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (3.95,0.877712687758651+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (4.05,0.626980658274177+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (4.15,-0.398616602433062+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (4.25,0.50197657920646489+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (4.35,0.912399856385178+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (4.45,-0.813965814902585+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (4.55,0.787393756068158+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (4.65,1.14216309203622+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (4.75,-0.716192093057755+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (4.85,-0.957149606030756+0.25) circle (0.03);
+\draw[black!70,fill=black!70] (4.95,-0.614552195244426+0.25) circle (0.03);
+
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+    \begin{tikzpicture}
+    \node[right] at (-1,2.25) {(c)};
+        \draw (0,-2) rectangle (5,2);
+        \draw[dashed] (0,0) -- (5,0);
+        \node at (2.5,2.25) {Residual plot};
+        \node[rotate=90] at (-0.75,0) {Residuals};
+        \node[left] at (0,0) {$0$};
+        \node at (2.5,-2.25) {Fitted values};
+        \draw[black!70,fill=black!70] (0.05,-0.651925125109626) circle (0.03);
+\draw[black!70,fill=black!70] (0.15,-0.320069239812023) circle (0.03);
+\draw[black!70,fill=black!70] (0.25,-0.982614382031659) circle (0.03);
+\draw[black!70,fill=black!70] (0.35,0.477212550727081) circle (0.03);
+\draw[black!70,fill=black!70] (0.45,1.33351436568581) circle (0.03);
+\draw[black!70,fill=black!70] (0.55,-0.779584742671186) circle (0.03);
+\draw[black!70,fill=black!70] (0.65,1.42272287375497) circle (0.03);
+\draw[black!70,fill=black!70] (0.75,0.720883168424448) circle (0.03);
+\draw[black!70,fill=black!70] (0.85,1.53600144648904) circle (0.03);
+\draw[black!70,fill=black!70] (0.95,1.00343286222344) circle (0.03);
+\draw[black!70,fill=black!70] (1.05,-0.926035133890821) circle (0.03);
+\draw[black!70,fill=black!70] (1.15,-0.120733535963202) circle (0.03);
+\draw[black!70,fill=black!70] (1.25,0.0163884041350403) circle (0.03);
+\draw[black!70,fill=black!70] (1.35,-0.511460088818794) circle (0.03);
+\draw[black!70,fill=black!70] (1.45,0.524762153522103) circle (0.03);
+\draw[black!70,fill=black!70] (1.55,-0.247617165703644) circle (0.03);
+\draw[black!70,fill=black!70] (1.65,-1.36094579580113) circle (0.03);
+\draw[black!70,fill=black!70] (1.75,0.696058291544958) circle (0.03);
+\draw[black!70,fill=black!70] (1.85,-0.675575394065222) circle (0.03);
+\draw[black!70,fill=black!70] (1.95,-1.00059932963719) circle (0.03);
+\draw[black!70,fill=black!70] (2.05,-0.432054628280506) circle (0.03);
+\draw[black!70,fill=black!70] (2.15,0.322728580365622) circle (0.03);
+\draw[black!70,fill=black!70] (2.25,-0.00174678686877219) circle (0.03);
+\draw[black!70,fill=black!70] (2.35,-0.387252821080475) circle (0.03);
+\draw[black!70,fill=black!70] (2.45,0.52090219272468) circle (0.03);
+\draw[black!70,fill=black!70] (2.55,-0.300360957038177) circle (0.03);
+\draw[black!70,fill=black!70] (2.65,0.1104101026472) circle (0.03);
+\draw[black!70,fill=black!70] (2.75,-0.031159715525395) circle (0.03);
+\draw[black!70,fill=black!70] (2.85,0.248396068252469) circle (0.03);
+\draw[black!70,fill=black!70] (2.95,-0.262446449538784) circle (0.03);
+\draw[black!70,fill=black!70] (3.05,0.222683389237466) circle (0.03);
+\draw[black!70,fill=black!70] (3.15,-0.636838658859418) circle (0.03);
+\draw[black!70,fill=black!70] (3.25,0.417423045488386) circle (0.03);
+\draw[black!70,fill=black!70] (3.35,0.143874955487233) circle (0.03);
+\draw[black!70,fill=black!70] (3.45,0.088142944461293) circle (0.03);
+\draw[black!70,fill=black!70] (3.55,-0.512762860673155) circle (0.03);
+\draw[black!70,fill=black!70] (3.65,-0.201996595901866) circle (0.03);
+\draw[black!70,fill=black!70] (3.75,-0.263139231657904) circle (0.03);
+\draw[black!70,fill=black!70] (3.85,-0.0230043181178601) circle (0.03);
+\draw[black!70,fill=black!70] (3.95,-0.0170826590204615) circle (0.03);
+\draw[black!70,fill=black!70] (4.05,0.164012220260618) circle (0.03);
+\draw[black!70,fill=black!70] (4.15,0.225917963961958) circle (0.03);
+\draw[black!70,fill=black!70] (4.25,-0.239011546361125) circle (0.03);
+\draw[black!70,fill=black!70] (4.35,0.0617899571524497) circle (0.03);
+\draw[black!70,fill=black!70] (4.45,-0.0923211809253113) circle (0.03);
+\draw[black!70,fill=black!70] (4.55,-0.188801163564917) circle (0.03);
+\draw[black!70,fill=black!70] (4.65,0.0652575340850301) circle (0.03);
+\draw[black!70,fill=black!70] (4.75,0.0143170913369634) circle (0.03);
+\draw[black!70,fill=black!70] (4.85,0.0611487094181591) circle (0.03);
+\draw[black!70,fill=black!70] (4.95,-0.0116307314767393) circle (0.03);
+
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+    \begin{tikzpicture}
+    \node[right] at (-1,2.25) {(f)};
+        \draw (0,-2) rectangle (5,2);
+        \draw[dashed] (0,0) -- (5,0);
+        \node at (2.5,2.25) {Residual plot};
+        \node[rotate=90] at (-0.75,0) {Residuals};
+        \node[left] at (0,0) {$0$};
+        \node at (2.5,-2.25) {Fitted values};
+\draw[black!70,fill=black!70] (0.45,-0.439256015731652-0.2) circle (0.03);
+\draw[black!70,fill=black!70] (1.05,0.278066393800596-0.2) circle (0.03);
+\draw[black!70,fill=black!70] (1.25,0.717152236270787-0.2) circle (0.03);
+\draw[black!70,fill=black!70] (1.85,-0.808154472348189-0.2) circle (0.03);
+\draw[black!70,fill=black!70] (2.05,0.685956109990812-0.2) circle (0.03);
+\draw[black!70,fill=black!70] (2.65,0.195744460469986-0.2) circle (0.03);
+\draw[black!70,fill=black!70] (3.05,-0.62293247336684-0.2) circle (0.03);
+\draw[black!70,fill=black!70] (3.25,0.490958769800039-0.2) circle (0.03);
+\draw[black!70,fill=black!70] (3.45,-0.307461281832055-0.2) circle (0.03);
+\draw[black!70,fill=black!70] (3.85,-0.763650077855085-0.2) circle (0.03);
+\draw[black!70,fill=black!70] (4.05,-0.147771801373483-0.2) circle (0.03);
+\draw[black!70,fill=black!70] (4.45,0.94850160906066-0.2) circle (0.03);
+\draw[black!70,fill=black!70] (4.65,0.569571837547496-0.2) circle (0.03);
+\end{tikzpicture}
+\end{center}
+
+\end{multicols}
+
+\pagebreak
+
+\begin{tcolorbox}[title=Example 1,title filled,colframe= black!50]
+\textbf{Problem:} The mark scored in a Maths test ($x$) and an English test ($y$) is recorded for a random sample of pupils. A linear regression model between Maths mark and English mark is proposed, the equation of the $y$ on $x$ regression line obtained and a residual plot is constructed, shown below along with the tabulated data.
+
+\begin{multicols}{2}
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        \multirow{2}{*}{Pupil} & Maths & English & Fit & Residual\\
+          & $x_i$ & $y_i$ & $\hat{Y_i}$ & $y_i-\hat{Y_i}$\\
+        \hline
+        A & 1 & 3 & 6.98 & -3.98\\
+        B & 8 & 14 & 10.24 & \textcolor{white}{-}3.76\\
+        C & 15 & 8 & 13.50 & -5.50\\
+        D & 18 & 20 & 14.90 & \textcolor{white}{-}5.09\\
+        E & 23 & 19 & 17.23 & \textcolor{white}{-}1.77\\
+        F&28&	17&	19.56&	-2.56\\
+        G&	33&	27	&21.89&	\textcolor{white}{-}5.11\\
+        H	&39	&26&	24.48&	\textcolor{white}{-}1.32\\
+        I&	45	&21&	27.48&	-6.48\\
+        J	&45	&29	&27.48	&\textcolor{white}{-}1.52\\
+        \hline
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw (0,-2.5) rectangle (6,2.5);
+        \draw[dashed] (0,0) -- (6,0);
+        \node at (3,2.75) {Residual plot};
+        \node[rotate=90] at (-0.75,0) {Residuals};
+        \node[left] at (0,0) {$0$};
+        \node at (3,-2.75) {Fitted values};
+\draw[black!80,fill=black!80] (0.24570478532022,-0.796563828256176) circle (0.05);
+\draw[black!80,fill=black!80] (1.06088828256176,0.751289373950588) circle (0.05);
+\draw[black!80,fill=black!80] (1.87607177980331,-1.10085742384265) circle (0.05);
+\draw[black!80,fill=black!80] (2.22543613576397,1.01965109138882) circle (0.05);
+\draw[black!80,fill=black!80] (2.80771006236508,0.35383195010794) circle (0.05);
+\draw[black!80,fill=black!80] (3.38998398896618,-0.511987191172943) circle (0.05);
+\draw[black!80,fill=black!80] (3.97225791556728,1.02219366754617) circle (0.05);
+\draw[black!80,fill=black!80] (4.67098662748861,0.263210698009115) circle (0.05);
+\draw[black!80,fill=black!80] (5.36971533940993,-1.29577227152794) circle (0.05);
+\draw[black!80,fill=black!80] (5.36971533940993,0.304227728472056) circle (0.05);
+
+\end{tikzpicture}
+\end{center}
+
+\end{multicols}
+
+\vspace{-0.5cm}
+Use the residual plot to comment on the validity of the linear model.
+
+\tcblower
+\textbf{Solution:} The residual plot appears to show a random scatter of points centred on zero, and variance appears to be plausibly constant. The residual plot does not contradict any of the required assumptions for the errors, and so a linear model between English mark and Maths mark can be considered appropriate.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[title=Example 2,title filled,colframe= black!50]
+\textbf{Problem:} A 1920s study on automobile safety involved recording the stopping distances (in feet) from selected speeds (in miles per hour) for a random sample of 47 cars. Below is a scatterplot of the results with a regression line obtained from a linear model, and a residual plot.
+
+\begin{multicols}{2}
+
+\begin{center}
+    \begin{tikzpicture}
+    \draw (0,0) -- (5,0);
+    \draw (0,0) -- (0,5);
+        \draw[black!70,fill=black!70] (0.8,0.08) circle (0.03);
+        \foreach \x in {0,5,...,25}{
+        \draw (0.2*\x,0) -- (0.2*\x,-0.1);
+        \node[below] at (0.2*\x,0) {\x};
+        }
+        \foreach \y in {0,24,...,120}{
+        \node[left] at (0,0.04*\y) {\y};
+        \draw (0,0.04*\y) -- (-0.1,0.04*\y);
+        }
+        \node at (2.5,-0.75) {Speed (mph)};
+        \node[rotate=90] at (-1,2.5) {Stopping distance (ft)};
+\draw[black!70,fill=black!70] (0.8,0.4) circle (0.03);
+\draw[black!70,fill=black!70] (1.4,0.16) circle (0.03);
+\draw[black!70,fill=black!70] (1.4,0.88) circle (0.03);
+\draw[black!70,fill=black!70] (1.6,0.64) circle (0.03);
+\draw[black!70,fill=black!70] (1.8,0.4) circle (0.03);
+\draw[black!70,fill=black!70] (2,0.72) circle (0.03);
+\draw[black!70,fill=black!70] (2,1.04) circle (0.03);
+\draw[black!70,fill=black!70] (2,1.36) circle (0.03);
+\draw[black!70,fill=black!70] (2.2,0.68) circle (0.03);
+\draw[black!70,fill=black!70] (2.2,1.12) circle (0.03);
+\draw[black!70,fill=black!70] (2.4,0.56) circle (0.03);
+\draw[black!70,fill=black!70] (2.4,0.8) circle (0.03);
+\draw[black!70,fill=black!70] (2.4,0.96) circle (0.03);
+\draw[black!70,fill=black!70] (2.4,1.12) circle (0.03);
+\draw[black!70,fill=black!70] (2.6,1.04) circle (0.03);
+\draw[black!70,fill=black!70] (2.6,1.36) circle (0.03);
+\draw[black!70,fill=black!70] (2.6,1.36) circle (0.03);
+\draw[black!70,fill=black!70] (2.6,1.84) circle (0.03);
+\draw[black!70,fill=black!70] (2.8,1.04) circle (0.03);
+\draw[black!70,fill=black!70] (2.8,1.44) circle (0.03);
+\draw[black!70,fill=black!70] (2.8,2.4) circle (0.03);
+\draw[black!70,fill=black!70] (3,0.8) circle (0.03);
+\draw[black!70,fill=black!70] (3,1.04) circle (0.03);
+\draw[black!70,fill=black!70] (3,2.16) circle (0.03);
+\draw[black!70,fill=black!70] (3.2,1.28) circle (0.03);
+\draw[black!70,fill=black!70] (3.2,1.6) circle (0.03);
+\draw[black!70,fill=black!70] (3.4,1.28) circle (0.03);
+\draw[black!70,fill=black!70] (3.4,1.6) circle (0.03);
+\draw[black!70,fill=black!70] (3.4,2) circle (0.03);
+\draw[black!70,fill=black!70] (3.6,1.68) circle (0.03);
+\draw[black!70,fill=black!70] (3.6,2.24) circle (0.03);
+\draw[black!70,fill=black!70] (3.6,3.04) circle (0.03);
+\draw[black!70,fill=black!70] (3.6,3.36) circle (0.03);
+\draw[black!70,fill=black!70] (3.8,1.44) circle (0.03);
+\draw[black!70,fill=black!70] (3.8,1.84) circle (0.03);
+\draw[black!70,fill=black!70] (3.8,2.72) circle (0.03);
+\draw[black!70,fill=black!70] (4,1.92) circle (0.03);
+\draw[black!70,fill=black!70] (4,2.08) circle (0.03);
+\draw[black!70,fill=black!70] (4,2.24) circle (0.03);
+\draw[black!70,fill=black!70] (4,2.56) circle (0.03);
+\draw[black!70,fill=black!70] (4.4,2.64) circle (0.03);
+\draw[black!70,fill=black!70] (4.6,2.16) circle (0.03);
+\draw[black!70,fill=black!70] (4.8,2.8) circle (0.03);
+\draw[black!70,fill=black!70] (4.8,3.68) circle (0.03);
+\draw[black!70,fill=black!70] (4.8,3.72) circle (0.03);
+\draw[black!70,fill=black!70] (5,3.4) circle (0.03);
+\draw[very thick] (1,-17.6*0.04+3.93*0.04*5) -- (5,-17.6*0.04+3.93*0.04*25);
+    \end{tikzpicture}
+\end{center}
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw (-2,-2) rectangle (5,2.5);
+        \draw[dashed] (-2,0) -- (5,0);
+        \node at (1.5,2.75) {Residual plot};
+        \node[rotate=90] at (-2.75,0) {Residuals};
+        \node[left] at (-2,0) {$0$};
+        \node at (1.5,-2.25) {Fitted values};
+\draw[black!70,fill=black!70] (-0.0921582481751823,0.192158248175182) circle (0.03);
+\draw[black!70,fill=black!70] (-0.0921582481751823,0.592158248175182) circle (0.03);
+\draw[black!70,fill=black!70] (0.497703065693431,-0.297703065693431) circle (0.03);
+\draw[black!70,fill=black!70] (0.497703065693431,0.602296934306569) circle (0.03);
+\draw[black!70,fill=black!70] (0.694323503649635,0.105676496350365) circle (0.03);
+\draw[black!70,fill=black!70] (0.89094394160584,-0.39094394160584) circle (0.03);
+\draw[black!70,fill=black!70] (1.08756437956204,-0.187564379562044) circle (0.03);
+\draw[black!70,fill=black!70] (1.08756437956204,0.212435620437956) circle (0.03);
+\draw[black!70,fill=black!70] (1.08756437956204,0.612435620437956) circle (0.03);
+\draw[black!70,fill=black!70] (1.28418481751825,-0.434184817518249) circle (0.03);
+\draw[black!70,fill=black!70] (1.28418481751825,0.115815182481751) circle (0.03);
+\draw[black!70,fill=black!70] (1.48080525547445,-0.780805255474453) circle (0.03);
+\draw[black!70,fill=black!70] (1.48080525547445,-0.480805255474453) circle (0.03);
+\draw[black!70,fill=black!70] (1.48080525547445,-0.280805255474453) circle (0.03);
+\draw[black!70,fill=black!70] (1.48080525547445,-0.0808052554744531) circle (0.03);
+\draw[black!70,fill=black!70] (1.67742569343066,-0.377425693430657) circle (0.03);
+\draw[black!70,fill=black!70] (1.67742569343066,0.0225743065693425) circle (0.03);
+\draw[black!70,fill=black!70] (1.67742569343066,0.0225743065693425) circle (0.03);
+\draw[black!70,fill=black!70] (1.67742569343066,0.622574306569343) circle (0.03);
+\draw[black!70,fill=black!70] (1.87404613138686,-0.574046131386862) circle (0.03);
+\draw[black!70,fill=black!70] (1.87404613138686,-0.0740461313868622) circle (0.03);
+\draw[black!70,fill=black!70] (1.87404613138686,1.12595386861314) circle (0.03);
+\draw[black!70,fill=black!70] (2.07066656934307,-1.07066656934307) circle (0.03);
+\draw[black!70,fill=black!70] (2.07066656934307,-0.770666569343067) circle (0.03);
+\draw[black!70,fill=black!70] (2.07066656934307,0.629333430656934) circle (0.03);
+\draw[black!70,fill=black!70] (2.26728700729927,-0.667287007299271) circle (0.03);
+\draw[black!70,fill=black!70] (2.26728700729927,-0.267287007299271) circle (0.03);
+\draw[black!70,fill=black!70] (2.46390744525548,-0.863907445255475) circle (0.03);
+\draw[black!70,fill=black!70] (2.46390744525548,-0.463907445255475) circle (0.03);
+\draw[black!70,fill=black!70] (2.46390744525548,0.0360925547445248) circle (0.03);
+\draw[black!70,fill=black!70] (2.66052788321168,-0.56052788321168) circle (0.03);
+\draw[black!70,fill=black!70] (2.66052788321168,0.13947211678832) circle (0.03);
+\draw[black!70,fill=black!70] (2.66052788321168,1.13947211678832) circle (0.03);
+\draw[black!70,fill=black!70] (2.66052788321168,1.53947211678832) circle (0.03);
+\draw[black!70,fill=black!70] (2.85714832116788,-1.05714832116788) circle (0.03);
+\draw[black!70,fill=black!70] (2.85714832116788,-0.557148321167884) circle (0.03);
+\draw[black!70,fill=black!70] (2.85714832116788,0.542851678832116) circle (0.03);
+\draw[black!70,fill=black!70] (3.05376875912409,-0.653768759124088) circle (0.03);
+\draw[black!70,fill=black!70] (3.05376875912409,-0.453768759124088) circle (0.03);
+\draw[black!70,fill=black!70] (3.05376875912409,-0.253768759124088) circle (0.03);
+\draw[black!70,fill=black!70] (3.05376875912409,0.146231240875912) circle (0.03);
+\draw[black!70,fill=black!70] (3.4470096350365,-0.147009635036498) circle (0.03);
+\draw[black!70,fill=black!70] (3.6436300729927,-0.943630072992702) circle (0.03);
+\draw[black!70,fill=black!70] (3.84025051094891,-0.340250510948906) circle (0.03);
+\draw[black!70,fill=black!70] (3.84025051094891,0.759749489051094) circle (0.03);
+\draw[black!70,fill=black!70] (3.84025051094891,0.809749489051094) circle (0.03);
+\draw[black!70,fill=black!70] (4.03687094890511,0.213129051094889) circle (0.03);
+
+\end{tikzpicture}
+\end{center}
+
+\end{multicols}
+
+\vspace{-0.5cm}
+Use the residual plot to comment on the validity of the linear model.
+
+\tcblower
+\textbf{Solution:} The residual plot appears to show a random scatter of points centred on zero, with a broadly constant variance as the fitted value increases. This suggests a linear model between stopping distance and speed could be appropriate.
+
+\end{tcolorbox}
+
+\pagebreak
+
+#### Exercise 18H {-}
+
+\begin{enumerate}
+    \item Metal cables are tested under laboratory conditions to determine their breaking strength. Each cable is fixed between two points, and masses attached to the middle of the cable, with the mass steadily increased until the cable breaks. The scatterplot below shows the cable diameter ($x$ mm) against the maximum mass held before breaking ($y$ kg).
+    \begin{multicols}{2}
+\begin{center}
+    \begin{tikzpicture}
+        \draw (0,0) -- (5,0);
+        \foreach \x in {0,0.5,...,4.5}{
+        \draw (\x,0) -- (\x,-0.1);
+        }
+        \foreach \y in {0,0.5,...,3.5}{
+        \draw (0,\y) -- (-0.1,\y);
+        }
+        \foreach \x in {0,1,...,5}{
+        \draw (\x,-0.1) -- (\x,0) node[below] {\x};
+        }
+        \node at (2.75,-0.75) {Diameter (mm)};
+        \draw (0,0) -- (0,3.8);
+        \foreach \y in {0,200,...,600}{
+        \draw (-0.1,0.005*\y) -- (0,0.005*\y) node[left] {\y};
+        }
+        \node[rotate=90] at (-1.3,2) {Max mass (kg)};
+        \draw[black!70,fill=black!70] (1,0.01425) circle (0.05);
+\draw[black!70,fill=black!70] (1.5,0.05705) circle (0.05);
+\draw[black!70,fill=black!70] (2,0.17755) circle (0.05);
+\draw[black!70,fill=black!70] (2.5,0.32715) circle (0.05);
+\draw[black!70,fill=black!70] (3,0.61035) circle (0.05);
+\draw[black!70,fill=black!70] (3.5,1.01405) circle (0.05);
+\draw[black!70,fill=black!70] (4,1.63255) circle (0.05);
+\draw[black!70,fill=black!70] (4.5,2.4923) circle (0.05);
+\draw[black!70,fill=black!70] (5,3.5018) circle (0.05);
+        \draw[thick] (1.7,0) -- (5,2.7); 
+    \end{tikzpicture}
+\end{center}
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw (-0.5,-2) -- (-0.5,2);
+        \draw (-0.3,0) -- (6.6,0);
+        \draw (-0.5,0) -- (-0.6,0);
+        \draw (-0.5,1) -- (-0.6,1);
+        \draw (-0.5,2) -- (-0.6,2);
+        \draw (-0.5,-1) -- (-0.6,-1);
+        \draw (-0.5,-2) -- (-0.6,-2);
+        \node at (2.5,2) {Residual plot};
+        \draw (0,0) -- (0,-0.1);
+        \draw (1,0) -- (1,-0.1);
+        \draw (2,0) -- (2,-0.1);
+        \draw (3,0) -- (3,-0.1);
+        \draw (4,0) -- (4,-0.1);
+        \draw (5,0) -- (5,-0.1);
+        \draw (6,0) -- (6,-0.1);
+        \node[below] at (0,0) {$0$};
+        \node[below] at (2,0) {$200$};
+        \node[below] at (4,0) {$400$};
+        \node[below] at (6,0) {$600$};
+        \node[rotate=90] at (-1.75,0) {Residuals};
+        \node[left] at (-0.5,0) {$0$};
+        \node[left] at (-0.5,2) {$200$};
+        \node[left] at (-0.5,1) {$100$};
+        \node[left] at (-0.5,-1) {$-100$};
+        \node[left] at (-0.5,-2) {$-200$};
+        \node at (2.5,-2) {Fitted maximum mass (kg)};
+       \draw[black!70,fill=black!70] (-0.129934444444445,1.15843444444444) circle (0.05);
+\draw[black!70,fill=black!70] (0.698493888888889,0.415606111111111) circle (0.05);
+\draw[black!70,fill=black!70] (1.52692222222222,-0.171822222222222) circle (0.05);
+\draw[black!70,fill=black!70] (2.35535055555556,-0.701050555555555) circle (0.05);
+\draw[black!70,fill=black!70] (3.18377888888889,-0.963078888888889) circle (0.05);
+\draw[black!70,fill=black!70] (4.01220722222222,-0.984107222222221) circle (0.05);
+\draw[black!70,fill=black!70] (4.84063555555556,-0.575535555555555) circle (0.05);
+\draw[black!70,fill=black!70] (5.66906388888889,0.315536111111111) circle (0.05);
+\draw[black!70,fill=black!70] (6.49749222222222,1.50610777777778) circle (0.05);
+    \end{tikzpicture}
+\end{center}
+\end{multicols}
+    Comment on the suitability of the linear model fitted.
+    \item 31 randomly selected black cherry trees have their diameter at a set distance from the ground measured, in inches, with the height of each tree also measured, in feet. The equation of the least squares regression line for $y$ on $x$ is obtained, and shown on the scatterplot below alongside a residual plot.
+    \begin{multicols}{2}
+    \begin{center}
+    \begin{tikzpicture}
+        \draw (0,0) -- (6.5,0);
+        \foreach \x in {0,1,...,6}{
+        \draw (\x,-0.1) -- (\x,0) node[below] {\x};
+        }
+        \node at (3.25,-0.75) {Tree diameter (inches)};
+        \draw (0,0) -- (0,3.5);
+        \foreach \y in {60,68,...,84}{
+        \draw (-0.1,0.125*\y-0.125*60) -- (0,0.125*\y-0.125*60) node[left] {\y};
+        }
+        \node[rotate=90] at (-1,2) {Tree height (feet)};
+        \draw[black!70,fill=black!70] (0.15,1.25) circle (0.03);
+\draw[black!70,fill=black!70] (0.3,0.625) circle (0.03);
+\draw[black!70,fill=black!70] (0.4,0.375) circle (0.03);
+\draw[black!70,fill=black!70] (1.25,1.5) circle (0.03);
+\draw[black!70,fill=black!70] (1.35,2.625) circle (0.03);
+\draw[black!70,fill=black!70] (1.4,2.875) circle (0.03);
+\draw[black!70,fill=black!70] (1.5,0.75) circle (0.03);
+\draw[black!70,fill=black!70] (1.5,1.875) circle (0.03);
+\draw[black!70,fill=black!70] (1.55,2.5) circle (0.03);
+\draw[black!70,fill=black!70] (1.6,1.875) circle (0.03);
+\draw[black!70,fill=black!70] (1.65,2.375) circle (0.03);
+\draw[black!70,fill=black!70] (1.7,2) circle (0.03);
+\draw[black!70,fill=black!70] (1.7,2) circle (0.03);
+\draw[black!70,fill=black!70] (1.85,1.125) circle (0.03);
+\draw[black!70,fill=black!70] (2,1.875) circle (0.03);
+\draw[black!70,fill=black!70] (2.45,1.75) circle (0.03);
+\draw[black!70,fill=black!70] (2.45,3.125) circle (0.03);
+\draw[black!70,fill=black!70] (2.65,3.25) circle (0.03);
+\draw[black!70,fill=black!70] (2.85,1.375) circle (0.03);
+\draw[black!70,fill=black!70] (2.9,0.5) circle (0.03);
+\draw[black!70,fill=black!70] (3,2.25) circle (0.03);
+\draw[black!70,fill=black!70] (3.1,2.5) circle (0.03);
+\draw[black!70,fill=black!70] (3.25,1.75) circle (0.03);
+\draw[black!70,fill=black!70] (4,1.5) circle (0.03);
+\draw[black!70,fill=black!70] (4.15,2.125) circle (0.03);
+\draw[black!70,fill=black!70] (4.65,2.625) circle (0.03);
+\draw[black!70,fill=black!70] (4.75,2.75) circle (0.03);
+\draw[black!70,fill=black!70] (4.95,3.5) circle (0.03);
+\draw[black!70,fill=black!70] (5,1.5) circle (0.03);
+\draw[black!70,fill=black!70] (6.3,3.375) circle (0.03);  
+\draw[thick] (0,1.3) -- (6.5,2.774); 
+    \end{tikzpicture}
+\end{center}
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw (0,-2) rectangle (7,2);
+        \draw[dashed] (0,0) -- (7,0);
+        \node[rotate=90] at (-0.75,0) {Residual};
+        \node[left] at (0,0) {$0$};
+        \node at (3.5,-2.25) {Fitted height (ft)};
+        \draw[black!70,fill=black!70] (0.393730557642215,-0.118119167292664) circle (0.03);
+\draw[black!70,fill=black!70] (0.551885879002775,-0.915565763700832) circle (0.03);
+\draw[black!70,fill=black!70] (0.657322759909817,-1.24719682797295) circle (0.03);
+\draw[black!70,fill=black!70] (1.55353624761967,-0.1660608742859) circle (0.03);
+\draw[black!70,fill=black!70] (1.65897312852671,1.15230806144199) circle (0.03);
+\draw[black!70,fill=black!70] (1.71169156898024,1.43649252930593) circle (0.03);
+\draw[black!70,fill=black!70] (1.81712844988727,-1.14513853496618) circle (0.03);
+\draw[black!70,fill=black!70] (1.81712844988727,0.204861465033819) circle (0.03);
+\draw[black!70,fill=black!70] (1.8698468903408,0.939045932897761) circle (0.03);
+\draw[black!70,fill=black!70] (1.92256533079431,0.173230400761706) circle (0.03);
+\draw[black!70,fill=black!70] (1.97528377124784,0.757414868625649) circle (0.03);
+\draw[black!70,fill=black!70] (2.02800221170136,0.291599336489593) circle (0.03);
+\draw[black!70,fill=black!70] (2.02800221170136,0.291599336489593) circle (0.03);
+\draw[black!70,fill=black!70] (2.18615753306192,-0.805847259918575) circle (0.03);
+\draw[black!70,fill=black!70] (2.34431285442248,0.046706143673255) circle (0.03);
+\draw[black!70,fill=black!70] (2.81877881850417,-0.245633645551251) circle (0.03);
+\draw[black!70,fill=black!70] (2.81877881850417,1.40436635444875) circle (0.03);
+\draw[black!70,fill=black!70] (3.02965258031825,1.49110422590453) circle (0.03);
+\draw[black!70,fill=black!70] (3.24052634213233,-0.8221579026397) circle (0.03);
+\draw[black!70,fill=black!70] (3.29324478258585,-1.88797343477576) circle (0.03);
+\draw[black!70,fill=black!70] (3.39868166349289,0.180395500952132) circle (0.03);
+\draw[black!70,fill=black!70] (3.50411854439994,0.448764436680019) circle (0.03);
+\draw[black!70,fill=black!70] (3.6622738657605,-0.498682159728149) circle (0.03);
+\draw[black!70,fill=black!70] (4.45305047256331,-1.03591514176899) circle (0.03);
+\draw[black!70,fill=black!70] (4.61120579392387,-0.333361738177162) circle (0.03);
+\draw[black!70,fill=black!70] (5.13839019845908,0.108482940462277) circle (0.03);
+\draw[black!70,fill=black!70] (5.24382707936612,0.226851876190164) circle (0.03);
+\draw[black!70,fill=black!70] (5.4547008411802,-0.136410252354059) circle (0.03);
+\draw[black!70,fill=black!70] (5.50741928163372,0.952225784490117) circle (0.03);
+\draw[black!70,fill=black!70] (5.50741928163372,-0.952225784490117) circle (0.03);
+\draw[black!70,fill=black!70] (6.87809873342526,0.486570379972422) circle (0.03);
+    \end{tikzpicture}
+\end{center}
+\end{multicols}
+    Explain why the residual plot suggests that a linear model would be suitable for the data.  
+    \item A student investigating the relationship between the length of a pendulum and the time taken for one complete swing to occur made a simple pendulum from string and a metal disc, suspended from a clamp over the edge of a table. The time taken for one complete swing ($y$ seconds) was recorded for 12 different string lengths ($x$ cm).
+    \begin{multicols}{2}
+    \begin{center}
+    \begin{tikzpicture}
+        \draw (0,0) -- (5,0);
+        \foreach \x in {0,10,...,50}{
+        \draw (0.1*\x,-0.1) -- (0.1*\x,0) node[below] {\x};
+        }
+        \node at (2.5,-1) {Length (cm)};
+        \draw (0,0) -- (0,3.2);
+        \foreach \y in {0,0.5,...,1.5}{
+        \draw (-0.1,2*\y) -- (0,2*\y) node[left] {\y};
+        }
+        \node[rotate=90] at (-1,1.6) {Time (seconds)};
+        \draw[black!80,fill=black!80] (0.65,1.02) circle (0.03);
+\draw[black!80,fill=black!80] (1.1,1.36) circle (0.03);
+\draw[black!80,fill=black!80] (1.32,1.46) circle (0.03);
+\draw[black!80,fill=black!80] (1.5,1.58) circle (0.03);
+\draw[black!80,fill=black!80] (1.8,1.76) circle (0.03);
+\draw[black!80,fill=black!80] (2.31,1.98) circle (0.03);
+\draw[black!80,fill=black!80] (2.44,2.02) circle (0.03);
+\draw[black!80,fill=black!80] (2.66,2.16) circle (0.03);
+\draw[black!80,fill=black!80] (3.05,2.26) circle (0.03);
+\draw[black!80,fill=black!80] (3.43,2.52) circle (0.03);
+\draw[black!80,fill=black!80] (3.76,2.56) circle (0.03);
+\draw[black!80,fill=black!80] (4.15,2.64) circle (0.03);
+    \draw (0.5,1.09) -- (4.5,2.94);
+    \end{tikzpicture}
+\end{center}
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw (0,-1.5) rectangle (6,1.5);
+        \draw[dashed] (0,0) -- (6,0);
+        \node[rotate=90] at (-0.75,0) {Residuals};
+        \node[left] at (0,0) {$0$};
+        \node at (3,-1.75) {Fitted time (seconds)};
+        \node at (3,1.75) {Residual plot};
+        \draw[black!80,fill=black!80] (0.490870774468948,-1.43623591489649) circle (0.05);
+\draw[black!80,fill=black!80] (1.11423900294745,-0.114130009824835) circle (0.05);
+\draw[black!80,fill=black!80] (1.41899680353694,-0.129989345123138) circle (0.05);
+\draw[black!80,fill=black!80] (1.66834409492834,0.238853016905525) circle (0.05);
+\draw[black!80,fill=black!80] (2.08392291391401,0.653590286953298) circle (0.05);
+\draw[black!80,fill=black!80] (2.79040690618965,0.498643646034507) circle (0.05);
+\draw[black!80,fill=black!80] (2.97049106108344,0.298363129721877) circle (0.05);
+\draw[black!80,fill=black!80] (3.27524886167293,0.682503794423575) circle (0.05);
+\draw[black!80,fill=black!80] (3.8155013263543,-0.118337754514322) circle (0.05);
+\draw[black!80,fill=black!80] (4.34190116373614,0.726996120879524) circle (0.05);
+\draw[black!80,fill=black!80] (4.79903786462038,-0.396792882067931) circle (0.05);
+\draw[black!80,fill=black!80] (5.33929032930175,-1.39763443100583) circle (0.05);
+    \end{tikzpicture}
+\end{center}
+\end{multicols}
+    Comment on the suitability of the linear model fitted.
+\end{enumerate}
+
+\pagebreak
+
+## Confidence and Prediction Intervals
+
+One purpose for adopting a regression approach to examine the relationship between two variables is the wish to predict a value for the response variable ($Y$) given a particular value for the predictor ($x$). 
+
+The least squares regression line equation of $\hat{Y_i}=a+bx_i$ gives an *estimate* for the **mean** value of the response variable for any given $x_i$, whilst the *true* mean response value for a given $x_i$, which is denoted $\text{E}(Y_i\,|\,x_i)$, is unknown. 
+
+It can be desirable to obtain a **confidence interval** for $\text{E}(Y_i\,|\,x_i)$. It can be shown that the *point estimate*, $\hat{Y_i}$, has a sample standard error of:
+
+$$s\sqrt{\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}$$
+
+If the errors, $\varepsilon_i$, are identically and independently distributed as $\text{N}\left(0,\sigma^2\right)$ then the formula below, given on Page 5 of the Data Booklet, can be derived.
+
+\begin{centering}
+\tcbset{width=16cm}
+\begin{tcolorbox}[adjusted title=A confidence interval for a mean response value, halign title = center,colback=black!5,colframe=black!75, halign = center]
+A $100(1-\alpha)\%$ confidence interval for $\text{E}(Y_i\,|\,x_i)$ is given by:\\[1em]
+$\hat{Y_i}\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}$
+\end{tcolorbox}
+\end{centering}
+
+As with confidence intervals, the level of confidence relates to the success rate of the *procedure used to generate the interval*, rather than the probability of a calculated interval containing the mean response value $\text{E}(Y_i\,|\,x_i)$.
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} The lengths in centimetres ($x$) and masses in kilograms ($y$) of 12 salmon were measured, with the results:
+
+\begin{center}
+    \begin{tabular}{ccccc}
+        $\Sigma x=30$ & $\Sigma y=540$ & $S_{xx}=12$ & $S_{yy}=4800$ & $S_{xy}=150$
+    \end{tabular}
+\end{center}
+
+Construct a 99\% confidence interval for the mean length of salmon with mass 3kg.
+
+\tcblower
+\textbf{Solution:}\\
+
+$b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{150}{12}=12.5, \quad a=\bar{y}-b\bar{x}=\dfrac{540}{12}-12.5\times \dfrac{30}{12}=13.75 \quad \implies \quad \hat{Y_i}=13.75+12.5x_i$\\[0.3em]
+
+$\hat{Y}=13.75+12.5\times 3=51.75$\\[0.3em]
+
+$SSR=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=4800-\dfrac{150^2}{12}=2925, \quad s^2=\dfrac{SSR}{n-2}=\dfrac{2925}{10}=292.5, \quad s=\sqrt{292.5}=17.1$\\[0.3em]
+
+A 99\% CI for $E(Y\,|\,x=3)$ is $51.75\,\pm\,3.169 \times 17.1\times \sqrt{\dfrac{1}{12}+\dfrac{(3-2.5)^2}{12}}=51.75\,\pm\,17.49$\\[0.3em]
+
+So a 99\% confidence interval for the mean mass of a 3kg salmon is $(34.26\text{cm}\,,\,69.24\text{cm})$.
+
+\end{tcolorbox}
+
+\pagebreak
+
+A similar but subtly different goal to predicting a *mean* response value is predicting an **individual** response value for a given $x_i$, denoted as $Y_i\,|\,x_i$. In the context of the previous example, that would be predicting the length of an *individual* salmon. Since the value for a sampled individual can be expected to have more variability that the value of a sample mean, a wider interval around $\hat{Y_i}$ is needed. The required interval is called a **prediction interval**.
+
+\begin{centering}
+\tcbset{width=16cm}
+\begin{tcolorbox}[adjusted title=A prediction interval for an individual response value, halign title = center,colback=black!5,colframe=black!75, halign = center]
+A $100(1-\alpha)\%$ prediction interval for $Y_i\,|\,x_i$ is given by:\\[1em]
+$\hat{Y_i}\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{1+\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}$
+\end{tcolorbox}
+\end{centering}
+
+This formula, also given on Page 5 of the Data Booklet, relies also on the errors, $\varepsilon_i$, being identically and independently distributed as $\text{N}\left(0,\sigma^2\right)$
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} The lengths in centimetres ($x$) and masses in kilograms ($y$) of 12 salmon were measured, with the results:
+
+\begin{center}
+    \begin{tabular}{ccccc}
+        $\Sigma x=30$ & $\Sigma y=540$ & $S_{xx}=12$ & $S_{yy}=4800$ & $S_{xy}=150$
+    \end{tabular}
+\end{center}
+
+Construct a 95\% prediction interval for the length of salmon with mass 4kg.
+
+\tcblower
+\textbf{Solution:}\\
+
+$b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{150}{12}=12.5, \quad a=\bar{y}-b\bar{x}=\dfrac{540}{12}-12.5\times \dfrac{30}{12}=13.75 \quad \implies \quad \hat{Y_i}=13.75+12.5x_i$\\[0.3em]
+
+$\hat{Y}=13.75+12.5\times 4=64.25$\\[0.3em]
+
+$SSR=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=4800-\dfrac{150^2}{12}=2925, \quad s^2=\dfrac{SSR}{n-2}=\dfrac{2925}{10}=292.5, \quad s=\sqrt{292.5}=17.1$\\[0.3em]
+
+A 95\% PI for $Y\,|\,x=3$ is $64.25\,\pm\,2.228 \times 17.1\times \sqrt{1+\dfrac{1}{12}+\dfrac{(4-2.5)^2}{12}}=64.25\,\pm\,42.95$\\[0.3em]
+
+So a 95\% prediction interval for the mass of a 4kg salmon is $(21.3\text{cm}\,,\,107.2\text{cm})$.
+
+\end{tcolorbox}
+
+#### Exercise 18I {-}
+
+\begin{enumerate}
+    \item From Context 1: Construct a 95\% confidence interval for the mean \% mass loss of a metal plate in the acid solution for 150 hours.
+    \item From Context 2: Construct a 90\% confidence interval for the mean carbohydrate content for a caffeinated drink with 400 calories.
+    \item From Context 3: Construct a 99\% prediction interval for the body fat \% for a patient with systolic blood pressure of 130.
+    \item From Context 4: Construct a 95\% prediction interval for the physics mark of a student who gained a maths mark of 74.
+\end{enumerate}
+
+\pagebreak
+
+## Transforming Data
+
+\newpage
+
+#### Exercise 18J {-}
+
+\newpage
+
+## Review Exercise {-}
+
+\begin{enumerate}
+    \item As part of a study on intensive exercise, a sports scientist recorded the peak heart rates ($y$) of a random selection of fifteen volunteers of different ages ($x$) who took regular exercise. The linear regression equation was calculated for the data shown in the scatter diagram and found to be $\hat{Y}=212.3−0.96x$.
+\begin{multicols}{2}
+
+\begin{center}
+\begin{tikzpicture}
+\draw[semithick] (1.8,0.1*160) -- (1.8,0.1*200);
+\draw[semithick] (2.0,15.9) -- (6.0,15.9);
+\node[rotate=90] at (0.4,0.1*180) {Heart rate (bpm)};
+\node at (4,14.9) {Age (years)};
+\foreach \y in {160,170,...,200}
+\node at (1.3,0.1*\y) {\y};
+\foreach \y in {160,165,...,200}
+\draw[semithick] (1.8,0.1*\y) -- (1.6,0.1*\y);
+\foreach \x in {20,25,...,60}
+\node at (0.1*\x,15.5) {\x};
+\foreach \x in {20,25,...,60}
+\draw[semithick] (0.1*\x,15.8) -- (0.1*\x,16);
+\draw[fill=black] (2,0.1*198) circle (0.05);
+\draw[fill=black] (2.2,0.1*191) circle (0.05);
+\draw[fill=black] (2.4,0.1*185) circle (0.05);
+\draw[fill=black] (2.6,0.1*190) circle (0.05);
+\draw[fill=black] (2.8,0.1*179) circle (0.05);
+\draw[fill=black] (2.9,0.1*187) circle (0.05);
+\draw[fill=black] (3.2,0.1*177) circle (0.05);
+\draw[fill=black] (3.5,0.1*178) circle (0.05);
+\draw[fill=black] (3.6,0.1*180) circle (0.05);
+\draw[fill=black] (3.9,0.1*179) circle (0.05);
+\draw[fill=black] (4.0,0.1*175) circle (0.05);
+\draw[fill=black] (4.4,0.1*168) circle (0.05);
+\draw[fill=black] (4.6,0.1*168) circle (0.05);
+\draw[fill=black] (4.6,0.1*170) circle (0.05);
+\draw[fill=black] (5.1,0.1*162) circle (0.05);
+\draw[thick] (2,21.23-0.096*20) -- (5.2,21.23-0.096*52);
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{lll}
+        $\Sigma x=518$ & $\Sigma y=2687$ & $\Sigma xy=91534$\\[0.5em]
+        $\Sigma x^2=19196$ & $\Sigma y^2=482691$ & $n=15$
+    \end{tabular}
+\end{center}
+
+\begin{enumerate}
+    \item Calculate the residual of a volunteer aged 32 with a heart rate of 177 bpm.
+    \item Use a suitable hypothesis test to assess the usefulness of the linear model for prediction at the 1\% level of significance.
+\end{enumerate}
+
+\end{multicols}
+
+    \item When a type of metal bar is heated it expands. The amount by which it expands ($e$, in mm) and for a given increase in temperature ($t$, in $\degree \text{C}$) is recorded for a random sample of six such bars. A regression line with equation is $\hat{E}=0.23+0.077t$ is obtained for the data, as well as summary statistics.
+
+\begin{multicols}{2}
+
+\begin{center}
+\begin{tikzpicture}
+\draw (0,0) -- (3,0);
+\draw (0,0) -- (0,3);
+\node[rotate=90] at (-1.3,1.5) {Expansion (mm)};
+\node at (1.5,-1.2) {Temperature rise ($^{\circ}C)$};
+\foreach \y in {0,10,...,30}
+\node[anchor=east] at (-0.2,0.1*\y) {\y};
+\foreach \y in {0,10,...,30}
+\draw[semithick] (0,0.1*\y) -- (-0.1,0.1*\y);
+\foreach \x in {0,100,...,300}
+\node at (0.01*\x,-0.5) {\x};
+\foreach \x in {0,50,...,300}
+\draw[semithick] (0.01*\x,0) -- (0.01*\x,-0.1);
+\draw[fill=black] (0.5,0.35) circle (0.05);
+\draw[fill=black] (1,0.85) circle (0.05);
+\draw[fill=black] (1.5,1.2) circle (0.05);
+\draw[fill=black] (2,1.54) circle (0.05);
+\draw[fill=black] (2.5,1.92) circle (0.05);
+\draw[fill=black] (3,2.32) circle (0.05);
+\draw[thick] (0.4,0.0023+0.08*4) -- (3,0.0023+0.08*30);
+\end{tikzpicture}
+\end{center}
+
+
+\begin{center}
+    \begin{tabular}{llc}
+        $\Sigma t=1050$ & $\Sigma e=81.8$ & $\Sigma te=17665$\\[0.5em]
+        $\Sigma t^2=227500$ & $\Sigma e^2=1372.54$ & $n=6$ 
+    \end{tabular}
+\end{center}
+
+\begin{enumerate}
+         \item Calculate the coefficient of determination and interpret its value.
+        \item Perform an appropriate hypothesis test at the 0.1\% level of significance to provide evidence of a linear association between temperature rise and expansion.
+\end{enumerate}
+
+\end{multicols}
+
+    \item A strength and conditioning coach wants to increase the vertical jump height performance in their trainees and considers whether back squat weight has an impact on vertical jump height performance. The summary statistics below are taken from the back squat weight ($x$ in kg) and vertical jump height ($y$ in cm) achieved by a random sample of 29 of the coach’s trainees.
+
+\begin{multicols}{2}
+
+
+\begin{center}
+\begin{tikzpicture}
+\draw (0,-0.1) -- (1.6*4,-0.1);
+\draw (0,0) -- (0,5*0.8);
+\node[rotate=90] at (-1.3,2.5*0.8) {Vertical jump height (cm)};
+\node at (1.6*2,-1.2) {Back squat weight (kg)};
+\foreach \y in {40,50,...,90}
+\node[anchor=east] at (-0.2,0.1*\y*0.8-4*0.8) {\y};
+\foreach \y in {40,45,...,90}
+\draw[semithick] (0,0.1*\y*0.8-4*0.8) -- (-0.1,0.1*\y*0.8-4*0.8);
+\foreach \x in {120,130,...,200}
+\node at (1.6*0.05*\x-1.6*6,-0.6) {\x};
+\foreach \x in {120,125,...,200}
+\draw[semithick] (1.6*0.05*\x-1.6*6,-0.2) -- (1.6*0.05*\x-1.6*6,-0.1);
+\draw[fill=black] (1.6*0,0.600000000000001*0.8) circle (0.05);
+\draw[fill=black] (1.6*0.350000000000001,2.2*0.8) circle (0.05);
+\draw[fill=black] (1.6*0.5,1.8*0.8) circle (0.05);
+\draw[fill=black] (1.6*1.5,2.6*0.8) circle (0.05);
+\draw[fill=black] (1.6*3,3*0.8) circle (0.05);
+\draw[fill=black] (1.6*2.6,2.4*0.8) circle (0.05);
+\draw[fill=black] (1.6*2.4,2*0.8) circle (0.05);
+\draw[fill=black] (1.6*1.9,2.2*0.8) circle (0.05);
+\draw[fill=black] (1.6*2,2.1*0.8) circle (0.05);
+\draw[fill=black] (1.6*2.75,4.4*0.8) circle (0.05);
+\draw[fill=black] (1.6*2.5,3.7*0.8) circle (0.05);
+\draw[fill=black] (1.6*0.75,1.6*0.8) circle (0.05);
+\draw[fill=black] (1.6*2,2.2*0.8) circle (0.05);
+\draw[fill=black] (1.6*1,1.5*0.8) circle (0.05);
+\draw[fill=black] (1.6*2.9,3.6*0.8) circle (0.05);
+\draw[fill=black] (1.6*2.1,2.5*0.8) circle (0.05);
+\draw[fill=black] (1.6*2.25,2.6*0.8) circle (0.05);
+\draw[fill=black] (1.6*2.9,3.2*0.8) circle (0.05);
+\draw[fill=black] (1.6*1.25,1.8*0.8) circle (0.05);
+\draw[fill=black] (1.6*1.1,1.5*0.8) circle (0.05);
+\draw[fill=black] (1.6*3.5,3.4*0.8) circle (0.05);
+\draw[fill=black] (1.6*2.4,2.6*0.8) circle (0.05);
+\draw[fill=black] (1.6*3,3.1*0.8) circle (0.05);
+\draw[fill=black] (1.6*2.25,2.6*0.8) circle (0.05);
+\draw[fill=black] (1.6*3.5,3.7*0.8) circle (0.05);
+\draw[fill=black] (1.6*1.25,1.6*0.8) circle (0.05);
+\draw[fill=black] (1.6*2.25,2.5*0.8) circle (0.05);
+\draw[fill=black] (1.6*2.5,2.8*0.8) circle (0.05);
+\draw[fill=black] (1.6*3.25,3.1*0.8) circle (0.05);
+\draw[thick] (1.6*0.05*120-1.6*6,0.019113*120*0.8+3.6639*0.8-4*0.8) -- (1.6*0.05*200-1.6*6,0.019113*200*0.8+3.6639*0.8-4*0.8);
+\node at (3,0.6) {$\hat{Y}=7.237+0.359x$};
+\end{tikzpicture}
+\end{center}  
+
+\begin{center}
+\begin{tabular}{lll}
+  $\Sigma x=4673$ & $S_{xy}=3630.45$ & $n=29$\\[0.5em]
+  $\Sigma x^2=763101$ & $S_{yy}=1899.45$ & 
+\end{tabular}
+\end{center}
+
+    \begin{enumerate}
+        \item Calculate an estimate for the error variance.
+        \item Calculate a 95\% prediction interval for vertical height for a traineee with a back squat weight of 172kg.
+        \item Explain why a prediction interval is more likely to be of interest to the coach in this context than a confidence interval.
+      \end{enumerate}
+
+\end{multicols}
+
+\pagebreak
+
+\item James Forbes was a Scottish physicist who, amongst other things, was interested in finding a way to estimate altitude from measurements of the boiling temperature of water. Some of his observations on boiling point ($y$, in $F^{\circ}$) and barometric pressure ($x$, in inches of mercury) are summarised below.\\[0.1em]
+
+After plotting a scatterplot for this data, a least squares regression line was obtained with the equation $\hat{Y}=155.29+1.9018x$, from which a residual plot was also created. 
+
+\begin{multicols}{2}
+    \begin{center}
+    \begin{tikzpicture}
+        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
+        \draw[-stealth] (0,0.1) -- (0,3.25) node[above] {$y$}; 
+        \node at (2.5,-1) {Barometric pressure (inches of mercury)};
+        \node at (-2.2,1.75) {Boiling point};
+        \node at (-2.5,1.25) {($F^{\circ}$)};
+        \foreach \x in {0.25,0.75,...,4.75}{
+        \draw (\x,0) -- (\x,-0.1);
+        }
+        \foreach \y in {0.5,1,...,3}{
+        \draw (0,\y) -- (-0.1,\y);
+        }
+        \node[left] at (0,0.5) {195};
+        \node[left] at (0,1.5) {205};
+        \node[left] at (0,2.5) {215};
+        \node[below] at (0.25,0) {21};
+        \node[below] at (1.25,0) {23};
+        \node[below] at (2.25,0) {25};
+        \node[below] at (3.25,0) {27};
+        \node[below] at (4.25,0) {29};
+        \draw[fill=black] (0.145,0.45) circle (0.03);
+\draw[fill=black] (0.145,0.430000000000001) circle (0.03);
+\draw[fill=black] (0.949999999999999,0.790000000000001) circle (0.03);
+\draw[fill=black] (1.085,0.840000000000001) circle (0.03);
+\draw[fill=black] (1.325,0.940000000000001) circle (0.03);
+\draw[fill=black] (1.425,0.990000000000001) circle (0.03);
+\draw[fill=black] (1.695,1.09) circle (0.03);
+\draw[fill=black] (1.745,1.11) circle (0.03);
+\draw[fill=black] (1.76,1.14) circle (0.03);
+\draw[fill=black] (1.755,1.13) circle (0.03);
+\draw[fill=black] (2.32,1.36) circle (0.03);
+\draw[fill=black] (3.035,1.46) circle (0.03);
+\draw[fill=black] (3.995,1.95) circle (0.03);
+\draw[fill=black] (3.63,1.86) circle (0.03);
+\draw[fill=black] (4.27,2.07) circle (0.03);
+\draw[fill=black] (4.69,2.19) circle (0.03);
+\draw[fill=black] (4.78,2.22) circle (0.03);
+\draw[semithick] (20.8*0.5-10.25,194.82*0.1-19) -- (30.5*0.5-10.25,213.25*0.1-19);
+    \end{tikzpicture}
+\end{center}
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[black!70,fill=black!70] (0.965827657571288,-0.658276575712875) circle (0.05);
+\draw[black!70,fill=black!70] (0.965827657571288,-1.05827657571285) circle (0.05);
+\draw[black!70,fill=black!70] (1.57820195230497,0.0179804769502994) circle (0.05);
+\draw[black!70,fill=black!70] (1.68089826260193,-0.00898262601930355) circle (0.05);
+\draw[black!70,fill=black!70] (1.86346948090762,0.165305190923789) circle (0.05);
+\draw[black!70,fill=black!70] (1.93954082186833,0.404591781316697) circle (0.05);
+\draw[black!70,fill=black!70] (2.14493344246224,0.350665575377661) circle (0.05);
+\draw[black!70,fill=black!70] (2.18296911294259,0.370308870574092) circle (0.05);
+\draw[black!70,fill=black!70] (2.19437981408669,0.85620185913308) circle (0.05);
+\draw[black!70,fill=black!70] (2.19057624703866,0.694237529613417) circle (0.05);
+\draw[black!70,fill=black!70] (2.62037932346665,0.996206765333511) circle (0.05);
+\draw[black!70,fill=black!70] (3.1642894113357,-2.442894113357) circle (0.05);
+\draw[black!70,fill=black!70] (3.89457428455848,0.0542571544152111) circle (0.05);
+\draw[black!70,fill=black!70] (3.6169138900519,1.030861099481) circle (0.05);
+\draw[black!70,fill=black!70] (4.10377047220042,0.36229527799577) circle (0.05);
+\draw[black!70,fill=black!70] (4.42327010423539,-0.43270104235387) circle (0.05);
+\draw[black!70,fill=black!70] (4.49173431110002,-0.51734311100023) circle (0.05);
+    \draw (0,-2.7) rectangle (6,1.5);
+    \draw[dashed] (0,0) -- (6,0);
+    \node at (3,1.8) {Residual plot};
+    \node[left] at (0,0) {$0$};
+    \node[rotate=90] at (-0.7,-0.5) {Fitted Values};
+    \node at (3,-3) {Residuals};
+    \end{tikzpicture}
+\end{center}
+
+\end{multicols}
+
+\begin{enumerate}[resume]
+    \item  Comment on the suitability of the linear model.
+    \item Suggest what next steps might be taken on the basis of the residual plot for the linear model.
+\end{enumerate}
+
+\item A running website randomly selected eleven amateur runners who recently completed a marathon and asked them to complete a survey which included their finishing time in the marathon and information about their training routine. The scatterplot below shows, for each runner, their finishing time ($x$, in hours) and the total distance they ran in the final four weeks of their training ($y$, in miles). 
+
+\begin{center}
+\begin{tikzpicture}
+\foreach \x in {0,1,...,7}{
+\draw (\x,0) -- (\x,-0.1);
+\node[below] at (\x,0) {\x};
+}
+\foreach \y in {0,25,...,175}{
+\draw (0,0.02*\y) -- (-0.1,0.02*\y);
+\node[left] at (0,0.02*\y) {\y};
+}
+\draw[black!70,fill=black!70] (2.4,2.7) circle (0.03);
+\draw[black!70,fill=black!70] (2.9,2.84) circle (0.03);
+\draw[black!70,fill=black!70] (3.1,2.42) circle (0.03);
+\draw[black!70,fill=black!70] (3.7,2.3) circle (0.03);
+\draw[black!70,fill=black!70] (3.9,1.9) circle (0.03);
+\draw[black!70,fill=black!70] (4,2.08) circle (0.03);
+\draw[black!70,fill=black!70] (4.2,1.88) circle (0.03);
+\draw[black!70,fill=black!70] (4.4,1.74) circle (0.03);
+\draw[black!70,fill=black!70] (4.7,1.62) circle (0.03);
+\draw[black!70,fill=black!70] (5,1.18) circle (0.03);
+\draw[black!70,fill=black!70] (6.2,1.3) circle (0.03);
+\draw[thick] (2,2.96) -- (6.5,0.84);
+\draw[-stealth] (0,0) -- (7,0) node[right] {$x$};
+\draw[-stealth] (0,0) -- (0,3.6) node[above] {$y$};
+\node at (3.5,-1) {Time (hours)};
+\node at (-2,2.5) {Distance};
+\node at (-2,2) {(miles)};
+\node[right] at (9,4) {Summary statistics:};
+\node[right] at (9,3.4) {$\sum x=44.5$};
+\node[right] at (9,2.8) {$\sum x^2=191.21$};
+\node[right] at (9,2.2) {$\sum y=1098$};
+\node[right] at (9,1.6) {$\sum y^2=116768$};
+\node[right] at (9,1) {$\sum xy=4179.2$};
+\node[right] at (9,0.4) {$n=11$};
+\end{tikzpicture}
+\end{center}  
+
+A least squares regression line for $y$ on $x$ is shown on the graph, with equation $\hat{Y}=194.8-23.48x$.
+
+\begin{enumerate}
+    \item[(a)] Calculate the correlation coefficient, and comment on its value.
+\end{enumerate}
+
+The website wishes to allow users the ability to input the number of miles in their training plan for the four weeks leading up to the rate, and receive in response an estimate for their finishing time.
+
+\begin{enumerate}
+    \item[(b)] Explain why the equation provided above is unsuitable for this purpose.
+    \item[(c)] Obtain a suitable equation which could instead be used.
+\end{enumerate}
+
+\end{enumerate}
+
+\pagebreak
+

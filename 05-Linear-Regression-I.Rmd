@@ -1,0 +1,1848 @@
+# An Introduction to Linear Regression
+
+A common interest for anyone working with data is a possible relationship between two numerical variables. For example, suppose a sports scientist wishes to explore the relationship between runners' *VO2 Max*, which is measure of aerobic fitness, and their *5km running time*. From a sample of eight runners they may record, for each, the values of the two *variables*, recording the results in a table as follows:
+
+\begin{center}
+\begin{tabular}{|c|cccccccc|}
+    \hline
+      Runner & A & B & C & D & E & F & G & H\\
+    \hline
+      VO2 Max (ml/kg/min) & 50 & 41 & 54 & 42 & 44 & 48 & 40 & 51\\
+      5km time (mins) & 26 & 34 & 20 & 31 & 28 & 27 & 31 & 22\\
+    \hline
+\end{tabular}
+\end{center}
+
+Before applying any statistical analysis techniques to this *bivariate data* the sports scientist constructs a *scatterplot* to visualise it, looking for any apparent patterns or problems:
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[-stealth] (0.5*38,0.25*19) -- (0.5*55.5,0.25*19);
+        \draw[-stealth] (0.5*38,0.25*19) -- (0.5*38,0.25*36.5); 
+        \node at (0.5*46,0.25*14.5) {VO2 Max};
+        \node at (0.5*46,0.25*12.5) {(ml/kg/min)};
+        \node at (0.5*34,0.25*27.5) {5km time};
+        \node at (0.5*34,0.25*25.5) {(mins)};
+        \foreach \x in {40,42,...,54}{
+        \draw (0.5*\x,0.25*19) -- (0.5*\x,0.25*18.8) node[below] {\x};
+        }
+        \foreach \x in {38,39,...,55}{
+        \draw (0.5*\x,0.25*19) -- (0.5*\x,0.25*18.8);
+        }
+        \foreach \y in {22,26,...,34}{
+        \draw (0.5*38,0.25*\y) -- (0.5*37.9,0.25*\y) node[left] {\y};
+        }
+        \foreach \y in {20,22,...,36}{
+        \draw (0.5*38,0.25*\y) -- (0.5*37.9,0.25*\y);
+        }
+        \draw[fill=black] (0.5*50,0.25*26) circle (0.08);
+        \draw[fill=black] (0.5*41,0.25*34) circle (0.08);
+        \draw[fill=black] (0.5*54,0.25*20) circle (0.08);
+        \draw[fill=black] (0.5*42,0.25*31) circle (0.08);
+        \draw[fill=black] (0.5*44,0.25*28) circle (0.08);
+        \draw[fill=black] (0.5*48,0.25*27) circle (0.08);
+        \draw[fill=black] (0.5*40,0.25*31) circle (0.08);
+        \draw[fill=black] (0.5*51,0.25*22) circle (0.08);
+    \end{tikzpicture}
+\end{center}
+
+Whilst the sample size is very small, the scatterplot seems to suggest that there is a *linear relationship* between a runner's VO2 Max and their 5km running time. This chapter will introduce the use of a *correlation coefficient* to evaluate the strength of any linear relationship between numerical variables and the construction of a *linear regression model* to describe this relationship and make predictions.
+
+\pagebreak
+
+## Scatterplots and Linear Correlation
+
+When deciding whether a relationship exists between two numerical variables, a scatterplot should always be drawn before any analysis is undertaken using the bivariate data collected.  This is the first step in determining the level of linear relationship, or *linear correlation*, between the variables. Whilst other kinds of relationship may exist between two numerical variables, in this course the focus is on the existence and strength of *linear* relationships. Consider the following:
+
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}[t]{.25\textwidth}
+  \centering
+
+\begin{tikzpicture}
+\draw[semithick,-stealth] (0,0) -- (0,0.6*5);
+\draw[semithick,-stealth] (0,0) -- (0.6*5,0);
+\node at (0.6*5.2,0) {$x$};
+\node at (0,0.6*5.2) {$y$};
+\draw[fill=black] (0.6*0.5,0.6*1.1) circle (0.04);
+\draw[fill=black] (0.6*1,0.6*0.9) circle (0.04);
+\draw[fill=black] (0.6*1.1,0.6*1.6) circle (0.04);
+\draw[fill=black] (0.6*1.4,0.6*1.3) circle (0.04);
+\draw[fill=black] (0.6*1.9,0.6*2.1) circle (0.04);
+\draw[fill=black] (0.6*2.5,0.6*2.1) circle (0.04);
+\draw[fill=black] (0.6*2.4,0.6*2.6) circle (0.04);
+\draw[fill=black] (0.6*3.1,0.6*3) circle (0.04);
+\draw[fill=black] (0.6*3.6,0.6*2.7) circle (0.04);
+\draw[fill=black] (0.6*4.2,0.6*3) circle (0.04);
+\draw[fill=black] (0.6*4.4,0.6*3.6) circle (0.04);
+\draw[fill=black] (0.6*4.9,0.6*3.9) circle (0.04);
+\draw[fill=black] (0.6*5,0.6*4.4) circle (0.04);
+\end{tikzpicture}
+ 
+\captionof{figure}{\textbf{Figure 1}}
+  \label{fig:test1}
+\end{minipage}%
+  \centering
+\begin{minipage}[t]{.25\textwidth}
+  \centering
+  
+\begin{tikzpicture}
+\draw[semithick,-stealth] (0,0) -- (0,0.6*5);
+\draw[semithick,-stealth] (0,0) -- (0.6*5,0);
+\node at (0.6*5.2,0) {$x$};
+\node at (0,0.6*5.2) {$y$};
+\draw[fill=black] (0.6*0.6,0.6*5) circle (0.04);
+\draw[fill=black] (0.6*0.7,0.6*3) circle (0.04);
+\draw[fill=black] (0.6*1,0.6*4.6) circle (0.04);
+\draw[fill=black] (0.6*1.2,0.6*2.9) circle (0.04);
+\draw[fill=black] (0.6*1.6,0.6*4.8) circle (0.04);
+\draw[fill=black] (0.6*1.9,0.6*1.9) circle (0.04);
+\draw[fill=black] (0.6*2.3,0.6*3) circle (0.04);
+\draw[fill=black] (0.6*2.4,0.6*0.9) circle (0.04);
+\draw[fill=black] (0.6*2.7,0.6*3.6) circle (0.04);
+\draw[fill=black] (0.6*3.4,0.6*1.2) circle (0.04);
+\draw[fill=black] (0.6*3.8,0.6*2.7) circle (0.04);
+\draw[fill=black] (0.6*4.4,0.6*0.5) circle (0.04);
+\draw[fill=black] (0.6*4.8,0.6*1.3) circle (0.04);
+\end{tikzpicture}
+  
+\captionof{figure}{\textbf{Figure 2}}
+  \label{fig:test1}
+\end{minipage}%
+  \centering
+\begin{minipage}[t]{.25\textwidth}
+  \centering
+
+\begin{tikzpicture}
+\draw[semithick,-stealth] (0,0) -- (0,0.6*5);
+\draw[semithick,-stealth] (0,0) -- (0.6*5,0);
+\node at (0.6*5.2,0) {$x$};
+\node at (0,0.6*5.2) {$y$};
+\draw[fill=black] (0.6*0.6,0.6*3.7) circle (0.04);
+\draw[fill=black] (0.6*0.7,0.6*1) circle (0.04);
+\draw[fill=black] (0.6*1,0.6*2.3) circle (0.04);
+\draw[fill=black] (0.6*1.2,0.6*4.6) circle (0.04);
+\draw[fill=black] (0.6*1.6,0.6*3.7) circle (0.04);
+\draw[fill=black] (0.6*1.9,0.6*0.3) circle (0.04);
+\draw[fill=black] (0.6*2.3,0.6*2.3) circle (0.04);
+\draw[fill=black] (0.6*2.4,0.6*1.9) circle (0.04);
+\draw[fill=black] (0.6*2.7,0.6*3.1) circle (0.04);
+\draw[fill=black] (0.6*3.4,0.6*5.0) circle (0.04);
+\draw[fill=black] (0.6*3.8,0.6*1.5) circle (0.04);
+\draw[fill=black] (0.6*4.4,0.6*4.2) circle (0.04);
+\draw[fill=black] (0.6*4.8,0.6*0.7) circle (0.04);
+\end{tikzpicture}
+
+\captionof{figure}{\textbf{Figure 3}}
+  \label{fig:test1}
+\end{minipage}%
+  \centering
+\begin{minipage}[t]{.25\textwidth}
+  \centering
+
+\begin{tikzpicture}
+\draw[semithick,-stealth] (0,0) -- (0,0.6*5);
+\draw[semithick,-stealth] (0,0) -- (0.6*5,0);
+\node at (0.6*5.2,0) {$x$};
+\node at (0,0.6*5.2) {$y$};
+\draw[fill=black] (0.6*0.6,0.6*3.61) circle (0.04);
+\draw[fill=black] (0.6*0.7,0.6*3.24) circle (0.04);
+\draw[fill=black] (0.6*1,0.6*2.25) circle (0.04);
+\draw[fill=black] (0.6*1.2,0.6*1.69) circle (0.04);
+\draw[fill=black] (0.6*1.6,0.6*0.81) circle (0.04);
+\draw[fill=black] (0.6*2.1,0.6*0.16) circle (0.04);
+\draw[fill=black] (0.6*4.1,0.6*2.56) circle (0.04);
+\draw[fill=black] (0.6*3.4,0.6*0.81) circle (0.04);
+\draw[fill=black] (0.6*4.4,0.6*3.61) circle (0.04);
+\draw[fill=black] (0.6*4.7,0.6*4.84) circle (0.04);
+\end{tikzpicture}
+
+\captionof{figure}{\textbf{Figure 4}}
+  \label{fig:test1}
+\end{minipage}
+\end{figure}
+
+\textbf{Figure 1} illustrates a *strong, positive linear correlation* between $x$ and $y$, where both variables increase together.
+
+\textbf{Figure 2} shows a *weak, negative linear correlation* between $x$ and $y$, where one decreases as the other increases. 
+
+In \textbf{Figure 3}, as one variable increases, there appears to be no clear pattern as to how the other variable behaves. There appears to be *no linear relationship* between $x$ and $y$.
+
+\textbf{Figure 4} is also an example of *no linear relationship* between $x$ and $y$, although there appears to be some non-linear (possibly quadratic) association between the variables.
+
+Note that **correlation doesn't imply causation**. A linear relationship can exist between variables without meaning that one causes the other. Seemingly linear relationships can also appear by chance - this is referred to as *spurious correlation*.
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} A French class takes two tests, one \textit{listening} and one \textit{reading}. The results of the 10 pupils are shown in the table and scatterplot below, along with some summary statistics. Comment on the scatterplot.
+
+\begin{multicols}{2}
+
+\begin{center}
+\begin{tabular}{c|c}
+    Listening & Reading\\
+    \hline
+    9 & 8\\
+    7 & 9\\
+    11 & 13\\
+    20 & 20\\
+    4 & 9\\
+    6 & 8\\
+    17 & 17\\
+    12 & 14\\
+    10 & 8\\
+    15 & 17
+\end{tabular}
+\end{center}
+
+\vfill\null
+
+\columnbreak
+
+\null\vfill
+
+\vspace{-1cm}
+\begin{center}
+\begin{tikzpicture}
+\draw[semithick] (-0.15,0) -- (-0.15,3.65);
+\draw[semithick] (0,-0.1) -- (4.15,-0.1);
+\node[rotate=90] at (-1.1,1.75) {Reading};
+\node at (2,-1) {Listening};
+\foreach \y in {6,8,...,20}
+\node at (-0.45,0.25*\y-1.5) {\y};
+\foreach \y in {6,8,...,20}
+\draw[semithick] (-0.15,0.25*\y-1.5) -- (-0.25,0.25*\y-1.5);
+\foreach \x in {4,6,...,20}
+\node at (0.25*\x-1,-0.45) {\x};
+\foreach \x in {4,6,...,20}
+\draw[semithick] (0.25*\x-1,-0.1) -- (0.25*\x-1,-0.2);
+\draw[fill=black] (9*0.25-1,8*0.25-1.5) circle (0.04);
+\draw[fill=black] (7*0.25-1,9*0.25-1.5) circle (0.04);
+\draw[fill=black] (11*0.25-1,13*0.25-1.5) circle (0.04);
+\draw[fill=black] (20*0.25-1,20*0.25-1.5) circle (0.04);
+\draw[fill=black] (4*0.25-1,9*0.25-1.5) circle (0.04);
+\draw[fill=black] (6*0.25-1,8*0.25-1.5) circle (0.04);
+\draw[fill=black] (17*0.25-1,17*0.25-1.5) circle (0.04);
+\draw[fill=black] (12*0.25-1,14*0.25-1.5) circle (0.04);
+\draw[fill=black] (10*0.25-1,8*0.25-1.5) circle (0.04);
+\draw[fill=black] (15*0.25-1,17*0.25-1.5) circle (0.04);
+\end{tikzpicture}
+\end{center} 
+
+\end{multicols}
+
+\tcblower
+\textbf{Solution:}
+
+The scatterplot appears to show a strong, positive linear relationship between pupils' listening and reading scores.
+
+\end{tcolorbox}
+
+Scatterplots should always be constructed and closely scrutinised before any analysis of bivariate data is undertaken. Through this visualisation, it may become apparent for instance that the dataset may actually be clearly separated into two or more *distinct groups*, or that possible *outliers* are present which should be carefully considered. 
+
+\pagebreak
+
+[]{#ex51q}
+
+#### [Exercise 5.1](#ex51a) {-}
+
+\setlength{\columnsep}{30pt}
+
+\begin{enumerate}
+    \item For each, make a comment on the scatterplot.
+    \begin{enumerate}[rightmargin=20pt]
+    \begin{multicols}{2}
+        \item Data is collected by a diner in the USA on the \textit{bill amount} and \textit{tip left} by its guests.
+\begin{center}
+\begin{tikzpicture}
+\draw[black!15,step=0.2cm] (0,0) grid (5,4);
+\draw (0,0) rectangle (5,4);
+\node[below] at (2.5,-0.8) {Bill amount (\$)};
+\node[above,rotate=90] at (-0.8,2) {Tip left (\$)};
+\foreach \x in {0,20,...,100}{
+\draw (0.05*\x,0) -- (0.05*\x,-0.1) node[below] {\x};
+}
+\foreach \y in {0,5,10,15,20}{
+\draw (0,0.2*\y) -- (-0.1,0.2*\y) node[left] {\y};
+}
+\draw[black,fill=black] (0.05*21,0.2*4) circle (0.03);
+\draw[black,fill=black] (0.05*26,0.2*4) circle (0.03);
+\draw[black,fill=black] (0.05*10.5,0.2*3.5) circle (0.03);
+\draw[black,fill=black] (0.05*62,0.2*8) circle (0.03);
+\draw[black,fill=black] (0.05*71,0.2*9) circle (0.03);
+\draw[black,fill=black] (0.05*54,0.2*6) circle (0.03);
+\draw[black,fill=black] (0.05*19,0.2*6) circle (0.03);
+\draw[black,fill=black] (0.05*83,0.2*7) circle (0.03);
+\draw[black,fill=black] (0.05*79,0.2*11) circle (0.03);
+\draw[black,fill=black] (0.05*42.5,0.2*7.5) circle (0.03);
+\draw[black,fill=black] (0.05*35,0.2*5) circle (0.03);
+\draw[black,fill=black] (0.05*90,0.2*10) circle (0.03);
+\draw[black,fill=black] (0.05*28,0.2*7) circle (0.03);
+\draw[black,fill=black] (0.05*22,0) circle (0.03);
+\end{tikzpicture}
+\end{center} 
+    \item The \textit{sale price} and \textit{floor area} are recorded for a number of 1-bedroom city centre apartments.
+\begin{center}
+\begin{tikzpicture}
+\draw (-0.1,0) -- (-0.1,4);
+\draw (0,-0.1) -- (5,-0.1);
+\node[rotate=90,above] at (-1,2) {Sale price (£1000s)};
+\node[below] at (2.5,-0.8) {Floor area (square metres)};
+\foreach \y in {50,100,...,200}
+\node[left] at (-0.1,0.02*\y-0.5) {\y};
+\foreach \y in {0,0.5,...,4}
+\draw (-0.1,\y) -- (-0.2,\y);
+\foreach \x in {0,20,...,100}
+\node[below] at (0.05*\x,-0.1) {\x};
+\foreach \x in {0,0.5,...,5}
+\draw (\x,-0.1) -- (\x,-0.2);
+\draw[fill=black] (0.6,1.2) circle (0.03);
+\draw[fill=black] (0.7,1.1) circle (0.03);
+\draw[fill=black] (1,1.3) circle (0.03);
+\draw[fill=black] (0.8,0.9) circle (0.03);
+\draw[fill=black] (1.7,1.8) circle (0.03);
+\draw[fill=black] (1.2,1.5) circle (0.03);
+\draw[fill=black] (1.5,2.1) circle (0.03);
+\draw[fill=black] (2,2) circle (0.03);
+\draw[fill=black] (4,3) circle (0.03);
+\draw[fill=black] (4.5,3.2) circle (0.03);
+\draw[fill=black] (2.4,2.7) circle (0.03);
+\draw[fill=black] (2.7,2.6) circle (0.03);
+\draw[fill=black] (2.8,2) circle (0.03);
+\draw[fill=black] (3.4,2.8) circle (0.03);
+\draw[fill=black] (1.9,1.8) circle (0.03);
+\draw[fill=black] (2.7,1.6) circle (0.03);
+\draw[fill=black] (1.4,1) circle (0.03);
+\draw[fill=black] (1.6,2.7) circle (0.03);
+\draw[fill=black] (3.1,2.5) circle (0.03);
+\draw[fill=black] (3.7,2.2) circle (0.03);
+\draw[fill=black] (3.5,3) circle (0.03);
+\draw[fill=black] (2.7,1.2) circle (0.03);
+\draw[fill=black] (4.2,2.6) circle (0.03);
+\draw[fill=black] (1.5,0.6) circle (0.03);
+\draw[fill=black] (4.3,1.7) circle (0.03);
+\end{tikzpicture}
+\end{center}
+\end{multicols}
+\end{enumerate}
+    \item Information on the designs of 32 different models of cars from the 1970s was collected by a motoring magazine. Data collected included \textit{miles per gallon}, \textit{mass} (in thousands of pounds), \textit{quarter mile time} (in seconds), \textit{rear axle ratio} and \textit{horsepower}. Three scatterplots are shown below to explore possible relationships between the variables.
+    \setlength{\columnsep}{5pt}
+    \begin{multicols}{3}
+       \begin{center}
+\begin{tikzpicture}
+\draw (0,0) rectangle (4,3);
+\node[below] at (2,-0.5) {Miles per gallon};
+\node[above,rotate=90] at (-0.5,1.5) {Mass};
+\foreach \x in {0,1,...,4}{
+\draw (\x,0) -- (\x,-0.1);
+}
+\foreach \y in {0,0.5,...,3}{
+\draw (0,\y) -- (-0.1,\y);
+}
+\foreach \x in {10,15,...,30}{
+\node[below] at (0.2*\x-2,0) {\x};
+}
+\foreach \y in {0,2,...,6}{
+\node[left] at (0,0.5*\y) {\y};
+}
+\draw[black!80,fill=black!80] (1.04,2.325) circle (0.03);
+\draw[black!80,fill=black!80] (1.04,2.112) circle (0.03);
+\draw[black!80,fill=black!80] (1.33,1.92) circle (0.03);
+\draw[black!80,fill=black!80] (1.43,1.785) circle (0.03);
+\draw[black!80,fill=black!80] (1.47,2.2725) circle (0.03);
+\draw[black!80,fill=black!80] (1.5,1.785) circle (0.03);
+\draw[black!80,fill=black!80] (1.52,1.89) circle (0.03);
+\draw[black!80,fill=black!80] (1.52,1.7175) circle (0.03);
+\draw[black!80,fill=black!80] (1.55,1.76) circle (0.03);
+\draw[black!80,fill=black!80] (1.58,1.585) circle (0.03);
+\draw[black!80,fill=black!80] (1.64,2.035) circle (0.03);
+\draw[black!80,fill=black!80] (1.73,1.865) circle (0.03);
+\draw[black!80,fill=black!80] (1.78,1.72) circle (0.03);
+\draw[black!80,fill=black!80] (1.81,1.73) circle (0.03);
+\draw[black!80,fill=black!80] (1.87,1.72) circle (0.03);
+\draw[black!80,fill=black!80] (1.92,1.72) circle (0.03);
+\draw[black!80,fill=black!80] (1.92,1.9225) circle (0.03);
+\draw[black!80,fill=black!80] (1.97,1.385) circle (0.03);
+\draw[black!80,fill=black!80] (2.1,1.31) circle (0.03);
+\draw[black!80,fill=black!80] (2.1,1.4375) circle (0.03);
+\draw[black!80,fill=black!80] (2.14,1.6075) circle (0.03);
+\draw[black!80,fill=black!80] (2.14,1.39) circle (0.03);
+\draw[black!80,fill=black!80] (2.15,1.2325) circle (0.03);
+\draw[black!80,fill=black!80] (2.28,1.16) circle (0.03);
+\draw[black!80,fill=black!80] (2.28,1.575) circle (0.03);
+\draw[black!80,fill=black!80] (2.44,1.595) circle (0.03);
+\draw[black!80,fill=black!80] (2.6,1.07) circle (0.03);
+\draw[black!80,fill=black!80] (2.73,0.9675) circle (0.03);
+\draw[black!80,fill=black!80] (3.04,0.8075) circle (0.03);
+\draw[black!80,fill=black!80] (3.04,0.7565) circle (0.03);
+\draw[black!80,fill=black!80] (3.24,1.1) circle (0.03);
+\draw[black!80,fill=black!80] (3.39,0.9175) circle (0.03);
+\end{tikzpicture}
+\end{center} 
+\vfill\null
+\columnbreak
+\begin{center}
+\begin{tikzpicture}
+\draw (0,0) rectangle (4,3);
+\node[below] at (2,-0.5) {Horsepower};
+\node[above,rotate=90] at (-0.5,1.5) {Quarter mile time};
+\foreach \x in {0,1,...,4}{
+\draw (\x,0) -- (\x,-0.1);
+}
+\foreach \y in {0,1,...,3}{
+\draw (0,\y) -- (-0.1,\y);
+}
+\foreach \x in {0,100,...,400}{
+\node[below] at (0.01*\x,0) {\x};
+}
+\foreach \y in {12,16,...,24}{
+\node[left] at (0,0.25*\y-3) {\y};
+}
+\draw[black!80,fill=black!80] (2.05,1.495) circle (0.03);
+\draw[black!80,fill=black!80] (2.15,1.455) circle (0.03);
+\draw[black!80,fill=black!80] (2.45,0.8525) circle (0.03);
+\draw[black!80,fill=black!80] (2.45,0.96) circle (0.03);
+\draw[black!80,fill=black!80] (2.3,1.355) circle (0.03);
+\draw[black!80,fill=black!80] (3.35,0.65) circle (0.03);
+\draw[black!80,fill=black!80] (1.8,1.5) circle (0.03);
+\draw[black!80,fill=black!80] (1.5,1.325) circle (0.03);
+\draw[black!80,fill=black!80] (1.5,1.2175) circle (0.03);
+\draw[black!80,fill=black!80] (2.64,0.625) circle (0.03);
+\draw[black!80,fill=black!80] (1.8,1.35) circle (0.03);
+\draw[black!80,fill=black!80] (1.8,1.4) circle (0.03);
+\draw[black!80,fill=black!80] (1.23,1.725) circle (0.03);
+\draw[black!80,fill=black!80] (1.05,2.055) circle (0.03);
+\draw[black!80,fill=black!80] (1.75,1.255) circle (0.03);
+\draw[black!80,fill=black!80] (1.23,1.575) circle (0.03);
+\draw[black!80,fill=black!80] (1.75,1.2625) circle (0.03);
+\draw[black!80,fill=black!80] (1.75,0.875) circle (0.03);
+\draw[black!80,fill=black!80] (1.1,1.115) circle (0.03);
+\draw[black!80,fill=black!80] (1.1,1.255) circle (0.03);
+\draw[black!80,fill=black!80] (1.1,1.86) circle (0.03);
+\draw[black!80,fill=black!80] (1.09,1.65) circle (0.03);
+\draw[black!80,fill=black!80] (0.97,2.0025) circle (0.03);
+\draw[black!80,fill=black!80] (0.93,1.6525) circle (0.03);
+\draw[black!80,fill=black!80] (0.95,2.725) circle (0.03);
+\draw[black!80,fill=black!80] (0.62,2) circle (0.03);
+\draw[black!80,fill=black!80] (0.91,1.175) circle (0.03);
+\draw[black!80,fill=black!80] (0.66,1.725) circle (0.03);
+\draw[black!80,fill=black!80] (0.52,1.63) circle (0.03);
+\draw[black!80,fill=black!80] (1.13,1.225) circle (0.03);
+\draw[black!80,fill=black!80] (0.66,1.8675) circle (0.03);
+\draw[black!80,fill=black!80] (0.65,1.975) circle (0.03);
+\end{tikzpicture}
+\end{center} 
+\vfill\null
+\columnbreak
+\begin{center}
+\begin{tikzpicture}
+\draw (0,0) rectangle (4,3);
+\node[below] at (2,-0.5) {Horsepower};
+\node[above,rotate=90] at (-0.5,1.5) {Rear axle ratio};
+\foreach \x in {0,1,...,4}{
+\draw (\x,0) -- (\x,-0.1);
+}
+\foreach \y in {0,1,...,3}{
+\draw (0,\y) -- (-0.1,\y);
+}
+\foreach \x in {0,100,...,400}{
+\node[below] at (0.01*\x,0) {\x};
+}
+\node[left] at (0,0) {$2$};
+\node[left] at (0,1) {$3$};
+\node[left] at (0,2) {$4$};
+\node[left] at (0,3) {$5$};
+\draw[black!80,fill=black!80] (2.05,0.93) circle (0.03);
+\draw[black!80,fill=black!80] (2.15,1) circle (0.03);
+\draw[black!80,fill=black!80] (2.45,1.73) circle (0.03);
+\draw[black!80,fill=black!80] (2.45,1.21) circle (0.03);
+\draw[black!80,fill=black!80] (2.3,1.23) circle (0.03);
+\draw[black!80,fill=black!80] (3.35,1.54) circle (0.03);
+\draw[black!80,fill=black!80] (1.8,1.07) circle (0.03);
+\draw[black!80,fill=black!80] (1.5,1.15) circle (0.03);
+\draw[black!80,fill=black!80] (1.5,0.76) circle (0.03);
+\draw[black!80,fill=black!80] (2.64,2.22) circle (0.03);
+\draw[black!80,fill=black!80] (1.8,1.07) circle (0.03);
+\draw[black!80,fill=black!80] (1.8,1.07) circle (0.03);
+\draw[black!80,fill=black!80] (1.23,1.92) circle (0.03);
+\draw[black!80,fill=black!80] (1.05,0.76) circle (0.03);
+\draw[black!80,fill=black!80] (1.75,1.15) circle (0.03);
+\draw[black!80,fill=black!80] (1.23,1.92) circle (0.03);
+\draw[black!80,fill=black!80] (1.75,1.08) circle (0.03);
+\draw[black!80,fill=black!80] (1.75,1.62) circle (0.03);
+\draw[black!80,fill=black!80] (1.1,1.9) circle (0.03);
+\draw[black!80,fill=black!80] (1.1,1.9) circle (0.03);
+\draw[black!80,fill=black!80] (1.1,1.08) circle (0.03);
+\draw[black!80,fill=black!80] (1.09,2.11) circle (0.03);
+\draw[black!80,fill=black!80] (0.97,1.7) circle (0.03);
+\draw[black!80,fill=black!80] (0.93,1.85) circle (0.03);
+\draw[black!80,fill=black!80] (0.95,1.92) circle (0.03);
+\draw[black!80,fill=black!80] (0.62,1.69) circle (0.03);
+\draw[black!80,fill=black!80] (0.91,2.43) circle (0.03);
+\draw[black!80,fill=black!80] (0.66,2.08) circle (0.03);
+\draw[black!80,fill=black!80] (0.52,2.93) circle (0.03);
+\draw[black!80,fill=black!80] (1.13,1.77) circle (0.03);
+\draw[black!80,fill=black!80] (0.66,2.08) circle (0.03);
+\draw[black!80,fill=black!80] (0.65,2.22) circle (0.03);
+\end{tikzpicture}
+\end{center} 
+\vfill\null
+    \end{multicols}
+    \vspace{-1cm}
+    Comment on each scatterplot.
+        \item A statistician is keen to learn what can be learned by studying data on songs provided by a music streaming platform. For a random sample of pop songs on the platform, their \textit{length} ($x$, in minutes) and \textit{tempo} ($y$, in bpm) are recorded, and a scatterplot is constructed. Some summary statistics were also calculated.
+\begin{center}
+\begin{tikzpicture}
+\draw (1,1.5) rectangle (6,5.5);
+\node[below] at (3.5,1) {Length (mins)};
+\node[above,rotate=90] at (0,3.5) {Tempo (bpm)};
+\foreach \x in {1,2,3,4,5,6}{
+\draw (\x,1.4) -- (\x,1.5) node[below] {\x};
+}
+\foreach \y in {80,120,160,200}{
+\draw (0.9,0.025*\y) -- (1,0.025*\y) node[left] {\y};
+}
+\draw[black,fill=black] (3.29,4.275) circle (0.03);
+\draw[black,fill=black] (3.89,2.4) circle (0.03);
+\draw[black,fill=black] (4.74,2.75) circle (0.03);
+\draw[black,fill=black] (3.46,2.45) circle (0.03);
+\draw[black,fill=black] (2.58,2.75) circle (0.03);
+\draw[black,fill=black] (2.84,2.6) circle (0.03);
+\draw[black,fill=black] (2.33,4.25) circle (0.03);
+\draw[black,fill=black] (3.39,3.125) circle (0.03);
+\draw[black,fill=black] (4.06,2.375) circle (0.03);
+\draw[black,fill=black] (3.83,4.65) circle (0.03);
+\draw[black,fill=black] (4.38,2.375) circle (0.03);
+\draw[black,fill=black] (3.94,2.125) circle (0.03);
+\draw[black,fill=black] (2.76,4.35) circle (0.03);
+\draw[black,fill=black] (3.15,2.925) circle (0.03);
+\draw[black,fill=black] (3.51,2.475) circle (0.03);
+\draw[black,fill=black] (5.18,2.3) circle (0.03);
+\draw[black,fill=black] (2.41,4.2) circle (0.03);
+\draw[black,fill=black] (2.82,3.75) circle (0.03);
+\draw[black,fill=black] (3.92,3.6) circle (0.03);
+\draw[black,fill=black] (4.38,3.9) circle (0.03);
+\draw[black,fill=black] (1.93,4.75) circle (0.03);
+\draw[black,fill=black] (2.34,4.7) circle (0.03);
+\node[text width = 6cm] at (10,3.5) {
+\begin{minipage}{\textwidth}
+\begin{align*}
+\Sigma x&=75.13\\
+\Sigma y&=2919\\
+\Sigma x^2&=272.1\\
+\Sigma y^2&=416279\\
+\Sigma xy&=9583.94\\
+n&=22
+\end{align*}
+\end{minipage}
+};
+\end{tikzpicture}
+\end{center} 
+\begin{enumerate}
+    \item Comment on the scatterplot.
+    \item Use the summary statistics to calculate the mean song length and the mean tempo for the sample .
+\end{enumerate}
+\end{enumerate}
+
+\setlength{\columnsep}{10pt}
+
+\newpage
+
+## Pearson's Product Moment Correlation Coefficient
+
+The strength of the *linear relationship* between two variables is measured using a *correlation coefficient*. Whilst there are a number of different correlation coefficients used in statistics, the only one used in this course is *Pearson's Product Moment Correlation Coefficient (PMCC)*, which can now simply be referred to as the **correlation coefficient**. Given a sample of bivariate data, the *sample correlation coefficient*, $r$, can be calculated as:
+
+\begin{center}
+\tcbset{width=8cm}
+\begin{tcolorbox}[adjusted title=Pearson's Correlation Coefficient, halign title = center,colback=black!5,colframe=black!75, halign = center]
+$r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$ 
+\end{tcolorbox}
+\end{center}
+
+The formulae for the *"Three Ss"* and the *"Five Sigmas"* are given in the data booklet:
+
+\begin{figure}[H]
+\centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}[t]{.5\textwidth}
+
+\begin{center}
+\textbf{Three Ss:}
+\end{center}
+
+\vspace{-1cm}
+
+\begin{align*}
+S_{xx}&=\Sigma(x-\bar{x})^2=\Sigma x^2-\frac{(\Sigma x)^2}{n}\\
+S_{yy}&=\Sigma(y-\bar{y})^2=\Sigma y^2-\frac{(\Sigma y)^2}{n}\\
+S_{xy}&=\Sigma(x-\bar{x})(y-\bar{y})=\Sigma xy-\frac{\Sigma x\Sigma y}{n}
+\end{align*}
+
+\end{minipage}%
+  \centering
+\begin{minipage}[t]{.5\textwidth}
+  \centering
+
+\begin{center}
+\textbf{Five Sigmas:}
+\end{center}
+
+\vspace{-1cm}
+
+\begin{align*}
+&\Sigma x\\
+&\Sigma y\\
+&\Sigma x^2\\
+&\Sigma y^2\\
+&\Sigma xy
+\end{align*}
+
+\end{minipage}
+\end{figure}
+
+For all sets of data, $-1\leqslant r\leqslant 1$. A correlation coefficient of zero means there is no correlation, or *no linear relationship*, between the two variables, whilst any non-zero correlation coefficient means *a linear relationship exists*. Each of figures below show a scatterplot of sample data along with its sample correlation coefficient, $r$, and an interpretation. 
+
+\begin{multicols}{5}
+
+\begin{center}
+\begin{tikzpicture}
+\draw[semithick] (0,0) -- (2.5,0);
+\draw[semithick] (0,0) -- (0,2.5);
+\draw[black!80,fill=black!80] (1.31640654716388,1.09043167418881) circle (0.03);
+\draw[black!80,fill=black!80] (1.09441893728601,1.23939996366839) circle (0.03);
+\draw[black!80,fill=black!80] (1.55776382064132,1.12757343209267) circle (0.03);
+\draw[black!80,fill=black!80] (1.09974653069397,1.23777936995853) circle (0.03);
+\draw[black!80,fill=black!80] (0.686305971168815,1.44702342424302) circle (0.03);
+\draw[black!80,fill=black!80] (1.6040853359148,1.00864876143083) circle (0.03);
+\draw[black!80,fill=black!80] (1.47527491074966,1.06347846750115) circle (0.03);
+\draw[black!80,fill=black!80] (1.67733102407529,1.10113293765651) circle (0.03);
+\draw[black!80,fill=black!80] (1.59946243374509,1.0144669626004) circle (0.03);
+\draw[black!80,fill=black!80] (0.181023816745797,1.72697613795367) circle (0.03);
+\draw[black!80,fill=black!80] (2.25838708245772,0.768526856308286) circle (0.03);
+\draw[black!80,fill=black!80] (2.26396386060674,0.748241331596395) circle (0.03);
+\draw[black!80,fill=black!80] (1.64157997680914,1.0659721500733) circle (0.03);
+\draw[black!80,fill=black!80] (0.152586186676521,1.63348748907141) circle (0.03);
+\draw[black!80,fill=black!80] (0.948921054312529,1.24014605939119) circle (0.03);
+\draw[black!80,fill=black!80] (0.594561226359576,1.47975458526167) circle (0.03);
+\draw[black!80,fill=black!80] (0.394666683888109,1.63320633155284) circle (0.03);
+\draw[black!80,fill=black!80] (1.9991359976154,0.943719566438048) circle (0.03);
+\draw[black!80,fill=black!80] (0.799084955276089,1.4732341217342) circle (0.03);
+\draw[black!80,fill=black!80] (1.10366422828614,1.21809494936998) circle (0.03);
+\node at (1.25,2.5) {$r=-0.98$};
+\node[below,align=center,text width = 3.2cm] at (1.25,0) {\textit{very strong\\negative\\linear relationship}};
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+\draw[semithick] (0,0) -- (2.5,0);
+\draw[semithick] (0,0) -- (0,2.5);
+\draw[black!80,fill=black!80] (0.844739627193447,1.06712487745685) circle (0.03);
+\draw[black!80,fill=black!80] (1.5294974780048,0.198720165833838) circle (0.03);
+\draw[black!80,fill=black!80] (0.535787268355268,1.29275822967211) circle (0.03);
+\draw[black!80,fill=black!80] (1.76555885164761,1.34472670646246) circle (0.03);
+\draw[black!80,fill=black!80] (1.39052627974503,1.28388802972111) circle (0.03);
+\draw[black!80,fill=black!80] (0.622991347672749,2.13999992105176) circle (0.03);
+\draw[black!80,fill=black!80] (1.16446121046981,1.92765202041766) circle (0.03);
+\draw[black!80,fill=black!80] (1.33081106725083,1.83554449257518) circle (0.03);
+\draw[black!80,fill=black!80] (1.97730963131186,0.577548231177494) circle (0.03);
+\draw[black!80,fill=black!80] (0.793218821756655,1.20087529648236) circle (0.03);
+\draw[black!80,fill=black!80] (1.23783095775625,0.994856095178977) circle (0.03);
+\draw[black!80,fill=black!80] (1.15761070164915,1.6910230601459) circle (0.03);
+\draw[black!80,fill=black!80] (1.49491023036548,1.67100225211092) circle (0.03);
+\draw[black!80,fill=black!80] (0.911927993804681,1.33006496741092) circle (0.03);
+\draw[black!80,fill=black!80] (0.608543953518249,1.24883344164788) circle (0.03);
+\draw[black!80,fill=black!80] (1.19483615230883,0.733804412689175) circle (0.03);
+\draw[black!80,fill=black!80] (1.14477125487441,0.681047881804432) circle (0.03);
+\draw[black!80,fill=black!80] (1.55778663763025,1.54014967759233) circle (0.03);
+\draw[black!80,fill=black!80] (1.1401507489033,0.666650362988476) circle (0.03);
+\draw[black!80,fill=black!80] (1.43568707986603,0.828293976053046) circle (0.03);
+\node at (1.25,2.5) {$r=-0.32$};
+\node[below,align=center,text width = 3.2cm] at (1.25,0) {\textit{weak\\negative\\linear relationship}};
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+\draw[semithick] (0,0) -- (2.5,0);
+\draw[semithick] (0,0) -- (0,2.5);
+\draw[black!80,fill=black!80] (2.27526918961352,1.82401402151919) circle (0.03);
+\draw[black!80,fill=black!80] (0.720382811642511,2.01552088201678) circle (0.03);
+\draw[black!80,fill=black!80] (2.0597812874385,2.08556595390962) circle (0.03);
+\draw[black!80,fill=black!80] (0.856478557455016,1.95405815837216) circle (0.03);
+\draw[black!80,fill=black!80] (2.21798031801115,0.241814283372899) circle (0.03);
+\draw[black!80,fill=black!80] (1.22796376152724,1.98374417812402) circle (0.03);
+\draw[black!80,fill=black!80] (0.447093653114311,0.51253518046289) circle (0.03);
+\draw[black!80,fill=black!80] (0.564270659039922,1.18806864952964) circle (0.03);
+\draw[black!80,fill=black!80] (0.355828305838543,0.123471547631305) circle (0.03);
+\draw[black!80,fill=black!80] (1.92660236748336,1.05553144979267) circle (0.03);
+\draw[black!80,fill=black!80] (2.29037895326011,0.543942966736729) circle (0.03);
+\draw[black!80,fill=black!80] (1.52132579128823,1.22603129420374) circle (0.03);
+\draw[black!80,fill=black!80] (2.05550975303871,0.13497883913829) circle (0.03);
+\draw[black!80,fill=black!80] (1.55327586137755,1.93932404547793) circle (0.03);
+\draw[black!80,fill=black!80] (1.7598937052011,0.665995295331712) circle (0.03);
+\draw[black!80,fill=black!80] (0.145375698811956,2.0061241945076) circle (0.03);
+\draw[black!80,fill=black!80] (0.288436753403026,1.03586042141574) circle (0.03);
+\draw[black!80,fill=black!80] (0.801318508363015,0.101244794060686) circle (0.03);
+\draw[black!80,fill=black!80] (0.624282727909172,1.68068411847719) circle (0.03);
+\draw[black!80,fill=black!80] (0.352176980459586,0.39934395881673) circle (0.03);
+\node at (1.25,2.5) {$r=0.00$};
+\node[below,align=center,text width = 3.2cm] at (1.25,0) {\textit{no\\linear\\relationship}};
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+\draw[semithick] (0,0) -- (2.5,0);
+\draw[semithick] (0,0) -- (0,2.5);
+\draw[black!80,fill=black!80] (1.39910399479049,2.08028478450962) circle (0.03);
+\draw[black!80,fill=black!80] (1.51541706910755,1.61425307399243) circle (0.03);
+\draw[black!80,fill=black!80] (1.50005634363829,1.28856212432398) circle (0.03);
+\draw[black!80,fill=black!80] (1.55034548198575,1.93834107292332) circle (0.03);
+\draw[black!80,fill=black!80] (1.85490359982272,1.27649122347046) circle (0.03);
+\draw[black!80,fill=black!80] (1.79349817510394,1.98217384300082) circle (0.03);
+\draw[black!80,fill=black!80] (1.05589338294535,1.78171338286559) circle (0.03);
+\draw[black!80,fill=black!80] (1.50062930412967,0.92302300937263) circle (0.03);
+\draw[black!80,fill=black!80] (1.74271987817696,2.04954817103244) circle (0.03);
+\draw[black!80,fill=black!80] (0.905349781325359,0.712833571032757) circle (0.03);
+\draw[black!80,fill=black!80] (1.66953741179805,2.17576596573112) circle (0.03);
+\draw[black!80,fill=black!80] (1.00179949064104,1.27511390637274) circle (0.03);
+\draw[black!80,fill=black!80] (1.83957703568477,1.83029454978544) circle (0.03);
+\draw[black!80,fill=black!80] (1.59399496735346,1.61726653335934) circle (0.03);
+\draw[black!80,fill=black!80] (1.33762543192358,1.28707543094456) circle (0.03);
+\draw[black!80,fill=black!80] (0.75552618847013,0.455360836487487) circle (0.03);
+\draw[black!80,fill=black!80] (1.44801450849031,1.74191531909932) circle (0.03);
+\draw[black!80,fill=black!80] (1.65581739286222,1.30093484216487) circle (0.03);
+\draw[black!80,fill=black!80] (1.22631362223259,1.02108271888735) circle (0.03);
+\draw[black!80,fill=black!80] (1.37331528203759,1.46538877890905) circle (0.03);
+\node at (1.25,2.5) {$r=0.73$};
+\node[below,align=center,text width = 3.2cm] at (1.25,0) {\textit{strong\\positive\\linear relationship}};
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+\draw[semithick] (0,0) -- (2.5,0);
+\draw[semithick] (0,0) -- (0,2.5);
+\draw[black!80,fill=black!80] (0.4,0.9) circle (0.03);
+\draw[black!80,fill=black!80] (1.4,1.4) circle (0.03);
+\draw[black!80,fill=black!80] (2.4,1.9) circle (0.03);
+\draw[black!80,fill=black!80] (0.8,1.1) circle (0.03);
+\node at (1.25,2.5) {$r=1$};
+\node[below,align=center,text width = 3.2cm] at (1.25,0) {\textit{perfect\\positive\\linear relationship}};
+\end{tikzpicture}
+\end{center}
+\end{multicols}
+
+\vspace{-0.3cm}
+
+As the correlation coefficient, r, is calculated for a *sample*, it is a **sample statistic**. It gives an estimate for the *population correlation coefficient*, $\rho$ (the Greek letter, *"rho"*). For this reason, a non-zero value of $r$ calculated from a sample only *suggests* a linear relationship exists between the variables. Establishing *evidence* will be covered in a later chapter.
+
+
+\begin{multicols}{2}
+
+\begin{center}
+\begin{tikzpicture}
+\draw[semithick] (0,0) -- (2.5,0);
+\draw[semithick] (0,0) -- (0,2.5);
+\draw[black!50,fill=black!50] (0.669035753145826,1.12010213774035) circle (0.03);
+\draw[black!50,fill=black!50] (1.56335542512138,1.11450799469143) circle (0.03);
+\draw[black!50,fill=black!50] (1.55199594766075,1.58580650730597) circle (0.03);
+\draw[black!50,fill=black!50] (0.927460785684292,1.32399556785688) circle (0.03);
+\draw[black!50,fill=black!50] (1.17366413542353,1.13309896238906) circle (0.03);
+\draw[black!50,fill=black!50] (0.687269406316309,0.985203183864963) circle (0.03);
+\draw[black!50,fill=black!50] (0.418376737194922,0.49062608779587) circle (0.03);
+\draw[black!50,fill=black!50] (2.08386366960819,1.28773637248865) circle (0.03);
+\draw[black!50,fill=black!50] (1.97676452649969,1.40765990312228) circle (0.03);
+\draw[black!50,fill=black!50] (1.54205324913559,1.11651522473593) circle (0.03);
+\draw[black!50,fill=black!50] (1.67089949338418,1.40941978099429) circle (0.03);
+\draw[black!50,fill=black!50] (0.455468858790432,0.47031088080331) circle (0.03);
+\draw[black!50,fill=black!50] (1.49141572242224,1.10090305851215) circle (0.03);
+\draw[black!50,fill=black!50] (0.897167420177262,0.781188297020803) circle (0.03);
+\draw[black!50,fill=black!50] (1.01771170858807,1.28132788556329) circle (0.03);
+\draw[black!50,fill=black!50] (0.81862222210216,0.987724233182474) circle (0.03);
+\draw[black!50,fill=black!50] (1.97745128593133,1.67344689730676) circle (0.03);
+\draw[black!50,fill=black!50] (0.664077565369995,1.12461772929553) circle (0.03);
+\draw[black!50,fill=black!50] (0.653011295763406,1.05811264180223) circle (0.03);
+\draw[black!50,fill=black!50] (1.68432716016825,1.05310166798064) circle (0.03);
+\draw[black!50,fill=black!50] (1.17539913646722,1.27652456680792) circle (0.03);
+\draw[black!50,fill=black!50] (2.11988647494053,1.40556443373742) circle (0.03);
+\draw[black!50,fill=black!50] (1.23557079567049,1.2754892793684) circle (0.03);
+\draw[black!50,fill=black!50] (1.55330006888896,1.61548610622535) circle (0.03);
+\draw[black!50,fill=black!50] (1.25873002280781,1.03739448831689) circle (0.03);
+\draw[black!50,fill=black!50] (1.23619628224052,1.13756404266915) circle (0.03);
+\draw[black!50,fill=black!50] (0.728836170629674,1.14136056063073) circle (0.03);
+\draw[black!50,fill=black!50] (0.835580312866217,1.32057674448347) circle (0.03);
+\draw[black!50,fill=black!50] (0.503811347812712,1.19510045399447) circle (0.03);
+\draw[black!50,fill=black!50] (1.8317912529324,1.23410528379555) circle (0.03);
+\draw[black!50,fill=black!50] (0.730588793874095,0.503229670805108) circle (0.03);
+\draw[black!50,fill=black!50] (2.2439532730717,1.17530613249334) circle (0.03);
+\draw[black!50,fill=black!50] (0.272609581403877,0.734812328626043) circle (0.03);
+\draw[black!50,fill=black!50] (0.624673199673809,0.49621870821195) circle (0.03);
+\draw[black!50,fill=black!50] (0.486430731375451,1.18767465598311) circle (0.03);
+\draw[black!50,fill=black!50] (1.55290790672477,1.09108043827819) circle (0.03);
+\draw[black!50,fill=black!50] (1.45671401774512,1.25395219484262) circle (0.03);
+\draw[black!50,fill=black!50] (1.98911923677622,1.17897357743186) circle (0.03);
+\draw[black!50,fill=black!50] (1.15705115133009,1.30970644963159) circle (0.03);
+\draw[black!50,fill=black!50] (2.21299415841261,1.81939913136306) circle (0.03);
+\draw[black!50,fill=black!50] (0.375887018493177,0.970977071279417) circle (0.03);
+\draw[black!50,fill=black!50] (1.55122268267514,0.991725336612495) circle (0.03);
+\draw[black!50,fill=black!50] (1.4941216012084,1.20284708797375) circle (0.03);
+\draw[black!50,fill=black!50] (0.845532176549088,0.847803070744003) circle (0.03);
+\draw[black!50,fill=black!50] (1.11059221981269,1.01042450670077) circle (0.03);
+\draw[black!50,fill=black!50] (2.11575219650094,1.59794011907537) circle (0.03);
+\draw[black!50,fill=black!50] (1.94821053668478,1.581831128866) circle (0.03);
+\draw[black!50,fill=black!50] (0.709277419757876,0.572630946778671) circle (0.03);
+\draw[black!50,fill=black!50] (0.834668032138753,0.920027444263537) circle (0.03);
+\draw[black!50,fill=black!50] (1.29872446844938,0.720605692595354) circle (0.03);
+\draw[black,fill=black] (0.669035753145826,1.12010213774035) circle (0.04);
+\draw[black,fill=black] (1.56335542512138,1.11450799469143) circle (0.04);
+\draw[black,fill=black] (1.55199594766075,1.58580650730597) circle (0.04);
+\draw[black,fill=black] (0.927460785684292,1.32399556785688) circle (0.04);
+\draw[black,fill=black] (1.17366413542353,1.13309896238906) circle (0.04);
+\draw[black,fill=black] (0.687269406316309,0.985203183864963) circle (0.04);
+\draw[black,fill=black] (0.418376737194922,0.49062608779587) circle (0.04);
+\draw[black,fill=black] (2.08386366960819,1.28773637248865) circle (0.04);
+\draw[black,fill=black] (1.97676452649969,1.40765990312228) circle (0.04);
+\draw[black,fill=black] (1.54205324913559,1.11651522473593) circle (0.04);
+\draw[black,fill=black] (1.67089949338418,1.40941978099429) circle (0.04);
+\draw[black,fill=black] (0.455468858790432,0.47031088080331) circle (0.04);
+\draw[black,fill=black] (1.49141572242224,1.10090305851215) circle (0.04);
+\draw[black,fill=black] (0.897167420177262,0.781188297020803) circle (0.04);
+\draw[black,fill=black] (1.01771170858807,1.28132788556329) circle (0.04);
+\draw[black,fill=black] (0.81862222210216,0.987724233182474) circle (0.04);
+\draw[black,fill=black] (1.97745128593133,1.67344689730676) circle (0.04);
+\draw[black,fill=black] (0.664077565369995,1.12461772929553) circle (0.04);
+\draw[black,fill=black] (0.653011295763406,1.05811264180223) circle (0.04);
+\draw[black,fill=black] (1.68432716016825,1.05310166798064) circle (0.04);
+\node[text width=5cm] at (3.4,1.6) {
+\begin{minipage}{\textwidth}
+\begin{align*}
+\rho&=0.66\\
+r&=0.71\\
+n&=20
+\end{align*}
+\end{minipage}
+};
+\node[below,align=left,text width=5cm] at (7,2.6) {Here, the \textbf{sample} has resulted in a value for $r$ which approximates well the \textcolor{black!50}{\textbf{population}} correlation coefficient, $\rho$.};
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+\draw[semithick] (0,0) -- (2.5,0);
+\draw[semithick] (0,0) -- (0,2.5);
+\draw[black!50,fill=black!50] (0.669035753145826,1.12010213774035) circle (0.03);
+\draw[black!50,fill=black!50] (1.56335542512138,1.11450799469143) circle (0.03);
+\draw[black!50,fill=black!50] (1.55199594766075,1.58580650730597) circle (0.03);
+\draw[black!50,fill=black!50] (0.927460785684292,1.32399556785688) circle (0.03);
+\draw[black!50,fill=black!50] (1.17366413542353,1.13309896238906) circle (0.03);
+\draw[black!50,fill=black!50] (0.687269406316309,0.985203183864963) circle (0.03);
+\draw[black!50,fill=black!50] (0.418376737194922,0.49062608779587) circle (0.03);
+\draw[black!50,fill=black!50] (2.08386366960819,1.28773637248865) circle (0.03);
+\draw[black!50,fill=black!50] (1.97676452649969,1.40765990312228) circle (0.03);
+\draw[black!50,fill=black!50] (1.54205324913559,1.11651522473593) circle (0.03);
+\draw[black!50,fill=black!50] (1.67089949338418,1.40941978099429) circle (0.03);
+\draw[black!50,fill=black!50] (0.455468858790432,0.47031088080331) circle (0.03);
+\draw[black!50,fill=black!50] (1.49141572242224,1.10090305851215) circle (0.03);
+\draw[black!50,fill=black!50] (0.897167420177262,0.781188297020803) circle (0.03);
+\draw[black!50,fill=black!50] (1.01771170858807,1.28132788556329) circle (0.03);
+\draw[black!50,fill=black!50] (0.81862222210216,0.987724233182474) circle (0.03);
+\draw[black!50,fill=black!50] (1.97745128593133,1.67344689730676) circle (0.03);
+\draw[black!50,fill=black!50] (0.664077565369995,1.12461772929553) circle (0.03);
+\draw[black!50,fill=black!50] (0.653011295763406,1.05811264180223) circle (0.03);
+\draw[black!50,fill=black!50] (1.68432716016825,1.05310166798064) circle (0.03);
+\draw[black!50,fill=black!50] (1.17539913646722,1.27652456680792) circle (0.03);
+\draw[black!50,fill=black!50] (2.11988647494053,1.40556443373742) circle (0.03);
+\draw[black!50,fill=black!50] (1.23557079567049,1.2754892793684) circle (0.03);
+\draw[black!50,fill=black!50] (1.55330006888896,1.61548610622535) circle (0.03);
+\draw[black!50,fill=black!50] (1.25873002280781,1.03739448831689) circle (0.03);
+\draw[black!50,fill=black!50] (1.23619628224052,1.13756404266915) circle (0.03);
+\draw[black!50,fill=black!50] (0.728836170629674,1.14136056063073) circle (0.03);
+\draw[black!50,fill=black!50] (0.835580312866217,1.32057674448347) circle (0.03);
+\draw[black!50,fill=black!50] (0.503811347812712,1.19510045399447) circle (0.03);
+\draw[black!50,fill=black!50] (1.8317912529324,1.23410528379555) circle (0.03);
+\draw[black!50,fill=black!50] (0.730588793874095,0.503229670805108) circle (0.03);
+\draw[black!50,fill=black!50] (2.2439532730717,1.17530613249334) circle (0.03);
+\draw[black!50,fill=black!50] (0.272609581403877,0.734812328626043) circle (0.03);
+\draw[black!50,fill=black!50] (0.624673199673809,0.49621870821195) circle (0.03);
+\draw[black!50,fill=black!50] (0.486430731375451,1.18767465598311) circle (0.03);
+\draw[black!50,fill=black!50] (1.55290790672477,1.09108043827819) circle (0.03);
+\draw[black!50,fill=black!50] (1.45671401774512,1.25395219484262) circle (0.03);
+\draw[black!50,fill=black!50] (1.98911923677622,1.17897357743186) circle (0.03);
+\draw[black!50,fill=black!50] (1.15705115133009,1.30970644963159) circle (0.03);
+\draw[black!50,fill=black!50] (2.21299415841261,1.81939913136306) circle (0.03);
+\draw[black!50,fill=black!50] (0.375887018493177,0.970977071279417) circle (0.03);
+\draw[black!50,fill=black!50] (1.55122268267514,0.991725336612495) circle (0.03);
+\draw[black!50,fill=black!50] (1.4941216012084,1.20284708797375) circle (0.03);
+\draw[black!50,fill=black!50] (0.845532176549088,0.847803070744003) circle (0.03);
+\draw[black!50,fill=black!50] (1.11059221981269,1.01042450670077) circle (0.03);
+\draw[black!50,fill=black!50] (2.11575219650094,1.59794011907537) circle (0.03);
+\draw[black!50,fill=black!50] (1.94821053668478,1.581831128866) circle (0.03);
+\draw[black!50,fill=black!50] (0.709277419757876,0.572630946778671) circle (0.03);
+\draw[black!50,fill=black!50] (0.834668032138753,0.920027444263537) circle (0.03);
+\draw[black!50,fill=black!50] (1.29872446844938,0.720605692595354) circle (0.03);
+\draw[black,fill=black] (2.2439532730717,1.17530613249334) circle (0.04);
+\draw[black,fill=black] (1.55290790672477,1.09108043827819) circle (0.04);
+\draw[black,fill=black] (1.98911923677622,1.17897357743186) circle (0.04);
+\draw[black,fill=black] (1.55122268267514,0.991725336612495) circle (0.04);
+\draw[black,fill=black] (1.25873002280781,1.03739448831689) circle (0.04);
+\draw[black,fill=black] (0.503811347812712,1.19510045399447) circle (0.04);
+\draw[black,fill=black] (0.486430731375451,1.18767465598311) circle (0.04);
+\node[text width=4cm] at (3.4,1.6) {
+\begin{minipage}{\textwidth}
+\begin{align*}
+\rho&=0.66\\
+r&=-0.18\\
+n&=7
+\end{align*}
+\end{minipage}
+};
+\node[below,align=left,text width=4.5cm] at (7.2,2.6) {Here, the \textbf{sample} has resulted in a value for $r$ which is far from the true \textcolor{black!50}{\textbf{population}} correlation coefficient, $\rho$.};
+\end{tikzpicture}
+\end{center}
+
+
+\end{multicols}
+
+\pagebreak
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} A biologist records the tail length ($x$) and total height ($y$), both in centimetres, for a random sample of 8 red squirrels. A scatterplot and summary statistics are for the data produced and shown below.
+\vspace{-0.5cm}
+\begin{center}
+\begin{tikzpicture}
+\draw[semithick] (3,3.75) -- (3,6) node[left] {$y$};
+\draw[semithick] (3,3.65) -- (6.1,3.65) node[right] {$x$};
+\foreach \y in {16,18,...,22}
+\node[left] at (3,0.25*\y) {\y};
+\foreach \y in {16,18,...,24}
+\draw[semithick] (3,0.25*\y) -- (2.9,0.25*\y);
+\foreach \x in {12,14,...,24}
+\node[below] at (0.25*\x,3.65) {\x};
+\foreach \x in {12,14,...,24}
+\draw[semithick] (0.25*\x,3.65) -- (0.25*\x,3.55);
+\node[text width = 6cm] at (-6,5.8) {
+\begin{minipage}{\textwidth}
+\begin{align*}
+\Sigma x&=143.4 \quad &\Sigma y&=163.3 \quad &\Sigma xy&=2978.5\\[0.3em]
+\Sigma x^2&=2618.3 &\Sigma y^2&=3391.8 &n&=8
+\end{align*}
+\end{minipage}
+};
+\node at (-4,3.5) {Calculate the correlation coefficient and interpret its value.};
+\draw[black!80,fill=black!80] (4.3,5.1) circle (0.04);
+\draw[black!80,fill=black!80] (4.4,4.875) circle (0.04);
+\draw[black!80,fill=black!80] (5,5.8) circle (0.04);
+\draw[black!80,fill=black!80] (4.025,4.725) circle (0.04);
+\draw[black!80,fill=black!80] (4.85,5.45) circle (0.04);
+\draw[black!80,fill=black!80] (5.45,6) circle (0.04);
+\draw[black!80,fill=black!80] (4.525,4.825) circle (0.04);
+\draw[black!80,fill=black!80] (3.3,3.85) circle (0.04);
+\end{tikzpicture}
+\end{center}
+\tcblower
+\textbf{Solution:}
+
+\vspace{-1.1cm}
+
+\begin{multicols}{3}
+
+\begin{flalign*}
+S_{xx}&=\Sigma x^2-\frac{(\Sigma x)^2}{n}\\
+&=2618.3-\frac{143.4^2}{8}\\
+&=47.82
+\end{flalign*}
+\vfill
+\null
+\columnbreak
+\begin{flalign*}
+S_{yy}&=\Sigma y^2-\frac{(\Sigma y)^2}{n}\\
+&=3391.8-\frac{163.3^2}{8}\\
+&=58.43
+\end{flalign*}
+\vfill
+\null
+\columnbreak
+\begin{flalign*}
+S_{xy}&=\Sigma xy-\frac{\Sigma x\Sigma y}{n}\\
+&=2978.5-\frac{143.4\times163.3}{8}\\
+&=51.39
+\end{flalign*}
+\vfill
+\null
+\end{multicols}
+
+\vspace{-0.8cm}
+
+$r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}=\dfrac{51.39}{\sqrt{47.82\times58.43}}=0.9354$\\[0.5em]
+
+This suggests a strong, positive linear correlation between the length of squirrels' tails and their heights.
+
+\end{tcolorbox}
+
+[]{#ex52q}
+
+\vspace{-0.3cm}
+
+#### [Exercise 5.2](#ex52a) {-}
+
+\setlength{\columnsep}{40pt}
+
+\vspace{-0.3cm}
+
+\begin{enumerate}
+    \item Students' average homework mark and their test score are recorded. Calculate the correlation coefficient.
+    \vspace{-0.1cm}
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+            \hline
+            Homework (average, out of 20) & 17.1 & 11.2 & 19.6 & 15.4 & 19.8 & 8.1\\
+            \hline
+            Test (\%) & 81 & 46 & 94 & 83 & 94 & 64\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \item For each, calculate the correlation coefficient and interpret its value.
+    \begin{enumerate}[rightmargin=10pt,leftmargin=10pt]
+    \begin{multicols}{2}
+        \item For 20 first-time marathon runners, their age ($x$, in years) and finishing time ($y$, in hours) is recorded.
+\begin{center}
+\vspace{-1cm}
+\begin{tikzpicture}
+\draw[step=0.5,thin,black!20] (0.5,3.5) grid (3.5,6.5);
+\draw[black,fill=black] (0.93175245,4.195164) circle (0.04);
+\draw[black,fill=black] (2.15123905,6.179795) circle (0.04);
+\draw[black,fill=black] (2.1736022,4.499866) circle (0.04);
+\draw[black,fill=black] (2.96973005,5.720383) circle (0.04);
+\draw[black,fill=black] (1.0691845,4.720987) circle (0.04);
+\draw[black,fill=black] (2.15810435,6.378645) circle (0.04);
+\draw[black,fill=black] (1.9299062,3.733367) circle (0.04);
+\draw[black,fill=black] (2.8473413,5.187949) circle (0.04);
+\draw[black,fill=black] (0.96158195,3.664476) circle (0.04);
+\draw[black,fill=black] (1.77563825,4.565726) circle (0.04);
+\draw[black,fill=black] (2.3410211,4.917814) circle (0.04);
+\draw[black,fill=black] (2.6264621,4.845001) circle (0.04);
+\draw[black,fill=black] (0.94957885,4.210152) circle (0.04);
+\draw[black,fill=black] (1.64065465,3.930956) circle (0.04);
+\draw[black,fill=black] (2.18389035,4.521499) circle (0.04);
+\draw[black,fill=black] (2.995,6.080185) circle (0.04);
+\draw[black,fill=black] (1.03884025,4.903124) circle (0.04);
+\draw[black,fill=black] (1.73751175,4.591229) circle (0.04);
+\draw[black,fill=black] (2.23572275,4.451043) circle (0.04);
+\draw[black,fill=black] (2.57791035,4.752668) circle (0.04);
+\draw[semithick] (0.5,3.5) -- (0.5,6.5);
+\draw[semithick] (0.5,3.5) -- (3.5,3.5);
+\foreach \x in {0.5,1,...,3.5}{
+\draw (\x,3.5) -- (\x,3.4);
+}
+\foreach \x in {10,30,...,70}{
+\node[below] at (0.05*\x,3.5) {\x};
+}
+\foreach \y in {4,5,...,6}{
+\node[left] at (0.5,\y) {\y};
+}
+\foreach \y in {3.5,4,...,6.5}{
+\draw (0.5,\y) -- (0.4,\y);
+}
+\node[below] at (2,3.2) {Age (years)};
+\node[above,rotate=90] at (0,5) {Time (hours)};
+\node[text width = 6cm] at (5.5,5) {
+\begin{minipage}{\textwidth}
+\begin{align*}
+\Sigma x&=785.9\\
+\Sigma y&=96\\
+\Sigma x^2&=34481\\
+\Sigma y^2&=472.6\\
+\Sigma xy&=3888.7\\
+n&=20
+\end{align*}
+\end{minipage}
+};
+\end{tikzpicture}
+\end{center}
+    \item The age ($x$, in years) and selling\\ price ($y$, £1000s) of 8 used cars is recorded.
+\begin{center}
+\vspace{-1cm}
+\begin{tikzpicture}
+\draw[black,fill=black] (1.96524603,2.4672) circle (0.04);
+\draw[black,fill=black] (0.99696564,3.49) circle (0.04);
+\draw[black,fill=black] (1.93495731,2.3068) circle (0.04);
+\draw[black,fill=black] (2.52989055,1.6244) circle (0.04);
+\draw[black,fill=black] (2.12430141,2.4126) circle (0.04);
+\draw[black,fill=black] (1.54360899,2.993) circle (0.04);
+\draw[black,fill=black] (3.10540329,1.1582) circle (0.04);
+\draw[black,fill=black] (2.17717797,2.4438) circle (0.04);
+\draw[semithick] (0.5,1) rectangle (3.5,4);
+\foreach \x in {0.66,0.99,...,3.63}{
+\draw (\x,1) -- (\x,0.9);
+}
+\foreach \y in {5,10,...,20}{
+\node[left] at (0.5,0.2*\y) {\y};
+}
+\foreach \y in {5,7.5,...,20}{
+\draw (0.5,0.2*\y) -- (0.4,0.2*\y);
+}
+\foreach \x in {2,4,...,10}{
+\node[below] at (0.33*\x,1) {\x};
+}
+\node[below] at (2,0.7) {Age (years)};
+\node[above,rotate=90] at (0,2.5) {Price (£1000s)};
+\node[text width = 6cm] at (5.5,2.5) {
+\begin{minipage}{\textwidth}
+\begin{align*}
+\Sigma x&=49.63\\
+\Sigma y&=94.48\\
+\Sigma x^2&=333.1\\
+\Sigma y^2&=1208.0\\
+\Sigma xy&=538.87\\
+n&=8
+\end{align*}
+\end{minipage}
+};
+\end{tikzpicture}
+\end{center}
+\end{multicols}
+\end{enumerate}
+\vspace{-0.5cm}
+\item A \textit{sepal} is part of a flower. The lengths ($x$, in cm) and widths ($y$, in cm) are measured for a random sample of 100 \textit{iris} flowers, of two different varieties. A scatterplot is plotted, and a correlation coefficient of $-0.206$ is obtained. The researcher concludes that this proves that there is a weak negative linear relationship.
+\begin{center}
+\vspace{-0.2cm}
+\begin{tikzpicture}
+\draw[black,fill=black] (5.1,3.5) circle (0.04);
+\draw[black,fill=black] (4.9,3) circle (0.04);
+\draw[black,fill=black] (4.7,3.2) circle (0.04);
+\draw[black,fill=black] (4.6,3.1) circle (0.04);
+\draw[black,fill=black] (5,3.6) circle (0.04);
+\draw[black,fill=black] (5.4,3.9) circle (0.04);
+\draw[black,fill=black] (4.6,3.4) circle (0.04);
+\draw[black,fill=black] (5,3.4) circle (0.04);
+\draw[black,fill=black] (4.4,2.9) circle (0.04);
+\draw[black,fill=black] (4.9,3.1) circle (0.04);
+\draw[black,fill=black] (5.4,3.7) circle (0.04);
+\draw[black,fill=black] (4.8,3.4) circle (0.04);
+\draw[black,fill=black] (4.8,3) circle (0.04);
+\draw[black,fill=black] (4.3,3) circle (0.04);
+\draw[black,fill=black] (5.8,4) circle (0.04);
+\draw[black,fill=black] (5.7,4.4) circle (0.04);
+\draw[black,fill=black] (5.4,3.9) circle (0.04);
+\draw[black,fill=black] (5.1,3.5) circle (0.04);
+\draw[black,fill=black] (5.7,3.8) circle (0.04);
+\draw[black,fill=black] (5.1,3.8) circle (0.04);
+\draw[black,fill=black] (5.4,3.4) circle (0.04);
+\draw[black,fill=black] (5.1,3.7) circle (0.04);
+\draw[black,fill=black] (4.6,3.6) circle (0.04);
+\draw[black,fill=black] (5.1,3.3) circle (0.04);
+\draw[black,fill=black] (4.8,3.4) circle (0.04);
+\draw[black,fill=black] (5,3) circle (0.04);
+\draw[black,fill=black] (5,3.4) circle (0.04);
+\draw[black,fill=black] (5.2,3.5) circle (0.04);
+\draw[black,fill=black] (5.2,3.4) circle (0.04);
+\draw[black,fill=black] (4.7,3.2) circle (0.04);
+\draw[black,fill=black] (4.8,3.1) circle (0.04);
+\draw[black,fill=black] (5.4,3.4) circle (0.04);
+\draw[black,fill=black] (5.2,4.1) circle (0.04);
+\draw[black,fill=black] (5.5,4.2) circle (0.04);
+\draw[black,fill=black] (4.9,3.1) circle (0.04);
+\draw[black,fill=black] (5,3.2) circle (0.04);
+\draw[black,fill=black] (5.5,3.5) circle (0.04);
+\draw[black,fill=black] (4.9,3.6) circle (0.04);
+\draw[black,fill=black] (4.4,3) circle (0.04);
+\draw[black,fill=black] (5.1,3.4) circle (0.04);
+\draw[black,fill=black] (5,3.5) circle (0.04);
+\draw[black,fill=black] (4.5,2.3) circle (0.04);
+\draw[black,fill=black] (4.4,3.2) circle (0.04);
+\draw[black,fill=black] (5,3.5) circle (0.04);
+\draw[black,fill=black] (5.1,3.8) circle (0.04);
+\draw[black,fill=black] (4.8,3) circle (0.04);
+\draw[black,fill=black] (5.1,3.8) circle (0.04);
+\draw[black,fill=black] (4.6,3.2) circle (0.04);
+\draw[black,fill=black] (5.3,3.7) circle (0.04);
+\draw[black,fill=black] (5,3.3) circle (0.04);
+\draw[black,fill=black] (7,3.2) circle (0.04);
+\draw[black,fill=black] (6.4,3.2) circle (0.04);
+\draw[black,fill=black] (6.9,3.1) circle (0.04);
+\draw[black,fill=black] (5.5,2.3) circle (0.04);
+\draw[black,fill=black] (6.5,2.8) circle (0.04);
+\draw[black,fill=black] (5.7,2.8) circle (0.04);
+\draw[black,fill=black] (6.3,3.3) circle (0.04);
+\draw[black,fill=black] (4.9,2.4) circle (0.04);
+\draw[black,fill=black] (6.6,2.9) circle (0.04);
+\draw[black,fill=black] (5.2,2.7) circle (0.04);
+\draw[black,fill=black] (5,2) circle (0.04);
+\draw[black,fill=black] (5.9,3) circle (0.04);
+\draw[black,fill=black] (6,2.2) circle (0.04);
+\draw[black,fill=black] (6.1,2.9) circle (0.04);
+\draw[black,fill=black] (5.6,2.9) circle (0.04);
+\draw[black,fill=black] (6.7,3.1) circle (0.04);
+\draw[black,fill=black] (5.6,3) circle (0.04);
+\draw[black,fill=black] (5.8,2.7) circle (0.04);
+\draw[black,fill=black] (6.2,2.2) circle (0.04);
+\draw[black,fill=black] (5.6,2.5) circle (0.04);
+\draw[black,fill=black] (5.9,3.2) circle (0.04);
+\draw[black,fill=black] (6.1,2.8) circle (0.04);
+\draw[black,fill=black] (6.3,2.5) circle (0.04);
+\draw[black,fill=black] (6.1,2.8) circle (0.04);
+\draw[black,fill=black] (6.4,2.9) circle (0.04);
+\draw[black,fill=black] (6.6,3) circle (0.04);
+\draw[black,fill=black] (6.8,2.8) circle (0.04);
+\draw[black,fill=black] (6.7,3) circle (0.04);
+\draw[black,fill=black] (6,2.9) circle (0.04);
+\draw[black,fill=black] (5.7,2.6) circle (0.04);
+\draw[black,fill=black] (5.5,2.4) circle (0.04);
+\draw[black,fill=black] (5.5,2.4) circle (0.04);
+\draw[black,fill=black] (5.8,2.7) circle (0.04);
+\draw[black,fill=black] (6,2.7) circle (0.04);
+\draw[black,fill=black] (5.4,3) circle (0.04);
+\draw[black,fill=black] (6,3.4) circle (0.04);
+\draw[black,fill=black] (6.7,3.1) circle (0.04);
+\draw[black,fill=black] (6.3,2.3) circle (0.04);
+\draw[black,fill=black] (5.6,3) circle (0.04);
+\draw[black,fill=black] (5.5,2.5) circle (0.04);
+\draw[black,fill=black] (5.5,2.6) circle (0.04);
+\draw[black,fill=black] (6.1,3) circle (0.04);
+\draw[black,fill=black] (5.8,2.6) circle (0.04);
+\draw[black,fill=black] (5,2.3) circle (0.04);
+\draw[black,fill=black] (5.6,2.7) circle (0.04);
+\draw[black,fill=black] (5.7,3) circle (0.04);
+\draw[black,fill=black] (5.7,2.9) circle (0.04);
+\draw[black,fill=black] (6.2,2.9) circle (0.04);
+\draw[black,fill=black] (5.1,2.5) circle (0.04);
+\draw[black,fill=black] (5.7,2.8) circle (0.04);
+\draw[semithick,-stealth] (4,1.9) -- (7.2,1.9) node[right] {$x$};
+\draw[semithick,-stealth] (4,1.9) -- (4,4.4) node[above] {$y$};
+\node[text width=14cm,right,align=left] at (8,3.3) {
+\begin{minipage}{\textwidth}
+\begin{enumerate}
+    \item[(a)] Without considering the scatterplot, explain why the researcher should not have used the word ``proves'' in their conclusion.
+    \item[(b)] Comment on what might be observed by inspecting the scatterplot, and explain what the researcher should do with the data as a consequence.
+    \item[(c)] Suggest two possible improvements to the design of the scatterplot.
+\end{enumerate}
+\end{minipage}
+};
+\end{tikzpicture}
+\end{center}
+\end{enumerate}
+
+\setlength{\columnsep}{10pt}
+
+\newpage
+
+## Least Squares Linear Regression 
+
+One goal of linear regression is to allow *predictions* to be made. This typically involves an independent (or *control*) variable on the $x$-axis, and a dependent (or *response*) variable on the $y$-axis, with the aim of constructing a *trend line* such that the model can predict unknown $y$ values based on known $x$ values. To determine the equation of this line, the method of *least squares regression* can be used.
+
+\vspace{-0.3cm}
+\begin{center}
+    \begin{tikzpicture}
+        \draw[semithick,-stealth] (0,0) -- (3,0) node[right] {$x$};
+        \draw[semithick,-stealth] (0,0) -- (0,3) node[above] {$y$};
+        \node[below] at (1.5,0) {\textit{control}};
+        \node[above,rotate=90] at (0,1.5) {\textit{response}};
+        \draw[fill] (0.5,0.4) circle (0.03);
+        \draw[fill] (1.2,0.9) circle (0.03);
+        \draw[fill] (1.7,1.1) circle (0.03);
+        \draw[fill] (1.8,1.3) circle (0.03);
+        \draw[fill] (1.9,1.0) circle (0.03);
+        \draw[fill] (2.4,1.8) circle (0.03);
+        \draw[fill] (2.7,2) circle (0.03);
+        \draw (0.2,0.113) -- (2.8,1.97);
+        \node[right] at (3.2,1.97) {This line is referred to as a $y$ \textit{on} $x$ \textit{regression line}.};
+    \end{tikzpicture}
+\end{center}
+
+\vspace{-0.3cm}
+\begin{multicols}{2}
+
+Given a full population of bivariate data $(x_1,y_1), (x_2,y_2) ...  (x_n,y_n)$, the equation of the best fitting line is of the form:
+
+$$y=\alpha + \beta x$$
+
+\begin{itemize}
+    \item $\alpha$ (\textit{``alpha''}) represents the \textit{intercept parameter}
+    \item $\beta$ (\textit{``beta''}) represents the \textit{slope parameter}
+\end{itemize}
+
+\begin{center}
+\begin{tikzpicture}
+\draw[semithick,-stealth] (0,0.4) -- (0,4.4);
+\draw[semithick,-stealth] (0,0.4) -- (5,0.4);
+\node at (5.2,0) {$x$};
+\node at (0,4.6) {$y$};
+\draw[fill=black] (1,3) circle (0.04);
+\draw[semithick,dashed] (1,3) -- (1,1.968);
+\draw[semithick,dotted] (0,1.968) -- (1,1.968);
+\draw[semithick,dotted] (0,3) -- (1,3);
+\draw (0,1.968) -- (-0.5,1.968);
+\draw (0,3) -- (-0.5,3);
+\node[anchor=east] at (-0.5,3) {observed $y_1$};
+\node[anchor=east] at (-0.5,1.968) {predicted $y_1$};
+\draw[fill=black] (1.5,1) circle (0.04);
+\draw[fill=black] (3,2.8) circle (0.04);
+\draw[fill=black] (4,2) circle (0.04);
+\draw[fill=black] (4.5,4) circle (0.04);
+\draw[semithick] (0.5,1.8035) -- (4.7,3.1853);
+\node[anchor=south] at (1,3) {$(x_1,y_1)$};
+\node[anchor=north] at (1.5,1) {$(x_2,y_2)$};
+\node[anchor=south] at (3,2.8) {$(x_3,y_3)$};
+\node[anchor=north] at (4,2) {$(x_4,y_4)$};
+\node[anchor=south] at (4.5,4) {$(x_5,y_5)$};
+\node[anchor=west] at (1,2.5) {$\epsilon_1$};
+\node[anchor=west] at (4.7,3.1853) {$y=\alpha + \beta x$};
+\end{tikzpicture}
+\end{center}
+
+\end{multicols}
+
+\vspace{-0.3cm}
+Differences between the $y$ values predicted by this line and the actual $y_i$ values are called *errors*, or $\epsilon_i$ (\textit{``epsilon''}). The parameters $\alpha$ and $\beta$ are calculated such that the *sum of squared errors*, $\Sigma \epsilon_i^2$, is minimised.   
+
+Since regression lines are generally calculated from a random *sample* of bivariate data points, the values for the population parameters $\alpha$ and $\beta$ have to be estimated, with the sample statistics $a$ and $b$ respectively calculated as *estimators*:   
+
+\begin{center}
+\tcbset{width=10cm}
+\begin{tcolorbox}[adjusted title=Estimation of Slope and Intercept Parameters, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\vspace{-0.4cm}
+$$\hat{\beta}=b=\dfrac{S_{xy}}{S_{xx}} \qquad \text{and} \qquad \hat{\alpha}=a=\bar{y}-b\bar{x}$$
+\end{tcolorbox}
+\end{center}
+
+Once values for $a$ and $b$ have been calculated, and so the least squares regression line of $y$ on $x$ obtained as $y=a+bx$, unknown values of $y$ may be predicted for given values of $x$. This equation (and the line it defines) is *not* suitable for predicting $x$ values based on $y$, the process for which will be covered in a later chapter.
+
+\begin{vwcol}[widths={0.65,0.35},
+ sep=.8cm,rule=0pt]
+Whether a linear relationship will continue to hold for $x$ values lower or higher than any observed within the range of the data can be unpredictable, and should not be assumed.\\[0.3em]\textbf{Interpolation}, prediction within the range of the control data, is generally reliable if the correlation is high.\\[0.3em]However, \textbf{extrapolation}, prediction out with the range of the data, should be avoided as unreliable and unsupported.
+
+\begin{tikzpicture}
+    \draw[fill=black!10,black!10] (0,0) rectangle (4.9,2.6);
+    \draw[fill=white,white] (1.95,0) rectangle (4.05,2.6);
+    \draw[semithick,-stealth] (0,0) -- (5,0) node[right] {$x$};
+    \draw[semithick,-stealth] (0,0) -- (0,2.7) node[above] {$y$};
+    \draw[fill] (2,1) circle (0.04);
+    \draw[fill] (2.2,1.4) circle (0.04);
+    \draw[fill] (2.5,0.7) circle (0.04);
+    \draw[fill] (2.6,0.9) circle (0.04);
+    \draw[fill] (2.9,1.4) circle (0.04);
+    \draw[fill] (3,1.5) circle (0.04);
+    \draw[fill] (3.2,1.9) circle (0.04);
+    \draw[fill] (3.5,1.4) circle (0.04);
+    \draw[fill] (3.9,2.1) circle (0.04);
+    \draw[fill] (4,2.4) circle (0.04);
+    \draw (1.95,0.8026) -- (4.05,2.1634);
+    \draw[densely dashed] (0.864,0.1) -- (4.72,2.6);
+    \draw [decorate, decoration = {brace,mirror,raise=20pt}] (1.95,0.6) --  (4.05,0.6);
+    \node at (3,-0.4) {interpolation};
+    \node at (3,3.5) {extrapolation};
+    \draw[-stealth] (1.7,3.3) -- (1,2.8);
+    \draw[-stealth] (4.25,3.3) -- (4.5,2.8);
+    \node at (1,1.25) {?};
+    \node at (4.5,1.25) {?};
+\end{tikzpicture}
+\end{vwcol} 
+ 
+\pagebreak
+
+
+
+\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\textbf{Problem:} A biology class takes two tests, one theoretical and one practical. The results of the 12 pupils are shown in the table and scatterplot below, along with some summary statistics.
+
+\begin{center}
+\begin{tabular}{c|cccccccccccc}
+    Theoretical test result ($x$) & 5 & 9 & 7 & 11 & 20 & 4 & 6 & 17 & 12 & 10 & 15 & 16\\
+  \hline
+    Practical test result ($y$) & 6 & 8 & 9 & 13 & 20 & 9 & 8 & 17 & 14 & 8 & 17 & 18
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+\draw[semithick] (-0.05,0) -- (-0.05,3.65);
+\draw[semithick] (0,-0.1) -- (4.15,-0.1);
+\node[rotate=90] at (-1,1.75) {Practical};
+\node at (2,-1) {Theoretical};
+\foreach \y in {6,8,...,20}
+\node at (-0.45,0.25*\y-1.5) {\y};
+\foreach \y in {6,8,...,20}
+\draw[semithick] (-0.05,0.25*\y-1.5) -- (-0.15,0.25*\y-1.5);
+\foreach \x in {4,6,...,20}
+\node at (0.25*\x-1,-0.45) {\x};
+\foreach \x in {4,6,...,20}
+\draw[semithick] (0.25*\x-1,-0.1) -- (0.25*\x-1,-0.2);
+\draw[semithick] (4*0.25-1,6.097*0.25-1.5) -- (20*0.25-1,20.161*0.25-1.5);
+\draw[fill=black] (5*0.25-1,6*0.25-1.5) circle (0.04);
+\draw[fill=black] (9*0.25-1,8*0.25-1.5) circle (0.04);
+\draw[fill=black] (7*0.25-1,9*0.25-1.5) circle (0.04);
+\draw[fill=black] (11*0.25-1,13*0.25-1.5) circle (0.04);
+\draw[fill=black] (20*0.25-1,20*0.25-1.5) circle (0.04);
+\draw[fill=black] (4*0.25-1,9*0.25-1.5) circle (0.04);
+\draw[fill=black] (6*0.25-1,8*0.25-1.5) circle (0.04);
+\draw[fill=black] (17*0.25-1,17*0.25-1.5) circle (0.04);
+\draw[fill=black] (12*0.25-1,14*0.25-1.5) circle (0.04);
+\draw[fill=black] (10*0.25-1,8*0.25-1.5) circle (0.04);
+\draw[fill=black] (15*0.25-1,17*0.25-1.5) circle (0.04);
+\draw[fill=black] (16*0.25-1,18*0.25-1.5) circle (0.04);
+\node at (9,3.5) {$\Sigma x=132,$\quad$\Sigma y=147,$};
+\node at (9,2.9) {$\Sigma x^2 =1742,$\quad$\Sigma y^2 =2057,$\quad$\Sigma xy=1872$};
+\node[anchor=west] at (5,2) {(a) Calculate the equation of the least squares};
+\node[anchor=west] at (5.6,1.5) {regression line of $y$ on $x$.};
+\node[anchor=west] at (5,1) {(b) Calculate a predicted mark for the practical test};
+\node[anchor=west] at (5.6,0.5) {for a pupil who missed it, having scored 8 in the};
+\node[anchor=west] at (5.6,0) {theoretical test.};
+\node[anchor=west] at (5,-0.5) {(c) Comment on the reliability of this prediction.};
+\end{tikzpicture}
+\end{center}
+
+\tcblower
+\textbf{Solution:}
+
+\begin{flalign*}
+\text{(a)   }S_{xx}&=\Sigma x^2-\frac{(\Sigma x)^2}{n}\\
+&=1742-\frac{132^2}{12}\\
+&=290\\[1em]
+S_{xy}&=\Sigma xy-\frac{\Sigma x\Sigma y}{n}\\
+&=1872-\frac{132\times 147}{12}\\
+&=2555\\[1em]
+b&=\dfrac{S_{xy}}{S_{xx}}=\dfrac{255}{290}=0.879 &\\
+ & &\\
+a&=\bar{y}-b \bar{x}=\dfrac{147}{12}-0.879\times \dfrac{132}{12}=2.578\\
+ & &\\
+y&=2.578+0.879x
+\end{flalign*}
+
+\vspace{0.5cm}
+\text{(b)   } $y=2.578 + 0.879\times 8=9.61$
+
+\vspace{0.5cm}
+\text{(c)   } This is an example of interpolation as the value of $x$ used is within the range of values of the other students, and consequently it can be considered a robust prediction, especially given the high value for $r$.  
+
+\end{tcolorbox}
+
+\newpage
+
+[]{#ex53q}
+
+#### [Exercise 5.3](#ex53a) {-}
+
+\begin{enumerate}
+    \item A bivariate sample has summary statistics:
+\begin{center}
+  \begin{tabular}{ccccccccccc}
+      $\sum x=117$ & \quad & $\sum x^2=1869$ & \quad & $\sum y=660$ & \quad & $\sum y^2=54638$ & \quad & $\sum xy=9519$ & \quad & $n=8$
+  \end{tabular}
+\end{center}
+It is determined from inspecting a scatterplot that there appears to be a linear relationship between the variables.\\
+Obtain the equation of the least squares regression line of $y$ on $x$.
+\item 31 randomly selected black cherry trees have their diameter at a set distance from the ground measured, in inches, with the height of each tree also measured, in feet. The equation of the least squares regression line for $y$ on $x$ is obtained, and shown on the scatterplot below.
+    \begin{center}
+    \begin{tikzpicture}
+        \draw (0,0) -- (6.5,0);
+        \foreach \x in {0,1,...,6}{
+        \draw (\x,-0.1) -- (\x,0) node[below] {\x};
+        }
+        \node at (3.25,-0.75) {Tree diameter (inches)};
+        \draw (0,0) -- (0,3.5);
+        \foreach \y in {60,68,...,84}{
+        \draw (-0.1,0.125*\y-0.125*60) -- (0,0.125*\y-0.125*60) node[left] {\y};
+        }
+        \node[rotate=90] at (-1,2) {Tree height (feet)};
+        \draw[black!70,fill=black!70] (0.15,1.25) circle (0.03);
+\draw[black!70,fill=black!70] (0.3,0.625) circle (0.03);
+\draw[black!70,fill=black!70] (0.4,0.375) circle (0.03);
+\draw[black!70,fill=black!70] (1.25,1.5) circle (0.03);
+\draw[black!70,fill=black!70] (1.35,2.625) circle (0.03);
+\draw[black!70,fill=black!70] (1.4,2.875) circle (0.03);
+\draw[black!70,fill=black!70] (1.5,0.75) circle (0.03);
+\draw[black!70,fill=black!70] (1.5,1.875) circle (0.03);
+\draw[black!70,fill=black!70] (1.55,2.5) circle (0.03);
+\draw[black!70,fill=black!70] (1.6,1.875) circle (0.03);
+\draw[black!70,fill=black!70] (1.65,2.375) circle (0.03);
+\draw[black!70,fill=black!70] (1.7,2) circle (0.03);
+\draw[black!70,fill=black!70] (1.7,2) circle (0.03);
+\draw[black!70,fill=black!70] (1.85,1.125) circle (0.03);
+\draw[black!70,fill=black!70] (2,1.875) circle (0.03);
+\draw[black!70,fill=black!70] (2.45,1.75) circle (0.03);
+\draw[black!70,fill=black!70] (2.45,3.125) circle (0.03);
+\draw[black!70,fill=black!70] (2.65,3.25) circle (0.03);
+\draw[black!70,fill=black!70] (2.85,1.375) circle (0.03);
+\draw[black!70,fill=black!70] (2.9,0.5) circle (0.03);
+\draw[black!70,fill=black!70] (3,2.25) circle (0.03);
+\draw[black!70,fill=black!70] (3.1,2.5) circle (0.03);
+\draw[black!70,fill=black!70] (3.25,1.75) circle (0.03);
+\draw[black!70,fill=black!70] (4,1.5) circle (0.03);
+\draw[black!70,fill=black!70] (4.15,2.125) circle (0.03);
+\draw[black!70,fill=black!70] (4.65,2.625) circle (0.03);
+\draw[black!70,fill=black!70] (4.75,2.75) circle (0.03);
+\draw[black!70,fill=black!70] (4.95,3.5) circle (0.03);
+\draw[black!70,fill=black!70] (5,1.5) circle (0.03);
+\draw[black!70,fill=black!70] (6.3,3.375) circle (0.03);  
+\draw[thick] (0,1.3) -- (6.5,2.774);
+\node[right] at (9,3.5) {Summary statistics:};
+\node[right] at (9,2.9) {$\sum x=410.7$};
+\node[right] at (9,2.3) {$\sum x^2=5736$};
+\node[right] at (9,1.7) {$\sum y=2356$};
+\node[right] at (9,1.1) {$\sum y^2=180274$};
+\node[right] at (9,0.5) {$\sum xy=31524$};
+\node[right] at (9,-0.1) {$n=31$};
+    \end{tikzpicture}
+\end{center}
+    Calculate the equation of the least squares regression line of $y$ on $x$.
+\item A running website randomly selected eleven amateur runners who recently completed a marathon and asked them to complete a survey which included their finishing time in the marathon and information about their training routine. The scatterplot below shows, for each runner, their finishing time ($x$, in hours) and the total distance they ran in the final four weeks of their training ($y$, in miles).
+\begin{center}
+\begin{tikzpicture}
+\foreach \x in {0,1,...,7}{
+\draw (\x,0) -- (\x,-0.1);
+\node[below] at (\x,0) {\x};
+}
+\foreach \y in {0,25,...,175}{
+\draw (0,0.02*\y) -- (-0.1,0.02*\y);
+\node[left] at (0,0.02*\y) {\y};
+}
+\draw[black!70,fill=black!70] (2.4,2.7) circle (0.03);
+\draw[black!70,fill=black!70] (2.9,2.84) circle (0.03);
+\draw[black!70,fill=black!70] (3.1,2.42) circle (0.03);
+\draw[black!70,fill=black!70] (3.7,2.3) circle (0.03);
+\draw[black!70,fill=black!70] (3.9,1.9) circle (0.03);
+\draw[black!70,fill=black!70] (4,2.08) circle (0.03);
+\draw[black!70,fill=black!70] (4.2,1.88) circle (0.03);
+\draw[black!70,fill=black!70] (4.4,1.74) circle (0.03);
+\draw[black!70,fill=black!70] (4.7,1.62) circle (0.03);
+\draw[black!70,fill=black!70] (5,1.18) circle (0.03);
+\draw[black!70,fill=black!70] (6.2,1.3) circle (0.03);
+\draw[thick] (2,2.96) -- (6.5,0.84);
+\draw[-stealth] (0,0) -- (7,0) node[right] {$x$};
+\draw[-stealth] (0,0) -- (0,3.6) node[above] {$y$};
+\node at (3.5,-1) {Time (hours)};
+\node at (-2,2.5) {Distance};
+\node at (-2,2) {(miles)};
+\node[right] at (9,4) {Summary statistics:};
+\node[right] at (9,3.4) {$\sum x=44.5$};
+\node[right] at (9,2.8) {$\sum x^2=191.21$};
+\node[right] at (9,2.2) {$\sum y=1098$};
+\node[right] at (9,1.6) {$\sum y^2=116768$};
+\node[right] at (9,1) {$\sum xy=4179.2$};
+\node[right] at (9,0.4) {$n=11$};
+\end{tikzpicture}
+\end{center}  
+
+A least squares regression line for $y$ on $x$ is shown on the graph.
+
+\begin{enumerate}
+    \item[(a)] Obtain the equation of the least squares regression line.
+\end{enumerate}
+
+\begin{enumerate}
+    \item[(b)] Calculate the correlation coefficient, and comment on its value.
+\end{enumerate}
+
+The website wishes to allow users the ability to input the number of miles in their training plan for the four weeks leading up to the rate, and receive in response an estimate for their finishing time.
+
+\begin{enumerate}
+    \item[(c)] Explain why the equation provided above is unsuitable for this purpose.
+\end{enumerate}
+\pagebreak
+    \item A researcher laid a transect line from the base of a tress and placed a quadrat at one metre intervals along the transect line. The number of seeds dropped by the tree contained in each quadrat was recorded. 
+    \begin{center}
+    \begin{multicols}{2}
+    \null\vfill
+    \begin{tabular}{|l|cccccc|}
+      \hline
+        Distance from base of tree ($x$) & 1 & 2 & 3 & 4 & 5 & 6\\ 
+      \hline
+        No. of seeds found ($y$) & 0 & 9 & 4 & 2 & 7 & 3\\
+      \hline
+    \end{tabular}\\
+    \begin{enumerate}
+        \item Calculate the correlation coefficient.
+        \item Explain why the researcher may have decided not to obtain a regression line.
+    \end{enumerate}
+    \vfill\null
+    \columnbreak
+    \null\vfill
+\begin{tikzpicture}
+\draw[white] (0,0.7*6*0.75) -- (1,0.7*6*0.75);
+\draw[semithick] (0,0) -- (0,0.7*5*0.75);
+\draw[semithick] (0,0) -- (6,0);
+\node at (0,0.7*5.5*0.75) {$y$};
+\node at (6.5,0) {$x$};
+\foreach \y in {0,2,...,10}
+\node at (-0.5,0.7*0.75*0.5*\y) {\y};
+\foreach \y in {0,2,...,10}
+\draw[semithick] (0,0.7*0.75*0.5*\y) -- (-0.1,0.7*0.75*0.5*\y);
+\foreach \x in {0,1,...,6}
+\node at (\x,-0.5) {\x};
+\foreach \x in {0,1,...,6}
+\draw[semithick] (\x,0) -- (\x,-0.1);
+\draw[fill=black] (1,0) circle (0.07);
+\draw[fill=black] (2,0.7*4.5*0.75) circle (0.07);
+\draw[fill=black] (3,0.7*2*0.75) circle (0.07);
+\draw[fill=black] (4,0.7*1*0.75) circle (0.07);
+\draw[fill=black] (5,0.7*3.5*0.75) circle (0.07);
+\draw[fill=black] (6,0.7*1.5*0.75) circle (0.07);
+\end{tikzpicture}
+\vfill\null
+\end{multicols}
+\end{center}
+\item A strength and conditioning coach wants to increase the vertical jump height performance in their trainees and considers whether back squat weight has an impact on vertical jump height performance. The summary statistics below are taken from the back squat weight ($x$ in kg) and vertical jump height ($y$ in cm) achieved by a random sample of 29 of the coach’s trainees.
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}
+\draw (0,-0.1) -- (3.75*4,-0.1);
+\draw (0,0) -- (0,5);
+\node[rotate=90] at (-1.3,2.5) {Vertical jump height (cm)};
+\node at (4*2,-1.2) {Back squat weight (kg)};
+\foreach \y in {40,50,...,90}
+\node[anchor=east] at (-0.2,0.1*\y-4) {\y};
+\foreach \y in {40,45,...,90}
+\draw[semithick] (0,0.1*\y-4) -- (-0.1,0.1*\y-4);
+\foreach \x in {120,130,...,190}
+\node at (4*0.05*\x-4*6,-0.6) {\x};
+\foreach \x in {120,125,...,195}
+\draw[semithick] (4*0.05*\x-4*6,-0.2) -- (4*0.05*\x-4*6,-0.1);
+\draw[fill=black] (4*0,0.600000000000001) circle (0.04);
+\draw[fill=black] (4*0.350000000000001,2.2) circle (0.04);
+\draw[fill=black] (4*0.5,1.8) circle (0.04);
+\draw[fill=black] (4*1.5,2.6) circle (0.04);
+\draw[fill=black] (4*3,3) circle (0.04);
+\draw[fill=black] (4*2.6,2.4) circle (0.04);
+\draw[fill=black] (4*2.4,2) circle (0.04);
+\draw[fill=black] (4*1.9,2.2) circle (0.04);
+\draw[fill=black] (4*2,2.1) circle (0.04);
+\draw[fill=black] (4*2.75,4.4) circle (0.04);
+\draw[fill=black] (4*2.5,3.7) circle (0.04);
+\draw[fill=black] (4*0.75,1.6) circle (0.04);
+\draw[fill=black] (4*2,2.2) circle (0.04);
+\draw[fill=black] (4*1,1.5) circle (0.04);
+\draw[fill=black] (4*2.9,3.6) circle (0.04);
+\draw[fill=black] (4*2.1,2.5) circle (0.04);
+\draw[fill=black] (4*2.25,2.6) circle (0.04);
+\draw[fill=black] (4*2.9,3.2) circle (0.04);
+\draw[fill=black] (4*1.25,1.8) circle (0.04);
+\draw[fill=black] (4*1.1,1.5) circle (0.04);
+\draw[fill=black] (4*3.5,3.4) circle (0.04);
+\draw[fill=black] (4*2.4,2.6) circle (0.04);
+\draw[fill=black] (4*3,3.1) circle (0.04);
+\draw[fill=black] (4*2.25,2.6) circle (0.04);
+\draw[fill=black] (4*3.5,3.7) circle (0.04);
+\draw[fill=black] (4*1.25,1.6) circle (0.04);
+\draw[fill=black] (4*2.25,2.5) circle (0.04);
+\draw[fill=black] (4*2.5,2.8) circle (0.04);
+\draw[fill=black] (4*3.25,3.1) circle (0.04);
+\draw[thick] (4*0.05*120-4*6,0.019113*120+3.6639-4) -- (3.75*0.05*200-3.75*6,0.019113*195+3.6639-4);
+\end{tikzpicture}
+\end{center}  
+\vspace{-0.5cm}
+\begin{center}
+\begin{tabular}{ccc}
+  $\Sigma x=4673$ & $\Sigma x^2=763101$ & $\Sigma xy=308020$\\[0.5em]
+  $\Sigma y=1889$ & $\Sigma y^2=124945$ & $n=29$
+\end{tabular}
+\end{center}
+\vspace{-0.5cm}
+\begin{enumerate}
+    \item[] \text{}
+    \begin{enumerate}
+        \item[(a) ] Use the scatterplot to comment on the relationship between vertical jump height and back squat weight achieved by the trainees.
+        \item[(b) ] Calculate the product moment correlation coefficient for this data set.
+        \item[(c)] The coach wishes to use the data to predict vertical jump height.
+        \begin{enumerate}
+            \item Find the equation of the least squares regression line of vertical jump height on back squat weight.
+            \item Estimate the vertical jump height of a trainee who back squats 165kg and comment on the reliability of this estimate.
+        \end{enumerate}
+      \end{enumerate}
+      \item[] Based on the correlation coefficient the coach advises that increasing their squat back weight will increase their vertical jump height.
+      \begin{enumerate}
+        \item[(d) ] Give a reason why this advice is not necessarily correct.
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+
+## Review Exercise {-}
+
+\begin{enumerate}
+    \item As part of a study on intensive exercise, a sports scientist recorded the peak heart rates ($y$) of a random selection of sixteen volunteers of different ages ($x$) who took regular exercise. The linear regression equation was calculated for the data shown in the scatter diagram and found to be $y=203.9−0.67x$.
+\end{enumerate}
+
+
+\begin{figure}[H]
+\centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}[t]{.30\textwidth}
+
+\vspace{0cm}
+
+\begin{center}
+\begin{tikzpicture}
+\draw[semithick] (1.8,0.1*160) -- (1.8,0.1*200);
+\draw[semithick] (2.0,15.9) -- (6.0,15.9);
+\node[rotate=90] at (0.8,0.1*180) {Heart rate (bpm)};
+\node at (4,15) {Age (years)};
+\foreach \y in {160,170,...,200}
+\node at (1.3,0.1*\y) {\y};
+\foreach \y in {160,165,...,200}
+\draw[semithick] (1.8,0.1*\y) -- (1.6,0.1*\y);
+\foreach \x in {20,25,...,60}
+\node at (0.1*\x,15.5) {\x};
+\foreach \x in {20,25,...,60}
+\draw[semithick] (0.1*\x,15.8) -- (0.1*\x,16);
+\draw[fill=black] (2,0.1*198) circle (0.04);
+\draw[fill=black] (2.2,0.1*191) circle (0.04);
+\draw[fill=black] (2.4,0.1*185) circle (0.04);
+\draw[fill=black] (2.6,0.1*190) circle (0.04);
+\draw[fill=black] (2.8,0.1*179) circle (0.04);
+\draw[fill=black] (2.9,0.1*187) circle (0.04);
+\draw[fill=black] (3.2,0.1*177) circle (0.04);
+\draw[fill=black] (3.5,0.1*178) circle (0.04);
+\draw[fill=black] (3.6,0.1*180) circle (0.04);
+\draw[fill=black] (3.9,0.1*179) circle (0.04);
+\draw[fill=black] (4.0,0.1*175) circle (0.04);
+\draw[fill=black] (4.4,0.1*168) circle (0.04);
+\draw[fill=black] (4.6,0.1*168) circle (0.04);
+\draw[fill=black] (4.6,0.1*170) circle (0.04);
+\draw[fill=black] (4.9,0.1*198) circle (0.04);
+\draw[fill=black] (5.1,0.1*162) circle (0.04);
+\draw[thick] (2,21.23-0.096*20) -- (5.2,21.23-0.096*52);
+\end{tikzpicture}
+\end{center}
+
+\end{minipage}%
+  \centering
+\begin{minipage}[t]{.7\textwidth}
+  \centering
+
+\vspace{0cm}
+
+\begin{enumerate}
+    \item[] However, after considering the scatter diagram for the data, it was realised that one piece of data has been misrecorded, and this volunteer’s data was removed from the data set. 
+    \begin{enumerate}
+        \item[(a) ] State the approximate age of the volunteer whose data was removed.
+        \item[(b) ] Calculate the new equation of the least squares regression line using the revised summary data:\\
+        $\Sigma x=518,  \Sigma y=2687,  \Sigma x^2=19196,  \Sigma y^2=482691,  \Sigma xy=91534$ 
+        \item[(c) ] Comment on the difference this makes to the prediction for the average peak heart rate of a 45 year old volunteer. 
+    \end{enumerate}
+\end{enumerate}
+
+\end{minipage}
+\end{figure}
+
+\begin{enumerate}[resume]
+    \item James Forbes was a Scottish physicist who, amongst other things, was interested in finding a way to estimate altitude from measurements of the boiling temperature of water. Some of his observations on boiling point ($y$, in $F^{\circ}$) and barometric pressure ($x$, in inches of mercury) are summarised below and shown in the scatterplot.
+    \begin{center}
+    \begin{tikzpicture}
+        \node[right] at (7,2.9) {Summary data for sample:};
+        \node[right] at (7,1.9) {$S_{xx}=145.94$};
+        \node[right] at (7,1.4) {$S_{yy}=530.78$};
+        \node[right] at (7,0.9) {$S_{xy}=277.54$};
+        \node[right] at (7,-0.1) {$n=17$};
+        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
+        \draw[-stealth] (0,0.1) -- (0,3.25) node[above] {$y$}; 
+        \node at (2.5,-1) {Barometric pressure (inches of mercury)};
+        \node at (-2.5,1.75) {Boiling point};
+        \node at (-2.5,1.25) {($F^{\circ}$)};
+        \foreach \x in {0.25,0.75,...,4.75}{
+        \draw (\x,0) -- (\x,-0.1);
+        }
+        \foreach \y in {0.5,1,...,3}{
+        \draw (0,\y) -- (-0.1,\y);
+        }
+        \node[left] at (0,0.5) {195};
+        \node[left] at (0,1.5) {205};
+        \node[left] at (0,2.5) {215};
+        \node[below] at (0.25,0) {21};
+        \node[below] at (1.25,0) {23};
+        \node[below] at (2.25,0) {25};
+        \node[below] at (3.25,0) {27};
+        \node[below] at (4.25,0) {29};
+        \draw[fill=black] (0.145,0.45) circle (0.03);
+\draw[fill=black] (0.145,0.430000000000001) circle (0.03);
+\draw[fill=black] (0.949999999999999,0.790000000000001) circle (0.03);
+\draw[fill=black] (1.085,0.840000000000001) circle (0.03);
+\draw[fill=black] (1.325,0.940000000000001) circle (0.03);
+\draw[fill=black] (1.425,0.990000000000001) circle (0.03);
+\draw[fill=black] (1.695,1.09) circle (0.03);
+\draw[fill=black] (1.745,1.11) circle (0.03);
+\draw[fill=black] (1.76,1.14) circle (0.03);
+\draw[fill=black] (1.755,1.13) circle (0.03);
+\draw[fill=black] (2.32,1.36) circle (0.03);
+\draw[fill=black] (3.035,1.46) circle (0.03);
+\draw[fill=black] (3.995,1.95) circle (0.03);
+\draw[fill=black] (3.63,1.86) circle (0.03);
+\draw[fill=black] (4.27,2.07) circle (0.03);
+\draw[fill=black] (4.69,2.19) circle (0.03);
+\draw[fill=black] (4.78,2.22) circle (0.03);
+\draw[semithick] (20.8*0.5-10.25,194.82*0.1-19) -- (30.5*0.5-10.25,213.25*0.1-19);
+    \end{tikzpicture}
+\end{center}
+The least squares regression line of $y=155.29+1.9018x$ was fitted. Show the calculations required to obtain the values of the sample intercept and sample slope parameter.
+\end{enumerate}
+
+\begin{enumerate}[resume]
+    \item The yield of a particular crop on a farm is thought to depend principally on the amount of rainfall in the growing season. The values of the yield, $y$, in tons per acre, and the rainfall, $x$, in centimetres, for seven successive years are given in the table and displayed in the scatterplot.
+\end{enumerate}
+
+\begin{figure}[H]
+  \centering
+\captionsetup[figure]{labelformat=empty}%
+\begin{minipage}[t]{.65\textwidth}
+  \centering
+
+\vspace{0cm}
+
+\begin{center}
+\begin{tabular}{|l|ccccccc|}
+  \hline
+    Rainfall ($x$) & 12.3 & 13.7 & 14.5 & 11.2 & 13.2 & 14.1 & 12.0\\
+  \hline
+    Yield ($y$) & 6.25 & 8.02 & 8.42 & 5.27 & 7.21 & 8.71 & 5.68\\
+  \hline
+\end{tabular}
+\end{center}
+\begin{enumerate}
+    \item[] \text{}
+    \begin{enumerate}
+        \item[(a) ] Comment on what the scatterplot shows. 
+        \item[(b) ] Calculate the product moment correlation coefficient for this data set. 
+        \item[(c) ] Find the equation of the least squares regression line of $y$ on $x$.
+        \item[(d) ] Comment on the appropriateness of using the regression line found to \\estimate the rainfall in a year if the yield for the year is known.
+    \end{enumerate}
+\end{enumerate}
+
+
+\end{minipage}%
+  \centering
+\begin{minipage}[t]{.35\textwidth}
+  \centering
+  
+\vspace{0cm}
+  
+\begin{center}
+\begin{tikzpicture}
+\draw[semithick] (10.95,0.5*4) -- (10.95,0.5*9);
+\draw[semithick] (11,0.5*4-0.1) -- (15,0.5*4-0.1);
+\node[rotate=90] at (10,0.5*6.5) {Yield (tons/acre)};
+\node at (13,0.5*4-1) {Rainfall (cm)};
+\foreach \y in {4,5,...,9}
+\node at (10.55,0.5*\y) {\y};
+\foreach \y in {4,5,...,9}
+\draw[semithick] (10.95,0.5*\y) -- (10.85,0.5*\y);
+\foreach \x in {11,12,...,15}
+\node at (\x,0.5*4-0.45) {\x};
+\foreach \x in {11,12,...,15}
+\draw[semithick] (\x,0.5*4-0.1) -- (\x,0.5*4-0.2);
+\draw[fill=black] (12.3,0.5*6.25) circle (0.04);
+\draw[fill=black] (13.7,0.5*8.02) circle (0.04);
+\draw[fill=black] (14.5,0.5*8.42) circle (0.04);
+\draw[fill=black] (11.2,0.5*5.27) circle (0.04);
+\draw[fill=black] (13.2,0.5*7.21) circle (0.04);
+\draw[fill=black] (14.1,0.5*8.71) circle (0.04);
+\draw[fill=black] (12,0.5*5.68) circle (0.04);
+\draw[thick] (11,-3.71+1.115*11*0.5) -- (15,-3.71+1.115*15*0.5);
+\end{tikzpicture}
+\end{center}  
+
+\end{minipage}
+\end{figure}
+
+\pagebreak
