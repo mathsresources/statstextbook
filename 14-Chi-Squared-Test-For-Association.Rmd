@@ -382,7 +382,7 @@ There is evidence to suggest the driving centre used and the outcome of the test
 Note that an equivalent conclusion would be that there is evidence to suggest that there is an *association* between driving centre used and the outcome of the test. However, it is generally preferable for a solution to mirror the language used in the question.
 \pagebreak
 
-#### Exercise 14A {-}
+#### Exercise 14.1 {-}
 
 \begin{enumerate}
     \item For all the games in the last 12 months, an ice hockey team records whether they won or lost, as well as whether the game was played at the weekend or on a weekday. The results were collated using a contingency table:
@@ -549,11 +549,11 @@ There is insufficient evidence to suggest that there is an association between t
 
 \end{tcolorbox}
 
-As with all all hypothesis tests, a decision to not reject $\text{H}_0$ does not mean there is evidence that it is true - only that there is insufficient evidence to suggest that it is *not* true in favour of $\text{H}_1$.
+As with all hypothesis tests, a decision to not reject $\text{H}_0$ does not mean there is evidence that it is true - only that there is insufficient evidence to suggest that it is *not* true in favour of $\text{H}_1$.
 
 \pagebreak
 
-#### Exercise 14B{-}
+#### Exercise 14.2{-}
 
 \begin{enumerate}
     \item A random sample of residents listed on the electoral register in four Scottish cities are selected and contacted to find out whether they voted in the most recent UK General Election, and the results shown in a contingency table. A \textit{spoiled vote} means they deliberately left their ballot paper blank or otherwise voided it, often seen as a `protest vote'.
@@ -567,7 +567,7 @@ As with all all hypothesis tests, a decision to not reject $\text{H}_0$ does not
      Spoiled & 3 & 7 & 2 & 1 & & Spoiled & 3.81 & 3.28 & 2.52 & 3.38
 \end{tabular}
 \end{center}
-Perform a test at the 5\% level of significance to assess whether there a difference in voting habits between the cities.
+Perform a hypothesis test to assess whether there is an association between voting habit and city of residence.
 \vspace{1cm}
     \item Data is collected from a random sample of people living across the United Kingdom on how many teaspoons (\text{tsp}) of sugar they typically add to a cup of tea. The contingency table below shows the results:
     \begin{center}
@@ -575,10 +575,10 @@ Perform a test at the 5\% level of significance to assess whether there a differ
         Observed & 0 tsp & 1 tsp & 2 tsp & 3+ tsp & & Expected & 0 tsp & 1 tsp & 2 tsp & 3+ tsp\\
         \cline{1-5}
         \cline{7-11}
-        England & 132 & 34 & 11 & 7 & \qquad \qquad & England & 132 & 34 & 11 & 7\\
-        Scotland & 52 & 27 & 13 & 4 & & Scotland & 52 & 27 & 13 & 4\\
-        Wales & 36 & 11 & 10 & 3 & & Wales & 36 & 11 & 10 & 3\\
-        N. Ireland & 27 & 16 & 5 & 0 & & N. Ireland & 27 & 16 & 5 & 0
+        England & 132 & 34 & 11 & 7 & \qquad \qquad & England & 117.13 & 41.73 & 18.49 & 6.64\\
+        Scotland & 52 & 27 & 13 & 4 & & Scotland & 61.11 & 21.77 & 9.65 & 3.46\\
+        Wales & 36 & 11 & 10 & 3 & & Wales & 38.20 & 13.61 & 6.03 & 2.16\\
+        N. Ireland & 27 & 16 & 5 & 0 & & N. Ireland & 30.56 & 10.89 & 4.82 & 1.73
     \end{tabular}
     \end{center}
     Use a chi-squared test to assess, at the 5\% level of significance, whether there is a difference in the amount of sugar the residents of the various parts of the United Kingdom prefer in their tea.
