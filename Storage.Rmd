@@ -1,0 +1,42 @@
+# Storage Questions
+
+### Chapter 15
+
+\begin{enumerate}
+\item A microbiologist wishes to determine whether there is any difference in the time it takes to make yoghurt from the two different starters: lactobacillus acidophilus (A) and bulgarius (B). Seven batches of yoghurt were made with each of the starters. The table below shows the time taken, in hours, to make each batch along with corresponding summary data.
+    \begin{center}
+    \begin{tabular}{c|ccccccc}
+        Starter A & 6.8 & 6.3 & 7.4 & 6.1 & 8.2 & 7.3 & 6.9\\
+        \hline
+        Starter B & 6.1 & 6.4 & 5.7 & 5.5 & 6.9 & 6.3 & 6.7
+    \end{tabular}
+    \end{center}
+    \begin{center}
+    \begin{tabular}{ccccc}
+        Variable & N & Mean & SE Mean & StDev\\
+        \hline
+        Starter A & 7 & 7.000 & 0.269 & 0.712\\
+        Starter B & 7 & 6.229 & 0.191 & 0.506
+    \end{tabular}
+    \end{center}
+    Assuming that both sets of times may be considered to be random samples from normal populations with the same variance, test at the 5\% significance level the hypothesis that the mean time taken to make yoghurt is the same for both starters. Comment on any different to the conclusion if a 1\% significance level had been used instead.
+    \item An investigation was conducted into the dust content in the flue gases of two types of solid-fuel boilers. Thirteen boilers of type A and nine boilers of type B were used under identical fuelling and extraction conditions. Over a similar period, the following quantities, in grams, of dust were deposited in similar traps inserted in each of the twenty-two flues.
+    \begin{center}
+    \begin{tabular}{c|ccccccccccccc}
+        Type A & 73.1 & 56.4 & 82.1 & 67.2 & 55.2 & 78.7 & 75.1 & 48.0 & 60.6 & 63.1 & 53.3 & 55.5 & 61.5\\
+        \hline
+        Type B & 53.0 & 39.3 & 55.8 & 46.0 & 56.4 & 58.8 & 41.2 & 66.6 & 58.9  &  &  &  & 	
+    \end{tabular}
+    \end{center}
+    A test for equality of population means was performed at the 5\% level of significance.\vspace{0.5cm}\\
+    \texttt{two sample t-test}\\
+    \texttt{alternative hypothesis: true difference in means is not equal to 0}\\
+    \texttt{t = 2.52}\qquad \texttt{df=20} \qquad \texttt{p-value = 0.020}\\
+    \texttt{sample estimates:}\\
+    \texttt{mean of A = 63.8}\qquad \texttt{mean of B = 52.89}\\
+    \texttt{sd of A = 10.6} \qquad \texttt{sd of B = 9.00}\\
+    \vspace{0.5cm}
+    Confirm the test statistic by calculating the pooled estimate of variance and draw a suitable conclusion for the test, stating any assumption required.
+    \item A random sample of 10 yellow grapefruit is weighed and the mean mass is found to be 201.4g. The value of an unbiased estimate for the population variance is 234.1$\text{g}^2$. The corresponding figures for a random sample of 8 pink grapefruit are 221.8g and 281.9$\text{g}^2$.\\[1em]
+Determine, using a 1\% significance level whether there is evidence that pink grapefruit weigh more than yellow grapefruit. State any assumptions made.
+\end{enumerate}

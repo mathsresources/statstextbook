@@ -1,0 +1,73 @@
+# Examples
+
+### Chapter 15
+
+\begin{tcolorbox}[title=Example 15.1.1,title filled, colframe=black!50]
+\textbf{Problem:} A survey found that the mean hotel room rate in Edinburgh is £88.42 and that the mean room rate in Glasgow is £80.61. The data was obtained from samples of 50 hotels each and the sample standard deviations were £5.62 and £4.83 respectively. Assess the evidence at the 5\% level of significance that mean hotel room rates are more expensive in Edinburgh, stating any assumption made.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[title=Example 15.1.1,title filled, colframe=black!50]
+\textbf{Problem:} A survey found that the mean hotel room rate in Edinburgh is £88.42 and that the mean room rate in Glasgow is £80.61. The data was obtained from samples of 50 hotels each and the sample standard deviations were £5.62 and £4.83 respectively. Assess the evidence at the 5\% level of significance that mean hotel room rates are more expensive in Edinburgh, stating any assumption made.
+
+\tcblower
+\textbf{Solution:}
+$\bar{x}_e=88.42$, $\bar{x}_g=80.61$, $s_e=5.62$, $s_g=4.83$ $n_e=50$, $n_g=50$\\[0.1em]
+
+Since both samples sizes are greater than 20, both sample means are approximately normally distributed due to the Central Limit Theorem. These sample sizes could also be considered large enough that the sample standard deviations of hotel room rate may be considered sufficiently accurate estimators for their respective population standard deviations.\\[0.1em]
+
+Assume that the samples of hotels for each city were random.\\[0.1em]
+
+\begin{math}
+\begin{array}{ll}
+      H_0: & \mu_e=\mu_g\\
+      H_1: & \mu_e > \mu_g
+    \end{array}
+\left]
+    \begin{array}{l}
+      \alpha=0.05\\
+      \textnormal{One-tailed}
+    \end{array}
+  \right.
+\end{math}
+
+\vspace{0.5cm}
+
+Test statistic: $z=\dfrac{88.42-80.61}{\sqrt{\dfrac{5.62^2}{50}+\dfrac{4.83^2}{50}}}=7.45$
+\hspace{3cm}
+\begin{tikzpicture}[overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6.5cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis
+  ]
+\addplot [draw=none, fill=black!50, domain=1.64:3] {gauss(x, 0, 1)} \closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(1.64,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\draw [semithick, black]  (axis cs:1.64,0) -- (axis cs:1.64,\valueA);
+\node[below] at (axis cs: 0,0)  {$0$};
+\node[above] at (axis cs: 0,\valueB)  {$z$};
+\node[below] at (axis cs: 1.64, 0) {$1.64$};
+\node[above] at (axis cs: 1.9,\valueA) {5\%};
+\end{axis}
+\end{tikzpicture}\\
+
+Critical value: $z_{0.95}=1.64$\\
+
+Since $7.45>1.64$, reject $\text{H}_0$ at the 5\% level of significance. There is evidence to suggest that the mean hotel room rate in Edinburgh is more expensive than in Glasgow.
+
+\end{tcolorbox}
