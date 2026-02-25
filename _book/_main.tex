@@ -16701,7 +16701,8 @@ The \(z\) and \(t\) hypothesis tests from chapters 10 and 15 which explore the \
 
 Given small samples (\(n<20\)) from populations whose distributions may not be assumed to be normally distributed, a number of \textbf{non-parametric} tests may be used which instead explore the locations of distributions by considering the \textbf{population median}, \(\eta\) (\emph{`eta'}).
 
-\section{Sign Test}\label{sign-test}
+\section*{Sign Test}\label{sign-test}
+\addcontentsline{toc}{section}{Sign Test}
 
 The Sign Test is a simple non-parametric test that, whilst \emph{not required for the Advanced Higher Statistics course}, helps to lay the groundwork for the tests covered later in this chapter. It uses a useful property of the population median, \(\eta\), namely that \(50\%\) of observations sampled from the population can be expected to be greater than \(\eta\) and \(50\%\) can be expected to be less than \(\eta\). This means that the number of observations on one side of the population median in a sample of size \(n\) should follow a \(B(n,0.5)\) distribution. For example, consider the following random sample of values (\(n=12\)) and a claim that the population median is less than \(9\):
 
@@ -17766,7 +17767,7 @@ Hence, the test statistic can now be confirmed as \(W=29\). However this value c
 \tcbset{width=14cm}
 \begin{tcolorbox}[adjusted title=For a Mann-Whitney Rank Sum test:, halign title = center,colback=black!5,colframe=black!75, halign = center]
 \begin{itemize}
-    \item The \textbf{test statistic}, denoted $W$, is the \textit{lower} of $W_m$ and $m(m+n+1)-W_m$. 
+    \item The \textbf{test statistic}, denoted $W$, is the \textit{smaller} of $W_m$ and $m(m+n+1)-W_m$. 
     \item The \textbf{critical value} can be obtained from Page 16 of the Data Booklet.
     \item $\text{H}_0$ is rejected if the test statistic $W$ is \textbf{less than or equal to} the critical value.
 \end{itemize}
@@ -17851,11 +17852,11 @@ Stating an assumption required, perform a non-parametric test to assess the data
 \begin{center}
 \begin{tabular}{l c l c r}
     $n=7$ & \qquad & $W_H=30.5$ & \qquad & $\frac{1}{2}\times 12 \times 13=78$\\[0.5em]
-    $m=5$ & \qquad & $W_R=47.5$ & & \textit{Check: }$39.5+5.5=45$
+    $m=5$ & \qquad & $W_R=47.5$ & & \textit{Check: }$30.5+47.5=78$
 \end{tabular}
 \end{center}
 
-\textit{Check: }$5\times 13-47.5=17.5$\\
+Find the smaller of: $W_R=47.5$ and $5\times 12-47.5=17.5$\\
 
 \begin{tabular}{l l l }
 Test statistic: & $W=17.5$ & \\[0.5em]
@@ -17869,8 +17870,8 @@ There is evidence to suggest that the median time taken for rugby players to run
 
 \pagebreak
 
-\subsubsection*{Exercise 17A}\label{exercise-17a}
-\addcontentsline{toc}{subsubsection}{Exercise 17A}
+\subsubsection*{Exercise 17.1}\label{exercise-17.1}
+\addcontentsline{toc}{subsubsection}{Exercise 17.1}
 
 \begin{enumerate}
     \item One year on World Maths Day (14th March) pupils across all the year groups in a school attempt a times tables speed challenge. A teacher checks the scores obtained by five randomly selected First Year pupils and seven randomly selected Third Year pupils. Their results are shown below.
@@ -18067,7 +18068,7 @@ Since here a \emph{discrete} distribution is being approximated by the \emph{con
 
 \vspace{0.3cm}
 
-Check that the rank sums for the smaller sample:\\
+Find the smallest possible rank sum for the smaller sample:\\
 
 $m=24,n=26,W_m=772$\\
 
@@ -18127,15 +18128,15 @@ Critical value: $-1.96$
 
 \vspace{0.5cm}
 
-Since $-3.10<-1.95$, reject $H_0$ at the 5\% level of significance. 
+Since $-3.10<-1.96$, reject $H_0$ at the 5\% level of significance. 
 There is evidence to suggest that the median length of an Atlantic herring differs from that of a North Sea herring.
 
 \end{tcolorbox}
 
 \pagebreak
 
-\subsubsection*{Exercise 17B}\label{exercise-17b}
-\addcontentsline{toc}{subsubsection}{Exercise 17B}
+\subsubsection*{Exercise 17.2}\label{exercise-17.2}
+\addcontentsline{toc}{subsubsection}{Exercise 17.2}
 
 \begin{enumerate}
     \item A commuter made a number of car journeys, on weekday mornings, from Perth to Glasgow. She believed that journeys on wet days would take longer, on average, than journeys on dry days. Journey length (in minutes) and weather conditions (either \textit{dry}, D, or \textit{wet}, W) for 48 randomly chosen days throughout the Autumn months, of which 21 were classified as \textit{dry}. The results are shown below.
@@ -18325,8 +18326,8 @@ There is evidence to suggest that the median number of shutter actuations before
 
 \pagebreak
 
-\subsubsection*{Exercise 17C}\label{exercise-17c}
-\addcontentsline{toc}{subsubsection}{Exercise 17C}
+\subsubsection*{Exercise 17.3}\label{exercise-17.3}
+\addcontentsline{toc}{subsubsection}{Exercise 17.3}
 
 \begin{enumerate}
     \item A Mann-Whitney test is to be performed using two independent samples of sizes 3 and 5. Once data for the samples have been collected and ordered, a rank sum will be obtained for the smaller sample.
@@ -18377,7 +18378,7 @@ There is evidence to suggest that the median number of shutter actuations before
     \begin{center}
         \begin{tabular}{c}
             $\text{H}_0:\eta_{\text{caffeine}}=\eta_{\text{caffeine-free}}$\\[0.5em]
-            $\text{H}_0:\eta_{\text{caffeine}}<\eta_{\text{caffeine-free}}$
+            $\text{H}_1:\eta_{\text{caffeine}}<\eta_{\text{caffeine-free}}$
         \end{tabular}
     \end{center}
     \begin{enumerate}[resume]
@@ -18481,19 +18482,16 @@ There is evidence to suggest that the median number of shutter actuations before
     \begin{enumerate}[resume]
         \item Comment on what the stem-and-leaf diagram may suggest about the suitability of both a $t$-test and a Mann-Whitney test.
     \end{enumerate}
-    \item Independent random samples, of sizes 4 and 9 respectively, are taken from populations $A$ and $B$. A non-parametric hypothesis test is to be performed at the 1\% significance level with the hypotheses as follows:
-    \begin{center}
-        \begin{tabular}{c}
-        $\text{H}_0:\eta_a=\eta_B$\\
-        $\text{H}_1:\eta_A<\eta_B$
-        \end{tabular}
-    \end{center}
-    When the data from the two samples are ranked from 1 (smallest) to 13 (largest), a rank sum of 12 is obtained for $A$, with no values tied.
+    \item Independent samples, of sizes 4 and 9 respectively, are taken from populations $A$ and $B$. A non-parametric hypothesis test is performed at the 2\% significance level, with truncated computer output from the test as follows:\\[0.5em]
+    \texttt{Mann Whitney test}\\
+    \texttt{data: sample A and sample B}\\
+    \texttt{alternative hypothesis: true location shift is not equal to zero}\\
+    \texttt{W = 12}
     \begin{enumerate}
-        \item State an assumption required for the test to be performed.
-        \item Find the number of possible arrangements of rankings for the 13 values.
-        \item List all relevant subsets which provide a rank sum for $A$ of 12 or less.
-        \item Hence find the $p$-value for the test, and state an appropriate conclusion.
+        \item State the null and alternative hypotheses used for the test.
+        \item Determine the critical value, and hence make a suitable conclusion.
+        \item State two assumptions required for the test performed to be valid.
+        \item Explain the steps required in order to obtain the test statistic of \texttt{W=12}.
     \end{enumerate}
 \end{enumerate}
 
@@ -18504,8 +18502,8 @@ There is evidence to suggest that the median number of shutter actuations before
 
 \emph{For any questions for which a level of significance is not specified, a 5\% level of significance has been used. Full answers should include, of course, conclusions in context}
 
-\subsubsection*{Exercise 17A}\label{exercise-17a-1}
-\addcontentsline{toc}{subsubsection}{Exercise 17A}
+\subsubsection*{Exercise 17.1}\label{exercise-17.1-1}
+\addcontentsline{toc}{subsubsection}{Exercise 17.1}
 
 \begin{enumerate}
     \item 
@@ -18527,8 +18525,8 @@ There is evidence to suggest that the median number of shutter actuations before
     \end{enumerate}
 \end{enumerate}
 
-\subsubsection*{Exercise 17B}\label{exercise-17b-1}
-\addcontentsline{toc}{subsubsection}{Exercise 17B}
+\subsubsection*{Exercise 17.2}\label{exercise-17.2-1}
+\addcontentsline{toc}{subsubsection}{Exercise 17.2}
 
 \begin{enumerate}
     \item 
@@ -18545,8 +18543,8 @@ There is evidence to suggest that the median number of shutter actuations before
     \end{enumerate}
 \end{enumerate}
 
-\subsubsection*{Exercise 17C}\label{exercise-17c-1}
-\addcontentsline{toc}{subsubsection}{Exercise 17C}
+\subsubsection*{Exercise 17.3}\label{exercise-17.3-1}
+\addcontentsline{toc}{subsubsection}{Exercise 17.3}
 
 \begin{enumerate}
     \item 
@@ -18591,10 +18589,10 @@ There is evidence to suggest that the median number of shutter actuations before
         \item Since the stem-and-leaf diagram seems to suggest that the distributions of alcohol content for the two groups have the same shape and variance, a Mann-Whitney test would be appropriate. Since the distributions both appear to be normal-like, a $t$-test would also be appropriate.
     \item 
     \begin{enumerate}
-        \item Assume that the distributions of $A$ and $B$ have the same shape and variance.
-        \item 715 
-        \item $\{1,2,3,4\},\{1,2,3,5\},\{1,2,3,6\},\{1,2,4,5\}$
-        \item $0.0056<0.01\implies\text{ reject }H_0$
+        \item $H_0:\;\eta_A = \eta_B$ and $H_0:\;\eta_A \ne \eta_B$
+        \item CV$=13$. Since $12<13$ reject $H_0$ at the 2\% significance level, so there is evidence to suggest that the two populations do not have the same median.
+        \item Assuming that the samples are random, and assume that the populations have the same shape and variance.
+        \item The data for samples A and B will have been combined and ordered, with ranks assigned to each value. The rank sum for sample A will have been found, $W_A$, and then the value $4\times (4+9+1)-W_A$ will have also been calculated. \texttt{W=12} will have been the smaller of those two values.
     \end{enumerate}
     \end{enumerate}
 \end{enumerate}

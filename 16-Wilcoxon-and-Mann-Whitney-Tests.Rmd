@@ -4,7 +4,7 @@ The $z$ and $t$ hypothesis tests from chapters 10 and 15 which explore the *loca
 
 Given small samples ($n<20$) from populations whose distributions may not be assumed to be normally distributed, a number of **non-parametric** tests may be used which instead explore the locations of distributions by considering the **population median**, $\eta$ (*'eta'*).
 
-## Sign Test
+## Sign Test {-}
 
 The Sign Test is a simple non-parametric test that, whilst *not required for the Advanced Higher Statistics course*, helps to lay the groundwork for the tests covered later in this chapter. It uses a useful property of the population median, $\eta$, namely that $50\%$ of observations sampled from the population  can be expected to be greater than $\eta$ and $50\%$ can be expected to be less than $\eta$. This means that the number of observations on one side of the population median in a sample of size $n$ should follow a $B(n,0.5)$ distribution. For example, consider the following random sample of values ($n=12$) and a claim that the population median is less than $9$:
 
