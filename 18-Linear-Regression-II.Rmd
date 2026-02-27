@@ -1371,7 +1371,7 @@ Instead it is necessary to create a new model and obtain the equation of an $x$ 
 
 Where the values of $a$ and $b$ for differ from those required for an $y$ on $x$ line, and are given instead by:
 
-\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=5cm]
+\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=6cm]
 \vspace{-0.5cm}
 \[b=\dfrac{S_{xy}}{S_{yy}} \quad and \quad a=\bar{x}-b\bar{y}\]
 \end{tcolorbox}
@@ -1612,7 +1612,7 @@ Below is an illustration of a standard scatterplot showing a sample of bivariate
 \vspace{-1cm}
 It should be observed that the residual plot broadly appears to show:
 
-\vspace{-0.2cm}
+\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=12cm]
 \begin{center}
     \begin{tabular}{ccc}
         A random scatter of points... & $\qquad$ & \\
@@ -1620,8 +1620,8 @@ It should be observed that the residual plot broadly appears to show:
         ...with a constant variance. & & $\text{V}(\varepsilon_i)=\sigma^2$
     \end{tabular}
 \end{center}
+\end{tcolorbox}
 
-\vspace{-0.2cm}
 This means that the residual plot would give no reason to doubt the assumptions made regarding the errors. This *ideal* residual plot would suggest that the linear regression model is **appropriate**.
 
 The following residual plots are accompanied with relevant comments and suitable conclusions. Note that if *any* of *"random scatter"*, *"centred on zero"* or *"constant variance"* are contradicted then the linear model is *not appropriate*.
@@ -2082,8 +2082,9 @@ This suggests that the linear regression model proposed is \textbf{not appropria
 
 #### [Exercise 18.7](#ex187) {-}
 
-*For each of the following residual plots, comment on the validity of the linear model from which they were produced.*
-
+\begin{enumerate}
+    \item For each of the following residual plots, comment on the validity of the linear model from which they were produced.
+\end{enumerate}
 \begin{multicols}{3}
 
 \begin{center}
@@ -2393,7 +2394,7 @@ This suggests that the linear regression model proposed is \textbf{not appropria
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example 1,title filled,colframe= black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The mark scored in a Maths test ($x$) and an English test ($y$) is recorded for a random sample of pupils. A linear regression model between Maths mark and English mark is proposed, the equation of the $y$ on $x$ regression line obtained and a residual plot is constructed, shown below along with the tabulated data.
 
 \begin{multicols}{2}
@@ -2450,7 +2451,7 @@ Use the residual plot to comment on the validity of the linear model.
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled,colframe= black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A 1920s study on automobile safety involved recording the stopping distances (in feet) from selected speeds (in miles per hour) for a random sample of 47 cars. Below is a scatterplot of the results with a regression line obtained from a linear model, and a residual plot.
 
 \begin{multicols}{2}
@@ -2826,17 +2827,14 @@ $$s\sqrt{\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}$$
 
 If the errors, $\varepsilon_i$, are identically and independently distributed as $\text{N}\left(0,\sigma^2\right)$ then the formula below, given on Page 5 of the Data Booklet, can be derived.
 
-\begin{centering}
-\tcbset{width=16cm}
-\begin{tcolorbox}[adjusted title=A confidence interval for a mean response value, halign title = center,colback=black!5,colframe=black!75, halign = center]
-A $100(1-\alpha)\%$ confidence interval for $\text{E}(Y_i\,|\,x_i)$ is given by:\\[1em]
-$\hat{Y_i}\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}$
+\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=12cm]
+A $100(1-\alpha)\%$ \textbf{confidence interval} for $\text{E}(Y_i\,|\,x_i)$ is given by:\\[1em]
+\[\hat{Y_i}\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}\]
 \end{tcolorbox}
-\end{centering}
 
 As with confidence intervals, the level of confidence relates to the success rate of the *procedure used to generate the interval*, rather than the probability of a calculated interval containing the mean response value $\text{E}(Y_i\,|\,x_i)$.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 \textbf{Problem:} The lengths in centimetres ($x$) and masses in kilograms ($y$) of 12 salmon were measured, with the results:
 
 \begin{center}
@@ -2866,17 +2864,14 @@ So a 99\% confidence interval for the mean mass of a 3kg salmon is $(34.26\text{
 
 A similar but subtly different goal to predicting a *mean* response value is predicting an **individual** response value for a given $x_i$, denoted as $Y_i\,|\,x_i$. In the context of the previous example, that would be predicting the length of an *individual* salmon. Since the value for a sampled individual can be expected to have more variability that the value of a sample mean, a wider interval around $\hat{Y_i}$ is needed. The required interval is called a **prediction interval**.
 
-\begin{centering}
-\tcbset{width=16cm}
-\begin{tcolorbox}[adjusted title=A prediction interval for an individual response value, halign title = center,colback=black!5,colframe=black!75, halign = center]
-A $100(1-\alpha)\%$ prediction interval for $Y_i\,|\,x_i$ is given by:\\[1em]
-$\hat{Y_i}\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{1+\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}$
+\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=12cm]
+A $100(1-\alpha)\%$ \textbf{prediction interval} for $Y_i\,|\,x_i$ is given by:\\[1em]
+\[\hat{Y_i}\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{1+\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}\]
 \end{tcolorbox}
-\end{centering}
 
 This formula, also given on Page 5 of the Data Booklet, relies also on the errors, $\varepsilon_i$, being identically and independently distributed as $\text{N}\left(0,\sigma^2\right)$
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 \textbf{Problem:} The lengths in centimetres ($x$) and masses in kilograms ($y$) of 12 salmon were measured, with the results:
 
 \begin{center}
