@@ -2,7 +2,7 @@
 
 Linear regression, first introduced in Chapter 5, will be explored in much more detail in this chapter.
 
-## The Method of Least Squares Regression
+## The Method of Least Squares Regression {-}
 
 A straight-line relationship can be valuable in many situations in establishing and summarising the dependence of one variable on another, and in making predictions.
 
@@ -10,16 +10,22 @@ In most experiments, it is assumed that $x$ is under the control of the experime
 
 The (conditional) expected value and variance of $Y$ is commonly of interest.
 
-$$Y_i=\alpha+\beta x_i+\varepsilon_i$$
+\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=4cm]
+\vspace{-0.5cm}
+\[Y_i=\alpha+\beta x_i+\varepsilon_i\]
+\end{tcolorbox}
  
-$\varepsilon$ is a random variables called the \textbf{error} that describes how far $Y$ is from its expected value. $\alpha$ and $\beta$ are fixed parameters whose value cannot be known exactly without examining all possible occurrences of $Y$ and $x$. However the sample observations $(x_i,y_i)$ can be used to give estimates $a$ and $b$ of $\alpha$ and $\beta$. This leads to the relationship $\hat{Y}_i=a+bx_i$, where $\hat{Y}_i$ denotes the predicted value of $Y_i$ for a given $x_i$.
+$\varepsilon$ (*"epsilon"*) is a random variable called the \textbf{error} that describes how far $Y$ is from its expected value. 
+
+$\alpha$ and $\beta$ are fixed parameters whose value cannot be known exactly without examining all possible occurrences of $Y$ and $x$. However the sample observations $(x_i,y_i)$ can be used to give estimates $a$ and $b$ of $\alpha$ and $\beta$. This leads to the relationship $\hat{Y}_i=a+bx_i$, where $\hat{Y}_i$ (*"y-hat"*) denotes the predicted value of $Y_i$ for a given $x_i$.
 
 The method of least squares gives formulae for $a$ and $b$ derived by considering how $\sum \varepsilon_i^2$ might be minimised:
 
 $$b=\dfrac{S_{xy}}{S_{xx}} \qquad \text{and} \qquad a=\bar{y}-b\bar{x}$$
 
-The above estimates, given on Page 5 of the Data Booklet, rely on several assumptions about the errors, $\varepsilon_i$:
+The above estimates rely on several assumptions about the population of errors, $\varepsilon_i$:
 
+\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=7cm]
 \begin{center}
     \begin{itemize}
         \item $\varepsilon_i$, are independent.
@@ -27,12 +33,15 @@ The above estimates, given on Page 5 of the Data Booklet, rely on several assump
         \item $\text{V}(\varepsilon_i)=\sigma^2$ where $\text{V}(Y)=\sigma^2$
     \end{itemize}
 \end{center}
+\end{tcolorbox}
+
+Formulae for the estimates of $\alpha$ and $\beta$ and the assumptions about the errors are given on Page 5 of the Data Booklet.
 
 \pagebreak
 
-## Contexts for Exercises
+## Contexts for Exercises {-}
 
-The following example and contexts 1 to 5 were all introduced in Chapter 5, and will be used throughout this chapter. For convenience, key summary data and sample statistics previously calculated are provided.
+The following example and contexts 1 to 5 will be used throughout this chapter. For convenience, key summary data and sample statistics are provided.
 
 \textbf{Example:} A biology exam consists of two papers: theoretical ($x$) and practical ($y$). The marks scored on each test is obtained for a random sample of 12 students who sat the exam, and a scatterplot is constructed to display the results.
 
@@ -373,9 +382,12 @@ The difference between an observed data value $y_i$ and a corresponding fitted v
 \begin{center}
     \begin{tikzpicture}
         \draw[fill=black!10] (8.2,0.8) rectangle (13,2.3);
+        \draw[very thick,RoyalBlue,dashed] (3,1) -- (3,2);
         \draw[semithick] (6,0) -- (0,2) node[left] {$\hat{Y_i}=a+bx_i$};
         \draw[fill=black] (3,2) circle (2pt) node[above] {$(x_i,y_i)$};
+        \node[below] at (3,0.9) {$(x_i,\hat{Y}_i)$};
         \draw[dashed] (3,1) -- (3,2);
+        \draw[fill] (3,1) circle (2pt);
         \draw[-stealth] (4.5,2) -- (3.2,2);
         \node[right] at (4.5,2) {Data, $y_i$};
         \draw[-stealth] (4.5,1) -- (3.2,1);
@@ -390,14 +402,23 @@ The difference between an observed data value $y_i$ and a corresponding fitted v
         \node at (10.95,1.2) {$y_i$};
         \node at (11.67,1.15) {$-$};
         \node at (12.25,1.2) {$\hat{Y_i}$};
+        \node at (10.7,1.55) {\begin{minipage}{5cm}
+            \begin{tcolorbox}[center,colback=red!5,colframe=red!70!black]
+            \vspace{-0.5cm}
+\begin{align*}
+    \text{Residual}&=\text{Data}-\text{Fit}\\
+    &=\hspace{0.2cm}y_i\hspace{0.3cm}-\hspace{0.1cm}\hat{Y}_i
+\end{align*}
+\end{tcolorbox}
+        \end{minipage}};
     \end{tikzpicture}
 \end{center}
 
-For data points which lie \textit{above} the regression line, their residual is \textit{positive}.
+For data points which lie \textit{above} the regression line, their residual is \textit{positive}.\newline For those which lie \textit{below} the line, their residual is \textit{negative}.
 
-For those which lie \textit{below} the line, their residual is \textit{negative}.
+To calculate a residual the fitted value, $\hat{Y}_i$ needs to first be found.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 \textbf{Problem:} Students sitting a biology exam are given a mark for each of the two papers: theoretical ($x$) and practical ($y$). From a random sample of 12 students, the $y$ on $x$ regression line is calculated as $\hat{Y}=2.581+0.879x$. Calculate the residual for a student who gains:\\
 
 \text{(a)   } 16 in the theoretical test and 18 in the practical test.\\
@@ -409,12 +430,12 @@ For those which lie \textit{below} the line, their residual is \textit{negative}
 \vspace{-0.8cm}
 \begin{center}
     \begin{tikzpicture}
-        \node[right] at (6,3.5) {(a)};
-        \node[right] at (6,3) { $\hat{Y}=2.581+0.879\times 16=16.645$};
-        \node[right] at (6,2.5) {Residual $=18-16.645=1.355$};
-        \node[right] at (6,1.5) {(b)};
-        \node[right] at (6,1) { $\hat{Y}=2.581+0.879\times 10=11.371$};
-        \node[right] at (6,0.5) {Residual $=8-11.371=-3.371$};
+        \node[right] at (6.5,3.5) {(a)};
+        \node[right] at (6.5,2.9) { $\hat{Y}=2.581+0.879\times 16=16.645$};
+        \node[right] at (6.5,2.3) {Residual $=18-16.645=1.355$};
+        \node[right] at (6.5,1.2) {(b)};
+        \node[right] at (6.5,0.6) { $\hat{Y}=2.581+0.879\times 10=11.371$};
+        \node[right] at (6.5,0) {Residual $=8-11.371=-3.371$};
         \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
         \draw[-stealth] (0,0) -- (0,3.25) node[above] {$y$}; 
         \node at (2.5,-1) {Theoretical mark};
@@ -438,6 +459,10 @@ For those which lie \textit{below} the line, their residual is \textit{negative}
         \node[below] at (3,0) {15};
         \node[below] at (4,0) {20};
         \node[below] at (5,0) {25};
+\draw[thick] (16*0.2,18*0.12) -- (16*0.2,16.8*0.12);
+\draw[semithick] (3*0.2,5.488*0.12) -- (22*0.2,22.189*0.12);
+\draw[stealth-] (10.6*0.2,9.5*0.12) -- (12*0.2,9*0.12) node[right] {$-3.371$};
+\draw[stealth-] (15.3*0.2,18.1*0.12) -- (13.6*0.2,20*0.12) node[left] {$1.355$};
 \draw[fill=black] (5*0.2,6*0.12) circle (0.02);
 \draw[fill=black] (9*0.2,8*0.12) circle (0.02);
 \draw[fill=black] (7*0.2,9*0.12) circle (0.02);
@@ -447,20 +472,18 @@ For those which lie \textit{below} the line, their residual is \textit{negative}
 \draw[fill=black] (6*0.2,8*0.12) circle (0.02);
 \draw[fill=black] (17*0.2,17*0.12) circle (0.02);
 \draw[fill=black] (12*0.2,14*0.12) circle (0.02);
-\draw[fill=black] (10*0.2,8*0.12) circle (0.03);
+\draw[fill,RoyalBlue] (10*0.2,8*0.12) circle (0.05);
 \draw[thick] (10*0.2,8*0.12) -- (10*0.2,11.6*0.12);
 \draw[fill=black] (15*0.2,17*0.12) circle (0.02);
-\draw[fill=black] (16*0.2,18*0.12) circle (0.03);
-\draw[thick] (16*0.2,18*0.12) -- (16*0.2,16.8*0.12);
-\draw[semithick] (3*0.2,5.488*0.12) -- (22*0.2,22.189*0.12);
-\draw[stealth-] (10.6*0.2,9.5*0.12) -- (12*0.2,9*0.12) node[right] {$-3.371$};
-\draw[stealth-] (15.3*0.2,18.1*0.12) -- (13.6*0.2,20*0.12) node[left] {$1.355$};
+\draw[fill,RoyalBlue] (16*0.2,18*0.12) circle (0.05);
     \end{tikzpicture}
 \end{center}
 
 \end{tcolorbox}
 
-#### Exercise 18A {-}
+[]{#ex181q}
+
+#### [Exercise 18.1](#ex181) {-}
 
 Referring to Contexts 1 to 5, calculate the residual for each of the following:
 
@@ -476,15 +499,21 @@ Referring to Contexts 1 to 5, calculate the residual for each of the following:
 
 ## Estimating the Error Variance
 
-One of the assumptions made for the least squares regression model is that the variance of the errors is a constant for all $x_i$ (and $Y_i$), or:
+An assumption made for the least squares regression model is that the variance of the errors is a constant for all $x_i$ (and $Y_i$):
 
 \vspace{-0.7cm}
 $$\text{V}(\varepsilon_i)=\sigma^2 \qquad \left(\text{where }\text{V}(Y_i)=\sigma^2\right) $$
 
 The error variance $\sigma^2$ is estimated by:
 
-\vspace{-0.7cm}
-$$s^2=\dfrac{SSR}{n-2}$$
+\vspace{-0.5cm}
+
+\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=3cm]
+\vspace{-0.5cm}
+\[s^2=\dfrac{SSR}{n-2}\]
+\end{tcolorbox}
+
+\vspace{0.2cm}
 
 Where the (always positive) \textit{sum of squared residuals}, $SSR$, is calculated as: 
 
@@ -494,7 +523,7 @@ $$SSR=\sum{ \left(y_i-\hat{Y_i}\right)^2} \qquad \text{or} \qquad SSR=S_{yy}-\df
 \vspace{-0.2cm}
 Both the formula for estimating the error variance $\sigma^2$ and the more convenient second formula for the sum of squared residuals $SSR$ are given on page 5 of the SQA Data Booklet.
 
-\begin{tcolorbox}[title=Example,title filled,colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Students sitting a biology exam are given a mark for each of the two papers: theoretical ($x$) and practical ($y$). From a random sample of 12 students: $S_{xx}=290,S_{yy}=256.25,S_{xy}=255$.\\
 
 \text{(a)   } Calculate the sum of squared residuals for this data set.\\[0.1em]
@@ -507,7 +536,9 @@ Both the formula for estimating the error variance $\sigma^2$ and the more conve
 \text{(b)   } $s^2=\dfrac{SRR}{n-2}=\dfrac{32.026}{12-2}=3.203$
 \end{tcolorbox}
 
-#### Exercise 18B {-}
+[]{#ex182q}
+
+#### [Exercise 18.2](#ex182) {-}
 
 \begin{enumerate}
     \item Calculate the sum of squared residuals and hence estimate the error variance for each of Contexts 1 to 5.
@@ -583,12 +614,13 @@ Both the formula for estimating the error variance $\sigma^2$ and the more conve
     \end{enumerate}
 \end{enumerate}
 
-\newpage
+\pagebreak
 
 ## Test for the Slope Parameter $\beta$
 
-There are three possibilities for the slope parameter $\beta$:
+The sample statistic $b$ is an estimator for the slope parameter, $\beta$, whose can only be known when data is available for a full population. The three figures below show calculated values of $b$ from samples compared to $\beta$.
 
+\vspace{-0.3cm}
 \begin{center}
         \begin{tikzpicture}
             \draw[-stealth] (0,0.3) -- (4,0.3) node[right] {$x$};
@@ -629,26 +661,27 @@ There are three possibilities for the slope parameter $\beta$:
             \draw[fill=black!20] (15.2,0.5) circle (0.05);
         \end{tikzpicture}    
 \end{center}
+\vspace{-0.5cm}
 
-In the case where $\beta=0$ it can be seen that knowing $x_i$ has no value in predicting $y_i$. In other words, a linear regression model is only \textbf{useful for prediction} in cases where the slope parameter is \textit{non-zero}, or $\beta \ne 0$. The \textit{parametric} \textbf{Test for Beta} assesses whether data from a sample provide evidence to suggest that this is the case. The test statistic below follows a $t$-distribution with $n-2$ degrees of freedom, and in this course the test will always be \textit{two-tailed}.
+The slope parameter $\beta$ can be *positive*, *negative* or *zero*. Where $\beta=0$ it can be said that knowing $x_i$ has no value in predicting $y_i$. In other words, a linear regression model is only \textbf{useful for prediction} in cases where the slope parameter is \textit{non-zero}, or $\beta \ne 0$. The \textit{parametric} \textbf{Test for Beta} assesses whether data from a sample provide evidence to suggest that this is the case. The test statistic below follows a $t$-distribution with $n-2$ degrees of freedom, and in this course the test will always be \textit{two-tailed} with hypotheses $\text{H}_0: \beta=0$ and $\text{H}_1: \beta\ne 0$.
 
 \begin{figure}[H]
   \centering
 \begin{minipage}[c]{.33\textwidth}
   \centering
 \begin{centering}
-\tcbset{width=6cm,height=2.6cm}
-\begin{tcolorbox}[adjusted title=Test for $\beta$ test statistic:, halign title = center,colback=black!5,colframe=black!75, halign = center]
-\vspace{0.1cm}
-$t_{n-2}=\dfrac{b\sqrt{S_{xx}}}{s}$
+\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=6cm,height=2.3cm]
+\textbf{Test statistic:}
+\[t_{n-2}=\dfrac{b\sqrt{S_{xx}}}{s}\]
 \end{tcolorbox}
 \end{centering}
 \end{minipage}%
   \centering
 \begin{minipage}[c]{.66\textwidth}
   \centering
-\tcbset{width=12cm,height=2.6cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of a test for $\beta$:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=12cm,height=2.3cm]
+\textbf{Requirements:}
+\vspace{0.1cm}
 \begin{itemize}
     \item $\varepsilon_i$ are independent and identically distributed as $\text{N}(0,\sigma^2)$.
     \item The data was obtained through random sampling.
@@ -657,9 +690,10 @@ $t_{n-2}=\dfrac{b\sqrt{S_{xx}}}{s}$
 \end{minipage}
 \end{figure}
 
-The conclusion must comment on the evidence for the model being useful for prediction in the given context.
+\vspace{-0.2cm}
+Any conclusion should comment on the evidence for the model being useful for prediction.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 \textbf{Problem:} A bivariate sample has summary statistics:
 
 \vspace{-0.3cm}
@@ -739,7 +773,9 @@ Since $-3.003>-3.707$, do not reject $\text{H}_0$ at the 1\% level of significan
 
 \pagebreak
 
-#### Exercise 18C {-}
+[]{#ex183q}
+
+#### [Exercise 18.3](#ex183) {-}
 
 \begin{enumerate}
     \item Six metal plates were immersed in a weak acid solution for various lengths of time. Their percentage losses in mass were then measured and a scatterplot drawn of time in solution ($x$ hours) against mass loss ($y$\%). The equation of the least squares regression line for $y$ on $x$ was obtained.\\[0.5em] 
@@ -986,24 +1022,25 @@ Pearson's Product Moment Correlation Coefficient, $r$, is a sample statistic whi
 \end{center}
 
 \vspace{-0.3cm}
-The \textit{parametric} \textbf{Test for Rho} assesses a sample of bivariate data for evidence of a \textbf{linear association} between the variables, or $\rho\ne 0$. The test statistic below follows a $t_{n-2}$ distribution, and in this course the test will always be \textit{two-tailed}.
+The \textit{parametric} \textbf{Test for Rho} assesses a sample of bivariate data for evidence of a \textbf{linear association} between the variables, or $\rho\ne 0$. The test statistic below follows a $t_{n-2}$ distribution, and in this course the test will always be \textit{two-tailed} with hypotheses $\text{H}_0:\rho=0$ and $\text{H}_1:\rho\ne 0$.
 
 \begin{figure}[H]
   \centering
 \begin{minipage}[c]{.33\textwidth}
   \centering
 \begin{centering}
-\tcbset{width=6cm,height=2.6cm}
-\begin{tcolorbox}[adjusted title=Test for $\rho$ test statistic:, halign title = center,colback=black!5,colframe=black!75, halign = center]
-$t_{n-2}=\dfrac{r\sqrt{n-2}}{\sqrt{1-r^2}}$
+\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=6cm,height=2.3cm]
+\textbf{Test statistic:}
+\[t_{n-2}=\dfrac{r\sqrt{n-2}}{\sqrt{1-r^2}}\]
 \end{tcolorbox}
 \end{centering}
 \end{minipage}%
   \centering
 \begin{minipage}[c]{.66\textwidth}
   \centering
-\tcbset{width=12cm,height=2.6cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of a test for $\rho$:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=12cm,height=2.3cm]
+\textbf{Requirements:}
+\vspace{0.1cm}
 \begin{itemize}
     \item $\varepsilon_i$ are independent and identically distributed as $\text{N}(0,\sigma^2)$.
     \item The data was obtained through random sampling.
@@ -1012,9 +1049,9 @@ $t_{n-2}=\dfrac{r\sqrt{n-2}}{\sqrt{1-r^2}}$
 \end{minipage}
 \end{figure}
 
-The conclusion must comment on the evidence for a linear association between the two variables in the given context.
+Any conclusion should comment on the evidence for a linear association between the two variables.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 \textbf{Problem:} A bivariate sample has summary statistics:
 
 \begin{center}
@@ -1086,13 +1123,15 @@ Test statistic: $t=\dfrac{r\sqrt{n-2}}{\sqrt{1-r^2}}=\dfrac{-0.7749\sqrt{8-2}}{\
 
 Critical value: $t_{6,0.995}=-3.707$\\
 
-Since $-3.003>-3.707$, do not reject $\text{H}_0$ at the 1\% level of significance. There is insufficient evidence to suggest that there is a linear relationship between thw two variables.
+Since $-3.003>-3.707$, do not reject $\text{H}_0$ at the 1\% level of significance. There is insufficient evidence to suggest that there is a linear relationship between the two variables.
 
 \end{tcolorbox}
 
 \pagebreak
 
-#### Exercise 18D {-}
+[]{#ex184q}
+
+#### [Exercise 18.4](#ex184) {-}
 
 \begin{enumerate}
     \item A researcher is wanting to know if there is a link between the number of calories ($x$) and the carbohydrate content ($y$) of different types of caffeinated drinks available at coffee shops. Summary statistics are obtained from a random sample of 22 caffeinated drink options from a range of coffee shops. \\[0.5em] 
@@ -1101,7 +1140,7 @@ Since $-3.003>-3.707$, do not reject $\text{H}_0$ at the 1\% level of significan
     \item Researchers collect marks for 9 students randomly selected from a group of students taking both a maths test ($x$) and a physics test ($y$).\\[0.5em] 
     \textit{(See Context 4)}\\[0.5em]
     Perform a test at the 10\% level of significance to assess the linear association.
-    \item A researcher laid a transect from the base of a tree and placed a quadrat at one metre intervals along the transect line. The number of seed dropped by the tree contained in each quadrat was recorded.
+    \item A researcher laid a transect from the base of a tree and placed a quadrat at one metre intervals along the transect line. The number of seeds dropped by the tree contained in each quadrat was recorded.
      \begin{center}
     \begin{tikzpicture}
         \node[right] at (7,2.9) {Summary data for sample:};
@@ -1109,7 +1148,7 @@ Since $-3.003>-3.707$, do not reject $\text{H}_0$ at the 1\% level of significan
         \node[right] at (7,1.5) {$\Sigma x^2=91$};
         \node[right] at (7,0.8) {$S_{yy}=54.833$};
         \node[right] at (7,0.1) {$S_{xy}=3.5$};
-        \node[right] at (7,-0.6) {$n=30$};
+        \node[right] at (7,-0.6) {$n=6$};
         \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
         \draw[-stealth] (0,0) -- (0,3.25) node[above] {$y$}; 
         \node at (2.5,-1) {Distance from base (metres)};
@@ -1184,7 +1223,6 @@ The *coefficient of determination*, $R^2$,is the proportion of the total variati
 
 \begin{center}
         \begin{tikzpicture}
-        \draw[fill=black!10] (6,2) rectangle (11,3.4);
             \draw[-stealth] (0,0) -- (5,0) node[right] {$x$};
             \draw[-stealth] (0,0) -- (0,3) node[above] {$y$};
             \node at (2.5,0.7) {$R^2=0.1246$};
@@ -1241,7 +1279,14 @@ The *coefficient of determination*, $R^2$,is the proportion of the total variati
 \draw[fill=black] (16.4,0.731984300904749) circle (0.03);
 \draw[fill=black] (16.6,0.450020978572811) circle (0.03);
 \draw[fill=black] (16.8,0.301613948412619) circle (0.03);
-\node at (8.5,2.7) {$R^2=\dfrac{\text{explained variation}}{\text{total variantion}}$};
+\node at (8.5,2.7) {
+\begin{minipage}{5cm}
+\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black]
+\vspace{-0.5cm}
+\[R^2=\dfrac{\text{explained variation}}{\text{total variation}}\]
+\end{tcolorbox}
+\end{minipage}
+};
 \node at (8.5,0.8) {$\left(R^2=\dfrac{b^2S_{xx}}{S_{yy}}=\dfrac{(S_{xy})^2}{S_{xx}S_{yy}}\right)$};
         \end{tikzpicture}    
 \end{center}
@@ -1250,16 +1295,22 @@ For the linear regression models covered in this course, the coefficient of dete
 
 \begin{center}
         \begin{tikzpicture}
-        \draw[fill=black!10] (3.8,-0.5) rectangle (5.9,0.5);
         \node[left] at (0,0) {$r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$};
         \node at (2,0) {$\implies$};
-        \node[right] at (4,0) {$r^2=R^2$};
+        \node[right] at (4,0){
+        \begin{minipage}{2.5cm}
+        \begin{tcolorbox}[center,colback=red!5,colframe=red!70!black]
+\vspace{-0.5cm}
+\[r^2=R^2\]
+\end{tcolorbox}
+        \end{minipage}
+};
         \end{tikzpicture}    
 \end{center}
 
 Everything above implies that $0\leqslant R^2 \leqslant 1$.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 \textbf{Problem:} Students sitting a biology exam are given a mark for each of the two papers: theoretical ($x$) and practical ($y$). From a random sample of 12 students, the following summary statistics are obtained:
 
 \begin{center}
@@ -1287,7 +1338,9 @@ This suggests that 87.4\% of the total variation in practical scores can be expl
 
 \end{tcolorbox}
 
-#### Exercise 18E {-}
+[]{#ex185q}
+
+#### [Exercise 18.5](#ex185) {-}
 
 \begin{enumerate}
     \item For each of Contexts 1 to 5, calculate the coefficient of determination and interpret it in context.
@@ -1307,17 +1360,23 @@ This suggests that 87.4\% of the total variation in practical scores can be expl
 
 ## Regression Line of $x$ on $y$
 
-All of the equations of least square regression lines calculated so far have been $y$ *on* $x$ regression lines, calculated with a goal of minimising errors when predicting $y$ *values*.
+All of the equations of least square regression lines calculated so far have been $y$ *on* $x$ regression lines, calculated with a goal of minimising errors when predicting $y$ *values*. However, a $y$ *on* $x$ regression line model cannot be used to predict $x$ values.
 
-If there is a need to predict an $x$ *value* based on a $y$ value then it is instead necessary to determine the equation of an $x$ *on* $y$ regression line. This takes the form:
+Instead it is necessary to create a new model and obtain the equation of an $x$ *on* $y$ regression line, of form:
 
-$$\hat{X}=a+by$$
+\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=4cm]
+\vspace{-0.5cm}
+\[\hat{X}=a+by\]
+\end{tcolorbox}
 
 Where the values of $a$ and $b$ for differ from those required for an $y$ on $x$ line, and are given instead by:
 
-$$b=\dfrac{S_{xy}}{S_{yy}} \quad and \quad a=\bar{x}-b\bar{y}$$
+\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=5cm]
+\vspace{-0.5cm}
+\[b=\dfrac{S_{xy}}{S_{yy}} \quad and \quad a=\bar{x}-b\bar{y}\]
+\end{tcolorbox}
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 \textbf{Problem:} Students sitting a biology exam are given a mark for each of the two papers: theoretical ($x$) and practical ($y$). From a random sample of 12 students, the following summary statistics are obtained:
 
 \begin{center}
@@ -1340,7 +1399,9 @@ $\hat{X}=-1.189+0.995y$
 
 \end{tcolorbox}
 
-#### Exercise 18F {-}
+[]{#ex186q}
+
+#### [Exercise 18.6](#ex186) {-}
 
 For each of Contexts 1 to 5, determine the equation of the least squares regression line for $x$ on $y$, and hence calculate predicted values for each of the following.
 
@@ -2017,7 +2078,9 @@ This suggests that the linear regression model proposed is \textbf{not appropria
 
 \end{multicols}
 
-#### Exercise 18G {-}
+[]{#ex187q}
+
+#### [Exercise 18.7](#ex187) {-}
 
 *For each of the following residual plots, comment on the validity of the linear model from which they were produced.*
 
@@ -2528,9 +2591,7 @@ Use the residual plot to comment on the validity of the linear model.
 
 \pagebreak
 
-#### Exercise 18H {-}
-
-\begin{enumerate}
+\begin{enumerate}[resume]
     \item Metal cables are tested under laboratory conditions to determine their breaking strength. Each cable is fixed between two points, and masses attached to the middle of the cable, with the mass steadily increased until the cable breaks. The scatterplot below shows the cable diameter ($x$ mm) against the maximum mass held before breaking ($y$ kg).
     \begin{multicols}{2}
 \begin{center}
@@ -2841,7 +2902,9 @@ So a 95\% prediction interval for the mass of a 4kg salmon is $(21.3\text{cm}\,,
 
 \end{tcolorbox}
 
-#### Exercise 18I {-}
+[]{#ex188q}
+
+#### [Exercise 18.8](#ex188) {-}
 
 \begin{enumerate}
     \item From Context 1: Construct a 95\% confidence interval for the mean \% mass loss of a metal plate in the acid solution for 150 hours.
@@ -2856,11 +2919,15 @@ So a 95\% prediction interval for the mass of a 4kg salmon is $(21.3\text{cm}\,,
 
 \newpage
 
-#### Exercise 18J {-}
+[]{#ex189q}
+
+#### [Exercise 18.9](#ex189) {-}
 
 \newpage
 
-## Review Exercise {-}
+[]{#re18q}
+
+## [Review Exercise](#re18a) {-}
 
 \begin{enumerate}
     \item As part of a study on intensive exercise, a sports scientist recorded the peak heart rates ($y$) of a random selection of fifteen volunteers of different ages ($x$) who took regular exercise. The linear regression equation was calculated for the data shown in the scatter diagram and found to be $\hat{Y}=212.3−0.96x$.
