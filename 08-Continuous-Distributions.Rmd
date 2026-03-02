@@ -95,7 +95,7 @@ If random variable $X$ can take *any real value* between $a$ and $b$ with a *con
 
 \begin{centering}
 \tcbset{width=7.5cm}
-\begin{tcolorbox}[adjusted title=The Continuous Uniform Distribution:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The Continuous Uniform Distribution:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item Notated $X\sim \text{U}(a,b)$.
     \item Defined by two parameters, $a$ and $b$.
@@ -112,7 +112,7 @@ The probability for any range of values can be calculated simply as the area of 
 
 $$k=\frac{1}{b-a}\quad \qquad \quad \text{E}(X)=\frac{a+b}{2}\quad \qquad \quad \text{V}(X)=\frac{(b-a)^2}{12}$$
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given random variable $T$ such that $T\sim \text{U}(27,42)$, calculate $\text{P}(31<T<34)$.
 
 \tcblower
@@ -282,7 +282,7 @@ The **normal distribution**, also sometimes called the *Gaussian Distribution*, 
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=The Normal Distribution:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The Normal Distribution:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item Notated $X\sim \text{N}(\mu,\sigma^2)$.
     \item Defined by two parameters, $\mu$ and $\sigma^2$.
@@ -807,7 +807,7 @@ Hence $X=\sigma Z + \mu$, which can be rearranged to obtain the $\mathbf{z}$**-t
 
 \begin{centering}
 \tcbset{width=9cm}
-\begin{tcolorbox}[adjusted title=The $z$-transformation:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The $z$-transformation:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $Z=\dfrac{X-\mu}{\text{$\sigma$}}$
 \end{tcolorbox}
 \end{centering}
@@ -923,7 +923,7 @@ $\text{P}(Z<1.5)=0.9332$
 \end{minipage}
 \end{figure}
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The mass of an adult red squirrel in an area of woodland is normally distributed with a mean of 295g and a standard deviation of 15g. Calculate the probability that a squirrel chosen at random has a mass greater than 300g.
 
 \tcblower
@@ -1103,7 +1103,7 @@ x=&285.12
 
 Hence, in the long run only 10\% of observations exceed 285.12.
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The time before failure of a model of TV is normally distributed with mean 31 months and standard deviation 4 months. Calculate the minimum warranty length, in months, such that fewer than 5\% of TVs will be expected to fail under warranty.
 
 \tcblower
@@ -1155,7 +1155,7 @@ Hence, a 25 month warranty should expect to see less than 5\% of TVs fail under 
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The diameter of the apples grown in a garden are normally distributed with a mean of 7cm and a standard deviation of 0.25cm. Calculate the range of values, symmetrical about the mean, within which the diameters of 95\% of the apples lie.
 
 \tcblower
@@ -1214,7 +1214,7 @@ Hence, 95\% of the apples grown have a diameter between 6.51cm and 7.49cm.
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example 3,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The masses of pumpkins grown in a farmer's field are normally distributed, with a mean of 6.8kg. Given that only one in every 1000 pumpkins has a mass greater than 10kg, calculate the standard deviation of the mass of a pumpkin.
 
 \tcblower
@@ -1324,7 +1324,7 @@ It is important to remember that $2X$ is **not** the sum of two independent obse
 
 When calculating probabilities relating to combined normal random variables, it can be helpful to name the new random variable using some logical letter choice, such as $T$ for *"Total"*, $D$ for *"Difference"* and so on.
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The actual volume of paint contained within tins marked as containing 25 litres is normally distributed with a mean of 25.2 litres and a standard deviation of 0.3 litres. Calculate the probability that 4 such tins contain less than 100 litres in total.
 
 \tcblower
@@ -1374,7 +1374,7 @@ $T\sim \text{N}(100.8,0.36)$
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The time taken for a washing machine cycle to complete is normally distributed, with mean 57 minutes and standard deviation 2 minutes. The time taken for the owner of the washing machine to start the cycle, run 10 kilometres on their treadmill and get back to the washing machine is normally distributed with mean 58 minutes and standard deviation 3 minutes. Stating an assumption required, calculate the probability that the washing machine cycle is still running when the owner returns to it.
 
 \tcblower
@@ -1543,7 +1543,7 @@ Under certain conditions the *discrete* binomial distribution can begin to resem
 
 \begin{centering}
 \tcbset{width=12cm}
-\begin{tcolorbox}[adjusted title=Conditions for normal approximation to binomial distributions :, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for normal approximation to binomial distributions :, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{center}
 $np>5$\quad \text{ and } \quad $nq>5$
 \end{center}
@@ -1607,7 +1607,7 @@ When calculating the discrete probability $\text{P}(X\leqslant 14)$, the bar rep
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A quiz contains 40 multiple choice questions, with four answers for every question. If a pupil picks answers entirely at random, use a suitable approximation to calculate the probability that they get at least half of the questions correct, and justify the suitability of the approximation used.  
 
 \tcblower
@@ -1771,7 +1771,7 @@ As with the binomial distribution, under certain conditions the *discrete* Poiss
 
 \begin{centering}
 \tcbset{width=12cm}
-\begin{tcolorbox}[adjusted title=Conditions for normal approximation to Poisson distributions :, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for normal approximation to Poisson distributions :, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{center}
 $\lambda>10$
 \end{center}
@@ -1784,7 +1784,7 @@ $$\text{If } X\sim Po(\lambda) \text{ then } X\approx \text{N}(\lambda,\lambda)$
 
 Since again this is a *continuous approximation* to a *discrete distribution*, any probabilities calculated will not be sufficiently accurate unless a **continuity correction** is applied. For a continuous approximation to a discrete distribution taking integers values, as is the case with both such approximations encountered in this chapter, continuity corrections will always require an addition or subtraction of 0.5. 
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} In a football league, goals occur at a constant mean rate of 2.5 goals per game. A full weekend of fixtures includes 10 games. Using a suitable approximation, and justifying its use, calculate the probability that there will be between 15 and 20 goals in total, inclusive, in a full weekend of fixtures. 
 
 \tcblower

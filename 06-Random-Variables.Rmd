@@ -77,7 +77,7 @@ Note that a discrete probability distribution must define \textit{mutually exclu
 \end{minipage}
 \end{figure}
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The probability distribution table for the discrete random variable $D$ is below.
 
 \begin{center}
@@ -283,12 +283,12 @@ Whilst a single roll of a die is equally likely to land on any of the numbers fr
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=The expectation $\mu$ of discrete random variable $X$:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The expectation $\mu$ of discrete random variable $X$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $\text{E}(X)=\sum{x_iP(X=x_i)}$
 \end{tcolorbox}
 \end{centering}
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50,height=6cm]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue,height=6cm]
 \textbf{Problem:} The probability distribution of random variable $X$ is tabulated as: 
 
 \begin{center}
@@ -312,7 +312,7 @@ $$\text{E}(X) = 3\times \frac{1}{8} + 4\times \frac{1}{4} + 5\times \frac{1}{2} 
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} From a bag containing 4 blue and 6 red cubes one is drawn at random, followed by another without replacing the first. Letting discrete random variable $X$ represent the number of red cubes drawn, calculate $\text{E}(X)$.
 
 \tcblower
@@ -498,7 +498,7 @@ It can be seen here that $\text{E}(2X)=2\text{E}(X)$. The expectation of a rando
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=For random variable $X$ with constants $a$ and $b$:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For random variable $X$ with constants $a$ and $b$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $\text{E}(aX\pm b)=a\text{E}(X)\pm b$
 \end{tcolorbox}
 \end{centering}
@@ -512,7 +512,7 @@ Proof:
     &=a\text{E}(X)+ b
 \end{align*}
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Let $X$ be the random variable such that $\text{E}(X)=3$. Calculate $\text{E}(4X-1)$.
 
 \tcblower
@@ -527,7 +527,7 @@ Proof:
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given tht $\text{E}(10-2Y)=50$, determine the value of $\text{E}(Y)$.
 \tcblower
 \textbf{Solution:}
@@ -545,7 +545,7 @@ Proof:
 
 \pagebreak
 
-#### Exercise 6.2 {-}
+#### Exercise 6.3 {-}
 
 \begin{enumerate}
     \item Calculate:
@@ -623,7 +623,7 @@ The *variance* of the values observed from successive rolls of a fair cubical di
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=The variance $\sigma^2$ of random variable $X$:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The variance $\sigma^2$ of random variable $X$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $\text{V}(X)=\text{E}(X^2)-E^2(X)$
 \end{tcolorbox}
 \end{centering}
@@ -650,7 +650,7 @@ The standard deviation, $\sigma$, of a random variable $X$, notated $\text{SD}(X
 
 $$\text{SD}(X)=\sqrt{\text{V}(X)}\qquad\text{and}\qquad \text{SD}(X),\text{V}(X)\geqslant0$$
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The probability distribution of random variable $X$ is tabulated as: 
 
 \begin{center}
@@ -737,7 +737,7 @@ Since variance is a measure of variability based on *squared* differences, $\tex
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=For random variable $X$ with constants $a$ and $b$:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For random variable $X$ with constants $a$ and $b$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $\text{V}(aX\pm b)=a^2\text{V}(X)$
 \end{tcolorbox}
 \end{centering}
@@ -756,7 +756,7 @@ Proof:
 
 Note that any laws relating to the *standard deviation* of a linear transformation ($\text{SD}(aX\pm b)$) would not be able to be expressed so concisely, so such problems must be tackled by *first finding the variance* ($\text{V}(aX\pm b)$).
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Let $X$ be the random variable such that $\text{E}(X)=-7$ and $\text{V}(X)=4$. Calculate $\text{V}(2-3X)$.
 
 \tcblower
@@ -770,7 +770,7 @@ Note that any laws relating to the *standard deviation* of a linear transformati
 \end{align*}
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Random variable $Y$ has mean 1.5 and standard deviation 0.8.\\ Determine the standard deviation of $10Y+25$.
 
 \tcblower
@@ -873,7 +873,7 @@ As well as linear transformations of a single random variable, new variables can
 
 \begin{centering}
 \tcbset{width=14cm}
-\begin{tcolorbox}[adjusted title=For \textbf{independent} random variables $X$ and $Y$:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For \textbf{independent} random variables $X$ and $Y$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \vspace{-0.3cm}
 \begin{equation*}
   \begin{split}
@@ -892,7 +892,7 @@ As well as linear transformations of a single random variable, new variables can
 \end{tcolorbox}
 \end{centering}
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Two independent random variables $F$ and $G$ have means of 15 and 12 and standard deviations of 3 and 4 respectively. Calculate $\text{E}(3G-2F)$ and $\text{V}(F-G)$.
 
 \tcblower
@@ -922,7 +922,7 @@ As well as linear transformations of a single random variable, new variables can
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Books in the fiction section of a library have a mean thickness of 3.1cm with standard deviation 0.2cm. If three books are randomly selected from the fiction section and stacked together, determine the mean and standard deviation of the collected, total thickness of the three books, stating one assumption required.
 
 \tcblower

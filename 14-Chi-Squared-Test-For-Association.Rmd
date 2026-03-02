@@ -40,7 +40,7 @@ The hypotheses for this **non-parametric** test should be stated *in context*.
 
 \begin{centering}
 \tcbset{width=15cm}
-\begin{tcolorbox}[adjusted title=$\chi^2$ Test for Association hypotheses:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=$\chi^2$ Test for Association hypotheses:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{center}
 \begin{tabular}{r l}
     $\text{H}_0:$ & There is \textbf{no association} between the variables.\\[0.5em]
@@ -162,7 +162,7 @@ There is insufficient evidence to suggest that there is an association between h
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Researchers working for an educational organisation wish to explore a possible connection between playing a musical instrument and learning a foreign language in school-age teenagers. They randomly select three schools within the region and then, within each school, select a number of S4 pupils to interview.\\[0.5em]
 During the interview, each pupil is asked whether or not they play at least one musical instrument, and whether or not they are studying at least one modern language at National 5 level. The results are summarised in the contingency table below:
 
@@ -275,7 +275,7 @@ It should be noted that since the test's purpose of looking for evidence for an 
 
 In such cases, reworded yet equivalent hypothesis should be used for the test for consistency.
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example 2,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The outcomes for a random sample of 80 driving tests sat in three different test centres located across Lancashire are recorded. The organisation responsible for overseeing driving test standards is seeking to explore a claim made that the centres do not use the same standards, and that the outcome of driver's test is not independent to location chosen.
 
 
@@ -444,7 +444,7 @@ Note that an equivalent conclusion would be that there is evidence to suggest th
 
 Where the conditions for validity for a $\chi^2$ test of association are not met, it may be still possible to carry out a test by *combining rows and/or columns*. It is generally advised to collapse those which most naturally may be combined.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A pharmaceutical company arranges for a random sample of 120 patients to take part in a trial of a new pain relief medication. Some will be given the new medication, whilst others will instead be given a placebo treatment that is identical in appearance and packaging. At the end of the week, each patient will be asked whether they experienced a reduction, an increase in pain, or no change. The data collected is shown in the table below:
 \begin{center}
 \begin{tabularx}{15cm}{ >{\centering\arraybackslash}X >{\centering\arraybackslash}X | >{\centering\arraybackslash}X|  >{\centering\arraybackslash}X |>{\centering\arraybackslash}X| } 

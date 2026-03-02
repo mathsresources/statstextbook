@@ -48,7 +48,7 @@ Since the sample mean $\overline{X}$ is a linear combination of independent obse
 
 \begin{centering}
 \tcbset{width=9cm}
-\begin{tcolorbox}[adjusted title=Sample mean of normally distributed $X$:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Sample mean of normally distributed $X$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \text{If   }$X\sim \text{N}(\mu,\sigma^2)$\text{   then   }$\overline{X}\sim \text{N}\left(\mu,\dfrac{\sigma^2}{n}\right)$
 \end{tcolorbox}
 \end{centering}
@@ -146,14 +146,14 @@ The $z$-transformation for the **sample mean** has the **standard error** as its
 
 \begin{centering}
 \tcbset{width=9cm}
-\begin{tcolorbox}[adjusted title=The $z$-transformation for the sample mean:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The $z$-transformation for the sample mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $Z=\dfrac{\overline{X}-\mu}{\dfrac{\sigma}{\sqrt{n}}}$
 \end{tcolorbox}
 \end{centering}
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The length of a mass-produced brand of fence panels is normally distributed with a mean of 180cm and a standard deviation of 0.4cm. A random sample of nine panels is taken and each is measured.
 
 \begin{enumerate}
@@ -249,14 +249,14 @@ The **approximate** distribution of the sample mean can be stated provided the e
 
 \begin{centering}
 \tcbset{width=15cm}
-\begin{tcolorbox}[adjusted title=The Central Limit Theorem:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The Central Limit Theorem:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \text{If   }$\text{E}(X)=\mu$ and $\text{V}(X)=\sigma^2$\text{   then   }$\overline{X}\approx \text{N}\left(\mu,\frac{\sigma^2}{n}\right)$, provided $n>20$.
 \end{tcolorbox}
 \end{centering}
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The mean mass of ceramic bowls produced by a potter is 400g and the standard deviation is 20g, and they can be ordered singly or in bulk. Bulk orders contain 36 mugs and, when such an order is placed, the potter selects the 36 mugs at random to be boxed up and shipped. Letting the random variable $X$ represent the weight of a bowl, and $\overline{X}$ the mean bowl mass in a bulk order:
 
 \begin{enumerate}

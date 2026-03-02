@@ -45,7 +45,7 @@ The theory underpinning the test statistic used for a goodness-of-fit test is be
 
 \begin{centering}
 \tcbset{width=15cm}
-\begin{tcolorbox}[adjusted title=For a $\chi^2$ goodness-of-fit test:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For a $\chi^2$ goodness-of-fit test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 Test statistic: $X^2=\cfrac{(O_1-E_1)^2}{E_1}+\cfrac{(O_2-E_2)^2}{E_2}+...+\cfrac{(O_n-E_n)^2}{E_n}=\sum{\cfrac{(O_i-E_i)^2}{E_i}}$
 \end{tcolorbox}
 \end{centering}
@@ -91,7 +91,7 @@ The test statistic follows a $\chi^2_\nu$ distribution with degrees of freedom $
 \begin{minipage}[c]{.54\textwidth}
   \centering
 \begin{centering}
-\begin{tcolorbox}[adjusted title=The decision rule for $\chi^2$ tests:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The decision rule for $\chi^2$ tests:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 If \textbf{test statistic} $>$ \textbf{critical value}, \textit{reject }$\text{H}_0$.\\
 \vspace{0.5cm}
 If \textbf{test statistic} $<$ \textbf{critical value}, \textit{do not reject }$\text{H}_0$.\\
@@ -112,7 +112,7 @@ Since $3<11.070$ the students should *not* reject the null hypothesis at the 5\%
 
 \begin{centering}
 \tcbset{width=14cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of a goodness-of-fit test:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for valid use of a goodness-of-fit test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item No \textbf{expected} values should be \emph{less than 1}.
     \item At least 80\% of the \textbf{expected} values should be \emph{at least 5}.
@@ -124,7 +124,7 @@ The data for teacher's die met the criteria for the valid use of a goodness-of-f
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A chocolatier says that their boxes are randomly filled with caramel, coffee and strawberry flavoured chocolates in the ratio $2:2:1$. Suspecting that this is not true, a chocolate-fan counts the number of chocolates of each flavour in a box and finds 8 are caramel, 13 are coffee and 11 are strawberry. Perform a non-parametric hypothesis test to assess the evidence at the 10\% significance level that the flavours are not distributed as claimed by the chocolatier. 
 \tcblower
 \textbf{Solution:}
@@ -236,7 +236,7 @@ Perform a non-parametric test at the 10\% significance level to test whether the
 
 If the expected categories do not meet the conditions stated on Page 151 then two or more categories should be *"combined"* (or *"collapsed"*) until the conditions are satisfied. The degrees of freedom for the test should be calculated based on the *final combined frequency table* rather than the original table. Whilst it is recommended to combine those categories with the smallest expected values, it may at times be more intuitive to instead collapse those categories that more naturally can be grouped. 
 
-\begin{tcolorbox}[height=20cm,title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[height=20cm,title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} An video game allows players to buy in-game ``loot boxes'' with real money, each containing one in-game item. The game's publisher states that 60\% of loot boxes contain a ``Regular'' item, 25\% contain a ``Premium'' item, 10\% contain a ``Rare' item and the remaining 5\% contain an ``Ultra Rare'' item. A player records the types of item contained in each of a series of loot boxes and records the results in the frequency table below.
 
 \vspace{0.3cm}
@@ -421,7 +421,7 @@ Perform a non-parametric test to assess at the 5\% level of significance the cla
 
 A goodness-of-fit test can also be performed to assess whether observed data fits a *binomial* distribution, in which the **total observed frequencies** will be split in proportion to the *calculated binomial probabilities*.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A supermarket randomly samples boxes of duck eggs delivered by a supplier, each containing four eggs, and counts how many of the four eggs are broken for each box. The results of this are:
 
 \vspace{0.05cm}
@@ -622,7 +622,7 @@ Note that estimating the parameter $p$ from *the data itself* would require an a
 
 Just as with a binomial distribution, using a Poisson distribution as a model for a goodness-of-fit test requires the total observations to be split according to calculated probabilities. Should the only parameter for a Poisson distribution, $\lambda$, be required to be *estimated from the data*, an additional degree of freedom will be *subtracted*, since $m=1$. 
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} It is generally said that the number of goals scored in a game of football follows a Poisson distribution. A football fan decides to see whether this statement is still reasonable, and records the number of goals scored in every game across a weekend in each of the top four tiers of English football:
 
 \begin{center}

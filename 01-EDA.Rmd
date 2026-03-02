@@ -1,12 +1,14 @@
 # Exploratory Data Analysis
 
+\vspace{-1cm}
+
 Datasets usually consist rows or columns of values, referred to as *raw data*. Before conducting any *statistical analysis*, a statistician will typically want to get a quick sense of what the data may reveal, as well as to identify any features of note. Common first steps are therefore often to: *organise* the data into suitable lists or tables; *visualise* the data using plots and graphs; and *measure* various properties of the data.
 
 This process is often referred to as *exploratory data analysis*.
 
 \begin{center}
 \begin{tikzpicture}
-    \draw (0,-0.4) rectangle (18,12);
+    \draw[white] (0,-0.9) rectangle (18,12);
 
 \draw[semithick,fill=black!10] (9,6) circle (1.5);
 \node[above] at (9,7.5) {Sample};
@@ -28,48 +30,48 @@ This process is often referred to as *exploratory data analysis*.
 \draw[semithick,-stealth,dashed] (7.8,7.2) -- (7.3,7.7);
 \draw[semithick,-stealth,dashed] (7.8,4.8) -- (7.3,4.3);
 
-\node[anchor=west] at (1,4.5) {\textbf{Summary (height in cm, all patients)}};
+\node[anchor=west] at (0.5,4) {\textbf{Summary (height in cm, all patients)}};
 
-\node[anchor=west] at (4.5,4) {$n=120$};
-\node[anchor=west] at (4.5,3.5) {$\bar{x}=168.5$};
-\node[anchor=west] at (4.5,3) {$s=8.26$};
-\node[anchor=west] at (4.5,2.5) {med $=168.9$};
-\node[anchor=west] at (4.5,2) {$\text{IQR}=10.3$};
-\node[anchor=west] at (4.5,1.5) {min  $=149.0$};
-\node[anchor=west] at (4.5,1) {max $=190.1$};
+\node[anchor=west] at (4,3.5) {$n=120$};
+\node[anchor=west] at (4,3) {$\bar{x}=168.5$};
+\node[anchor=west] at (4,2.5) {$s=8.26$};
+\node[anchor=west] at (4,2) {med $=168.9$};
+\node[anchor=west] at (4,1.5) {$\text{IQR}=10.3$};
+\node[anchor=west] at (4,1) {min  $=149.0$};
+\node[anchor=west] at (4,0.5) {max $=190.1$};
 
-\node[anchor=west] at (1,4) {sample size};
-\node[anchor=west] at (1,3.5) {mean};
-\node[anchor=west] at (1,3) {standard deviation};
-\node[anchor=west] at (1,2.5) {median};
-\node[anchor=west] at (1,2) {interquartile range};
-\node[anchor=west] at (1,1.5) {minimum value};
-\node[anchor=west] at (1,1) {maximum value};
+\node[anchor=west] at (0.5,3.5) {sample size};
+\node[anchor=west] at (0.5,3) {mean};
+\node[anchor=west] at (0.5,2.5) {standard deviation};
+\node[anchor=west] at (0.5,2) {median};
+\node[anchor=west] at (0.5,1.5) {interquartile range};
+\node[anchor=west] at (0.5,1) {minimum value};
+\node[anchor=west] at (0.5,0.5) {maximum value};
 
-\node[anchor=west] at (1,11.5) {\textbf{Patient data table (first five entries only)}};
-\node[anchor=west] at (1,11) {age (yrs)};
-\node[anchor=west] at (2.6,11) {height (cm)};
-\node[anchor=west] at (4.8,11) {NHS health board};
+\node[anchor=west] at (0.5,11.5) {\textbf{Patient data table (first five entries only)}};
+\node[anchor=west] at (0.5,11) {age (yrs)};
+\node[anchor=west] at (2.1,11) {height (cm)};
+\node[anchor=west] at (4.3,11) {NHS health board};
 
-\draw (1.1,10.75) -- (7.8,10.75);
+\draw (0.6,10.75) -- (7.3,10.75);
 
-\node at (1.7,10.5) {57};
-\node at (1.7,10) {43};
-\node at (1.7,9.5) {48};
-\node at (1.7,9) {64};
-\node at (1.7,8.5) {52};
+\node at (1.2,10.5) {57};
+\node at (1.2,10) {43};
+\node at (1.2,9.5) {48};
+\node at (1.2,9) {64};
+\node at (1.2,8.5) {52};
 
-\node at (3.6,10.5) {182.2};
-\node at (3.6,10) {168.2};
-\node at (3.6,9.5) {179.4};
-\node at (3.6,9) {162.6};
-\node at (3.6,8.5) {171.5};
+\node at (3.1,10.5) {182.2};
+\node at (3.1,10) {168.2};
+\node at (3.1,9.5) {179.4};
+\node at (3.1,9) {162.6};
+\node at (3.1,8.5) {171.5};
 
-\node at (6.2,10.5) {Fife};
-\node at (6.2,10) {Tayside};
-\node at (6.2,9.5) {Tayside};
-\node at (6.2,9) {Forth Valley};
-\node at (6.2,8.5) {Fife};
+\node at (5.7,10.5) {Fife};
+\node at (5.7,10) {Tayside};
+\node at (5.7,9.5) {Tayside};
+\node at (5.7,9) {Forth Valley};
+\node at (5.7,8.5) {Fife};
 
 \node at (13,11.5) {\textbf{Dot plot and box plot (age, NHS Fife patients)}};
 
@@ -117,47 +119,47 @@ This process is often referred to as *exploratory data analysis*.
 \draw (16,9) circle (0.05);
 \node[below] at (13.25,8.5) {Age in years};
 
-\node at (14,4.5) {\textbf{Histogram (height, all patients)}};
+\node at (14,4) {\textbf{Histogram (height, all patients)}};
 
-\draw (12,1) -- (17,1);
+\draw (12,0.5) -- (17,0.5);
 \foreach \x in {12,12.5,...,17}
-{\draw (\x,1) -- (\x,0.9);
+{\draw (\x,0.5) -- (\x,0.4);
 
 }
-\draw (12,1) -- (12,4);
+\draw (12,0.5) -- (12,3.5);
 \foreach \y in {1,1.5,...,4}
-{\draw (12,\y) -- (11.9,\y);
+{\draw (12,\y-0.5) -- (11.9,\y-0.5);
 
 }
 
-\draw[fill=black!25] (12,1) rectangle (12.5,1.2);
-\draw[fill=black!25] (12.5,1) rectangle (13,1.3);
-\draw[fill=black!25] (13,1) rectangle (13.5,2.3);
-\draw[fill=black!25] (13.5,1) rectangle (14,3.6);
-\draw[fill=black!25] (14,1) rectangle (14.5,4);
-\draw[fill=black!25] (14.5,1) rectangle (15,3.1);
-\draw[fill=black!25] (15,1) rectangle (15.5,2.3);
-\draw[fill=black!25] (15.5,1) rectangle (16,2);
-\draw[fill=black!25] (16,1) rectangle (16.5,1.2);
-\draw[fill=black!25] (16.5,1) rectangle (17,1.1);
+\draw[fill=black!25] (12,1-0.5) rectangle (12.5,1.2-0.5);
+\draw[fill=black!25] (12.5,1-0.5) rectangle (13,1.3-0.5);
+\draw[fill=black!25] (13,1-0.5) rectangle (13.5,2.3-0.5);
+\draw[fill=black!25] (13.5,1-0.5) rectangle (14,3.6-0.5);
+\draw[fill=black!25] (14,1-0.5) rectangle (14.5,4-0.5);
+\draw[fill=black!25] (14.5,1-0.5) rectangle (15,3.1-0.5);
+\draw[fill=black!25] (15,1-0.5) rectangle (15.5,2.3-0.5);
+\draw[fill=black!25] (15.5,1-0.5) rectangle (16,2-0.5);
+\draw[fill=black!25] (16,1-0.5) rectangle (16.5,1.2-0.5);
+\draw[fill=black!25] (16.5,1-0.5) rectangle (17,1.1-0.5);
 
 
-\node at (12.5,0.6) {150};
-\node at (13.5,0.6) {160};
-\node at (14.5,0.6) {170};
-\node at (15.5,0.6) {180};
-\node at (16.5,0.6) {190};
+\node at (12.5,0.1) {150};
+\node at (13.5,0.1) {160};
+\node at (14.5,0.1) {170};
+\node at (15.5,0.1) {180};
+\node at (16.5,0.1) {190};
 
-\node at (14.5,0) {Height in cm};
-\node[align=center,text width=2cm] at (10.5,2.5) {Number of patients};
+\node at (14.5,-0.5) {Height in cm};
+\node[align=center,text width=2cm] at (9.5,2) {Number of patients};
 
-\node[anchor=east] at (11.9,1) {0};
-\node[anchor=east] at (11.9,1.5) {5};
-\node[anchor=east] at (11.9,2) {10};
-\node[anchor=east] at (11.9,2.5) {15};
-\node[anchor=east] at (11.9,3) {20};
-\node[anchor=east] at (11.9,3.5) {25};
-\node[anchor=east] at (11.9,4) {30};
+\node[anchor=east] at (11.9,0.5) {0};
+\node[anchor=east] at (11.9,1) {5};
+\node[anchor=east] at (11.9,1.5) {10};
+\node[anchor=east] at (11.9,2) {15};
+\node[anchor=east] at (11.9,2.5) {20};
+\node[anchor=east] at (11.9,3) {25};
+\node[anchor=east] at (11.9,3.5) {30};
 
 \end{tikzpicture}
 \end{center}
@@ -168,9 +170,11 @@ This process is often referred to as *exploratory data analysis*.
 
 Knowing what *type* of data has been collected helps inform what kind of graphs and statistics may be appropriate.
 
-Data that is numerical is called *quantitative*, of which there are two types. **Discrete** data consists of values that can be listed, such as someone's shoe size or the number of siblings they have. **Continuous** data can take *any* value within a range, though is typically rounded to reflect the precision of measurements taken, such as the mass of a squirrel.
+Data that is numerical is called *quantitative*, of which there are two types. **Discrete** data consists of values that can be listed, such as someone's shoe size or the number of siblings they have. **Continuous** data can take *any* value within a range, though is often rounded to reflect the precision of measurements taken, such as the mass of a mouse.
 
 *Qualitative* data (also called **categorical**) is *non-numerical*, such as whether a squirrel is red or grey. 
+
+\vspace{-0.1cm}
 
 \begin{center}
 \begin{tikzpicture}
@@ -195,7 +199,11 @@ Data that is numerical is called *quantitative*, of which there are two types. *
 \end{tikzpicture}
 \end{center}
 
+\vspace{-0.2cm}
+
 For example, the table below shows data relating to some football players:
+
+\vspace{-0.3cm}
 
 \begin{center}
 \begin{tikzpicture}
@@ -238,45 +246,66 @@ For example, the table below shows data relating to some football players:
 \node at (10.6,8.5) {5};
 
 \draw[decoration={brace,mirror,raise=2pt},decorate]
-  (0,8) -- node[below=5pt] {\textbf{Categorical}} (4.7,8);
+  (0,8.2) -- node[below=5pt] {\textbf{Categorical}} (4.7,8.2);
 
 \draw[decoration={brace,mirror,raise=2pt},decorate]
-  (5.3,8) -- node[below=5pt] {\textbf{Continuous}} (7.2,8);
+  (5.3,8.2) -- node[below=5pt] {\textbf{Continuous}} (7.2,8.2);
 
 \draw[decoration={brace,mirror,raise=2pt},decorate]
-  (8.2,8) -- node[below=5pt] {\textbf{Discrete}} (11,8);
+  (8.2,8.2) -- node[below=5pt] {\textbf{Discrete}} (11,8.2);
 
 \end{tikzpicture}
 \end{center}
+
+\vspace{-1cm}
 
 []{#ex11q}
 
 #### [Exercise 1.1](#ex11a) {-}
 
 \begin{enumerate}
-    \item A survey is carried out about the pets owned by a class. Decide whether the following data is qualitative or quantitative.
+    \item A survey is carried out on the pets owned by a class. State whether the following data is qualitative or quantitative.
+    \vspace{-0.5cm}
     \begin{enumerate}
-    \begin{multicols}{3}
+    \begin{multicols}{2}
         \item How many pets each pupil owns.
         \item What kind of animal the pets are.
+    \end{multicols}
+    \end{enumerate}
+    \begin{enumerate}
+    \begin{multicols}{2}
         \item The pet’s age.
         \item The name of the pet.
+    \end{multicols}
+    \end{enumerate}
+    \begin{enumerate}
+    \begin{multicols}{2}
         \item The mass of the pet.
         \item Whether the pet is a mammal.
     \end{multicols}
     \end{enumerate}
     \item For each of the following, state whether the data collected would be discrete or continuous.
+    \vspace{-0.1cm}
     \begin{enumerate}
-    \begin{multicols}{3}
-        \item The number of people in a room  .      
+    \begin{multicols}{2}
+        \item The number of people in a room.      
         \item The mass of a book.
-        \item The number of pages in a book.
-        \item The number of songs in an album.
-        \item The volume of water in a bottle.
-        \item The time taken to complete a puzzle.
     \end{multicols}
     \end{enumerate}
-    \item A random sample of members of a gym were surveyed and the results are shown in the table below.
+    \begin{enumerate}
+    \begin{multicols}{2}
+        \item The number of pages in a book.
+        \item The number of songs in an album.
+    \end{multicols}
+    \end{enumerate}
+    \begin{enumerate}
+    \begin{multicols}{2}
+        \item The volume of water in a bottle.
+        \item Time taken to complete a puzzle.
+    \end{multicols}
+    \end{enumerate}
+    \item A random sample of members of a gym were surveyed and the first few results are shown in the table below.
+    \vspace{-0.1cm}
     \begin{center}
     \begin{tabular}{|c|c|c|c|c|}
       \hline
@@ -286,10 +315,10 @@ For example, the table below shows data relating to some football players:
         Moderate & No & 72 & 145 & 58\\
         A lot & Yes & 73.5 & 160 & 62\\
         Slight & Yes & 73 & 190 & 66\\
-        Moderate & No & 69 & 155 & 64\\
       \hline
     \end{tabular}
     \end{center}
+    \vspace{-0.1cm}
     State the type of data that was collected for each variable.
 \end{enumerate}
 
@@ -297,7 +326,7 @@ For example, the table below shows data relating to some football players:
 
 ## Population Parameters and Sample Statistics
 
-In a statistical investigation, the term **population** refers to the entire set of objects of interest, whilst a **sample** is a selection of some objects chosen from the population. Understanding the distinction is fundamental to statistical analysis. 
+In a statistical investigation, the term **population** refers to the entire set of objects of interest, whilst a **sample** is a selection of some objects chosen from the population. Recognising the difference is fundamental to statistical analysis. 
 
 \begin{center}
 \begin{tikzpicture}
@@ -499,7 +528,7 @@ It is good practice to refer *clearly* to whether a population parameter or samp
 
 Population parameters are seen as having fixed values, at the time of the study at least, whilst the values of sample statistics will depend on the sample chosen. 
 
-Sample statistics may be seen as \textit{estimates} of the true value of their respective population parameters, and \textbf{inference} is the process by which claims may be made about population parameters basis on observed sample statistics. 
+Sample statistics may be seen as \textit{estimates} of the true value of their respective population parameters, and \hbox{\textbf{inference}} is the process by which claims may be made about population parameters (such as $\mu$ )based on observed sample statistics (such as $\bar{x}$). 
 
 \end{multicols}
 
@@ -624,13 +653,13 @@ The *lower quartile* (LQ or $\text{Q}_1$) and the *upper quartile* (UQ or $\text
 \node at (12,0) {$22$};
 \node at (13,0) {$22$};
 \node at (14,0) {$26$};
-\draw[thick] (7.5,-0.5) -- (7.5,0.5) node[above] {$Q_2=15$};
+\draw[thick] (7.5,-0.5) -- (7.5,0.5) node[above] {$\text{Q}_2=15$};
 \draw[thick] (4,0) circle (0.5);
 \draw[thick] (12,0) circle (0.5);
-\node[above] at (4,0.5) {$Q_1=8$};
-\node[above] at (12,0.5) {$Q_3=22$};
-\draw[stealth-] (0.7,0.3) -- (0.3,0.6) node[above left] {$Min=4$};
-\draw[stealth-] (14.3,0.3) -- (14.6,0.6) node[above right] {$Max=26$};
+\node[above] at (4,0.5) {$\text{Q}_1=8$};
+\node[above] at (12,0.5) {$\text{Q}_3=22$};
+\draw[stealth-] (0.7,0.3) -- (0.3,0.6) node[above left] {$\text{Min}=4$};
+\draw[stealth-] (14.3,0.3) -- (14.6,0.6) node[above right] {$\text{Max}=26$};
 \end{tikzpicture}
 \end{center}
 
@@ -641,13 +670,13 @@ The *interquartile range* is calculated as: \hspace{0.5cm}$\text{IQR}=\text{Q}_3
 #### [Exercise 1.3](#ex13a) {-}
 
 \begin{enumerate}
-    \item The monthly cost of 10 drivers' car insurance ($x$, in £'s) are recorded. Calculate the mean and standard deviation:
+    \item The monthly cost of 10 drivers' car insurance ($x$, in £'s) are recorded. Calculate the mean and standard deviation.
     \begin{center}
     \begin{tabular}{ccc}
       $\Sigma{x}=359$ & $\Sigma{x^2}=15119$ & $n=10$
     \end{tabular}
     \end{center}
-    \item Daily fuel spend ($f$, in £'s) for 15 drivers is summarised below. Calculate the mean and standard deviation:
+    \item Daily fuel spend ($f$, in £'s) for 15 drivers is summarised below. Calculate the mean and standard deviation.
     \begin{center}
     \begin{tabular}{ccc}
       $\Sigma{f}=87$ & $\Sigma{f^2}=569$ & $n=15$
@@ -824,7 +853,7 @@ Before any analysis of a data set is undertaken, it is common practice to *displ
 #### [Exercise 1.4](#ex14a) {-}
 
 \begin{enumerate}
-    \item The ages (in years) of competitors in a junior golf tournament are below. Draw a dot plot to represent this data:
+    \item The ages (in years) of competitors in a junior golf tournament are below. Draw a dot plot to represent this data.
     \begin{center}
     \begin{tabular}{cccccccccccccc}
         16 & 14 & 19 & 13 & 14 & 17 & 16 & 19 & 16 & 17 & 12 & 16 & 14 & 19
@@ -837,7 +866,7 @@ Before any analysis of a data set is undertaken, it is common practice to *displ
         2.00 & 1.90 & 3.60 & 0.90 & 1.70 & 1.50
     \end{tabular}
     \end{center}
-    \item The masses (in kg) of the luggage of 10 passengers on a plane to Barra were recorded. Draw a box plot of these masses.
+    \item The masses (in kg) of the luggage of 10 passengers on a plane to Barra were recorded. Construct a box plot.
     \begin{center}
     \begin{tabular}{cccccccccc}
         15 & 18 & 14 & 22 & 19 & 14 & 10 & 21 & 17 & 16  
@@ -957,7 +986,7 @@ There are many ways in which data can be presented, extending beyond those cover
 
 \end{multicols}
 
-Not all graphs encountered in real life will be up to scratch; some graphs may be unclear, accidentally misleading or even intentionally misleading. Being alert to potential flaws in tables and figures and pointing out possible improvements is an important skill.
+Not all graphs encountered in real life will be up to scratch; some graphs may be unclear, accidentally misleading or even intentionally misleading. Being alert to potential flaws in tables and figures and identifying possible improvements is an important skill.
 
 The widespread availability of computing power means that specialist software is often used by statisticians to avoid the need for time-consuming calculations where possible. Whilst this course requires no use of statistical software, examples of computer **output** will be displayed from which the required information must be extracted.
 
@@ -1031,7 +1060,7 @@ The widespread availability of computing power means that specialist software is
 
 \end{multicols}
 
-Whilst this textbook aims to enable familiarity with common figures, tables and computer output, the best way to practise obtaining information from them is to **read a wide range of relevant statistical articles and reports**. 
+Whilst this textbook aims to enable familiarity with common figures, tables and computer output, the best way to practise obtaining information from them is to *read a wide range of relevant statistical articles and reports*. 
 
 []{#ex15q}
 
@@ -1049,9 +1078,9 @@ Whilst this textbook aims to enable familiarity with common figures, tables and 
 
 ## Outliers and Fences
 
-Sometimes a set of data may contain values that seem *extremely high or low* in comparison to the rest of the values. It is important to be wary of such values and the potentially significant impact they could have on any statistical analysis performed. There are a range of objective approaches that can be used to determine whether one or more points are extreme enough to be classed as *outliers*. In this course, *fences* will be used.
+Sometimes a set of data may contain values that seem *extremely high or low* in comparison to the rest of the values. It is important to be wary of such values and the potentially significant impact they could have on any statistical analysis performed. There are a range of objective approaches that can be used to determine whether one or more points are extreme enough to be classed as **outliers**. In this course, *fences* will be used.
 
-\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=15cm]
+\begin{tcolorbox}[center,adjusted title=Identifying Outliers,colback=red!5,colframe=red!70!black,width=15cm,halign = center,halign title = center]
 \begin{center}
 Lower Fence $=\text{Q}_1-1.5\times \text{IQR}$.\\[1em]
 Upper Fence $=\text{Q}_3+1.5\times \text{IQR}$.\\[1em]
@@ -1085,6 +1114,8 @@ n & min & Q1 & median & Q3 & max\\
 \end{center}
 
 \end{multicols}
+
+\vspace{-1cm}
 
 \begin{align*}
   \text{IQR}&=\text{Q}_3-\text{Q}_1=51-38=13\\[1em]
@@ -1122,6 +1153,7 @@ On a box plot, outliers are indicated separately as shown below, with the "whisk
 \draw[semithick] (38*0.25,1.8) -- (51*0.25,1.8);
 \draw[semithick] (51*0.25,1.5) -- (62*0.25,1.5);
 \draw[semithick] (73*0.25,1.5) circle (0.08);
+\draw[stealth-] (18.5,1.75) -- (19,2.25) node[above right] {Outlier};
 \end{tikzpicture}
 \end{center}
 
@@ -1223,7 +1255,7 @@ The outlier in this data set could be valid if, for instance, the sunflower plan
 
 ## Describing Data Distributions
 
-Summary statistics alone are not sufficient to describe the full complexity of the way data is distributed. It is also important to consider and be able to describe the *shape* of the distribution, accomplished most easily using a histogram. Whilst real-life rarely *perfectly* follows a precise mathematical model, a number of shapes are commonly observed and a number of descriptions are commonly considered. The following data was generated by *simulating sampling* from populations of data which followed the distributions described. 
+Summary statistics alone are not sufficient to describe the full complexity of the way data is distributed. It is also important to consider and be able to describe the **shape** of the distribution, accomplished most easily using a histogram. Whilst real-life rarely *perfectly* follows a precise mathematical model, a number of shapes are commonly observed and a number of descriptions are commonly considered. The following data was generated by *simulating sampling* from populations of data which followed the distributions described. 
 
 \begin{figure}[H]
   \centering
@@ -1481,7 +1513,7 @@ As well as considering whether the **underlying population distribution** of dat
 
 Whilst the following example references techniques that will be introduced later in the course, it is intended to give an idea of the importance of studying distributions in selecting appropriate methods for statistical inference.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=NavyBlue]
 \textbf{Problem:} A environmental scientist collected water samples from a number of rivers in a region to explore whether the concentration of a harmful chemical in the water has changed since farming practises used locally have changed. They are considering the following choices of hypothesis test:
 
 \begin{itemize}
@@ -1522,7 +1554,7 @@ Whilst the following example references techniques that will be introduced later
 \draw[fill=black!25] (4.75,0) rectangle (5.5,1.6);
 \draw[fill=black!25] (5.5,0) rectangle (6.25,1.8);
 \draw[fill=black!25] (6.25,0) rectangle (7,0.5);
-\node at (3,-0.8) {Concentration ($mg/L$)};
+\node at (3,-0.8) {Concentration (mg/L)};
 \node at (-2,1) {Frequency};
 \end{tikzpicture}
 \end{center}
@@ -1682,8 +1714,8 @@ Whilst the following example references techniques that will be introduced later
 
 When comparing two or more samples of data, a good starting point is to create suitable plots and obtain summary statistics. Differences and similarities should be noted, considering the location, spread and shape of the distributions of each group.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
-\textbf{Problem:} Within the sport of professional cycling, it is common for riders to specialise in certain types of cycling. \textit{Sprinters} aim to win races that finish on flat road at high speed, whilst \textit{climbers} aim to win races with an uphill finish. A researcher studying the characteristics of elite-level cyclists randomly selects samples of 30 \textit{sprinters} and 30 \textit{climbers}, recording the heights of each. The results are shown summarised in \textbf{Table 1} below.
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=NavyBlue]
+\textbf{Problem:} Within the sport of professional cycling, it is common for riders to specialise in certain types of cycling. \textit{Sprinters} aim to win races that finish on flat road at high speed, whilst \textit{climbers} aim to win races with an uphill finish. A researcher studying the characteristics of elite-level cyclists randomly selects samples of 30 \textit{sprinters} and 30 \textit{climbers}, recording the heights of each. The results are shown summarised in \textbf{Table 1}.
 
 \begin{center}
 \textbf{Table 1}\\\vspace{0.2cm}
@@ -1839,7 +1871,6 @@ Note that this data is based on the heights of *samples* sprinters and climbers.
 
 \begin{enumerate}
     \item Two models of coffee machines produced by the brand \textit{DOLCAFÉ} are supposed produce a white coffee with the same volume of liquid each time, but natural variation means the actual amount dispensed is not quite the same every time. The volumes dispensed, in ml, are recorded for random samples from each model.
-    \vspace{-0.3cm}
     \begin{center}
     \begin{tabular}{c|ccccccc}
         Model A & 295 & 298 & 299 & 301 & 303 & 304 & 309\\
@@ -1848,7 +1879,7 @@ Note that this data is based on the heights of *samples* sprinters and climbers.
     \end{tabular}
     \end{center}
     \begin{enumerate}
-        \item Determine the mean and standard deviation for each model.
+        \item Determine the sample mean and standard deviation for each model.
         \item Make two comments comparing the amount of coffee dispensed by the two models.
     \end{enumerate}
     \item The scores awarded by two judges in a diving competition are recorded and displayed in box plots, shown below.
@@ -1857,13 +1888,13 @@ Note that this data is based on the heights of *samples* sprinters and climbers.
 \draw[semithick] (88,1) -- (100,1);
 \foreach \x in {0,...,12}
   \draw (88+\x,1) -- (88+\x,0.8);
-\node at (88,0.5) {$8.8$};
-\node at (90,0.5) {$9.0$};
-\node at (92,0.5) {$9.2$};
-\node at (94,0.5) {$9.4$};
-\node at (96,0.5) {$9.6$};
-\node at (98,0.5) {$9.8$};
-\node at (100,0.5) {$10.0$};
+\node at (88,0.5) {$\scriptsize{8.8}$};
+\node at (90,0.5) {$\scriptsize{9.0}$};
+\node at (92,0.5) {$\scriptsize{9.2}$};
+\node at (94,0.5) {$\scriptsize{9.4}$};
+\node at (96,0.5) {$\scriptsize{9.6}$};
+\node at (98,0.5) {$\scriptsize{9.8}$};
+\node at (100,0.5) {$\scriptsize{10.0}$};
 \draw[semithick,fill=black!40] (90.25,1.2) rectangle (93.75,1.8);
 \draw[semithick,fill=black!40] (101,1.2) rectangle (101.8,1.8);
 \node at (102.5,1.5) {\text{Judge B}};
@@ -1891,21 +1922,19 @@ Note that this data is based on the heights of *samples* sprinters and climbers.
 \draw[semithick] (97,2.3) -- (99,2.3);
 \end{tikzpicture}
 \end{center}
-    \vspace{-0.3cm}Using the box plots, make two comments comparing the scoring of the two judges.
+    Using the box plots, make two comments comparing the scoring of the two judges.
     \item The temperature at 2pm was noted for 14 randomly selected days in January and June at a local tourist spot and box plots drawn to display the results.
-
-\vspace{-0.2cm}
 \begin{center}
 \begin{tikzpicture}
 \node at (26.5,0.75) {\text{June}};
 \draw[semithick] (16,0.4) -- (25,0.4);
 \foreach \x in {0,...,18}
   \draw (16+0.5*\x,0.4) -- (16+0.5*\x,0.3);
-\node at (16,0.1) {$16$};
-\node at (18,0.1) {$18$};
-\node at (20,0.1) {$20$};
-\node at (22,0.1) {$22$};
-\node at (24,0.1) {$24$};
+\node at (16,0.1) {$\scriptsize{16}$};
+\node at (18,0.1) {$\scriptsize{18}$};
+\node at (20,0.1) {$\scriptsize{20}$};
+\node at (22,0.1) {$\scriptsize{22}$};
+\node at (24,0.1) {$\scriptsize{24}$};
 \fill[black!15] (18,0.5) rectangle (23,1);
 \draw[semithick] (16,0.6) -- (16,0.9);
 \draw[semithick] (18,0.5) -- (18,1);
@@ -1924,14 +1953,14 @@ Note that this data is based on the heights of *samples* sprinters and climbers.
 \draw[semithick] (-6*9/14,-0.4) -- (8*9/14,-0.4);
 \foreach \x in {0,...,35}
   \draw (-6*9/14+0.4*\x*9/14,-0.4) -- (-6*9/14+0.4*\x*9/14,-0.5);
-\node at (-6*9/14,-0.7) {$-6$};
-\node at (-4*9/14,-0.7) {$-4$};
-\node at (-2*9/14,-0.7) {$-2$};
-\node at (0*9/14,-0.7) {$0$};
-\node at (2*9/14,-0.7) {$2$};
-\node at (4*9/14,-0.7) {$4$};
-\node at (6*9/14,-0.7) {$6$};
-\node at (8*9/14,-0.7) {$8$};
+\node at (-6*9/14,-0.7) {$\scriptsize{-6}$};
+\node at (-4*9/14,-0.7) {$\scriptsize{-4}$};
+\node at (-2*9/14,-0.7) {$\scriptsize{-2}$};
+\node at (0*9/14,-0.7) {$\scriptsize{0}$};
+\node at (2*9/14,-0.7) {$\scriptsize{2}$};
+\node at (4*9/14,-0.7) {$\scriptsize{4}$};
+\node at (6*9/14,-0.7) {$\scriptsize{6}$};
+\node at (8*9/14,-0.7) {$\scriptsize{8}$};
 \fill[black!40] (-1*9/14,-0.3) rectangle (5*9/14,0.2);
 \draw[semithick] (-6*9/14,-0.2) -- (-6*9/14,0.1);
 \draw[semithick] (-1*9/14,-0.3) -- (-1*9/14,0.2);
@@ -1948,28 +1977,16 @@ Note that this data is based on the heights of *samples* sprinters and climbers.
         \item Using the box plots, make two comments comparing temperatures in January and June.
         \item Explain why the box plots may be misleading.
     \end{enumerate}
-    \item The back-to-back stem-and-leaf diagram below shows the heights of trees in two areas of woodland. 
-    \begin{center}
-    \begin{tabular}{cccc|c|cccc}
-        \multicolumn{4}{c}{Woodland A} & \multicolumn{1}{c}{} & \multicolumn{4}{c}{Woodland B}\\
-         & & & 5 & 2 & 1 & 3 & 3 & 8\\
-         & & 7 & 4 & 3 & 0 & 2 & 4 & 7\\
-         9& 7& 7& 2& 4 & 2 & 5 & &\\
-         & 7& 6& 3& 5 & & & &
-    \end{tabular}
-    \end{center}
-    \begin{enumerate}
-        \item Suggest one improvement needed for the diagram.
-        \item Make one comment comparing the heights of trees in the two areas of woodland.
-    \end{enumerate}
     \item The manager of a lemonade bottling plant is interested in comparing the performances of two production lines, one of which has only recently been installed. For each line she selects 10 one-hour periods at random and records the number of crates completed in each hour. The table below gives the results:
     \begin{center}
-    \begin{tabular}{l|cccccccccc}
-        Production Line & \multicolumn{10}{c}{Number of crates completed per hour}\\
+    \begin{tabular}{|l|cccccccccc|}
+      \hline
+        Production Line & \multicolumn{10}{c|}{Number of crates completed per hour}\\
       \hline
         New & 78 & 87 & 79 & 82 & 87 & 81 & 85 & 80 & 82 & 83\\
       \hline
-        Old & 74 & 77 & 78 & 70 & 87 & 83 & 76 & 78 & 81 & 76
+        Old & 74 & 77 & 78 & 70 & 87 & 83 & 76 & 78 & 81 & 76\\
+      \hline
     \end{tabular}
     \end{center}   
     \begin{enumerate}
@@ -2004,9 +2021,11 @@ Note that this data is based on the heights of *samples* sprinters and climbers.
     \begin{enumerate}
         \item State which of the five variables contain:
         \begin{enumerate}
+            \begin{multicols}{3}
             \item Categorical data.
             \item Discrete data.
             \item Continuous data.
+            \end{multicols}
         \end{enumerate}
         \item If it was suspected that one of the tracks is an outlier in terms of length, state what could be calculated in order to determine whether it is in fact an outlier.
     \end{enumerate}
@@ -2018,8 +2037,23 @@ Note that this data is based on the heights of *samples* sprinters and climbers.
     \end{center}
     \begin{enumerate}
         \item Contruct a dot plot to display the data.
-        \item Find the mean and standard deviation for the sizes of running shoes sold.
+        \item Find the median and interquartile range for the sizes of running shoes sold.
+        \item Calculate the mean and standard deviation for the sizes of running shoes sold.
         \item State the type of data recorded.
+    \end{enumerate}
+    \item The back-to-back stem-and-leaf diagram below shows the heights of trees in two areas of woodland. 
+    \begin{center}
+    \begin{tabular}{cccc|c|cccc}
+        \multicolumn{4}{c}{Woodland A} & \multicolumn{1}{c}{} & \multicolumn{4}{c}{Woodland B}\\
+         & & & 5 & 2 & 1 & 3 & 3 & 8\\
+         & & 7 & 4 & 3 & 0 & 2 & 4 & 7\\
+         9& 7& 7& 2& 4 & 2 & 5 & &\\
+         & 7& 6& 3& 5 & & & &
+    \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item Suggest one improvement needed for the diagram.
+        \item Make one comment comparing the heights of trees in the two areas of woodland.
     \end{enumerate}
     \item The petal lengths (in centimetres) for samples of flowers from two species of iris flowers is recorded: \textit{iris setosa} and \textit{iris versicolor}. The data is summarised in the table below using statistical software:
     \begin{center}

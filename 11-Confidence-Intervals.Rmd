@@ -46,7 +46,7 @@ Given a *random sample* from an distribution that is *normally distributed* with
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=A $z$-confidence interval for the population mean:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=A $z$-confidence interval for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 A $(1-\alpha)\%$ CI for $\mu$ is: $\bar{x}\pm z_{1-\alpha/2} \times \cfrac{\sigma}{\sqrt{n}}$
 \end{tcolorbox}
 \end{centering}
@@ -55,7 +55,7 @@ Note that the conditions required match those for a $z$-test for the population 
 
 A sketch can be used to help find the required $z$-value. In this course, only *two-tailed* confidence intervals will calculated.
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The masses of ceramic dishes sold by a kitchenware shop are known to be normally distributed with a standard deviation of 12g. A random sample of 15 such ceramic dishes are weighed and the sample mean is 430 grams. Obtain a 95\% confidence interval for the mean mass of a ceramic dish.
 
 \tcblower
@@ -112,7 +112,7 @@ Therefore a 95\% confidence interval for the population mean dish mass, in grams
 
 It should be observed that the $z$-confidence interval is symmetrical with the **sample mean at its centre**. The width of the interval is determined by the **standard error** and the confidence level required.
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example 2,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} An airline picks a random sample of 25 of their flights and records how long it takes for all the passengers to depart the plane from the time the cabin doors are opened. The sample mean of 6.5 minutes is obtained, and a sample standard deviation of 0.8 minutes. Determine a 90\% confidence interval for the mean time taken for all passengers to depart one of the airline's planes, and interpret this confidence interval.
 
 \tcblower
@@ -207,7 +207,7 @@ The calculations involved in calculating a *two-tailed* $z$-confidence interval 
 
 \begin{centering}
 \tcbset{width=17cm}
-\begin{tcolorbox}[adjusted title=Inference using confidence intervals:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Inference using confidence intervals:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 If a given value for $\mu$ is \textbf{outwith a calculated confidence interval} then this would \textit{support a claim} that it is \textit{not the true value of the population mean}.\\
 \vspace{0.5cm}
 If a given value for $\mu$ is \textbf{within a calculated confidence interval} then this would \textit{not support a claim} that it is not the true value of the population mean.
@@ -216,7 +216,7 @@ If a given value for $\mu$ is \textbf{within a calculated confidence interval} t
 
 In this course, it should be noted that an instruction to perform a \textit{test} requires a hypothesis test to be conducted using either a $p$-value or a test statistic, rather than a confidence interval.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The mass of food eaten each day by a family's cat is normally distributed with a mean of 280 grams and a standard deviation of 13 grams. Recently, they notice that their cat doesn't seem to eat the same amount of food as it used to. On 14 randomly chosen days they measure the mass of food that their cat eats, obtaining a mean of 273 grams per day. Stating an assumption required, obtain a 95\% confidence interval for the mass of food eaten daily by their cat, and comment on their concern that their cat doesn't eat the same amount of the food as it did previously.
 
 \tcblower
@@ -318,7 +318,7 @@ Given a random sample of data from an underlying population that is *normally di
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=A $t$-confidence interval for the population mean:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=A $t$-confidence interval for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 A $(1-\alpha)\%$ CI for $\mu$ is: $\bar{x}\pm t_{n-1,1-\alpha/2} \times \cfrac{s}{\sqrt{n}}$
 \end{tcolorbox}
 \end{centering}
@@ -326,7 +326,7 @@ A $(1-\alpha)\%$ CI for $\mu$ is: $\bar{x}\pm t_{n-1,1-\alpha/2} \times \cfrac{s
 As with a $z$-confidence interval, a $t$*-confidence interval* can be used in a similar way to **_two-tailed_** *one sample *$t$*-test for the population mean*. 
 
 \vspace{0.5cm}
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Seven mid-terrace houses in Fife are randomly chosen to have their electricity usage for 24 hours recorded. The results, in kWh, are:
 
   \begin{center}
@@ -450,7 +450,7 @@ In Chapter 9 a *normal approximation* to the distribution of the sample proporti
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=A $z$-confidence interval for the population proportion:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=A $z$-confidence interval for the population proportion:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 A $(1-\alpha)\%$ CI for $p$ is: $\hat{p}\pm z_{1-\alpha/2} \times \sqrt{\cfrac{\hat{p}\hat{q}}{n}}$
 \end{tcolorbox}
 \end{centering}
@@ -461,7 +461,7 @@ As for a $z$-test for proportion, the conditions for validity are that the data 
 
 \vspace{0.5cm}
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A tech website surveys a random selection of its subscribers and finds that 41 out of 50 of them have changed the password for their WiFi router from the default one as recommended by experts. Obtain an approximate 95\% confidence interval for the proportion of its subscribers that have changed their router's password.   
 
 \vspace{0.5cm}

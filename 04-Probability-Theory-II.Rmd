@@ -47,7 +47,7 @@ Now suppose a pupil is chosen at random and, before it is known whether or not t
 
 $$\text{P}(\text{Art | Biology})=\dfrac{3}{7}$$
 
-Conditional probability is fundamental to many of the statistical analysis techniques that will be introduced in this course.
+Conditional probability is fundamental to many of the statistical analysis techniques that will be introduced.
 
 \vspace{1cm}
 
@@ -55,7 +55,7 @@ Conditional probability is fundamental to many of the statistical analysis techn
 
 ## Conditional Probability from Tables and Diagrams
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A medical trial for drug treating a minor illness has patients given either the drug or a placebo, with a test after one month of treatment determining whether or not each patient has fully recovered.
 \begin{center}
     \begin{tabular}{| c|c c|} 
@@ -217,14 +217,14 @@ Where a conditional probability cannot be intuitively stated, the formula for co
 
 \begin{centering}
 \tcbset{width=9cm}
-\begin{tcolorbox}[adjusted title=Conditional Probability:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditional Probability:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(A \cap B)$}}}{\text{\normalsize{$\text{P}(B)$}}}$
 \end{tcolorbox}
 \end{centering}
 
 It may be helpful to note that $\text{P}(\overline{A}|B)=1-\text{P}(A|B)$.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given events $V$ and $W$ such that $\text{P}(V)=0.7236$ and $\text{P}(V\cap W)=0.1046$, find $\text{P}(W | V)$. 
 
 \tcblower
@@ -273,14 +273,14 @@ The probability a randomly selected card from a standard pack of playing cards b
 \captionsetup[figure]{labelformat=empty}%
 \begin{minipage}{.5\textwidth}
   \centering
-\begin{tcolorbox}[adjusted title=Independent:, halign = center,halign title = center,colback=black!5,colframe=black!75,width=8.5cm]
+\begin{tcolorbox}[adjusted title=Independent:, halign = center,halign title = center,colback=red!5,colframe=red!70!black,width=8.5cm]
 $\text{P}(A | B)= \text{P}(A)$
 \end{tcolorbox}
 \end{minipage}%
   \centering
 \begin{minipage}{.5\textwidth}
   \centering
-\begin{tcolorbox}[adjusted title=Not Independent:,colback=black!5,colframe=black!75, halign = center,halign title = center,width=8.5cm]
+\begin{tcolorbox}[adjusted title=Not Independent:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8.5cm]
 $\text{P}(A | B)\ne \text{P}(A)$
 \end{tcolorbox}
 \end{minipage}
@@ -288,7 +288,7 @@ $\text{P}(A | B)\ne \text{P}(A)$
 
 \vspace{0.5cm}
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given $\text{P}(D)=0.25$, $\text{P}(E)=0.6$ and $\text{P}(D\cap E)=0.15$, show that $E$ and $D$ are independent.
 
 \tcblower
@@ -376,7 +376,7 @@ The conditional probability rule can be rearranged to allow the **intersection**
 \begin{minipage}{.5\textwidth}
   \centering
 \tcbset{width=8.5cm}
-\begin{tcolorbox}[adjusted title=Multiplication rule:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Multiplication rule:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $\text{P}(A \cap B)=\text{P}(A)\times \text{P}(B|A)$
 \end{tcolorbox}
 \end{minipage}%
@@ -384,7 +384,7 @@ $\text{P}(A \cap B)=\text{P}(A)\times \text{P}(B|A)$
 \begin{minipage}{.5\textwidth}
   \centering
 \tcbset{width=8.5cm}
-\begin{tcolorbox}[adjusted title=Multiplication rule for independent events:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Multiplication rule for independent events:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $\text{P}(A \cap B)=\text{P}(A)\times \text{P}(B)$
 \end{tcolorbox}
 \end{minipage}
@@ -392,7 +392,7 @@ $\text{P}(A \cap B)=\text{P}(A)\times \text{P}(B)$
 
 \vspace{0.5cm}
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Studies of a species of plant in the UK reveal that 8\% of the plants have a particular genetic mutation. Amongst those plants with the genetic mutation, 35\% produce yellow flowers. If a plant of this species in the UK is selected at random and observed, determine the probability that it will both have the genetic mutation and produce yellow flowers.
 
 \tcblower
@@ -474,14 +474,14 @@ Dividing both sides by $\text{P}(B)$ gives:
 
 \begin{centering}
 \tcbset{width=9cm}
-\begin{tcolorbox}[adjusted title=Bayes' Theorem:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Bayes' Theorem:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(B|A)\times \text{P}(A)$}}}{\text{\normalsize{$\text{P}(B)$}}}$
 \end{tcolorbox}
 \end{centering}
 
 Bayes' Theorem provides a the link between a conditional probability and its *reverse*. Using it to find a conditional probability given its reverse is sometimes referred to as *reversing the condition*. 
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given events $V$ and $W$ such that $\text{P}(V|W)=0.3$, $\text{P}(W)=0.8$ and $\text{P}(\overline{V})=0.1$, find $\text{P}(W|V)$.
 
 \tcblower
@@ -489,7 +489,7 @@ Bayes' Theorem provides a the link between a conditional probability and its *re
 $\text{P}(W|V) = \dfrac{\text{P}(V|W)\times \text{P}(W)}{\text{P}(V)} = \dfrac{0.3\times 0.8}{0.9} = \dfrac{4}{15}$
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} In a neighbourhood, 14\% of homes have a garage, whilst 62\% of homes have a garden. Of those homes with a garage, 87\% have a garden. If a home chosen at random has a garden, determine the probability that it has a garage.
 
 \tcblower
@@ -622,7 +622,7 @@ The *total probability* of $B$, $\text{P}(B)$, can be calculated as:
 
 The advantage of the use of tree diagrams, for questions where they are suitable, is that they can offer a more intuitive and visual approach to tackling problems than solely using formulae. If they are used, they must be annotated carefully with events and probabilities, and accurate probability notation must still be used when giving answers. 
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A teacher observes that one of their pupils is late to school 20\% of the time, and when this happens they have their tie with them 70\% of the time. When they are on time they have their tie 90\% of the time. Construct a tree diagram and calculate the probability that, on a randomly chosen day, they have no tie.
 
 \tcblower
@@ -727,7 +727,7 @@ $$\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(A \cap B)$}}}{\text{\normals
 
 A key misunderstanding often made is that a high value for $\text{P}(B|A)$ must lead to a similarly high value for $\text{P}(A|B)$. The following example demonstrates that this is not always the case, and gives an insight into a common problem that must be considered whenever medical testing is being undertaken, especially for rare conditions or diseases:
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A medical test for a condition has a \textit{sensitivity} of 98\%, meaning that when the patient \textit{has the condition}, the test will correctly return a \textit{positive} result with a probability of 0.98. This means there is a \textit{false negative} rate of 2\%. The test has \textit{specificity} of 97\%, meaning that when the patient \textit{does not} have the condition, the test will correctly return a \textit{negative} result with a probability of 0.97. This means there is a \textit{false positive} rate of 3\%. The \textit{prevalence} in the general population is 4\%, meaning only 4\% of people have the condition. 
 
 \vspace{0.3cm}

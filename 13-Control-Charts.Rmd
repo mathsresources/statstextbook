@@ -150,7 +150,7 @@ A process maybe out of statistical control when:
 
 Each rule must be carefully checked for to determine whether a process is *in statistical control*. If it is *not* in statistical control, it is often necessary to identify the relevant WECO rule and at which point this could be declared. The following examples focus on context-free control charts for the purpose of practising *applying the WECO rules*.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} For the control chart below, determine whether the process is in control. If it is out of control, identify at which sample this could be determined, with justification.
 
 \begin{center}
@@ -414,7 +414,7 @@ Sigma limits can be calculated as:
 
 A control chart is created with horizontal lines indicating the population mean and each of the 6 sigma limits calculated. The sample mean for each of the samples drawn at regular intervals is plotted on the chart, and the *WECO rules* applied to determine if or when the production process is out of control. 
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A machine fills cans of soda with mean volume 350ml and standard deviation 5ml. Every hour a sample of 3 cans is taken, their volumes measured, and the sample mean calculated before being added to an $x$-bar chart. 
 
 \begin{center}
@@ -748,7 +748,7 @@ It should be noted that, depending on the value of $p$, it is not unusual for th
 
 If no historical value of the population proportion has been suggested, then $p$ must be estimated from the sample data provided, and $\hat{p}$ used.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A machine fills Christmas crackers. 30\% of the crackers are supposed to contain joke A. Every 30 minutes a sample of 50 crackers is taken and the number containing joke A is found. The proportion of each sample that has joke A is plotted on a $p$-chart.
 
 \includegraphics[scale=0.4]{images/1225e.png}

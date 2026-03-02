@@ -157,7 +157,7 @@ From the Data Booklet:
 \columnbreak
 
 \begin{centering}
-\begin{tcolorbox}[adjusted title=For a two-sample $z$-test for means:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For a two-sample $z$-test for means:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 Test statistic: $z=\dfrac{\overline{x}_1-\overline{x}_2}{\sqrt{\dfrac{\sigma_1^2}{n_1}+\dfrac{\sigma_2^2}{n_2}}}$
 \end{tcolorbox}
 \end{centering}
@@ -166,7 +166,7 @@ Test statistic: $z=\dfrac{\overline{x}_1-\overline{x}_2}{\sqrt{\dfrac{\sigma_1^2
 
 \begin{centering}
 \tcbset{width=14cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of the two-sample $z$-test for population means:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for valid use of the two-sample $z$-test for population means:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The \textit{populations} are \textbf{normally distributed}.
     \item The \textit{population standard deviations}, $\sigma_1$ and $\sigma_2$, are \textbf{known}.
@@ -177,7 +177,7 @@ Test statistic: $z=\dfrac{\overline{x}_1-\overline{x}_2}{\sqrt{\dfrac{\sigma_1^2
 
  Note when sample sizes $n_1$ and $n_2$ are greater than 20 the *Central Limit Theorem* can be invoked, so the sample means are at least approximately normally distributed regardless of the distribution of the underlying population. Also, for larger sample sizes the sample standard deviations $s_1$ and $s_2$ might be taken as *sufficiently accurate estimates* for the *population* standard deviations $\sigma_1$ and $\sigma_2$.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} To compare the longevity of two brands' light bulbs, a random sample of eight bulbs from \textit{AlwaysBrite} and eight bulbs from \textit{BulbCity} are tested. The sample of AlwaysBrite bulbs had have a mean lifespan 1015 hours, with a sample mean of 1059 hours before failure for BulbCity. Assuming that the lifespan for both populations of bulbs is known to be normally distributed, with a standard deviation of 84 hours, use a parametric test to determine whether there is evidence for a difference in longevity between the brands.
 
 \tcblower
@@ -313,7 +313,7 @@ The test statistic is provided in the SQA Data Booklet, and it uses an *estimate
 
 \begin{centering}
 \tcbset{width=13cm}
-\begin{tcolorbox}[adjusted title=For a two-sample $z$-test for population proportions:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For a two-sample $z$-test for population proportions:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 Test statistic: $z=\dfrac{\hat{p}_1-\hat{p}_2}{\sqrt{\hat{p} \hat{q} \left( \dfrac{1}{n_1}+ \dfrac{1}{n_2}\right)}}$ \qquad where \qquad $\hat{p}=\dfrac{\hat{p_1}n_1+n_2\hat{p}_2}{n_1+n_2}$
 \end{tcolorbox}
 \end{centering}
@@ -322,7 +322,7 @@ The test statistic may be derived from the use of the normal approximation to a 
 
 \begin{centering}
 \tcbset{width=14cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of the two-sample $z$-test for population proportions:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for valid use of the two-sample $z$-test for population proportions:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item Each of $n_1 \hat{p}_1,n_1 \hat{q}_1,n_2 \hat{p}_2$ and $n_2 \hat{q}_2$ are \textbf{greater than 5}.
     \item The data was obtained through \textbf{random} and \textbf{independent samples}.
@@ -339,7 +339,7 @@ This parametric test can take one-tailed or two-tailed hypotheses which relation
     \end{tabular}
 \end{center}
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A sample of 50 randomly selected men with high triglyceride levels consumed 2 tablespoons of oat bran daily for 6 weeks. After 6 weeks, 60\% of the men had lowered their triglyceride levels. A sample of 80 men consumed 2 tablespoons of wheat bran for 6 weeks. After 6 weeks 25\% had lower triglyceride levels. Assess the evidence for a difference in the proportions at the 1\% significance level.
 
 \tcblower
@@ -467,7 +467,7 @@ When one or both sample sizes are small and population standard deviations are u
 
 \begin{centering}
 \tcbset{width=13cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of the two-sample $t$-test for population means:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for valid use of the two-sample $t$-test for population means:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The \textit{populations} are \textbf{normally distributed}.
     \item The populations have \textbf{equal variance}.
@@ -480,12 +480,12 @@ The test statistic is provided in the SQA Data Booklet, and follows a $t$-distri
 
 \begin{centering}
 \tcbset{width=15.5cm}
-\begin{tcolorbox}[adjusted title=For a two-sample $t$-test for population means:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For a two-sample $t$-test for population means:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 Test statistic: $t_{n_1+n_2-2}=\dfrac{\bar{x}_1-\bar{x}_2}{s\sqrt{\dfrac{1}{n_1}+ \dfrac{1}{n_2}}}$ \qquad where \qquad $s^2=\dfrac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}$
 \end{tcolorbox}
 \end{centering}
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} It is known that the volume of hot drinks dispensed by a type of machine is normally distributed. A random sample of 10 hot drinks from Dispenser A has a mean volume of 203 ml and a standard deviation of 3 ml. A random sample of 15 hot drinks from Dispenser B has corresponding values of 206 ml and 5 ml. Test, at the 5\% significance level, the hypothesis that there is no difference in the mean volume dispensed by the two machines.  
 
 \tcblower
@@ -637,7 +637,7 @@ The test statistic derives from the one-sample $t$-test covered in Chapter 10, w
   \centering
 \begin{centering}
 \tcbset{width=6cm,height=2.7cm}
-\begin{tcolorbox}[adjusted title=For a paired $t$-test:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For a paired $t$-test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 Test statistic: $t_{n-1}=\dfrac{\bar{d}-\mu_d}{\dfrac{s_d}{\sqrt{n}}}$
 \end{tcolorbox}
 \end{centering}
@@ -646,7 +646,7 @@ Test statistic: $t_{n-1}=\dfrac{\bar{d}-\mu_d}{\dfrac{s_d}{\sqrt{n}}}$
 \begin{minipage}[c]{.66\textwidth}
   \centering
 \tcbset{width=11cm,height=2.7cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of a paired $t$-test:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for valid use of a paired $t$-test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The \textit{populations of differences} is \textbf{normally distributed}.
     \item The data was obtained through \textbf{random sampling}.
@@ -657,7 +657,7 @@ Test statistic: $t_{n-1}=\dfrac{\bar{d}-\mu_d}{\dfrac{s_d}{\sqrt{n}}}$
 
 Careful attention to how the sample differences was created is needed for one-tailed hypotheses.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Six randomly selected children have their IQ measured before and after starting a regular programme of exercise.
 \begin{center}
 \begin{tabular}{l|cccccc}

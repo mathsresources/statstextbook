@@ -141,7 +141,7 @@ Note that the sum of $W_+$ and $W_-$ is $12.5+23.5=36$, which will always be the
 
 \begin{centering}
 \tcbset{width=14cm}
-\begin{tcolorbox}[adjusted title=For a Wilcoxon Signed Rank test:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For a Wilcoxon Signed Rank test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The \textbf{test statistic}, denoted $W$, is the \textit{lower} of $W_+$ and $W_-$. 
     \item The \textbf{critical value} can be obtained from Page 15 of the Data Booklet.
@@ -164,7 +164,7 @@ The Wilcoxon Signed Rank test will typically be used for small samples for which
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for valid use:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The underlying distribution is \textbf{symmetrical}.
     \item The data was obtained through a \textbf{random sample}.
@@ -179,9 +179,9 @@ A suggested methodical approach to obtaining the signed ranks required without a
     \item Ignoring any \textbf{zeros}, assign ranks to the remaining $n$ values in ascending order by \textbf{absolute} value.
 \end{itemize}
 
-The following example should be compared to Example 1 from Section 10.7, Chapter 10, in which a $t$-test was used.
+The following example should be compared to Example from Section 10.7, Chapter 10, in which a $t$-test was used.
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A supermarket sells sharing-sized bags of a particular brand of crisps. A consumer watchdog is asked to investigate a claim that the median mass of crisps contained in a bag is less than the stated contents of 150 grams. A random sample of bags gives the following results, in grams:
 
   \begin{center}
@@ -260,7 +260,7 @@ There is insufficient evidence to suggest that the median mass of crisps in the 
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Before learner drivers can sit their practical test, they must sit a theory test. Part of this is a hazard perception test, in which a maximum of 75 points are available. Prior to some changes to the hazard perception test, the median score was 44. The points scored by ten randomly selected learner drivers in the updated hazard perception test are recorded:
 
   \begin{center}
@@ -403,7 +403,7 @@ In Chapter 15, the *paired* $t$-*test* was introduced. It is used for assessing 
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of the Wilcoxon Signed Rank Test for Paired Data:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for valid use of the Wilcoxon Signed Rank Test for Paired Data:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The \textbf{population of differences are symmetrical}.
     \item The data was obtained through \textbf{random sampling}.
@@ -413,7 +413,7 @@ In Chapter 15, the *paired* $t$-*test* was introduced. It is used for assessing 
 
 Just as with the paired $t$-test, the paired samples are considered as a *single sample of differences*, allowing a similar process to the one-sample Wilcoxon Signed Rank Test.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} An athletics coach wishes to assess the value to athletes of an intensive period of weight training. Twelve 400-metre runners are selected at random and their times to complete this distance, in seconds, are recorded. Following a programme of weight training they run the distance again, with their times in seconds again recorded. The table below summarises the results.
 
 \begin{center}
@@ -536,7 +536,7 @@ $$E(W)=\frac{1}{4}n(n+1) \quad \text{and} \quad V(W)=\frac{1}{24}n(n+1)(2n+1)$$
 
 Since here a *discrete* distribution is being approximated by the *continuous* normal distribution, a **continuity correction** is required. If the test statistic $W$ is taken as the lower of $W_+$ and $W_-$, a continuity correction of $+0.5$ should be used.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} It is claimed by a local resident that more than 50\% of all the vehicles on an urban road exceed the 30 mph speed limit.  The speed of each of a random sample of 24 vehicles is recorded with the following results:
 
 \begin{center}

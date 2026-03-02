@@ -34,7 +34,7 @@ Most statistical studies begin with a claim, which is called the **alternative h
 
 It should also first be decided whether evidence is being sought for the true value of the population mean being *less than* a specified value, *greater than* a specified value, or simply *different than* a specified value. When the alternative hypothesis is only interested in a *single direction*, the test being performed is described as  **_one-tailed_**. When the alternative hypothesis is interested in a change in *either direction*, it is referred to as a **_two-tailed_** test.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Using suitable notation, state the null and alternative hypotheses for each of the following claims.
 
 \vspace{0.2cm}
@@ -79,7 +79,7 @@ The probability of such an extreme sample purely by chance is called the **_p_**
 
 \begin{centering}
 \tcbset{width=16cm}
-\begin{tcolorbox}[adjusted title=The decision rule for the $p$-value and the significance level $\alpha$:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The decision rule for the $p$-value and the significance level $\alpha$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 If $p$-value $<$ $\alpha$ then \textbf{reject }$\mathbf{H_0}$ and conclude that\\ there is \textit{evidence to suggest} that the  alternative hypothesis is true.\\
 \vspace{0.5cm}
 If $p$-value $>$ $\alpha$ then \textbf{do not reject }$\mathbf{H_0}$ and conclude that\\ there is \textit{insufficient evidence to suggest} that the alternative hypothesis is true.
@@ -117,7 +117,7 @@ The *one-sample *$z$*-test for the population mean* is a hypothesis test used wh
 
 \begin{centering}
 \tcbset{width=14cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of the one-sample $z$-test for the population mean:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for valid use of the one-sample $z$-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The \textit{sample mean} is \textbf{normally distributed}.
     \item The \textit{population standard deviation}, $\sigma$, is \textbf{known}.
@@ -130,7 +130,7 @@ The *one-sample *$z$*-test for the population mean* is a hypothesis test used wh
  
 Note that when the sample size is greater than 20 **the CLT can be invoked**, so the sample mean is at least *approximately* normally distributed regardless of the distribution of the underlying population. Also, again for sample sizes greater than 20, the *sample* standard deviation, $s$, is considered to provide a *sufficiently accurate estimate* for the *population* standard deviation, $\sigma$. These concepts remove the need for the first two assumptions to be made for *sufficiently large samples*.
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The designers of an electric car state that the distance that can be covered on a full charge is normally distributed, with a mean of 260 miles and a standard deviation of 10 miles. A car magazine randomly selects 14 of them from showrooms to be tested, with a sample mean of 257 miles obtained. Stating one assumption required, perform a hypothesis test to assess, at the 1\% level of significance, the claim by the car magazine that the mean distance is actually less than the designers' claim.
 
 \tcblower
@@ -172,7 +172,7 @@ Since $0.1314>0.01$, do not reject $H_0$ at the 1\% level of significance. There
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The mass of crisps dispensed into a sharing-sized bag by a machine is normally distributed with a mean of 150g and a standard deviation of 2g. After being serviced, a random sample of 30 bags gives a mean of 150.8g. Test at the 5\% level of significance the claim that the machine is now dispensing too much.
 
 \tcblower
@@ -208,7 +208,7 @@ Since $0.0143<0.05$, reject $H_0$ at the 5\% level of significance.\\ There is e
 
 For a *two-tailed* test, the probability of such an extreme result *in either direction* must be considered. Given a symmetrical distribution of the test statistic, such as with a $z$-test, a $p$-value for a two-tailed test is *double* the initial probability obtained.
 
-\begin{tcolorbox}[title=Example 3,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A tomato grower has been monitoring the mass of the tomatoes he grows, with the mean mass of a tomato shown to be 82 grams. Following a change in the soil composition in which they are grown, the grower wants to see whether the mean mass of their tomatoes has been affected. A sample of 36 tomatoes gives a mean mass of 83 grams and a standard deviation of 3 grams. Perform a hypothesis test to determine whether there is evidence to suggest that the mean mass of their tomatoes has changed, stating one assumption required and justifying the validity of the test with reference to the sample size.
 
 \tcblower
@@ -307,7 +307,7 @@ Every hypothesis test performed so far has involved calculating the probability 
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=For a one-sample $z$-test for the population mean:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For a one-sample $z$-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 Test statistic: $z=\dfrac{\bar{x}-\mu}{\dfrac{\sigma}{\sqrt{n}}}$
 \end{tcolorbox}
 \end{centering}
@@ -431,7 +431,7 @@ The relevant areas of the $z$-distribution *beyond* the critical values, shown s
 
 \begin{centering}
 \tcbset{width=17cm}
-\begin{tcolorbox}[adjusted title=The decision rule for test statistics and critical values for parametric tests:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The decision rule for test statistics and critical values for parametric tests:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 If the \textbf{test statistic is further from zero than the critical value(s)} then \textbf{reject }$\mathbf{H_0}$\\ and conclude that there is \textit{evidence to suggest} that the  alternative hypothesis is true.\\
 \vspace{0.5cm}
 If the \textbf{test statistic is not further zero than the critical value(s)} then \textbf{do not reject }$\mathbf{H_0}$\\ and conclude that there is \textit{insufficient evidence to suggest} that the alternative hypothesis is true.
@@ -444,7 +444,7 @@ One key need for this approach is that it can be difficult to calculate $p$-valu
 
 Note that the following examples approach problems already covered in the examples on Pages 120-121, which used a *p*-value approach, and lead to identical conclusions to the hypothesis tests conducted.
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The designers of an electric car state that the distance that can be covered on a full charge is normally distributed, with a mean of 260 miles and a standard deviation of 10 miles. A car magazine randomly selects 14 of them from showrooms to be tested, with a sample mean of 257 miles obtained. Perform a hypothesis test to assess, at the 1\% level of significance, the claim by the car magazine that the mean distance is actually less than the designers' claim.
 
 \tcblower
@@ -509,7 +509,7 @@ Since $-1.12>-2.33$, do not reject $H_0$ at the 1\% level of significance. There
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A tomato grower has been monitoring the mass of the tomatoes he grows, with the mean mass of a tomato shown to be 82 grams. Following a change in the soil composition in which they are grown, the grower wants to see whether the mean mass of their tomatoes has been affected. A sample of 36 tomatoes gives a mean mass of 83 grams and a standard deviation of 3 grams. Perform a hypothesis test to determine whether there is evidence to suggest that the mean mass of their tomatoes has changed.
 
 \tcblower
@@ -718,7 +718,7 @@ The one-sample $t$-test for population mean is a **parametric test** that should
 
 \begin{centering}
 \tcbset{width=14cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of the one-sample t-test for the population mean:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for valid use of the one-sample t-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The \textit{underlying population} is \textbf{normally distributed}.
     \item The data was obtained through a \textbf{random sample}.
@@ -730,7 +730,7 @@ The $t$-test statistic is identical to that of the equivalent $z$-test, except t
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=For a one-sample t-test for the population mean:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For a one-sample t-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 Test statistic: $t_{n-1}=\dfrac{\bar{x}-\mu}{\dfrac{s}{\sqrt{n}}}$
 \end{tcolorbox}
 \end{centering}
@@ -739,7 +739,7 @@ Critical values for the $t$-test can be found on **Page 13 of the SQA Data Bookl
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A supermarket sells sharing-sized bags of a particular brand of crisps. A consumer watchdog is asked to investigate a claim that the mean mass of crisps contained in a bag is less than the stated contents of 150 grams. A random sample of bags gives the following results, in grams:
 
 \vspace{-0.2cm}
@@ -816,7 +816,7 @@ Since $-1.127>-2.998$, do not reject $H_0$ at the 1\% level of significance. The
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Marks scored in an exam are known to be approximately normally distributed, and historically the mean mark achieved by students is 72. After some minor tweaks to the exam, marks gained by a random sample of 7 students generated the summary data below. Perform a hypothesis test at the 5\% level of significance to determine whether there is evidence that the difficulty of the exam has changed for students.\\
 
 \vspace{-0.5cm}
@@ -1000,7 +1000,7 @@ The $z$-transformation leads to the required test statistic:
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=For a one-sample $z$-test for the population proportion:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For a one-sample $z$-test for the population proportion:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 Test statistic: $z=\dfrac{\hat{p}-p}{\sqrt{\dfrac{pq}{n}}}$
 \end{tcolorbox}
 \end{centering}
@@ -1009,7 +1009,7 @@ Note that $\sqrt{\dfrac{pq}{n}}$ is called the **standard error of the sample pr
 
 \begin{centering}
 \tcbset{width=14cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of the one-sample z-test for the population proportion:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for valid use of the one-sample z-test for the population proportion:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item $\mathbf{\textbf{\emph{np}}>5}$ \textbf{ and } $\mathbf{\textbf{\emph{nq}}>5}$
     \item The data was obtained through a \textbf{random sample}.
@@ -1019,7 +1019,7 @@ Note that $\sqrt{\dfrac{pq}{n}}$ is called the **standard error of the sample pr
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A data storage company knows that 10\% of the hard drives they use will fail within the first year of their use. They have decided to trial the use of a cheaper model of hard drive, but are concerned that it may have a higher failure rate. During this trial, 60 of the new hard drives are randomly selected to be monitored for a year once installed. Of those 60, 11 fail.\\ 
 
 Use a parametric hypothesis test to assess the evidence, at the 5\% level of significance, that the new drives have a higher first-year failure rate than the previous model.
@@ -1088,7 +1088,7 @@ Since $2.14>1.64$, reject $H_0$ at the 5\% level of significance.\\ There is evi
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A candidate in a mayoral election claims that 85\% of voters intend to vote for them. Out of a random sample of 80 people eligible to vote, 56 say that they intend to vote for that candidate. Perform a hypothesis test to assess the evidence at the 1\% level of significance that their claim may be untrue.
 
 \tcblower

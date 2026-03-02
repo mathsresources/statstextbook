@@ -131,10 +131,10 @@
 
 \usepackage{graphbox,graphicx}
 
-\tolerance=1
-\emergencystretch=\maxdimen
-\hyphenpenalty=10000
-\hbadness=10000
+\pretolerance=100
+\tolerance=200
+\hyphenchar\font=-1
+\sloppy
 
 \usepackage{enumitem}
 \setlist{topsep=0pt, leftmargin=*}
@@ -410,13 +410,15 @@ Techniques suitable for a range of contexts will be covered, and it is expected 
 
 \chapter{Exploratory Data Analysis}\label{exploratory-data-analysis}
 
+\vspace{-1cm}
+
 Datasets usually consist rows or columns of values, referred to as \emph{raw data}. Before conducting any \emph{statistical analysis}, a statistician will typically want to get a quick sense of what the data may reveal, as well as to identify any features of note. Common first steps are therefore often to: \emph{organise} the data into suitable lists or tables; \emph{visualise} the data using plots and graphs; and \emph{measure} various properties of the data.
 
 This process is often referred to as \emph{exploratory data analysis}.
 
 \begin{center}
 \begin{tikzpicture}
-    \draw (0,-0.4) rectangle (18,12);
+    \draw[white] (0,-0.9) rectangle (18,12);
 
 \draw[semithick,fill=black!10] (9,6) circle (1.5);
 \node[above] at (9,7.5) {Sample};
@@ -438,48 +440,48 @@ This process is often referred to as \emph{exploratory data analysis}.
 \draw[semithick,-stealth,dashed] (7.8,7.2) -- (7.3,7.7);
 \draw[semithick,-stealth,dashed] (7.8,4.8) -- (7.3,4.3);
 
-\node[anchor=west] at (1,4.5) {\textbf{Summary (height in cm, all patients)}};
+\node[anchor=west] at (0.5,4) {\textbf{Summary (height in cm, all patients)}};
 
-\node[anchor=west] at (4.5,4) {$n=120$};
-\node[anchor=west] at (4.5,3.5) {$\bar{x}=168.5$};
-\node[anchor=west] at (4.5,3) {$s=8.26$};
-\node[anchor=west] at (4.5,2.5) {med $=168.9$};
-\node[anchor=west] at (4.5,2) {$\text{IQR}=10.3$};
-\node[anchor=west] at (4.5,1.5) {min  $=149.0$};
-\node[anchor=west] at (4.5,1) {max $=190.1$};
+\node[anchor=west] at (4,3.5) {$n=120$};
+\node[anchor=west] at (4,3) {$\bar{x}=168.5$};
+\node[anchor=west] at (4,2.5) {$s=8.26$};
+\node[anchor=west] at (4,2) {med $=168.9$};
+\node[anchor=west] at (4,1.5) {$\text{IQR}=10.3$};
+\node[anchor=west] at (4,1) {min  $=149.0$};
+\node[anchor=west] at (4,0.5) {max $=190.1$};
 
-\node[anchor=west] at (1,4) {sample size};
-\node[anchor=west] at (1,3.5) {mean};
-\node[anchor=west] at (1,3) {standard deviation};
-\node[anchor=west] at (1,2.5) {median};
-\node[anchor=west] at (1,2) {interquartile range};
-\node[anchor=west] at (1,1.5) {minimum value};
-\node[anchor=west] at (1,1) {maximum value};
+\node[anchor=west] at (0.5,3.5) {sample size};
+\node[anchor=west] at (0.5,3) {mean};
+\node[anchor=west] at (0.5,2.5) {standard deviation};
+\node[anchor=west] at (0.5,2) {median};
+\node[anchor=west] at (0.5,1.5) {interquartile range};
+\node[anchor=west] at (0.5,1) {minimum value};
+\node[anchor=west] at (0.5,0.5) {maximum value};
 
-\node[anchor=west] at (1,11.5) {\textbf{Patient data table (first five entries only)}};
-\node[anchor=west] at (1,11) {age (yrs)};
-\node[anchor=west] at (2.6,11) {height (cm)};
-\node[anchor=west] at (4.8,11) {NHS health board};
+\node[anchor=west] at (0.5,11.5) {\textbf{Patient data table (first five entries only)}};
+\node[anchor=west] at (0.5,11) {age (yrs)};
+\node[anchor=west] at (2.1,11) {height (cm)};
+\node[anchor=west] at (4.3,11) {NHS health board};
 
-\draw (1.1,10.75) -- (7.8,10.75);
+\draw (0.6,10.75) -- (7.3,10.75);
 
-\node at (1.7,10.5) {57};
-\node at (1.7,10) {43};
-\node at (1.7,9.5) {48};
-\node at (1.7,9) {64};
-\node at (1.7,8.5) {52};
+\node at (1.2,10.5) {57};
+\node at (1.2,10) {43};
+\node at (1.2,9.5) {48};
+\node at (1.2,9) {64};
+\node at (1.2,8.5) {52};
 
-\node at (3.6,10.5) {182.2};
-\node at (3.6,10) {168.2};
-\node at (3.6,9.5) {179.4};
-\node at (3.6,9) {162.6};
-\node at (3.6,8.5) {171.5};
+\node at (3.1,10.5) {182.2};
+\node at (3.1,10) {168.2};
+\node at (3.1,9.5) {179.4};
+\node at (3.1,9) {162.6};
+\node at (3.1,8.5) {171.5};
 
-\node at (6.2,10.5) {Fife};
-\node at (6.2,10) {Tayside};
-\node at (6.2,9.5) {Tayside};
-\node at (6.2,9) {Forth Valley};
-\node at (6.2,8.5) {Fife};
+\node at (5.7,10.5) {Fife};
+\node at (5.7,10) {Tayside};
+\node at (5.7,9.5) {Tayside};
+\node at (5.7,9) {Forth Valley};
+\node at (5.7,8.5) {Fife};
 
 \node at (13,11.5) {\textbf{Dot plot and box plot (age, NHS Fife patients)}};
 
@@ -527,47 +529,47 @@ This process is often referred to as \emph{exploratory data analysis}.
 \draw (16,9) circle (0.05);
 \node[below] at (13.25,8.5) {Age in years};
 
-\node at (14,4.5) {\textbf{Histogram (height, all patients)}};
+\node at (14,4) {\textbf{Histogram (height, all patients)}};
 
-\draw (12,1) -- (17,1);
+\draw (12,0.5) -- (17,0.5);
 \foreach \x in {12,12.5,...,17}
-{\draw (\x,1) -- (\x,0.9);
+{\draw (\x,0.5) -- (\x,0.4);
 
 }
-\draw (12,1) -- (12,4);
+\draw (12,0.5) -- (12,3.5);
 \foreach \y in {1,1.5,...,4}
-{\draw (12,\y) -- (11.9,\y);
+{\draw (12,\y-0.5) -- (11.9,\y-0.5);
 
 }
 
-\draw[fill=black!25] (12,1) rectangle (12.5,1.2);
-\draw[fill=black!25] (12.5,1) rectangle (13,1.3);
-\draw[fill=black!25] (13,1) rectangle (13.5,2.3);
-\draw[fill=black!25] (13.5,1) rectangle (14,3.6);
-\draw[fill=black!25] (14,1) rectangle (14.5,4);
-\draw[fill=black!25] (14.5,1) rectangle (15,3.1);
-\draw[fill=black!25] (15,1) rectangle (15.5,2.3);
-\draw[fill=black!25] (15.5,1) rectangle (16,2);
-\draw[fill=black!25] (16,1) rectangle (16.5,1.2);
-\draw[fill=black!25] (16.5,1) rectangle (17,1.1);
+\draw[fill=black!25] (12,1-0.5) rectangle (12.5,1.2-0.5);
+\draw[fill=black!25] (12.5,1-0.5) rectangle (13,1.3-0.5);
+\draw[fill=black!25] (13,1-0.5) rectangle (13.5,2.3-0.5);
+\draw[fill=black!25] (13.5,1-0.5) rectangle (14,3.6-0.5);
+\draw[fill=black!25] (14,1-0.5) rectangle (14.5,4-0.5);
+\draw[fill=black!25] (14.5,1-0.5) rectangle (15,3.1-0.5);
+\draw[fill=black!25] (15,1-0.5) rectangle (15.5,2.3-0.5);
+\draw[fill=black!25] (15.5,1-0.5) rectangle (16,2-0.5);
+\draw[fill=black!25] (16,1-0.5) rectangle (16.5,1.2-0.5);
+\draw[fill=black!25] (16.5,1-0.5) rectangle (17,1.1-0.5);
 
 
-\node at (12.5,0.6) {150};
-\node at (13.5,0.6) {160};
-\node at (14.5,0.6) {170};
-\node at (15.5,0.6) {180};
-\node at (16.5,0.6) {190};
+\node at (12.5,0.1) {150};
+\node at (13.5,0.1) {160};
+\node at (14.5,0.1) {170};
+\node at (15.5,0.1) {180};
+\node at (16.5,0.1) {190};
 
-\node at (14.5,0) {Height in cm};
-\node[align=center,text width=2cm] at (10.5,2.5) {Number of patients};
+\node at (14.5,-0.5) {Height in cm};
+\node[align=center,text width=2cm] at (9.5,2) {Number of patients};
 
-\node[anchor=east] at (11.9,1) {0};
-\node[anchor=east] at (11.9,1.5) {5};
-\node[anchor=east] at (11.9,2) {10};
-\node[anchor=east] at (11.9,2.5) {15};
-\node[anchor=east] at (11.9,3) {20};
-\node[anchor=east] at (11.9,3.5) {25};
-\node[anchor=east] at (11.9,4) {30};
+\node[anchor=east] at (11.9,0.5) {0};
+\node[anchor=east] at (11.9,1) {5};
+\node[anchor=east] at (11.9,1.5) {10};
+\node[anchor=east] at (11.9,2) {15};
+\node[anchor=east] at (11.9,2.5) {20};
+\node[anchor=east] at (11.9,3) {25};
+\node[anchor=east] at (11.9,3.5) {30};
 
 \end{tikzpicture}
 \end{center}
@@ -578,9 +580,11 @@ This process is often referred to as \emph{exploratory data analysis}.
 
 Knowing what \emph{type} of data has been collected helps inform what kind of graphs and statistics may be appropriate.
 
-Data that is numerical is called \emph{quantitative}, of which there are two types. \textbf{Discrete} data consists of values that can be listed, such as someone's shoe size or the number of siblings they have. \textbf{Continuous} data can take \emph{any} value within a range, though is typically rounded to reflect the precision of measurements taken, such as the mass of a squirrel.
+Data that is numerical is called \emph{quantitative}, of which there are two types. \textbf{Discrete} data consists of values that can be listed, such as someone's shoe size or the number of siblings they have. \textbf{Continuous} data can take \emph{any} value within a range, though is often rounded to reflect the precision of measurements taken, such as the mass of a mouse.
 
 \emph{Qualitative} data (also called \textbf{categorical}) is \emph{non-numerical}, such as whether a squirrel is red or grey.
+
+\vspace{-0.1cm}
 
 \begin{center}
 \begin{tikzpicture}
@@ -605,7 +609,11 @@ Data that is numerical is called \emph{quantitative}, of which there are two typ
 \end{tikzpicture}
 \end{center}
 
+\vspace{-0.2cm}
+
 For example, the table below shows data relating to some football players:
+
+\vspace{-0.3cm}
 
 \begin{center}
 \begin{tikzpicture}
@@ -648,16 +656,18 @@ For example, the table below shows data relating to some football players:
 \node at (10.6,8.5) {5};
 
 \draw[decoration={brace,mirror,raise=2pt},decorate]
-  (0,8) -- node[below=5pt] {\textbf{Categorical}} (4.7,8);
+  (0,8.2) -- node[below=5pt] {\textbf{Categorical}} (4.7,8.2);
 
 \draw[decoration={brace,mirror,raise=2pt},decorate]
-  (5.3,8) -- node[below=5pt] {\textbf{Continuous}} (7.2,8);
+  (5.3,8.2) -- node[below=5pt] {\textbf{Continuous}} (7.2,8.2);
 
 \draw[decoration={brace,mirror,raise=2pt},decorate]
-  (8.2,8) -- node[below=5pt] {\textbf{Discrete}} (11,8);
+  (8.2,8.2) -- node[below=5pt] {\textbf{Discrete}} (11,8.2);
 
 \end{tikzpicture}
 \end{center}
+
+\vspace{-1cm}
 
 \phantomsection\label{ex11q}{}
 
@@ -665,29 +675,48 @@ For example, the table below shows data relating to some football players:
 \addcontentsline{toc}{subsubsection}{\hyperref[ex11a]{Exercise 1.1}}
 
 \begin{enumerate}
-    \item A survey is carried out about the pets owned by a class. Decide whether the following data is qualitative or quantitative.
+    \item A survey is carried out on the pets owned by a class. State whether the following data is qualitative or quantitative.
+    \vspace{-0.5cm}
     \begin{enumerate}
-    \begin{multicols}{3}
+    \begin{multicols}{2}
         \item How many pets each pupil owns.
         \item What kind of animal the pets are.
+    \end{multicols}
+    \end{enumerate}
+    \begin{enumerate}
+    \begin{multicols}{2}
         \item The pet’s age.
         \item The name of the pet.
+    \end{multicols}
+    \end{enumerate}
+    \begin{enumerate}
+    \begin{multicols}{2}
         \item The mass of the pet.
         \item Whether the pet is a mammal.
     \end{multicols}
     \end{enumerate}
     \item For each of the following, state whether the data collected would be discrete or continuous.
+    \vspace{-0.1cm}
     \begin{enumerate}
-    \begin{multicols}{3}
-        \item The number of people in a room  .      
+    \begin{multicols}{2}
+        \item The number of people in a room.      
         \item The mass of a book.
-        \item The number of pages in a book.
-        \item The number of songs in an album.
-        \item The volume of water in a bottle.
-        \item The time taken to complete a puzzle.
     \end{multicols}
     \end{enumerate}
-    \item A random sample of members of a gym were surveyed and the results are shown in the table below.
+    \begin{enumerate}
+    \begin{multicols}{2}
+        \item The number of pages in a book.
+        \item The number of songs in an album.
+    \end{multicols}
+    \end{enumerate}
+    \begin{enumerate}
+    \begin{multicols}{2}
+        \item The volume of water in a bottle.
+        \item Time taken to complete a puzzle.
+    \end{multicols}
+    \end{enumerate}
+    \item A random sample of members of a gym were surveyed and the first few results are shown in the table below.
+    \vspace{-0.1cm}
     \begin{center}
     \begin{tabular}{|c|c|c|c|c|}
       \hline
@@ -697,10 +726,10 @@ For example, the table below shows data relating to some football players:
         Moderate & No & 72 & 145 & 58\\
         A lot & Yes & 73.5 & 160 & 62\\
         Slight & Yes & 73 & 190 & 66\\
-        Moderate & No & 69 & 155 & 64\\
       \hline
     \end{tabular}
     \end{center}
+    \vspace{-0.1cm}
     State the type of data that was collected for each variable.
 \end{enumerate}
 
@@ -708,7 +737,7 @@ For example, the table below shows data relating to some football players:
 
 \section{Population Parameters and Sample Statistics}\label{population-parameters-and-sample-statistics-1}
 
-In a statistical investigation, the term \textbf{population} refers to the entire set of objects of interest, whilst a \textbf{sample} is a selection of some objects chosen from the population. Understanding the distinction is fundamental to statistical analysis.
+In a statistical investigation, the term \textbf{population} refers to the entire set of objects of interest, whilst a \textbf{sample} is a selection of some objects chosen from the population. Recognising the difference is fundamental to statistical analysis.
 
 \begin{center}
 \begin{tikzpicture}
@@ -910,7 +939,7 @@ It is good practice to refer \emph{clearly} to whether a population parameter or
 
 Population parameters are seen as having fixed values, at the time of the study at least, whilst the values of sample statistics will depend on the sample chosen. 
 
-Sample statistics may be seen as \textit{estimates} of the true value of their respective population parameters, and \textbf{inference} is the process by which claims may be made about population parameters basis on observed sample statistics. 
+Sample statistics may be seen as \textit{estimates} of the true value of their respective population parameters, and \hbox{\textbf{inference}} is the process by which claims may be made about population parameters (such as $\mu$ )based on observed sample statistics (such as $\bar{x}$). 
 
 \end{multicols}
 
@@ -1040,13 +1069,13 @@ The \emph{lower quartile} (LQ or \(\text{Q}_1\)) and the \emph{upper quartile} (
 \node at (12,0) {$22$};
 \node at (13,0) {$22$};
 \node at (14,0) {$26$};
-\draw[thick] (7.5,-0.5) -- (7.5,0.5) node[above] {$Q_2=15$};
+\draw[thick] (7.5,-0.5) -- (7.5,0.5) node[above] {$\text{Q}_2=15$};
 \draw[thick] (4,0) circle (0.5);
 \draw[thick] (12,0) circle (0.5);
-\node[above] at (4,0.5) {$Q_1=8$};
-\node[above] at (12,0.5) {$Q_3=22$};
-\draw[stealth-] (0.7,0.3) -- (0.3,0.6) node[above left] {$Min=4$};
-\draw[stealth-] (14.3,0.3) -- (14.6,0.6) node[above right] {$Max=26$};
+\node[above] at (4,0.5) {$\text{Q}_1=8$};
+\node[above] at (12,0.5) {$\text{Q}_3=22$};
+\draw[stealth-] (0.7,0.3) -- (0.3,0.6) node[above left] {$\text{Min}=4$};
+\draw[stealth-] (14.3,0.3) -- (14.6,0.6) node[above right] {$\text{Max}=26$};
 \end{tikzpicture}
 \end{center}
 
@@ -1058,13 +1087,13 @@ The \emph{interquartile range} is calculated as: \hspace{0.5cm}\(\text{IQR}=\tex
 \addcontentsline{toc}{subsubsection}{\hyperref[ex13a]{Exercise 1.3}}
 
 \begin{enumerate}
-    \item The monthly cost of 10 drivers' car insurance ($x$, in £'s) are recorded. Calculate the mean and standard deviation:
+    \item The monthly cost of 10 drivers' car insurance ($x$, in £'s) are recorded. Calculate the mean and standard deviation.
     \begin{center}
     \begin{tabular}{ccc}
       $\Sigma{x}=359$ & $\Sigma{x^2}=15119$ & $n=10$
     \end{tabular}
     \end{center}
-    \item Daily fuel spend ($f$, in £'s) for 15 drivers is summarised below. Calculate the mean and standard deviation:
+    \item Daily fuel spend ($f$, in £'s) for 15 drivers is summarised below. Calculate the mean and standard deviation.
     \begin{center}
     \begin{tabular}{ccc}
       $\Sigma{f}=87$ & $\Sigma{f^2}=569$ & $n=15$
@@ -1242,7 +1271,7 @@ Before any analysis of a data set is undertaken, it is common practice to \emph{
 \addcontentsline{toc}{subsubsection}{\hyperref[ex14a]{Exercise 1.4}}
 
 \begin{enumerate}
-    \item The ages (in years) of competitors in a junior golf tournament are below. Draw a dot plot to represent this data:
+    \item The ages (in years) of competitors in a junior golf tournament are below. Draw a dot plot to represent this data.
     \begin{center}
     \begin{tabular}{cccccccccccccc}
         16 & 14 & 19 & 13 & 14 & 17 & 16 & 19 & 16 & 17 & 12 & 16 & 14 & 19
@@ -1255,7 +1284,7 @@ Before any analysis of a data set is undertaken, it is common practice to \emph{
         2.00 & 1.90 & 3.60 & 0.90 & 1.70 & 1.50
     \end{tabular}
     \end{center}
-    \item The masses (in kg) of the luggage of 10 passengers on a plane to Barra were recorded. Draw a box plot of these masses.
+    \item The masses (in kg) of the luggage of 10 passengers on a plane to Barra were recorded. Construct a box plot.
     \begin{center}
     \begin{tabular}{cccccccccc}
         15 & 18 & 14 & 22 & 19 & 14 & 10 & 21 & 17 & 16  
@@ -1375,7 +1404,7 @@ There are many ways in which data can be presented, extending beyond those cover
 
 \end{multicols}
 
-Not all graphs encountered in real life will be up to scratch; some graphs may be unclear, accidentally misleading or even intentionally misleading. Being alert to potential flaws in tables and figures and pointing out possible improvements is an important skill.
+Not all graphs encountered in real life will be up to scratch; some graphs may be unclear, accidentally misleading or even intentionally misleading. Being alert to potential flaws in tables and figures and identifying possible improvements is an important skill.
 
 The widespread availability of computing power means that specialist software is often used by statisticians to avoid the need for time-consuming calculations where possible. Whilst this course requires no use of statistical software, examples of computer \textbf{output} will be displayed from which the required information must be extracted.
 
@@ -1449,7 +1478,7 @@ The widespread availability of computing power means that specialist software is
 
 \end{multicols}
 
-Whilst this textbook aims to enable familiarity with common figures, tables and computer output, the best way to practise obtaining information from them is to \textbf{read a wide range of relevant statistical articles and reports}.
+Whilst this textbook aims to enable familiarity with common figures, tables and computer output, the best way to practise obtaining information from them is to \emph{read a wide range of relevant statistical articles and reports}.
 
 \phantomsection\label{ex15q}{}
 
@@ -1468,9 +1497,9 @@ Whilst this textbook aims to enable familiarity with common figures, tables and 
 
 \section{Outliers and Fences}\label{outliers-and-fences}
 
-Sometimes a set of data may contain values that seem \emph{extremely high or low} in comparison to the rest of the values. It is important to be wary of such values and the potentially significant impact they could have on any statistical analysis performed. There are a range of objective approaches that can be used to determine whether one or more points are extreme enough to be classed as \emph{outliers}. In this course, \emph{fences} will be used.
+Sometimes a set of data may contain values that seem \emph{extremely high or low} in comparison to the rest of the values. It is important to be wary of such values and the potentially significant impact they could have on any statistical analysis performed. There are a range of objective approaches that can be used to determine whether one or more points are extreme enough to be classed as \textbf{outliers}. In this course, \emph{fences} will be used.
 
-\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=15cm]
+\begin{tcolorbox}[center,adjusted title=Identifying Outliers,colback=red!5,colframe=red!70!black,width=15cm,halign = center,halign title = center]
 \begin{center}
 Lower Fence $=\text{Q}_1-1.5\times \text{IQR}$.\\[1em]
 Upper Fence $=\text{Q}_3+1.5\times \text{IQR}$.\\[1em]
@@ -1504,6 +1533,8 @@ n & min & Q1 & median & Q3 & max\\
 \end{center}
 
 \end{multicols}
+
+\vspace{-1cm}
 
 \begin{align*}
   \text{IQR}&=\text{Q}_3-\text{Q}_1=51-38=13\\[1em]
@@ -1541,6 +1572,7 @@ On a box plot, outliers are indicated separately as shown below, with the ``whis
 \draw[semithick] (38*0.25,1.8) -- (51*0.25,1.8);
 \draw[semithick] (51*0.25,1.5) -- (62*0.25,1.5);
 \draw[semithick] (73*0.25,1.5) circle (0.08);
+\draw[stealth-] (18.5,1.75) -- (19,2.25) node[above right] {Outlier};
 \end{tikzpicture}
 \end{center}
 
@@ -1643,7 +1675,7 @@ The outlier in this data set could be valid if, for instance, the sunflower plan
 
 \section{Describing Data Distributions}\label{describing-data-distributions}
 
-Summary statistics alone are not sufficient to describe the full complexity of the way data is distributed. It is also important to consider and be able to describe the \emph{shape} of the distribution, accomplished most easily using a histogram. Whilst real-life rarely \emph{perfectly} follows a precise mathematical model, a number of shapes are commonly observed and a number of descriptions are commonly considered. The following data was generated by \emph{simulating sampling} from populations of data which followed the distributions described.
+Summary statistics alone are not sufficient to describe the full complexity of the way data is distributed. It is also important to consider and be able to describe the \textbf{shape} of the distribution, accomplished most easily using a histogram. Whilst real-life rarely \emph{perfectly} follows a precise mathematical model, a number of shapes are commonly observed and a number of descriptions are commonly considered. The following data was generated by \emph{simulating sampling} from populations of data which followed the distributions described.
 
 \begin{figure}[H]
   \centering
@@ -1901,7 +1933,7 @@ As well as considering whether the \textbf{underlying population distribution} o
 
 Whilst the following example references techniques that will be introduced later in the course, it is intended to give an idea of the importance of studying distributions in selecting appropriate methods for statistical inference.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=NavyBlue]
 \textbf{Problem:} A environmental scientist collected water samples from a number of rivers in a region to explore whether the concentration of a harmful chemical in the water has changed since farming practises used locally have changed. They are considering the following choices of hypothesis test:
 
 \begin{itemize}
@@ -1942,7 +1974,7 @@ Whilst the following example references techniques that will be introduced later
 \draw[fill=black!25] (4.75,0) rectangle (5.5,1.6);
 \draw[fill=black!25] (5.5,0) rectangle (6.25,1.8);
 \draw[fill=black!25] (6.25,0) rectangle (7,0.5);
-\node at (3,-0.8) {Concentration ($mg/L$)};
+\node at (3,-0.8) {Concentration (mg/L)};
 \node at (-2,1) {Frequency};
 \end{tikzpicture}
 \end{center}
@@ -2103,8 +2135,8 @@ Whilst the following example references techniques that will be introduced later
 
 When comparing two or more samples of data, a good starting point is to create suitable plots and obtain summary statistics. Differences and similarities should be noted, considering the location, spread and shape of the distributions of each group.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
-\textbf{Problem:} Within the sport of professional cycling, it is common for riders to specialise in certain types of cycling. \textit{Sprinters} aim to win races that finish on flat road at high speed, whilst \textit{climbers} aim to win races with an uphill finish. A researcher studying the characteristics of elite-level cyclists randomly selects samples of 30 \textit{sprinters} and 30 \textit{climbers}, recording the heights of each. The results are shown summarised in \textbf{Table 1} below.
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=NavyBlue]
+\textbf{Problem:} Within the sport of professional cycling, it is common for riders to specialise in certain types of cycling. \textit{Sprinters} aim to win races that finish on flat road at high speed, whilst \textit{climbers} aim to win races with an uphill finish. A researcher studying the characteristics of elite-level cyclists randomly selects samples of 30 \textit{sprinters} and 30 \textit{climbers}, recording the heights of each. The results are shown summarised in \textbf{Table 1}.
 
 \begin{center}
 \textbf{Table 1}\\\vspace{0.2cm}
@@ -2261,7 +2293,6 @@ Note that this data is based on the heights of \emph{samples} sprinters and clim
 
 \begin{enumerate}
     \item Two models of coffee machines produced by the brand \textit{DOLCAFÉ} are supposed produce a white coffee with the same volume of liquid each time, but natural variation means the actual amount dispensed is not quite the same every time. The volumes dispensed, in ml, are recorded for random samples from each model.
-    \vspace{-0.3cm}
     \begin{center}
     \begin{tabular}{c|ccccccc}
         Model A & 295 & 298 & 299 & 301 & 303 & 304 & 309\\
@@ -2270,7 +2301,7 @@ Note that this data is based on the heights of \emph{samples} sprinters and clim
     \end{tabular}
     \end{center}
     \begin{enumerate}
-        \item Determine the mean and standard deviation for each model.
+        \item Determine the sample mean and standard deviation for each model.
         \item Make two comments comparing the amount of coffee dispensed by the two models.
     \end{enumerate}
     \item The scores awarded by two judges in a diving competition are recorded and displayed in box plots, shown below.
@@ -2279,13 +2310,13 @@ Note that this data is based on the heights of \emph{samples} sprinters and clim
 \draw[semithick] (88,1) -- (100,1);
 \foreach \x in {0,...,12}
   \draw (88+\x,1) -- (88+\x,0.8);
-\node at (88,0.5) {$8.8$};
-\node at (90,0.5) {$9.0$};
-\node at (92,0.5) {$9.2$};
-\node at (94,0.5) {$9.4$};
-\node at (96,0.5) {$9.6$};
-\node at (98,0.5) {$9.8$};
-\node at (100,0.5) {$10.0$};
+\node at (88,0.5) {$\scriptsize{8.8}$};
+\node at (90,0.5) {$\scriptsize{9.0}$};
+\node at (92,0.5) {$\scriptsize{9.2}$};
+\node at (94,0.5) {$\scriptsize{9.4}$};
+\node at (96,0.5) {$\scriptsize{9.6}$};
+\node at (98,0.5) {$\scriptsize{9.8}$};
+\node at (100,0.5) {$\scriptsize{10.0}$};
 \draw[semithick,fill=black!40] (90.25,1.2) rectangle (93.75,1.8);
 \draw[semithick,fill=black!40] (101,1.2) rectangle (101.8,1.8);
 \node at (102.5,1.5) {\text{Judge B}};
@@ -2313,21 +2344,19 @@ Note that this data is based on the heights of \emph{samples} sprinters and clim
 \draw[semithick] (97,2.3) -- (99,2.3);
 \end{tikzpicture}
 \end{center}
-    \vspace{-0.3cm}Using the box plots, make two comments comparing the scoring of the two judges.
+    Using the box plots, make two comments comparing the scoring of the two judges.
     \item The temperature at 2pm was noted for 14 randomly selected days in January and June at a local tourist spot and box plots drawn to display the results.
-
-\vspace{-0.2cm}
 \begin{center}
 \begin{tikzpicture}
 \node at (26.5,0.75) {\text{June}};
 \draw[semithick] (16,0.4) -- (25,0.4);
 \foreach \x in {0,...,18}
   \draw (16+0.5*\x,0.4) -- (16+0.5*\x,0.3);
-\node at (16,0.1) {$16$};
-\node at (18,0.1) {$18$};
-\node at (20,0.1) {$20$};
-\node at (22,0.1) {$22$};
-\node at (24,0.1) {$24$};
+\node at (16,0.1) {$\scriptsize{16}$};
+\node at (18,0.1) {$\scriptsize{18}$};
+\node at (20,0.1) {$\scriptsize{20}$};
+\node at (22,0.1) {$\scriptsize{22}$};
+\node at (24,0.1) {$\scriptsize{24}$};
 \fill[black!15] (18,0.5) rectangle (23,1);
 \draw[semithick] (16,0.6) -- (16,0.9);
 \draw[semithick] (18,0.5) -- (18,1);
@@ -2346,14 +2375,14 @@ Note that this data is based on the heights of \emph{samples} sprinters and clim
 \draw[semithick] (-6*9/14,-0.4) -- (8*9/14,-0.4);
 \foreach \x in {0,...,35}
   \draw (-6*9/14+0.4*\x*9/14,-0.4) -- (-6*9/14+0.4*\x*9/14,-0.5);
-\node at (-6*9/14,-0.7) {$-6$};
-\node at (-4*9/14,-0.7) {$-4$};
-\node at (-2*9/14,-0.7) {$-2$};
-\node at (0*9/14,-0.7) {$0$};
-\node at (2*9/14,-0.7) {$2$};
-\node at (4*9/14,-0.7) {$4$};
-\node at (6*9/14,-0.7) {$6$};
-\node at (8*9/14,-0.7) {$8$};
+\node at (-6*9/14,-0.7) {$\scriptsize{-6}$};
+\node at (-4*9/14,-0.7) {$\scriptsize{-4}$};
+\node at (-2*9/14,-0.7) {$\scriptsize{-2}$};
+\node at (0*9/14,-0.7) {$\scriptsize{0}$};
+\node at (2*9/14,-0.7) {$\scriptsize{2}$};
+\node at (4*9/14,-0.7) {$\scriptsize{4}$};
+\node at (6*9/14,-0.7) {$\scriptsize{6}$};
+\node at (8*9/14,-0.7) {$\scriptsize{8}$};
 \fill[black!40] (-1*9/14,-0.3) rectangle (5*9/14,0.2);
 \draw[semithick] (-6*9/14,-0.2) -- (-6*9/14,0.1);
 \draw[semithick] (-1*9/14,-0.3) -- (-1*9/14,0.2);
@@ -2370,28 +2399,16 @@ Note that this data is based on the heights of \emph{samples} sprinters and clim
         \item Using the box plots, make two comments comparing temperatures in January and June.
         \item Explain why the box plots may be misleading.
     \end{enumerate}
-    \item The back-to-back stem-and-leaf diagram below shows the heights of trees in two areas of woodland. 
-    \begin{center}
-    \begin{tabular}{cccc|c|cccc}
-        \multicolumn{4}{c}{Woodland A} & \multicolumn{1}{c}{} & \multicolumn{4}{c}{Woodland B}\\
-         & & & 5 & 2 & 1 & 3 & 3 & 8\\
-         & & 7 & 4 & 3 & 0 & 2 & 4 & 7\\
-         9& 7& 7& 2& 4 & 2 & 5 & &\\
-         & 7& 6& 3& 5 & & & &
-    \end{tabular}
-    \end{center}
-    \begin{enumerate}
-        \item Suggest one improvement needed for the diagram.
-        \item Make one comment comparing the heights of trees in the two areas of woodland.
-    \end{enumerate}
     \item The manager of a lemonade bottling plant is interested in comparing the performances of two production lines, one of which has only recently been installed. For each line she selects 10 one-hour periods at random and records the number of crates completed in each hour. The table below gives the results:
     \begin{center}
-    \begin{tabular}{l|cccccccccc}
-        Production Line & \multicolumn{10}{c}{Number of crates completed per hour}\\
+    \begin{tabular}{|l|cccccccccc|}
+      \hline
+        Production Line & \multicolumn{10}{c|}{Number of crates completed per hour}\\
       \hline
         New & 78 & 87 & 79 & 82 & 87 & 81 & 85 & 80 & 82 & 83\\
       \hline
-        Old & 74 & 77 & 78 & 70 & 87 & 83 & 76 & 78 & 81 & 76
+        Old & 74 & 77 & 78 & 70 & 87 & 83 & 76 & 78 & 81 & 76\\
+      \hline
     \end{tabular}
     \end{center}   
     \begin{enumerate}
@@ -2427,9 +2444,11 @@ Note that this data is based on the heights of \emph{samples} sprinters and clim
     \begin{enumerate}
         \item State which of the five variables contain:
         \begin{enumerate}
+            \begin{multicols}{3}
             \item Categorical data.
             \item Discrete data.
             \item Continuous data.
+            \end{multicols}
         \end{enumerate}
         \item If it was suspected that one of the tracks is an outlier in terms of length, state what could be calculated in order to determine whether it is in fact an outlier.
     \end{enumerate}
@@ -2441,8 +2460,23 @@ Note that this data is based on the heights of \emph{samples} sprinters and clim
     \end{center}
     \begin{enumerate}
         \item Contruct a dot plot to display the data.
-        \item Find the mean and standard deviation for the sizes of running shoes sold.
+        \item Find the median and interquartile range for the sizes of running shoes sold.
+        \item Calculate the mean and standard deviation for the sizes of running shoes sold.
         \item State the type of data recorded.
+    \end{enumerate}
+    \item The back-to-back stem-and-leaf diagram below shows the heights of trees in two areas of woodland. 
+    \begin{center}
+    \begin{tabular}{cccc|c|cccc}
+        \multicolumn{4}{c}{Woodland A} & \multicolumn{1}{c}{} & \multicolumn{4}{c}{Woodland B}\\
+         & & & 5 & 2 & 1 & 3 & 3 & 8\\
+         & & 7 & 4 & 3 & 0 & 2 & 4 & 7\\
+         9& 7& 7& 2& 4 & 2 & 5 & &\\
+         & 7& 6& 3& 5 & & & &
+    \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item Suggest one improvement needed for the diagram.
+        \item Make one comment comparing the heights of trees in the two areas of woodland.
     \end{enumerate}
     \item The petal lengths (in centimetres) for samples of flowers from two species of iris flowers is recorded: \textit{iris setosa} and \textit{iris versicolor}. The data is summarised in the table below using statistical software:
     \begin{center}
@@ -2493,7 +2527,7 @@ For example, in the context of rolling a fair, cubical die:
 \subsubsection*{Probability notation}\label{probability-notation}
 \addcontentsline{toc}{subsubsection}{Probability notation}
 
-The probability that a die lands on 5 is \emph{one-in-six}, or \(\frac{1}{6}\). Using probability notation:
+The probability that a fair cubical die lands on 5 is \emph{one-in-six}, or \(\frac{1}{6}\). Using probability notation:
 
 \[\text{P}(5)=\dfrac{1}{6}\]
 
@@ -2504,35 +2538,42 @@ The probability that a die lands on 5 is \emph{one-in-six}, or \(\frac{1}{6}\). 
 \subsection*{Experimental Probability}\label{experimental-probability}
 \addcontentsline{toc}{subsection}{Experimental Probability}
 
+\vspace{-0.2cm}
+
 The probability of an event can be estimated through repeated trials - this is referred to as the \mbox{\textit{experimental probability}} of the event. For example, if a motorist passes a set of traffic lights every morning and wishes to know the probability of having to wait at a red light on any given morning, they could record the \emph{proportion} of times they have to wait at a red light over a period of time. If, over the course of 200 mornings, they have to wait at a red light 114 times:
+
+\vspace{-0.1cm}
 
 \[\text{P}(\text{red light})\approx\frac{114}{200}=0.57\]
 
 \subsection*{Theoretical Probability}\label{theoretical-probability}
 \addcontentsline{toc}{subsection}{Theoretical Probability}
 
+\vspace{-0.2cm}
+
 When each of the outcomes in the sample space of a random experiment can be reasonably assumed to be \mbox{\textbf{equally likely}} then the probability of any outcomes or events can be determined. This is called \emph{theoretical probability}.
 
-Equally likely outcomes typically arise from the symmetry of a physical object (such as a coin or die) or a reasonable assumption. The probability of any one \emph{individual outcome} in a sample space containing \(N\) equally likely outcomes is \(\frac{1}{N}\).
-
-For example, if a playing card is picked at random from a standard pack of 52 cards, containing no jokers, then the probability of picking the Queen of Hearts is \(\frac{1}{52}\).
+Equally likely outcomes typically arise from the symmetry of a physical object (such as a coin or die) or a reasonable assumption. The probability of any \emph{individual outcome} in a sample space containing \(N\) equally likely outcomes is \(\frac{1}{N}\).\newline For example, if a playing card is picked at random from a standard pack of 52 cards, containing no jokers, then the probability of picking the Queen of Hearts is \(\frac{1}{52}\).
 
 An \textbf{event} is a set of one or more outcomes from the sample space. The probability of an event is given by:
 
-\[\text{P}(\text{event})=\frac{\text{number of outcomes from the sample space in the event}}{\text{total number of outcomes in the sample space}}\]
+\begin{tcolorbox}[center,adjusted title=Probability of an Event,colback=red!5,colframe=red!70!black,width=13cm,halign = center,halign title = center]
+\vspace{-0.3cm}
+$$\text{P}(\text{event})=\frac{\text{number of outcomes from the sample space in the event}}{\text{total number of outcomes in the sample space}}$$
+\end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A bag contains 13 red counters, 5 blue counters and 4 green counters. A counter is chosen at random. Find the probability that the counter is green.
 
 \tcblower
 \textbf{Solution:}
+\vspace{-0.3cm}
 $$\text{P}(\text{green})=\frac{4}{22}=\frac{2}{11}$$
 \end{tcolorbox}
 
-In this course, probabilities will be given as simplified fractions or \textbf{rounded to four decimal places}.
-In probability theory, \emph{``and''} means that \emph{both} events are true, and \emph{``or''} means that \emph{at least one of} the events are true.
+In probability theory, \emph{``and''} means that \emph{both} events are true, and \emph{``or''} means that \emph{at least one} is true.
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A car dealership has 80 cars in its showroom. They have a mix of electric, hybrid, petrol and diesel cars, both new and second-hand. The table below shows the numbers of each type.
 
 \begin{center}
@@ -2550,8 +2591,11 @@ A car is selected at random. Determine the probability that the car selected is 
 
 \tcblower
 \textbf{Solution:}
+\vspace{-0.3cm}
 $$\text{P}(\text{second-hand and hybrid})=\dfrac{7}{80}=0.0875$$
 \end{tcolorbox}
+
+In this textbook, probabilities will be given as simplified fractions or \emph{rounded to four decimal places} for consistency.
 
 \pagebreak
 
@@ -2656,7 +2700,7 @@ If two coins are tossed, it may be tempting to suggest that the probability of b
 
 The probability of both coins landing tails is therefore \emph{one-in-four}, or \(\text{P}(\text{both tails})=\frac{1}{4}\).
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Three coins are tossed at the same time. Find the probability that exactly two of the coins land tails.
 
 \tcblower
@@ -2668,7 +2712,7 @@ $$\text{P}(\text{exactly two tails})=\dfrac{3}{8}$$
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Two fair dice are rolled. Determine the probability that the sum obtained is at least nine.
 
 \tcblower
@@ -2870,7 +2914,7 @@ Tree diagrams can be created to map out the possible results of a random experim
 
 Note that in the tree diagram above the probability of the card being a diamond does not change depending on whether the roll of a die gives a six or not. In the following example the probabilities on the second stage of the tree diagram do change depending on the result of the first stage.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} From a bag containing four blue and six red cubes one is drawn at random, followed by another without replacing the first. Find the probability that two red cubes are drawn.
 
 \tcblower
@@ -3081,7 +3125,7 @@ Venn diagrams help illustrate these. Note that \emph{capital letters} are common
 \end{minipage}
 \end{figure}
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A dish is picked at random from the twelve on the main course menu shown in the Venn diagram above. State the value of $\text{P}(G\cap V)$.
 
 \tcblower
@@ -3239,7 +3283,7 @@ If two sets \(A\) and \(B\) are such that \emph{no elements lie in both} \(A\) \
   \centering
 \begin{minipage}[c]{.5\textwidth}
   \centering
-\begin{tcolorbox}[adjusted title=For Mutually Exclusive events $A$ and $B$:,colback=black!5,colframe=black!75, halign = center,halign title = center,width=8cm,height=1.8cm]
+\begin{tcolorbox}[adjusted title=For Mutually Exclusive events $A$ and $B$:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8cm,height=1.8cm]
 $\text{P}(A\cap B)=0$
 \end{tcolorbox}
 \end{minipage}
@@ -3263,7 +3307,7 @@ If two sets \(A\) and \(B\) are such that \emph{every element lies in at least o
   \centering
 \begin{minipage}[c]{.5\textwidth}
   \centering
-\begin{tcolorbox}[adjusted title=For Exhaustive events $A$ and $B$:,colback=black!5,colframe=black!75, halign = center,halign title = center,width=8cm,height=1.8cm]
+\begin{tcolorbox}[adjusted title=For Exhaustive events $A$ and $B$:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8cm,height=1.8cm]
 $\text{P}(A\cup B)=1$
 \end{tcolorbox}
 \end{minipage}
@@ -3275,14 +3319,14 @@ As well as the two rules above which apply depending on whether \(A\) and \(B\) 
   \centering
 \begin{minipage}[c]{.4\textwidth}
   \centering
-\begin{tcolorbox}[adjusted title=The Complement of $A$:,colback=black!5,colframe=black!75, halign = center,halign title = center,width=6cm,height=1.8cm]
+\begin{tcolorbox}[adjusted title=The Complement of $A$:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=6cm,height=1.8cm]
 $\text{P}(A)+\text{P}(\overline{A})=1$
 \end{tcolorbox}
 \end{minipage}%
   \centering
 \begin{minipage}[c]{.6\textwidth}
   \centering
-\begin{tcolorbox}[adjusted title=The Addition Rule for events $A$ and $B$:, halign title = center,colback=black!5,colframe=black!75, halign = center,width=9cm,height=1.8cm]
+\begin{tcolorbox}[adjusted title=The Addition Rule for events $A$ and $B$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,width=9cm,height=1.8cm]
 $\text{P}(A \cup B)=\text{P}(A)+\text{P}(B)-\text{P}(A \cap B)$
 \end{tcolorbox}
 \end{minipage}
@@ -3290,7 +3334,7 @@ $\text{P}(A \cup B)=\text{P}(A)+\text{P}(B)-\text{P}(A \cap B)$
 
 It should be noted that there are generally numerous different ways to approach probability problems, including using a Venn diagram, a tree diagram or formulae. Whilst the problems on the next page have been designed to allow practice using formulae, a flexible approach may help.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given events $F$ and $G$ such that ${\text{P}(\overline{F})=0.3}$, ${\text{P}(G)=0.4}$ and ${\text{P}(F\cap G)=0.1}$ show that $F$ and $G$ are exhaustive.
 
 \tcblower
@@ -4405,6 +4449,8 @@ The following sampling methods are \emph{non-random}. Whilst they may seem helpf
 
 Taking a sample of a target population taken from an easily obtainable group, with no random process taking place, is called \emph{convenience sampling}. For example, a teacher wishes to investigate the heights of pupils in a particular year group and uses pupils within their class in that year group as the sample.
 
+\vspace{-0.3cm}
+
 \begin{center}
 \begin{tikzpicture}
 \node at (3.5,4.65) {Population};
@@ -4531,10 +4577,14 @@ Taking a sample of a target population taken from an easily obtainable group, wi
 \end{tikzpicture}
 \end{center}
 
+\vspace{-0.4cm}
+
 \subsection*{Quota Sampling (Non-random)}\label{quota-sampling-non-random}
 \addcontentsline{toc}{subsection}{Quota Sampling (Non-random)}
 
 Where a population contains distinct strata, \emph{quota sampling} sets a target number of individuals from within each stratum to sample. It differs from stratified sampling in that the number sampled from each stratum is according to a set \emph{quota} rather than proportional to their size, and the selection is often \emph{non-random}. This means that ordered \emph{sampling frames are not required} for each stratum, and the proportion that each makes up within the population may not be known.
+
+\vspace{-0.5cm}
 
 \begin{center}
 \begin{tikzpicture}
@@ -4619,6 +4669,8 @@ Where a population contains distinct strata, \emph{quota sampling} sets a target
 \end{tikzpicture}
 \end{center}
 
+\vspace{-0.3cm}
+
 For example, a council wishing to know local opinion of proposed changes to a park may see the population as split into strata including pensioners, teenagers, parents of pre-school children, and so on. Interviewer are placed on the town's main shopping street and speak to people who pass, choosing for themselves who to interview from their allocated strata.
 
 \subsection*{Advantages and Disadvantages}\label{advantages-and-disadvantages}
@@ -4626,7 +4678,7 @@ For example, a council wishing to know local opinion of proposed changes to a pa
 
 The possible advantages and disadvantages of sampling methods depend on the context in which they are used. However, desired \emph{advantages} of a sampling method may include it being: cheap to administer; quick to administer; free from bias due to the use of a random process; representative of the full population; easy to obtain a suitable sampling frame for. Conversely, \emph{disadvantages} may include it being: expensive; time-consuming; non-random, possibly introducing bias; not representative of the full population; difficult to obtain a suitable sampling frame for.
 
-The method of collecting data may also impact the quality of the data obtained. For example, \emph{emailing} selected individuals with a questionnaire to complete may introduce bias by excluding those who don't use email and allowing \emph{self-selection}.
+The method of collecting data may also impact the quality of the data obtained. For example, \emph{emailing} selected individuals a questionnaire may introduce bias by excluding those who don't use email and allowing \emph{self-selection}.
 
 \pagebreak
 
@@ -4775,7 +4827,7 @@ Now suppose a pupil is chosen at random and, before it is known whether or not t
 
 \[\text{P}(\text{Art | Biology})=\dfrac{3}{7}\]
 
-Conditional probability is fundamental to many of the statistical analysis techniques that will be introduced in this course.
+Conditional probability is fundamental to many of the statistical analysis techniques that will be introduced.
 
 \vspace{1cm}
 
@@ -4783,7 +4835,7 @@ Conditional probability is fundamental to many of the statistical analysis techn
 
 \section{Conditional Probability from Tables and Diagrams}\label{conditional-probability-from-tables-and-diagrams}
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A medical trial for drug treating a minor illness has patients given either the drug or a placebo, with a test after one month of treatment determining whether or not each patient has fully recovered.
 \begin{center}
     \begin{tabular}{| c|c c|} 
@@ -4946,14 +4998,14 @@ Where a conditional probability cannot be intuitively stated, the formula for co
 
 \begin{centering}
 \tcbset{width=9cm}
-\begin{tcolorbox}[adjusted title=Conditional Probability:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditional Probability:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(A \cap B)$}}}{\text{\normalsize{$\text{P}(B)$}}}$
 \end{tcolorbox}
 \end{centering}
 
 It may be helpful to note that \(\text{P}(\overline{A}|B)=1-\text{P}(A|B)\).
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given events $V$ and $W$ such that $\text{P}(V)=0.7236$ and $\text{P}(V\cap W)=0.1046$, find $\text{P}(W | V)$. 
 
 \tcblower
@@ -5003,14 +5055,14 @@ The probability a randomly selected card from a standard pack of playing cards b
 \captionsetup[figure]{labelformat=empty}%
 \begin{minipage}{.5\textwidth}
   \centering
-\begin{tcolorbox}[adjusted title=Independent:, halign = center,halign title = center,colback=black!5,colframe=black!75,width=8.5cm]
+\begin{tcolorbox}[adjusted title=Independent:, halign = center,halign title = center,colback=red!5,colframe=red!70!black,width=8.5cm]
 $\text{P}(A | B)= \text{P}(A)$
 \end{tcolorbox}
 \end{minipage}%
   \centering
 \begin{minipage}{.5\textwidth}
   \centering
-\begin{tcolorbox}[adjusted title=Not Independent:,colback=black!5,colframe=black!75, halign = center,halign title = center,width=8.5cm]
+\begin{tcolorbox}[adjusted title=Not Independent:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8.5cm]
 $\text{P}(A | B)\ne \text{P}(A)$
 \end{tcolorbox}
 \end{minipage}
@@ -5018,7 +5070,7 @@ $\text{P}(A | B)\ne \text{P}(A)$
 
 \vspace{0.5cm}
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given $\text{P}(D)=0.25$, $\text{P}(E)=0.6$ and $\text{P}(D\cap E)=0.15$, show that $E$ and $D$ are independent.
 
 \tcblower
@@ -5107,7 +5159,7 @@ The conditional probability rule can be rearranged to allow the \textbf{intersec
 \begin{minipage}{.5\textwidth}
   \centering
 \tcbset{width=8.5cm}
-\begin{tcolorbox}[adjusted title=Multiplication rule:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Multiplication rule:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $\text{P}(A \cap B)=\text{P}(A)\times \text{P}(B|A)$
 \end{tcolorbox}
 \end{minipage}%
@@ -5115,7 +5167,7 @@ $\text{P}(A \cap B)=\text{P}(A)\times \text{P}(B|A)$
 \begin{minipage}{.5\textwidth}
   \centering
 \tcbset{width=8.5cm}
-\begin{tcolorbox}[adjusted title=Multiplication rule for independent events:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Multiplication rule for independent events:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $\text{P}(A \cap B)=\text{P}(A)\times \text{P}(B)$
 \end{tcolorbox}
 \end{minipage}
@@ -5123,7 +5175,7 @@ $\text{P}(A \cap B)=\text{P}(A)\times \text{P}(B)$
 
 \vspace{0.5cm}
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Studies of a species of plant in the UK reveal that 8\% of the plants have a particular genetic mutation. Amongst those plants with the genetic mutation, 35\% produce yellow flowers. If a plant of this species in the UK is selected at random and observed, determine the probability that it will both have the genetic mutation and produce yellow flowers.
 
 \tcblower
@@ -5207,14 +5259,14 @@ Dividing both sides by \(\text{P}(B)\) gives:
 
 \begin{centering}
 \tcbset{width=9cm}
-\begin{tcolorbox}[adjusted title=Bayes' Theorem:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Bayes' Theorem:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(B|A)\times \text{P}(A)$}}}{\text{\normalsize{$\text{P}(B)$}}}$
 \end{tcolorbox}
 \end{centering}
 
 Bayes' Theorem provides a the link between a conditional probability and its \emph{reverse}. Using it to find a conditional probability given its reverse is sometimes referred to as \emph{reversing the condition}.
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given events $V$ and $W$ such that $\text{P}(V|W)=0.3$, $\text{P}(W)=0.8$ and $\text{P}(\overline{V})=0.1$, find $\text{P}(W|V)$.
 
 \tcblower
@@ -5222,7 +5274,7 @@ Bayes' Theorem provides a the link between a conditional probability and its \em
 $\text{P}(W|V) = \dfrac{\text{P}(V|W)\times \text{P}(W)}{\text{P}(V)} = \dfrac{0.3\times 0.8}{0.9} = \dfrac{4}{15}$
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} In a neighbourhood, 14\% of homes have a garage, whilst 62\% of homes have a garden. Of those homes with a garage, 87\% have a garden. If a home chosen at random has a garden, determine the probability that it has a garage.
 
 \tcblower
@@ -5356,7 +5408,7 @@ The \emph{total probability} of \(B\), \(\text{P}(B)\), can be calculated as:
 
 The advantage of the use of tree diagrams, for questions where they are suitable, is that they can offer a more intuitive and visual approach to tackling problems than solely using formulae. If they are used, they must be annotated carefully with events and probabilities, and accurate probability notation must still be used when giving answers.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A teacher observes that one of their pupils is late to school 20\% of the time, and when this happens they have their tie with them 70\% of the time. When they are on time they have their tie 90\% of the time. Construct a tree diagram and calculate the probability that, on a randomly chosen day, they have no tie.
 
 \tcblower
@@ -5462,7 +5514,7 @@ In this chapter, Bayes' Theorem has already been used to calculate the \emph{rev
 
 A key misunderstanding often made is that a high value for \(\text{P}(B|A)\) must lead to a similarly high value for \(\text{P}(A|B)\). The following example demonstrates that this is not always the case, and gives an insight into a common problem that must be considered whenever medical testing is being undertaken, especially for rare conditions or diseases:
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A medical test for a condition has a \textit{sensitivity} of 98\%, meaning that when the patient \textit{has the condition}, the test will correctly return a \textit{positive} result with a probability of 0.98. This means there is a \textit{false negative} rate of 2\%. The test has \textit{specificity} of 97\%, meaning that when the patient \textit{does not} have the condition, the test will correctly return a \textit{negative} result with a probability of 0.97. This means there is a \textit{false positive} rate of 3\%. The \textit{prevalence} in the general population is 4\%, meaning only 4\% of people have the condition. 
 
 \vspace{0.3cm}
@@ -5810,7 +5862,7 @@ In \textbf{Figure 3}, as one variable increases, there appears to be no clear pa
 
 Note that \textbf{correlation doesn't imply causation}. A linear relationship can exist between variables without meaning that one causes the other. Seemingly linear relationships can also appear by chance - this is referred to as \emph{spurious correlation}.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A French class takes two tests, one \textit{listening} and one \textit{reading}. The results of the 10 pupils are shown in the table and scatterplot below, along with some summary statistics. Comment on the scatterplot.
 
 \begin{multicols}{2}
@@ -6192,7 +6244,7 @@ The strength of the \emph{linear relationship} between two variables is measured
 
 \begin{center}
 \tcbset{width=8cm}
-\begin{tcolorbox}[adjusted title=Pearson's Correlation Coefficient, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Pearson's Correlation Coefficient, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$ 
 \end{tcolorbox}
 \end{center}
@@ -6544,7 +6596,7 @@ n&=7
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A biologist records the tail length ($x$) and total height ($y$), both in centimetres, for a random sample of 8 red squirrels. A scatterplot and summary statistics are for the data produced and shown below.
 \vspace{-0.5cm}
 \begin{center}
@@ -6940,7 +6992,7 @@ Since regression lines are generally calculated from a random \emph{sample} of b
 
 \begin{center}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=Estimation of Slope and Intercept Parameters, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Estimation of Slope and Intercept Parameters, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \vspace{-0.4cm}
 $$\hat{\beta}=b=\dfrac{S_{xy}}{S_{xx}} \qquad \text{and} \qquad \hat{\alpha}=a=\bar{y}-b\bar{x}$$
 \end{tcolorbox}
@@ -6981,7 +7033,7 @@ Whether a linear relationship will continue to hold for $x$ values lower or high
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A biology class takes two tests, one theoretical and one practical. The results of the 12 pupils are shown in the table and scatterplot below, along with some summary statistics.
 
 \begin{center}
@@ -7565,7 +7617,7 @@ Note that a discrete probability distribution must define \textit{mutually exclu
 \end{minipage}
 \end{figure}
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The probability distribution table for the discrete random variable $D$ is below.
 
 \begin{center}
@@ -7772,12 +7824,12 @@ Whilst a single roll of a die is equally likely to land on any of the numbers fr
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=The expectation $\mu$ of discrete random variable $X$:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The expectation $\mu$ of discrete random variable $X$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $\text{E}(X)=\sum{x_iP(X=x_i)}$
 \end{tcolorbox}
 \end{centering}
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50,height=6cm]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue,height=6cm]
 \textbf{Problem:} The probability distribution of random variable $X$ is tabulated as: 
 
 \begin{center}
@@ -7801,7 +7853,7 @@ $$\text{E}(X) = 3\times \frac{1}{8} + 4\times \frac{1}{4} + 5\times \frac{1}{2} 
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} From a bag containing 4 blue and 6 red cubes one is drawn at random, followed by another without replacing the first. Letting discrete random variable $X$ represent the number of red cubes drawn, calculate $\text{E}(X)$.
 
 \tcblower
@@ -7988,7 +8040,7 @@ It can be seen here that \(\text{E}(2X)=2\text{E}(X)\). The expectation of a ran
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=For random variable $X$ with constants $a$ and $b$:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For random variable $X$ with constants $a$ and $b$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $\text{E}(aX\pm b)=a\text{E}(X)\pm b$
 \end{tcolorbox}
 \end{centering}
@@ -8002,7 +8054,7 @@ Proof:
     &=a\text{E}(X)+ b
 \end{align*}
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Let $X$ be the random variable such that $\text{E}(X)=3$. Calculate $\text{E}(4X-1)$.
 
 \tcblower
@@ -8017,7 +8069,7 @@ Proof:
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given tht $\text{E}(10-2Y)=50$, determine the value of $\text{E}(Y)$.
 \tcblower
 \textbf{Solution:}
@@ -8035,8 +8087,8 @@ Proof:
 
 \pagebreak
 
-\subsubsection*{Exercise 6.2}\label{exercise-6.2-1}
-\addcontentsline{toc}{subsubsection}{Exercise 6.2}
+\subsubsection*{Exercise 6.3}\label{exercise-6.3}
+\addcontentsline{toc}{subsubsection}{Exercise 6.3}
 
 \begin{enumerate}
     \item Calculate:
@@ -8114,7 +8166,7 @@ The \emph{variance} of the values observed from successive rolls of a fair cubic
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=The variance $\sigma^2$ of random variable $X$:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The variance $\sigma^2$ of random variable $X$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $\text{V}(X)=\text{E}(X^2)-E^2(X)$
 \end{tcolorbox}
 \end{centering}
@@ -8141,7 +8193,7 @@ The standard deviation, \(\sigma\), of a random variable \(X\), notated \(\text{
 
 \[\text{SD}(X)=\sqrt{\text{V}(X)}\qquad\text{and}\qquad \text{SD}(X),\text{V}(X)\geqslant0\]
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The probability distribution of random variable $X$ is tabulated as: 
 
 \begin{center}
@@ -8229,7 +8281,7 @@ Since variance is a measure of variability based on \emph{squared} differences, 
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=For random variable $X$ with constants $a$ and $b$:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For random variable $X$ with constants $a$ and $b$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $\text{V}(aX\pm b)=a^2\text{V}(X)$
 \end{tcolorbox}
 \end{centering}
@@ -8248,7 +8300,7 @@ Proof:
 
 Note that any laws relating to the \emph{standard deviation} of a linear transformation (\(\text{SD}(aX\pm b)\)) would not be able to be expressed so concisely, so such problems must be tackled by \emph{first finding the variance} (\(\text{V}(aX\pm b)\)).
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Let $X$ be the random variable such that $\text{E}(X)=-7$ and $\text{V}(X)=4$. Calculate $\text{V}(2-3X)$.
 
 \tcblower
@@ -8262,7 +8314,7 @@ Note that any laws relating to the \emph{standard deviation} of a linear transfo
 \end{align*}
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Random variable $Y$ has mean 1.5 and standard deviation 0.8.\\ Determine the standard deviation of $10Y+25$.
 
 \tcblower
@@ -8366,7 +8418,7 @@ As well as linear transformations of a single random variable, new variables can
 
 \begin{centering}
 \tcbset{width=14cm}
-\begin{tcolorbox}[adjusted title=For \textbf{independent} random variables $X$ and $Y$:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For \textbf{independent} random variables $X$ and $Y$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \vspace{-0.3cm}
 \begin{equation*}
   \begin{split}
@@ -8385,7 +8437,7 @@ As well as linear transformations of a single random variable, new variables can
 \end{tcolorbox}
 \end{centering}
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Two independent random variables $F$ and $G$ have means of 15 and 12 and standard deviations of 3 and 4 respectively. Calculate $\text{E}(3G-2F)$ and $\text{V}(F-G)$.
 
 \tcblower
@@ -8415,7 +8467,7 @@ As well as linear transformations of a single random variable, new variables can
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Books in the fiction section of a library have a mean thickness of 3.1cm with standard deviation 0.2cm. If three books are randomly selected from the fiction section and stacked together, determine the mean and standard deviation of the collected, total thickness of the three books, stating one assumption required.
 
 \tcblower
@@ -8639,7 +8691,7 @@ Whilst \(X\) and \(Y\) do not follow the exact same distribution, they share key
 
 \begin{centering}
 \tcbset{width=11cm}
-\begin{tcolorbox}[adjusted title=The Discrete Uniform Distribution:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The Discrete Uniform Distribution:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item Notated $X\sim \text{U}(k)$.
     \item Defined by one parameter, $k$.
@@ -8663,7 +8715,7 @@ The previously stated values for the expectation and variance of \(X\) and \(Y\)
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given $T\sim \text{U}(10)$ and $W=3T+1$, calculate $\text{E}(W)$ and $\text{V}(W)$.
 
 \tcblower
@@ -8741,7 +8793,7 @@ A \emph{Bernoulli trial} is an experiment in which each trial has only two possi
 
 \begin{centering}
 \tcbset{width=10.5cm}
-\begin{tcolorbox}[adjusted title=The Binomial Distribution:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The Binomial Distribution:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item Notated $X\sim \text{B}(n,p)$.
     \item Defined by two parameters, $n$ and $p$.
@@ -8823,7 +8875,7 @@ The SQA Data Booklet gives the \textbf{formula} to calculate \emph{individual} p
 \[\text{Given }X\sim \text{B}(n,p)\text{: }\qquad \text{P}(X=x)={}^{n}C_{x}\times p^x\times q^{n-x}\]
 \pagebreak
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given $X\sim \text{B}(7,\frac{1}{3})$, calculate $\text{P}(X=1)$.
 
 \tcblower
@@ -8839,7 +8891,7 @@ The SQA Data Booklet gives the \textbf{formula} to calculate \emph{individual} p
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} 12 students each take it in turns to select a playing card from a pack at random, before returning it. Calculate the probability that the card drawn is a Spade for fewer than 2 of the students. 
 
 \tcblower
@@ -8899,7 +8951,7 @@ Consider discrete random variable \(X\) taking values \(x=\{0,1,2,3,4,5,6\}\):
 \end{align*}
 \end{center}
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} It is estimated that around 10\% of people are left-handed. Taking this percentage to be accurate, calculate the probability that, in a random sample of 12 people, at least two of them will be left-handed.
 
 \tcblower
@@ -8966,7 +9018,7 @@ Given random variable \(X\) such that \(X\sim \text{B}(n,p)\):
 
 Where \(q=1-p\), representing the \emph{probability of failure}.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A multiple choice quiz is comprised of eight questions, each with four choices to pick from. Let random variable $X$ represent the number of correct answers obtained out of eight from a student guessing completely at random. Calculate the mean and variance of $X$.
 
 \tcblower
@@ -9024,7 +9076,7 @@ Consider a mobile network's customer support department looking at how many call
 
 \begin{centering}
 \tcbset{width=12.5cm}
-\begin{tcolorbox}[adjusted title=The Poisson Distribution:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The Poisson Distribution:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item Notated $X\sim \text{Po}(\lambda)$.
     \item Defined by one parameter $\lambda$ \textit{("lambda")}.
@@ -9080,7 +9132,7 @@ For example \(\text{P}(X=4)\) in the probability distribution above can be calcu
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} During a spell of rain, drops of rain fall on a lawn at a constant mean rate of 6 drops per square metre per second. Calculate the probability that exactly 10 drops fall in one square metres of the lawn in a second.
 
 \tcblower
@@ -9165,7 +9217,7 @@ Given two \textbf{independent} random variables \(X\) and \(Y\) such that \(X\si
 
 The same result can be used to extend, or shorten, the time period of interest for a Poisson distribution, provided there is a \emph{constant mean rate} throughout the entire time period.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Betty has observed that the number of work emails she receives on weekdays between 10am and 11am follows a Poisson distribution with a mean rate of 7 emails. The number of personal emails she receives in this time is also Poisson distributed with a mean rate of 3 emails. Calculate the probability that she receives fewer than 8 emails in total on a weekday between 10am and 11am. 
 
 \tcblower
@@ -9356,7 +9408,7 @@ If random variable \(X\) can take \emph{any real value} between \(a\) and \(b\) 
 
 \begin{centering}
 \tcbset{width=7.5cm}
-\begin{tcolorbox}[adjusted title=The Continuous Uniform Distribution:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The Continuous Uniform Distribution:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item Notated $X\sim \text{U}(a,b)$.
     \item Defined by two parameters, $a$ and $b$.
@@ -9373,7 +9425,7 @@ The probability for any range of values can be calculated simply as the area of 
 
 \[k=\frac{1}{b-a}\quad \qquad \quad \text{E}(X)=\frac{a+b}{2}\quad \qquad \quad \text{V}(X)=\frac{(b-a)^2}{12}\]
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given random variable $T$ such that $T\sim \text{U}(27,42)$, calculate $\text{P}(31<T<34)$.
 
 \tcblower
@@ -9544,7 +9596,7 @@ The \textbf{normal distribution}, also sometimes called the \emph{Gaussian Distr
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=The Normal Distribution:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The Normal Distribution:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item Notated $X\sim \text{N}(\mu,\sigma^2)$.
     \item Defined by two parameters, $\mu$ and $\sigma^2$.
@@ -10072,7 +10124,7 @@ Hence \(X=\sigma Z + \mu\), which can be rearranged to obtain the \(\mathbf{z}\)
 
 \begin{centering}
 \tcbset{width=9cm}
-\begin{tcolorbox}[adjusted title=The $z$-transformation:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The $z$-transformation:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $Z=\dfrac{X-\mu}{\text{$\sigma$}}$
 \end{tcolorbox}
 \end{centering}
@@ -10188,7 +10240,7 @@ $\text{P}(Z<1.5)=0.9332$
 \end{minipage}
 \end{figure}
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The mass of an adult red squirrel in an area of woodland is normally distributed with a mean of 295g and a standard deviation of 15g. Calculate the probability that a squirrel chosen at random has a mass greater than 300g.
 
 \tcblower
@@ -10369,7 +10421,7 @@ x=&285.12
 
 Hence, in the long run only 10\% of observations exceed 285.12.
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The time before failure of a model of TV is normally distributed with mean 31 months and standard deviation 4 months. Calculate the minimum warranty length, in months, such that fewer than 5\% of TVs will be expected to fail under warranty.
 
 \tcblower
@@ -10421,7 +10473,7 @@ Hence, a 25 month warranty should expect to see less than 5\% of TVs fail under 
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The diameter of the apples grown in a garden are normally distributed with a mean of 7cm and a standard deviation of 0.25cm. Calculate the range of values, symmetrical about the mean, within which the diameters of 95\% of the apples lie.
 
 \tcblower
@@ -10480,7 +10532,7 @@ Hence, 95\% of the apples grown have a diameter between 6.51cm and 7.49cm.
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example 3,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The masses of pumpkins grown in a farmer's field are normally distributed, with a mean of 6.8kg. Given that only one in every 1000 pumpkins has a mass greater than 10kg, calculate the standard deviation of the mass of a pumpkin.
 
 \tcblower
@@ -10591,7 +10643,7 @@ It is important to remember that \(2X\) is \textbf{not} the sum of two independe
 
 When calculating probabilities relating to combined normal random variables, it can be helpful to name the new random variable using some logical letter choice, such as \(T\) for \emph{``Total''}, \(D\) for \emph{``Difference''} and so on.
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The actual volume of paint contained within tins marked as containing 25 litres is normally distributed with a mean of 25.2 litres and a standard deviation of 0.3 litres. Calculate the probability that 4 such tins contain less than 100 litres in total.
 
 \tcblower
@@ -10641,7 +10693,7 @@ $T\sim \text{N}(100.8,0.36)$
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The time taken for a washing machine cycle to complete is normally distributed, with mean 57 minutes and standard deviation 2 minutes. The time taken for the owner of the washing machine to start the cycle, run 10 kilometres on their treadmill and get back to the washing machine is normally distributed with mean 58 minutes and standard deviation 3 minutes. Stating an assumption required, calculate the probability that the washing machine cycle is still running when the owner returns to it.
 
 \tcblower
@@ -10811,7 +10863,7 @@ Under certain conditions the \emph{discrete} binomial distribution can begin to 
 
 \begin{centering}
 \tcbset{width=12cm}
-\begin{tcolorbox}[adjusted title=Conditions for normal approximation to binomial distributions :, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for normal approximation to binomial distributions :, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{center}
 $np>5$\quad \text{ and } \quad $nq>5$
 \end{center}
@@ -10875,7 +10927,7 @@ When calculating the discrete probability \(\text{P}(X\leqslant 14)\), the bar r
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A quiz contains 40 multiple choice questions, with four answers for every question. If a pupil picks answers entirely at random, use a suitable approximation to calculate the probability that they get at least half of the questions correct, and justify the suitability of the approximation used.  
 
 \tcblower
@@ -11039,7 +11091,7 @@ As with the binomial distribution, under certain conditions the \emph{discrete} 
 
 \begin{centering}
 \tcbset{width=12cm}
-\begin{tcolorbox}[adjusted title=Conditions for normal approximation to Poisson distributions :, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for normal approximation to Poisson distributions :, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{center}
 $\lambda>10$
 \end{center}
@@ -11052,7 +11104,7 @@ The mean and variance of the \emph{approximate} normal distribution are \(\text{
 
 Since again this is a \emph{continuous approximation} to a \emph{discrete distribution}, any probabilities calculated will not be sufficiently accurate unless a \textbf{continuity correction} is applied. For a continuous approximation to a discrete distribution taking integers values, as is the case with both such approximations encountered in this chapter, continuity corrections will always require an addition or subtraction of 0.5.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} In a football league, goals occur at a constant mean rate of 2.5 goals per game. A full weekend of fixtures includes 10 games. Using a suitable approximation, and justifying its use, calculate the probability that there will be between 15 and 20 goals in total, inclusive, in a full weekend of fixtures. 
 
 \tcblower
@@ -11243,7 +11295,7 @@ Since the sample mean \(\overline{X}\) is a linear combination of independent ob
 
 \begin{centering}
 \tcbset{width=9cm}
-\begin{tcolorbox}[adjusted title=Sample mean of normally distributed $X$:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Sample mean of normally distributed $X$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \text{If   }$X\sim \text{N}(\mu,\sigma^2)$\text{   then   }$\overline{X}\sim \text{N}\left(\mu,\dfrac{\sigma^2}{n}\right)$
 \end{tcolorbox}
 \end{centering}
@@ -11341,14 +11393,14 @@ The \(z\)-transformation for the \textbf{sample mean} has the \textbf{standard e
 
 \begin{centering}
 \tcbset{width=9cm}
-\begin{tcolorbox}[adjusted title=The $z$-transformation for the sample mean:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The $z$-transformation for the sample mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $Z=\dfrac{\overline{X}-\mu}{\dfrac{\sigma}{\sqrt{n}}}$
 \end{tcolorbox}
 \end{centering}
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The length of a mass-produced brand of fence panels is normally distributed with a mean of 180cm and a standard deviation of 0.4cm. A random sample of nine panels is taken and each is measured.
 
 \begin{enumerate}
@@ -11431,14 +11483,14 @@ The \textbf{approximate} distribution of the sample mean can be stated provided 
 
 \begin{centering}
 \tcbset{width=15cm}
-\begin{tcolorbox}[adjusted title=The Central Limit Theorem:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The Central Limit Theorem:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \text{If   }$\text{E}(X)=\mu$ and $\text{V}(X)=\sigma^2$\text{   then   }$\overline{X}\approx \text{N}\left(\mu,\frac{\sigma^2}{n}\right)$, provided $n>20$.
 \end{tcolorbox}
 \end{centering}
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The mean mass of ceramic bowls produced by a potter is 400g and the standard deviation is 20g, and they can be ordered singly or in bulk. Bulk orders contain 36 mugs and, when such an order is placed, the potter selects the 36 mugs at random to be boxed up and shipped. Letting the random variable $X$ represent the weight of a bowl, and $\overline{X}$ the mean bowl mass in a bulk order:
 
 \begin{enumerate}
@@ -11563,7 +11615,7 @@ Most statistical studies begin with a claim, which is called the \textbf{alterna
 
 It should also first be decided whether evidence is being sought for the true value of the population mean being \emph{less than} a specified value, \emph{greater than} a specified value, or simply \emph{different than} a specified value. When the alternative hypothesis is only interested in a \emph{single direction}, the test being performed is described as \textbf{\emph{one-tailed}}. When the alternative hypothesis is interested in a change in \emph{either direction}, it is referred to as a \textbf{\emph{two-tailed}} test.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Using suitable notation, state the null and alternative hypotheses for each of the following claims.
 
 \vspace{0.2cm}
@@ -11611,7 +11663,7 @@ The probability of such an extreme sample purely by chance is called the \textbf
 
 \begin{centering}
 \tcbset{width=16cm}
-\begin{tcolorbox}[adjusted title=The decision rule for the $p$-value and the significance level $\alpha$:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The decision rule for the $p$-value and the significance level $\alpha$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 If $p$-value $<$ $\alpha$ then \textbf{reject }$\mathbf{H_0}$ and conclude that\\ there is \textit{evidence to suggest} that the  alternative hypothesis is true.\\
 \vspace{0.5cm}
 If $p$-value $>$ $\alpha$ then \textbf{do not reject }$\mathbf{H_0}$ and conclude that\\ there is \textit{insufficient evidence to suggest} that the alternative hypothesis is true.
@@ -11649,7 +11701,7 @@ The \emph{one-sample }\(z\)\emph{-test for the population mean} is a hypothesis 
 
 \begin{centering}
 \tcbset{width=14cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of the one-sample $z$-test for the population mean:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for valid use of the one-sample $z$-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The \textit{sample mean} is \textbf{normally distributed}.
     \item The \textit{population standard deviation}, $\sigma$, is \textbf{known}.
@@ -11662,7 +11714,7 @@ If one or more of these conditions is not known to be satisfied, then it is requ
 
 Note that when the sample size is greater than 20 \textbf{the CLT can be invoked}, so the sample mean is at least \emph{approximately} normally distributed regardless of the distribution of the underlying population. Also, again for sample sizes greater than 20, the \emph{sample} standard deviation, \(s\), is considered to provide a \emph{sufficiently accurate estimate} for the \emph{population} standard deviation, \(\sigma\). These concepts remove the need for the first two assumptions to be made for \emph{sufficiently large samples}.
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The designers of an electric car state that the distance that can be covered on a full charge is normally distributed, with a mean of 260 miles and a standard deviation of 10 miles. A car magazine randomly selects 14 of them from showrooms to be tested, with a sample mean of 257 miles obtained. Stating one assumption required, perform a hypothesis test to assess, at the 1\% level of significance, the claim by the car magazine that the mean distance is actually less than the designers' claim.
 
 \tcblower
@@ -11704,7 +11756,7 @@ Since $0.1314>0.01$, do not reject $H_0$ at the 1\% level of significance. There
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The mass of crisps dispensed into a sharing-sized bag by a machine is normally distributed with a mean of 150g and a standard deviation of 2g. After being serviced, a random sample of 30 bags gives a mean of 150.8g. Test at the 5\% level of significance the claim that the machine is now dispensing too much.
 
 \tcblower
@@ -11740,7 +11792,7 @@ Since $0.0143<0.05$, reject $H_0$ at the 5\% level of significance.\\ There is e
 
 For a \emph{two-tailed} test, the probability of such an extreme result \emph{in either direction} must be considered. Given a symmetrical distribution of the test statistic, such as with a \(z\)-test, a \(p\)-value for a two-tailed test is \emph{double} the initial probability obtained.
 
-\begin{tcolorbox}[title=Example 3,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A tomato grower has been monitoring the mass of the tomatoes he grows, with the mean mass of a tomato shown to be 82 grams. Following a change in the soil composition in which they are grown, the grower wants to see whether the mean mass of their tomatoes has been affected. A sample of 36 tomatoes gives a mean mass of 83 grams and a standard deviation of 3 grams. Perform a hypothesis test to determine whether there is evidence to suggest that the mean mass of their tomatoes has changed, stating one assumption required and justifying the validity of the test with reference to the sample size.
 
 \tcblower
@@ -11840,7 +11892,7 @@ Every hypothesis test performed so far has involved calculating the probability 
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=For a one-sample $z$-test for the population mean:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For a one-sample $z$-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 Test statistic: $z=\dfrac{\bar{x}-\mu}{\dfrac{\sigma}{\sqrt{n}}}$
 \end{tcolorbox}
 \end{centering}
@@ -11964,7 +12016,7 @@ The relevant areas of the \(z\)-distribution \emph{beyond} the critical values, 
 
 \begin{centering}
 \tcbset{width=17cm}
-\begin{tcolorbox}[adjusted title=The decision rule for test statistics and critical values for parametric tests:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The decision rule for test statistics and critical values for parametric tests:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 If the \textbf{test statistic is further from zero than the critical value(s)} then \textbf{reject }$\mathbf{H_0}$\\ and conclude that there is \textit{evidence to suggest} that the  alternative hypothesis is true.\\
 \vspace{0.5cm}
 If the \textbf{test statistic is not further zero than the critical value(s)} then \textbf{do not reject }$\mathbf{H_0}$\\ and conclude that there is \textit{insufficient evidence to suggest} that the alternative hypothesis is true.
@@ -11977,7 +12029,7 @@ One key need for this approach is that it can be difficult to calculate \(p\)-va
 
 Note that the following examples approach problems already covered in the examples on Pages 120-121, which used a \emph{p}-value approach, and lead to identical conclusions to the hypothesis tests conducted.
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The designers of an electric car state that the distance that can be covered on a full charge is normally distributed, with a mean of 260 miles and a standard deviation of 10 miles. A car magazine randomly selects 14 of them from showrooms to be tested, with a sample mean of 257 miles obtained. Perform a hypothesis test to assess, at the 1\% level of significance, the claim by the car magazine that the mean distance is actually less than the designers' claim.
 
 \tcblower
@@ -12042,7 +12094,7 @@ Since $-1.12>-2.33$, do not reject $H_0$ at the 1\% level of significance. There
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A tomato grower has been monitoring the mass of the tomatoes he grows, with the mean mass of a tomato shown to be 82 grams. Following a change in the soil composition in which they are grown, the grower wants to see whether the mean mass of their tomatoes has been affected. A sample of 36 tomatoes gives a mean mass of 83 grams and a standard deviation of 3 grams. Perform a hypothesis test to determine whether there is evidence to suggest that the mean mass of their tomatoes has changed.
 
 \tcblower
@@ -12250,7 +12302,7 @@ The one-sample \(t\)-test for population mean is a \textbf{parametric test} that
 
 \begin{centering}
 \tcbset{width=14cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of the one-sample t-test for the population mean:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for valid use of the one-sample t-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The \textit{underlying population} is \textbf{normally distributed}.
     \item The data was obtained through a \textbf{random sample}.
@@ -12262,7 +12314,7 @@ The \(t\)-test statistic is identical to that of the equivalent \(z\)-test, exce
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=For a one-sample t-test for the population mean:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For a one-sample t-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 Test statistic: $t_{n-1}=\dfrac{\bar{x}-\mu}{\dfrac{s}{\sqrt{n}}}$
 \end{tcolorbox}
 \end{centering}
@@ -12271,7 +12323,7 @@ Critical values for the \(t\)-test can be found on \textbf{Page 13 of the SQA Da
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A supermarket sells sharing-sized bags of a particular brand of crisps. A consumer watchdog is asked to investigate a claim that the mean mass of crisps contained in a bag is less than the stated contents of 150 grams. A random sample of bags gives the following results, in grams:
 
 \vspace{-0.2cm}
@@ -12348,7 +12400,7 @@ Since $-1.127>-2.998$, do not reject $H_0$ at the 1\% level of significance. The
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Marks scored in an exam are known to be approximately normally distributed, and historically the mean mark achieved by students is 72. After some minor tweaks to the exam, marks gained by a random sample of 7 students generated the summary data below. Perform a hypothesis test at the 5\% level of significance to determine whether there is evidence that the difficulty of the exam has changed for students.\\
 
 \vspace{-0.5cm}
@@ -12533,7 +12585,7 @@ The \(z\)-transformation leads to the required test statistic:
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=For a one-sample $z$-test for the population proportion:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For a one-sample $z$-test for the population proportion:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 Test statistic: $z=\dfrac{\hat{p}-p}{\sqrt{\dfrac{pq}{n}}}$
 \end{tcolorbox}
 \end{centering}
@@ -12542,7 +12594,7 @@ Note that \(\sqrt{\dfrac{pq}{n}}\) is called the \textbf{standard error of the s
 
 \begin{centering}
 \tcbset{width=14cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of the one-sample z-test for the population proportion:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for valid use of the one-sample z-test for the population proportion:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item $\mathbf{\textbf{\emph{np}}>5}$ \textbf{ and } $\mathbf{\textbf{\emph{nq}}>5}$
     \item The data was obtained through a \textbf{random sample}.
@@ -12552,7 +12604,7 @@ Note that \(\sqrt{\dfrac{pq}{n}}\) is called the \textbf{standard error of the s
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A data storage company knows that 10\% of the hard drives they use will fail within the first year of their use. They have decided to trial the use of a cheaper model of hard drive, but are concerned that it may have a higher failure rate. During this trial, 60 of the new hard drives are randomly selected to be monitored for a year once installed. Of those 60, 11 fail.\\ 
 
 Use a parametric hypothesis test to assess the evidence, at the 5\% level of significance, that the new drives have a higher first-year failure rate than the previous model.
@@ -12621,7 +12673,7 @@ Since $2.14>1.64$, reject $H_0$ at the 5\% level of significance.\\ There is evi
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A candidate in a mayoral election claims that 85\% of voters intend to vote for them. Out of a random sample of 80 people eligible to vote, 56 say that they intend to vote for that candidate. Perform a hypothesis test to assess the evidence at the 1\% level of significance that their claim may be untrue.
 
 \tcblower
@@ -12831,7 +12883,7 @@ Given a \emph{random sample} from an distribution that is \emph{normally distrib
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=A $z$-confidence interval for the population mean:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=A $z$-confidence interval for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 A $(1-\alpha)\%$ CI for $\mu$ is: $\bar{x}\pm z_{1-\alpha/2} \times \cfrac{\sigma}{\sqrt{n}}$
 \end{tcolorbox}
 \end{centering}
@@ -12840,7 +12892,7 @@ Note that the conditions required match those for a \(z\)-test for the populatio
 
 A sketch can be used to help find the required \(z\)-value. In this course, only \emph{two-tailed} confidence intervals will calculated.
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The masses of ceramic dishes sold by a kitchenware shop are known to be normally distributed with a standard deviation of 12g. A random sample of 15 such ceramic dishes are weighed and the sample mean is 430 grams. Obtain a 95\% confidence interval for the mean mass of a ceramic dish.
 
 \tcblower
@@ -12897,7 +12949,7 @@ Therefore a 95\% confidence interval for the population mean dish mass, in grams
 
 It should be observed that the \(z\)-confidence interval is symmetrical with the \textbf{sample mean at its centre}. The width of the interval is determined by the \textbf{standard error} and the confidence level required.
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example 2,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} An airline picks a random sample of 25 of their flights and records how long it takes for all the passengers to depart the plane from the time the cabin doors are opened. The sample mean of 6.5 minutes is obtained, and a sample standard deviation of 0.8 minutes. Determine a 90\% confidence interval for the mean time taken for all passengers to depart one of the airline's planes, and interpret this confidence interval.
 
 \tcblower
@@ -12993,7 +13045,7 @@ The calculations involved in calculating a \emph{two-tailed} \(z\)-confidence in
 
 \begin{centering}
 \tcbset{width=17cm}
-\begin{tcolorbox}[adjusted title=Inference using confidence intervals:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Inference using confidence intervals:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 If a given value for $\mu$ is \textbf{outwith a calculated confidence interval} then this would \textit{support a claim} that it is \textit{not the true value of the population mean}.\\
 \vspace{0.5cm}
 If a given value for $\mu$ is \textbf{within a calculated confidence interval} then this would \textit{not support a claim} that it is not the true value of the population mean.
@@ -13002,7 +13054,7 @@ If a given value for $\mu$ is \textbf{within a calculated confidence interval} t
 
 In this course, it should be noted that an instruction to perform a \textit{test} requires a hypothesis test to be conducted using either a \(p\)-value or a test statistic, rather than a confidence interval.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The mass of food eaten each day by a family's cat is normally distributed with a mean of 280 grams and a standard deviation of 13 grams. Recently, they notice that their cat doesn't seem to eat the same amount of food as it used to. On 14 randomly chosen days they measure the mass of food that their cat eats, obtaining a mean of 273 grams per day. Stating an assumption required, obtain a 95\% confidence interval for the mass of food eaten daily by their cat, and comment on their concern that their cat doesn't eat the same amount of the food as it did previously.
 
 \tcblower
@@ -13105,7 +13157,7 @@ Given a random sample of data from an underlying population that is \emph{normal
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=A $t$-confidence interval for the population mean:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=A $t$-confidence interval for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 A $(1-\alpha)\%$ CI for $\mu$ is: $\bar{x}\pm t_{n-1,1-\alpha/2} \times \cfrac{s}{\sqrt{n}}$
 \end{tcolorbox}
 \end{centering}
@@ -13113,7 +13165,7 @@ A $(1-\alpha)\%$ CI for $\mu$ is: $\bar{x}\pm t_{n-1,1-\alpha/2} \times \cfrac{s
 As with a \(z\)-confidence interval, a \(t\)\emph{-confidence interval} can be used in a similar way to \textbf{\emph{two-tailed}} \emph{one sample }\(t\)\emph{-test for the population mean}.
 
 \vspace{0.5cm}
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Seven mid-terrace houses in Fife are randomly chosen to have their electricity usage for 24 hours recorded. The results, in kWh, are:
 
   \begin{center}
@@ -13238,7 +13290,7 @@ In Chapter 9 a \emph{normal approximation} to the distribution of the sample pro
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=A $z$-confidence interval for the population proportion:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=A $z$-confidence interval for the population proportion:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 A $(1-\alpha)\%$ CI for $p$ is: $\hat{p}\pm z_{1-\alpha/2} \times \sqrt{\cfrac{\hat{p}\hat{q}}{n}}$
 \end{tcolorbox}
 \end{centering}
@@ -13249,7 +13301,7 @@ As for a \(z\)-test for proportion, the conditions for validity are that the dat
 
 \vspace{0.5cm}
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A tech website surveys a random selection of its subscribers and finds that 41 out of 50 of them have changed the password for their WiFi router from the default one as recommended by experts. Obtain an approximate 95\% confidence interval for the proportion of its subscribers that have changed their router's password.   
 
 \vspace{0.5cm}
@@ -13420,7 +13472,7 @@ The theory underpinning the test statistic used for a goodness-of-fit test is be
 
 \begin{centering}
 \tcbset{width=15cm}
-\begin{tcolorbox}[adjusted title=For a $\chi^2$ goodness-of-fit test:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For a $\chi^2$ goodness-of-fit test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 Test statistic: $X^2=\cfrac{(O_1-E_1)^2}{E_1}+\cfrac{(O_2-E_2)^2}{E_2}+...+\cfrac{(O_n-E_n)^2}{E_n}=\sum{\cfrac{(O_i-E_i)^2}{E_i}}$
 \end{tcolorbox}
 \end{centering}
@@ -13466,7 +13518,7 @@ The test statistic follows a \(\chi^2_\nu\) distribution with degrees of freedom
 \begin{minipage}[c]{.54\textwidth}
   \centering
 \begin{centering}
-\begin{tcolorbox}[adjusted title=The decision rule for $\chi^2$ tests:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The decision rule for $\chi^2$ tests:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 If \textbf{test statistic} $>$ \textbf{critical value}, \textit{reject }$\text{H}_0$.\\
 \vspace{0.5cm}
 If \textbf{test statistic} $<$ \textbf{critical value}, \textit{do not reject }$\text{H}_0$.\\
@@ -13491,7 +13543,7 @@ There is \emph{insufficient evidence} to suggest that the model is not correct, 
 
 \begin{centering}
 \tcbset{width=14cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of a goodness-of-fit test:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for valid use of a goodness-of-fit test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item No \textbf{expected} values should be \emph{less than 1}.
     \item At least 80\% of the \textbf{expected} values should be \emph{at least 5}.
@@ -13503,7 +13555,7 @@ The data for teacher's die met the criteria for the valid use of a goodness-of-f
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A chocolatier says that their boxes are randomly filled with caramel, coffee and strawberry flavoured chocolates in the ratio $2:2:1$. Suspecting that this is not true, a chocolate-fan counts the number of chocolates of each flavour in a box and finds 8 are caramel, 13 are coffee and 11 are strawberry. Perform a non-parametric hypothesis test to assess the evidence at the 10\% significance level that the flavours are not distributed as claimed by the chocolatier. 
 \tcblower
 \textbf{Solution:}
@@ -13616,7 +13668,7 @@ Perform a non-parametric test at the 10\% significance level to test whether the
 
 If the expected categories do not meet the conditions stated on Page 151 then two or more categories should be \emph{``combined''} (or \emph{``collapsed''}) until the conditions are satisfied. The degrees of freedom for the test should be calculated based on the \emph{final combined frequency table} rather than the original table. Whilst it is recommended to combine those categories with the smallest expected values, it may at times be more intuitive to instead collapse those categories that more naturally can be grouped.
 
-\begin{tcolorbox}[height=20cm,title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[height=20cm,title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} An video game allows players to buy in-game ``loot boxes'' with real money, each containing one in-game item. The game's publisher states that 60\% of loot boxes contain a ``Regular'' item, 25\% contain a ``Premium'' item, 10\% contain a ``Rare' item and the remaining 5\% contain an ``Ultra Rare'' item. A player records the types of item contained in each of a series of loot boxes and records the results in the frequency table below.
 
 \vspace{0.3cm}
@@ -13802,7 +13854,7 @@ Perform a non-parametric test to assess at the 5\% level of significance the cla
 
 A goodness-of-fit test can also be performed to assess whether observed data fits a \emph{binomial} distribution, in which the \textbf{total observed frequencies} will be split in proportion to the \emph{calculated binomial probabilities}.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A supermarket randomly samples boxes of duck eggs delivered by a supplier, each containing four eggs, and counts how many of the four eggs are broken for each box. The results of this are:
 
 \vspace{0.05cm}
@@ -14004,7 +14056,7 @@ Note that estimating the parameter \(p\) from \emph{the data itself} would requi
 
 Just as with a binomial distribution, using a Poisson distribution as a model for a goodness-of-fit test requires the total observations to be split according to calculated probabilities. Should the only parameter for a Poisson distribution, \(\lambda\), be required to be \emph{estimated from the data}, an additional degree of freedom will be \emph{subtracted}, since \(m=1\).
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} It is generally said that the number of goals scored in a game of football follows a Poisson distribution. A football fan decides to see whether this statement is still reasonable, and records the number of goals scored in every game across a weekend in each of the top four tiers of English football:
 
 \begin{center}
@@ -14465,7 +14517,7 @@ A process maybe out of statistical control when:
 
 Each rule must be carefully checked for to determine whether a process is \emph{in statistical control}. If it is \emph{not} in statistical control, it is often necessary to identify the relevant WECO rule and at which point this could be declared. The following examples focus on context-free control charts for the purpose of practising \emph{applying the WECO rules}.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} For the control chart below, determine whether the process is in control. If it is out of control, identify at which sample this could be determined, with justification.
 
 \begin{center}
@@ -14730,7 +14782,7 @@ Sigma limits can be calculated as:
 
 A control chart is created with horizontal lines indicating the population mean and each of the 6 sigma limits calculated. The sample mean for each of the samples drawn at regular intervals is plotted on the chart, and the \emph{WECO rules} applied to determine if or when the production process is out of control.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A machine fills cans of soda with mean volume 350ml and standard deviation 5ml. Every hour a sample of 3 cans is taken, their volumes measured, and the sample mean calculated before being added to an $x$-bar chart. 
 
 \begin{center}
@@ -15066,7 +15118,7 @@ It should be noted that, depending on the value of \(p\), it is not unusual for 
 
 If no historical value of the population proportion has been suggested, then \(p\) must be estimated from the sample data provided, and \(\hat{p}\) used.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A machine fills Christmas crackers. 30\% of the crackers are supposed to contain joke A. Every 30 minutes a sample of 50 crackers is taken and the number containing joke A is found. The proportion of each sample that has joke A is plotted on a $p$-chart.
 
 \includegraphics[scale=0.4]{images/1225e.png}
@@ -15188,7 +15240,7 @@ The hypotheses for this \textbf{non-parametric} test should be stated \emph{in c
 
 \begin{centering}
 \tcbset{width=15cm}
-\begin{tcolorbox}[adjusted title=$\chi^2$ Test for Association hypotheses:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=$\chi^2$ Test for Association hypotheses:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{center}
 \begin{tabular}{r l}
     $\text{H}_0:$ & There is \textbf{no association} between the variables.\\[0.5em]
@@ -15312,7 +15364,7 @@ There is insufficient evidence to suggest that there is an association between h
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Researchers working for an educational organisation wish to explore a possible connection between playing a musical instrument and learning a foreign language in school-age teenagers. They randomly select three schools within the region and then, within each school, select a number of S4 pupils to interview.\\[0.5em]
 During the interview, each pupil is asked whether or not they play at least one musical instrument, and whether or not they are studying at least one modern language at National 5 level. The results are summarised in the contingency table below:
 
@@ -15425,7 +15477,7 @@ It should be noted that since the test's purpose of looking for evidence for an 
 
 In such cases, reworded yet equivalent hypothesis should be used for the test for consistency.
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example 2,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The outcomes for a random sample of 80 driving tests sat in three different test centres located across Lancashire are recorded. The organisation responsible for overseeing driving test standards is seeking to explore a claim made that the centres do not use the same standards, and that the outcome of driver's test is not independent to location chosen.
 
 
@@ -15595,7 +15647,7 @@ Note that an equivalent conclusion would be that there is evidence to suggest th
 
 Where the conditions for validity for a \(\chi^2\) test of association are not met, it may be still possible to carry out a test by \emph{combining rows and/or columns}. It is generally advised to collapse those which most naturally may be combined.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A pharmaceutical company arranges for a random sample of 120 patients to take part in a trial of a new pain relief medication. Some will be given the new medication, whilst others will instead be given a placebo treatment that is identical in appearance and packaging. At the end of the week, each patient will be asked whether they experienced a reduction, an increase in pain, or no change. The data collected is shown in the table below:
 \begin{center}
 \begin{tabularx}{15cm}{ >{\centering\arraybackslash}X >{\centering\arraybackslash}X | >{\centering\arraybackslash}X|  >{\centering\arraybackslash}X |>{\centering\arraybackslash}X| } 
@@ -15996,7 +16048,7 @@ From the Data Booklet:
 \columnbreak
 
 \begin{centering}
-\begin{tcolorbox}[adjusted title=For a two-sample $z$-test for means:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For a two-sample $z$-test for means:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 Test statistic: $z=\dfrac{\overline{x}_1-\overline{x}_2}{\sqrt{\dfrac{\sigma_1^2}{n_1}+\dfrac{\sigma_2^2}{n_2}}}$
 \end{tcolorbox}
 \end{centering}
@@ -16005,7 +16057,7 @@ Test statistic: $z=\dfrac{\overline{x}_1-\overline{x}_2}{\sqrt{\dfrac{\sigma_1^2
 
 \begin{centering}
 \tcbset{width=14cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of the two-sample $z$-test for population means:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for valid use of the two-sample $z$-test for population means:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The \textit{populations} are \textbf{normally distributed}.
     \item The \textit{population standard deviations}, $\sigma_1$ and $\sigma_2$, are \textbf{known}.
@@ -16016,7 +16068,7 @@ Test statistic: $z=\dfrac{\overline{x}_1-\overline{x}_2}{\sqrt{\dfrac{\sigma_1^2
 
 Note when sample sizes \(n_1\) and \(n_2\) are greater than 20 the \emph{Central Limit Theorem} can be invoked, so the sample means are at least approximately normally distributed regardless of the distribution of the underlying population. Also, for larger sample sizes the sample standard deviations \(s_1\) and \(s_2\) might be taken as \emph{sufficiently accurate estimates} for the \emph{population} standard deviations \(\sigma_1\) and \(\sigma_2\).
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} To compare the longevity of two brands' light bulbs, a random sample of eight bulbs from \textit{AlwaysBrite} and eight bulbs from \textit{BulbCity} are tested. The sample of AlwaysBrite bulbs had have a mean lifespan 1015 hours, with a sample mean of 1059 hours before failure for BulbCity. Assuming that the lifespan for both populations of bulbs is known to be normally distributed, with a standard deviation of 84 hours, use a parametric test to determine whether there is evidence for a difference in longevity between the brands.
 
 \tcblower
@@ -16153,7 +16205,7 @@ The test statistic is provided in the SQA Data Booklet, and it uses an \emph{est
 
 \begin{centering}
 \tcbset{width=13cm}
-\begin{tcolorbox}[adjusted title=For a two-sample $z$-test for population proportions:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For a two-sample $z$-test for population proportions:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 Test statistic: $z=\dfrac{\hat{p}_1-\hat{p}_2}{\sqrt{\hat{p} \hat{q} \left( \dfrac{1}{n_1}+ \dfrac{1}{n_2}\right)}}$ \qquad where \qquad $\hat{p}=\dfrac{\hat{p_1}n_1+n_2\hat{p}_2}{n_1+n_2}$
 \end{tcolorbox}
 \end{centering}
@@ -16162,7 +16214,7 @@ The test statistic may be derived from the use of the normal approximation to a 
 
 \begin{centering}
 \tcbset{width=14cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of the two-sample $z$-test for population proportions:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for valid use of the two-sample $z$-test for population proportions:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item Each of $n_1 \hat{p}_1,n_1 \hat{q}_1,n_2 \hat{p}_2$ and $n_2 \hat{q}_2$ are \textbf{greater than 5}.
     \item The data was obtained through \textbf{random} and \textbf{independent samples}.
@@ -16179,7 +16231,7 @@ This parametric test can take one-tailed or two-tailed hypotheses which relation
     \end{tabular}
 \end{center}
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A sample of 50 randomly selected men with high triglyceride levels consumed 2 tablespoons of oat bran daily for 6 weeks. After 6 weeks, 60\% of the men had lowered their triglyceride levels. A sample of 80 men consumed 2 tablespoons of wheat bran for 6 weeks. After 6 weeks 25\% had lower triglyceride levels. Assess the evidence for a difference in the proportions at the 1\% significance level.
 
 \tcblower
@@ -16308,7 +16360,7 @@ When one or both sample sizes are small and population standard deviations are u
 
 \begin{centering}
 \tcbset{width=13cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of the two-sample $t$-test for population means:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for valid use of the two-sample $t$-test for population means:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The \textit{populations} are \textbf{normally distributed}.
     \item The populations have \textbf{equal variance}.
@@ -16321,12 +16373,12 @@ The test statistic is provided in the SQA Data Booklet, and follows a \(t\)-dist
 
 \begin{centering}
 \tcbset{width=15.5cm}
-\begin{tcolorbox}[adjusted title=For a two-sample $t$-test for population means:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For a two-sample $t$-test for population means:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 Test statistic: $t_{n_1+n_2-2}=\dfrac{\bar{x}_1-\bar{x}_2}{s\sqrt{\dfrac{1}{n_1}+ \dfrac{1}{n_2}}}$ \qquad where \qquad $s^2=\dfrac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}$
 \end{tcolorbox}
 \end{centering}
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} It is known that the volume of hot drinks dispensed by a type of machine is normally distributed. A random sample of 10 hot drinks from Dispenser A has a mean volume of 203 ml and a standard deviation of 3 ml. A random sample of 15 hot drinks from Dispenser B has corresponding values of 206 ml and 5 ml. Test, at the 5\% significance level, the hypothesis that there is no difference in the mean volume dispensed by the two machines.  
 
 \tcblower
@@ -16479,7 +16531,7 @@ The test statistic derives from the one-sample \(t\)-test covered in Chapter 10,
   \centering
 \begin{centering}
 \tcbset{width=6cm,height=2.7cm}
-\begin{tcolorbox}[adjusted title=For a paired $t$-test:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For a paired $t$-test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 Test statistic: $t_{n-1}=\dfrac{\bar{d}-\mu_d}{\dfrac{s_d}{\sqrt{n}}}$
 \end{tcolorbox}
 \end{centering}
@@ -16488,7 +16540,7 @@ Test statistic: $t_{n-1}=\dfrac{\bar{d}-\mu_d}{\dfrac{s_d}{\sqrt{n}}}$
 \begin{minipage}[c]{.66\textwidth}
   \centering
 \tcbset{width=11cm,height=2.7cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of a paired $t$-test:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for valid use of a paired $t$-test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The \textit{populations of differences} is \textbf{normally distributed}.
     \item The data was obtained through \textbf{random sampling}.
@@ -16499,7 +16551,7 @@ Test statistic: $t_{n-1}=\dfrac{\bar{d}-\mu_d}{\dfrac{s_d}{\sqrt{n}}}$
 
 Careful attention to how the sample differences was created is needed for one-tailed hypotheses.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Six randomly selected children have their IQ measured before and after starting a regular programme of exercise.
 \begin{center}
 \begin{tabular}{l|cccccc}
@@ -16844,7 +16896,7 @@ Note that the sum of \(W_+\) and \(W_-\) is \(12.5+23.5=36\), which will always 
 
 \begin{centering}
 \tcbset{width=14cm}
-\begin{tcolorbox}[adjusted title=For a Wilcoxon Signed Rank test:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For a Wilcoxon Signed Rank test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The \textbf{test statistic}, denoted $W$, is the \textit{lower} of $W_+$ and $W_-$. 
     \item The \textbf{critical value} can be obtained from Page 15 of the Data Booklet.
@@ -16867,7 +16919,7 @@ The Wilcoxon Signed Rank test will typically be used for small samples for which
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for valid use:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The underlying distribution is \textbf{symmetrical}.
     \item The data was obtained through a \textbf{random sample}.
@@ -16882,9 +16934,9 @@ A suggested methodical approach to obtaining the signed ranks required without a
     \item Ignoring any \textbf{zeros}, assign ranks to the remaining $n$ values in ascending order by \textbf{absolute} value.
 \end{itemize}
 
-The following example should be compared to Example 1 from Section 10.7, Chapter 10, in which a \(t\)-test was used.
+The following example should be compared to Example from Section 10.7, Chapter 10, in which a \(t\)-test was used.
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A supermarket sells sharing-sized bags of a particular brand of crisps. A consumer watchdog is asked to investigate a claim that the median mass of crisps contained in a bag is less than the stated contents of 150 grams. A random sample of bags gives the following results, in grams:
 
   \begin{center}
@@ -16963,7 +17015,7 @@ There is insufficient evidence to suggest that the median mass of crisps in the 
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Before learner drivers can sit their practical test, they must sit a theory test. Part of this is a hazard perception test, in which a maximum of 75 points are available. Prior to some changes to the hazard perception test, the median score was 44. The points scored by ten randomly selected learner drivers in the updated hazard perception test are recorded:
 
   \begin{center}
@@ -17107,7 +17159,7 @@ In Chapter 15, the \emph{paired} \(t\)-\emph{test} was introduced. It is used fo
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of the Wilcoxon Signed Rank Test for Paired Data:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for valid use of the Wilcoxon Signed Rank Test for Paired Data:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The \textbf{population of differences are symmetrical}.
     \item The data was obtained through \textbf{random sampling}.
@@ -17117,7 +17169,7 @@ In Chapter 15, the \emph{paired} \(t\)-\emph{test} was introduced. It is used fo
 
 Just as with the paired \(t\)-test, the paired samples are considered as a \emph{single sample of differences}, allowing a similar process to the one-sample Wilcoxon Signed Rank Test.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} An athletics coach wishes to assess the value to athletes of an intensive period of weight training. Twelve 400-metre runners are selected at random and their times to complete this distance, in seconds, are recorded. Following a programme of weight training they run the distance again, with their times in seconds again recorded. The table below summarises the results.
 
 \begin{center}
@@ -17241,7 +17293,7 @@ The Data Booklet only provides Wilcoxon critical values for effective sample siz
 
 Since here a \emph{discrete} distribution is being approximated by the \emph{continuous} normal distribution, a \textbf{continuity correction} is required. If the test statistic \(W\) is taken as the lower of \(W_+\) and \(W_-\), a continuity correction of \(+0.5\) should be used.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} It is claimed by a local resident that more than 50\% of all the vehicles on an urban road exceed the 30 mph speed limit.  The speed of each of a random sample of 24 vehicles is recorded with the following results:
 
 \begin{center}
@@ -17641,7 +17693,7 @@ Given two independent samples, the non-parametric \textbf{Mann-Whitney Rank Sum 
 
 \begin{centering}
 \tcbset{width=16cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of the Mann-Whitney Rank Sum Test:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for valid use of the Mann-Whitney Rank Sum Test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The two distributions of the underlying populations have \textbf{the same shape and variance}.
     \item The data were obtained through \textbf{random} and \textbf{independent samples}
@@ -17770,7 +17822,7 @@ Hence, the test statistic can now be confirmed as \(W=29\). However this value c
 
 \begin{centering}
 \tcbset{width=14cm}
-\begin{tcolorbox}[adjusted title=For a Mann-Whitney Rank Sum test:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For a Mann-Whitney Rank Sum test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The \textbf{test statistic}, denoted $W$, is the \textit{smaller} of $W_m$ and $m(m+n+1)-W_m$. 
     \item The \textbf{critical value} can be obtained from Page 16 of the Data Booklet.
@@ -17787,7 +17839,7 @@ Since \(29>18\), \(\text{H}_0\) can not be rejected at the 5\% level of signific
 
 Note that whilst only the rank sum for the \textit{smaller sample} is required, to minimise errors it is recommended to calculate rank sums for both samples and check that they add to the required total of \(\frac{1}{2}(m+n)(m+n+1)\). Here \(\frac{1}{2}\times 11\times 12=66\), and it should be observed that for each pair of rank sums the total is \(66\).
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Times taken to run 5km for a random sample of 7 hockey players and a random sample of 5 rugby players are recorded. The table below gives the results, to the nearest minute:
 
 \begin{center}
@@ -18044,7 +18096,7 @@ The Data Booklet only provides Mann-Whitney critical values for sample sizes whe
 
 Since here a \emph{discrete} distribution is being approximated by the \emph{continuous} normal distribution, a \textbf{continuity correction} is required. If the test statistic \(W\) is taken as the lowest possible rank sum \(W_m\) \emph{for the smaller sample}, a continuity correction of \(+0.5\) should be used.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} 26 Atlantic herrings and 24 North Sea herrings were caught and their lengths measured in cm. The 50 lengths were ordered from smallest to largest and the ranks summed: 
      \begin{center}
      \begin{tabular}{ccc}
@@ -18273,7 +18325,7 @@ The standard steps involved in performing a one-tailed test in this manner are, 
     \item The $p$-value for the test can be calculated using the values from the previous steps as $\dfrac{\text{relevant arrangements}}{\text{possible arrangements}}$.
 \end{itemize}
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Three randomly selected cameras from Brand A and seven from Brand B are tested for reliability, with the number of \textit{shutter actuations} before failure recorded. When ranked with 10 as the most reliable (greatest number of actuations) to 1 as the least reliable (least number of actuations), a rank sum of 9 is obtained for Brand A.\\[0.1em]
 
 By considering possible arrangements of rankings, and stating any assumptions required, perform a Mann-Whitney test at the 10\% significance level to assess whether the data suggests Brand A's cameras are less reliable.
@@ -22407,11 +22459,6 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{enumerate}
     \item 
     \begin{enumerate}
-        \item A legend should be provided for the diagram, such as $3|2=3.2\text{ metres}$.
-        \item The stem-and-leaf diagram shows that trees in Woodland A were taller, on average.
-    \end{enumerate}
-    \item 
-    \begin{enumerate}
     \item 
     \begin{tikzpicture}[baseline=(current bounding box.north)]
         \draw (0.8*70,0) -- (0.8*87,0);
@@ -22496,9 +22543,15 @@ The website wishes to allow users the ability to input the number of miles in th
     \draw[fill] (6,0.6) circle (2pt);
     \draw[fill] (5,0.3) circle (2pt);
     \end{tikzpicture}
+    \item $\text{median}=7.5$ and $\text{interquartile range}=3.25$
     \item $\text{mean}=7.33$ and $\text{sd}=2.35$
     \item Shoe sizes are discrete data.
     \end{multicols}
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item A legend should be provided for the diagram, such as $3|2=3.2\text{ metres}$.
+        \item The stem-and-leaf diagram shows that trees in Woodland A were taller, on average.
     \end{enumerate}
     \item 
     \begin{enumerate}

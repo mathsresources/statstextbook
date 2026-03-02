@@ -226,11 +226,6 @@
     \end{enumerate}
     \item 
     \begin{enumerate}
-        \item A legend should be provided for the diagram, such as $3|2=3.2\text{ metres}$.
-        \item The stem-and-leaf diagram shows that trees in Woodland A were taller, on average.
-    \end{enumerate}
-    \item 
-    \begin{enumerate}
     \item 
     \begin{tikzpicture}[baseline=(current bounding box.north)]
         \draw (0.8*70,0) -- (0.8*87,0);
@@ -314,9 +309,15 @@
     \draw[fill] (6,0.6) circle (2pt);
     \draw[fill] (5,0.3) circle (2pt);
     \end{tikzpicture}
+    \item $\text{median}=7.5$ and $\text{interquartile range}=3.25$
     \item $\text{mean}=7.33$ and $\text{sd}=2.35$
     \item Shoe sizes are discrete data.
     \end{multicols}
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item A legend should be provided for the diagram, such as $3|2=3.2\text{ metres}$.
+        \item The stem-and-leaf diagram shows that trees in Woodland A were taller, on average.
     \end{enumerate}
     \item 
     \begin{enumerate}

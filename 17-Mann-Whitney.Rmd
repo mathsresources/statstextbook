@@ -133,7 +133,7 @@ Given two independent samples, the non-parametric **Mann-Whitney Rank Sum test**
 
 \begin{centering}
 \tcbset{width=16cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of the Mann-Whitney Rank Sum Test:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for valid use of the Mann-Whitney Rank Sum Test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The two distributions of the underlying populations have \textbf{the same shape and variance}.
     \item The data were obtained through \textbf{random} and \textbf{independent samples}
@@ -262,7 +262,7 @@ $$5(5+6+1)-31=29$$
 
 \begin{centering}
 \tcbset{width=14cm}
-\begin{tcolorbox}[adjusted title=For a Mann-Whitney Rank Sum test:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=For a Mann-Whitney Rank Sum test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The \textbf{test statistic}, denoted $W$, is the \textit{smaller} of $W_m$ and $m(m+n+1)-W_m$. 
     \item The \textbf{critical value} can be obtained from Page 16 of the Data Booklet.
@@ -279,7 +279,7 @@ Since $29>18$, $\text{H}_0$ can not be rejected at the 5\% level of significance
 
 Note that whilst only the rank sum for the \textit{smaller sample} is required, to minimise errors it is recommended to calculate rank sums for both samples and check that they add to the required total of $\frac{1}{2}(m+n)(m+n+1)$. Here $\frac{1}{2}\times 11\times 12=66$, and it should be observed that for each pair of rank sums the total is $66$.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Times taken to run 5km for a random sample of 7 hockey players and a random sample of 5 rugby players are recorded. The table below gives the results, to the nearest minute:
 
 \begin{center}
@@ -535,7 +535,7 @@ $$\text{E}(W)=\frac{1}{2}m(m+n+1) \quad \text{and} \quad \text{V}(W)=\frac{1}{12
 
 Since here a *discrete* distribution is being approximated by the *continuous* normal distribution, a **continuity correction** is required. If the test statistic $W$ is taken as the lowest possible rank sum $W_m$ *for the smaller sample*, a continuity correction of $+0.5$ should be used.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} 26 Atlantic herrings and 24 North Sea herrings were caught and their lengths measured in cm. The 50 lengths were ordered from smallest to largest and the ranks summed: 
 	 \begin{center}
 	 \begin{tabular}{ccc}
@@ -763,7 +763,7 @@ The standard steps involved in performing a one-tailed test in this manner are, 
     \item The $p$-value for the test can be calculated using the values from the previous steps as $\dfrac{\text{relevant arrangements}}{\text{possible arrangements}}$.
 \end{itemize}
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Three randomly selected cameras from Brand A and seven from Brand B are tested for reliability, with the number of \textit{shutter actuations} before failure recorded. When ranked with 10 as the most reliable (greatest number of actuations) to 1 as the least reliable (least number of actuations), a rank sum of 9 is obtained for Brand A.\\[0.1em]
 
 By considering possible arrangements of rankings, and stating any assumptions required, perform a Mann-Whitney test at the 10\% significance level to assess whether the data suggests Brand A's cameras are less reliable.

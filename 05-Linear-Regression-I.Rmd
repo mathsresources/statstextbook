@@ -173,7 +173,7 @@ In \textbf{Figure 3}, as one variable increases, there appears to be no clear pa
 
 Note that **correlation doesn't imply causation**. A linear relationship can exist between variables without meaning that one causes the other. Seemingly linear relationships can also appear by chance - this is referred to as *spurious correlation*.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A French class takes two tests, one \textit{listening} and one \textit{reading}. The results of the 10 pupils are shown in the table and scatterplot below, along with some summary statistics. Comment on the scatterplot.
 
 \begin{multicols}{2}
@@ -554,7 +554,7 @@ The strength of the *linear relationship* between two variables is measured usin
 
 \begin{center}
 \tcbset{width=8cm}
-\begin{tcolorbox}[adjusted title=Pearson's Correlation Coefficient, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Pearson's Correlation Coefficient, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$ 
 \end{tcolorbox}
 \end{center}
@@ -907,7 +907,7 @@ n&=7
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A biologist records the tail length ($x$) and total height ($y$), both in centimetres, for a random sample of 8 red squirrels. A scatterplot and summary statistics are for the data produced and shown below.
 \vspace{-0.5cm}
 \begin{center}
@@ -1301,7 +1301,7 @@ Since regression lines are generally calculated from a random *sample* of bivari
 
 \begin{center}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=Estimation of Slope and Intercept Parameters, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=Estimation of Slope and Intercept Parameters, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \vspace{-0.4cm}
 $$\hat{\beta}=b=\dfrac{S_{xy}}{S_{xx}} \qquad \text{and} \qquad \hat{\alpha}=a=\bar{y}-b\bar{x}$$
 \end{tcolorbox}
@@ -1344,7 +1344,7 @@ Whether a linear relationship will continue to hold for $x$ values lower or high
 
 
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A biology class takes two tests, one theoretical and one practical. The results of the 12 pupils are shown in the table and scatterplot below, along with some summary statistics.
 
 \begin{center}

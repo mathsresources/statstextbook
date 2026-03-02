@@ -122,7 +122,7 @@ Whilst $X$ and $Y$ do not follow the exact same distribution, they share key cha
 
 \begin{centering}
 \tcbset{width=11cm}
-\begin{tcolorbox}[adjusted title=The Discrete Uniform Distribution:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The Discrete Uniform Distribution:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item Notated $X\sim \text{U}(k)$.
     \item Defined by one parameter, $k$.
@@ -146,7 +146,7 @@ The previously stated values for the expectation and variance of $X$ and $Y$ can
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given $T\sim \text{U}(10)$ and $W=3T+1$, calculate $\text{E}(W)$ and $\text{V}(W)$.
 
 \tcblower
@@ -223,7 +223,7 @@ A *Bernoulli trial* is an experiment in which each trial has only two possible o
 
 \begin{centering}
 \tcbset{width=10.5cm}
-\begin{tcolorbox}[adjusted title=The Binomial Distribution:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The Binomial Distribution:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item Notated $X\sim \text{B}(n,p)$.
     \item Defined by two parameters, $n$ and $p$.
@@ -304,7 +304,7 @@ The SQA Data Booklet gives the **formula** to calculate *individual* probabiliti
 $$\text{Given }X\sim \text{B}(n,p)\text{: }\qquad \text{P}(X=x)={}^{n}C_{x}\times p^x\times q^{n-x}$$
 \pagebreak
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given $X\sim \text{B}(7,\frac{1}{3})$, calculate $\text{P}(X=1)$.
 
 \tcblower
@@ -320,7 +320,7 @@ $$\text{Given }X\sim \text{B}(n,p)\text{: }\qquad \text{P}(X=x)={}^{n}C_{x}\time
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} 12 students each take it in turns to select a playing card from a pack at random, before returning it. Calculate the probability that the card drawn is a Spade for fewer than 2 of the students. 
 
 \tcblower
@@ -379,7 +379,7 @@ Consider discrete random variable $X$ taking values $x=\{0,1,2,3,4,5,6\}$:
 \end{align*}
 \end{center}
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} It is estimated that around 10\% of people are left-handed. Taking this percentage to be accurate, calculate the probability that, in a random sample of 12 people, at least two of them will be left-handed.
 
 \tcblower
@@ -445,7 +445,7 @@ $$\text{E}(X)=np \qquad \text{and} \qquad \text{V}(X)=npq$$
 
 Where $q=1-p$, representing the *probability of failure*.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A multiple choice quiz is comprised of eight questions, each with four choices to pick from. Let random variable $X$ represent the number of correct answers obtained out of eight from a student guessing completely at random. Calculate the mean and variance of $X$.
 
 \tcblower
@@ -502,7 +502,7 @@ Consider a mobile network's customer support department looking at how many call
 
 \begin{centering}
 \tcbset{width=12.5cm}
-\begin{tcolorbox}[adjusted title=The Poisson Distribution:, halign title = center,colback=black!5,colframe=black!75, halign = center]
+\begin{tcolorbox}[adjusted title=The Poisson Distribution:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item Notated $X\sim \text{Po}(\lambda)$.
     \item Defined by one parameter $\lambda$ \textit{("lambda")}.
@@ -558,7 +558,7 @@ $$\text{P}(X=4)=\frac{e^{-2.5} \times 2.5^4}{4!}=0.1336$$
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} During a spell of rain, drops of rain fall on a lawn at a constant mean rate of 6 drops per square metre per second. Calculate the probability that exactly 10 drops fall in one square metres of the lawn in a second.
 
 \tcblower
@@ -641,7 +641,7 @@ $$X+Y\sim \text{Po}(\lambda_X+\lambda_Y)$$
 
 The same result can be used to extend, or shorten, the time period of interest for a Poisson distribution, provided there is a *constant mean rate* throughout the entire time period. 
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Betty has observed that the number of work emails she receives on weekdays between 10am and 11am follows a Poisson distribution with a mean rate of 7 emails. The number of personal emails she receives in this time is also Poisson distributed with a mean rate of 3 emails. Calculate the probability that she receives fewer than 8 emails in total on a weekday between 10am and 11am. 
 
 \tcblower

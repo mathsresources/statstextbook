@@ -25,7 +25,7 @@ For example, in the context of rolling a fair, cubical die:
 
 #### Probability notation {-}
 
-The probability that a die  lands on 5 is *one-in-six*, or $\frac{1}{6}$. Using probability notation:
+The probability that a fair cubical die lands on 5 is *one-in-six*, or $\frac{1}{6}$. Using probability notation:
 
 $$\text{P}(5)=\dfrac{1}{6}$$
 
@@ -35,34 +35,42 @@ $$\text{P}(5)=\dfrac{1}{6}$$
 
 ### Experimental Probability {-}
 
+\vspace{-0.2cm}
+
 The probability of an event can be estimated through repeated trials - this is referred to as the \mbox{\textit{experimental probability}} of the event. For example, if a motorist passes a set of traffic lights every morning and wishes to know the probability of having to wait at a red light on any given morning, they could record the *proportion* of times they have to wait at a red light over a period of time. If, over the course of 200 mornings, they have to wait at a red light 114 times:
+
+\vspace{-0.1cm}
 
 $$\text{P}(\text{red light})\approx\frac{114}{200}=0.57$$
 
 ### Theoretical Probability {-}
 
+\vspace{-0.2cm}
+
 When each of the outcomes in the sample space of a random experiment can be reasonably assumed to be \mbox{\textbf{equally likely}} then the probability of any outcomes or events can be determined. This is called *theoretical probability*.
 
-Equally likely outcomes typically arise from the symmetry of a physical object (such as a coin or die) or a reasonable assumption. The probability of any one *individual outcome* in a sample space containing $N$ equally likely outcomes is $\frac{1}{N}$.
-
-For example, if a playing card is picked at random from a standard pack of 52 cards, containing no jokers, then the probability of picking the Queen of Hearts is $\frac{1}{52}$.
+Equally likely outcomes typically arise from the symmetry of a physical object (such as a coin or die) or a reasonable assumption. The probability of any *individual outcome* in a sample space containing $N$ equally likely outcomes is $\frac{1}{N}$.\newline For example, if a playing card is picked at random from a standard pack of 52 cards, containing no jokers, then the probability of picking the Queen of Hearts is $\frac{1}{52}$.
 
 An **event** is a set of one or more outcomes from the sample space. The probability of an event is given by:
 
+\begin{tcolorbox}[center,adjusted title=Probability of an Event,colback=red!5,colframe=red!70!black,width=13cm,halign = center,halign title = center]
+\vspace{-0.3cm}
 $$\text{P}(\text{event})=\frac{\text{number of outcomes from the sample space in the event}}{\text{total number of outcomes in the sample space}}$$
+\end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A bag contains 13 red counters, 5 blue counters and 4 green counters. A counter is chosen at random. Find the probability that the counter is green.
 
 \tcblower
 \textbf{Solution:}
+\vspace{-0.3cm}
 $$\text{P}(\text{green})=\frac{4}{22}=\frac{2}{11}$$
 \end{tcolorbox}
 
-In this course, probabilities will be given as simplified fractions or **rounded to four decimal places**.
-In probability theory, *"and"* means that *both* events are true, and *"or"* means that *at least one of* the events are true.
+In probability theory, *"and"* means that *both* events are true, and *"or"* means that *at least one* is true.
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A car dealership has 80 cars in its showroom. They have a mix of electric, hybrid, petrol and diesel cars, both new and second-hand. The table below shows the numbers of each type.
 
 \begin{center}
@@ -80,8 +88,11 @@ A car is selected at random. Determine the probability that the car selected is 
 
 \tcblower
 \textbf{Solution:}
+\vspace{-0.3cm}
 $$\text{P}(\text{second-hand and hybrid})=\dfrac{7}{80}=0.0875$$
 \end{tcolorbox}
+
+In this textbook, probabilities will be given as simplified fractions or *rounded to four decimal places* for consistency.
 
 \pagebreak
 
@@ -185,7 +196,7 @@ If two coins are tossed, it may be tempting to suggest that the probability of b
 
 The probability of both coins landing tails is therefore *one-in-four*, or $\text{P}(\text{both tails})=\frac{1}{4}$.
 
-\begin{tcolorbox}[title=Example 1,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Three coins are tossed at the same time. Find the probability that exactly two of the coins land tails.
 
 \tcblower
@@ -197,7 +208,7 @@ $$\text{P}(\text{exactly two tails})=\dfrac{3}{8}$$
 
 \end{tcolorbox}
 
-\begin{tcolorbox}[title=Example 2,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Two fair dice are rolled. Determine the probability that the sum obtained is at least nine.
 
 \tcblower
@@ -391,7 +402,7 @@ Tree diagrams can be created to map out the possible results of a random experim
 
 Note that in the tree diagram above the probability of the card being a diamond does not change depending on whether the roll of a die gives a six or not. In the following example the probabilities on the second stage of the tree diagram do change depending on the result of the first stage.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} From a bag containing four blue and six red cubes one is drawn at random, followed by another without replacing the first. Find the probability that two red cubes are drawn.
 
 \tcblower
@@ -600,7 +611,7 @@ Venn diagrams help illustrate these. Note that *capital letters* are commonly us
 \end{minipage}
 \end{figure}
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A dish is picked at random from the twelve on the main course menu shown in the Venn diagram above. State the value of $\text{P}(G\cap V)$.
 
 \tcblower
@@ -757,7 +768,7 @@ If two sets $A$ and $B$ are such that *no elements lie in both* $A$ *and* $B$, t
   \centering
 \begin{minipage}[c]{.5\textwidth}
   \centering
-\begin{tcolorbox}[adjusted title=For Mutually Exclusive events $A$ and $B$:,colback=black!5,colframe=black!75, halign = center,halign title = center,width=8cm,height=1.8cm]
+\begin{tcolorbox}[adjusted title=For Mutually Exclusive events $A$ and $B$:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8cm,height=1.8cm]
 $\text{P}(A\cap B)=0$
 \end{tcolorbox}
 \end{minipage}
@@ -781,7 +792,7 @@ If two sets $A$ and $B$ are such that *every element lies in at least one of* $A
   \centering
 \begin{minipage}[c]{.5\textwidth}
   \centering
-\begin{tcolorbox}[adjusted title=For Exhaustive events $A$ and $B$:,colback=black!5,colframe=black!75, halign = center,halign title = center,width=8cm,height=1.8cm]
+\begin{tcolorbox}[adjusted title=For Exhaustive events $A$ and $B$:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8cm,height=1.8cm]
 $\text{P}(A\cup B)=1$
 \end{tcolorbox}
 \end{minipage}
@@ -793,14 +804,14 @@ As well as the two rules above which apply depending on whether $A$ and $B$ are 
   \centering
 \begin{minipage}[c]{.4\textwidth}
   \centering
-\begin{tcolorbox}[adjusted title=The Complement of $A$:,colback=black!5,colframe=black!75, halign = center,halign title = center,width=6cm,height=1.8cm]
+\begin{tcolorbox}[adjusted title=The Complement of $A$:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=6cm,height=1.8cm]
 $\text{P}(A)+\text{P}(\overline{A})=1$
 \end{tcolorbox}
 \end{minipage}%
   \centering
 \begin{minipage}[c]{.6\textwidth}
   \centering
-\begin{tcolorbox}[adjusted title=The Addition Rule for events $A$ and $B$:, halign title = center,colback=black!5,colframe=black!75, halign = center,width=9cm,height=1.8cm]
+\begin{tcolorbox}[adjusted title=The Addition Rule for events $A$ and $B$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,width=9cm,height=1.8cm]
 $\text{P}(A \cup B)=\text{P}(A)+\text{P}(B)-\text{P}(A \cap B)$
 \end{tcolorbox}
 \end{minipage}
@@ -808,7 +819,7 @@ $\text{P}(A \cup B)=\text{P}(A)+\text{P}(B)-\text{P}(A \cap B)$
 
 It should be noted that there are generally numerous different ways to approach probability problems, including using a Venn diagram, a tree diagram or formulae. Whilst the problems on the next page have been designed to allow practice using formulae, a flexible approach may help.
 
-\begin{tcolorbox}[title=Example,title filled, colframe=black!50]
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given events $F$ and $G$ such that ${\text{P}(\overline{F})=0.3}$, ${\text{P}(G)=0.4}$ and ${\text{P}(F\cap G)=0.1}$ show that $F$ and $G$ are exhaustive.
 
 \tcblower
