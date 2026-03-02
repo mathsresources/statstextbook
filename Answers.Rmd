@@ -2347,39 +2347,53 @@
 
 #### [Exercise 18.6](#ex186q) {-}
 
-\begin{multicols}{3}
 \begin{enumerate}
-    \item
+    \begin{multicols}{3}
+    \item $\hat{X}=−33.455+196.15y$\newline $\text{time in solutio}= 378.4$
+    \item $\hat{X}=247.91+0.46y$\newline $\text{calorie}= 263.7$
+    \item $\hat{X}=95.95+1.86y$\newline $\text{systolic b}= 116.44$
+    \end{multicols}
 \end{enumerate}
-\end{multicols}
+\begin{enumerate}[resume]
+    \begin{multicols}{3}
+    \item $\hat{X}=23.69+0.549y$\newline $\text{maths mar}= 64.92$
+    \item $\hat{X}=18.86−0.62y$\newline $\text{weed killer concentratio}= 13.86$
+    \end{multicols}
+\end{enumerate}
 
 []{#ex187a}
 
 #### [Exercise 18.7](#ex187q) {-}
 
-\begin{multicols}{3}
 \begin{enumerate}
-    \item
+    \item The residual plot shows a random scatter of points centred on zero ($\text{E}(\epsilon)=0$) with constant variance ($\text{V}(\epsilon)=\sigma^2$) which suggests the linear regression model is suitable.
+    \item The residual plot appears to show the points in the pattern of a curve ($\text{E}(\epsilon)\ne0$) with constant variance ($\text{V}(\epsilon)=\sigma^2$) which suggests that the linear regression model is not suitable.
+    \item The residual plot appears to show the points centred on zero ($\text{E}(\epsilon)=0$) in a funnel pattern with decreasing variance ($\text{V}(\epsilon)\ne\sigma^2$) which suggests that the linear regression model is not suitable.
+    \item The residual plot appears to show the points in the pattern of a U-shaped curve ($\text{E}(\epsilon)\ne0$) with constant variance ($\text{V}(\epsilon)=\sigma^2$) which suggests that the linear regression model is not suitable.
+    \item The residual plot appears to show the points centred on zero ($\text{E}(\epsilon)=0$) in a funnel pattern with increasing variance ($\text{V}(\epsilon)\ne\sigma^2$) which suggests that the linear regression model is not suitable.
+    \item The residual plot shows a random scatter of points centred on zero ($\text{E}(\epsilon)=0$) with constant variance ($\text{V}(\epsilon)\ne\sigma^2$) which suggests the linear regression model is suitable.
 \end{enumerate}
-\end{multicols}
 
 []{#ex188a}
 
 #### [Exercise 18.8](#ex188q) {-}
 
-\begin{multicols}{3}
 \begin{enumerate}
-    \item
+    \item The residual plot shows a clear U-shaped curve which suggests that a linear model is not suitable for the diameter and maximum mass held before breaking of the cables.
+    \item The residual plot appears to show a random scatter of points centred on zero with constant variance so a linear model would be suitable for the data.
+    \item The residual plot appears to show a pattern with variable variance so the linear model fitted is not suitable.
 \end{enumerate}
-\end{multicols}
 
 []{#ex189a}
 
 #### [Exercise 18.9](#ex189q) {-}
 
-\begin{multicols}{3}
+\begin{multicols}{4}
 \begin{enumerate}
-    \item
+    \item $(0.672, 1.272)$
+    \item $(64.576, 71.424)$
+    \item $(-2.57, 39.85)$
+    \item $(50.768, 93,938)$
 \end{enumerate}
 \end{multicols}
 
