@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.25)  3 MAR 2026 18:40
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.25)  3 MAR 2026 23:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1477,9 +1477,6 @@ LaTeX Warning: Label `fig:test1' multiply defined.
 LaTeX Warning: Label `fig:test1' multiply defined.
 
 
-LaTeX Warning: Label `ex71q' multiply defined.
-
-
 LaTeX Warning: Label `fig:test1' multiply defined.
 
 
@@ -1881,9 +1878,6 @@ File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 
 ]
-
-LaTeX Warning: Hyper reference `re7a' on page ii undefined on input line 117.
-
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
 (Font)              Font shape `TU/lmss/m/sl' tried instead on input line 124.
 
@@ -2468,9 +2462,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [51]
 
-LaTeX Warning: Hyper reference `ex51a' on page 52 undefined on input line 5941.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -2533,9 +2524,6 @@ Overfull \hbox (58.19807pt too wide) in paragraph at lines 6619--6626
 Underfull \hbox (badness 10000) in paragraph at lines 6672--6673
 
  []
-
-
-LaTeX Warning: Hyper reference `ex52a' on page 54 undefined on input line 6682.
 
 
 Overfull \hbox (7.45459pt too wide) in paragraph at lines 6757--6758
@@ -2604,9 +2592,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [56]
 
-LaTeX Warning: Hyper reference `ex53a' on page 57 undefined on input line 7119.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -2627,6 +2612,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [58]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 7360.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -2641,22 +2630,22 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [60
 
 ]
-Overfull \hbox (6.95483pt too wide) in paragraph at lines 7589--7592
+Overfull \hbox (6.95483pt too wide) in paragraph at lines 7591--7594
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7636--7641
+Underfull \hbox (badness 10000) in paragraph at lines 7638--7643
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7636--7641
+Underfull \hbox (badness 10000) in paragraph at lines 7638--7643
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7643--7644
+Underfull \hbox (badness 10000) in paragraph at lines 7645--7646
 
  []
 
@@ -2714,9 +2703,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [66]
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7.665> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 8219.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 8227.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5.475> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 8219.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 8227.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2751,27 +2740,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [70]
-Underfull \hbox (badness 10000) in paragraph at lines 8487--8487
+Underfull \hbox (badness 10000) in paragraph at lines 8499--8499
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8489--8489
+Underfull \hbox (badness 10000) in paragraph at lines 8501--8501
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8491--8491
+Underfull \hbox (badness 10000) in paragraph at lines 8503--8503
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8493--8493
+Underfull \hbox (badness 10000) in paragraph at lines 8505--8505
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8495--8495
+Underfull \hbox (badness 10000) in paragraph at lines 8507--8507
 
  []
 
@@ -2796,6 +2785,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [72]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 8551.
+
+
 Underfull \vbox (badness 6944) has occurred while \output is active []
 
 
@@ -2822,9 +2816,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [75]
 
-LaTeX Warning: Hyper reference `ex71a' on page 76 undefined on input line 8758.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -2833,7 +2824,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [76]
 LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 8803.
+(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 8819.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2843,9 +2834,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [77]
 
-LaTeX Warning: Hyper reference `ex72a' on page 78 undefined on input line 8929.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -2853,12 +2841,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [78]
-Underfull \hbox (badness 10000) in paragraph at lines 8969--8970
+Underfull \hbox (badness 10000) in paragraph at lines 8985--8986
 
  []
-
-
-LaTeX Warning: Hyper reference `ex73a' on page 79 undefined on input line 8980.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2868,9 +2853,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [79]
-
-LaTeX Warning: Hyper reference `ex74a' on page 80 undefined on input line 9046.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2887,20 +2869,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [81]
-Underfull \hbox (badness 10000) in paragraph at lines 9150--9151
+Underfull \hbox (badness 10000) in paragraph at lines 9166--9167
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9152--9153
+Underfull \hbox (badness 10000) in paragraph at lines 9168--9169
 
  []
-
-
-LaTeX Warning: Hyper reference `ex75a' on page 82 undefined on input line 9164.
-
-
-LaTeX Warning: Hyper reference `ex76a' on page 82 undefined on input line 9188.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2910,27 +2886,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [82]
-Underfull \hbox (badness 10000) in paragraph at lines 9237--9238
+Underfull \hbox (badness 10000) in paragraph at lines 9253--9254
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9239--9240
+Underfull \hbox (badness 10000) in paragraph at lines 9255--9256
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9241--9242
+Underfull \hbox (badness 10000) in paragraph at lines 9257--9258
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9243--9244
+Underfull \hbox (badness 10000) in paragraph at lines 9259--9260
 
  []
-
-
-LaTeX Warning: Hyper reference `ex77a' on page 83 undefined on input line 9251.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2941,11 +2914,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [83]
 
-LaTeX Warning: Hyper reference `re7a' on page 84 undefined on input line 9266.
-
-
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 9267.
+(hyperref)                removing `\@ifnextchar' on input line 9283.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3192,7 +3162,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [88]
 LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <14.4> not available
-(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 9794.
+(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 9810.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -3201,7 +3171,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [89]
-Overfull \hbox (52.89688pt too wide) in paragraph at lines 10156--10252
+Overfull \hbox (52.89688pt too wide) in paragraph at lines 10172--10268
  [][][][] 
  []
 
@@ -3291,7 +3261,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [99]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 11211.
+(hyperref)                removing `\@ifnextchar' on input line 11227.
 
 
 Underfull \vbox (badness 5878) has occurred while \output is active []
@@ -3323,12 +3293,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [102]
-Underfull \hbox (badness 10000) in paragraph at lines 11426--11428
+Underfull \hbox (badness 10000) in paragraph at lines 11442--11444
 
  []
 
 
-Overfull \vbox (9.86844pt too high) has occurred while \output is active []
+Overfull \vbox (10.66844pt too high) has occurred while \output is active []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3357,6 +3327,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [105]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 11573.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -3366,7 +3340,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [106]
 Chapter 10.
 
-Underfull \vbox (badness 5022) has occurred while \output is active []
+Underfull \vbox (badness 5490) has occurred while \output is active []
 
 [107
 
@@ -3379,7 +3353,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [108]
-Underfull \vbox (badness 1348) has occurred while \output is active []
+LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <12> not available
+(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 11692.
+
+Underfull \vbox (badness 1577) has occurred while \output is active []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3389,22 +3366,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [109]
-Underfull \hbox (badness 10000) in paragraph at lines 11732--11734
+Underfull \hbox (badness 10000) in paragraph at lines 11756--11758
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11737--11738
+Underfull \hbox (badness 10000) in paragraph at lines 11761--11762
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11756--11757
+Underfull \hbox (badness 10000) in paragraph at lines 11780--11781
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11760--11761
+Underfull \hbox (badness 10000) in paragraph at lines 11784--11785
 
  []
 
@@ -3419,32 +3396,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [110]
-Underfull \hbox (badness 10000) in paragraph at lines 11774--11776
+Underfull \hbox (badness 10000) in paragraph at lines 11798--11800
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11794--11795
+Underfull \hbox (badness 10000) in paragraph at lines 11818--11819
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11798--11799
+Underfull \hbox (badness 10000) in paragraph at lines 11822--11823
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11810--11812
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11815--11816
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11835--11836
+Underfull \hbox (badness 10000) in paragraph at lines 11834--11836
 
  []
 
@@ -3454,7 +3421,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 11839--11840
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11843--11844
+Underfull \hbox (badness 10000) in paragraph at lines 11859--11860
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11863--11864
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11867--11868
 
  []
 
@@ -3499,32 +3476,32 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [114]
-Underfull \hbox (badness 10000) in paragraph at lines 12047--12049
+Underfull \hbox (badness 10000) in paragraph at lines 12073--12075
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12066--12099
+Underfull \hbox (badness 10000) in paragraph at lines 12092--12125
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12102--12103
+Underfull \hbox (badness 10000) in paragraph at lines 12128--12129
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12112--12114
+Underfull \hbox (badness 10000) in paragraph at lines 12138--12140
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12133--12170
+Underfull \hbox (badness 10000) in paragraph at lines 12159--12196
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12173--12174
+Underfull \hbox (badness 10000) in paragraph at lines 12199--12200
 
  []
 
@@ -3569,52 +3546,52 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [118]
-Underfull \hbox (badness 10000) in paragraph at lines 12353--12355
+Underfull \hbox (badness 10000) in paragraph at lines 12381--12383
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12356--12357
+Underfull \hbox (badness 10000) in paragraph at lines 12384--12385
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12373--12405
+Underfull \hbox (badness 10000) in paragraph at lines 12401--12433
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12406--12407
+Underfull \hbox (badness 10000) in paragraph at lines 12434--12435
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12408--12409
+Underfull \hbox (badness 10000) in paragraph at lines 12436--12437
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12415--12416
+Underfull \hbox (badness 10000) in paragraph at lines 12443--12444
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12424--12426
+Underfull \hbox (badness 10000) in paragraph at lines 12452--12454
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12442--12478
+Underfull \hbox (badness 10000) in paragraph at lines 12470--12506
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12479--12480
+Underfull \hbox (badness 10000) in paragraph at lines 12507--12508
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12481--12482
+Underfull \hbox (badness 10000) in paragraph at lines 12509--12510
 
  []
 
@@ -3653,37 +3630,37 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [122]
-Underfull \hbox (badness 10000) in paragraph at lines 12619--12620
+Underfull \hbox (badness 10000) in paragraph at lines 12649--12650
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12624--12626
+Underfull \hbox (badness 10000) in paragraph at lines 12654--12656
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12644--12676
+Underfull \hbox (badness 10000) in paragraph at lines 12674--12706
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12679--12680
+Underfull \hbox (badness 10000) in paragraph at lines 12709--12710
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12691--12693
+Underfull \hbox (badness 10000) in paragraph at lines 12721--12723
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12711--12747
+Underfull \hbox (badness 10000) in paragraph at lines 12741--12777
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12750--12751
+Underfull \hbox (badness 10000) in paragraph at lines 12780--12781
 
  []
 
@@ -3716,6 +3693,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [125]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 12850.
+
+
 Underfull \vbox (badness 1590) has occurred while \output is active []
 
 
@@ -3730,32 +3712,32 @@ Chapter 11.
 [127
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 12910--12912
+Underfull \hbox (badness 10000) in paragraph at lines 12946--12948
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12955--12956
+Underfull \hbox (badness 10000) in paragraph at lines 12991--12992
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12957--12958
+Underfull \hbox (badness 10000) in paragraph at lines 12993--12994
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12967--12969
+Underfull \hbox (badness 10000) in paragraph at lines 13003--13005
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12970--12971
+Underfull \hbox (badness 10000) in paragraph at lines 13006--13007
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13015--13016
+Underfull \hbox (badness 10000) in paragraph at lines 13051--13052
 
  []
 
@@ -3775,17 +3757,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [129]
-Underfull \hbox (badness 10000) in paragraph at lines 13072--13074
+Underfull \hbox (badness 10000) in paragraph at lines 13110--13112
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13120--13121
+Underfull \hbox (badness 10000) in paragraph at lines 13158--13159
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13124--13125
+Underfull \hbox (badness 10000) in paragraph at lines 13162--13163
 
  []
 
@@ -3808,22 +3790,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [131]
-Underfull \hbox (badness 10000) in paragraph at lines 13191--13193
+Underfull \hbox (badness 10000) in paragraph at lines 13231--13233
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13194--13195
+Underfull \hbox (badness 10000) in paragraph at lines 13234--13235
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13235--13236
+Underfull \hbox (badness 10000) in paragraph at lines 13275--13276
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13239--13240
+Underfull \hbox (badness 10000) in paragraph at lines 13279--13280
 
  []
 
@@ -3846,17 +3828,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [133]
-Underfull \hbox (badness 10000) in paragraph at lines 13321--13323
+Underfull \hbox (badness 10000) in paragraph at lines 13363--13365
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13364--13365
+Underfull \hbox (badness 10000) in paragraph at lines 13406--13407
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13368--13369
+Underfull \hbox (badness 10000) in paragraph at lines 13410--13411
 
  []
 
@@ -3877,6 +3859,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [135]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 13455.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -3886,11 +3872,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [136]
 Chapter 12.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 14.83417pt on input line 13443.
+(Font)              scaled to size 14.83417pt on input line 13489.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 14.83571pt on input line 13443.
+(Font)              scaled to size 14.83571pt on input line 13489.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 14.83284pt on input line 13443.
+(Font)              scaled to size 14.83284pt on input line 13489.
 [137
 
 ]
@@ -3904,17 +3890,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [138]
-Underfull \hbox (badness 10000) in paragraph at lines 13604--13605
+Underfull \hbox (badness 10000) in paragraph at lines 13650--13651
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13606--13607
+Underfull \hbox (badness 10000) in paragraph at lines 13652--13653
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13608--13642
+Underfull \hbox (badness 10000) in paragraph at lines 13654--13688
 
  []
 
@@ -3926,17 +3912,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [139]
-Underfull \hbox (badness 10000) in paragraph at lines 13752--13753
+Underfull \hbox (badness 10000) in paragraph at lines 13800--13801
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13756--13757
+Underfull \hbox (badness 10000) in paragraph at lines 13804--13805
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13760--13794
+Underfull \hbox (badness 10000) in paragraph at lines 13808--13842
 
  []
 
@@ -3959,32 +3945,32 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [141]
-Underfull \hbox (badness 10000) in paragraph at lines 13888--13889
+Underfull \hbox (badness 10000) in paragraph at lines 13938--13939
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13890--13902
+Underfull \hbox (badness 10000) in paragraph at lines 13940--13952
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13905--13906
+Underfull \hbox (badness 10000) in paragraph at lines 13955--13956
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13942--13943
+Underfull \hbox (badness 10000) in paragraph at lines 13992--13993
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13946--13947
+Underfull \hbox (badness 10000) in paragraph at lines 13996--13997
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13950--13984
+Underfull \hbox (badness 10000) in paragraph at lines 14000--14034
 
  []
 
@@ -4007,37 +3993,37 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [143]
-Underfull \hbox (badness 10000) in paragraph at lines 14086--14087
+Underfull \hbox (badness 10000) in paragraph at lines 14138--14139
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14088--14100
+Underfull \hbox (badness 10000) in paragraph at lines 14140--14152
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14131--14132
+Underfull \hbox (badness 10000) in paragraph at lines 14183--14184
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14133--14134
+Underfull \hbox (badness 10000) in paragraph at lines 14185--14186
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14135--14136
+Underfull \hbox (badness 10000) in paragraph at lines 14187--14188
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14137--14171
+Underfull \hbox (badness 10000) in paragraph at lines 14189--14223
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14172--14174
+Underfull \hbox (badness 10000) in paragraph at lines 14224--14226
 
  []
 
@@ -4062,6 +4048,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [145]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 14297.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -4185,27 +4176,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [159]
-Overfull \hbox (5.40051pt too wide) in paragraph at lines 15402--15414
+Overfull \hbox (5.40051pt too wide) in paragraph at lines 15458--15470
 []$[] []$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15402--15414
+Underfull \hbox (badness 10000) in paragraph at lines 15458--15470
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15432--15433
+Underfull \hbox (badness 10000) in paragraph at lines 15488--15489
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15436--15437
+Underfull \hbox (badness 10000) in paragraph at lines 15492--15493
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15440--15474
+Underfull \hbox (badness 10000) in paragraph at lines 15496--15530
 
  []
 
@@ -4220,32 +4211,32 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [160]
-Underfull \hbox (badness 10000) in paragraph at lines 15514--15515
+Underfull \hbox (badness 10000) in paragraph at lines 15570--15571
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15518--15530
+Underfull \hbox (badness 10000) in paragraph at lines 15574--15586
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15545--15546
+Underfull \hbox (badness 10000) in paragraph at lines 15601--15602
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15549--15550
+Underfull \hbox (badness 10000) in paragraph at lines 15605--15606
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15553--15587
+Underfull \hbox (badness 10000) in paragraph at lines 15609--15643
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15590--15592
+Underfull \hbox (badness 10000) in paragraph at lines 15646--15648
 
  []
 
@@ -4268,32 +4259,32 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [162]
-Overfull \hbox (3.7449pt too wide) in paragraph at lines 15674--15674
+Overfull \hbox (3.7449pt too wide) in paragraph at lines 15732--15732
 []|\TU/lmss/m/n/10.95 Treatment|  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15679--15680
+Underfull \hbox (badness 10000) in paragraph at lines 15737--15738
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15681--15693
+Underfull \hbox (badness 10000) in paragraph at lines 15739--15751
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15716--15717
+Underfull \hbox (badness 10000) in paragraph at lines 15774--15775
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15720--15721
+Underfull \hbox (badness 10000) in paragraph at lines 15778--15779
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15724--15758
+Underfull \hbox (badness 10000) in paragraph at lines 15782--15816
 
  []
 
@@ -4308,22 +4299,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [163]
-Overfull \hbox (4.3206pt too wide) in paragraph at lines 15777--15777
+Overfull \hbox (4.3206pt too wide) in paragraph at lines 15837--15837
  []|\TU/lmss/m/n/10.95 Stirling| 
  []
 
 
-Overfull \hbox (3.36052pt too wide) in paragraph at lines 15777--15777
+Overfull \hbox (3.36052pt too wide) in paragraph at lines 15837--15837
  []|\TU/lmss/m/n/10.95 Glasgow| 
  []
 
 
-Overfull \hbox (4.3206pt too wide) in paragraph at lines 15777--15777
+Overfull \hbox (4.3206pt too wide) in paragraph at lines 15837--15837
  []|\TU/lmss/m/n/10.95 Stirling| 
  []
 
 
-Overfull \hbox (3.36052pt too wide) in paragraph at lines 15777--15777
+Overfull \hbox (3.36052pt too wide) in paragraph at lines 15837--15837
  []|\TU/lmss/m/n/10.95 Glasgow| 
  []
 
@@ -4338,7 +4329,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [164]
-Underfull \hbox (badness 10000) in paragraph at lines 15856--15862
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 15880.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15918--15924
 
  []
 
@@ -4362,17 +4358,17 @@ Chapter 15.
 [167
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 16086--16088
+Underfull \hbox (badness 10000) in paragraph at lines 16148--16150
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16104--16141
+Underfull \hbox (badness 10000) in paragraph at lines 16166--16203
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16142--16143
+Underfull \hbox (badness 10000) in paragraph at lines 16204--16205
 
  []
 
@@ -4405,17 +4401,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [170]
-Underfull \hbox (badness 10000) in paragraph at lines 16249--16251
+Underfull \hbox (badness 10000) in paragraph at lines 16311--16313
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16271--16307
+Underfull \hbox (badness 10000) in paragraph at lines 16333--16369
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16308--16309
+Underfull \hbox (badness 10000) in paragraph at lines 16370--16371
 
  []
 
@@ -4440,7 +4436,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [172]
-Underfull \hbox (badness 10000) in paragraph at lines 16350--16359
+Underfull \hbox (badness 10000) in paragraph at lines 16412--16421
 
  []
 
@@ -4462,22 +4458,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [174]
-Underfull \hbox (badness 10000) in paragraph at lines 16396--16398
+Underfull \hbox (badness 10000) in paragraph at lines 16458--16460
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16414--16415
+Underfull \hbox (badness 10000) in paragraph at lines 16476--16477
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16420--16456
+Underfull \hbox (badness 10000) in paragraph at lines 16482--16518
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16457--16458
+Underfull \hbox (badness 10000) in paragraph at lines 16519--16520
 
  []
 
@@ -4500,17 +4496,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [176]
-Underfull \hbox (badness 10000) in paragraph at lines 16588--16589
+Underfull \hbox (badness 10000) in paragraph at lines 16650--16651
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16609--16645
+Underfull \hbox (badness 10000) in paragraph at lines 16671--16707
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16646--16647
+Underfull \hbox (badness 10000) in paragraph at lines 16708--16709
 
  []
 
@@ -4532,7 +4528,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [178]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 16722.
+(hyperref)                removing `\@ifnextchar' on input line 16784.
 
 
 Underfull \vbox (badness 1102) has occurred while \output is active []
@@ -4547,7 +4543,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [179]
 Chapter 16.
 
-Overfull \hbox (26.06517pt too wide) in paragraph at lines 16784--16796
+Overfull \hbox (26.06517pt too wide) in paragraph at lines 16846--16858
  [] []$ 
  []
 
@@ -4562,12 +4558,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [181]
-Underfull \hbox (badness 10000) in paragraph at lines 16987--16988
+Underfull \hbox (badness 10000) in paragraph at lines 17049--17050
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17017--17021
+Underfull \hbox (badness 10000) in paragraph at lines 17079--17083
 
  []
 
@@ -4579,12 +4575,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [182]
-Underfull \hbox (badness 10000) in paragraph at lines 17066--17067
+Underfull \hbox (badness 10000) in paragraph at lines 17128--17129
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17096--17100
+Underfull \hbox (badness 10000) in paragraph at lines 17158--17162
 
  []
 
@@ -4604,12 +4600,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [184]
-Underfull \hbox (badness 10000) in paragraph at lines 17200--17201
+Underfull \hbox (badness 10000) in paragraph at lines 17264--17265
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17229--17233
+Underfull \hbox (badness 10000) in paragraph at lines 17293--17297
 
  []
 
@@ -4632,12 +4628,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [186]
-Underfull \hbox (badness 10000) in paragraph at lines 17359--17360
+Underfull \hbox (badness 10000) in paragraph at lines 17425--17426
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17363--17395
+Underfull \hbox (badness 10000) in paragraph at lines 17429--17461
 
  []
 
@@ -4661,6 +4657,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [188]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 17543.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -4668,16 +4668,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [189]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[190]
 Chapter 17.
-[191
+[190
 
 ]
 
@@ -4687,21 +4679,29 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
+[191]
+Underfull \hbox (badness 10000) in paragraph at lines 17913--17914
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17943--17944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17945--17949
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
 [192]
-Underfull \hbox (badness 10000) in paragraph at lines 17897--17898
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 17927--17928
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 17929--17933
-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -4710,6 +4710,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [193]
+Underfull \hbox (badness 10000) in paragraph at lines 18105--18111
+
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -4718,7 +4722,47 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [194]
-Underfull \hbox (badness 10000) in paragraph at lines 18087--18093
+Underfull \hbox (badness 10000) in paragraph at lines 18157--18158
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18159--18160
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18161--18162
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18163--18164
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18165--18166
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18167--18168
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18169--18170
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18173--18174
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18177--18214
 
  []
 
@@ -4730,50 +4774,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [195]
-Underfull \hbox (badness 10000) in paragraph at lines 18139--18140
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18141--18142
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18143--18144
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18145--18146
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18147--18148
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18149--18150
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18151--18152
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18155--18156
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18159--18196
-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -4782,20 +4782,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [196]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[197]
-Underfull \hbox (badness 10000) in paragraph at lines 18340--18341
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18368--18369
+Underfull \hbox (badness 10000) in paragraph at lines 18360--18361
 
  []
 
@@ -4805,6 +4792,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 18388--18389
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 18408--18409
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[197]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -4815,8 +4817,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [198]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -4826,6 +4826,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [199]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 18492.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -4833,14 +4837,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [200]
+Chapter 18.
+[201
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[201]
+]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -4857,27 +4857,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [203]
-Chapter 18.
-[204
-
-]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[205]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[206]
-Underfull \hbox (badness 10000) in paragraph at lines 19091--19092
+Underfull \hbox (badness 10000) in paragraph at lines 19015--19016
 
  []
 
@@ -4888,8 +4868,80 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
+[204]
+Underfull \hbox (badness 10000) in paragraph at lines 19124--19125
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[205]
+Underfull \hbox (badness 10000) in paragraph at lines 19309--19310
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19326--19327
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19328--19329
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19330--19366
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19367--19368
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[206]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
 [207]
-Underfull \hbox (badness 10000) in paragraph at lines 19200--19201
+Underfull \hbox (badness 10000) in paragraph at lines 19667--19668
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19684--19685
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19686--19687
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19688--19724
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19725--19726
 
  []
 
@@ -4901,30 +4953,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [208]
-Underfull \hbox (badness 10000) in paragraph at lines 19385--19386
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19402--19403
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19404--19405
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19406--19442
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19443--19444
-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -4933,6 +4961,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [209]
+Overfull \hbox (5.54848pt too wide) detected at line 19888
+[][] [] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19935--19936
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19937--19938
+
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -4941,27 +4983,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [210]
-Underfull \hbox (badness 10000) in paragraph at lines 19743--19744
+Underfull \hbox (badness 10000) in paragraph at lines 19995--19996
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19760--19761
+Underfull \hbox (badness 10000) in paragraph at lines 19997--19998
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19762--19763
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19764--19800
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19801--19802
+Underfull \hbox (badness 10000) in paragraph at lines 19999--20000
 
  []
 
@@ -4981,18 +5013,33 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [212]
-Overfull \hbox (5.54848pt too wide) detected at line 19964
-[][] [] []
+Overfull \hbox (1.66714pt too wide) in paragraph at lines 20756--20757
+ [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20011--20012
-
+Overfull \hbox (1.66714pt too wide) in paragraph at lines 20784--20785
+ [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20013--20014
+Overfull \hbox (1.66714pt too wide) in paragraph at lines 20847--20848
+ [] 
+ []
 
+
+Overfull \hbox (1.66714pt too wide) in paragraph at lines 20908--20909
+ [] 
+ []
+
+
+Overfull \hbox (1.66714pt too wide) in paragraph at lines 20971--20972
+ [] 
+ []
+
+
+Overfull \hbox (1.66714pt too wide) in paragraph at lines 20996--20997
+ [] 
  []
 
 
@@ -5003,19 +5050,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [213]
-Underfull \hbox (badness 10000) in paragraph at lines 20071--20072
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 20073--20074
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 20075--20076
-
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -5033,87 +5068,32 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [215]
-Overfull \hbox (1.66714pt too wide) in paragraph at lines 20832--20833
- [] 
- []
-
-
-Overfull \hbox (1.66714pt too wide) in paragraph at lines 20860--20861
- [] 
- []
-
-
-Overfull \hbox (1.66714pt too wide) in paragraph at lines 20923--20924
- [] 
- []
-
-
-Overfull \hbox (1.66714pt too wide) in paragraph at lines 20984--20985
- [] 
- []
-
-
-Overfull \hbox (1.66714pt too wide) in paragraph at lines 21047--21048
- [] 
- []
-
-
-Overfull \hbox (1.66714pt too wide) in paragraph at lines 21072--21073
- [] 
- []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[216]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[217]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[218]
-Underfull \hbox (badness 10000) in paragraph at lines 21513--21514
+Underfull \hbox (badness 10000) in paragraph at lines 21437--21438
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21531--21532
+Underfull \hbox (badness 10000) in paragraph at lines 21455--21456
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21533--21534
+Underfull \hbox (badness 10000) in paragraph at lines 21457--21458
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21535--21536
+Underfull \hbox (badness 10000) in paragraph at lines 21459--21460
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21537--21538
+Underfull \hbox (badness 10000) in paragraph at lines 21461--21462
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21539--21540
+Underfull \hbox (badness 10000) in paragraph at lines 21463--21464
 
  []
 
@@ -5127,33 +5107,33 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[219]
-Underfull \hbox (badness 10000) in paragraph at lines 21550--21551
+[216]
+Underfull \hbox (badness 10000) in paragraph at lines 21474--21475
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21568--21569
+Underfull \hbox (badness 10000) in paragraph at lines 21492--21493
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21570--21571
+Underfull \hbox (badness 10000) in paragraph at lines 21494--21495
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21572--21573
+Underfull \hbox (badness 10000) in paragraph at lines 21496--21497
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21574--21575
+Underfull \hbox (badness 10000) in paragraph at lines 21498--21499
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21576--21577
+Underfull \hbox (badness 10000) in paragraph at lines 21500--21501
 
  []
 
@@ -5164,13 +5144,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[220]
+[217]
 Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
 
-Underfull \hbox (badness 10000) in paragraph at lines 21682--21683
+Underfull \hbox (badness 10000) in paragraph at lines 21606--21607
 
  []
 
@@ -5188,7 +5168,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[221]
+[218]
 Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
@@ -5201,11 +5181,11 @@ Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
 LaTeX Font Info:    Font shape `TU/TimesNewRoman(1)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 21922.
+(Font)              scaled to size 10.95pt on input line 21846.
 LaTeX Font Info:    Font shape `TU/TimesNewRoman(1)/m/n' will be
-(Font)              scaled to size 7.665pt on input line 21922.
+(Font)              scaled to size 7.665pt on input line 21846.
 LaTeX Font Info:    Font shape `TU/TimesNewRoman(1)/m/n' will be
-(Font)              scaled to size 5.475pt on input line 21922.
+(Font)              scaled to size 5.475pt on input line 21846.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -5213,10 +5193,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[222]
+[219]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 21931.
+(hyperref)                removing `\@ifnextchar' on input line 21855.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -5225,13 +5205,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[223]
-Underfull \hbox (badness 10000) in paragraph at lines 22097--22098
+[220]
+Underfull \hbox (badness 10000) in paragraph at lines 22021--22022
 
  []
 
 
-Overfull \hbox (9.71738pt too wide) in paragraph at lines 22141--22142
+Overfull \hbox (9.71738pt too wide) in paragraph at lines 22065--22066
  [] 
  []
 
@@ -5242,15 +5222,44 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[224] [225
+[221]
+LaTeX Font Info:    Font shape `TU/TimesNewRoman(1)/m/n' will be
+(Font)              scaled to size 9.0pt on input line 22222.
+LaTeX Font Info:    Font shape `TU/TimesNewRoman(1)/m/n' will be
+(Font)              scaled to size 6.0pt on input line 22222.
+LaTeX Font Info:    Font shape `TU/TimesNewRoman(1)/m/n' will be
+(Font)              scaled to size 5.0pt on input line 22222.
+[222
 
 ]
-LaTeX Font Info:    Font shape `TU/TimesNewRoman(1)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 22300.
-LaTeX Font Info:    Font shape `TU/TimesNewRoman(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 22300.
-LaTeX Font Info:    Font shape `TU/TimesNewRoman(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 22300.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[223]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[224]
+Overfull \hbox (5.382pt too wide) in paragraph at lines 22735--22735
+ [][]\TU/lmss/m/n/9 insufficient 
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[225]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -5259,6 +5268,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [226]
+Underfull \vbox (badness 6775) has occurred while \output is active []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -5267,15 +5278,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [227]
-Overfull \hbox (2.33626pt too wide) in paragraph at lines 22679--22680
-[][][][] [] 
- []
-
-
-Overfull \hbox (5.382pt too wide) in paragraph at lines 22800--22800
- [][]\TU/lmss/m/n/9 insufficient 
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -5324,15 +5326,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [233]
-Overfull \hbox (6.37079pt too wide) in paragraph at lines 23540--23540
-[]$[][][][][][] [] 
- []
-
-
-Overfull \hbox (6.37079pt too wide) in paragraph at lines 23540--23541
-[]$[][][][][][] [] 
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -5341,6 +5334,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [234]
+
+LaTeX Warning: Hyper reference `ex131q' on page 235 undefined on input line 24412.
+
+
+LaTeX Warning: Hyper reference `ex132q' on page 235 undefined on input line 24417.
+
+
+LaTeX Warning: Hyper reference `ex133q' on page 235 undefined on input line 24422.
+
+
+LaTeX Warning: Hyper reference `re13q' on page 235 undefined on input line 24427.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -5365,8 +5373,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [237]
-Overfull \vbox (2.04337pt too high) has occurred while \output is active []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -5391,14 +5397,38 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [240]
+Chapter 19.
 
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+Underfull \hbox (badness 10000) in paragraph at lines 24847--24849
 
-[241]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24850--24851
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24852--24853
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24869--24901
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24902--24903
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[241
+
+]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -5407,141 +5437,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [242]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[243]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[244]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[245]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[246]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[247]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[248]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[249]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[250]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[251]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[252]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[253]
-Chapter 19.
-
-Underfull \hbox (badness 10000) in paragraph at lines 24809--24811
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 24812--24813
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 24814--24815
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 24831--24863
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 24864--24865
-
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[254
-
-]
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 13.59999pt, for example:
-(fancyhdr)                \setlength{\headheight}{13.59999pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
-
-[255]
 Chapter 20.
-[256
+[243
 
 ]
 No file _main.bbl.
 
-Package caption Warning: Unused \captionsetup[figure] on input line 17762.
+Package caption Warning: Unused \captionsetup[figure] on input line 17778.
 See the caption package documentation for explanation.
 
 
@@ -5551,7 +5453,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[257] (./_main.aux)
+[244] (./_main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -5567,12 +5469,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 58679 strings out of 470190
- 1382829 string characters out of 5477670
- 2577218 words of memory out of 5000000
- 86281 multiletter control sequences out of 15000+600000
- 698599 words of font info for 233 fonts, out of 8000000 for 9000
+ 58810 strings out of 470190
+ 1384447 string characters out of 5477670
+ 2581996 words of memory out of 5000000
+ 86407 multiletter control sequences out of 15000+600000
+ 698631 words of font info for 237 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  116i,19n,121p,904b,2594s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _main.pdf (263 pages).
+Output written on _main.pdf (250 pages).

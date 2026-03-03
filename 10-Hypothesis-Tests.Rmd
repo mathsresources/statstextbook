@@ -2,7 +2,7 @@
 
 In brief, hypothesis testing is an approach to assessing the statistical evidence for a claim through the analysis of data from a random sample. The claim will typically relate to some aspect of the distribution of a population of interest, often a *parameter* such as the *population mean*, $\mu$, and the foundation of hypothesis testing is *probability*.
 
-## The Logic of Hypothesis Testing {-}
+### The Logic of Hypothesis Testing {-}
 
 Consider the following scenarios:  
 
@@ -52,7 +52,9 @@ It should also first be decided whether evidence is being sought for the true va
 \end{enumerate}
 \end{tcolorbox}
 
-#### Exercise 10.1 {-}
+[]{#ex101q}
+
+#### [Exercise 10.1](#ex101a) {-}
 
 For each proposed hypothesis test, state the **null hypothesis** and the **alternative hypothesis** using appropriate notation.
 
@@ -67,11 +69,11 @@ For each proposed hypothesis test, state the **null hypothesis** and the **alter
 
 \pagebreak
 
-## Evidence to Suggest {-}
+### Evidence to Suggest {-}
 
 The *true value* of a population parameter cannot be known by studying a sample. This means that, without a census of the entire population, a statistician will never say that they have *proved* or *disproved* a claim. Instead they will say that they have **evidence to suggest** or **insufficient evidence to suggest** a particular claim is true. 
 
-## The Significance Level and the \textit{p}-value {-}
+### The Significance Level and the \textit{p}-value {-}
 
 Once the null and alternative hypotheses have been stated, a conservative viewpoint is taken - it is *assumed that the null hypothesis is true*. Only an observed value that is then *very unlikely to have occurred by random chance* will lead to the decision to **reject the null hypothesis** in favour of the alternative hypothesis. The decision to *reject or not reject* is made in relation to the *null hypothesis*, whilst the *evidence (to suggest)*, or lack of, relates to the *alternative hypothesis*:
 
@@ -255,7 +257,9 @@ Since $0.0.0456<0.5$, reject $H_0$ at the 5\% level of significance.\\ There is 
 
 \pagebreak
 
-#### Exercise 10.2 {-}
+[]{#ex102q}
+
+#### [Exercise 10.2](#ex102a) {-}
 
 \begin{enumerate}
     \item The length of cookery videos uploaded to a video sharing platform has been historically found to be normally distributed, with a mean of 11.7 minutes and a standard deviation of 2.3 minutes. A random sample of 30 videos uploaded this year tagged as 'cookery' on the platform  gives a mean of 10.8 minutes. Assuming that the standard deviation of video length has not changed, test at the 5\% level of significant the claim that the mean length of cookery videos on the platform is now less than 11.7 minutes.
@@ -582,7 +586,9 @@ Since $2>1.96$, reject $H_0$ at the 5\% level of significance.\\ There is eviden
 
 \pagebreak
 
-#### Exercise 10.3 {-}
+[]{#ex103q}
+
+#### [Exercise 10.3](#ex103a) {-}
 
 \begin{enumerate}
     \item A packing process packages ground coffee into bags. The mass of each bag is normally distributed, with standard deviation 15g. To comply with the technical standards stipulated for the process, the mean mass of coffee per bag should be 500g. After a recent adjustment of some of the machinery involved in the process, a random sample of 25 bags is taken and the sample mean is found to be 512g. Test the claim that there has been a change in the mean mass of coffee per bag at the 5\% level of significance.
@@ -891,7 +897,9 @@ Since $3.749>2.447$, reject $H_0$ at the 5\% level of significance. There is evi
 
 \pagebreak
 
-#### Exercise 10.4 {-}
+[]{#ex104q}
+
+#### [Exercise 10.4](#ex104a) {-}
 
 \begin{enumerate}
     \item The amount of sugar contained in frozen pizzas, per 100g, is normally distributed. A random sample of 8 brands of frozen pizza gives the following sugar content per 100g, measuring in grams:
@@ -1161,7 +1169,9 @@ Since $3.76>2.58$, reject $H_0$ at the 1\% level of significance.\\ There is evi
 
 \pagebreak
 
-#### Exercise 10.5 {-}
+[]{#ex105q}
+
+#### [Exercise 10.5](#ex105a) {-}
 
 \begin{enumerate}
     \item A coin is thrown 500 times and 267 heads are obtained. Test whether the coin is biased, using a 10\% significance level.
@@ -1186,7 +1196,9 @@ Since $3.76>2.58$, reject $H_0$ at the 1\% level of significance.\\ There is evi
 
 Selecting the appropriate hypothesis test to be used in any given context is an important skill for a statistican, and warrants careful practice. The following questions contain a mix of $z$\textit{-tests for the population mean, }$t$\textit{-tests for the population mean and }$z$\textit{-tests for the population proportion.}
 
-#### Exercise 10.6 {-}
+[]{#ex106q}
+
+#### [Exercise 10.6](#ex106a) {-}
 
 \begin{enumerate}
     \item A keen cyclist often takes a route which consists of a circuit, travelling through a forest and around a hill before returning to her starting point, timing herself on each occasion. The time it takes her to complete a circuit is normally distributed, with mean 42.7 minutes and standard deviation 3.8 minutes. After buying a new bike, she records the time is takes her to complete a circuit on 7 randomly selected occasions, obtaining a sample mean of 41.3 minutes. Assuming the standard deviation in her time taken remains unchanged, perform a hypothesis test to assess her data for evidence that her mean time taken to complete the route has reduced.
@@ -1212,7 +1224,9 @@ Selecting the appropriate hypothesis test to be used in any given context is an 
 
 \pagebreak
 
-## Review Exercise {-}
+[]{#re10q}
+
+## [Review Exercise](#re10a) {-}
 
 \begin{enumerate}
     \item A pharmaceutical company has developed a drug designed to reduce the recovery time needed for a specific type of operation from the well-established mean time of 11 days. Following trials involving treating 24 randomly selected patients admitted to hospital for the operation with the drug, it is found that the mean recovery time for these patients is 9.6 days, with a standard deviation of 2.7 days.

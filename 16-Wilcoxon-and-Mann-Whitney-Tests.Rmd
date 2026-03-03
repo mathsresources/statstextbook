@@ -4,7 +4,7 @@ The $z$ and $t$ hypothesis tests from chapters 10 and 15 which explore the *loca
 
 Given small samples ($n<20$) from populations whose distributions may not be assumed to be normally distributed, a number of **non-parametric** tests may be used which instead explore the locations of distributions by considering the **population median**, $\eta$ (*'eta'*).
 
-## Sign Test {-}
+### Sign Test {-}
 
 The Sign Test is a simple non-parametric test that, whilst *not required for the Advanced Higher Statistics course*, helps to lay the groundwork for the tests covered later in this chapter. It uses a useful property of the population median, $\eta$, namely that $50\%$ of observations sampled from the population  can be expected to be greater than $\eta$ and $50\%$ can be expected to be less than $\eta$. This means that the number of observations on one side of the population median in a sample of size $n$ should follow a $B(n,0.5)$ distribution. For example, consider the following random sample of values ($n=12$) and a claim that the population median is less than $9$:
 
@@ -337,7 +337,9 @@ There is evidence to suggest that the median score achieved in the hazard percep
 
 \end{tcolorbox}
 
-#### Exercise 16.1 {-}
+[]{#ex161q}
+
+#### [Exercise 16.1](#ex161a) {-}
 
 \begin{enumerate}
     \item It is known that a certain tree produces apples with a median mass of 150g. Eight apples are chosen at random from a crate containing apples picked from the tree. The masses, in grams, are:
@@ -469,7 +471,9 @@ There is evidence to suggest that the median difference in 400 metres times is g
 
 \end{tcolorbox}
 
-#### Exercise 16.2 {-}
+[]{#ex162q}
+
+#### [Exercise 16.2](#ex162a) {-}
 
 \begin{enumerate}
     \item To measure the effectiveness of a drug for asthmatic relief, twelve subjects, all susceptible to asthma, were each randomly administered either the drug or a placebo during two separate asthma attacks. After one hour an asthmatic index was obtained on each subject with the following results:
@@ -634,7 +638,9 @@ There is evidence to suggest that the median speed of the vehicles on the road i
 
 \pagebreak
 
-#### Exercise 16.3 {-}
+[]{#ex163q}
+
+#### [Exercise 16.3](#ex163a) {-}
 
 *Note: sums of signed ranks are often provided in questions that require a normal approximation to the Wilcoxon test. The data must still be inspected to check whether any values have been be discarded, to determine the effective sample size*
 
@@ -700,7 +706,9 @@ Use a non-parametric test to determine whether the sample supports the newspaper
 
 \pagebreak
 
-## Review Exercise {-}
+[]{#re16q}
+
+## [Review Exercise](#re16a) {-}
 
 \begin{enumerate}
     \item A random sample of nine primary school pupils are selected to test the number of times tables questions they can answer correctly in one minute. The results are are follows:
@@ -744,48 +752,3 @@ Perform a non-parametric test to assess whether there is evidence to suggest tha
 \end{enumerate}
 
 \pagebreak
-
-#### Chapter 16 Answers{-}
-
-*For any questions for which a level of significance is not specified, a 5\% level of significance has been used. Full answers should include, of course, conclusions in context*
-
-#### Exercise 16.1 {-}
-\begin{enumerate}
-    \item $9>3\implies\text{ do not reject }H_0$
-    \item $5.5<3\implies\text{ reject }H_0$
-    \item $8>5\implies\text{ do not reject }H_0$
-    \item $7.5>5\implies\text{ do not reject }H_0$
-    \item $10\leqslant 10\implies\text{ reject }H_0$
-    \item $9<10\implies\text{ reject }H_0$
-    \item $6.5>5\implies\text{ do not reject }H_0$
-\end{enumerate}
-
-#### Exercise 16.2 {-}
-\begin{enumerate}
-    \item $8.5<13\implies\text{ reject }H_0$
-    \item $11>5\implies\text{ do not reject }H_0$
-    \item $46>21\implies\text{ do not reject }H_0$
-    \item $1.5<2\implies\text{ reject }H_0$
-    \item $4<8\implies\text{ reject }H_0$
-\end{enumerate}
-
-#### Exercise 16.3 {-}
-\begin{enumerate}
-    \item $-0.34>-1.96\implies\text{ do not reject }H_0$
-    \item $-1.67<-1.64\implies\text{ reject }H_0$
-    \item $-0.27>-1.64\implies\text{ do not reject }H_0$
-    \item
-    \begin{enumerate}
-        \item $H_0: \eta =110, \quad H_1: \eta<110$
-        \item $-2.16>-1.64\implies\text{reject }H_0$
-        \item Assume that time taken to complete the hike is symmetrically distributed.
-    \end{enumerate}
-\end{enumerate}
-
-#### Review Exercise {-}
-\begin{enumerate}
-    \item $5\leqslant5\implies\text{ reject }H_0$
-    \item $14>8\implies\text{ do not reject }H_0$
-    \item $-2.40>-1.96\implies\text{ reject }H_0$
-    \item $3>2\implies\text{do not reject }H_0$
-\end{enumerate}

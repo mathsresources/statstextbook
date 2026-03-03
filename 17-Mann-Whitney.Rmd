@@ -367,7 +367,9 @@ There is evidence to suggest that the median time taken for rugby players to run
 
 \pagebreak
 
-#### Exercise 17.1 {-}
+[]{#ex171q}
+
+#### [Exercise 17.1](#ex171a) {-}
 
 \begin{enumerate}
     \item One year on World Maths Day (14th March) pupils across all the year groups in a school attempt a times tables speed challenge. A teacher checks the scores obtained by five randomly selected First Year pupils and seven randomly selected Third Year pupils. Their results are shown below.
@@ -631,7 +633,9 @@ There is evidence to suggest that the median length of an Atlantic herring diffe
 
 \pagebreak
 
-#### Exercise 17.2 {-}
+[]{#ex172q}
+
+#### [Exercise 17.2](#ex172a) {-}
 
 \begin{enumerate}
     \item A commuter made a number of car journeys, on weekday mornings, from Perth to Glasgow. She believed that journeys on wet days would take longer, on average, than journeys on dry days. Journey length (in minutes) and weather conditions (either \textit{dry}, D, or \textit{wet}, W) for 48 randomly chosen days throughout the Autumn months, of which 21 were classified as \textit{dry}. The results are shown below.
@@ -821,7 +825,9 @@ There is evidence to suggest that the median number of shutter actuations before
 
 \pagebreak
 
-#### Exercise 17.3 {-}
+[]{#ex173q}
+
+#### [Exercise 17.3](#ex173a) {-}
 
 \begin{enumerate}
     \item A Mann-Whitney test is to be performed using two independent samples of sizes 3 and 5. Once data for the samples have been collected and ordered, a rank sum will be obtained for the smaller sample.
@@ -890,7 +896,9 @@ There is evidence to suggest that the median number of shutter actuations before
 
 \pagebreak
 
-## Review Exercise {-}
+[]{#re17q}
+
+## [Review Exercise](#re17a) {-}
 
 \begin{enumerate}
     \item A wildlife enthusiast sets up a remote camera which is configured to take a photo when movement is detected. Sometimes it is placed in some local woods, whilst at other times it is positioned beside a pond. The photos are later reviewed and the number of animals spotted each day by the camera is recorded. The number of animal sightings at each location over the last two weeks is shown below.
@@ -989,95 +997,3 @@ There is evidence to suggest that the median number of shutter actuations before
 \end{enumerate}
 
 \pagebreak
-
-#### Chapter 17 Answers{-}
-
-*For any questions for which a level of significance is not specified, a 5\% level of significance has been used. Full answers should include, of course, conclusions in context*
-
-#### Exercise 17.1 {-}
-\begin{enumerate}
-    \item 
-    \begin{enumerate}
-        \item Rank sum of 20.5, or rank sum of 44.5 leading to smaller value of 20.5.
-        \item $20.5<21\implies\text{ reject }H_0$
-    \end{enumerate}
-    \item $65.5<78\implies\text{ reject }H_0$
-    \item $28\leqslant28\implies\text{ reject }H_0$
-    \item $27.5<31\implies\text{ reject }H_0$
-    \item $29>28\implies\text{ do not reject }H_0$
-    \item Assume distributions of learning times for each type of mouse have the same shape and variance.\\
-    $38.5>26\implies\text{ do not reject }H_0$
-    \item 
-    \begin{enumerate}
-        \item $\text{H}_0:\eta_A=\eta_B$ and $\text{H}_1:\eta_A\ne\eta_B$
-        \item $72.5>73\implies\text{ reject }H_0$
-        \item Assume the distributions of mass of dust deposited for each boiler type have the same shape and variance. Assume the samples of boilers are random. Assume the samples are independent.
-    \end{enumerate}
-\end{enumerate}
-
-#### Exercise 17.2 {-}
-\begin{enumerate}
-    \item 
-    \begin{enumerate}
-        \item $-2.39<-2.33\implies\text{ reject }H_0$
-        \item Assume that the distributions of driving times for each weather condition have the same shape and variance.
-    \end{enumerate}
-    \item $-1.47>-1.96\implies\text{ do not reject }H_0$
-    \item $-1.96>-1.64\implies\text{ do not reject }H_0$
-    \item 
-    \begin{enumerate}
-        \item The distributions of gradings for each line appear to have the same shape and variance, to a Mann-Whitney test is appropriate. The distributions do not appear to be normal, so a $t$-test would not be appropriate.
-        \item $-1.34<-1.28\implies\text{ reject }H_0$
-    \end{enumerate}
-\end{enumerate}
-
-#### Exercise 17.3 {-}
-\begin{enumerate}
-    \item 
-    \begin{enumerate}
-        \item 56
-        \item $\{1,2,3\},\{1,2,4\},\{1,2,5\},\{1,3,4\}$
-        \item $\frac{4}{56}=\frac{1}{14}\text{ or }0.0714$
-    \end{enumerate}
-    \begin{enumerate}
-        \item 126
-        \item $\{1,2,3,4\},\{1,2,3,5\},\{1,2,3,6\},\{1,2,4,5\}$
-        \item $\frac{4}{126}=\frac{2}{63}\text{ or }0.0317$
-    \end{enumerate}
-    \item 
-    \begin{enumerate}
-        \item $1+2+4+8=15$
-        \item $\{1,2,3,4\},\{1,2,3,5\},\{1,2,3,6\},\{1,2,3,7\},\{1,2,3,8\}$\\
-        $\{1,2,3,9\},\{1,2,4,5\},\{1,2,4,6\},\{1,2,4,7\},\{1,2,4,8\}$\\
-        $\{1,2,5,6\},\{1,2,5,7\},\{1,3,4,5\},\{1,3,4,6\},\{1,3,4,7\}$\\
-        $\{1,3,5,6\},\{2,3,4,5\},\{2,3,4,6\}$
-        \item Assume that the population distributions of reactions times for each group have the same shape and variance.
-        \item $\frac{18}{330}=\frac{3}{55}\text{ or }0.0545$
-        \item $0.0545>0.05\implies\text{ do not reject }H_0$
-    \end{enumerate}
-    \item 
-    \begin{enumerate}
-        \item $\frac{7}{495}=0.0141$
-        \item $0.0141<0.1\implies\text{ reject }H_0$
-        \item Assume that the samples of hockey and rugby players are random.
-    \end{enumerate}
-\end{enumerate}
-
-#### Review Exercise {-}
-\begin{enumerate}
-    \item $34>29\implies\text{ do not reject }H_0$
-    \item 
-    \begin{enumerate}
-        \item The stem-and-leaf diagram shows that red wines seem to contain more alcohol on average than white wines.
-        \item $-3.04<-1.64\implies\text{ reject }H_0$
-        \item Since the stem-and-leaf diagram seems to suggest that the distributions of alcohol content for the two groups have the same shape and variance, a Mann-Whitney test would be appropriate. Since the distributions both appear to be normal-like, a $t$-test would also be appropriate.
-    \item 
-    \begin{enumerate}
-        \item $H_0:\;\eta_A = \eta_B$ and $H_0:\;\eta_A \ne \eta_B$
-        \item CV$=13$. Since $12<13$ reject $H_0$ at the 2\% significance level, so there is evidence to suggest that the two populations do not have the same median.
-        \item Assuming that the samples are random, and assume that the populations have the same shape and variance.
-        \item The data for samples A and B will have been combined and ordered, with ranks assigned to each value. The rank sum for sample A will have been found, $W_A$, and then the value $4\times (4+9+1)-W_A$ will have also been calculated. \texttt{W=12} will have been the smaller of those two values.
-    \end{enumerate}
-    \end{enumerate}
-\end{enumerate}
-

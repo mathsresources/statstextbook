@@ -3,8 +3,6 @@
 \setstretch{1.0}
 \raggedright
 
-\newpage
-
 ### Chapter 1 Answers - Exploratory Data Analysis {-}
 
 \begingroup
@@ -146,12 +144,17 @@
 #### [Exercise 1.5](#ex15q) {-}
 
 \begin{enumerate}
-    \item $\frac{23}{94}$ or $0.2447$
+    \item $\tfrac{23}{94}$ or $0.2447$
     \item A clear key/legend linked to the plot, numbers/scale on the $y$ axis.
     \item The proportions of pupils in year group taking the bus seem to be broadly similar.
     \item Approximately 15 minutes.
     \item 7
 \end{enumerate}
+
+\endgroup
+\pagebreak
+\begingroup
+\footnotesize
 
 []{#ex16a}
 
@@ -268,6 +271,11 @@
     \end{enumerate}
 \end{enumerate}
 
+\endgroup
+\pagebreak
+\begingroup
+\footnotesize
+
 []{#re1a}
 
 #### [Chapter 1 Review Exercise](#re1q) {-}
@@ -328,7 +336,7 @@
 
 \endgroup
 
-\pagebreak
+
 
 ### Chapter 2 Answers - An Introduction to Probability Theory {-}
 
@@ -344,47 +352,47 @@
 \begin{enumerate}
     \item
     \begin{enumerate}
-        \item $\text{P}(\text{vowel})=\dfrac{5}{26}$
-        \item $\text{P}(\text{consonant})=\dfrac{21}{26}$
-        \item $\text{P}(\text{statistics})=\dfrac{5}{26}$
+        \item $\text{P}(\text{vowel})=\tfrac{5}{26}$
+        \item $\text{P}(\text{consonant})=\tfrac{21}{26}$
+        \item $\text{P}(\text{statistics})=\tfrac{5}{26}$
     \end{enumerate}
     \item
     \begin{enumerate}
-        \item $\text{P}(\text{blue})=\dfrac{4}{15}$
-        \item $\text{P}(\text{green or red})=\dfrac{11}{15}$
-        \item $\text{P}(\text{not red})=\dfrac{3}{5}$
+        \item $\text{P}(\text{blue})=\tfrac{4}{15}$
+        \item $\text{P}(\text{green or red})=\tfrac{11}{15}$
+        \item $\text{P}(\text{not red})=\tfrac{3}{5}$
     \end{enumerate}
     \item
     \begin{enumerate}
-        \item $\text{P}(\text{orange})=\dfrac{1}{3}$
+        \item $\text{P}(\text{orange})=\tfrac{1}{3}$
         \item $\text{P}(\text{orange and strawberry})=0$
-        \item $\text{P}(\text{not caramel})=\dfrac{7}{12}$
+        \item $\text{P}(\text{not caramel})=\tfrac{7}{12}$
     \end{enumerate}
     \newcolumn
     \item
     \begin{enumerate}
-        \item $\text{P}(\text{Scotland})=\dfrac{2}{19}$
-        \item $\text{P}(\text{Wales or NI})=\dfrac{13}{76}$
-        \item $\text{P}(\text{not England})=\dfrac{21}{76}$
+        \item $\text{P}(\text{Scotland})=\tfrac{2}{19}$
+        \item $\text{P}(\text{Wales or NI})=\tfrac{13}{76}$
+        \item $\text{P}(\text{not England})=\tfrac{21}{76}$
     \end{enumerate}
     \item
     \begin{enumerate}
-        \item $\text{P}(\text{blue and 5})=\dfrac{1}{18}$
-        \item $\text{P}(\text{5})=\dfrac{1}{9}$
-        \item $\text{P}(\text{blue or 5})=\dfrac{7}{18}$
+        \item $\text{P}(\text{blue and 5})=\tfrac{1}{18}$
+        \item $\text{P}(\text{5})=\tfrac{1}{9}$
+        \item $\text{P}(\text{blue or 5})=\tfrac{7}{18}$
     \end{enumerate}
     \newcolumn
     \item
     \begin{enumerate}
-        \item $\text{P}(G)=\dfrac{9}{10}$
-        \item $\text{P}(G\text{ and }A)=\dfrac{27}{80}$
-        \item $\text{P}(\text{not }A)=\dfrac{5}{8}$
+        \item $\text{P}(G)=\tfrac{9}{10}$
+        \item $\text{P}(G\text{ and }A)=\tfrac{27}{80}$
+        \item $\text{P}(\text{not }A)=\tfrac{5}{8}$
     \end{enumerate}
     \item
     \begin{enumerate}
-        \item $\text{P}(\text{nurse})=\dfrac{25}{64}$
-        \item $\text{P}(\text{not ward 2})=\dfrac{39}{64}$
-        \item $\text{P}(\text{ward 2 and not doctor})=\dfrac{21}{64}$
+        \item $\text{P}(\text{nurse})=\tfrac{25}{64}$
+        \item $\text{P}(\text{not ward 2})=\tfrac{39}{64}$
+        \item $\text{P}(\text{ward 2 and not doctor})=\tfrac{21}{64}$
     \end{enumerate}
 \end{enumerate}
 \end{multicols}
@@ -399,29 +407,29 @@
     \begin{enumerate}
         \item \{H1,H2,H3,H4,H5,H6\\
         T1,T2,T3,T4,T5,T6\}
-        \item $\text{P}(\text{even and tails})=\dfrac{1}{4}$
+        \item $\text{P}(\text{even and tails})=\tfrac{1}{4}$
     \end{enumerate}
     \item
     \begin{enumerate}
-        \item $\text{P}(\text{tea and toast})=\dfrac{1}{12}$
-        \item $\text{P}(\text{museli and not coffee})=\dfrac{1}{6}$
-        \item $\text{P}(\text{not porridge and not tea})=\dfrac{1}{2}$
+        \item $\text{P}(\text{tea and toast})=\tfrac{1}{12}$
+        \item $\text{P}(\text{museli and not coffee})=\tfrac{1}{6}$
+        \item $\text{P}(\text{not porridge and not tea})=\tfrac{1}{2}$
     \end{enumerate}
     \item
     \begin{enumerate}
-        \item $\text{P}(\text{tails twice in a row})=\dfrac{3}{8}$
-        \item $\text{P}(\text{tails at least twice})=\dfrac{1}{2}$
+        \item $\text{P}(\text{tails twice in a row})=\tfrac{3}{8}$
+        \item $\text{P}(\text{tails at least twice})=\tfrac{1}{2}$
     \end{enumerate}
     \newcolumn
-    \item $\text{P}(\text{sum}=3)=\dfrac{1}{20}$
-    \item $\text{P}(\text{product}<5)=\dfrac{2}{9}$
-    \item $\text{P}(\text{at least one number}\leqslant 2)=\dfrac{2}{3}$
+    \item $\text{P}(\text{sum}=3)=\tfrac{1}{20}$
+    \item $\text{P}(\text{product}<5)=\tfrac{2}{9}$
+    \item $\text{P}(\text{at least one number}\leqslant 2)=\tfrac{2}{3}$
     \item
     \begin{enumerate}
-        \item $\text{P}(\text{20p first})=\dfrac{1}{5}$ 
-        \item $\text{P}(\text{20p selected})=\dfrac{2}{5}$
-        \item $\text{P}(\text{total}\geqslant15\text{p})=\dfrac{1}{2}$
-        \item $\text{P}(\text{total}<12\text{p})=\dfrac{2}{5}$
+        \item $\text{P}(\text{20p first})=\tfrac{1}{5}$ 
+        \item $\text{P}(\text{20p selected})=\tfrac{2}{5}$
+        \item $\text{P}(\text{total}\geqslant15\text{p})=\tfrac{1}{2}$
+        \item $\text{P}(\text{total}<12\text{p})=\tfrac{2}{5}$
     \end{enumerate}
     \newcolumn
     \item 
@@ -429,13 +437,18 @@
         \item $56$ 
         \item
           \begin{enumerate}
-              \item $\text{P}(\text{A:whiteboard and C:pens})=\dfrac{1}{56}$
-              \item $\text{P}(\text{neither chosen})=\dfrac{15}{28}$
-              \item $\text{P}(\text{at least one chosen})=\dfrac{13}{28}$
+              \item $\text{P}(\text{A board and C pens})=\tfrac{1}{56}$
+              \item $\text{P}(\text{neither chosen})=\tfrac{15}{28}$
+              \item $\text{P}(\text{at least one chosen})=\tfrac{13}{28}$
           \end{enumerate}
     \end{enumerate}
 \end{enumerate}
 \end{multicols}
+
+\endgroup
+\pagebreak
+\begingroup
+\footnotesize
 
 []{#ex23a}
 
@@ -460,18 +473,18 @@
                     {yellow}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\frac{4}{8}$}
+                node[below]  {$\tfrac{4}{8}$}
             }
             child {
                 node[end, label=right:
                     {green}] {}
                 edge from parent
-                node[above] {$\frac{4}{8}$}
+                node[above] {$\tfrac{4}{8}$}
                 node[below]  {}
             }
             edge from parent 
             node[above] {}
-            node[below]  {$\frac{5}{9}$}
+            node[below]  {$\tfrac{5}{9}$}
     }
     child {
         node[bag] {green}        
@@ -480,24 +493,24 @@
                     {yellow}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\frac{5}{8}$}
+                node[below]  {$\tfrac{5}{8}$}
             }
             child {
                 node[end, label=right:
                     {green}] {}
                 edge from parent
-                node[above] {$\frac{3}{8}$}
+                node[above] {$\tfrac{3}{8}$}
                 node[below]  {}
             }
         edge from parent         
-            node[above] {$\frac{4}{9}$}
+            node[above] {$\tfrac{4}{9}$}
             node[below]  {}
     };
 \end{tikzpicture}
-        \item $\text{P}(\text{both green})=\frac{1}{6}$
-        \item $\text{P}(\text{at least one green})=\frac{13}{18}$
+        \item $\text{P}(\text{both green})=\tfrac{1}{6}$
+        \item $\text{P}(\text{at least one green})=\tfrac{13}{18}$
     \end{enumerate}
-    \item $\text{P}(\text{both same colour})=\frac{9}{19}$
+    \item $\text{P}(\text{both same colour})=\tfrac{9}{19}$
     \newcolumn
     \item $\text{P}(\text{neither O}_+)=0.4281$
     \item
@@ -517,18 +530,18 @@
                     {fail}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\frac{2}{5}$}
+                node[below]  {$\tfrac{2}{5}$}
             }
             child {
                 node[end, label=right:
                     {pass}] {}
                 edge from parent
-                node[above] {$\frac{3}{5}$}
+                node[above] {$\tfrac{3}{5}$}
                 node[below]  {}
             }
             edge from parent 
             node[above] {}
-            node[below]  {$\frac{1}{4}$}
+            node[below]  {$\tfrac{1}{4}$}
     }
     child {
         node[bag] {sufficient quality}        
@@ -537,17 +550,17 @@
                     {fail}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\frac{1}{10}$}
+                node[below]  {$\tfrac{1}{10}$}
             }
             child {
                 node[end, label=right:
                     {pass}] {}
                 edge from parent
-                node[above] {$\frac{9}{10}$}
+                node[above] {$\tfrac{9}{10}$}
                 node[below]  {}
             }
         edge from parent         
-            node[above] {$\frac{3}{4}$}
+            node[above] {$\tfrac{3}{4}$}
             node[below]  {}
     };
 \end{tikzpicture}
@@ -615,18 +628,18 @@
                     {2B}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\frac{2}{6}$}
+                node[below]  {$\tfrac{2}{6}$}
             }
             child {
                 node[end, label=right:
                     {HB}] {}
                 edge from parent
-                node[above] {$\frac{4}{6}$}
+                node[above] {$\tfrac{4}{6}$}
                 node[below]  {}
             }
             edge from parent 
             node[above] {}
-            node[below]  {$\frac{1}{7}$}
+            node[below]  {$\tfrac{1}{7}$}
     }
     child {
         node[bag] {2B}        
@@ -635,24 +648,24 @@
                     {2H}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\frac{1}{6}$}
+                node[below]  {$\tfrac{1}{6}$}
             }
             child {
                 node[end, label=right:
                     {2B}] {}
                 edge from parent
-                node[above] {$\frac{1}{6}$}
+                node[above] {$\tfrac{1}{6}$}
                 node[below]  {}
             }
             child {
                 node[end, label=right:
                     {HB}] {}
                 edge from parent
-                node[above] {$\frac{4}{6}$}
+                node[above] {$\tfrac{4}{6}$}
                 node[below]  {}
             }
             edge from parent 
-            node[above] {$\frac{2}{7}$}
+            node[above] {$\tfrac{2}{7}$}
             node[below]  {}
     }
     child {
@@ -662,30 +675,30 @@
                     {2H}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\frac{1}{6}$}
+                node[below]  {$\tfrac{1}{6}$}
             }
             child {
                 node[end, label=right:
                     {2B}] {}
                 edge from parent
-                node[above] {$\frac{2}{6}$}
+                node[above] {$\tfrac{2}{6}$}
                 node[below]  {}
             }
             child {
                 node[end, label=right:
                     {HB}] {}
                 edge from parent
-                node[above] {$\frac{3}{6}$}
+                node[above] {$\tfrac{3}{6}$}
                 node[below]  {}
             }
         edge from parent         
-            node[above] {$\frac{4}{7}$}
+            node[above] {$\tfrac{4}{7}$}
             node[below]  {}
     };
 \end{tikzpicture}
-        \item $\text{P}(\text{both same})=\frac{1}{3}$ 
-        \item $\text{P}(\text{different})=\frac{2}{3}$
-        \item $\text{P}(\text{neither HB})=\frac{1}{7}$
+        \item $\text{P}(\text{both same})=\tfrac{1}{3}$ 
+        \item $\text{P}(\text{different})=\tfrac{2}{3}$
+        \item $\text{P}(\text{neither HB})=\tfrac{1}{7}$
     \end{enumerate}
     \newcolumn
     \item 
@@ -705,14 +718,14 @@
 \begin{enumerate}
     \item 
     \begin{enumerate}
-        \item $\text{P}(A)=\frac{5}{9}$ 
-        \item $\text{P}(B)=\frac{4}{9}$ 
-        \item $\text{P}(\bar{A})=\frac{4}{9}$ 
-        \item $\text{P}(\bar{B})=\frac{5}{9}$ 
-        \item $\text{P}(A\cap B)=\frac{1}{3}$ 
-        \item $\text{P}(A \cup B)=\frac{2}{3}$ 
-        \item $\text{P}(\bar{A} \cap B)=\frac{1}{9}$ 
-        \item $\text{P}(A \cap \bar{B})=\frac{2}{9}$ 
+        \item $\text{P}(A)=\tfrac{5}{9}$ 
+        \item $\text{P}(B)=\tfrac{4}{9}$ 
+        \item $\text{P}(\bar{A})=\tfrac{4}{9}$ 
+        \item $\text{P}(\bar{B})=\tfrac{5}{9}$ 
+        \item $\text{P}(A\cap B)=\tfrac{1}{3}$ 
+        \item $\text{P}(A \cup B)=\tfrac{2}{3}$ 
+        \item $\text{P}(\bar{A} \cap B)=\tfrac{1}{9}$ 
+        \item $\text{P}(A \cap \bar{B})=\tfrac{2}{9}$ 
     \end{enumerate}
     \item 
     \begin{enumerate}
@@ -727,14 +740,14 @@
     \newcolumn
     \item 
     \begin{enumerate}
-        \item $\text{P}(\text{prime} \text{})=\frac{3}{8}$
-        \item $\text{P}(\text{odd} \text{})=\frac{1}{2}$
-        \item $\text{P}(\overline{\text{prime}} \text{})=\frac{5}{8}$
-        \item $\text{P}(\overline{\text{odd}} \text{})=\frac{1}{2}$
-        \item $\text{P}(\text{prime} \cap \text{odd})=\frac{5}{16}$
-        \item $\text{P}(\text{prime} \cup \text{odd})=\frac{9}{16}$
-        \item $\text{P}(\overline{\text{prime}} \cap \text{odd})=\frac{3}{16}$
-        \item $\text{P}(\text{prime} \cap \overline{\text{odd}})=\frac{1}{16}$
+        \item $\text{P}(\text{prime} \text{})=\tfrac{3}{8}$
+        \item $\text{P}(\text{odd} \text{})=\tfrac{1}{2}$
+        \item $\text{P}(\overline{\text{prime}} \text{})=\tfrac{5}{8}$
+        \item $\text{P}(\overline{\text{odd}} \text{})=\tfrac{1}{2}$
+        \item $\text{P}(\text{prime} \cap \text{odd})=\tfrac{5}{16}$
+        \item $\text{P}(\text{prime} \cup \text{odd})=\tfrac{9}{16}$
+        \item $\text{P}(\overline{\text{prime}} \cap \text{odd})=\tfrac{3}{16}$
+        \item $\text{P}(\text{prime} \cap \overline{\text{odd}})=\tfrac{1}{16}$
     \end{enumerate}
     \newcolumn
     \item 
@@ -748,10 +761,15 @@
         \item $\text{P}(C \cup \bar{D})=0.88$
         \item $\text{P}(\bar{C} \cup D)=0.55$
     \end{enumerate}
-    \item $\text{P}(\text{biology})=\frac{13}{24}$
-    \item $\text{P}(\text{PM}\cap \text{NO}_2)=\frac{1}{10}$
+    \item $\text{P}(\text{biology})=\tfrac{13}{24}$
+    \item $\text{P}(\text{PM}\cap \text{NO}_2)=\tfrac{1}{10}$
 \end{enumerate}
 \end{multicols}
+
+\endgroup
+\pagebreak
+\begingroup
+\footnotesize
 
 []{#ex25a}
 
@@ -760,17 +778,17 @@
 \begin{multicols}{3}
     \begin{enumerate}
         \item $\text{P}(X \cup Y)=0.6$
-        \item $\text{P}(A \cup B)=\frac{29}{30}$
+        \item $\text{P}(A \cup B)=\tfrac{29}{30}$
         \item $\text{P}(E \cup F)=0.61$
-        \item $\text{P}(C \cup D)=\frac{11}{14}$
+        \item $\text{P}(C \cup D)=\tfrac{11}{14}$
         \item $\text{P}(A \cap B)=0.163$
-        \item $\text{P}(X \cap Y)=\frac{9}{80}$
+        \item $\text{P}(X \cap Y)=\tfrac{9}{80}$
         \item $\text{P}(V \cap W)=0.2$
-        \item $\text{P}(\bar{J})=\frac{7}{72}$
+        \item $\text{P}(\bar{J})=\tfrac{7}{72}$
         \item $\text{P}(X \cup Y)=0.9$
-        \item $\text{P}(\bar{B})=\frac{1}{6}$
+        \item $\text{P}(\bar{B})=\tfrac{1}{6}$
         \item $\text{P}(\text{fish})=0.85$
-        \item $\text{P}(\bar{N})=\frac{3}{8}$
+        \item $\text{P}(\bar{N})=\tfrac{3}{8}$
         \item $\text{P}(\bar{R})=0.19$
         \item
         \begin{enumerate}
@@ -795,30 +813,30 @@
     \begin{enumerate}
         \item 
         \begin{enumerate}
-            \item $\text{P}(\overline{\text{yellow}}\cup 1)=\frac{2}{3}$
-            \item $\text{P}(\text{neither yellow})=\frac{5}{18}$
+            \item $\text{P}(\overline{\text{yellow}}\cup 1)=\tfrac{2}{3}$
+            \item $\text{P}(\text{neither yellow})=\tfrac{5}{18}$
         \end{enumerate}
         \item 
         \begin{enumerate}
-            \item $\text{P}(\text{English}\cap \text{N5})=\frac{21}{64}$
-            \item $\text{P}(\text{History}\cup \text{Higher})=\frac{43}{64}$
+            \item $\text{P}(\text{English}\cap \text{N5})=\tfrac{21}{64}$
+            \item $\text{P}(\text{History}\cup \text{Higher})=\tfrac{43}{64}$
         \end{enumerate}
         \item $\text{P}(\text{}F)=0.9$
         \item $\text{P}(\text{takes payment})=0.8926$
         \item 
         \begin{enumerate}
-            \item $\text{P}(\text{not a tie})=\frac{5}{6}$
-            \item $\text{P}(\text{attacker wins})=\frac{7}{12}$
-            \item $\text{P}(\text{bonus point})=\frac{1}{8}$
+            \item $\text{P}(\text{not a tie})=\tfrac{5}{6}$
+            \item $\text{P}(\text{attacker wins})=\tfrac{7}{12}$
+            \item $\text{P}(\text{bonus point})=\tfrac{1}{8}$
         \end{enumerate}
-        \item $\text{P}(\text{}N \cup \bar{A})=\frac{7}{25}$
+        \item $\text{P}(\text{}N \cup \bar{A})=\tfrac{7}{25}$
         \item $\text{P}(\text{}B \cap C)=0.2$
     \end{enumerate}
 \end{multicols}
 
 \endgroup
 
-\newpage
+
 
 ### Chapter 3 Answers - Sampling Theory {-}
 
@@ -891,7 +909,7 @@
     \end{enumerate}
 \end{enumerate}
 
-\pagebreak
+
 
 []{#re3a}
 
@@ -927,8 +945,7 @@
 \end{enumerate}
 
 \endgroup
-
-\newpage
+\pagebreak
 
 ### Chapter 4 Answers - Further Probability Theory {-}
 
@@ -943,21 +960,21 @@
 \begin{enumerate}
     \item
     \begin{enumerate}
-        \item $\text{P}(X)=\dfrac{5}{9}$
-        \item $\text{P}(X|Y)=\dfrac{3}{4}$
-        \item $\text{P}(X\cap Y)=\dfrac{1}{3}$
-        \item $\text{P}(X\cup Y)=\dfrac{2}{3}$
-        \item $\text{P}(Y)=\dfrac{4}{9}$
-        \item $\text{P}(Y|X)=\dfrac{3}{5}$
-        \item $\text{P}(Y\cap X)=\dfrac{1}{3}$
-        \item $\text{P}(Y\cup X)=\dfrac{2}{3}$
+        \item $\text{P}(X)=\tfrac{5}{9}$
+        \item $\text{P}(X|Y)=\tfrac{3}{4}$
+        \item $\text{P}(X\cap Y)=\tfrac{1}{3}$
+        \item $\text{P}(X\cup Y)=\tfrac{2}{3}$
+        \item $\text{P}(Y)=\tfrac{4}{9}$
+        \item $\text{P}(Y|X)=\tfrac{3}{5}$
+        \item $\text{P}(Y\cap X)=\tfrac{1}{3}$
+        \item $\text{P}(Y\cup X)=\tfrac{2}{3}$
     \end{enumerate}
     \item
     \begin{enumerate}
-        \item $\text{P}(\text{scored})=\dfrac{73}{135}$
-        \item $\text{P}(\text{scored }|\text{ 3-pointer})=\dfrac{15}{41}$
-        \item $\text{P}(\text{3-pointer})=\dfrac{41}{135}$
-        \item $\text{P}(\text{3-pointer }|\text{ scored})=\dfrac{15}{73}$
+        \item $\text{P}(\text{scored})=\tfrac{73}{135}$
+        \item $\text{P}(\text{scored }|\text{ 3-pointer})=\tfrac{15}{41}$
+        \item $\text{P}(\text{3-pointer})=\tfrac{41}{135}$
+        \item $\text{P}(\text{3-pointer }|\text{ scored})=\tfrac{15}{73}$
     \end{enumerate}
     \item
     \begin{enumerate}
@@ -970,17 +987,17 @@
     \end{enumerate}
     \item
     \begin{enumerate}
-        \item $\text{P}(A)=\dfrac{2}{5}$
-        \item $\text{P}(B)=\dfrac{2}{5}$
-        \item $\text{P}(C)=\dfrac{1}{3}$
-        \item $\text{P}(A\cap B)=\dfrac{2}{15}$
-        \item $\text{P}(B \cup C)=\dfrac{3}{5}$
-        \item $\text{P}(A \cap B \cap C)=\dfrac{1}{15}$
-        \item $\text{P}(A | C)=\dfrac{3}{5}$
-        \item $\text{P}(C | B)=\dfrac{1}{3}$
-        \item $\text{P}(\overline{B} | C)=\dfrac{3}{5}$
-        \item $\text{P}(C | \overline{A})=\dfrac{2}{9}$
-        \item $\text{P}((A \cap B) | C)=\dfrac{1}{5}$
+        \item $\text{P}(A)=\tfrac{2}{5}$
+        \item $\text{P}(B)=\tfrac{2}{5}$
+        \item $\text{P}(C)=\tfrac{1}{3}$
+        \item $\text{P}(A\cap B)=\tfrac{2}{15}$
+        \item $\text{P}(B \cup C)=\tfrac{3}{5}$
+        \item $\text{P}(A \cap B \cap C)=\tfrac{1}{15}$
+        \item $\text{P}(A | C)=\tfrac{3}{5}$
+        \item $\text{P}(C | B)=\tfrac{1}{3}$
+        \item $\text{P}(\overline{B} | C)=\tfrac{3}{5}$
+        \item $\text{P}(C | \overline{A})=\tfrac{2}{9}$
+        \item $\text{P}((A \cap B) | C)=\tfrac{1}{5}$
     \end{enumerate}
 \end{enumerate}
 \end{multicols}
@@ -995,19 +1012,19 @@
     \begin{enumerate}
         \item $\text{P}(A|B)=0.2$
         \item $\text{P}(\text{red }|\text{ blue})=0.4849$
-        \item $\text{P}(X|Y)=\dfrac{2}{3}$
+        \item $\text{P}(X|Y)=\tfrac{2}{3}$
         \item $\text{P}(M|N)=0.3233$
         \item
         \begin{enumerate}
             \item $\text{P}(\overline{A}|B)=0.8$
             \item $\text{P}(\text{}\overline{\text{red}\text{ }}|\text{ blue})=0.5151$
-            \item $\text{P}(\overline{X}|Y)=\dfrac{1}{3}$
+            \item $\text{P}(\overline{X}|Y)=\tfrac{1}{3}$
             \item $\text{P}(\overline{M}|N)=0.6767$
         \end{enumerate}
     \end{enumerate}
     \item $\text{P}(\overline{V}|W)=0.3$
     \item $\text{P}(\text{5 }|\text{ yellow})=0.2$
-    \item $\text{P}(\text{lose }|\text{ concede}\geq2)=\dfrac{5}{8}$
+    \item $\text{P}(\text{lose }|\text{ concede}\geq2)=\tfrac{5}{8}$
     \item $\text{P}(M|N)=0.25$
     \item $\text{P}(V \cup W)=0.725$
 \end{enumerate}
@@ -1047,7 +1064,7 @@
         \item
         \begin{enumerate}
             \item $\text{P}(X\cap Y)=0.072$
-            \item $\text{P}(\text{blue}\cap \text{yellow})=\dfrac{3}{8}$
+            \item $\text{P}(\text{blue}\cap \text{yellow})=\tfrac{3}{8}$
             \item $\text{P}(E\cap F)=0.246$
         \end{enumerate}
         \item
@@ -1070,15 +1087,15 @@
     \begin{enumerate}
     \item 
     \begin{enumerate}
-    \item $\text{P}(X|Y)=\dfrac{7}{12}$
+    \item $\text{P}(X|Y)=\tfrac{7}{12}$
     \item $\text{P}(V|W)=0.625$
     \end{enumerate}
     \item $\text{P}(\text{1 }|\text{ red})=0.6$
     \item $\text{P}(\text{gene }|\text{ positive})=0.2186$
     \item 
     \begin{enumerate}
-        \item $\text{P}(M|N)=\dfrac{8}{15}$
-        \item $\text{P}(\overline{M}|N)=\dfrac{7}{15}$
+        \item $\text{P}(M|N)=\tfrac{8}{15}$
+        \item $\text{P}(\overline{M}|N)=\tfrac{7}{15}$
     \end{enumerate}
     \item $\text{P}(\text{pass }|\text{ car})=0.8446$
     \item $\text{P}(\text{Pacific 525 }|\text{ music})=0.7467$
@@ -1086,7 +1103,7 @@
 \end{enumerate}
 \end{multicols}
 
-\pagebreak
+
 
 []{#ex46a}
 
@@ -1142,23 +1159,23 @@
 
 \begin{multicols}{3}
     \begin{enumerate}
-        \item $\text{P}(E|F)=\dfrac{7}{9}$
+        \item $\text{P}(E|F)=\tfrac{7}{9}$
         \item 
         \begin{enumerate}
             \item 
             \begin{enumerate}
-                \item $\text{P}(W\cup A)=\dfrac{17}{20}$
-                \item $\text{P}(\overline{W}\cap B)=\dfrac{1}{8}$
+                \item $\text{P}(W\cup A)=\tfrac{17}{20}$
+                \item $\text{P}(\overline{W}\cap B)=\tfrac{1}{8}$
             \end{enumerate}
             \item $\text{P}(\text{power})=0.825$
-            \item $\text{P}(\text{Mac }|\text{ }\overline{\text{power}})=\dfrac{1}{7}$
+            \item $\text{P}(\text{Mac }|\text{ }\overline{\text{power}})=\tfrac{1}{7}$
         \end{enumerate}
         \item 
         \begin{enumerate}
             \item $\text{P}(\text{wins})=0.3917$
             \item $\text{P}(\text{1st }|\text{ lost})=0.1370$
         \end{enumerate}
-        \item $\text{P}(M|B)=\dfrac{1}{5}=\text{P}(M)$\\hence $P,M$ are independent
+        \item $\text{P}(M|B)=\tfrac{1}{5}=\text{P}(M)$\\hence $P,M$ are independent
         \item 
         \begin{enumerate}
             \item $\text{P}(\text{incorrect})=0.2875$
@@ -1169,143 +1186,81 @@
 
 \endgroup
 
-\newpage
-
-\begin{multicols}{4}
-\begin{enumerate}
-    \item Hi
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{4}
-\begin{enumerate}
-    \item[1a) ] $0.9\implies$not exhaustive
-    \item[1b) ] $1\implies$exhaustive
-    \item[1c) ] $0.15\implies$not exhaustive
-    \item[1d) ] $\frac{5}{6}\implies$not exhaustive
-    \item[2a) ] $0.3\implies$not mutually exclusive
-    \item[2b) ] $\frac{3}{5}\implies$not mutually exclusive
-    \item[2c) ] $0.6\implies$not mutually exclusive
-    \item[2d) ] $0\implies$mutually exclusive
-    \item[3a) ] $0.64$
-    \item[3b) ] $0.82$
-    \item[3c) ] $0.56$
-    \item[3d) ] $0.9$
-    \item[4) ] $\frac{47}{72}$
-    \item[5) ] $0.9$
-    \item[6) ] $\frac{1}{6}$
-    \item[7) ] $0.85$
-    \item[8) ] $\frac{5}{8}$
-    \item[9) ] $1$
-    \item[10a) ] $0.89$
-    \item[10b) ] $0.05$
-    \item[10c) ] $0.19$
-    \item[11) ] $P(E\cup F)=\frac{71}{60}>1$ Probabilities cannot be\\ greater than 1.
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{4}
-\begin{enumerate}
-    \item[1b ] $\frac{1}{6}$
-    \item[1c ] $\frac{13}{18}$
-    \item[2 ] $\frac{9}{19}$
-    \item[3 ] $0.4281$
-    \item[4b ] $0.825$
-    \item[5b ] $0.8536$
-    \item[6b ] $\frac{1}{3}$
-    \item[6c ] $\frac{2}{3}$
-    \item[6d ] $\frac{1}{7}$
-    \item[7a ] $0.224$
-    \item[7b ] $0.776$
-    \item[7c ] $0.252$
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{4}
-\begin{enumerate}
-    \item[1a) ] $0.9\implies$not exhaustive
-    \item[1b) ] $1\implies$exhaustive
-    \item[1c) ] $0.15\implies$not exhaustive
-    \item[1d) ] $\frac{5}{6}\implies$not exhaustive
-    \item[2a) ] $0.3\implies$not mutually exclusive
-    \item[2b) ] $\frac{3}{5}\implies$not mutually exclusive
-    \item[2c) ] $0.6\implies$not mutually exclusive
-    \item[2d) ] $0\implies$mutually exclusive
-    \item[3a) ] $0.64$
-    \item[3b) ] $0.82$
-    \item[3c) ] $0.56$
-    \item[3d) ] $0.9$
-    \item[4) ] $\frac{47}{72}$
-    \item[5) ] $0.9$
-    \item[6) ] $\frac{1}{6}$
-    \item[7) ] $0.85$
-    \item[8) ] $\frac{5}{8}$
-    \item[9) ] $1$
-    \item[10a) ] $0.89$
-    \item[10b) ] $0.05$
-    \item[10c) ] $0.19$
-    \item[11) ] $P(E\cup F)=\frac{71}{60}>1$ Probabilities cannot be\\ greater than 1.
-\end{enumerate}
-\end{multicols}
-
-\begin{multicols}{4}
-\begin{enumerate}
-    \item[1a)i) ] $\frac{5}{9}$
-    \item[1a)ii) ] $\frac{4}{9}$
-    \item[1a)iii) ] $\frac{3}{4}$
-    \item[1a)iv) ] $\frac{3}{5}$
-    \item[1a)v) ] $\frac{1}{3}$
-    \item[1b) ] $\frac{3}{4}$
-    \item[2a) ] $0.3616$
-    \item[2b) ] $0.2044$
-    \item[3a) ] $0.7$
-    \item[3b) ] $0.3$
-    \item[4) ] $0.4$
-    \item[5) ] $0.25$
-    \item[6a)i) ] $\frac{2}{15}$
-    \item[6a)ii) ] $\frac{4}{5}$
-    \item[6a)iii) ] $\frac{4}{15}$
-    \item[6a)iv) ] $\frac{2}{3}$
-    \item[6a)v) ] $\frac{1}{5}$
-    \item[6b)i) ] $\frac{2}{7}$
-    \item[6b)ii) ] $\frac{4}{7}$
-    \item[6b)iii) ] $\frac{4}{7}$
-    \item[6b)iv) ] $\frac{3}{7}$
-    \item[6b)v) ] $\frac{3}{8}$
-    \item[7) ] $0.725$
-    \item[8) ] $P(\text{express})=0.35$\\$P(\text{regular})=0.65$\\$P(\text{undamaged}|\text{express})=0.98$\\$P(\text{undamaged}|\text{express})=0.91$
-\end{enumerate}
-\end{multicols}
-
-\newpage
-
 ### Chapter 5 - An Introduction to Linear Regression {-}
 
-\begin{multicols}{4}
-\begin{enumerate}
-    \item Hi
-\end{enumerate}
-\end{multicols}
+\begingroup
+\footnotesize
 
-\newpage
+[]{#ex51a}
+
+#### [Exercise 5.1](#ex51q) {-}
+
+[]{#ex52a}
+
+#### [Exercise 5.2](#ex52q) {-}
+
+[]{#ex53a}
+
+#### [Exercise 5.3](#ex53q) {-}
+
+
+[]{#re5a}
+
+#### [Chapter 5 Review Exercise](#re5q) {-}
+
+
+\endgroup
 
 ### Chapter 6 - Random Variables {-}
 
-\begin{multicols}{4}
-\begin{enumerate}
-    \item Hi
-\end{enumerate}
-\end{multicols}
+\begingroup
+\footnotesize
 
-\newpage
+[]{#ex61a}
+
+#### [Exercise 6.1](#ex61q) {-}
+
+[]{#ex62a}
+
+#### [Exercise 6.2](#ex62q) {-}
+
+[]{#ex63a}
+
+#### [Exercise 6.3](#ex63q) {-}
+
+
+[]{#ex64a}
+
+#### [Exercise 6.4](#ex64q) {-}
+
+[]{#ex65a}
+
+#### [Exercise 6.5](#ex65q) {-}
+
+[]{#ex66a}
+
+#### [Exercise 6.6](#ex66q) {-}
+
+
+[]{#re6a}
+
+#### [Chapter 6 Review Exercise](#re6q) {-}
+
+\endgroup
 
 ### Chapter 7 - Discrete Distributions {-}
 
+\begingroup
+\footnotesize
+
+[]{#ex71a}
+
+#### [Exercise 7.1](#ex71q) {-}
+
 \begin{multicols}{3}
-\textbf{Exercise 6A}
 \begin{enumerate}
     \item $E(X)=3$ and $V(X)=2$
-    \item $E(X)=8$ and $V(X)=\frac{56}{3}$
+    \item $E(X)=8$ and $V(X)=\tfrac{56}{3}$
     \item
     \begin{enumerate}
         \item $E(X)=4.5$ and $V(X)=5.25$
@@ -1320,13 +1275,13 @@
     \item
     \begin{enumerate}
         \item $E(X-Y)=-1$
-        \item $V(X-Y)=\frac{8}{3}$
+        \item $V(X-Y)=\tfrac{8}{3}$
     \end{enumerate}
     \item
     \begin{enumerate}
         \item $k=10$
         \item $P(2\leqslant X<6)=0.4$
-        \item $SD(X)=\frac{\sqrt{33}}{2}$
+        \item $SD(X)=\tfrac{\sqrt{33}}{2}$
     \end{enumerate}
     \item
     \begin{enumerate}
@@ -1335,8 +1290,14 @@
     \end{enumerate}
     \item $X\sim U(11)$ and $Y\sim U(7)$
 \end{enumerate}
+\end{multicols}
 
-\textbf{Exercise 6B}
+
+[]{#ex72a}
+
+#### [Exercise 7.2](#ex72q) {-}
+
+\begin{multicols}{3}
 \begin{enumerate}
     \item $0.2503$
     \item $0.2787$
@@ -1344,13 +1305,19 @@
     \item $0.0988$
     \item
     \begin{enumerate}
-        \item $X\sim B(4,\frac{1}{7})$
+        \item $X\sim B(4,\tfrac{1}{7})$
         \item $0.3599$
     \end{enumerate}
     \item 0.0214
 \end{enumerate}
+\end{multicols}
 
-\textbf{Exercise 6C}
+
+[]{#ex73a}
+
+#### [Exercise 7.3](#ex73q) {-}
+
+\begin{multicols}{3}
 \begin{enumerate}
     \item
     \begin{enumerate}
@@ -1379,19 +1346,24 @@
         \item $0.1927$
     \end{enumerate}
 \end{enumerate}
+\end{multicols}
     
-\textbf{Exercise 6D}
+[]{#ex74a}
+
+#### [Exercise 7.4](#ex74q) {-}
+
+\begin{multicols}{3}
 \begin{enumerate}
     \item
     \begin{enumerate}
         \item $\mu=0.8,\sigma^2=0.64$
-        \item $\mu=2,\sigma^2=\frac{4}{3}$
+        \item $\mu=2,\sigma^2=\tfrac{4}{3}$
         \item $\mu=0.4,\sigma^2=0.36$
         \item $\mu=12,\sigma^2=7.2$
     \end{enumerate}
     \item
     \begin{enumerate}
-        \item $S\sim B(10,\frac{1}{4})$
+        \item $S\sim B(10,\tfrac{1}{4})$
         \item $E(S)=2.5$ and $V(S)=1.875$
         \item $0.0197$
     \end{enumerate}
@@ -1402,17 +1374,22 @@
     \end{enumerate}
     \item
     \begin{enumerate}
-        \item $p=\frac{2}{3}$
+        \item $p=\tfrac{2}{3}$
         \item $E(Y)=8$
     \end{enumerate}
     \item
     \begin{enumerate}
-        \item $n=20$ and $p=\frac{4}{5}$
+        \item $n=20$ and $p=\tfrac{4}{5}$
         \item $P(5<X<10)=0.0006$
     \end{enumerate}
 \end{enumerate}
+\end{multicols}
 
-\textbf{Exercise 6E}
+
+[]{#ex75a}
+
+#### [Exercise 7.5](#ex75q) {-}
+
 \begin{enumerate}
     \item 
     \begin{enumerate}
@@ -1428,7 +1405,11 @@
     \end{enumerate}
 \end{enumerate}
 
-\textbf{Exercise 6F}
+[]{#ex76a}
+
+#### [Exercise 7.6](#ex76q) {-}
+
+\begin{multicols}{3}
 \begin{enumerate}
     \item 
     \begin{enumerate}
@@ -1450,8 +1431,12 @@
         \item $0.0190$
     \end{enumerate}
 \end{enumerate}
+\end{multicols}
 
-\textbf{Exercise 6G}
+[]{#ex77a}
+
+#### [Exercise 7.7](#ex77q) {-}
+
 \begin{enumerate}
     \item $0.9473$
     \item $0.9389$
@@ -1460,11 +1445,15 @@
     \item $0.0144$
 \end{enumerate}
 
-\textbf{Review Exercise}
+[]{#re7a}
+
+#### [Chapter 7 Review Exercise](#re7q) {-}
+
+\begin{multicols}{3}
 \begin{enumerate}
     \item
     \begin{enumerate}
-        \item $\frac{5}{8}$
+        \item $\tfrac{5}{8}$
         \item $E(X)=4.5$ and $V(X)=5.25$
     \end{enumerate}
     \item
@@ -1504,7 +1493,7 @@
 \end{enumerate}
 \end{multicols}
 
-\newpage
+\endgroup
 
 ### Chapter 8 Answers - Continuous Distributions {-}
 
@@ -1519,36 +1508,36 @@
 \begin{enumerate}
     \item
     \begin{enumerate}
-        \item $\frac{2}{3}$
+        \item $\tfrac{2}{3}$
         \item $0.7667$
         \item $0.1$
     \end{enumerate}
     \item
     \begin{enumerate}
-        \item $\frac{1}{3}$
+        \item $\tfrac{1}{3}$
         \item $0$
         \item $0.6583$
     \end{enumerate}
     \item
     \begin{enumerate}
-        \item $\frac{1}{6}$
-        \item $\frac{5}{6}$
-        \item $\frac{5}{12}$
+        \item $\tfrac{1}{6}$
+        \item $\tfrac{5}{6}$
+        \item $\tfrac{5}{12}$
     \end{enumerate}
     \item
     \begin{enumerate}
         \item \mbox{$E(X)=1,$} \mbox{$SD(X)=2.89$}
-        \item \mbox{$E(3X-1)=2,$} \mbox{$V(5-2X)=\frac{100}{3}$}
+        \item \mbox{$E(3X-1)=2,$} \mbox{$V(5-2X)=\tfrac{100}{3}$}
         \item $0.64$
         \item $0.4$
     \end{enumerate}
     \item
     \begin{enumerate}
-        \item $\frac{5}{6}$
+        \item $\tfrac{5}{6}$
         \item $7.5$ mins
         \item $4.33$ mins
     \end{enumerate}
-    \item $\frac{4}{7}$
+    \item $\tfrac{4}{7}$
     \item
     \begin{enumerate}
         \item $0.4$
@@ -1565,7 +1554,7 @@
     \begin{enumerate}
         \item $X\sim U(2,14)$
         \item $\sqrt{12}$
-        \item $\frac{5}{12}$
+        \item $\tfrac{5}{12}$
     \end{enumerate}
     \item
     \begin{enumerate}
@@ -1818,7 +1807,7 @@
     \begin{enumerate}
         \item $4$
         \item $3$
-        \item $\frac{1}{3}$
+        \item $\tfrac{1}{3}$
     \end{enumerate}
     \item
     \begin{enumerate}
@@ -1852,14 +1841,16 @@
 
 \endgroup
 
-\newpage
-
 ### Chapter 9 - Distribution of the Sample Mean {-}
 
-\chead{ANSWERS}
+\begingroup
+\footnotesize
+
+[]{#ex91a}
+
+#### [Exercise 9.1](#ex91q) {-}
 
 \begin{multicols}{3}
-\textbf{Exercise 9.1}
 \begin{enumerate}
     \item
     \begin{enumerate}
@@ -1870,7 +1861,7 @@
         \end{enumerate}
         \item
         \begin{enumerate}
-            \item $N(24,\frac{4^2}{3})$
+            \item $N(24,\tfrac{4^2}{3})$
             \item $0.3015$
             \item $0.3974$
         \end{enumerate}
@@ -1889,17 +1880,19 @@
     \end{enumerate}
     \item $0.9992$
 \end{enumerate}
+\end{multicols}
 
-\vfill\null
-\columnbreak
+[]{#ex92a}
 
-\textbf{Exercise 9.2}
+#### [Exercise 9.2](#ex92q) {-}
+
+\begin{multicols}{3}
 \begin{enumerate}
     \item
     \begin{enumerate}
-        \item $X\approx N(2.3,\frac{5^2}{40})$
-        \item $Y\sim N(83,\frac{9}{25})$
-        \item $D\sim N(126,\frac{10}{7})$
+        \item $X\approx N(2.3,\tfrac{5^2}{40})$
+        \item $Y\sim N(83,\tfrac{9}{25})$
+        \item $D\sim N(126,\tfrac{10}{7})$
         \item Comment.
     \end{enumerate}
     \item $0.9857$
@@ -1911,22 +1904,24 @@
         \item $0.0526$
     \end{enumerate}
 \end{enumerate}
+\end{multicols}
 
-\vfill\null
-\columnbreak
+[]{#re9a}
 
-\textbf{Review Exercise}
+#### [Chapter 9 Review Exercise](#re9q) {-}
+
+\begin{multicols}{3}
 \begin{enumerate}
     \item
     \begin{enumerate}
-        \item $\bar{X}\sim N(15,\frac{3^2}{8})$
+        \item $\bar{X}\sim N(15,\tfrac{3^2}{8})$
         \item $0.9706$
     \end{enumerate}
     \item $0.9981$
     \item
     \begin{enumerate}
         \item Comment.
-        \item $\bar{X}\approx N(600,\frac{70^2}{40})$
+        \item $\bar{X}\approx N(600,\tfrac{70^2}{40})$
         \item $0.1489$
     \end{enumerate}
     \item
@@ -1938,7 +1933,7 @@
         \end{enumerate}
         \item
         \begin{enumerate}
-            \item $\bar{X}\sim N(60, \frac{2^2}{8})$
+            \item $\bar{X}\sim N(60, \tfrac{2^2}{8})$
             \item $0.1271$
         \end{enumerate}
         \item Comment.
@@ -1947,21 +1942,24 @@
     \begin{enumerate}
         \item $X\sim Po(4.5)$
         \item $0.1736$
-        \item $X\approx N(4.5,\frac{4.5}{30})$
+        \item $X\approx N(4.5,\tfrac{4.5}{30})$
         \item $0.0985$
     \end{enumerate}
 \end{enumerate}
 \end{multicols}
 
-\newpage
+\endgroup
 
 ### Chapter 10 - An Introduction to Hypothesis Testing {-}
 
-\chead{ANSWERS}
+\begingroup
+\footnotesize
 
-\begin{multicols}{2}
+[]{#ex101a}
 
-\textbf{Exercise 10.1}
+#### [Exercise 10.1](#ex101q) {-}
+
+\begin{multicols}{3}
 \begin{enumerate}
     \item $H_0:\mu=8.6$\\
     $H_1: \mu>8.6$
@@ -1976,8 +1974,12 @@
     \item $H_0:\mu=15.7$\\
     $H_1: \mu\ne15.7$
 \end{enumerate}
+\end{multicols}
 
-\textbf{Exercise 10.2}
+[]{#ex102a}
+
+#### [Exercise 10.2](#ex102q) {-}
+}
 \begin{enumerate}
     \item $0.0162<0.05\implies \textit{reject }H_0$
     \item $0.1056>0.01\implies \textit{do not reject }H_0$
@@ -1985,7 +1987,10 @@
     \item $0.0764>0.05\implies \textit{do not reject }H_0$
 \end{enumerate}
 
-\textbf{Exercise 10.3}
+[]{#ex103a}
+
+#### [Exercise 10.3](#ex103q) {-}
+
 \begin{enumerate}
     \item $0.0286<0.1\implies \textit{reject }H_0$
     \item $0.0702>0.001\implies \textit{do not reject }H_0$
@@ -1997,7 +2002,10 @@
     \item $0.0250>0.01\implies \textit{do not reject }H_0$
 \end{enumerate}
 
-\textbf{Exercise 10.4}
+[]{#ex104a}
+
+#### [Exercise 10.4](#ex104q) {-}
+
 \begin{enumerate}
     \item $1.67<1.96\implies \textit{do not reject }H_0$
     \item $-2.5<-1.64\implies \textit{reject }H_0$
@@ -2006,7 +2014,10 @@
     \item $2.00>1.96\implies \textit{reject }H_0$
 \end{enumerate}
 
-\textbf{Exercise 10.5}
+[]{#ex105a}
+
+#### [Exercise 10.5](#ex105q) {-}
+
 \begin{enumerate}
     \item $-2.985<-1.895\implies \textit{reject }H_0$
     \item $0.636<1.476\implies \textit{do not reject }H_0$
@@ -2014,7 +2025,10 @@
     \item $-3.531<-2.821\implies \textit{reject }H_0$
 \end{enumerate}
 
-\textbf{Exercise 10.6}
+[]{#ex106a}
+
+#### [Exercise 10.6](#ex106q) {-}
+
 \begin{enumerate}
     \item $1.52<1.64\implies \textit{do not reject }H_0$
     \item $2.42>2.33\implies \textit{reject }H_0$
@@ -2024,7 +2038,10 @@
     \item $-2.2<-1.64\implies \textit{reject }H_0$
 \end{enumerate}
 
-\textbf{Review Exercise}
+[]{#re10a}
+
+#### [Chapter 10 Review Exercise](#re10q) {-}
+
 \begin{enumerate}
     \item $-2.54<-2.33\implies \textit{reject }H_0$
     \item $2.158<2.365\implies \textit{do not reject }H_0$
@@ -2032,17 +2049,18 @@
     \item $-3.00<-2.33\implies \textit{reject }H_0$
     \item $-2.170<-1.895\implies \textit{reject }H_0$
 \end{enumerate}
-\end{multicols}
 
-\newpage
+\endgroup
 
 ### Chapter 11 - Confidence Intervals {-}
 
-\chead{ANSWERS}
+\begingroup
+\footnotesize
 
-\begin{multicols}{2}
+[]{#ex111a}
 
-\textbf{Exercise 10.1}
+#### [Exercise 11.1](#ex111q) {-}
+
 \begin{enumerate}
     \item $(55.18 ,58.82)$
     \item $(12.76 ,14.84)$
@@ -2059,7 +2077,10 @@
     \item $10.0$
 \end{enumerate}
 
-\textbf{Exercise 10.2}
+[]{#ex112a}
+
+#### [Exercise 11.2](#ex112q) {-}
+
 \begin{enumerate}
     \item $(499.1,510.9)\implies \text{within, comment}$
     \item $(419.5,426.5)\implies \text{within, comment}$
@@ -2069,7 +2090,10 @@
     \item $(28580,30020\implies \text{within, comment})$
 \end{enumerate}
 
-\textbf{Exercise 10.3}
+[]{#ex113a}
+
+#### [Exercise 11.3](#ex113q) {-}
+
 \begin{enumerate}
     \item $(6.88,7.87)$
     \item $(4048.5,4714.4)\implies \text{within, comment}$
@@ -2078,7 +2102,10 @@
     \item $(2.760,4.740)\implies \text{outwith, comment}$
 \end{enumerate}
 
-\textbf{Exercise 10.4}
+[]{#ex114a}
+
+#### [Exercise 11.4](#ex114q) {-}
+
 \begin{enumerate}
     \item $(0.598,0.736)$
     \item $(0.133,0.427)$
@@ -2094,7 +2121,10 @@
     \end{enumerate}
 \end{enumerate}
 
-\textbf{Review Exercise}
+[]{#re11a}
+
+#### [Chapter 11 Review Exercise](#re11q) {-}
+
 \begin{enumerate}
     \item $(63.98,82.77)$
     \item $(0.116,0.444)$
@@ -2110,39 +2140,88 @@
     \end{enumerate}
     \item $(0.679,0.888)\implies \text{outwith, comment}$
 \end{enumerate}
-\end{multicols}
 
-\newpage
+\endgroup
 
 ### Chapter 12 - Control Charts {-}
 
-\textbf{Exercise 12E}
-\begin{enumerate}
-    \item[2. ] $3.324<6.635 \implies \textit{do not reject } H_0$
-    \item[3. ] $2.326<4.605 \implies \textit{do not reject } H_0$
-\end{enumerate}
+\begingroup
+\footnotesize
 
-\newpage
+[]{#ex121a}
 
-### Chapter 12 - Chi-Squared Goodness-of-Fit Test {-}
+#### [Exercise 12.1](#ex121q) {-}
 
-\textbf{Exercise 12E}
-\begin{enumerate}
-    \item[2. ] $3.324<6.635 \implies \textit{do not reject } H_0$
-    \item[3. ] $2.326<4.605 \implies \textit{do not reject } H_0$
-\end{enumerate}
 
-\newpage
+[]{#ex122a}
+
+#### [Exercise 12.2](#ex122q) {-}
+
+
+[]{#ex123a}
+
+#### [Exercise 12.3](#ex123q) {-}
+
+
+[]{#ex124a}
+
+#### [Exercise 12.4](#ex124q) {-}
+
+
+[]{#re12a}
+
+#### [Chapter 12 Review Exercise](#re12q) {-}
+
+\endgroup
+
+### Chapter 13 - Chi-Squared Goodness-of-Fit Test {-}
+
+\begingroup
+\footnotesize
+
+[]{#ex131a}
+
+#### [Exercise 13.1](#ex131q) {-}
+
+
+[]{#ex132a}
+
+#### [Exercise 13.2](#ex132q) {-}
+
+
+[]{#ex133a}
+
+#### [Exercise 13.3](#ex133q) {-}
+
+
+
+[]{#re13a}
+
+#### [Chapter 13 Review Exercise](#re13q) {-}
+
+\endgroup
 
 ### Chapter 14 - Chi-Squared Test for Association {-}
 
-\begin{multicols}{4}
-\begin{enumerate}
-    \item Hi
-\end{enumerate}
-\end{multicols}
+\begingroup
+\footnotesize
 
-\newpage
+[]{#ex141a}
+
+#### [Exercise 14.1](#ex141q) {-}
+
+
+[]{#ex142a}
+
+#### [Exercise 14.2](#ex142q) {-}
+
+
+[]{#re14a}
+
+#### [Chapter 14 Review Exercise](#re14q) {-}
+
+\endgroup
+
 
 ### Chapter 15 - Two-Sample Parametric Tests {-}
 
@@ -2153,51 +2232,38 @@
 
 #### [Exercise 15.1](#ex151q) {-}
 
-\begin{enumerate}
-    \item
-\end{enumerate}
 
 []{#ex152a}
 
 #### [Exercise 15.2](#ex152q) {-}
 
-\begin{enumerate}
-    \item
-\end{enumerate}
 
 []{#ex153a}
 
 #### [Exercise 15.3](#ex153q) {-}
 
-\begin{enumerate}
-    \item
-\end{enumerate}
 
 []{#ex154a}
 
 #### [Exercise 15.4](#ex154q) {-}
 
-\begin{enumerate}
-    \item
-\end{enumerate}
 
 []{#re15a}
 
 #### [Chapter 15 Review Exercise](#re15q) {-}
 
-\begin{enumerate}
-    \item
-\end{enumerate}
 
 \endgroup
 
-\newpage
+### Chapter 16 - Wilcoxon Signed Rank Test {-}
 
-#### Chapter 16 - Wilcoxon Signed Rank Test {-}
+\begingroup
+\footnotesize
 
-*For any questions for which a level of significance is not specified, a 5\% level of significance has been used. Full answers should include, of course, conclusions in context*
+[]{#ex161a}
 
-#### Exercise 16A {-}
+#### [Exercise 16.1](#ex161q) {-}
+
 \begin{enumerate}
     \item $9>3\implies\text{ do not reject }H_0$
     \item $5.5<3\implies\text{ reject }H_0$
@@ -2208,7 +2274,10 @@
     \item $6.5>5\implies\text{ do not reject }H_0$
 \end{enumerate}
 
-#### Exercise 16B {-}
+[]{#ex162a}
+
+#### [Exercise 16.2](#ex162q) {-}
+
 \begin{enumerate}
     \item $8.5<13\implies\text{ reject }H_0$
     \item $11>5\implies\text{ do not reject }H_0$
@@ -2217,33 +2286,141 @@
     \item $4<8\implies\text{ reject }H_0$
 \end{enumerate}
 
-#### Exercise 16C {-}
+[]{#ex163a}
+
+#### [Exercise 16.3](#ex163q) {-}
+
 \begin{enumerate}
     \item $-0.34>-1.96\implies\text{ do not reject }H_0$
     \item $-1.67<-1.64\implies\text{ reject }H_0$
     \item $-0.27>-1.64\implies\text{ do not reject }H_0$
-    \item $W=80.5$
-    \item $W=55$
+    \item
+    \begin{enumerate}
+        \item $H_0: \eta =110, \quad H_1: \eta<110$
+        \item $-2.16>-1.64\implies\text{reject }H_0$
+        \item Assume that time taken to complete the hike is symmetrically distributed.
+    \end{enumerate}
 \end{enumerate}
 
-#### Review Exercise {-}
+
+[]{#re16a}
+
+#### [Chapter 16 Review Exercise](#re16q) {-}
+
 \begin{enumerate}
     \item $5\leqslant5\implies\text{ reject }H_0$
     \item $14>8\implies\text{ do not reject }H_0$
     \item $-2.40>-1.96\implies\text{ reject }H_0$
+    \item $3>2\implies\text{do not reject }H_0$
 \end{enumerate}
 
-\newpage
+\endgroup
 
 ### Chapter 17 - Mann Whitney Rank Sum Test {-}
 
-\begin{multicols}{4}
-\begin{enumerate}
-    \item Hi
-\end{enumerate}
-\end{multicols}
+\begingroup
+\footnotesize
 
-\newpage
+[]{#ex171a}
+
+#### [Exercise 17.1](#ex171q) {-}
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Rank sum of 20.5, or rank sum of 44.5 leading to smaller value of 20.5.
+        \item $20.5<21\implies\text{ reject }H_0$
+    \end{enumerate}
+    \item $65.5<78\implies\text{ reject }H_0$
+    \item $28\leqslant28\implies\text{ reject }H_0$
+    \item $27.5<31\implies\text{ reject }H_0$
+    \item $29>28\implies\text{ do not reject }H_0$
+    \item Assume distributions of learning times for each type of mouse have the same shape and variance.\\
+    $38.5>26\implies\text{ do not reject }H_0$
+    \item 
+    \begin{enumerate}
+        \item $\text{H}_0:\eta_A=\eta_B$ and $\text{H}_1:\eta_A\ne\eta_B$
+        \item $72.5>73\implies\text{ reject }H_0$
+        \item Assume the distributions of mass of dust deposited for each boiler type have the same shape and variance. Assume the samples of boilers are random. Assume the samples are independent.
+    \end{enumerate}
+\end{enumerate}
+
+[]{#ex172a}
+
+#### [Exercise 17.2](#ex172q) {-}
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $-2.39<-2.33\implies\text{ reject }H_0$
+        \item Assume that the distributions of driving times for each weather condition have the same shape and variance.
+    \end{enumerate}
+    \item $-1.47>-1.96\implies\text{ do not reject }H_0$
+    \item $-1.96>-1.64\implies\text{ do not reject }H_0$
+    \item 
+    \begin{enumerate}
+        \item The distributions of gradings for each line appear to have the same shape and variance, to a Mann-Whitney test is appropriate. The distributions do not appear to be normal, so a $t$-test would not be appropriate.
+        \item $-1.34<-1.28\implies\text{ reject }H_0$
+    \end{enumerate}
+\end{enumerate}
+
+[]{#ex173a}
+
+#### [Exercise 17.3](#ex173q) {-}
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item 56
+        \item $\{1,2,3\},\{1,2,4\},\{1,2,5\},\{1,3,4\}$
+        \item $\frac{4}{56}=\frac{1}{14}\text{ or }0.0714$
+    \end{enumerate}
+    \begin{enumerate}
+        \item 126
+        \item $\{1,2,3,4\},\{1,2,3,5\},\{1,2,3,6\},\{1,2,4,5\}$
+        \item $\frac{4}{126}=\frac{2}{63}\text{ or }0.0317$
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $1+2+4+8=15$
+        \item $\{1,2,3,4\},\{1,2,3,5\},\{1,2,3,6\},\{1,2,3,7\},\{1,2,3,8\}$\\
+        $\{1,2,3,9\},\{1,2,4,5\},\{1,2,4,6\},\{1,2,4,7\},\{1,2,4,8\}$\\
+        $\{1,2,5,6\},\{1,2,5,7\},\{1,3,4,5\},\{1,3,4,6\},\{1,3,4,7\}$\\
+        $\{1,3,5,6\},\{2,3,4,5\},\{2,3,4,6\}$
+        \item Assume that the population distributions of reactions times for each group have the same shape and variance.
+        \item $\frac{18}{330}=\frac{3}{55}\text{ or }0.0545$
+        \item $0.0545>0.05\implies\text{ do not reject }H_0$
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $\frac{7}{495}=0.0141$
+        \item $0.0141<0.1\implies\text{ reject }H_0$
+        \item Assume that the samples of hockey and rugby players are random.
+    \end{enumerate}
+\end{enumerate}
+
+[]{#re17a}
+
+#### [Chapter 17 Review Exercise](#re17q) {-}
+
+\begin{enumerate}
+    \item $34>29\implies\text{ do not reject }H_0$
+    \item 
+    \begin{enumerate}
+        \item The stem-and-leaf diagram shows that red wines seem to contain more alcohol on average than white wines.
+        \item $-3.04<-1.64\implies\text{ reject }H_0$
+        \item Since the stem-and-leaf diagram seems to suggest that the distributions of alcohol content for the two groups have the same shape and variance, a Mann-Whitney test would be appropriate. Since the distributions both appear to be normal-like, a $t$-test would also be appropriate.
+    \item 
+    \begin{enumerate}
+        \item $H_0:\;\eta_A = \eta_B$ and $H_0:\;\eta_A \ne \eta_B$
+        \item CV$=13$. Since $12<13$ reject $H_0$ at the 2\% significance level, so there is evidence to suggest that the two populations do not have the same median.
+        \item Assuming that the samples are random, and assume that the populations have the same shape and variance.
+        \item The data for samples A and B will have been combined and ordered, with ranks assigned to each value. The rank sum for sample A will have been found, $W_A$, and then the value $4\times (4+9+1)-W_A$ will have also been calculated. \texttt{W=12} will have been the smaller of those two values.
+    \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+
+\endgroup
 
 ### Chapter 18 - Further Linear Regression {-}
 
@@ -2402,73 +2579,7 @@
 
 #### [Chapter 18 Review Exercise](#re18q) {-}
 
-\begin{multicols}{3}
-\begin{enumerate}
-    \item
-\end{enumerate}
-\end{multicols}
-
 \endgroup
 
-\newpage
 
 
-### Spare
-
-\newpage
-
-\begin{enumerate}
-    \item[1a) ] Independent
-    \item[1b) ] Not independent
-    \item[2a) ] Independent
-    \item[2b) ] Not independent
-    \item[2c) ] Not independent
-\end{enumerate}
-\vspace{0.5cm}
-\textbf{Exercise 1G}
-\begin{enumerate}
-    \item[1) ] $0.8708$
-    \item[2) ] $0.6745$
-    \item[3) ] $0.695$
-    \item[4) ] $0.268$
-    \item[5) ] $0.3882$
-\end{enumerate}
-\vspace{0.5cm}
-\textbf{Exercise 1H}
-\begin{enumerate}
-    \item[1a) ] $0.4524$
-    \item[1b) ] $0.2836$
-    \item[1c) ] $0.6735$
-    \item[1d) ] $0.3333$
-    \item[1e) ] $0.0787$
-    \item[2) ] $0.8409$
-    \item[3) ] $0.7273$
-    \item[4) ] $0.0559$
-    \item[5) ] $0.3043$
-    \item[6) ] $0.3667$
-    \item[7) ] $0.8048$
-\end{enumerate}
-\vspace{0.5cm}
-\textbf{Exercise 1I}
-\begin{enumerate}
-    \item[1) ] $\frac{7}{12}$
-    \item[2a) ] $0.625$
-    \item[2b) ] $0.375$
-    \item[4) ] $0.3584$
-\end{enumerate}
-\vspace{0.5cm}
-\textbf{Review Exercise}
-\begin{enumerate}
-    \item[1) ] $\frac{7}{9}$
-    \item[2a) ] $\frac{17}{20}$
-    \item[2b)i) ] $\frac{37}{40}$
-    \item[2b)ii) ] $\frac{1}{8}$
-    \item[3a) ] $0.3917$
-    \item[3b) ] $0.1370$
-    \item[4) ] $P(M|B)=P(M)\therefore$ independent
-    \item[5a) ] $0.6525$
-    \item[5b) ] $0.3669$
-\end{enumerate}
-\end{multicols}
-
-\newpage
