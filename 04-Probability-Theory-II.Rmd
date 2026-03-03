@@ -273,14 +273,14 @@ The probability a randomly selected card from a standard pack of playing cards b
 \captionsetup[figure]{labelformat=empty}%
 \begin{minipage}{.5\textwidth}
   \centering
-\begin{tcolorbox}[adjusted title=Independent:, halign = center,halign title = center,colback=red!5,colframe=red!70!black,width=8.5cm]
+\begin{tcolorbox}[adjusted title=For Independent $A$ and $B$:, halign = center,halign title = center,colback=red!5,colframe=red!70!black,width=8.5cm]
 $\text{P}(A | B)= \text{P}(A)$
 \end{tcolorbox}
 \end{minipage}%
   \centering
 \begin{minipage}{.5\textwidth}
   \centering
-\begin{tcolorbox}[adjusted title=Not Independent:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8.5cm]
+\begin{tcolorbox}[adjusted title=For Not Independent $A$ and $B$:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8.5cm]
 $\text{P}(A | B)\ne \text{P}(A)$
 \end{tcolorbox}
 \end{minipage}
@@ -376,7 +376,7 @@ The conditional probability rule can be rearranged to allow the **intersection**
 \begin{minipage}{.5\textwidth}
   \centering
 \tcbset{width=8.5cm}
-\begin{tcolorbox}[adjusted title=Multiplication rule:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+\begin{tcolorbox}[adjusted title=Multiplication rule for all $A$,$B$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $\text{P}(A \cap B)=\text{P}(A)\times \text{P}(B|A)$
 \end{tcolorbox}
 \end{minipage}%
@@ -384,13 +384,13 @@ $\text{P}(A \cap B)=\text{P}(A)\times \text{P}(B|A)$
 \begin{minipage}{.5\textwidth}
   \centering
 \tcbset{width=8.5cm}
-\begin{tcolorbox}[adjusted title=Multiplication rule for independent events:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+\begin{tcolorbox}[adjusted title=Multiplication rule for independent $A$,$B$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $\text{P}(A \cap B)=\text{P}(A)\times \text{P}(B)$
 \end{tcolorbox}
 \end{minipage}
 \end{figure}
 
-\vspace{0.5cm}
+\vspace{-0.5cm}
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Studies of a species of plant in the UK reveal that 8\% of the plants have a particular genetic mutation. Amongst those plants with the genetic mutation, 35\% produce yellow flowers. If a plant of this species in the UK is selected at random and observed, determine the probability that it will both have the genetic mutation and produce yellow flowers.
@@ -399,6 +399,8 @@ $\text{P}(A \cap B)=\text{P}(A)\times \text{P}(B)$
 \textbf{Solution:}
 
 $\text{P}(\text{mutation}\cap \text{yellow}) = \text{P}(\text{mutation}) \times \text{P}(\text{yellow }|\text{ mutation}) = 0.08 \times 0.35=0.028$\\
+
+\vspace{-0.3cm}
 
 \end{tcolorbox}
 
