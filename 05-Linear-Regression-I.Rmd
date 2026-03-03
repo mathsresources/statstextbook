@@ -16,7 +16,7 @@ A common interest for anyone working with data is a possible relationship betwee
 Before applying any statistical analysis techniques to this *bivariate data* the sports scientist constructs a *scatterplot* to visualise it, looking for any apparent patterns or problems:
 
 \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=0.9]
         \draw[-stealth] (0.5*38,0.25*19) -- (0.5*55.5,0.25*19);
         \draw[-stealth] (0.5*38,0.25*19) -- (0.5*38,0.25*36.5); 
         \node at (0.5*46,0.25*14.5) {VO2 Max};
@@ -60,7 +60,7 @@ When deciding whether a relationship exists between two numerical variables, a s
 \begin{minipage}[t]{.25\textwidth}
   \centering
 
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw[semithick,-stealth] (0,0) -- (0,0.6*5);
 \draw[semithick,-stealth] (0,0) -- (0.6*5,0);
 \node at (0.6*5.2,0) {$x$};
@@ -87,7 +87,7 @@ When deciding whether a relationship exists between two numerical variables, a s
 \begin{minipage}[t]{.25\textwidth}
   \centering
   
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw[semithick,-stealth] (0,0) -- (0,0.6*5);
 \draw[semithick,-stealth] (0,0) -- (0.6*5,0);
 \node at (0.6*5.2,0) {$x$};
@@ -114,7 +114,7 @@ When deciding whether a relationship exists between two numerical variables, a s
 \begin{minipage}[t]{.25\textwidth}
   \centering
 
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw[semithick,-stealth] (0,0) -- (0,0.6*5);
 \draw[semithick,-stealth] (0,0) -- (0.6*5,0);
 \node at (0.6*5.2,0) {$x$};
@@ -141,7 +141,7 @@ When deciding whether a relationship exists between two numerical variables, a s
 \begin{minipage}[t]{.25\textwidth}
   \centering
 
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw[semithick,-stealth] (0,0) -- (0,0.6*5);
 \draw[semithick,-stealth] (0,0) -- (0.6*5,0);
 \node at (0.6*5.2,0) {$x$};
@@ -162,6 +162,8 @@ When deciding whether a relationship exists between two numerical variables, a s
   \label{fig:test1}
 \end{minipage}
 \end{figure}
+
+\vspace{-0.3cm}
 
 \textbf{Figure 1} illustrates a *strong, positive linear correlation* between $x$ and $y$, where both variables increase together.
 
@@ -254,7 +256,7 @@ Scatterplots should always be constructed and closely scrutinised before any ana
     \begin{multicols}{2}
         \item Data is collected by a diner in the USA on the \textit{bill amount} and \textit{tip left} by its guests.
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw[black!15,step=0.2cm] (0,0) grid (5,4);
 \draw (0,0) rectangle (5,4);
 \node[below] at (2.5,-0.8) {Bill amount (\$)};
@@ -283,7 +285,7 @@ Scatterplots should always be constructed and closely scrutinised before any ana
 \end{center} 
     \item The \textit{sale price} and \textit{floor area} are recorded for a number of 1-bedroom city centre apartments.
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw (-0.1,0) -- (-0.1,4);
 \draw (0,-0.1) -- (5,-0.1);
 \node[rotate=90,above] at (-1,2) {Sale price (£1000s)};
@@ -492,7 +494,7 @@ Scatterplots should always be constructed and closely scrutinised before any ana
     Comment on each scatterplot.
         \item A statistician is keen to learn what can be learned by studying data on songs provided by a music streaming platform. For a random sample of pop songs on the platform, their \textit{length} ($x$, in minutes) and \textit{tempo} ($y$, in bpm) are recorded, and a scatterplot is constructed. Some summary statistics were also calculated.
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.9]
 \draw (1,1.5) rectangle (6,5.5);
 \node[below] at (3.5,1) {Length (mins)};
 \node[above,rotate=90] at (0,3.5) {Tempo (bpm)};
@@ -1009,7 +1011,7 @@ This suggests a strong, positive linear correlation between the length of squirr
         \item For 20 first-time marathon runners, their age ($x$, in years) and finishing time ($y$, in hours) is recorded.
 \begin{center}
 \vspace{-1cm}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw[step=0.5,thin,black!20] (0.5,3.5) grid (3.5,6.5);
 \draw[black,fill=black] (0.93175245,4.195164) circle (0.04);
 \draw[black,fill=black] (2.15123905,6.179795) circle (0.04);
@@ -1045,8 +1047,8 @@ This suggests a strong, positive linear correlation between the length of squirr
 \foreach \y in {3.5,4,...,6.5}{
 \draw (0.5,\y) -- (0.4,\y);
 }
-\node[below] at (2,3.2) {Age (years)};
-\node[above,rotate=90] at (0,5) {Time (hours)};
+\node[below] at (2,3.1) {Age (years)};
+\node[above,rotate=90] at (-0.1,5) {Time (hours)};
 \node[text width = 6cm] at (5.5,5) {
 \begin{minipage}{\textwidth}
 \begin{align*}
@@ -1064,7 +1066,7 @@ n&=20
     \item The age ($x$, in years) and selling\\ price ($y$, £1000s) of 8 used cars is recorded.
 \begin{center}
 \vspace{-1cm}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw[black,fill=black] (1.96524603,2.4672) circle (0.04);
 \draw[black,fill=black] (0.99696564,3.49) circle (0.04);
 \draw[black,fill=black] (1.93495731,2.3068) circle (0.04);
@@ -1086,8 +1088,8 @@ n&=20
 \foreach \x in {2,4,...,10}{
 \node[below] at (0.33*\x,1) {\x};
 }
-\node[below] at (2,0.7) {Age (years)};
-\node[above,rotate=90] at (0,2.5) {Price (£1000s)};
+\node[below] at (2,0.6) {Age (years)};
+\node[above,rotate=90] at (-0.1,2.5) {Price (£1000s)};
 \node[text width = 6cm] at (5.5,2.5) {
 \begin{minipage}{\textwidth}
 \begin{align*}
@@ -1108,7 +1110,7 @@ n&=8
 \item A \textit{sepal} is part of a flower. The lengths ($x$, in cm) and widths ($y$, in cm) are measured for a random sample of 100 \textit{iris} flowers, of two different varieties. A scatterplot is plotted, and a correlation coefficient of $-0.206$ is obtained. The researcher concludes that this proves that there is a weak negative linear relationship.
 \begin{center}
 \vspace{-0.2cm}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw[black,fill=black] (5.1,3.5) circle (0.04);
 \draw[black,fill=black] (4.9,3) circle (0.04);
 \draw[black,fill=black] (4.7,3.2) circle (0.04);
@@ -1587,7 +1589,7 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw (0,-0.1) -- (3.75*4,-0.1);
 \draw (0,0) -- (0,5);
 \node[rotate=90] at (-1.3,2.5) {Vertical jump height (cm)};
@@ -1674,7 +1676,7 @@ The website wishes to allow users the ability to input the number of miles in th
 \vspace{0cm}
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw[semithick] (1.8,0.1*160) -- (1.8,0.1*200);
 \draw[semithick] (2.0,15.9) -- (6.0,15.9);
 \node[rotate=90] at (0.8,0.1*180) {Heart rate (bpm)};
@@ -1730,7 +1732,7 @@ The website wishes to allow users the ability to input the number of miles in th
 \begin{enumerate}[resume]
     \item James Forbes was a Scottish physicist who, amongst other things, was interested in finding a way to estimate altitude from measurements of the boiling temperature of water. Some of his observations on boiling point ($y$, in $F^{\circ}$) and barometric pressure ($x$, in inches of mercury) are summarised below and shown in the scatterplot.
     \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=0.8]
         \node[right] at (7,2.9) {Summary data for sample:};
         \node[right] at (7,1.9) {$S_{xx}=145.94$};
         \node[right] at (7,1.4) {$S_{yy}=530.78$};

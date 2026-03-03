@@ -505,6 +505,8 @@ $\text{E}(aX\pm b)=a\text{E}(X)\pm b$
 
 Proof:
 
+\vspace{-0.4cm}
+
 \begin{align*}
     \text{E}(aX+ b)&=\sum{(ax_i + b)\text{P}(X=x_i)}\\
     &=\sum{(ax_i)\text{P}(X=x_i)}+ \sum{b{\text{P}(X=x_i)}}\\
@@ -630,6 +632,8 @@ $\text{V}(X)=\text{E}(X^2)-E^2(X)$
 
 Proof:
 
+\vspace{-0.4cm}
+
 \begin{align*}
     \text{V}(X)&=\text{E}[(X-\mu)^2]\\
     &=\text{E}[(X-\mu)(X-\mu)]\\
@@ -743,6 +747,8 @@ $\text{V}(aX\pm b)=a^2\text{V}(X)$
 \end{centering}
 
 Proof:
+
+\vspace{-0.4cm}
 
 \begin{align*}
     \text{V}(aX+ b)&=\text{E}[((aX+ b)-(\text{E}(aX+ b))^2]\\

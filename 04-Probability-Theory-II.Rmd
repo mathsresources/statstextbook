@@ -217,7 +217,7 @@ Where a conditional probability cannot be intuitively stated, the formula for co
 
 \begin{centering}
 \tcbset{width=9cm}
-\begin{tcolorbox}[adjusted title=Conditional Probability:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+\begin{tcolorbox}[title=Conditional Probability:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(A \cap B)$}}}{\text{\normalsize{$\text{P}(B)$}}}$
 \end{tcolorbox}
 \end{centering}
@@ -266,27 +266,27 @@ $\text{P}(W | V) = \dfrac{\text{P}(W\cap V)}{\text{P}(V)}=\dfrac{0.1046}{0.7236}
 
 The probability of tossing a coin and it landing tails is $\frac{1}{2}$. The probability of it landing tails *given that it is a weekday*, notated as $\text{P}(\text{tails }|\text{ weekday})$, is *still* $\frac{1}{2}$. Since it being a weekday or not makes no different to the probability of a coin showing tails, the two events are said to be *independent*. 
 
-The probability a randomly selected card from a standard pack of playing cards being a Diamond is $\frac{1}{4}$. The probability the card is a Diamond *given that we discover the card picked is red*, notated as $\text{P}(\text{Diamond }|\text{ red})$, is $\frac{1}{2}$. Since knowing the card picked is red changes the probability of it being a Diamond, the two events are said to be *not independent*.
+\vspace{-0.1cm}
 
-\begin{figure}[H]
-  \centering
-\captionsetup[figure]{labelformat=empty}%
-\begin{minipage}{.5\textwidth}
-  \centering
-\begin{tcolorbox}[adjusted title=For Independent $A$ and $B$:, halign = center,halign title = center,colback=red!5,colframe=red!70!black,width=8.5cm]
+\begin{center}
+\begin{tcolorbox}[title={$A$} and {$B$} are Independent if:, halign = center,halign title = center,colback=red!5,colframe=red!70!black,width=8.5cm]
 $\text{P}(A | B)= \text{P}(A)$
 \end{tcolorbox}
-\end{minipage}%
-  \centering
-\begin{minipage}{.5\textwidth}
-  \centering
-\begin{tcolorbox}[adjusted title=For Not Independent $A$ and $B$:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8.5cm]
+\end{center}
+
+\vspace{-0.1cm}
+
+The probability a randomly selected card from a standard pack of playing cards being a Diamond is $\frac{1}{4}$. The probability the card is a Diamond *given that we discover the card picked is red*, notated as $\text{P}(\text{Diamond }|\text{ red})$, is $\frac{1}{2}$. Since knowing the card picked is red changes the probability of it being a Diamond, the two events are said to be *not independent*.
+
+\vspace{-0.1cm}
+
+\begin{center}
+\begin{tcolorbox}[title={$A$} and {$B$} are not Independent if:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8.5cm]
 $\text{P}(A | B)\ne \text{P}(A)$
 \end{tcolorbox}
-\end{minipage}
-\end{figure}
+\end{center}
 
-\vspace{0.5cm}
+\vspace{-0.1cm}
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given $\text{P}(D)=0.25$, $\text{P}(E)=0.6$ and $\text{P}(D\cap E)=0.15$, show that $E$ and $D$ are independent.
@@ -306,6 +306,7 @@ Since $\text{P}(D|E) = \text{P}(D)$, events $D$ and $E$ are independent.
 
 \begin{enumerate}
     \item For each pair of events $X$ and $Y$, state whether you would expect them to be independent or not.
+    \vspace{-0.2cm}
     \begin{enumerate}
     \begin{multicols}{2}
         \item A person is selected at random in a survey:
@@ -321,6 +322,7 @@ Since $\text{P}(D|E) = \text{P}(D)$, events $D$ and $E$ are independent.
     \end{multicols}
     \end{enumerate}
     \item For each pair of events, determine whether or not they are independent.
+    \vspace{-0.3cm}
     \begin{enumerate}
     \begin{multicols}{3}
         \item $A$ and $B$ given:
@@ -370,27 +372,21 @@ Since $\text{P}(D|E) = \text{P}(D)$, events $D$ and $E$ are independent.
 
 The conditional probability rule can be rearranged to allow the **intersection** of two events to be calculated using a conditional probability. For independent events, since $\text{P}(B|A)=\text{P}(B)$, this simplifies further.
 
-\begin{figure}[H]
-  \centering
-\captionsetup[figure]{labelformat=empty}%
-\begin{minipage}{.5\textwidth}
-  \centering
-\tcbset{width=8.5cm}
-\begin{tcolorbox}[adjusted title=Multiplication rule for all $A$,$B$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+\begin{multicols}{2}
+
+\begin{center}
+\begin{tcolorbox}[title=Multiplication rule for any $A$ and $B$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,width=8.5cm]
 $\text{P}(A \cap B)=\text{P}(A)\times \text{P}(B|A)$
 \end{tcolorbox}
-\end{minipage}%
-  \centering
-\begin{minipage}{.5\textwidth}
-  \centering
-\tcbset{width=8.5cm}
-\begin{tcolorbox}[adjusted title=Multiplication rule for independent $A$,$B$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+\end{center}
+
+\begin{center}
+\begin{tcolorbox}[title=Multiplication rule for Independent {$A$} and {$B$}:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,width=8.5cm]
 $\text{P}(A \cap B)=\text{P}(A)\times \text{P}(B)$
 \end{tcolorbox}
-\end{minipage}
-\end{figure}
+\end{center}
 
-\vspace{-0.5cm}
+\end{multicols}
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Studies of a species of plant in the UK reveal that 8\% of the plants have a particular genetic mutation. Amongst those plants with the genetic mutation, 35\% produce yellow flowers. If a plant of this species in the UK is selected at random and observed, determine the probability that it will both have the genetic mutation and produce yellow flowers.
@@ -434,8 +430,11 @@ $\text{P}(\text{mutation}\cap \text{yellow}) = \text{P}(\text{mutation}) \times 
     \end{enumerate}
     \item Events $A$ and $B$ are such that $\text{P}(A)=0.4$, $\text{P}(B)=0.7$ and $\text{P}(A|B)=0.56$. Determine the value of:
     \begin{enumerate}
+        \begin{multicols}{2}
         \item $\text{P}(A \cap B)$
         \item $\text{P}(A \cup B)$
+        \item $\text{P}(B|A)$
+        \end{multicols}
     \end{enumerate}
     \item Independent events $X$ and $Y$ are such that $\text{P}(X)=0.4$ and $\text{P}(Y)=0.8$. Determine the value of $\text{P}(X\cup Y)$.
     \item A large box in a maths classroom contains a number of calculators, with 85\% of them made by Arizona Instruments and the rest made by Calculo. 70\% of the calculators overall are working, whilst 80\% of those made by Calculo are working. Determine the probability that a calculator selected at random from the box is a working Calculo calculator.
@@ -465,18 +464,18 @@ $\text{P}(A\cap B)=\text{P}(A|B)\times \text{P}(B)$\\
 $\text{P}(B\cap A)=\text{P}(B|A)\times \text{P}(A)$
 \end{center}
 
-\vspace{-0.3cm}
+\vspace{-0.4cm}
 Since $\text{P}(A\cap B)=\text{P}(B\cap A)$:
 
-\vspace{-0.2cm}
+\vspace{-0.4cm}
 
-$$\text{P}(A|B)\times \text{P}(B)=\text{P}(B|A)\times \text{P}(A)$$
+\[\text{P}(A|B)\times \text{P}(B)=\text{P}(B|A)\times \text{P}(A)\]
 
 Dividing both sides by $\text{P}(B)$ gives:
 
 \begin{centering}
 \tcbset{width=9cm}
-\begin{tcolorbox}[adjusted title=Bayes' Theorem:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+\begin{tcolorbox}[title=Bayes' Theorem:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(B|A)\times \text{P}(A)$}}}{\text{\normalsize{$\text{P}(B)$}}}$
 \end{tcolorbox}
 \end{centering}
@@ -507,6 +506,7 @@ $\text{P}(\text{garage }|\text{ garden}) = \dfrac{\text{P}(\text{garden }|\text{
 
 \begin{enumerate}
     \item For each, first write out the formula for Bayes' Theorem explicitly:
+    \vspace{-0.3cm}
     \begin{enumerate}
     \begin{multicols}{2}
     \item Events $X$ and $Y$ are such that:
@@ -525,6 +525,7 @@ $\text{P}(\text{garage }|\text{ garden}) = \dfrac{\text{P}(\text{garden }|\text{
     Determine $\text{P}(V|W)$.
     \end{multicols}
     \end{enumerate}
+    \vspace{-0.3cm}
     \item A bag contains numbered counters of various colours, a quarter of which are red. Three-eighths of the counters are numbered 1, of which two-fifths are red. If a counter is selected at random and it is red, determine the probability that it is numbered 1.
     \item Research has shown that 1.7\% of people possess a specific gene. A prototype test for the presence of the gene in a person is being developed, and it shows as \textit{positive} for the gene for 7\% of everyone people tested. It is later established that the probability a test shows as positive for a person known to possess the gene is 0.9. If a person is selected at random to take the test, and it shows positive, determine the probability that they actually do possess the gene.
     \item Given that $\text{P}(M)=\frac{2}{3}$, $\text{P}(N)=\frac{3}{4}$ and $\text{P}(N|M)=\frac{3}{5}$:
@@ -723,7 +724,7 @@ The advantage of the use of tree diagrams, for questions where they are suitable
 
 ## Bayes Theorem and Tree Diagrams
 
-In this chapter, Bayes' Theorem has already been used to calculate the *reverse* of a conditional probability: calculating $\text{P}(B|A)$ when $\text{P}(A|B)$ is known. This process can be made more intuitive and more readily extended to more complex problems by instead using tree diagrams combined with the formula for conditional probability, introduced on Page 44:
+In this chapter, Bayes' Theorem has already been used to calculate the *reverse* of a conditional probability: calculating $\text{P}(B|A)$ when $\text{P}(A|B)$ is known. However, this process can be made more intuitive and more readily extended to more complex problems by using tree diagrams combined with the formula for conditional probability:
 
 $$\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(A \cap B)$}}}{\text{\normalsize{$\text{P}(B)$}}}$$
 

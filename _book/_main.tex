@@ -1499,7 +1499,7 @@ Whilst this textbook aims to enable familiarity with common figures, tables and 
 
 Sometimes a set of data may contain values that seem \emph{extremely high or low} in comparison to the rest of the values. It is important to be wary of such values and the potentially significant impact they could have on any statistical analysis performed. There are a range of objective approaches that can be used to determine whether one or more points are extreme enough to be classed as \textbf{outliers}. In this course, \emph{fences} will be used.
 
-\begin{tcolorbox}[center,adjusted title=Identifying Outliers,colback=red!5,colframe=red!70!black,width=15cm,halign = center,halign title = center]
+\begin{tcolorbox}[center,title=Identifying Outliers,colback=red!5,colframe=red!70!black,width=15cm,halign = center,halign title = center]
 \begin{center}
 Lower Fence $=\text{Q}_1-1.5\times \text{IQR}$.\\[1em]
 Upper Fence $=\text{Q}_3+1.5\times \text{IQR}$.\\[1em]
@@ -2557,7 +2557,7 @@ Equally likely outcomes typically arise from the symmetry of a physical object (
 
 An \textbf{event} is a set of one or more outcomes from the sample space. The probability of an event is given by:
 
-\begin{tcolorbox}[center,adjusted title=Probability of an Event,colback=red!5,colframe=red!70!black,width=13cm,halign = center,halign title = center]
+\begin{tcolorbox}[center,title=Probability of an Event,colback=red!5,colframe=red!70!black,width=13cm,halign = center,halign title = center]
 \vspace{-0.3cm}
 $$\text{P}(\text{event})=\frac{\text{number of outcomes from the sample space in the event}}{\text{total number of outcomes in the sample space}}$$
 \end{tcolorbox}
@@ -3283,7 +3283,7 @@ If two sets \(A\) and \(B\) are such that \emph{no elements lie in both} \(A\) \
   \centering
 \begin{minipage}[c]{.5\textwidth}
   \centering
-\begin{tcolorbox}[adjusted title=For Mutually Exclusive events $A$ and $B$:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8cm,height=1.8cm]
+\begin{tcolorbox}[title=For Mutually Exclusive events {$A$} and {$B$}:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8cm,height=1.8cm]
 $\text{P}(A\cap B)=0$
 \end{tcolorbox}
 \end{minipage}
@@ -3307,7 +3307,7 @@ If two sets \(A\) and \(B\) are such that \emph{every element lies in at least o
   \centering
 \begin{minipage}[c]{.5\textwidth}
   \centering
-\begin{tcolorbox}[adjusted title=For Exhaustive events $A$ and $B$:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8cm,height=1.8cm]
+\begin{tcolorbox}[title=For Exhaustive events {$A$} and {$B$}:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8cm,height=1.8cm]
 $\text{P}(A\cup B)=1$
 \end{tcolorbox}
 \end{minipage}
@@ -3319,14 +3319,14 @@ As well as the two rules above which apply depending on whether \(A\) and \(B\) 
   \centering
 \begin{minipage}[c]{.4\textwidth}
   \centering
-\begin{tcolorbox}[adjusted title=The Complement of $A$:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=6cm,height=1.8cm]
+\begin{tcolorbox}[title=The Complement of {$A$}:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=6cm,height=1.8cm]
 $\text{P}(A)+\text{P}(\overline{A})=1$
 \end{tcolorbox}
 \end{minipage}%
   \centering
 \begin{minipage}[c]{.6\textwidth}
   \centering
-\begin{tcolorbox}[adjusted title=The Addition Rule for events $A$ and $B$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,width=9cm,height=1.8cm]
+\begin{tcolorbox}[title=The Addition Rule for events $A$ and $B$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,width=9cm,height=1.8cm]
 $\text{P}(A \cup B)=\text{P}(A)+\text{P}(B)-\text{P}(A \cap B)$
 \end{tcolorbox}
 \end{minipage}
@@ -4998,7 +4998,7 @@ Where a conditional probability cannot be intuitively stated, the formula for co
 
 \begin{centering}
 \tcbset{width=9cm}
-\begin{tcolorbox}[adjusted title=Conditional Probability:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+\begin{tcolorbox}[title=Conditional Probability:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(A \cap B)$}}}{\text{\normalsize{$\text{P}(B)$}}}$
 \end{tcolorbox}
 \end{centering}
@@ -5048,27 +5048,27 @@ $\text{P}(W | V) = \dfrac{\text{P}(W\cap V)}{\text{P}(V)}=\dfrac{0.1046}{0.7236}
 
 The probability of tossing a coin and it landing tails is \(\frac{1}{2}\). The probability of it landing tails \emph{given that it is a weekday}, notated as \(\text{P}(\text{tails }|\text{ weekday})\), is \emph{still} \(\frac{1}{2}\). Since it being a weekday or not makes no different to the probability of a coin showing tails, the two events are said to be \emph{independent}.
 
-The probability a randomly selected card from a standard pack of playing cards being a Diamond is \(\frac{1}{4}\). The probability the card is a Diamond \emph{given that we discover the card picked is red}, notated as \(\text{P}(\text{Diamond }|\text{ red})\), is \(\frac{1}{2}\). Since knowing the card picked is red changes the probability of it being a Diamond, the two events are said to be \emph{not independent}.
+\vspace{-0.1cm}
 
-\begin{figure}[H]
-  \centering
-\captionsetup[figure]{labelformat=empty}%
-\begin{minipage}{.5\textwidth}
-  \centering
-\begin{tcolorbox}[adjusted title=Independent:, halign = center,halign title = center,colback=red!5,colframe=red!70!black,width=8.5cm]
+\begin{center}
+\begin{tcolorbox}[title={$A$} and {$B$} are Independent if:, halign = center,halign title = center,colback=red!5,colframe=red!70!black,width=8.5cm]
 $\text{P}(A | B)= \text{P}(A)$
 \end{tcolorbox}
-\end{minipage}%
-  \centering
-\begin{minipage}{.5\textwidth}
-  \centering
-\begin{tcolorbox}[adjusted title=Not Independent:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8.5cm]
+\end{center}
+
+\vspace{-0.1cm}
+
+The probability a randomly selected card from a standard pack of playing cards being a Diamond is \(\frac{1}{4}\). The probability the card is a Diamond \emph{given that we discover the card picked is red}, notated as \(\text{P}(\text{Diamond }|\text{ red})\), is \(\frac{1}{2}\). Since knowing the card picked is red changes the probability of it being a Diamond, the two events are said to be \emph{not independent}.
+
+\vspace{-0.1cm}
+
+\begin{center}
+\begin{tcolorbox}[title={$A$} and {$B$} are not Independent if:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8.5cm]
 $\text{P}(A | B)\ne \text{P}(A)$
 \end{tcolorbox}
-\end{minipage}
-\end{figure}
+\end{center}
 
-\vspace{0.5cm}
+\vspace{-0.1cm}
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given $\text{P}(D)=0.25$, $\text{P}(E)=0.6$ and $\text{P}(D\cap E)=0.15$, show that $E$ and $D$ are independent.
@@ -5089,6 +5089,7 @@ Since $\text{P}(D|E) = \text{P}(D)$, events $D$ and $E$ are independent.
 
 \begin{enumerate}
     \item For each pair of events $X$ and $Y$, state whether you would expect them to be independent or not.
+    \vspace{-0.2cm}
     \begin{enumerate}
     \begin{multicols}{2}
         \item A person is selected at random in a survey:
@@ -5104,6 +5105,7 @@ Since $\text{P}(D|E) = \text{P}(D)$, events $D$ and $E$ are independent.
     \end{multicols}
     \end{enumerate}
     \item For each pair of events, determine whether or not they are independent.
+    \vspace{-0.3cm}
     \begin{enumerate}
     \begin{multicols}{3}
         \item $A$ and $B$ given:
@@ -5153,27 +5155,21 @@ Since $\text{P}(D|E) = \text{P}(D)$, events $D$ and $E$ are independent.
 
 The conditional probability rule can be rearranged to allow the \textbf{intersection} of two events to be calculated using a conditional probability. For independent events, since \(\text{P}(B|A)=\text{P}(B)\), this simplifies further.
 
-\begin{figure}[H]
-  \centering
-\captionsetup[figure]{labelformat=empty}%
-\begin{minipage}{.5\textwidth}
-  \centering
-\tcbset{width=8.5cm}
-\begin{tcolorbox}[adjusted title=Multiplication rule:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+\begin{multicols}{2}
+
+\begin{center}
+\begin{tcolorbox}[title=Multiplication rule for any $A$ and $B$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,width=8.5cm]
 $\text{P}(A \cap B)=\text{P}(A)\times \text{P}(B|A)$
 \end{tcolorbox}
-\end{minipage}%
-  \centering
-\begin{minipage}{.5\textwidth}
-  \centering
-\tcbset{width=8.5cm}
-\begin{tcolorbox}[adjusted title=Multiplication rule for independent events:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+\end{center}
+
+\begin{center}
+\begin{tcolorbox}[title=Multiplication rule for Independent {$A$} and {$B$}:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,width=8.5cm]
 $\text{P}(A \cap B)=\text{P}(A)\times \text{P}(B)$
 \end{tcolorbox}
-\end{minipage}
-\end{figure}
+\end{center}
 
-\vspace{0.5cm}
+\end{multicols}
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Studies of a species of plant in the UK reveal that 8\% of the plants have a particular genetic mutation. Amongst those plants with the genetic mutation, 35\% produce yellow flowers. If a plant of this species in the UK is selected at random and observed, determine the probability that it will both have the genetic mutation and produce yellow flowers.
@@ -5182,6 +5178,8 @@ $\text{P}(A \cap B)=\text{P}(A)\times \text{P}(B)$
 \textbf{Solution:}
 
 $\text{P}(\text{mutation}\cap \text{yellow}) = \text{P}(\text{mutation}) \times \text{P}(\text{yellow }|\text{ mutation}) = 0.08 \times 0.35=0.028$\\
+
+\vspace{-0.3cm}
 
 \end{tcolorbox}
 
@@ -5216,8 +5214,11 @@ $\text{P}(\text{mutation}\cap \text{yellow}) = \text{P}(\text{mutation}) \times 
     \end{enumerate}
     \item Events $A$ and $B$ are such that $\text{P}(A)=0.4$, $\text{P}(B)=0.7$ and $\text{P}(A|B)=0.56$. Determine the value of:
     \begin{enumerate}
+        \begin{multicols}{2}
         \item $\text{P}(A \cap B)$
         \item $\text{P}(A \cup B)$
+        \item $\text{P}(B|A)$
+        \end{multicols}
     \end{enumerate}
     \item Independent events $X$ and $Y$ are such that $\text{P}(X)=0.4$ and $\text{P}(Y)=0.8$. Determine the value of $\text{P}(X\cup Y)$.
     \item A large box in a maths classroom contains a number of calculators, with 85\% of them made by Arizona Instruments and the rest made by Calculo. 70\% of the calculators overall are working, whilst 80\% of those made by Calculo are working. Determine the probability that a calculator selected at random from the box is a working Calculo calculator.
@@ -5247,11 +5248,11 @@ $\text{P}(A\cap B)=\text{P}(A|B)\times \text{P}(B)$\\
 $\text{P}(B\cap A)=\text{P}(B|A)\times \text{P}(A)$
 \end{center}
 
-\vspace{-0.3cm}
+\vspace{-0.4cm}
 
 Since \(\text{P}(A\cap B)=\text{P}(B\cap A)\):
 
-\vspace{-0.2cm}
+\vspace{-0.4cm}
 
 \[\text{P}(A|B)\times \text{P}(B)=\text{P}(B|A)\times \text{P}(A)\]
 
@@ -5259,7 +5260,7 @@ Dividing both sides by \(\text{P}(B)\) gives:
 
 \begin{centering}
 \tcbset{width=9cm}
-\begin{tcolorbox}[adjusted title=Bayes' Theorem:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+\begin{tcolorbox}[title=Bayes' Theorem:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(B|A)\times \text{P}(A)$}}}{\text{\normalsize{$\text{P}(B)$}}}$
 \end{tcolorbox}
 \end{centering}
@@ -5291,6 +5292,7 @@ $\text{P}(\text{garage }|\text{ garden}) = \dfrac{\text{P}(\text{garden }|\text{
 
 \begin{enumerate}
     \item For each, first write out the formula for Bayes' Theorem explicitly:
+    \vspace{-0.3cm}
     \begin{enumerate}
     \begin{multicols}{2}
     \item Events $X$ and $Y$ are such that:
@@ -5309,6 +5311,7 @@ $\text{P}(\text{garage }|\text{ garden}) = \dfrac{\text{P}(\text{garden }|\text{
     Determine $\text{P}(V|W)$.
     \end{multicols}
     \end{enumerate}
+    \vspace{-0.3cm}
     \item A bag contains numbered counters of various colours, a quarter of which are red. Three-eighths of the counters are numbered 1, of which two-fifths are red. If a counter is selected at random and it is red, determine the probability that it is numbered 1.
     \item Research has shown that 1.7\% of people possess a specific gene. A prototype test for the presence of the gene in a person is being developed, and it shows as \textit{positive} for the gene for 7\% of everyone people tested. It is later established that the probability a test shows as positive for a person known to possess the gene is 0.9. If a person is selected at random to take the test, and it shows positive, determine the probability that they actually do possess the gene.
     \item Given that $\text{P}(M)=\frac{2}{3}$, $\text{P}(N)=\frac{3}{4}$ and $\text{P}(N|M)=\frac{3}{5}$:
@@ -5508,7 +5511,7 @@ The advantage of the use of tree diagrams, for questions where they are suitable
 
 \section{Bayes Theorem and Tree Diagrams}\label{bayes-theorem-and-tree-diagrams}
 
-In this chapter, Bayes' Theorem has already been used to calculate the \emph{reverse} of a conditional probability: calculating \(\text{P}(B|A)\) when \(\text{P}(A|B)\) is known. This process can be made more intuitive and more readily extended to more complex problems by instead using tree diagrams combined with the formula for conditional probability, introduced on Page 44:
+In this chapter, Bayes' Theorem has already been used to calculate the \emph{reverse} of a conditional probability: calculating \(\text{P}(B|A)\) when \(\text{P}(A|B)\) is known. However, this process can be made more intuitive and more readily extended to more complex problems by using tree diagrams combined with the formula for conditional probability:
 
 \[\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(A \cap B)$}}}{\text{\normalsize{$\text{P}(B)$}}}\]
 
@@ -5705,7 +5708,7 @@ A common interest for anyone working with data is a possible relationship betwee
 Before applying any statistical analysis techniques to this \emph{bivariate data} the sports scientist constructs a \emph{scatterplot} to visualise it, looking for any apparent patterns or problems:
 
 \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=0.9]
         \draw[-stealth] (0.5*38,0.25*19) -- (0.5*55.5,0.25*19);
         \draw[-stealth] (0.5*38,0.25*19) -- (0.5*38,0.25*36.5); 
         \node at (0.5*46,0.25*14.5) {VO2 Max};
@@ -5749,7 +5752,7 @@ When deciding whether a relationship exists between two numerical variables, a s
 \begin{minipage}[t]{.25\textwidth}
   \centering
 
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw[semithick,-stealth] (0,0) -- (0,0.6*5);
 \draw[semithick,-stealth] (0,0) -- (0.6*5,0);
 \node at (0.6*5.2,0) {$x$};
@@ -5776,7 +5779,7 @@ When deciding whether a relationship exists between two numerical variables, a s
 \begin{minipage}[t]{.25\textwidth}
   \centering
   
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw[semithick,-stealth] (0,0) -- (0,0.6*5);
 \draw[semithick,-stealth] (0,0) -- (0.6*5,0);
 \node at (0.6*5.2,0) {$x$};
@@ -5803,7 +5806,7 @@ When deciding whether a relationship exists between two numerical variables, a s
 \begin{minipage}[t]{.25\textwidth}
   \centering
 
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw[semithick,-stealth] (0,0) -- (0,0.6*5);
 \draw[semithick,-stealth] (0,0) -- (0.6*5,0);
 \node at (0.6*5.2,0) {$x$};
@@ -5830,7 +5833,7 @@ When deciding whether a relationship exists between two numerical variables, a s
 \begin{minipage}[t]{.25\textwidth}
   \centering
 
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw[semithick,-stealth] (0,0) -- (0,0.6*5);
 \draw[semithick,-stealth] (0,0) -- (0.6*5,0);
 \node at (0.6*5.2,0) {$x$};
@@ -5851,6 +5854,8 @@ When deciding whether a relationship exists between two numerical variables, a s
   \label{fig:test1}
 \end{minipage}
 \end{figure}
+
+\vspace{-0.3cm}
 
 \textbf{Figure 1} illustrates a \emph{strong, positive linear correlation} between \(x\) and \(y\), where both variables increase together.
 
@@ -5944,7 +5949,7 @@ Scatterplots should always be constructed and closely scrutinised before any ana
     \begin{multicols}{2}
         \item Data is collected by a diner in the USA on the \textit{bill amount} and \textit{tip left} by its guests.
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw[black!15,step=0.2cm] (0,0) grid (5,4);
 \draw (0,0) rectangle (5,4);
 \node[below] at (2.5,-0.8) {Bill amount (\$)};
@@ -5973,7 +5978,7 @@ Scatterplots should always be constructed and closely scrutinised before any ana
 \end{center} 
     \item The \textit{sale price} and \textit{floor area} are recorded for a number of 1-bedroom city centre apartments.
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw (-0.1,0) -- (-0.1,4);
 \draw (0,-0.1) -- (5,-0.1);
 \node[rotate=90,above] at (-1,2) {Sale price (£1000s)};
@@ -6182,7 +6187,7 @@ Scatterplots should always be constructed and closely scrutinised before any ana
     Comment on each scatterplot.
         \item A statistician is keen to learn what can be learned by studying data on songs provided by a music streaming platform. For a random sample of pop songs on the platform, their \textit{length} ($x$, in minutes) and \textit{tempo} ($y$, in bpm) are recorded, and a scatterplot is constructed. Some summary statistics were also calculated.
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.9]
 \draw (1,1.5) rectangle (6,5.5);
 \node[below] at (3.5,1) {Length (mins)};
 \node[above,rotate=90] at (0,3.5) {Tempo (bpm)};
@@ -6699,7 +6704,7 @@ This suggests a strong, positive linear correlation between the length of squirr
         \item For 20 first-time marathon runners, their age ($x$, in years) and finishing time ($y$, in hours) is recorded.
 \begin{center}
 \vspace{-1cm}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw[step=0.5,thin,black!20] (0.5,3.5) grid (3.5,6.5);
 \draw[black,fill=black] (0.93175245,4.195164) circle (0.04);
 \draw[black,fill=black] (2.15123905,6.179795) circle (0.04);
@@ -6735,8 +6740,8 @@ This suggests a strong, positive linear correlation between the length of squirr
 \foreach \y in {3.5,4,...,6.5}{
 \draw (0.5,\y) -- (0.4,\y);
 }
-\node[below] at (2,3.2) {Age (years)};
-\node[above,rotate=90] at (0,5) {Time (hours)};
+\node[below] at (2,3.1) {Age (years)};
+\node[above,rotate=90] at (-0.1,5) {Time (hours)};
 \node[text width = 6cm] at (5.5,5) {
 \begin{minipage}{\textwidth}
 \begin{align*}
@@ -6754,7 +6759,7 @@ n&=20
     \item The age ($x$, in years) and selling\\ price ($y$, £1000s) of 8 used cars is recorded.
 \begin{center}
 \vspace{-1cm}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw[black,fill=black] (1.96524603,2.4672) circle (0.04);
 \draw[black,fill=black] (0.99696564,3.49) circle (0.04);
 \draw[black,fill=black] (1.93495731,2.3068) circle (0.04);
@@ -6776,8 +6781,8 @@ n&=20
 \foreach \x in {2,4,...,10}{
 \node[below] at (0.33*\x,1) {\x};
 }
-\node[below] at (2,0.7) {Age (years)};
-\node[above,rotate=90] at (0,2.5) {Price (£1000s)};
+\node[below] at (2,0.6) {Age (years)};
+\node[above,rotate=90] at (-0.1,2.5) {Price (£1000s)};
 \node[text width = 6cm] at (5.5,2.5) {
 \begin{minipage}{\textwidth}
 \begin{align*}
@@ -6798,7 +6803,7 @@ n&=8
 \item A \textit{sepal} is part of a flower. The lengths ($x$, in cm) and widths ($y$, in cm) are measured for a random sample of 100 \textit{iris} flowers, of two different varieties. A scatterplot is plotted, and a correlation coefficient of $-0.206$ is obtained. The researcher concludes that this proves that there is a weak negative linear relationship.
 \begin{center}
 \vspace{-0.2cm}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw[black,fill=black] (5.1,3.5) circle (0.04);
 \draw[black,fill=black] (4.9,3) circle (0.04);
 \draw[black,fill=black] (4.7,3.2) circle (0.04);
@@ -7277,7 +7282,7 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw (0,-0.1) -- (3.75*4,-0.1);
 \draw (0,0) -- (0,5);
 \node[rotate=90] at (-1.3,2.5) {Vertical jump height (cm)};
@@ -7364,7 +7369,7 @@ The website wishes to allow users the ability to input the number of miles in th
 \vspace{0cm}
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8]
 \draw[semithick] (1.8,0.1*160) -- (1.8,0.1*200);
 \draw[semithick] (2.0,15.9) -- (6.0,15.9);
 \node[rotate=90] at (0.8,0.1*180) {Heart rate (bpm)};
@@ -7420,7 +7425,7 @@ The website wishes to allow users the ability to input the number of miles in th
 \begin{enumerate}[resume]
     \item James Forbes was a Scottish physicist who, amongst other things, was interested in finding a way to estimate altitude from measurements of the boiling temperature of water. Some of his observations on boiling point ($y$, in $F^{\circ}$) and barometric pressure ($x$, in inches of mercury) are summarised below and shown in the scatterplot.
     \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=0.8]
         \node[right] at (7,2.9) {Summary data for sample:};
         \node[right] at (7,1.9) {$S_{xx}=145.94$};
         \node[right] at (7,1.4) {$S_{yy}=530.78$};
@@ -8047,6 +8052,8 @@ $\text{E}(aX\pm b)=a\text{E}(X)\pm b$
 
 Proof:
 
+\vspace{-0.4cm}
+
 \begin{align*}
     \text{E}(aX+ b)&=\sum{(ax_i + b)\text{P}(X=x_i)}\\
     &=\sum{(ax_i)\text{P}(X=x_i)}+ \sum{b{\text{P}(X=x_i)}}\\
@@ -8173,6 +8180,8 @@ $\text{V}(X)=\text{E}(X^2)-E^2(X)$
 
 Proof:
 
+\vspace{-0.4cm}
+
 \begin{align*}
     \text{V}(X)&=\text{E}[(X-\mu)^2]\\
     &=\text{E}[(X-\mu)(X-\mu)]\\
@@ -8287,6 +8296,8 @@ $\text{V}(aX\pm b)=a^2\text{V}(X)$
 \end{centering}
 
 Proof:
+
+\vspace{-0.4cm}
 
 \begin{align*}
     \text{V}(aX+ b)&=\text{E}[((aX+ b)-(\text{E}(aX+ b))^2]\\

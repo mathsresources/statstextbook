@@ -53,7 +53,7 @@ Equally likely outcomes typically arise from the symmetry of a physical object (
 
 An **event** is a set of one or more outcomes from the sample space. The probability of an event is given by:
 
-\begin{tcolorbox}[center,adjusted title=Probability of an Event,colback=red!5,colframe=red!70!black,width=13cm,halign = center,halign title = center]
+\begin{tcolorbox}[center,title=Probability of an Event,colback=red!5,colframe=red!70!black,width=13cm,halign = center,halign title = center]
 \vspace{-0.3cm}
 $$\text{P}(\text{event})=\frac{\text{number of outcomes from the sample space in the event}}{\text{total number of outcomes in the sample space}}$$
 \end{tcolorbox}
@@ -768,7 +768,7 @@ If two sets $A$ and $B$ are such that *no elements lie in both* $A$ *and* $B$, t
   \centering
 \begin{minipage}[c]{.5\textwidth}
   \centering
-\begin{tcolorbox}[adjusted title=For Mutually Exclusive events $A$ and $B$:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8cm,height=1.8cm]
+\begin{tcolorbox}[title=For Mutually Exclusive events {$A$} and {$B$}:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8cm,height=1.8cm]
 $\text{P}(A\cap B)=0$
 \end{tcolorbox}
 \end{minipage}
@@ -792,7 +792,7 @@ If two sets $A$ and $B$ are such that *every element lies in at least one of* $A
   \centering
 \begin{minipage}[c]{.5\textwidth}
   \centering
-\begin{tcolorbox}[adjusted title=For Exhaustive events $A$ and $B$:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8cm,height=1.8cm]
+\begin{tcolorbox}[title=For Exhaustive events {$A$} and {$B$}:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8cm,height=1.8cm]
 $\text{P}(A\cup B)=1$
 \end{tcolorbox}
 \end{minipage}
@@ -804,14 +804,14 @@ As well as the two rules above which apply depending on whether $A$ and $B$ are 
   \centering
 \begin{minipage}[c]{.4\textwidth}
   \centering
-\begin{tcolorbox}[adjusted title=The Complement of $A$:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=6cm,height=1.8cm]
+\begin{tcolorbox}[title=The Complement of {$A$}:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=6cm,height=1.8cm]
 $\text{P}(A)+\text{P}(\overline{A})=1$
 \end{tcolorbox}
 \end{minipage}%
   \centering
 \begin{minipage}[c]{.6\textwidth}
   \centering
-\begin{tcolorbox}[adjusted title=The Addition Rule for events $A$ and $B$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,width=9cm,height=1.8cm]
+\begin{tcolorbox}[title=The Addition Rule for events $A$ and $B$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,width=9cm,height=1.8cm]
 $\text{P}(A \cup B)=\text{P}(A)+\text{P}(B)-\text{P}(A \cap B)$
 \end{tcolorbox}
 \end{minipage}

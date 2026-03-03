@@ -1080,7 +1080,7 @@ Whilst this textbook aims to enable familiarity with common figures, tables and 
 
 Sometimes a set of data may contain values that seem *extremely high or low* in comparison to the rest of the values. It is important to be wary of such values and the potentially significant impact they could have on any statistical analysis performed. There are a range of objective approaches that can be used to determine whether one or more points are extreme enough to be classed as **outliers**. In this course, *fences* will be used.
 
-\begin{tcolorbox}[center,adjusted title=Identifying Outliers,colback=red!5,colframe=red!70!black,width=15cm,halign = center,halign title = center]
+\begin{tcolorbox}[center,title=Identifying Outliers,colback=red!5,colframe=red!70!black,width=15cm,halign = center,halign title = center]
 \begin{center}
 Lower Fence $=\text{Q}_1-1.5\times \text{IQR}$.\\[1em]
 Upper Fence $=\text{Q}_3+1.5\times \text{IQR}$.\\[1em]
