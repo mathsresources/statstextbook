@@ -21,11 +21,6 @@ header-includes:
 
 Statistics is the science of collecting, organising, presenting and analysing data. It is vital in helping us develop a better understanding of the world, and to allow decisions to be made in a rational manner based on the information that is available to us. Governments, organisations, businesses and individuals across a diverse range of fields rely on statistics and statisticians.
 
-The *Advanced Higher Statistics* course aims to equip learners with a sound foundation of statistical knowledge. This textbook has been created to serve as a source of key facts, examples, and exercises to support progress through the course.
-
-
-#### Population Parameters and Sample Statistics {-}
-
 \begin{center}
 \begin{tikzpicture}
 \draw[semithick,fill=black!10] (0,0) rectangle (8,5);
@@ -189,22 +184,10 @@ The *Advanced Higher Statistics* course aims to equip learners with a sound foun
 \draw[semithick,dashed] (11,2) -- (2.5,1.05);
 \draw[semithick,dashed] (6,0.45) -- (12,1.4);
 
-\draw[semithick,-stealth] (12,0.8) -- (12,0);
-\node at (12,-0.4) {\textit{Sample Statistics}};
-\draw[semithick,-stealth] (10,-0.4) -- (6.5,-0.4);
-\node at (4,-0.4) {\textit{Population Parameters}};
-\node at (8.25,-0.8) {\textbf{Statistical Inference}};
-
-\node at (12,-0.9) {\textit{e.g.  }$\bar{x}$};
-\node at (4,-0.9) {\textit{e.g.  }$\mu$};
-
-
 \end{tikzpicture}
 \end{center}
 
-The diagram above gives a quick overview of the typical role of a statistician wishing to answer questions related to a *population* of interest. This is often in the form of wishing to know more about some *population parameter* such as a population mean, $\mu$. Since it is generally impractical to take a *census* of the entire population, a *sample* is instead obtained from that population, from which *sample statistics* may be calculated, such as the sample mean, $\bar{x}$. *Statistical inference* is the process by which claims about population parameters can be tested using sample statistics.
-
-This course, and textbook, will cover all of the key stages involved in statistical research and investigations, including:
+The *Advanced Higher Statistics* course aims to equip learners with a sound foundation of statistical knowledge. This textbook has been created to serve as a source of key facts, examples, and exercises to support progress through the course, covering all of the key stages involved in statistical research and investigations, including:
 
 - Gathering data using appropriate *sampling techniques*.
 
@@ -227,6 +210,8 @@ Techniques suitable for a range of contexts will be covered, and it is expected 
 \pagebreak
 
 ## Suggested Use Of The Book {-}
+
+
 
 ## Other Resources {-}
 

@@ -185,11 +185,6 @@
 
 Statistics is the science of collecting, organising, presenting and analysing data. It is vital in helping us develop a better understanding of the world, and to allow decisions to be made in a rational manner based on the information that is available to us. Governments, organisations, businesses and individuals across a diverse range of fields rely on statistics and statisticians.
 
-The \emph{Advanced Higher Statistics} course aims to equip learners with a sound foundation of statistical knowledge. This textbook has been created to serve as a source of key facts, examples, and exercises to support progress through the course.
-
-\subsubsection*{Population Parameters and Sample Statistics}\label{population-parameters-and-sample-statistics}
-\addcontentsline{toc}{subsubsection}{Population Parameters and Sample Statistics}
-
 \begin{center}
 \begin{tikzpicture}
 \draw[semithick,fill=black!10] (0,0) rectangle (8,5);
@@ -353,22 +348,10 @@ The \emph{Advanced Higher Statistics} course aims to equip learners with a sound
 \draw[semithick,dashed] (11,2) -- (2.5,1.05);
 \draw[semithick,dashed] (6,0.45) -- (12,1.4);
 
-\draw[semithick,-stealth] (12,0.8) -- (12,0);
-\node at (12,-0.4) {\textit{Sample Statistics}};
-\draw[semithick,-stealth] (10,-0.4) -- (6.5,-0.4);
-\node at (4,-0.4) {\textit{Population Parameters}};
-\node at (8.25,-0.8) {\textbf{Statistical Inference}};
-
-\node at (12,-0.9) {\textit{e.g.  }$\bar{x}$};
-\node at (4,-0.9) {\textit{e.g.  }$\mu$};
-
-
 \end{tikzpicture}
 \end{center}
 
-The diagram above gives a quick overview of the typical role of a statistician wishing to answer questions related to a \emph{population} of interest. This is often in the form of wishing to know more about some \emph{population parameter} such as a population mean, \(\mu\). Since it is generally impractical to take a \emph{census} of the entire population, a \emph{sample} is instead obtained from that population, from which \emph{sample statistics} may be calculated, such as the sample mean, \(\bar{x}\). \emph{Statistical inference} is the process by which claims about population parameters can be tested using sample statistics.
-
-This course, and textbook, will cover all of the key stages involved in statistical research and investigations, including:
+The \emph{Advanced Higher Statistics} course aims to equip learners with a sound foundation of statistical knowledge. This textbook has been created to serve as a source of key facts, examples, and exercises to support progress through the course, covering all of the key stages involved in statistical research and investigations, including:
 
 \begin{itemize}
 \item
@@ -735,7 +718,7 @@ For example, the table below shows data relating to some football players:
 
 \pagebreak
 
-\section{Population Parameters and Sample Statistics}\label{population-parameters-and-sample-statistics-1}
+\section{Population Parameters and Sample Statistics}\label{population-parameters-and-sample-statistics}
 
 In a statistical investigation, the term \textbf{population} refers to the entire set of objects of interest, whilst a \textbf{sample} is a selection of some objects chosen from the population. Recognising the difference is fundamental to statistical analysis.
 
@@ -5275,6 +5258,8 @@ Bayes' Theorem provides a the link between a conditional probability and its \em
 $\text{P}(W|V) = \dfrac{\text{P}(V|W)\times \text{P}(W)}{\text{P}(V)} = \dfrac{0.3\times 0.8}{0.9} = \dfrac{4}{15}$
 \end{tcolorbox}
 
+Careful reading of text may be required to identify when a probability provided is a \emph{conditional} probability.
+
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} In a neighbourhood, 14\% of homes have a garage, whilst 62\% of homes have a garden. Of those homes with a garage, 87\% have a garden. If a home chosen at random has a garden, determine the probability that it has a garage.
 
@@ -7051,18 +7036,18 @@ Whether a linear relationship will continue to hold for $x$ values lower or high
 
 \begin{center}
 \begin{tikzpicture}
-\draw[semithick] (-0.05,0) -- (-0.05,3.65);
-\draw[semithick] (0,-0.1) -- (4.15,-0.1);
-\node[rotate=90] at (-1,1.75) {Practical};
-\node at (2,-1) {Theoretical};
+\draw[semithick] (-0.55,-0.5) -- (-0.55,3.65);
+\draw[semithick] (-0.5,-0.6) -- (4.6,-0.6);
+\node[rotate=90] at (-1.7,1.75) {Practical};
+\node at (2,-1.7) {Theoretical};
 \foreach \y in {6,8,...,20}
-\node at (-0.45,0.25*\y-1.5) {\y};
+\node at (-0.95,0.25*\y-1.5) {\y};
 \foreach \y in {6,8,...,20}
-\draw[semithick] (-0.05,0.25*\y-1.5) -- (-0.15,0.25*\y-1.5);
-\foreach \x in {4,6,...,20}
-\node at (0.25*\x-1,-0.45) {\x};
-\foreach \x in {4,6,...,20}
-\draw[semithick] (0.25*\x-1,-0.1) -- (0.25*\x-1,-0.2);
+\draw[semithick] (-0.55,0.25*\y-1.5) -- (-0.65,0.25*\y-1.5);
+\foreach \x in {2,4,...,22}
+\node at (0.25*\x-1,-0.95) {\x};
+\foreach \x in {2,4,...,22}
+\draw[semithick] (0.25*\x-1,-0.6) -- (0.25*\x-1,-0.7);
 \draw[semithick] (4*0.25-1,6.097*0.25-1.5) -- (20*0.25-1,20.161*0.25-1.5);
 \draw[fill=black] (5*0.25-1,6*0.25-1.5) circle (0.04);
 \draw[fill=black] (9*0.25-1,8*0.25-1.5) circle (0.04);
@@ -7076,27 +7061,28 @@ Whether a linear relationship will continue to hold for $x$ values lower or high
 \draw[fill=black] (10*0.25-1,8*0.25-1.5) circle (0.04);
 \draw[fill=black] (15*0.25-1,17*0.25-1.5) circle (0.04);
 \draw[fill=black] (16*0.25-1,18*0.25-1.5) circle (0.04);
-\node at (9,3.5) {$\Sigma x=132,$\quad$\Sigma y=147,$};
-\node at (9,2.9) {$\Sigma x^2 =1742,$\quad$\Sigma y^2 =2057,$\quad$\Sigma xy=1872$};
-\node[anchor=west] at (5,2) {(a) Calculate the equation of the least squares};
-\node[anchor=west] at (5.6,1.5) {regression line of $y$ on $x$.};
-\node[anchor=west] at (5,1) {(b) Calculate a predicted mark for the practical test};
-\node[anchor=west] at (5.6,0.5) {for a pupil who missed it, having scored 8 in the};
-\node[anchor=west] at (5.6,0) {theoretical test.};
-\node[anchor=west] at (5,-0.5) {(c) Comment on the reliability of this prediction.};
+\node at (9.5,3.5) {$\Sigma x=132,$\quad$\Sigma y=147,$};
+\node at (9.5,2.9) {$\Sigma x^2 =1742,$\quad$\Sigma y^2 =2057,$\quad$\Sigma xy=1872$};
+\node[anchor=west] at (5.5,2) {(a) Calculate the equation of the least squares};
+\node[anchor=west] at (6.1,1.5) {regression line of $y$ on $x$.};
+\node[anchor=west] at (5.5,0.7) {(b) Calculate a predicted mark for the practical test};
+\node[anchor=west] at (6.1,0.2) {for a pupil who missed it, having scored 8 in the};
+\node[anchor=west] at (6.1,-0.3) {theoretical test.};
+\node[anchor=west] at (5.5,-1.2) {(c) Comment on the reliability of this prediction.};
 \end{tikzpicture}
 \end{center}
 
 \tcblower
 \textbf{Solution:}
+\vspace{-0.3cm}
 
 \begin{flalign*}
 \text{(a)   }S_{xx}&=\Sigma x^2-\frac{(\Sigma x)^2}{n}\\
 &=1742-\frac{132^2}{12}\\
-&=290\\[1em]
+&=290\\[0.5em]
 S_{xy}&=\Sigma xy-\frac{\Sigma x\Sigma y}{n}\\
 &=1872-\frac{132\times 147}{12}\\
-&=2555\\[1em]
+&=2555\\[0.5em]
 b&=\dfrac{S_{xy}}{S_{xx}}=\dfrac{255}{290}=0.879 &\\
  & &\\
 a&=\bar{y}-b \bar{x}=\dfrac{147}{12}-0.879\times \dfrac{132}{12}=2.578\\
@@ -7104,15 +7090,17 @@ a&=\bar{y}-b \bar{x}=\dfrac{147}{12}-0.879\times \dfrac{132}{12}=2.578\\
 y&=2.578+0.879x
 \end{flalign*}
 
-\vspace{0.5cm}
+\vspace{0.3cm}
 \text{(b)   } $y=2.578 + 0.879\times 8=9.61$
 
-\vspace{0.5cm}
+\vspace{0.3cm}
 \text{(c)   } This is an example of interpolation as the value of $x$ used is within the range of values of the other students, and consequently it can be considered a robust prediction, especially given the high value for $r$.  
 
 \end{tcolorbox}
 
-\newpage
+Another way of writing the equation found above is: \(\text{practical}=2.578+0.879\text{ theoretical}\). \newline This suggests that an increase by \(1\) in the theory is associated with an increase by \(0.879\) in the practical.
+
+\pagebreak
 
 \phantomsection\label{ex53q}{}
 
@@ -19505,7 +19493,7 @@ The least squares regression line of $\hat{Y}=155.29+1.9018x$ was fitted. Test a
 
 \section{\texorpdfstring{Test for the Product Moment Correlation Coefficient \(\rho\)}{Test for the Product Moment Correlation Coefficient \textbackslash rho}}\label{test-for-the-product-moment-correlation-coefficient-rho}
 
-Pearson's Product Moment Correlation Coefficient, \(r\), is a sample statistic which measures the strength of the linear association between two variables. It is an estimate of the population parameter \(\rho\) (\textit{``rho''}), where \(-1\leqslant \rho \leqslant 1\). If \(\rho=0\) then there is no \textit{linear} relationship between the variables. Given a sample of bivariate data for which there exists \textit{no} linear relationship between the variables, it is regardless common for the sample to give a \textit{non-zero} value for \(r\):
+Pearson's Product Moment Correlation Coefficient, \(r\), is a sample statistic which measures the strength of the linear association between two variables. It is an estimate of the population parameter \(\rho\) (\textit{``rho''}), where \(-1\leqslant \rho \leqslant 1\). If \(\rho=0\) then there is no \textit{linear} relationship between the variables. Given a sample of bivariate data for which there exists \textit{no} linear relationship, it is regardless common for the sample to give a \textit{non-zero} value for \(r\):
 
 \vspace{-0.3cm}
 \begin{center}
@@ -19630,7 +19618,7 @@ The \textit{parametric} \textbf{Test for Rho} assesses a sample of bivariate dat
 \begin{minipage}[c]{.33\textwidth}
   \centering
 \begin{centering}
-\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=6cm,height=2.3cm]
+\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=6cm,height=2.6cm]
 \textbf{Test statistic:}
 \[t_{n-2}=\dfrac{r\sqrt{n-2}}{\sqrt{1-r^2}}\]
 \end{tcolorbox}
@@ -19639,11 +19627,12 @@ The \textit{parametric} \textbf{Test for Rho} assesses a sample of bivariate dat
   \centering
 \begin{minipage}[c]{.66\textwidth}
   \centering
-\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=12cm,height=2.3cm]
+\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=12cm,height=2.6cm]
 \textbf{Requirements:}
 \vspace{0.1cm}
 \begin{itemize}
-    \item $\varepsilon_i$ are independent and identically distributed as $\text{N}(0,\sigma^2)$.
+\setlength\itemsep{-0.3em}
+    \item The variables are independent and follow an approximately \newline bivariate normal distribution.
     \item The data was obtained through random sampling.
 \end{itemize}
 \end{tcolorbox}
@@ -24830,123 +24819,6 @@ The website wishes to allow users the ability to input the number of miles in th
 \addcontentsline{toc}{subsubsection}{\hyperref[re18q]{Chapter 18 Review Exercise}}
 
 \endgroup
-
-\chapter{Examples}\label{examples}
-
-\subsection{Chapter 15}\label{chapter-15}
-
-\begin{tcolorbox}[title=Example 15.1.1,title filled, colframe=black!50]
-\textbf{Problem:} A survey found that the mean hotel room rate in Edinburgh is £88.42 and that the mean room rate in Glasgow is £80.61. The data was obtained from samples of 50 hotels each and the sample standard deviations were £5.62 and £4.83 respectively. Assess the evidence at the 5\% level of significance that mean hotel room rates are more expensive in Edinburgh, stating any assumption made.
-
-\end{tcolorbox}
-
-\begin{tcolorbox}[title=Example 15.1.1,title filled, colframe=black!50]
-\textbf{Problem:} A survey found that the mean hotel room rate in Edinburgh is £88.42 and that the mean room rate in Glasgow is £80.61. The data was obtained from samples of 50 hotels each and the sample standard deviations were £5.62 and £4.83 respectively. Assess the evidence at the 5\% level of significance that mean hotel room rates are more expensive in Edinburgh, stating any assumption made.
-
-\tcblower
-\textbf{Solution:}
-$\bar{x}_e=88.42$, $\bar{x}_g=80.61$, $s_e=5.62$, $s_g=4.83$ $n_e=50$, $n_g=50$\\[0.1em]
-
-Since both samples sizes are greater than 20, both sample means are approximately normally distributed due to the Central Limit Theorem. These sample sizes could also be considered large enough that the sample standard deviations of hotel room rate may be considered sufficiently accurate estimators for their respective population standard deviations.\\[0.1em]
-
-Assume that the samples of hotels for each city were random.\\[0.1em]
-
-\begin{math}
-\begin{array}{ll}
-      H_0: & \mu_e=\mu_g\\
-      H_1: & \mu_e > \mu_g
-    \end{array}
-\left]
-    \begin{array}{l}
-      \alpha=0.05\\
-      \textnormal{One-tailed}
-    \end{array}
-  \right.
-\end{math}
-
-\vspace{0.5cm}
-
-Test statistic: $z=\dfrac{88.42-80.61}{\sqrt{\dfrac{5.62^2}{50}+\dfrac{4.83^2}{50}}}=7.45$
-\hspace{3cm}
-\begin{tikzpicture}[overlay]
-\begin{axis}[
-  no markers, 
-  domain=-3:3, 
-  samples=100,
-  ymin=0,
-  axis lines*=left, 
-  every axis y label/.style={at=(current axis.above origin),anchor=south},
-  every axis x label/.style={at=(current axis.right of origin),anchor=west},
-  height=3cm, 
-  width=6.5cm,
-  xtick=\empty, 
-  ytick=\empty,
-  enlargelimits=false, 
-  clip=false, 
-  axis on top,
-  grid = major,
-  hide y axis
-  ]
-\addplot [draw=none, fill=black!50, domain=1.64:3] {gauss(x, 0, 1)} \closedcycle;
- \addplot [semithick] {gauss(x, 0, 1)};
-\pgfmathsetmacro\valueA{gauss(1.64,0,1)}
-\pgfmathsetmacro\valueB{gauss(0,0,1)}
-\draw [semithick, black]  (axis cs:1.64,0) -- (axis cs:1.64,\valueA);
-\node[below] at (axis cs: 0,0)  {$0$};
-\node[above] at (axis cs: 0,\valueB)  {$z$};
-\node[below] at (axis cs: 1.64, 0) {$1.64$};
-\node[above] at (axis cs: 1.9,\valueA) {5\%};
-\end{axis}
-\end{tikzpicture}\\
-
-Critical value: $z_{0.95}=1.64$\\
-
-Since $7.45>1.64$, reject $\text{H}_0$ at the 5\% level of significance. There is evidence to suggest that the mean hotel room rate in Edinburgh is more expensive than in Glasgow.
-
-\end{tcolorbox}
-
-\chapter{Storage Questions}\label{storage-questions}
-
-\subsection{Chapter 15}\label{chapter-15-1}
-
-\begin{enumerate}
-\item A microbiologist wishes to determine whether there is any difference in the time it takes to make yoghurt from the two different starters: lactobacillus acidophilus (A) and bulgarius (B). Seven batches of yoghurt were made with each of the starters. The table below shows the time taken, in hours, to make each batch along with corresponding summary data.
-    \begin{center}
-    \begin{tabular}{c|ccccccc}
-        Starter A & 6.8 & 6.3 & 7.4 & 6.1 & 8.2 & 7.3 & 6.9\\
-        \hline
-        Starter B & 6.1 & 6.4 & 5.7 & 5.5 & 6.9 & 6.3 & 6.7
-    \end{tabular}
-    \end{center}
-    \begin{center}
-    \begin{tabular}{ccccc}
-        Variable & N & Mean & SE Mean & StDev\\
-        \hline
-        Starter A & 7 & 7.000 & 0.269 & 0.712\\
-        Starter B & 7 & 6.229 & 0.191 & 0.506
-    \end{tabular}
-    \end{center}
-    Assuming that both sets of times may be considered to be random samples from normal populations with the same variance, test at the 5\% significance level the hypothesis that the mean time taken to make yoghurt is the same for both starters. Comment on any different to the conclusion if a 1\% significance level had been used instead.
-    \item An investigation was conducted into the dust content in the flue gases of two types of solid-fuel boilers. Thirteen boilers of type A and nine boilers of type B were used under identical fuelling and extraction conditions. Over a similar period, the following quantities, in grams, of dust were deposited in similar traps inserted in each of the twenty-two flues.
-    \begin{center}
-    \begin{tabular}{c|ccccccccccccc}
-        Type A & 73.1 & 56.4 & 82.1 & 67.2 & 55.2 & 78.7 & 75.1 & 48.0 & 60.6 & 63.1 & 53.3 & 55.5 & 61.5\\
-        \hline
-        Type B & 53.0 & 39.3 & 55.8 & 46.0 & 56.4 & 58.8 & 41.2 & 66.6 & 58.9  &  &  &  &   
-    \end{tabular}
-    \end{center}
-    A test for equality of population means was performed at the 5\% level of significance.\vspace{0.5cm}\\
-    \texttt{two sample t-test}\\
-    \texttt{alternative hypothesis: true difference in means is not equal to 0}\\
-    \texttt{t = 2.52}\qquad \texttt{df=20} \qquad \texttt{p-value = 0.020}\\
-    \texttt{sample estimates:}\\
-    \texttt{mean of A = 63.8}\qquad \texttt{mean of B = 52.89}\\
-    \texttt{sd of A = 10.6} \qquad \texttt{sd of B = 9.00}\\
-    \vspace{0.5cm}
-    Confirm the test statistic by calculating the pooled estimate of variance and draw a suitable conclusion for the test, stating any assumption required.
-    \item A random sample of 10 yellow grapefruit is weighed and the mean mass is found to be 201.4g. The value of an unbiased estimate for the population variance is 234.1$\text{g}^2$. The corresponding figures for a random sample of 8 pink grapefruit are 221.8g and 281.9$\text{g}^2$.\\[1em]
-Determine, using a 1\% significance level whether there is evidence that pink grapefruit weigh more than yellow grapefruit. State any assumptions made.
-\end{enumerate}
 
 \bibliography{book.bib,packages.bib}
 

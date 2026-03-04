@@ -1359,18 +1359,18 @@ Whether a linear relationship will continue to hold for $x$ values lower or high
 
 \begin{center}
 \begin{tikzpicture}
-\draw[semithick] (-0.05,0) -- (-0.05,3.65);
-\draw[semithick] (0,-0.1) -- (4.15,-0.1);
-\node[rotate=90] at (-1,1.75) {Practical};
-\node at (2,-1) {Theoretical};
+\draw[semithick] (-0.55,-0.5) -- (-0.55,3.65);
+\draw[semithick] (-0.5,-0.6) -- (4.6,-0.6);
+\node[rotate=90] at (-1.7,1.75) {Practical};
+\node at (2,-1.7) {Theoretical};
 \foreach \y in {6,8,...,20}
-\node at (-0.45,0.25*\y-1.5) {\y};
+\node at (-0.95,0.25*\y-1.5) {\y};
 \foreach \y in {6,8,...,20}
-\draw[semithick] (-0.05,0.25*\y-1.5) -- (-0.15,0.25*\y-1.5);
-\foreach \x in {4,6,...,20}
-\node at (0.25*\x-1,-0.45) {\x};
-\foreach \x in {4,6,...,20}
-\draw[semithick] (0.25*\x-1,-0.1) -- (0.25*\x-1,-0.2);
+\draw[semithick] (-0.55,0.25*\y-1.5) -- (-0.65,0.25*\y-1.5);
+\foreach \x in {2,4,...,22}
+\node at (0.25*\x-1,-0.95) {\x};
+\foreach \x in {2,4,...,22}
+\draw[semithick] (0.25*\x-1,-0.6) -- (0.25*\x-1,-0.7);
 \draw[semithick] (4*0.25-1,6.097*0.25-1.5) -- (20*0.25-1,20.161*0.25-1.5);
 \draw[fill=black] (5*0.25-1,6*0.25-1.5) circle (0.04);
 \draw[fill=black] (9*0.25-1,8*0.25-1.5) circle (0.04);
@@ -1384,19 +1384,20 @@ Whether a linear relationship will continue to hold for $x$ values lower or high
 \draw[fill=black] (10*0.25-1,8*0.25-1.5) circle (0.04);
 \draw[fill=black] (15*0.25-1,17*0.25-1.5) circle (0.04);
 \draw[fill=black] (16*0.25-1,18*0.25-1.5) circle (0.04);
-\node at (9,3.5) {$\Sigma x=132,$\quad$\Sigma y=147,$};
-\node at (9,2.9) {$\Sigma x^2 =1742,$\quad$\Sigma y^2 =2057,$\quad$\Sigma xy=1872$};
-\node[anchor=west] at (5,2) {(a) Calculate the equation of the least squares};
-\node[anchor=west] at (5.6,1.5) {regression line of $y$ on $x$.};
-\node[anchor=west] at (5,1) {(b) Calculate a predicted mark for the practical test};
-\node[anchor=west] at (5.6,0.5) {for a pupil who missed it, having scored 8 in the};
-\node[anchor=west] at (5.6,0) {theoretical test.};
-\node[anchor=west] at (5,-0.5) {(c) Comment on the reliability of this prediction.};
+\node at (9.5,3.5) {$\Sigma x=132,$\quad$\Sigma y=147,$};
+\node at (9.5,2.9) {$\Sigma x^2 =1742,$\quad$\Sigma y^2 =2057,$\quad$\Sigma xy=1872$};
+\node[anchor=west] at (5.5,2) {(a) Calculate the equation of the least squares};
+\node[anchor=west] at (6.1,1.5) {regression line of $y$ on $x$.};
+\node[anchor=west] at (5.5,0.7) {(b) Calculate a predicted mark for the practical test};
+\node[anchor=west] at (6.1,0.2) {for a pupil who missed it, having scored 8 in the};
+\node[anchor=west] at (6.1,-0.3) {theoretical test.};
+\node[anchor=west] at (5.5,-1.2) {(c) Comment on the reliability of this prediction.};
 \end{tikzpicture}
 \end{center}
 
 \tcblower
 \textbf{Solution:}
+\vspace{-0.3cm}
 
 \begin{flalign*}
 \text{(a)   }S_{xx}&=\Sigma x^2-\frac{(\Sigma x)^2}{n}\\
@@ -1404,7 +1405,7 @@ Whether a linear relationship will continue to hold for $x$ values lower or high
 &=290\\[1em]
 S_{xy}&=\Sigma xy-\frac{\Sigma x\Sigma y}{n}\\
 &=1872-\frac{132\times 147}{12}\\
-&=2555\\[1em]
+&=2555\\[0.5em]
 b&=\dfrac{S_{xy}}{S_{xx}}=\dfrac{255}{290}=0.879 &\\
  & &\\
 a&=\bar{y}-b \bar{x}=\dfrac{147}{12}-0.879\times \dfrac{132}{12}=2.578\\
@@ -1412,15 +1413,19 @@ a&=\bar{y}-b \bar{x}=\dfrac{147}{12}-0.879\times \dfrac{132}{12}=2.578\\
 y&=2.578+0.879x
 \end{flalign*}
 
-\vspace{0.5cm}
+\vspace{0.3cm}
 \text{(b)   } $y=2.578 + 0.879\times 8=9.61$
 
-\vspace{0.5cm}
+\vspace{0.3cm}
 \text{(c)   } This is an example of interpolation as the value of $x$ used is within the range of values of the other students, and consequently it can be considered a robust prediction, especially given the high value for $r$.  
 
 \end{tcolorbox}
 
-\newpage
+Another way of writing the equation found above is: $\text{practical}=2.578+0.879\text{ theoretical}$.
+
+This suggests that an increase by $1$ in the theory is associated with an increase by $0.879$ in the practical.
+
+\pagebreak
 
 []{#ex53q}
 

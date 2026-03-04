@@ -905,7 +905,7 @@ The least squares regression line of $\hat{Y}=155.29+1.9018x$ was fitted. Test a
 
 ## Test for the Product Moment Correlation Coefficient $\rho$
 
-Pearson's Product Moment Correlation Coefficient, $r$, is a sample statistic which measures the strength of the linear association between two variables. It is an estimate of the population parameter $\rho$ (\textit{``rho''}), where $-1\leqslant \rho \leqslant 1$. If $\rho=0$ then there is no \textit{linear} relationship between the variables. Given a sample of bivariate data for which there exists \textit{no} linear relationship between the variables, it is regardless common for the sample to give a \textit{non-zero} value for $r$:
+Pearson's Product Moment Correlation Coefficient, $r$, is a sample statistic which measures the strength of the linear association between two variables. It is an estimate of the population parameter $\rho$ (\textit{``rho''}), where $-1\leqslant \rho \leqslant 1$. If $\rho=0$ then there is no \textit{linear} relationship between the variables. Given a sample of bivariate data for which there exists \textit{no} linear relationship, it is regardless common for the sample to give a \textit{non-zero} value for $r$:
 
 \vspace{-0.3cm}
 \begin{center}
@@ -1029,7 +1029,7 @@ The \textit{parametric} \textbf{Test for Rho} assesses a sample of bivariate dat
 \begin{minipage}[c]{.33\textwidth}
   \centering
 \begin{centering}
-\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=6cm,height=2.3cm]
+\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=6cm,height=2.6cm]
 \textbf{Test statistic:}
 \[t_{n-2}=\dfrac{r\sqrt{n-2}}{\sqrt{1-r^2}}\]
 \end{tcolorbox}
@@ -1038,11 +1038,12 @@ The \textit{parametric} \textbf{Test for Rho} assesses a sample of bivariate dat
   \centering
 \begin{minipage}[c]{.66\textwidth}
   \centering
-\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=12cm,height=2.3cm]
+\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=12cm,height=2.6cm]
 \textbf{Requirements:}
 \vspace{0.1cm}
 \begin{itemize}
-    \item $\varepsilon_i$ are independent and identically distributed as $\text{N}(0,\sigma^2)$.
+\setlength\itemsep{-0.3em}
+    \item The variables are independent and follow an approximately \newline bivariate normal distribution.
     \item The data was obtained through random sampling.
 \end{itemize}
 \end{tcolorbox}
