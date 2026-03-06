@@ -32,7 +32,7 @@ A *probability function*, or *pf*, assigns probabilities to each possible value 
 \begin{tabular}{ c | c c c }
       $x$ & $3$ & $4$ & $5$\\
   \hline
-      $P(X=x)$ & 0.2 & 0.5 & 0.3
+      $\text{P}(X=x)$ & 0.2 & 0.5 & 0.3
 \end{tabular}
 \end{center}
 
@@ -42,7 +42,7 @@ Note that a discrete probability distribution must define \textit{mutually exclu
 
 \begin{center}
 \begin{tabular}{c c c}
-      $0\leqslant P(X=x_i)\leqslant 1$ for all $i$ & and & $\sum P(X=x_i)=1$
+      $0\leqslant \text{P}(X=x_i)\leqslant 1$ for all $i$ & and & $\sum \text{P}(X=x_i)=1$
 \end{tabular}
 \end{center}
 
@@ -84,15 +84,15 @@ Note that a discrete probability distribution must define \textit{mutually exclu
 \begin{tabular}{ c | c c c c c }
       $d$ & $6$ & $7$ & $8$ & $9$ & $10$\\
   \hline
-      $P(D=d)$ & $0.35$ & $0.3$ & $c$ & $0.2$ & $0.1$ 
+      $\text{P}(D=d)$ & $0.35$ & $0.3$ & $c$ & $0.2$ & $0.1$ 
 \end{tabular}
 \end{center}
 
 \text{(a)   }Calculate the value of $c$.\\
   \\
-\text{(b)   }Calculate $P(D\leqslant7)$.\\
+\text{(b)   }Calculate $\text{P}(D\leqslant7)$.\\
   \\
-\text{(c)   }Calculate $P(D>7)$.
+\text{(c)   }Calculate $\text{P}(D>7)$.
 
 \tcblower
 \textbf{Solution:}  \\
@@ -103,12 +103,12 @@ Note that a discrete probability distribution must define \textit{mutually exclu
 \begin{tabular}{ c | c c c c c }
       $d$ & $6$ & $7$ & $8$ & $9$ & $10$\\
   \hline
-      $P(D=d)$ & $0.35$ & $0.3$ & $0.05$ & $0.2$ & $0.1$ 
+      $\text{P}(D=d)$ & $0.35$ & $0.3$ & $0.05$ & $0.2$ & $0.1$ 
 \end{tabular}
 \end{center}
 
 \begin{flalign*}
-\text{(b)   }P(D\leqslant7)&=P(D=6)+P(D=7) &\\
+\text{(b)   }\text{P}(D\leqslant7)&=\text{P}(D=6)+\text{P}(D=7) &\\
 &=0.35+0.3\\
 &=0.65
 \end{flalign*}
@@ -139,7 +139,7 @@ Note that a discrete probability distribution must define \textit{mutually exclu
 \end{tikzpicture}
 
 \begin{flalign*}
-\text{(c)   }P(D>7)&=1-P(D\leqslant7) &\\
+\text{(c)   }\text{P}(D>7)&=1-\text{P}(D\leqslant7) &\\
 &=1-0.65\\
 &=0.35
 \end{flalign*}
@@ -281,17 +281,17 @@ Note that a discrete probability distribution must define \textit{mutually exclu
 
 ## The Expectation of a Discrete Random Variable
 
-Whilst a single roll of a die is equally likely to land on any of the numbers from 1 to 6, if it is rolled many times and the *mean* of the observed values is calculated, it is very likely to be around 3.5. Letting random variable $X$ represent the result of one roll of the die, the *long-run mean of successive observations of $X$ will tend to 3.5*. This can be referred to as the *mean*, $\mu$, of $X$, the *expectation* of $X$, or $\text{E}(X)$.
+Whilst a single roll of a die is equally likely to land on any of the numbers from 1 to 6, if it is rolled many times and the *mean* of the observed values is calculated, it is very likely to be around 3.5. Letting random variable $X$ represent the result of one roll of the die, the *long-run mean of successive observations of $X$ will tend to 3.5*. This can be referred to as the *mean*, $\mu$, of $X$, the **expectation** of $X$, or $\text{E}(X)$.
 
 \begin{centering}
 \tcbset{width=10cm}
 \begin{tcolorbox}[adjusted title=The expectation $\mu$ of discrete random variable $X$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-$\text{E}(X)=\sum{x_iP(X=x_i)}$
+$\mu_{X}=\text{E}(X)=\sum{x_i\text{P}(X=x_i)}$
 \end{tcolorbox}
 \end{centering}
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue,height=6cm]
-\textbf{Problem:} The probability distribution of random variable $X$ is tabulated as: 
+\textbf{Problem:} Given the probability distribution of random variable $X$ tabulated below, calculate $\text{E}(X)$.
 
 \begin{center}
 \bgroup
@@ -299,23 +299,21 @@ $\text{E}(X)=\sum{x_iP(X=x_i)}$
 \begin{tabular}{ c | c c c c }
       $x$ & $3$ & $4$ & $5$ & $6$\\
   \hline
-      $P(X=x)$ & $\frac{1}{8}$ & $\frac{1}{4}$ & $\frac{1}{2}$ & $\frac{1}{8}$ 
+      $\text{P}(X=x)$ & $\frac{1}{8}$ & $\frac{1}{4}$ & $\frac{1}{2}$ & $\frac{1}{8}$ 
 \end{tabular}
 \egroup
 \end{center}
 
-\vspace{-0.5cm}
-
-Calculate $\text{E}(X)$.
-
 \tcblower
 \textbf{Solution:}
-$$\text{E}(X) = 3\times \frac{1}{8} + 4\times \frac{1}{4} + 5\times \frac{1}{2} + 6\times \frac{1}{8}= \frac{37}{8}$$
+$$\text{E}(X) = 3\times \tfrac{1}{8} + 4\times \tfrac{1}{4} + 5\times \tfrac{1}{2} + 6\times \tfrac{1}{8}= \tfrac{37}{8}$$
 
 \end{tcolorbox}
 
+Problems may require a probability distribution to first be tabulated, such as by using a tree diagram.
+
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} From a bag containing 4 blue and 6 red cubes one is drawn at random, followed by another without replacing the first. Letting discrete random variable $X$ represent the number of red cubes drawn, calculate $\text{E}(X)$.
+\textbf{Problem:} A bag containing 4 blue and 6 red cubes. One is drawn at random, followed by another without replacing the first. Letting discrete random variable $X$ represent the number of red cubes drawn, calculate $\text{E}(X)$.
 
 \tcblower
 \textbf{Solution: }
@@ -372,10 +370,10 @@ $$\text{E}(X) = 3\times \frac{1}{8} + 4\times \frac{1}{4} + 5\times \frac{1}{2} 
         \begin{tabular}{ c | c c c }
             $x$ & $0$ & $1$ & $2$\\
           \hline
-            $P(X=x)$ & $\frac{2}{15}$ & $\frac{8}{15}$ & $\frac{1}{3}$ 
+            $\text{P}(X=x)$ & $\frac{2}{15}$ & $\frac{8}{15}$ & $\frac{1}{3}$ 
         \end{tabular}
         \egroup
-$$\text{E}(X)=0\times \frac{2}{15}+1\times \frac{8}{15}+2\times \frac{1}{3}=\frac{6}{5}$$
+$$\text{E}(X)=0\times \tfrac{2}{15}+1\times \tfrac{8}{15}+2\times \tfrac{1}{3}=\tfrac{6}{5}$$
 \end{tcolorbox}
 
 \pagebreak
@@ -394,7 +392,7 @@ $$\text{E}(X)=0\times \frac{2}{15}+1\times \frac{8}{15}+2\times \frac{1}{3}=\fra
         \begin{tabular}{ c | c c c c }
             $x$ & $2$ & $4$ & $6$ & $8$\\
           \hline
-            $P(X=x)$ & $0.25$ & $0.4$ & $0.2$ & $0.15$ 
+            $\text{P}(X=x)$ & $0.25$ & $0.4$ & $0.2$ & $0.15$ 
         \end{tabular}
         \egroup
         \item 
@@ -403,7 +401,7 @@ $$\text{E}(X)=0\times \frac{2}{15}+1\times \frac{8}{15}+2\times \frac{1}{3}=\fra
         \begin{tabular}{ c | c c c c c }
             $y$ & $1$ & $2$ & $3$ & $4$ & $5$\\
           \hline
-            $P(Y=y)$ & $\frac{1}{20}$ & $\frac{7}{20}$ & $\frac{3}{20}$ & $k$ & $\frac{1}{20}$ 
+            $\text{P}(Y=y)$ & $\frac{1}{20}$ & $\frac{7}{20}$ & $\frac{3}{20}$ & $k$ & $\frac{1}{20}$ 
         \end{tabular}
         \egroup
         \end{multicols}
@@ -411,7 +409,7 @@ $$\text{E}(X)=0\times \frac{2}{15}+1\times \frac{8}{15}+2\times \frac{1}{3}=\fra
     \item The random variable $X$ represents the result of a roll of a fair, octahedral die with sides numbered 1 to 8.
     \begin{enumerate}
         \item Tabulate the probability distribution of $X$.
-        \item State $P(4\leqslant X\leqslant 6)$.
+        \item State $\text{P}(4\leqslant X\leqslant 6)$.
         \item Calculate $\text{E}(X)$.
     \end{enumerate}
     \item A discrete random variable $X$ can assume values 10 and 20 only. Given $\text{E}(X)=16$, tabulate the probability distribution of $X$.
@@ -444,7 +442,7 @@ $$\text{E}(X)=0\times \frac{2}{15}+1\times \frac{8}{15}+2\times \frac{1}{3}=\fra
     \begin{tabular}{ c | c c c c c }
         $x$ & $1$ & $3$ & $5$ & $8$ & $10$\\
       \hline
-        $P(X=x)$ & $0.1$ & $a$ & $0.3$ & $b$ & $0.2$ 
+        $\text{P}(X=x)$ & $0.1$ & $a$ & $0.3$ & $b$ & $0.2$ 
     \end{tabular}
     \end{center}
     Given that $\text{E}(X)=6.3$, find the values of $a$ and $b$.
@@ -454,7 +452,7 @@ $$\text{E}(X)=0\times \frac{2}{15}+1\times \frac{8}{15}+2\times \frac{1}{3}=\fra
 
 ## The Law of Expectation
 
-If discrete random variable $X$ takes values ${x_1,x_2...x_n}$ with probabilities $P(X=x_i)$, then random variable \mbox{$Y=2X$} takes values ${2x_1,2x_2...2x_n}$ with probabilities $P(X=x_i)$. For example, let $X$ represent the roll of a die:
+If discrete random variable $X$ takes values ${x_1,x_2...x_n}$ with probabilities $\text{P}(X=x_i)$, then random variable \mbox{$Y=2X$} takes values ${2x_1,2x_2...2x_n}$ with probabilities $\text{P}(X=x_i)$. For example, let $X$ represent the roll of a die:
 
 \begin{figure}[H]
   \centering
@@ -467,7 +465,7 @@ If discrete random variable $X$ takes values ${x_1,x_2...x_n}$ with probabilitie
 \begin{tabular}{ c | c c c c c c }
       $x$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$\\
   \hline
-      $P(X=x)$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ 
+      $\text{P}(X=x)$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ 
 \end{tabular}
 \egroup
 \end{center}
@@ -487,7 +485,7 @@ If discrete random variable $X$ takes values ${x_1,x_2...x_n}$ with probabilitie
 \begin{tabular}{ c | c c c c c c }
       $y$ & $2$ & $4$ & $6$ & $8$ & $10$ & $12$\\
   \hline
-      $P(Y=y)$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ 
+      $\text{P}(Y=y)$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ 
 \end{tabular}
 \egroup
 \end{center}
@@ -595,7 +593,7 @@ Proof:
         \begin{tabular}{ c | c c c c }
             $x$ & $4$ & $5$ & $6$ & $7$\\
           \hline
-            $P(X=x)$ & $0.3$ & $0.5$ & $k$ & $0.05$ 
+            $\text{P}(X=x)$ & $0.3$ & $0.5$ & $k$ & $0.05$ 
         \end{tabular}
     \egroup
     \end{center}
@@ -612,12 +610,12 @@ Proof:
     \item Random variables $X$ and $Y$ are defined such that the mean of $X$ is $\frac{1}{4}$ and $Y=6X+4$. Determine the mean of $Y$.
     \item A betting game involves a player rolling a fair, octagonal die with faces numbered from 1 to 8. Let $X$ represent the result of a roll of the die.
     \begin{enumerate}
-    \item Determine $E(X)$.
+    \item Determine $\text{E}(X)$.
     \end{enumerate}
     Each game costs £10 to enter, with the number obtained of a single roll of the die being multiplied by 2 to give an amount in pounds that the player receives. Let $Y$ represent the \textit{profit} a player makes from playing the game a single time.
     \begin{enumerate}[resume]
         \item State an equation linking $Y$ and $X$.
-        \item Determine the value of $E(Y)$.
+        \item Determine the value of $\text{E}(Y)$.
         \item Explain what this suggests will happen if a player plays the game repeatedly.
     \end{enumerate}
     \item Random variables $X$ and $Y$ are defined such that the mean of $Y$ is $-5$ and $Y=2X-10$. Determine the mean of $X$.
@@ -667,7 +665,7 @@ $$\text{SD}(X)=\sqrt{\text{V}(X)}\qquad\text{and}\qquad \text{SD}(X),\text{V}(X)
 \begin{tabular}{ c | c c c c }
       $x$ & $0$ & $1$ & $2$ & $3$\\
   \hline
-      $P(X=x)$ & $0.3$ & $0.4$ & $0.1$ & $0.2$ 
+      $\text{P}(X=x)$ & $0.3$ & $0.4$ & $0.1$ & $0.2$ 
 \end{tabular}
 \end{center}
 
@@ -703,7 +701,7 @@ Calculate $\text{E}(X)$ and $\text{V}(X)$
         \begin{tabular}{ c | c c c c }
             $x$ & $1$ & $2$ & $5$ & $10$\\
           \hline
-            $P(X=x)$ & $0.4$ & $0.3$ & $0.2$ & $0.1$ 
+            $\text{P}(X=x)$ & $0.4$ & $0.3$ & $0.2$ & $0.1$ 
         \end{tabular}
         \egroup
         \item 
@@ -712,7 +710,7 @@ Calculate $\text{E}(X)$ and $\text{V}(X)$
         \begin{tabular}{ c | c c c c c }
             $y$ & $0$ & $1$ & $2$ & $3$ & $4$\\
           \hline
-            $P(Y=y)$ & $\frac{1}{10}$ & $\frac{1}{5}$ & $\frac{1}{4}$ & $k$ & $\frac{2}{5}$ 
+            $\text{P}(Y=y)$ & $\frac{1}{10}$ & $\frac{1}{5}$ & $\frac{1}{4}$ & $k$ & $\frac{2}{5}$ 
         \end{tabular}
         \egroup
         \end{multicols}
@@ -850,7 +848,7 @@ Note that any laws relating to the *standard deviation* of a linear transformati
         \end{center}
         \begin{enumerate}
         \begin{multicols}{3}
-            \item Calculate $E(X)$ and $V(X)$.
+            \item Calculate $\text{E}(X)$ and $\text{V}(X)$.
             \item Find $\text{E}(2X+1)$.
             \item Find $\text{V}(2X+1)$.
         \end{multicols}
