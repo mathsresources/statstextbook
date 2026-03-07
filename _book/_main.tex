@@ -7706,7 +7706,7 @@ Note that a discrete probability distribution must define \textit{mutually exclu
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c }
-            $c$ & $red$ & $blue$ & $green$\\
+            $c$ & red & blue & green\\
           \hline
             $\text{P}(C=c)$ & $\frac{1}{3}$ & $\frac{1}{6}$ & $\frac{1}{2}$ 
         \end{tabular}
@@ -7824,7 +7824,7 @@ Whilst a single roll of a die is equally likely to land on any of the numbers fr
 \begin{centering}
 \tcbset{width=10cm}
 \begin{tcolorbox}[adjusted title=The expectation $\mu$ of discrete random variable $X$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-$\mu_{X}=\text{E}(X)=\sum{x_i\text{P}(X=x_i)}$
+$\text{E}(X)=\sum{x_i\text{P}(X=x_i)}$
 \end{tcolorbox}
 \end{centering}
 
@@ -8049,9 +8049,9 @@ Proof:
 \vspace{-0.4cm}
 
 \begin{align*}
-    \text{E}(aX+ b)&=\sum{(ax_i + b)\text{P}(X=x_i)}\\
-    &=\sum{(ax_i)\text{P}(X=x_i)}+ \sum{b{\text{P}(X=x_i)}}\\
-    &=a\sum{x_i\text{P}(X=x_i)}+ b\sum{\text{P}(X=x_i)}\\
+    \text{E}(aX+ b)&=\sum{(ax_i + b)\text{P}(X=x_i)}\\[0.3em]
+    &=\sum{(ax_i)\text{P}(X=x_i)}+ \sum{b{\text{P}(X=x_i)}}\\[0.3em]
+    &=a\sum{x_i\text{P}(X=x_i)}+ b\sum{\text{P}(X=x_i)}\\[0.3em]
     &=a\text{E}(X)+ b
 \end{align*}
 
@@ -8069,6 +8069,8 @@ Proof:
 \end{align*}
 
 \end{tcolorbox}
+
+Given the value of the expectation of \(aX\pm b\), the expectation of \(X\) may be determined.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given tht $\text{E}(10-2Y)=50$, determine the value of $\text{E}(Y)$.
@@ -8179,19 +8181,19 @@ Proof:
 \vspace{-0.4cm}
 
 \begin{align*}
-    \text{V}(X)&=\text{E}[(X-\mu)^2]\\
-    &=\text{E}[(X-\mu)(X-\mu)]\\
-    &=\text{E}[X^2-2\mu X+\mu^2]\\
-    &=\text{E}(X^2)-2\mu \text{E}(X)+\mu^2\\
-    &=\text{E}(X^2)-2(\text{E}(X))^2 +(\text{E}(X))^2\\
+    \text{V}(X)&=\text{E}[(X-\mu)^2]\\[0.3em]
+    &=\text{E}[(X-\mu)(X-\mu)]\\[0.3em]
+    &=\text{E}[X^2-2\mu X+\mu^2]\\[0.3em]
+    &=\text{E}(X^2)-2\mu \text{E}(X)+\mu^2\\[0.3em]
+    &=\text{E}(X^2)-2(\text{E}(X))^2 +(\text{E}(X))^2\\[0.3em]
     &=\text{E}(X^2)-\text{E}^2(X)
 \end{align*}
 
 Knowing the \emph{expectation} and \emph{variance} of random variables help statisticians better understand the \emph{long-run} behaviour of repeated observations:
 
 \begin{itemize}
-    \item $\text{E}(X)=\mu$, the \textit{long-run mean} of the distribution of $X$.
-    \item $\text{V}(X)=\sigma^2$, the \textit{variance} of the distribution of $X$.
+    \item $\text{E}(X)=\mu_X$, the \textit{long-run mean} of the distribution of $X$.
+    \item $\text{V}(X)=\sigma_X^2$, the \textit{variance} of the distribution of $X$.
 \end{itemize}
 
 The standard deviation, \(\sigma\), of a random variable \(X\), notated \(\text{SD}(X)\), is the square root of the variance:
@@ -8298,16 +8300,14 @@ Proof:
 \vspace{-0.4cm}
 
 \begin{align*}
-    \text{V}(aX+ b)&=\text{E}[((aX+ b)-(\text{E}(aX+ b))^2]\\
-    &=\text{E}[(aX+b-a\text{E}(X)-b)^2]\\
-    &=\text{E}[(aX-a\text{E}(X))^2]\\
-    &=\text{E}[(a(X-\text{E}(X)))^2]\\
-    &=\text{E}[a^2(X-\text{E}(X))^2]\\
-    &=a^2 \text{E}[(X-\text{E}(X))^2]\\
+    \text{V}(aX+ b)&=\text{E}[((aX+ b)-(\text{E}(aX+ b))^2]\\[0.5em]
+    &=\text{E}[(aX+b-a\text{E}(X)-b)^2]\\[0.5em]
+    &=\text{E}[(aX-a\text{E}(X))^2]\\[0.5em]
+    &=\text{E}[(a(X-\text{E}(X)))^2]\\[0.5em]
+    &=\text{E}[a^2(X-\text{E}(X))^2]\\[0.5em]
+    &=a^2 \text{E}[(X-\text{E}(X))^2]\\[0.5em]
     &=a^2 \text{V}(X)
 \end{align*}
-
-Note that any laws relating to the \emph{standard deviation} of a linear transformation (\(\text{SD}(aX\pm b)\)) would not be able to be expressed so concisely, so such problems must be tackled by \emph{first finding the variance} (\(\text{V}(aX\pm b)\)).
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Let $X$ be the random variable such that $\text{E}(X)=-7$ and $\text{V}(X)=4$. Calculate $\text{V}(2-3X)$.
@@ -8315,13 +8315,20 @@ Note that any laws relating to the \emph{standard deviation} of a linear transfo
 \tcblower
 \textbf{Solution:}\textit{ (It helps to rearrange into the form $aX\pm b$.)}
 
+\vspace{-0.1cm}
+
 \begin{align*}
 \text{V}(2-3X)&=\text{V}(-3X+2)\\
 &=(-3)^2\text{V}(X)\\
 &=9\times 4\\
-&=36\\
+&=36
 \end{align*}
+
+\vspace{-0.3cm}
+
 \end{tcolorbox}
+
+Note that any laws relating to the \emph{standard deviation} of a linear transformation (\(\text{SD}(aX\pm b)\)) would not be able to be expressed so concisely, so such problems must be tackled by \emph{first finding the variance} (\(\text{V}(aX\pm b)\)).
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Random variable $Y$ has mean 1.5 and standard deviation 0.8.\\ Determine the standard deviation of $10Y+25$.
@@ -8329,12 +8336,17 @@ Note that any laws relating to the \emph{standard deviation} of a linear transfo
 \tcblower
 \textbf{Solution:}
 
+\vspace{-0.3cm}
+
 \begin{align*}
 \text{V}(10Y+25)&=10^2\text{V}(Y)\\
 &=100\times 0.8^2\\
 &=64\\
-\text{SD}&=8\\
+\text{SD}&=8
 \end{align*}
+
+\vspace{-0.3cm}
+
 \end{tcolorbox}
 
 \pagebreak
@@ -8476,7 +8488,11 @@ As well as linear transformations of a single random variable, new variables can
 \vfill\null
 \end{multicols}
 
+\vspace{-0.8cm}
+
 \end{tcolorbox}
+
+Random variables \textbf{independently and identically distributed (i.i.d)} as \(X\) are denoted as \(X_1,X_2,X_3,\dots\)
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Books in the fiction section of a library have a mean thickness of 3.1cm with standard deviation 0.2cm. If three books are randomly selected from the fiction section and stacked together, determine the mean and standard deviation of the collected, total thickness of the three books, stating one assumption required.
@@ -8506,6 +8522,26 @@ Hence the mean total thickness of the three books is 9.3cm, and the standard dev
 \addcontentsline{toc}{subsubsection}{\hyperref[ex66a]{Exercise 6.6}}
 
 \begin{enumerate}
+    \item Random variables $J$ and $K$ are defined such that $\text{E}(J)=3$ and $\text{E}(K)=-2$.
+    \begin{enumerate}
+        \item State the information required to be known about $J$ and $K$ in order to determine whether the laws introduced on the previous page may be applied.
+        \item Assuming that $J$ and $K$ are such that the those laws may be applied, find:
+    \begin{enumerate}
+        \begin{multicols}{3}
+            \item $\text{E}(J+K)$
+            \item $\text{E}(J-K)$
+            \item $\text{E}(2K-3J)$
+        \end{multicols}
+    \end{enumerate}
+    \item Assuming that $J$ and $K$ are such that the those laws may be applied, find:
+    \begin{enumerate}
+        \begin{multicols}{3}
+            \item $\text{V}(J+K)$
+            \item $\text{V}(J-K)$
+            \item $\text{V}(2K-3J)$
+        \end{multicols}
+    \end{enumerate}
+    \end{enumerate}
     \item Independent random variables $X$ and $Y$ are defined such that $\text{E}(X)=5$, $\text{V}(X)=6$, $\text{E}(Y)=3$ and $\text{V}(Y)=8$. Determine the values of:
     \begin{enumerate}
         \begin{multicols}{3}

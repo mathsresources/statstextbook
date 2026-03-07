@@ -138,7 +138,7 @@ Parameters define the precise distribution that random variables take within *"f
 
 $$X\sim \text{U}(6)\quad\text{ and }\quad Y\sim \text{U}(4)$$
 
-The SQA Data Booklet gives the formulae to calculate *expectation* and *variance* for the discrete uniform distribution. For $X\sim \text{U}(k)$:
+The  Data Booklet gives the formulae to calculate *expectation* and *variance* for the discrete uniform distribution. For $X\sim \text{U}(k)$:
 
 $$\text{E}(X)=\frac{k+1}{2}\quad \text{ and }\quad \text{V}(X)=\frac{k^2-1}{12}$$
 
@@ -293,13 +293,13 @@ Consider a spinning wheel that lands on a shaded sector with probability $\frac{
 \vspace{-0.5cm}
 To calculate the probability of *exactly two successes*, consider the probability of the first two spins resulting in success followed by four failures. Since each trial is independent:
 
-$$\text{P}(success,success,fail,fail,fail,fail)=0.4\times0.4\times0.6\times0.6\times0.6\times0.6=0.4^2\times0.6^4=0.0207$$
+$$\text{P}(\text{success, success, fail, fail, fail, fail})=0.4\times0.4\times0.6\times0.6\times0.6\times0.6=0.4^2\times0.6^4=0.0207$$
 
 However there are a number of other possible *combinations* of successes and failures that *also* give exactly two successes, *each* with probability $0.0207$. The number of possible combinations from $n$ trials resulting in $x$ successes can be calculated using the *binomial coefficient*, ${}^{n}C_{x}$. For $6$ trials of which $2$ are successes, a calculator will provide the value of ${}^{6}C_{2}$.
 
 $$\text{P}(X=2)={}^{6}C_{2}\times0.4^2\times0.6^4=0.3110$$
 
-The SQA Data Booklet gives the **formula** to calculate *individual* probabilities for the binomial distribution:
+The  Data Booklet gives the **formula** to calculate *individual* probabilities for the binomial distribution:
 
 $$\text{Given }X\sim \text{B}(n,p)\text{: }\qquad \text{P}(X=x)={}^{n}C_{x}\times p^x\times q^{n-x}$$
 \pagebreak
@@ -314,7 +314,7 @@ $$\text{Given }X\sim \text{B}(n,p)\text{: }\qquad \text{P}(X=x)={}^{n}C_{x}\time
 
 \begin{center}
 \begin{equation*}
-\text{P}(X=1)={}^{7}C_{1}\times \left(\frac{1}{3}\right)^1\times \left(\frac{2}{3}\right)^6=0.2048
+\text{P}(X=1)={}^{7}C_{1}\times \left(\tfrac{1}{3}\right)^1\times \left(\tfrac{2}{3}\right)^6=0.2048
 \end{equation*}
 \end{center}
 
@@ -332,9 +332,9 @@ Let random variable $X$ represent the number of times that the card drawn is spa
 
 \begin{center}
 \begin{align*}
-X&\sim B\left(12,\frac{1}{4}\right)\\[1em]
+X&\sim B\left(12,\tfrac{1}{4}\right)\\[1em]
 \text{P}(X<2)&=\text{P}(X=0)+\text{P}(X=1)\\[1em]
-&={}^{12}C_{0}\times \left(\frac{1}{4}\right)^0\times \left(\frac{3}{4}\right)^{12}+{}^{12}C_{1}\times \left(\frac{1}{4}\right)^1\times \left(\frac{3}{4}\right)^{11}\\[1em]
+&={}^{12}C_{0}\times \left(\tfrac{1}{4}\right)^0\times \left(\tfrac{3}{4}\right)^{12}+{}^{12}C_{1}\times \left(\tfrac{1}{4}\right)^1\times \left(\tfrac{3}{4}\right)^{11}\\[1em]
 &=0.0317+0.1267\\[1em]
 &=0.1584
 \end{align*}
@@ -437,7 +437,7 @@ $\text{P}(X\geqslant 2)=1-\text{P}(X\leqslant 1)=1-0.6590=0.3410$
 
 ## The Mean and Variance of the Binomial Distribution
 
-The SQA Data Booklet gives the formulae for the *mean* and *variance* of binomial distribution.
+The  Data Booklet gives the formulae for the *mean* and *variance* of binomial distribution.
 
 Given random variable $X$ such that $X\sim \text{B}(n,p)$:
 
@@ -546,7 +546,7 @@ Assume that the mean rate of 2.5 phone calls per hour is *constant* across the o
 \end{tikzpicture}
 \end{center}
 
-As with the binomial distribution, individual Poisson probabilities can calculated using a formula, provided in the SQA Data Booklet.
+As with the binomial distribution, individual Poisson probabilities can calculated using a formula, provided in the  Data Booklet.
 
 Given random variable $X\sim \text{Po}(\lambda)$:
 
@@ -580,12 +580,14 @@ $$\text{P}(X=10)=\frac{e^{-6} \times 6^{10}}{10!}=0.0413$$
 
 \begin{enumerate}
     \item Given random variable $X$ such that $X\sim \text{Po}(2.5)$, use the formula to calculate:
+    \begin{multicols}{4}
     \begin{enumerate}
         \item $\text{P}(X=4)$.
         \item $\text{P}(X=0)$.
         \item $\text{P}(X<2)$.
         \item $\text{P}(X\geqslant2)$.
     \end{enumerate}
+    \end{multicols}
     \item Let random variable $X$ represent the number of goals in a game of Sunday League football, known to follow a Poisson distribution with a mean of 4 goals.
     \begin{enumerate}
         \item State the distribution of $X$.
@@ -595,7 +597,7 @@ $$\text{P}(X=10)=\frac{e^{-6} \times 6^{10}}{10!}=0.0413$$
 
 ### Poisson Calculations using Tables and Calculators
 
-As with the binomial distribution, in general it is far quicker to use the cumulative probability tables in the SQA Data Booklet, or a grapical calculator, to calculate Poisson probabilities.
+As with the binomial distribution, in general it is far quicker to use the cumulative probability tables in the  Data Booklet, or a grapical calculator, to calculate Poisson probabilities.
 
 []{#ex76q}
 
@@ -631,7 +633,7 @@ As with the binomial distribution, in general it is far quicker to use the cumul
 
 ## The Mean and Variance of the Poisson Distribution
 
-The mean and variance of a Poisson distribution are stated in the SQA Data Booklet. Given $X\sim \text{Po}(\lambda)$:
+The mean and variance of a Poisson distribution are stated in the  Data Booklet. Given $X\sim \text{Po}(\lambda)$:
 
 $$\text{E}(X)=\text{V}(X)=\lambda \qquad \text{and} \qquad \text{SD}(X)=\sqrt{\lambda}$$
 
