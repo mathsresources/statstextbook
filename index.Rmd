@@ -25,15 +25,15 @@ Statistics is the science of collecting, organising, presenting and analysing da
 \begin{tikzpicture}
 \draw[semithick,fill=black!10] (0,0) rectangle (8,5);
 \node at (4,5.3) {Population};
-\draw[semithick,fill=black!10] (12,2.5) circle (1.5);
+\draw[semithick,fill=black!15] (12,2.5) circle (1.5);
 \node at (12,4.3) {Sample};
 
-\draw[very thick,fill=black!10] (7,4.65) circle (0.35);
-\draw[very thick,fill=black!10] (4,4.05) circle (0.35);
-\draw[very thick,fill=black!10] (2,3.45) circle (0.35);
-\draw[very thick,fill=black!10] (7,2.25) circle (0.35);
-\draw[very thick,fill=black!10] (2.5,1.05) circle (0.35);
-\draw[very thick,fill=black!10] (6,0.45) circle (0.35);
+\draw[very thick,fill=black!15] (7,4.65) circle (0.35);
+\draw[very thick,fill=black!15] (4,4.05) circle (0.35);
+\draw[very thick,fill=black!15] (2,3.45) circle (0.35);
+\draw[very thick,fill=black!15] (7,2.25) circle (0.35);
+\draw[very thick,fill=black!15] (2.5,1.05) circle (0.35);
+\draw[very thick,fill=black!15] (6,0.45) circle (0.35);
 
 \node[alice,minimum size=0.04cm] at (11.5,2.75) {};
 \node[alice,minimum size=0.04cm] at (12,1.4) {};

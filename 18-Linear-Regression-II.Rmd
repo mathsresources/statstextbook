@@ -2816,101 +2816,6 @@ Use the residual plot to comment on the validity of the linear model.
 
 \pagebreak
 
-## Confidence and Prediction Intervals
-
-One purpose for adopting a regression approach to examine the relationship between two variables is the wish to predict a value for the response variable ($Y$) given a particular value for the predictor ($x$). 
-
-The least squares regression line equation of $\hat{Y_i}=a+bx_i$ gives an *estimate* for the **mean** value of the response variable for any given $x_i$, whilst the *true* mean response value for a given $x_i$, which is denoted $\text{E}(Y_i\,|\,x_i)$, is unknown. 
-
-It can be desirable to obtain a **confidence interval** for $\text{E}(Y_i\,|\,x_i)$. It can be shown that the *point estimate*, $\hat{Y_i}$, has a sample standard error of:
-
-$$s\sqrt{\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}$$
-
-If the errors, $\varepsilon_i$, are identically and independently distributed as $\text{N}\left(0,\sigma^2\right)$ then the formula below, given on Page 5 of the Data Booklet, can be derived.
-
-\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=12cm]
-A $100(1-\alpha)\%$ \textbf{confidence interval} for $\text{E}(Y_i\,|\,x_i)$ is given by:\\[1em]
-\[\hat{Y_i}\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}\]
-\end{tcolorbox}
-
-As with confidence intervals, the level of confidence relates to the success rate of the *procedure used to generate the interval*, rather than the probability of a calculated interval containing the mean response value $\text{E}(Y_i\,|\,x_i)$.
-
-\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
-\textbf{Problem:} The lengths in centimetres ($x$) and masses in kilograms ($y$) of 12 salmon were measured, with the results:
-
-\begin{center}
-    \begin{tabular}{ccccc}
-        $\Sigma x=30$ & $\Sigma y=540$ & $S_{xx}=12$ & $S_{yy}=4800$ & $S_{xy}=150$
-    \end{tabular}
-\end{center}
-
-Construct a 99\% confidence interval for the mean length of salmon with mass 3kg.
-
-\tcblower
-\textbf{Solution:}\\
-
-$b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{150}{12}=12.5, \quad a=\bar{y}-b\bar{x}=\dfrac{540}{12}-12.5\times \dfrac{30}{12}=13.75 \quad \implies \quad \hat{Y_i}=13.75+12.5x_i$\\[0.3em]
-
-$\hat{Y}=13.75+12.5\times 3=51.75$\\[0.3em]
-
-$SSR=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=4800-\dfrac{150^2}{12}=2925, \quad s^2=\dfrac{SSR}{n-2}=\dfrac{2925}{10}=292.5, \quad s=\sqrt{292.5}=17.1$\\[0.3em]
-
-A 99\% CI for $E(Y\,|\,x=3)$ is $51.75\,\pm\,3.169 \times 17.1\times \sqrt{\dfrac{1}{12}+\dfrac{(3-2.5)^2}{12}}=51.75\,\pm\,17.49$\\[0.3em]
-
-So a 99\% confidence interval for the mean mass of a 3kg salmon is $(34.26\text{cm}\,,\,69.24\text{cm})$.
-
-\end{tcolorbox}
-
-\pagebreak
-
-A similar but subtly different goal to predicting a *mean* response value is predicting an **individual** response value for a given $x_i$, denoted as $Y_i\,|\,x_i$. In the context of the previous example, that would be predicting the length of an *individual* salmon. Since the value for a sampled individual can be expected to have more variability that the value of a sample mean, a wider interval around $\hat{Y_i}$ is needed. The required interval is called a **prediction interval**.
-
-\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=12cm]
-A $100(1-\alpha)\%$ \textbf{prediction interval} for $Y_i\,|\,x_i$ is given by:\\[1em]
-\[\hat{Y_i}\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{1+\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}\]
-\end{tcolorbox}
-
-This formula, also given on Page 5 of the Data Booklet, relies also on the errors, $\varepsilon_i$, being identically and independently distributed as $\text{N}\left(0,\sigma^2\right)$
-
-\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
-\textbf{Problem:} The lengths in centimetres ($x$) and masses in kilograms ($y$) of 12 salmon were measured, with the results:
-
-\begin{center}
-    \begin{tabular}{ccccc}
-        $\Sigma x=30$ & $\Sigma y=540$ & $S_{xx}=12$ & $S_{yy}=4800$ & $S_{xy}=150$
-    \end{tabular}
-\end{center}
-
-Construct a 95\% prediction interval for the length of salmon with mass 4kg.
-
-\tcblower
-\textbf{Solution:}\\
-
-$b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{150}{12}=12.5, \quad a=\bar{y}-b\bar{x}=\dfrac{540}{12}-12.5\times \dfrac{30}{12}=13.75 \quad \implies \quad \hat{Y_i}=13.75+12.5x_i$\\[0.3em]
-
-$\hat{Y}=13.75+12.5\times 4=64.25$\\[0.3em]
-
-$SSR=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=4800-\dfrac{150^2}{12}=2925, \quad s^2=\dfrac{SSR}{n-2}=\dfrac{2925}{10}=292.5, \quad s=\sqrt{292.5}=17.1$\\[0.3em]
-
-A 95\% PI for $Y\,|\,x=3$ is $64.25\,\pm\,2.228 \times 17.1\times \sqrt{1+\dfrac{1}{12}+\dfrac{(4-2.5)^2}{12}}=64.25\,\pm\,42.95$\\[0.3em]
-
-So a 95\% prediction interval for the mass of a 4kg salmon is $(21.3\text{cm}\,,\,107.2\text{cm})$.
-
-\end{tcolorbox}
-
-[]{#ex188q}
-
-#### [Exercise 18.8](#ex188a) {-}
-
-\begin{enumerate}
-    \item From Context 1: Construct a 95\% confidence interval for the mean \% mass loss of a metal plate in the acid solution for 150 hours.
-    \item From Context 2: Construct a 90\% confidence interval for the mean carbohydrate content for a caffeinated drink with 400 calories.
-    \item From Context 3: Construct a 99\% prediction interval for the body fat \% for a patient with systolic blood pressure of 130.
-    \item From Context 4: Construct a 95\% prediction interval for the physics mark of a student who gained a maths mark of 74.
-\end{enumerate}
-
-\pagebreak
-
 ## Transforming Data
 
 If a residual plot indicates that a linear model is not valid then it may be possible to *transform* the data and fit a new linear model between the *transformed* variables. A further residual plot can be created and used to determine the appropriateness of this transformed model. In this course any proposed transformation of the data will be provided in the question, allowing a new least squares regression model to be determined using the transformed data.
@@ -3110,9 +3015,9 @@ The equation of the regression line is: $\sqrt{\texttt{distance}}\texttt{ = 0.79
 
 \end{tcolorbox}
 
-[]{#ex189q}
+[]{#ex188q}
 
-#### [Exercise 18.9](#ex189a) {-}
+#### [Exercise 18.8](#ex188a) {-}
 
 \begin{enumerate}
     \item An study was carried out in a factory to investigate the relationship between tool-wear ($w$ \%) and run-time ($x$ minutes) of a particular type of tool. A tool was randomly selected, and the results of the experiment are displayed in the scatterplot below. The line $\hat{W}=2.556+0.12287x$ was fitted to the data.
@@ -3238,6 +3143,101 @@ The new model has summary statistics of $\Sigma x=225,\;\Sigma y =6.564,\;\Sigma
     \item Find the new least squares regression line of $y$ on $x$.
     \item Estimate the tool-wear corresponding to a run-time of 32 minutes.\newline (Hint: $\log_a{t}=b$ can be written as $a^b=t$).
 \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+## Confidence and Prediction Intervals
+
+One purpose for adopting a regression approach to examine the relationship between two variables is the wish to predict a value for the response variable ($Y$) given a particular value for the predictor ($x$). 
+
+The least squares regression line equation of $\hat{Y_i}=a+bx_i$ gives an *estimate* for the **mean** value of the response variable for any given $x_i$, whilst the *true* mean response value for a given $x_i$, which is denoted $\text{E}(Y_i\,|\,x_i)$, is unknown. 
+
+It can be desirable to obtain a **confidence interval** for $\text{E}(Y_i\,|\,x_i)$. It can be shown that the *point estimate*, $\hat{Y_i}$, has a sample standard error of:
+
+$$s\sqrt{\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}$$
+
+If the errors, $\varepsilon_i$, are identically and independently distributed as $\text{N}\left(0,\sigma^2\right)$ then the formula below, given on Page 5 of the Data Booklet, can be derived.
+
+\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=12cm]
+A $100(1-\alpha)\%$ \textbf{confidence interval} for $\text{E}(Y_i\,|\,x_i)$ is given by:\\[1em]
+\[\hat{Y_i}\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}\]
+\end{tcolorbox}
+
+As with confidence intervals, the level of confidence relates to the success rate of the *procedure used to generate the interval*, rather than the probability of a calculated interval containing the mean response value $\text{E}(Y_i\,|\,x_i)$.
+
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
+\textbf{Problem:} The lengths in centimetres ($x$) and masses in kilograms ($y$) of 12 salmon were measured, with the results:
+
+\begin{center}
+    \begin{tabular}{ccccc}
+        $\Sigma x=30$ & $\Sigma y=540$ & $S_{xx}=12$ & $S_{yy}=4800$ & $S_{xy}=150$
+    \end{tabular}
+\end{center}
+
+Construct a 99\% confidence interval for the mean length of salmon with mass 3kg.
+
+\tcblower
+\textbf{Solution:}\\
+
+$b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{150}{12}=12.5, \quad a=\bar{y}-b\bar{x}=\dfrac{540}{12}-12.5\times \dfrac{30}{12}=13.75 \quad \implies \quad \hat{Y_i}=13.75+12.5x_i$\\[0.3em]
+
+$\hat{Y}=13.75+12.5\times 3=51.75$\\[0.3em]
+
+$SSR=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=4800-\dfrac{150^2}{12}=2925, \quad s^2=\dfrac{SSR}{n-2}=\dfrac{2925}{10}=292.5, \quad s=\sqrt{292.5}=17.1$\\[0.3em]
+
+A 99\% CI for $E(Y\,|\,x=3)$ is $51.75\,\pm\,3.169 \times 17.1\times \sqrt{\dfrac{1}{12}+\dfrac{(3-2.5)^2}{12}}=51.75\,\pm\,17.49$\\[0.3em]
+
+So a 99\% confidence interval for the mean mass of a 3kg salmon is $(34.26\text{cm}\,,\,69.24\text{cm})$.
+
+\end{tcolorbox}
+
+\pagebreak
+
+A similar but subtly different goal to predicting a *mean* response value is predicting an **individual** response value for a given $x_i$, denoted as $Y_i\,|\,x_i$. In the context of the previous example, that would be predicting the length of an *individual* salmon. Since the value for a sampled individual can be expected to have more variability that the value of a sample mean, a wider interval around $\hat{Y_i}$ is needed. The required interval is called a **prediction interval**.
+
+\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=12cm]
+A $100(1-\alpha)\%$ \textbf{prediction interval} for $Y_i\,|\,x_i$ is given by:\\[1em]
+\[\hat{Y_i}\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{1+\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}\]
+\end{tcolorbox}
+
+This formula, also given on Page 5 of the Data Booklet, relies also on the errors, $\varepsilon_i$, being identically and independently distributed as $\text{N}\left(0,\sigma^2\right)$
+
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
+\textbf{Problem:} The lengths in centimetres ($x$) and masses in kilograms ($y$) of 12 salmon were measured, with the results:
+
+\begin{center}
+    \begin{tabular}{ccccc}
+        $\Sigma x=30$ & $\Sigma y=540$ & $S_{xx}=12$ & $S_{yy}=4800$ & $S_{xy}=150$
+    \end{tabular}
+\end{center}
+
+Construct a 95\% prediction interval for the length of salmon with mass 4kg.
+
+\tcblower
+\textbf{Solution:}\\
+
+$b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{150}{12}=12.5, \quad a=\bar{y}-b\bar{x}=\dfrac{540}{12}-12.5\times \dfrac{30}{12}=13.75 \quad \implies \quad \hat{Y_i}=13.75+12.5x_i$\\[0.3em]
+
+$\hat{Y}=13.75+12.5\times 4=64.25$\\[0.3em]
+
+$SSR=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=4800-\dfrac{150^2}{12}=2925, \quad s^2=\dfrac{SSR}{n-2}=\dfrac{2925}{10}=292.5, \quad s=\sqrt{292.5}=17.1$\\[0.3em]
+
+A 95\% PI for $Y\,|\,x=3$ is $64.25\,\pm\,2.228 \times 17.1\times \sqrt{1+\dfrac{1}{12}+\dfrac{(4-2.5)^2}{12}}=64.25\,\pm\,42.95$\\[0.3em]
+
+So a 95\% prediction interval for the mass of a 4kg salmon is $(21.3\text{cm}\,,\,107.2\text{cm})$.
+
+\end{tcolorbox}
+
+[]{#ex188q}
+
+#### [Exercise 18.9](#ex189a) {-}
+
+\begin{enumerate}
+    \item From Context 1: Construct a 95\% confidence interval for the mean \% mass loss of a metal plate in the acid solution for 150 hours.
+    \item From Context 2: Construct a 90\% confidence interval for the mean carbohydrate content for a caffeinated drink with 400 calories.
+    \item From Context 3: Construct a 99\% prediction interval for the body fat \% for a patient with systolic blood pressure of 130.
+    \item From Context 4: Construct a 95\% prediction interval for the physics mark of a student who gained a maths mark of 74.
 \end{enumerate}
 
 \pagebreak

@@ -1,10 +1,10 @@
 # Continuous Distributions
 
-Data that results from measuring is often continuous, such as the height of a person, the mass of a piece of fruit or the volume of tea in a cup. *Continuous* means that if there were no limits to the accuracy of the measuring device, there would be an infinite set of possible values in any given range. A **continuous random variable** takes a *range* of real numbers, instead of a list. For example, the time taken to complete a task could take *any real, positive number*, or $\{x\in R,x>0\}$.
+Data that results from measuring is often continuous, such as the height of a person, the mass of a piece of fruit or the volume of tea in a cup. *Continuous* means that if there were no limits to the precision of the measuring device, there would be an infinite set of possible values in any given range. A **continuous random variable** takes a *range* of real numbers, instead of a list. For example, the time taken to complete a task could take *any real, positive number*, or $\{x\in R,x>0\}$.
 
 ### Probability and Continuous Distributions {-}
 
-Since a continuous random variable can take an infinite set of values, it is not possible for any *particular* value to be assigned a non-zero probability. This leads to the somewhat counter-intuitive result that, for any given value $x$, $\text{P}(X=x)=0$. Instead, probabilities are assigned to *ranges of values*. For example, letting random variable $X$ represent the time taken to complete a task, measured in seconds, an example of probabilities for this continuous random variable could be:
+Since a continuous random variable can take any of an infinite set of possible values, it is not possible for any *precise* value to be assigned a non-zero probability. This leads to the somewhat counter-intuitive result that, for any given value $x$, $\text{P}(X=x)=0$. Instead, probabilities are assigned to *intervals*. For example, letting random variable $X$ represent the time taken to complete a task, measured in seconds, an example of probabilities for this continuous random variable could be:
 
 $$\text{P}(X=26)=0\quad \textit{ but }\quad \text{P}(24<X<28.5)=0.5328$$
 
@@ -33,7 +33,7 @@ Probabilities are calculated not from the *height* of the graphed probability di
   hide y axis,
   hide x axis
   ]
-\addplot [draw=none, fill=black!20, domain=-1:0.5] {gauss(x, 0, 1)} \closedcycle;
+\addplot [draw=none, fill=Black!20, domain=-1:0.5] {gauss(x, 0, 1)} \closedcycle;
  \addplot [semithick] {gauss(x, 0, 1)};
 \pgfmathsetmacro\valueA{gauss(-1,0,1)}
 \pgfmathsetmacro\valueB{gauss(0.5,0,1)}
@@ -41,12 +41,15 @@ Probabilities are calculated not from the *height* of the graphed probability di
 \node[below] at (axis cs: -1,0)  {$24$};
 \node[below] at (axis cs: 0.5,0)  {$28.5$};
 \node[above] at (axis cs: -0.25,0.1)  {$0.5328$};
-\fill[black!20] (axis cs: -1,-0.01) rectangle (axis cs: 0.5,0.05);
+\fill[Black!20] (axis cs: -1,-0.01) rectangle (axis cs: 0.5,0.05);
 \draw [semithick, black]  (axis cs:-1,-0.01) -- (axis cs:-1,\valueA);
 \draw [semithick, black]  (axis cs:0.5,-0.01) -- (axis cs:0.5,\valueB);
 \draw[semithick] (axis cs: -1,0) -- (axis cs: -1,0.05);
 \draw[semithick] (axis cs: 0.5,0) -- (axis cs: 0.5,0.05);
 \draw[semithick] (axis cs: -3,-0.01) -- (axis cs: 3,-0.01);
+\draw[semithick,-stealth] (axis cs: -3.2,-0.01) -- (axis cs: 3.2,-0.01) node[below] {$x$}; 
+\draw[semithick,-stealth] (axis cs: -3.2,-0.01) -- (axis cs: -3.2,0.5);
+\node[left,text width=2cm,align=center] at (axis cs: -3.2,0.4) {probability density};
 \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -78,7 +81,7 @@ If random variable $X$ can take *any real value* between $a$ and $b$ with a *con
     }
 }
     \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 4cm, width = 6cm, ybar,bar width=10pt, xmin=1,xmax=9,ymin=0,ymax=0.4, xtick={2,7},xticklabels={a,b},ytick={0.3},yticklabels={k},xlabel=$x$,ylabel=probability density]
-\fill[black!25] (axis cs: 2,0) rectangle (axis cs: 7,0.3);
+\fill[Black!20] (axis cs: 2,0) rectangle (axis cs: 7,0.3);
 \draw[thick] (axis cs: 2,0) rectangle (axis cs: 7,0.3);
     \end{axis}
 \end{tikzpicture}
@@ -139,8 +142,8 @@ $\text{P}(31<T<34)=3\times \frac{1}{15}=\frac{3}{15}=\frac{1}{5}$
     }
 }
     \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3cm, width = 8cm, ybar,bar width=10pt, xmin=2,xmax=5,ymin=0,ymax=0.4, xtick={2.7,3.1,3.4,4.2},xticklabels={27,31,34,42},ytick={0.3},yticklabels={k},xlabel=$t$,ylabel=probability density]
-\fill[black!25] (axis cs: 2.7,0) rectangle (axis cs: 4.2,0.3);
-\fill[black!50] (axis cs: 3.1,0) rectangle (axis cs: 3.4,0.3);
+\fill[Black!20] (axis cs: 2.7,0) rectangle (axis cs: 4.2,0.3);
+\fill[Black!50] (axis cs: 3.1,0) rectangle (axis cs: 3.4,0.3);
 \draw[thick] (axis cs: 2.7,0) rectangle (axis cs: 4.2,0.3);
 \draw[thick] (axis cs: 3.1,0) rectangle (axis cs: 3.4,0.3);
     \end{axis}
@@ -396,11 +399,11 @@ The shape of the curve illustrates that values closer to the mean are more likel
   hide y axis,
   hide x axis
   ]
-\addplot [draw=none, fill=black!10, domain=-3:3] {gauss(x, 0, 1)}
+\addplot [draw=none, fill=Black!10, domain=-3:3] {gauss(x, 0, 1)}
 \closedcycle;
-\addplot [draw=none, fill=black!25, domain=-2:2] {gauss(x, 0, 1)}
+\addplot [draw=none, fill=Black!20, domain=-2:2] {gauss(x, 0, 1)}
 \closedcycle;
-\addplot [draw=none, fill=black!40, domain=-1:1] {gauss(x, 0, 1)}
+\addplot [draw=none, fill=Black!40, domain=-1:1] {gauss(x, 0, 1)}
 \closedcycle;
  \addplot [semithick] {gauss(x, 0, 1)};
 \pgfmathsetmacro\valueA{gauss(0,0,1)}
@@ -422,9 +425,9 @@ The shape of the curve illustrates that values closer to the mean are more likel
 \node[below] at (axis cs: -3,0)  {$-3\sigma$};
 \node[below] at (axis cs: 3,0)  {$+3\sigma$};
 \node[above] at (axis cs: 0,\valueA)  {$\mu$};
-\fill[black!10] (axis cs: -3,-0.01) rectangle (axis cs: 3,0);
-\fill[black!25] (axis cs: -2,-0.01) rectangle (axis cs: 2,0);
-\fill[black!40] (axis cs: -1,-0.01) rectangle (axis cs: 1,0);
+\fill[Black!10] (axis cs: -3,-0.01) rectangle (axis cs: 3,0);
+\fill[Black!20] (axis cs: -2,-0.01) rectangle (axis cs: 2,0);
+\fill[Black!40] (axis cs: -1,-0.01) rectangle (axis cs: 1,0);
 \draw [semithick, black]  (axis cs:0,-0.01) -- (axis cs:0,\valueA);
 \draw [semithick, black]  (axis cs:-1,-0.01) -- (axis cs:-1,\valueB);
 \draw [semithick, black]  (axis cs:1,-0.01) -- (axis cs:1,\valueC);
@@ -547,12 +550,12 @@ $Z$ is called the **standard normal distribution**, and it is used to calculate 
   hide y axis,
   hide x axis
   ]
-\addplot [draw=none, fill=black!20, domain=-3:1.24] {gauss(x, 0, 1)} 
+\addplot [draw=none, fill=Black!20, domain=-3:1.24] {gauss(x, 0, 1)} 
 \closedcycle;
  \addplot [semithick] {gauss(x, 0, 1)};
 \pgfmathsetmacro\valueA{gauss(1.24,0,1)}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
-\fill[black!20] (axis cs: -3,-0.02) rectangle (axis cs: 1.24,0);
+\fill[Black!20] (axis cs: -3,-0.02) rectangle (axis cs: 1.24,0);
 \draw [semithick, black]  (axis cs:1.24,-0.02) -- (axis cs:1.24,\valueA);
 \node[below] at (axis cs: 1.24,0)  {$1.24$};
 \node[below] at (axis cs: 0,0)  {$0$};
@@ -600,12 +603,12 @@ $Z$ is called the **standard normal distribution**, and it is used to calculate 
   hide y axis,
   hide x axis
   ]
-\addplot [draw=none, fill=black!20, domain=0.71:3] {gauss(x, 0, 1)} 
+\addplot [draw=none, fill=Black!20, domain=0.71:3] {gauss(x, 0, 1)} 
 \closedcycle;
  \addplot [semithick] {gauss(x, 0, 1)};
 \pgfmathsetmacro\valueA{gauss(0.71,0,1)}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
-\fill[black!20] (axis cs: 0.71,-0.02) rectangle (axis cs: 3,0);
+\fill[Black!20] (axis cs: 0.71,-0.02) rectangle (axis cs: 3,0);
 \draw [semithick, black]  (axis cs:0.71,-0.02) -- (axis cs:0.71,\valueA);
 \node[below] at (axis cs: 0.71,0)  {$0.71$};
 \node[below] at (axis cs: 0,0)  {$0$};
@@ -656,12 +659,12 @@ $Z$ is called the **standard normal distribution**, and it is used to calculate 
   hide y axis,
   hide x axis
   ]
-\addplot [draw=none, fill=black!20, domain=-1.05:3] {gauss(x, 0, 1)} 
+\addplot [draw=none, fill=Black!20, domain=-1.05:3] {gauss(x, 0, 1)} 
 \closedcycle;
  \addplot [semithick] {gauss(x, 0, 1)};
 \pgfmathsetmacro\valueA{gauss(-1.05,0,1)}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
-\fill[black!20] (axis cs: -1.05,-0.02) rectangle (axis cs: 3,0);
+\fill[Black!20] (axis cs: -1.05,-0.02) rectangle (axis cs: 3,0);
 \draw [semithick, black]  (axis cs:-1.05,-0.02) -- (axis cs:-1.05,\valueA);
 \node[below] at (axis cs: -1.05,0)  {$-1.05$};
 \node[below] at (axis cs: 0,0)  {$0$};
@@ -710,13 +713,13 @@ $Z$ is called the **standard normal distribution**, and it is used to calculate 
   hide y axis,
   hide x axis
   ]
-\addplot [draw=none, fill=black!20, domain=0.7:1.5] {gauss(x, 0, 1)}
+\addplot [draw=none, fill=Black!20, domain=0.7:1.5] {gauss(x, 0, 1)}
 \closedcycle;
  \addplot [semithick] {gauss(x, 0, 1)};
 \pgfmathsetmacro\valueA{gauss(0.7,0,1)}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
 \pgfmathsetmacro\valueC{gauss(1.5,0,1)}
-\fill[black!20] (axis cs: 0.7,-0.02) rectangle (axis cs: 1.5,0);
+\fill[Black!20] (axis cs: 0.7,-0.02) rectangle (axis cs: 1.5,0);
 \draw [semithick, black]  (axis cs:0.7,-0.02) -- (axis cs:0.7,\valueA);
 \draw [semithick, black]  (axis cs:1.5,-0.02) -- (axis cs:1.5,\valueC);
 \node[below] at (axis cs: 0.7,0)  {$0.7$};
@@ -850,12 +853,12 @@ $$\text{P}(X<29)=\text{P}\left(Z<\dfrac{X-\mu}{\sigma}\right)=\text{P}\left(Z<\d
   hide y axis,
   hide x axis
   ]
-\addplot [draw=none, fill=black!20, domain=-3:1.5] {gauss(x, 0, 1)} 
+\addplot [draw=none, fill=Black!20, domain=-3:1.5] {gauss(x, 0, 1)} 
 \closedcycle;
  \addplot [semithick] {gauss(x, 0, 1)};
 \pgfmathsetmacro\valueA{gauss(1.5,0,1)}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
-\fill[black!20] (axis cs: -3,-0.02) rectangle (axis cs: 1.5,0);
+\fill[Black!20] (axis cs: -3,-0.02) rectangle (axis cs: 1.5,0);
 \draw [semithick, black]  (axis cs:1.5,-0.02) -- (axis cs:1.5,\valueA);
 \node[below] at (axis cs: 1.5,0)  {$29$};
 \node[below] at (axis cs: 0,0)  {$20$};
@@ -901,12 +904,12 @@ $\text{P}(X<29)=0.9332$
   hide y axis,
   hide x axis
   ]
-\addplot [draw=none, fill=black!20, domain=-3:1.5] {gauss(x, 0, 1)} 
+\addplot [draw=none, fill=Black!20, domain=-3:1.5] {gauss(x, 0, 1)} 
 \closedcycle;
  \addplot [semithick] {gauss(x, 0, 1)};
 \pgfmathsetmacro\valueA{gauss(1.5,0,1)}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
-\fill[black!20] (axis cs: -3,-0.02) rectangle (axis cs: 1.5,0);
+\fill[Black!20] (axis cs: -3,-0.02) rectangle (axis cs: 1.5,0);
 \draw [semithick, black]  (axis cs:1.5,-0.02) -- (axis cs:1.5,\valueA);
 \node[below] at (axis cs: 1.5,0)  {$1.5$};
 \node[below] at (axis cs: 0,0)  {$0$};
@@ -962,12 +965,12 @@ $\text{P}(X>300)=\text{P}(Z>\frac{\text{$X-\mu$}}{\text{$\sigma$}})=\text{P}(Z>\
   hide y axis,
   hide x axis
   ]
-\addplot [draw=none, fill=black!20, domain=0.33:3] {gauss(x, 0, 1)} 
+\addplot [draw=none, fill=Black!20, domain=0.33:3] {gauss(x, 0, 1)} 
 \closedcycle;
  \addplot [semithick] {gauss(x, 0, 1)};
 \pgfmathsetmacro\valueA{gauss(0.33,0,1)}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
-\fill[black!20] (axis cs: 0.33,-0.02) rectangle (axis cs: 3,0);
+\fill[Black!20] (axis cs: 0.33,-0.02) rectangle (axis cs: 3,0);
 \draw [semithick, black]  (axis cs:0.33,-0.02) -- (axis cs:0.33,\valueA);
 \node[below] at (axis cs: 0.33,0)  {$0.33$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
@@ -1082,12 +1085,12 @@ $\text{P}(X>300)=\text{P}(Z>\frac{\text{$X-\mu$}}{\text{$\sigma$}})=\text{P}(Z>\
   hide y axis,
   hide x axis
   ]
-\addplot [draw=none, fill=black!20, domain=-3:1.28] {gauss(x, 0, 1)} 
+\addplot [draw=none, fill=Black!20, domain=-3:1.28] {gauss(x, 0, 1)} 
 \closedcycle;
  \addplot [semithick] {gauss(x, 0, 1)};
 \pgfmathsetmacro\valueA{gauss(1.28,0,1)}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
-\fill[black!20] (axis cs: -3,-0.02) rectangle (axis cs: 1.28,0);
+\fill[Black!20] (axis cs: -3,-0.02) rectangle (axis cs: 1.28,0);
 \draw [semithick, black]  (axis cs:1.28,-0.02) -- (axis cs:1.28,\valueA);
 \node[below] at (axis cs: 1.28,0)  {$1.28$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
@@ -1134,13 +1137,13 @@ X\sim &\text{N}(31,4^2)\\
   hide y axis,
   hide x axis
   ]
-\addplot [draw=none, fill=black!20, domain=-1.64:3] {gauss(x, 0, 1)} 
+\addplot [draw=none, fill=Black!20, domain=-1.64:3] {gauss(x, 0, 1)} 
 \closedcycle;
  \addplot [semithick] {gauss(x, 0, 1)};
 \pgfmathsetmacro\valueA{gauss(1.28,0,1)}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
 \pgfmathsetmacro\valueC{gauss(1.64,0,1)}
-\fill[black!20] (axis cs: -1.64,-0.02) rectangle (axis cs: 3,0);
+\fill[Black!20] (axis cs: -1.64,-0.02) rectangle (axis cs: 3,0);
 \draw [semithick, black]  (axis cs:-1.64,-0.02) -- (axis cs:-1.64,\valueC);
 \node[below] at (axis cs: -1.64,0)  {$-1.64$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
@@ -1187,13 +1190,13 @@ x=&7+1.96\times 0.25\hspace{3cm}
   hide y axis,
   hide x axis
   ]
-\addplot [draw=none, fill=black!20, domain=-1.96:1.96] {gauss(x, 0, 1)} 
+\addplot [draw=none, fill=Black!20, domain=-1.96:1.96] {gauss(x, 0, 1)} 
 \closedcycle;
  \addplot [semithick] {gauss(x, 0, 1)};
 \pgfmathsetmacro\valueA{gauss(1.28,0,1)}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
 \pgfmathsetmacro\valueC{gauss(1.96,0,1)}
-\fill[black!20] (axis cs: -1.96,-0.02) rectangle (axis cs: 1.96,0);
+\fill[Black!20] (axis cs: -1.96,-0.02) rectangle (axis cs: 1.96,0);
 \draw [semithick, black]  (axis cs:-1.96,-0.02) -- (axis cs:-1.96,\valueC);
 \draw [semithick, black]  (axis cs:1.96,-0,02) -- (axis cs:1.96,\valueC);
 \node[below] at (axis cs: 1.96,0)  {$1.96$};
@@ -1247,13 +1250,13 @@ X\sim & \text{N}(6.8,\sigma^2)\\
   hide y axis,
   hide x axis
   ]
-\addplot [draw=none, fill=black!20, domain=-3.2:3.09] {gauss(x, 0, 1)} 
+\addplot [draw=none, fill=Black!20, domain=-3.2:3.09] {gauss(x, 0, 1)} 
 \closedcycle;
  \addplot [semithick] {gauss(x, 0, 1)};
 \pgfmathsetmacro\valueA{gauss(1.96,0,1)}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
 \pgfmathsetmacro\valueC{gauss(3.09,0,1)}
-\fill[black!20] (axis cs: -3.2,-0.02) rectangle (axis cs: 3.09,0);
+\fill[Black!20] (axis cs: -3.2,-0.02) rectangle (axis cs: 3.09,0);
 \draw [semithick, black]  (axis cs:3.09,-0,02) -- (axis cs:3.09,\valueC);
 \node[below] at (axis cs: 3.09,0)  {$3.09$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
@@ -1444,7 +1447,7 @@ Assuming the time taken for the cycle to complete and the time taken for the own
     }
 }
     \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3cm, width = 6cm, ybar,bar width=10pt, xmin=1,xmax=11,ymin=0,ymax=0.4, xtick={2,3,4,5,6,7,8,9,10},xticklabels={0,1,2,3,4,5,6,7,8},yticklabels=\empty,xlabel=$x$,ylabel=probability,ytick=\empty]
-        \addplot[fill=black!25, draw=black] coordinates {
+        \addplot[fill=Black!20, draw=black] coordinates {
     (2,0.168)
     (3,0.336) 
     (4,0.294) 
@@ -1480,7 +1483,7 @@ Assuming the time taken for the cycle to complete and the time taken for the own
     }
 }
     \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3cm, width = 6cm, ybar,bar width=3pt, xmin=1,xmax=28,ymin=0,ymax=0.2, xtick={2,7,12,17,22,27},xticklabels={0,5,10,15,20,25},yticklabels=\empty,xlabel=$x$,ylabel=probability,ytick=\empty]
-        \addplot[fill=black!25, draw=black] coordinates {
+        \addplot[fill=Black!20, draw=black] coordinates {
     (2,0.0000028)
     (3,0.00005) 
     (4,0.0004) 
@@ -1529,7 +1532,7 @@ Assuming the time taken for the cycle to complete and the time taken for the own
     ybar=0pt, bar width=1,every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
     every axis y label/.style={at={(current axis.above origin)},anchor=south east},x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3cm, width = 6cm,xlabel=$x$,ylabel=probability,ytick=\empty,yticklabels=\empty
 ]
-\addplot [fill=black!25, fill opacity=0.5] {binom(x,60,0.5)}; 
+\addplot [fill=Black!20, fill opacity=0.5] {binom(x,60,0.5)}; 
 \end{axis}
 \end{tikzpicture}
 \captionof{figure}{$B(60,0.5)$}
@@ -1579,7 +1582,7 @@ Approximating probabilities for a *discrete* distribution using a *continuous* d
   grid = major,
   hide y axis
   ]
-\addplot [draw=none, fill=black!20, domain=11.5:14] {gauss(x, 12, 6)} 
+\addplot [draw=none, fill=Black!20, domain=11.5:14] {gauss(x, 12, 6)} 
 \closedcycle;
  \addplot [semithick] {gauss(x,12,6)};
 \pgfmathsetmacro\valueA{gauss(12,12,6)}
@@ -1703,7 +1706,7 @@ $X\approx \text{N}(10,7.5)$
     }
 }
     \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3cm, width = 6cm, ybar,bar width=10pt, xmin=1,xmax=11,ymin=0,ymax=0.4, xtick={2,3,4,5,6,7,8,9,10},xticklabels={0,1,2,3,4,5,6,7,8},yticklabels=\empty,xlabel=$x$,ylabel=probability,ytick=\empty]
-        \addplot[fill=black!25, draw=black] coordinates {
+        \addplot[fill=Black!20, draw=black] coordinates {
     (2,0.223)
     (3,0.335) 
     (4,0.251) 
@@ -1735,7 +1738,7 @@ $X\approx \text{N}(10,7.5)$
     ybar=0pt, bar width=1,every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
     every axis y label/.style={at={(current axis.above origin)},anchor=south east},x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3cm, width = 6cm,xtick={0,8,16},,xticklabels={0,8,16},xlabel=$x$,ylabel=probability,ymax=0.2,ytick=\empty,yticklabels=\empty
 ]
-\addplot [fill=black!25, fill opacity=0.5] {pois(x,8)}; 
+\addplot [fill=Black!20, fill opacity=0.5] {pois(x,8)}; 
 \end{axis}
 \end{tikzpicture}
 \captionof{figure}{$Po(8)$}
@@ -1757,7 +1760,7 @@ $X\approx \text{N}(10,7.5)$
     ybar=0pt, bar width=1,every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
     every axis y label/.style={at={(current axis.above origin)},anchor=south east},x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3cm, width = 6cm,xtick={0,25,50},,xticklabels={0,25,50},xlabel=$x$,ylabel=probability,ytick=\empty,yticklabels=\empty
 ]
-\addplot [fill=black!25, fill opacity=0.5] {pois(x,25)}; 
+\addplot [fill=Black!20, fill opacity=0.5] {pois(x,25)}; 
 \end{axis}
 \end{tikzpicture}
 \captionof{figure}{$Po(25)$}
