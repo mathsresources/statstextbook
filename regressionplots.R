@@ -100,3 +100,36 @@ linear_model_residual_plot <- function(samplesize="random",
   abline(h = 0, col = "red", lwd = 2)
   print(data)
 }
+
+samplesize<-10
+x <- rnorm(n=samplesize,
+           mean=runif(1,min=0,max=100),
+           sd=runif(1,min=1,max=10)
+)
+e <- rnorm(n=samplesize,
+           mean=0,
+           sd=runif(1,min=0.1,max=3)
+)
+alpha=runif(1,min=0,max=20)
+beta=runif(1,min=-2,max=2)
+y <- alpha + beta * x + e
+data <- data.frame(x, y)
+model <- lm(y ~ x, data = data)
+par(mfrow=c(1,2))
+plot(data,
+     pch=20,
+     col="blue",
+     main="Scatter Plot",
+     xlab="x values",
+     ylab="y values")
+abline(lm(y~x), col="red")
+plot(
+  fitted(model), resid(model),
+  main = "Residual Plot",
+  xlab = "Fitted Values",
+  ylab = "Residuals",
+  pch = 20, col = "blue"
+)
+abline(h = 0, col = "red", lwd = 2)
+print(data)
+
