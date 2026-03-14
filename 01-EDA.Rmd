@@ -2,9 +2,9 @@
 
 \vspace{-1cm}
 
-Datasets usually consist rows or columns of values, referred to as *raw data*. Before conducting any *statistical analysis*, a statistician will typically want to get a quick sense of what the data may reveal, as well as to identify any features of note. Common first steps are therefore often to: *organise* the data into suitable lists or tables; *visualise* the data using plots and graphs; and *measure* various properties of the data.
+Collected data, without any form of processing having been applied, is referred to as *raw data*. Before conducting any statistical analysis, a statistician will typically want to get a quick sense of the data, checking for any potential issues and identifying any features of note. Common first steps are therefore often to: *organise* the data into suitable lists or tables; *visualise* the data using plots and graphs; and *measure* various properties of the data.
 
-This process is often referred to as *exploratory data analysis*.
+This process is called *exploratory data analysis*.
 
 \begin{center}
 \begin{tikzpicture}
@@ -151,7 +151,7 @@ This process is often referred to as *exploratory data analysis*.
 \node at (16.5,0.1) {190};
 
 \node at (14.5,-0.5) {Height in cm};
-\node[align=center,text width=2cm] at (9.5,2) {Number of patients};
+\node[align=center,text width=2cm] at (10,2) {Number of patients};
 
 \node[anchor=east] at (11.9,0.5) {0};
 \node[anchor=east] at (11.9,1) {5};
@@ -272,13 +272,13 @@ For example, the table below shows data relating to some football players:
         \item What kind of animal the pets are.
     \end{multicols}
     \end{enumerate}
-    \begin{enumerate}
+    \begin{enumerate}[resume]
     \begin{multicols}{2}
         \item The pet’s age.
         \item The name of the pet.
     \end{multicols}
     \end{enumerate}
-    \begin{enumerate}
+    \begin{enumerate}[resume]
     \begin{multicols}{2}
         \item The mass of the pet.
         \item Whether the pet is a mammal.
@@ -292,13 +292,13 @@ For example, the table below shows data relating to some football players:
         \item The mass of a book.
     \end{multicols}
     \end{enumerate}
-    \begin{enumerate}
+    \begin{enumerate}[resume]
     \begin{multicols}{2}
         \item The number of pages in a book.
         \item The number of songs in an album.
     \end{multicols}
     \end{enumerate}
-    \begin{enumerate}
+    \begin{enumerate}[resume]
     \begin{multicols}{2}
         \item The volume of water in a bottle.
         \item Time taken to complete a puzzle.
