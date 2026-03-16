@@ -326,7 +326,7 @@ For example, the table below shows data relating to some football players:
 
 ## Population Parameters and Sample Statistics
 
-In a statistical investigation, the term **population** refers to the entire set of objects of interest, whilst a **sample** is a selection of some objects chosen from the population. Recognising the difference is fundamental to statistical analysis. 
+In a statistical study, the term **population** refers to the entire set of objects of interest, whilst a **sample** is a selection of some objects chosen from the population. Recognising the difference is fundamental to statistics. 
 
 \begin{center}
 \begin{tikzpicture}
@@ -497,7 +497,7 @@ In a statistical investigation, the term **population** refers to the entire set
 
 If data were available for an entire *population* then various **population parameters** could be calculated, such as the *population mean*. Since this is never really possible, instead *samples* are taken from populations. Measures calculated from a sample of data are called **sample statistics**, such as the *sample mean*. 
 
-Letters from the Greek alphabet are commonly used to represent population parameters, such as:
+Letters from the Greek alphabet are commonly used to represent population parameters.
 
 \begin{center}
 \begin{tabular}{lll}
@@ -528,13 +528,15 @@ It is good practice to refer *clearly* to whether a population parameter or samp
 
 Population parameters are seen as having fixed values, at the time of the study at least, whilst the values of sample statistics will depend on the sample chosen. 
 
-Sample statistics may be seen as \textit{estimates} of the true value of their respective population parameters, and \hbox{\textbf{inference}} is the process by which claims may be made about population parameters (such as $\mu$ )based on observed sample statistics (such as $\bar{x}$). 
+Sample statistics may be seen as \textit{estimates} of the true value of their respective population parameters, and \hbox{\textbf{inference}} is the process by which claims may be made about population parameters (such as $\mu$) based on observed sample statistics (such as $\bar{x}$). 
 
 \end{multicols}
 
 []{#ex12q}
 
 #### [Exercise 1.2](#ex12a) {-}
+
+\vspace{-0.2cm}
 
 \textit{For each, state using the context of the question which population parameter or sample statistic has been obtained.}
 
