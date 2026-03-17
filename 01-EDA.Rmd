@@ -820,7 +820,7 @@ Before any analysis of a data set is undertaken, it is common practice to *displ
 
 \begin{tikzpicture}
 \draw (30*0.08+3.8,0) -- (80*0.08+3.8,0);
-\draw (30*0.08+3.8,0) -- (30*0.08+3.8,1);
+\draw (30*0.08+3.8,0) -- (30*0.08+3.8,1.2);
 \node at (0.08*30+3.8,-0.3) {$30$};
 \node at (0.08*40+3.8,-0.3) {$40$};
 \node at (0.08*50+3.8,-0.3) {$50$};
@@ -830,15 +830,15 @@ Before any analysis of a data set is undertaken, it is common practice to *displ
 \foreach \x in {30,40,...,80}
   \draw (0.08*\x+3.8,0) -- (0.08*\x+3.8,-0.1);
   \foreach \y in {0,...,5}
-  \draw (0.08*29.5+3.8,0.2*\y) -- (0.08*30+3.8,0.2*\y);
-\node at (0.08*28.5+3.8,1) {5};
+  \draw (0.08*29.5+3.8,1.2*0.2*\y) -- (0.08*30+3.8,1.2*0.2*\y);
+\node at (0.08*28.5+3.8,1.2) {5};
 \node at (0.08*28.5+3.8,0) {0};
 \node at (0.08*25+3,0.5) {frequency};
-\draw[fill=black!25] (0.08*30+3.8,0) rectangle (0.08*40+3.8,0.6);
-\draw[fill=black!25] (0.08*40+3.8,0) rectangle (0.08*50+3.8,0.8);
-\draw[fill=black!25] (0.08*50+3.8,0) rectangle (0.08*60+3.8,0.2);
-\draw[fill=black!25] (0.08*60+3.8,0) rectangle (0.08*70+3.8,0.2);
-\draw[fill=black!25] (0.08*70+3.8,0) rectangle (0.08*80+3.8,0.2);
+\draw[fill=black!25] (0.08*30+3.8,0) rectangle (0.08*40+3.8,0.6*1.2);
+\draw[fill=black!25] (0.08*40+3.8,0) rectangle (0.08*50+3.8,0.8*1.2);
+\draw[fill=black!25] (0.08*50+3.8,0) rectangle (0.08*60+3.8,0.2*1.2);
+\draw[fill=black!25] (0.08*60+3.8,0) rectangle (0.08*70+3.8,0.2*1.2);
+\draw[fill=black!25] (0.08*70+3.8,0) rectangle (0.08*80+3.8,0.2*1.2);
 \node at (0.08*53+3.8,-0.8) {\text{Height (cm)}};
 \node at (8,4.5) {\textbf{Histograms}};
 \node[text width = 8cm,below] at (8,4) {Histograms put continuous numerical data into intervals (or \textit{bins}) and display it in a manner similar to a bar graph.};
@@ -1092,7 +1092,7 @@ Any values \textit{below the lower fence} or \textit{above the upper fence} are 
 
 If an outlier is identified in a set of data, an investigation should be conducted to determine the cause. If it is concluded that the outlier is a rogue point, such as an error in measurement, it can be removed from the data set and summary statistics re-calculated. However, if an outlier is a valid point in the data set then it should not be removed.
 
-Returning to the sunflower heights from page 7, the data can now be checked for possible outliers:
+Returning to the sunflower heights from page 6, the data can now be checked for possible outliers:
 
 \begin{multicols}{2}
 
