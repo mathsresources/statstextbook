@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.2.25)  30 MAR 2026 11:48
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.4.24)  24 APR 2026 19:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **_main.tex
 (./_main.tex
 LaTeX2e <2025-11-01>
-L3 programming layer <2026-01-19>
+L3 programming layer <2026-03-20>
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2025/01/22 v1.4n Standard LaTeX document class
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/base/bk11.clo
@@ -22,7 +22,7 @@ File: bk11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \c@table=\count279
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
-\bibindent=\dimen148
+\bibindent=\dimen150
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -49,10 +49,10 @@ Package: amstext 2024/11/17 v2.01 AMS text
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks17
-\ex@=\dimen149
+\ex@=\dimen151
 )) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen150
+\pmbraise@=\dimen152
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
@@ -73,7 +73,7 @@ LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen151
+\big@size=\dimen153
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
 \macc@depth=\count285
@@ -91,12 +91,12 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \column@=\count290
 \maxfields@=\count291
 \andhelp@=\toks19
-\eqnshift@=\dimen152
-\alignsep@=\dimen153
-\tagshift@=\dimen154
-\tagwidth@=\dimen155
-\totwidth@=\dimen156
-\lineht@=\dimen157
+\eqnshift@=\dimen154
+\alignsep@=\dimen155
+\tagshift@=\dimen156
+\tagwidth@=\dimen157
+\totwidth@=\dimen158
+\lineht@=\dimen159
 \@envbody=\toks20
 \multlinegap=\skip52
 \multlinetaggap=\skip53
@@ -115,9 +115,9 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 )) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math.sty (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2026-01-19 L3 programming layer (loader) 
+Package: expl3 2026-03-20 L3 programming layer (loader) 
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
-File: l3backend-xetex.def 2025-10-09 L3 backend support: XeTeX
+File: l3backend-xetex.def 2026-02-18 L3 backend support: XeTeX
 \g__graphics_track_int=\count292
 \g__pdfannot_backend_int=\count293
 \g__pdfannot_backend_link_int=\count294
@@ -144,9 +144,9 @@ Package: fontspec-xetex 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
 \l__fontspec_emdef_int=\count303
 \l__fontspec_strong_int=\count304
 \l__fontspec_strongdef_int=\count305
-\l__fontspec_tmpa_dim=\dimen158
-\l__fontspec_tmpb_dim=\dimen159
-\l__fontspec_tmpc_dim=\dimen160
+\l__fontspec_tmpa_dim=\dimen160
+\l__fontspec_tmpb_dim=\dimen161
+\l__fontspec_tmpc_dim=\dimen162
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.cfg))) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/base/fix-cm.sty
@@ -436,7 +436,7 @@ Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
 \LTpre=\skip56
 \LTpost=\skip57
 \LTchunksize=\count309
-\LTcapwidth=\dimen161
+\LTcapwidth=\dimen163
 \LT@head=\box55
 \LT@firsthead=\box56
 \LT@foot=\box57
@@ -449,76 +449,78 @@ Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
 \LT@p@ftn=\toks22
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen162
-\lightrulewidth=\dimen163
-\cmidrulewidth=\dimen164
-\belowrulesep=\dimen165
-\belowbottomsep=\dimen166
-\aboverulesep=\dimen167
-\abovetopsep=\dimen168
-\cmidrulesep=\dimen169
-\cmidrulekern=\dimen170
-\defaultaddspace=\dimen171
+\heavyrulewidth=\dimen164
+\lightrulewidth=\dimen165
+\cmidrulewidth=\dimen166
+\belowrulesep=\dimen167
+\belowbottomsep=\dimen168
+\aboverulesep=\dimen169
+\abovetopsep=\dimen170
+\cmidrulesep=\dimen171
+\cmidrulekern=\dimen172
+\defaultaddspace=\dimen173
 \@cmidla=\count314
 \@cmidlb=\count315
-\@aboverulesep=\dimen172
-\@belowrulesep=\dimen173
+\@aboverulesep=\dimen174
+\@belowrulesep=\dimen175
 \@thisruleclass=\count316
 \@lastruleclass=\count317
-\@thisrulewidth=\dimen174
+\@thisrulewidth=\dimen176
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/tools/array.sty
 Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
-\col@sep=\dimen175
+\col@sep=\dimen177
 \ar@mcellbox=\box60
-\extrarowheight=\dimen176
+\extrarowheight=\dimen178
 \NC@list=\toks23
 \extratabsurround=\skip58
 \backup@length=\skip59
 \ar@cellbox=\box61
-) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
+)
+\c@none=\count318
+(/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
-\calc@Acount=\count318
-\calc@Bcount=\count319
-\calc@Adimen=\dimen177
-\calc@Bdimen=\dimen178
+\calc@Acount=\count319
+\calc@Bcount=\count320
+\calc@Adimen=\dimen179
+\calc@Bdimen=\dimen180
 \calc@Askip=\skip60
 \calc@Bskip=\skip61
 LaTeX Info: Redefining \setlength on input line 86.
 LaTeX Info: Redefining \addtolength on input line 87.
-\calc@Ccount=\count320
+\calc@Ccount=\count321
 \calc@Cskip=\skip62
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count321
+\etb@tempcnta=\count322
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/mdwtools/footnote.sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
 \fn@notes=\box62
-\fn@width=\dimen179
+\fn@width=\dimen181
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip63
 \bibsep=\skip64
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count322
+\c@NAT@ctr=\count323
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
-Package: geometry 2020/01/02 v5.9 Page Geometry
+Package: geometry 2026/03/07 v6.0 Page Geometry
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks24
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count323
-\Gm@cntv=\count324
-\c@Gm@tempcnt=\count325
-\Gm@bindingoffset=\dimen180
-\Gm@wd@mp=\dimen181
-\Gm@odd@mp=\dimen182
-\Gm@even@mp=\dimen183
-\Gm@layoutwidth=\dimen184
-\Gm@layoutheight=\dimen185
-\Gm@layouthoffset=\dimen186
-\Gm@layoutvoffset=\dimen187
+\Gm@cnth=\count324
+\Gm@cntv=\count325
+\c@Gm@tempcnt=\count326
+\Gm@bindingoffset=\dimen182
+\Gm@wd@mp=\dimen183
+\Gm@odd@mp=\dimen184
+\Gm@even@mp=\dimen185
+\Gm@layoutwidth=\dimen186
+\Gm@layoutheight=\dimen187
+\Gm@layouthoffset=\dimen188
+\Gm@layoutvoffset=\dimen189
 \Gm@dimlist=\toks25
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
@@ -544,8 +546,8 @@ Package: quotchap 2020/11/13 v1.3 Decorative Chapter Headings with Quotes
 Package: tcolorbox 2025/11/28 version 6.9.0 text color boxes
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks27
-\pgfutil@tempdima=\dimen188
-\pgfutil@tempdimb=\dimen189
+\pgfutil@tempdima=\dimen190
+\pgfutil@tempdimb=\dimen191
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box64
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/pgf.revision.tex)
@@ -563,8 +565,8 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: xetex.def on input line 106.
 )
-\Gin@req@height=\dimen190
-\Gin@req@width=\dimen191
+\Gin@req@height=\dimen192
+\Gin@req@width=\dimen193
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
@@ -573,26 +575,26 @@ Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
 \pgfkeys@tmptoks=\toks30
 ))
-\pgf@x=\dimen192
-\pgf@y=\dimen193
-\pgf@xa=\dimen194
-\pgf@ya=\dimen195
-\pgf@xb=\dimen196
-\pgf@yb=\dimen197
-\pgf@xc=\dimen198
-\pgf@yc=\dimen199
-\pgf@xd=\dimen256
-\pgf@yd=\dimen257
+\pgf@x=\dimen194
+\pgf@y=\dimen195
+\pgf@xa=\dimen196
+\pgf@ya=\dimen197
+\pgf@xb=\dimen198
+\pgf@yb=\dimen199
+\pgf@xc=\dimen256
+\pgf@yc=\dimen257
+\pgf@xd=\dimen258
+\pgf@yd=\dimen259
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count326
-\c@pgf@countb=\count327
-\c@pgf@countc=\count328
-\c@pgf@countd=\count329
+\c@pgf@counta=\count327
+\c@pgf@countb=\count328
+\c@pgf@countc=\count329
+\c@pgf@countd=\count330
 \t@pgf@toka=\toks31
 \t@pgf@tokb=\toks32
 \t@pgf@tokc=\toks33
-\pgf@sys@id@count=\count330
+\pgf@sys@id@count=\count331
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
 )
@@ -604,62 +606,62 @@ File: pgfsys-dvipdfmx.def 2025-08-29 v3.1.11a (3.1.11a)
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
 )
-\pgfsys@objnum=\count331
+\pgfsys@objnum=\count332
 ))) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfsyssoftpath@smallbuffer@items=\count332
-\pgfsyssoftpath@bigbuffer@items=\count333
+\pgfsyssoftpath@smallbuffer@items=\count333
+\pgfsyssoftpath@bigbuffer@items=\count334
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen258
-\pgfmath@count=\count334
+\pgfmath@dimen=\dimen260
+\pgfmath@count=\count335
 \pgfmath@box=\box65
 \pgfmath@toks=\toks34
 \pgfmath@stack@operand=\toks35
 \pgfmath@stack@operation=\toks36
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count335
+\c@pgfmathroundto@lastzeros=\count336
 )) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@picminx=\dimen259
-\pgf@picmaxx=\dimen260
-\pgf@picminy=\dimen261
-\pgf@picmaxy=\dimen262
-\pgf@pathminx=\dimen263
-\pgf@pathmaxx=\dimen264
-\pgf@pathminy=\dimen265
-\pgf@pathmaxy=\dimen266
-\pgf@xx=\dimen267
-\pgf@xy=\dimen268
-\pgf@yx=\dimen269
-\pgf@yy=\dimen270
-\pgf@zx=\dimen271
-\pgf@zy=\dimen272
+\pgf@picminx=\dimen261
+\pgf@picmaxx=\dimen262
+\pgf@picminy=\dimen263
+\pgf@picmaxy=\dimen264
+\pgf@pathminx=\dimen265
+\pgf@pathmaxx=\dimen266
+\pgf@pathminy=\dimen267
+\pgf@pathmaxy=\dimen268
+\pgf@xx=\dimen269
+\pgf@xy=\dimen270
+\pgf@yx=\dimen271
+\pgf@yy=\dimen272
+\pgf@zx=\dimen273
+\pgf@zy=\dimen274
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@path@lastx=\dimen273
-\pgf@path@lasty=\dimen274
+\pgf@path@lastx=\dimen275
+\pgf@path@lasty=\dimen276
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@shorten@end@additional=\dimen275
-\pgf@shorten@start@additional=\dimen276
+\pgf@shorten@end@additional=\dimen277
+\pgf@shorten@start@additional=\dimen278
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfpic=\box66
 \pgf@hbox=\box67
 \pgf@layerbox@main=\box68
-\pgf@picture@serial@count=\count336
+\pgf@picture@serial@count=\count337
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgflinewidth=\dimen277
+\pgflinewidth=\dimen279
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@pt@x=\dimen278
-\pgf@pt@y=\dimen279
-\pgf@pt@temp=\dimen280
+\pgf@pt@x=\dimen280
+\pgf@pt@y=\dimen281
+\pgf@pt@temp=\dimen282
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
@@ -668,12 +670,12 @@ File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfarrowsep=\dimen281
+\pgfarrowsep=\dimen283
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@max=\dimen282
-\pgf@sys@shading@range@num=\count337
-\pgf@shadingcount=\count338
+\pgf@max=\dimen284
+\pgf@sys@shading@range@num=\count338
+\pgf@shadingcount=\count339
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
@@ -694,46 +696,46 @@ File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@nodesepstart=\dimen283
-\pgf@nodesepend=\dimen284
+\pgf@nodesepstart=\dimen285
+\pgf@nodesepend=\dimen286
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
 )) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
-\pgffor@iter=\dimen285
-\pgffor@skip=\dimen286
+\pgffor@iter=\dimen287
+\pgffor@skip=\dimen288
 \pgffor@stack=\toks37
 \pgffor@toks=\toks38
 )) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgf@plot@mark@count=\count339
-\pgfplotmarksize=\dimen287
+\pgf@plot@mark@count=\count340
+\pgfplotmarksize=\dimen289
 )
-\tikz@lastx=\dimen288
-\tikz@lasty=\dimen289
-\tikz@lastxsaved=\dimen290
-\tikz@lastysaved=\dimen291
-\tikz@lastmovetox=\dimen292
-\tikz@lastmovetoy=\dimen293
-\tikzleveldistance=\dimen294
-\tikzsiblingdistance=\dimen295
+\tikz@lastx=\dimen290
+\tikz@lasty=\dimen291
+\tikz@lastxsaved=\dimen292
+\tikz@lastysaved=\dimen293
+\tikz@lastmovetox=\dimen294
+\tikz@lastmovetoy=\dimen295
+\tikzleveldistance=\dimen296
+\tikzsiblingdistance=\dimen297
 \tikz@figbox=\box71
 \tikz@figbox@bg=\box72
 \tikz@tempbox=\box73
 \tikz@tempbox@bg=\box74
-\tikztreelevel=\count340
-\tikznumberofchildren=\count341
-\tikznumberofcurrentchild=\count342
-\tikz@fig@count=\count343
+\tikztreelevel=\count341
+\tikznumberofchildren=\count342
+\tikznumberofcurrentchild=\count343
+\tikz@fig@count=\count344
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfmatrixcurrentrow=\count344
-\pgfmatrixcurrentcolumn=\count345
-\pgf@matrix@numberofcolumns=\count346
+\pgfmatrixcurrentrow=\count345
+\pgfmatrixcurrentcolumn=\count346
+\pgf@matrix@numberofcolumns=\count347
 )
-\tikz@expandcount=\count347
+\tikz@expandcount=\count348
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ))) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/tools/verbatim.sty
@@ -750,29 +752,29 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \tcb@upperbox=\box76
 \tcb@lowerbox=\box77
 \tcb@phantombox=\box78
-\c@tcbbreakpart=\count348
-\c@tcblayer=\count349
-\c@tcolorbox@number=\count350
+\c@tcbbreakpart=\count349
+\c@tcblayer=\count350
+\c@tcolorbox@number=\count351
 \l__tcobox_tmpa_box=\box79
-\l__tcobox_tmpa_dim=\dimen296
+\l__tcobox_tmpa_dim=\dimen298
 \tcb@temp=\box80
 \tcb@temp=\box81
 \tcb@temp=\box82
 \tcb@temp=\box83
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
 Library (tcolorbox): 'tcbraster.code.tex' version '6.9.0'
-\c@tcbrastercolumn=\count351
-\c@tcbrasterrow=\count352
-\c@tcbrasternum=\count353
-\c@tcbraster=\count354
+\c@tcbrastercolumn=\count352
+\c@tcbrasterrow=\count353
+\c@tcbrasternum=\count354
+\c@tcbraster=\count355
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
 Library (tcolorbox): 'tcbskins.code.tex' version '6.9.0'
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
-Package: tikzfill.image 2023/08/08 v1.0.1 Image filling library for TikZ
-(/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/tikzfill/tikzfill-common.sty
-Package: tikzfill-common 2023/08/08 v1.0.1 Auxiliary code for tikzfill
-) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.code.tex
-File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
+Package: tikzfill.image 2026/03/26 v1.1.0 Image filling library for TikZ
+(/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.code.tex
+File: tikzlibraryfill.image.code.tex 2026/03/26 v1.1.0 Image filling library
+\l__tikzfill_tmpa_dim=\dimen299
+\l__tikzfill_tmpb_dim=\dimen300
 \l__tikzfill_img_box=\box84
 )) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
 Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.9.0'
@@ -797,33 +799,33 @@ Library (tcolorbox): 'tcbhooks.code.tex' version '6.9.0'
 Library (tcolorbox): 'tcbtheorems.code.tex' version '6.9.0'
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
 Library (tcolorbox): 'tcbfitting.code.tex' version '6.9.0'
-\tcbfitdim=\dimen297
-\tcb@lowerfitdim=\dimen298
-\tcb@upperfitdim=\dimen299
-\tcb@cur@hbadness=\count355
+\tcbfitdim=\dimen301
+\tcb@lowerfitdim=\dimen302
+\tcb@upperfitdim=\dimen303
+\tcb@cur@hbadness=\count356
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcblistingsutf8.code.tex
 Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.9.0'
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
 Library (tcolorbox): 'tcblistings.code.tex' version '6.9.0'
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count356
+\lst@mode=\count357
 \lst@gtempboxa=\box88
 \lst@token=\toks41
-\lst@length=\count357
-\lst@currlwidth=\dimen300
-\lst@column=\count358
-\lst@pos=\count359
-\lst@lostspace=\dimen301
-\lst@width=\dimen302
-\lst@newlines=\count360
-\lst@lineno=\count361
-\lst@maxwidth=\dimen303
+\lst@length=\count358
+\lst@currlwidth=\dimen304
+\lst@column=\count359
+\lst@pos=\count360
+\lst@lostspace=\dimen305
+\lst@width=\dimen306
+\lst@newlines=\count361
+\lst@lineno=\count362
+\lst@maxwidth=\dimen307
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
-\c@lstnumber=\count362
-\lst@skipnumbers=\count363
+\c@lstnumber=\count363
+\lst@skipnumbers=\count364
 \lst@framebox=\box89
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2025/11/14 1.11b listings configuration
@@ -840,7 +842,7 @@ Library (tcolorbox): 'tcblistingscore.code.tex' version '6.9.0'
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
 Library (tcolorbox): 'tcbprocessing.code.tex' version '6.9.0'
 )
-\c@tcblisting=\count364
+\c@tcblisting=\count365
 ))
 Package tcolorbox Info: Library `listingsutf8' is compatible with pdftex only. Library `listings` is loaded instead. on input line 29.
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbexternal.code.tex
@@ -860,14 +862,14 @@ File: tikzlibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
 File: pgflibrarypatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 )) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
-\pgfdecoratedcompleteddistance=\dimen304
-\pgfdecoratedremainingdistance=\dimen305
-\pgfdecoratedinputsegmentcompleteddistance=\dimen306
-\pgfdecoratedinputsegmentremainingdistance=\dimen307
-\pgf@decorate@distancetomove=\dimen308
-\pgf@decorate@repeatstate=\count365
-\pgfdecorationsegmentamplitude=\dimen309
-\pgfdecorationsegmentlength=\dimen310
+\pgfdecoratedcompleteddistance=\dimen308
+\pgfdecoratedremainingdistance=\dimen309
+\pgfdecoratedinputsegmentcompleteddistance=\dimen310
+\pgfdecoratedinputsegmentremainingdistance=\dimen311
+\pgf@decorate@distancetomove=\dimen312
+\pgf@decorate@repeatstate=\count366
+\pgfdecorationsegmentamplitude=\dimen313
+\pgfdecorationsegmentlength=\dimen314
 )
 \tikz@lib@dec@box=\box90
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryangles.code.tex
@@ -879,28 +881,28 @@ Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \ttl@box=\box91
 \beforetitleunit=\skip79
 \aftertitleunit=\skip80
-\ttl@plus=\dimen311
-\ttl@minus=\dimen312
+\ttl@plus=\dimen315
+\ttl@minus=\dimen316
 \ttl@toksa=\toks42
-\titlewidth=\dimen313
-\titlewidthlast=\dimen314
-\titlewidthfirst=\dimen315
+\titlewidth=\dimen317
+\titlewidthlast=\dimen318
+\titlewidthfirst=\dimen319
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
-\caption@tempdima=\dimen316
-\captionmargin=\dimen317
-\caption@leftmargin=\dimen318
-\caption@rightmargin=\dimen319
-\caption@width=\dimen320
-\caption@indent=\dimen321
-\caption@parindent=\dimen322
-\caption@hangindent=\dimen323
+\caption@tempdima=\dimen320
+\captionmargin=\dimen321
+\caption@leftmargin=\dimen322
+\caption@rightmargin=\dimen323
+\caption@width=\dimen324
+\caption@indent=\dimen325
+\caption@parindent=\dimen326
+\caption@hangindent=\dimen327
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count366
-\c@continuedfloat=\count367
+\c@caption@flags=\count367
+\c@continuedfloat=\count368
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/caption/ltcaption.sty
@@ -908,9 +910,9 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2023/07/28 v1.6b Sub-captions (AR)
 Package caption Info: New subtype `subfigure' on input line 238.
-\c@subfigure=\count368
+\c@subfigure=\count369
 Package caption Info: New subtype `subtable' on input line 238.
-\c@subtable=\count369
+\c@subtable=\count370
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/units/units.sty
 Package: units 1998/08/04 v0.9b Typesetting units
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty
@@ -940,17 +942,17 @@ Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 Package mathtools Warning: For best results, please load mathtools *before* 
 (mathtools)                unicode-math on input line 127.
 
-\g_MT_multlinerow_int=\count370
-\l_MT_multwidth_dim=\dimen324
+\g_MT_multlinerow_int=\count371
+\l_MT_multwidth_dim=\dimen328
 \origjot=\skip84
-\l_MT_shortvdotswithinadjustabove_dim=\dimen325
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen326
-\l_MT_above_intertext_sep=\dimen327
-\l_MT_below_intertext_sep=\dimen328
-\l_MT_above_shortintertext_sep=\dimen329
-\l_MT_below_shortintertext_sep=\dimen330
+\l_MT_shortvdotswithinadjustabove_dim=\dimen329
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen330
+\l_MT_above_intertext_sep=\dimen331
+\l_MT_below_intertext_sep=\dimen332
+\l_MT_above_shortintertext_sep=\dimen333
+\l_MT_below_shortintertext_sep=\dimen334
 \xmathstrut@box=\box92
-\xmathstrut@dim=\dimen331
+\xmathstrut@dim=\dimen335
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/dirtytalk/dirtytalk.sty
 Package: dirtytalk 2010/11/21 A package making "quoting" easier
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
@@ -958,29 +960,29 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 ))
-\c@dirtytalk@qdepth=\count371
+\c@dirtytalk@qdepth=\count372
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
-\c@tracingmulticols=\count372
+\c@tracingmulticols=\count373
 \mult@box=\box93
-\multicol@leftmargin=\dimen332
-\c@unbalance=\count373
-\c@collectmore=\count374
-\doublecol@number=\count375
-\multicoltolerance=\count376
-\multicolpretolerance=\count377
-\full@width=\dimen333
-\page@free=\dimen334
-\premulticols=\dimen335
-\postmulticols=\dimen336
+\multicol@leftmargin=\dimen336
+\c@unbalance=\count374
+\c@collectmore=\count375
+\doublecol@number=\count376
+\multicoltolerance=\count377
+\multicolpretolerance=\count378
+\full@width=\dimen337
+\page@free=\dimen338
+\premulticols=\dimen339
+\postmulticols=\dimen340
 \multicolsep=\skip85
 \multicolbaselineskip=\skip86
 \partial@page=\box94
 \last@line=\box95
 \mc@boxedresult=\box96
-\maxbalancingoverflow=\dimen337
+\maxbalancingoverflow=\dimen341
 \mult@rightbox=\box97
 \mult@grightbox=\box98
 \mult@firstbox=\box99
@@ -1021,30 +1023,30 @@ Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
 \@tempa=\box134
 \@tempa=\box135
 \@tempa=\box136
-\c@minrows=\count378
-\c@columnbadness=\count379
-\c@finalcolumnbadness=\count380
-\last@try=\dimen338
-\multicolovershoot=\dimen339
-\multicolundershoot=\dimen340
+\c@minrows=\count379
+\c@columnbadness=\count380
+\c@finalcolumnbadness=\count381
+\last@try=\dimen342
+\multicolovershoot=\dimen343
+\multicolundershoot=\dimen344
 \mult@nat@firstbox=\box137
 \colbreak@box=\box138
-\mc@col@check@num=\count381
-\g__mc_curr_col_int=\count382
+\mc@col@check@num=\count382
+\g__mc_curr_col_int=\count383
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/tikzpeople/tikzpeople.sty
 Package: tikzpeople 2017/04/22 v0.4 People shaped nodes for Tikz
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryintersections.code.tex (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
-\pgf@intersect@solutions=\count383
+\pgf@intersect@solutions=\count384
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.markings.code.tex (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.markings.code.tex)) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-\pgfarrowinset=\dimen341
-\pgfarrowlength=\dimen342
-\pgfarrowwidth=\dimen343
-\pgfarrowlinewidth=\dimen344
+\pgfarrowinset=\dimen345
+\pgfarrowlength=\dimen346
+\pgfarrowwidth=\dimen347
+\pgfarrowlinewidth=\dimen348
 )) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
@@ -1065,19 +1067,19 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count384
+\c@section@level=\count385
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
-\@linkdim=\dimen345
-\Hy@linkcounter=\count385
-\Hy@pagecounter=\count386
+\@linkdim=\dimen349
+\Hy@linkcounter=\count386
+\Hy@pagecounter=\count387
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count387
+\Hy@SavedSpaceFactor=\count388
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
 )
@@ -1089,21 +1091,21 @@ Package hyperref Info: Plain pages OFF on input line 4216.
 Package hyperref Info: Backreferencing OFF on input line 4221.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4468.
-\c@Hy@tempcnt=\count388
+\c@Hy@tempcnt=\count389
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip19
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4807.
-\XeTeXLinkMargin=\dimen346
+\XeTeXLinkMargin=\dimen350
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count389
-\Field@Width=\dimen347
-\Fld@charsize=\dimen348
+\Fld@menulength=\count390
+\Field@Width=\dimen351
+\Fld@charsize=\dimen352
 Package hyperref Info: Hyper figures OFF on input line 6084.
 Package hyperref Info: Link nesting OFF on input line 6089.
 Package hyperref Info: Hyper index ON on input line 6092.
@@ -1111,18 +1113,18 @@ Package hyperref Info: backreferencing OFF on input line 6099.
 Package hyperref Info: Link coloring OFF on input line 6104.
 Package hyperref Info: Link coloring with OCG OFF on input line 6109.
 Package hyperref Info: PDF/A mode OFF on input line 6114.
-\Hy@abspage=\count390
-\c@Item=\count391
-\c@Hfootnote=\count392
+\Hy@abspage=\count391
+\c@Item=\count392
+\c@Hfootnote=\count393
 )
 Package hyperref Info: Driver (autodetected): hxetex.
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hxetex.def
 File: hxetex.def 2026-01-29 v7.01p Hyperref driver for XeTeX
 \pdfm@box=\box139
-\c@Hy@AnnotLevel=\count393
-\HyField@AnnotCount=\count394
-\Fld@listcount=\count395
-\c@bookmark@seq@number=\count396
+\c@Hy@AnnotLevel=\count394
+\HyField@AnnotCount=\count395
+\Fld@listcount=\count396
+\c@bookmark@seq@number=\count397
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -1135,56 +1137,56 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 Package: gensymb 2022/10/17 v1.0.2 (KJH)
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
-\TX@col@width=\dimen349
-\TX@old@table=\dimen350
-\TX@old@col=\dimen351
-\TX@target=\dimen352
-\TX@delta=\dimen353
-\TX@cols=\count397
+\TX@col@width=\dimen353
+\TX@old@table=\dimen354
+\TX@old@col=\dimen355
+\TX@target=\dimen356
+\TX@delta=\dimen357
+\TX@cols=\count398
 \TX@ftn=\toks43
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@colwidth=\skip88
-\multirow@cntb=\count398
+\multirow@cntb=\count399
 \multirow@dima=\skip89
-\bigstrutjot=\dimen354
+\bigstrutjot=\dimen358
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen355
-\WF@size=\dimen356
-\c@WF@wrappedlines=\count399
+\wrapoverhang=\dimen359
+\WF@size=\dimen360
+\c@WF@wrappedlines=\count400
 \WF@box=\box140
 \WF@everypar=\toks44
 Package: wrapfig 2003/01/31  v 3.6
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/exsheets/exsheets.sty
 Package: exsheets 2019/09/30 v0.21k Yet another package for the creation of exercise sheets and exams.
-\l__exsheets_tmpa_int=\count400
-\l__exsheets_tmpb_int=\count401
-\l__exsheets_tmpc_int=\count402
-\l__exsheets_tmpd_int=\count403
-\l__exsheets_tmpe_int=\count404
-\g__exsheets_tmpa_int=\count405
-\l__exsheets_tmpa_dim=\dimen357
-\l__exsheets_tmpb_dim=\dimen358
+\l__exsheets_tmpa_int=\count401
+\l__exsheets_tmpb_int=\count402
+\l__exsheets_tmpc_int=\count403
+\l__exsheets_tmpd_int=\count404
+\l__exsheets_tmpe_int=\count405
+\g__exsheets_tmpa_int=\count406
+\l__exsheets_tmpa_dim=\dimen361
+\l__exsheets_tmpb_dim=\dimen362
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty
 Package: xtemplate 2025-10-09 L3 Experimental prototype document functions
 )
-\l__exsheets_variations_int=\count406
-\g__exsheets_questions_id_int=\count407
-\g__exsheets_questions_used_int=\count408
-\l__exsheets_include_random_int=\count409
-\l__exsheets_questions_set_int=\count410
-\g__exsheets_select_random_int=\count411
-\g__exsheets_selection_number_int=\count412
-\l__exsheets_counter_ch_int=\count413
-\l__exsheets_current_ch_int=\count414
-\l__exsheets_counter_sec_int=\count415
-\l__exsheets_current_sec_int=\count416
-\l_exsheets_counter_qu_int=\count417
-\l__exsheets_questions_skip_below_dim=\dimen359
-\l__exsheets_solutions_skip_below_dim=\dimen360
-\l__exsheets_blank_dim=\dimen361
-\l__exsheets_blank_line_increment_dim=\dimen362
-\l__exsheets_blank_line_minimum_length_dim=\dimen363
+\l__exsheets_variations_int=\count407
+\g__exsheets_questions_id_int=\count408
+\g__exsheets_questions_used_int=\count409
+\l__exsheets_include_random_int=\count410
+\l__exsheets_questions_set_int=\count411
+\g__exsheets_select_random_int=\count412
+\g__exsheets_selection_number_int=\count413
+\l__exsheets_counter_ch_int=\count414
+\l__exsheets_current_ch_int=\count415
+\l__exsheets_counter_sec_int=\count416
+\l__exsheets_current_sec_int=\count417
+\l_exsheets_counter_qu_int=\count418
+\l__exsheets_questions_skip_below_dim=\dimen363
+\l__exsheets_solutions_skip_below_dim=\dimen364
+\l__exsheets_blank_dim=\dimen365
+\l__exsheets_blank_line_increment_dim=\dimen366
+\l__exsheets_blank_line_minimum_length_dim=\dimen367
 \l__exsheets_blank_box=\box141
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/cntformats/cntformats.sty
 Package: cntformats 2014/07/20 v0.7 A different way to read counters. (CN)
@@ -1195,18 +1197,18 @@ Package: pgfopts 2014/07/10 v2.1a LaTeX package options with pgfkeys
 \pgfopts@list@add@a@toks=\toks45
 \pgfopts@list@add@b@toks=\toks46
 )
-\c@cnltx@tmpa=\count418
-\c@cnltx@tmpb=\count419
-\c@cnltx@tmpc=\count420
+\c@cnltx@tmpa=\count419
+\c@cnltx@tmpb=\count420
+\c@cnltx@tmpc=\count421
 \cnltx@tmpa@length=\skip90
 \cnltx@tmpb@length=\skip91
 \cnltx@tmpc@length=\skip92
 ))
-\c@question=\count421
+\c@question=\count422
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/exsheets/exsheets_headings.def
 File: exsheets_headings.def  2019/09/30 v0.21k ExSheets headings object
-\l__exsheets_heading_above_dim=\dimen364
-\l__exsheets_heading_below_dim=\dimen365
+\l__exsheets_heading_above_dim=\dimen368
+\l__exsheets_heading_below_dim=\dimen369
 \l__exsheets_heading_main_coffin=\box142
 \l__exsheets_heading_pre_coffin=\box143
 \l__exsheets_heading_post_coffin=\box144
@@ -1222,33 +1224,33 @@ LaTeX template Info: Declaring template type 'exsheets-heading' taking 5
 File: exsheets_headings.cfg  2019/09/30 v0.21k ExSheets headings instances 
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/tasks/tasks.sty
 Package: tasks 2022/01/08 v1.4a lists with columns filled horizontally
-\g__tasks_total_items_int=\count422
-\l__tasks_columns_int=\count423
-\g__tasks_rows_int=\count424
-\g__tasks_current_col_num_int=\count425
-\g__tasks_current_row_num_int=\count426
-\l__tasks_item_columns_int=\count427
-\g__tasks_env_int=\count428
-\l__tasks_start_int=\count429
-\l__tasks_item_indent_dim=\dimen366
-\l__tasks_item_default_indent_dim=\dimen367
-\l__tasks_item_width_dim=\dimen368
-\l__tasks_label_width_dim=\dimen369
-\l__tasks_label_default_width_dim=\dimen370
-\l__tasks_label_offset_dim=\dimen371
-\l__tasks_label_default_offset_dim=\dimen372
-\l__tasks_column_sep_dim=\dimen373
-\l__tasks_correction_dim=\dimen374
-\l__tasks_full_width_dim=\dimen375
+\g__tasks_total_items_int=\count423
+\l__tasks_columns_int=\count424
+\g__tasks_rows_int=\count425
+\g__tasks_current_col_num_int=\count426
+\g__tasks_current_row_num_int=\count427
+\l__tasks_item_columns_int=\count428
+\g__tasks_env_int=\count429
+\l__tasks_start_int=\count430
+\l__tasks_item_indent_dim=\dimen370
+\l__tasks_item_default_indent_dim=\dimen371
+\l__tasks_item_width_dim=\dimen372
+\l__tasks_label_width_dim=\dimen373
+\l__tasks_label_default_width_dim=\dimen374
+\l__tasks_label_offset_dim=\dimen375
+\l__tasks_label_default_offset_dim=\dimen376
+\l__tasks_column_sep_dim=\dimen377
+\l__tasks_correction_dim=\dimen378
+\l__tasks_full_width_dim=\dimen379
 \l__tasks_after_item_skip=\skip93
 \l__tasks_custom_after_item_skip=\skip94
 \l__tasks_before_list_skip=\skip95
 \l__tasks_after_list_skip=\skip96
 \l__tasks_item_coffin=\box149
 \l__tasks_label_coffin=\box150
-\c@task=\count430
-\l__tasks_tmpa_int=\count431
-\l__tasks_tmpb_int=\count432
+\c@task=\count431
+\l__tasks_tmpa_int=\count432
+\l__tasks_tmpb_int=\count433
 \l__tasks_tmpa_coffin=\box151
 \l__tasks_tmpa_box=\box152
 
@@ -1260,22 +1262,22 @@ LaTeX template Info: Declaring template type 'tasks' taking 3 argument(s) on
 \UL@hyphenbox=\box154
 \UL@skip=\skip97
 \UL@hook=\toks47
-\UL@height=\dimen376
-\UL@pe=\count433
-\UL@pixel=\dimen377
+\UL@height=\dimen380
+\UL@pe=\count434
+\UL@pixel=\dimen381
 \ULC@box=\box155
 Package: ulem 2019/11/18
-\ULdepth=\dimen378
+\ULdepth=\dimen382
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/translations/translations.sty
 Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages (CN)
 )) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
 \labelindent=\skip98
-\enit@outerparindent=\dimen379
+\enit@outerparindent=\dimen383
 \enit@toks=\toks48
 \enit@inbox=\box156
-\enit@count@id=\count434
-\enitdp@description=\count435
+\enit@count@id=\count435
+\enitdp@description=\count436
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/tools/bm.sty
 Package: bm 2025/10/21 v1.2g Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup6
@@ -1309,10 +1311,10 @@ Package: ragged2e 2023/06/22 v3.6 ragged2e Package
 \vwcol@totalwidth=\skip115
 \vwcol@averagewidth=\skip116
 \vwcol@parindent=\skip117
-\vwcol@last=\count436
-\vwcol@Ncols=\count437
-\vwcol@Nlines=\count438
-\vwcol@maxrecursion=\count439
+\vwcol@last=\count437
+\vwcol@Ncols=\count438
+\vwcol@Nlines=\count439
+\vwcol@maxrecursion=\count440
 \vwcol@box=\box157
 \vwcol@plainbox=\box158
 \vwcol@outputbox=\box159
@@ -1331,7 +1333,7 @@ Package: graphbox 2025/03/25 v1.1.1 extension for graphicx to adjust containing 
 \Gin@box@bheight=\skip123
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count440
+\c@float@type=\count441
 \float@exts=\toks49
 \float@box=\box161
 \@float@everytoks=\toks50
@@ -1345,7 +1347,7 @@ Package: xkeyval 2025/11/04 v2.10 package option processing (HA)
 \XKV@tempa@toks=\toks52
 \XKV@tempb@toks=\toks53
 )
-\XKV@depth=\count441
+\XKV@depth=\count442
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/adjustbox/adjcalc.sty
 Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back-ends (calc, etex, pgfmath)
@@ -1355,48 +1357,48 @@ Package: trimclip 2025/02/21 v1.2a Trim and clip general TeX material
 Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
 \collectedbox=\box163
 )
-\tc@llx=\dimen380
-\tc@lly=\dimen381
-\tc@urx=\dimen382
-\tc@ury=\dimen383
+\tc@llx=\dimen384
+\tc@lly=\dimen385
+\tc@urx=\dimen386
+\tc@ury=\dimen387
 Package trimclip Info: Using driver 'tc-xetex.def'.
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/adjustbox/tc-xetex.def
 File: tc-xetex.def 2019/01/04 v2.2 Clipping driver for xetex
 ))
-\adjbox@Width=\dimen384
-\adjbox@Height=\dimen385
-\adjbox@Depth=\dimen386
-\adjbox@Totalheight=\dimen387
-\adjbox@pwidth=\dimen388
-\adjbox@pheight=\dimen389
-\adjbox@pdepth=\dimen390
-\adjbox@ptotalheight=\dimen391
+\adjbox@Width=\dimen388
+\adjbox@Height=\dimen389
+\adjbox@Depth=\dimen390
+\adjbox@Totalheight=\dimen391
+\adjbox@pwidth=\dimen392
+\adjbox@pheight=\dimen393
+\adjbox@pdepth=\dimen394
+\adjbox@ptotalheight=\dimen395
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/pgfplots/pgfplots.sty (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
 Package: pgfplots 2025/08/14 v1.18.2 Data Visualization (1.18.2)
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
 \t@pgfplots@toka=\toks54
 \t@pgfplots@tokb=\toks55
 \t@pgfplots@tokc=\toks56
-\pgfplots@tmpa=\dimen392
-\c@pgfplots@coordindex=\count442
-\c@pgfplots@scanlineindex=\count443
+\pgfplots@tmpa=\dimen396
+\c@pgfplots@coordindex=\count443
+\c@pgfplots@scanlineindex=\count444
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex)) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_loader.code.tex (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructureext.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex
-\c@pgfplotsarray@tmp=\count444
+\c@pgfplotsarray@tmp=\count445
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex
-\c@pgfplotstable@counta=\count445
+\c@pgfplotstable@counta=\count446
 \t@pgfplotstable@a=\toks57
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count446
+\c@pgfplotslibrarysurf@no=\count447
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-xetex.def (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-dvipdfmx.def
-\c@pgfplotslibrarysurf@streamlen=\count447
+\c@pgfplotslibrarysurf@streamlen=\count448
 )))) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex)) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex))) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua.code.tex)
-\pgfplots@numplots=\count448
-\pgfplots@xmin@reg=\dimen393
-\pgfplots@xmax@reg=\dimen394
-\pgfplots@ymin@reg=\dimen395
-\pgfplots@ymax@reg=\dimen396
-\pgfplots@zmin@reg=\dimen397
-\pgfplots@zmax@reg=\dimen398
+\pgfplots@numplots=\count449
+\pgfplots@xmin@reg=\dimen397
+\pgfplots@xmax@reg=\dimen398
+\pgfplots@ymin@reg=\dimen399
+\pgfplots@ymax@reg=\dimen400
+\pgfplots@zmin@reg=\dimen401
+\pgfplots@zmax@reg=\dimen402
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex
 File: tikzlibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
@@ -1411,31 +1413,31 @@ Package: nextpage 2009/09/03 v1.1a additional page commands
 \epigraphwidth=\skip126
 \epigraphrule=\skip127
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/lineno/lineno.sty
-Package: lineno 2026/02/16 line numbers on paragraphs v5.7
-\linenopenalty=\count449
+Package: lineno 2026/03/08 line numbers on paragraphs v5.9
+\linenopenalty=\count450
 \output=\toks58
-\linenoprevgraf=\count450
-\linenumbersep=\dimen399
-\linenumberwidth=\dimen400
-\c@linenumber=\count451
-\c@pagewiselinenumber=\count452
-\c@LN@truepage=\count453
-\c@internallinenumber=\count454
-\c@internallinenumbers=\count455
-\quotelinenumbersep=\dimen401
-\bframerule=\dimen402
-\bframesep=\dimen403
+\linenoprevgraf=\count451
+\linenumbersep=\dimen403
+\linenumberwidth=\dimen404
+\c@linenumber=\count452
+\c@pagewiselinenumber=\count453
+\c@LN@truepage=\count454
+\c@internallinenumber=\count455
+\c@internallinenumbers=\count456
+\quotelinenumbersep=\dimen405
+\bframerule=\dimen406
+\bframesep=\dimen407
 \bframebox=\box164
-\@LN@amsmath@ams@eqpen=\count456
+\@LN@amsmath@ams@eqpen=\count457
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
 (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-dvipdfm.def
 File: bkm-dvipdfm.def 2023-12-10 v1.31 bookmark driver for dvipdfm (HO)
-\BKM@id=\count457
+\BKM@id=\count458
 ))
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 175.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 176.
 (./_main.aux
 
 LaTeX Warning: Label `fig:test1' multiply defined.
@@ -1515,34 +1517,34 @@ LaTeX Warning: Label `ex188q' multiply defined.
 )
 \openout1 = `_main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 175.
-LaTeX Font Info:    ... okay on input line 175.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 176.
+LaTeX Font Info:    ... okay on input line 176.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 175.
+(Font)                  OT1/lmss/m/n --> TU/lmss/m/n on input line 176.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> TU/lmss/b/n on input line 175.
+(Font)                  OT1/lmss/bx/n --> TU/lmss/b/n on input line 176.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 175.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/m/n on input line 176.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> TU/lmtt/b/n on input line 175.
+(Font)                  OT1/lmtt/m/n --> TU/lmtt/b/n on input line 176.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.03015890977869.
@@ -1570,7 +1572,7 @@ Package fontspec Info:
 (fontspec)             <->s*[1.03015890977869]"[latinmodern-math.otf]/OT:script=math;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(0)/m/n' will be
-(Font)              scaled to size 11.28015pt on input line 175.
+(Font)              scaled to size 11.28015pt on input line 176.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.03015890977869.
@@ -1606,15 +1608,15 @@ Package fontspec Info:
 (fontspec)             <->s*[1.03015890977869]"[latinmodern-math.otf]/OT:script=math;language=dflt;"
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 11.28015pt on input line 175.
+(Font)              scaled to size 11.28015pt on input line 176.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 175.
+(Font)              `operators' in the math version `normal' on input line 176.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 175.
+(Font)                  OT1/lmr/m/n --> TU/latinmodern-math.otf(1)/m/n on input line 176.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 175.
+(Font)              `operators' in the math version `bold' on input line 176.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 175.
+(Font)                  OT1/lmr/bx/n --> TU/latinmodern-math.otf(1)/b/n on input line 176.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.03015890977869.
@@ -1680,13 +1682,13 @@ Package fontspec Info:
 (fontspec)             <->s*[1.030261925669668]"[latinmodern-math.otf]/OT:script=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `normal' on input line 175.
+(Font)              `symbols' in the math version `normal' on input line 176.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 175.
+(Font)                  OMS/lmsy/m/n --> TU/latinmodern-math.otf(2)/m/n on input line 176.
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
-(Font)              `symbols' in the math version `bold' on input line 175.
+(Font)              `symbols' in the math version `bold' on input line 176.
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 175.
+(Font)                  OMS/lmsy/b/n --> TU/latinmodern-math.otf(2)/b/n on input line 176.
 
 Package fontspec Info: 
 (fontspec)             latinmodern-math scale = 1.03015890977869.
@@ -1746,13 +1748,13 @@ Package fontspec Info:
 (fontspec)             <->s*[1.030055893887712]"[latinmodern-math.otf]/OT:script=math;language=dflt;"
 
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `normal' on input line 175.
+(Font)              `largesymbols' in the math version `normal' on input line 176.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 175.
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/m/n on input line 176.
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
-(Font)              `largesymbols' in the math version `bold' on input line 175.
+(Font)              `largesymbols' in the math version `bold' on input line 176.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 175.
+(Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 176.
 
 Package unicode-math Warning: Using \overbracket and \underbracket from
 (unicode-math)                `mathtools' package.
@@ -1805,20 +1807,20 @@ Package unicode-math Warning: I'm going to overwrite the following commands
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count458
+\c@lstlisting=\count459
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 175.
-LaTeX Info: Redefining \celsius on input line 175.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 175.
+Package hyperref Info: Link coloring OFF on input line 176.
+LaTeX Info: Redefining \celsius on input line 176.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 176.
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 175.
-Package gensymb Info: Using \upOmega for \ohm on input line 175.
+LaTeX Info: Redefining \ohm on input line 176.
+Package gensymb Info: Using \upOmega for \ohm on input line 176.
 
 Package gensymb Warning: Not defining \micro.
 
@@ -1831,14 +1833,14 @@ File: exsheets_configurations.cfg
 ) (/Users/andyjames/Library/TinyTeX/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 175.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 176.
 Package pgfplots notification 'compat/show suggested version=true': you might benefit from \pgfplotsset{compat=1.18} (current compat level: 1.8).
 
-LaTeX Font Info:    Trying to load font information for TU+pbk on input line 179.
-LaTeX Font Info:    No file TUpbk.fd. on input line 179.
+LaTeX Font Info:    Trying to load font information for TU+pbk on input line 180.
+LaTeX Font Info:    No file TUpbk.fd. on input line 180.
 
 LaTeX Font Warning: Font shape `TU/pbk/b/n' undefined
-(Font)              using `TU/lmr/m/n' instead on input line 179.
+(Font)              using `TU/lmr/m/n' instead on input line 180.
 
 (./_main.toc
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
@@ -1951,23 +1953,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [4]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 12.36182pt on input line 914.
+(Font)              scaled to size 12.36182pt on input line 915.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 8.24121pt on input line 914.
+(Font)              scaled to size 8.24121pt on input line 915.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 6.18091pt on input line 914.
+(Font)              scaled to size 6.18091pt on input line 915.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.3631pt on input line 914.
+(Font)              scaled to size 12.3631pt on input line 915.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.24207pt on input line 914.
+(Font)              scaled to size 8.24207pt on input line 915.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.18155pt on input line 914.
+(Font)              scaled to size 6.18155pt on input line 915.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 12.36072pt on input line 914.
+(Font)              scaled to size 12.36072pt on input line 915.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.24048pt on input line 914.
+(Font)              scaled to size 8.24048pt on input line 915.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.18036pt on input line 914.
+(Font)              scaled to size 6.18036pt on input line 915.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2000,7 +2002,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [8]
-Overfull \hbox (0.7929pt too wide) in paragraph at lines 1461--1462
+Overfull \hbox (0.7929pt too wide) in paragraph at lines 1462--1463
  [] 
  []
 
@@ -2053,9 +2055,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [14]
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 2298.
-
-
 LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 2299.
 
 
@@ -2074,7 +2073,7 @@ LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 2303.
 LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 2304.
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 2340.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 2305.
 
 
 LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 2341.
@@ -2089,7 +2088,7 @@ LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 2343.
 LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 2344.
 
 
-LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 2363.
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 2345.
 
 
 LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 2364.
@@ -2113,6 +2112,9 @@ LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 2369.
 LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 2370.
 
 
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 2371.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -2120,10 +2122,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [15]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 2411.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2157,6 +2155,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Underfull \vbox (badness 5175) has occurred while \output is active []
 
 
+Underfull \vbox (badness 5175) has occurred while \output is active []
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -2179,6 +2180,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -2195,17 +2199,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [23]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 9.27136pt on input line 3028.
+(Font)              scaled to size 9.27136pt on input line 3029.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.15076pt on input line 3028.
+(Font)              scaled to size 5.15076pt on input line 3029.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 9.27232pt on input line 3028.
+(Font)              scaled to size 9.27232pt on input line 3029.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.15129pt on input line 3028.
+(Font)              scaled to size 5.15129pt on input line 3029.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.27054pt on input line 3028.
+(Font)              scaled to size 9.27054pt on input line 3029.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.1503pt on input line 3028.
+(Font)              scaled to size 5.1503pt on input line 3029.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2239,10 +2243,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [27]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 3373.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -2254,6 +2254,9 @@ Chapter 3.
 [29
 
 ]
+Underfull \vbox (badness 1043) has occurred while \output is active []
+
+
 Underfull \vbox (badness 1043) has occurred while \output is active []
 
 
@@ -2281,17 +2284,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [32]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.30151pt on input line 4269.
+(Font)              scaled to size 10.30151pt on input line 4270.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.21106pt on input line 4269.
+(Font)              scaled to size 7.21106pt on input line 4270.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.30258pt on input line 4269.
+(Font)              scaled to size 10.30258pt on input line 4270.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.2118pt on input line 4269.
+(Font)              scaled to size 7.2118pt on input line 4270.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 10.3006pt on input line 4269.
+(Font)              scaled to size 10.3006pt on input line 4270.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.21042pt on input line 4269.
+(Font)              scaled to size 7.21042pt on input line 4270.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2317,10 +2320,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [35]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 4717.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -2330,7 +2329,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [36]
 Chapter 4.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <9> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 4775.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 4776.
 [37
 
 ]
@@ -2345,6 +2344,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Underfull \vbox (badness 3417) has occurred while \output is active []
 
 
+Underfull \vbox (badness 3417) has occurred while \output is active []
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -2352,7 +2354,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [39]
-Underfull \hbox (badness 10000) in paragraph at lines 5064--5065
+Underfull \hbox (badness 10000) in paragraph at lines 5065--5066
 
  []
 
@@ -2364,7 +2366,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [40]
-Underfull \hbox (badness 10000) in paragraph at lines 5165--5166
+Underfull \hbox (badness 10000) in paragraph at lines 5166--5167
 
  []
 
@@ -2384,6 +2386,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [42]
+Underfull \vbox (badness 1248) has occurred while \output is active []
+
+
 Underfull \vbox (badness 1248) has occurred while \output is active []
 
 
@@ -2413,6 +2418,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Underfull \vbox (badness 1454) has occurred while \output is active []
 
 
+Underfull \vbox (badness 1454) has occurred while \output is active []
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -2428,10 +2436,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [47]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 5626.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2460,37 +2464,37 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [51]
-Overfull \hbox (0.56056pt too wide) in paragraph at lines 6315--6316
+Overfull \hbox (0.56056pt too wide) in paragraph at lines 6316--6317
  [] 
  []
 
 
-Overfull \hbox (0.56056pt too wide) in paragraph at lines 6344--6345
+Overfull \hbox (0.56056pt too wide) in paragraph at lines 6345--6346
  [] 
  []
 
 
-Overfull \hbox (0.56056pt too wide) in paragraph at lines 6373--6374
+Overfull \hbox (0.56056pt too wide) in paragraph at lines 6374--6375
  [] 
  []
 
 
-Overfull \hbox (0.56056pt too wide) in paragraph at lines 6402--6403
+Overfull \hbox (0.56056pt too wide) in paragraph at lines 6403--6404
  [] 
  []
 
 
-Overfull \hbox (0.56056pt too wide) in paragraph at lines 6415--6416
+Overfull \hbox (0.56056pt too wide) in paragraph at lines 6416--6417
  [] 
  []
 
 
-Overfull \hbox (14.78232pt too wide) in paragraph at lines 6509--6510
+Overfull \hbox (14.78232pt too wide) in paragraph at lines 6510--6511
  [] 
  []
 
 
-Overfull \hbox (13.35959pt too wide) in paragraph at lines 6583--6584
+Overfull \hbox (13.35959pt too wide) in paragraph at lines 6584--6585
  [] 
  []
 
@@ -2502,37 +2506,37 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [52]
-Overfull \hbox (58.19807pt too wide) detected at line 6611
+Overfull \hbox (58.19807pt too wide) detected at line 6612
 []
  []
 
 
-Overfull \hbox (58.19807pt too wide) in paragraph at lines 6606--6613
+Overfull \hbox (58.19807pt too wide) in paragraph at lines 6607--6614
 [][]$[]$  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6659--6660
+Underfull \hbox (badness 10000) in paragraph at lines 6660--6661
 
  []
 
 
-Overfull \hbox (7.45459pt too wide) in paragraph at lines 6744--6745
+Overfull \hbox (7.45459pt too wide) in paragraph at lines 6745--6746
  [] 
  []
 
 
-Overfull \hbox (7.45459pt too wide) in paragraph at lines 6785--6786
+Overfull \hbox (7.45459pt too wide) in paragraph at lines 6786--6787
  [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6899--6900
-[]\TU/lmss/m/n/10.95 Without considering the scatterplot, explain why the researcher should not have
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 6900--6901
+[]\TU/lmss/m/n/10.95 Without considering the scatterplot, explain why the researcher should not have
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6901--6902
 []\TU/lmss/m/n/10.95 Comment on what might be observed by inspecting the scatterplot, and explain
  []
 
@@ -2544,25 +2548,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [53]
-Underfull \hbox (badness 10000) in paragraph at lines 6939--6940
+Underfull \hbox (badness 10000) in paragraph at lines 6940--6941
 []\TU/lmss/m/n/10.95 Given a full population of bivariate data
  []
 
 
-Overfull \hbox (14.36632pt too wide) in paragraph at lines 6974--6975
+Overfull \hbox (14.36632pt too wide) in paragraph at lines 6975--6976
  [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 7024
+Underfull \vbox (badness 10000) detected at line 7025
  []
 
 
-Overfull \vbox (9.66827pt too high) detected at line 7024
+Overfull \vbox (9.66827pt too high) detected at line 7025
  []
 
 
-Overfull \hbox (351.77263pt too wide) detected at line 7024
+Overfull \hbox (351.77263pt too wide) detected at line 7025
 [] []|[] []
  []
 
@@ -2574,6 +2578,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [54]
+Underfull \vbox (badness 3954) has occurred while \output is active []
+
+
 Underfull \vbox (badness 3954) has occurred while \output is active []
 
 
@@ -2592,7 +2599,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [56]
-Overfull \hbox (5.5991pt too wide) in paragraph at lines 7235--7241
+Overfull \hbox (5.5991pt too wide) in paragraph at lines 7236--7242
  [] 
  []
 
@@ -2605,10 +2612,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [57]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 7352.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -2620,27 +2623,33 @@ Chapter 6.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 [59
 
 ]
-Overfull \hbox (3.3068pt too wide) in paragraph at lines 7583--7586
+Overfull \hbox (3.3068pt too wide) in paragraph at lines 7584--7587
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7630--7635
+Underfull \hbox (badness 10000) in paragraph at lines 7631--7636
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7630--7635
+Underfull \hbox (badness 10000) in paragraph at lines 7631--7636
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7637--7638
+Underfull \hbox (badness 10000) in paragraph at lines 7638--7639
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2661,6 +2670,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [61]
+Underfull \vbox (badness 1629) has occurred while \output is active []
+
+
 Underfull \vbox (badness 1629) has occurred while \output is active []
 
 
@@ -2696,9 +2708,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [65]
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <7.665> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 8219.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 8220.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <5.475> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 8219.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 8220.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2707,6 +2719,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [66]
+Underfull \vbox (badness 4316) has occurred while \output is active []
+
+
 Underfull \vbox (badness 4316) has occurred while \output is active []
 
 
@@ -2733,27 +2748,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [69]
-Underfull \hbox (badness 10000) in paragraph at lines 8505--8505
+Underfull \hbox (badness 10000) in paragraph at lines 8506--8506
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8507--8507
+Underfull \hbox (badness 10000) in paragraph at lines 8508--8508
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8509--8509
+Underfull \hbox (badness 10000) in paragraph at lines 8510--8510
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8511--8511
+Underfull \hbox (badness 10000) in paragraph at lines 8512--8512
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8513--8513
+Underfull \hbox (badness 10000) in paragraph at lines 8514--8514
 
  []
 
@@ -2773,9 +2788,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [71]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 8577.
+Underfull \vbox (badness 6944) has occurred while \output is active []
 
 
 Underfull \vbox (badness 6944) has occurred while \output is active []
@@ -2789,6 +2802,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [72]
 Chapter 7.
+
+Underfull \vbox (badness 6032) has occurred while \output is active []
+
 
 Underfull \vbox (badness 6032) has occurred while \output is active []
 
@@ -2812,7 +2828,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [75]
 LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 8845.
+(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 8846.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2824,6 +2840,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Underfull \vbox (badness 2698) has occurred while \output is active []
 
 
+Underfull \vbox (badness 2698) has occurred while \output is active []
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -2831,7 +2850,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [77]
-Underfull \hbox (badness 10000) in paragraph at lines 9011--9012
+Underfull \hbox (badness 10000) in paragraph at lines 9012--9013
 
  []
 
@@ -2859,12 +2878,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [80]
-Underfull \hbox (badness 10000) in paragraph at lines 9192--9193
+Underfull \hbox (badness 10000) in paragraph at lines 9193--9194
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9194--9195
+Underfull \hbox (badness 10000) in paragraph at lines 9195--9196
 
  []
 
@@ -2876,22 +2895,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [81]
-Underfull \hbox (badness 10000) in paragraph at lines 9281--9282
+Underfull \hbox (badness 10000) in paragraph at lines 9282--9283
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9283--9284
+Underfull \hbox (badness 10000) in paragraph at lines 9284--9285
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9285--9286
+Underfull \hbox (badness 10000) in paragraph at lines 9286--9287
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9287--9288
+Underfull \hbox (badness 10000) in paragraph at lines 9288--9289
 
  []
 
@@ -2903,10 +2922,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [82]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 9311.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -3152,7 +3167,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [87]
 LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <14.4> not available
-(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 9841.
+(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 9842.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -3161,7 +3176,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [88]
-Overfull \hbox (52.89688pt too wide) in paragraph at lines 10203--10299
+Overfull \hbox (52.89688pt too wide) in paragraph at lines 10204--10300
  [][][][] 
  []
 
@@ -3197,6 +3212,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [92]
+Underfull \vbox (badness 5417) has occurred while \output is active []
+
+
 Underfull \vbox (badness 5417) has occurred while \output is active []
 
 
@@ -3242,6 +3260,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Underfull \vbox (badness 2790) has occurred while \output is active []
 
 
+Underfull \vbox (badness 2790) has occurred while \output is active []
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -3249,9 +3270,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [98]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 11258.
+Underfull \vbox (badness 5878) has occurred while \output is active []
 
 
 Underfull \vbox (badness 5878) has occurred while \output is active []
@@ -3276,6 +3295,9 @@ Missing character: There is no ; ("3B) in font nullfont!
 Underfull \vbox (badness 1558) has occurred while \output is active []
 
 
+Underfull \vbox (badness 1558) has occurred while \output is active []
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -3283,7 +3305,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [101]
-Underfull \hbox (badness 10000) in paragraph at lines 11473--11475
+Underfull \hbox (badness 10000) in paragraph at lines 11474--11476
 
  []
 
@@ -3317,10 +3339,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [104]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 11604.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -3329,6 +3347,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [105]
 Chapter 10.
+
+Underfull \vbox (badness 5490) has occurred while \output is active []
+
 
 Underfull \vbox (badness 5490) has occurred while \output is active []
 
@@ -3344,7 +3365,10 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [107]
 LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <12> not available
-(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 11723.
+(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 11724.
+
+Underfull \vbox (badness 1577) has occurred while \output is active []
+
 
 Underfull \vbox (badness 1577) has occurred while \output is active []
 
@@ -3356,24 +3380,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [108]
-Underfull \hbox (badness 10000) in paragraph at lines 11787--11789
+Underfull \hbox (badness 10000) in paragraph at lines 11788--11790
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11792--11793
+Underfull \hbox (badness 10000) in paragraph at lines 11793--11794
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11811--11812
+Underfull \hbox (badness 10000) in paragraph at lines 11812--11813
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11815--11816
+Underfull \hbox (badness 10000) in paragraph at lines 11816--11817
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -3386,44 +3413,47 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [109]
-Underfull \hbox (badness 10000) in paragraph at lines 11829--11831
+Underfull \hbox (badness 10000) in paragraph at lines 11830--11832
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11849--11850
+Underfull \hbox (badness 10000) in paragraph at lines 11850--11851
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11853--11854
+Underfull \hbox (badness 10000) in paragraph at lines 11854--11855
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11865--11867
+Underfull \hbox (badness 10000) in paragraph at lines 11866--11868
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11870--11871
+Underfull \hbox (badness 10000) in paragraph at lines 11871--11872
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11890--11891
+Underfull \hbox (badness 10000) in paragraph at lines 11891--11892
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11894--11895
+Underfull \hbox (badness 10000) in paragraph at lines 11895--11896
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11898--11899
+Underfull \hbox (badness 10000) in paragraph at lines 11899--11900
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -3439,6 +3469,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Underfull \vbox (badness 7451) has occurred while \output is active []
 
 
+Underfull \vbox (badness 7451) has occurred while \output is active []
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -3446,6 +3479,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [111]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -3459,6 +3495,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -3466,34 +3505,37 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [113]
-Underfull \hbox (badness 10000) in paragraph at lines 12104--12106
+Underfull \hbox (badness 10000) in paragraph at lines 12105--12107
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12123--12156
+Underfull \hbox (badness 10000) in paragraph at lines 12124--12157
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12159--12160
+Underfull \hbox (badness 10000) in paragraph at lines 12160--12161
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12169--12171
+Underfull \hbox (badness 10000) in paragraph at lines 12170--12172
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12190--12227
+Underfull \hbox (badness 10000) in paragraph at lines 12191--12228
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12230--12231
+Underfull \hbox (badness 10000) in paragraph at lines 12231--12232
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -3509,6 +3551,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -3516,6 +3561,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [115]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -3529,6 +3577,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Underfull \vbox (badness 1102) has occurred while \output is active []
 
 
+Underfull \vbox (badness 1102) has occurred while \output is active []
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -3536,54 +3587,57 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [117]
-Underfull \hbox (badness 10000) in paragraph at lines 12412--12414
+Underfull \hbox (badness 10000) in paragraph at lines 12413--12415
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12415--12416
+Underfull \hbox (badness 10000) in paragraph at lines 12416--12417
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12432--12464
+Underfull \hbox (badness 10000) in paragraph at lines 12433--12465
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12465--12466
+Underfull \hbox (badness 10000) in paragraph at lines 12466--12467
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12467--12468
+Underfull \hbox (badness 10000) in paragraph at lines 12468--12469
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12474--12475
+Underfull \hbox (badness 10000) in paragraph at lines 12475--12476
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12483--12485
+Underfull \hbox (badness 10000) in paragraph at lines 12484--12486
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12501--12537
+Underfull \hbox (badness 10000) in paragraph at lines 12502--12538
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12538--12539
+Underfull \hbox (badness 10000) in paragraph at lines 12539--12540
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12540--12541
+Underfull \hbox (badness 10000) in paragraph at lines 12541--12542
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -3620,39 +3674,42 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [121]
-Underfull \hbox (badness 10000) in paragraph at lines 12680--12681
+Underfull \hbox (badness 10000) in paragraph at lines 12681--12682
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12685--12687
+Underfull \hbox (badness 10000) in paragraph at lines 12686--12688
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12705--12737
+Underfull \hbox (badness 10000) in paragraph at lines 12706--12738
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12740--12741
+Underfull \hbox (badness 10000) in paragraph at lines 12741--12742
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12752--12754
+Underfull \hbox (badness 10000) in paragraph at lines 12753--12755
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12772--12808
+Underfull \hbox (badness 10000) in paragraph at lines 12773--12809
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12811--12812
+Underfull \hbox (badness 10000) in paragraph at lines 12812--12813
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -3665,6 +3722,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [122]
+Underfull \vbox (badness 3989) has occurred while \output is active []
+
+
 Underfull \vbox (badness 3989) has occurred while \output is active []
 
 
@@ -3683,9 +3743,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [124]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 12881.
+Underfull \vbox (badness 1590) has occurred while \output is active []
 
 
 Underfull \vbox (badness 1590) has occurred while \output is active []
@@ -3702,32 +3760,32 @@ Chapter 11.
 [126
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 12977--12979
+Underfull \hbox (badness 10000) in paragraph at lines 12978--12980
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13022--13023
+Underfull \hbox (badness 10000) in paragraph at lines 13023--13024
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13024--13025
+Underfull \hbox (badness 10000) in paragraph at lines 13025--13026
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13034--13036
+Underfull \hbox (badness 10000) in paragraph at lines 13035--13037
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13037--13038
+Underfull \hbox (badness 10000) in paragraph at lines 13038--13039
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13082--13083
+Underfull \hbox (badness 10000) in paragraph at lines 13083--13084
 
  []
 
@@ -3747,19 +3805,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [128]
-Underfull \hbox (badness 10000) in paragraph at lines 13141--13143
+Underfull \hbox (badness 10000) in paragraph at lines 13142--13144
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13189--13190
+Underfull \hbox (badness 10000) in paragraph at lines 13190--13191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13193--13194
+Underfull \hbox (badness 10000) in paragraph at lines 13194--13195
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -3780,24 +3841,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [130]
-Underfull \hbox (badness 10000) in paragraph at lines 13262--13264
+Underfull \hbox (badness 10000) in paragraph at lines 13263--13265
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13265--13266
+Underfull \hbox (badness 10000) in paragraph at lines 13266--13267
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13306--13307
+Underfull \hbox (badness 10000) in paragraph at lines 13307--13308
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13310--13311
+Underfull \hbox (badness 10000) in paragraph at lines 13311--13312
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -3818,17 +3882,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [132]
-Underfull \hbox (badness 10000) in paragraph at lines 13394--13396
+Underfull \hbox (badness 10000) in paragraph at lines 13395--13397
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13437--13438
+Underfull \hbox (badness 10000) in paragraph at lines 13438--13439
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13441--13442
+Underfull \hbox (badness 10000) in paragraph at lines 13442--13443
 
  []
 
@@ -3849,10 +3913,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [134]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 13486.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -3862,14 +3922,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [135]
 Chapter 12.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 14.83417pt on input line 13520.
+(Font)              scaled to size 14.83417pt on input line 13521.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 14.83571pt on input line 13520.
+(Font)              scaled to size 14.83571pt on input line 13521.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 14.83284pt on input line 13520.
+(Font)              scaled to size 14.83284pt on input line 13521.
 [136
 
 ]
+Underfull \vbox (badness 1221) has occurred while \output is active []
+
+
 Underfull \vbox (badness 1221) has occurred while \output is active []
 
 
@@ -3880,17 +3943,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [137]
-Underfull \hbox (badness 10000) in paragraph at lines 13681--13682
+Underfull \hbox (badness 10000) in paragraph at lines 13682--13683
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13683--13684
+Underfull \hbox (badness 10000) in paragraph at lines 13684--13685
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13685--13719
+Underfull \hbox (badness 10000) in paragraph at lines 13686--13720
 
  []
 
@@ -3902,19 +3965,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [138]
-Underfull \hbox (badness 10000) in paragraph at lines 13831--13832
+Underfull \hbox (badness 10000) in paragraph at lines 13832--13833
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13835--13836
+Underfull \hbox (badness 10000) in paragraph at lines 13836--13837
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13839--13873
+Underfull \hbox (badness 10000) in paragraph at lines 13840--13874
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -3935,34 +4001,37 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [140]
-Underfull \hbox (badness 10000) in paragraph at lines 13969--13970
+Underfull \hbox (badness 10000) in paragraph at lines 13970--13971
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13971--13983
+Underfull \hbox (badness 10000) in paragraph at lines 13972--13984
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13986--13987
+Underfull \hbox (badness 10000) in paragraph at lines 13987--13988
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14023--14024
+Underfull \hbox (badness 10000) in paragraph at lines 14024--14025
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14027--14028
+Underfull \hbox (badness 10000) in paragraph at lines 14028--14029
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14031--14065
+Underfull \hbox (badness 10000) in paragraph at lines 14032--14066
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -3983,39 +4052,42 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [142]
-Underfull \hbox (badness 10000) in paragraph at lines 14169--14170
+Underfull \hbox (badness 10000) in paragraph at lines 14170--14171
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14171--14183
+Underfull \hbox (badness 10000) in paragraph at lines 14172--14184
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14214--14215
+Underfull \hbox (badness 10000) in paragraph at lines 14215--14216
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14216--14217
+Underfull \hbox (badness 10000) in paragraph at lines 14217--14218
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14218--14219
+Underfull \hbox (badness 10000) in paragraph at lines 14219--14220
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14220--14254
+Underfull \hbox (badness 10000) in paragraph at lines 14221--14255
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14255--14257
+Underfull \hbox (badness 10000) in paragraph at lines 14256--14258
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -4031,6 +4103,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Underfull \vbox (badness 1742) has occurred while \output is active []
 
 
+Underfull \vbox (badness 1742) has occurred while \output is active []
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -4038,9 +4113,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [144]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 14328.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -4101,6 +4174,9 @@ File: images/1223.png Graphic file (type bmp)
 <images/1223.png>
 File: images/1224.png Graphic file (type bmp)
 <images/1224.png>
+
+Underfull \vbox (badness 3417) has occurred while \output is active []
+
 
 Underfull \vbox (badness 3417) has occurred while \output is active []
 
@@ -4166,29 +4242,32 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [158]
-Overfull \hbox (5.40051pt too wide) in paragraph at lines 15489--15501
+Overfull \hbox (5.40051pt too wide) in paragraph at lines 15490--15502
 []$[] []$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15489--15501
+Underfull \hbox (badness 10000) in paragraph at lines 15490--15502
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15519--15520
+Underfull \hbox (badness 10000) in paragraph at lines 15520--15521
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15523--15524
+Underfull \hbox (badness 10000) in paragraph at lines 15524--15525
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15527--15561
+Underfull \hbox (badness 10000) in paragraph at lines 15528--15562
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -4201,34 +4280,37 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [159]
-Underfull \hbox (badness 10000) in paragraph at lines 15601--15602
+Underfull \hbox (badness 10000) in paragraph at lines 15602--15603
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15605--15617
+Underfull \hbox (badness 10000) in paragraph at lines 15606--15618
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15632--15633
+Underfull \hbox (badness 10000) in paragraph at lines 15633--15634
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15636--15637
+Underfull \hbox (badness 10000) in paragraph at lines 15637--15638
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15640--15674
+Underfull \hbox (badness 10000) in paragraph at lines 15641--15675
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15677--15679
+Underfull \hbox (badness 10000) in paragraph at lines 15678--15680
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -4249,34 +4331,37 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [161]
-Overfull \hbox (3.7449pt too wide) in paragraph at lines 15763--15763
+Overfull \hbox (3.7449pt too wide) in paragraph at lines 15764--15764
 []|\TU/lmss/m/n/10.95 Treatment|  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15768--15769
+Underfull \hbox (badness 10000) in paragraph at lines 15769--15770
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15770--15782
+Underfull \hbox (badness 10000) in paragraph at lines 15771--15783
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15805--15806
+Underfull \hbox (badness 10000) in paragraph at lines 15806--15807
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15809--15810
+Underfull \hbox (badness 10000) in paragraph at lines 15810--15811
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15813--15847
+Underfull \hbox (badness 10000) in paragraph at lines 15814--15848
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -4289,24 +4374,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [162]
-Overfull \hbox (4.3206pt too wide) in paragraph at lines 15868--15868
+Overfull \hbox (4.3206pt too wide) in paragraph at lines 15869--15869
  []|\TU/lmss/m/n/10.95 Stirling| 
  []
 
 
-Overfull \hbox (3.36052pt too wide) in paragraph at lines 15868--15868
+Overfull \hbox (3.36052pt too wide) in paragraph at lines 15869--15869
  []|\TU/lmss/m/n/10.95 Glasgow| 
  []
 
 
-Overfull \hbox (4.3206pt too wide) in paragraph at lines 15868--15868
+Overfull \hbox (4.3206pt too wide) in paragraph at lines 15869--15869
  []|\TU/lmss/m/n/10.95 Stirling| 
  []
 
 
-Overfull \hbox (3.36052pt too wide) in paragraph at lines 15868--15868
+Overfull \hbox (3.36052pt too wide) in paragraph at lines 15869--15869
  []|\TU/lmss/m/n/10.95 Glasgow| 
  []
+
+
+Underfull \vbox (badness 3364) has occurred while \output is active []
 
 
 Underfull \vbox (badness 3364) has occurred while \output is active []
@@ -4319,12 +4407,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [163]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 15911.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 15949--15955
+Underfull \hbox (badness 10000) in paragraph at lines 15950--15956
 
  []
 
@@ -4348,19 +4431,22 @@ Chapter 15.
 [166
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 16179--16181
+Underfull \hbox (badness 10000) in paragraph at lines 16180--16182
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16197--16234
+Underfull \hbox (badness 10000) in paragraph at lines 16198--16235
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16235--16236
+Underfull \hbox (badness 10000) in paragraph at lines 16236--16237
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -4373,6 +4459,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [167]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -4391,19 +4480,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [169]
-Underfull \hbox (badness 10000) in paragraph at lines 16342--16344
+Underfull \hbox (badness 10000) in paragraph at lines 16343--16345
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16364--16400
+Underfull \hbox (badness 10000) in paragraph at lines 16365--16401
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16401--16402
+Underfull \hbox (badness 10000) in paragraph at lines 16402--16403
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -4419,6 +4511,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -4426,7 +4521,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [171]
-Underfull \hbox (badness 10000) in paragraph at lines 16443--16452
+Underfull \hbox (badness 10000) in paragraph at lines 16444--16453
 
  []
 
@@ -4441,6 +4536,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -4448,24 +4546,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [173]
-Underfull \hbox (badness 10000) in paragraph at lines 16489--16491
+Underfull \hbox (badness 10000) in paragraph at lines 16490--16492
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16507--16508
+Underfull \hbox (badness 10000) in paragraph at lines 16508--16509
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16513--16549
+Underfull \hbox (badness 10000) in paragraph at lines 16514--16550
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16550--16551
+Underfull \hbox (badness 10000) in paragraph at lines 16551--16552
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -4486,17 +4587,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [175]
-Underfull \hbox (badness 10000) in paragraph at lines 16681--16682
+Underfull \hbox (badness 10000) in paragraph at lines 16682--16683
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16702--16738
+Underfull \hbox (badness 10000) in paragraph at lines 16703--16739
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16739--16740
+Underfull \hbox (badness 10000) in paragraph at lines 16740--16741
 
  []
 
@@ -4516,9 +4617,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [177]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 16815.
+Underfull \vbox (badness 1102) has occurred while \output is active []
 
 
 Underfull \vbox (badness 1102) has occurred while \output is active []
@@ -4533,7 +4632,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [178]
 Chapter 16.
 
-Overfull \hbox (26.06517pt too wide) in paragraph at lines 16877--16889
+Overfull \hbox (26.06517pt too wide) in paragraph at lines 16878--16890
  [] []$ 
  []
 
@@ -4548,12 +4647,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [180]
-Underfull \hbox (badness 10000) in paragraph at lines 17080--17081
+Underfull \hbox (badness 10000) in paragraph at lines 17081--17082
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17110--17114
+Underfull \hbox (badness 10000) in paragraph at lines 17111--17115
 
  []
 
@@ -4565,12 +4664,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [181]
-Underfull \hbox (badness 10000) in paragraph at lines 17159--17160
+Underfull \hbox (badness 10000) in paragraph at lines 17160--17161
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17189--17193
+Underfull \hbox (badness 10000) in paragraph at lines 17190--17194
 
  []
 
@@ -4590,14 +4689,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [183]
-Underfull \hbox (badness 10000) in paragraph at lines 17295--17296
+Underfull \hbox (badness 10000) in paragraph at lines 17296--17297
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17324--17328
+Underfull \hbox (badness 10000) in paragraph at lines 17325--17329
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -4618,14 +4720,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [185]
-Underfull \hbox (badness 10000) in paragraph at lines 17456--17457
+Underfull \hbox (badness 10000) in paragraph at lines 17457--17458
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17460--17492
+Underfull \hbox (badness 10000) in paragraph at lines 17461--17493
 
  []
+
+
+Underfull \vbox (badness 1248) has occurred while \output is active []
 
 
 Underfull \vbox (badness 1248) has occurred while \output is active []
@@ -4647,10 +4752,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [187]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 17574.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -4670,17 +4771,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [190]
-Underfull \hbox (badness 10000) in paragraph at lines 17944--17945
+Underfull \hbox (badness 10000) in paragraph at lines 17945--17946
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17974--17975
+Underfull \hbox (badness 10000) in paragraph at lines 17975--17976
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17976--17980
+Underfull \hbox (badness 10000) in paragraph at lines 17977--17981
 
  []
 
@@ -4700,7 +4801,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [192]
-Underfull \hbox (badness 10000) in paragraph at lines 18136--18142
+Underfull \hbox (badness 10000) in paragraph at lines 18137--18143
 
  []
 
@@ -4712,47 +4813,47 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [193]
-Underfull \hbox (badness 10000) in paragraph at lines 18188--18189
+Underfull \hbox (badness 10000) in paragraph at lines 18189--18190
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18190--18191
+Underfull \hbox (badness 10000) in paragraph at lines 18191--18192
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18192--18193
+Underfull \hbox (badness 10000) in paragraph at lines 18193--18194
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18194--18195
+Underfull \hbox (badness 10000) in paragraph at lines 18195--18196
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18196--18197
+Underfull \hbox (badness 10000) in paragraph at lines 18197--18198
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18198--18199
+Underfull \hbox (badness 10000) in paragraph at lines 18199--18200
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18200--18201
+Underfull \hbox (badness 10000) in paragraph at lines 18201--18202
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18204--18205
+Underfull \hbox (badness 10000) in paragraph at lines 18205--18206
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18208--18245
+Underfull \hbox (badness 10000) in paragraph at lines 18209--18246
 
  []
 
@@ -4772,19 +4873,22 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [195]
-Underfull \hbox (badness 10000) in paragraph at lines 18391--18392
+Underfull \hbox (badness 10000) in paragraph at lines 18392--18393
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18419--18420
+Underfull \hbox (badness 10000) in paragraph at lines 18420--18421
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18439--18440
+Underfull \hbox (badness 10000) in paragraph at lines 18440--18441
 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -4797,6 +4901,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [196]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -4815,10 +4922,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [198]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 18523.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -4847,7 +4950,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [202]
-Underfull \hbox (badness 10000) in paragraph at lines 19046--19047
+Underfull \hbox (badness 10000) in paragraph at lines 19047--19048
 
  []
 
@@ -4859,7 +4962,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [203]
-Underfull \hbox (badness 10000) in paragraph at lines 19155--19156
+Underfull \hbox (badness 10000) in paragraph at lines 19156--19157
 
  []
 
@@ -4871,27 +4974,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [204]
-Underfull \hbox (badness 10000) in paragraph at lines 19340--19341
+Underfull \hbox (badness 10000) in paragraph at lines 19341--19342
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19357--19358
+Underfull \hbox (badness 10000) in paragraph at lines 19358--19359
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19359--19360
+Underfull \hbox (badness 10000) in paragraph at lines 19360--19361
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19361--19397
+Underfull \hbox (badness 10000) in paragraph at lines 19362--19398
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19398--19399
+Underfull \hbox (badness 10000) in paragraph at lines 19399--19400
 
  []
 
@@ -4911,27 +5014,27 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [206]
-Underfull \hbox (badness 10000) in paragraph at lines 19699--19700
+Underfull \hbox (badness 10000) in paragraph at lines 19700--19701
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19716--19717
+Underfull \hbox (badness 10000) in paragraph at lines 19717--19718
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19718--19719
+Underfull \hbox (badness 10000) in paragraph at lines 19719--19720
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19720--19756
+Underfull \hbox (badness 10000) in paragraph at lines 19721--19757
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19757--19758
+Underfull \hbox (badness 10000) in paragraph at lines 19758--19759
 
  []
 
@@ -4951,17 +5054,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [208]
-Overfull \hbox (5.54848pt too wide) detected at line 19920
+Overfull \hbox (5.54848pt too wide) detected at line 19921
 [][] [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19967--19968
+Underfull \hbox (badness 10000) in paragraph at lines 19968--19969
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19969--19970
+Underfull \hbox (badness 10000) in paragraph at lines 19970--19971
 
  []
 
@@ -4973,17 +5076,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [209]
-Underfull \hbox (badness 10000) in paragraph at lines 20027--20028
+Underfull \hbox (badness 10000) in paragraph at lines 20028--20029
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20029--20030
+Underfull \hbox (badness 10000) in paragraph at lines 20030--20031
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20031--20032
+Underfull \hbox (badness 10000) in paragraph at lines 20032--20033
 
  []
 
@@ -5003,32 +5106,32 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [211]
-Overfull \hbox (1.66714pt too wide) in paragraph at lines 20788--20789
+Overfull \hbox (1.66714pt too wide) in paragraph at lines 20789--20790
  [] 
  []
 
 
-Overfull \hbox (1.66714pt too wide) in paragraph at lines 20816--20817
+Overfull \hbox (1.66714pt too wide) in paragraph at lines 20817--20818
  [] 
  []
 
 
-Overfull \hbox (1.66714pt too wide) in paragraph at lines 20879--20880
+Overfull \hbox (1.66714pt too wide) in paragraph at lines 20880--20881
  [] 
  []
 
 
-Overfull \hbox (1.66714pt too wide) in paragraph at lines 20940--20941
+Overfull \hbox (1.66714pt too wide) in paragraph at lines 20941--20942
  [] 
  []
 
 
-Overfull \hbox (1.66714pt too wide) in paragraph at lines 21003--21004
+Overfull \hbox (1.66714pt too wide) in paragraph at lines 21004--21005
  [] 
  []
 
 
-Overfull \hbox (1.66714pt too wide) in paragraph at lines 21028--21029
+Overfull \hbox (1.66714pt too wide) in paragraph at lines 21029--21030
  [] 
  []
 
@@ -5040,6 +5143,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [212]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -5063,7 +5169,7 @@ Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
 
-Underfull \hbox (badness 10000) in paragraph at lines 21542--21543
+Underfull \hbox (badness 10000) in paragraph at lines 21543--21544
 
  []
 
@@ -5071,6 +5177,9 @@ Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -5094,11 +5203,11 @@ Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
 Missing character: There is no ; ("3B) in font nullfont!
 LaTeX Font Info:    Font shape `TU/TimesNewRoman(1)/m/n' will be
-(Font)              scaled to size 10.95pt on input line 21782.
+(Font)              scaled to size 10.95pt on input line 21783.
 LaTeX Font Info:    Font shape `TU/TimesNewRoman(1)/m/n' will be
-(Font)              scaled to size 7.665pt on input line 21782.
+(Font)              scaled to size 7.665pt on input line 21783.
 LaTeX Font Info:    Font shape `TU/TimesNewRoman(1)/m/n' will be
-(Font)              scaled to size 5.475pt on input line 21782.
+(Font)              scaled to size 5.475pt on input line 21783.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -5107,34 +5216,37 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [216]
-Underfull \hbox (badness 10000) in paragraph at lines 21801--21802
+Underfull \hbox (badness 10000) in paragraph at lines 21802--21803
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21819--21820
+Underfull \hbox (badness 10000) in paragraph at lines 21820--21821
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21821--21822
+Underfull \hbox (badness 10000) in paragraph at lines 21822--21823
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21823--21824
+Underfull \hbox (badness 10000) in paragraph at lines 21824--21825
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21825--21826
+Underfull \hbox (badness 10000) in paragraph at lines 21826--21827
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21827--21828
+Underfull \hbox (badness 10000) in paragraph at lines 21828--21829
 
  []
+
+
+Underfull \vbox (badness 1028) has occurred while \output is active []
 
 
 Underfull \vbox (badness 1028) has occurred while \output is active []
@@ -5147,32 +5259,32 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [217]
-Underfull \hbox (badness 10000) in paragraph at lines 21838--21839
+Underfull \hbox (badness 10000) in paragraph at lines 21839--21840
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21856--21857
+Underfull \hbox (badness 10000) in paragraph at lines 21857--21858
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21858--21859
+Underfull \hbox (badness 10000) in paragraph at lines 21859--21860
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21860--21861
+Underfull \hbox (badness 10000) in paragraph at lines 21861--21862
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21862--21863
+Underfull \hbox (badness 10000) in paragraph at lines 21863--21864
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 21864--21865
+Underfull \hbox (badness 10000) in paragraph at lines 21865--21866
 
  []
 
@@ -5185,10 +5297,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [218]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\@ifnextchar' on input line 21887.
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
 (fancyhdr)                \setlength{\headheight}{13.59999pt}.
@@ -5196,12 +5304,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [219]
-Underfull \hbox (badness 10000) in paragraph at lines 22053--22054
+Underfull \hbox (badness 10000) in paragraph at lines 22054--22055
 
  []
 
 
-Overfull \hbox (9.71738pt too wide) in paragraph at lines 22097--22098
+Overfull \hbox (9.71738pt too wide) in paragraph at lines 22098--22099
  [] 
  []
 
@@ -5214,11 +5322,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [220]
 LaTeX Font Info:    Font shape `TU/TimesNewRoman(1)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 22254.
+(Font)              scaled to size 9.0pt on input line 22255.
 LaTeX Font Info:    Font shape `TU/TimesNewRoman(1)/m/n' will be
-(Font)              scaled to size 6.0pt on input line 22254.
+(Font)              scaled to size 6.0pt on input line 22255.
 LaTeX Font Info:    Font shape `TU/TimesNewRoman(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 22254.
+(Font)              scaled to size 5.0pt on input line 22255.
 [221
 
 ]
@@ -5238,7 +5346,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [223]
-Overfull \hbox (5.382pt too wide) in paragraph at lines 22767--22767
+Overfull \hbox (5.382pt too wide) in paragraph at lines 22768--22768
  [][]\TU/lmss/m/n/9 insufficient 
  []
 
@@ -5258,6 +5366,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
 [225]
+Underfull \vbox (badness 6775) has occurred while \output is active []
+
+
 Underfull \vbox (badness 6775) has occurred while \output is active []
 
 
@@ -5325,16 +5436,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [233]
 
-LaTeX Warning: Hyper reference `ex131q' on page 234 undefined on input line 24444.
+LaTeX Warning: Hyper reference `ex131q' on page 234 undefined on input line 24445.
 
 
-LaTeX Warning: Hyper reference `ex132q' on page 234 undefined on input line 24449.
+LaTeX Warning: Hyper reference `ex132q' on page 234 undefined on input line 24450.
 
 
-LaTeX Warning: Hyper reference `ex133q' on page 234 undefined on input line 24454.
+LaTeX Warning: Hyper reference `ex133q' on page 234 undefined on input line 24455.
 
 
-LaTeX Warning: Hyper reference `re13q' on page 234 undefined on input line 24459.
+LaTeX Warning: Hyper reference `re13q' on page 234 undefined on input line 24460.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -5372,11 +5486,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [237]
 
-LaTeX Warning: Hyper reference `ex189q' on page 238 undefined on input line 24850.
+LaTeX Warning: Hyper reference `ex189q' on page 238 undefined on input line 24851.
 
 No file _main.bbl.
 
-Package caption Warning: Unused \captionsetup[figure] on input line 17809.
+Package caption Warning: Unused \captionsetup[figure] on input line 17810.
 See the caption package documentation for explanation.
 
 
@@ -5389,7 +5503,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [238] (./_main.aux)
  ***********
 LaTeX2e <2025-11-01>
-L3 programming layer <2026-01-19>
+L3 programming layer <2026-03-20>
  ***********
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -5402,10 +5516,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 58805 strings out of 470190
- 1384331 string characters out of 5477670
- 2580761 words of memory out of 5000000
- 86402 multiletter control sequences out of 15000+600000
+ 58789 strings out of 470015
+ 1383625 string characters out of 5474338
+ 2583504 words of memory out of 5000000
+ 86565 multiletter control sequences out of 15000+600000
  698631 words of font info for 237 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  116i,19n,121p,904b,2594s stack positions out of 10000i,1000n,20000p,200000b,200000s
