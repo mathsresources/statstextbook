@@ -1,0 +1,350 @@
+# Storage 18
+
+
+### Contexts for Exercises {-}
+
+The following example and contexts 1 to 5 will be used throughout this chapter. For convenience, key summary data and sample statistics are provided.
+
+\textbf{Example:} A biology exam consists of two papers: theoretical ($x$) and practical ($y$). The marks scored on each test is obtained for a random sample of 12 students who sat the exam, and a scatterplot is constructed to display the results.
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[right] at (7,3.9) {Summary data for sample:};
+        \node[right] at (7,3.4) {$\Sigma x=132$};
+        \node[right] at (7,2.9) {$\Sigma x^2=1742$};
+        \node[right] at (7,2.4) {$\Sigma y=147$};
+        \node[right] at (7,1.9) {$\Sigma y^2=2057$};
+        \node[right] at (7,1.4) {$\Sigma xy=1872$};
+        \node[right] at (10,3.4) {$S_{xx}=290$};
+        \node[right] at (10,2.9) {$S_{yy}=256.25$};
+        \node[right] at (10,2.4) {$S_{xy}=255$};
+        \node[right] at (10,1.5) {$n=12$};
+        \node[right] at (7,0.7) {Sample correlation coefficient};
+        \node[right] at (7,0.2) {$r=0.935$};
+        \node[right] at (7,-0.5) {Equation of $y$ on $x$ regression line:};
+        \node[right] at (7,-1) {$\hat{Y}=2.581+0.879x$};
+        \draw[white] (-4,-1.3) rectangle (14.4,4.2);
+        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
+        \draw[-stealth] (0,0) -- (0,3.25) node[above] {$y$}; 
+        \node at (2.5,-1) {Theoretical mark};
+        \node at (-2,1.75) {Practical};
+        \node at (-2,1.25) {mark};
+        \foreach \x in {0,1,...,5}{
+        \draw (\x,0) -- (\x,-0.1);
+        }
+        \foreach \y in {0,0.6,...,3}{
+        \draw (0,\y) -- (-0.1,\y);
+        }
+        \node[left] at (0,0) {0};
+        \node[left] at (0,0.6) {5};
+        \node[left] at (0,1.2) {10};
+        \node[left] at (0,1.8) {15};
+        \node[left] at (0,2.4) {20};
+        \node[left] at (0,3.0) {25};
+        \node[below] at (0,0) {0};
+        \node[below] at (1,0) {5};
+        \node[below] at (2,0) {10};
+        \node[below] at (3,0) {15};
+        \node[below] at (4,0) {20};
+        \node[below] at (5,0) {25};
+\draw[fill=black] (5*0.2,6*0.12) circle (0.05);
+\draw[fill=black] (9*0.2,8*0.12) circle (0.05);
+\draw[fill=black] (7*0.2,9*0.12) circle (0.05);
+\draw[fill=black] (11*0.2,13*0.12) circle (0.05);
+\draw[fill=black] (20*0.2,20*0.12) circle (0.05);
+\draw[fill=black] (4*0.2,9*0.12) circle (0.05);
+\draw[fill=black] (6*0.2,8*0.12) circle (0.05);
+\draw[fill=black] (17*0.2,17*0.12) circle (0.05);
+\draw[fill=black] (12*0.2,14*0.12) circle (0.05);
+\draw[fill=black] (10*0.2,8*0.12) circle (0.05);
+\draw[fill=black] (15*0.2,17*0.12) circle (0.05);
+\draw[fill=black] (16*0.2,18*0.12) circle (0.05);
+\draw[semithick] (3*0.2,5.488*0.12) -- (22*0.2,22.189*0.12);
+    \end{tikzpicture}
+\end{center}
+
+\textbf{Context 1:} Six metal plates were immersed in a weak acid solution for various lengths of time. Their percentage losses in mass were then measured and a scatterplot drawn of time in solution ($x$ hours) against mass loss ($y$\%). 
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[right] at (7,3.9) {Summary data for sample:};
+        \node[right] at (7,3.4) {$\Sigma x=1800$};
+        \node[right] at (7,2.9) {$\Sigma x^2=645000$};
+        \node[right] at (7,2.4) {$\Sigma y=10.2$};
+        \node[right] at (7,1.9) {$\Sigma y^2=19.94$};
+        \node[right] at (7,1.4) {$\Sigma xy=3570$};
+        \node[right] at (10,3.4) {$S_{xx}=105000$};
+        \node[right] at (10,2.9) {$S_{yy}=2.6$};
+        \node[right] at (10,2.4) {$S_{xy}=510$};
+        \node[right] at (10,1.5) {$n=6$};
+        \node[right] at (7,0.7) {Sample correlation coefficient};
+        \node[right] at (7,0.2) {$r=0.976$};
+        \node[right] at (7,-0.5) {Equation of $y$ on $x$ regression line:};
+        \node[right] at (7,-1) {$\hat{Y}=0.243+0.00486x$};
+        \draw[white] (-4,-1.3) rectangle (14.4,4.2);
+        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
+        \draw[-stealth] (0,0) -- (0,3.25) node[above] {$y$}; 
+        \node at (2.5,-1) {Time in solution (hours)};
+        \node at (-2,1.8) {Mass loss};
+        \node at (-2,1.2) {(\%)};
+        \foreach \x in {0,1,...,5}{
+        \draw (\x,0) -- (\x,-0.1);
+        }
+        \foreach \y in {0,0.5,...,3}{
+        \draw (0,\y) -- (-0.1,\y);
+        }
+        \node[left] at (0,0) {0};
+        \node[left] at (0,1) {1.0};
+        \node[left] at (0,2) {2.0};
+        \node[left] at (0,3) {3.0};
+        \node[below] at (0,0) {0};
+        \node[below] at (1,0) {100};
+        \node[below] at (2,0) {200};
+        \node[below] at (3,0) {300};
+        \node[below] at (4,0) {400};
+        \node[below] at (5,0) {500};
+        \draw[fill=black] (0.01*150,0.8) circle (0.05);
+        \draw[fill=black] (0.01*200,1.2) circle (0.05);
+        \draw[fill=black] (0.01*200,1.4) circle (0.05);
+        \draw[fill=black] (0.01*300,1.7) circle (0.05);
+        \draw[fill=black] (0.01*450,2.6) circle (0.05);
+        \draw[fill=black] (0.01*500,2.5) circle (0.05);
+        \draw[semithick] (0.01*100,0.00486*100+0.243) -- (0.01*510,0.00486*510+0.243);
+    \end{tikzpicture}
+\end{center}
+
+\textbf{Context 2:} A researcher is wanting to know if there is a link between the number of calories ($x$) and the carbohydrate content ($y$) of different types of caffeinated drinks available at coffee shops. The summary statistics below are from a random sample of 22 caffeinated drink options from a range of coffee shops. 
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[right] at (7,3.9) {Summary data for sample:};
+        \node[right] at (7,3.4) {$\Sigma x=5880$};
+        \node[right] at (7,2.9) {$\Sigma x^2=1738200$};
+        \node[right] at (7,2.4) {$\Sigma y=916$};
+        \node[right] at (7,1.9) {$\Sigma y^2=45282$};
+        \node[right] at (7,1.4) {$\Sigma xy=278040$};
+        \node[right] at (10,3.4) {$S_{xx}=166636$};
+        \node[right] at (10,2.9) {$S_{yy}=7143.1$};
+        \node[right] at (10,2.4) {$S_{xy}=33218$};
+        \node[right] at (10,1.5) {$n=22$};
+        \node[right] at (7,0.7) {Sample correlation coefficient};
+        \node[right] at (7,0.2) {$r=0.963$};
+        \node[right] at (7,-0.5) {Equation of $y$ on $x$ regression line:};
+        \node[right] at (7,-1) {$\hat{Y}=-11.6+0.199x$};
+        \draw[white] (-4,-1.3) rectangle (14.4,4.2);
+        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
+        \draw[-stealth] (0,0) -- (0,3.25) node[above] {$y$}; 
+        \node at (2.5,-1) {Calories (kcal)};
+        \node at (-2,2) {Carbohydrate};
+        \node at (-2,1.5) {content};
+        \node at (-2,1) {(g)};
+        \foreach \x in {0,1,...,5}{
+        \draw (\x,0) -- (\x,-0.1);
+        }
+        \foreach \y in {0,0.5,...,3}{
+        \draw (0,\y) -- (-0.1,\y);
+        }
+        \node[left] at (0,0) {0};
+        \node[left] at (0,1) {30};
+        \node[left] at (0,2) {60};
+        \node[left] at (0,3) {90};
+        \node[below] at (0,0) {0};
+        \node[below] at (1,0) {100};
+        \node[below] at (2,0) {200};
+        \node[below] at (3,0) {300};
+        \node[below] at (4,0) {400};
+        \node[below] at (5,0) {500};
+        \draw[fill=black] (1.9,18/30) circle (0.05);
+\draw[fill=black] (2.6,41/30) circle (0.05);
+\draw[fill=black] (2.6,41/30) circle (0.05);
+\draw[fill=black] (2.4,34/30) circle (0.05);
+\draw[fill=black] (2.6,40/30) circle (0.05);
+\draw[fill=black] (2.5,36/30) circle (0.05);
+\draw[fill=black] (1.3,13/30) circle (0.05);
+\draw[fill=black] (2.0,35/30) circle (0.05);
+\draw[fill=black] (2.30,33/30) circle (0.05);
+\draw[fill=black] (2.60,52/30) circle (0.05);
+\draw[fill=black] (4.00,72/30) circle (0.05);
+\draw[fill=black] (2.50,44/30) circle (0.05);
+\draw[fill=black] (1.10,12/30) circle (0.05);
+\draw[fill=black] (2.80,51/30) circle (0.05);
+\draw[fill=black] (3.40,55/30) circle (0.05);
+\draw[fill=black] (3.30,57/30) circle (0.05);
+\draw[fill=black] (4.70,78/30) circle (0.05);
+\draw[fill=black] (3.10,49/30) circle (0.05);
+\draw[fill=black] (1.80,18/30) circle (0.05);
+\draw[fill=black] (1.80,18/30) circle (0.05);
+\draw[fill=black] (3.50,58/30) circle (0.05);
+\draw[fill=black] (4.00,61/30) circle (0.05);
+        \draw[semithick] (0.7,0.07766) -- (5,2.93);
+    \end{tikzpicture}
+\end{center}
+
+\pagebreak
+
+\textbf{Context 3:} The systolic blood pressure in mmHg ($x$) and percentage body fat ($y$) of six randomly selected patients with the same consultant were recorded, and the data shown in the scatterplot below. 
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[right] at (7,3.9) {Summary data for sample:};
+        \node[right] at (7,3.4) {$\Sigma x=790$};
+        \node[right] at (7,2.9) {$\Sigma x^2=105050$};
+        \node[right] at (7,2.4) {$\Sigma y=115$};
+        \node[right] at (7,1.9) {$\Sigma y^2=2375$};
+        \node[right] at (7,1.4) {$\Sigma xy=15460$};
+        \node[right] at (10,3.4) {$S_{xx}=1033.3$};
+        \node[right] at (10,2.9) {$S_{yy}=170.83$};
+        \node[right] at (10,2.4) {$S_{xy}=318.33$};
+        \node[right] at (10,1.5) {$n=6$};
+        \node[right] at (7,0.7) {Sample correlation coefficient};
+        \node[right] at (7,0.2) {$r=0.758$};
+        \node[right] at (7,-0.5) {Equation of $y$ on $x$ regression line:};
+        \node[right] at (7,-1) {$\hat{Y}=-21.4+0.308x$};
+        \draw[white] (-4,-1.3) rectangle (14.4,4.2);
+        \draw[-stealth] (0.1,0) -- (5.25,0) node[right] {$x$};
+        \draw[-stealth] (0,0.1) -- (0,3.25) node[above] {$y$}; 
+        \node at (2.5,-1) {Systolic blood pressure (mmHg)};
+        \node at (-2,1.8) {Body fat};
+        \node at (-2,1.2) {(\%)};
+        \foreach \x in {0.5,1,...,5}{
+        \draw (\x,0) -- (\x,-0.1);
+        }
+        \foreach \y in {0.5,1,...,3}{
+        \draw (0,\y) -- (-0.1,\y);
+        }
+        \node[left] at (0,0.5) {10};
+        \node[left] at (0,1.5) {20};
+        \node[left] at (0,2.5) {30};
+        \node[below] at (1,0) {110};
+        \node[below] at (2,0) {120};
+        \node[below] at (3,0) {130};
+        \node[below] at (4,0) {140};
+        \node[below] at (5,0) {150};
+        \draw[fill=black] (0.1*110-10,0.1*16-0.5) circle (0.05);
+\draw[fill=black] (0.1*120-10,0.1*9-0.5) circle (0.05);
+\draw[fill=black] (0.1*135-10,0.1*20-0.5) circle (0.05);
+\draw[fill=black] (0.1*135-10,0.1*22-0.5) circle (0.05);
+\draw[fill=black] (0.1*140-10,0.1*25-0.5) circle (0.05);
+\draw[fill=black] (0.1*150-10,0.1*23-0.5) circle (0.05);
+        \draw[semithick] (0.5,0.1*10.94-0.5) -- (5,0.1*24.8-0.5);
+    \end{tikzpicture}
+\end{center}
+
+\textbf{Context 4:} Researchers collect marks for 9 students randomly selected from a group of students taking both a maths test ($x$) and a physics test ($y$). The results are shown in the scatterplot below.
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[right] at (7,3.9) {Summary data for sample:};
+        \node[right] at (7,3.4) {$\Sigma x=549$};
+        \node[right] at (7,2.9) {$\Sigma x^2=35225$};
+        \node[right] at (7,2.4) {$\Sigma y=622$};
+        \node[right] at (7,1.9) {$\Sigma y^2=43780$};
+        \node[right] at (7,1.4) {$\Sigma xy=38370$};
+        \node[right] at (10,3.4) {$S_{xx}=1736$};
+        \node[right] at (10,2.9) {$S_{yy}=792.89$};
+        \node[right] at (10,2.4) {$S_{xy}=428$};
+        \node[right] at (10,1.5) {$n=9$};
+        \node[right] at (7,0.7) {Sample correlation coefficient};
+        \node[right] at (7,0.2) {$r=0.365$};
+        \node[right] at (7,-0.5) {Equation of $y$ on $x$ regression line:};
+        \node[right] at (7,-1) {$\hat{Y}=54.1+0.247x$};
+        \draw[white] (-4,-1.3) rectangle (14.4,4.2);
+        \draw[-stealth] (0.1,0) -- (5.25,0) node[right] {$x$};
+        \draw[-stealth] (0,0) -- (0,3.25) node[above] {$y$}; 
+        \node at (2.5,-1) {Maths test};
+        \node at (-2,1.5) {Physics test};
+        \foreach \x in {0.5,1,...,5}{
+        \draw (\x,0) -- (\x,-0.1);
+        }
+        \foreach \y in {0,0.5,...,3}{
+        \draw (0,\y) -- (-0.1,\y);
+        }
+        \node[left] at (0,0) {40};
+        \node[left] at (0,1) {60};
+        \node[left] at (0,2) {80};
+        \node[left] at (0,3) {100};
+        \node[below] at (1,0) {20};
+        \node[below] at (2,0) {40};
+        \node[below] at (3,0) {60};
+        \node[below] at (4,0) {80};
+        \node[below] at (5,0) {100};
+        \draw[fill=black] (5.5/2,7/2-2) circle (0.05);
+\draw[fill=black] (6.6/2,4.8/2-2) circle (0.05);
+\draw[fill=black] (4.2/2,3-2) circle (0.05);
+\draw[fill=black] (7.3/2,7.3/2-2) circle (0.05);
+\draw[fill=black] (8.1/2,7.9/2-2) circle (0.05);
+\draw[fill=black] (5.7/2,3.6-2) circle (0.05);
+\draw[fill=black] (3.2,6.9/2-2) circle (0.05);
+\draw[fill=black] (3.7,8.1/2-2) circle (0.05);
+\draw[fill=black] (3.7/2,3.5-2) circle (0.05);
+        \draw[semithick] (1,0.95) -- (4.5,1.816);
+    \end{tikzpicture}
+\end{center}
+
+\textbf{Context 5:} A scientist is investigating the effectiveness of a particular weed killer. She uses different concentrations of weed killer (mg/litre, $x$) and counts the number of surviving weeds (per 10 square metres, $y$) in a fixed area. The results were as follows.
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[right] at (7,3.9) {Summary data for sample:};
+        \node[right] at (7,3.4) {$\Sigma x=64$};
+        \node[right] at (7,2.9) {$\Sigma x^2=680$};
+        \node[right] at (7,2.4) {$\Sigma y=140$};
+        \node[right] at (7,1.9) {$\Sigma y^2=2882$};
+        \node[right] at (7,1.4) {$\Sigma xy=852$};
+        \node[right] at (10,3.4) {$S_{xx}=168$};
+        \node[right] at (10,2.9) {$S_{yy}=432$};
+        \node[right] at (10,2.4) {$S_{xy}=-268$};
+        \node[right] at (10,1.5) {$n=8$};
+        \node[right] at (7,0.7) {Sample correlation coefficient};
+        \node[right] at (7,0.2) {$r=-0.995$};
+        \node[right] at (7,-0.5) {Equation of $y$ on $x$ regression line:};
+        \node[right] at (7,-1) {$\hat{Y}=30.26-1.595x$};
+        \draw[white] (-4,-1.3) rectangle (14.4,4.2);
+        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
+        \draw[-stealth] (0,0) -- (0,3.25) node[above] {$y$}; 
+        \node at (2.5,-1) {Concentration (mg/L)};
+        \node at (-2.2,1.8) {No. of weeds};
+        \node at (-2.2,1.2) {(per 10$\text{m}^2$)};
+        \foreach \x in {0,0.5,...,5}{
+        \draw (\x,0) -- (\x,-0.1);
+        }
+        \foreach \y in {0,0.5,...,3}{
+        \draw (0,\y) -- (-0.1,\y);
+        }
+        \node[left] at (0,0) {0};
+        \node[left] at (0,1) {10};
+        \node[left] at (0,2) {20};
+        \node[left] at (0,3) {30};
+        \node[below] at (0,0) {0};
+        \node[below] at (1,0) {3};
+        \node[below] at (2,0) {6};
+        \node[below] at (3,0) {9};
+        \node[below] at (4,0) {12};
+        \node[below] at (5,0) {15};
+        \draw[fill=black] (0.33*1,3) circle (0.05);
+        \draw[fill=black] (0.33*3,2.4) circle (0.05);
+        \draw[fill=black] (0.33*5,2.2) circle (0.05);
+        \draw[fill=black] (0.33*7,1.9) circle (0.05);
+        \draw[fill=black] (0.33*9,1.6) circle (0.05);
+        \draw[fill=black] (0.33*11,1.3) circle (0.05);
+        \draw[fill=black] (0.33*13,1.0) circle (0.05);
+        \draw[fill=black] (0.33*15,0.6) circle (0.05);
+        \draw[semithick] (0.333,2.8666) -- (5,0.6337);
+    \end{tikzpicture}
+\end{center}
+
+\pagebreak
+
+Ex18.1
+
+Referring to Contexts 1 to 5, calculate the residual for each of the following:
+
+\begin{enumerate}
+    \item From Context 1: A metal plate in the acid solution for 200 hours with 1.4\% mass loss.
+    \item From Context 2: A caffeinated drink with 400 calories and a carbohydrate content of 61 grams.
+    \item From Context 3: A patient with systolic blood pressure of 110 and body fat \% of 16.
+    \item From Context 4: A student who gained a maths mark of 74 and a physics mark of 81.
+    \item From Context 5: A weed killer concentration of 3 and 24 surviving weeds counted.
+\end{enumerate}
+
+Ex18.2

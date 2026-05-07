@@ -1,381 +1,78 @@
 # Further Linear Regression
 
-Linear regression, first introduced in Chapter 5, will be explored in much more detail in this chapter.
+\vspace{-1cm}
+
+A straight-line relationship can be valuable in many situations in establishing and summarising the dependence of one variable on another, and in making predictions. Linear regression will be explored in more detail in this chapter.
 
 ### The Method of Least Squares Regression {-}
 
-A straight-line relationship can be valuable in many situations in establishing and summarising the dependence of one variable on another, and in making predictions.
+In most experiments, it is assumed that $x$ is under the control of the experimenter and can be known exactly. In such cases $x$ is called the \textit{predictor} (or \textit{independent}) variable, whilst $Y$ is a \textbf{random variable} known as the \textit{response} (or \textit{dependent}) variable.
 
-In most experiments, it is assumed that $x$ is under the control of the experimenter and can be known exactly. In such cases $x$ is called the \textit{predictor} (or \textit{independent}) variable. $Y$ is known as the \textit{response} (or \textit{dependent}) variable, and since it is conditional on $x$, $Y$ is a random variable.
+\begin{multicols}{2}
 
-The (conditional) expected value and variance of $Y$ is commonly of interest.
+\begin{center}
+    \begin{tikzpicture}
+        \draw[-stealth] (0,0) -- (7,0) node[below] {$x$};
+        \draw[-stealth] (0,0) -- (0,5) node[left] {$y$};
+        \node[below] at (3.5,-0.3) {independent variable};
+        \node[rotate=90,above] at (-0.3,2.5) {response variable};
+        \draw[very thick] (0.5,1.6) -- (5.5,4.2) node[right] {$y=\alpha+\beta x$};
+        \draw[fill,densely dashed] (3.5258224,3.072553) circle (0.05) -- (3.5258224,3.173427648);
+\draw[fill,densely dashed] (3.3020558,2.331238) circle (0.05) -- (3.3020558,3.057069016);
+\draw[fill,densely dashed] (3.7090608,3.683062) circle (0.05) -- (3.7090608,3.268711616);
+\draw[fill,densely dashed] (4.3429324,4.169212) circle (0.05) -- (4.3429324,3.598324848);
+\draw[fill,densely dashed] (0.9282517,1.662861) circle (0.05) -- (0.9282517,1.822690884);
+\draw[fill,densely dashed] (3.9876255,3.250634) circle (0.05) -- (3.9876255,3.41356526);
+\draw[fill,densely dashed] (4.6912468,3.534086) circle (0.05) -- (4.6912468,3.779448336);
+\draw[fill,densely dashed] (1.8099240,2.297074) circle (0.05) -- (1.8099240,2.2811605);
+\draw[fill,densely dashed] (1.4651929,1.490792) circle (0.05) -- (1.4651929,2.101900308);
+\draw[fill,densely dashed] (2.2436259,2.614456) circle (0.05) -- (2.2436259,2.506685468);
+\draw[fill,densely dashed] (4.4783236,3.647896) circle (0.05) -- (4.4783236,3.668728272);
+\draw[fill,densely dashed] (3.9126398,2.929844) circle (0.05) -- (3.9126398,3.374572696);
+\draw[fill,densely dashed] (3.4281654,3.268362) circle (0.05) -- (3.4281654,3.122646008);
+\draw[fill,densely dashed] (1.3975460,2.601538) circle (0.05) -- (1.3975460,2.0667239);
+\draw[fill,densely dashed] (2.8836849,3.199075) circle (0.05) -- (2.8836849,2.839516148);
+\draw[fill,densely dashed] (3.2025879,3.355931) circle (0.05) -- (3.2025879,3.005345708);
+    \end{tikzpicture}
+\end{center}
 
-\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=4cm]
-\vspace{-0.5cm}
+The theoretical model for linear regression is that of a straight line of form $y=\alpha+\beta x$ describing the best fit for a relationship between variables. However, the population of bivariate data will not perfectly lie along this line due to chance variation.
+
+\begin{tcolorbox}[title=The Linear Regression Model,center,colback=red!5,colframe=red!70!black,width=6.5cm]
 \[Y_i=\alpha+\beta x_i+\varepsilon_i\]
 \end{tcolorbox}
  
-$\varepsilon$ (*"epsilon"*) is a random variable called the \textbf{error} that describes how far $Y$ is from its expected value. 
+$\varepsilon$ (\textit{"epsilon"}) is a random variable called the \textbf{error} that describes how far $Y$ is from its expected value. 
 
-$\alpha$ and $\beta$ are fixed parameters whose value cannot be known exactly without examining all possible occurrences of $Y$ and $x$. However the sample observations $(x_i,y_i)$ can be used to give estimates $a$ and $b$ of $\alpha$ and $\beta$. This leads to the relationship $\hat{Y}_i=a+bx_i$, where $\hat{Y}_i$ (*"y-hat"*) denotes the predicted value of $Y_i$ for a given $x_i$.
+\end{multicols}
+
+The values of parameters $\alpha$ and $\beta$ cannot be known exactly without examining all possible occurrences of $Y$ and $x$. However the sample observations $(x_i,y_i)$ can be used to give estimates, $a$ and $b$, of $\alpha$ and $\beta$. This leads to the relationship $\hat{Y}_i=a+bx_i$, where $\hat{Y}_i$ (*"y-hat"*) denotes the predicted value of $Y_i$ for a given $x_i$.
 
 The method of least squares gives formulae for $a$ and $b$ derived by considering how $\sum \varepsilon_i^2$ might be minimised:
 
+\begin{multicols}{2}
+
 $$b=\dfrac{S_{xy}}{S_{xx}} \qquad \text{and} \qquad a=\bar{y}-b\bar{x}$$
 
-The above estimates rely on several assumptions about the population of errors, $\varepsilon_i$:
+These estimates rely on several assumptions about the population of errors, $\varepsilon_i$, which are given on Page 5 of the Data Booklet.
 
-\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=7cm]
+\begin{tcolorbox}[title=Assumptions for the Errors,center,colback=red!5,colframe=red!70!black,width=6.5cm]
 \begin{center}
     \begin{itemize}
-        \item $\varepsilon_i$, are independent.
+        \item $\varepsilon_i$ are independent.
         \item $\text{E}(\varepsilon_i)=0$
         \item $\text{V}(\varepsilon_i)=\sigma^2$ where $\text{V}(Y)=\sigma^2$
     \end{itemize}
 \end{center}
 \end{tcolorbox}
 
-Formulae for the estimates of $\alpha$ and $\beta$ and the assumptions about the errors are given on Page 5 of the Data Booklet.
-
-\pagebreak
-
-### Contexts for Exercises {-}
-
-The following example and contexts 1 to 5 will be used throughout this chapter. For convenience, key summary data and sample statistics are provided.
-
-\textbf{Example:} A biology exam consists of two papers: theoretical ($x$) and practical ($y$). The marks scored on each test is obtained for a random sample of 12 students who sat the exam, and a scatterplot is constructed to display the results.
-
-\begin{center}
-    \begin{tikzpicture}
-        \node[right] at (7,3.9) {Summary data for sample:};
-        \node[right] at (7,3.4) {$\Sigma x=132$};
-        \node[right] at (7,2.9) {$\Sigma x^2=1742$};
-        \node[right] at (7,2.4) {$\Sigma y=147$};
-        \node[right] at (7,1.9) {$\Sigma y^2=2057$};
-        \node[right] at (7,1.4) {$\Sigma xy=1872$};
-        \node[right] at (10,3.4) {$S_{xx}=290$};
-        \node[right] at (10,2.9) {$S_{yy}=256.25$};
-        \node[right] at (10,2.4) {$S_{xy}=255$};
-        \node[right] at (10,1.5) {$n=12$};
-        \node[right] at (7,0.7) {Sample correlation coefficient};
-        \node[right] at (7,0.2) {$r=0.935$};
-        \node[right] at (7,-0.5) {Equation of $y$ on $x$ regression line:};
-        \node[right] at (7,-1) {$\hat{Y}=2.581+0.879x$};
-        \draw[white] (-4,-1.3) rectangle (14.4,4.2);
-        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
-        \draw[-stealth] (0,0) -- (0,3.25) node[above] {$y$}; 
-        \node at (2.5,-1) {Theoretical mark};
-        \node at (-2,1.75) {Practical};
-        \node at (-2,1.25) {mark};
-        \foreach \x in {0,1,...,5}{
-        \draw (\x,0) -- (\x,-0.1);
-        }
-        \foreach \y in {0,0.6,...,3}{
-        \draw (0,\y) -- (-0.1,\y);
-        }
-        \node[left] at (0,0) {0};
-        \node[left] at (0,0.6) {5};
-        \node[left] at (0,1.2) {10};
-        \node[left] at (0,1.8) {15};
-        \node[left] at (0,2.4) {20};
-        \node[left] at (0,3.0) {25};
-        \node[below] at (0,0) {0};
-        \node[below] at (1,0) {5};
-        \node[below] at (2,0) {10};
-        \node[below] at (3,0) {15};
-        \node[below] at (4,0) {20};
-        \node[below] at (5,0) {25};
-\draw[fill=black] (5*0.2,6*0.12) circle (0.05);
-\draw[fill=black] (9*0.2,8*0.12) circle (0.05);
-\draw[fill=black] (7*0.2,9*0.12) circle (0.05);
-\draw[fill=black] (11*0.2,13*0.12) circle (0.05);
-\draw[fill=black] (20*0.2,20*0.12) circle (0.05);
-\draw[fill=black] (4*0.2,9*0.12) circle (0.05);
-\draw[fill=black] (6*0.2,8*0.12) circle (0.05);
-\draw[fill=black] (17*0.2,17*0.12) circle (0.05);
-\draw[fill=black] (12*0.2,14*0.12) circle (0.05);
-\draw[fill=black] (10*0.2,8*0.12) circle (0.05);
-\draw[fill=black] (15*0.2,17*0.12) circle (0.05);
-\draw[fill=black] (16*0.2,18*0.12) circle (0.05);
-\draw[semithick] (3*0.2,5.488*0.12) -- (22*0.2,22.189*0.12);
-    \end{tikzpicture}
-\end{center}
-
-\textbf{Context 1:} Six metal plates were immersed in a weak acid solution for various lengths of time. Their percentage losses in mass were then measured and a scatterplot drawn of time in solution ($x$ hours) against mass loss ($y$\%). 
-
-\begin{center}
-    \begin{tikzpicture}
-        \node[right] at (7,3.9) {Summary data for sample:};
-        \node[right] at (7,3.4) {$\Sigma x=1800$};
-        \node[right] at (7,2.9) {$\Sigma x^2=645000$};
-        \node[right] at (7,2.4) {$\Sigma y=10.2$};
-        \node[right] at (7,1.9) {$\Sigma y^2=19.94$};
-        \node[right] at (7,1.4) {$\Sigma xy=3570$};
-        \node[right] at (10,3.4) {$S_{xx}=105000$};
-        \node[right] at (10,2.9) {$S_{yy}=2.6$};
-        \node[right] at (10,2.4) {$S_{xy}=510$};
-        \node[right] at (10,1.5) {$n=6$};
-        \node[right] at (7,0.7) {Sample correlation coefficient};
-        \node[right] at (7,0.2) {$r=0.976$};
-        \node[right] at (7,-0.5) {Equation of $y$ on $x$ regression line:};
-        \node[right] at (7,-1) {$\hat{Y}=0.243+0.00486x$};
-        \draw[white] (-4,-1.3) rectangle (14.4,4.2);
-        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
-        \draw[-stealth] (0,0) -- (0,3.25) node[above] {$y$}; 
-        \node at (2.5,-1) {Time in solution (hours)};
-        \node at (-2,1.8) {Mass loss};
-        \node at (-2,1.2) {(\%)};
-        \foreach \x in {0,1,...,5}{
-        \draw (\x,0) -- (\x,-0.1);
-        }
-        \foreach \y in {0,0.5,...,3}{
-        \draw (0,\y) -- (-0.1,\y);
-        }
-        \node[left] at (0,0) {0};
-        \node[left] at (0,1) {1.0};
-        \node[left] at (0,2) {2.0};
-        \node[left] at (0,3) {3.0};
-        \node[below] at (0,0) {0};
-        \node[below] at (1,0) {100};
-        \node[below] at (2,0) {200};
-        \node[below] at (3,0) {300};
-        \node[below] at (4,0) {400};
-        \node[below] at (5,0) {500};
-        \draw[fill=black] (0.01*150,0.8) circle (0.05);
-        \draw[fill=black] (0.01*200,1.2) circle (0.05);
-        \draw[fill=black] (0.01*200,1.4) circle (0.05);
-        \draw[fill=black] (0.01*300,1.7) circle (0.05);
-        \draw[fill=black] (0.01*450,2.6) circle (0.05);
-        \draw[fill=black] (0.01*500,2.5) circle (0.05);
-        \draw[semithick] (0.01*100,0.00486*100+0.243) -- (0.01*510,0.00486*510+0.243);
-    \end{tikzpicture}
-\end{center}
-
-\textbf{Context 2:} A researcher is wanting to know if there is a link between the number of calories ($x$) and the carbohydrate content ($y$) of different types of caffeinated drinks available at coffee shops. The summary statistics below are from a random sample of 22 caffeinated drink options from a range of coffee shops. 
-
-\begin{center}
-    \begin{tikzpicture}
-        \node[right] at (7,3.9) {Summary data for sample:};
-        \node[right] at (7,3.4) {$\Sigma x=5880$};
-        \node[right] at (7,2.9) {$\Sigma x^2=1738200$};
-        \node[right] at (7,2.4) {$\Sigma y=916$};
-        \node[right] at (7,1.9) {$\Sigma y^2=45282$};
-        \node[right] at (7,1.4) {$\Sigma xy=278040$};
-        \node[right] at (10,3.4) {$S_{xx}=166636$};
-        \node[right] at (10,2.9) {$S_{yy}=7143.1$};
-        \node[right] at (10,2.4) {$S_{xy}=33218$};
-        \node[right] at (10,1.5) {$n=22$};
-        \node[right] at (7,0.7) {Sample correlation coefficient};
-        \node[right] at (7,0.2) {$r=0.963$};
-        \node[right] at (7,-0.5) {Equation of $y$ on $x$ regression line:};
-        \node[right] at (7,-1) {$\hat{Y}=-11.6+0.199x$};
-        \draw[white] (-4,-1.3) rectangle (14.4,4.2);
-        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
-        \draw[-stealth] (0,0) -- (0,3.25) node[above] {$y$}; 
-        \node at (2.5,-1) {Calories (kcal)};
-        \node at (-2,2) {Carbohydrate};
-        \node at (-2,1.5) {content};
-        \node at (-2,1) {(g)};
-        \foreach \x in {0,1,...,5}{
-        \draw (\x,0) -- (\x,-0.1);
-        }
-        \foreach \y in {0,0.5,...,3}{
-        \draw (0,\y) -- (-0.1,\y);
-        }
-        \node[left] at (0,0) {0};
-        \node[left] at (0,1) {30};
-        \node[left] at (0,2) {60};
-        \node[left] at (0,3) {90};
-        \node[below] at (0,0) {0};
-        \node[below] at (1,0) {100};
-        \node[below] at (2,0) {200};
-        \node[below] at (3,0) {300};
-        \node[below] at (4,0) {400};
-        \node[below] at (5,0) {500};
-        \draw[fill=black] (1.9,18/30) circle (0.05);
-\draw[fill=black] (2.6,41/30) circle (0.05);
-\draw[fill=black] (2.6,41/30) circle (0.05);
-\draw[fill=black] (2.4,34/30) circle (0.05);
-\draw[fill=black] (2.6,40/30) circle (0.05);
-\draw[fill=black] (2.5,36/30) circle (0.05);
-\draw[fill=black] (1.3,13/30) circle (0.05);
-\draw[fill=black] (2.0,35/30) circle (0.05);
-\draw[fill=black] (2.30,33/30) circle (0.05);
-\draw[fill=black] (2.60,52/30) circle (0.05);
-\draw[fill=black] (4.00,72/30) circle (0.05);
-\draw[fill=black] (2.50,44/30) circle (0.05);
-\draw[fill=black] (1.10,12/30) circle (0.05);
-\draw[fill=black] (2.80,51/30) circle (0.05);
-\draw[fill=black] (3.40,55/30) circle (0.05);
-\draw[fill=black] (3.30,57/30) circle (0.05);
-\draw[fill=black] (4.70,78/30) circle (0.05);
-\draw[fill=black] (3.10,49/30) circle (0.05);
-\draw[fill=black] (1.80,18/30) circle (0.05);
-\draw[fill=black] (1.80,18/30) circle (0.05);
-\draw[fill=black] (3.50,58/30) circle (0.05);
-\draw[fill=black] (4.00,61/30) circle (0.05);
-        \draw[semithick] (0.7,0.07766) -- (5,2.93);
-    \end{tikzpicture}
-\end{center}
-
-\pagebreak
-
-\textbf{Context 3:} The systolic blood pressure in mmHg ($x$) and percentage body fat ($y$) of six randomly selected patients with the same consultant were recorded, and the data shown in the scatterplot below. 
-
-\begin{center}
-    \begin{tikzpicture}
-        \node[right] at (7,3.9) {Summary data for sample:};
-        \node[right] at (7,3.4) {$\Sigma x=790$};
-        \node[right] at (7,2.9) {$\Sigma x^2=105050$};
-        \node[right] at (7,2.4) {$\Sigma y=115$};
-        \node[right] at (7,1.9) {$\Sigma y^2=2375$};
-        \node[right] at (7,1.4) {$\Sigma xy=15460$};
-        \node[right] at (10,3.4) {$S_{xx}=1033.3$};
-        \node[right] at (10,2.9) {$S_{yy}=170.83$};
-        \node[right] at (10,2.4) {$S_{xy}=318.33$};
-        \node[right] at (10,1.5) {$n=6$};
-        \node[right] at (7,0.7) {Sample correlation coefficient};
-        \node[right] at (7,0.2) {$r=0.758$};
-        \node[right] at (7,-0.5) {Equation of $y$ on $x$ regression line:};
-        \node[right] at (7,-1) {$\hat{Y}=-21.4+0.308x$};
-        \draw[white] (-4,-1.3) rectangle (14.4,4.2);
-        \draw[-stealth] (0.1,0) -- (5.25,0) node[right] {$x$};
-        \draw[-stealth] (0,0.1) -- (0,3.25) node[above] {$y$}; 
-        \node at (2.5,-1) {Systolic blood pressure (mmHg)};
-        \node at (-2,1.8) {Body fat};
-        \node at (-2,1.2) {(\%)};
-        \foreach \x in {0.5,1,...,5}{
-        \draw (\x,0) -- (\x,-0.1);
-        }
-        \foreach \y in {0.5,1,...,3}{
-        \draw (0,\y) -- (-0.1,\y);
-        }
-        \node[left] at (0,0.5) {10};
-        \node[left] at (0,1.5) {20};
-        \node[left] at (0,2.5) {30};
-        \node[below] at (1,0) {110};
-        \node[below] at (2,0) {120};
-        \node[below] at (3,0) {130};
-        \node[below] at (4,0) {140};
-        \node[below] at (5,0) {150};
-        \draw[fill=black] (0.1*110-10,0.1*16-0.5) circle (0.05);
-\draw[fill=black] (0.1*120-10,0.1*9-0.5) circle (0.05);
-\draw[fill=black] (0.1*135-10,0.1*20-0.5) circle (0.05);
-\draw[fill=black] (0.1*135-10,0.1*22-0.5) circle (0.05);
-\draw[fill=black] (0.1*140-10,0.1*25-0.5) circle (0.05);
-\draw[fill=black] (0.1*150-10,0.1*23-0.5) circle (0.05);
-        \draw[semithick] (0.5,0.1*10.94-0.5) -- (5,0.1*24.8-0.5);
-    \end{tikzpicture}
-\end{center}
-
-\textbf{Context 4:} Researchers collect marks for 9 students randomly selected from a group of students taking both a maths test ($x$) and a physics test ($y$). The results are shown in the scatterplot below.
-
-\begin{center}
-    \begin{tikzpicture}
-        \node[right] at (7,3.9) {Summary data for sample:};
-        \node[right] at (7,3.4) {$\Sigma x=549$};
-        \node[right] at (7,2.9) {$\Sigma x^2=35225$};
-        \node[right] at (7,2.4) {$\Sigma y=622$};
-        \node[right] at (7,1.9) {$\Sigma y^2=43780$};
-        \node[right] at (7,1.4) {$\Sigma xy=38370$};
-        \node[right] at (10,3.4) {$S_{xx}=1736$};
-        \node[right] at (10,2.9) {$S_{yy}=792.89$};
-        \node[right] at (10,2.4) {$S_{xy}=428$};
-        \node[right] at (10,1.5) {$n=9$};
-        \node[right] at (7,0.7) {Sample correlation coefficient};
-        \node[right] at (7,0.2) {$r=0.365$};
-        \node[right] at (7,-0.5) {Equation of $y$ on $x$ regression line:};
-        \node[right] at (7,-1) {$\hat{Y}=54.1+0.247x$};
-        \draw[white] (-4,-1.3) rectangle (14.4,4.2);
-        \draw[-stealth] (0.1,0) -- (5.25,0) node[right] {$x$};
-        \draw[-stealth] (0,0) -- (0,3.25) node[above] {$y$}; 
-        \node at (2.5,-1) {Maths test};
-        \node at (-2,1.5) {Physics test};
-        \foreach \x in {0.5,1,...,5}{
-        \draw (\x,0) -- (\x,-0.1);
-        }
-        \foreach \y in {0,0.5,...,3}{
-        \draw (0,\y) -- (-0.1,\y);
-        }
-        \node[left] at (0,0) {40};
-        \node[left] at (0,1) {60};
-        \node[left] at (0,2) {80};
-        \node[left] at (0,3) {100};
-        \node[below] at (1,0) {20};
-        \node[below] at (2,0) {40};
-        \node[below] at (3,0) {60};
-        \node[below] at (4,0) {80};
-        \node[below] at (5,0) {100};
-        \draw[fill=black] (5.5/2,7/2-2) circle (0.05);
-\draw[fill=black] (6.6/2,4.8/2-2) circle (0.05);
-\draw[fill=black] (4.2/2,3-2) circle (0.05);
-\draw[fill=black] (7.3/2,7.3/2-2) circle (0.05);
-\draw[fill=black] (8.1/2,7.9/2-2) circle (0.05);
-\draw[fill=black] (5.7/2,3.6-2) circle (0.05);
-\draw[fill=black] (3.2,6.9/2-2) circle (0.05);
-\draw[fill=black] (3.7,8.1/2-2) circle (0.05);
-\draw[fill=black] (3.7/2,3.5-2) circle (0.05);
-        \draw[semithick] (1,0.95) -- (4.5,1.816);
-    \end{tikzpicture}
-\end{center}
-
-\textbf{Context 5:} A scientist is investigating the effectiveness of a particular weed killer. She uses different concentrations of weed killer (mg/litre, $x$) and counts the number of surviving weeds (per 10 square metres, $y$) in a fixed area. The results were as follows.
-
-\begin{center}
-    \begin{tikzpicture}
-        \node[right] at (7,3.9) {Summary data for sample:};
-        \node[right] at (7,3.4) {$\Sigma x=64$};
-        \node[right] at (7,2.9) {$\Sigma x^2=680$};
-        \node[right] at (7,2.4) {$\Sigma y=140$};
-        \node[right] at (7,1.9) {$\Sigma y^2=2882$};
-        \node[right] at (7,1.4) {$\Sigma xy=852$};
-        \node[right] at (10,3.4) {$S_{xx}=168$};
-        \node[right] at (10,2.9) {$S_{yy}=432$};
-        \node[right] at (10,2.4) {$S_{xy}=-268$};
-        \node[right] at (10,1.5) {$n=8$};
-        \node[right] at (7,0.7) {Sample correlation coefficient};
-        \node[right] at (7,0.2) {$r=-0.995$};
-        \node[right] at (7,-0.5) {Equation of $y$ on $x$ regression line:};
-        \node[right] at (7,-1) {$\hat{Y}=30.26-1.595x$};
-        \draw[white] (-4,-1.3) rectangle (14.4,4.2);
-        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
-        \draw[-stealth] (0,0) -- (0,3.25) node[above] {$y$}; 
-        \node at (2.5,-1) {Concentration (mg/L)};
-        \node at (-2.2,1.8) {No. of weeds};
-        \node at (-2.2,1.2) {(per 10$\text{m}^2$)};
-        \foreach \x in {0,0.5,...,5}{
-        \draw (\x,0) -- (\x,-0.1);
-        }
-        \foreach \y in {0,0.5,...,3}{
-        \draw (0,\y) -- (-0.1,\y);
-        }
-        \node[left] at (0,0) {0};
-        \node[left] at (0,1) {10};
-        \node[left] at (0,2) {20};
-        \node[left] at (0,3) {30};
-        \node[below] at (0,0) {0};
-        \node[below] at (1,0) {3};
-        \node[below] at (2,0) {6};
-        \node[below] at (3,0) {9};
-        \node[below] at (4,0) {12};
-        \node[below] at (5,0) {15};
-        \draw[fill=black] (0.33*1,3) circle (0.05);
-        \draw[fill=black] (0.33*3,2.4) circle (0.05);
-        \draw[fill=black] (0.33*5,2.2) circle (0.05);
-        \draw[fill=black] (0.33*7,1.9) circle (0.05);
-        \draw[fill=black] (0.33*9,1.6) circle (0.05);
-        \draw[fill=black] (0.33*11,1.3) circle (0.05);
-        \draw[fill=black] (0.33*13,1.0) circle (0.05);
-        \draw[fill=black] (0.33*15,0.6) circle (0.05);
-        \draw[semithick] (0.333,2.8666) -- (5,0.6337);
-    \end{tikzpicture}
-\end{center}
+\end{multicols}
 
 \pagebreak
 
 ## Calculating the Value of a Residual
 
-For any given $x_i$, the equation of the least squares regression line $\hat{Y_i}=a+bx_i$ gives a \textit{predicted} corresponding value $\hat{Y_i}$, referred to as a \textit{fitted} value, or \textbf{fit}. For any observed data point $(x_i,y_i)$, the value of $y_i$ may be called the \textbf{data} value.
+For any given $x_i$, the equation of the least squares regression line $\hat{Y_i}=a+bx_i$ gives a \textit{predicted} value $\hat{Y_i}$, also referred to as a \textit{fitted} value. For any observed data point $(x_i,y_i)$, the value of $y_i$ may be called the \textbf{data} value.
 
 The difference between an observed data value $y_i$ and a corresponding fitted value $\hat{Y_i}$ is called a \textbf{residual}:
 
@@ -387,11 +84,11 @@ The difference between an observed data value $y_i$ and a corresponding fitted v
         \draw[fill=black] (3,2) circle (2pt) node[above] {$(x_i,y_i)$};
         \node[below] at (3,0.9) {$(x_i,\hat{Y}_i)$};
         \draw[dashed] (3,1) -- (3,2);
-        \draw[fill] (3,1) circle (2pt);
+        \draw[fill] (3,1) circle (1pt);
         \draw[-stealth] (4.5,2) -- (3.2,2);
         \node[right] at (4.5,2) {Data, $y_i$};
         \draw[-stealth] (4.5,1) -- (3.2,1);
-        \node[right] at (4.5,1) {Fit, $\hat{Y_i}$};
+        \node[right] at (4.5,1) {Fitted, $\hat{Y_i}$};
         \draw[stealth-,dashed] (3.2,1.5) -- (8,1.5);
         \node at (9.2,1.9) {Residual};
         \node at (10.25,1.85) {$=$};
@@ -402,11 +99,11 @@ The difference between an observed data value $y_i$ and a corresponding fitted v
         \node at (10.95,1.2) {$y_i$};
         \node at (11.67,1.15) {$-$};
         \node at (12.25,1.2) {$\hat{Y_i}$};
-        \node at (10.7,1.55) {\begin{minipage}{5cm}
-            \begin{tcolorbox}[center,colback=red!5,colframe=red!70!black]
+        \node at (10.7,1.55) {\begin{minipage}{6cm}
+            \begin{tcolorbox}[title=Calculating a Residual,center,colback=red!5,colframe=red!70!black]
             \vspace{-0.5cm}
 \begin{align*}
-    \text{Residual}&=\text{Data}-\text{Fit}\\
+    \text{Residual}&=\text{Data}-\text{Fitted}\\
     &=\hspace{0.2cm}y_i\hspace{0.3cm}-\hspace{0.1cm}\hat{Y}_i
 \end{align*}
 \end{tcolorbox}
@@ -414,20 +111,48 @@ The difference between an observed data value $y_i$ and a corresponding fitted v
     \end{tikzpicture}
 \end{center}
 
-For data points which lie \textit{above} the regression line, their residual is \textit{positive}.\newline For those which lie \textit{below} the line, their residual is \textit{negative}.
+For data points which lie \textit{above} the regression line, their residual is \textit{positive}.\newline This means that the observed value $y_i$ was \textit{greater} than that predicted by the regression line for the value of $x_i$.
 
-To calculate a residual the fitted value, $\hat{Y}_i$ needs to first be found.
+\begin{center}
+    \begin{tikzpicture}[scale=0.9]
+        \draw[very thick] (0,0) -- (8,0.8) node[right] {$\hat{Y}=a+bx$};
+        \draw[dashed] (1,1) -- (1,0.1);
+        \draw[dashed] (2,-0.5) -- (2,0.2);
+        \draw[thin,dashed] (3,0.7) -- (3,0.3);
+        \draw[thin,dashed] (4,2) -- (4,0.4);
+        \draw[thin,dashed] (5,-0.8) -- (5,0.5);
+        \draw[thin,dashed] (6,1.2) -- (6,0.6);
+        \draw[thin,dashed] (7,0) -- (7,0.7);
+        \draw[ForestGreen,fill] (1,1) circle (0.05);
+        \draw[ForestGreen,fill] (3,0.7) circle (0.05);
+        \draw[ForestGreen,fill] (4,2) circle (0.05);
+        \draw[ForestGreen,fill] (6,1.2) circle (0.05);
+        \draw[red,fill] (2,-0.5) circle (0.05);
+        \draw[red,fill] (5,-0.8) circle (0.05);
+        \draw[red,fill] (7,0) circle (0.05);
+        \node[ForestGreen] at (7,2) {\textit{positive residuals}};
+        \node[red] at (7,-1) {\textit{negative residuals}};
+    \end{tikzpicture}
+\end{center}
+
+For those which lie \textit{below} the line, their residual is \textit{negative}.\newline This means that the observed value $y_i$ was \textit{less} than that predicted by the regression line for the value of $x_i$.
+
+To calculate a residual the fitted value, $\hat{Y}_i$ needs to first be found using the equation of the regression line.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
-\textbf{Problem:} Students sitting a biology exam are given a mark for each of the two papers: theoretical ($x$) and practical ($y$). From a random sample of 12 students, the $y$ on $x$ regression line is calculated as $\hat{Y}=2.581+0.879x$. Calculate the residual for a student who gains:\\
+\textbf{Problem:}
 
-\text{(a)   } 16 in the theoretical test and 18 in the practical test.\\
+Students sitting a biology exam are given a mark for each of the two papers: theoretical ($x$) and practical ($y$). From a random sample of 12 students, the $y$ on $x$ regression line is calculated as $\hat{Y}=2.581+0.879x$. Calculate the residual for a student who gains:\\
+
+\text{(a)   } 16 in the theoretical test and 18 in the practical test.\\[0.5em]
 \text{(b)   } 10 in the theoretical test and 8 in the practical test.
 
 \tcblower
+
 \textbf{Solution:}
 
-\vspace{-0.8cm}
+\vspace{-0.3cm}
+
 \begin{center}
     \begin{tikzpicture}
         \node[right] at (6.5,3.5) {(a)};
@@ -472,73 +197,253 @@ To calculate a residual the fitted value, $\hat{Y}_i$ needs to first be found.
 \draw[fill=black] (6*0.2,8*0.12) circle (0.02);
 \draw[fill=black] (17*0.2,17*0.12) circle (0.02);
 \draw[fill=black] (12*0.2,14*0.12) circle (0.02);
-\draw[fill,RoyalBlue] (10*0.2,8*0.12) circle (0.05);
+\draw[fill,red] (10*0.2,8*0.12) circle (0.05);
 \draw[thick] (10*0.2,8*0.12) -- (10*0.2,11.6*0.12);
 \draw[fill=black] (15*0.2,17*0.12) circle (0.02);
-\draw[fill,RoyalBlue] (16*0.2,18*0.12) circle (0.05);
+\draw[fill,ForestGreen] (16*0.2,18*0.12) circle (0.05);
     \end{tikzpicture}
 \end{center}
 
 \end{tcolorbox}
 
+\newpage
+
 []{#ex181q}
 
 #### [Exercise 18.1](#ex181a) {-}
 
-Referring to Contexts 1 to 5, calculate the residual for each of the following:
-
-\begin{enumerate}
-    \item From Context 1: A metal plate in the acid solution for 200 hours with 1.4\% mass loss.
-    \item From Context 2: A caffeinated drink with 400 calories and a carbohydrate content of 61 grams.
-    \item From Context 3: A patient with systolic blood pressure of 110 and body fat \% of 16.
-    \item From Context 4: A student who gained a maths mark of 74 and a physics mark of 81.
-    \item From Context 5: A weed killer concentration of 3 and 24 surviving weeds counted.
-\end{enumerate}
-
-\pagebreak
+\newpage
 
 ## Estimating the Error Variance
 
-An assumption made for the least squares regression model is that the variance of the errors is a constant for all $x_i$ (and $Y_i$):
+The least squares regression model assumes that that the variance of the errors is a constant for all $x_i$ (and $Y_i$):
 
-\vspace{-0.7cm}
-$$\text{V}(\varepsilon_i)=\sigma^2 \qquad \left(\text{where }\text{V}(Y_i)=\sigma^2\right) $$
+$$\text{V}(\varepsilon_i)=\sigma^2$$
+
+The *error variance* is the variance of the population of data *relative to the regression line's predicted values*, loosely indicated below by blue arrows. This is distinct from the *total variance* of $Y$, loosely indicated by the purple arrow.
+
+\begin{center}
+    \begin{tikzpicture}[scale=0.9]
+        \draw[thick] (0,2.13) -- (10,6.02) node[right] {$\hat{Y}=a+bx$};
+        \draw[fill] (6.955968,6.2978298) circle (0.05);
+\draw[fill] (7.912889,5.8402953) circle (0.05);
+\draw[fill] (1.868432,1.6709538) circle (0.05);
+\draw[fill] (6.571086,5.5025033) circle (0.05);
+\draw[fill] (1.498014,3.9415629) circle (0.05);
+\draw[fill] (2.819003,4.6160401) circle (0.05);
+\draw[fill] (5.354720,5.4286745) circle (0.05);
+\draw[fill] (5.692772,3.8360525) circle (0.05);
+\draw[fill] (6.919847,4.0510383) circle (0.05);
+\draw[fill] (3.901206,4.4838583) circle (0.05);
+\draw[fill] (7.173250,4.7138811) circle (0.05);
+\draw[fill] (6.177491,4.5210034) circle (0.05);
+\draw[fill] (8.281164,7.4271066) circle (0.05);
+\draw[fill] (4.304496,6.2752596) circle (0.05);
+\draw[fill] (4.051405,3.3392576) circle (0.05);
+\draw[fill] (3.559364,3.9908928) circle (0.05);
+\draw[fill] (5.048672,3.1857659) circle (0.05);
+\draw[fill] (4.457014,5.0693545) circle (0.05);
+\draw[fill] (5.870260,3.0534712) circle (0.05);
+\draw[fill] (5.025332,2.3569438) circle (0.05);
+\draw[fill] (6.603807,4.3495520) circle (0.05);
+\draw[fill] (8.964121,5.5267531) circle (0.05);
+\draw[fill] (8.595800,6.0630182) circle (0.05);
+\draw[fill] (2.642958,2.1614941) circle (0.05);
+\draw[fill] (1.288687,0.7441907) circle (0.05);
+\draw[fill] (7.331049,3.5987320) circle (0.05);
+\draw[fill] (4.517530,4.8806159) circle (0.05);
+\draw[fill] (3.524255,2.6571825) circle (0.05);
+\draw[fill] (7.153844,4.0209312) circle (0.05);
+\draw[fill] (5.748901,6.1275396) circle (0.05);
+\draw[fill] (4.758351,5.2985055) circle (0.05);
+\draw[fill] (5.082882,3.1929715) circle (0.05);
+\draw[fill] (3.964579,2.8719889) circle (0.05);
+\draw[fill] (4.656324,2.0837197) circle (0.05);
+\draw[fill] (6.829647,3.6616396) circle (0.05);
+\draw[fill] (6.473691,5.8108632) circle (0.05);
+\draw[fill] (1.814834,2.3950480) circle (0.05);
+\draw[fill] (2.579615,3.8515882) circle (0.05);
+\draw[fill] (8.730507,5.0549693) circle (0.05);
+\draw[fill] (6.122615,4.5842622) circle (0.05);
+\draw[fill] (5.604990,5.0227012) circle (0.05);
+\draw[fill] (2.715744,4.0786740) circle (0.05);
+\draw[fill] (4.666348,3.9671370) circle (0.05);
+\draw[fill] (4.833494,2.6864497) circle (0.05);
+\draw[fill] (2.699929,3.7831202) circle (0.05);
+\draw[fill] (5.875923,4.1321580) circle (0.05);
+\draw[fill] (1.141053,2.4180573) circle (0.05);
+\draw[fill] (3.810106,4.7228958) circle (0.05);
+\draw[fill] (3.983993,2.6769287) circle (0.05);
+\draw[fill] (8.486224,3.7495115) circle (0.05);
+    \draw[ultra thick,RoyalBlue,stealth-stealth] (1,1*0.39+2.13+1.1) -- (1,1*0.39+2.13-1.1);
+    \draw[ultra thick,RoyalBlue,stealth-stealth] (3,3*0.39+2.13+1.1) -- (3,3*0.39+2.13-1.1);
+    \draw[ultra thick,RoyalBlue,stealth-stealth] (5,5*0.39+2.13+1.1) -- (5,5*0.39+2.13-1.1);
+    \draw[ultra thick,RoyalBlue,stealth-stealth] (7,7*0.39+2.13+1.1) -- (7,7*0.39+2.13-1.1);
+    \draw[ultra thick,RoyalBlue,stealth-stealth] (9,9*0.39+2.13+1.1) -- (9,9*0.39+2.13-1.1);
+    \draw[ultra thick,Plum,stealth-stealth] (15,4.1+2) -- (15,4.1-2);
+    \node[RoyalBlue] at (6,1) {constant variance of the errors};
+    \node[Plum] at (15,1) {total variance of $Y$};
+    \end{tikzpicture}
+\end{center}
 
 The error variance $\sigma^2$ is estimated by:
 
-\vspace{-0.5cm}
-
-\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=3cm]
-\vspace{-0.5cm}
+\begin{tcolorbox}[title=Estimating the Error Variance,center,colback=red!5,colframe=red!70!black,width=6cm]
 \[s^2=\dfrac{SSR}{n-2}\]
 \end{tcolorbox}
 
-\vspace{0.2cm}
+Where the (always positive) \textit{sum of squared residuals}, $SSR$, is calculated as:\hspace{0.5cm} $SSR=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}$
 
-Where the (always positive) \textit{sum of squared residuals}, $SSR$, is calculated as: 
-
-\vspace{-0.3cm}
-$$SSR=\sum{ \left(y_i-\hat{Y_i}\right)^2} \qquad \text{or} \qquad SSR=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}$$
-
-\vspace{-0.2cm}
-Both the formula for estimating the error variance $\sigma^2$ and the more convenient second formula for the sum of squared residuals $SSR$ are given on page 5 of the SQA Data Booklet.
+Both the formula for estimating the error variance $\sigma^2$ and the more convenient second formula for the sum of squared residuals $SSR$ are given on page 5 of the Data Booklet.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Students sitting a biology exam are given a mark for each of the two papers: theoretical ($x$) and practical ($y$). From a random sample of 12 students: $S_{xx}=290,S_{yy}=256.25,S_{xy}=255$.\\
+\textbf{Problem:} 
 
-\text{(a)   } Calculate the sum of squared residuals for this data set.\\[0.1em]
+Students sitting a biology exam are given a mark for each of the two papers: theoretical ($x$) and practical ($y$). From a random sample of 12 students: $S_{xx}=290,S_{yy}=256.25,S_{xy}=255$.\\
+
+\text{(a)   } Calculate the sum of squared residuals for this data set.\\[0.3em]
 \text{(b)   } Obtain an estimate of the error variance.
 
 \tcblower
 \textbf{Solution:}
 
-\text{(a)   } $SSR=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=256.25-\dfrac{255^2}{290}=32.026$\\[0.5em]
+\text{(a)   } $SSR=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=256.25-\dfrac{255^2}{290}=32.026$\\[0.7em]
 \text{(b)   } $s^2=\dfrac{SRR}{n-2}=\dfrac{32.026}{12-2}=3.203$
 \end{tcolorbox}
+
+\pagebreak
 
 []{#ex182q}
 
 #### [Exercise 18.2](#ex182a) {-}
+
+\newpage
+
+## The Coefficient of Determination
+
+The *coefficient of determination*, $R^2$,is the proportion of the total variation in the response variable, $Y$, that is explained by the linear regression model.
+
+\begin{center}
+        \begin{tikzpicture}
+            \draw[-stealth] (0,0) -- (5,0) node[right] {$x$};
+            \draw[-stealth] (0,0) -- (0,3) node[above] {$y$};
+            \node at (2.5,0.7) {$R^2=0.1246$};
+            \draw[thick] (0.2,1.87+0.13*0.2) -- (4.8,1.87+0.13*4.8);
+            \draw[fill=black] (0.2,1.53373841023011) circle (0.03);
+\draw[fill=black] (0.4,1.20717964535332) circle (0.03);
+\draw[fill=black] (0.6,1.72251067887986) circle (0.03);
+\draw[fill=black] (0.8,2.11648810666721) circle (0.03);
+\draw[fill=black] (1,1.97650101823779) circle (0.03);
+\draw[fill=black] (1.2,1.52303291760533) circle (0.03);
+\draw[fill=black] (1.4,1.58992089360673) circle (0.03);
+\draw[fill=black] (1.6,2.80483627736993) circle (0.03);
+\draw[fill=black] (1.8,2.74061040424513) circle (0.03);
+\draw[fill=black] (2,2.84559934643717) circle (0.03);
+\draw[fill=black] (2.2,2.90524254023335) circle (0.03);
+\draw[fill=black] (2.4,2.38201538321828) circle (0.03);
+\draw[fill=black] (2.6,1.59873854386617) circle (0.03);
+\draw[fill=black] (2.8,2.90173502441664) circle (0.03);
+\draw[fill=black] (3,2.59999938622566) circle (0.03);
+\draw[fill=black] (3.2,2.5591860521887) circle (0.03);
+\draw[fill=black] (3.4,1.76705018101233) circle (0.03);
+\draw[fill=black] (3.6,1.86661649309301) circle (0.03);
+\draw[fill=black] (3.8,3.00434568581749) circle (0.03);
+\draw[fill=black] (4,2.29277113670136) circle (0.03);
+\draw[fill=black] (4.2,2.21107850467089) circle (0.03);
+\draw[fill=black] (4.4,2.02013969791051) circle (0.03);
+\draw[fill=black] (4.6,2.5745743227038) circle (0.03);
+\draw[fill=black] (4.8,1.98816925972809) circle (0.03);
+            \draw[-stealth] (12,0) -- (17,0) node[right] {$x$};
+            \draw[-stealth] (12,0) -- (12,3) node[above] {$y$};
+            \node at (16,2.5) {$R^2=0.9604$};
+            \draw[fill=black] (12.2,2.85798900535176) circle (0.03);
+            \draw[thick] (12.2,3-0.54*0.2) -- (16.8,3-0.54*4.8);
+\draw[fill=black] (12.4,2.60537287961341) circle (0.03);
+\draw[fill=black] (12.6,2.77018510784324) circle (0.03);
+\draw[fill=black] (12.8,2.66349862608913) circle (0.03);
+\draw[fill=black] (13,2.35990060265767) circle (0.03);
+\draw[fill=black] (13.2,2.30035706778736) circle (0.03);
+\draw[fill=black] (13.4,2.08602522426643) circle (0.03);
+\draw[fill=black] (13.6,2.25084122059611) circle (0.03);
+\draw[fill=black] (13.8,2.14551272622872) circle (0.03);
+\draw[fill=black] (14,1.81146604663732) circle (0.03);
+\draw[fill=black] (14.2,2.08407903013156) circle (0.03);
+\draw[fill=black] (14.4,1.50565270007012) circle (0.03);
+\draw[fill=black] (14.6,1.46149356269359) circle (0.03);
+\draw[fill=black] (14.8,1.39099215853279) circle (0.03);
+\draw[fill=black] (15,1.64671625827524) circle (0.03);
+\draw[fill=black] (15.2,1.21641922001981) circle (0.03);
+\draw[fill=black] (15.4,1.46251390454929) circle (0.03);
+\draw[fill=black] (15.6,0.938058516930767) circle (0.03);
+\draw[fill=black] (15.8,0.825017334308726) circle (0.03);
+\draw[fill=black] (16,0.823330020748936) circle (0.03);
+\draw[fill=black] (16.2,0.687053814962354) circle (0.03);
+\draw[fill=black] (16.4,0.731984300904749) circle (0.03);
+\draw[fill=black] (16.6,0.450020978572811) circle (0.03);
+\draw[fill=black] (16.8,0.301613948412619) circle (0.03);
+\node at (8.5,2.7) {
+\begin{minipage}{5cm}
+\begin{tcolorbox}[title=Coefficient of Determination,center,colback=red!5,colframe=red!70!black]
+\[R^2=\dfrac{\text{explained variation}}{\text{total variation}}\]
+\end{tcolorbox}
+\end{minipage}
+};
+\node at (8.5,0.8) {$\left(R^2=\dfrac{b^2S_{xx}}{S_{yy}}=\dfrac{(S_{xy})^2}{S_{xx}S_{yy}}\right)$};
+        \end{tikzpicture}    
+\end{center}
+
+For the linear regression models covered in this course, the coefficient of determination is connected to the *correlation coefficient*, $r$, by a simple relationship:
+
+\begin{center}
+        \begin{tikzpicture}
+        \node[left] at (0,0) {$r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$};
+        \node at (2,0) {$\implies$};
+        \node[right] at (4,0){
+        \begin{minipage}{2.5cm}
+        \begin{tcolorbox}[center,colback=red!5,colframe=red!70!black]
+\vspace{-0.5cm}
+\[r^2=R^2\]
+\end{tcolorbox}
+        \end{minipage}
+};
+        \end{tikzpicture}    
+\end{center}
+
+Everything above implies that $0\leqslant R^2 \leqslant 1$.
+
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
+\textbf{Problem:} Students sitting a biology exam are given a mark for each of the two papers: theoretical ($x$) and practical ($y$). From a random sample of 12 students, the following summary statistics are obtained:
+
+\begin{center}
+    \begin{tabular}{ccccc}
+        $S_{xx}=290$ & $S_{yy}=256.25$ & $S_{xy}=255$ & $n=12$ & $r=0.935$
+    \end{tabular}
+\end{center}
+
+A linear regression model is proposed, and an equation for the regression line of $y$ on $x$ is obtained:
+
+\begin{center}
+    \begin{tabular}{c}
+        $\hat{Y}=2.581+0.879x$
+    \end{tabular}
+\end{center}
+
+Calculate the coefficient of determination and interpret this value in context.
+
+\tcblower
+\textbf{Solution:}\\
+
+$R^2=0.935^2=0.8742$.\\
+
+This suggests that 87.4\% of the total variation in practical scores can be explained by the linear model.
+
+\end{tcolorbox}
+
+\newpage
+
+[]{#ex183q}
+
+#### [Exercise 18.3](#ex183a) {-}
 
 \begin{enumerate}
     \item Calculate the sum of squared residuals and hence estimate the error variance for each of Contexts 1 to 5.
@@ -773,9 +678,9 @@ Since $-3.003>-3.707$, do not reject $\text{H}_0$ at the 1\% level of significan
 
 \pagebreak
 
-[]{#ex183q}
+[]{#ex184q}
 
-#### [Exercise 18.3](#ex183a) {-}
+#### [Exercise 18.4](#ex184a) {-}
 
 \begin{enumerate}
     \item Six metal plates were immersed in a weak acid solution for various lengths of time. Their percentage losses in mass were then measured and a scatterplot drawn of time in solution ($x$ hours) against mass loss ($y$\%). The equation of the least squares regression line for $y$ on $x$ was obtained.\\[0.5em] 
@@ -1130,10 +1035,6 @@ Since $-3.003>-3.707$, do not reject $\text{H}_0$ at the 1\% level of significan
 
 \pagebreak
 
-[]{#ex184q}
-
-#### [Exercise 18.4](#ex184a) {-}
-
 \begin{enumerate}
     \item A researcher is wanting to know if there is a link between the number of calories ($x$) and the carbohydrate content ($y$) of different types of caffeinated drinks available at coffee shops. Summary statistics are obtained from a random sample of 22 caffeinated drink options from a range of coffee shops. \\[0.5em] 
     \textit{(See Context 2)}\\[0.5em]
@@ -1217,127 +1118,6 @@ Since $-3.003>-3.707$, do not reject $\text{H}_0$ at the 1\% level of significan
 \end{enumerate}
 
 \pagebreak
-
-## The Coefficient of Determination
-
-The *coefficient of determination*, $R^2$,is the proportion of the total variation in the response variable, $Y$, that is explained by the linear regression model.
-
-\begin{center}
-        \begin{tikzpicture}
-            \draw[-stealth] (0,0) -- (5,0) node[right] {$x$};
-            \draw[-stealth] (0,0) -- (0,3) node[above] {$y$};
-            \node at (2.5,0.7) {$R^2=0.1246$};
-            \draw[thick] (0.2,1.87+0.13*0.2) -- (4.8,1.87+0.13*4.8);
-            \draw[fill=black] (0.2,1.53373841023011) circle (0.03);
-\draw[fill=black] (0.4,1.20717964535332) circle (0.03);
-\draw[fill=black] (0.6,1.72251067887986) circle (0.03);
-\draw[fill=black] (0.8,2.11648810666721) circle (0.03);
-\draw[fill=black] (1,1.97650101823779) circle (0.03);
-\draw[fill=black] (1.2,1.52303291760533) circle (0.03);
-\draw[fill=black] (1.4,1.58992089360673) circle (0.03);
-\draw[fill=black] (1.6,2.80483627736993) circle (0.03);
-\draw[fill=black] (1.8,2.74061040424513) circle (0.03);
-\draw[fill=black] (2,2.84559934643717) circle (0.03);
-\draw[fill=black] (2.2,2.90524254023335) circle (0.03);
-\draw[fill=black] (2.4,2.38201538321828) circle (0.03);
-\draw[fill=black] (2.6,1.59873854386617) circle (0.03);
-\draw[fill=black] (2.8,2.90173502441664) circle (0.03);
-\draw[fill=black] (3,2.59999938622566) circle (0.03);
-\draw[fill=black] (3.2,2.5591860521887) circle (0.03);
-\draw[fill=black] (3.4,1.76705018101233) circle (0.03);
-\draw[fill=black] (3.6,1.86661649309301) circle (0.03);
-\draw[fill=black] (3.8,3.00434568581749) circle (0.03);
-\draw[fill=black] (4,2.29277113670136) circle (0.03);
-\draw[fill=black] (4.2,2.21107850467089) circle (0.03);
-\draw[fill=black] (4.4,2.02013969791051) circle (0.03);
-\draw[fill=black] (4.6,2.5745743227038) circle (0.03);
-\draw[fill=black] (4.8,1.98816925972809) circle (0.03);
-            \draw[-stealth] (12,0) -- (17,0) node[right] {$x$};
-            \draw[-stealth] (12,0) -- (12,3) node[above] {$y$};
-            \node at (16,2.5) {$R^2=0.9604$};
-            \draw[fill=black] (12.2,2.85798900535176) circle (0.03);
-            \draw[thick] (12.2,3-0.54*0.2) -- (16.8,3-0.54*4.8);
-\draw[fill=black] (12.4,2.60537287961341) circle (0.03);
-\draw[fill=black] (12.6,2.77018510784324) circle (0.03);
-\draw[fill=black] (12.8,2.66349862608913) circle (0.03);
-\draw[fill=black] (13,2.35990060265767) circle (0.03);
-\draw[fill=black] (13.2,2.30035706778736) circle (0.03);
-\draw[fill=black] (13.4,2.08602522426643) circle (0.03);
-\draw[fill=black] (13.6,2.25084122059611) circle (0.03);
-\draw[fill=black] (13.8,2.14551272622872) circle (0.03);
-\draw[fill=black] (14,1.81146604663732) circle (0.03);
-\draw[fill=black] (14.2,2.08407903013156) circle (0.03);
-\draw[fill=black] (14.4,1.50565270007012) circle (0.03);
-\draw[fill=black] (14.6,1.46149356269359) circle (0.03);
-\draw[fill=black] (14.8,1.39099215853279) circle (0.03);
-\draw[fill=black] (15,1.64671625827524) circle (0.03);
-\draw[fill=black] (15.2,1.21641922001981) circle (0.03);
-\draw[fill=black] (15.4,1.46251390454929) circle (0.03);
-\draw[fill=black] (15.6,0.938058516930767) circle (0.03);
-\draw[fill=black] (15.8,0.825017334308726) circle (0.03);
-\draw[fill=black] (16,0.823330020748936) circle (0.03);
-\draw[fill=black] (16.2,0.687053814962354) circle (0.03);
-\draw[fill=black] (16.4,0.731984300904749) circle (0.03);
-\draw[fill=black] (16.6,0.450020978572811) circle (0.03);
-\draw[fill=black] (16.8,0.301613948412619) circle (0.03);
-\node at (8.5,2.7) {
-\begin{minipage}{5cm}
-\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black]
-\vspace{-0.5cm}
-\[R^2=\dfrac{\text{explained variation}}{\text{total variation}}\]
-\end{tcolorbox}
-\end{minipage}
-};
-\node at (8.5,0.8) {$\left(R^2=\dfrac{b^2S_{xx}}{S_{yy}}=\dfrac{(S_{xy})^2}{S_{xx}S_{yy}}\right)$};
-        \end{tikzpicture}    
-\end{center}
-
-For the linear regression models covered in this course, the coefficient of determination is connected to the *correlation coefficient*, $r$, by a simple relationship:
-
-\begin{center}
-        \begin{tikzpicture}
-        \node[left] at (0,0) {$r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$};
-        \node at (2,0) {$\implies$};
-        \node[right] at (4,0){
-        \begin{minipage}{2.5cm}
-        \begin{tcolorbox}[center,colback=red!5,colframe=red!70!black]
-\vspace{-0.5cm}
-\[r^2=R^2\]
-\end{tcolorbox}
-        \end{minipage}
-};
-        \end{tikzpicture}    
-\end{center}
-
-Everything above implies that $0\leqslant R^2 \leqslant 1$.
-
-\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
-\textbf{Problem:} Students sitting a biology exam are given a mark for each of the two papers: theoretical ($x$) and practical ($y$). From a random sample of 12 students, the following summary statistics are obtained:
-
-\begin{center}
-    \begin{tabular}{ccccc}
-        $S_{xx}=290$ & $S_{yy}=256.25$ & $S_{xy}=255$ & $n=12$ & $r=0.935$
-    \end{tabular}
-\end{center}
-
-A linear regression model is proposed, and an equation for the regression line of $y$ on $x$ is obtained:
-
-\begin{center}
-    \begin{tabular}{c}
-        $\hat{Y}=2.581+0.879x$
-    \end{tabular}
-\end{center}
-
-Calculate the coefficient of determination and interpret this value in context.
-
-\tcblower
-\textbf{Solution:}\\
-
-$R^2=0.935^2=0.8742$.\\
-
-This suggests that 87.4\% of the total variation in practical scores can be explained by the linear model.
-
-\end{tcolorbox}
 
 []{#ex185q}
 
