@@ -79,7 +79,7 @@ The difference between an observed data value $y_i$ and a corresponding fitted v
 \begin{center}
     \begin{tikzpicture}
         \draw[fill=black!10] (8.2,0.8) rectangle (13,2.3);
-        \draw[very thick,RoyalBlue,dashed] (3,1) -- (3,2);
+        \draw[very thick,dashed] (3,1) -- (3,2);
         \draw[semithick] (6,0) -- (0,2) node[left] {$\hat{Y_i}=a+bx_i$};
         \draw[fill=black] (3,2) circle (2pt) node[above] {$(x_i,y_i)$};
         \node[below] at (3,0.9) {$(x_i,\hat{Y}_i)$};
@@ -89,7 +89,7 @@ The difference between an observed data value $y_i$ and a corresponding fitted v
         \node[right] at (4.5,2) {Data, $y_i$};
         \draw[-stealth] (4.5,1) -- (3.2,1);
         \node[right] at (4.5,1) {Fitted, $\hat{Y_i}$};
-        \draw[stealth-,dashed] (3.2,1.5) -- (8,1.5);
+        \draw[stealth-,dashed,thin] (3.2,1.5) -- (8,1.5);
         \node at (9.2,1.9) {Residual};
         \node at (10.25,1.85) {$=$};
         \node at (10.95,1.9) {Data};
@@ -123,15 +123,15 @@ For data points which lie \textit{above} the regression line, their residual is 
         \draw[thin,dashed] (5,-0.8) -- (5,0.5);
         \draw[thin,dashed] (6,1.2) -- (6,0.6);
         \draw[thin,dashed] (7,0) -- (7,0.7);
-        \draw[ForestGreen,fill] (1,1) circle (0.05);
-        \draw[ForestGreen,fill] (3,0.7) circle (0.05);
-        \draw[ForestGreen,fill] (4,2) circle (0.05);
-        \draw[ForestGreen,fill] (6,1.2) circle (0.05);
-        \draw[red,fill] (2,-0.5) circle (0.05);
-        \draw[red,fill] (5,-0.8) circle (0.05);
-        \draw[red,fill] (7,0) circle (0.05);
-        \node[ForestGreen] at (7,2) {\textit{positive residuals}};
-        \node[red] at (7,-1) {\textit{negative residuals}};
+        \draw[fill] (1,1) circle (0.05);
+        \draw[fill] (3,0.7) circle (0.05);
+        \draw[fill] (4,2) circle (0.05);
+        \draw[fill] (6,1.2) circle (0.05);
+        \draw[fill] (2,-0.5) circle (0.05);
+        \draw[fill] (5,-0.8) circle (0.05);
+        \draw[fill] (7,0) circle (0.05);
+        \node at (7,2) {\textit{positive residuals}};
+        \node at (7,-1) {\textit{negative residuals}};
     \end{tikzpicture}
 \end{center}
 
@@ -197,10 +197,10 @@ Students sitting a biology exam are given a mark for each of the two papers: the
 \draw[fill=black] (6*0.2,8*0.12) circle (0.02);
 \draw[fill=black] (17*0.2,17*0.12) circle (0.02);
 \draw[fill=black] (12*0.2,14*0.12) circle (0.02);
-\draw[fill,red] (10*0.2,8*0.12) circle (0.05);
+\draw[fill] (10*0.2,8*0.12) circle (0.05);
 \draw[thick] (10*0.2,8*0.12) -- (10*0.2,11.6*0.12);
 \draw[fill=black] (15*0.2,17*0.12) circle (0.02);
-\draw[fill,ForestGreen] (16*0.2,18*0.12) circle (0.05);
+\draw[fill] (16*0.2,18*0.12) circle (0.05);
     \end{tikzpicture}
 \end{center}
 
@@ -220,7 +220,7 @@ The least squares regression model assumes that that the variance of the errors 
 
 $$\text{V}(\varepsilon_i)=\sigma^2$$
 
-The *error variance* is the variance of the population of data *relative to the regression line's predicted values*, loosely indicated below by blue arrows. This is distinct from the *total variance* of $Y$, loosely indicated by the purple arrow.
+The *error variance* is the variance of the population of data *relative to the regression line's predicted values*, indicated below by the arrows below. This is distinct from the *total variance* of $Y$, indicated by the single arrow to the right.
 
 \begin{center}
     \begin{tikzpicture}[scale=0.9]
@@ -275,26 +275,26 @@ The *error variance* is the variance of the population of data *relative to the 
 \draw[fill] (3.810106,4.7228958) circle (0.05);
 \draw[fill] (3.983993,2.6769287) circle (0.05);
 \draw[fill] (8.486224,3.7495115) circle (0.05);
-    \draw[ultra thick,RoyalBlue,stealth-stealth] (1,1*0.39+2.13+1.1) -- (1,1*0.39+2.13-1.1);
-    \draw[ultra thick,RoyalBlue,stealth-stealth] (3,3*0.39+2.13+1.1) -- (3,3*0.39+2.13-1.1);
-    \draw[ultra thick,RoyalBlue,stealth-stealth] (5,5*0.39+2.13+1.1) -- (5,5*0.39+2.13-1.1);
-    \draw[ultra thick,RoyalBlue,stealth-stealth] (7,7*0.39+2.13+1.1) -- (7,7*0.39+2.13-1.1);
-    \draw[ultra thick,RoyalBlue,stealth-stealth] (9,9*0.39+2.13+1.1) -- (9,9*0.39+2.13-1.1);
-    \draw[ultra thick,Plum,stealth-stealth] (15,4.1+2) -- (15,4.1-2);
-    \node[RoyalBlue] at (6,1) {constant variance of the errors};
-    \node[Plum] at (15,1) {total variance of $Y$};
+    \draw[ultra thick,stealth-stealth] (1,1*0.39+2.13+1.1) -- (1,1*0.39+2.13-1.1);
+    \draw[ultra thick,stealth-stealth] (3,3*0.39+2.13+1.1) -- (3,3*0.39+2.13-1.1);
+    \draw[ultra thick,stealth-stealth] (5,5*0.39+2.13+1.1) -- (5,5*0.39+2.13-1.1);
+    \draw[ultra thick,stealth-stealth] (7,7*0.39+2.13+1.1) -- (7,7*0.39+2.13-1.1);
+    \draw[ultra thick,stealth-stealth] (9,9*0.39+2.13+1.1) -- (9,9*0.39+2.13-1.1);
+    \draw[ultra thick,stealth-stealth] (15,4.1+2) -- (15,4.1-2);
+    \node at (6,1) {constant variance of the errors $\epsilon_i$};
+    \node at (15,1) {total variance of $Y$};
     \end{tikzpicture}
 \end{center}
 
 The error variance $\sigma^2$ is estimated by:
 
 \begin{tcolorbox}[title=Estimating the Error Variance,center,colback=red!5,colframe=red!70!black,width=6cm]
-\[s^2=\dfrac{SSR}{n-2}\]
+\[s^2=\dfrac{\text{\text{SSR}}}{n-2}\]
 \end{tcolorbox}
 
-Where the (always positive) \textit{sum of squared residuals}, $SSR$, is calculated as:\hspace{0.5cm} $SSR=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}$
+Where the (always positive) \textit{sum of squared residuals}, $\text{\text{SSR}}$, is calculated as:\hspace{0.5cm} $\text{\text{SSR}}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}$
 
-Both the formula for estimating the error variance $\sigma^2$ and the more convenient second formula for the sum of squared residuals $SSR$ are given on page 5 of the Data Booklet.
+Both the formula for estimating the error variance $\sigma^2$ and the more convenient second formula for the sum of squared residuals $\text{SSR}$ are given on page 5 of the Data Booklet.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} 
@@ -307,7 +307,7 @@ Students sitting a biology exam are given a mark for each of the two papers: the
 \tcblower
 \textbf{Solution:}
 
-\text{(a)   } $SSR=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=256.25-\dfrac{255^2}{290}=32.026$\\[0.7em]
+\text{(a)   } $\text{SSR}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=256.25-\dfrac{255^2}{290}=32.026$\\[0.7em]
 \text{(b)   } $s^2=\dfrac{SRR}{n-2}=\dfrac{32.026}{12-2}=3.203$
 \end{tcolorbox}
 
@@ -321,7 +321,7 @@ Students sitting a biology exam are given a mark for each of the two papers: the
 
 ## The Coefficient of Determination
 
-The *coefficient of determination*, $R^2$,is the proportion of the total variation in the response variable, $Y$, that is explained by the linear regression model.
+The *coefficient of determination*, $R^2$, is the proportion of the total variation in the response variable, $Y$, that is explained by the linear regression model. The higher the value of $R^2$, the less variation remains for $Y_i$ relative to the total variation of $Y$. This means that the coefficient of determination is a very useful measure of how 'good' a model is for the data.
 
 \begin{center}
         \begin{tikzpicture}
@@ -381,14 +381,15 @@ The *coefficient of determination*, $R^2$,is the proportion of the total variati
 \draw[fill=black] (16.4,0.731984300904749) circle (0.03);
 \draw[fill=black] (16.6,0.450020978572811) circle (0.03);
 \draw[fill=black] (16.8,0.301613948412619) circle (0.03);
-\node at (8.5,2.7) {
-\begin{minipage}{5cm}
+\node[text width = 5.5cm,below right] at (0.1,-0.2) {12.5\% of the variation in $Y$ is explained by the linear model.};
+\node[text width = 5.5cm,below right] at (12.1,-0.2) {96.0\% of the variation in $Y$ is explained by the linear model.};
+\node at (8.5,1.7) {
+\begin{minipage}{5.9cm}
 \begin{tcolorbox}[title=Coefficient of Determination,center,colback=red!5,colframe=red!70!black]
-\[R^2=\dfrac{\text{explained variation}}{\text{total variation}}\]
+$R^2=\dfrac{\text{explained variation}}{\text{total variation}}$
 \end{tcolorbox}
 \end{minipage}
 };
-\node at (8.5,0.8) {$\left(R^2=\dfrac{b^2S_{xx}}{S_{yy}}=\dfrac{(S_{xy})^2}{S_{xx}S_{yy}}\right)$};
         \end{tikzpicture}    
 \end{center}
 
@@ -402,21 +403,23 @@ For the linear regression models covered in this course, the coefficient of dete
         \begin{minipage}{2.5cm}
         \begin{tcolorbox}[center,colback=red!5,colframe=red!70!black]
 \vspace{-0.5cm}
-\[r^2=R^2\]
+\[R^2=r^2\]
 \end{tcolorbox}
         \end{minipage}
 };
         \end{tikzpicture}    
 \end{center}
 
-Everything above implies that $0\leqslant R^2 \leqslant 1$.
+Both the formula above and the interpretation of the coefficient of determination implies that $0\leqslant R^2 \leqslant 1$.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
-\textbf{Problem:} Students sitting a biology exam are given a mark for each of the two papers: theoretical ($x$) and practical ($y$). From a random sample of 12 students, the following summary statistics are obtained:
+\textbf{Problem:} 
+
+Students sitting a biology exam are given a mark for each of the two papers: theoretical ($x$) and practical ($y$). From a random sample of 12 students, the following summary statistics are obtained:
 
 \begin{center}
     \begin{tabular}{ccccc}
-        $S_{xx}=290$ & $S_{yy}=256.25$ & $S_{xy}=255$ & $n=12$ & $r=0.935$
+        $S_{xx}=290$ & $S_{yy}=256.25$ & $S_{xy}=255$ & $n=12$
     \end{tabular}
 \end{center}
 
@@ -431,15 +434,24 @@ A linear regression model is proposed, and an equation for the regression line o
 Calculate the coefficient of determination and interpret this value in context.
 
 \tcblower
-\textbf{Solution:}\\
+\textbf{Solution:}
 
-$R^2=0.935^2=0.8742$.\\
+\vspace{-0.5cm}
 
-This suggests that 87.4\% of the total variation in practical scores can be explained by the linear model.
+\begin{align*}
+r&=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}=\dfrac{255}{\sqrt{290\times 256.25}}=0.935\\[1em]
+R^2&=r^2=0.935^2=0.8742
+\end{align*}
+
+This suggests that 87.4\% of the variation in practical scores can be explained by the linear model.
 
 \end{tcolorbox}
 
-\newpage
+The conclusion from the example above could also be phrased as:
+
+"*87.4\% of the variation in practical scores can be explained by the theory scores.*"
+
+\pagebreak
 
 []{#ex183q}
 
@@ -523,50 +535,152 @@ This suggests that 87.4\% of the total variation in practical scores can be expl
 
 ## Test for the Slope Parameter $\beta$
 
-The sample statistic $b$ is an estimator for the slope parameter, $\beta$, whose can only be known when data is available for a full population. The following three possibilities for the true value of $\beta$ are of interet.
+The value of the \textit{slope parameter}, $\beta$, cannot be known without obtaining a full population. The \textit{sample statistic} $b$ is an estimator for $\beta$, and may differ slightly or substantially from it, as shown below.  
 
-\vspace{-0.3cm}
-\begin{center}
+\begin{multicols}{2}
+    \begin{center}
         \begin{tikzpicture}
-            \draw[-stealth] (0,0.3) -- (4,0.3) node[right] {$x$};
-            \draw[-stealth] (6,0.3) -- (10,0.3) node[right] {$x$};
-            \draw[-stealth] (12,0.3) -- (16,0.3) node[right] {$x$};
-            \draw[-stealth] (0,0.3) -- (0,3) node[above] {$y$};
-            \draw[-stealth] (6,0.3) -- (6,3) node[above] {$y$};
-            \draw[-stealth] (12,0.3) -- (12,3) node[above] {$y$};
-            \node at (2,-0.2) {$\beta>0$};
-            \node at (8,-0.2) {$\beta=0$};
-            \node at (14,-0.2) {$\beta<0$};
-            \draw[thick] (0.5,0.5) -- (3.5,3.3);
-            \draw[thick] (6.5,1.5) -- (9.5,1.5);
-            \draw[thick] (12.5,2.8) -- (15.5,0.5);
-            \draw[fill=black!20] (1.0,0.9) circle (0.05);
-            \draw[fill=black!20] (1.2,1.5) circle (0.05);
-            \draw[fill=black!20] (1.6,1.2) circle (0.05);
-            \draw[fill=black!20] (1.9,1.9) circle (0.05);
-            \draw[fill=black!20] (2.2,2.5) circle (0.05);
-            \draw[fill=black!20] (2.6,2.1) circle (0.05);
-            \draw[fill=black!20] (2.8,2.7) circle (0.05);
-            \draw[fill=black!20] (3.1,2.6) circle (0.05);
-            \draw[fill=black!20] (6.7,2.1) circle (0.05);
-            \draw[fill=black!20] (7,1.2) circle (0.05);
-            \draw[fill=black!20] (7.6,2.2) circle (0.05);
-            \draw[fill=black!20] (7.8,0.8) circle (0.05);
-            \draw[fill=black!20] (8.1,1.6) circle (0.05);
-            \draw[fill=black!20] (8.5,1.2) circle (0.05);
-            \draw[fill=black!20] (8.9,2.7) circle (0.05);
-            \draw[fill=black!20] (9.2,1.9) circle (0.05);
-            \draw[fill=black!20] (12.9,2.5) circle (0.05);
-            \draw[fill=black!20] (13.1,1.9) circle (0.05);
-            \draw[fill=black!20] (13.5,1.8) circle (0.05);
-            \draw[fill=black!20] (13.8,2.1) circle (0.05);
-            \draw[fill=black!20] (14.1,1.3) circle (0.05);
-            \draw[fill=black!20] (14.5,1.8) circle (0.05);
-            \draw[fill=black!20] (14.8,1.3) circle (0.05);
-            \draw[fill=black!20] (15.2,0.5) circle (0.05);
-        \end{tikzpicture}    
-\end{center}
-\vspace{-0.5cm}
+            \draw[white] (-0.7,-0.2) rectangle (5,4.2);
+            \draw[-stealth] (-0.3,0) -- (4.5,0) node[right] {$x$};
+            \draw[-stealth] (-0.3,0) -- (-0.3,4) node[left] {$y$};
+            \draw[fill] (2.32587819,3.305163) circle (0.02);
+\draw[fill] (1.68779856,2.328487) circle (0.02);
+\draw[fill] (0.4987622,0.159483) circle (0.02);
+\draw[fill] (1.99962533,1.2682117) circle (0.02);
+\draw[fill] (0.77248457,1.2897987) circle (0.02);
+\draw[fill] (2.14298654,2.2913268) circle (0.02);
+\draw[fill] (0.85344114,1.9222984) circle (0.02);
+\draw[fill] (3.11541255,2.1545408) circle (0.02);
+\draw[fill] (3.48815011,1.7561819) circle (0.02);
+\draw[fill] (3.65702668,3.3699968) circle (0.02);
+\draw[fill] (2.95880027,2.1902534) circle (0.02);
+\draw[fill] (3.33497133,2.2437815) circle (0.02);
+\draw[fill] (1.69019935,2.1003015) circle (0.02);
+\draw[fill] (2.91111092,2.4494643) circle (0.02);
+\draw[fill] (2.76460555,2.8742915) circle (0.02);
+\draw[fill] (0.37709156,1.0084187) circle (0.02);
+\draw[fill] (3.15940466,2.9964305) circle (0.02);
+\draw[fill] (1.90515602,2.0325375) circle (0.02);
+\draw[fill] (1.18948394,1.4667501) circle (0.02);
+\draw[fill] (1.5946854,2.4451243) circle (0.02);
+\draw[fill] (1.80843916,1.6969464) circle (0.02);
+\draw[fill] (1.9159613,2.4177518) circle (0.02);
+\draw[fill] (4.14423745,2.739782) circle (0.02);
+\draw[fill] (2.3182264,2.2670707) circle (0.02);
+\draw[fill] (2.03837627,2.1160129) circle (0.02);
+\draw[fill] (2.52611305,2.6680841) circle (0.02);
+\draw[fill] (3.34383949,2.1191032) circle (0.02);
+\draw[fill] (3.40794493,2.5460285) circle (0.02);
+\draw[fill] (3.55146203,2.5717483) circle (0.02);
+\draw[fill] (1.99993656,2.3487264) circle (0.02);
+\draw[fill] (3.43282494,2.4295578) circle (0.02);
+\draw[fill] (2.18089306,1.8102915) circle (0.02);
+\draw[fill] (3.5882686,2.7516054) circle (0.02);
+\draw[fill] (1.59101393,1.5188158) circle (0.02);
+\draw[fill] (3.13055699,2.4960652) circle (0.02);
+\draw[fill] (2.37728225,2.2374801) circle (0.02);
+\draw[fill] (1.79464581,2.0112902) circle (0.02);
+\draw[fill] (3.31794055,2.0271896) circle (0.02);
+\draw[fill] (3.06035623,2.8816853) circle (0.02);
+\draw[fill] (4.31334514,3.5612607) circle (0.02);
+\draw[fill] (3.6126231,2.7784446) circle (0.02);
+\draw[fill] (2.98565321,3.0694587) circle (0.02);
+\draw[fill] (1.40208432,1.3316966) circle (0.02);
+\draw[fill] (2.8981677,2.1612393) circle (0.02);
+\draw[fill] (0.63980668,1.3951679) circle (0.02);
+\draw[fill] (4.06110526,2.3011806) circle (0.02);
+\draw[fill] (0.99451403,1.4679988) circle (0.02);
+\draw[fill] (3.99764718,2.8798711) circle (0.02);
+\draw[fill] (0.76667484,1.2280423) circle (0.02);
+\draw[fill=black] (2.671839,2.3005514) circle (0.06);
+\draw[fill=black] (1.326522,1.7513623) circle (0.06);
+\draw[fill=black] (1.048916,0.9183572) circle (0.06);
+\draw[fill=black] (1.936491,2.5312718) circle (0.06);
+\draw[fill=black] (2.231906,1.9189243) circle (0.06);
+\draw[fill=black] (1.049836,1.1341388) circle (0.06);
+\draw[fill=black] (2.786819,3.152378) circle (0.06);
+\draw[fill=black] (1.914067,2.1632732) circle (0.06);
+\draw[fill=black] (2.916147,2.8106946) circle (0.06);
+\draw[fill=black] (1.147273,1.7060175) circle (0.06);
+        \draw[very thin,dashed] (0,1) -- (4.5,4.5*0.5+1);
+        \draw[very thick] (0,0.44) -- (4,4*0.84+0.44);
+        \node at (6.4,2.5) {Population:};
+            \node at (6.4,2) {$\beta=0.5$};
+            \node at (6.4,1.2) {\textbf{Sample}:};
+            \node at (6.4,0.7) {$b=0.84$};
+        \end{tikzpicture}
+    \end{center}
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[white] (-0.7,-0.2) rectangle (5,4.2);
+            \draw[-stealth] (-0.3,0) -- (4.5,0) node[right] {$x$};
+            \draw[-stealth] (-0.3,0) -- (-0.3,4) node[left] {$y$};
+            \node at (6.4,2.5) {Population:};
+            \node at (6.4,2) {$\beta=0$};
+            \node at (6.4,1.2) {\textbf{Sample}:};
+            \node at (6.4,0.7) {$b=-0.66$};
+            \draw[fill] (1.8773691,2.03036688) circle (0.02);
+\draw[fill] (0.5063114,1.78542006) circle (0.02);
+\draw[fill] (2.1449772,2.47325384) circle (0.02);
+\draw[fill] (0.904426,2.40268215) circle (0.02);
+\draw[fill] (0.1706925,1.1733692) circle (0.02);
+\draw[fill] (1.5087966,1.40314665) circle (0.02);
+\draw[fill] (2.744333,2.12177336) circle (0.02);
+\draw[fill] (1.5315343,1.32920037) circle (0.02);
+\draw[fill] (3.0512736,1.43902448) circle (0.02);
+\draw[fill] (1.0341176,2.49008735) circle (0.02);
+\draw[fill] (4.179623,3.32150403) circle (0.02);
+\draw[fill] (3.1996179,1.35791885) circle (0.02);
+\draw[fill] (1.2601926,2.52904754) circle (0.02);
+\draw[fill] (1.5975439,2.51662918) circle (0.02);
+\draw[fill] (1.826049,0.91433903) circle (0.02);
+\draw[fill] (2.8453224,2.56858619) circle (0.02);
+\draw[fill] (1.3203548,1.74374667) circle (0.02);
+\draw[fill] (1.786068,1.03375795) circle (0.02);
+\draw[fill] (1.9898703,1.54229047) circle (0.02);
+\draw[fill] (1.3066681,1.01967896) circle (0.02);
+\draw[fill] (1.4465622,3.44974166) circle (0.02);
+\draw[fill] (2.5055776,0.27716394) circle (0.02);
+\draw[fill] (1.2935839,2.724642) circle (0.02);
+\draw[fill] (2.2860373,1.65457746) circle (0.02);
+\draw[fill] (1.5111443,1.57833582) circle (0.02);
+\draw[fill] (1.7325682,2.34981319) circle (0.02);
+\draw[fill] (1.0388733,0.80212456) circle (0.02);
+\draw[fill] (1.7259473,3.38593561) circle (0.02);
+\draw[fill] (1.4030438,0.09231285) circle (0.02);
+\draw[fill] (0.871039,2.25423133) circle (0.02);
+\draw[fill] (1.3956757,1.32314277) circle (0.02);
+\draw[fill] (1.0903776,0.54710199) circle (0.02);
+\draw[fill] (2.382148,2.31351295) circle (0.02);
+\draw[fill] (3.2830576,1.81812744) circle (0.02);
+\draw[fill] (2.6370965,2.33822361) circle (0.02);
+\draw[fill] (2.3339605,0.33296781) circle (0.02);
+\draw[fill] (2.6452115,0.85336708) circle (0.02);
+\draw[fill] (2.0084405,2.98131884) circle (0.02);
+\draw[fill] (1.6716557,0.83547851) circle (0.02);
+\draw[fill] (1.0356871,1.73158562) circle (0.02);
+\draw[fill] (2.0903785,1.4369686) circle (0.02);
+\draw[fill] (2.8786515,1.61014692) circle (0.02);
+\draw[fill] (2.5651643,1.52068466) circle (0.02);
+\draw[fill] (0.632567,2.42259413) circle (0.02);
+\draw[fill] (2.7481655,2.46358965) circle (0.02);
+\draw[fill] (2.0347438,0.7531166) circle (0.02);
+\draw[fill=black] (3.1896841,2.62004) circle (0.06);
+\draw[fill=black] (2.9221113,0.8403827) circle (0.06);
+\draw[fill=black] (2.6265277,1.2731702) circle (0.06);
+\draw[fill=black] (0.2987119,3.0892714) circle (0.06);
+\draw[fill=black] (3.6216834,0.2180837) circle (0.06);
+\draw[fill=black] (1.113394,2.4031362) circle (0.06);
+\draw[fill=black] (1.5459337,1.858644) circle (0.06);
+\draw[fill=black] (1.1926436,3.3418853) circle (0.06);
+\draw[fill=black] (1.8057894,2.0398668) circle (0.06);
+\draw[fill=black] (1.3412726,1.7937196) circle (0.06);
+
+        \draw[very thin,dashed] (0,1.75) -- (4.2,1.75);
+        \draw[very thick] (0,3.25) -- (4,3.25-4*0.66);
+        \end{tikzpicture}
+    \end{center}
+\end{multicols}
 
 The slope parameter $\beta$ can be *positive*, *negative* or *zero*. Where $\beta=0$ it can be said that knowing $x_i$ has no value in predicting $y_i$. In other words, a linear regression model is only \textbf{useful for prediction} in cases where the slope parameter is \textit{non-zero}, or $\beta \ne 0$. The \textit{parametric} \textbf{Test for Beta} assesses whether data from a sample provide evidence to suggest that this is the case. The test statistic below follows a $t$-distribution with $n-2$ degrees of freedom, and in this course the test will always be \textit{two-tailed} with hypotheses $\text{H}_0: \beta=0$ and $\text{H}_1: \beta\ne 0$.
 
@@ -575,8 +689,8 @@ The slope parameter $\beta$ can be *positive*, *negative* or *zero*. Where $\bet
 \begin{minipage}[c]{.33\textwidth}
   \centering
 \begin{centering}
-\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=6cm,height=2.3cm]
-\textbf{Test statistic:}
+\begin{tcolorbox}[title=Test Statistic,center,colback=red!5,colframe=red!70!black,width=5cm,height=2.5cm]
+\vspace{-0.3cm}
 \[t_{n-2}=\dfrac{b\sqrt{S_{xx}}}{s}\]
 \end{tcolorbox}
 \end{centering}
@@ -584,9 +698,7 @@ The slope parameter $\beta$ can be *positive*, *negative* or *zero*. Where $\bet
   \centering
 \begin{minipage}[c]{.66\textwidth}
   \centering
-\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=12cm,height=2.3cm]
-\textbf{Requirements:}
-\vspace{0.1cm}
+\begin{tcolorbox}[title=Conditions,center,colback=red!5,colframe=red!70!black,width=12cm,height=2.5cm]
 \begin{itemize}
     \item $\varepsilon_i$ are independent and identically distributed as $\text{N}(0,\sigma^2)$.
     \item The data was obtained through random sampling.
@@ -595,21 +707,19 @@ The slope parameter $\beta$ can be *positive*, *negative* or *zero*. Where $\bet
 \end{minipage}
 \end{figure}
 
-\vspace{-0.2cm}
-Any conclusion should comment on the evidence for the model being useful for prediction.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
-\textbf{Problem:} A bivariate sample has summary statistics:
+\textbf{Problem:} A bivariate sample of 8 values produces a regression line with equation $\hat{Y}=-0.8456x$. The following summary statistics were also obtained
 
 \vspace{-0.3cm}
 \begin{center}
   \begin{tabular}{ccccccccccc}
-      $\sum x=117$ & \quad & $\sum x^2=1869$ & \quad & $\sum y=660$ & \quad & $\sum y^2=54638$ & \quad & $\sum xy=9519$ & \quad & $n=8$
+      $S_{xx}=157.875$ & \quad & $S_{yy}=188$ & \quad & $S_{xy}=-133.5$
   \end{tabular}
 \end{center}
 
 \vspace{-0.3cm}
-Test at the 1\% significance level for evidence that a linear regression model would be useful for prediction.
+Test at the $\alpha=0.1$ level for evidence that a linear regression model would be useful for prediction.
 
 \tcblower
 \textbf{Solution:}\\
@@ -621,21 +731,20 @@ Test at the 1\% significance level for evidence that a linear regression model w
     \end{array}
 \left]
     \begin{array}{l}
-      \alpha=0.01\\
+      \alpha=0.1\\
       \textnormal{Two-tailed}
     \end{array}
   \right.
 \end{math}
 
-\vspace{0.2cm}
+\vspace{0.3cm}
 
-$S_{xx}=157.875 \qquad  S_{yy}=188 \qquad S_{xy}=-133.5 \qquad b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{-133.5}{157.875}=-0.8456$\\[0.5em]
-
-$SSR=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=188-\dfrac{(-133.5)^2}{157.875}=75.11, \quad s=\sqrt{\dfrac{SSR}{n-2}}=\sqrt{\dfrac{75.11}{8-2}}=3.538$\\[1em]
+$\text{\text{SSR}}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=188-\dfrac{(-133.5)^2}{157.875}=75.11, \quad s=\sqrt{\dfrac{\text{\text{SSR}}}{n-2}}=\sqrt{\dfrac{75.11}{8-2}}=3.538$\\[2em]
 
 Test statistic: $t=\dfrac{b\sqrt{S_{xx}}}{s}=\dfrac{-0.8456\times \sqrt{157.875}}{3.538}=-3.003$
-\hspace{2.5cm}
-\begin{tikzpicture}[overlay]
+
+\hspace{11.5cm}
+\begin{tikzpicture}[remember picture,overlay]
 \begin{axis}[
   no markers, 
   domain=-3:3, 
@@ -654,25 +763,25 @@ Test statistic: $t=\dfrac{b\sqrt{S_{xx}}}{s}=\dfrac{-0.8456\times \sqrt{157.875}
   grid = major,
   hide y axis
   ]
-\addplot [draw=none, fill=black!70, domain=-3:-2.2] {gauss(x, 0, 1)} \closedcycle;
-\addplot [draw=none, fill=black!70, domain=2.2:3] {gauss(x, 0, 1)} \closedcycle;
+\addplot [draw=none, fill=black!70, domain=-3:-1.64] {gauss(x, 0, 1)} \closedcycle;
+\addplot [draw=none, fill=black!70, domain=1.64:3] {gauss(x, 0, 1)} \closedcycle;
  \addplot [semithick] {gauss(x, 0, 1)};
-\pgfmathsetmacro\valueA{gauss(-2.2,0,1)}
+\pgfmathsetmacro\valueA{gauss(-1.64,0,1)}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
-\draw [semithick, black]  (axis cs:-2.2,0) -- (axis cs:-2.2,\valueA);
-\draw [semithick, black]  (axis cs:2.2,0) -- (axis cs:2.2,\valueA);
+\draw [semithick, black]  (axis cs:-1.64,0) -- (axis cs:-1.64,\valueA);
+\draw [semithick, black]  (axis cs:1.64,0) -- (axis cs:1.64,\valueA);
 \node[below] at (axis cs: 0,0)  {$0$};
 \node[above] at (axis cs: 0,\valueB)  {$t_6$};
-\node[below] at (axis cs: -2.2, 0) {$-3.707$};
-\node[above] at (axis cs: -2.4,\valueA) {0.5\%};
-\node[below] at (axis cs: 2.2, 0) {$3.707$};
-\node[above] at (axis cs: 2.4,\valueA) {0.5\%};
+\node[below] at (axis cs: -1.7, 0) {$-1.943$};
+\node[above] at (axis cs: -2.2,\valueA) {5\%};
+\node[below] at (axis cs: 1.7, 0) {$1.943$};
+\node[above] at (axis cs: 2.2,\valueA) {5\%};
 \end{axis}
 \end{tikzpicture}\\
 
-Critical value: $t_{6,0.995}=-3.707$\\
+Critical value: $t_{6,0.95}=-1.943$\\
 
-Since $-3.003>-3.707$, do not reject $\text{H}_0$ at the 1\% level of significance. There is insufficient evidence to suggest that the slope parameter is not zero, and so no evidence that a linear model would be useful for prediction.
+Since $-3.003<-1.943$, reject $\text{H}_0$ at the 10\% level of significance. There is  evidence to suggest that the slope parameter is not zero, so evidence that a linear model would be useful for prediction.
 
 \end{tcolorbox}
 
@@ -819,13 +928,13 @@ Pearson's Product Moment Correlation Coefficient, $r$, is a sample statistic whi
             \draw[-stealth] (0,0) -- (0,3) node[above] {$y$};
             \node at (6.4,2.5) {Population:};
             \node at (6.4,2) {$\rho=0$};
-            \node at (6.4,1.2) {Sample:};
+            \node at (6.4,1.2) {\textbf{Sample}:};
             \node at (6.4,0.7) {$r=0.639$};
             \draw[-stealth] (10,0) -- (15,0) node[right] {$x$};
             \draw[-stealth] (10,0) -- (10,3) node[above] {$y$};
             \node at (16.4,2.5) {Population:};
             \node at (16.4,2) {$\rho=0.791$};
-            \node at (16.4,1.2) {Sample:};
+            \node at (16.4,1.2) {\textbf{Sample}:};
             \node at (16.4,0.7) {$r=0.634$};
             \draw[fill=black] (0.1,2.34770818082416) circle (0.02);
 \draw[fill=black] (0.22,2.79368786956234) circle (0.02);
@@ -934,8 +1043,7 @@ The \textit{parametric} \textbf{Test for Rho} assesses a sample of bivariate dat
 \begin{minipage}[c]{.33\textwidth}
   \centering
 \begin{centering}
-\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=6cm,height=2.6cm]
-\textbf{Test statistic:}
+\begin{tcolorbox}[title=Test Statistic,center,colback=red!5,colframe=red!70!black,width=6cm,height=2.6cm]
 \[t_{n-2}=\dfrac{r\sqrt{n-2}}{\sqrt{1-r^2}}\]
 \end{tcolorbox}
 \end{centering}
@@ -943,9 +1051,7 @@ The \textit{parametric} \textbf{Test for Rho} assesses a sample of bivariate dat
   \centering
 \begin{minipage}[c]{.66\textwidth}
   \centering
-\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=12cm,height=2.6cm]
-\textbf{Requirements:}
-\vspace{0.1cm}
+\begin{tcolorbox}[title=Conditions,center,colback=red!5,colframe=red!70!black,width=12cm,height=2.6cm]
 \begin{itemize}
 \setlength\itemsep{-0.3em}
     \item The variables are independent and follow an approximately \newline bivariate normal distribution.
@@ -958,11 +1064,13 @@ The \textit{parametric} \textbf{Test for Rho} assesses a sample of bivariate dat
 Any conclusion should comment on the evidence for a linear association between the two variables.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
-\textbf{Problem:} A bivariate sample has summary statistics:
+\textbf{Problem:} 
+
+A bivariate sample has summary statistics:
 
 \begin{center}
-  \begin{tabular}{ccccccccccc}
-      $\sum x=117$ & \quad & $\sum x^2=1869$ & \quad & $\sum y=660$ & \quad & $\sum y^2=54638$ & \quad & $\sum xy=9519$ & \quad & $n=8$
+  \begin{tabular}{ccccccc}
+      $S_{xx}=157.875$ & \qquad & $S_{yy}=188$ & \qquad & $S_{xy}=-133.5$ & \qquad & $n=8$
   \end{tabular}
 \end{center}
 
@@ -985,8 +1093,6 @@ Test at the 1\% significance level for evidence of a linear association between 
 \end{math}
 
 \vspace{0.3cm}
-
-$S_{xx}=157.875 \qquad S_{yy}=188 \qquad S_{xy}=-133.5$\\[0.1em]
 
 $r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}=\dfrac{-133.5}{\sqrt{157.875\times 188}}=-0.7749$\\[1em]
 
@@ -1029,7 +1135,7 @@ Test statistic: $t=\dfrac{r\sqrt{n-2}}{\sqrt{1-r^2}}=\dfrac{-0.7749\sqrt{8-2}}{\
 
 Critical value: $t_{6,0.995}=-3.707$\\
 
-Since $-3.003>-3.707$, do not reject $\text{H}_0$ at the 1\% level of significance. There is insufficient evidence to suggest that there is a linear relationship between the two variables.
+Since $-3.003>-3.707$, do not reject $\text{H}_0$ at the 1\% level of significance.\newline There is insufficient evidence to suggest that there is a linear relationship between the two variables.
 
 \end{tcolorbox}
 
@@ -1141,24 +1247,89 @@ Since $-3.003>-3.707$, do not reject $\text{H}_0$ at the 1\% level of significan
 
 ## Regression Line of $x$ on $y$
 
-All of the equations of least square regression lines calculated so far have been $y$ *on* $x$ regression lines, calculated with a goal of minimising errors when predicting $y$ *values*. However, a $y$ *on* $x$ regression line model cannot be used to predict $x$ values.
+Each least squares regression line met so far has been an $y$ *on* $x$ regression line, calculated with the aim of minimising errors when *predicting* $y$ *values*. However, a $y$ *on* $x$ regression line model cannot be used to predict $x$ values.
 
-Instead it is necessary to create a new model and obtain the equation of an $x$ *on* $y$ regression line, of form:
+If the prediction of $x$ values based on $y$ values is of interest, it is necessary to obtain the equation of an $x$ *on* $y$ regression line. This takes a different form and different values of $a$ and $b$ as shown below:
 
-\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=4cm]
-\vspace{-0.5cm}
-\[\hat{X}=a+by\]
+\begin{tcolorbox}[title=Calculating an $x$ on $y$ Regression Line,center,colback=red!5,colframe=red!70!black,width=12cm]
+$\hat{X}=a+by \qquad \text{where} \qquad b=\dfrac{S_{xy}}{S_{yy}} \qquad \text{and} \qquad a=\bar{x}-b\bar{y}$
 \end{tcolorbox}
 
-Where the values of $a$ and $b$ for differ from those required for an $y$ on $x$ line, and are given instead by:
+Using this method is an alternative to *relabelling* the variables and *redrawing* a scatterplot.
 
-\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=6cm]
-\vspace{-0.5cm}
-\[b=\dfrac{S_{xy}}{S_{yy}} \quad and \quad a=\bar{x}-b\bar{y}\]
-\end{tcolorbox}
+\vspace{-0.3cm}
+
+\begin{multicols}{2}
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[white] (-1,-1) rectangle (6,5);
+            \draw[-stealth] (0,0) -- (0,4) node[above] {$y$};
+            \draw[-stealth] (0,0) -- (5,0) node[right] {$x$};
+            \node at (2.5,-0.5) {Prediction with a $y$ on $x$ model};
+            \draw[fill] (1.8717487,1.7974477) circle (0.05);
+\draw[fill] (2.7352247,2.0554359) circle (0.05);
+\draw[fill] (2.0775949,3.3894574) circle (0.05);
+\draw[fill] (1.7449302,1.0352874) circle (0.05);
+\draw[fill] (2.7070811,2.7362257) circle (0.05);
+\draw[fill] (0.7975562,1.0011431) circle (0.05);
+\draw[fill] (3.0048085,2.861815) circle (0.05);
+\draw[fill] (0.9914708,1.4786031) circle (0.05);
+\draw[fill] (3.0668544,3.0221905) circle (0.05);
+\draw[fill] (3.3598348,3.1216317) circle (0.05);
+\draw[fill] (3.358295,3.327456) circle (0.05);
+\draw[fill] (0.910028,0.9257098) circle (0.05);
+\draw[fill] (2.0456805,2.3489078) circle (0.05);
+\draw[fill] (0.948168,1.3693633) circle (0.05);
+\draw[fill] (1.5736475,2.0883494) circle (0.05);
+\draw[fill] (1.3927657,1.3703404) circle (0.05);
+\draw[fill] (1.5466501,1.6830586) circle (0.05);
+\draw[fill] (2.3668546,2.4227856) circle (0.05);
+\draw[fill] (2.7736595,2.6725544) circle (0.05);
+\draw[fill] (2.0828944,1.8844629) circle (0.05);
+        \draw[very thick] (0.5,0.5*0.82+0.43) -- (4,4*0.82+0.43) node[right] {$y$ on $x$};
+        \draw[very thin,dashed,black!30] (0.5*0.9+0.16,0.5) -- (4*0.9+0.16,4) node[above] {$x$ on $y$};
+        \draw[-Latex,dashed] (3.25,0) -- (3.25,3.25*0.82+0.43) -- (0,3.25*0.82+0.43);
+        \end{tikzpicture}
+    \end{center}
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[white] (-1,-1) rectangle (6,5);
+            \draw[-stealth] (0,0) -- (0,4) node[above] {$y$};
+            \draw[-stealth] (0,0) -- (5,0) node[right] {$x$};
+            \node at (2.5,-0.5) {Prediction with an $x$ on $y$ model};
+            \draw[fill] (1.8717487,1.7974477) circle (0.05);
+\draw[fill] (2.7352247,2.0554359) circle (0.05);
+\draw[fill] (2.0775949,3.3894574) circle (0.05);
+\draw[fill] (1.7449302,1.0352874) circle (0.05);
+\draw[fill] (2.7070811,2.7362257) circle (0.05);
+\draw[fill] (0.7975562,1.0011431) circle (0.05);
+\draw[fill] (3.0048085,2.861815) circle (0.05);
+\draw[fill] (0.9914708,1.4786031) circle (0.05);
+\draw[fill] (3.0668544,3.0221905) circle (0.05);
+\draw[fill] (3.3598348,3.1216317) circle (0.05);
+\draw[fill] (3.358295,3.327456) circle (0.05);
+\draw[fill] (0.910028,0.9257098) circle (0.05);
+\draw[fill] (2.0456805,2.3489078) circle (0.05);
+\draw[fill] (0.948168,1.3693633) circle (0.05);
+\draw[fill] (1.5736475,2.0883494) circle (0.05);
+\draw[fill] (1.3927657,1.3703404) circle (0.05);
+\draw[fill] (1.5466501,1.6830586) circle (0.05);
+\draw[fill] (2.3668546,2.4227856) circle (0.05);
+\draw[fill] (2.7736595,2.6725544) circle (0.05);
+\draw[fill] (2.0828944,1.8844629) circle (0.05);
+        \draw[very thin,dashed,black!30] (0.5,0.5*0.82+0.43) -- (4,4*0.82+0.43) node[right] {$y$ on $x$};
+        \draw[very thick] (0.5*0.9+0.16,0.5) -- (4*0.9+0.16,4) node[above] {$x$ on $y$};
+        \draw[-Latex,dashed] (0,3.25) -- (3.25*0.9+0.16,3.25) -- (3.25*0.9+0.16,0);
+        \end{tikzpicture}
+    \end{center}
+\end{multicols}
+
+\vspace{-0.3cm}
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
-\textbf{Problem:} Students sitting a biology exam are given a mark for each of the two papers: theoretical ($x$) and practical ($y$). From a random sample of 12 students, the following summary statistics are obtained:
+\textbf{Problem:} 
+
+Students sitting a biology exam are given a mark for each of the two papers: theoretical ($x$) and practical ($y$). From a random sample of 12 students, the following summary statistics are obtained:
 
 \begin{center}
     \begin{tabular}{ccccc}
@@ -1167,18 +1338,24 @@ Where the values of $a$ and $b$ for differ from those required for an $y$ on $x$
     \end{tabular}
 \end{center}
 
-Determine the equation for the least squares regression line of $x$ on $y$.
+Determine the equation for the least squares regression line of $x$ on $y$, and hence predict the theory paper mark for a student who has only sat the practical paper and obtained a mark of 17 in it.
 
 \tcblower
 \textbf{Solution:}\\
 
-$b=\dfrac{S_{xy}}{S_{yy}}=\dfrac{255}{256.25}=0.995$\\[1em]
+$b=\dfrac{S_{xy}}{S_{yy}}=\dfrac{255}{256.25}=0.995$\\[0.5em]
 
-$a=\bar{x}-b\bar{y}=\dfrac{132}{12}-0.995\times \dfrac{147}{12}=-1.189$\\[1em]
+$a=\bar{x}-b\bar{y}=\dfrac{132}{12}-0.995\times \dfrac{147}{12}=-1.189$\\[0.5em]
 
-$\hat{X}=-1.189+0.995y$
+$\hat{X}=-1.189+0.995y$\\[0.5em]
+
+For a student with a practical mark ($y$) of 17:\\[0.1em]
+
+$\hat{X}=-1.189+0.995\times 17=15.7$
 
 \end{tcolorbox}
+
+\newpage
 
 []{#ex186q}
 
@@ -1393,7 +1570,7 @@ Below is an illustration of a standard scatterplot showing a sample of bivariate
 \vspace{-1cm}
 It should be observed that the residual plot broadly appears to show:
 
-\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=12cm]
+\begin{tcolorbox}[title=Residual Plots for appropriate models,center,colback=red!5,colframe=red!70!black,width=11cm]
 \begin{center}
     \begin{tabular}{ccc}
         A random scatter of points... & $\qquad$ & \\
@@ -1405,7 +1582,106 @@ It should be observed that the residual plot broadly appears to show:
 
 This means that the residual plot would give no reason to doubt the assumptions made regarding the errors. This *ideal* residual plot would suggest that the linear regression model is **appropriate**.
 
+A helpful way of visualising that the residuals are *centred on zero* with a *constant variance* is to view the residual plot as a series of isolated *vertical strips, as shown below:
+
+\begin{center}
+    \begin{tikzpicture}[xscale=2]
+        \draw[fill=black!10] (3,-2.5) rectangle (9,2.55);
+        \draw[fill=white] (3.2,-2.3) rectangle (8.8,2.35);
+        \foreach \x in {3.2,4,...,8.8}{
+        \draw (\x,-2.3) -- (\x,2.35);
+        }
+        \draw[dashed] (3,0) -- (9,0);
+        \draw[black!70,fill=black!70] (8.39307409253776,1.06597870442773) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (8.32968519061489,-1.61965740143367) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (8.26629628869203,0.810826416487654) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (8.20290738676917,0.20628000785721) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (8.13951848484631,-1.04343977077903) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (8.07612958292345,0.491422480686081) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (8.01274068100058,-0.76588717995288) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (7.94935177907772,1.33003189599524) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (7.88596287715486,0.803712653216053) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (7.822573975232,1.18394403701253) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (7.75918507330913,1.2559050324715) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (7.69579617138627,-0.797284696837558) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (7.63240726946341,-0.127982904712902) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (7.56901836754055,-1.0606158539821) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (7.50562946561769,1.10430802829229) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (7.44224056369482,-0.895799278715006) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (7.37885166177196,2.04471485680382) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (7.3154627598491,0.529161004139815) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (7.25207385792624,1.0536366836668) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (7.18868495600337,-0.166255344660351) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (7.12529605408051,-1.55824141393781) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (7.06190715215765,0.377485349309505) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (6.99851825023479,-0.217512434888576) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (6.93512934831192,-0.652314483422991) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (6.87174044638906,-0.0409319879715797) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (6.8083515444662,-1.91272626873808) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (6.74496264254334,0.74993057085495) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (6.68157374062048,0.459638352250112) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (6.61818483869761,1.04938121642708) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (6.55479593677475,-0.522066160159615) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (6.49140703485189,-0.26189463853979) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (6.42801813292903,1.48734724546986) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (6.36462923100616,-1.72657372844454) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (6.3012403290833,-1.84751190397833) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (6.23785142716044,-0.522735870794731) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (6.17446252523758,0.0601822043199776) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (6.11107362331472,0.441278282071078) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (6.04768472139185,-0.88588389061914) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (5.98429581946899,-0.461806301564692) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (5.92090691754613,0.51844062480529) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (5.85751801562327,-1.53950329599386) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (5.79412911370041,-0.0200979420094498) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (5.73074021177754,1.76390695853312) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (5.66735130985468,-0.671626219216023) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (5.60396240793182,0.171880026350582) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (5.54057350600896,-1.27873383490603) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (5.4771846040861,0.0856474691807509) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (5.41379570216323,-1.23486265849681) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (5.35040680024037,-0.8241076277901) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (5.28701789831751,-0.783297799076014) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (5.22362899639465,-0.303583955523175) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (5.16024009447178,-0.140019024737982) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (5.09685119254892,-1.12298064777596) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (5.03346229062606,1.40836616958759) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (4.9700733887032,-0.228846845017033) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (4.90668448678034,-0.339743530316203) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (4.84329558485748,-0.67794713661462) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (4.77990668293461,0.531971252878876) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (4.71651778101175,1.48375210295433) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (4.65312887908889,0.420763072390794) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (4.58973997716603,0.77809957818618) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (4.52635107524316,-0.916206787870849) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (4.4629621733203,0.0652862801421619) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (4.39957327139744,1.02786287723927) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (4.33618436947458,-0.126031603733287) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (4.27279546755172,0.871038014314441) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (4.20940656562886,0.463252380701839) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (4.14601766370599,0.955294551098615) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (4.08262876178313,-0.750536746111899) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (4.01923985986027,-0.320492778859177) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (3.95585095793741,0.267844572286051) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (3.89246205601455,1.63085862905224) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (3.82907315409168,1.40261928845938) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (3.76568425216882,-0.578454854410304) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (3.70229535024596,-0.114701266213262) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (3.6389064483231,-1.12380210667804) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (3.57551754640024,-1.2557534811089) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (3.51212864447737,0.814218263679825) ellipse (0.015 and 0.03);
+\draw[black!70,fill=black!70] (3.44873974255451,0.254649561114014) ellipse (0.015 and 0.03);
+    \node at (6,-3) {Fitted values};
+    \node at (6,3.05) {\textbf{Residual plot}};
+    \node[rotate=90] at (2.4,0) {Residuals};
+    \node[left] at (3,0) {$0$};
+    \end{tikzpicture}
+\end{center}
+
+\newpage
+
 The following residual plots are accompanied with relevant comments and suitable conclusions. Note that if *any* of *"random scatter"*, *"centred on zero"* or *"constant variance"* are contradicted then the linear model is *not appropriate*.
+
 
 \begin{multicols}{2}
 
@@ -2964,9 +3240,9 @@ $b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{150}{12}=12.5, \quad a=\bar{y}-b\bar{x}=\dfrac{
 
 $\hat{Y}=13.75+12.5\times 3=51.75$\\[0.3em]
 
-$SSR=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=4800-\dfrac{150^2}{12}=2925, \quad s^2=\dfrac{SSR}{n-2}=\dfrac{2925}{10}=292.5, \quad s=\sqrt{292.5}=17.1$\\[0.3em]
+$\text{\text{SSR}}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=4800-\dfrac{150^2}{12}=2925, \quad s^2=\dfrac{\text{\text{SSR}}}{n-2}=\dfrac{2925}{10}=292.5, \quad s=\sqrt{292.5}=17.1$\\[0.3em]
 
-A 99\% CI for $E(Y\,|\,x=3)$ is $51.75\,\pm\,3.169 \times 17.1\times \sqrt{\dfrac{1}{12}+\dfrac{(3-2.5)^2}{12}}=51.75\,\pm\,17.49$\\[0.3em]
+A 99\% CI for $\text{E}(Y\,|\,x=3)$ is $51.75\,\pm\,3.169 \times 17.1\times \sqrt{\dfrac{1}{12}+\dfrac{(3-2.5)^2}{12}}=51.75\,\pm\,17.49$\\[0.3em]
 
 So a 99\% confidence interval for the mean mass of a 3kg salmon is $(34.26\text{cm}\,,\,69.24\text{cm})$.
 
@@ -3001,7 +3277,7 @@ $b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{150}{12}=12.5, \quad a=\bar{y}-b\bar{x}=\dfrac{
 
 $\hat{Y}=13.75+12.5\times 4=64.25$\\[0.3em]
 
-$SSR=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=4800-\dfrac{150^2}{12}=2925, \quad s^2=\dfrac{SSR}{n-2}=\dfrac{2925}{10}=292.5, \quad s=\sqrt{292.5}=17.1$\\[0.3em]
+$\text{\text{SSR}}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=4800-\dfrac{150^2}{12}=2925, \quad s^2=\dfrac{\text{\text{SSR}}}{n-2}=\dfrac{2925}{10}=292.5, \quad s=\sqrt{292.5}=17.1$\\[0.3em]
 
 A 95\% PI for $Y\,|\,x=3$ is $64.25\,\pm\,2.228 \times 17.1\times \sqrt{1+\dfrac{1}{12}+\dfrac{(4-2.5)^2}{12}}=64.25\,\pm\,42.95$\\[0.3em]
 
