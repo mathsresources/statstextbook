@@ -38,7 +38,7 @@ In most experiments, it is assumed that $x$ is under the control of the experime
 
 The theoretical model for linear regression is that of a straight line of form $y=\alpha+\beta x$ describing the best fit for a relationship between variables. However, the population of bivariate data will not perfectly lie along this line due to chance variation.
 
-\begin{tcolorbox}[title=The Linear Regression Model,center,colback=red!5,colframe=red!70!black,width=6.5cm]
+\begin{tcolorbox}[halign title=center,title=The Linear Regression Model,center,colback=red!5,colframe=red!70!black,width=6.5cm]
 \[Y_i=\alpha+\beta x_i+\varepsilon_i\]
 \end{tcolorbox}
  
@@ -56,7 +56,7 @@ $$b=\dfrac{S_{xy}}{S_{xx}} \qquad \text{and} \qquad a=\bar{y}-b\bar{x}$$
 
 These estimates rely on several assumptions about the population of errors, $\varepsilon_i$, which are given on Page 5 of the Data Booklet.
 
-\begin{tcolorbox}[title=Assumptions for the Errors,center,colback=red!5,colframe=red!70!black,width=6.5cm]
+\begin{tcolorbox}[halign title=center,title=Assumptions for the Errors,center,colback=red!5,colframe=red!70!black,width=6.5cm]
 \begin{center}
     \begin{itemize}
         \item $\varepsilon_i$ are independent.
@@ -100,7 +100,7 @@ The difference between an observed data value $y_i$ and a corresponding fitted v
         \node at (11.67,1.15) {$-$};
         \node at (12.25,1.2) {$\hat{Y_i}$};
         \node at (10.7,1.55) {\begin{minipage}{6cm}
-            \begin{tcolorbox}[title=Calculating a Residual,center,colback=red!5,colframe=red!70!black]
+            \begin{tcolorbox}[halign title=center,title=Calculating a Residual,center,colback=red!5,colframe=red!70!black]
             \vspace{-0.5cm}
 \begin{align*}
     \text{Residual}&=\text{Data}-\text{Fitted}\\
@@ -288,7 +288,7 @@ The *error variance* is the variance of the population of data *relative to the 
 
 The error variance $\sigma^2$ is estimated by:
 
-\begin{tcolorbox}[title=Estimating the Error Variance,center,colback=red!5,colframe=red!70!black,width=6cm]
+\begin{tcolorbox}[halign title=center,title=Estimating the Error Variance,center,colback=red!5,colframe=red!70!black,width=6cm]
 \[s^2=\dfrac{\text{\text{SSR}}}{n-2}\]
 \end{tcolorbox}
 
@@ -385,7 +385,7 @@ The *coefficient of determination*, $R^2$, is the proportion of the total variat
 \node[text width = 5.5cm,below right] at (12.1,-0.2) {96.0\% of the variation in $Y$ is explained by the linear model.};
 \node at (8.5,1.7) {
 \begin{minipage}{5.9cm}
-\begin{tcolorbox}[title=Coefficient of Determination,center,colback=red!5,colframe=red!70!black]
+\begin{tcolorbox}[halign title=center,title=Coefficient of Determination,center,colback=red!5,colframe=red!70!black]
 $R^2=\dfrac{\text{explained variation}}{\text{total variation}}$
 \end{tcolorbox}
 \end{minipage}
@@ -401,7 +401,7 @@ For the linear regression models covered in this course, the coefficient of dete
         \node at (2,0) {$\implies$};
         \node[right] at (4,0){
         \begin{minipage}{2.5cm}
-        \begin{tcolorbox}[center,colback=red!5,colframe=red!70!black]
+        \begin{tcolorbox}[halign title=center,center,colback=red!5,colframe=red!70!black]
 \vspace{-0.5cm}
 \[R^2=r^2\]
 \end{tcolorbox}
@@ -689,7 +689,7 @@ The slope parameter $\beta$ can be *positive*, *negative* or *zero*. Where $\bet
 \begin{minipage}[c]{.33\textwidth}
   \centering
 \begin{centering}
-\begin{tcolorbox}[title=Test Statistic,center,colback=red!5,colframe=red!70!black,width=5cm,height=2.5cm]
+\begin{tcolorbox}[halign title=center,title=Test Statistic,center,colback=red!5,colframe=red!70!black,width=5cm,height=2.5cm]
 \vspace{-0.3cm}
 \[t_{n-2}=\dfrac{b\sqrt{S_{xx}}}{s}\]
 \end{tcolorbox}
@@ -698,7 +698,7 @@ The slope parameter $\beta$ can be *positive*, *negative* or *zero*. Where $\bet
   \centering
 \begin{minipage}[c]{.66\textwidth}
   \centering
-\begin{tcolorbox}[title=Conditions,center,colback=red!5,colframe=red!70!black,width=12cm,height=2.5cm]
+\begin{tcolorbox}[halign title=center,title=Conditions,center,colback=red!5,colframe=red!70!black,width=12cm,height=2.5cm]
 \begin{itemize}
     \item $\varepsilon_i$ are independent and identically distributed as $\text{N}(0,\sigma^2)$.
     \item The data was obtained through random sampling.
@@ -917,9 +917,9 @@ The least squares regression line of $\hat{Y}=155.29+1.9018x$ was fitted. Test a
 
 \pagebreak
 
-## Test for the Product Moment Correlation Coefficient $\rho$
+## Test for the Correlation Coefficient $\rho$
 
-Pearson's Product Moment Correlation Coefficient, $r$, is a sample statistic which measures the strength of the linear association between two variables. It is an estimate of the population parameter $\rho$ (\textit{``rho''}), where $-1\leqslant \rho \leqslant 1$. If $\rho=0$ then there is no \textit{linear} relationship between the variables. Given a sample of bivariate data for which there exists \textit{no} linear relationship, it is regardless common for the sample to give a \textit{non-zero} value for $r$:
+The previously calculated correlation coefficient, $r$, is a sample statistic which measures the strength of the linear association between two variables. It is an estimate of the population parameter $\rho$ (\textit{``rho''}), where $-1\leqslant \rho \leqslant 1$. If $\rho=0$ then there is no \textit{linear} relationship between the variables. Given a sample of bivariate data for which there exists \textit{no} linear relationship, it is regardless common for the sample to give a \textit{non-zero} value for $r$:
 
 \vspace{-0.3cm}
 \begin{center}
@@ -1043,7 +1043,8 @@ The \textit{parametric} \textbf{Test for Rho} assesses a sample of bivariate dat
 \begin{minipage}[c]{.33\textwidth}
   \centering
 \begin{centering}
-\begin{tcolorbox}[title=Test Statistic,center,colback=red!5,colframe=red!70!black,width=6cm,height=2.6cm]
+\begin{tcolorbox}[halign title=center,title=Test Statistic,center,colback=red!5,colframe=red!70!black,width=5cm,height=2.6cm]
+\vspace{-0.3cm}
 \[t_{n-2}=\dfrac{r\sqrt{n-2}}{\sqrt{1-r^2}}\]
 \end{tcolorbox}
 \end{centering}
@@ -1051,7 +1052,7 @@ The \textit{parametric} \textbf{Test for Rho} assesses a sample of bivariate dat
   \centering
 \begin{minipage}[c]{.66\textwidth}
   \centering
-\begin{tcolorbox}[title=Conditions,center,colback=red!5,colframe=red!70!black,width=12cm,height=2.6cm]
+\begin{tcolorbox}[halign title=center,title=Conditions,center,colback=red!5,colframe=red!70!black,width=12cm,height=2.6cm]
 \begin{itemize}
 \setlength\itemsep{-0.3em}
     \item The variables are independent and follow an approximately \newline bivariate normal distribution.
@@ -1251,13 +1252,11 @@ Each least squares regression line met so far has been an $y$ *on* $x$ regressio
 
 If the prediction of $x$ values based on $y$ values is of interest, it is necessary to obtain the equation of an $x$ *on* $y$ regression line. This takes a different form and different values of $a$ and $b$ as shown below:
 
-\begin{tcolorbox}[title=Calculating an $x$ on $y$ Regression Line,center,colback=red!5,colframe=red!70!black,width=12cm]
+\begin{tcolorbox}[halign title=center,title=Calculating an $x$ on $y$ Regression Line,center,colback=red!5,colframe=red!70!black,width=11cm]
 $\hat{X}=a+by \qquad \text{where} \qquad b=\dfrac{S_{xy}}{S_{yy}} \qquad \text{and} \qquad a=\bar{x}-b\bar{y}$
 \end{tcolorbox}
 
-Using this method is an alternative to *relabelling* the variables and *redrawing* a scatterplot.
-
-\vspace{-0.3cm}
+\vspace{-0.1cm}
 
 \begin{multicols}{2}
     \begin{center}
@@ -1343,9 +1342,9 @@ Determine the equation for the least squares regression line of $x$ on $y$, and 
 \tcblower
 \textbf{Solution:}\\
 
-$b=\dfrac{S_{xy}}{S_{yy}}=\dfrac{255}{256.25}=0.995$\\[0.5em]
+$b=\dfrac{S_{xy}}{S_{yy}}=\dfrac{255}{256.25}=0.995$\\[0.1em]
 
-$a=\bar{x}-b\bar{y}=\dfrac{132}{12}-0.995\times \dfrac{147}{12}=-1.189$\\[0.5em]
+$a=\bar{x}-b\bar{y}=\dfrac{132}{12}-0.995\times \dfrac{147}{12}=-1.189$\\[0.1em]
 
 $\hat{X}=-1.189+0.995y$\\[0.5em]
 
@@ -1355,7 +1354,7 @@ $\hat{X}=-1.189+0.995\times 17=15.7$
 
 \end{tcolorbox}
 
-\newpage
+\pagebreak
 
 []{#ex186q}
 
@@ -1388,7 +1387,7 @@ Below is an illustration of a standard scatterplot showing a sample of bivariate
 \begin{multicols}{2}
 
 \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=0.9]
         \draw[-stealth] (0,0.5) -- (8,0.5) node[right] {$x$};
         \draw[-stealth] (0,0.5) -- (0,5.8) node[above] {$y$};
         \draw[black!70,fill=black!70] (0.1,5.26251575069661) circle (0.08);
@@ -1476,7 +1475,7 @@ Below is an illustration of a standard scatterplot showing a sample of bivariate
 \end{center}
 
 \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=0.9]
         \draw (3,-2.5) rectangle (9,2.55);
         \draw[dashed] (3,0) -- (9,0);
         \draw[black!70,fill=black!70] (8.39307409253776,1.06597870442773) circle (0.08);
@@ -1567,10 +1566,10 @@ Below is an illustration of a standard scatterplot showing a sample of bivariate
 
 \end{multicols}
 
-\vspace{-1cm}
+\vspace{-0.5cm}
 It should be observed that the residual plot broadly appears to show:
 
-\begin{tcolorbox}[title=Residual Plots for appropriate models,center,colback=red!5,colframe=red!70!black,width=11cm]
+\begin{tcolorbox}[halign title=center,title=Interpreting Residual Plots,center,colback=red!5,colframe=red!70!black,width=11cm]
 \begin{center}
     \begin{tabular}{ccc}
         A random scatter of points... & $\qquad$ & \\
@@ -1582,7 +1581,7 @@ It should be observed that the residual plot broadly appears to show:
 
 This means that the residual plot would give no reason to doubt the assumptions made regarding the errors. This *ideal* residual plot would suggest that the linear regression model is **appropriate**.
 
-A helpful way of visualising that the residuals are *centred on zero* with a *constant variance* is to view the residual plot as a series of isolated *vertical strips, as shown below:
+A helpful way of visualising that the residuals are *centred on zero* with a *constant variance* is to view the residual plot as a series of isolated *vertical strips*, as shown below:
 
 \begin{center}
     \begin{tikzpicture}[xscale=2]
@@ -1592,6 +1591,9 @@ A helpful way of visualising that the residuals are *centred on zero* with a *co
         \draw (\x,-2.3) -- (\x,2.35);
         }
         \draw[dashed] (3,0) -- (9,0);
+        \foreach \x in {3.6,4.4,...,8.4}{
+        \draw[ultra thick,Latex-Latex,black!10] (\x,1.2) -- (\x,-1.2);
+        } 
         \draw[black!70,fill=black!70] (8.39307409253776,1.06597870442773) ellipse (0.015 and 0.03);
 \draw[black!70,fill=black!70] (8.32968519061489,-1.61965740143367) ellipse (0.015 and 0.03);
 \draw[black!70,fill=black!70] (8.26629628869203,0.810826416487654) ellipse (0.015 and 0.03);
@@ -1679,13 +1681,11 @@ A helpful way of visualising that the residuals are *centred on zero* with a *co
 \end{center}
 
 \newpage
+The following residual plots are accompanied with relevant comments and suitable conclusions.
 
-The following residual plots are accompanied with relevant comments and suitable conclusions. Note that if *any* of *"random scatter"*, *"centred on zero"* or *"constant variance"* are contradicted then the linear model is *not appropriate*.
-
-
-\begin{multicols}{2}
-
-\begin{center}
+\begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.44\textwidth}
     \begin{tikzpicture}
         \draw (3,-1.75) rectangle (9,1.75);
         \draw[dashed] (3,0) -- (9,0);
@@ -1809,13 +1809,12 @@ The following residual plots are accompanied with relevant comments and suitable
 \draw[black!70,fill=black!70] (8.95,) circle (0.03);
 
     \node at (6,-2) {Fitted value};
-    \node at (6,2) {\textbf{Residual plot}};
     \node[rotate=90] at (2.2,0) {Residual};
     \node[left] at (3,0) {$0$};
     \end{tikzpicture}
-\end{center}
-
-
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.56\textwidth}
 The residual plot appears to show a `funnel' shaped pattern of points centred on zero, with variance increasing as the fitted value increases. 
 
 \vspace{-1cm}
@@ -1826,18 +1825,15 @@ The residual plot appears to show a `funnel' shaped pattern of points centred on
     \end{align*}
 \end{center}
 
-This suggests the that linear regression model proposed is \textbf{not appropriate}.
+This suggests the that linear model is \textbf{not appropriate}.
+\end{minipage}
+\end{figure}
 
-\vfill
-\null
+\vspace{-0.3cm}
 
-\end{multicols}
-
-\pagebreak
-
-\begin{multicols}{2}
-
-\begin{center}
+\begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.44\textwidth}
     \begin{tikzpicture}
         \draw (3,-1.75) rectangle (9,1.75);
         \draw[dashed] (3,0) -- (9,0);
@@ -1961,13 +1957,12 @@ This suggests the that linear regression model proposed is \textbf{not appropria
 \draw[black!70,fill=black!70] (8.95,) circle (0.03);
 
     \node at (6,-2) {Fitted value};
-    \node at (6,2) {\textbf{Residual plot}};
     \node[rotate=90] at (2.2,0) {Residual};
     \node[left] at (3,0) {$0$};
     \end{tikzpicture}
-\end{center}
-
-
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.56\textwidth}
 The residual plot appears to show a pattern of points following a curve, with constant variance.
 
 \vspace{-1cm}
@@ -1978,16 +1973,15 @@ The residual plot appears to show a pattern of points following a curve, with co
     \end{align*}
 \end{center}
 
-This suggests that the linear regression model proposed is \textbf{not appropriate}.
+This suggests that the linear model is \textbf{not appropriate}.
+\end{minipage}
+\end{figure}
 
-\vfill
-\null
+\vspace{-0.3cm}
 
-\end{multicols}
-
-\begin{multicols}{2}
-
-\begin{center}
+\begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.44\textwidth}
     \begin{tikzpicture}
         \draw (3,-1.75) rectangle (9,1.75);
         \draw[dashed] (3,0) -- (9,0);
@@ -2111,13 +2105,12 @@ This suggests that the linear regression model proposed is \textbf{not appropria
 \draw[black!70,fill=black!70] (8.95,) circle (0.03);
 
     \node at (6,-2) {Fitted value};
-    \node at (6,2) {\textbf{Residual plot}};
     \node[rotate=90] at (2.2,0) {Residual};
     \node[left] at (3,0) {$0$};
     \end{tikzpicture}
-\end{center}
-
-
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.56\textwidth}
 The residual plot appears to show a pattern of points following a curve, with variance decreasing as the fitted value increases.
 
 \vspace{-1cm}
@@ -2128,12 +2121,152 @@ The residual plot appears to show a pattern of points following a curve, with va
     \end{align*}
 \end{center}
 
-This suggests that the linear regression model proposed is \textbf{not appropriate}.
+This suggests that the linear model is \textbf{not appropriate}.
+\end{minipage}
+\end{figure}
 
-\vfill
-\null
+\vspace{-0.3cm}
+
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
+\textbf{Problem:} A 1920s study on automobile safety involved recording the stopping distances (in feet) from selected speeds (in miles per hour) for a random sample of 47 cars. Below is a scatterplot of the results with a regression line obtained from a linear model, and a residual plot.
+
+\begin{multicols}{2}
+
+\begin{center}
+    \begin{tikzpicture}[scale=0.8]
+    \draw (0,0) -- (5,0);
+    \draw (0,0) -- (0,4);
+        \draw[black!70,fill=black!70] (0.8,0.08) circle (0.03);
+        \foreach \x in {0,5,...,25}{
+        \draw (0.2*\x,0) -- (0.2*\x,-0.1);
+        \node[below] at (0.2*\x,0) {\x};
+        }
+        \foreach \y in {0,24,...,96}{
+        \node[left] at (0,0.04*\y) {\y};
+        \draw (0,0.04*\y) -- (-0.1,0.04*\y);
+        }
+        \node at (2.5,-1) {Speed (mph)};
+        \node[rotate=90] at (-1.5,2) {Distance (ft)};
+\draw[black!70,fill=black!70] (0.8,0.4) circle (0.03);
+\draw[black!70,fill=black!70] (1.4,0.16) circle (0.03);
+\draw[black!70,fill=black!70] (1.4,0.88) circle (0.03);
+\draw[black!70,fill=black!70] (1.6,0.64) circle (0.03);
+\draw[black!70,fill=black!70] (1.8,0.4) circle (0.03);
+\draw[black!70,fill=black!70] (2,0.72) circle (0.03);
+\draw[black!70,fill=black!70] (2,1.04) circle (0.03);
+\draw[black!70,fill=black!70] (2,1.36) circle (0.03);
+\draw[black!70,fill=black!70] (2.2,0.68) circle (0.03);
+\draw[black!70,fill=black!70] (2.2,1.12) circle (0.03);
+\draw[black!70,fill=black!70] (2.4,0.56) circle (0.03);
+\draw[black!70,fill=black!70] (2.4,0.8) circle (0.03);
+\draw[black!70,fill=black!70] (2.4,0.96) circle (0.03);
+\draw[black!70,fill=black!70] (2.4,1.12) circle (0.03);
+\draw[black!70,fill=black!70] (2.6,1.04) circle (0.03);
+\draw[black!70,fill=black!70] (2.6,1.36) circle (0.03);
+\draw[black!70,fill=black!70] (2.6,1.36) circle (0.03);
+\draw[black!70,fill=black!70] (2.6,1.84) circle (0.03);
+\draw[black!70,fill=black!70] (2.8,1.04) circle (0.03);
+\draw[black!70,fill=black!70] (2.8,1.44) circle (0.03);
+\draw[black!70,fill=black!70] (2.8,2.4) circle (0.03);
+\draw[black!70,fill=black!70] (3,0.8) circle (0.03);
+\draw[black!70,fill=black!70] (3,1.04) circle (0.03);
+\draw[black!70,fill=black!70] (3,2.16) circle (0.03);
+\draw[black!70,fill=black!70] (3.2,1.28) circle (0.03);
+\draw[black!70,fill=black!70] (3.2,1.6) circle (0.03);
+\draw[black!70,fill=black!70] (3.4,1.28) circle (0.03);
+\draw[black!70,fill=black!70] (3.4,1.6) circle (0.03);
+\draw[black!70,fill=black!70] (3.4,2) circle (0.03);
+\draw[black!70,fill=black!70] (3.6,1.68) circle (0.03);
+\draw[black!70,fill=black!70] (3.6,2.24) circle (0.03);
+\draw[black!70,fill=black!70] (3.6,3.04) circle (0.03);
+\draw[black!70,fill=black!70] (3.6,3.36) circle (0.03);
+\draw[black!70,fill=black!70] (3.8,1.44) circle (0.03);
+\draw[black!70,fill=black!70] (3.8,1.84) circle (0.03);
+\draw[black!70,fill=black!70] (3.8,2.72) circle (0.03);
+\draw[black!70,fill=black!70] (4,1.92) circle (0.03);
+\draw[black!70,fill=black!70] (4,2.08) circle (0.03);
+\draw[black!70,fill=black!70] (4,2.24) circle (0.03);
+\draw[black!70,fill=black!70] (4,2.56) circle (0.03);
+\draw[black!70,fill=black!70] (4.4,2.64) circle (0.03);
+\draw[black!70,fill=black!70] (4.6,2.16) circle (0.03);
+\draw[black!70,fill=black!70] (4.8,2.8) circle (0.03);
+\draw[black!70,fill=black!70] (4.8,3.68) circle (0.03);
+\draw[black!70,fill=black!70] (4.8,3.72) circle (0.03);
+\draw[black!70,fill=black!70] (5,3.4) circle (0.03);
+\draw[very thick] (1,-17.6*0.04+3.93*0.04*5) -- (5,-17.6*0.04+3.93*0.04*25);
+    \end{tikzpicture}
+\end{center}
+
+\begin{center}
+    \begin{tikzpicture}[yscale=0.8]
+        \draw (-2,-1.8) rectangle (5,2.3);
+        \draw[dashed] (-2,0) -- (5,0);
+        \node at (1.5,2.55) {Residual plot};
+        \node[rotate=90] at (-2.75,0) {Residuals};
+        \node[left] at (-2,0) {$0$};
+        \node at (1.5,-2.05) {Fitted values};
+\draw[black!70,fill=black!70] (-0.0921582481751823,0.192158248175182) circle (0.03);
+\draw[black!70,fill=black!70] (-0.0921582481751823,0.592158248175182) circle (0.03);
+\draw[black!70,fill=black!70] (0.497703065693431,-0.297703065693431) circle (0.03);
+\draw[black!70,fill=black!70] (0.497703065693431,0.602296934306569) circle (0.03);
+\draw[black!70,fill=black!70] (0.694323503649635,0.105676496350365) circle (0.03);
+\draw[black!70,fill=black!70] (0.89094394160584,-0.39094394160584) circle (0.03);
+\draw[black!70,fill=black!70] (1.08756437956204,-0.187564379562044) circle (0.03);
+\draw[black!70,fill=black!70] (1.08756437956204,0.212435620437956) circle (0.03);
+\draw[black!70,fill=black!70] (1.08756437956204,0.612435620437956) circle (0.03);
+\draw[black!70,fill=black!70] (1.28418481751825,-0.434184817518249) circle (0.03);
+\draw[black!70,fill=black!70] (1.28418481751825,0.115815182481751) circle (0.03);
+\draw[black!70,fill=black!70] (1.48080525547445,-0.780805255474453) circle (0.03);
+\draw[black!70,fill=black!70] (1.48080525547445,-0.480805255474453) circle (0.03);
+\draw[black!70,fill=black!70] (1.48080525547445,-0.280805255474453) circle (0.03);
+\draw[black!70,fill=black!70] (1.48080525547445,-0.0808052554744531) circle (0.03);
+\draw[black!70,fill=black!70] (1.67742569343066,-0.377425693430657) circle (0.03);
+\draw[black!70,fill=black!70] (1.67742569343066,0.0225743065693425) circle (0.03);
+\draw[black!70,fill=black!70] (1.67742569343066,0.0225743065693425) circle (0.03);
+\draw[black!70,fill=black!70] (1.67742569343066,0.622574306569343) circle (0.03);
+\draw[black!70,fill=black!70] (1.87404613138686,-0.574046131386862) circle (0.03);
+\draw[black!70,fill=black!70] (1.87404613138686,-0.0740461313868622) circle (0.03);
+\draw[black!70,fill=black!70] (1.87404613138686,1.12595386861314) circle (0.03);
+\draw[black!70,fill=black!70] (2.07066656934307,-1.07066656934307) circle (0.03);
+\draw[black!70,fill=black!70] (2.07066656934307,-0.770666569343067) circle (0.03);
+\draw[black!70,fill=black!70] (2.07066656934307,0.629333430656934) circle (0.03);
+\draw[black!70,fill=black!70] (2.26728700729927,-0.667287007299271) circle (0.03);
+\draw[black!70,fill=black!70] (2.26728700729927,-0.267287007299271) circle (0.03);
+\draw[black!70,fill=black!70] (2.46390744525548,-0.863907445255475) circle (0.03);
+\draw[black!70,fill=black!70] (2.46390744525548,-0.463907445255475) circle (0.03);
+\draw[black!70,fill=black!70] (2.46390744525548,0.0360925547445248) circle (0.03);
+\draw[black!70,fill=black!70] (2.66052788321168,-0.56052788321168) circle (0.03);
+\draw[black!70,fill=black!70] (2.66052788321168,0.13947211678832) circle (0.03);
+\draw[black!70,fill=black!70] (2.66052788321168,1.13947211678832) circle (0.03);
+\draw[black!70,fill=black!70] (2.66052788321168,1.53947211678832) circle (0.03);
+\draw[black!70,fill=black!70] (2.85714832116788,-1.05714832116788) circle (0.03);
+\draw[black!70,fill=black!70] (2.85714832116788,-0.557148321167884) circle (0.03);
+\draw[black!70,fill=black!70] (2.85714832116788,0.542851678832116) circle (0.03);
+\draw[black!70,fill=black!70] (3.05376875912409,-0.653768759124088) circle (0.03);
+\draw[black!70,fill=black!70] (3.05376875912409,-0.453768759124088) circle (0.03);
+\draw[black!70,fill=black!70] (3.05376875912409,-0.253768759124088) circle (0.03);
+\draw[black!70,fill=black!70] (3.05376875912409,0.146231240875912) circle (0.03);
+\draw[black!70,fill=black!70] (3.4470096350365,-0.147009635036498) circle (0.03);
+\draw[black!70,fill=black!70] (3.6436300729927,-0.943630072992702) circle (0.03);
+\draw[black!70,fill=black!70] (3.84025051094891,-0.340250510948906) circle (0.03);
+\draw[black!70,fill=black!70] (3.84025051094891,0.759749489051094) circle (0.03);
+\draw[black!70,fill=black!70] (3.84025051094891,0.809749489051094) circle (0.03);
+\draw[black!70,fill=black!70] (4.03687094890511,0.213129051094889) circle (0.03);
+
+\end{tikzpicture}
+\end{center}
 
 \end{multicols}
+
+\vspace{-0.5cm}
+Use the residual plot to comment on the validity of the linear model.
+
+\tcblower
+\textbf{Solution:} The residual plot appears to show a random scatter of points centred on zero, with a broadly constant variance as the fitted value increases. This suggests the linear model between stopping distance and speed could be appropriate.
+
+\end{tcolorbox}
+
+\newpage
 
 []{#ex187q}
 
@@ -2874,7 +3007,13 @@ Use the residual plot to comment on the validity of the linear model.
 
 ## Transforming Data
 
+Where a non-linear relationship seems to exist between two variables then it would not be appropriate to use a model which describes a linear relationship between them, even if such a model leads to high values for the coefficient of determination, $R^2$. The presence of a non-linear relationship may be immediately clear from an initial scatterplot, or it may only be revealed once a residual plot for a proposed linear model is created.
+
+
+
 If a residual plot indicates that a linear model is not valid then it may be possible to *transform* the data and fit a new linear model between the *transformed* variables. A further residual plot can be created and used to determine the appropriateness of this transformed model. In this course any proposed transformation of the data will be provided in the question, allowing a new least squares regression model to be determined using the transformed data.
+
+\newpage
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 
@@ -2891,7 +3030,9 @@ If a residual plot indicates that a linear model is not valid then it may be pos
     \end{tabular}
 \end{center}
 
-The least squares regression line $\hat{Y}=-5.11+0.5697x$ was fitted to the data, and a scatterplot (\textbf{Figure 1}) and residual plot (\textbf{Figure 2}) drawn.
+The line $\hat{Y}=-5.11+0.5697x$ was fitted, and a scatterplot and a residual plot drawn (\textbf{Figures 1 and 2}).
+
+\vspace{-0.2cm}
 
 \begin{figure}[H]
   \centering
@@ -2956,11 +3097,9 @@ The least squares regression line $\hat{Y}=-5.11+0.5697x$ was fitted to the data
 \end{minipage}
 \end{figure}
 
-\vspace{-0.2cm}
+\vspace{-0.5cm}
 
-A second linear model was created between speed ($x$) and the square root of the stopping distance ($\sqrt{y}$). For this new model, a scatterplot (\textbf{Figure 3}) and residual plot (\textbf{Figure 4}) were produced, and a least squares regression line was computed using statistical software, with the output below:\\[0.5em] 
-
-\textbf{Output 1:} \texttt{square root of distance = 0.797 + **** $\times$ speed}
+A second linear model was created between speed ($x$) and the square root of the stopping distance ($\sqrt{y}$). For this new model, a scatterplot (\textbf{Figure 3}) and residual plot (\textbf{Figure 4}) were produced, and a least squares regression line was computed as: \texttt{square root of distance = 0.797 + 0.078 $\times$ speed}
 
 \begin{figure}[H]
   \centering
@@ -3025,51 +3164,29 @@ A second linear model was created between speed ($x$) and the square root of the
 \end{minipage}
 \end{figure}
 
-\vspace{-0.2cm}
+\vspace{-0.5cm}
 
 \begin{enumerate}
-    \item[(a)] Comment on the appropriateness of the linear model of $y$ and $x$.
-    \item[(b)] Use the data from \textbf{Table 1} to calculate the missing value of \texttt{****} from \textbf{Output 1}.
-    \item[(c)] Comment on the suitability of this new model of $\sqrt{y}$ on $x$.
-    \item[(d)] Calculate the coefficient of determination for this new model and interpret its value.
+    \item[(a)] Comment on the appropriateness of the linear model of $y$ on $x$.
+    \item[(b)] Comment on the suitability of the new model of $\sqrt{y}$ on $x$.
+    \item[(c)] Calculate the coefficient of determination for this new model and interpret its value.
+    \item[(d)] Estimate the stopping distance at a speed of 50 kilometres per hour.
 \end{enumerate}
 
-\end{tcolorbox}
-
-\pagebreak
-
-\begin{tcolorbox}[colback=RoyalBlue!1!, colframe=RoyalBlue]
+\tcblower
 \textbf{Solution:}
 
 \begin{enumerate}
-    \item[(a)] The residual plot for the $y$ on $x$ model appears to show a curved pattern, so this linear model is not suitable.
-    \item[(b)] Table of $x$ and $\sqrt{x}$ values:
-    \vspace{-0.2cm}
-    \begin{center}
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
-        \hline
-        Speed ($x$) & 8.0 & 12.9 & 12.9 & 24.1 & 29.0 & 33.8 & 41.8 & 48.3 & 56.3 & 64.4\\
-        \hline
-        Distance ($y$) & 2.4 & 4.0 & 3.4 & 4.9 & 10.4 & 11.9 & 12.5 & 20.4 & 32.6 & 33.5\\
-        \hline
-    \end{tabular}
-\end{center}
-
-\vspace{-0.2cm}
-Using a statistical calculator:\newline $\Sigma x=331.5,\;\Sigma x^2=14358.25,\;\Sigma \sqrt{y}=33.83,\;\Sigma \sqrt{y}^2=136.03,\;\Sigma x\sqrt{y}=1385.8,n=10$.
-
-$S_{xx}=14358.25-\frac{331.5^2}{10}=3369.025$ and $S_{x\sqrt{y}}=1385.8-\frac{331.5\times 33.83}{10}=264.34$.
-
-$b=\dfrac{S_{x\sqrt{y}}}{S_{xx}}=\dfrac{264.34}{3369.025}=0.078$ and so $\texttt{****}=0.078$.
-
-The equation of the regression line is: $\sqrt{\texttt{distance}}\texttt{ = 0.797 + 0.78 speed}$ or $\sqrt{y}=0.797+0.78x$.
-
-    \item[(c)] The residual plot for the new model appears to show a random scatter of points centered on zero, with a constant variance as fitted values increase, so the new model seems appropriate.
-    \item[(d)] $r=\dfrac{S_{x\sqrt{y}}}{\sqrt{S_{xx}S_{\sqrt{y}\sqrt{y}}}}=\dfrac{264.36}{\sqrt{3369.025\times 21.586}}=0.9803$ and $R^2=0.9803^2=0.961$.\newline
-    $96.1$\% of the variation of $\sqrt{\text{distance}}$ is explained by the linear model.
+    \item[(a)] The residual plot appears to show a curved pattern, so this linear model is not suitable.
+    \item[(b)] The residual plot for the new model appears to show a random scatter of points centered on zero, with a constant variance as fitted values increase, so the new model seems appropriate.
+    \item[(c)] $r=\dfrac{S_{x\sqrt{y}}}{\sqrt{S_{xx}S_{\sqrt{y}\sqrt{y}}}}=\dfrac{264.36}{\sqrt{3369.025\times 21.586}}=0.9803$ and $R^2=0.9803^2=0.961$.\newline
+    $96.1$\% of the variation of $\sqrt{\text{distance}}$ is explained by the model.
+    \item[(d)] $\sqrt{\text{distance}}=0.797+0.078\times 50=4.697\text{, so distance}=4.697^2=22.1\text{ metres}$
 \end{enumerate}
 
 \end{tcolorbox}
+
+\newpage
 
 []{#ex188q}
 
@@ -3203,27 +3320,151 @@ The new model has summary statistics of $\Sigma x=225,\;\Sigma y =6.564,\;\Sigma
 
 \pagebreak
 
-## Confidence and Prediction Intervals
-
-One purpose for adopting a regression approach to examine the relationship between two variables is the wish to predict a value for the response variable ($Y$) given a particular value for the predictor ($x$). 
+## Confidence Intervals and Prediction Intervals
+One purpose for adopting a regression approach to examine the relationship between two variables is the wish to make predictions related to the response variable ($Y$) when given a particular value for the predictor ($x$). 
 
 The least squares regression line equation of $\hat{Y_i}=a+bx_i$ gives an *estimate* for the **mean** value of the response variable for any given $x_i$, whilst the *true* mean response value for a given $x_i$, which is denoted $\text{E}(Y_i\,|\,x_i)$, is unknown. 
 
-It can be desirable to obtain a **confidence interval** for $\text{E}(Y_i\,|\,x_i)$. It can be shown that the *point estimate*, $\hat{Y_i}$, has a sample standard error of:
+It can be desirable to obtain a **confidence interval** for $\text{E}(Y_i\,|\,x_i)$.
+
+\begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.45\textwidth}
+    \begin{center}
+    \begin{tikzpicture}[scale=1.3]
+            \draw[-stealth] (0,0.6) -- (5,0.6) node[right] {$x$};
+            \draw[-stealth] (0,0.6) -- (0,3.7) node[left] {$y$};
+            \fill[black!20] plot[smooth] coordinates {(0.1,1.78) (1,2) (2,2.25) (3,2.57) (4,2.95) (4.8,3.27)} -- (4.8,2.836) plot[smooth] coordinates { (4.8,2.836) (4,2.64) (3,2.38) (2,2.055) (1,1.67) (0.1,1.31) } -- (0.1,1.78);
+             \node at (5,3.1) {$\hat{Y}$};
+             \node[below] at (0.9,0.6) {$x_i$};
+             \draw[ultra thin,dashed] (0.9,0.6) -- (0.9,1.63);
+             \draw[fill=black!60,black!60] (0.87,1.965) -- (0.93,1.980) -- (0.93,1.643) -- (0.87,1.619) -- cycle;
+             \draw[thick] (0.1,1.51+0.32*0.1) -- (4.8,4.8*0.32+1.51);
+             \draw[stealth-] (0.9,2.1) -- (1.1,3) node[above] {$\text{E}(Y_i|x_i)$};
+\draw[fill] (4.3363950,3.0565871) circle (0.025);
+\draw[fill] (1.8257738,2.1527751) circle (0.025);
+\draw[fill] (3.6696688,2.7455503) circle (0.025);
+\draw[fill] (3.1466872,2.4831508) circle (0.025);
+\draw[fill] (1.6929149,1.4290909) circle (0.025);
+\draw[fill] (3.5892880,2.3768544) circle (0.025);
+\draw[fill] (3.2948313,2.2061247) circle (0.025);
+\draw[fill] (4.1186531,2.8047739) circle (0.025);
+\draw[fill] (2.6106541,2.6333114) circle (0.025);
+\draw[fill] (3.0015549,2.8461205) circle (0.025);
+\draw[fill] (1.2460242,2.8236880) circle (0.025);
+\draw[fill] (2.2514297,2.7610143) circle (0.025);
+\draw[fill] (2.3146370,2.3886235) circle (0.025);
+\draw[fill] (2.8930436,2.6169797) circle (0.025);
+\draw[fill] (2.5313592,2.4667105) circle (0.025);
+\draw[fill] (3.7443200,3.3248808) circle (0.025);
+\draw[fill] (1.7619832,1.4442731) circle (0.025);
+\draw[fill] (2.8223686,2.1367046) circle (0.025);
+\draw[fill] (2.6905003,2.5882775) circle (0.025);
+\draw[fill] (2.3306204,1.7647571) circle (0.025);
+\draw[fill] (3.5643986,1.7540329) circle (0.025);
+\draw[fill] (2.5475316,2.5819633) circle (0.025);
+\draw[fill] (0.6196707,1.7407058) circle (0.025);
+\draw[fill] (2.6252987,1.8738594) circle (0.025);
+\draw[fill] (0.2311936,1.1867039) circle (0.025);
+\draw[fill] (2.5921432,2.2786012) circle (0.025);
+\draw[fill] (1.3263373,1.4670903) circle (0.025);
+\draw[fill] (1.2768343,1.4693665) circle (0.025);
+\draw[fill] (2.6405140,2.5286012) circle (0.025);
+\draw[fill] (4.6781096,2.5171945) circle (0.025);
+\draw[fill] (1.8949296,3.2895866) circle (0.025);
+\draw[fill] (1.9760109,2.6167031) circle (0.025);
+\draw[fill] (3.3771485,3.1577070) circle (0.025);
+\draw[fill] (3.5985413,2.5216506) circle (0.025);
+\draw[fill] (2.6186868,2.3546323) circle (0.025);
+\draw[fill] (2.7584162,2.4601992) circle (0.025);
+\draw[fill] (2.4879102,2.5396250) circle (0.025);
+\draw[fill] (2.3974763,2.2783382) circle (0.025);
+\draw[fill] (3.6557084,2.3733230) circle (0.025);
+\draw[fill] (1.7062729,2.6201000) circle (0.025);
+\draw[fill] (2.5296301,1.9896044) circle (0.025);
+\draw[fill] (2.3368203,1.8191709) circle (0.025);
+\draw[fill] (1.1984621,1.8486193) circle (0.025);
+\draw[fill] (2.2013159,2.5334466) circle (0.025);
+\draw[fill] (3.9583961,2.6880222) circle (0.025);
+\draw[fill] (1.5899918,2.1198890) circle (0.025);
+\draw[fill] (3.8050951,3.4171817) circle (0.025);
+\draw[fill] (0.1162737,0.7826276) circle (0.025);
+\draw[fill] (1.6717217,2.3479134) circle (0.025);
+\draw[fill] (2.4043482,2.0867250) circle (0.025);
+\draw[fill] (0.6744156,1.9708199) circle (0.025);
+\draw[fill] (1.8989277,2.5649783) circle (0.025);
+\draw[fill] (2.7692380,2.8082608) circle (0.025);
+\draw[fill] (3.4906288,2.6225438) circle (0.025);
+\draw[fill] (1.8172254,2.4503822) circle (0.025);
+\draw[fill] (4.6524560,3.2796855) circle (0.025);
+\draw[fill] (3.3943288,3.1373983) circle (0.025);
+\draw[fill] (1.6075723,1.9088071) circle (0.025);
+\draw[fill] (2.4742392,1.7769002) circle (0.025);
+\draw[fill] (4.0990849,2.9308218) circle (0.025);
+\draw[fill] (1.9740217,2.4904545) circle (0.025);
+\draw[fill] (2.0280051,2.2192092) circle (0.025);
+\draw[fill] (3.4771699,2.1337608) circle (0.025);
+\draw[fill] (3.1449574,3.0095094) circle (0.025);
+\draw[fill] (2.3392608,2.9804617) circle (0.025);
+\draw[fill] (3.1770795,2.4956330) circle (0.025);
+\draw[fill] (2.8333715,2.9312680) circle (0.025);
+\draw[fill] (3.9179660,2.1203264) circle (0.025);
+\draw[fill] (1.2977681,1.3818752) circle (0.025);
+\draw[fill] (1.8452314,2.5099713) circle (0.025);
+\draw[fill] (3.6552033,2.8847268) circle (0.025);
+\draw[fill] (1.9040389,2.2179828) circle (0.025);
+\draw[fill] (1.8515219,2.7642650) circle (0.025);
+\draw[fill] (4.4131350,3.3622880) circle (0.025);
+\draw[fill] (2.1054952,2.0879375) circle (0.025);
+\draw[fill] (2.6863044,2.1624035) circle (0.025);
+\draw[fill] (2.4952754,1.8564243) circle (0.025);
+\draw[fill] (3.8043018,2.3834828) circle (0.025);
+\draw[fill] (2.2547655,1.8662932) circle (0.025);
+\draw[fill] (2.0222749,0.9866091) circle (0.025);
+\draw[fill] (2.7958871,2.6586097) circle (0.025);
+\draw[fill] (3.6471418,2.2065016) circle (0.025);
+\draw[fill] (2.3868165,2.9926895) circle (0.025);
+\draw[fill] (1.2517952,1.8377142) circle (0.025);
+\draw[fill] (3.4622542,2.2122443) circle (0.025);
+\draw[fill] (3.8386178,2.5208674) circle (0.025);
+\draw[fill] (2.4068734,1.5852268) circle (0.025);
+\draw[fill] (1.0176214,1.6202520) circle (0.025);
+\draw[fill] (1.0523203,1.4718609) circle (0.025);
+\draw[fill] (1.8703864,2.1969153) circle (0.025);
+\draw[fill] (2.9254964,2.5402209) circle (0.025);
+\draw[fill] (1.8520711,2.1735303) circle (0.025);
+\draw[fill] (1.6727187,2.6713170) circle (0.025);
+\draw[fill] (2.6747436,2.6221642) circle (0.025);
+\draw[fill] (2.2863092,2.8204645) circle (0.025);
+\draw[fill] (3.5728943,1.9649286) circle (0.025);
+\draw[fill] (3.4744290,2.3868745) circle (0.025);
+\draw[fill] (3.1110311,2.3838065) circle (0.025);
+\draw[fill] (3.1142563,2.4495563) circle (0.025);
+\draw[fill] (1.4003549,1.6048878) circle (0.025);
+        \end{tikzpicture}
+        \end{center}
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.55\textwidth}
+It can be shown that the \textit{point estimate} for the mean response, $\hat{Y_i}$, has a sample standard error of:
 
 $$s\sqrt{\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}$$
 
 If the errors, $\varepsilon_i$, are identically and independently distributed as $\text{N}\left(0,\sigma^2\right)$ then the formula below, given on Page 5 of the Data Booklet, can be derived.
+\end{minipage}
+\end{figure}
 
-\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=12cm]
-A $100(1-\alpha)\%$ \textbf{confidence interval} for $\text{E}(Y_i\,|\,x_i)$ is given by:\\[1em]
-\[\hat{Y_i}\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}\]
+
+\begin{tcolorbox}[halign title=center,title=A Confidence Interval for the Mean Response,center,colback=red!5,colframe=red!70!black,width=15.5cm]
+A $100(1-\alpha)\%$ \text{CI} for $\text{E}(Y_i\,|\,x_i)$ is given by: $\hat{Y_i}\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}$
 \end{tcolorbox}
 
-As with confidence intervals, the level of confidence relates to the success rate of the *procedure used to generate the interval*, rather than the probability of a calculated interval containing the mean response value $\text{E}(Y_i\,|\,x_i)$.
+With all confidence intervals, the level of confidence relates to the success rate of the *procedure used to generate the interval*, rather than the probability of a calculated interval containing the mean response value $\text{E}(Y_i\,|\,x_i)$.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
-\textbf{Problem:} The lengths in centimetres ($x$) and masses in kilograms ($y$) of 12 salmon were measured, with the results:
+\textbf{Problem:} 
+
+The lengths in centimetres ($x$) and masses in kilograms ($y$) of 12 salmon were measured, with the results:
 
 \begin{center}
     \begin{tabular}{ccccc}
@@ -3231,7 +3472,7 @@ As with confidence intervals, the level of confidence relates to the success rat
     \end{tabular}
 \end{center}
 
-Construct a 99\% confidence interval for the mean length of salmon with mass 3kg.
+Construct a 95\% confidence interval for the mean length of salmon with mass 3kg.
 
 \tcblower
 \textbf{Solution:}\\
@@ -3242,25 +3483,158 @@ $\hat{Y}=13.75+12.5\times 3=51.75$\\[0.3em]
 
 $\text{\text{SSR}}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=4800-\dfrac{150^2}{12}=2925, \quad s^2=\dfrac{\text{\text{SSR}}}{n-2}=\dfrac{2925}{10}=292.5, \quad s=\sqrt{292.5}=17.1$\\[0.3em]
 
-A 99\% CI for $\text{E}(Y\,|\,x=3)$ is $51.75\,\pm\,3.169 \times 17.1\times \sqrt{\dfrac{1}{12}+\dfrac{(3-2.5)^2}{12}}=51.75\,\pm\,17.49$\\[0.3em]
+A 95\% CI for $\text{E}(Y\,|\,x=3)$ is $51.75\,\pm\,2.228 \times 17.1\times \sqrt{\dfrac{1}{12}+\dfrac{(3-2.5)^2}{12}}=51.75\,\pm\,12.30$\\[0.3em]
 
-So a 99\% confidence interval for the mean mass of a 3kg salmon is $(34.26\text{cm}\,,\,69.24\text{cm})$.
+So a 95\% confidence interval for the mean length of a 3kg salmon is $(39.45\text{cm}\,,\,64.05\text{cm})$.
 
 \end{tcolorbox}
 
 \pagebreak
 
-A similar but subtly different goal to predicting a *mean* response value is predicting an **individual** response value for a given $x_i$, denoted as $Y_i\,|\,x_i$. In the context of the previous example, that would be predicting the length of an *individual* salmon. Since the value for a sampled individual can be expected to have more variability that the value of a sample mean, a wider interval around $\hat{Y_i}$ is needed. The required interval is called a **prediction interval**.
+Instead of an interval for the value of \textit{mean} response, it may be desired to obtain an interval for **individual** response values for a given $x_i$, denoted as $Y_i\,|\,x_i$. 
 
-\begin{tcolorbox}[center,colback=red!5,colframe=red!70!black,width=12cm]
-A $100(1-\alpha)\%$ \textbf{prediction interval} for $Y_i\,|\,x_i$ is given by:\\[1em]
-\[\hat{Y_i}\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{1+\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}\]
+The desired interval is called a **prediction interval**.
+
+\begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.6\textwidth}
+    \begin{center}
+    \begin{tikzpicture}[scale=1.6]
+            \draw[-stealth] (0,0.6) -- (5,0.6) node[right] {$x$};
+            \draw[-stealth] (0,0.6) -- (0,3.7) node[left] {$y$};
+            \fill[black!10] plot[smooth] coordinates {(0.1,2.437) (1,2.709) (2,3.02) (3,3.34) (4,3.67) (4.8,3.94)} -- (4.8,2.17) plot[smooth] coordinates { (4.8,2.17) (4,1.93) (3,1.61) (2,1.29) (1,0.96) (0.1,0.65) } -- (0.1,2.437);
+            \fill[black!20] plot[smooth] coordinates {(0.1,1.78) (1,2) (2,2.25) (3,2.57) (4,2.95) (4.8,3.27)} -- (4.8,2.836) plot[smooth] coordinates { (4.8,2.836) (4,2.64) (3,2.38) (2,2.055) (1,1.67) (0.1,1.31) } -- (0.1,1.78);
+             \node at (5,3.1) {$\hat{Y}$};
+             \node[below] at (0.9,0.6) {$x_i$};
+             \draw[ultra thin,dashed] (0.9,0.6) -- (0.9,0.9252);
+             \fill[black!60] (0.87,2.669) -- (0.93,2.688) -- (0.93,0.935) -- (0.87,0.915) -- cycle;
+             \draw[thick] (0.1,1.51+0.32*0.1) -- (4.8,4.8*0.32+1.51);
+             \draw[stealth-] (0.95,2.9) -- (1.1,3.3) node[above] {$Y_i|x_i$};
+\draw[fill] (4.3363950,3.0565871) circle (0.025);
+\draw[fill] (1.8257738,2.1527751) circle (0.025);
+\draw[fill] (3.6696688,2.7455503) circle (0.025);
+\draw[fill] (3.1466872,2.4831508) circle (0.025);
+\draw[fill] (1.6929149,1.4290909) circle (0.025);
+\draw[fill] (3.5892880,2.3768544) circle (0.025);
+\draw[fill] (3.2948313,2.2061247) circle (0.025);
+\draw[fill] (4.1186531,2.8047739) circle (0.025);
+\draw[fill] (2.6106541,2.6333114) circle (0.025);
+\draw[fill] (3.0015549,2.8461205) circle (0.025);
+\draw[fill] (1.2460242,2.8236880) circle (0.025);
+\draw[fill] (2.2514297,2.7610143) circle (0.025);
+\draw[fill] (2.3146370,2.3886235) circle (0.025);
+\draw[fill] (2.8930436,2.6169797) circle (0.025);
+\draw[fill] (2.5313592,2.4667105) circle (0.025);
+\draw[fill] (3.7443200,3.3248808) circle (0.025);
+\draw[fill] (1.7619832,1.4442731) circle (0.025);
+\draw[fill] (2.8223686,2.1367046) circle (0.025);
+\draw[fill] (2.6905003,2.5882775) circle (0.025);
+\draw[fill] (2.3306204,1.7647571) circle (0.025);
+\draw[fill] (3.5643986,1.7540329) circle (0.025);
+\draw[fill] (2.5475316,2.5819633) circle (0.025);
+\draw[fill] (0.6196707,1.7407058) circle (0.025);
+\draw[fill] (2.6252987,1.8738594) circle (0.025);
+\draw[fill] (0.2311936,1.1867039) circle (0.025);
+\draw[fill] (2.5921432,2.2786012) circle (0.025);
+\draw[fill] (1.3263373,1.4670903) circle (0.025);
+\draw[fill] (1.2768343,1.4693665) circle (0.025);
+\draw[fill] (2.6405140,2.5286012) circle (0.025);
+\draw[fill] (4.6781096,2.5171945) circle (0.025);
+\draw[fill] (1.8949296,3.2895866) circle (0.025);
+\draw[fill] (1.9760109,2.6167031) circle (0.025);
+\draw[fill] (3.3771485,3.1577070) circle (0.025);
+\draw[fill] (3.5985413,2.5216506) circle (0.025);
+\draw[fill] (2.6186868,2.3546323) circle (0.025);
+\draw[fill] (2.7584162,2.4601992) circle (0.025);
+\draw[fill] (2.4879102,2.5396250) circle (0.025);
+\draw[fill] (2.3974763,2.2783382) circle (0.025);
+\draw[fill] (3.6557084,2.3733230) circle (0.025);
+\draw[fill] (1.7062729,2.6201000) circle (0.025);
+\draw[fill] (2.5296301,1.9896044) circle (0.025);
+\draw[fill] (2.3368203,1.8191709) circle (0.025);
+\draw[fill] (1.1984621,1.8486193) circle (0.025);
+\draw[fill] (2.2013159,2.5334466) circle (0.025);
+\draw[fill] (3.9583961,2.6880222) circle (0.025);
+\draw[fill] (1.5899918,2.1198890) circle (0.025);
+\draw[fill] (3.8050951,3.4171817) circle (0.025);
+\draw[fill] (0.1162737,0.7826276) circle (0.025);
+\draw[fill] (1.6717217,2.3479134) circle (0.025);
+\draw[fill] (2.4043482,2.0867250) circle (0.025);
+\draw[fill] (0.6744156,1.9708199) circle (0.025);
+\draw[fill] (1.8989277,2.5649783) circle (0.025);
+\draw[fill] (2.7692380,2.8082608) circle (0.025);
+\draw[fill] (3.4906288,2.6225438) circle (0.025);
+\draw[fill] (1.8172254,2.4503822) circle (0.025);
+\draw[fill] (4.6524560,3.2796855) circle (0.025);
+\draw[fill] (3.3943288,3.1373983) circle (0.025);
+\draw[fill] (1.6075723,1.9088071) circle (0.025);
+\draw[fill] (2.4742392,1.7769002) circle (0.025);
+\draw[fill] (4.0990849,2.9308218) circle (0.025);
+\draw[fill] (1.9740217,2.4904545) circle (0.025);
+\draw[fill] (2.0280051,2.2192092) circle (0.025);
+\draw[fill] (3.4771699,2.1337608) circle (0.025);
+\draw[fill] (3.1449574,3.0095094) circle (0.025);
+\draw[fill] (2.3392608,2.9804617) circle (0.025);
+\draw[fill] (3.1770795,2.4956330) circle (0.025);
+\draw[fill] (2.8333715,2.9312680) circle (0.025);
+\draw[fill] (3.9179660,2.1203264) circle (0.025);
+\draw[fill] (1.2977681,1.3818752) circle (0.025);
+\draw[fill] (1.8452314,2.5099713) circle (0.025);
+\draw[fill] (3.6552033,2.8847268) circle (0.025);
+\draw[fill] (1.9040389,2.2179828) circle (0.025);
+\draw[fill] (1.8515219,2.7642650) circle (0.025);
+\draw[fill] (4.4131350,3.3622880) circle (0.025);
+\draw[fill] (2.1054952,2.0879375) circle (0.025);
+\draw[fill] (2.6863044,2.1624035) circle (0.025);
+\draw[fill] (2.4952754,1.8564243) circle (0.025);
+\draw[fill] (3.8043018,2.3834828) circle (0.025);
+\draw[fill] (2.2547655,1.8662932) circle (0.025);
+\draw[fill] (2.0222749,0.9866091) circle (0.025);
+\draw[fill] (2.7958871,2.6586097) circle (0.025);
+\draw[fill] (3.6471418,2.2065016) circle (0.025);
+\draw[fill] (2.3868165,2.9926895) circle (0.025);
+\draw[fill] (1.2517952,1.8377142) circle (0.025);
+\draw[fill] (3.4622542,2.2122443) circle (0.025);
+\draw[fill] (3.8386178,2.5208674) circle (0.025);
+\draw[fill] (2.4068734,1.5852268) circle (0.025);
+\draw[fill] (1.0176214,1.6202520) circle (0.025);
+\draw[fill] (1.0523203,1.4718609) circle (0.025);
+\draw[fill] (1.8703864,2.1969153) circle (0.025);
+\draw[fill] (2.9254964,2.5402209) circle (0.025);
+\draw[fill] (1.8520711,2.1735303) circle (0.025);
+\draw[fill] (1.6727187,2.6713170) circle (0.025);
+\draw[fill] (2.6747436,2.6221642) circle (0.025);
+\draw[fill] (2.2863092,2.8204645) circle (0.025);
+\draw[fill] (3.5728943,1.9649286) circle (0.025);
+\draw[fill] (3.4744290,2.3868745) circle (0.025);
+\draw[fill] (3.1110311,2.3838065) circle (0.025);
+\draw[fill] (3.1142563,2.4495563) circle (0.025);
+\draw[fill] (1.4003549,1.6048878) circle (0.025);
+        \end{tikzpicture}
+        \end{center}
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.4\textwidth}
+
+Since the value of a randomly sampled individual can be expected to have more variability than the value of a sample mean, a wider interval around $\hat{Y_i}$ is needed.\\[0.5em]
+
+Note the more darkly shaded region lying closer to the regression line, showing the narrower confidence interval for the same data.\\[0.5em]
+
+In the long-run, a 95\% prediction interval for $Y_i\,|\,x_i$, such as indicated in the diagram, will tend to capture 95\% of all observed response values for any given $x_i$.
+
+\end{minipage}
+\end{figure}
+
+\begin{tcolorbox}[halign title=center,title=A Prediction Interval for an Individual Response,center,colback=red!5,colframe=red!70!black,width=15cm]
+A $100(1-\alpha)\%$ \text{PI} for $Y_i\,|\,x_i$ is given by: $\hat{Y_i}\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{1+\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}$
 \end{tcolorbox}
 
 This formula, also given on Page 5 of the Data Booklet, relies also on the errors, $\varepsilon_i$, being identically and independently distributed as $\text{N}\left(0,\sigma^2\right)$
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
-\textbf{Problem:} The lengths in centimetres ($x$) and masses in kilograms ($y$) of 12 salmon were measured, with the results:
+\textbf{Problem:} 
+
+The lengths in centimetres ($x$) and masses in kilograms ($y$) of 12 salmon were measured, with the results:
 
 \begin{center}
     \begin{tabular}{ccccc}
@@ -3268,22 +3642,24 @@ This formula, also given on Page 5 of the Data Booklet, relies also on the error
     \end{tabular}
 \end{center}
 
-Construct a 95\% prediction interval for the length of salmon with mass 4kg.
+Construct a 95\% prediction interval for the length of salmon with mass 3kg.
 
 \tcblower
 \textbf{Solution:}\\
 
-$b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{150}{12}=12.5, \quad a=\bar{y}-b\bar{x}=\dfrac{540}{12}-12.5\times \dfrac{30}{12}=13.75 \quad \implies \quad \hat{Y_i}=13.75+12.5x_i$\\[0.3em]
+$b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{150}{12}=12.5, \quad a=\bar{y}-b\bar{x}=\dfrac{540}{12}-12.5\times \dfrac{30}{12}=13.75 \quad \implies \quad \hat{Y_i}=13.75+12.5x_i$\\[0.5em]
 
-$\hat{Y}=13.75+12.5\times 4=64.25$\\[0.3em]
+$\hat{Y}=13.75+12.5\times 3=51.75$\\[0.5em]
 
-$\text{\text{SSR}}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=4800-\dfrac{150^2}{12}=2925, \quad s^2=\dfrac{\text{\text{SSR}}}{n-2}=\dfrac{2925}{10}=292.5, \quad s=\sqrt{292.5}=17.1$\\[0.3em]
+$\text{\text{SSR}}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=4800-\dfrac{150^2}{12}=2925, \quad s^2=\dfrac{\text{\text{SSR}}}{n-2}=\dfrac{2925}{10}=292.5, \quad s=\sqrt{292.5}=17.1$\\[0.5em]
 
-A 95\% PI for $Y\,|\,x=3$ is $64.25\,\pm\,2.228 \times 17.1\times \sqrt{1+\dfrac{1}{12}+\dfrac{(4-2.5)^2}{12}}=64.25\,\pm\,42.95$\\[0.3em]
+A 95\% PI for $Y\,|\,x=3$ is $51.75\,\pm\,2.228 \times 17.1\times \sqrt{1+\dfrac{1}{12}+\dfrac{(3-2.5)^2}{12}}=51.75\,\pm\,40.03$\\[0.5em]
 
-So a 95\% prediction interval for the mass of a 4kg salmon is $(21.3\text{cm}\,,\,107.2\text{cm})$.
+So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72\text{cm}\,,\,91.78\text{cm})$.
 
 \end{tcolorbox}
+
+\pagebreak
 
 []{#ex188q}
 
