@@ -3007,13 +3007,413 @@ Use the residual plot to comment on the validity of the linear model.
 
 ## Transforming Data
 
-Where a non-linear relationship seems to exist between two variables then it would not be appropriate to use a model which describes a linear relationship between them, even if such a model leads to high values for the coefficient of determination, $R^2$. The presence of a non-linear relationship may be immediately clear from an initial scatterplot, or it may only be revealed once a residual plot for a proposed linear model is created.
+Where a \textit{non-linear} relationship seems to exist between two variables then it would not be appropriate to use a model which describes a \textit{linear} relationship between them. The presence of a non-linear relationship may be immediately clear from an initial scatterplot, or it may only be revealed once a residual plot for a proposed linear model is created.
 
+\begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.4\textwidth}
+\vspace{-0.5cm}
 
+A linear model might initially seem to describe well relationship between $x$ and $y$, as might the result of $R^2=0.9228$.\\
 
-If a residual plot indicates that a linear model is not valid then it may be possible to *transform* the data and fit a new linear model between the *transformed* variables. A further residual plot can be created and used to determine the appropriateness of this transformed model. In this course any proposed transformation of the data will be provided in the question, allowing a new least squares regression model to be determined using the transformed data.
+However, the residual plot suggests that a\newline linear model between $x$ and $y$ is \textit{not} appropriate, since the residuals follow a curved pattern.
 
-\newpage
+\end{minipage}%
+\begin{minipage}[c]{.6\textwidth}
+    \begin{multicols}{2}
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[-stealth] (0,-0.3) -- (4,-0.3) node[below] {$x$};
+            \draw[-stealth] (0,-0.3) -- (0,3.6) node[left] {$y$};
+            \draw[fill] (3.526991,2.28946709) circle (0.02);
+\draw[fill] (3.692324,2.56533836) circle (0.02);
+\draw[fill] (1.057241,0.11591265) circle (0.02);
+\draw[fill] (1.400553,0.50013541) circle (0.02);
+\draw[fill] (3.661851,2.19574158) circle (0.02);
+\draw[fill] (1.205086,0.02461551) circle (0.02);
+\draw[fill] (2.15694,0.74636575) circle (0.02);
+\draw[fill] (2.77175,1.53922716) circle (0.02);
+\draw[fill] (2.131245,0.66394894) circle (0.02);
+\draw[fill] (2.867338,1.71361331) circle (0.02);
+\draw[fill] (3.45906,2.35786466) circle (0.02);
+\draw[fill] (3.347416,2.36535098) circle (0.02);
+\draw[fill] (2.698868,1.5776666) circle (0.02);
+\draw[fill] (3.584975,2.40726817) circle (0.02);
+\draw[fill] (3.976843,2.88553821) circle (0.02);
+\draw[fill] (3.352306,2.34640261) circle (0.02);
+\draw[fill] (1.08691,0.0505639) circle (0.02);
+\draw[fill] (1.931606,0.63522151) circle (0.02);
+\draw[fill] (1.746165,0.7731654) circle (0.02);
+\draw[fill] (3.985587,3.29945569) circle (0.02);
+\draw[fill] (2.390265,1.23580813) circle (0.02);
+\draw[fill] (2.896134,1.86966106) circle (0.02);
+\draw[fill] (2.850576,1.70090348) circle (0.02);
+\draw[fill] (2.182865,1.05175261) circle (0.02);
+\draw[fill] (1.63768,0.60270108) circle (0.02);
+\draw[fill] (2.156279,0.94193584) circle (0.02);
+\draw[fill] (1.577296,0.38872134) circle (0.02);
+\draw[fill] (2.671162,1.40563137) circle (0.02);
+\draw[fill] (3.242561,2.1365229) circle (0.02);
+\draw[fill] (1.151183,0.25485367) circle (0.02);
+\draw[fill] (2.19006,1.07079321) circle (0.02);
+\draw[fill] (1.373821,0.40105486) circle (0.02);
+\draw[fill] (2.183985,1.1322387) circle (0.02);
+\draw[fill] (3.88781,2.96396559) circle (0.02);
+\draw[fill] (3.984205,3.07811153) circle (0.02);
+\draw[fill] (3.347953,2.3996366) circle (0.02);
+\draw[fill] (2.881369,1.5947713) circle (0.02);
+\draw[fill] (2.676132,1.28620718) circle (0.02);
+\draw[fill] (1.336033,0.03336481) circle (0.02);
+\draw[fill] (1.085615,0.47230645) circle (0.02);
+\draw[fill] (1.544976,0.61842959) circle (0.02);
+\draw[fill] (3.261353,2.18924649) circle (0.02);
+\draw[fill] (2.349472,1.10830332) circle (0.02);
+\draw[fill] (2.082814,0.95881576) circle (0.02);
+\draw[fill] (1.273007,0.408708) circle (0.02);
+\draw[fill] (3.932572,3.21753484) circle (0.02);
+\draw[fill] (1.775928,0.6454457) circle (0.02);
+\draw[fill] (1.773134,0.37901942) circle (0.02);
+\draw[fill] (2.549346,1.59880579) circle (0.02);
+\draw[fill] (3.582168,2.92781268) circle (0.02);
+\draw[fill] (1.271497,0.35745373) circle (0.02);
+\draw[fill] (3.089766,1.99203814) circle (0.02);
+\draw[fill] (3.995393,3.1724175) circle (0.02);
+\draw[fill] (1.619784,0.85708373) circle (0.02);
+\draw[fill] (2.39806,1.32301455) circle (0.02);
+\draw[fill] (1.573366,0.63052645) circle (0.02);
+\draw[fill] (2.434048,1.04387273) circle (0.02);
+\draw[fill] (3.40942,2.16690748) circle (0.02);
+\draw[fill] (2.77129,2.07793276) circle (0.02);
+\draw[fill] (1.885387,0.51186439) circle (0.02);
+\draw[fill] (1.915189,0.63498592) circle (0.02);
+\draw[fill] (3.925927,3.24194853) circle (0.02);
+\draw[fill] (3.766942,3.14539767) circle (0.02);
+\draw[fill] (3.035479,1.8645133) circle (0.02);
+\draw[fill] (1.301818,0.37693219) circle (0.02);
+\draw[fill] (2.209323,1.06405459) circle (0.02);
+\draw[fill] (3.739591,2.83370164) circle (0.02);
+\draw[fill] (1.244051,0.0566491) circle (0.02);
+\draw[fill] (1.060566,0.11758265) circle (0.02);
+\draw[fill] (3.625103,2.50517311) circle (0.02);
+\draw[fill] (1.811213,0.5734159) circle (0.02);
+\draw[fill] (3.845746,3.080847) circle (0.02);
+\draw[fill] (3.896201,3.04665837) circle (0.02);
+\draw[fill] (3.709731,2.45780072) circle (0.02);
+\draw[fill] (2.254024,0.89746995) circle (0.02);
+\draw[fill] (3.307568,1.97451231) circle (0.02);
+\draw[fill] (1.199642,0.3468914) circle (0.02);
+\draw[fill] (2.590024,1.39035902) circle (0.02);
+\draw[fill] (3.628571,2.99729709) circle (0.02);
+\draw[fill] (3.518665,2.23926829) circle (0.02);
+\draw[thick] (1,-1.15+1.01*1) -- (4,-1.15+1.01*4);
+        \end{tikzpicture}
+    \end{center}
+    \begin{center}
+        \begin{tikzpicture}
+            \draw (-0.5,-2) rectangle (3.5,2);
+            \draw[dashed] (-0.5,0) -- (3.5,0);
+            \node[below] at (1.5,-2) {fitted values};
+            \node[above,rotate=90] at (-1,0) {residuals};
+            \node[left] at (-0.5,0) {$0$};
+            \draw[fill] (2.28946709,-0.393538368) circle (0.02);
+\draw[fill] (2.56533836,-0.181681984) circle (0.02);
+\draw[fill] (0.11591265,0.336574486) circle (0.02);
+\draw[fill] (0.50013541,0.399250086) circle (0.02);
+\draw[fill] (2.19574158,-0.858229146) circle (0.02);
+\draw[fill] (0.02461551,-0.149955946) circle (0.02);
+\draw[fill] (0.74636575,-0.66324009) circle (0.02);
+\draw[fill] (1.53922716,-0.34142112) circle (0.02);
+\draw[fill] (0.66394894,-0.775251578) circle (0.02);
+\draw[fill] (1.71361331,-0.189155268) circle (0.02);
+\draw[fill] (2.35786466,-0.117093028) circle (0.02);
+\draw[fill] (2.36535098,0.127392376) circle (0.02);
+\draw[fill] (1.5776666,-0.114713902) circle (0.02);
+\draw[fill] (2.40726817,-0.277137952) circle (0.02);
+\draw[fill] (2.88553821,-0.126184964) circle (0.02);
+\draw[fill] (2.34640261,0.079444186) circle (0.02);
+\draw[fill] (0.0505639,0.144884348) circle (0.02);
+\draw[fill] (0.63522151,-0.422296966) circle (0.02);
+\draw[fill] (0.7731654,0.234813696) circle (0.02);
+\draw[fill] (3.29945569,0.683674394) circle (0.02);
+\draw[fill] (1.23580813,-0.16401617) circle (0.02);
+\draw[fill] (1.86966106,0.063742884) circle (0.02);
+\draw[fill] (1.70090348,-0.180116518) circle (0.02);
+\draw[fill] (1.05175261,-0.105763538) circle (0.02);
+\draw[fill] (0.60270108,0.116904648) circle (0.02);
+\draw[fill] (0.94193584,-0.270741502) circle (0.02);
+\draw[fill] (0.38872134,-0.186918204) circle (0.02);
+\draw[fill] (1.40563137,-0.40182718) circle (0.02);
+\draw[fill] (2.1365229,-0.114706772) circle (0.02);
+\draw[fill] (0.25485367,0.421333332) circle (0.02);
+\draw[fill] (1.07079321,-0.082472094) circle (0.02);
+\draw[fill] (0.40105486,0.256045242) circle (0.02);
+\draw[fill] (1.1322387,0.052908036) circle (0.02);
+\draw[fill] (2.96396559,0.213701224) circle (0.02);
+\draw[fill] (3.07811153,0.243827402) circle (0.02);
+\draw[fill] (2.3996366,0.194859716) circle (0.02);
+\draw[fill] (1.5947713,-0.455683192) circle (0.02);
+\draw[fill] (1.28620718,-0.650893088) circle (0.02);
+\draw[fill] (0.03336481,-0.401653346) circle (0.02);
+\draw[fill] (0.47230645,0.991030712) circle (0.02);
+\draw[fill] (0.61842959,0.33893919) circle (0.02);
+\draw[fill] (2.18924649,-0.047889934) circle (0.02);
+\draw[fill] (1.10830332,-0.335166142) circle (0.02);
+\draw[fill] (0.95881576,-0.085955168) circle (0.02);
+\draw[fill] (0.408708,0.47860062) circle (0.02);
+\draw[fill] (3.21753484,0.628818482) circle (0.02);
+\draw[fill] (0.6454457,-0.08181143) circle (0.02);
+\draw[fill] (0.37901942,-0.608919932) circle (0.02);
+\draw[fill] (1.59880579,0.234945636) circle (0.02);
+\draw[fill] (2.92781268,0.769721048) circle (0.02);
+\draw[fill] (0.35745373,0.379196648) circle (0.02);
+\draw[fill] (1.99203814,-0.089564536) circle (0.02);
+\draw[fill] (3.1724175,0.409439354) circle (0.02);
+\draw[fill] (0.85708373,0.662460272) circle (0.02);
+\draw[fill] (1.32301455,-0.005629238) circle (0.02);
+\draw[fill] (0.63052645,0.30477039) circle (0.02);
+\draw[fill] (1.04387273,-0.637894536) circle (0.02);
+\draw[fill] (2.16690748,-0.396959852) circle (0.02);
+\draw[fill] (2.07793276,0.736935622) circle (0.02);
+\draw[fill] (0.51186439,-0.573995512) circle (0.02);
+\draw[fill] (0.63498592,-0.389017758) circle (0.02);
+\draw[fill] (3.24194853,0.691306464) circle (0.02);
+\draw[fill] (3.14539767,0.825041082) circle (0.02);
+\draw[fill] (1.8645133,-0.233014562) circle (0.02);
+\draw[fill] (0.37693219,0.355819526) circle (0.02);
+\draw[fill] (1.06405459,-0.135549124) circle (0.02);
+\draw[fill] (2.83370164,0.257876324) circle (0.02);
+\draw[fill] (0.0566491,-0.165990674) circle (0.02);
+\draw[fill] (0.11758265,0.333077208) circle (0.02);
+\draw[fill] (2.50517311,-0.163821522) circle (0.02);
+\draw[fill] (0.5734159,-0.298408562) circle (0.02);
+\draw[fill] (3.080847,0.533937728) circle (0.02);
+\draw[fill] (3.04665837,0.361836312) circle (0.02);
+\draw[fill] (2.45780072,-0.43254112) circle (0.02);
+\draw[fill] (0.89746995,-0.560613466) circle (0.02);
+\draw[fill] (1.97451231,-0.572367162) circle (0.02);
+\draw[fill] (0.3468914,0.505788446) circle (0.02);
+\draw[fill] (1.39035902,-0.265572376) circle (0.02);
+\draw[fill] (2.99729709,0.813297618) circle (0.02);
+\draw[fill] (2.23926829,-0.47682021) circle (0.02);
+        \end{tikzpicture}
+    \end{center}
+    \end{multicols}
+\end{minipage}
+\end{figure}
+
+\vspace{-0.6cm}
+
+The simulated data above was actually generated using a \textit{quadratic} relationship between $x$ and $y$.\newline A scatterplot of $\sqrt{y}$ against $x$ for this data is shown below, alongside a residual plot:
+
+\begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.4\textwidth}
+\vspace{-0.5cm}
+
+Both the scatterplot and the residual plot for this new model of $\sqrt{y}$ on $x$ suggest that it is appropriate for the data.\\
+
+This new, better-fitting model also produces an improved value for the coefficient of determination, of $R^2=0.9402$.
+
+\end{minipage}%
+\begin{minipage}[c]{.6\textwidth}
+    \begin{multicols}{2}
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[-stealth] (0,0.3) -- (4,0.3) node[below] {$x$};
+            \draw[-stealth] (0,0.3) -- (0,4) node[left] {$\sqrt{y}$};
+            \draw[fill] (2.218763,1.3171539) circle (0.02);
+\draw[fill] (3.989628,2.75268315) circle (0.02);
+\draw[fill] (2.204272,1.44496605) circle (0.02);
+\draw[fill] (1.636095,1.12215405) circle (0.02);
+\draw[fill] (3.005976,1.9658667) circle (0.02);
+\draw[fill] (3.823426,2.5748241) circle (0.02);
+\draw[fill] (2.335272,1.7948748) circle (0.02);
+\draw[fill] (3.341042,2.2037043) circle (0.02);
+\draw[fill] (2.546074,1.7252868) circle (0.02);
+\draw[fill] (2.049181,0.97781145) circle (0.02);
+\draw[fill] (3.494245,2.46495) circle (0.02);
+\draw[fill] (1.646636,1.21565355) circle (0.02);
+\draw[fill] (3.897038,2.53434345) circle (0.02);
+\draw[fill] (3.280243,2.0017239) circle (0.02);
+\draw[fill] (3.863926,2.5458159) circle (0.02);
+\draw[fill] (1.735653,1.209573) circle (0.02);
+\draw[fill] (3.886925,2.58610125) circle (0.02);
+\draw[fill] (2.8315,2.0000016) circle (0.02);
+\draw[fill] (2.194568,1.57319445) circle (0.02);
+\draw[fill] (3.039058,2.12807595) circle (0.02);
+\draw[fill] (1.588417,1.0969776) circle (0.02);
+\draw[fill] (3.465669,2.1427173) circle (0.02);
+\draw[fill] (1.819143,1.2136254) circle (0.02);
+\draw[fill] (1.910467,1.04752155) circle (0.02);
+\draw[fill] (2.838795,1.7755644) circle (0.02);
+\draw[fill] (3.060794,2.26162845) circle (0.02);
+\draw[fill] (2.472019,1.73807955) circle (0.02);
+\draw[fill] (1.518213,1.03657095) circle (0.02);
+\draw[fill] (2.883596,2.0313696) circle (0.02);
+\draw[fill] (1.295614,0.64201005) circle (0.02);
+\draw[fill] (3.099435,1.85001225) circle (0.02);
+\draw[fill] (3.816836,2.52950865) circle (0.02);
+\draw[fill] (2.776986,1.8628722) circle (0.02);
+\draw[fill] (2.418641,1.5147693) circle (0.02);
+\draw[fill] (2.573947,1.81747185) circle (0.02);
+\draw[fill] (2.841471,1.8282276) circle (0.02);
+\draw[fill] (2.166411,1.4971761) circle (0.02);
+\draw[fill] (2.220256,1.58536575) circle (0.02);
+\draw[fill] (1.173221,0.7300848) circle (0.02);
+\draw[fill] (2.898777,1.98218535) circle (0.02);
+\draw[fill] (2.823314,1.98009345) circle (0.02);
+\draw[fill] (2.490149,1.5713841) circle (0.02);
+\draw[fill] (2.356083,1.60579875) circle (0.02);
+\draw[fill] (2.482078,1.7316903) circle (0.02);
+\draw[fill] (3.115975,2.05638465) circle (0.02);
+\draw[fill] (2.695692,1.92986085) circle (0.02);
+\draw[fill] (1.380013,0.93947865) circle (0.02);
+\draw[fill] (2.14749,1.4276172) circle (0.02);
+\draw[fill] (2.461941,1.6650579) circle (0.02);
+\draw[fill] (3.40712,2.4284007) circle (0.02);
+\draw[fill] (2.852648,1.9589997) circle (0.02);
+\draw[fill] (2.763009,1.9422987) circle (0.02);
+\draw[fill] (1.211283,0.92827005) circle (0.02);
+\draw[fill] (3.253314,2.33712495) circle (0.02);
+\draw[fill] (3.745357,2.6716302) circle (0.02);
+\draw[fill] (3.045926,1.93475385) circle (0.02);
+\draw[fill] (2.371393,1.5717717) circle (0.02);
+\draw[fill] (2.539076,1.44245025) circle (0.02);
+\draw[fill] (2.618866,1.73609535) circle (0.02);
+\draw[fill] (1.119105,0.64125795) circle (0.02);
+\draw[fill] (3.19414,2.31472965) circle (0.02);
+\draw[fill] (3.109017,2.1634872) circle (0.02);
+\draw[fill] (1.626826,1.11653955) circle (0.02);
+\draw[fill] (1.95972,1.4989149) circle (0.02);
+\draw[fill] (1.382047,0.6189447) circle (0.02);
+\draw[fill] (2.438495,1.78762155) circle (0.02);
+\draw[fill] (2.527407,1.73100855) circle (0.02);
+\draw[fill] (2.775166,1.77054255) circle (0.02);
+\draw[fill] (2.160761,1.1843967) circle (0.02);
+\draw[fill] (2.889298,1.9770816) circle (0.02);
+\draw[fill] (1.884701,1.28806245) circle (0.02);
+\draw[fill] (3.354586,2.2882533) circle (0.02);
+\draw[fill] (1.984099,1.2093753) circle (0.02);
+\draw[fill] (3.024763,2.07763635) circle (0.02);
+\draw[fill] (1.303434,1.09502115) circle (0.02);
+\draw[fill] (1.701592,1.18813125) circle (0.02);
+\draw[fill] (1.625775,1.1343447) circle (0.02);
+\draw[fill] (1.837715,1.36004535) circle (0.02);
+\draw[fill] (1.425188,1.17724005) circle (0.02);
+\draw[fill] (1.132082,0.92441895) circle (0.02);
+\draw[thick] (1,1*1.5*0.45) -- (4,0.45*4*1.5);
+        \end{tikzpicture}
+    \end{center}
+    \begin{center}
+        \begin{tikzpicture}
+            \draw (0.75,-2) rectangle (4.75,2);
+            \draw[dashed] (0.75,0) -- (4.75,0);
+            \node[below] at (2.5,-2) {fitted values};
+            \node[above,rotate=90] at (0.25,0) {residuals};
+            \node[left] at (0.75,0) {$0$};
+            \draw[fill] (2.1952565,-0.470406068) circle (0.02);
+\draw[fill] (4.58780525,0.168677504) circle (0.02);
+\draw[fill] (2.40827675,-0.103477828) circle (0.02);
+\draw[fill] (1.87025675,0.058868236) circle (0.02);
+\draw[fill] (3.2764445,-0.158127388) circle (0.02);
+\draw[fill] (4.2913735,-0.006315344) circle (0.02);
+\draw[fill] (2.991458,0.59370474) circle (0.02);
+\draw[fill] (3.6728405,-0.127284736) circle (0.02);
+\draw[fill] (2.875478,0.028521844) circle (0.02);
+\draw[fill] (1.62968575,-1.069933808) circle (0.02);
+\draw[fill] (4.10825,0.29347952) circle (0.02);
+\draw[fill] (2.02608925,0.289219496) circle (0.02);
+\draw[fill] (4.22390575,-0.246824168) circle (0.02);
+\draw[fill] (3.3362065,-0.556411628) circle (0.02);
+\draw[fill] (4.2430265,-0.156602908) circle (0.02);
+\draw[fill] (2.015955,0.112700628) circle (0.02);
+\draw[fill] (4.31016875,-0.090593016) circle (0.02);
+\draw[fill] (3.333336,0.247097432) circle (0.02);
+\draw[fill] (2.62199075,0.255939672) circle (0.02);
+\draw[fill] (3.54679325,0.214856228) circle (0.02);
+\draw[fill] (1.828296,0.07759098) circle (0.02);
+\draw[fill] (3.5711955,-0.514346416) circle (0.02);
+\draw[fill] (2.022709,-0.026842896) circle (0.02);
+\draw[fill] (1.74586925,-0.634242432) circle (0.02);
+\draw[fill] (2.959274,-0.364539572) circle (0.02);
+\draw[fill] (3.76938075,0.531852572) circle (0.02);
+\draw[fill] (2.89679925,0.195995492) circle (0.02);
+\draw[fill] (1.72761825,0.042930904) circle (0.02);
+\draw[fill] (3.385616,0.236930376) circle (0.02);
+\draw[fill] (1.07001675,-0.608372144) circle (0.02);
+\draw[fill] (3.08335375,-0.635375316) circle (0.02);
+\draw[fill] (4.21584775,-0.115289624) circle (0.02);
+\draw[fill] (3.104787,-0.020412384) circle (0.02);
+\draw[fill] (2.5246155,-0.303374984) circle (0.02);
+\draw[fill] (3.02911975,0.224156112) circle (0.02);
+\draw[fill] (3.047046,-0.228922612) circle (0.02);
+\draw[fill] (2.4952935,0.103929256) circle (0.02);
+\draw[fill] (2.64227625,0.242135588) circle (0.02);
+\draw[fill] (1.216808,-0.153100008) circle (0.02);
+\draw[fill] (3.30364225,0.07843422) circle (0.02);
+\draw[fill] (3.30015575,0.208750468) circle (0.02);
+\draw[fill] (2.6189735,-0.281174496) circle (0.02);
+\draw[fill] (2.67633125,0.052025416) circle (0.02);
+\draw[fill] (2.8861505,0.160842556) circle (0.02);
+\draw[fill] (3.42730775,-0.114834196) circle (0.02);
+\draw[fill] (3.21643475,0.304619812) circle (0.02);
+\draw[fill] (1.56579775,0.032890308) circle (0.02);
+\draw[fill] (2.379362,-0.0474882) circle (0.02);
+\draw[fill] (2.7750965,0.019419504) circle (0.02);
+\draw[fill] (4.0473345,0.352911884) circle (0.02);
+\draw[fill] (3.2649995,0.09967568) circle (0.02);
+\draw[fill] (3.2371645,0.216562276) circle (0.02);
+\draw[fill] (1.54711675,0.306852024) circle (0.02);
+\draw[fill] (3.89520825,0.386483824) circle (0.02);
+\draw[fill] (4.452717,0.392422332) circle (0.02);
+\draw[fill] (3.22458975,-0.313037788) circle (0.02);
+\draw[fill] (2.6196195,-0.066284452) circle (0.02);
+\draw[fill] (2.40408375,-0.71310582) circle (0.02);
+\draw[fill] (2.89349225,-0.073739724) circle (0.02);
+\draw[fill] (1.06876325,-0.292518) circle (0.02);
+\draw[fill] (3.85788275,0.433324084) circle (0.02);
+\draw[fill] (3.605812,0.183302472) circle (0.02);
+\draw[fill] (1.86089925,0.06058918) circle (0.02);
+\draw[fill] (2.4981915,0.480777984) circle (0.02);
+\draw[fill] (1.0315745,-0.825530384) circle (0.02);
+\draw[fill] (2.97936925,0.38847786) circle (0.02);
+\draw[fill] (2.88501425,0.077395372) circle (0.02);
+\draw[fill] (2.95090425,-0.263347252) circle (0.02);
+\draw[fill] (1.9739945,-0.719974976) circle (0.02);
+\draw[fill] (3.295136,0.081893324) circle (0.02);
+\draw[fill] (2.14677075,0.053599892) circle (0.02);
+\draw[fill] (3.8137555,0.07378806) circle (0.02);
+\draw[fill] (2.0156255,-0.335229928) circle (0.02);
+\draw[fill] (3.46272725,0.106093444) circle (0.02);
+\draw[fill] (1.82503525,0.585574244) circle (0.02);
+\draw[fill] (1.98021875,0.116861176) circle (0.02);
+\draw[fill] (1.8905745,0.109962924) circle (0.02);
+\draw[fill] (2.26674225,0.33016634) circle (0.02);
+\draw[fill] (1.96206675,0.585569204) circle (0.02);
+\draw[fill] (1.54069825,0.439208064) circle (0.02);
+        \end{tikzpicture}
+    \end{center}
+    \end{multicols}
+\end{minipage}
+\end{figure}
+
+\vspace{-0.5cm}
+
+Creating a model such as this, in which one or both variables have some operation performed on them (such as taking the \textit{square root}) is called applying a \textbf{transformation} to the data. In practice, knowing which transformation(s) to try will generally be guided by a background understanding of the variables, or previous studies. In this course, any required transformations will be clearly specified.
+
+The value of applying transformations in this way, where possible, is that linear regression can hence be extended to nonlinear relationships.
+
+Continuing with the example of the model of the *square root* of $y$ *on* $x$, the various calculations required for linear regression can be *translated* in terms of $x$ and $\sqrt{y}$, instead of $x$ and $y$, such as:
+
+Equation of the $\sqrt{y}$ *on* $x$ regression line: $\hat{\sqrt{Y}}=ax+b$ where $b=\dfrac{S_{x\sqrt{y}}}{S_{xx}}$ and $a=\overline{\sqrt{y}}+bx$.
+
+Sample correlation coefficient: $r=\dfrac{S_{x\sqrt{y}}}{\sqrt{S_{xx}S_{\sqrt{y}\sqrt{y}}}}$.
+
+The sum of squared residuals is $\text{SSR}=S_{\sqrt{y}\sqrt{y}}-\dfrac{S^2_{x\sqrt{y}}}{S_{xx}}$ and an estimate for $\sigma^2$ is given by $\dfrac{\text{SSR}}{n-2}$.
+
+Predictions may be made using an $\sqrt{y}$ *on* $x$ regression line.\newline Any value of $\sqrt{y}$ obtained must be squared to find a predicted value for $y$ itself for any given $x$ value.
+
+\pagebreak
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 
@@ -3169,7 +3569,7 @@ A second linear model was created between speed ($x$) and the square root of the
 \begin{enumerate}
     \item[(a)] Comment on the appropriateness of the linear model of $y$ on $x$.
     \item[(b)] Comment on the suitability of the new model of $\sqrt{y}$ on $x$.
-    \item[(c)] Calculate the coefficient of determination for this new model and interpret its value.
+    \item[(c)] By calculating $\sqrt{\text{distance}}$ from the table, find the coefficient of determination for this new model and interpret its value.
     \item[(d)] Estimate the stopping distance at a speed of 50 kilometres per hour.
 \end{enumerate}
 

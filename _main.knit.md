@@ -1,188 +1,23 @@
-% Options for packages loaded elsewhere
-\PassOptionsToPackage{unicode}{hyperref}
-\PassOptionsToPackage{hyphens}{url}
-\documentclass[
-  11pt,
-  openany]{book}
-\usepackage{xcolor}
-\usepackage{amsmath,amssymb}
-\setcounter{secnumdepth}{5}
-\usepackage{iftex}
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
-  \usepackage{unicode-math} % this also loads fontspec
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
-\usepackage{lmodern}
-\ifPDFTeX\else
-  % xetex/luatex font selection
-  \setmainfont[]{Times New Roman}
-\fi
-% Use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-\IfFileExists{microtype.sty}{% use microtype if available
-  \usepackage[]{microtype}
-  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-}{}
-\makeatletter
-\@ifundefined{KOMAClassName}{% if non-KOMA class
-  \IfFileExists{parskip.sty}{%
-    \usepackage{parskip}
-  }{% else
-    \setlength{\parindent}{0pt}
-    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
-}{% if KOMA class
-  \KOMAoptions{parskip=half}}
-\makeatother
-\usepackage{longtable,booktabs,array}
-\newcounter{none} % for unnumbered tables
-\usepackage{calc} % for calculating minipage widths
-% Correct order of tables after \paragraph or \subparagraph
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
-\makeatother
-% Allow footnotes in longtable head/foot
-\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
-\makesavenoteenv{longtable}
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\usepackage[]{natbib}
-\bibliographystyle{apalike}
-\usepackage{booktabs}
-\usepackage[top=1cm,bottom=1cm,left=1.5cm,right=1.5cm,includehead]{geometry}
-\usepackage{fancyhdr}
-  \pagestyle{fancy}
-  \fancypagestyle{plain}{%
-  \renewcommand{\headrulewidth}{0pt}%
-  \fancyhf{}%
-}
-  \fancyhf{}
-  \fancyhf[HRO,HLE]{\thepage}
-  \fancyhf[HC]{\leftmark}
-\usepackage{quotchap}
-\usepackage{amsmath}
-\usepackage[most]{tcolorbox}
-\usepackage{tikz}
-\usetikzlibrary{patterns}
-\usetikzlibrary{decorations.pathreplacing,angles,quotes}
-\usepackage{titlesec}
-\titlespacing*{\chapter}{0pt}{0cm}{0cm}
-\titlespacing*{\section}{0pt}{0.2cm}{0.2cm}
-\titlespacing*{\subsection}{0pt}{0.2cm}{0.2cm}
-\titlespacing*{\subsubsection}{0pt}{0.2cm}{0.2cm}
-\usepackage{caption}
-\usepackage{subcaption}
-\usepackage{units}
-\usepackage{amssymb}
-\usepackage{pifont}
-\usepackage{nth}
-\usepackage{mathtools}
-\usepackage{dirtytalk}
-\usepackage{setspace}
-\usepackage{multicol}
-\usepackage[draft]{tikzpeople}
-\usepackage{hyperref}
-\usepackage{gensymb}
-\usepackage{tabularx}
-\usepackage{multirow}
-\usepackage{array}
-\usepackage{wrapfig}
-\graphicspath{ {images/} }
-\usepackage{exsheets}
-\usepackage{setspace}
-\usepackage{etoolbox}
-\usepackage{enumitem}
-\usepackage{bm}
-\usepackage{vwcol}
-\usetikzlibrary{shapes.geometric}
-\usepackage{graphicx}
+--- 
+site: bookdown::bookdown_site
+documentclass: book
+classoption: openany
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+mainfont: Times New Roman
+fontsize: 11pt
+url: https://bookdown.org/mathsresources/stats/
+cover-image: cover.png
+description: |
+  This textbook is designed to support the Advanced Higher Statistics course.
+link-citations: no
+header-includes:
+- \AtBeginDocument{\frontmatter}
+---
 
-
-\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
-\newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
-\newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
-\newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
-
-\newenvironment{cols}[1][]{}{}
-
-\newenvironment{col}[1]{\begin{minipage}{#1}\ignorespaces}{%
-\end{minipage}
-\ifhmode\unskip\fi
-\aftergroup\useignorespacesandallpars}
-
-\def\useignorespacesandallpars#1\ignorespaces\fi{%
-#1\fi\ignorespacesandallpars}
-
-\makeatletter
-\def\ignorespacesandallpars{%
-  \@ifnextchar\par
-    {\expandafter\ignorespacesandallpars\@gobble}%
-    {}%
-}
-\makeatother
-
-
-\tcbuselibrary{skins}
-
-\usepackage{graphbox,graphicx}
-
-\pretolerance=100
-\tolerance=200
-\hyphenchar\font=-1
-\sloppy
-
-\usepackage{enumitem}
-\setlist{topsep=0pt, leftmargin=*}
-\setlist[2]{itemsep=1pt}
-
-
-
-\usepackage{float}
-\usepackage{adjustbox}
-
-\usepackage{pgfplots}
-\usepackage{pgfmath}
-\pgfplotsset{compat=1.8}
-\pgfmathdeclarefunction{gauss}{3}{%
-\pgfmathparse{1/(#3*sqrt(2*pi))*exp(-((#1-#2)^2)/(2*#3^2))}%
-}
-
-\usepackage{epigraph}
-\usepackage[switch, modulo]{lineno}
-
-\usepackage[dvipsnames]{xcolor}
-\usepackage[no-math]{fontspec}
-\usepackage{lmodern}
-\renewcommand{\familydefault}{lmss}
-
-
-\AtBeginDocument{\frontmatter}
-\usepackage{bookmark}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same}
-\hypersetup{
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-
-\author{}
-\date{\vspace{-2.5em}}
-
-\begin{document}
-
-{
-\setcounter{tocdepth}{1}
-\tableofcontents
-}
 \mainmatter
 
-\chapter*{Introduction}\label{introduction}
-\addcontentsline{toc}{chapter}{Introduction}
+# Introduction {-}
 
 Statistics is the science of collecting, organising, presenting and analysing data. It is vital in helping us develop a better understanding of the world, and to allow decisions to be made in a rational manner based on the information that is available to us. Governments, organisations, businesses and individuals across a diverse range of fields rely on statistics and statisticians.
 
@@ -352,53 +187,51 @@ Statistics is the science of collecting, organising, presenting and analysing da
 \end{tikzpicture}
 \end{center}
 
-The \emph{Advanced Higher Statistics} course aims to equip learners with a sound foundation of statistical knowledge. This textbook has been created to serve as a source of key facts, examples, and exercises to support progress through the course, covering all of the key stages involved in statistical research and investigations, including:
+The *Advanced Higher Statistics* course aims to equip learners with a sound foundation of statistical knowledge. This textbook has been created to serve as a source of key facts, examples, and exercises to support progress through the course, covering all of the key stages involved in statistical research and investigations, including:
 
-\begin{itemize}
-\item
-  Gathering data using appropriate \emph{sampling techniques}.
-\item
-  Initial exploration of data using \emph{descriptive statistics}, including:
+- Gathering data using appropriate *sampling techniques*.
 
-  \begin{itemize}
-  \item
-    Visualising data with charts and graphs.
-  \item
-    Calculating sample statistics.
-  \end{itemize}
-\item
-  Using \emph{statistical inference} to assess the evidence for claims about population parameters, including:
+- Initial exploration of data using *descriptive statistics*, including:
 
-  \begin{itemize}
-  \item
-    An introduction to \textit{probability theory}, which underpins all statistical inference
-  \item
-    Conducting hypothesis tests
-  \item
-    Constructing confidence intervals
-  \end{itemize}
-\end{itemize}
+    - Visualising data with charts and graphs. 
+    
+    - Calculating sample statistics.
 
-Techniques suitable for a range of contexts will be covered, and it is expected that by the end of the course students should have sufficient knowledge and confidence to collect their own data and conduct their own statistical investigations.
+- Using *statistical inference* to assess the evidence for claims about population parameters, including:
+
+    - An introduction to \textit{probability theory}, which underpins all statistical inference
+
+    - Conducting hypothesis tests
+    
+    - Constructing confidence intervals
+    
+Techniques suitable for a range of contexts will be covered, and it is expected that by the end of the course students should have sufficient knowledge and confidence to collect their own data and conduct their own statistical investigations. 
 
 \pagebreak
 
-\section*{Suggested Use Of The Book}\label{suggested-use-of-the-book}
-\addcontentsline{toc}{section}{Suggested Use Of The Book}
+## Suggested Use Of The Book {-}
 
-\section*{Other Resources}\label{other-resources}
-\addcontentsline{toc}{section}{Other Resources}
 
-\section*{Acknowledgements}\label{acknowledgements}
-\addcontentsline{toc}{section}{Acknowledgements}
 
-\chapter{Exploratory Data Analysis}\label{exploratory-data-analysis}
+## Other Resources {-}
+
+## Acknowledgements {-}
+
+
+
+
+
+
+
+<!--chapter:end:index.Rmd-->
+
+# Exploratory Data Analysis
 
 \vspace{-1cm}
 
-Collected data, without any form of processing having been applied, is referred to as \emph{raw data}. Before conducting any statistical analysis, a statistician will typically want to get a quick sense of the data, checking for any potential issues and identifying any features of note. Common first steps are therefore often to: \emph{organise} the data into suitable lists or tables; \emph{visualise} the data using plots and graphs; and \emph{measure} various properties of the data.
+Collected data, without any form of processing having been applied, is referred to as *raw data*. Before conducting any statistical analysis, a statistician will typically want to get a quick sense of the data, checking for any potential issues and identifying any features of note. Common first steps are therefore often to: *organise* the data into suitable lists or tables; *visualise* the data using plots and graphs; and *measure* various properties of the data.
 
-This process is called \emph{exploratory data analysis}.
+This process is called *exploratory data analysis*.
 
 \begin{center}
 \begin{tikzpicture}
@@ -560,13 +393,13 @@ This process is called \emph{exploratory data analysis}.
 
 \pagebreak
 
-\section{Types of Data}\label{types-of-data}
+## Types of Data
 
-Knowing what \emph{type} of data has been collected helps inform what kind of graphs and statistics may be appropriate.
+Knowing what *type* of data has been collected helps inform what kind of graphs and statistics may be appropriate.
 
-Data that is numerical is called \emph{quantitative}, of which there are two types. \textbf{Discrete} data consists of values that can be listed, such as someone's shoe size or the number of siblings they have. \textbf{Continuous} data can take \emph{any} value within a range, though is often rounded to reflect the precision of measurements taken, such as the mass of a mouse.
+Data that is numerical is called *quantitative*, of which there are two types. **Discrete** data consists of values that can be listed, such as someone's shoe size or the number of siblings they have. **Continuous** data can take *any* value within a range, though is often rounded to reflect the precision of measurements taken, such as the mass of a mouse.
 
-\emph{Qualitative} data (also called \textbf{categorical}) is \emph{non-numerical}, such as whether a squirrel is red or grey.
+*Qualitative* data (also called **categorical**) is *non-numerical*, such as whether a squirrel is red or grey. 
 
 \vspace{-0.1cm}
 
@@ -653,10 +486,9 @@ For example, the table below shows data relating to some football players:
 
 \vspace{-1cm}
 
-\protect\phantomsection\label{ex11q}{}
+[]{#ex11q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex11a]{Exercise 1.1}}{Exercise 1.1}}\label{exercise-1.1}
-\addcontentsline{toc}{subsubsection}{{Exercise 1.1}}
+#### [Exercise 1.1](#ex11a) {-}
 
 \begin{enumerate}
     \item A survey is carried out on the pets owned by a class. State whether the following data is qualitative or quantitative.
@@ -719,9 +551,9 @@ For example, the table below shows data relating to some football players:
 
 \pagebreak
 
-\section{Population Parameters and Sample Statistics}\label{population-parameters-and-sample-statistics}
+## Population Parameters and Sample Statistics
 
-In a statistical study, the term \textbf{population} refers to the entire set of objects of interest, whilst a \textbf{sample} is a selection of some objects chosen from the population. Recognising the difference is fundamental to statistics.
+In a statistical study, the term **population** refers to the entire set of objects of interest, whilst a **sample** is a selection of some objects chosen from the population. Recognising the difference is fundamental to statistics. 
 
 \begin{center}
 \begin{tikzpicture}
@@ -890,7 +722,7 @@ In a statistical study, the term \textbf{population} refers to the entire set of
 \end{tikzpicture}
 \end{center}
 
-If data were available for an entire \emph{population} then various \textbf{population parameters} could be calculated, such as the \emph{population mean}. Since this is never really possible, instead \emph{samples} are taken from populations. Measures calculated from a sample of data are called \textbf{sample statistics}, such as the \emph{sample mean}.
+If data were available for an entire *population* then various **population parameters** could be calculated, such as the *population mean*. Since this is never really possible, instead *samples* are taken from populations. Measures calculated from a sample of data are called **sample statistics**, such as the *sample mean*. 
 
 Letters from the Greek alphabet are commonly used to represent population parameters.
 
@@ -902,7 +734,7 @@ Letters from the Greek alphabet are commonly used to represent population parame
 \end{tabular}
 \end{center}
 
-It is good practice to refer \emph{clearly} to whether a population parameter or sample statistic is being discussed.
+It is good practice to refer *clearly* to whether a population parameter or sample statistic is being discussed.
 
 \begin{multicols}{2}
 
@@ -927,10 +759,9 @@ Sample statistics may be seen as \textit{estimates} of the true value of their r
 
 \end{multicols}
 
-\protect\phantomsection\label{ex12q}{}
+[]{#ex12q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex12a]{Exercise 1.2}}{Exercise 1.2}}\label{exercise-1.2}
-\addcontentsline{toc}{subsubsection}{{Exercise 1.2}}
+#### [Exercise 1.2](#ex12a) {-}
 
 \vspace{-0.2cm}
 
@@ -944,9 +775,9 @@ Sample statistics may be seen as \textit{estimates} of the true value of their r
 
 \pagebreak
 
-\section{Measures of Location and Spread}\label{measures-of-location-and-spread}
+## Measures of Location and Spread
 
-\emph{Summary statistics} are a collection of measures taken of the data from a sample, such as the mean, or standard deviation. These offer a quick way to communicate some general sense of the data. For example, for the \emph{raw data} of \(0,2,2,6,12,14,16,18,18,18,20\), the table below shows a selection of summary statistics.
+*Summary statistics* are a collection of measures taken of the data from a sample, such as the mean, or standard deviation. These offer a quick way to communicate some general sense of the data. For example, for the *raw data* of $0,2,2,6,12,14,16,18,18,18,20$, the table below shows a selection of summary statistics. 
 
 \begin{center}
 \begin{tabular}{ccccccccccccc}
@@ -956,12 +787,11 @@ n & mean & sd & sum & sum of squares & min & LQ & median & UQ & max & range & IQ
 \end{tabular}
 \end{center}
 
-There are two main types of summary statistic: those that measure the \textit{central tendency} of data (or its \textbf{location}); and those that measure the \textit{variability} of data (or its \textbf{spread}). It is common to wish to measure both the location \emph{and} spread.
+There are two main types of summary statistic: those that measure the \textit{central tendency} of data (or its \textbf{location}); and those that measure the \textit{variability} of data (or its \textbf{spread}). It is common to wish to measure both the location *and* spread.
 
-\subsubsection*{Measures of Location}\label{measures-of-location}
-\addcontentsline{toc}{subsubsection}{Measures of Location}
+#### Measures of Location {-}
 
-The three main measures of location, or \emph{averages}, should already be familiar. To avoid ambiguity, statisticians will typically avoid referring to \emph{``the average''}, and will instead specify exactly \emph{which} average they are referring to:
+The three main measures of location, or *averages*, should already be familiar. To avoid ambiguity, statisticians will typically avoid referring to *"the average"*, and will instead specify exactly *which* average they are referring to:
 
 \begin{itemize}
     \item \textbf{Mode} - the most commonly observed piece of data.
@@ -1008,10 +838,9 @@ The three main measures of location, or \emph{averages}, should already be famil
 \end{tikzpicture}
 \end{center}
 
-\subsubsection*{Measures of Spread}\label{measures-of-spread}
-\addcontentsline{toc}{subsubsection}{Measures of Spread}
+#### Measures of Spread {-}
 
-The measure of spread which is usually encountered first in a maths classroom is the \emph{range}, which is the difference between the highest and lowest values. In practice this measure is seldom used by statisticians since it only uses the two most extreme values from the data. There are three main measures of spread commonly used, two of which are likely to already be familiar:
+The measure of spread which is usually encountered first in a maths classroom is the *range*, which is the difference between the highest and lowest values. In practice this measure is seldom used by statisticians since it only uses the two most extreme values from the data. There are three main measures of spread commonly used, two of which are likely to already be familiar: 
 
 \begin{itemize}
     \item \textbf{Interquartile Range} - the difference between the upper quartile and the lower quartile.
@@ -1021,23 +850,21 @@ The measure of spread which is usually encountered first in a maths classroom is
 
 \pagebreak
 
-\subsection*{The Mean and the Standard Deviation}\label{the-mean-and-the-standard-deviation}
-\addcontentsline{toc}{subsection}{The Mean and the Standard Deviation}
+### The Mean and the Standard Deviation {-}
 
-The \emph{mean} and \emph{standard deviation} are perhaps the most commonly used measures of location and spread, respectively, and both link strongly to the commonly-encountered \emph{bell-shaped curve} (see page 13). The formulae for calculating the sample mean and sample standard deviation from sample data are given below using notation, where the Greek letter \(\Sigma\) (\emph{``Sigma''}) means a \emph{sum} should be calculated, \(x\) represents the all of the values in the sample (a shortened abbreviation of \(x_1,x_2,\dots,x_n\) or \(x_i\)) and \(n\) represents the \emph{number} of values in the sample.
+The *mean* and *standard deviation* are perhaps the most commonly used measures of location and spread, respectively, and both link strongly to the commonly-encountered *bell-shaped curve* (see page 13). The formulae for calculating the sample mean and sample standard deviation from sample data are given below using notation, where the Greek letter $\Sigma$ (*"Sigma"*) means a *sum* should be calculated, $x$ represents the all of the values in the sample (a shortened abbreviation of $x_1,x_2,\dots,x_n$ or $x_i$) and $n$ represents the *number* of values in the sample.
 
-The \emph{sample mean}, \(\bar{x}\), is calculated as: \hspace{0.5cm}\(\bar{x}=\dfrac{\Sigma x}{n}\)
+The *sample mean*, $\bar{x}$, is calculated as: \hspace{0.5cm}$\bar{x}=\dfrac{\Sigma x}{n}$
 
-The \emph{sample standard deviation}, \(s\), is calculated as: \hspace{0.5cm}\(s=\sqrt{\dfrac{S_{xx}}{n-1}}\)\hspace{0.5cm}where: \hspace{0.5cm}\(S_{xx}=\Sigma x^2-\dfrac{(\Sigma x)^2}{n}\)
+The *sample standard deviation*, $s$, is calculated as: \hspace{0.5cm}$s=\sqrt{\dfrac{S_{xx}}{n-1}}$\hspace{0.5cm}where: \hspace{0.5cm}$S_{xx}=\Sigma x^2-\dfrac{(\Sigma x)^2}{n}$
 
-The \emph{sample variance}, \(s^2\), is simply the \emph{square of the standard deviation}.
+The *sample variance*, $s^2$, is simply the *square of the standard deviation*.
 
-\subsubsection*{The Median and the Interquartile Range}\label{the-median-and-the-interquartile-range}
-\addcontentsline{toc}{subsubsection}{The Median and the Interquartile Range}
+#### The Median and the Interquartile Range {-}
 
-The median, \(\text{Q}_2\), and interquartile range, \(\text{IQR}\), are often chosen to measure location and spread when the data is particularly \emph{skewed} (see page 13), as they are less influenced by \emph{extreme values} than the mean and standard deviation.
+The median, $\text{Q}_2$, and interquartile range, $\text{IQR}$, are often chosen to measure location and spread when the data is particularly *skewed* (see page 13), as they are less influenced by *extreme values* than the mean and standard deviation.
 
-The \emph{lower quartile} (LQ or \(\text{Q}_1\)) and the \emph{upper quartile} (UQ or \(\text{Q}_3\)) split a set of values into quarters along with the median. From the lowest value to \(\text{Q}_1\) contains the lowest 25\% of the values, from \(\text{Q}_1\) to \(\text{Q}_2\) contains the next 25\%, and so on.
+The *lower quartile* (LQ or $\text{Q}_1$) and the *upper quartile* (UQ or $\text{Q}_3$) split a set of values into quarters along with the median. From the lowest value to $\text{Q}_1$ contains the lowest 25\% of the values, from $\text{Q}_1$ to $\text{Q}_2$ contains the next 25\%, and so on.
 
 \begin{center}
 \begin{tikzpicture}
@@ -1065,12 +892,11 @@ The \emph{lower quartile} (LQ or \(\text{Q}_1\)) and the \emph{upper quartile} (
 \end{tikzpicture}
 \end{center}
 
-The \emph{interquartile range} is calculated as: \hspace{0.5cm}\(\text{IQR}=\text{Q}_3-\text{Q}_1\)
+The *interquartile range* is calculated as: \hspace{0.5cm}$\text{IQR}=\text{Q}_3-\text{Q}_1$
 
-\protect\phantomsection\label{ex13q}{}
+[]{#ex13q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex13a]{Exercise 1.3}}{Exercise 1.3}}\label{exercise-1.3}
-\addcontentsline{toc}{subsubsection}{{Exercise 1.3}}
+#### [Exercise 1.3](#ex13a) {-}
 
 \begin{enumerate}
     \item The monthly cost of 10 drivers' car insurance ($x$, in £'s) are recorded. Calculate the mean and standard deviation.
@@ -1102,9 +928,9 @@ The \emph{interquartile range} is calculated as: \hspace{0.5cm}\(\text{IQR}=\tex
 
 \pagebreak
 
-\section{Displaying Data}\label{displaying-data}
+## Displaying Data
 
-Before any analysis of a data set is undertaken, it is common practice to \emph{display} the data in a simple form so that an initial impression of what the data shows can be formed. Some key examples are shown below, using a sample taken by a gardener of the heights of 10 of their sunflowers 8 weeks after germination, measured to the nearest centimetre:
+Before any analysis of a data set is undertaken, it is common practice to *display* the data in a simple form so that an initial impression of what the data shows can be formed. Some key examples are shown below, using a sample taken by a gardener of the heights of 10 of their sunflowers 8 weeks after germination, measured to the nearest centimetre:
 
 \begin{center}
 \begin{tabular}{cccccccccccc}
@@ -1251,10 +1077,9 @@ Before any analysis of a data set is undertaken, it is common practice to \emph{
 
 \vspace{-1cm}
 
-\protect\phantomsection\label{ex14q}{}
+[]{#ex14q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex14a]{Exercise 1.4}}{Exercise 1.4}}\label{exercise-1.4}
-\addcontentsline{toc}{subsubsection}{{Exercise 1.4}}
+#### [Exercise 1.4](#ex14a) {-}
 
 \begin{enumerate}
     \item The ages (in years) of competitors in a junior golf tournament are below. Draw a dot plot to represent this data.
@@ -1280,9 +1105,9 @@ Before any analysis of a data set is undertaken, it is common practice to \emph{
 
 \pagebreak
 
-\section{Tables, Figures and Output}\label{tables-figures-and-output}
+## Tables, Figures and Output
 
-There are many ways in which data can be presented, extending beyond those covered on the previous page. In statistical reports they are often clearly labelled as \textbf{tables} or \textbf{figures}, and numbered so they can be more easily referred to.
+There are many ways in which data can be presented, extending beyond those covered on the previous page. In statistical reports they are often clearly labelled as **tables** or **figures**, and numbered so they can be more easily referred to. 
 
 \begin{multicols}{3}
 
@@ -1392,7 +1217,7 @@ There are many ways in which data can be presented, extending beyond those cover
 
 Not all graphs encountered in real life will be up to scratch; some graphs may be unclear, accidentally misleading or even intentionally misleading. Being alert to potential flaws in tables and figures and identifying possible improvements is an important skill.
 
-The widespread availability of computing power means that specialist software is often used by statisticians to avoid the need for time-consuming calculations where possible. Whilst this course requires no use of statistical software, examples of computer \textbf{output} will be displayed from which the required information must be extracted.
+The widespread availability of computing power means that specialist software is often used by statisticians to avoid the need for time-consuming calculations where possible. Whilst this course requires no use of statistical software, examples of computer **output** will be displayed from which the required information must be extracted.
 
 \begin{multicols}{2}
 
@@ -1464,12 +1289,11 @@ The widespread availability of computing power means that specialist software is
 
 \end{multicols}
 
-Whilst this textbook aims to enable familiarity with common figures, tables and computer output, the best way to practise obtaining information from them is to \emph{read a wide range of relevant statistical articles and reports}.
+Whilst this textbook aims to enable familiarity with common figures, tables and computer output, the best way to practise obtaining information from them is to *read a wide range of relevant statistical articles and reports*. 
 
-\protect\phantomsection\label{ex15q}{}
+[]{#ex15q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex15a]{Exercise 1.5}}{Exercise 1.5}}\label{exercise-1.5}
-\addcontentsline{toc}{subsubsection}{{Exercise 1.5}}
+#### [Exercise 1.5](#ex15a) {-}
 
 \begin{enumerate}
     \item Use \textbf{Table 1} to calculate the proportion of pupils in the sample that walk to school.
@@ -1481,9 +1305,9 @@ Whilst this textbook aims to enable familiarity with common figures, tables and 
 
 \pagebreak
 
-\section{Outliers and Fences}\label{outliers-and-fences}
+## Outliers and Fences
 
-Sometimes a set of data may contain values that seem \emph{extremely high or low} in comparison to the rest of the values. It is important to be wary of such values and the potentially significant impact they could have on any statistical analysis performed. There are a range of objective approaches that can be used to determine whether one or more points are extreme enough to be classed as \textbf{outliers}. In this course, \emph{fences} will be used.
+Sometimes a set of data may contain values that seem *extremely high or low* in comparison to the rest of the values. It is important to be wary of such values and the potentially significant impact they could have on any statistical analysis performed. There are a range of objective approaches that can be used to determine whether one or more points are extreme enough to be classed as **outliers**. In this course, *fences* will be used.
 
 \begin{tcolorbox}[center,title=Identifying Outliers,colback=red!5,colframe=red!70!black,width=15cm,halign = center,halign title = center]
 \begin{center}
@@ -1528,9 +1352,9 @@ n & min & Q1 & median & Q3 & max\\
   \text{Upper fence}&=\text{Q}_3+1.5\times \text{IQR}=51+1.5\times 13=70.5
 \end{align*}
 
-Since \(73>70.5\), it is an outlier.
+Since $73>70.5$, it is an outlier.
 
-On a box plot, outliers are indicated separately as shown below, with the ``whiskers'' extending only as far as the highest (and lowest) values which are \emph{not} outliers. However the quartiles remain as those calculated using the \emph{full} set of values, including any outliers. \emph{Plotting outliers separately in this way is to highlight their presence, and is not a judgement on whether those values are rogue or valid.}
+On a box plot, outliers are indicated separately as shown below, with the "whiskers" extending only as far as the highest (and lowest) values which are *not* outliers. However the quartiles remain as those calculated using the *full* set of values, including any outliers. *Plotting outliers separately in this way is to highlight their presence, and is not a judgement on whether those values are rogue or valid.*
 
 \begin{center}
 \begin{tikzpicture}
@@ -1592,10 +1416,9 @@ The outlier in this data set could be valid if, for instance, the sunflower plan
 
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex16q}{}
+[]{#ex16q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex16a]{Exercise 1.6}}{Exercise 1.6}}\label{exercise-1.6}
-\addcontentsline{toc}{subsubsection}{{Exercise 1.6}}
+#### [Exercise 1.6](#ex16a) {-}
 
 \begin{enumerate}
     \item Strawberry tarts are sold every day in a bakery over the summer months. The shop manager monitors the sales and takes a random sample of the number of strawberry tarts sold on 10 randomly selected days over one month.
@@ -1659,9 +1482,9 @@ The outlier in this data set could be valid if, for instance, the sunflower plan
 
 \pagebreak
 
-\section{Describing Data Distributions}\label{describing-data-distributions}
+## Describing Data Distributions
 
-Summary statistics alone are not sufficient to describe the full complexity of the way data is distributed. It is also important to consider and be able to describe the \textbf{shape} of the distribution, accomplished most easily using a histogram. Whilst real-life rarely \emph{perfectly} follows a precise mathematical model, a number of shapes are commonly observed and a number of descriptions are commonly considered. The following data was generated by \emph{simulating sampling} from populations of data which followed the distributions described.
+Summary statistics alone are not sufficient to describe the full complexity of the way data is distributed. It is also important to consider and be able to describe the **shape** of the distribution, accomplished most easily using a histogram. Whilst real-life rarely *perfectly* follows a precise mathematical model, a number of shapes are commonly observed and a number of descriptions are commonly considered. The following data was generated by *simulating sampling* from populations of data which followed the distributions described. 
 
 \begin{figure}[H]
   \centering
@@ -1913,7 +1736,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
 \end{minipage}
 \end{figure}
 
-As well as considering whether the \textbf{underlying population distribution} of data appears to be \emph{normal}, \emph{skewed}, \emph{uniform} or \emph{bimodal}, the appropriateness of some statistical inference techniques will depend on whether the distribution is \emph{symmetrical}, or whether two sets of data follow the \emph{same distribution}, with matching shapes and spread.
+As well as considering whether the **underlying population distribution** of data appears to be *normal*, *skewed*, *uniform* or *bimodal*, the appropriateness of some statistical inference techniques will depend on whether the distribution is *symmetrical*, or whether two sets of data follow the *same distribution*, with matching shapes and spread.
 
 \newpage
 
@@ -1980,10 +1803,9 @@ Whilst the following example references techniques that will be introduced later
 
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex17q}{}
+[]{#ex17q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex17a]{Exercise 1.7}}{Exercise 1.7}}\label{exercise-1.7}
-\addcontentsline{toc}{subsubsection}{{Exercise 1.7}}
+#### [Exercise 1.7](#ex17a) {-}
 
 \textit{Comment on each population distribution using the simplified histograms, which show data from samples.}
 
@@ -2117,7 +1939,7 @@ Whilst the following example references techniques that will be introduced later
 
 \pagebreak
 
-\section{Comparing Distributions}\label{comparing-distributions}
+## Comparing Distributions
 
 When comparing two or more samples of data, a good starting point is to create suitable plots and obtain summary statistics. Differences and similarities should be noted, considering the location, spread and shape of the distributions of each group.
 
@@ -2268,14 +2090,13 @@ The larger interquartile range suggests that the population heights of sprinters
 
 \end{tcolorbox}
 
-Note that this data is based on the heights of \emph{samples} sprinters and climbers. Without the use of \emph{statistical inference} techniques covered later in the course, it is only possible to \emph{conjecture} rather than ever being able to make any definitive claims about the heights of the full \emph{populations} of sprinters and climbers.
+Note that this data is based on the heights of *samples* sprinters and climbers. Without the use of *statistical inference* techniques covered later in the course, it is only possible to *conjecture* rather than ever being able to make any definitive claims about the heights of the full *populations* of sprinters and climbers.
 
 \pagebreak
 
-\protect\phantomsection\label{ex18q}{}
+[]{#ex18q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex18a]{Exercise 1.8}}{Exercise 1.8}}\label{exercise-1.8}
-\addcontentsline{toc}{subsubsection}{{Exercise 1.8}}
+#### [Exercise 1.8](#ex18a) {-}
 
 \begin{enumerate}
     \item Two models of coffee machines produced by the brand \textit{DOLCAFÉ} are supposed produce a white coffee with the same volume of liquid each time, but natural variation means the actual amount dispensed is not quite the same every time. The volumes dispensed, in ml, are recorded for random samples from each model.
@@ -2406,10 +2227,9 @@ Note that this data is based on the heights of \emph{samples} sprinters and clim
 
 \pagebreak
 
-\protect\phantomsection\label{re1q}{}
+[]{#re1q}
 
-\section*{\texorpdfstring{\hyperref[re1a]{Review Exercise}}{Review Exercise}}\label{review-exercise}
-\addcontentsline{toc}{section}{{Review Exercise}}
+## [Review Exercise](#re1a) {-}
 
 \begin{enumerate}
     \item A music fan wishes to investigate the characteristics of songs that are popular on a well-known music streaming app. She is able to obtain data on the thousand most-streamed songs of all time, a small selection of which are displayed in the table below.
@@ -2481,14 +2301,15 @@ Note that this data is based on the heights of \emph{samples} sprinters and clim
 
 \pagebreak
 
-\chapter{An Introduction to Probability Theory}\label{an-introduction-to-probability-theory}
+<!--chapter:end:01-EDA.Rmd-->
+
+# An Introduction to Probability Theory
 
 The purpose of statistics is to make sense of the world by analysing data. Typically however, it is only possible to obtain data from a random sample of the full population of interest, creating an element of uncertainty that must be navigated carefully. For this reason, developing an understanding of statistical analysis begins with learning about probability theory.
 
-\subsubsection*{Key definitions}\label{key-definitions}
-\addcontentsline{toc}{subsubsection}{Key definitions}
+#### Key definitions {-}
 
-In probability theory, an experiment for which all of the possible \emph{outcomes} can be defined, and yet the actual outcome of any given \emph{trial} cannot be known in advance, is called a \emph{random experiment}. The set of all possible outcomes is called the \emph{sample space} of the random experiment. Probability is assigned to individual outcomes or to sets of outcomes, called \emph{events}. Probability itself is defined as the \textbf{long-run relative frequency} of an outcome or event occurring, and values range from 0 (\emph{impossible, and will never happen}) to 1 (\emph{certain, and will happen every time}).
+In probability theory, an experiment for which all of the possible *outcomes* can be defined, and yet the actual outcome of any given *trial* cannot be known in advance, is called a *random experiment*. The set of all possible outcomes is called the *sample space* of the random experiment. Probability is assigned to individual outcomes or to sets of outcomes, called *events*. Probability itself is defined as the **long-run relative frequency** of an outcome or event occurring, and values range from 0 (*impossible, and will never happen*) to 1 (*certain, and will happen every time*).
 
 \begin{wrapfigure}{r}{0.15\textwidth}
 \centering
@@ -2497,56 +2318,51 @@ In probability theory, an experiment for which all of the possible \emph{outcome
 
 For example, in the context of rolling a fair, cubical die:
 
-\begin{itemize}
-\item
-  the procedure of rolling the die and observing the result is a \textbf{random experiment}.
-\item
-  each roll of the die may be referred to as a \textbf{trial}.
-\item
-  the \textbf{sample space} consists of a list of all of the possible \textbf{outcomes}: \(\{1,2,3,4,5,6\}\)
-\item
-  the \textbf{probability} of a \(5\) is \(\frac{1}{6}\) since \emph{in the long-run} it can be expected to occur \(\frac{1}{6}\) of the time.
-\item
-  a possible \textbf{event} of interest may be that the outcome is \emph{prime}: \(\{2,3,5\}\)
-\end{itemize}
+- the procedure of rolling the die and observing the result is a **random experiment**.
 
-\subsubsection*{Probability notation}\label{probability-notation}
-\addcontentsline{toc}{subsubsection}{Probability notation}
+- each roll of the die may be referred to as a **trial**.
 
-The probability that a fair cubical die lands on 5 is \emph{one-in-six}, or \(\frac{1}{6}\). Using probability notation:
+- the **sample space** consists of a list of all of the possible **outcomes**: $\{1,2,3,4,5,6\}$
 
-\[\text{P}(5)=\dfrac{1}{6}\]
+- the **probability** of a $5$ is $\frac{1}{6}$ since *in the long-run* it can be expected to occur $\frac{1}{6}$ of the time.
+
+- a possible **event** of interest may be that the outcome is *prime*: $\{2,3,5\}$ 
+
+#### Probability notation {-}
+
+The probability that a fair cubical die lands on 5 is *one-in-six*, or $\frac{1}{6}$. Using probability notation:
+
+$$\text{P}(5)=\dfrac{1}{6}$$
 
 \pagebreak
 
-\section{Types of Probability}\label{types-of-probability}
+## Types of Probability
 
-\subsection*{Experimental Probability}\label{experimental-probability}
-\addcontentsline{toc}{subsection}{Experimental Probability}
+### Experimental Probability {-}
 
 \vspace{-0.2cm}
 
-The probability of an event can be estimated through repeated trials - this is referred to as the \mbox{\textit{experimental probability}} of the event. For example, if a motorist passes a set of traffic lights every morning and wishes to know the probability of having to wait at a red light on any given morning, they could record the \emph{proportion} of times they have to wait at a red light over a period of time. If, over the course of 200 mornings, they have to wait at a red light 114 times:
+The probability of an event can be estimated through repeated trials - this is referred to as the \mbox{\textit{experimental probability}} of the event. For example, if a motorist passes a set of traffic lights every morning and wishes to know the probability of having to wait at a red light on any given morning, they could record the *proportion* of times they have to wait at a red light over a period of time. If, over the course of 200 mornings, they have to wait at a red light 114 times:
 
 \vspace{-0.1cm}
 
-\[\text{P}(\text{red light})\approx\frac{114}{200}=0.57\]
+$$\text{P}(\text{red light})\approx\frac{114}{200}=0.57$$
 
-\subsection*{Theoretical Probability}\label{theoretical-probability}
-\addcontentsline{toc}{subsection}{Theoretical Probability}
+### Theoretical Probability {-}
 
 \vspace{-0.2cm}
 
-When each of the outcomes in the sample space of a random experiment can be reasonably assumed to be \mbox{\textbf{equally likely}} then the probability of any outcomes or events can be determined. This is called \emph{theoretical probability}.
+When each of the outcomes in the sample space of a random experiment can be reasonably assumed to be \mbox{\textbf{equally likely}} then the probability of any outcomes or events can be determined. This is called *theoretical probability*.
 
-Equally likely outcomes typically arise from the symmetry of a physical object (such as a coin or die) or a reasonable assumption. The probability of any \emph{individual outcome} in a sample space containing \(N\) equally likely outcomes is \(\frac{1}{N}\).\newline For example, if a playing card is picked at random from a standard pack of 52 cards, containing no jokers, then the probability of picking the Queen of Hearts is \(\frac{1}{52}\).
+Equally likely outcomes typically arise from the symmetry of a physical object (such as a coin or die) or a reasonable assumption. The probability of any *individual outcome* in a sample space containing $N$ equally likely outcomes is $\frac{1}{N}$.\newline For example, if a playing card is picked at random from a standard pack of 52 cards, containing no jokers, then the probability of picking the Queen of Hearts is $\frac{1}{52}$.
 
-An \textbf{event} is a set of one or more outcomes from the sample space. The probability of an event is given by:
+An **event** is a set of one or more outcomes from the sample space. The probability of an event is given by:
 
 \begin{tcolorbox}[center,title=Probability of an Event,colback=red!5,colframe=red!70!black,width=13cm,halign = center,halign title = center]
 \vspace{-0.3cm}
 $$\text{P}(\text{event})=\frac{\text{number of outcomes from the sample space in the event}}{\text{total number of outcomes in the sample space}}$$
 \end{tcolorbox}
+
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A bag contains 13 red counters, 5 blue counters and 4 green counters. A counter is chosen at random. Find the probability that the counter is green.
@@ -2557,7 +2373,7 @@ $$\text{P}(\text{event})=\frac{\text{number of outcomes from the sample space in
 $$\text{P}(\text{green})=\frac{4}{22}=\frac{2}{11}$$
 \end{tcolorbox}
 
-In probability theory, \emph{``and''} means that \emph{both} events are true, and \emph{``or''} means that \emph{at least one} is true.
+In probability theory, *"and"* means that *both* events are true, and *"or"* means that *at least one* is true.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A car dealership has 80 cars in its showroom. They have a mix of electric, hybrid, petrol and diesel cars, both new and second-hand. The table below shows the numbers of each type.
@@ -2581,14 +2397,13 @@ A car is selected at random. Determine the probability that the car selected is 
 $$\text{P}(\text{second-hand and hybrid})=\dfrac{7}{80}=0.0875$$
 \end{tcolorbox}
 
-In this textbook, probabilities will be given as simplified fractions or \emph{rounded to four decimal places} for consistency.
+In this textbook, probabilities will be given as simplified fractions or *rounded to four decimal places* for consistency.
 
 \pagebreak
 
-\protect\phantomsection\label{ex21q}{}
+[]{#ex21q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex21a]{Exercise 2.1}}{Exercise 2.1}}\label{exercise-2.1}
-\addcontentsline{toc}{subsubsection}{{Exercise 2.1}}
+#### [Exercise 2.1](#ex21a) {-}
 
 \begin{enumerate}
     \item A letter of the English alphabet is chosen at random. State the probability that the letter chosen is:
@@ -2674,17 +2489,17 @@ In this textbook, probabilities will be given as simplified fractions or \emph{r
 
 \pagebreak
 
-\section{Sample Spaces as Lists and Grids}\label{sample-spaces-as-lists-and-grids}
+## Sample Spaces as Lists and Grids
 
-It can help to write out sample spaces. Some sample spaces can be easily described using a simple list, but more organisation may be needed for more complicated sample spaces, such as approaching the list in a structured manner or using a grid. Sample spaces are generally useful only if each of the outcomes is equally likely.
+It can help to write out sample spaces. Some sample spaces can be easily described using a simple list, but more organisation may be needed for more complicated sample spaces, such as approaching the list in a structured manner or using a grid. Sample spaces are generally useful only if each of the outcomes is equally likely. 
 
-If two coins are tossed, it may be tempting to suggest that the probability of both landing tails is one-in-three, since the experiment can result in either no coins landing tails, only one coin landing tails or two coins landing tails. However a list of the four possible \emph{equally likely} outcomes in the sample space shows that this is not the case:
+If two coins are tossed, it may be tempting to suggest that the probability of both landing tails is one-in-three, since the experiment can result in either no coins landing tails, only one coin landing tails or two coins landing tails. However a list of the four possible *equally likely* outcomes in the sample space shows that this is not the case:
 
-\emph{Not equally likely outcomes:} \(\{\text{no tails},\text{one tail},\textbf{two tails}\}\)
+*Not equally likely outcomes:* $\{\text{no tails},\text{one tail},\textbf{two tails}\}$
 
-\emph{Equally likely outcomes:} \(\{\text{HH},\text{HT},\text{TH},\textbf{TT}\}\)
+*Equally likely outcomes:* $\{\text{HH},\text{HT},\text{TH},\textbf{TT}\}$
 
-The probability of both coins landing tails is therefore \emph{one-in-four}, or \(\text{P}(\text{both tails})=\frac{1}{4}\).
+The probability of both coins landing tails is therefore *one-in-four*, or $\text{P}(\text{both tails})=\frac{1}{4}$.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Three coins are tossed at the same time. Find the probability that exactly two of the coins land tails.
@@ -2775,12 +2590,11 @@ $$\text{P}(\text{exactly two tails})=\dfrac{3}{8}$$
 
 \pagebreak
 
-\protect\phantomsection\label{ex22q}{}
+[]{#ex22q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex22a]{Exercise 2.2}}{Exercise 2.2}}\label{exercise-2.2}
-\addcontentsline{toc}{subsubsection}{{Exercise 2.2}}
+#### [Exercise 2.2](#ex22a) {-}
 
-For most of the following questions, it is recommended to write out a full list of all the possible equally likely outcomes. There may be times when a full list would be excessive in length, in which case careful multiplication can reveal the \emph{number} of outcomes, and only the \emph{relevant} ones may be needed to be listed.
+For most of the following questions, it is recommended to write out a full list of all the possible equally likely outcomes. There may be times when a full list would be excessive in length, in which case careful multiplication can reveal the *number* of outcomes, and only the *relevant* ones may be needed to be listed.
 
 \begin{enumerate}
     \item A coin is tossed and a cubical, fair die numbered 1 to 6 is rolled. Write down:
@@ -2831,9 +2645,9 @@ For most of the following questions, it is recommended to write out a full list 
 
 \pagebreak
 
-\section{Tree Diagrams}\label{tree-diagrams}
+## Tree Diagrams
 
-Tree diagrams can be created to map out the possible results of a random experiment, and they are especially useful when considering two or more events. For example, consider a game involving rolling a cubical die and picking a playing card at random from a standard set, with an interest in the chance of the die landing on a \emph{six} and the card picked being a \emph{diamond}:
+Tree diagrams can be created to map out the possible results of a random experiment, and they are especially useful when considering two or more events. For example, consider a game involving rolling a cubical die and picking a playing card at random from a standard set, with an interest in the chance of the die landing on a *six* and the card picked being a *diamond*:
 
 \begin{figure}[H]
 \centering
@@ -2886,17 +2700,10 @@ Tree diagrams can be created to map out the possible results of a random experim
 \end{tikzpicture}
 \end{figure}
 
-\begin{itemize}
-\tightlist
-\item
-  Every branch must be clearly labelled with a probability.
-\item
-  The end of each branch must be clearly described, such as \emph{``not diamond''}.
-\item
-  Sibling branches must add to 1.
-\item
-  Multiplying the probabilities along branches gives the probability of those events occurring together.
-\end{itemize}
+- Every branch must be clearly labelled with a probability.
+- The end of each branch must be clearly described, such as *"not diamond"*.
+- Sibling branches must add to 1.
+- Multiplying the probabilities along branches gives the probability of those events occurring together.
 
 Note that in the tree diagram above the probability of the card being a diamond does not change depending on whether the roll of a die gives a six or not. In the following example the probabilities on the second stage of the tree diagram do change depending on the result of the first stage.
 
@@ -2958,12 +2765,11 @@ Note that in the tree diagram above the probability of the card being a diamond 
 
 \pagebreak
 
-\protect\phantomsection\label{ex23q}{}
+[]{#ex23q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex23a]{Exercise 2.3}}{Exercise 2.3}}\label{exercise-2.3}
-\addcontentsline{toc}{subsubsection}{{Exercise 2.3}}
+#### [Exercise 2.3](#ex23a) {-}
 
-\emph{Construct a tree diagram for each question}.
+*Construct a tree diagram for each question*.
 
 \begin{enumerate}
     \item A counter is selected at random from a bag containing four green counters and five yellow counters, and then a second counter is selected from the bag without replacing the first counter that was taken.
@@ -3002,9 +2808,9 @@ Note that in the tree diagram above the probability of the card being a diamond 
 
 \pagebreak
 
-\section{Venn Diagrams and Set Notation}\label{venn-diagrams-and-set-notation}
+## Venn Diagrams and Set Notation
 
-Venn diagrams are used to show which elements of a set belong or don't belong to one or more subsets. They can offer an alternative way of representing information about a sample space that might otherwise be shown in a table. For instance, the table below shows the twelve dishes from a restaurant's main course menu, broken down by whether or not each is \emph{gluten-free} (\(G\)) and whether or not each is \emph{vegan} (\(V\)). Beside it is a Venn diagram showing the same information.
+Venn diagrams are used to show which elements of a set belong or don't belong to one or more subsets. They can offer an alternative way of representing information about a sample space that might otherwise be shown in a table. For instance, the table below shows the twelve dishes from a restaurant's main course menu, broken down by whether or not each is *gluten-free* ($G$) and whether or not each is *vegan* ($V$). Beside it is a Venn diagram showing the same information.
 
 \begin{figure}[H]
   \centering
@@ -3047,10 +2853,9 @@ Venn diagrams are used to show which elements of a set belong or don't belong to
 \end{minipage}
 \end{figure}
 
-\subsection*{Complements, Intersections and Unions}\label{complements-intersections-and-unions}
-\addcontentsline{toc}{subsection}{Complements, Intersections and Unions}
+### Complements, Intersections and Unions {-}
 
-So far, \emph{descriptive} words have been used to refer to different sets of outcomes. Using \emph{set notation}:
+So far, *descriptive* words have been used to refer to different sets of outcomes. Using *set notation*:
 
 \begin{center}
     \begin{tabular}{|c|c|c|}
@@ -3064,7 +2869,7 @@ So far, \emph{descriptive} words have been used to refer to different sets of ou
     \end{tabular}
 \end{center}
 
-Venn diagrams help illustrate these. Note that \emph{capital letters} are commonly used to represent events.
+Venn diagrams help illustrate these. Note that *capital letters* are commonly used to represent events.
 
 \begin{figure}[H]
   \centering
@@ -3123,10 +2928,9 @@ $\text{P}(G\cap V)=\dfrac{2}{12}=\dfrac{1}{6}$
 
 \pagebreak
 
-\protect\phantomsection\label{ex24q}{}
+[]{#ex24q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex24a]{Exercise 2.4}}{Exercise 2.4}}\label{exercise-2.4}
-\addcontentsline{toc}{subsubsection}{{Exercise 2.4}}
+#### [Exercise 2.4](#ex24a) {-}
 
 \begin{enumerate}
     \item One of the nine elements shown on the Venn diagram below is selected at random. State:
@@ -3252,9 +3056,9 @@ $\text{P}(G\cap V)=\dfrac{2}{12}=\dfrac{1}{6}$
 
 \pagebreak
 
-\section{The Addition Rule for the Union}\label{the-addition-rule-for-the-union}
+## The Addition Rule for the Union
 
-If two sets \(A\) and \(B\) are such that \emph{no elements lie in both} \(A\) \emph{and} \(B\), then they are said to be \textbf{mutually exclusive}. This is sometimes visualised on a digram by two \emph{disjoint} circles, that do not intersect. In terms of probability theory, this means that the probability of the event ``\(A\) \emph{and} \(B\)'' is 0 (impossible).
+If two sets $A$ and $B$ are such that *no elements lie in both* $A$ *and* $B$, then they are said to be **mutually exclusive**. This is sometimes visualised on a digram by two *disjoint* circles, that do not intersect. In terms of probability theory, this means that the probability of the event "$A$ *and* $B$ " is 0 (impossible).
 
 \begin{figure}[H]
   \centering
@@ -3275,7 +3079,7 @@ $\text{P}(A\cap B)=0$
 \end{minipage}
 \end{figure}
 
-If two sets \(A\) and \(B\) are such that \emph{every element lies in at least one of} \(A\) \emph{or} \(B\), then they are said to be \textbf{exhaustive}. This can be visualised on a Venn digram by crossing out the area of the sample space outside of the two circles. This means that the probability of the event ``\(A\) \emph{or} \(B\)'' is 1 (certain).
+If two sets $A$ and $B$ are such that *every element lies in at least one of* $A$ *or* $B$, then they are said to be **exhaustive**. This can be visualised on a Venn digram by crossing out the area of the sample space outside of the two circles. This means that the probability of the event "$A$ *or* $B$ " is 1 (certain).
 
 \begin{figure}[H]
   \centering
@@ -3299,7 +3103,7 @@ $\text{P}(A\cup B)=1$
 \end{minipage}
 \end{figure}
 
-As well as the two rules above which apply depending on whether \(A\) and \(B\) are know to be mutually exclusive, exhaustive, or both, the two formulae below apply for \emph{all events} \(A,B\):
+As well as the two rules above which apply depending on whether $A$ and $B$ are know to be mutually exclusive, exhaustive, or both, the two formulae below apply for *all events* $A,B$:
 
 \begin{figure}[H]
   \centering
@@ -3333,10 +3137,9 @@ It should be noted that there are generally numerous different ways to approach 
 
 \pagebreak
 
-\protect\phantomsection\label{ex25q}{}
+[]{#ex25q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex25a]{Exercise 2.5}}{Exercise 2.5}}\label{exercise-2.5}
-\addcontentsline{toc}{subsubsection}{{Exercise 2.5}}
+#### [Exercise 2.5](#ex25a) {-}
 
 \begin{enumerate}
     \item Given events $X$ and $Y$ such that $\text{P}(X\cap Y)=0.3$, $\text{P}(X)=0.4$ and $\text{P}(Y)=0.5$, find $\text{P}(X\cup Y)$.
@@ -3368,10 +3171,9 @@ It should be noted that there are generally numerous different ways to approach 
 
 \pagebreak
 
-\protect\phantomsection\label{re2q}{}
+[]{#re2q}
 
-\section*{\texorpdfstring{\hyperref[re2a]{Review Exercise}}{Review Exercise}}\label{review-exercise-1}
-\addcontentsline{toc}{section}{{Review Exercise}}
+## [Review Exercise](#re2a) {-}
 
 \begin{enumerate}
     \item A box contains five red balls numbered from 1 to 5, and four yellow balls numbered from 1 to 4. A ball is selected at random from the box. Let \textit{yellow} be the event "the ball selected is yellow".
@@ -3426,14 +3228,15 @@ It should be noted that there are generally numerous different ways to approach 
 
 \pagebreak
 
-\chapter{Sampling Theory}\label{sampling-theory}
+<!--chapter:end:02-Probability-Theory-I.Rmd-->
 
-\emph{``Garbage In, Garbage Out''} is a phrase used in computer science that may equally be applied to statistics. It should be discouraged to think that the task of a statistician begins with raw data; the manner of the collection of the data itself is of fundamental importance. Any statistical inferences made on the basis of data that has not be collected with an appropriate \emph{sampling method} should not be trusted.
+# Sampling Theory
 
-\subsection*{Populations and Samples}\label{populations-and-samples}
-\addcontentsline{toc}{subsection}{Populations and Samples}
+*"Garbage In, Garbage Out"* is a phrase used in computer science that may equally be applied to statistics. It should be discouraged to think that the task of a statistician begins with raw data; the manner of the collection of the data itself is of fundamental importance. Any statistical inferences made on the basis of data that has not be collected with an appropriate *sampling method* should not be trusted.
 
-To recap from chapter 1, the term \textbf{population} refers to the entire set of objects in which we are interested. A \textbf{sample} is a selection of some objects chosen from the population.
+### Populations and Samples {-}
+
+To recap from chapter 1, the term **population** refers to the entire set of objects in which we are interested. A **sample** is a selection of some objects chosen from the population. 
 
 \begin{center}
 \begin{tikzpicture}
@@ -3602,22 +3405,21 @@ To recap from chapter 1, the term \textbf{population} refers to the entire set o
 \end{tikzpicture}
 \end{center}
 
-A \textbf{census} is used to collect information from a full population and a \textbf{sample survey} is used to collect data on a sample.
+A **census** is used to collect information from a full population and a **sample survey** is used to collect data on a sample. 
 
-It is usually very difficult to carry out a census as it is time consuming, expensive, and requires an accurate and complete list of every member of the population. In some cases, investigating an entire population would destroy it all, such as the burn time of candles. It is therefore usually preferable that a sample survey is carried out and, if representative of the population, it should give an accurate indication of the characteristics of the population.
+It is usually very difficult to carry out a census as it is time consuming, expensive, and requires an accurate and complete list of every member of the population.  In some cases, investigating an entire population would destroy it all, such as the burn time of candles. It is therefore usually preferable that a sample survey is carried out and, if representative of the population, it should give an accurate indication of the characteristics of the population.
 
 \newpage
 
-\section{Sampling Considerations}\label{sampling-considerations}
+## Sampling Considerations
 
 Samples are used to infer information about the populations from which they are taken, and sample data collected using higher quality sampling techniques should tend to lead to more reliable inferences. There are several key considerations and pitfalls to be aware of whenever the collection of sample data is being planned.
 
-\subsection*{Sample Size}\label{sample-size}
-\addcontentsline{toc}{subsection}{Sample Size}
+### Sample Size {-}
 
-Parameters, such as the \emph{population mean}, are generally considered as fixed, but usually unknown values. If samples are repeatedly taken from a population and their means are are obtained, the values of those sample means will sometimes be higher than that of the true population mean and sometimes lower. This comes from \emph{random sampling error} which, despite its name, is a natural effect due to chance variation.
+Parameters, such as the *population mean*, are generally considered as fixed, but usually unknown values. If samples are repeatedly taken from a population and their means are are obtained, the values of those sample means will sometimes be higher than that of the true population mean and sometimes lower. This comes from *random sampling error* which, despite its name, is a natural effect due to chance variation.
 
-The figure below shows two sets of sample means for random samples taken from the same distribution with a population mean of \(\mu=50\). For one set a sample size of \(n=5\) was used, with \(n=20\) for the other.
+The figure below shows two sets of sample means for random samples taken from the same distribution with a population mean of $\mu=50$. For one set a sample size of $n=5$ was used, with $n=20$ for the other.
 
 \begin{tikzpicture}
         \draw (0,0) -- (8,0);
@@ -3654,10 +3456,9 @@ The figure below shows two sets of sample means for random samples taken from th
 
 It can be seen that larger sample sizes tend to produce sample statistics that better represent the population parameters they are used to estimate. Larger samples are therefore generally preferred, and statistical studies conducting using only small samples of data should typically be treated with more caution than those based on larger samples. When small samples are used, the reasons are usually one or more of cost, time, and availability of data.
 
-\subsection*{Bias}\label{bias}
-\addcontentsline{toc}{subsection}{Bias}
+### Bias {-}
 
-Poor sampling technique may lead to samples that are not \emph{representative} of the population from which they are drawn. The most common effect of this is that \emph{bias} is introduced: a tendency for sample statistics calculated from these samples to overestimate, or underestimate, the population parameter they aim to represent. The diagrams below illustrate the effects various sampling techniques may have on sample means obtained from repeated sampling; the techniques used for the left and right diagrams are causing bias, whilst the sample means obtained for the middle diagram are \emph{unbiased}.
+Poor sampling technique may lead to samples that are not *representative* of the population from which they are drawn. The most common effect of this is that *bias* is introduced: a tendency for sample statistics calculated from these samples to overestimate, or underestimate, the population parameter they aim to represent. The diagrams below illustrate the effects various sampling techniques may have on sample means obtained from repeated sampling; the techniques used for the left and right diagrams are causing bias, whilst the sample means obtained for the middle diagram are *unbiased*.
 
 \begin{center}
     \begin{tikzpicture}
@@ -3688,16 +3489,15 @@ Poor sampling technique may lead to samples that are not \emph{representative} o
     \end{tikzpicture}
 \end{center}
 
-It is very difficult to identify that bias has been introduced, and effectively impossible to correct it. The only reliable way to avoid introducing bias is through application of \emph{appropriate random sampling techniques}.
+It is very difficult to identify that bias has been introduced, and effectively impossible to correct it. The only reliable way to avoid introducing bias is through application of *appropriate random sampling techniques*.
 
 \pagebreak
 
-\subsection*{Sampling Frames}\label{sampling-frames}
-\addcontentsline{toc}{subsection}{Sampling Frames}
+### Sampling Frames {-}
 
-Any real-life experience of sampling for any kind of study is likely to quickly reveal that it is not quite as straight-forward as \emph{``just choosing at random''}. Several key elements must be identified and problems considered.
+Any real-life experience of sampling for any kind of study is likely to quickly reveal that it is not quite as straight-forward as *"just choosing at random"*. Several key elements must be identified and problems considered.
 
-\emph{For example, consider the context of wishing to use registration time one morning to survey a sample of pupils at a large secondary school for their views on the school cafeteria.}
+*For example, consider the context of wishing to use registration time one morning to survey a sample of pupils at a large secondary school for their views on the school cafeteria.*
 
 \begin{multicols}{2}
 
@@ -3736,14 +3536,13 @@ The \textbf{sample} consists of the subset of the sampling frame  selected to be
 
 The \textit{sampling method} is the way in which sampling units are selected from the sampling frame to create the sample.
 
-Care should be taken to ensure that sampling frames are representative of the target population. For example, if walking habits are being studied, a sampling frame containing only residents of Glasgow city centre is likely to be \emph{not representative} of an intended target population of people living in Scotland.
+Care should be taken to ensure that sampling frames are representative of the target population. For example, if walking habits are being studied, a sampling frame containing only residents of Glasgow city centre is likely to be *not representative* of an intended target population of people living in Scotland.
 
-The impact to a study of an ill-defined target population, an unrepresentative samplng frame or a poor sampling technique is likely to be data which is \emph{biased} and \emph{not representative} of the population, and \emph{unreliable conclusions}.
+The impact to a study of an ill-defined target population, an unrepresentative samplng frame or a poor sampling technique is likely to be data which is *biased* and *not representative* of the population, and *unreliable conclusions*.
 
-\protect\phantomsection\label{ex31q}{}
+[]{#ex31q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex31a]{Exercise 3.1}}{Exercise 3.1}}\label{exercise-3.1}
-\addcontentsline{toc}{subsubsection}{{Exercise 3.1}}
+#### [Exercise 3.1](#ex31a) {-}
 
 \begin{enumerate}
     \item A researcher wants to study the shopping habits of those who use his local supermarket. To collect data, he plans to stand at the exit of the self-checkout area one Sunday morning and ask shoppers if he can take a photo of their receipt. Since he will not have time to ask everyone, he will pick only those he feels are most likely to agree to this.
@@ -3766,16 +3565,15 @@ The impact to a study of an ill-defined target population, an unrepresentative s
 
 \newpage
 
-\section{Six Sampling Methods}\label{six-sampling-methods}
+## Six Sampling Methods
 
-In this course, knowledge is required of \emph{four random samplng methods} and \emph{two non-random sampling methods}.
+In this course, knowledge is required of *four random samplng methods* and *two non-random sampling methods*.
 
-\subsection*{Simple Random Sampling (Random)}\label{simple-random-sampling-random}
-\addcontentsline{toc}{subsection}{Simple Random Sampling (Random)}
+### Simple Random Sampling (Random) {-}
 
-With \emph{simple random sampling} each unit of the sampling frame is \emph{equally likely} to be selected, such as by drawing names out of a hat. In general, a simple random sample of size \(n\) can be selected from a population of size \(N\) by numbering the units in the sampling frame from 1 to \(N\), then selecting \(n\) unique random numbers using a random number generator. Those units in the sampling frame corresponding to those numbers generated are then selected to form the sample.
+With *simple random sampling* each unit of the sampling frame is *equally likely* to be selected, such as by drawing names out of a hat. In general, a simple random sample of size $n$ can be selected from a population of size $N$ by numbering the units in the sampling frame from 1 to $N$, then selecting $n$ unique random numbers using a random number generator. Those units in the sampling frame corresponding to those numbers generated are then selected to form the sample.
 
-For example, simple random sample of 15 pupils from a year group of 120 can be made by numbering a list of pupils from the year group from 1 to 120, then selecting 15 random numbers using a random number generator.
+For example, simple random sample of 15 pupils from a year group of 120 can be made by numbering a list of pupils from the year group from 1 to 120, then selecting 15 random numbers using a random number generator. 
 
 \begin{center}
 \begin{tikzpicture}
@@ -3974,12 +3772,11 @@ For example, simple random sample of 15 pupils from a year group of 120 can be m
 \end{tikzpicture}
 \end{center}
 
-\subsection*{Systematic Sampling (Random)}\label{systematic-sampling-random}
-\addcontentsline{toc}{subsection}{Systematic Sampling (Random)}
+### Systematic Sampling (Random) {-}
 
-\emph{Systematic sampling} involves using an orderly \emph{pattern} to select units, starting from a randomly selected point. In general, for a numbered sampling frame of size \(N\), a random number generator may select a number from 1 to \(N\), with the corresponding sampling unit selected. After that initial selection, \emph{every subsequent} \(\frac{N}{n}th\) \emph{unit is selected}, looping back to the start of the sampling frame as necessary to complete the sample of size \(n\).
+*Systematic sampling* involves using an orderly *pattern* to select units, starting from a randomly selected point. In general, for a numbered sampling frame of size $N$, a random number generator may select a number from 1 to $N$, with the corresponding sampling unit selected. After that initial selection, *every subsequent* $\frac{N}{n}th$ *unit is selected*, looping back to the start of the sampling frame as necessary to complete the sample of size $n$.
 
-For example, a systematic sample of 15 pupils from a year group of 120 can be made by first selecting a random starting point, such as the \(83rd\) pupil, in an alphabetised list of pupils in the year group. From there, every \(\frac{120}{15}=8th\) pupil from the list is chosen, looping back round at the end of the list until 15 pupils have been chosen.
+For example, a systematic sample of 15 pupils from a year group of 120 can be made by first selecting a random starting point, such as the  $83rd$ pupil, in an alphabetised list of pupils in the year group. From there, every $\frac{120}{15}=8th$ pupil from the list is chosen, looping back round at the end of the list until 15 pupils have been chosen.
 
 \begin{center}
 \begin{tikzpicture}
@@ -4186,12 +3983,11 @@ For example, a systematic sample of 15 pupils from a year group of 120 can be ma
 
 \pagebreak
 
-\subsection*{Stratified Sampling (Random)}\label{stratified-sampling-random}
-\addcontentsline{toc}{subsection}{Stratified Sampling (Random)}
+### Stratified Sampling (Random) {-}
 
-If a target population contains distinct \emph{strata}, where each stratum may have its own distinct characteristics, \emph{stratified sampling} ensures that each strata will be \emph{proportionally represented}. In general, this involves obtaining an ordered sampling frame for \emph{each stratum} and using the proportions of each stratum in the population to determine how many to sample from each, using simple random sampling. Finally, these samples from the strata are combined.
+If a target population contains distinct *strata*, where each stratum may have its own distinct characteristics, *stratified sampling* ensures that each strata will be *proportionally represented*. In general, this involves obtaining an ordered sampling frame for *each stratum* and using the proportions of each stratum in the population to determine how many to sample from each, using simple random sampling. Finally, these samples from the strata are combined.
 
-For example, a hospital wishing to survey its staff about the food in the staff canteen may split the \(N=120\) staff into management, doctors/nurses and support staff. For a sample of size \(n=12\), covering \(\frac{1}{10}th\) of the sampling frame, simple random sampling is used to select \(\frac{1}{10}\) of the staff \emph{from each group}. These are then collected to form the stratified sample.
+For example, a hospital wishing to survey its staff about the food in the staff canteen may split the $N=120$ staff into management, doctors/nurses and support staff. For a sample of size $n=12$, covering $\frac{1}{10}th$ of the sampling frame, simple random sampling is used to select $\frac{1}{10}$ of the staff *from each group*. These are then collected to form the stratified sample. 
 
 \begin{center}
 \begin{tikzpicture}
@@ -4273,12 +4069,11 @@ For example, a hospital wishing to survey its staff about the food in the staff 
 \end{tikzpicture}
 \end{center}
 
-\subsection*{Cluster Sampling (Random)}\label{cluster-sampling-random}
-\addcontentsline{toc}{subsection}{Cluster Sampling (Random)}
+### Cluster Sampling (Random) {-}
 
-If a target population is split into clusters, and each cluster represents a similar mix of characteristics to the full population, \emph{cluster sampling} may be useful. For a \emph{one-stage} cluster sample, one or more clusters are randomly selected, from a sampling frame of clusters, and then \emph{all individual} within those clusters form the sample. For a \emph{two-stage} cluster sample, an additional level of sampling takes place to only sample \emph{some} of the individuals within each cluster.
+If a target population is split into clusters, and each cluster represents a similar mix of characteristics to the full population, *cluster sampling* may be useful. For a *one-stage* cluster sample, one or more clusters are randomly selected, from a sampling frame of clusters, and then *all individual* within those clusters form the sample. For a *two-stage* cluster sample, an additional level of sampling takes place to only sample *some* of the individuals within each cluster.
 
-For example, a hospital wishing to survey its staff about the food in the staff canteen may recognise that staff are split into hospital wards \(A\) to \(H\). Several wards are randomly selected (\(A\), \(C\) and \(D\)) and each member of staff working there surveyed. For a two-stage sampling method, simple random sampling could be used to select only \emph{some} of the ward staff from the selected clusters to sample rather than everyone.
+For example, a hospital wishing to survey its staff about the food in the staff canteen may recognise that staff are split into hospital wards $A$ to $H$. Several wards are randomly selected ($A$, $C$ and $D$) and each member of staff working there surveyed. For a two-stage sampling method, simple random sampling could be used to select only *some* of the ward staff from the selected clusters to sample rather than everyone.
 
 \begin{center}
 \begin{tikzpicture}
@@ -4428,12 +4223,11 @@ For example, a hospital wishing to survey its staff about the food in the staff 
 
 \pagebreak
 
-The following sampling methods are \emph{non-random}. Whilst they may seem helpful in some instances for quickly gathering data, their lack of random process may lead to \emph{bias}, and any inferences made using such sampling methods may be considered unreliable.
+The following sampling methods are *non-random*. Whilst they may seem helpful in some instances for quickly gathering data, their lack of random process may lead to *bias*, and any inferences made using such sampling methods may be considered unreliable.
 
-\subsection*{Convenience Sampling (Non-random)}\label{convenience-sampling-non-random}
-\addcontentsline{toc}{subsection}{Convenience Sampling (Non-random)}
+### Convenience Sampling (Non-random) {-}
 
-Taking a sample of a target population taken from an easily obtainable group, with no random process taking place, is called \emph{convenience sampling}. For example, a teacher wishes to investigate the heights of pupils in a particular year group and uses pupils within their class in that year group as the sample.
+Taking a sample of a target population taken from an easily obtainable group, with no random process taking place, is called *convenience sampling*. For example, a teacher wishes to investigate the heights of pupils in a particular year group and uses pupils within their class in that year group as the sample.
 
 \vspace{-0.3cm}
 
@@ -4565,10 +4359,9 @@ Taking a sample of a target population taken from an easily obtainable group, wi
 
 \vspace{-0.4cm}
 
-\subsection*{Quota Sampling (Non-random)}\label{quota-sampling-non-random}
-\addcontentsline{toc}{subsection}{Quota Sampling (Non-random)}
+### Quota Sampling (Non-random) {-}
 
-Where a population contains distinct strata, \emph{quota sampling} sets a target number of individuals from within each stratum to sample. It differs from stratified sampling in that the number sampled from each stratum is according to a set \emph{quota} rather than proportional to their size, and the selection is often \emph{non-random}. This means that ordered \emph{sampling frames are not required} for each stratum, and the proportion that each makes up within the population may not be known.
+Where a population contains distinct strata, *quota sampling* sets a target number of individuals from within each stratum to sample. It differs from stratified sampling in that the number sampled from each stratum is according to a set *quota* rather than proportional to their size, and the selection is often *non-random*. This means that ordered *sampling frames are not required* for each stratum, and the proportion that each makes up within the population may not be known.
 
 \vspace{-0.5cm}
 
@@ -4659,19 +4452,17 @@ Where a population contains distinct strata, \emph{quota sampling} sets a target
 
 For example, a council wishing to know local opinion of proposed changes to a park may see the population as split into strata including pensioners, teenagers, parents of pre-school children, and so on. Interviewer are placed on the town's main shopping street and speak to people who pass, choosing for themselves who to interview from their allocated strata.
 
-\subsection*{Advantages and Disadvantages}\label{advantages-and-disadvantages}
-\addcontentsline{toc}{subsection}{Advantages and Disadvantages}
+### Advantages and Disadvantages {-}
 
-The possible advantages and disadvantages of sampling methods depend on the context in which they are used. However, desired \emph{advantages} of a sampling method may include it being: cheap to administer; quick to administer; free from bias due to the use of a random process; representative of the full population; easy to obtain a suitable sampling frame for. Conversely, \emph{disadvantages} may include it being: expensive; time-consuming; non-random, possibly introducing bias; not representative of the full population; difficult to obtain a suitable sampling frame for.
+The possible advantages and disadvantages of sampling methods depend on the context in which they are used. However, desired *advantages* of a sampling method may include it being: cheap to administer; quick to administer; free from bias due to the use of a random process; representative of the full population; easy to obtain a suitable sampling frame for. Conversely, *disadvantages* may include it being: expensive; time-consuming; non-random, possibly introducing bias; not representative of the full population; difficult to obtain a suitable sampling frame for.
 
-The method of collecting data may also impact the quality of the data obtained. For example, \emph{emailing} selected individuals a questionnaire may introduce bias by excluding those who don't use email and allowing \emph{self-selection}.
+The method of collecting data may also impact the quality of the data obtained. For example, *emailing* selected individuals a questionnaire may introduce bias by excluding those who don't use email and allowing *self-selection*. 
 
 \pagebreak
 
-\protect\phantomsection\label{ex32q}{}
+[]{#ex32q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex32a]{Exercise 3.2}}{Exercise 3.2}}\label{exercise-3.2}
-\addcontentsline{toc}{subsubsection}{{Exercise 3.2}}
+#### [Exercise 3.2](#ex32a) {-}
 
 \begin{enumerate}
   \item For each, state the sampling method that is being described.
@@ -4712,10 +4503,9 @@ The method of collecting data may also impact the quality of the data obtained. 
 
 \pagebreak
 
-\protect\phantomsection\label{re3q}{}
+[]{#re3q}
 
-\section*{\texorpdfstring{\hyperref[re3a]{Review Exercise}}{Review Exercise}}\label{review-exercise-2}
-\addcontentsline{toc}{section}{{Review Exercise}}
+## [Review Exercise](#re3a) {-}
 
 \begin{enumerate}
     \item The owners of a chain of nine restaurants, located in various cities around Scotland, wish to interview a sample of the employees working in those restaurants. 
@@ -4764,7 +4554,10 @@ The method of collecting data may also impact the quality of the data obtained. 
 
 \pagebreak
 
-\chapter{Further Probability Theory}\label{further-probability-theory}
+
+<!--chapter:end:03-Sampling-Theory.Rmd-->
+
+# Further Probability Theory
 
 Suppose ten pupils in a class are asked whether they are taking Art, and whether they are taking Biology, and the results are displayed in both a Venn diagram and a table.
 
@@ -4807,11 +4600,11 @@ Suppose ten pupils in a class are asked whether they are taking Art, and whether
 
 From both the table and the Venn diagram, it can be seen that, of the ten pupils, five are taking Art. Therefore, the probability of randomly selecting a pupil from the class and that pupil turning out to be taking Art can be stated:
 
-\[\text{P}(\text{Art})=\dfrac{5}{10}=\dfrac{1}{2}\]
+$$\text{P}(\text{Art})=\dfrac{5}{10}=\dfrac{1}{2}$$
 
-Now suppose a pupil is chosen at random and, before it is known whether or not they are taking Art, they reveal that they are taking Biology. The probability that the pupil is also taking Art is no longer \(\frac{1}{2}\), since only three of the seven pupils taking Biology are taking Art. The probability now being sought is the probability that they are taking Art \emph{given that they are taking Biology}. This is called a \emph{conditional probability}, and can be notated as:
+Now suppose a pupil is chosen at random and, before it is known whether or not they are taking Art, they reveal that they are taking Biology. The probability that the pupil is also taking Art is no longer $\frac{1}{2}$, since only three of the seven pupils taking Biology are taking Art. The probability now being sought is the probability that they are taking Art *given that they are taking Biology*. This is called a *conditional probability*, and can be notated as:
 
-\[\text{P}(\text{Art | Biology})=\dfrac{3}{7}\]
+$$\text{P}(\text{Art | Biology})=\dfrac{3}{7}$$
 
 Conditional probability is fundamental to many of the statistical analysis techniques that will be introduced.
 
@@ -4819,7 +4612,7 @@ Conditional probability is fundamental to many of the statistical analysis techn
 
 \pagebreak
 
-\section{Conditional Probability from Tables and Diagrams}\label{conditional-probability-from-tables-and-diagrams}
+## Conditional Probability from Tables and Diagrams
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A medical trial for drug treating a minor illness has patients given either the drug or a placebo, with a test after one month of treatment determining whether or not each patient has fully recovered.
@@ -4840,10 +4633,9 @@ A patient is selected at random to be interviewed. State $\text{P}(\text{fully r
 $\text{P}(\text{fully recovered }|\text{ placebo})=\dfrac{18}{30}=\dfrac{3}{5}$
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex41q}{}
+[]{#ex41q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex41a]{Exercise 4.1}}{Exercise 4.1}}\label{exercise-4.1}
-\addcontentsline{toc}{subsubsection}{{Exercise 4.1}}
+#### [Exercise 4.1](#ex41a) {-}
 
 \begin{enumerate}
     \item The Venn diagram below shows equally likely outcomes in a sample space and events $X$ and $Y$. State:
@@ -4978,7 +4770,7 @@ $\text{P}(\text{fully recovered }|\text{ placebo})=\dfrac{18}{30}=\dfrac{3}{5}$
 
 \pagebreak
 
-\section{The Conditional Probability Formula}\label{the-conditional-probability-formula}
+## The Conditional Probability Formula
 
 Where a conditional probability cannot be intuitively stated, the formula for conditional probability may be used:
 
@@ -4989,7 +4781,7 @@ $\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(A \cap B)$}}}{\text{\normalsi
 \end{tcolorbox}
 \end{centering}
 
-It may be helpful to note that \(\text{P}(\overline{A}|B)=1-\text{P}(A|B)\).
+It may be helpful to note that $\text{P}(\overline{A}|B)=1-\text{P}(A|B)$.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given events $V$ and $W$ such that $\text{P}(V)=0.7236$ and $\text{P}(V\cap W)=0.1046$, find $\text{P}(W | V)$. 
@@ -4999,10 +4791,9 @@ It may be helpful to note that \(\text{P}(\overline{A}|B)=1-\text{P}(A|B)\).
 $\text{P}(W | V) = \dfrac{\text{P}(W\cap V)}{\text{P}(V)}=\dfrac{0.1046}{0.7236}=0.1446$
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex42q}{}
+[]{#ex42q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex42a]{Exercise 4.2}}{Exercise 4.2}}\label{exercise-4.2}
-\addcontentsline{toc}{subsubsection}{{Exercise 4.2}}
+#### [Exercise 4.2](#ex42a) {-}
 
 \begin{enumerate}
     \item Find, by first writing out the conditional probability formula for these events:
@@ -5030,9 +4821,9 @@ $\text{P}(W | V) = \dfrac{\text{P}(W\cap V)}{\text{P}(V)}=\dfrac{0.1046}{0.7236}
 
 \pagebreak
 
-\section{Independent Events}\label{independent-events}
+## Independent Events
 
-The probability of tossing a coin and it landing tails is \(\frac{1}{2}\). The probability of it landing tails \emph{given that it is a weekday}, notated as \(\text{P}(\text{tails }|\text{ weekday})\), is \emph{still} \(\frac{1}{2}\). Since it being a weekday or not makes no different to the probability of a coin showing tails, the two events are said to be \emph{independent}.
+The probability of tossing a coin and it landing tails is $\frac{1}{2}$. The probability of it landing tails *given that it is a weekday*, notated as $\text{P}(\text{tails }|\text{ weekday})$, is *still* $\frac{1}{2}$. Since it being a weekday or not makes no different to the probability of a coin showing tails, the two events are said to be *independent*. 
 
 \vspace{-0.1cm}
 
@@ -5044,7 +4835,7 @@ $\text{P}(A | B)= \text{P}(A)$
 
 \vspace{-0.1cm}
 
-The probability a randomly selected card from a standard pack of playing cards being a Diamond is \(\frac{1}{4}\). The probability the card is a Diamond \emph{given that we discover the card picked is red}, notated as \(\text{P}(\text{Diamond }|\text{ red})\), is \(\frac{1}{2}\). Since knowing the card picked is red changes the probability of it being a Diamond, the two events are said to be \emph{not independent}.
+The probability a randomly selected card from a standard pack of playing cards being a Diamond is $\frac{1}{4}$. The probability the card is a Diamond *given that we discover the card picked is red*, notated as $\text{P}(\text{Diamond }|\text{ red})$, is $\frac{1}{2}$. Since knowing the card picked is red changes the probability of it being a Diamond, the two events are said to be *not independent*.
 
 \vspace{-0.1cm}
 
@@ -5068,10 +4859,9 @@ Since $\text{P}(D|E) = \text{P}(D)$, events $D$ and $E$ are independent.
 
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex43q}{}
+[]{#ex43q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex43a]{Exercise 4.3}}{Exercise 4.3}}\label{exercise-4.3}
-\addcontentsline{toc}{subsubsection}{{Exercise 4.3}}
+#### [Exercise 4.3](#ex43a) {-}
 
 \begin{enumerate}
     \item For each pair of events $X$ and $Y$, state whether you would expect them to be independent or not.
@@ -5137,9 +4927,9 @@ Since $\text{P}(D|E) = \text{P}(D)$, events $D$ and $E$ are independent.
 
 \pagebreak
 
-\section{The Multiplication Rule for the Intersection}\label{the-multiplication-rule-for-the-intersection}
+## The Multiplication Rule for the Intersection 
 
-The conditional probability rule can be rearranged to allow the \textbf{intersection} of two events to be calculated using a conditional probability. For independent events, since \(\text{P}(B|A)=\text{P}(B)\), this simplifies further.
+The conditional probability rule can be rearranged to allow the **intersection** of two events to be calculated using a conditional probability. For independent events, since $\text{P}(B|A)=\text{P}(B)$, this simplifies further.
 
 \begin{multicols}{2}
 
@@ -5169,10 +4959,9 @@ $\text{P}(\text{mutation}\cap \text{yellow}) = \text{P}(\text{mutation}) \times 
 
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex44q}{}
+[]{#ex44q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex44a]{Exercise 4.4}}{Exercise 4.4}}\label{exercise-4.4}
-\addcontentsline{toc}{subsubsection}{{Exercise 4.4}}
+#### [Exercise 4.4](#ex44a) {-}
 
 \begin{enumerate}
     \item Calculate each probability by first \textit{writing out the formula required}:
@@ -5220,11 +5009,11 @@ $\text{P}(\text{mutation}\cap \text{yellow}) = \text{P}(\text{mutation}) \times 
 
 \pagebreak
 
-\section{Bayes Theorem and Reversing the Condition}\label{bayes-theorem-and-reversing-the-condition}
+## Bayes Theorem and Reversing the Condition
 
-In 1763 the Reverend Thomas Bayes, also a statistician, published \emph{``An Essay towards solving a Problem in the Doctrine of Chances''}. In it, he stated a formula that has come to be known as \emph{Bayes' Theorem}, which can be applied in a particular, specialised way to enable existing knowledge to be updated as new information is collected. In turn, this has resulted in an approach towards statistcal inference that has been growing since the mid-20th century called \emph{Bayesian statistics}, substantially made more feasible by modern computing power.
+In 1763 the Reverend Thomas Bayes, also a statistician, published *"An Essay towards solving a Problem in the Doctrine of Chances"*. In it, he stated a formula that has come to be known as *Bayes' Theorem*, which can be applied in a particular, specialised way to enable existing knowledge to be updated as new information is collected. In turn, this has resulted in an approach towards statistcal inference that has been growing since the mid-20th century called *Bayesian statistics*, substantially made more feasible by modern computing power.
 
-Whilst knowledge of Bayes' Theorem is required in the Advanced Higher Statistics course, Bayesian \emph{statistics} is \emph{not} part of this course, and so will not be covered here. If you would like to find out more about Bayesian statistics, and whether it may be relevant to you in the future, it is recommended that you discuss this with your teacher at a later point in the course. University modules introducing Bayesian statistics are typically available as part of an undergraduate degree in Mathematics or Statistics.
+Whilst knowledge of Bayes' Theorem is required in the Advanced Higher Statistics course, Bayesian *statistics* is *not* part of this course, and so will not be covered here. If you would like to find out more about Bayesian statistics, and whether it may be relevant to you in the future, it is recommended that you discuss this with your teacher at a later point in the course. University modules introducing Bayesian statistics are typically available as part of an undergraduate degree in Mathematics or Statistics.
 
 Bayes' Theorem can be derived directly from the formulae already introduced in this chapter. Note that:
 
@@ -5235,14 +5024,13 @@ $\text{P}(B\cap A)=\text{P}(B|A)\times \text{P}(A)$
 \end{center}
 
 \vspace{-0.4cm}
-
-Since \(\text{P}(A\cap B)=\text{P}(B\cap A)\):
+Since $\text{P}(A\cap B)=\text{P}(B\cap A)$:
 
 \vspace{-0.4cm}
 
 \[\text{P}(A|B)\times \text{P}(B)=\text{P}(B|A)\times \text{P}(A)\]
 
-Dividing both sides by \(\text{P}(B)\) gives:
+Dividing both sides by $\text{P}(B)$ gives:
 
 \begin{centering}
 \tcbset{width=9cm}
@@ -5251,7 +5039,7 @@ $\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(B|A)\times \text{P}(A)$}}}{\t
 \end{tcolorbox}
 \end{centering}
 
-Bayes' Theorem provides a the link between a conditional probability and its \emph{reverse}. Using it to find a conditional probability given its reverse is sometimes referred to as \emph{reversing the condition}.
+Bayes' Theorem provides a the link between a conditional probability and its *reverse*. Using it to find a conditional probability given its reverse is sometimes referred to as *reversing the condition*. 
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given events $V$ and $W$ such that $\text{P}(V|W)=0.3$, $\text{P}(W)=0.8$ and $\text{P}(\overline{V})=0.1$, find $\text{P}(W|V)$.
@@ -5261,7 +5049,7 @@ Bayes' Theorem provides a the link between a conditional probability and its \em
 $\text{P}(W|V) = \dfrac{\text{P}(V|W)\times \text{P}(W)}{\text{P}(V)} = \dfrac{0.3\times 0.8}{0.9} = \dfrac{4}{15}$
 \end{tcolorbox}
 
-Careful reading of text may be required to identify when a probability provided is a \emph{conditional} probability.
+Careful reading of text may be required to identify when a probability provided is a *conditional* probability.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} In a neighbourhood, 14\% of homes have a garage, whilst 62\% of homes have a garden. Of those homes with a garage, 87\% have a garden. If a home chosen at random has a garden, determine the probability that it has a garage.
@@ -5273,10 +5061,9 @@ $\text{P}(\text{garage }|\text{ garden}) = \dfrac{\text{P}(\text{garden }|\text{
 
 \pagebreak
 
-\protect\phantomsection\label{ex45q}{}
+[]{#ex45q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex45a]{Exercise 4.5}}{Exercise 4.5}}\label{exercise-4.5}
-\addcontentsline{toc}{subsubsection}{{Exercise 4.5}}
+#### [Exercise 4.5](#ex45a) {-}
 
 \begin{enumerate}
     \item For each, first write out the formula for Bayes' Theorem explicitly:
@@ -5325,15 +5112,15 @@ $\text{P}(\text{garage }|\text{ garden}) = \dfrac{\text{P}(\text{garden }|\text{
 
 \pagebreak
 
-\section{Total Probability and Tree Diagrams}\label{total-probability-and-tree-diagrams}
+## Total Probability and Tree Diagrams
 
-The \emph{law of total probability} for \(X\) conditional on \(n\) mutually exclusive, exhaustive events \(Y_i\) is:
+The *law of total probability* for $X$ conditional on $n$ mutually exclusive, exhaustive events $Y_i$ is:
 
-\[\text{P}(X)=\sum_{i=1}^{n}\text{P}(Y_i)\times \text{P}(X|Y_i)\]
+$$\text{P}(X)=\sum_{i=1}^{n}\text{P}(Y_i)\times \text{P}(X|Y_i)$$
 
-It may help to recognise the right hand side of the equation as containing the \emph{multiplication rule for the intersection}: the total probability of \(X\) is obtained by adding together the probabilities of all (disjoint) intersections in which \(X\) occurs.
+It may help to recognise the right hand side of the equation as containing the *multiplication rule for the intersection*: the total probability of $X$ is obtained by adding together the probabilities of all (disjoint) intersections in which $X$ occurs. 
 
-The tree diagram below shows the appropriate notation for each stage, in which first event \(A\) and then event \(B\) are considered:
+The tree diagram below shows the appropriate notation for each stage, in which first event $A$ and then event $B$ are considered:
 
 \begin{figure}[H]
   \centering
@@ -5385,9 +5172,9 @@ The tree diagram below shows the appropriate notation for each stage, in which f
             node[below]  {}
     };
 \end{tikzpicture}
-\end{figure}
+\end{figure}  
 
-The \emph{total probability} of \(B\), \(\text{P}(B)\), can be calculated as:
+The *total probability* of $B$, $\text{P}(B)$, can be calculated as:
 
 \vspace{-0.5cm}
 \begin{center}
@@ -5397,7 +5184,7 @@ The \emph{total probability} of \(B\), \(\text{P}(B)\), can be calculated as:
 \end{alignat*}
 \end{center}
 
-The advantage of the use of tree diagrams, for questions where they are suitable, is that they can offer a more intuitive and visual approach to tackling problems than solely using formulae. If they are used, they must be annotated carefully with events and probabilities, and accurate probability notation must still be used when giving answers.
+The advantage of the use of tree diagrams, for questions where they are suitable, is that they can offer a more intuitive and visual approach to tackling problems than solely using formulae. If they are used, they must be annotated carefully with events and probabilities, and accurate probability notation must still be used when giving answers. 
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A teacher observes that one of their pupils is late to school 20\% of the time, and when this happens they have their tie with them 70\% of the time. When they are on time they have their tie 90\% of the time. Construct a tree diagram and calculate the probability that, on a randomly chosen day, they have no tie.
@@ -5459,12 +5246,11 @@ The advantage of the use of tree diagrams, for questions where they are suitable
 
 \pagebreak
 
-\protect\phantomsection\label{ex46q}{}
+[]{#ex46q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex46a]{Exercise 4.6}}{Exercise 4.6}}\label{exercise-4.6}
-\addcontentsline{toc}{subsubsection}{{Exercise 4.6}}
+#### [Exercise 4.6](#ex46a) {-}
 
-\emph{Construct a tree diagram for each question}.
+*Construct a tree diagram for each question*.
 
 \begin{enumerate}
     \item A UK-based car company makes a special edition model with a colour choice of blue or yellow. It sells cars both within the UK as well as exporting to Europe. 
@@ -5497,13 +5283,13 @@ The advantage of the use of tree diagrams, for questions where they are suitable
 
 \pagebreak
 
-\section{Bayes Theorem and Tree Diagrams}\label{bayes-theorem-and-tree-diagrams}
+## Bayes Theorem and Tree Diagrams
 
-In this chapter, Bayes' Theorem has already been used to calculate the \emph{reverse} of a conditional probability: calculating \(\text{P}(B|A)\) when \(\text{P}(A|B)\) is known. However, this process can be made more intuitive and more readily extended to more complex problems by using tree diagrams combined with the formula for conditional probability:
+In this chapter, Bayes' Theorem has already been used to calculate the *reverse* of a conditional probability: calculating $\text{P}(B|A)$ when $\text{P}(A|B)$ is known. However, this process can be made more intuitive and more readily extended to more complex problems by using tree diagrams combined with the formula for conditional probability:
 
-\[\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(A \cap B)$}}}{\text{\normalsize{$\text{P}(B)$}}}\]
+$$\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(A \cap B)$}}}{\text{\normalsize{$\text{P}(B)$}}}$$
 
-A key misunderstanding often made is that a high value for \(\text{P}(B|A)\) must lead to a similarly high value for \(\text{P}(A|B)\). The following example demonstrates that this is not always the case, and gives an insight into a common problem that must be considered whenever medical testing is being undertaken, especially for rare conditions or diseases:
+A key misunderstanding often made is that a high value for $\text{P}(B|A)$ must lead to a similarly high value for $\text{P}(A|B)$. The following example demonstrates that this is not always the case, and gives an insight into a common problem that must be considered whenever medical testing is being undertaken, especially for rare conditions or diseases:
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A medical test for a condition has a \textit{sensitivity} of 98\%, meaning that when the patient \textit{has the condition}, the test will correctly return a \textit{positive} result with a probability of 0.98. This means there is a \textit{false negative} rate of 2\%. The test has \textit{specificity} of 97\%, meaning that when the patient \textit{does not} have the condition, the test will correctly return a \textit{negative} result with a probability of 0.97. This means there is a \textit{false positive} rate of 3\%. The \textit{prevalence} in the general population is 4\%, meaning only 4\% of people have the condition. 
@@ -5580,12 +5366,11 @@ It may be surprising that a test which appears so effective can lead to such a h
 
 \pagebreak
 
-\protect\phantomsection\label{ex47q}{}
+[]{#ex47q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex47a]{Exercise 4.7}}{Exercise 4.7}}\label{exercise-4.7}
-\addcontentsline{toc}{subsubsection}{{Exercise 4.7}}
+#### [Exercise 4.7](#ex47a) {-}
 
-\emph{Construct a tree diagram for each question}.
+*Construct a tree diagram for each question*.
 
 \begin{enumerate}
     \item A company sends customers' orders by either regular or express delivery.
@@ -5621,10 +5406,9 @@ It may be surprising that a test which appears so effective can lead to such a h
 
 \pagebreak
 
-\protect\phantomsection\label{re4q}{}
+[]{#re4q}
 
-\section*{\texorpdfstring{\hyperref[re4a]{Review Exercise}}{Review Exercise}}\label{review-exercise-3}
-\addcontentsline{toc}{section}{{Review Exercise}}
+## [Review Exercise](#re4a) {-}
 
 \begin{enumerate}
     \itemsep2em
@@ -5678,9 +5462,11 @@ $\text{P}(M\cap B)=\frac{3}{25}$, $\text{P}(M)=\frac{1}{5}$ and $\text{P}(\overl
 
 \pagebreak
 
-\chapter{An Introduction to Linear Regression}\label{an-introduction-to-linear-regression}
+<!--chapter:end:04-Probability-Theory-II.Rmd-->
 
-A common interest for anyone working with data is a possible relationship between two numerical variables. For example, suppose a sports scientist wishes to explore the relationship between runners' \emph{VO2 Max}, which is measure of aerobic fitness, and their \emph{5km running time}. From a sample of eight runners they may record, for each, the values of the two \emph{variables}, recording the results in a table as follows:
+# An Introduction to Linear Regression
+
+A common interest for anyone working with data is a possible relationship between two numerical variables. For example, suppose a sports scientist wishes to explore the relationship between runners' *VO2 Max*, which is measure of aerobic fitness, and their *5km running time*. From a sample of eight runners they may record, for each, the values of the two *variables*, recording the results in a table as follows:
 
 \begin{center}
 \begin{tabular}{|c|cccccccc|}
@@ -5693,7 +5479,7 @@ A common interest for anyone working with data is a possible relationship betwee
 \end{tabular}
 \end{center}
 
-Before applying any statistical analysis techniques to this \emph{bivariate data} the sports scientist constructs a \emph{scatterplot} to visualise it, looking for any apparent patterns or problems:
+Before applying any statistical analysis techniques to this *bivariate data* the sports scientist constructs a *scatterplot* to visualise it, looking for any apparent patterns or problems:
 
 \begin{center}
     \begin{tikzpicture}[scale=0.9]
@@ -5726,13 +5512,13 @@ Before applying any statistical analysis techniques to this \emph{bivariate data
     \end{tikzpicture}
 \end{center}
 
-Whilst the sample size is very small, the scatterplot seems to suggest that there is a \emph{linear relationship} between a runner's VO2 Max and their 5km running time. This chapter will introduce the use of a \emph{correlation coefficient} to evaluate the strength of any linear relationship between numerical variables and the construction of a \emph{linear regression model} to describe this relationship and make predictions.
+Whilst the sample size is very small, the scatterplot seems to suggest that there is a *linear relationship* between a runner's VO2 Max and their 5km running time. This chapter will introduce the use of a *correlation coefficient* to evaluate the strength of any linear relationship between numerical variables and the construction of a *linear regression model* to describe this relationship and make predictions.
 
 \pagebreak
 
-\section{Scatterplots and Linear Correlation}\label{scatterplots-and-linear-correlation}
+## Scatterplots and Linear Correlation
 
-When deciding whether a relationship exists between two numerical variables, a scatterplot should always be drawn before any analysis is undertaken using the bivariate data collected. This is the first step in determining the level of linear relationship, or \emph{linear correlation}, between the variables. Whilst other kinds of relationship may exist between two numerical variables, in this course the focus is on the existence and strength of \emph{linear} relationships. Consider the following:
+When deciding whether a relationship exists between two numerical variables, a scatterplot should always be drawn before any analysis is undertaken using the bivariate data collected.  This is the first step in determining the level of linear relationship, or *linear correlation*, between the variables. Whilst other kinds of relationship may exist between two numerical variables, in this course the focus is on the existence and strength of *linear* relationships. Consider the following:
 
 \begin{figure}[H]
   \centering
@@ -5845,15 +5631,15 @@ When deciding whether a relationship exists between two numerical variables, a s
 
 \vspace{-0.3cm}
 
-\textbf{Figure 1} illustrates a \emph{strong, positive linear correlation} between \(x\) and \(y\), where both variables increase together.
+\textbf{Figure 1} illustrates a *strong, positive linear correlation* between $x$ and $y$, where both variables increase together.
 
-\textbf{Figure 2} shows a \emph{weak, negative linear correlation} between \(x\) and \(y\), where one decreases as the other increases.
+\textbf{Figure 2} shows a *weak, negative linear correlation* between $x$ and $y$, where one decreases as the other increases. 
 
-In \textbf{Figure 3}, as one variable increases, there appears to be no clear pattern as to how the other variable behaves. There appears to be \emph{no linear relationship} between \(x\) and \(y\).
+In \textbf{Figure 3}, as one variable increases, there appears to be no clear pattern as to how the other variable behaves. There appears to be *no linear relationship* between $x$ and $y$.
 
-\textbf{Figure 4} is also an example of \emph{no linear relationship} between \(x\) and \(y\), although there appears to be some non-linear (possibly quadratic) association between the variables.
+\textbf{Figure 4} is also an example of *no linear relationship* between $x$ and $y$, although there appears to be some non-linear (possibly quadratic) association between the variables.
 
-Note that \textbf{correlation doesn't imply causation}. A linear relationship can exist between variables without meaning that one causes the other. Seemingly linear relationships can also appear by chance - this is referred to as \emph{spurious correlation}.
+Note that **correlation doesn't imply causation**. A linear relationship can exist between variables without meaning that one causes the other. Seemingly linear relationships can also appear by chance - this is referred to as *spurious correlation*.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A French class takes two tests, one \textit{listening} and one \textit{reading}. The results of the 10 pupils are shown in the table and scatterplot below, along with some summary statistics. Comment on the scatterplot.
@@ -5920,14 +5706,13 @@ The scatterplot appears to show a strong, positive linear relationship between p
 
 \end{tcolorbox}
 
-Scatterplots should always be constructed and closely scrutinised before any analysis of bivariate data is undertaken. Through this visualisation, it may become apparent for instance that the dataset may actually be clearly separated into two or more \emph{distinct groups}, or that possible \emph{outliers} are present which should be carefully considered.
+Scatterplots should always be constructed and closely scrutinised before any analysis of bivariate data is undertaken. Through this visualisation, it may become apparent for instance that the dataset may actually be clearly separated into two or more *distinct groups*, or that possible *outliers* are present which should be carefully considered. 
 
 \pagebreak
 
-\protect\phantomsection\label{ex51q}{}
+[]{#ex51q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex51a]{Exercise 5.1}}{Exercise 5.1}}\label{exercise-5.1}
-\addcontentsline{toc}{subsubsection}{{Exercise 5.1}}
+#### [Exercise 5.1](#ex51a) {-}
 
 \setlength{\columnsep}{30pt}
 
@@ -6231,9 +6016,9 @@ n&=22
 
 \newpage
 
-\section{Pearson's Product Moment Correlation Coefficient}\label{pearsons-product-moment-correlation-coefficient}
+## Pearson's Product Moment Correlation Coefficient
 
-The strength of the \emph{linear relationship} between two variables is measured using a \emph{correlation coefficient}. Whilst there are a number of different correlation coefficients used in statistics, the only one used in this course is \emph{Pearson's Product Moment Correlation Coefficient (PMCC)}, which can now simply be referred to as the \textbf{correlation coefficient}. Given a sample of bivariate data, the \emph{sample correlation coefficient}, \(r\), can be calculated as:
+The strength of the *linear relationship* between two variables is measured using a *correlation coefficient*. Whilst there are a number of different correlation coefficients used in statistics, the only one used in this course is *Pearson's Product Moment Correlation Coefficient (PMCC)*, which can now simply be referred to as the **correlation coefficient**. Given a sample of bivariate data, the *sample correlation coefficient*, $r$, can be calculated as:
 
 \begin{center}
 \tcbset{width=8cm}
@@ -6242,7 +6027,7 @@ $r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$
 \end{tcolorbox}
 \end{center}
 
-The formulae for the \emph{``Three Ss''} and the \emph{``Five Sigmas''} are given in the data booklet:
+The formulae for the *"Three Ss"* and the *"Five Sigmas"* are given in the data booklet:
 
 \begin{figure}[H]
 \centering
@@ -6283,7 +6068,7 @@ S_{xy}&=\Sigma(x-\bar{x})(y-\bar{y})=\Sigma xy-\frac{\Sigma x\Sigma y}{n}
 \end{minipage}
 \end{figure}
 
-For all sets of data, \(-1\leqslant r\leqslant 1\). A correlation coefficient of zero means there is no correlation, or \emph{no linear relationship}, between the two variables, whilst any non-zero correlation coefficient means \emph{a linear relationship exists}. Each of figures below show a scatterplot of sample data along with its sample correlation coefficient, \(r\), and an interpretation.
+For all sets of data, $-1\leqslant r\leqslant 1$. A correlation coefficient of zero means there is no correlation, or *no linear relationship*, between the two variables, whilst any non-zero correlation coefficient means *a linear relationship exists*. Each of figures below show a scatterplot of sample data along with its sample correlation coefficient, $r$, and an interpretation. 
 
 \begin{multicols}{5}
 
@@ -6419,7 +6204,8 @@ For all sets of data, \(-1\leqslant r\leqslant 1\). A correlation coefficient of
 
 \vspace{-0.3cm}
 
-As the correlation coefficient, r, is calculated for a \emph{sample}, it is a \textbf{sample statistic}. It gives an estimate for the \emph{population correlation coefficient}, \(\rho\) (the Greek letter, \emph{``rho''}). For this reason, a non-zero value of \(r\) calculated from a sample only \emph{suggests} a linear relationship exists between the variables. Establishing \emph{evidence} will be covered in a later chapter.
+As the correlation coefficient, r, is calculated for a *sample*, it is a **sample statistic**. It gives an estimate for the *population correlation coefficient*, $\rho$ (the Greek letter, *"rho"*). For this reason, a non-zero value of $r$ calculated from a sample only *suggests* a linear relationship exists between the variables. Establishing *evidence* will be covered in a later chapter.
+
 
 \begin{multicols}{2}
 
@@ -6663,12 +6449,11 @@ This suggests a strong, positive linear correlation between the length of squirr
 
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex52q}{}
+[]{#ex52q}
 
 \vspace{-0.3cm}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex52a]{Exercise 5.2}}{Exercise 5.2}}\label{exercise-5.2}
-\addcontentsline{toc}{subsubsection}{{Exercise 5.2}}
+#### [Exercise 5.2](#ex52a) {-}
 
 \setlength{\columnsep}{40pt}
 
@@ -6911,9 +6696,9 @@ n&=8
 
 \newpage
 
-\section{Least Squares Linear Regression}\label{least-squares-linear-regression}
+## Least Squares Linear Regression 
 
-One goal of linear regression is to allow \emph{predictions} to be made. This typically involves an independent (or \emph{control}) variable on the \(x\)-axis, and a dependent (or \emph{response}) variable on the \(y\)-axis, with the aim of constructing a \emph{trend line} such that the model can predict unknown \(y\) values based on known \(x\) values. To determine the equation of this line, the method of \emph{least squares regression} can be used.
+One goal of linear regression is to allow *predictions* to be made. This typically involves an independent (or *control*) variable on the $x$-axis, and a dependent (or *response*) variable on the $y$-axis, with the aim of constructing a *trend line* such that the model can predict unknown $y$ values based on known $x$ values. To determine the equation of this line, the method of *least squares regression* can be used.
 
 \vspace{-0.3cm}
 \begin{center}
@@ -6978,10 +6763,9 @@ $$y=\alpha + \beta x$$
 \end{multicols}
 
 \vspace{-0.3cm}
+Differences between the $y$ values predicted by this line and the actual $y_i$ values are called *errors*, or $\epsilon_i$ (\textit{``epsilon''}). The parameters $\alpha$ and $\beta$ are calculated such that the *sum of squared errors*, $\Sigma \epsilon_i^2$, is minimised.   
 
-Differences between the \(y\) values predicted by this line and the actual \(y_i\) values are called \emph{errors}, or \(\epsilon_i\) (\textit{``epsilon''}). The parameters \(\alpha\) and \(\beta\) are calculated such that the \emph{sum of squared errors}, \(\Sigma \epsilon_i^2\), is minimised.
-
-Since regression lines are generally calculated from a random \emph{sample} of bivariate data points, the values for the population parameters \(\alpha\) and \(\beta\) have to be estimated, with the sample statistics \(a\) and \(b\) respectively calculated as \emph{estimators}:
+Since regression lines are generally calculated from a random *sample* of bivariate data points, the values for the population parameters $\alpha$ and $\beta$ have to be estimated, with the sample statistics $a$ and $b$ respectively calculated as *estimators*:   
 
 \begin{center}
 \tcbset{width=10cm}
@@ -6991,7 +6775,7 @@ $$\hat{\beta}=b=\dfrac{S_{xy}}{S_{xx}} \qquad \text{and} \qquad \hat{\alpha}=a=\
 \end{tcolorbox}
 \end{center}
 
-Once values for \(a\) and \(b\) have been calculated, and so the least squares regression line of \(y\) on \(x\) obtained as \(y=a+bx\), unknown values of \(y\) may be predicted for given values of \(x\). This equation (and the line it defines) is \emph{not} suitable for predicting \(x\) values based on \(y\), the process for which will be covered in a later chapter.
+Once values for $a$ and $b$ have been calculated, and so the least squares regression line of $y$ on $x$ obtained as $y=a+bx$, unknown values of $y$ may be predicted for given values of $x$. This equation (and the line it defines) is *not* suitable for predicting $x$ values based on $y$, the process for which will be covered in a later chapter.
 
 \begin{vwcol}[widths={0.65,0.35},
  sep=.8cm,rule=0pt]
@@ -7022,9 +6806,11 @@ Whether a linear relationship will continue to hold for $x$ values lower or high
     \node at (1,1.25) {?};
     \node at (4.5,1.25) {?};
 \end{tikzpicture}
-\end{vwcol}
-
+\end{vwcol} 
+ 
 \pagebreak
+
+
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A biology class takes two tests, one theoretical and one practical. The results of the 12 pupils are shown in the table and scatterplot below, along with some summary statistics.
@@ -7101,16 +6887,15 @@ y&=2.578+0.879x
 
 \end{tcolorbox}
 
-Another way of writing the equation found above is: \(\text{practical}=2.578+0.879\text{ theoretical}\).
+Another way of writing the equation found above is: $\text{practical}=2.578+0.879\text{ theoretical}$.
 
-This suggests that an increase by \(1\) in the theory is associated with an increase by \(0.879\) in the practical.
+This suggests that an increase by $1$ in the theory is associated with an increase by $0.879$ in the practical.
 
 \pagebreak
 
-\protect\phantomsection\label{ex53q}{}
+[]{#ex53q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex53a]{Exercise 5.3}}{Exercise 5.3}}\label{exercise-5.3}
-\addcontentsline{toc}{subsubsection}{{Exercise 5.3}}
+#### [Exercise 5.3](#ex53a) {-}
 
 \begin{enumerate}
     \item A bivariate sample has summary statistics:
@@ -7347,14 +7132,14 @@ The website wishes to allow users the ability to input the number of miles in th
 
 \newpage
 
-\protect\phantomsection\label{re5q}{}
+[]{#re5q}
 
-\section*{\texorpdfstring{\hyperref[re5a]{Review Exercise}}{Review Exercise}}\label{review-exercise-4}
-\addcontentsline{toc}{section}{{Review Exercise}}
+## [Review Exercise](#re5a) {-}
 
 \begin{enumerate}
     \item As part of a study on intensive exercise, a sports scientist recorded the peak heart rates ($y$) of a random selection of sixteen volunteers of different ages ($x$) who took regular exercise. The linear regression equation was calculated for the data shown in the scatter diagram and found to be $y=203.9−0.67x$.
 \end{enumerate}
+
 
 \begin{figure}[H]
 \centering
@@ -7537,16 +7322,17 @@ The least squares regression line of $y=155.29+1.9018x$ was fitted. Show the cal
 
 \pagebreak
 
-\chapter{Random Variables}\label{random-variables}
+<!--chapter:end:05-Linear-Regression-I.Rmd-->
 
-A random variable is a mathematical object that describes the possible outcomes, and their probabilities, of a random experiment. They are used to create a \emph{model} of the behaviour of random processes, stated formally and algebraically. Random variables take a defined list or range of \emph{numerical} values, either \emph{discrete} or \emph{continuous}.
+# Random Variables
 
-Random variables are notated using \emph{capital letters}, such as \(X\) and \(Y\), whilst \emph{specific values} that they can take are notated with small letters such as \(x\) and \(y\). Time spent paying careful attention to which is required when first encountering random variables will help greatly as the course progresses.
+A random variable is a mathematical object that describes the possible outcomes, and their probabilities, of a random experiment. They are used to create a *model* of the behaviour of random processes, stated formally and algebraically. Random variables take a defined list or range of *numerical* values, either *discrete* or *continuous*.
 
-\subsection*{Discrete Random Variables}\label{discrete-random-variables}
-\addcontentsline{toc}{subsection}{Discrete Random Variables}
+Random variables are notated using *capital letters*, such as $X$ and $Y$, whilst *specific values* that they can take are notated with small letters such as $x$ and $y$. Time spent paying careful attention to which is required when first encountering random variables will help greatly as the course progresses.
 
-If a random variable takes \emph{discrete} numerical values, and a probability is assigned to each, then it is a \textbf{discrete random variable}. The outcomes are often integers, but this not necessary, and whilst discrete numbers are often described as ones that can be \emph{``listed''}, the list does not have to be finite. Some examples of discrete random variables are:
+### Discrete Random Variables {-}
+
+If a random variable takes *discrete* numerical values, and a probability is assigned to each, then it is a **discrete random variable**. The outcomes are often integers, but this not necessary, and whilst discrete numbers are often described as ones that can be *"listed"*, the list does not have to be finite. Some examples of discrete random variables are:
 
 \begin{center}
 \renewcommand{\arraystretch}{2}
@@ -7560,9 +7346,9 @@ If a random variable takes \emph{discrete} numerical values, and a probability i
 
 \pagebreak
 
-\section{Probability Distributions for Discrete Random Variables}\label{probability-distributions-for-discrete-random-variables}
+## Probability Distributions for Discrete Random Variables
 
-A \emph{probability function}, or \emph{pf}, assigns probabilities to each possible value of a discrete random variable, and there are a number of ways of presenting the \emph{probability distribution} created. For example, consider a discrete random variable \(X\) that takes the value \(3\) with probability \(0.2\), the value \(4\) with probability \(0.5\) and the value \(5\) with probability \(0.3\). Below, the probability distribution for \(X\) has been \emph{tabulated} and \emph{graphed}.
+A *probability function*, or *pf*, assigns probabilities to each possible value of a discrete random variable, and there are a number of ways of presenting the *probability distribution* created. For example, consider a discrete random variable $X$ that takes the value $3$ with probability $0.2$, the value $4$ with probability $0.5$ and the value $5$ with probability $0.3$. Below, the probability distribution for $X$ has been *tabulated* and *graphed*.
 
 \begin{figure}[H]
   \centering
@@ -7687,10 +7473,9 @@ Note that a discrete probability distribution must define \textit{mutually exclu
 
 \pagebreak
 
-\protect\phantomsection\label{ex61q}{}
+[]{#ex61q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex61a]{Exercise 6.1}}{Exercise 6.1}}\label{exercise-6.1}
-\addcontentsline{toc}{subsubsection}{{Exercise 6.1}}
+#### [Exercise 6.1](#ex61a) {-}
 
 \begin{enumerate}
     \item Explain why each of the following tables do not represent a tabulated probability distribution. 
@@ -7820,9 +7605,9 @@ Note that a discrete probability distribution must define \textit{mutually exclu
 
 \pagebreak
 
-\section{The Expectation of a Discrete Random Variable}\label{the-expectation-of-a-discrete-random-variable}
+## The Expectation of a Discrete Random Variable
 
-Whilst a single roll of a die is equally likely to land on any of the numbers from 1 to 6, if it is rolled many times and the \emph{mean} of the observed values is calculated, it is very likely to be around 3.5. Letting random variable \(X\) represent the result of one roll of the die, the \emph{long-run mean of successive observations of \(X\) will tend to 3.5}. This can be referred to as the \emph{mean}, \(\mu\), of \(X\), the \textbf{expectation} of \(X\), or \(\text{E}(X)\).
+Whilst a single roll of a die is equally likely to land on any of the numbers from 1 to 6, if it is rolled many times and the *mean* of the observed values is calculated, it is very likely to be around 3.5. Letting random variable $X$ represent the result of one roll of the die, the *long-run mean of successive observations of $X$ will tend to 3.5*. This can be referred to as the *mean*, $\mu$, of $X$, the **expectation** of $X$, or $\text{E}(X)$.
 
 \begin{centering}
 \tcbset{width=10cm}
@@ -7919,10 +7704,9 @@ $$\text{E}(X)=0\times \tfrac{2}{15}+1\times \tfrac{8}{15}+2\times \tfrac{1}{3}=\
 
 \pagebreak
 
-\protect\phantomsection\label{ex62q}{}
+[]{#ex62q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex62a]{Exercise 6.2}}{Exercise 6.2}}\label{exercise-6.2}
-\addcontentsline{toc}{subsubsection}{{Exercise 6.2}}
+#### [Exercise 6.2](#ex62a) {-}
 
 \begin{enumerate}
     \item Calculate the expected value for each of the probability distributions below.
@@ -7992,9 +7776,9 @@ $$\text{E}(X)=0\times \tfrac{2}{15}+1\times \tfrac{8}{15}+2\times \tfrac{1}{3}=\
 
 \pagebreak
 
-\section{The Law of Expectation}\label{the-law-of-expectation}
+## The Law of Expectation
 
-If discrete random variable \(X\) takes values \({x_1,x_2...x_n}\) with probabilities \(\text{P}(X=x_i)\), then random variable \mbox{$Y=2X$} takes values \({2x_1,2x_2...2x_n}\) with probabilities \(\text{P}(X=x_i)\). For example, let \(X\) represent the roll of a die:
+If discrete random variable $X$ takes values ${x_1,x_2...x_n}$ with probabilities $\text{P}(X=x_i)$, then random variable \mbox{$Y=2X$} takes values ${2x_1,2x_2...2x_n}$ with probabilities $\text{P}(X=x_i)$. For example, let $X$ represent the roll of a die:
 
 \begin{figure}[H]
   \centering
@@ -8036,9 +7820,9 @@ If discrete random variable \(X\) takes values \({x_1,x_2...x_n}\) with probabil
 \end{minipage}
 \end{figure}
 
-(Note that the distribution of \(2X\) is \emph{not} that of the sum of two \emph{independent} dice rolls.)
+(Note that the distribution of $2X$ is *not* that of the sum of two *independent* dice rolls.)
 
-It can be seen here that \(\text{E}(2X)=2\text{E}(X)\). The expectation of a random variable that is a \emph{linear transformation} of another random variable for which the expectation is known can be calculated using the law:
+It can be seen here that $\text{E}(2X)=2\text{E}(X)$. The expectation of a random variable that is a *linear transformation* of another random variable for which the expectation is known can be calculated using the law:
 
 \begin{centering}
 \tcbset{width=10cm}
@@ -8073,7 +7857,7 @@ Proof:
 
 \end{tcolorbox}
 
-Given the value of the expectation of \(aX\pm b\), the expectation of \(X\) may be determined.
+Given the value of the expectation of $aX\pm b$, the expectation of $X$ may be determined.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given tht $\text{E}(10-2Y)=50$, determine the value of $\text{E}(Y)$.
@@ -8093,10 +7877,9 @@ Given the value of the expectation of \(aX\pm b\), the expectation of \(X\) may 
 
 \pagebreak
 
-\protect\phantomsection\label{ex63q}{}
+[]{#ex63q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex63a]{Exercise 6.3}}{Exercise 6.3}}\label{exercise-6.3}
-\addcontentsline{toc}{subsubsection}{{Exercise 6.3}}
+#### [Exercise 6.3](#ex63a) {-}
 
 \begin{enumerate}
     \item Calculate:
@@ -8168,9 +7951,9 @@ Given the value of the expectation of \(aX\pm b\), the expectation of \(X\) may 
 
 \pagebreak
 
-\section{The Variance of a Random Variable}\label{the-variance-of-a-random-variable}
+## The Variance of a Random Variable
 
-The \emph{variance} of the values observed from successive rolls of a fair cubical die will tend towards a value in the long-run. Letting the random variable \(X\) represent the result of a roll of a die, the \textbf{variance}, \(\sigma^2\), of \(X\) is \(\frac{35}{12}\), or \(\text{V}(X)=\frac{35}{12}\).
+The *variance* of the values observed from successive rolls of a fair cubical die will tend towards a value in the long-run. Letting the random variable $X$ represent the result of a roll of a die, the **variance**, $\sigma^2$, of $X$ is $\frac{35}{12}$, or $\text{V}(X)=\frac{35}{12}$.
 
 \begin{centering}
 \tcbset{width=10cm}
@@ -8192,16 +7975,16 @@ Proof:
     &=\text{E}(X^2)-\text{E}^2(X)
 \end{align*}
 
-Knowing the \emph{expectation} and \emph{variance} of random variables help statisticians better understand the \emph{long-run} behaviour of repeated observations:
+Knowing the *expectation* and *variance* of random variables help statisticians better understand the *long-run* behaviour of repeated observations:
 
 \begin{itemize}
     \item $\text{E}(X)=\mu_X$, the \textit{long-run mean} of the distribution of $X$.
     \item $\text{V}(X)=\sigma_X^2$, the \textit{variance} of the distribution of $X$.
 \end{itemize}
 
-The standard deviation, \(\sigma\), of a random variable \(X\), notated \(\text{SD}(X)\), is the square root of the variance:
+The standard deviation, $\sigma$, of a random variable $X$, notated $\text{SD}(X)$, is the square root of the variance:
 
-\[\text{SD}(X)=\sqrt{\text{V}(X)}\qquad\text{and}\qquad \text{SD}(X),\text{V}(X)\geqslant0\]
+$$\text{SD}(X)=\sqrt{\text{V}(X)}\qquad\text{and}\qquad \text{SD}(X),\text{V}(X)\geqslant0$$
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The probability distribution of random variable $X$ is tabulated as: 
@@ -8232,10 +8015,9 @@ Calculate $\text{E}(X)$ and $\text{V}(X)$
 
 \pagebreak
 
-\protect\phantomsection\label{ex64q}{}
+[]{#ex64q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex64a]{Exercise 6.4}}{Exercise 6.4}}\label{exercise-6.4}
-\addcontentsline{toc}{subsubsection}{{Exercise 6.4}}
+#### [Exercise 6.4](#ex64a) {-}
 
 \begin{enumerate}
     \item Calculate the mean and variance of each of the following probability distributions.
@@ -8287,9 +8069,9 @@ Calculate $\text{E}(X)$ and $\text{V}(X)$
 
 \pagebreak
 
-\section{The Law of Variance}\label{the-law-of-variance}
+## The Law of Variance
 
-Since variance is a measure of variability based on \emph{squared} differences, \(\text{V}(2X)\ne2\text{V}(X)\).
+Since variance is a measure of variability based on *squared* differences, $\text{V}(2X)\ne2\text{V}(X)$.
 
 \begin{centering}
 \tcbset{width=10cm}
@@ -8331,7 +8113,7 @@ Proof:
 
 \end{tcolorbox}
 
-Note that any laws relating to the \emph{standard deviation} of a linear transformation (\(\text{SD}(aX\pm b)\)) would not be able to be expressed so concisely, so such problems must be tackled by \emph{first finding the variance} (\(\text{V}(aX\pm b)\)).
+Note that any laws relating to the *standard deviation* of a linear transformation ($\text{SD}(aX\pm b)$) would not be able to be expressed so concisely, so such problems must be tackled by *first finding the variance* ($\text{V}(aX\pm b)$).
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Random variable $Y$ has mean 1.5 and standard deviation 0.8.\\ Determine the standard deviation of $10Y+25$.
@@ -8354,10 +8136,9 @@ Note that any laws relating to the \emph{standard deviation} of a linear transfo
 
 \pagebreak
 
-\protect\phantomsection\label{ex65q}{}
+[]{#ex65q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex65a]{Exercise 6.5}}{Exercise 6.5}}\label{exercise-6.5}
-\addcontentsline{toc}{subsubsection}{{Exercise 6.5}}
+#### [Exercise 6.5](#ex65a) {-}
 
 \begin{enumerate}
     \item Given $\text{E}(X)=6$ and $\text{V}(X)=8$, determine the values of:
@@ -8438,9 +8219,9 @@ Note that any laws relating to the \emph{standard deviation} of a linear transfo
 
 \pagebreak
 
-\section{Bivariate Random Variables}\label{bivariate-random-variables}
+## Bivariate Random Variables
 
-As well as linear transformations of a single random variable, new variables can be created by adding (or subtracting) random variables. Given random variables \(X\) and \(Y\), for example, \(W=X+Y\) is a \textit{bivariate} random variable. When studying the long-run behaviour of bivariate random variables, by considering their expectation and variance, it is important to consider whether the variables are \textbf{independent}.
+As well as linear transformations of a single random variable, new variables can be created by adding (or subtracting) random variables. Given random variables $X$ and $Y$, for example, $W=X+Y$ is a \textit{bivariate} random variable. When studying the long-run behaviour of bivariate random variables, by considering their expectation and variance, it is important to consider whether the variables are **independent**.
 
 \begin{centering}
 \tcbset{width=14cm}
@@ -8495,7 +8276,7 @@ As well as linear transformations of a single random variable, new variables can
 
 \end{tcolorbox}
 
-Random variables \textbf{independently and identically distributed (i.i.d)} as \(X\) are denoted as \(X_1,X_2,X_3,\dots\)
+Random variables **independently and identically distributed (i.i.d)** as $X$ are denoted as $X_1,X_2,X_3,\dots$
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Books in the fiction section of a library have a mean thickness of 3.1cm with standard deviation 0.2cm. If three books are randomly selected from the fiction section and stacked together, determine the mean and standard deviation of the collected, total thickness of the three books, stating one assumption required.
@@ -8519,10 +8300,9 @@ Hence the mean total thickness of the three books is 9.3cm, and the standard dev
 
 \pagebreak
 
-\protect\phantomsection\label{ex66q}{}
+[]{#ex66q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex66a]{Exercise 6.6}}{Exercise 6.6}}\label{exercise-6.6}
-\addcontentsline{toc}{subsubsection}{{Exercise 6.6}}
+#### [Exercise 6.6](#ex66a) {-}
 
 \begin{enumerate}
     \item Random variables $J$ and $K$ are defined such that $\text{E}(J)=3$ and $\text{E}(K)=-2$.
@@ -8572,10 +8352,9 @@ Hence the mean total thickness of the three books is 9.3cm, and the standard dev
 
 \pagebreak
 
-\protect\phantomsection\label{re6q}{}
+[]{#re6q}
 
-\section*{\texorpdfstring{\hyperref[re6a]{Review Exercise}}{Review Exercise}}\label{review-exercise-5}
-\addcontentsline{toc}{section}{{Review Exercise}}
+## [Review Exercise](#re6a) {-}
 
 \begin{enumerate}
     \item A trial consists of tossing two unbiased coins. Let the random variable $X$ represent the number of heads obtained.
@@ -8620,18 +8399,19 @@ Hence the mean total thickness of the three books is 9.3cm, and the standard dev
 
 \pagebreak
 
-\chapter{Discrete Distributions}\label{discrete-distributions}
+<!--chapter:end:06-Random-Variables.Rmd-->
+
+# Discrete Distributions
 
 \begin{center}
 \say{\textit{All models are wrong, but some models are useful.}}
 \end{center}
 
-\subsection*{Models, Conditions and Assumptions}\label{models-conditions-and-assumptions}
-\addcontentsline{toc}{subsection}{Models, Conditions and Assumptions}
+### Models, Conditions and Assumptions {-}
 
-The above quote, attributed to the statistician George Box, highlights that no mathematical or statistical \emph{model} can perfectly describe the behaviour of something in the real world. Nevertheless, if a model can get \emph{close enough} then results obtained using it can be sufficiently accurate, and useful.
+The above quote, attributed to the statistician George Box, highlights that no mathematical or statistical *model* can perfectly describe the behaviour of something in the real world. Nevertheless, if a model can get *close enough* then results obtained using it can be sufficiently accurate, and useful.
 
-In this chapter, three \emph{discrete probability distributions} that can model real-life data will be introduced:
+In this chapter, three *discrete probability distributions* that can model real-life data will be introduced:
 
 \begin{itemize}
     \item The Discrete Uniform Distribution
@@ -8639,15 +8419,15 @@ In this chapter, three \emph{discrete probability distributions} that can model 
     \item The Poisson Distribution
 \end{itemize}
 
-Studying a problem in context and identifying an appropriate model to use is an important skill for anyone working with data. The validity of the use of a model is based on a number of \emph{conditions} being sufficiently met. When using a model it is vital to consider the conditions required for its use, and specifically whether they are each satisfied. In this chapter, and subsequent chapters introducing more probability distributions and hypothesis testing, the \emph{conditions for the valid use} of models and tests are clearly indicated as they are introduced.
+Studying a problem in context and identifying an appropriate model to use is an important skill for anyone working with data. The validity of the use of a model is based on a number of *conditions* being sufficiently met. When using a model it is vital to consider the conditions required for its use, and specifically whether they are each satisfied. In this chapter, and subsequent chapters introducing more probability distributions and hypothesis testing, the *conditions for the valid use* of models and tests are clearly indicated as they are introduced.
 
-Sometimes it will be clear that a particular condition has been met, but there will be times when it is unclear. Whenever it is not clear that a condition has been met, statisticians must ask whether they can reasonably make an \emph{assumption} that the condition is satisfied. It should always be recognised when an assumption is required, and it may be necessary to \emph{justify} the use of an assumption in a context.
+Sometimes it will be clear that a particular condition has been met, but there will be times when it is unclear. Whenever it is not clear that a condition has been met, statisticians must ask whether they can reasonably make an *assumption* that the condition is satisfied. It should always be recognised when an assumption is required, and it may be necessary to *justify* the use of an assumption in a context.
 
 \pagebreak
 
-\section{The Discrete Uniform Distribution}\label{the-discrete-uniform-distribution}
+## The Discrete Uniform Distribution
 
-Consider the discrete random variables \(X\) and \(Y\), representing the scores obtained from a cubical die numbered \(\{1,2,3,4,5,6\}\) and a tetrahedral die numbered \(\{1,2,3,4\}\) respectively. Their probability distributions have been tabulated and graphed below, and the expectation and variance calculated for each:
+Consider the discrete random variables $X$ and $Y$, representing the scores obtained from a cubical die numbered $\{1,2,3,4,5,6\}$ and a tetrahedral die numbered $\{1,2,3,4\}$ respectively. Their probability distributions have been tabulated and graphed below, and the expectation and variance calculated for each:
 
 \begin{figure}[H]
   \centering
@@ -8739,7 +8519,7 @@ Consider the discrete random variables \(X\) and \(Y\), representing the scores 
 \end{minipage}
 \end{figure}
 
-Whilst \(X\) and \(Y\) do not follow the exact same distribution, they share key characteristics, namely that they both take a \emph{finite number of discrete values}, \(\{1,2,3,\dots,k\}\), and that \emph{each of these values is equally likely}. It is these \emph{shared characteristics} that define the \emph{discrete uniform distribution}.
+Whilst $X$ and $Y$ do not follow the exact same distribution, they share key characteristics, namely that they both take a *finite number of discrete values*, $\{1,2,3,\dots,k\}$, and that *each of these values is equally likely*. It is these *shared characteristics* that define the *discrete uniform distribution*.
 
 \vspace{0.5cm}
 
@@ -8757,15 +8537,15 @@ Whilst \(X\) and \(Y\) do not follow the exact same distribution, they share key
 
 \vspace{0.5cm}
 
-Parameters define the precise distribution that random variables take within \emph{``families''} of distributions. Here, we can say that \(X\) \emph{``is distributed uniformly\emph{'' with parameter \(k=6\) (with values from \(1\) to \(6\)). Using \(\sim\), or }''tilde''}, to mean \emph{``is distributed\ldots{}''}, such statements can be notated more efficiently:
+Parameters define the precise distribution that random variables take within *"families"* of distributions. Here, we can say that $X$ *"is distributed uniformly*" with parameter $k=6$ (with values from $1$ to $6$). Using $\sim$, or *"tilde"*, to mean *"is distributed..."*, such statements can be notated more efficiently:
 
-\[X\sim \text{U}(6)\quad\text{ and }\quad Y\sim \text{U}(4)\]
+$$X\sim \text{U}(6)\quad\text{ and }\quad Y\sim \text{U}(4)$$
 
-The Data Booklet gives the formulae to calculate \emph{expectation} and \emph{variance} for the discrete uniform distribution. For \(X\sim \text{U}(k)\):
+The  Data Booklet gives the formulae to calculate *expectation* and *variance* for the discrete uniform distribution. For $X\sim \text{U}(k)$:
 
-\[\text{E}(X)=\frac{k+1}{2}\quad \text{ and }\quad \text{V}(X)=\frac{k^2-1}{12}\]
+$$\text{E}(X)=\frac{k+1}{2}\quad \text{ and }\quad \text{V}(X)=\frac{k^2-1}{12}$$
 
-The previously stated values for the expectation and variance of \(X\) and \(Y\) can be quickly obtained using these formulae.
+The previously stated values for the expectation and variance of $X$ and $Y$ can be quickly obtained using these formulae.
 
 \pagebreak
 
@@ -8796,10 +8576,9 @@ The previously stated values for the expectation and variance of \(X\) and \(Y\)
 
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex71q}{}
+[]{#ex71q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex71a]{Exercise 7.1}}{Exercise 7.1}}\label{exercise-7.1}
-\addcontentsline{toc}{subsubsection}{{Exercise 7.1}}
+#### [Exercise 7.1](#ex71a) {-}
 
 \begin{enumerate}
     \item Let $X\sim \text{U}(5)$. Calculate the mean and variance of $X$.
@@ -8841,9 +8620,9 @@ The previously stated values for the expectation and variance of \(X\) and \(Y\)
 
 \pagebreak
 
-\section{The Binomial Distribution}\label{the-binomial-distribution}
+## The Binomial Distribution
 
-A \emph{Bernoulli trial} is an experiment in which each trial has only two possible outcomes, such as a coin landing on either \emph{heads} or \emph{tails}, or asking a \emph{yes or no} question in a survey. These responses can be more generally referred to as \emph{successes} or \emph{failures}. If random variable \(X\) represents the \textbf{number of successes} in \textbf{\emph{n}} \textbf{trials}, each trial having \textbf{probability of success} \textbf{\emph{p}}, then \(X\) is \textbf{binomially distributed}.
+A *Bernoulli trial* is an experiment in which each trial has only two possible outcomes, such as a coin landing on either *heads* or *tails*, or asking a *yes or no* question in a survey. These responses can be more generally referred to as *successes* or *failures*. If random variable $X$ represents the **number of successes** in **_n_** **trials**, each trial having **probability of success** **_p_**, then $X$ is **binomially distributed**.
 
 \begin{centering}
 \tcbset{width=10.5cm}
@@ -8858,7 +8637,7 @@ A \emph{Bernoulli trial} is an experiment in which each trial has only two possi
 \end{tcolorbox}
 \end{centering}
 
-Consider a spinning wheel that lands on a shaded sector with probability \(\frac{2}{5}\), or \(0.4\). Let random variable \(X\) represent the number of times the wheel will land on the shaded sector \emph{out of 6 trials}, with possible values from \(0\) to \(6\). Here \(X\) is \emph{binomially distributed}, with \(n=6\) (number of trials) and \(p=0.4\) (probability of success), or: \(X\sim \text{B}(6,0.4)\)
+Consider a spinning wheel that lands on a shaded sector with probability $\frac{2}{5}$, or $0.4$. Let random variable $X$ represent the number of times the wheel will land on the shaded sector *out of 6 trials*, with possible values from $0$ to $6$. Here $X$ is *binomially distributed*, with $n=6$ (number of trials) and $p=0.4$ (probability of success), or: $X\sim \text{B}(6,0.4)$
 
 \vspace{-0.5cm}
 \begin{figure}[H]
@@ -8915,18 +8694,17 @@ Consider a spinning wheel that lands on a shaded sector with probability \(\frac
 \end{figure}
 
 \vspace{-0.5cm}
+To calculate the probability of *exactly two successes*, consider the probability of the first two spins resulting in success followed by four failures. Since each trial is independent:
 
-To calculate the probability of \emph{exactly two successes}, consider the probability of the first two spins resulting in success followed by four failures. Since each trial is independent:
+$$\text{P}(\text{success, success, fail, fail, fail, fail})=0.4\times0.4\times0.6\times0.6\times0.6\times0.6=0.4^2\times0.6^4=0.0207$$
 
-\[\text{P}(\text{success, success, fail, fail, fail, fail})=0.4\times0.4\times0.6\times0.6\times0.6\times0.6=0.4^2\times0.6^4=0.0207\]
+However there are a number of other possible *combinations* of successes and failures that *also* give exactly two successes, *each* with probability $0.0207$. The number of possible combinations from $n$ trials resulting in $x$ successes can be calculated using the *binomial coefficient*, ${}^{n}C_{x}$. For $6$ trials of which $2$ are successes, a calculator will provide the value of ${}^{6}C_{2}$.
 
-However there are a number of other possible \emph{combinations} of successes and failures that \emph{also} give exactly two successes, \emph{each} with probability \(0.0207\). The number of possible combinations from \(n\) trials resulting in \(x\) successes can be calculated using the \emph{binomial coefficient}, \({}^{n}C_{x}\). For \(6\) trials of which \(2\) are successes, a calculator will provide the value of \({}^{6}C_{2}\).
+$$\text{P}(X=2)={}^{6}C_{2}\times0.4^2\times0.6^4=0.3110$$
 
-\[\text{P}(X=2)={}^{6}C_{2}\times0.4^2\times0.6^4=0.3110\]
+The  Data Booklet gives the **formula** to calculate *individual* probabilities for the binomial distribution:
 
-The Data Booklet gives the \textbf{formula} to calculate \emph{individual} probabilities for the binomial distribution:
-
-\[\text{Given }X\sim \text{B}(n,p)\text{: }\qquad \text{P}(X=x)={}^{n}C_{x}\times p^x\times q^{n-x}\]
+$$\text{Given }X\sim \text{B}(n,p)\text{: }\qquad \text{P}(X=x)={}^{n}C_{x}\times p^x\times q^{n-x}$$
 \pagebreak
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
@@ -8967,10 +8745,9 @@ X&\sim B\left(12,\tfrac{1}{4}\right)\\[1em]
 
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex72q}{}
+[]{#ex72q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex72a]{Exercise 7.2}}{Exercise 7.2}}\label{exercise-7.2}
-\addcontentsline{toc}{subsubsection}{{Exercise 7.2}}
+#### [Exercise 7.2](#ex72a) {-}
 
 \begin{enumerate}
     \item Given that $X\sim \text{B}(10,0.25)$, calculate $\text{P}(X=3)$.
@@ -8987,13 +8764,13 @@ X&\sim B\left(12,\tfrac{1}{4}\right)\\[1em]
 
 \pagebreak
 
-\section{Binomial Calculations using Tables and Calculators}\label{binomial-calculations-using-tables-and-calculators}
+## Binomial Calculations using Tables and Calculators
 
-In practice, it will seldom be necessary to calculate binomial probabilities using the formula. Graphical calculators can be used to calculate both \emph{individual} (\(\text{P}(X=x)\)) and \emph{cumulative} (\(\text{P}(X\leqslant x)\)) probabilities. The Data Booklet provides \textbf{cumulative probability tables}, giving \textbf{``less than or equal to''} probabilities.
+In practice, it will seldom be necessary to calculate binomial probabilities using the formula. Graphical calculators can be used to calculate both *individual* ($\text{P}(X=x)$) and *cumulative* ($\text{P}(X\leqslant x)$) probabilities. The Data Booklet provides **cumulative probability tables**, giving **"less than or equal to"** probabilities.
 
-It is therefore important to be able to write any given probability that uses an inequality in terms of a \emph{less than or equal to} probability.
+It is therefore important to be able to write any given probability that uses an inequality in terms of a *less than or equal to* probability.
 
-Consider discrete random variable \(X\) taking values \(x=\{0,1,2,3,4,5,6\}\):
+Consider discrete random variable $X$ taking values $x=\{0,1,2,3,4,5,6\}$:
 
 \vspace{-1cm}
 \begin{center}
@@ -9018,10 +8795,9 @@ $\text{P}(X\geqslant 2)=1-\text{P}(X\leqslant 1)=1-0.6590=0.3410$
 
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex73q}{}
+[]{#ex73q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex73a]{Exercise 7.3}}{Exercise 7.3}}\label{exercise-7.3}
-\addcontentsline{toc}{subsubsection}{{Exercise 7.3}}
+#### [Exercise 7.3](#ex73a) {-}
 
 \begin{enumerate}
     \item Given that $X\sim \text{B}(10,0.3)$, calculate:
@@ -9062,15 +8838,15 @@ $\text{P}(X\geqslant 2)=1-\text{P}(X\leqslant 1)=1-0.6590=0.3410$
 
 \pagebreak
 
-\section{The Mean and Variance of the Binomial Distribution}\label{the-mean-and-variance-of-the-binomial-distribution}
+## The Mean and Variance of the Binomial Distribution
 
-The Data Booklet gives the formulae for the \emph{mean} and \emph{variance} of binomial distribution.
+The  Data Booklet gives the formulae for the *mean* and *variance* of binomial distribution.
 
-Given random variable \(X\) such that \(X\sim \text{B}(n,p)\):
+Given random variable $X$ such that $X\sim \text{B}(n,p)$:
 
-\[\text{E}(X)=np \qquad \text{and} \qquad \text{V}(X)=npq\]
+$$\text{E}(X)=np \qquad \text{and} \qquad \text{V}(X)=npq$$
 
-Where \(q=1-p\), representing the \emph{probability of failure}.
+Where $q=1-p$, representing the *probability of failure*.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A multiple choice quiz is comprised of eight questions, each with four choices to pick from. Let random variable $X$ represent the number of correct answers obtained out of eight from a student guessing completely at random. Calculate the mean and variance of $X$.
@@ -9084,10 +8860,9 @@ $\text{V}(X)=npq=8\times 0.25 \times 0.75=1.5$
 
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex74q}{}
+[]{#ex74q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex74a]{Exercise 7.4}}{Exercise 7.4}}\label{exercise-7.4}
-\addcontentsline{toc}{subsubsection}{{Exercise 7.4}}
+#### [Exercise 7.4](#ex74a) {-}
 
 \begin{enumerate}
     \item Calculate the mean and variance for each random variable:
@@ -9124,9 +8899,9 @@ $\text{V}(X)=npq=8\times 0.25 \times 0.75=1.5$
 
 \pagebreak
 
-\section{The Poisson Distribution}\label{the-poisson-distribution}
+## The Poisson Distribution
 
-Consider a mobile network's customer support department looking at how many call agents to have on duty at any one time. The mean rate of calls may be well known, such as 2.5 per hour. However, in any one hour there may be 4 calls, 10 calls, no calls at all, and so on. Letting the random variable \(X\) represent the number of calls in any particular hour, if certain conditions are satisfied then \(X\) follows a \textbf{Poisson distribution} with mean rate \(\lambda=2.5\).
+Consider a mobile network's customer support department looking at how many call agents to have on duty at any one time. The mean rate of calls may be well known, such as 2.5 per hour. However, in any one hour there may be 4 calls, 10 calls, no calls at all, and so on. Letting the random variable $X$ represent the number of calls in any particular hour, if certain conditions are satisfied then $X$ follows a **Poisson distribution** with mean rate $\lambda=2.5$.
 
 \begin{centering}
 \tcbset{width=12.5cm}
@@ -9142,7 +8917,7 @@ Consider a mobile network's customer support department looking at how many call
 \end{tcolorbox}
 \end{centering}
 
-Assume that the mean rate of 2.5 phone calls per hour is \emph{constant} across the opening hours of the customer support department, and that there isn't some major network-wide event causing the calls to no longer be \emph{independent}. The Poisson distribution can then be used to calculate, for example, the probability that there are exactly 4 calls in any one hour. Note that the graph below is truncated, and the Poisson distribution has non-zero probabilities for any non-negative integer \(\{0,1,2,3,\dots\}\).
+Assume that the mean rate of 2.5 phone calls per hour is *constant* across the opening hours of the customer support department, and that there isn't some major network-wide event causing the calls to no longer be *independent*. The Poisson distribution can then be used to calculate, for example, the probability that there are exactly 4 calls in any one hour. Note that the graph below is truncated, and the Poisson distribution has non-zero probabilities for any non-negative integer $\{0,1,2,3,\dots\}$.
 
 \begin{center}
 \begin{tikzpicture}
@@ -9174,15 +8949,15 @@ Assume that the mean rate of 2.5 phone calls per hour is \emph{constant} across 
 \end{tikzpicture}
 \end{center}
 
-As with the binomial distribution, individual Poisson probabilities can calculated using a formula, provided in the Data Booklet.
+As with the binomial distribution, individual Poisson probabilities can calculated using a formula, provided in the  Data Booklet.
 
-Given random variable \(X\sim \text{Po}(\lambda)\):
+Given random variable $X\sim \text{Po}(\lambda)$:
 
-\[\text{P}(X=x)=\frac{e^{-\lambda} \times \lambda^x}{x!}\]
+$$\text{P}(X=x)=\frac{e^{-\lambda} \times \lambda^x}{x!}$$
 
-For example \(\text{P}(X=4)\) in the probability distribution above can be calculated as:
+For example $\text{P}(X=4)$ in the probability distribution above can be calculated as:
 
-\[\text{P}(X=4)=\frac{e^{-2.5} \times 2.5^4}{4!}=0.1336\]
+$$\text{P}(X=4)=\frac{e^{-2.5} \times 2.5^4}{4!}=0.1336$$
 
 \pagebreak
 
@@ -9202,10 +8977,9 @@ $$\text{P}(X=10)=\frac{e^{-6} \times 6^{10}}{10!}=0.0413$$
 
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex75q}{}
+[]{#ex75q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex75a]{Exercise 7.5}}{Exercise 7.5}}\label{exercise-7.5}
-\addcontentsline{toc}{subsubsection}{{Exercise 7.5}}
+#### [Exercise 7.5](#ex75a) {-}
 
 \begin{enumerate}
     \item Given random variable $X$ such that $X\sim \text{Po}(2.5)$, use the formula to calculate:
@@ -9224,14 +8998,13 @@ $$\text{P}(X=10)=\frac{e^{-6} \times 6^{10}}{10!}=0.0413$$
     \end{enumerate}
 \end{enumerate}
 
-\subsection{Poisson Calculations using Tables and Calculators}\label{poisson-calculations-using-tables-and-calculators}
+### Poisson Calculations using Tables and Calculators
 
-As with the binomial distribution, in general it is far quicker to use the cumulative probability tables in the Data Booklet, or a grapical calculator, to calculate Poisson probabilities.
+As with the binomial distribution, in general it is far quicker to use the cumulative probability tables in the  Data Booklet, or a grapical calculator, to calculate Poisson probabilities.
 
-\protect\phantomsection\label{ex76q}{}
+[]{#ex76q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex76a]{Exercise 7.6}}{Exercise 7.6}}\label{exercise-7.6}
-\addcontentsline{toc}{subsubsection}{{Exercise 7.6}}
+#### [Exercise 7.6](#ex76a) {-}
 
 \begin{enumerate}
     \item The random variable $X$ follows a Poisson distribution with mean 6. Use the tables to calculate:
@@ -9261,17 +9034,17 @@ As with the binomial distribution, in general it is far quicker to use the cumul
 
 \pagebreak
 
-\section{The Mean and Variance of the Poisson Distribution}\label{the-mean-and-variance-of-the-poisson-distribution}
+## The Mean and Variance of the Poisson Distribution
 
-The mean and variance of a Poisson distribution are stated in the Data Booklet. Given \(X\sim \text{Po}(\lambda)\):
+The mean and variance of a Poisson distribution are stated in the  Data Booklet. Given $X\sim \text{Po}(\lambda)$:
 
-\[\text{E}(X)=\text{V}(X)=\lambda \qquad \text{and} \qquad \text{SD}(X)=\sqrt{\lambda}\]
+$$\text{E}(X)=\text{V}(X)=\lambda \qquad \text{and} \qquad \text{SD}(X)=\sqrt{\lambda}$$
 
-Given two \textbf{independent} random variables \(X\) and \(Y\) such that \(X\sim \text{Po}(\lambda_X)\) and \(Y\sim \text{Po}(\lambda_Y)\):
+Given two **independent** random variables $X$ and $Y$ such that $X\sim \text{Po}(\lambda_X)$ and $Y\sim \text{Po}(\lambda_Y)$:
 
-\[X+Y\sim \text{Po}(\lambda_X+\lambda_Y)\]
+$$X+Y\sim \text{Po}(\lambda_X+\lambda_Y)$$
 
-The same result can be used to extend, or shorten, the time period of interest for a Poisson distribution, provided there is a \emph{constant mean rate} throughout the entire time period.
+The same result can be used to extend, or shorten, the time period of interest for a Poisson distribution, provided there is a *constant mean rate* throughout the entire time period. 
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Betty has observed that the number of work emails she receives on weekdays between 10am and 11am follows a Poisson distribution with a mean rate of 7 emails. The number of personal emails she receives in this time is also Poisson distributed with a mean rate of 3 emails. Calculate the probability that she receives fewer than 8 emails in total on a weekday between 10am and 11am. 
@@ -9291,10 +9064,9 @@ $\text{P}(X+Y<8)=0.2202$
 
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex77q}{}
+[]{#ex77q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex77a]{Exercise 7.7}}{Exercise 7.7}}\label{exercise-7.7}
-\addcontentsline{toc}{subsubsection}{{Exercise 7.7}}
+#### [Exercise 7.7](#ex77a) {-}
 
 \begin{enumerate}
     \item Given independent random variables $X$,$Y$ such that $X\sim \text{Po}(1.6)$ and $Y\sim \text{Po}(0.4)$, calculate $\text{P}(X+Y\leqslant4)$.
@@ -9306,10 +9078,9 @@ $\text{P}(X+Y<8)=0.2202$
 
 \pagebreak
 
-\protect\phantomsection\label{re7q}{}
+[]{#re7q}
 
-\section*{\texorpdfstring{\hyperref[re7a]{Review Exercise}}{Review Exercise}}\label{review-exercise-6}
-\addcontentsline{toc}{section}{{Review Exercise}}
+## [Review Exercise](#re7a) {-}
 
 \begin {enumerate}
     \item Given that $X\sim \text{U}(8)$, calculate:
@@ -9366,20 +9137,21 @@ $\text{P}(X+Y<8)=0.2202$
     \end{enumerate}
 \end{enumerate}
 
-\chapter{Continuous Distributions}\label{continuous-distributions}
+<!--chapter:end:07-Discrete-Distributions.Rmd-->
 
-Data that results from measuring is often continuous, such as the height of a person, the mass of a piece of fruit or the volume of tea in a cup. \emph{Continuous} means that if there were no limits to the precision of the measuring device, there would be an infinite set of possible values in any given range. A \textbf{continuous random variable} takes a \emph{range} of real numbers, instead of a list. For example, the time taken to complete a task could take \emph{any real, positive number}, or \(\{x\in R,x>0\}\).
+# Continuous Distributions
 
-\subsection*{Probability and Continuous Distributions}\label{probability-and-continuous-distributions}
-\addcontentsline{toc}{subsection}{Probability and Continuous Distributions}
+Data that results from measuring is often continuous, such as the height of a person, the mass of a piece of fruit or the volume of tea in a cup. *Continuous* means that if there were no limits to the precision of the measuring device, there would be an infinite set of possible values in any given range. A **continuous random variable** takes a *range* of real numbers, instead of a list. For example, the time taken to complete a task could take *any real, positive number*, or $\{x\in R,x>0\}$.
 
-Since a continuous random variable can take any of an infinite set of possible values, it is not possible for any \emph{precise} value to be assigned a non-zero probability. This leads to the somewhat counter-intuitive result that, for any given value \(x\), \(\text{P}(X=x)=0\). Instead, probabilities are assigned to \emph{intervals}. For example, letting random variable \(X\) represent the time taken to complete a task, measured in seconds, an example of probabilities for this continuous random variable could be:
+### Probability and Continuous Distributions {-}
 
-\[\text{P}(X=26)=0\quad \textit{ but }\quad \text{P}(24<X<28.5)=0.5328\]
+Since a continuous random variable can take any of an infinite set of possible values, it is not possible for any *precise* value to be assigned a non-zero probability. This leads to the somewhat counter-intuitive result that, for any given value $x$, $\text{P}(X=x)=0$. Instead, probabilities are assigned to *intervals*. For example, letting random variable $X$ represent the time taken to complete a task, measured in seconds, an example of probabilities for this continuous random variable could be:
 
-This also means that for continuous random variables: \(\text{P}(X\leqslant a)=\text{P}(X<a)\).
+$$\text{P}(X=26)=0\quad \textit{ but }\quad \text{P}(24<X<28.5)=0.5328$$
 
-Probabilities are calculated not from the \emph{height} of the graphed probability distributions as with discrete random variables, but instead from the \textbf{area under the curve} within the required interval. In this course, graphical calculators and tables of values mean that calculus will not be required to calculate these areas through integration.
+This also means that for continuous random variables: $\text{P}(X\leqslant a)=\text{P}(X<a)$.
+
+Probabilities are calculated not from the *height* of the graphed probability distributions as with discrete random variables, but instead from the **area under the curve** within the required interval. In this course, graphical calculators and tables of values mean that calculus will not be required to calculate these areas through integration.
 
 \begin{center}
 \begin{tikzpicture}
@@ -9423,13 +9195,13 @@ Probabilities are calculated not from the \emph{height} of the graphed probabili
 \end{tikzpicture}
 \end{center}
 
-The height of the curve is referred to as \emph{probability density}, and indicates the ``relative likelihood'' of different values in the range. \textbf{The total area under the curve for any continuous distribution is 1.}
+The height of the curve is referred to as *probability density*, and indicates the "relative likelihood" of different values in the range. **The total area under the curve for any continuous distribution is 1.** 
 
 \pagebreak
 
-\section{The Continuous Uniform Distribution}\label{the-continuous-uniform-distribution}
+## The Continuous Uniform Distribution
 
-If random variable \(X\) can take \emph{any real value} between \(a\) and \(b\) with a \emph{constant probability density} then it follows a \textbf{continuous uniform distribution} with \emph{two} parameters: \(a\) and \(b\). This should not be confused with the \emph{discrete uniform distribution}, which takes a \emph{single} parameter only. Since graphing this distribution produces a rectangle, it is often also called a \emph{rectangular distribution}.
+If random variable $X$ can take *any real value* between $a$ and $b$ with a *constant probability density* then it follows a **continuous uniform distribution** with *two* parameters: $a$ and $b$. This should not be confused with the *discrete uniform distribution*, which takes a *single* parameter only. Since graphing this distribution produces a rectangle, it is often also called a *rectangular distribution*.
 
 \begin{figure}[H]
   \centering
@@ -9480,9 +9252,9 @@ If random variable \(X\) can take \emph{any real value} between \(a\) and \(b\) 
 \end{minipage}
 \end{figure}
 
-The probability for any range of values can be calculated simply as the area of the rectangle enclosed. The value of \(k\) can be calculated using the formula given in the SQA Data Booklet, derived from the area under any ``curve'' for any continuous distribution being \textbf{equal to 1}. The formulae for the \textbf{expectation} and \textbf{variance} for the continuous uniform distribution are also given for \(X\sim \text{U}(a,b)\):
+The probability for any range of values can be calculated simply as the area of the rectangle enclosed. The value of $k$ can be calculated using the formula given in the SQA Data Booklet, derived from the area under any "curve" for any continuous distribution being **equal to 1**. The formulae for the **expectation** and **variance** for the continuous uniform distribution are also given for $X\sim \text{U}(a,b)$:
 
-\[k=\frac{1}{b-a}\quad \qquad \quad \text{E}(X)=\frac{a+b}{2}\quad \qquad \quad \text{V}(X)=\frac{(b-a)^2}{12}\]
+$$k=\frac{1}{b-a}\quad \qquad \quad \text{E}(X)=\frac{a+b}{2}\quad \qquad \quad \text{V}(X)=\frac{(b-a)^2}{12}$$
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given random variable $T$ such that $T\sim \text{U}(27,42)$, calculate $\text{P}(31<T<34)$.
@@ -9524,10 +9296,9 @@ $\text{P}(31<T<34)=3\times \frac{1}{15}=\frac{3}{15}=\frac{1}{5}$
 
 \vspace{0.7cm}
 
-\protect\phantomsection\label{ex81q}{}
+[]{#ex81q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex81a]{Exercise 8.1}}{Exercise 8.1}}\label{exercise-8.1}
-\addcontentsline{toc}{subsubsection}{{Exercise 8.1}}
+#### [Exercise 8.1](#ex81a) {-}
 
 \begin{enumerate}[itemsep=12pt]
     \item The continuous random variable $X$ is uniformly distributed over the interval $(6,15)$. Find:
@@ -9597,9 +9368,9 @@ $\text{P}(31<T<34)=3\times \frac{1}{15}=\frac{3}{15}=\frac{1}{5}$
 
 \pagebreak
 
-\section{The Normal Distribution}\label{the-normal-distribution}
+## The Normal Distribution
 
-The \textbf{normal distribution}, also sometimes called the \emph{Gaussian Distribution}, is one of the most important probability distributions in statistics. One of the reasons for this is that many continuous variables, from the mass of an animal to the time taken to complete a task, have been observed to be \textbf{normally distributed}.
+The **normal distribution**, also sometimes called the *Gaussian Distribution*, is one of the most important probability distributions in statistics. One of the reasons for this is that many continuous variables, from the mass of an animal to the time taken to complete a task, have been observed to be **normally distributed**.
 
 \begin{figure}[H]
   \centering
@@ -9726,7 +9497,7 @@ The \textbf{normal distribution}, also sometimes called the \emph{Gaussian Distr
 \end{tikzpicture}
 \end{center}
 
-The shape of the curve illustrates that values closer to the mean are more likely to be observed, whilst those further from the mean are less likely. Whilst \emph{any real value} is possible under the model, for \textbf{every normal distribution}:
+The shape of the curve illustrates that values closer to the mean are more likely to be observed, whilst those further from the mean are less likely. Whilst *any real value* is possible under the model, for **every normal distribution**:
 
 \begin{figure}[H]
   \centering
@@ -9813,13 +9584,11 @@ The shape of the curve illustrates that values closer to the mean are more likel
 \end{minipage}
 \end{figure}
 
-\protect\phantomsection\label{ex82q}{}
+[]{#ex82q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex82a]{Exercise 8.2}}{Exercise 8.2}}\label{exercise-8.2}
-\addcontentsline{toc}{subsubsection}{{Exercise 8.2}}
+#### [Exercise 8.2](#ex82a) {-}
 
-\emph{For each, sketch the distribution, labelling the mean and two standard deviations either side of the mean.}
-
+*For each, sketch the distribution, labelling the mean and two standard deviations either side of the mean.*
 \begin{multicols}{2}
 \begin{enumerate}[itemsep=0pt]
     \item
@@ -9839,9 +9608,9 @@ The shape of the curve illustrates that values closer to the mean are more likel
 
 \pagebreak
 
-\section{\texorpdfstring{The Standard Normal Distribution \textit{Z}}{The Standard Normal Distribution }}\label{the-standard-normal-distribution}
+## The Standard Normal Distribution \textit{Z}
 
-The random variable \(Z\) is specifically defined as normally distributed, with \(\mu=0\) and \(\sigma=1\):
+The random variable $Z$ is specifically defined as normally distributed, with $\mu=0$ and $\sigma=1$:
 
 \begin{center}
 \begin{tikzpicture}
@@ -9892,7 +9661,7 @@ The random variable \(Z\) is specifically defined as normally distributed, with 
 \end{tikzpicture}
 \end{center}
 
-\(Z\) is called the \textbf{standard normal distribution}, and it is used to calculate probabilities for \textbf{any} normal distribution. Probabilities for the \(Z\) distribution can be obtained using the \textbf{cumulative probability table} on Page 11 of the SQA Data Booklet, or directly from a graphical calculator. Since the cumulative table only gives probabilities for \textbf{positive} \(\mathbf{z}\)\textbf{-values}, negative \(z\)-values require consideration of the symmetry of the normal distribution.
+$Z$ is called the **standard normal distribution**, and it is used to calculate probabilities for **any** normal distribution. Probabilities for the $Z$ distribution can be obtained using the **cumulative probability table** on Page 11 of the SQA Data Booklet, or directly from a graphical calculator. Since the cumulative table only gives probabilities for **positive** $\mathbf{z}$**-values**, negative $z$-values require consideration of the symmetry of the normal distribution. 
 
 \begin{figure}[H]
   \centering
@@ -10116,10 +9885,9 @@ The random variable \(Z\) is specifically defined as normally distributed, with 
 
 \vspace{-0.5cm}
 
-\protect\phantomsection\label{ex83q}{}
+[]{#ex83q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex83a]{Exercise 8.3}}{Exercise 8.3}}\label{exercise-8.3}
-\addcontentsline{toc}{subsubsection}{{Exercise 8.3}}
+#### [Exercise 8.3](#ex83a) {-}
 
 \begin{enumerate}[itemsep=0pt]
     \item Find:
@@ -10157,13 +9925,13 @@ The random variable \(Z\) is specifically defined as normally distributed, with 
 
 \pagebreak
 
-\section{\texorpdfstring{The \textit{Z}-Transformation}{The -Transformation}}\label{the--transformation}
+## The \textit{Z}-Transformation
 
-A linear transformation of a normally distributed random variable will result in \emph{another} normally distributed random variable, with the laws of expectation and variance applying as usual. In this way, any normal distributed can be related to the \emph{standard normal distribution}, \(Z\). Consider a random variable \(X\) with mean \(\mu\) and variance \(\sigma^2\):
+A linear transformation of a normally distributed random variable will result in *another* normally distributed random variable, with the laws of expectation and variance applying as usual. In this way, any normal distributed can be related to the *standard normal distribution*, $Z$. Consider a random variable $X$ with mean $\mu$ and variance $\sigma^2$:
 
-\[X\sim \text{N}(\mu,\sigma^2)\]
+$$X\sim \text{N}(\mu,\sigma^2)$$
 
-Multiplying \(Z\) by \(\sigma\) and adding \(\mu\) results in a normally distributed random variable:
+Multiplying $Z$ by $\sigma$ and adding $\mu$ results in a normally distributed random variable:
 
 \begin{equation*}
   \begin{split}
@@ -10179,7 +9947,7 @@ Multiplying \(Z\) by \(\sigma\) and adding \(\mu\) results in a normally distrib
   \end{split}
 \end{equation*}
 
-Hence \(X=\sigma Z + \mu\), which can be rearranged to obtain the \(\mathbf{z}\)\textbf{-transformation}:
+Hence $X=\sigma Z + \mu$, which can be rearranged to obtain the $\mathbf{z}$**-transformation**:
 
 \begin{centering}
 \tcbset{width=9cm}
@@ -10188,15 +9956,15 @@ $Z=\dfrac{X-\mu}{\text{$\sigma$}}$
 \end{tcolorbox}
 \end{centering}
 
-A useful way of thinking about the result of a \(z\)-transformation is that it is a measure of \emph{how many standard deviations from the mean any given} \(x\)\emph{-value is}, which then can be used to calculate a probability.
+A useful way of thinking about the result of a $z$-transformation is that it is a measure of *how many standard deviations from the mean any given* $x$*-value is*, which then can be used to calculate a probability. 
 
-For example, consider normally distributed random variable \(X\) with a mean of 20 and standard deviation of 6. The probability that a random observation of \(X\) results in a value less than 29 can be sketched on the distribution of \(X\), and compared to the \emph{transformed value} of 1.5 on the distribution of \(Z\). Note that 29 is 1.5 standard deviations over the mean of 20.
+For example, consider normally distributed random variable $X$ with a mean of 20 and standard deviation of 6. The probability that a random observation of $X$ results in a value less than 29 can be sketched on the distribution of $X$, and compared to the *transformed value* of 1.5 on the distribution of $Z$. Note that 29 is 1.5 standard deviations over the mean of 20.
 
-\[z=\frac{\text{$x-\mu$}}{\text{$\sigma$}}=\frac{\text{$29-20$}}{\text{$6$}}=1.5\]
+$$z=\frac{\text{$x-\mu$}}{\text{$\sigma$}}=\frac{\text{$29-20$}}{\text{$6$}}=1.5$$
 
-Hence, a probability statement about \(X\) can be rewritten as a probability statement about \(Z\):
+Hence, a probability statement about $X$ can be rewritten as a probability statement about $Z$:
 
-\[\text{P}(X<29)=\text{P}\left(Z<\dfrac{X-\mu}{\sigma}\right)=\text{P}\left(Z<\dfrac{29-20}{6}\right)=\text{P}(Z<1.5)\]
+$$\text{P}(X<29)=\text{P}\left(Z<\dfrac{X-\mu}{\sigma}\right)=\text{P}\left(Z<\dfrac{29-20}{6}\right)=\text{P}(Z<1.5)$$
 
 \begin{figure}[H]
   \centering
@@ -10354,10 +10122,9 @@ $\text{P}(X>300)=\text{P}(Z>\frac{\text{$X-\mu$}}{\text{$\sigma$}})=\text{P}(Z>\
 
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex84q}{}
+[]{#ex84q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex84a]{Exercise 8.4}}{Exercise 8.4}}\label{exercise-8.4}
-\addcontentsline{toc}{subsubsection}{{Exercise 8.4}}
+#### [Exercise 8.4](#ex84a) {-}
 
 \begin{enumerate}
     \item Given $X\sim \text{N}(24,9)$, find:
@@ -10411,9 +10178,9 @@ $\text{P}(X>300)=\text{P}(Z>\frac{\text{$X-\mu$}}{\text{$\sigma$}})=\text{P}(Z>\
 \end{enumerate}
 \pagebreak
 
-\section{Working Backwards}\label{working-backwards}
+## Working Backwards
 
-``Working backwards'' means calculating a value for a normally distributed random variable when a \textbf{probability relating to this value is given}. For example, if random variable \(X\) is normally distributed with mean \(280\) and variance \(16\), it may be desired to calculate the value only exceeded by 10\% of the observations. Typical steps are:
+"Working backwards" means calculating a value for a normally distributed random variable when a **probability relating to this value is given**. For example, if random variable $X$ is normally distributed with mean $280$ and variance $16$, it may be desired to calculate the value only exceeded by 10\% of the observations. Typical steps are:
 
 \begin{figure}[H]
   \centering
@@ -10645,10 +10412,9 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
 
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex85q}{}
+[]{#ex85q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex85a]{Exercise 8.5}}{Exercise 8.5}}\label{exercise-8.5}
-\addcontentsline{toc}{subsubsection}{{Exercise 8.5}}
+#### [Exercise 8.5](#ex85a) {-}
 
 \begin{enumerate}
     \item Given $Z\sim \text{N}(0,1)$, find the value of $a$ if:
@@ -10685,22 +10451,22 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
 
 \pagebreak
 
-\section{Combining Normal Random Variables}\label{combining-normal-random-variables}
+## Combining Normal Random Variables
 
-\textbf{Sums and differences} of normally distributed random variables \emph{are themselves normally distributed}, under the condition that \textbf{the normal random variables are independent}. For example, given \textbf{independent} normally distributed random variables \(X\) and \(Y\) with means of \(\mu_X\) and \(\mu_Y\) and standard deviations of \(\sigma_X\) and \(\sigma_Y\) respectively:
+**Sums and differences** of normally distributed random variables  *are themselves normally distributed*, under the condition that **the normal random variables are independent**. For example, given **independent** normally distributed random variables $X$ and $Y$ with means of $\mu_X$ and $\mu_Y$ and standard deviations of $\sigma_X$ and $\sigma_Y$ respectively:
 
-\[X+Y\sim \text{N}(\mu_X+\mu_Y,\sigma_X^2+\sigma_Y^2)\quad\text{   and   }\quad X-Y\sim \text{N}(\mu_X-\mu_Y,\sigma_X^2+\sigma_Y^2)\]
+$$X+Y\sim \text{N}(\mu_X+\mu_Y,\sigma_X^2+\sigma_Y^2)\quad\text{   and   }\quad X-Y\sim \text{N}(\mu_X-\mu_Y,\sigma_X^2+\sigma_Y^2)$$
 
-The mean and variance of these \emph{combined normal random variables} can be calculated using the laws of expectation and variance as usual.
+The mean and variance of these *combined normal random variables* can be calculated using the laws of expectation and variance as usual. 
 
-It is important to remember that \(2X\) is \textbf{not} the sum of two independent observations of \(X\). Instead, the sum of \(n\) independent observations of \(X\) is \(X_1+X_2+...+X_n\).
+It is important to remember that $2X$ is **not** the sum of two independent observations of $X$. Instead, the sum of $n$ independent observations of $X$ is $X_1+X_2+...+X_n$.
 
 \begin{align*}
 \text{E}(X_1+X_2+...+X_n)=&\text{E}(X_1)+\text{E}(X_2)+...+\text{E}(X_n)=n\text{E}(X)\\
 \text{V}(X_1+X_2+...+X_n)=&\text{V}(X_1)+\text{V}(X_2)+...+\text{V}(X_n)=n\text{V}(X)
 \end{align*}
 
-When calculating probabilities relating to combined normal random variables, it can be helpful to name the new random variable using some logical letter choice, such as \(T\) for \emph{``Total''}, \(D\) for \emph{``Difference''} and so on.
+When calculating probabilities relating to combined normal random variables, it can be helpful to name the new random variable using some logical letter choice, such as $T$ for *"Total"*, $D$ for *"Difference"* and so on.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The actual volume of paint contained within tins marked as containing 25 litres is normally distributed with a mean of 25.2 litres and a standard deviation of 0.3 litres. Calculate the probability that 4 such tins contain less than 100 litres in total.
@@ -10784,10 +10550,9 @@ Assuming the time taken for the cycle to complete and the time taken for the own
 
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex86q}{}
+[]{#ex86q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex86a]{Exercise 8.6}}{Exercise 8.6}}\label{exercise-8.6}
-\addcontentsline{toc}{subsubsection}{{Exercise 8.6}}
+#### [Exercise 8.6](#ex86a) {-}
 
 \begin{enumerate}
     \item Bob observes that making his usual portion of mashed potatoes can be broken down into three distinct processes. The time taken to peel the potatoes is normally distributed with a mean of 5 minutes and a standard deviation of 1.2 minutes. The time taken to boil the potatoes is also normally distributed with a mean of 27 minutes and a standard deviation of 3.4 minutes. Finally, the mean time taken to mash and season the potatoes is 2 minutes with a standard deviation of 0.3 minutes.
@@ -10802,7 +10567,7 @@ Assuming the time taken for the cycle to complete and the time taken for the own
 
 \pagebreak
 
-\section{Normal Approximation to the Binomial Distribution}\label{normal-approximation-to-the-binomial-distribution}
+## Normal Approximation to the Binomial Distribution
 
 \begin{figure}[H]
   \centering
@@ -10918,7 +10683,7 @@ Assuming the time taken for the cycle to complete and the time taken for the own
 \end{minipage}
 \end{figure}
 
-Under certain conditions the \emph{discrete} binomial distribution can begin to resemble a \emph{continuous} normal distribution.. Given random variable \(X\sim B(n,p)\), \textbf{a normal distribution can approximate the binomial distribution}, with \emph{sufficiently accuracy}, when:
+Under certain conditions the *discrete* binomial distribution can begin to resemble a *continuous* normal distribution.. Given random variable $X\sim B(n,p)$, **a normal distribution can approximate the binomial distribution**, with *sufficiently accuracy*, when:   
 
 \begin{centering}
 \tcbset{width=12cm}
@@ -10929,13 +10694,13 @@ $np>5$\quad \text{ and } \quad $nq>5$
 \end{tcolorbox}
 \end{centering}
 
-The mean and variance of the \emph{approximate} normal distribution are, as usual for a binomial distribution, \mbox{$\text{E}(X)=np$} and \(\text{V}(X)=npq\). Using `\(\approx\)' instead of `\(\sim\)' is important to show that the normal distribution is only an \emph{approximation} to the actual binomial distribution.
+The mean and variance of the *approximate* normal distribution are, as usual for a binomial distribution, \mbox{$\text{E}(X)=np$} and $\text{V}(X)=npq$. Using '$\approx$' instead of '$\sim$' is important to show that the normal distribution is only an *approximation* to the actual binomial distribution. 
 
-\[\text{If } X\sim B(n,p) \text{ then } X\approx \text{N}(np,npq)\]
+$$\text{If } X\sim B(n,p) \text{ then } X\approx \text{N}(np,npq)$$
 
-Historically, the ability to approximate the binomial distribution using the normal distribution will have prevented the need for extensive tables of binomial probabilities. Additionally, binomial distribution calculations tend to be more computationally-intensive than normal distributions calculations. Whilst modern computing power may seem to render this argument null, it can still be desirable to speed up computation in return for a trivial loss in accuracy.
+Historically, the ability to approximate the binomial distribution using the normal distribution will have prevented the need for extensive tables of binomial probabilities. Additionally, binomial distribution calculations tend to be more computationally-intensive than normal distributions calculations. Whilst modern computing power may seem to render this argument null, it can still be desirable to speed up computation in return for a trivial loss in accuracy. 
 
-Approximating probabilities for a \emph{discrete} distribution using a \emph{continuous} distribution may lead to inaccuracy unless a \textbf{continuity correction} is applied. For example, consider random variable \(X\sim B(24,0.5)\), with its normal approximation \(X\approx \text{N}(12,6)\) overlaid and the \emph{continous} probability \(\text{P}(X<14)\) shaded:
+Approximating probabilities for a *discrete* distribution using a *continuous* distribution may lead to inaccuracy unless a **continuity correction** is applied. For example, consider random variable $X\sim B(24,0.5)$, with its normal approximation $X\approx \text{N}(12,6)$ overlaid and the *continous* probability $\text{P}(X<14)$ shaded:
 
 \begin{center}
 \hspace{-1cm}
@@ -10982,7 +10747,7 @@ Approximating probabilities for a \emph{discrete} distribution using a \emph{con
 \end{tikzpicture}
 \end{center}
 
-When calculating the discrete probability \(\text{P}(X\leqslant 14)\), the bar representing the discrete integer 14 ought to be included. The continuous probability \(\text{P}(X<14.5)\), making a \textbf{continuity correction}, would provide a more accurate estimate of the desired probability. For the discrete probability \(\text{P}(X<14)\), with the discrete integer value of 14 not to be included, the continuous probability \(\text{P}(X<13.5)\) would be more accurate.
+When calculating the discrete probability $\text{P}(X\leqslant 14)$, the bar representing the discrete integer 14 ought to be included. The continuous probability $\text{P}(X<14.5)$, making a **continuity correction**, would provide a more accurate estimate of the desired probability. For the discrete probability $\text{P}(X<14)$, with the discrete integer value of 14 not to be included, the continuous probability $\text{P}(X<13.5)$ would be more accurate.
 
 \pagebreak
 
@@ -11024,10 +10789,9 @@ $X\approx \text{N}(10,7.5)$
 
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex87q}{}
+[]{#ex87q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex87a]{Exercise 8.7}}{Exercise 8.7}}\label{exercise-8.7}
-\addcontentsline{toc}{subsubsection}{{Exercise 8.7}}
+#### [Exercise 8.7](#ex87a) {-}
 
 \begin{enumerate}[itemsep=0pt]
     \item Given $X\sim B(40,0.4)$:
@@ -11058,10 +10822,11 @@ $X\approx \text{N}(10,7.5)$
     \item A farmer believes that 60\% of the apples that are brought into her grading shed are classified as Grade A. Assuming she is right, use a suitable approximation to estimate the probability that, in a random sample of 120 apples, there are more than 75 Grade A apples.
     \item 200 people are randomly picked as part of a survey and asked whether or not they plan to vote for the party currently in power in an upcoming election. It is generally thought that 54\% of people will vote for this party. Using a suitable approximation, calculate the probability that less than 45\% of the people sampled indicate that they will vote for the party currently in power, and comment on what this might suggest should it happen.
 \end{enumerate}
+        
 
 \pagebreak
 
-\section{Normal Approximation to the Poisson Distribution}\label{normal-approximation-to-the-poisson-distribution}
+## Normal Approximation to the Poisson Distribution
 
 \begin{figure}[H]
   \centering
@@ -11146,7 +10911,7 @@ $X\approx \text{N}(10,7.5)$
 \end{minipage}
 \end{figure}
 
-As with the binomial distribution, under certain conditions the \emph{discrete} Poisson distribution can also begin to resemble a \emph{continuous} normal distribution. Given random variable \(X\sim Po(\lambda)\), \textbf{a normal distribution can approximate the Poisson distribution}, with \emph{sufficiently accuracy}, when:
+As with the binomial distribution, under certain conditions the *discrete* Poisson distribution can also begin to resemble a *continuous* normal distribution. Given random variable $X\sim Po(\lambda)$, **a normal distribution can approximate the Poisson distribution**, with *sufficiently accuracy*, when:   
 
 \begin{centering}
 \tcbset{width=12cm}
@@ -11157,11 +10922,11 @@ $\lambda>10$
 \end{tcolorbox}
 \end{centering}
 
-The mean and variance of the \emph{approximate} normal distribution are \(\text{E}(X)=\text{V}(X)=\lambda\).
+The mean and variance of the *approximate* normal distribution are $\text{E}(X)=\text{V}(X)=\lambda$.
 .
-\[\text{If } X\sim Po(\lambda) \text{ then } X\approx \text{N}(\lambda,\lambda)\]
+$$\text{If } X\sim Po(\lambda) \text{ then } X\approx \text{N}(\lambda,\lambda)$$
 
-Since again this is a \emph{continuous approximation} to a \emph{discrete distribution}, any probabilities calculated will not be sufficiently accurate unless a \textbf{continuity correction} is applied. For a continuous approximation to a discrete distribution taking integers values, as is the case with both such approximations encountered in this chapter, continuity corrections will always require an addition or subtraction of 0.5.
+Since again this is a *continuous approximation* to a *discrete distribution*, any probabilities calculated will not be sufficiently accurate unless a **continuity correction** is applied. For a continuous approximation to a discrete distribution taking integers values, as is the case with both such approximations encountered in this chapter, continuity corrections will always require an addition or subtraction of 0.5. 
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} In a football league, goals occur at a constant mean rate of 2.5 goals per game. A full weekend of fixtures includes 10 games. Using a suitable approximation, and justifying its use, calculate the probability that there will be between 15 and 20 goals in total, inclusive, in a full weekend of fixtures. 
@@ -11203,10 +10968,9 @@ $T\approx \text{N}(25,25)$
 
 \pagebreak
 
-\protect\phantomsection\label{ex88q}{}
+[]{#ex88q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex88a]{Exercise 8.8}}{Exercise 8.8}}\label{exercise-8.8}
-\addcontentsline{toc}{subsubsection}{{Exercise 8.8}}
+#### [Exercise 8.8](#ex88a) {-}
 
 \begin{enumerate}
     \item Given $X\sim Po(24)$, use the normal approximation to find:
@@ -11253,10 +11017,9 @@ $T\approx \text{N}(25,25)$
 
 \pagebreak
 
-\protect\phantomsection\label{re8q}{}
+[]{#re8q}
 
-\section*{\texorpdfstring{\hyperref[re8a]{Review Exercise}}{Review Exercise}}\label{review-exercise-7}
-\addcontentsline{toc}{section}{{Review Exercise}}
+## [Review Exercise](#re8a) {-}
 
 \begin{enumerate}[itemsep=10pt]
     \item Given $X\sim \text{U}(1,7)$, find:
@@ -11297,60 +11060,55 @@ $T\approx \text{N}(25,25)$
 
 \pagebreak
 
-\chapter{The Distribution of the Sample Mean}\label{the-distribution-of-the-sample-mean}
+<!--chapter:end:08-Continuous-Distributions.Rmd-->
 
-\vspace{-0.7cm}
+# The Distribution of the Sample Mean
 
-Previous chapters have investigated probabilities related to \emph{individual} observations from random variables with known distributions. However, statisticians are rarely in the business of making a single observation from a population - instead, they are far more likely to draw a \emph{sample} of observations and, commonly, calculate the \emph{sample mean}. Given random variable \(X\), the sample mean of \(X\) is also a random variable and is denoted \(\overline{X}\).
+\vspace{-0.7cm}Previous chapters have investigated probabilities related to *individual* observations from random variables with known distributions. However, statisticians are rarely in the business of making a single observation from a population - instead, they are far more likely to draw a *sample* of observations and, commonly, calculate the *sample mean*. Given random variable $X$, the sample mean of $X$ is also a random variable and is denoted $\overline{X}$. 
 
-Letting \(X_1,X_2,\dots,X_n\) represent a sample of \(n\) \textbf{independent and identically distributed} (\textbf{i.i.d.}) observations, where independence may be assumed through the use of \emph{random sampling} methods, the sample mean may be expressed as:
+Letting $X_1,X_2,\dots,X_n$ represent a sample of $n$ **independent and identically distributed** (**i.i.d.**) observations, where independence may be assumed through the use of *random sampling* methods, the sample mean may be expressed as:
 
-\[\overline{X}=\frac{1}{n}\left(X_1+X_2+X_3+...+X_n\right)\]
+$$\overline{X}=\frac{1}{n}\left(X_1+X_2+X_3+...+X_n\right)$$
 
-\subsection*{The Expectation and Variance of the Sample Mean}\label{the-expectation-and-variance-of-the-sample-mean}
-\addcontentsline{toc}{subsection}{The Expectation and Variance of the Sample Mean}
+### The Expectation and Variance of the Sample Mean {-}
 
-The expected value of the sample mean is equal to the true value of the population mean, meaning it is an \emph{unbiased estimator} of the population mean. That is, if a series of samples are taken from a distribution with population mean \(\mu\) and the mean is calculated for each sample, in the long-run the mean of these sample means tends toward \(\mu\).
+The expected value of the sample mean is equal to the true value of the population mean, meaning it is an *unbiased estimator* of the population mean. That is, if a series of samples are taken from a distribution with population mean $\mu$ and the mean is calculated for each sample, in the long-run the mean of these sample means tends toward $\mu$.
 
-The \emph{standard deviation of the sample mean} \(\overline{X}\) is called the \textbf{standard error}. For an underlying population with standard deviation \(\sigma\), the standard error of the sample mean for a sample of size \(n\) is \(\dfrac{\sigma}{\sqrt{n}}\).
+The *standard deviation of the sample mean* $\overline{X}$ is called the **standard error**. For an underlying population with standard deviation $\sigma$, the standard error of the sample mean for a sample of size $n$ is $\dfrac{\sigma}{\sqrt{n}}$.
 
-\textbf{Proof}: Given random variable \(X\) such that \(\text{E}(X)=\mu\) and \(\text{V}(X)=\sigma^2\), from which a sample of \(n\) independent observations (\(X_1,X_2,\dots,X_n\)) are drawn:
+**Proof**: Given random variable $X$ such that $\text{E}(X)=\mu$ and $\text{V}(X)=\sigma^2$, from which a sample of $n$ independent observations ($X_1,X_2,\dots,X_n$) are drawn:
 
-\begin{cols}
-
-\begin{col}{0.475\textwidth}
+:::::: {.cols data-latex=""}
+::: {.col data-latex="{0.475\textwidth}"}
 \begin{align*}
 \text{E}(\overline{X})&=\text{E}\left(\frac{1}{n}(X_1+X_2+...+X_n)\right)\\
 &=\frac{1}{n}(\text{E}(X_1)+\text{E}(X_2)+...+\text{E}(X_n))\\
 &=\frac{1}{n}(n\mu)\\
 &=\mu
 \end{align*}
+:::
 
-\end{col}
+::: {.col data-latex="{0.05\textwidth}"}
+\ 
+<!-- an empty Div (with a white space), serving as
+a column separator -->
+:::
 
-\begin{col}{0.05\textwidth}
-~
-
-
-\end{col}
-
-\begin{col}{0.475\textwidth}
+::: {.col data-latex="{0.475\textwidth}"}
 \begin{align*}
 \text{V}(\overline{X})&=\text{V}\left(\frac{1}{n}(X_1+X_2+...+X_n)\right)\\
 &=\frac{1}{n^2}(\text{V}(X_1)+\text{V}(X_2)+...+\text{V}(X_n))\\
 &=\frac{1}{n^2}(n\sigma^2)\\
 &=\frac{\sigma^2}{n}
 \end{align*}
-
-\end{col}
-
-\end{cols}
+:::
+::::::
 
 \pagebreak
 
-\section{The Sample Mean of a Normally Distributed Random Variable}\label{the-sample-mean-of-a-normally-distributed-random-variable}
+## The Sample Mean of a Normally Distributed Random Variable
 
-Since the sample mean \(\overline{X}\) is a linear combination of independent observations from \(X\), \textbf{if} \(X\) \textbf{is normally distributed then} \(\overline{X}\) \textbf{is also normally distributed.}
+Since the sample mean $\overline{X}$ is a linear combination of independent observations from $X$, **if** $X$ **is normally distributed then** $\overline{X}$ **is also normally distributed.**
 
 \begin{centering}
 \tcbset{width=9cm}
@@ -11359,7 +11117,7 @@ Since the sample mean \(\overline{X}\) is a linear combination of independent ob
 \end{tcolorbox}
 \end{centering}
 
-Due to the lower variance of the sample mean, \emph{extreme results are less likely} when taking the mean of a sample in comparison to a single observation. For example, suppose the mass of adult red squirrels in a location is known to be normally distributed, with mean 250 grams and standard deviation 12 grams. If a single squirrel is randomly selected and its mass measured, it would not be that unlikely to encounter a squirrel lighter than 240 grams or heavier than 260 grams. However, if a random sample of three squirrels is taken, each weighed and the mean of the sample calculated then it would be very unlikely for the sample mean to be lower than 240 grams or heavier than 260 grams.
+Due to the lower variance of the sample mean, *extreme results are less likely* when taking the mean of a sample in comparison to a single observation. For example, suppose the mass of adult red squirrels in a location is known to be normally distributed, with mean 250 grams and standard deviation 12 grams. If a single squirrel is randomly selected and its mass measured, it would not be that unlikely to encounter a squirrel lighter than 240 grams or heavier than 260 grams. However, if a random sample of three squirrels is taken, each weighed and the mean of the sample calculated then it would be very unlikely for the sample mean to be lower than 240 grams or heavier than 260 grams.
 
 The histograms below show 100 simulated individual observations of squirrel masses compared to the means of 100 simulated samples, each of size 3. Note that the sample means also show a distribution that looks normal with a mean of 250 grams, but that the spread of the sample means is much less than that of the individual observations.
 
@@ -11444,11 +11202,11 @@ The histograms below show 100 simulated individual observations of squirrel mass
     \end{tikzpicture}
 \end{center}
 
-Given \(X\sim\text{N}(\mu,\sigma^2)\):
+Given $X\sim\text{N}(\mu,\sigma^2)$:
 
-The \(z\)-transformation for \emph{single observations} from \(X\) has the \emph{standard deviation} as the denominator: \(Z=\dfrac{X-\mu}{\sigma}\)
+The $z$-transformation for *single observations* from $X$ has the *standard deviation* as the denominator: $Z=\dfrac{X-\mu}{\sigma}$
 
-The \(z\)-transformation for the \textbf{sample mean} has the \textbf{standard error} as its denominator instead:
+The $z$-transformation for the **sample mean** has the **standard error** as its denominator instead:
 
 \begin{centering}
 \tcbset{width=9cm}
@@ -11478,10 +11236,9 @@ $Z=\dfrac{\overline{X}-\mu}{\dfrac{\sigma}{\sqrt{n}}}$
 \end{enumerate}
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex91q}{}
+[]{#ex91q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex91a]{Exercise 9.1}}{Exercise 9.1}}\label{exercise-9.1}
-\addcontentsline{toc}{subsubsection}{{Exercise 9.1}}
+#### [Exercise 9.1](#ex91a) {-}
 
 \begin{multicols}{2}
 \begin{enumerate}
@@ -11521,9 +11278,9 @@ $Z=\dfrac{\overline{X}-\mu}{\dfrac{\sigma}{\sqrt{n}}}$
 
 \pagebreak
 
-\section{The Central Limit Theorem}\label{the-central-limit-theorem}
+## The Central Limit Theorem
 
-The Central Limit Theorem (CLT) is one of the most important and useful concepts in statistics. It gives an insight into the prevalence of the normal distribution and, crucially for statisticians, allows the normal distribution to be used for statistical inference even when the data of interest is \emph{not} normally distributed. The CLT says:
+The Central Limit Theorem (CLT) is one of the most important and useful concepts in statistics. It gives an insight into the prevalence of the normal distribution and, crucially for statisticians, allows the normal distribution to be used for statistical inference even when the data of interest is *not* normally distributed. The CLT says:
 
 \begin{center}
 \begin{minipage}{0.95\textwidth}
@@ -11534,13 +11291,14 @@ The Central Limit Theorem (CLT) is one of the most important and useful concepts
 \end{minipage}
 \end{center}
 
-Note that a \emph{``sufficiently large sample''} in this course is \textbf{greater than 20} (\(n>20\)). Other statistical textbooks may use the value of 30, whilst in reality many statisticians appreciate that the nature of the underlying distribution may allow for smaller samples to be used or require larger samples in order for the distribution of the sample mean to be sufficiently approximately normal.
+Note that a *"sufficiently large sample"* in this course is **greater than 20** ($n>20$). Other statistical textbooks may use the value of 30, whilst in reality many statisticians appreciate that the nature of the underlying distribution may allow for smaller samples to be used or require larger samples in order for the distribution of the sample mean to be sufficiently approximately normal.
 
 Proof of the CLT is beyond the scope of this course (and this textbook), but statistical software and/or experimentation can help give a sense of what this looks like in practice. The simulations below show random individual observations from distributions on the left, with corresponding distributions of sample means to the right. Every random sample in both cases was of size 25.
 
+
 \begin{center}\includegraphics{_main_files/figure-latex/unnamed-chunk-1-1} \end{center}
 
-The \textbf{approximate} distribution of the sample mean can be stated provided the expectation and variance (or standard deviation) of the underlying distribution are known, or can be calculated. The notation `\(\approx\)' is used to highlight that this is an \emph{approximate} distribution.
+The **approximate** distribution of the sample mean can be stated provided the expectation and variance (or standard deviation) of the underlying distribution are known, or can be calculated. The notation '$\approx$' is used to highlight that this is an *approximate* distribution.
 
 \begin{centering}
 \tcbset{width=15cm}
@@ -11569,10 +11327,9 @@ The \textbf{approximate} distribution of the sample mean can be stated provided 
 
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex92q}{}
+[]{#ex92q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex92a]{Exercise 9.2}}{Exercise 9.2}}\label{exercise-9.2}
-\addcontentsline{toc}{subsubsection}{{Exercise 9.2}}
+#### [Exercise 9.2](#ex92a) {-}
 
 \begin{enumerate}
     \item For each sample from the random variable given, state the distribution of the sample mean where possible:
@@ -11597,12 +11354,12 @@ The \textbf{approximate} distribution of the sample mean can be stated provided 
     \end{enumerate}
 \end{enumerate}
 
+
 \pagebreak
 
-\protect\phantomsection\label{re9q}{}
+[]{#re9q}
 
-\section*{\texorpdfstring{\hyperref[re9a]{Review Exercise}}{Review Exercise}}\label{review-exercise-8}
-\addcontentsline{toc}{section}{{Review Exercise}}
+## [Review Exercise](#re9a) {-}
 
 \begin{enumerate}[itemsep=18pt]
     \item Given a normally distributed random variable $X$, with a mean of 15 and a standard deviation of 3, from which a sample of eight independent observations are taken:
@@ -11643,14 +11400,15 @@ The \textbf{approximate} distribution of the sample mean can be stated provided 
     \end{enumerate}
 \end{enumerate}
 
-\chapter{An Introduction to Hypothesis Testing}\label{an-introduction-to-hypothesis-testing}
+<!--chapter:end:09-The-Distribution-of-the-Sample-Mean.Rmd-->
 
-In brief, hypothesis testing is an approach to assessing the statistical evidence for a claim through the analysis of data from a random sample. The claim will typically relate to some aspect of the distribution of a population of interest, often a \emph{parameter} such as the \emph{population mean}, \(\mu\), and the foundation of hypothesis testing is \emph{probability}.
+# An Introduction to Hypothesis Testing
 
-\subsection*{The Logic of Hypothesis Testing}\label{the-logic-of-hypothesis-testing}
-\addcontentsline{toc}{subsection}{The Logic of Hypothesis Testing}
+In brief, hypothesis testing is an approach to assessing the statistical evidence for a claim through the analysis of data from a random sample. The claim will typically relate to some aspect of the distribution of a population of interest, often a *parameter* such as the *population mean*, $\mu$, and the foundation of hypothesis testing is *probability*.
 
-Consider the following scenarios:
+### The Logic of Hypothesis Testing {-}
+
+Consider the following scenarios:  
 
 \begin{itemize}
     \item A coin is tossed 50 times, and it lands showing \textit{tails} 47 of those times.
@@ -11670,15 +11428,15 @@ In each of these scenarios, there are two possible conclusions:
 \end{tabular}
 \end{center}
 
-An \emph{objective} process is required that allows a decision to be made between these two possibilities. This process, called \textbf{hypothesis testing}, will form a substantial part of the remainder of the course.
+An *objective* process is required that allows a decision to be made between these two possibilities. This process, called **hypothesis testing**, will form a substantial part of the remainder of the course.
 
 \pagebreak
 
-\section{The Null Hypothesis and the Alternative Hypothesis}\label{the-null-hypothesis-and-the-alternative-hypothesis}
+## The Null Hypothesis and the Alternative Hypothesis
 
-Most statistical studies begin with a claim, which is called the \textbf{alternative hypothesis}, or \(H_1\). Initially in this chapter, these will consist of a claim about the value of the \emph{population mean}, \(\mu\). A conservative stance in opposition to the alternative hypothesis will used as the basis for all calculations, assuming that claim is \emph{not true}. This is called the \textbf{null hypothesis}, or \(H_0\). It is \emph{essential} that both hypotheses are formed \emph{before} observing the data.
+Most statistical studies begin with a claim, which is called the **alternative hypothesis**, or $H_1$. Initially in this chapter, these will consist of a claim about the value of the *population mean*, $\mu$. A conservative stance in opposition to the alternative hypothesis will used as the basis for all calculations, assuming that claim is *not true*. This is  called the **null hypothesis**, or $H_0$. It is *essential* that both hypotheses are formed *before* observing the data.
 
-It should also first be decided whether evidence is being sought for the true value of the population mean being \emph{less than} a specified value, \emph{greater than} a specified value, or simply \emph{different than} a specified value. When the alternative hypothesis is only interested in a \emph{single direction}, the test being performed is described as \textbf{\emph{one-tailed}}. When the alternative hypothesis is interested in a change in \emph{either direction}, it is referred to as a \textbf{\emph{two-tailed}} test.
+It should also first be decided whether evidence is being sought for the true value of the population mean being *less than* a specified value, *greater than* a specified value, or simply *different than* a specified value. When the alternative hypothesis is only interested in a *single direction*, the test being performed is described as  **_one-tailed_**. When the alternative hypothesis is interested in a change in *either direction*, it is referred to as a **_two-tailed_** test.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Using suitable notation, state the null and alternative hypotheses for each of the following claims.
@@ -11698,12 +11456,11 @@ It should also first be decided whether evidence is being sought for the true va
 \end{enumerate}
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex101q}{}
+[]{#ex101q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex101a]{Exercise 10.1}}{Exercise 10.1}}\label{exercise-10.1}
-\addcontentsline{toc}{subsubsection}{{Exercise 10.1}}
+#### [Exercise 10.1](#ex101a) {-}
 
-For each proposed hypothesis test, state the \textbf{null hypothesis} and the \textbf{alternative hypothesis} using appropriate notation.
+For each proposed hypothesis test, state the **null hypothesis** and the **alternative hypothesis** using appropriate notation.
 
 \begin{enumerate}[itemsep=18pt]
     \item A telecommunications provider wishes to test whether the mean amount of data used by its customers is more than 8.6 gigabytes per month.
@@ -11716,17 +11473,15 @@ For each proposed hypothesis test, state the \textbf{null hypothesis} and the \t
 
 \pagebreak
 
-\subsection*{Evidence to Suggest}\label{evidence-to-suggest}
-\addcontentsline{toc}{subsection}{Evidence to Suggest}
+### Evidence to Suggest {-}
 
-The \emph{true value} of a population parameter cannot be known by studying a sample. This means that, without a census of the entire population, a statistician will never say that they have \emph{proved} or \emph{disproved} a claim. Instead they will say that they have \textbf{evidence to suggest} or \textbf{insufficient evidence to suggest} a particular claim is true.
+The *true value* of a population parameter cannot be known by studying a sample. This means that, without a census of the entire population, a statistician will never say that they have *proved* or *disproved* a claim. Instead they will say that they have **evidence to suggest** or **insufficient evidence to suggest** a particular claim is true. 
 
-\subsection*{\texorpdfstring{The Significance Level and the \textit{p}-value}{The Significance Level and the -value}}\label{the-significance-level-and-the--value}
-\addcontentsline{toc}{subsection}{The Significance Level and the \textit{p}-value}
+### The Significance Level and the \textit{p}-value {-}
 
-Once the null and alternative hypotheses have been stated, a conservative viewpoint is taken - it is \emph{assumed that the null hypothesis is true}. Only an observed value that is then \emph{very unlikely to have occurred by random chance} will lead to the decision to \textbf{reject the null hypothesis} in favour of the alternative hypothesis. The decision to \emph{reject or not reject} is made in relation to the \emph{null hypothesis}, whilst the \emph{evidence (to suggest)}, or lack of, relates to the \emph{alternative hypothesis}:
+Once the null and alternative hypotheses have been stated, a conservative viewpoint is taken - it is *assumed that the null hypothesis is true*. Only an observed value that is then *very unlikely to have occurred by random chance* will lead to the decision to **reject the null hypothesis** in favour of the alternative hypothesis. The decision to *reject or not reject* is made in relation to the *null hypothesis*, whilst the *evidence (to suggest)*, or lack of, relates to the *alternative hypothesis*:
 
-The probability of such an extreme sample purely by chance is called the \textbf{\emph{p}-value}. A decision should be made in advance of collecting the data regarding the \textbf{significance level}, \(\alpha\), or \emph{``alpha''}. When the \(p\)-value is less than \(\alpha\) this is referred to as a \emph{statistically-significant} result.
+The probability of such an extreme sample purely by chance is called the **_p_****-value**. A decision should be made in advance of collecting the data regarding the **significance level**, $\alpha$, or *"alpha"*. When the $p$-value is less than $\alpha$ this is referred to as a *statistically-significant* result.
 
 \begin{centering}
 \tcbset{width=16cm}
@@ -11737,7 +11492,7 @@ If $p$-value $>$ $\alpha$ then \textbf{do not reject }$\mathbf{H_0}$ and conclud
 \end{tcolorbox}
 \end{centering}
 
-A significance level of 5\%, or \(\alpha=0.05\), is common, and it is recommended to use this value if a question does not already specify one. In some fields a smaller value is chosen to reduce the risk of making a \emph{Type I Error} - incorrectly rejecting the null hypothesis when it is in fact true. Failing to reject the null hypothesis error when it is in fact false is called a \emph{Type II Error}.
+A significance level of 5\%, or $\alpha=0.05$, is common, and it is recommended to use this value if a question does not already specify one.  In some fields a smaller value is chosen to reduce the risk of making a *Type I Error* - incorrectly rejecting the null hypothesis when it is in fact true. Failing to reject the null hypothesis error when it is in fact false is called a *Type II Error*.
 
 \begin{center}
   \begin{tabular}{| c|c c |} 
@@ -11750,7 +11505,7 @@ A significance level of 5\%, or \(\alpha=0.05\), is common, and it is recommende
 \end{tabular}
 \end{center}
 
-When performing \emph{any} significance test the following procedure is generally performed:
+When performing *any* significance test the following procedure is generally performed:
 
 \begin{enumerate}
     \item State $H_0$ and $H_1$, and whether the test will be one-tailed or two-tailed.
@@ -11762,9 +11517,9 @@ When performing \emph{any} significance test the following procedure is generall
 
 \pagebreak
 
-\section{\texorpdfstring{One-Sample \textit{z}-Test for the Population Mean using a \textit{p}-value}{One-Sample -Test for the Population Mean using a -value}}\label{one-sample--test-for-the-population-mean-using-a--value}
+## One-Sample \textit{z}-Test for the Population Mean using a \textit{p}-value
 
-The \emph{one-sample }\(z\)\emph{-test for the population mean} is a hypothesis test used when a sample of data is taken from a population so that a claim about the \emph{true value of the population mean}, \(\mu\), can be assessed. Since \(z\)-tests are based on the normal distribution, they are called \textbf{parametric tests}.
+The *one-sample *$z$*-test for the population mean* is a hypothesis test used when a sample of data is taken from a population so that a claim about the *true value of the population mean*, $\mu$, can be assessed. Since $z$-tests are based on the normal distribution, they are called **parametric tests**.
 
 \begin{centering}
 \tcbset{width=14cm}
@@ -11777,9 +11532,9 @@ The \emph{one-sample }\(z\)\emph{-test for the population mean} is a hypothesis 
 \end{tcolorbox}
 \end{centering}
 
-If one or more of these conditions is not known to be satisfied, then it is required to make an \textbf{assumption} that it \emph{is} satisfied for the test to be valid. In any statistical study assumptions that have been made should be recognised and consideration should be given as to whether they could be justified.
-
-Note that when the sample size is greater than 20 \textbf{the CLT can be invoked}, so the sample mean is at least \emph{approximately} normally distributed regardless of the distribution of the underlying population. Also, again for sample sizes greater than 20, the \emph{sample} standard deviation, \(s\), is considered to provide a \emph{sufficiently accurate estimate} for the \emph{population} standard deviation, \(\sigma\). These concepts remove the need for the first two assumptions to be made for \emph{sufficiently large samples}.
+ If one or more of these conditions is not known to be satisfied, then it is required to make an **assumption** that it *is* satisfied for the test to be valid. In any statistical study assumptions that have been made should be recognised and consideration should be given as to whether they could be justified.
+ 
+Note that when the sample size is greater than 20 **the CLT can be invoked**, so the sample mean is at least *approximately* normally distributed regardless of the distribution of the underlying population. Also, again for sample sizes greater than 20, the *sample* standard deviation, $s$, is considered to provide a *sufficiently accurate estimate* for the *population* standard deviation, $\sigma$. These concepts remove the need for the first two assumptions to be made for *sufficiently large samples*.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The designers of an electric car state that the distance that can be covered on a full charge is normally distributed, with a mean of 260 miles and a standard deviation of 10 miles. A car magazine randomly selects 14 of them from showrooms to be tested, with a sample mean of 257 miles obtained. Stating one assumption required, perform a hypothesis test to assess, at the 1\% level of significance, the claim by the car magazine that the mean distance is actually less than the designers' claim.
@@ -11857,7 +11612,7 @@ Since $0.0143<0.05$, reject $H_0$ at the 5\% level of significance.\\ There is e
 
 \end{tcolorbox}
 
-For a \emph{two-tailed} test, the probability of such an extreme result \emph{in either direction} must be considered. Given a symmetrical distribution of the test statistic, such as with a \(z\)-test, a \(p\)-value for a two-tailed test is \emph{double} the initial probability obtained.
+For a *two-tailed* test, the probability of such an extreme result *in either direction* must be considered. Given a symmetrical distribution of the test statistic, such as with a $z$-test, a $p$-value for a two-tailed test is *double* the initial probability obtained.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A tomato grower has been monitoring the mass of the tomatoes he grows, with the mean mass of a tomato shown to be 82 grams. Following a change in the soil composition in which they are grown, the grower wants to see whether the mean mass of their tomatoes has been affected. A sample of 36 tomatoes gives a mean mass of 83 grams and a standard deviation of 3 grams. Perform a hypothesis test to determine whether there is evidence to suggest that the mean mass of their tomatoes has changed, stating one assumption required and justifying the validity of the test with reference to the sample size.
@@ -11906,10 +11661,9 @@ Since $0.0.0456<0.5$, reject $H_0$ at the 5\% level of significance.\\ There is 
 
 \pagebreak
 
-\protect\phantomsection\label{ex102q}{}
+[]{#ex102q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex102a]{Exercise 10.2}}{Exercise 10.2}}\label{exercise-10.2}
-\addcontentsline{toc}{subsubsection}{{Exercise 10.2}}
+#### [Exercise 10.2](#ex102a) {-}
 
 \begin{enumerate}
     \item The length of cookery videos uploaded to a video sharing platform has been historically found to be normally distributed, with a mean of 11.7 minutes and a standard deviation of 2.3 minutes. A random sample of 30 videos uploaded this year tagged as 'cookery' on the platform  gives a mean of 10.8 minutes. Assuming that the standard deviation of video length has not changed, test at the 5\% level of significant the claim that the mean length of cookery videos on the platform is now less than 11.7 minutes.
@@ -11955,9 +11709,9 @@ Since $0.0.0456<0.5$, reject $H_0$ at the 5\% level of significance.\\ There is 
 
 \pagebreak
 
-\section{\texorpdfstring{One-Sample \textit{z}-Test for the Population Mean using a Test Statistic}{One-Sample -Test for the Population Mean using a Test Statistic}}\label{one-sample--test-for-the-population-mean-using-a-test-statistic}
+## One-Sample \textit{z}-Test for the Population Mean using a Test Statistic
 
-Every hypothesis test performed so far has involved calculating the probability of the observed sample mean, \(\bar{x}\), by first using the \(z\)\emph{-transformation for a sample mean} to obtain what is called a \(z\)\emph{-score}. Instead of comparing a \(p\)-value to the significance level, another approach is to instead compare the \(z\)-score, referred to as the \textbf{test statistic}, to separately calculated cut-off values, called \textbf{critical values}.
+Every hypothesis test performed so far has involved calculating the probability of the observed sample mean, $\bar{x}$, by first using the $z$*-transformation for a sample mean* to obtain what is called a $z$*-score*. Instead of comparing a $p$-value to the significance level, another approach is to instead compare the $z$-score, referred to as the **test statistic**, to separately calculated cut-off values, called **critical values**.
 
 \begin{centering}
 \tcbset{width=10cm}
@@ -11966,9 +11720,9 @@ Test statistic: $z=\dfrac{\bar{x}-\mu}{\dfrac{\sigma}{\sqrt{n}}}$
 \end{tcolorbox}
 \end{centering}
 
-A \(z\)\emph{-test statistic} of \(0\) occurs when the sample mean of the observed data is equal to the value for \(\mu\) claimed by the null hypothesis. The further the test statistic is from \(0\), the more extreme the observed data is.
+A $z$*-test statistic* of $0$ occurs when the sample mean of the observed data is equal to the value for $\mu$ claimed by the null hypothesis. The further the test statistic is from $0$, the more extreme the observed data is.
 
-\emph{Critical values} can be found by considering \emph{where the 5\% least-likely }\(z\)\emph{-scores lie that, if observed, would cause the null hypothesis to be rejected}. For a two-tailed test, the 5\% least-likely observed values for the sample mean are split between 2.5\% in the upper tail of the distribution and 2.5\% in the lower tail. The symmetry of the distribution means that the values to the left of the mean are the \emph{negative} of the equivalent values on the right.
+*Critical values* can be found by considering *where the 5\% least-likely *$z$*-scores lie that, if observed, would cause the null hypothesis to be rejected*. For a two-tailed test, the 5\% least-likely observed values for the sample mean are split between 2.5\% in the upper tail of the distribution and 2.5\% in the lower tail. The symmetry of the distribution means that the values to the left of the mean are the *negative* of the equivalent values on the right.
 
 \begin{figure}[H]
   \centering
@@ -12081,7 +11835,7 @@ A \(z\)\emph{-test statistic} of \(0\) occurs when the sample mean of the observ
 \end{minipage}
 \end{figure}
 
-The relevant areas of the \(z\)-distribution \emph{beyond} the critical values, shown shaded on in the diagrams above, are often referred to as \textbf{critical regions}, and a test statistic within a critical region leads to the null hypothesis being rejected in favour of the alternative hypothesis.
+The relevant areas of the $z$-distribution *beyond* the critical values, shown shaded on in the diagrams above, are often referred to as **critical regions**, and a test statistic within a critical region leads to the null hypothesis being rejected in favour of the alternative hypothesis.
 
 \begin{centering}
 \tcbset{width=17cm}
@@ -12092,11 +11846,11 @@ If the \textbf{test statistic is not further zero than the critical value(s)} th
 \end{tcolorbox}
 \end{centering}
 
-One key need for this approach is that it can be difficult to calculate \(p\)-values for some distributions. \textbf{Page 12 of the SQA Data Booklet} can be used to find common critical values for \(z\)-tests without the need for more extensive probability tables or a graphical calculator. It is expected that a statistician is able to both calculate and interpret a \(p\)-value when required, as well as use test statistics and critical values. For the remainder of this textbook, the predominant approach used in examples will be \textbf{test statistics and critical values}.
+One key need for this approach is that it can be difficult to calculate $p$-values for some distributions. **Page 12 of the SQA Data Booklet** can be used to find common critical values for $z$-tests without the need for more extensive probability tables or a graphical calculator. It is expected that a statistician is able to both calculate and interpret a $p$-value when required, as well as use test statistics and critical values. For the remainder of this textbook, the predominant approach used in examples will be **test statistics and critical values**.
 
 \pagebreak
 
-Note that the following examples approach problems already covered in the examples on Pages 120-121, which used a \emph{p}-value approach, and lead to identical conclusions to the hypothesis tests conducted.
+Note that the following examples approach problems already covered in the examples on Pages 120-121, which used a *p*-value approach, and lead to identical conclusions to the hypothesis tests conducted.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The designers of an electric car state that the distance that can be covered on a full charge is normally distributed, with a mean of 260 miles and a standard deviation of 10 miles. A car magazine randomly selects 14 of them from showrooms to be tested, with a sample mean of 257 miles obtained. Perform a hypothesis test to assess, at the 1\% level of significance, the claim by the car magazine that the mean distance is actually less than the designers' claim.
@@ -12236,10 +11990,9 @@ Since $2>1.96$, reject $H_0$ at the 5\% level of significance.\\ There is eviden
 
 \pagebreak
 
-\protect\phantomsection\label{ex103q}{}
+[]{#ex103q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex103a]{Exercise 10.3}}{Exercise 10.3}}\label{exercise-10.3}
-\addcontentsline{toc}{subsubsection}{{Exercise 10.3}}
+#### [Exercise 10.3](#ex103a) {-}
 
 \begin{enumerate}
     \item A packing process packages ground coffee into bags. The mass of each bag is normally distributed, with standard deviation 15g. To comply with the technical standards stipulated for the process, the mean mass of coffee per bag should be 500g. After a recent adjustment of some of the machinery involved in the process, a random sample of 25 bags is taken and the sample mean is found to be 512g. Test the claim that there has been a change in the mean mass of coffee per bag at the 5\% level of significance.
@@ -12283,9 +12036,10 @@ Since $2>1.96$, reject $H_0$ at the 5\% level of significance.\\ There is eviden
 
 \pagebreak
 
-\section{\texorpdfstring{One-Sample \textit{t}-Test for the Population Mean}{One-Sample -Test for the Population Mean}}\label{one-sample--test-for-the-population-mean}
+## One-Sample \textit{t}-Test for the Population Mean
 
-In the early 20th century William Sealy Gosset, statistician and Head Experimental Brewer at the Guinness factory in Dublin, described the distribution of the sample mean when the \textbf{population standard deviation is unknown}. This was necessary since he was working with \textbf{small sample sizes}, for which the sample standard deviation could not be used as a reliable estimator for the population standard deviation. Since Guinness did not want rival companies to know that they were employing a statistician to improve their brewing, he published his work under the pen-name \emph{Student}, hence the distribution he described becoming known as \textbf{Student's} \textbf{\emph{t}-distribution}, or \emph{the} \(t\)-\emph{distribution}.
+In the early 20th century William Sealy Gosset, statistician and Head Experimental Brewer at the Guinness factory in Dublin, described the distribution of the sample mean when the **population standard deviation is unknown**. This was necessary since he was working with **small sample sizes**, for which the sample standard deviation could not be used as a reliable estimator for the population standard deviation. Since Guinness did not want rival companies to know that they were employing a statistician to improve their brewing, he published his work under the pen-name *Student*, hence the distribution he described becoming known as **Student's** **_t_****-distribution**, or *the* $t$-*distribution*.
+
 
 \begin{figure}[H]
   \centering
@@ -12365,11 +12119,12 @@ In the early 20th century William Sealy Gosset, statistician and Head Experiment
 \end{minipage}
 \end{figure}
 
-Not knowing the population standard deviation, \(\sigma\), creates additional uncertainty about the distribution of the sample mean, with the \textbf{sample standard deviation}, \(s\), used instead. This results in the shape of a t-distribution resembling that of a normal distribution but with \emph{fatter tails}. The \(t\)-distribution takes one parameter called \textbf{degrees of freedom}, notated using the Greek letter \(\nu\), which is the \emph{number of data points from the sample that are free to vary} under the null hypothesis. For the one-sample \(t\)-test for population mean, the degrees of freedom can be calculated for a sample size \(n\) as:
+Not knowing the population standard deviation, $\sigma$, creates additional uncertainty about the distribution of the sample mean, with the **sample standard deviation**, $s$, used instead. This results in the shape of a t-distribution resembling that of a normal distribution but with *fatter tails*. The $t$-distribution takes one parameter called **degrees of freedom**, notated using the Greek letter $\nu$, which is the *number of data points from the sample that are free to vary* under the null hypothesis. For the one-sample $t$-test for population mean, the degrees of freedom can be calculated for a sample size $n$ as:
 
-\[\nu=n-1\]
+$$\nu=n-1$$
 
-The one-sample \(t\)-test for population mean is a \textbf{parametric test} that should be used, in this course, in place of the equivalent \(z\)-test when the population standard deviation, \(\sigma\), is not known \textbf{and} the sample size is less than 20.
+
+The one-sample $t$-test for population mean is a **parametric test** that should be used, in this course, in place of the equivalent $z$-test when the population standard deviation, $\sigma$, is not known **and** the sample size is less than 20.
 
 \begin{centering}
 \tcbset{width=14cm}
@@ -12381,7 +12136,7 @@ The one-sample \(t\)-test for population mean is a \textbf{parametric test} that
 \end{tcolorbox}
 \end{centering}
 
-The \(t\)-test statistic is identical to that of the equivalent \(z\)-test, except the use of the sample standard deviation, \(s\), instead of the population standard deviation, \(\sigma\).
+The $t$-test statistic is identical to that of the equivalent $z$-test, except the use of the sample standard deviation, $s$, instead of the population standard deviation, $\sigma$.
 
 \begin{centering}
 \tcbset{width=10cm}
@@ -12390,7 +12145,7 @@ Test statistic: $t_{n-1}=\dfrac{\bar{x}-\mu}{\dfrac{s}{\sqrt{n}}}$
 \end{tcolorbox}
 \end{centering}
 
-Critical values for the \(t\)-test can be found on \textbf{Page 13 of the SQA Data Booklet}, referring to the significance level, whether the test is one-tailed or two-tailed and the degrees of freedom.
+Critical values for the $t$-test can be found on **Page 13 of the SQA Data Booklet**, referring to the significance level, whether the test is one-tailed or two-tailed and the degrees of freedom.  
 
 \pagebreak
 
@@ -12546,10 +12301,9 @@ Since $3.749>2.447$, reject $H_0$ at the 5\% level of significance. There is evi
 
 \pagebreak
 
-\protect\phantomsection\label{ex104q}{}
+[]{#ex104q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex104a]{Exercise 10.4}}{Exercise 10.4}}\label{exercise-10.4}
-\addcontentsline{toc}{subsubsection}{{Exercise 10.4}}
+#### [Exercise 10.4](#ex104a) {-}
 
 \begin{enumerate}
     \item The amount of sugar contained in frozen pizzas, per 100g, is normally distributed. A random sample of 8 brands of frozen pizza gives the following sugar content per 100g, measuring in grams:
@@ -12627,17 +12381,17 @@ It has historically been observed that the mean mass of a chick after six weeks 
 
 \pagebreak
 
-\section{\texorpdfstring{One-Sample \textit{z}-Test for the Population Proportion}{One-Sample -Test for the Population Proportion}}\label{one-sample--test-for-the-population-proportion}
+## One-Sample \textit{z}-Test for the Population Proportion
 
-If \(X\) of the elements from a random sample of size \(n\) from a population of interest satisfy some condition, then the \textbf{sample proportion}, \(\hat{P}\), can be calculated as:
+If $X$ of the elements from a random sample of size $n$ from a population of interest satisfy some condition, then the **sample proportion**, $\hat{P}$, can be calculated as:
 
-\[\hat{P}=\frac{X}{n}\]
+$$\hat{P}=\frac{X}{n}$$
 
-For example, if a survey of registered voters reveals 114 out of 250 intend to vote for the incumbent candidate, the \emph{sample proportion}, \(\hat{p}\), is \(\frac{114}{250}=0.456\). The true value of the \textbf{population proportion}, \textbf{\emph{p}}, may be something different entirely. The \textbf{one-sample \(z\)-test for proportion} assesses whether an \emph{observed sample proportion} provides statistically significant evidence against a \emph{null-hypothesised population proportion}. The test statistic can be derived from the distributions of the random variables \(X\) and hence \(\hat{P}\):
+For example, if a survey of registered voters reveals 114 out of 250 intend to vote for the incumbent candidate, the *sample proportion*, $\hat{p}$, is $\frac{114}{250}=0.456$. The true value of the **population proportion**, **_p_**, may be something different entirely. The **one-sample $z$-test for proportion** assesses whether an *observed sample proportion* provides statistically significant evidence against a *null-hypothesised population proportion*. The test statistic can be derived from the distributions of the random variables $X$ and hence $\hat{P}$:
 
-\[X \sim B(n,p)\]
+$$X \sim B(n,p)$$ 
 
-When \(np>5\) and \(nq>5\), \(X\) is \emph{approximately} normally distributed:
+When $np>5$ and $nq>5$, $X$ is *approximately* normally distributed:
 
 \begin{align*}
 E(X) & = np\\
@@ -12645,16 +12399,16 @@ V(X) & = npq\\
 X & \approx N(np,npq)
 \end{align*}
 
-The distribution of \(\hat{P}\) can now be obtained since \(\hat{P}=\frac{X}{n}\):
+The distribution of $\hat{P}$ can now be obtained since $\hat{P}=\frac{X}{n}$:
 
-\[E\left(\hat{P}\right)=E\left(\frac{X}{n}\right)=\frac{1}{n}E(X)=\frac{1}{n}\times np=p\]
+$$E\left(\hat{P}\right)=E\left(\frac{X}{n}\right)=\frac{1}{n}E(X)=\frac{1}{n}\times np=p$$
 
-\[V\left(\hat{P}\right)=V\left(\frac{X}{n}\right)=\left(\frac{1}{n}\right)^2 V(X)=\frac{1}{n^2}\times npq=\frac{pq}{n}\]
+$$V\left(\hat{P}\right)=V\left(\frac{X}{n}\right)=\left(\frac{1}{n}\right)^2 V(X)=\frac{1}{n^2}\times npq=\frac{pq}{n}$$
 Therefore:
 
-\[\hat{P} \approx N\left(p,\frac{pq}{n}\right)\]
+$$\hat{P} \approx N\left(p,\frac{pq}{n}\right)$$
 
-The \(z\)-transformation leads to the required test statistic:
+The $z$-transformation leads to the required test statistic:
 
 \begin{centering}
 \tcbset{width=10cm}
@@ -12663,7 +12417,7 @@ Test statistic: $z=\dfrac{\hat{p}-p}{\sqrt{\dfrac{pq}{n}}}$
 \end{tcolorbox}
 \end{centering}
 
-Note that \(\sqrt{\dfrac{pq}{n}}\) is called the \textbf{standard error of the sample proportion}.
+Note that $\sqrt{\dfrac{pq}{n}}$ is called the **standard error of the sample proportion**.
 
 \begin{centering}
 \tcbset{width=14cm}
@@ -12819,10 +12573,9 @@ Since $3.76>2.58$, reject $H_0$ at the 1\% level of significance.\\ There is evi
 
 \pagebreak
 
-\protect\phantomsection\label{ex105q}{}
+[]{#ex105q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex105a]{Exercise 10.5}}{Exercise 10.5}}\label{exercise-10.5}
-\addcontentsline{toc}{subsubsection}{{Exercise 10.5}}
+#### [Exercise 10.5](#ex105a) {-}
 
 \begin{enumerate}
     \item A coin is thrown 500 times and 267 heads are obtained. Test whether the coin is biased, using a 10\% significance level.
@@ -12843,14 +12596,13 @@ Since $3.76>2.58$, reject $H_0$ at the 1\% level of significance.\\ There is evi
 
 \pagebreak
 
-\section{Choosing the Right Hypothesis Test}\label{choosing-the-right-hypothesis-test}
+## Choosing the Right Hypothesis Test
 
-Selecting the appropriate hypothesis test to be used in any given context is an important skill for a statistican, and warrants careful practice. The following questions contain a mix of \(z\)\textit{-tests for the population mean, }\(t\)\textit{-tests for the population mean and }\(z\)\textit{-tests for the population proportion.}
+Selecting the appropriate hypothesis test to be used in any given context is an important skill for a statistican, and warrants careful practice. The following questions contain a mix of $z$\textit{-tests for the population mean, }$t$\textit{-tests for the population mean and }$z$\textit{-tests for the population proportion.}
 
-\protect\phantomsection\label{ex106q}{}
+[]{#ex106q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex106a]{Exercise 10.6}}{Exercise 10.6}}\label{exercise-10.6}
-\addcontentsline{toc}{subsubsection}{{Exercise 10.6}}
+#### [Exercise 10.6](#ex106a) {-}
 
 \begin{enumerate}
     \item A keen cyclist often takes a route which consists of a circuit, travelling through a forest and around a hill before returning to her starting point, timing herself on each occasion. The time it takes her to complete a circuit is normally distributed, with mean 42.7 minutes and standard deviation 3.8 minutes. After buying a new bike, she records the time is takes her to complete a circuit on 7 randomly selected occasions, obtaining a sample mean of 41.3 minutes. Assuming the standard deviation in her time taken remains unchanged, perform a hypothesis test to assess her data for evidence that her mean time taken to complete the route has reduced.
@@ -12876,10 +12628,9 @@ Selecting the appropriate hypothesis test to be used in any given context is an 
 
 \pagebreak
 
-\protect\phantomsection\label{re10q}{}
+[]{#re10q}
 
-\section*{\texorpdfstring{\hyperref[re10a]{Review Exercise}}{Review Exercise}}\label{review-exercise-9}
-\addcontentsline{toc}{section}{{Review Exercise}}
+## [Review Exercise](#re10a) {-}
 
 \begin{enumerate}
     \item A pharmaceutical company has developed a drug designed to reduce the recovery time needed for a specific type of operation from the well-established mean time of 11 days. Following trials involving treating 24 randomly selected patients admitted to hospital for the operation with the drug, it is found that the mean recovery time for these patients is 9.6 days, with a standard deviation of 2.7 days.
@@ -12914,15 +12665,17 @@ Selecting the appropriate hypothesis test to be used in any given context is an 
 
 \pagebreak
 
-\chapter{Confidence Intervals}\label{confidence-intervals}
+<!--chapter:end:10-Hypothesis-Tests.Rmd-->
 
-From a random sample of data from a population, the sample mean could be calculated and used as a \emph{point estimate} for the true, unknown value of the population mean. If the sample was very small, or the variability of the data is very high, then it would not be appropriate to have a great deal of confidence in the \emph{precision} of this value. To avoid the misleading sense of precision that point estimates on their own can give, many institutions will require \emph{confidence intervals} to routinely be stated as part of any statistical analysis. Statistical software will often also report a confidence interval whenever a hypothesis test is performed.
+# Confidence Intervals
+
+From a random sample of data from a population, the sample mean could be calculated and used as a *point estimate* for the true, unknown value of the population mean. If the sample was very small, or the variability of the data is very high, then it would not be appropriate to have a great deal of confidence in the *precision* of this value. To avoid the misleading sense of precision that point estimates on their own can give, many institutions will require *confidence intervals* to routinely be stated as part of any statistical analysis. Statistical software will often also report a confidence interval whenever a hypothesis test is performed.
 
 \begin{center}
 \textit{"A 95\% confidence interval for the mean weight of an adult pine marten, in kg, is (1.42 , 1.58)"}
 \end{center}
 
-A common misconception is that such a confidence interval can be interpreted as \emph{``There is a 95\% probability that the true mean weight is between 1.42 and 1.58.''} Care should be taken to \emph{avoid} interpreting the significance level used as a probability relating to any particular generated confidence interval and the parameter it relates to. Instead, \emph{``95\% confidence''} refers to the \textbf{long-run success rate of the procedure} used to generate the interval. If random samples are repeatedly taken from a distribution with population mean \(\mu\), and a confidence interval produced from each, in the long-run 95\% of these intervals will contain \(\mu\). The figure below shows twenty 95\% confidence intervals generated using simulated data, one of which does not contain the true value of the population mean, \(\mu\), in the interval.
+A common misconception is that such a confidence interval can be interpreted as *"There is a 95\% probability that the true mean weight is between 1.42 and 1.58."* Care should be taken to *avoid* interpreting the significance level used as a probability relating to any particular generated confidence interval and the parameter it relates to. Instead, *"95\% confidence"* refers to the **long-run success rate of the procedure** used to generate the interval. If random samples are repeatedly taken from a distribution with population mean $\mu$, and a confidence interval produced from each, in the long-run 95\% of these intervals will contain $\mu$. The figure below shows twenty 95\% confidence intervals generated using simulated data, one of which does not contain the true value of the population mean, $\mu$, in the interval.
 
 \begin{figure}[H]
   \centering
@@ -12956,9 +12709,9 @@ A common misconception is that such a confidence interval can be interpreted as 
 
 \pagebreak
 
-\section{\texorpdfstring{A \textit{z}-Confidence Interval for the Population Mean}{A -Confidence Interval for the Population Mean}}\label{a--confidence-interval-for-the-population-mean}
+## A \textit{z}-Confidence Interval for the Population Mean
 
-Given a \emph{random sample} from an distribution that is \emph{normally distributed} with \emph{known population standard deviation} \(\sigma\), a \((1-\alpha)\%\) \(z\)-\emph{confidence interval} for the population mean, \(\mu\), can be calculated:
+Given a *random sample* from an distribution that is *normally distributed* with *known population standard deviation* $\sigma$, a $(1-\alpha)\%$ $z$-*confidence interval* for the population mean, $\mu$, can be calculated:
 
 \begin{centering}
 \tcbset{width=10cm}
@@ -12967,9 +12720,9 @@ A $(1-\alpha)\%$ CI for $\mu$ is: $\bar{x}\pm z_{1-\alpha/2} \times \cfrac{\sigm
 \end{tcolorbox}
 \end{centering}
 
-Note that the conditions required match those for a \(z\)-test for the population mean.
+Note that the conditions required match those for a $z$-test for the population mean. 
 
-A sketch can be used to help find the required \(z\)-value. In this course, only \emph{two-tailed} confidence intervals will calculated.
+A sketch can be used to help find the required $z$-value. In this course, only *two-tailed* confidence intervals will calculated.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The masses of ceramic dishes sold by a kitchenware shop are known to be normally distributed with a standard deviation of 12g. A random sample of 15 such ceramic dishes are weighed and the sample mean is 430 grams. Obtain a 95\% confidence interval for the mean mass of a ceramic dish.
@@ -13026,7 +12779,7 @@ Therefore a 95\% confidence interval for the population mean dish mass, in grams
 
 \end{tcolorbox}
 
-It should be observed that the \(z\)-confidence interval is symmetrical with the \textbf{sample mean at its centre}. The width of the interval is determined by the \textbf{standard error} and the confidence level required.
+It should be observed that the $z$-confidence interval is symmetrical with the **sample mean at its centre**. The width of the interval is determined by the **standard error** and the confidence level required.
 
 \begin{tcolorbox}[title=Example 2,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} An airline picks a random sample of 25 of their flights and records how long it takes for all the passengers to depart the plane from the time the cabin doors are opened. The sample mean of 6.5 minutes is obtained, and a sample standard deviation of 0.8 minutes. Determine a 90\% confidence interval for the mean time taken for all passengers to depart one of the airline's planes, and interpret this confidence interval.
@@ -13088,10 +12841,9 @@ A $90\%$ CI for $\mu$ is: \hspace{0.5cm}$6.5 \pm 1.64 \times \cfrac{0.8}{\sqrt{2
 
 \pagebreak
 
-\protect\phantomsection\label{ex111q}{}
+[]{#ex111q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex111a]{Exercise 11.1}}{Exercise 11.1}}\label{exercise-11.1}
-\addcontentsline{toc}{subsubsection}{{Exercise 11.1}}
+#### [Exercise 11.1](#ex111a) {-}
 
 \begin{enumerate}
     \item The height of a red panda is known to be normally distributed with a standard deviation of 2cm. A random sample of 8 red pandas have their heights measured, with a sample mean of 57cm obtained. Obtain a 99\% confidence interval for the mean height of a red panda. 
@@ -13120,9 +12872,9 @@ A $90\%$ CI for $\mu$ is: \hspace{0.5cm}$6.5 \pm 1.64 \times \cfrac{0.8}{\sqrt{2
 
 \pagebreak
 
-\section{Confidence Intervals and Hypothesis Testing}\label{confidence-intervals-and-hypothesis-testing}
+## Confidence Intervals and Hypothesis Testing
 
-The calculations involved in calculating a \emph{two-tailed} \(z\)-confidence interval for the population mean correspond with those for a \emph{two-tailed} \(z\)-test for the population mean. Such a confidence interval could therefore allow inferences to be made about the population mean, \(\mu\).
+The calculations involved in calculating a *two-tailed* $z$-confidence interval for the population mean correspond with those for a *two-tailed* $z$-test for the population mean. Such a confidence interval could therefore allow inferences to be made about the population mean, $\mu$.
 
 \begin{centering}
 \tcbset{width=17cm}
@@ -13133,7 +12885,7 @@ If a given value for $\mu$ is \textbf{within a calculated confidence interval} t
 \end{tcolorbox}
 \end{centering}
 
-In this course, it should be noted that an instruction to perform a \textit{test} requires a hypothesis test to be conducted using either a \(p\)-value or a test statistic, rather than a confidence interval.
+In this course, it should be noted that an instruction to perform a \textit{test} requires a hypothesis test to be conducted using either a $p$-value or a test statistic, rather than a confidence interval.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The mass of food eaten each day by a family's cat is normally distributed with a mean of 280 grams and a standard deviation of 13 grams. Recently, they notice that their cat doesn't seem to eat the same amount of food as it used to. On 14 randomly chosen days they measure the mass of food that their cat eats, obtaining a mean of 273 grams per day. Stating an assumption required, obtain a 95\% confidence interval for the mass of food eaten daily by their cat, and comment on their concern that their cat doesn't eat the same amount of the food as it did previously.
@@ -13201,10 +12953,9 @@ Since 280 lies outwith the confidence interval, this supports their concern that
 
 \pagebreak
 
-\protect\phantomsection\label{ex112q}{}
+[]{#ex112q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex112a]{Exercise 11.2}}{Exercise 11.2}}\label{exercise-11.2}
-\addcontentsline{toc}{subsubsection}{{Exercise 11.2}}
+#### [Exercise 11.2](#ex112a) {-}
 
 \begin{enumerate}[itemsep=16pt]
     \item A packing process packages ground coffee into bags. The mass of each bag is normally distributed with standard deviation 15g. A random sample of 25 bags is taken and the sample mean is found to be 505g. Obtain a 95\% confidence interval for the mean mass of ground coffee in a bag, and comment on the claim that the mean mass being dispensed is not the 500g that it is supposed to be.
@@ -13234,9 +12985,9 @@ Since 280 lies outwith the confidence interval, this supports their concern that
 
 \pagebreak
 
-\section{\texorpdfstring{A \textit{t}-Confidence Interval for the Population Mean}{A -Confidence Interval for the Population Mean}}\label{a--confidence-interval-for-the-population-mean-1}
+## A \textit{t}-Confidence Interval for the Population Mean
 
-Given a random sample of data from an underlying population that is \emph{normally distributed}, a \(t\)-confidence interval can be calculated using the \emph{sample standard deviation}, \(s\). The conditions for valid use of the a \(t\)-confidence interval match those for a one-sample \(t\)-test, with the degrees of freedom calculated as \(\nu=n-1\).
+Given a random sample of data from an underlying population that is *normally distributed*, a $t$-confidence interval can be calculated using the *sample standard deviation*, $s$. The conditions for valid use of the a $t$-confidence interval match those for a one-sample $t$-test, with the degrees of freedom calculated as $\nu=n-1$.
 
 \begin{centering}
 \tcbset{width=10cm}
@@ -13245,7 +12996,7 @@ A $(1-\alpha)\%$ CI for $\mu$ is: $\bar{x}\pm t_{n-1,1-\alpha/2} \times \cfrac{s
 \end{tcolorbox}
 \end{centering}
 
-As with a \(z\)-confidence interval, a \(t\)\emph{-confidence interval} can be used in a similar way to \textbf{\emph{two-tailed}} \emph{one sample }\(t\)\emph{-test for the population mean}.
+As with a $z$-confidence interval, a $t$*-confidence interval* can be used in a similar way to **_two-tailed_** *one sample *$t$*-test for the population mean*. 
 
 \vspace{0.5cm}
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
@@ -13318,10 +13069,9 @@ Since 9.7 kWh is within the confidence interval, there is insufficient evidence 
 
 \pagebreak
 
-\protect\phantomsection\label{ex113q}{}
+[]{#ex113q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex113a]{Exercise 11.3}}{Exercise 11.3}}\label{exercise-11.3}
-\addcontentsline{toc}{subsubsection}{{Exercise 11.3}}
+#### [Exercise 11.3](#ex113a) {-}
 
 \begin{enumerate}[itemsep=16pt]
     \item As part of a project to better understand acidity levels in lakes in England, a random sample of 8 lakes are selected and the pH level of each measured. The pH levels observed were:
@@ -13367,9 +13117,9 @@ Since 9.7 kWh is within the confidence interval, there is insufficient evidence 
 
 \pagebreak
 
-\section{\texorpdfstring{A \textit{z}-Confidence Interval for the Population Proportion}{A -Confidence Interval for the Population Proportion}}\label{a--confidence-interval-for-the-population-proportion}
+## A \textit{z}-Confidence Interval for the Population Proportion
 
-In Chapter 9 a \emph{normal approximation} to the distribution of the sample proportion, \(\hat{P}\), was introduced, with a standard error of \(\sqrt{\cfrac{pq}{n}}\), where \(p\) is the null-hypothesised \emph{population proportion}. When calculating a \(z\)-confidence interval for the population proportion, it is necessary to instead use the \textbf{sample proportion}, \(\hat{p}\), to \textit{estimate} the standard error as \(\sqrt{\cfrac{\hat{p}\hat{q}}{n}}\).
+In Chapter 9 a *normal approximation* to the distribution of the sample proportion, $\hat{P}$, was introduced, with a standard error of $\sqrt{\cfrac{pq}{n}}$, where $p$ is the null-hypothesised *population proportion*. When calculating a $z$-confidence interval for the population proportion, it is necessary to instead use the \textbf{sample proportion}, $\hat{p}$, to \textit{estimate} the standard error as $\sqrt{\cfrac{\hat{p}\hat{q}}{n}}$.
 
 \vspace{0.5cm}
 
@@ -13382,7 +13132,7 @@ A $(1-\alpha)\%$ CI for $p$ is: $\hat{p}\pm z_{1-\alpha/2} \times \sqrt{\cfrac{\
 
 \vspace{0.5cm}
 
-As for a \(z\)-test for proportion, the conditions for validity are that the data is from a \emph{random sample} and that \(n\hat{p},n\hat{q}>5\). Since a \emph{normal approximation to the binomial distribution} is being used (see Chapter 10, Section 10.8), it is often referred to as an \emph{approximate confidence interval}.
+As for a $z$-test for proportion, the conditions for validity are that the data is from a *random sample* and that $n\hat{p},n\hat{q}>5$. Since a *normal approximation to the binomial distribution* is being used (see Chapter 10, Section 10.8), it is often referred to as an *approximate confidence interval*.
 
 \vspace{0.5cm}
 
@@ -13445,14 +13195,13 @@ Therefore an approximate 95\% confidence interval for the proportion of the webs
 
 \vspace{0.5cm}
 
-Given the potential for confusion between the population proportion \(p\) and the sample proportion \(\hat{p}\), as well as \(q\) and \(\hat{q}\), it is recommended to check all working carefully to ensure the correct notation is being used.
+Given the potential for confusion between the population proportion $p$ and the sample proportion $\hat{p}$, as well as $q$ and $\hat{q}$, it is recommended to check all working carefully to ensure the correct notation is being used.
 
 \newpage
 
-\protect\phantomsection\label{ex114q}{}
+[]{#ex114q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex114a]{Exercise 11.4}}{Exercise 11.4}}\label{exercise-11.4}
-\addcontentsline{toc}{subsubsection}{{Exercise 11.4}}
+#### [Exercise 11.4](#ex114a) {-}
 
 \begin{enumerate}[itemsep=18pt]
     \item A newspaper conducts a survey to explore the proportion of its readers that are car owners. In a random sample of 312 readers there are 208 car owners. Obtain an approximate 99\% confidence interval for the proportion of car owners amongst the newspaper's readers, justifying the method used.
@@ -13478,13 +13227,13 @@ Given the potential for confusion between the population proportion \(p\) and th
         \item Comment on whether the confidence interval supports the website's claim.
     \end{enumerate}
 \end{enumerate}
+        
 
 \pagebreak
 
-\protect\phantomsection\label{re11q}{}
+[]{#re11q}
 
-\section*{\texorpdfstring{\hyperref[re11a]{Review Exercise}}{Review Exercise}}\label{review-exercise-10}
-\addcontentsline{toc}{section}{{Review Exercise}}
+## [Review Exercise](#re11a) {-}
 
 \begin{enumerate}[itemsep=20pt]
     \item A road safety researcher randomly selects eight cars passing by on a motorway and records their speed, in mph. The following results are obtained:
@@ -13514,13 +13263,15 @@ Given the potential for confusion between the population proportion \(p\) and th
 
 \pagebreak
 
-\chapter{Chi-Squared Goodness-Of-Fit Test}\label{chi-squared-goodness-of-fit-test}
+<!--chapter:end:11-Confidence-Intervals.Rmd-->
 
-The \textbf{chi-squared distribution}, \(\chi^2_\nu\), describes the distribution of \emph{sums} of \emph{scaled, squared random variables}. \mbox{$\chi^2$ hypothesis tests} offer a way to analyse categorical data, and are a type of \textbf{non-parametric} test.
+# Chi-Squared Goodness-Of-Fit Test
 
-\section{\texorpdfstring{\(\chi^2\) Goodness-of-Fit Test}{\textbackslash chi\^{}2 Goodness-of-Fit Test}}\label{chi2-goodness-of-fit-test}
+The **chi-squared distribution**, $\chi^2_\nu$, describes the distribution of *sums* of *scaled, squared random variables*. \mbox{$\chi^2$ hypothesis tests} offer a way to analyse categorical data, and are a type of **non-parametric** test.
 
-A \emph{goodness-of-fit} test assesses how well observed data, which can be broken down into categories, fits a hypothesised model. In this course, the data examined will be either \emph{categorical} or, as in the following example, \emph{discrete}. Suppose a statistics teacher's cubical die is suspected of being not \emph{fair} and their students roll the die 48 times to check for any bias. The number of times each outcome occurs, or the \textbf{observed frequencies}, are recorded in a frequency table:
+## $\chi^2$ Goodness-of-Fit Test
+
+A *goodness-of-fit* test assesses how well observed data, which can be broken down into categories, fits a hypothesised model. In this course, the data examined will be either *categorical* or, as in the following example, *discrete*. Suppose a statistics teacher's cubical die is suspected of being not *fair* and their students roll the die 48 times to check for any bias. The number of times each outcome occurs, or the **observed frequencies**, are recorded in a frequency table:
 
 \begin{center}
 \begin{tabular}{| c | c c c c c c |} 
@@ -13532,7 +13283,7 @@ A \emph{goodness-of-fit} test assesses how well observed data, which can be brok
 \end{tabular}
 \end{center}
 
-With the null hypothesis being that the die \emph{is} fair, a third row of \textbf{expected frequencies} can be added to the table by dividing the total count of 48 \emph{observations} by the 6 equally-likely outcomes:
+With the null hypothesis being that the die *is* fair, a third row of **expected frequencies** can be added to the table by dividing the total count of 48 *observations* by the 6 equally-likely outcomes:
 
 \begin{center}
 \begin{tabular}{| c | c c c c c c |} 
@@ -13546,7 +13297,7 @@ With the null hypothesis being that the die \emph{is} fair, a third row of \text
 \end{tabular}
 \end{center}
 
-The \(\chi^2\) goodness-of-fit test asks whether the \textbf{observed values} are so \emph{significantly} different than the \textbf{expected values}, under the model described in the null hypothesis, that there is evidence to suggest \emph{the model is in fact incorrect}.
+The $\chi^2$ goodness-of-fit test asks whether the **observed values** are so *significantly* different than the **expected values**, under the model described in the null hypothesis, that there is evidence to suggest *the model is in fact incorrect*.
 
 \begin{center}
 \begin{tabular}{r c l}
@@ -13555,7 +13306,7 @@ The \(\chi^2\) goodness-of-fit test asks whether the \textbf{observed values} ar
 \end{tabular}
 \end{center}
 
-The theory underpinning the test statistic used for a goodness-of-fit test is beyond the scope of the Advanced Higher Statistics course. However, a glimpse into the rationale may be found by noting that the test statistic, on the next page, takes the \emph{sum} of \emph{squared differences} between the observed and expected frequencies, \emph{scaled} by the expected frequencies.
+The theory underpinning the test statistic used for a goodness-of-fit test is beyond the scope of the Advanced Higher Statistics course. However, a glimpse into the rationale may be found by noting that the test statistic, on the next page, takes the *sum* of *squared differences* between the observed and expected frequencies, *scaled* by the expected frequencies.
 
 \pagebreak
 
@@ -13566,7 +13317,7 @@ Test statistic: $X^2=\cfrac{(O_1-E_1)^2}{E_1}+\cfrac{(O_2-E_2)^2}{E_2}+...+\cfra
 \end{tcolorbox}
 \end{centering}
 
-The test statistic follows a \(\chi^2_\nu\) distribution with degrees of freedom \(\nu=c-1-m\), where:
+The test statistic follows a $\chi^2_\nu$ distribution with degrees of freedom $\nu=c-1-m$, where:
 
 \begin{itemize}
     \item $c$ is the number of \textit{categories}.
@@ -13616,19 +13367,15 @@ If \textbf{test statistic} $<$ \textbf{critical value}, \textit{do not reject }$
 \end{minipage}
 \end{figure}
 
-For the \emph{``fair''} die, the test statistic can now be calculated:
+For the *"fair"* die, the test statistic can now be calculated:
 
-\[X^2=\frac{(7-8)^2}{8}+\frac{(8-8)^2}{8}+\frac{(5-8)^2}{8}+\frac{(10-8)^2}{8}+\frac{(7-8)^2}{8}+\frac{(11-8)^2}{8}=3\]
+$$X^2=\frac{(7-8)^2}{8}+\frac{(8-8)^2}{8}+\frac{(5-8)^2}{8}+\frac{(10-8)^2}{8}+\frac{(7-8)^2}{8}+\frac{(11-8)^2}{8}=3$$
 
-There are six categories, so \(c=6\), and no parameters of the model were calculated using the data, so \(m=0\). The degrees of freedom are therefore \(\nu=6-1-0=5\), and the test statistic can be compared against the \(\chi^2\) critical values from \textbf{page 14} of the data booklet. With \(\nu=5\) and taking \(\alpha=0.05\), the critical value of \(\chi^2_{5,0.95}=11.070\) can be found.
+There are six categories, so $c=6$, and no parameters of the model were calculated using the data, so $m=0$. The degrees of freedom are therefore $\nu=6-1-0=5$, and the test statistic can be compared against the $\chi^2$ critical values from **page 14** of the data booklet. With $\nu=5$ and taking $\alpha=0.05$, the critical value of $\chi^2_{5,0.95}=11.070$ can be found. 
 
-The smallest possible observed test statistic is 0, representing data that perfectly matches the model, and for \(\nu=5\) less than 5\% of test statistics exceed 11.070 by random chance. Note that chi-squared tests are always \emph{one-tailed}.
+The smallest possible observed test statistic is 0, representing data that perfectly matches the model, and for $\nu=5$ less than 5\% of test statistics exceed 11.070 by random chance. Note that chi-squared tests are always *one-tailed*.
 
-Since \(3<11.070\) the students should \emph{not} reject the null hypothesis at the 5\% level of significance.
-
-\par
-
-There is \emph{insufficient evidence} to suggest that the model is not correct, and that the die is not fair.
+Since $3<11.070$ the students should *not* reject the null hypothesis at the 5\% level of significance.\par There is *insufficient evidence* to suggest that the model is not correct, and that the die is not fair.
 
 \begin{centering}
 \tcbset{width=14cm}
@@ -13640,7 +13387,7 @@ There is \emph{insufficient evidence} to suggest that the model is not correct, 
 \end{tcolorbox}
 \end{centering}
 
-The data for teacher's die met the criteria for the valid use of a goodness-of-fit test, which is given on \textbf{page 6 of the data booklet}. Both conditions need to be verified before test statistics, degrees of freedom and critical values can be calculated.
+The data for teacher's die met the criteria for the valid use of a goodness-of-fit test, which is given on **page 6 of the data booklet**. Both conditions need to be verified before test statistics, degrees of freedom and critical values can be calculated.
 
 \pagebreak
 
@@ -13722,10 +13469,9 @@ Since $5.109>4.605$, reject $\text{H}_0$ at the 10\% level of significance.\\ Th
 
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex121q}{}
+[]{#ex121q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex121a]{Exercise 12.1}}{Exercise 12.1}}\label{exercise-12.1}
-\addcontentsline{toc}{subsubsection}{{Exercise 12.1}}
+#### [Exercise 12.1](#ex121a) {-}
 
 \begin{enumerate}
     \item A fair, tetrahedral die with faces numbered 1 to 4 is rolled 24 times. The results obtained are:
@@ -13752,12 +13498,12 @@ Perform a goodness-of-fit test at the 5\% level of significance to assess whethe
 Perform a non-parametric test at the 10\% significance level to test whether the data supports the textbook's statement.
     \item A local council has previously monitored the numbers of cars entering a city, classifying each as either internal combustion engine (ICE), hybrid or fully electric. The ratio of cars in each category was found to be to be 5:2:1 respectively. Interested in whether this has since changed, a random sample is taken of 80 cars entering the city, with the results: 43 ICE, 16 hybrid and the remaining cars fully electric. Perform a hypothesis test at the 1\% level of significance to test the claim the the ratio has changed from what it was previously.
 \end{enumerate}
-
+    
 \pagebreak
 
-\section{Combining Columns}\label{combining-columns}
+## Combining Columns
 
-If the expected categories do not meet the conditions stated on Page 151 then two or more categories should be \emph{``combined''} (or \emph{``collapsed''}) until the conditions are satisfied. The degrees of freedom for the test should be calculated based on the \emph{final combined frequency table} rather than the original table. Whilst it is recommended to combine those categories with the smallest expected values, it may at times be more intuitive to instead collapse those categories that more naturally can be grouped.
+If the expected categories do not meet the conditions stated on Page 151 then two or more categories should be *"combined"* (or *"collapsed"*) until the conditions are satisfied. The degrees of freedom for the test should be calculated based on the *final combined frequency table* rather than the original table. Whilst it is recommended to combine those categories with the smallest expected values, it may at times be more intuitive to instead collapse those categories that more naturally can be grouped. 
 
 \begin{tcolorbox}[height=20cm,title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} An video game allows players to buy in-game ``loot boxes'' with real money, each containing one in-game item. The game's publisher states that 60\% of loot boxes contain a ``Regular'' item, 25\% contain a ``Premium'' item, 10\% contain a ``Rare' item and the remaining 5\% contain an ``Ultra Rare'' item. A player records the types of item contained in each of a series of loot boxes and records the results in the frequency table below.
@@ -13880,10 +13626,9 @@ Since $6.913<9.210$, do not reject $\text{H}_0$ at the 1\% level of significance
 
 \pagebreak
 
-\protect\phantomsection\label{ex122q}{}
+[]{#ex122q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex122a]{Exercise 12.2}}{Exercise 12.2}}\label{exercise-12.2}
-\addcontentsline{toc}{subsubsection}{{Exercise 12.2}}
+#### [Exercise 12.2](#ex122a) {-}
 
 \begin{enumerate}
     \item Historically, grades attained (\textit{A}, \textit{B}, \textit{C}, \textit{D} and \textit{No Award})  by pupils in a school course's end of year exam have been distributed following the ratio $4:5:3:2:1$. Following a change in the teaching resources used, the results of 40 students are recorded as follows:
@@ -13943,9 +13688,9 @@ Perform a non-parametric test to assess at the 5\% level of significance the cla
 
 \pagebreak
 
-\section{Goodness-of-fit and Binomial Distributions}\label{goodness-of-fit-and-binomial-distributions}
+## Goodness-of-fit and Binomial Distributions
 
-A goodness-of-fit test can also be performed to assess whether observed data fits a \emph{binomial} distribution, in which the \textbf{total observed frequencies} will be split in proportion to the \emph{calculated binomial probabilities}.
+A goodness-of-fit test can also be performed to assess whether observed data fits a *binomial* distribution, in which the **total observed frequencies** will be split in proportion to the *calculated binomial probabilities*.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A supermarket randomly samples boxes of duck eggs delivered by a supplier, each containing four eggs, and counts how many of the four eggs are broken for each box. The results of this are:
@@ -14073,14 +13818,13 @@ A condition for a binomial model is that each trial is independent. Since broken
 
 \end{tcolorbox}
 
-Note that estimating the parameter \(p\) from \emph{the data itself} would require an additional degree of freedom to be subtracted (since \(m=1\)). However this is rarely assessed in this course.
+Note that estimating the parameter $p$ from *the data itself* would require an additional degree of freedom to be subtracted (since $m=1$). However this is rarely assessed in this course.
 
 \pagebreak
 
-\protect\phantomsection\label{ex123q}{}
+[]{#ex123q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex123a]{Exercise 12.3}}{Exercise 12.3}}\label{exercise-12.3}
-\addcontentsline{toc}{subsubsection}{{Exercise 12.3}}
+#### [Exercise 12.3](#ex123a) {-}
 
 \begin{enumerate}
     \item A manufacturer of festive products sells Christmas crackers, in boxes of four. Since 20\% of all crackers they produce are known to be faulty, failing to produce the required ``\text{crack}'' when pulled, they wish to test whether the number of faulty crackers in a box could be modelled using a binomial distribution. 
@@ -14147,9 +13891,9 @@ Note that estimating the parameter \(p\) from \emph{the data itself} would requi
 
 \pagebreak
 
-\section{Goodness-of-fit and Poisson Distributions}\label{goodness-of-fit-and-poisson-distributions}
+## Goodness-of-fit and Poisson Distributions
 
-Just as with a binomial distribution, using a Poisson distribution as a model for a goodness-of-fit test requires the total observations to be split according to calculated probabilities. Should the only parameter for a Poisson distribution, \(\lambda\), be required to be \emph{estimated from the data}, an additional degree of freedom will be \emph{subtracted}, since \(m=1\).
+Just as with a binomial distribution, using a Poisson distribution as a model for a goodness-of-fit test requires the total observations to be split according to calculated probabilities. Should the only parameter for a Poisson distribution, $\lambda$, be required to be *estimated from the data*, an additional degree of freedom will be *subtracted*, since $m=1$. 
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} It is generally said that the number of goals scored in a game of football follows a Poisson distribution. A football fan decides to see whether this statement is still reasonable, and records the number of goals scored in every game across a weekend in each of the top four tiers of English football:
@@ -14258,14 +14002,13 @@ There is insufficient evidence to suggest that the number of goals scored per fo
 
 \end{tcolorbox}
 
-Note that whilst the \(\chi^2\) test statistic is a measure of how well the data fits a model, the goodness-of-fit test does not show evidence \emph{for} the model - only that the data does or does not \emph{contradict} it.
+Note that whilst the $\chi^2$ test statistic is a measure of how well the data fits a model, the goodness-of-fit test does not show evidence *for* the model - only that the data does or does not *contradict* it.
 
 \pagebreak
 
-\protect\phantomsection\label{ex124q}{}
+[]{#ex124q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex124a]{Exercise 12.4}}{Exercise 12.4}}\label{exercise-12.4}
-\addcontentsline{toc}{subsubsection}{{Exercise 12.4}}
+#### [Exercise 12.4](#ex124a) {-}
 
 \begin{enumerate}
     \item A keen amateur astronomer recalls hearing during a statistics class that shooting stars can be seen in a local section of night sky at a mean rate of 1 per hour, and the number visible in an hour is Poisson distributed. Over the course of a year they carefully watch the night sky on clear nights, and record the number of shooting starts they see within each hour. The data they obtain for the total of 70 hours spent watching for shooting stars is shown in the table below:
@@ -14323,10 +14066,9 @@ Note that whilst the \(\chi^2\) test statistic is a measure of how well the data
 
 \pagebreak
 
-\protect\phantomsection\label{re12q}{}
+[]{#re12q}
 
-\section*{\texorpdfstring{\hyperref[re12a]{Review Exercise}}{Review Exercise}}\label{review-exercise-11}
-\addcontentsline{toc}{section}{{Review Exercise}}
+## [Review Exercise](#re12a) {-}
 
 \begin{enumerate}
     \item The population of the United Kingdom can be approximately split between those living in England, Scotland, Wales and Northern Ireland in the ratio $30:3:2:1$. Out of a random sample of 117 people who applied to take part in a UK-wide television show, 102 lived in England, 4 lived in Scotland, and 1 lived in Northern Ireland.\\[1em]
@@ -14463,9 +14205,12 @@ Note that whilst the \(\chi^2\) test statistic is a measure of how well the data
 
 \end{multicols}
 
-\chapter{Control Charts}\label{control-charts}
 
-In any manufacturing process, performance must be monitored to ensure that the products being manufactured are not faulty or that the process is not flawed in some way. A common tool used to monitor performance is a \emph{control chart}, in which a series of samples are taken, measured and plotted against calculated limits to observe for signs of a problem.
+<!--chapter:end:12-Chi-Squared-Goodness-Of-Fit-Test.Rmd-->
+
+# Control Charts
+
+In any manufacturing process, performance must be monitored to ensure that the products being manufactured are not faulty or that the process is not flawed in some way. A common tool used to monitor performance is a *control chart*, in which a series of samples are taken, measured and plotted against calculated limits to observe for signs of a problem.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -14510,16 +14255,15 @@ In any manufacturing process, performance must be monitored to ensure that the p
 \end{tikzpicture}
 \end{center}
 
-Variation naturally occurs as a result of random causes in any manufacturing process, referred to as \emph{common cause variation}, and often there is no need for this to be investigated or addressed. This could be, for example, because the variation is within tolerable limits, or the cost of reducing the variation would outweigh the potential benefit of doing so. A process performing in this manner could be described as \emph{under control}.
+Variation naturally occurs as a result of random causes in any manufacturing process, referred to as *common cause variation*, and often there is no need for this to be investigated or addressed. This could be, for example, because the variation is within tolerable limits, or the cost of reducing the variation would outweigh the potential benefit of doing so. A process performing in this manner could be described as *under control*.
 
-However, if something occurs within the manufacturing process that results in a significant change in the output, a system, such as a control chart, needs to be in place to raise the alarm that the process may be \emph{out of control}. The process can then be reviewed and any possible \emph{special cause variation} investigated, such as machine wear and tear, poor raw materials, poorly trained operatives, or an accident or malfunction.
+However, if something occurs within the manufacturing process that results in a significant change in the output, a system, such as a control chart, needs to be in place to raise the alarm that the process may be *out of control*. The process can then be reviewed and any possible *special cause variation* investigated, such as machine wear and tear, poor raw materials, poorly trained operatives, or an accident or malfunction.
 
 \pagebreak
 
-\subsection*{The Principle of a Control Chart}\label{the-principle-of-a-control-chart}
-\addcontentsline{toc}{subsection}{The Principle of a Control Chart}
+### The Principle of a Control Chart {-}
 
-The control chart was invented in the 1920's by Walter Shewart, who was working for a communications company whose engineers wanted to improve the reliability of their telephone transmission systems. His theory was based around the normal distribution bell curve.
+The control chart was invented in the 1920’s by Walter Shewart, who was working for a communications company whose engineers wanted to improve the reliability of their telephone transmission systems. His theory was based around the normal distribution bell curve.
 
 The Advanced Higher Statistics course covers two types of control charts:
 
@@ -14528,9 +14272,9 @@ The Advanced Higher Statistics course covers two types of control charts:
     \item A Shewart $p$ chart for the sample \textbf{proportion}.
 \end{itemize}
 
-In either case, random samples of the product are taken at regular intervals and the sample means or sample proportions are plotted onto the control chart. A line on the chart is drawn to indicate the target value for the population mean or population proportion, as well as \(1\)-sigma , \(2\)-sigma and \(3\)-sigma lines either side of the target value.
+In either case, random samples of the product are taken at regular intervals and the sample means or sample proportions are plotted onto the control chart. A line on the chart is drawn to indicate the target value for the population mean or population proportion, as well as $1$-sigma , $2$-sigma and $3$-sigma lines either side of the target value.
 
-The \(3\)-sigma (\(3\sigma\)) limits are often referred to as the \emph{upper} and \emph{lower control limits}, with the other limits called \emph{warning lines}.
+The $3$-sigma ($3\sigma$) limits are often referred to as the *upper* and *lower control limits*, with the other limits called *warning lines*.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9,declare function={gaussy(\x,\y,\z)=1/(\y*sqrt(2*pi))*exp(-((\x-\z)^2)/(2*\y^2));}]
@@ -14582,24 +14326,24 @@ The \(3\)-sigma (\(3\sigma\)) limits are often referred to as the \emph{upper} a
     \draw[very thick, dashed] (10.5,4.5) -- (11.1,4.5);
     \draw[very thick, dashed] (10.5,-4.5) -- (11.1,-4.5);
     \draw[decorate, 
-    decoration = {brace,
-        amplitude=5pt}] (14.95,1.5) --  (14.95,-1.5);
+	decoration = {brace,
+		amplitude=5pt}] (14.95,1.5) --  (14.95,-1.5);
         \draw[white,fill=white] (14.7,-0.7) rectangle (15.35,0.7);
         \node[rotate=270] at (15.05,0) {68.3\%};
     \draw [decorate, 
-    decoration = {brace,
-        amplitude=6pt}] (11.95,3) --  (11.95,-3);
+	decoration = {brace,
+		amplitude=6pt}] (11.95,3) --  (11.95,-3);
         \draw[white,fill=white] (11.7,-0.7) rectangle (12.35,0.7);
         \node[rotate=270] at (12.05,0) {95.5\%};
     \draw [decorate, 
-    decoration = {brace,
-        amplitude=7pt}] (11.1,4.5) --  (11.1,-4.5);
+	decoration = {brace,
+		amplitude=7pt}] (11.1,4.5) --  (11.1,-4.5);
         \draw[white,fill=white] (10.85,-0.7) rectangle (11.5,0.7);
         \node[rotate=270] at (11.2,0) {99.7\%};
 \end{tikzpicture}
 \end{center}
 
-The Western Electric Company Rules (\emph{WECO Rules}) are commonly used to determine whether the production process is \emph{in or out of statistical control}, and are provided on Page 4 of the SQA booklet of Formulae and Tables.
+The Western Electric Company Rules (*WECO Rules*) are commonly used to determine whether the production process is *in or out of statistical control*, and are provided on Page 4 of the SQA booklet of Formulae and Tables.
 
 A process maybe out of statistical control when:
 
@@ -14612,9 +14356,9 @@ A process maybe out of statistical control when:
 
 \pagebreak
 
-\section{Applying the WECO Rules}\label{applying-the-weco-rules}
+## Applying the WECO Rules
 
-Each rule must be carefully checked for to determine whether a process is \emph{in statistical control}. If it is \emph{not} in statistical control, it is often necessary to identify the relevant WECO rule and at which point this could be declared. The following examples focus on context-free control charts for the purpose of practising \emph{applying the WECO rules}.
+Each rule must be carefully checked for to determine whether a process is *in statistical control*. If it is *not* in statistical control, it is often necessary to identify the relevant WECO rule and at which point this could be declared. The following examples focus on context-free control charts for the purpose of practising *applying the WECO rules*.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} For the control chart below, determine whether the process is in control. If it is out of control, identify at which sample this could be determined, with justification.
@@ -14664,10 +14408,9 @@ Each rule must be carefully checked for to determine whether a process is \emph{
 
 \end{tcolorbox}
 
-\subsubsection*{Exercise 13.1}\label{exercise-13.1}
-\addcontentsline{toc}{subsubsection}{Exercise 13.1}
+#### Exercise 13.1 {-}
 
-\emph{For each control charts below, determine whether the process is in control. If it is out of control, identify at which sample this could be determined, with justification.}
+*For each control charts below, determine whether the process is in control. If it is out of control, identify at which sample this could be determined, with justification.*
 
 \begin{multicols}{2}
 
@@ -14847,13 +14590,13 @@ Each rule must be carefully checked for to determine whether a process is \emph{
 
 \pagebreak
 
-\section{\texorpdfstring{Shewart \textit{x}-bar Charts with a Known Population Mean}{Shewart -bar Charts with a Known Population Mean}}\label{shewart--bar-charts-with-a-known-population-mean}
+## Shewart \textit{x}-bar Charts with a Known Population Mean
 
-Suppose that a manufacturing process is working properly and its performance is normally distributed, with mean \(\mu\) and standard deviation \(\sigma\). If samples of size \(n\) are taken regularly from the product, and the mean obtained for each sample, then:
+Suppose that a manufacturing process is working properly and its performance is normally distributed, with mean $\mu$ and standard deviation $\sigma$. If samples of size $n$ are taken regularly from the product, and the mean obtained for each sample, then:
 
 \vspace{-0.5cm}
 
-\[\overline{X}\sim N\left(\mu,\dfrac{\sigma^2}{n}\right)\]
+$$\overline{X}\sim N\left(\mu,\dfrac{\sigma^2}{n}\right)$$
 
 \vspace{-0.5cm}
 
@@ -14867,19 +14610,19 @@ Sigma limits can be calculated as:
         \node at (0,0) {$2\sigma \text{ limits: }\mu \text{ }\pm \text{ }\dfrac{2\sigma}{\sqrt{n}}$};
         \node at (5,0) {$3\sigma \text{ limits: }\mu \text{ }\pm \text{ }\dfrac{3\sigma}{\sqrt{n}}$};
         \draw[decorate, 
-    decoration = {brace,
-        amplitude=7pt}] (1.8,-0.8) --  (-6.8,-0.8);
+	decoration = {brace,
+		amplitude=7pt}] (1.8,-0.8) --  (-6.8,-0.8);
         \node[below] at (-2.5,-1) {\textit{Warning lines}};
         \draw[decorate, 
-    decoration = {brace,
-        amplitude=7pt}] (6.8,-0.8) --  (3.2,-0.8);
+	decoration = {brace,
+		amplitude=7pt}] (6.8,-0.8) --  (3.2,-0.8);
         \node[below] at (5,-1) {\textit{UCL}\text{ and }\textit{LCL}};
     \end{tikzpicture}
 \end{center}
 
 \vspace{-0.5cm}
 
-A control chart is created with horizontal lines indicating the population mean and each of the 6 sigma limits calculated. The sample mean for each of the samples drawn at regular intervals is plotted on the chart, and the \emph{WECO rules} applied to determine if or when the production process is out of control.
+A control chart is created with horizontal lines indicating the population mean and each of the 6 sigma limits calculated. The sample mean for each of the samples drawn at regular intervals is plotted on the chart, and the *WECO rules* applied to determine if or when the production process is out of control. 
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A machine fills cans of soda with mean volume 350ml and standard deviation 5ml. Every hour a sample of 3 cans is taken, their volumes measured, and the sample mean calculated before being added to an $x$-bar chart. 
@@ -14950,8 +14693,7 @@ A control chart is created with horizontal lines indicating the population mean 
 
 \pagebreak
 
-\subsubsection*{Exercise 13.2}\label{exercise-13.2}
-\addcontentsline{toc}{subsubsection}{Exercise 13.2}
+#### Exercise 13.2 {-}
 
 \begin{enumerate}
     \item A machine dispenses crisps into sharing-sized bags with a mean mass of 150g and a standard deviation of 2g. It is known that the mass of the crisps is normally distributed. A random sample of 5 of the sharing-sized bags of crisps is taken every hour to check that the machine is in statistical control. A control chart showing 12 consecutive samples from a particular shift is shown.
@@ -15133,11 +14875,10 @@ Confirm the 1 and 2 sigma limits on the chart and determine whether the process 
 Calculate the upper and lower control limits and determine if the process is in statistical control for the day sampled.
 \end{enumerate}
 
-\section*{\texorpdfstring{Shewart \textit{x}-bar Charts with an Unknown Population Mean}{Shewart -bar Charts with an Unknown Population Mean}}\label{shewart--bar-charts-with-an-unknown-population-mean}
-\addcontentsline{toc}{section}{Shewart \textit{x}-bar Charts with an Unknown Population Mean}
+## Shewart \textit{x}-bar Charts with an Unknown Population Mean {-}
 
-If the population mean is unknown, the value for \(\mu\) must be estimated from the \emph{mean of the mean} of the first few sample measurements, known as \(\bar{\bar{x}}\). This situation would be common when a control chart for a manufacturing process is being set up for the first time.
-When \(\mu\) is unknown, often \(\sigma\) is also unknown. It goes beyond the syllabus for this course to estimate the value of \(\sigma\) so it will be stated in the question.
+If the population mean is unknown, the value for $\mu$ must be estimated from the *mean of the mean* of the first few sample measurements, known as $\bar{\bar{x}}$. This situation would be common when a control chart for a manufacturing process is being set up for the first time. 
+When $\mu$ is unknown, often $\sigma$ is also unknown. It goes beyond the syllabus for this course to estimate the value of $\sigma$ so it will be stated in the question.
 
 \begin{enumerate}[resume]
     \item A new medical manufacturing process is set up to produce a new tablet. In order to ensure the process is in statistical control, a control chart is created from random samples of size 5. The first ten sample means were used to create the target value $\bar{\bar{x}}$ for the chart, and it is known that $\sigma = 0.06\text{ mg}$.
@@ -15147,11 +14888,11 @@ When \(\mu\) is unknown, often \(\sigma\) is also unknown. It goes beyond the sy
         \hline
         \textbf{Sample number} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10}\\
         \hline
-        Mass (mg) & 4.92    & 4.94 &    5.04 &  5.01 &  4.98 &  5.07    & 4.97  & 4.99 &    5.06 &  5.02\\
+        Mass (mg) & 4.92	& 4.94 &	5.04 &	5.01 &	4.98 &	5.07	& 4.97	& 4.99 &	5.06 &	5.02\\
         \hline
         \textbf{Sample number} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{17} & \textbf{18} & \textbf{19} & \textbf{20}\\
         \hline
-        Mass (mg) & 4.99 & 4.98 &   4.92 &  4.95 &  4.93 &  4.97 &  4.91 &  5.01 &  5.04 &  4.98 \\
+        Mass (mg) & 4.99 & 4.98 &	4.92 &	4.95 &	4.93 &	4.97 &	4.91 &	5.01 &	5.04 &	4.98 \\
         \hline
     \end{tabular}
 \end{center}
@@ -15203,19 +14944,19 @@ When \(\mu\) is unknown, often \(\sigma\) is also unknown. It goes beyond the sy
 
 \pagebreak
 
-\section{\texorpdfstring{Shewart \textit{p}-Charts for a Proportion}{Shewart -Charts for a Proportion}}\label{shewart--charts-for-a-proportion}
+## Shewart \textit{p}-Charts for a Proportion
 
-For some quality control processes the attribute of interest will be a \emph{quality} rather than a numerical value, meaning calculating a mean is not possible. For such cases, a control chart for \(x\)-bar is not appropriate. Such a \emph{quality} may typically take the form of a binary outcome, such as \emph{defective} or \emph{not defective}. The \emph{proportion} of products within each sample that take a particular outcome (such as \emph{defective}) may instead be calculated, and a control chart for proportion, or \(p\)-chart, created.
+For some quality control processes the attribute of interest will be a *quality* rather than a numerical value, meaning calculating a mean is not possible. For such cases, a control chart for $x$-bar is not appropriate. Such a *quality* may typically take the form of a binary outcome, such as *defective* or *not defective*. The *proportion* of products within each sample that take a particular outcome (such as *defective*) may instead be calculated, and a control chart for proportion, or $p$-chart, created.
 
-For \(np,nq>5\) the distribution of the sample proportion may be described by \(\hat{P}\approx N\left(p,\dfrac{pq}{n}\right)\).
+For $np,nq>5$ the distribution of the sample proportion may be described by $\hat{P}\approx N\left(p,\dfrac{pq}{n}\right)$.
 
-This leads to the 3-sigma control limits for a \(p\)-chart being given, for population proportion \(p\), by \(p\text{ }\pm \text{ }3\sqrt{\dfrac{pq}{n}}\).
+This leads to the 3-sigma control limits for a $p$-chart being given, for population proportion $p$, by $p\text{ }\pm \text{ }3\sqrt{\dfrac{pq}{n}}$.
 
-Similarly, the \(1\sigma\) and \(2\sigma\) limits be be calculated respectively as \(p\text{ }\pm \text{ }\sqrt{\dfrac{pq}{n}}\) and \(p\text{ }\pm \text{ }2\sqrt{\dfrac{pq}{n}}\).
+Similarly, the $1\sigma$ and $2\sigma$ limits be be calculated respectively as $p\text{ }\pm \text{ }\sqrt{\dfrac{pq}{n}}$ and $p\text{ }\pm \text{ }2\sqrt{\dfrac{pq}{n}}$.
 
-It should be noted that, depending on the value of \(p\), it is not unusual for the lower control limit to be negative or the upper control limit to be greater than 1. When this happens the lower control limit should be given as 0 or the upper control limit given as 1.
+It should be noted that, depending on the value of $p$, it is not unusual for the lower control limit to be negative or the upper control limit to be greater than 1. When this happens the lower control limit should be given as 0 or the upper control limit given as 1.
 
-If no historical value of the population proportion has been suggested, then \(p\) must be estimated from the sample data provided, and \(\hat{p}\) used.
+If no historical value of the population proportion has been suggested, then $p$ must be estimated from the sample data provided, and $\hat{p}$ used.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A machine fills Christmas crackers. 30\% of the crackers are supposed to contain joke A. Every 30 minutes a sample of 50 crackers is taken and the number containing joke A is found. The proportion of each sample that has joke A is plotted on a $p$-chart.
@@ -15234,8 +14975,7 @@ The process is out of statistical control at sample 6 as two out of three consec
 
 \newpage
 
-\subsubsection*{Exercise 13.3}\label{exercise-13.3}
-\addcontentsline{toc}{subsubsection}{Exercise 13.3}
+#### Exercise 13.3 {-}
 
 \begin{enumerate}
     \item A manufacturer of orange juice cans claims that, historically, 10\% of the cans produced are defective. 24 samples, each of 50 cans were taken from the production line at daily intervals, and the number of defective cans in the samples were plotted on a $p$-chart.
@@ -15267,11 +15007,11 @@ The process is out of statistical control at sample 6 as two out of three consec
         \hline
         \textbf{Sample no.} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10}\\
         \hline
-        No. of defective containers & 25    & 27 &  31 &    28 &    22 &    35  & 25    & 24 &  26 &    27\\
+        No. of defective containers & 25	& 27 &	31 &	28 &	22 &	35	& 25	& 24 &	26 &	27\\
         \hline
         \textbf{Sample no.} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{17} & \textbf{18} & \textbf{19} & \textbf{20}\\
         \hline
-        No. of defective containers & 23 & 39 & 33 &    22 &    23 &    24 &    26 &    20 &    19 &    21 \\
+        No. of defective containers & 23 & 39 &	33 &	22 &	23 &	24 &	26 &	20 &	19 &	21 \\
         \hline
     \end{tabular}
 \end{center}
@@ -15297,13 +15037,17 @@ The process is out of statistical control at sample 6 as two out of three consec
 
 \pagebreak
 
-\chapter{Chi-Squared Test for Association}\label{chi-squared-test-for-association}
 
-Categorical variables can be described as \emph{independent} if knowledge about one of the variables reveals nothing about the other. Another way of saying this is that there is \textbf{no association} between the variables. For example, knowing a person's \emph{favourite colour} reveals nothing about whether or not they are \emph{left-handed or right-handed}, and so there is no association between the someone's favourite colour and their handedness.
 
-On the other hand, knowing whether or not someone \emph{enjoys camping} is likely to help in predicting whether or not they \emph{own a tent}, and so these variables are \emph{not independent}. Another way of saying this is that there \textbf{is an association} between enjoying camping and owning a tent.
+<!--chapter:end:13-Control-Charts.Rmd-->
 
-Suppose a researcher wishes to investigate whether there is a link between someone's \emph{handedness} and whether they have colour vision deficiency (\emph{CVD}), often known as \emph{colour-blindness}. Data is obtained for a random sample of 800 people, and the data is displayed in a \emph{contingency table}:
+# Chi-Squared Test for Association
+
+Categorical variables can be described as *independent* if knowledge about one of the variables reveals nothing about the other. Another way of saying this is that there is **no association** between the variables. For example, knowing a person's *favourite colour* reveals nothing about whether or not they are *left-handed or right-handed*, and so there is no association between the someone's favourite colour and their handedness. 
+
+On the other hand, knowing whether or not someone *enjoys camping* is likely to help in predicting whether or not they *own a tent*, and so these variables are *not independent*. Another way of saying this is that there **is an association** between enjoying camping and owning a tent.
+
+Suppose a researcher wishes to investigate whether there is a link between someone's *handedness* and whether they have colour vision deficiency (*CVD*), often known as *colour-blindness*. Data is obtained for a random sample of 800 people, and the data is displayed in a *contingency table*: 
 
 \begin{center}
 \begin{tabular}{ c | c c} 
@@ -15314,7 +15058,7 @@ Suppose a researcher wishes to investigate whether there is a link between someo
 \end{tabular}
 \end{center}
 
-The contingency table shows that 5\% (4 out of 80) of left-handed people had colour-blindness, whilst slightly over 8\% (58 out of 720) of right-handed people had colour-blindness. However, this difference in proportions may have occurred due to an association between colour-blindness and handedness, or through \emph{random chance}, since this is a \emph{random sample} of individuals.
+The contingency table shows that 5\% (4 out of 80) of left-handed people had colour-blindness, whilst slightly over 8\% (58 out of 720) of right-handed people had colour-blindness. However, this difference in proportions may have occurred due to an association between colour-blindness and handedness, or through *random chance*, since this is a *random sample* of individuals.
 
 A hypothesis test is required to assess whether the data in the contingency table gives evidence to suggest that there is in fact an association between handedness and colour-blindness.
 
@@ -15329,11 +15073,11 @@ The hypotheses for this test will be as follows:
 
 \pagebreak
 
-\section{\texorpdfstring{\(\chi^2\) Test for Association}{\textbackslash chi\^{}2 Test for Association}}\label{chi2-test-for-association}
+## $\chi^2$ Test for Association
 
-The \(\chi^2\) test for association is used to explore a possible \emph{association} between \emph{two categorical variables}, the data for which are typically displayed in a \textbf{contingency table}.
+The $\chi^2$ test for association is used to explore a possible *association* between *two categorical variables*, the data for which are typically displayed in a **contingency table**. 
 
-The hypotheses for this \textbf{non-parametric} test should be stated \emph{in context}.
+The hypotheses for this **non-parametric** test should be stated *in context*.
 
 \vspace{0.3cm}
 
@@ -15351,9 +15095,9 @@ The hypotheses for this \textbf{non-parametric} test should be stated \emph{in c
 
 \vspace{0.3cm}
 
-The test uses the \emph{same test statistic and conditions for validity} as the \(\chi^2\) goodness-of-fit test, given on page 6 of the SQA Data Booklet. The decision rule also matches that for the goodness-of-fit test, stated in Chapter 13.
+The test uses the *same test statistic and conditions for validity* as the $\chi^2$ goodness-of-fit test, given on page 6 of the SQA Data Booklet. The decision rule also matches that for the goodness-of-fit test, stated in Chapter 13.
 
-Returning to the data on handedness and colour-blindness, a \(\chi^2\) test for association can now be performed. The first step is to include \emph{marginal totals} for each row and column of the contingency table, as well as an total number of observations. The expected value for each cell can then be calculated by multiplying marginal totals and dividing by the total frequency, as shown below:
+Returning to the data on handedness and colour-blindness, a $\chi^2$ test for association can now be performed. The first step is to include *marginal totals* for each row and column of the contingency table, as well as an total number of observations. The expected value for each cell can then be calculated by multiplying marginal totals and dividing by the total frequency, as shown below:
 
 \vspace{0.5cm}
 \begin{figure}[H]
@@ -15395,15 +15139,13 @@ Returning to the data on handedness and colour-blindness, a \(\chi^2\) test for 
     \node at (0,0) {};
 \end{tikzpicture}
 
-\vspace{-0.5cm}
+\vspace{-0.5cm}The expected values produced meet the required conditions, in that all are at least 1, and at least 80\% are at least 5. Note that these expected values can also be produced quickly using some graphical calculators, as can the $\chi^2$ test statistic:
 
-The expected values produced meet the required conditions, in that all are at least 1, and at least 80\% are at least 5. Note that these expected values can also be produced quickly using some graphical calculators, as can the \(\chi^2\) test statistic:
+$$X^2=\frac{(4-6.2)^2}{6.2}+\frac{(76-73.8)^2}{73.8}+\frac{(58-55.8)^2}{55.8}+\frac{(662-664.2)^2}{664.2}=0.940$$
 
-\[X^2=\frac{(4-6.2)^2}{6.2}+\frac{(76-73.8)^2}{73.8}+\frac{(58-55.8)^2}{55.8}+\frac{(662-664.2)^2}{664.2}=0.940\]
+The number of *degrees of freedom* for the test statistic is calculated as $\nu=(r-1)(c-1)$, where $r$ is the number of rows and $c$ is the number of columns of data in the contingency table, *not including marginal rows and columns*.
 
-The number of \emph{degrees of freedom} for the test statistic is calculated as \(\nu=(r-1)(c-1)\), where \(r\) is the number of rows and \(c\) is the number of columns of data in the contingency table, \emph{not including marginal rows and columns}.
-
-Here there are \emph{two rows} (\(r=2\)) and \emph{two columns} (\(c=2\)), so \(\nu=(2-1)(2-1)=1\). The \(\chi^2_1\) critical value, taking a 5\% level of significance, can be obtained from Page 14 of the Data Booklet:
+Here there are *two rows* ($r=2$) and *two columns* ($c=2$), so $\nu=(2-1)(2-1)=1$. The $\chi^2_1$ critical value, taking a 5\% level of significance, can be obtained from Page 14 of the Data Booklet:  
 
 \begin{figure}[H]
   \centering
@@ -15457,9 +15199,9 @@ Critical value: $\chi^2_{1,0.95}=3.841$
 \end{minipage}
 \end{figure}
 
-Since \(0.940<3.841\), \(\text{H}_0\) is not rejected at the 5\% level of significance.
+Since $0.940<3.841$, $\text{H}_0$ is not rejected at the 5\% level of significance.
 
-There is insufficient evidence to suggest that there is an association between handedness and colour-blindness.
+There is insufficient evidence to suggest that there is an association between handedness and colour-blindness. 
 
 \pagebreak
 
@@ -15572,7 +15314,7 @@ Marginal totals are helpful when manually calculating expected values. When a gr
 
 \pagebreak
 
-It should be noted that since the test's purpose of looking for evidence for an \emph{association} is the same thing as looking for a \emph{lack of independence}, the wording of a question may be framed in that manner, as below.
+It should be noted that since the test's purpose of looking for evidence for an *association* is the same thing as looking for a *lack of independence*, the wording of a question may be framed in that manner, as below. 
 
 In such cases, reworded yet equivalent hypothesis should be used for the test for consistency.
 
@@ -15680,13 +15422,12 @@ There is evidence to suggest the driving centre used and the outcome of the test
 
 \end{tcolorbox}
 
-Note that an equivalent conclusion would be that there is evidence to suggest that there is an \emph{association} between driving centre used and the outcome of the test. However, it is generally preferable for a solution to mirror the language used in the question.
+Note that an equivalent conclusion would be that there is evidence to suggest that there is an *association* between driving centre used and the outcome of the test. However, it is generally preferable for a solution to mirror the language used in the question.
 \pagebreak
 
-\protect\phantomsection\label{ex141q}{}
+[]{#ex141q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex141a]{Exercise 14.1}}{Exercise 14.1}}\label{exercise-14.1}
-\addcontentsline{toc}{subsubsection}{{Exercise 14.1}}
+#### [Exercise 14.1](#ex141a) {-}
 
 \begin{enumerate}
     \item For all the games in the last 12 months, an ice hockey team records whether they won or lost, as well as whether the game was played at the weekend or on a weekday. The results were collated using a contingency table:
@@ -15744,9 +15485,9 @@ Note that an equivalent conclusion would be that there is evidence to suggest th
 
 \pagebreak
 
-\section{Combining Columns or Rows}\label{combining-columns-or-rows}
+## Combining Columns or Rows
 
-Where the conditions for validity for a \(\chi^2\) test of association are not met, it may be still possible to carry out a test by \emph{combining rows and/or columns}. It is generally advised to collapse those which most naturally may be combined.
+Where the conditions for validity for a $\chi^2$ test of association are not met, it may be still possible to carry out a test by *combining rows and/or columns*. It is generally advised to collapse those which most naturally may be combined.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A pharmaceutical company arranges for a random sample of 120 patients to take part in a trial of a new pain relief medication. Some will be given the new medication, whilst others will instead be given a placebo treatment that is identical in appearance and packaging. At the end of the week, each patient will be asked whether they experienced a reduction, an increase in pain, or no change. The data collected is shown in the table below:
@@ -15853,14 +15594,13 @@ There is insufficient evidence to suggest that there is an association between t
 
 \end{tcolorbox}
 
-As with all hypothesis tests, a decision to not reject \(\text{H}_0\) does not mean there is evidence that it is true - only that there is insufficient evidence to suggest that it is \emph{not} true in favour of \(\text{H}_1\).
+As with all hypothesis tests, a decision to not reject $\text{H}_0$ does not mean there is evidence that it is true - only that there is insufficient evidence to suggest that it is *not* true in favour of $\text{H}_1$.
 
 \pagebreak
 
-\protect\phantomsection\label{ex142q}{}
+[]{#ex142q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex142a]{Exercise 14.2}}{Exercise 14.2}}\label{exercise-14.2}
-\addcontentsline{toc}{subsubsection}{{Exercise 14.2}}
+#### [Exercise 14.2](#ex142a) {-}
 
 \begin{enumerate}
     \item A random sample of residents listed on the electoral register in four Scottish cities are selected and contacted to find out whether they voted in the most recent UK General Election, and the results shown in a contingency table. A \textit{spoiled vote} means they deliberately left their ballot paper blank or otherwise voided it, often seen as a `protest vote'.
@@ -15906,10 +15646,9 @@ Perform a non-parametric test at the 10\% level of significance to assess whethe
 
 \pagebreak
 
-\protect\phantomsection\label{re14q}{}
+[]{#re14q}
 
-\section*{\texorpdfstring{\hyperref[re14a]{Review Exercise}}{Review Exercise}}\label{review-exercise-12}
-\addcontentsline{toc}{section}{{Review Exercise}}
+## [Review Exercise](#re14a) {-}
 
 \begin{enumerate}
     \item In statistician Ronald Fisher's 1935 book, `\textit{A Design of Experiments}', he details setting up a test to judge a claim made by the scientist Muriel Bristol: that she could tell whether milk was added to a cup \textit{before} tea, or \textit{after}. A statistics student, whose friend claims to only like tea when the milk is added first, decides to set up a similar experiment for herself, disbelieving that her friend can really tell the difference.\\[1em]
@@ -15994,11 +15733,13 @@ Perform a non-parametric test at the 10\% level of significance to assess whethe
     \end{enumerate}
 \end{enumerate}
 
-\chapter{Two-Sample Parametric Tests}\label{two-sample-parametric-tests}
+<!--chapter:end:14-Chi-Squared-Test-For-Association.Rmd-->
+
+# Two-Sample Parametric Tests
 
 \vspace{-0.5cm}
 
-Chapter 10 introduced three hypothesis tests which use a single sample of data to assess the evidence for claims relating to the population mean. For example, a study on the longevity of a brand's light bulbs might check a random sample of such bulbs, to assess whether their is evidence to suggest the population mean lifespan is greater than 1000 hours. The data from the sample is shown below, with the sample mean \(\bar{x}\) indicated:
+Chapter 10 introduced three hypothesis tests which use a single sample of data to assess the evidence for claims relating to the population mean. For example, a study on the longevity of a brand's light bulbs might check a random sample of such bulbs, to assess whether their is evidence to suggest the population mean lifespan is greater than 1000 hours. The data from the sample is shown below, with the sample mean $\bar{x}$ indicated:
 
 \begin{figure}[H]
   \centering
@@ -16050,9 +15791,9 @@ Chapter 10 introduced three hypothesis tests which use a single sample of data t
 \end{minipage}
 \end{figure}
 
-This use of a \emph{single sample} of data, investigating a \emph{single} population parameter, is an example of a \textbf{one-sample test}.
+This use of a *single sample* of data, investigating a *single* population parameter, is an example of a **one-sample test**.
 
-Should a study instead wish to compare the longevity of \emph{two different brands' light bulbs} they would instead check \emph{two samples} of data: one sample from \emph{Brand A} and one sample from \emph{Brand B}. In such a case, a typical set of hypotheses might instead ask whether there is evidence to suggest that there is a difference between the population mean lifespan for Brand A, \(\mu_A\), and the population mean lifespan for Brand B, \(\mu_B\). The data from the samples are shown below, with the sample means \(\bar{x}_A\) and \(\bar{x}_B\) indicated:
+Should a study instead wish to compare the longevity of *two different brands' light bulbs* they would instead check *two samples* of data: one sample from *Brand A* and one sample from *Brand B*. In such a case, a typical set of hypotheses might instead ask whether there is evidence to suggest that there is a difference between the population mean lifespan for Brand A, $\mu_A$, and the population mean lifespan for Brand B, $\mu_B$. The data from the samples are shown below, with the sample means $\bar{x}_A$ and $\bar{x}_B$ indicated:
 
 \vspace{-0.5cm}
 
@@ -16124,7 +15865,7 @@ Should a study instead wish to compare the longevity of \emph{two different bran
 \end{minipage}
 \end{figure}
 
-Such a test, comparing the parameters of \emph{two} populations by using \emph{two samples}, is an example of a \textbf{two-sample test}. Either one-tailed or two-tailed tests can be performed:
+Such a test, comparing the parameters of *two* populations by using *two samples*, is an example of a **two-sample test**.  Either one-tailed or two-tailed tests can be performed:
 
 \begin{center}
     \begin{tabular}{ccccc}
@@ -16135,13 +15876,13 @@ Such a test, comparing the parameters of \emph{two} populations by using \emph{t
 
 \pagebreak
 
-\section{\texorpdfstring{Two-Sample \textit{z}-test for Population Means}{Two-Sample -test for Population Means}}\label{two-sample--test-for-population-means}
+## Two-Sample \textit{z}-test for Population Means
 
-If independent random samples of sizes \(n_1\) and \(n_2\) are obtained from each of two normally distributed populations which have population means \(\mu_1\) and \(\mu_2\) respectively, and population standard deviations \(\sigma_1\) and \(\sigma_2\) respectively, then the difference in sample means \(\bar{X}_1\) and \(\bar{X}_2\) is also normally distributed, as below:
+If independent random samples of sizes $n_1$ and $n_2$ are obtained from each of two normally distributed populations which have population means $\mu_1$ and $\mu_2$ respectively, and population standard deviations $\sigma_1$ and $\sigma_2$ respectively, then the difference in sample means $\bar{X}_1$ and $\bar{X}_2$ is also normally distributed, as below:
 
 \[\overline{X}_1\sim \text{N}\left(\mu_1,\frac{\sigma_1^2}{n_1}\right) \quad \text{and} \quad \overline{X}_2\sim \text{N}\left(\mu_2,\frac{\sigma_2^2}{n_2}\right)\quad\implies\quad\overline{X}_1-\overline{X}_2\sim \text{N}\left(\mu_1-\mu_2,\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}\right)\]
 
-This leads to the test statistic for the \emph{two-sample} \(z\)\emph{-test for population means} given in the data booklet. Under the typical null hypothesis of no difference between the population means, or \(\mu_1-\mu_2=0\), the test statistic in the box may be used.
+This leads to the test statistic for the *two-sample* $z$*-test for population means* given in the data booklet. Under the typical null hypothesis of no difference between the population means, or $\mu_1-\mu_2=0$, the test statistic in the box may be used.
 
 \begin{multicols}{2}
 
@@ -16171,7 +15912,7 @@ Test statistic: $z=\dfrac{\overline{x}_1-\overline{x}_2}{\sqrt{\dfrac{\sigma_1^2
 \end{tcolorbox}
 \end{centering}
 
-Note when sample sizes \(n_1\) and \(n_2\) are greater than 20 the \emph{Central Limit Theorem} can be invoked, so the sample means are at least approximately normally distributed regardless of the distribution of the underlying population. Also, for larger sample sizes the sample standard deviations \(s_1\) and \(s_2\) might be taken as \emph{sufficiently accurate estimates} for the \emph{population} standard deviations \(\sigma_1\) and \(\sigma_2\).
+ Note when sample sizes $n_1$ and $n_2$ are greater than 20 the *Central Limit Theorem* can be invoked, so the sample means are at least approximately normally distributed regardless of the distribution of the underlying population. Also, for larger sample sizes the sample standard deviations $s_1$ and $s_2$ might be taken as *sufficiently accurate estimates* for the *population* standard deviations $\sigma_1$ and $\sigma_2$.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} To compare the longevity of two brands' light bulbs, a random sample of eight bulbs from \textit{AlwaysBrite} and eight bulbs from \textit{BulbCity} are tested. The sample of AlwaysBrite bulbs had have a mean lifespan 1015 hours, with a sample mean of 1059 hours before failure for BulbCity. Assuming that the lifespan for both populations of bulbs is known to be normally distributed, with a standard deviation of 84 hours, use a parametric test to determine whether there is evidence for a difference in longevity between the brands.
@@ -16241,10 +15982,9 @@ Since $-1.05>-1.96$, do not reject $\text{H}_0$ at the 5\% level of significance
 
 \pagebreak
 
-\protect\phantomsection\label{ex151q}{}
+[]{#ex151q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex151a]{Exercise 15.1}}{Exercise 15.1}}\label{exercise-15.1}
-\addcontentsline{toc}{subsubsection}{{Exercise 15.1}}
+#### [Exercise 15.1](#ex151a) {-}
 
 \begin{enumerate}
     \item The alkalinity, in milligrams per litre, of water in the upper reaches of rivers in a particular region is known to be normally distributed with a standard deviation of 10 mg/l. Alkalinity readings in the lower reaches of rivers in the same region are also known to be normally distributed, but with a standard deviation of 25 mg/l.  Ten alkalinity readings are made in the upper reaches of rivers in the region and fifteen in the lower reaches with sample means of 80.5 mg/l and 99.0 mg/l respectively. Test, at the 1\% level of significance, the claim that the true mean alkalinity of water in the lower reaches of this river is greater than that in the upper reaches, stating an assumption made.
@@ -16261,7 +16001,7 @@ After the overhaul, which from past experience is known not to affect the standa
 \begin{center}
 \begin{tabular}{cccccc}
     151.1 & 150.7 & 149.0 & 150.3 & 151.3 & 151.4\\[0.1em]
-        150.8 & 149.5 & 150.2 & 150.6 & 150.9 & 151.3
+		150.8 & 149.5 & 150.2 & 150.6 & 150.9 & 151.3
 \end{tabular}
 \end{center}
 \vspace{-0.3cm}
@@ -16302,11 +16042,11 @@ Test the hypothesis that the minor overhaul has had no effect on the mean mass o
 
 \pagebreak
 
-\section{\texorpdfstring{Two-Sample \textit{z}-test for Population Proportions}{Two-Sample -test for Population Proportions}}\label{two-sample--test-for-population-proportions}
+## Two-Sample \textit{z}-test for Population Proportions
 
-If random, independent samples of data are obtained from each of two populations, and the two \textbf{sample proportions} \(\hat{p}_1\) and \(\hat{p}_2\) are obtained, then a \emph{two-sample} \(z\)\emph{-test for population proportions} may be used to explore evidence for a difference in the \textbf{population proportions}, \(p_1\) and \(p_2\).
+If random, independent samples of data are obtained from each of two populations, and the two \textbf{sample proportions} $\hat{p}_1$ and $\hat{p}_2$ are obtained, then a *two-sample* $z$*-test for population proportions* may be used to explore evidence for a difference in the \textbf{population proportions}, $p_1$ and $p_2$.  
 
-The test statistic is provided in the SQA Data Booklet, and it uses an \emph{estimate of the pooled population proportion}, \(\hat{p}\):
+The test statistic is provided in the SQA Data Booklet, and it uses an *estimate of the pooled population proportion*, $\hat{p}$:
 
 \begin{centering}
 \tcbset{width=13cm}
@@ -16315,7 +16055,7 @@ Test statistic: $z=\dfrac{\hat{p}_1-\hat{p}_2}{\sqrt{\hat{p} \hat{q} \left( \dfr
 \end{tcolorbox}
 \end{centering}
 
-The test statistic may be derived from the use of the normal approximation to a binomial distribution to describe the approximate distribution of the sample proportion (see section 10.5) and the distribution of the difference of two \emph{independent} sample proportions (similar to section 15.1). The conditions for the use of this hypothesis follow.
+The test statistic may be derived from the use of the normal approximation to a binomial distribution to describe the approximate distribution of the sample proportion (see section 10.5) and the distribution of the difference of two *independent* sample proportions (similar to section 15.1). The conditions for the use of this hypothesis follow.
 
 \begin{centering}
 \tcbset{width=14cm}
@@ -16327,7 +16067,7 @@ The test statistic may be derived from the use of the normal approximation to a 
 \end{tcolorbox}
 \end{centering}
 
-This parametric test can take one-tailed or two-tailed hypotheses which relation to the population proportions, \(p_1\) and \(p_2\):
+This parametric test can take one-tailed or two-tailed hypotheses which relation to the population proportions, $p_1$ and $p_2$:
 
 \begin{center}
     \begin{tabular}{ccccc}
@@ -16407,10 +16147,9 @@ Since $3.99>2.58$, reject $\text{H}_0$ at the 1\% level of significance. There i
 
 \pagebreak
 
-\protect\phantomsection\label{ex152q}{}
+[]{#ex152q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex152a]{Exercise 15.2}}{Exercise 15.2}}\label{exercise-15.2}
-\addcontentsline{toc}{subsubsection}{{Exercise 15.2}}
+#### [Exercise 15.2](#ex152a) {-}
 
 \begin{enumerate}
     \item Students in a school wish to study possible differences in the ability of students and teachers to correctly identify a particular brand of cola based on taste along. A random sample of 70 students are chosen to take part, and a random sample of 80 teachers are selected, with the results shown in the table below.
@@ -16459,9 +16198,9 @@ Since $3.99>2.58$, reject $\text{H}_0$ at the 1\% level of significance. There i
 
 \pagebreak
 
-\section{\texorpdfstring{Two-Sample \textit{t}-test for Population Means}{Two-Sample -test for Population Means}}\label{two-sample--test-for-population-means-1}
+## Two-Sample \textit{t}-test for Population Means
 
-When one or both sample sizes are small and population standard deviations are unknown, a two-sample \(z\)-test for population means is not appropriate. Instead, a \emph{two-sample} \(t\)\emph{-test for population means} may be used, given certain conditions are met:
+When one or both sample sizes are small and population standard deviations are unknown, a two-sample $z$-test for population means is not appropriate. Instead, a *two-sample* $t$*-test for population means* may be used, given certain conditions are met:
 
 \begin{centering}
 \tcbset{width=13cm}
@@ -16474,7 +16213,7 @@ When one or both sample sizes are small and population standard deviations are u
 \end{tcolorbox}
 \end{centering}
 
-The test statistic is provided in the SQA Data Booklet, and follows a \(t\)-distribution with \(\nu=n_1+n_2-2\) degrees of freedom. It requires calculation of a \emph{pooled estimate of the variance}, \(s^2\), and as with the two-sample \(z\)-test, a more streamline version of the test statistic under a null hypothesis of \(\mu_1=\mu_2\) is as follows:
+The test statistic is provided in the SQA Data Booklet, and follows a $t$-distribution with $\nu=n_1+n_2-2$ degrees of freedom. It requires calculation of a *pooled estimate of the variance*, $s^2$, and as with the two-sample $z$-test, a more streamline version of the test statistic under a null hypothesis of $\mu_1=\mu_2$ is as follows:
 
 \begin{centering}
 \tcbset{width=15.5cm}
@@ -16556,10 +16295,9 @@ Since $-1.697>-2.069$, do not reject $\text{H}_0$ at the 5\% level of significan
 
 \pagebreak
 
-\protect\phantomsection\label{ex153q}{}
+[]{#ex153q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex153a]{Exercise 15.3}}{Exercise 15.3}}\label{exercise-15.3}
-\addcontentsline{toc}{subsubsection}{{Exercise 15.3}}
+#### [Exercise 15.3](#ex153a) {-}
 
 \begin{enumerate}
     \item The times (in minutes) it took six randomly selected field mice to learn to run a simple maze and the times it took six randomly selected house mice to learn to run the same maze are given. 
@@ -16587,12 +16325,12 @@ Since $-1.697>-2.069$, do not reject $\text{H}_0$ at the 5\% level of significan
     \begin{tabular}{c|ccccccccccccc}
         Librarians & 55 & 18 & 99 & 54 & 87 & 11 & 62 & 68 & 27 & 90 & 57  &   & \\
         \hline
-        Designers & 23 & 69 & 34 & 27 & 51 & 29 & 45 & 42 & 48 & 74 & 31 & 30 & 31  
+        Designers & 23 & 69 & 34 & 27 & 51 & 29 & 45 & 42 & 48 & 74 & 31 & 30 & 31	
     \end{tabular}
     \end{center}
     \begin{enumerate}
-        \item Stating any necessary assumptions, investigate whether the mean   time for the librarians is longer than for the designers.
-        \item Suggest another parametric hypothesis test that could be carried  out using this data and perform this test.
+        \item Stating any necessary assumptions, investigate whether the mean 	time for the librarians is longer than for the designers.
+        \item Suggest another parametric hypothesis test that could be carried 	out using this data and perform this test.
     \end{enumerate}
     \item A council official wants to compare two brands of paint used for painting stripes on local roads. Twenty locations are randomly selected for the road stripes. The first brand is used on ten randomly selected locations and the second brand on the remaining 10. The number of months each brand lasts is shown below.
     \begin{center}
@@ -16617,9 +16355,9 @@ Since $-1.697>-2.069$, do not reject $\text{H}_0$ at the 5\% level of significan
 
 \newpage
 
-\section{\texorpdfstring{Paired \textit{t}-test for the Population Mean Difference}{Paired -test for the Population Mean Difference}}\label{paired--test-for-the-population-mean-difference}
+## Paired \textit{t}-test for the Population Mean Difference
 
-Suppose six randomly selected athletes have their times to complete a 100 metres sprint recorded, then they each repeat the sprint a month later after some training on technique. Here the two sets of data, \emph{time before} and \emph{time after}, are \emph{not independent}. Instead, each value from the first set of data pairs with a value from the second set; this is called \emph{paired data}. In such a case, the previous two-sample tests in this chapter would be inappropriate. Instead, a single sample of \emph{differences}, \(d_i\), for each pair should be calculated and the mean difference assessed using a \emph{paired} \(t\)\emph{-test}. Possible hypotheses would then related to the population mean difference, \(\mu_d\):
+Suppose six randomly selected athletes have their times to complete a 100 metres sprint recorded, then they each repeat the sprint a month later after some training on technique. Here the two sets of data, *time before* and *time after*, are *not independent*. Instead, each value from the first set of data pairs with a value from the second set; this is called *paired data*. In such a case, the previous two-sample tests in this chapter would be inappropriate. Instead, a single sample of *differences*, $d_i$, for each pair should be calculated and the mean difference assessed using a *paired* $t$*-test*. Possible hypotheses would then related to the population mean difference, $\mu_d$:
 
 \begin{center}
     \begin{tabular}{ccccc}
@@ -16628,7 +16366,7 @@ Suppose six randomly selected athletes have their times to complete a 100 metres
     \end{tabular}
 \end{center}
 
-The test statistic derives from the one-sample \(t\)-test covered in Chapter 10, with \(\bar{d}\) (or \(\bar{x}_d\)) representing the sample mean difference and \(s_d\) the sample standard deviation in differences.
+The test statistic derives from the one-sample $t$-test covered in Chapter 10, with $\bar{d}$ (or $\bar{x}_d$) representing the sample mean difference and  $s_d$ the sample standard deviation in differences.
 
 \begin{figure}[H]
   \centering
@@ -16745,10 +16483,9 @@ Since $0.840<2.571$, do not reject $\text{H}_0$ at the 5\% level of significance
 
 \pagebreak
 
-\protect\phantomsection\label{ex154q}{}
+[]{#ex154q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex154a]{Exercise 15.4}}{Exercise 15.4}}\label{exercise-15.4}
-\addcontentsline{toc}{subsubsection}{{Exercise 15.4}}
+#### [Exercise 15.4](#ex154a) {-}
 
 \begin{enumerate}
     \item A school is seeking to assess whether a new online numeracy website is helping pupils improve their times tables knowledge. Seven pupils are randomly selected to answer as many times tables questions correctly as they can in one minute. Six months later, after regular use of the online numeracy website, the same seven pupils try again to answer as many times tables questions correctly as they can in one minute. The results are:
@@ -16810,10 +16547,9 @@ Since $0.840<2.571$, do not reject $\text{H}_0$ at the 5\% level of significance
 
 \pagebreak
 
-\protect\phantomsection\label{re15q}{}
+[]{#re15q}
 
-\section*{\texorpdfstring{\hyperref[re15a]{Review Exercise}}{Review Exercise}}\label{review-exercise-13}
-\addcontentsline{toc}{section}{{Review Exercise}}
+## [Review Exercise](#re15a) {-}
 
 \begin{enumerate}
     \item An estate agent compares the selling prices of homes in two neighbouring villages to see if there is a difference in price. The results of the study are shown below, measured in pounds.
@@ -16857,16 +16593,17 @@ At the end of the year, the two classes are given the same test of mathematical 
 
 \pagebreak
 
-\chapter{Wilcoxon Signed Rank Test}\label{wilcoxon-signed-rank-test}
+<!--chapter:end:15-Two-Sample-Parametric-Tests.Rmd-->
 
-The \(z\) and \(t\) hypothesis tests from chapters 10 and 15 which explore the \emph{locations} of distributions have all focused on the \emph{population mean}, \(\mu\). Those \emph{parametric} tests each rely on either normally distributed populations or sample sizes greater than \(20\) such that the sample mean is approximately normally distributed.
+# Wilcoxon Signed Rank Test
 
-Given small samples (\(n<20\)) from populations whose distributions may not be assumed to be normally distributed, a number of \textbf{non-parametric} tests may be used which instead explore the locations of distributions by considering the \textbf{population median}, \(\eta\) (\emph{`eta'}).
+The $z$ and $t$ hypothesis tests from chapters 10 and 15 which explore the *locations* of distributions have all focused on the *population mean*, $\mu$. Those *parametric* tests each rely on either normally distributed populations or sample sizes greater than $20$ such that the sample mean is approximately normally distributed.
 
-\subsection*{Sign Test}\label{sign-test}
-\addcontentsline{toc}{subsection}{Sign Test}
+Given small samples ($n<20$) from populations whose distributions may not be assumed to be normally distributed, a number of **non-parametric** tests may be used which instead explore the locations of distributions by considering the **population median**, $\eta$ (*'eta'*).
 
-The Sign Test is a simple non-parametric test that, whilst \emph{not required for the Advanced Higher Statistics course}, helps to lay the groundwork for the tests covered later in this chapter. It uses a useful property of the population median, \(\eta\), namely that \(50\%\) of observations sampled from the population can be expected to be greater than \(\eta\) and \(50\%\) can be expected to be less than \(\eta\). This means that the number of observations on one side of the population median in a sample of size \(n\) should follow a \(B(n,0.5)\) distribution. For example, consider the following random sample of values (\(n=12\)) and a claim that the population median is less than \(9\):
+### Sign Test {-}
+
+The Sign Test is a simple non-parametric test that, whilst *not required for the Advanced Higher Statistics course*, helps to lay the groundwork for the tests covered later in this chapter. It uses a useful property of the population median, $\eta$, namely that $50\%$ of observations sampled from the population  can be expected to be greater than $\eta$ and $50\%$ can be expected to be less than $\eta$. This means that the number of observations on one side of the population median in a sample of size $n$ should follow a $B(n,0.5)$ distribution. For example, consider the following random sample of values ($n=12$) and a claim that the population median is less than $9$:
 
 \begin{figure}[H]
   \centering
@@ -16928,34 +16665,34 @@ The Sign Test is a simple non-parametric test that, whilst \emph{not required fo
 \end{minipage}
 \end{figure}
 
-With \(4\) out of the \(12\) observed values being less than \(9\), the \(p\)-value for this test can be calculated as the probability of observing \(4\) or fewer values less than \(\eta=9\). Letting random variable \(X\) represent the number of such values, which follows a \(B(12,0.5)\) distribution under the null hypothesis:
+With $4$ out of the $12$ observed values being less than $9$, the $p$-value for this test can be calculated as the probability of observing $4$ or fewer values less than $\eta=9$. Letting random variable $X$ represent the number of such values, which follows a $B(12,0.5)$ distribution under the null hypothesis:
 
 \vspace{-0.3cm}
 
-\[p\text{-value}=P(X\leqslant4)=0.1938\]
+$$p\text{-value}=P(X\leqslant4)=0.1938$$
 
 \vspace{0.1cm}
 
-Since \(0.1938>0.05\), do not reject \(\text{H}_0\) at the \(5\%\) level of significance.
+Since $0.1938>0.05$, do not reject $\text{H}_0$ at the $5\%$ level of significance. 
 
-There is insufficient evidence to suggest that the population median is less than \(9\).
+There is insufficient evidence to suggest that the population median is less than $9$.
 
 \pagebreak
 
-\section{Wilcoxon Signed Rank Test}\label{wilcoxon-signed-rank-test-1}
+## Wilcoxon Signed Rank Test
 
-Whilst the Sign Test is only concerned with the number of values that fall on either side of the hypothesised population median, \(\eta\), the Wilcoxon Signed Rank test also considers how far from the median these values lie. More specifically, it applies weighting to the values by assigning \emph{rank} \(1\) to the value closest to \(\eta\), \emph{rank} \(2\) to the second closest, and so on.
+Whilst the Sign Test is only concerned with the number of values that fall on either side of the hypothesised population median, $\eta$, the Wilcoxon Signed Rank test also considers how far from the median these values lie. More specifically, it applies weighting to the values by assigning *rank* $1$ to the value closest to $\eta$, *rank* $2$ to the second closest, and so on.
 
-\textbf{Zeros:} Any values that are exactly equal to the median, \(\eta\), are ignored and not given a rank, with the sample size \(n\) reduced to reflect the number of \emph{remaining values to be ranked}.
+\textbf{Zeros:} Any values that are exactly equal to the median, $\eta$, are ignored and not given a rank, with the sample size $n$ reduced to reflect the number of *remaining values to be ranked*.
 
-\textbf{Tied ranks:} Values that are equally distant from the median, \(\eta\), share ranks. For example, if two values are equally far from \(\eta\) when looking to assign rank \(4\), then they are each ranked \(4.5\), since \(\frac{4+5}{2}=4.5\). If three values are equally distant from \(\eta\) when assigning rank \(7\), then they are each ranked \(8\) since \(\frac{7+8+9}{3}=8\).
+\textbf{Tied ranks:} Values that are equally distant from the median, $\eta$, share ranks. For example, if two values are equally far from $\eta$ when looking to assign rank $4$, then they are each ranked $4.5$, since $\frac{4+5}{2}=4.5$. If three values are equally distant from $\eta$ when assigning rank $7$, then they are each ranked $8$ since $\frac{7+8+9}{3}=8$.
 
 \begin{itemize}
     \item Ranks of values greater than the median are denoted as \textit{positive ranks}, and their total as $W_{+}$.
     \item Ranks of values less than the median are denoted as \textit{negative ranks}, and their total as $W_{-}$. 
 \end{itemize}
 
-Consider a random sample of nine values from a distribution with median \(\eta=10\): \qquad \(2,4,5,6,10,11,12,13,16\)
+Consider a random sample of nine values from a distribution with median $\eta=10$: \qquad $2,4,5,6,10,11,12,13,16$
 
 \begin{center}
 \begin{math}
@@ -16997,7 +16734,7 @@ Consider a random sample of nine values from a distribution with median \(\eta=1
 \end{tikzpicture}
 \end{center}
 
-Note that the sum of \(W_+\) and \(W_-\) is \(12.5+23.5=36\), which will always be the total when ranks are assigned to \(n=8\) values, since \(1+2+3+4+5+6+7+8=36\). It is recommended to check that the sum of \(W_+\) and \(W_-\) does give the appropriate total for the sample size, which can be calculated for a sample of size \(n\) as \(\frac{1}{2}n(n+1)\).
+Note that the sum of $W_+$ and $W_-$ is $12.5+23.5=36$, which will always be the total when ranks are assigned to $n=8$ values, since $1+2+3+4+5+6+7+8=36$. It is recommended to check that the sum of $W_+$ and $W_-$ does give the appropriate total for the sample size, which can be calculated for a sample of size $n$ as $\frac{1}{2}n(n+1)$.
 
 \begin{centering}
 \tcbset{width=14cm}
@@ -17015,12 +16752,12 @@ Test statistic: & $W=12.5$ & \\[0.5em]
 Critical value: & $CV=3$ & \quad ($\alpha=0.05$, $n=8$ \text{ and two-tailed.})
 \end{tabular}
 
-Since \(12.5>3\), do not reject \(\text{H}_0\) at the \(5\%\) level of significance.\\
-There is insufficient evidence to suggest that the population \textbf{median} is not \(10\).
+Since $12.5>3$, do not reject $\text{H}_0$ at the $5\%$ level of significance.  
+There is insufficient evidence to suggest that the population **median** is not $10$.
 
 \pagebreak
 
-The Wilcoxon Signed Rank test will typically be used for small samples for which the Central Limit Theorem cannot be invoked, from populations which cannot be reasonably assumed to be normally distributed in order to use a \(t\)-test. The table of critical values only extends to samples up to size \(n=20\), once zeros have been discarded.
+The Wilcoxon Signed Rank test will typically be used for small samples for which the Central Limit Theorem cannot be invoked, from populations which cannot be reasonably assumed to be normally distributed in order to use a $t$-test. The table of critical values only extends to samples up to size $n=20$, once zeros have been discarded. 
 
 \begin{centering}
 \tcbset{width=10cm}
@@ -17039,7 +16776,7 @@ A suggested methodical approach to obtaining the signed ranks required without a
     \item Ignoring any \textbf{zeros}, assign ranks to the remaining $n$ values in ascending order by \textbf{absolute} value.
 \end{itemize}
 
-The following example should be compared to Example from Section 10.7, Chapter 10, in which a \(t\)-test was used.
+The following example should be compared to Example from Section 10.7, Chapter 10, in which a $t$-test was used.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A supermarket sells sharing-sized bags of a particular brand of crisps. A consumer watchdog is asked to investigate a claim that the median mass of crisps contained in a bag is less than the stated contents of 150 grams. A random sample of bags gives the following results, in grams:
@@ -17197,16 +16934,15 @@ There is evidence to suggest that the median score achieved in the hazard percep
 
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex161q}{}
+[]{#ex161q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex161a]{Exercise 16.1}}{Exercise 16.1}}\label{exercise-16.1}
-\addcontentsline{toc}{subsubsection}{{Exercise 16.1}}
+#### [Exercise 16.1](#ex161a) {-}
 
 \begin{enumerate}
     \item It is known that a certain tree produces apples with a median mass of 150g. Eight apples are chosen at random from a crate containing apples picked from the tree. The masses, in grams, are:
 \begin{center}
 \begin{tabular}{cccccccc}
-            147 & 138 & 171 &   142 &   152 &   145 &   141 &   143
+			147	& 138 &	171 &	142 &	152 &	145 &	141 &	143
 \end{tabular}
 \end{center}
 Use a non-parametric test, at the 5\% significance level, to test whether the median mass of the apples is different from 150g.
@@ -17260,9 +16996,9 @@ Assess at the 5\% level whether the data suggests the median appointment duratio
 
 \pagebreak
 
-\section{Wilcoxon Signed Rank Test for Paired Data}\label{wilcoxon-signed-rank-test-for-paired-data}
+## Wilcoxon Signed Rank Test for Paired Data
 
-In Chapter 15, the \emph{paired} \(t\)-\emph{test} was introduced. It is used for assessing the \emph{mean of the differences between paired values} from small samples, and a key assumption for the test is that the \emph{population of differences is normally distributed}. Where this assumption cannot reasonably be made, a \textbf{Wilcoxon Signed Rank Test for Paired Data} can instead be used to assesses the \textbf{median of the differences}, \(\eta_d\).
+In Chapter 15, the *paired* $t$-*test* was introduced. It is used for assessing the *mean of the differences between paired values* from small samples, and a key assumption for the test is that the *population of differences is normally distributed*. Where this assumption cannot reasonably be made, a **Wilcoxon Signed Rank Test for Paired Data** can instead be used to assesses the **median of the differences**, $\eta_d$.
 
 \begin{centering}
 \tcbset{width=10cm}
@@ -17274,7 +17010,7 @@ In Chapter 15, the \emph{paired} \(t\)-\emph{test} was introduced. It is used fo
 \end{tcolorbox}
 \end{centering}
 
-Just as with the paired \(t\)-test, the paired samples are considered as a \emph{single sample of differences}, allowing a similar process to the one-sample Wilcoxon Signed Rank Test.
+Just as with the paired $t$-test, the paired samples are considered as a *single sample of differences*, allowing a similar process to the one-sample Wilcoxon Signed Rank Test.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} An athletics coach wishes to assess the value to athletes of an intensive period of weight training. Twelve 400-metre runners are selected at random and their times to complete this distance, in seconds, are recorded. Following a programme of weight training they run the distance again, with their times in seconds again recorded. The table below summarises the results.
@@ -17332,10 +17068,9 @@ There is evidence to suggest that the median difference in 400 metres times is g
 
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex162q}{}
+[]{#ex162q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex162a]{Exercise 16.2}}{Exercise 16.2}}\label{exercise-16.2}
-\addcontentsline{toc}{subsubsection}{{Exercise 16.2}}
+#### [Exercise 16.2](#ex162a) {-}
 
 \begin{enumerate}
     \item To measure the effectiveness of a drug for asthmatic relief, twelve subjects, all susceptible to asthma, were each randomly administered either the drug or a placebo during two separate asthma attacks. After one hour an asthmatic index was obtained on each subject with the following results:
@@ -17394,13 +17129,13 @@ Stating an assumption required, perform a non-parametric test to assess whether 
 \end{enumerate}
 \pagebreak
 
-\section{Normal Approximation to the Wilcoxon Signed Rank Test}\label{normal-approximation-to-the-wilcoxon-signed-rank-test}
+## Normal Approximation to the Wilcoxon Signed Rank Test
 
-The Data Booklet only provides Wilcoxon critical values for effective sample sizes where \(n\leqslant20\), due to the complexity of obtaining exact critical values as \(n\) increases. When dealing with a larger sample, where \(n>20\) after zeros have been removed, a Wilcoxon Signed Rank Test may still be performed using a \textbf{normal approximation}. Page 15 of the Data Booklet provides the required properties of the distribution of the test statistic, \(W\):
+The Data Booklet only provides Wilcoxon critical values for effective sample sizes where $n\leqslant20$, due to the complexity of obtaining exact critical values as $n$ increases. When dealing with a larger sample, where $n>20$ after zeros have been removed, a Wilcoxon Signed Rank Test may still be performed using a **normal approximation**. Page 15 of the Data Booklet  provides the required properties of the distribution of the test statistic, $W$:
 
-\[E(W)=\frac{1}{4}n(n+1) \quad \text{and} \quad V(W)=\frac{1}{24}n(n+1)(2n+1)\]
+$$E(W)=\frac{1}{4}n(n+1) \quad \text{and} \quad V(W)=\frac{1}{24}n(n+1)(2n+1)$$
 
-Since here a \emph{discrete} distribution is being approximated by the \emph{continuous} normal distribution, a \textbf{continuity correction} is required. If the test statistic \(W\) is taken as the lower of \(W_+\) and \(W_-\), a continuity correction of \(+0.5\) should be used.
+Since here a *discrete* distribution is being approximated by the *continuous* normal distribution, a **continuity correction** is required. If the test statistic $W$ is taken as the lower of $W_+$ and $W_-$, a continuity correction of $+0.5$ should be used.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} It is claimed by a local resident that more than 50\% of all the vehicles on an urban road exceed the 30 mph speed limit.  The speed of each of a random sample of 24 vehicles is recorded with the following results:
@@ -17408,7 +17143,7 @@ Since here a \emph{discrete} distribution is being approximated by the \emph{con
 \begin{center}
 \begin{tabular}{cccccccccccc} 
     22 & 24 & 26 & 28 & 29 & 30 & 30 & 32 & 33 & 34 & 35 & 35\\
-        37 & 38 & 38 & 39 & 40 & 41 & 42 & 45 & 48 & 56 & 62 & 72
+		37 & 38 & 38 & 39 & 40 & 41 & 42 & 45 & 48 & 56 & 62 & 72
 \end{tabular}
 \end{center}
   
@@ -17500,12 +17235,11 @@ There is evidence to suggest that the median speed of the vehicles on the road i
 
 \pagebreak
 
-\protect\phantomsection\label{ex163q}{}
+[]{#ex163q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex163a]{Exercise 16.3}}{Exercise 16.3}}\label{exercise-16.3}
-\addcontentsline{toc}{subsubsection}{{Exercise 16.3}}
+#### [Exercise 16.3](#ex163a) {-}
 
-\emph{Note: sums of signed ranks are often provided in questions that require a normal approximation to the Wilcoxon test. The data must still be inspected to check whether any values have been be discarded, to determine the effective sample size}
+*Note: sums of signed ranks are often provided in questions that require a normal approximation to the Wilcoxon test. The data must still be inspected to check whether any values have been be discarded, to determine the effective sample size*
 
 \begin{enumerate}
     \item Twenty six apples are chosen at random from a crate containing a large number of apples. The masses (to the nearest gram) are:
@@ -17569,10 +17303,9 @@ Use a non-parametric test to determine whether the sample supports the newspaper
 
 \pagebreak
 
-\protect\phantomsection\label{re16q}{}
+[]{#re16q}
 
-\section*{\texorpdfstring{\hyperref[re16a]{Review Exercise}}{Review Exercise}}\label{review-exercise-14}
-\addcontentsline{toc}{section}{{Review Exercise}}
+## [Review Exercise](#re16a) {-}
 
 \begin{enumerate}
     \item A random sample of nine primary school pupils are selected to test the number of times tables questions they can answer correctly in one minute. The results are are follows:
@@ -17617,9 +17350,11 @@ Perform a non-parametric test to assess whether there is evidence to suggest tha
 
 \pagebreak
 
-\chapter{Mann-Whitney Rank Sum Test}\label{mann-whitney-rank-sum-test}
+<!--chapter:end:16-Wilcoxon-and-Mann-Whitney-Tests.Rmd-->
 
-The Mann-Whitney Rank Sum test is a \textbf{two-sample} test, which is \textbf{non-parametric}. It is an example of a \textit{permutation test}, which are those that can be approached by considering every possible equally-likely arrangement of sample data. Consider random samples of two mice of species \(A\) and four of species \(B\), which will ordered from lightest to heaviest, and then ranks from \(1\) to \(6\) assigned. Below are each of the \(15\) possible arrangements of ranks for the six mice, and alongside each arrangement is the \textit{sum of the ranks} obtained by the two mice of species \(A\):
+# Mann-Whitney Rank Sum Test
+
+The Mann-Whitney Rank Sum test is a \textbf{two-sample} test, which is \textbf{non-parametric}. It is an example of a \textit{permutation test}, which are those that can be approached by considering every possible equally-likely arrangement of sample data. Consider random samples of two mice of species $A$ and four of species $B$, which will ordered from lightest to heaviest, and then ranks from $1$ to $6$ assigned. Below are each of the $15$ possible arrangements of ranks for the six mice, and alongside each arrangement is the \textit{sum of the ranks} obtained by the two mice of species $A$:
 
 \begin{center}
     \begin{tabular}{|c|c|c|c|c|c|}
@@ -17635,11 +17370,11 @@ The Mann-Whitney Rank Sum test is a \textbf{two-sample} test, which is \textbf{n
     \end{tabular}
 \end{center}
 
-If the population distributions of mass for mice from species \(A\) and mice from species \(B\) are \textit{identical} then the probability of obtaining for \(A\) a rank sum less than or equal to 4 (for example) by random chance can be calculated:
+If the population distributions of mass for mice from species $A$ and mice from species $B$ are \textit{identical} then the probability of obtaining for $A$ a rank sum less than or equal to 4 (for example) by random chance can be calculated:
 
-\[\text{P}(\text{rank sum obtained}\leqslant4)=\dfrac{2}{15}=0.1333\]
+$$\text{P}(\text{rank sum obtained}\leqslant4)=\dfrac{2}{15}=0.1333$$
 
-If it is assumed that the two population distributions of mice masses have the \textit{same shape and variance} then hypotheses may be formed which focus on a possible difference in the \textit{medians}, \(\eta_A\) and \(\eta_B\), of the distributions. Hypotheses for this two-sample test may be one-tailed or two-tailed. Here, a one-tailed example is given:
+If it is assumed that the two population distributions of mice masses have the \textit{same shape and variance} then hypotheses may be formed which focus on a possible difference in the \textit{medians}, $\eta_A$ and $\eta_B$, of the distributions. Hypotheses for this two-sample test may be one-tailed or two-tailed. Here, a one-tailed example is given:
 
 \begin{center}
 \begin{math}
@@ -17656,15 +17391,15 @@ If it is assumed that the two population distributions of mice masses have the \
 \end{math}
 \end{center}
 
-The \(p\)\text{-value} of 0.1333 obtained about would not provide evidence to suggest, at the 5\% level of significance, that the median mass of a mouse of species \(A\) is less than the median mass of a mouse of species \(B\) (since \(0.1333>0.05\)).
+The $p$\text{-value} of 0.1333 obtained about would not provide evidence to suggest, at the 5\% level of significance, that the median mass of a mouse of species $A$ is less than the median mass of a mouse of species $B$ (since $0.1333>0.05$).
 
 Since the process of listing possible arrangements would become excessively time-consuming for anything other than small samples, Mann-Whitney tests will be typically conducted using \textit{critical values} from the SQA Data Booklet, and \textit{test statistics}. However it is also necessary to be able to perform the test \textit{from first principles} as above, covered on Page 200.
 
 \pagebreak
 
-\section{Mann-Whitney Rank Sum Test}\label{mann-whitney-rank-sum-test-1}
+## Mann-Whitney Rank Sum Test
 
-Given two independent samples, the non-parametric \textbf{Mann-Whitney Rank Sum test} can be used to assess whether the two population distributions have different \emph{medians}. It is typically used in place of a two-sample \(t\)-test where the two distributions are not \emph{normal} and sample sizes are small. Instead a required assumption is that the population distributions have the \emph{same shape and variance}, to test whether there is evidence of a difference in \emph{locations}:
+Given two independent samples, the non-parametric **Mann-Whitney Rank Sum test** can be used to assess whether the two population distributions have different *medians*. It is typically used in place of a two-sample $t$-test where the two distributions are not *normal* and sample sizes are small. Instead a required assumption is that the population distributions have the *same shape and variance*, to test whether there is evidence of a difference in *locations*:
 
 \begin{figure}[H]
   \centering
@@ -17760,14 +17495,14 @@ Given two independent samples, the non-parametric \textbf{Mann-Whitney Rank Sum 
 \end{tcolorbox}
 \end{centering}
 
-Consider two independent samples taken from populations \(A\) and \(B\) and the following hypotheses:
+Consider two independent samples taken from populations $A$ and $B$ and the following hypotheses:
 
 \begin{center}
     \begin{tikzpicture}
         \node[left] at (-0.20,0.3) {$\text{H}_0:\eta_A=\eta_B$};
         \node[left] at (-0.2,-0.3) {$\text{H}_0:\eta_A\ne\eta_B$};
         \draw [decorate,
-    decoration = {brace}] (0,0.5) --  (0,-0.5);
+	decoration = {brace}] (0,0.5) --  (0,-0.5);
         \node[right] at (0.2,0.3) {$\alpha=0.05$};
         \node[right] at (0.2,-0.3) {Two-tailed};
         \draw (3.2,0) -- (9.3,0);
@@ -17803,7 +17538,7 @@ Consider two independent samples taken from populations \(A\) and \(B\) and the 
     \end{tikzpicture}
 \end{center}
 
-To perform the test using a test statistic and critical value approach, first the samples are combined, ordered and ranked, with \textbf{rank sums} \(W_A\) and \(W_B\) obtained:
+To perform the test using a test statistic and critical value approach, first the samples are combined, ordered and ranked, with **rank sums** $W_A$ and $W_B$ obtained:
 
 \begin{figure}[H]
   \centering
@@ -17838,7 +17573,7 @@ To perform the test using a test statistic and critical value approach, first th
 \end{minipage}
 \end{figure}
 
-The test statistic, \(W\), is the \emph{smallest possible rank sum that can be obtained for the smaller sample}, here \(B\). A time-consuming approach would be to reorder the values and rerank them to check if this produces a smaller rank sum \(W_B\).
+The test statistic, $W$, is the *smallest possible rank sum that can be obtained for the smaller sample*, here $B$. A time-consuming approach would be to reorder the values and rerank them to check if this produces a smaller rank sum $W_B$.
 
 \begin{figure}[H]
   \centering
@@ -17873,9 +17608,9 @@ The test statistic, \(W\), is the \emph{smallest possible rank sum that can be o
 \end{minipage}
 \end{figure}
 
-Hence, the test statistic can now be confirmed as \(W=29\). However this value can be obtained without reordering using the formula \(m(m+n+1)-W_m\), where \(m\) and \(n\) represent the sizes of the smaller and larger samples respectively:
+Hence, the test statistic can now be confirmed as $W=29$. However this value can be obtained without reordering using the formula $m(m+n+1)-W_m$, where $m$ and $n$ represent the sizes of the smaller and larger samples respectively:
 
-\[5(5+6+1)-31=29\]
+$$5(5+6+1)-31=29$$
 
 \pagebreak
 
@@ -17890,13 +17625,13 @@ Hence, the test statistic can now be confirmed as \(W=29\). However this value c
 \end{tcolorbox}
 \end{centering}
 
-Taking as the test statistic the value \(W=29\), the test can now be concluded.
+Taking as the test statistic the value $W=29$, the test can now be concluded.
 
-From page 16 of the SQA Data Booklet the critical value of \(18\) can be obtained, using \(m=5\), \(n=6\) and a two-tailed test at the 5\% significance level.
+From page 16 of the SQA Data Booklet the critical value of $18$ can be obtained, using $m=5$, $n=6$ and a two-tailed test at the 5\% significance level. 
 
-Since \(29>18\), \(\text{H}_0\) can not be rejected at the 5\% level of significance. There is insufficient evidence to suggest that the two distributions have different population medians.
+Since $29>18$, $\text{H}_0$ can not be rejected at the 5\% level of significance. There is insufficient evidence to suggest that the two distributions have different population medians.
 
-Note that whilst only the rank sum for the \textit{smaller sample} is required, to minimise errors it is recommended to calculate rank sums for both samples and check that they add to the required total of \(\frac{1}{2}(m+n)(m+n+1)\). Here \(\frac{1}{2}\times 11\times 12=66\), and it should be observed that for each pair of rank sums the total is \(66\).
+Note that whilst only the rank sum for the \textit{smaller sample} is required, to minimise errors it is recommended to calculate rank sums for both samples and check that they add to the required total of $\frac{1}{2}(m+n)(m+n+1)$. Here $\frac{1}{2}\times 11\times 12=66$, and it should be observed that for each pair of rank sums the total is $66$.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Times taken to run 5km for a random sample of 7 hockey players and a random sample of 5 rugby players are recorded. The table below gives the results, to the nearest minute:
@@ -17986,10 +17721,9 @@ There is evidence to suggest that the median time taken for rugby players to run
 
 \pagebreak
 
-\protect\phantomsection\label{ex171q}{}
+[]{#ex171q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex171a]{Exercise 17.1}}{Exercise 17.1}}\label{exercise-17.1}
-\addcontentsline{toc}{subsubsection}{{Exercise 17.1}}
+#### [Exercise 17.1](#ex171a) {-}
 
 \begin{enumerate}
     \item One year on World Maths Day (14th March) pupils across all the year groups in a school attempt a times tables speed challenge. A teacher checks the scores obtained by five randomly selected First Year pupils and seven randomly selected Third Year pupils. Their results are shown below.
@@ -18131,7 +17865,7 @@ leads to improved egg production.
     \begin{tabular}{c|ccccccccccccc}
         Type A & 73.1 & 56.4 & 82.1 & 67.2 & 55.2 & 78.7 & 75.1 & 48.0 & 60.6 & 63.1 & 53.3 & 55.5 & 61.5\\
         \hline
-        Type B & 53.0 & 39.3 & 55.8 & 46.0 & 56.4 & 58.8 & 41.2 & 66.6 & 58.9  &  &  &  &   
+        Type B & 53.0 & 39.3 & 55.8 & 46.0 & 56.4 & 58.8 & 41.2 & 66.6 & 58.9  &  &  &  & 	
     \end{tabular}
     \end{center}
     A non-parametric test for a difference in population medians was performed at the 5\% level of significance.\vspace{0.5cm}\\
@@ -18149,22 +17883,22 @@ leads to improved egg production.
 
 \pagebreak
 
-\section{Normal Approximation to the Mann-Whitney Rank Sum Test}\label{normal-approximation-to-the-mann-whitney-rank-sum-test}
+## Normal Approximation to the Mann-Whitney Rank Sum Test
 
-The Data Booklet only provides Mann-Whitney critical values for sample sizes where \(n\leqslant 20\) and \(m\leqslant 20\). When dealing with larger samples, where \(m,n>20\), a Mann-Whitney Rank Sum Test may still be performed using a \textbf{normal approximation}. Page 16 of the Data Booklet provides the required properties of the distribution of the test statistic, \(W\):
+The Data Booklet only provides Mann-Whitney critical values for sample sizes where $n\leqslant 20$ and $m\leqslant 20$. When dealing with larger samples, where $m,n>20$, a Mann-Whitney Rank Sum Test may still be performed using a **normal approximation**. Page 16 of the Data Booklet  provides the required properties of the distribution of the test statistic, $W$:
 
-\[\text{E}(W)=\frac{1}{2}m(m+n+1) \quad \text{and} \quad \text{V}(W)=\frac{1}{12}mn(m+n+1)\]
+$$\text{E}(W)=\frac{1}{2}m(m+n+1) \quad \text{and} \quad \text{V}(W)=\frac{1}{12}mn(m+n+1)$$
 
-Since here a \emph{discrete} distribution is being approximated by the \emph{continuous} normal distribution, a \textbf{continuity correction} is required. If the test statistic \(W\) is taken as the lowest possible rank sum \(W_m\) \emph{for the smaller sample}, a continuity correction of \(+0.5\) should be used.
+Since here a *discrete* distribution is being approximated by the *continuous* normal distribution, a **continuity correction** is required. If the test statistic $W$ is taken as the lowest possible rank sum $W_m$ *for the smaller sample*, a continuity correction of $+0.5$ should be used.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} 26 Atlantic herrings and 24 North Sea herrings were caught and their lengths measured in cm. The 50 lengths were ordered from smallest to largest and the ranks summed: 
-     \begin{center}
-     \begin{tabular}{ccc}
+	 \begin{center}
+	 \begin{tabular}{ccc}
    $W_{\text{Atlantic}}=503$ & \qquad & $W_{\text{North Sea}}=772$
    \end{tabular}
    \end{center}
-    Assess at the 5\% significance level whether Atlantic and North Sea herrings differ in median length.
+	Assess at the 5\% significance level whether Atlantic and North Sea herrings differ in median length.
 
 \tcblower
 \textbf{Solution:}
@@ -18253,10 +17987,9 @@ There is evidence to suggest that the median length of an Atlantic herring diffe
 
 \pagebreak
 
-\protect\phantomsection\label{ex172q}{}
+[]{#ex172q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex172a]{Exercise 17.2}}{Exercise 17.2}}\label{exercise-17.2}
-\addcontentsline{toc}{subsubsection}{{Exercise 17.2}}
+#### [Exercise 17.2](#ex172a) {-}
 
 \begin{enumerate}
     \item A commuter made a number of car journeys, on weekday mornings, from Perth to Glasgow. She believed that journeys on wet days would take longer, on average, than journeys on dry days. Journey length (in minutes) and weather conditions (either \textit{dry}, D, or \textit{wet}, W) for 48 randomly chosen days throughout the Autumn months, of which 21 were classified as \textit{dry}. The results are shown below.
@@ -18375,11 +18108,11 @@ There is evidence to suggest that the median length of an Atlantic herring diffe
 
 \pagebreak
 
-\section{Mann-Whitney from First Principles}\label{mann-whitney-from-first-principles}
+## Mann-Whitney from First Principles
 
-In Chapter 10, hypothesis tests were initially introduced using \(p\)-values, which can be compared directly to the chosen significance level to conclude a test. Exact \(p\)-values can also be calculated directly for Mann-Whitney tests using an approach introduced on the first page of this chapter. The conditions required for a Mann-Whitney test using the \textit{first principles} method are the same as when using critical values, but with the addition that the data must contain \textit{no tied values}, and hence no shared ranks.
+In Chapter 10, hypothesis tests were initially introduced using $p$-values, which can be compared directly to the chosen significance level to conclude a test. Exact $p$-values can also be calculated directly for Mann-Whitney tests using an approach introduced on the first page of this chapter. The conditions required for a Mann-Whitney test using the \textit{first principles} method are the same as when using critical values, but with the addition that the data must contain \textit{no tied values}, and hence no shared ranks. 
 
-The standard steps involved in performing a one-tailed test in this manner are, for samples of size \(m\) and \(n\) (where \(m\leqslant n\)):
+The standard steps involved in performing a one-tailed test in this manner are, for samples of size $m$ and $n$ (where $m\leqslant n$):
 
 \begin{itemize}
     \item Use $ ^{m+n}C_m$ to calculate the number of possible arrangements of the $m+n$ values.
@@ -18446,10 +18179,9 @@ There is evidence to suggest that the median number of shutter actuations before
 
 \pagebreak
 
-\protect\phantomsection\label{ex173q}{}
+[]{#ex173q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex173a]{Exercise 17.3}}{Exercise 17.3}}\label{exercise-17.3}
-\addcontentsline{toc}{subsubsection}{{Exercise 17.3}}
+#### [Exercise 17.3](#ex173a) {-}
 
 \begin{enumerate}
     \item A Mann-Whitney test is to be performed using two independent samples of sizes 3 and 5. Once data for the samples have been collected and ordered, a rank sum will be obtained for the smaller sample.
@@ -18518,10 +18250,9 @@ There is evidence to suggest that the median number of shutter actuations before
 
 \pagebreak
 
-\protect\phantomsection\label{re17q}{}
+[]{#re17q}
 
-\section*{\texorpdfstring{\hyperref[re17a]{Review Exercise}}{Review Exercise}}\label{review-exercise-15}
-\addcontentsline{toc}{section}{{Review Exercise}}
+## [Review Exercise](#re17a) {-}
 
 \begin{enumerate}
     \item A wildlife enthusiast sets up a remote camera which is configured to take a photo when movement is detected. Sometimes it is placed in some local woods, whilst at other times it is positioned beside a pond. The photos are later reviewed and the number of animals spotted each day by the camera is recorded. The number of animal sightings at each location over the last two weeks is shown below.
@@ -18621,16 +18352,17 @@ There is evidence to suggest that the median number of shutter actuations before
 
 \pagebreak
 
-\chapter{Further Linear Regression}\label{further-linear-regression}
+<!--chapter:end:17-Mann-Whitney.Rmd-->
+
+# Further Linear Regression
 
 \vspace{-1cm}
 
 A straight-line relationship can be valuable in many situations in establishing and summarising the dependence of one variable on another, and in making predictions. Linear regression will be explored in more detail in this chapter.
 
-\subsection*{The Method of Least Squares Regression}\label{the-method-of-least-squares-regression}
-\addcontentsline{toc}{subsection}{The Method of Least Squares Regression}
+### The Method of Least Squares Regression {-}
 
-In most experiments, it is assumed that \(x\) is under the control of the experimenter and can be known exactly. In such cases \(x\) is called the \textit{predictor} (or \textit{independent}) variable, whilst \(Y\) is a \textbf{random variable} known as the \textit{response} (or \textit{dependent}) variable.
+In most experiments, it is assumed that $x$ is under the control of the experimenter and can be known exactly. In such cases $x$ is called the \textit{predictor} (or \textit{independent}) variable, whilst $Y$ is a \textbf{random variable} known as the \textit{response} (or \textit{dependent}) variable.
 
 \begin{multicols}{2}
 
@@ -18670,9 +18402,9 @@ $\varepsilon$ (\textit{"epsilon"}) is a random variable called the \textbf{error
 
 \end{multicols}
 
-The values of parameters \(\alpha\) and \(\beta\) cannot be known exactly without examining all possible occurrences of \(Y\) and \(x\). However the sample observations \((x_i,y_i)\) can be used to give estimates, \(a\) and \(b\), of \(\alpha\) and \(\beta\). This leads to the relationship \(\hat{Y}_i=a+bx_i\), where \(\hat{Y}_i\) (\emph{``y-hat''}) denotes the predicted value of \(Y_i\) for a given \(x_i\).
+The values of parameters $\alpha$ and $\beta$ cannot be known exactly without examining all possible occurrences of $Y$ and $x$. However the sample observations $(x_i,y_i)$ can be used to give estimates, $a$ and $b$, of $\alpha$ and $\beta$. This leads to the relationship $\hat{Y}_i=a+bx_i$, where $\hat{Y}_i$ (*"y-hat"*) denotes the predicted value of $Y_i$ for a given $x_i$.
 
-The method of least squares gives formulae for \(a\) and \(b\) derived by considering how \(\sum \varepsilon_i^2\) might be minimised:
+The method of least squares gives formulae for $a$ and $b$ derived by considering how $\sum \varepsilon_i^2$ might be minimised:
 
 \begin{multicols}{2}
 
@@ -18694,11 +18426,11 @@ These estimates rely on several assumptions about the population of errors, $\va
 
 \pagebreak
 
-\section{Calculating the Value of a Residual}\label{calculating-the-value-of-a-residual}
+## Calculating the Value of a Residual
 
-For any given \(x_i\), the equation of the least squares regression line \(\hat{Y_i}=a+bx_i\) gives a \textit{predicted} value \(\hat{Y_i}\), also referred to as a \textit{fitted} value. For any observed data point \((x_i,y_i)\), the value of \(y_i\) may be called the \textbf{data} value.
+For any given $x_i$, the equation of the least squares regression line $\hat{Y_i}=a+bx_i$ gives a \textit{predicted} value $\hat{Y_i}$, also referred to as a \textit{fitted} value. For any observed data point $(x_i,y_i)$, the value of $y_i$ may be called the \textbf{data} value.
 
-The difference between an observed data value \(y_i\) and a corresponding fitted value \(\hat{Y_i}\) is called a \textbf{residual}:
+The difference between an observed data value $y_i$ and a corresponding fitted value $\hat{Y_i}$ is called a \textbf{residual}:
 
 \begin{center}
     \begin{tikzpicture}
@@ -18735,7 +18467,7 @@ The difference between an observed data value \(y_i\) and a corresponding fitted
     \end{tikzpicture}
 \end{center}
 
-For data points which lie \textit{above} the regression line, their residual is \textit{positive}.\newline This means that the observed value \(y_i\) was \textit{greater} than that predicted by the regression line for the value of \(x_i\).
+For data points which lie \textit{above} the regression line, their residual is \textit{positive}.\newline This means that the observed value $y_i$ was \textit{greater} than that predicted by the regression line for the value of $x_i$.
 
 \begin{center}
     \begin{tikzpicture}[scale=0.9]
@@ -18759,9 +18491,9 @@ For data points which lie \textit{above} the regression line, their residual is 
     \end{tikzpicture}
 \end{center}
 
-For those which lie \textit{below} the line, their residual is \textit{negative}.\newline This means that the observed value \(y_i\) was \textit{less} than that predicted by the regression line for the value of \(x_i\).
+For those which lie \textit{below} the line, their residual is \textit{negative}.\newline This means that the observed value $y_i$ was \textit{less} than that predicted by the regression line for the value of $x_i$.
 
-To calculate a residual the fitted value, \(\hat{Y}_i\) needs to first be found using the equation of the regression line.
+To calculate a residual the fitted value, $\hat{Y}_i$ needs to first be found using the equation of the regression line.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 \textbf{Problem:}
@@ -18832,20 +18564,19 @@ Students sitting a biology exam are given a mark for each of the two papers: the
 
 \newpage
 
-\protect\phantomsection\label{ex181q}{}
+[]{#ex181q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex181a]{Exercise 18.1}}{Exercise 18.1}}\label{exercise-18.1}
-\addcontentsline{toc}{subsubsection}{{Exercise 18.1}}
+#### [Exercise 18.1](#ex181a) {-}
 
 \newpage
 
-\section{Estimating the Error Variance}\label{estimating-the-error-variance}
+## Estimating the Error Variance
 
-The least squares regression model assumes that that the variance of the errors is a constant for all \(x_i\) (and \(Y_i\)):
+The least squares regression model assumes that that the variance of the errors is a constant for all $x_i$ (and $Y_i$):
 
-\[\text{V}(\varepsilon_i)=\sigma^2\]
+$$\text{V}(\varepsilon_i)=\sigma^2$$
 
-The \emph{error variance} is the variance of the population of data \emph{relative to the regression line's predicted values}, indicated below by the arrows below. This is distinct from the \emph{total variance} of \(Y\), indicated by the single arrow to the right.
+The *error variance* is the variance of the population of data *relative to the regression line's predicted values*, indicated below by the arrows below. This is distinct from the *total variance* of $Y$, indicated by the single arrow to the right.
 
 \begin{center}
     \begin{tikzpicture}[scale=0.9]
@@ -18911,15 +18642,15 @@ The \emph{error variance} is the variance of the population of data \emph{relati
     \end{tikzpicture}
 \end{center}
 
-The error variance \(\sigma^2\) is estimated by:
+The error variance $\sigma^2$ is estimated by:
 
 \begin{tcolorbox}[halign title=center,title=Estimating the Error Variance,center,colback=red!5,colframe=red!70!black,width=6cm]
 \[s^2=\dfrac{\text{\text{SSR}}}{n-2}\]
 \end{tcolorbox}
 
-Where the (always positive) \textit{sum of squared residuals}, \(\text{\text{SSR}}\), is calculated as:\hspace{0.5cm} \(\text{\text{SSR}}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}\)
+Where the (always positive) \textit{sum of squared residuals}, $\text{\text{SSR}}$, is calculated as:\hspace{0.5cm} $\text{\text{SSR}}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}$
 
-Both the formula for estimating the error variance \(\sigma^2\) and the more convenient second formula for the sum of squared residuals \(\text{SSR}\) are given on page 5 of the Data Booklet.
+Both the formula for estimating the error variance $\sigma^2$ and the more convenient second formula for the sum of squared residuals $\text{SSR}$ are given on page 5 of the Data Booklet.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} 
@@ -18938,16 +18669,15 @@ Students sitting a biology exam are given a mark for each of the two papers: the
 
 \pagebreak
 
-\protect\phantomsection\label{ex182q}{}
+[]{#ex182q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex182a]{Exercise 18.2}}{Exercise 18.2}}\label{exercise-18.2}
-\addcontentsline{toc}{subsubsection}{{Exercise 18.2}}
+#### [Exercise 18.2](#ex182a) {-}
 
 \newpage
 
-\section{The Coefficient of Determination}\label{the-coefficient-of-determination}
+## The Coefficient of Determination
 
-The \emph{coefficient of determination}, \(R^2\), is the proportion of the total variation in the response variable, \(Y\), that is explained by the linear regression model. The higher the value of \(R^2\), the less variation remains for \(Y_i\) relative to the total variation of \(Y\). This means that the coefficient of determination is a very useful measure of how `good' a model is for the data.
+The *coefficient of determination*, $R^2$, is the proportion of the total variation in the response variable, $Y$, that is explained by the linear regression model. The higher the value of $R^2$, the less variation remains for $Y_i$ relative to the total variation of $Y$. This means that the coefficient of determination is a very useful measure of how 'good' a model is for the data.
 
 \begin{center}
         \begin{tikzpicture}
@@ -19019,7 +18749,7 @@ $R^2=\dfrac{\text{explained variation}}{\text{total variation}}$
         \end{tikzpicture}    
 \end{center}
 
-For the linear regression models covered in this course, the coefficient of determination is connected to the \emph{correlation coefficient}, \(r\), by a simple relationship:
+For the linear regression models covered in this course, the coefficient of determination is connected to the *correlation coefficient*, $r$, by a simple relationship:
 
 \begin{center}
         \begin{tikzpicture}
@@ -19036,7 +18766,7 @@ For the linear regression models covered in this course, the coefficient of dete
         \end{tikzpicture}    
 \end{center}
 
-Both the formula above and the interpretation of the coefficient of determination implies that \(0\leqslant R^2 \leqslant 1\).
+Both the formula above and the interpretation of the coefficient of determination implies that $0\leqslant R^2 \leqslant 1$.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 \textbf{Problem:} 
@@ -19075,14 +18805,13 @@ This suggests that 87.4\% of the variation in practical scores can be explained 
 
 The conclusion from the example above could also be phrased as:
 
-``\emph{87.4\% of the variation in practical scores can be explained by the theory scores.}''
+"*87.4\% of the variation in practical scores can be explained by the theory scores.*"
 
 \pagebreak
 
-\protect\phantomsection\label{ex183q}{}
+[]{#ex183q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex183a]{Exercise 18.3}}{Exercise 18.3}}\label{exercise-18.3}
-\addcontentsline{toc}{subsubsection}{{Exercise 18.3}}
+#### [Exercise 18.3](#ex183a) {-}
 
 \begin{enumerate}
     \item Calculate the sum of squared residuals and hence estimate the error variance for each of Contexts 1 to 5.
@@ -19160,9 +18889,9 @@ The conclusion from the example above could also be phrased as:
 
 \pagebreak
 
-\section{\texorpdfstring{Test for the Slope Parameter \(\beta\)}{Test for the Slope Parameter \textbackslash beta}}\label{test-for-the-slope-parameter-beta}
+## Test for the Slope Parameter $\beta$
 
-The value of the \textit{slope parameter}, \(\beta\), cannot be known without obtaining a full population. The \textit{sample statistic} \(b\) is an estimator for \(\beta\), and may differ slightly or substantially from it, as shown below.
+The value of the \textit{slope parameter}, $\beta$, cannot be known without obtaining a full population. The \textit{sample statistic} $b$ is an estimator for $\beta$, and may differ slightly or substantially from it, as shown below.  
 
 \begin{multicols}{2}
     \begin{center}
@@ -19309,7 +19038,7 @@ The value of the \textit{slope parameter}, \(\beta\), cannot be known without ob
     \end{center}
 \end{multicols}
 
-The slope parameter \(\beta\) can be \emph{positive}, \emph{negative} or \emph{zero}. Where \(\beta=0\) it can be said that knowing \(x_i\) has no value in predicting \(y_i\). In other words, a linear regression model is only \textbf{useful for prediction} in cases where the slope parameter is \textit{non-zero}, or \(\beta \ne 0\). The \textit{parametric} \textbf{Test for Beta} assesses whether data from a sample provide evidence to suggest that this is the case. The test statistic below follows a \(t\)-distribution with \(n-2\) degrees of freedom, and in this course the test will always be \textit{two-tailed} with hypotheses \(\text{H}_0: \beta=0\) and \(\text{H}_1: \beta\ne 0\).
+The slope parameter $\beta$ can be *positive*, *negative* or *zero*. Where $\beta=0$ it can be said that knowing $x_i$ has no value in predicting $y_i$. In other words, a linear regression model is only \textbf{useful for prediction} in cases where the slope parameter is \textit{non-zero}, or $\beta \ne 0$. The \textit{parametric} \textbf{Test for Beta} assesses whether data from a sample provide evidence to suggest that this is the case. The test statistic below follows a $t$-distribution with $n-2$ degrees of freedom, and in this course the test will always be \textit{two-tailed} with hypotheses $\text{H}_0: \beta=0$ and $\text{H}_1: \beta\ne 0$.
 
 \begin{figure}[H]
   \centering
@@ -19333,6 +19062,7 @@ The slope parameter \(\beta\) can be \emph{positive}, \emph{negative} or \emph{z
 \end{tcolorbox}
 \end{minipage}
 \end{figure}
+
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 \textbf{Problem:} A bivariate sample of 8 values produces a regression line with equation $\hat{Y}=-0.8456x$. The following summary statistics were also obtained
@@ -19413,10 +19143,9 @@ Since $-3.003<-1.943$, reject $\text{H}_0$ at the 10\% level of significance. Th
 
 \pagebreak
 
-\protect\phantomsection\label{ex184q}{}
+[]{#ex184q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex184a]{Exercise 18.4}}{Exercise 18.4}}\label{exercise-18.4}
-\addcontentsline{toc}{subsubsection}{{Exercise 18.4}}
+#### [Exercise 18.4](#ex184a) {-}
 
 \begin{enumerate}
     \item Six metal plates were immersed in a weak acid solution for various lengths of time. Their percentage losses in mass were then measured and a scatterplot drawn of time in solution ($x$ hours) against mass loss ($y$\%). The equation of the least squares regression line for $y$ on $x$ was obtained.\\[0.5em] 
@@ -19544,9 +19273,9 @@ The least squares regression line of $\hat{Y}=155.29+1.9018x$ was fitted. Test a
 
 \pagebreak
 
-\section{\texorpdfstring{Test for the Correlation Coefficient \(\rho\)}{Test for the Correlation Coefficient \textbackslash rho}}\label{test-for-the-correlation-coefficient-rho}
+## Test for the Correlation Coefficient $\rho$
 
-The previously calculated correlation coefficient, \(r\), is a sample statistic which measures the strength of the linear association between two variables. It is an estimate of the population parameter \(\rho\) (\textit{``rho''}), where \(-1\leqslant \rho \leqslant 1\). If \(\rho=0\) then there is no \textit{linear} relationship between the variables. Given a sample of bivariate data for which there exists \textit{no} linear relationship, it is regardless common for the sample to give a \textit{non-zero} value for \(r\):
+The previously calculated correlation coefficient, $r$, is a sample statistic which measures the strength of the linear association between two variables. It is an estimate of the population parameter $\rho$ (\textit{``rho''}), where $-1\leqslant \rho \leqslant 1$. If $\rho=0$ then there is no \textit{linear} relationship between the variables. Given a sample of bivariate data for which there exists \textit{no} linear relationship, it is regardless common for the sample to give a \textit{non-zero} value for $r$:
 
 \vspace{-0.3cm}
 \begin{center}
@@ -19663,8 +19392,7 @@ The previously calculated correlation coefficient, \(r\), is a sample statistic 
 \end{center}
 
 \vspace{-0.3cm}
-
-The \textit{parametric} \textbf{Test for Rho} assesses a sample of bivariate data for evidence of a \textbf{linear association} between the variables, or \(\rho\ne 0\). The test statistic below follows a \(t_{n-2}\) distribution, and in this course the test will always be \textit{two-tailed} with hypotheses \(\text{H}_0:\rho=0\) and \(\text{H}_1:\rho\ne 0\).
+The \textit{parametric} \textbf{Test for Rho} assesses a sample of bivariate data for evidence of a \textbf{linear association} between the variables, or $\rho\ne 0$. The test statistic below follows a $t_{n-2}$ distribution, and in this course the test will always be \textit{two-tailed} with hypotheses $\text{H}_0:\rho=0$ and $\text{H}_1:\rho\ne 0$.
 
 \begin{figure}[H]
   \centering
@@ -19854,10 +19582,9 @@ Since $-3.003>-3.707$, do not reject $\text{H}_0$ at the 1\% level of significan
 
 \pagebreak
 
-\protect\phantomsection\label{ex185q}{}
+[]{#ex185q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex185a]{Exercise 18.5}}{Exercise 18.5}}\label{exercise-18.5}
-\addcontentsline{toc}{subsubsection}{{Exercise 18.5}}
+#### [Exercise 18.5](#ex185a) {-}
 
 \begin{enumerate}
     \item For each of Contexts 1 to 5, calculate the coefficient of determination and interpret it in context.
@@ -19875,11 +19602,11 @@ Since $-3.003>-3.707$, do not reject $\text{H}_0$ at the 1\% level of significan
 
 \newpage
 
-\section{\texorpdfstring{Regression Line of \(x\) on \(y\)}{Regression Line of x on y}}\label{regression-line-of-x-on-y}
+## Regression Line of $x$ on $y$
 
-Each least squares regression line met so far has been an \(y\) \emph{on} \(x\) regression line, calculated with the aim of minimising errors when \emph{predicting} \(y\) \emph{values}. However, a \(y\) \emph{on} \(x\) regression line model cannot be used to predict \(x\) values.
+Each least squares regression line met so far has been an $y$ *on* $x$ regression line, calculated with the aim of minimising errors when *predicting* $y$ *values*. However, a $y$ *on* $x$ regression line model cannot be used to predict $x$ values.
 
-If the prediction of \(x\) values based on \(y\) values is of interest, it is necessary to obtain the equation of an \(x\) \emph{on} \(y\) regression line. This takes a different form and different values of \(a\) and \(b\) as shown below:
+If the prediction of $x$ values based on $y$ values is of interest, it is necessary to obtain the equation of an $x$ *on* $y$ regression line. This takes a different form and different values of $a$ and $b$ as shown below:
 
 \begin{tcolorbox}[halign title=center,title=Calculating an $x$ on $y$ Regression Line,center,colback=red!5,colframe=red!70!black,width=11cm]
 $\hat{X}=a+by \qquad \text{where} \qquad b=\dfrac{S_{xy}}{S_{yy}} \qquad \text{and} \qquad a=\bar{x}-b\bar{y}$
@@ -19985,12 +19712,11 @@ $\hat{X}=-1.189+0.995\times 17=15.7$
 
 \pagebreak
 
-\protect\phantomsection\label{ex186q}{}
+[]{#ex186q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex186a]{Exercise 18.6}}{Exercise 18.6}}\label{exercise-18.6}
-\addcontentsline{toc}{subsubsection}{{Exercise 18.6}}
+#### [Exercise 18.6](#ex186a) {-}
 
-For each of Contexts 1 to 5, determine the equation of the least squares regression line for \(x\) on \(y\), and hence calculate predicted values for each of the following.
+For each of Contexts 1 to 5, determine the equation of the least squares regression line for $x$ on $y$, and hence calculate predicted values for each of the following.
 
 \begin{enumerate}
     \item From Context 1: The time a metal plate spent in the acid solution if the mass loss was 2.1\%.
@@ -20002,9 +19728,9 @@ For each of Contexts 1 to 5, determine the equation of the least squares regress
 
 \pagebreak
 
-\section{Residual Plots}\label{residual-plots}
+## Residual Plots
 
-When considering the use of a linear regression model for bivariate data, it is recommended to produce a plot of \emph{residuals} (\(\varepsilon_i\)) against \emph{fitted values} (\(\hat{Y_i}\)), which have been calculated using the sample regression line. The purpose of this is both to ascertain whether a linear regression model is \emph{the most appropriate} model, as well as to judge the validity of several commonly required assumptions, including those required to obtain the estimates for \(\alpha\) and \(\beta\):
+When considering the use of a linear regression model for bivariate data, it is recommended to produce a plot of *residuals* ($\varepsilon_i$) against *fitted values* ($\hat{Y_i}$), which have been calculated using the sample regression line. The purpose of this is both to ascertain whether a linear regression model is *the most appropriate* model, as well as to judge the validity of several commonly required assumptions, including those required to obtain the estimates for $\alpha$ and $\beta$:
 
 \begin{center}
     \begin{tabular}{ccc}
@@ -20012,7 +19738,7 @@ When considering the use of a linear regression model for bivariate data, it is 
     \end{tabular}
 \end{center}
 
-Below is an illustration of a standard scatterplot showing a sample of bivariate data on the left, with a \(y\) on \(x\) regression line included, and a residual plot for the same data on the right. The data points highlighted with larger circles on the \(y\) against \(x\) scatterplot have their residuals similarly highlighted on the residual plot.
+Below is an illustration of a standard scatterplot showing a sample of bivariate data on the left, with a $y$ on $x$ regression line included, and a residual plot for the same data on the right. The data points highlighted with larger circles on the $y$ against $x$ scatterplot have their residuals similarly highlighted on the residual plot.
 
 \begin{multicols}{2}
 
@@ -20197,7 +19923,6 @@ Below is an illustration of a standard scatterplot showing a sample of bivariate
 \end{multicols}
 
 \vspace{-0.5cm}
-
 It should be observed that the residual plot broadly appears to show:
 
 \begin{tcolorbox}[halign title=center,title=Interpreting Residual Plots,center,colback=red!5,colframe=red!70!black,width=11cm]
@@ -20210,9 +19935,9 @@ It should be observed that the residual plot broadly appears to show:
 \end{center}
 \end{tcolorbox}
 
-This means that the residual plot would give no reason to doubt the assumptions made regarding the errors. This \emph{ideal} residual plot would suggest that the linear regression model is \textbf{appropriate}.
+This means that the residual plot would give no reason to doubt the assumptions made regarding the errors. This *ideal* residual plot would suggest that the linear regression model is **appropriate**.
 
-A helpful way of visualising that the residuals are \emph{centred on zero} with a \emph{constant variance} is to view the residual plot as a series of isolated \emph{vertical strips}, as shown below:
+A helpful way of visualising that the residuals are *centred on zero* with a *constant variance* is to view the residual plot as a series of isolated *vertical strips*, as shown below:
 
 \begin{center}
     \begin{tikzpicture}[xscale=2]
@@ -20312,7 +20037,6 @@ A helpful way of visualising that the residuals are \emph{centred on zero} with 
 \end{center}
 
 \newpage
-
 The following residual plots are accompanied with relevant comments and suitable conclusions.
 
 \begin{figure}[H]
@@ -20900,10 +20624,9 @@ Use the residual plot to comment on the validity of the linear model.
 
 \newpage
 
-\protect\phantomsection\label{ex187q}{}
+[]{#ex187q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex187a]{Exercise 18.7}}{Exercise 18.7}}\label{exercise-18.7}
-\addcontentsline{toc}{subsubsection}{{Exercise 18.7}}
+#### [Exercise 18.7](#ex187a) {-}
 
 \begin{enumerate}
     \item For each of the following residual plots, comment on the validity of the linear model from which they were produced.
@@ -21233,11 +20956,11 @@ Use the residual plot to comment on the validity of the linear model.
         C & 15 & 8 & 13.50 & -5.50\\
         D & 18 & 20 & 14.90 & \textcolor{white}{-}5.09\\
         E & 23 & 19 & 17.23 & \textcolor{white}{-}1.77\\
-        F&28&   17& 19.56&  -2.56\\
-        G&  33& 27  &21.89& \textcolor{white}{-}5.11\\
-        H   &39 &26&    24.48&  \textcolor{white}{-}1.32\\
-        I&  45  &21&    27.48&  -6.48\\
-        J   &45 &29 &27.48  &\textcolor{white}{-}1.52\\
+        F&28&	17&	19.56&	-2.56\\
+        G&	33&	27	&21.89&	\textcolor{white}{-}5.11\\
+        H	&39	&26&	24.48&	\textcolor{white}{-}1.32\\
+        I&	45	&21&	27.48&	-6.48\\
+        J	&45	&29	&27.48	&\textcolor{white}{-}1.52\\
         \hline
     \end{tabular}
 \end{center}
@@ -21638,7 +21361,7 @@ Use the residual plot to comment on the validity of the linear model.
 
 \pagebreak
 
-\section{Transforming Data}\label{transforming-data}
+## Transforming Data
 
 Where a \textit{non-linear} relationship seems to exist between two variables then it would not be appropriate to use a model which describes a \textit{linear} relationship between them. The presence of a non-linear relationship may be immediately clear from an initial scatterplot, or it may only be revealed once a residual plot for a proposed linear model is created.
 
@@ -21836,7 +21559,7 @@ However, the residual plot suggests that a\newline linear model between $x$ and 
 
 \vspace{-0.6cm}
 
-The simulated data above was actually generated using a \textit{quadratic} relationship between \(x\) and \(y\).\newline A scatterplot of \(\sqrt{y}\) against \(x\) for this data is shown below, alongside a residual plot:
+The simulated data above was actually generated using a \textit{quadratic} relationship between $x$ and $y$.\newline A scatterplot of $\sqrt{y}$ against $x$ for this data is shown below, alongside a residual plot:
 
 \begin{figure}[H]
   \centering
@@ -22036,15 +21759,15 @@ Creating a model such as this, in which one or both variables have some operatio
 
 The value of applying transformations in this way, where possible, is that linear regression can hence be extended to nonlinear relationships.
 
-Continuing with the example of the model of the \emph{square root} of \(y\) \emph{on} \(x\), the various calculations required for linear regression can be \emph{translated} in terms of \(x\) and \(\sqrt{y}\), instead of \(x\) and \(y\), such as:
+Continuing with the example of the model of the *square root* of $y$ *on* $x$, the various calculations required for linear regression can be *translated* in terms of $x$ and $\sqrt{y}$, instead of $x$ and $y$, such as:
 
-Equation of the \(\sqrt{y}\) \emph{on} \(x\) regression line: \(\hat{\sqrt{Y}}=ax+b\) where \(b=\dfrac{S_{x\sqrt{y}}}{S_{xx}}\) and \(a=\overline{\sqrt{y}}+bx\).
+Equation of the $\sqrt{y}$ *on* $x$ regression line: $\hat{\sqrt{Y}}=ax+b$ where $b=\dfrac{S_{x\sqrt{y}}}{S_{xx}}$ and $a=\overline{\sqrt{y}}+bx$.
 
-Sample correlation coefficient: \(r=\dfrac{S_{x\sqrt{y}}}{\sqrt{S_{xx}S_{\sqrt{y}\sqrt{y}}}}\).
+Sample correlation coefficient: $r=\dfrac{S_{x\sqrt{y}}}{\sqrt{S_{xx}S_{\sqrt{y}\sqrt{y}}}}$.
 
-The sum of squared residuals is \(\text{SSR}=S_{\sqrt{y}\sqrt{y}}-\dfrac{S^2_{x\sqrt{y}}}{S_{xx}}\) and an estimate for \(\sigma^2\) is given by \(\dfrac{\text{SSR}}{n-2}\).
+The sum of squared residuals is $\text{SSR}=S_{\sqrt{y}\sqrt{y}}-\dfrac{S^2_{x\sqrt{y}}}{S_{xx}}$ and an estimate for $\sigma^2$ is given by $\dfrac{\text{SSR}}{n-2}$.
 
-Predictions may be made using an \(\sqrt{y}\) \emph{on} \(x\) regression line.\newline Any value of \(\sqrt{y}\) obtained must be squared to find a predicted value for \(y\) itself for any given \(x\) value.
+Predictions may be made using an $\sqrt{y}$ *on* $x$ regression line.\newline Any value of $\sqrt{y}$ obtained must be squared to find a predicted value for $y$ itself for any given $x$ value.
 
 \pagebreak
 
@@ -22202,7 +21925,7 @@ A second linear model was created between speed ($x$) and the square root of the
 \begin{enumerate}
     \item[(a)] Comment on the appropriateness of the linear model of $y$ on $x$.
     \item[(b)] Comment on the suitability of the new model of $\sqrt{y}$ on $x$.
-    \item[(c)] Calculate the coefficient of determination for this new model and interpret its value.
+    \item[(c)] By calculating $\sqrt{\text{distance}}$ from the table, find the coefficient of determination for this new model and interpret its value.
     \item[(d)] Estimate the stopping distance at a speed of 50 kilometres per hour.
 \end{enumerate}
 
@@ -22221,10 +21944,9 @@ A second linear model was created between speed ($x$) and the square root of the
 
 \newpage
 
-\protect\phantomsection\label{ex188q}{}
+[]{#ex188q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex188a]{Exercise 18.8}}{Exercise 18.8}}\label{exercise-18.8}
-\addcontentsline{toc}{subsubsection}{{Exercise 18.8}}
+#### [Exercise 18.8](#ex188a) {-}
 
 \begin{enumerate}
     \item An study was carried out in a factory to investigate the relationship between tool-wear ($w$ \%) and run-time ($x$ minutes) of a particular type of tool. A tool was randomly selected, and the results of the experiment are displayed in the scatterplot below. The line $\hat{W}=2.556+0.12287x$ was fitted to the data.
@@ -22354,13 +22076,12 @@ The new model has summary statistics of $\Sigma x=225,\;\Sigma y =6.564,\;\Sigma
 
 \pagebreak
 
-\section{Confidence Intervals and Prediction Intervals}\label{confidence-intervals-and-prediction-intervals}
+## Confidence Intervals and Prediction Intervals
+One purpose for adopting a regression approach to examine the relationship between two variables is the wish to make predictions related to the response variable ($Y$) when given a particular value for the predictor ($x$). 
 
-One purpose for adopting a regression approach to examine the relationship between two variables is the wish to make predictions related to the response variable (\(Y\)) when given a particular value for the predictor (\(x\)).
+The least squares regression line equation of $\hat{Y_i}=a+bx_i$ gives an *estimate* for the **mean** value of the response variable for any given $x_i$, whilst the *true* mean response value for a given $x_i$, which is denoted $\text{E}(Y_i\,|\,x_i)$, is unknown. 
 
-The least squares regression line equation of \(\hat{Y_i}=a+bx_i\) gives an \emph{estimate} for the \textbf{mean} value of the response variable for any given \(x_i\), whilst the \emph{true} mean response value for a given \(x_i\), which is denoted \(\text{E}(Y_i\,|\,x_i)\), is unknown.
-
-It can be desirable to obtain a \textbf{confidence interval} for \(\text{E}(Y_i\,|\,x_i)\).
+It can be desirable to obtain a **confidence interval** for $\text{E}(Y_i\,|\,x_i)$.
 
 \begin{figure}[H]
   \centering
@@ -22489,11 +22210,12 @@ If the errors, $\varepsilon_i$, are identically and independently distributed as
 \end{minipage}
 \end{figure}
 
+
 \begin{tcolorbox}[halign title=center,title=A Confidence Interval for the Mean Response,center,colback=red!5,colframe=red!70!black,width=15.5cm]
 A $100(1-\alpha)\%$ \text{CI} for $\text{E}(Y_i\,|\,x_i)$ is given by: $\hat{Y_i}\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}$
 \end{tcolorbox}
 
-With all confidence intervals, the level of confidence relates to the success rate of the \emph{procedure used to generate the interval}, rather than the probability of a calculated interval containing the mean response value \(\text{E}(Y_i\,|\,x_i)\).
+With all confidence intervals, the level of confidence relates to the success rate of the *procedure used to generate the interval*, rather than the probability of a calculated interval containing the mean response value $\text{E}(Y_i\,|\,x_i)$.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 \textbf{Problem:} 
@@ -22525,9 +22247,9 @@ So a 95\% confidence interval for the mean length of a 3kg salmon is $(39.45\tex
 
 \pagebreak
 
-Instead of an interval for the value of \textit{mean} response, it may be desired to obtain an interval for \textbf{individual} response values for a given \(x_i\), denoted as \(Y_i\,|\,x_i\).
+Instead of an interval for the value of \textit{mean} response, it may be desired to obtain an interval for **individual** response values for a given $x_i$, denoted as $Y_i\,|\,x_i$. 
 
-The desired interval is called a \textbf{prediction interval}.
+The desired interval is called a **prediction interval**.
 
 \begin{figure}[H]
   \centering
@@ -22663,7 +22385,7 @@ In the long-run, a 95\% prediction interval for $Y_i\,|\,x_i$, such as indicated
 A $100(1-\alpha)\%$ \text{PI} for $Y_i\,|\,x_i$ is given by: $\hat{Y_i}\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{1+\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}$
 \end{tcolorbox}
 
-This formula, also given on Page 5 of the Data Booklet, relies also on the errors, \(\varepsilon_i\), being identically and independently distributed as \(\text{N}\left(0,\sigma^2\right)\)
+This formula, also given on Page 5 of the Data Booklet, relies also on the errors, $\varepsilon_i$, being identically and independently distributed as $\text{N}\left(0,\sigma^2\right)$
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 \textbf{Problem:} 
@@ -22695,10 +22417,9 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 
 \pagebreak
 
-\protect\phantomsection\label{ex188q}{}
+[]{#ex188q}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex189a]{Exercise 18.9}}{Exercise 18.9}}\label{exercise-18.9}
-\addcontentsline{toc}{subsubsection}{{Exercise 18.9}}
+#### [Exercise 18.9](#ex189a) {-}
 
 \begin{enumerate}
     \item From Context 1: Construct a 95\% confidence interval for the mean \% mass loss of a metal plate in the acid solution for 150 hours.
@@ -22709,10 +22430,9 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 
 \pagebreak
 
-\protect\phantomsection\label{re18q}{}
+[]{#re18q}
 
-\section*{\texorpdfstring{\hyperref[re18a]{Review Exercise}}{Review Exercise}}\label{review-exercise-16}
-\addcontentsline{toc}{section}{{Review Exercise}}
+## [Review Exercise](#re18a) {-}
 
 \begin{enumerate}
     \item As part of a study on intensive exercise, a sports scientist recorded the peak heart rates ($y$) of a random selection of fifteen volunteers of different ages ($x$) who took regular exercise. The linear regression equation was calculated for the data shown in the scatter diagram and found to be $\hat{Y}=212.3−0.96x$.
@@ -23016,22 +22736,22 @@ The website wishes to allow users the ability to input the number of miles in th
 
 \pagebreak
 
-\chapter*{Answers}\label{answers}
-\addcontentsline{toc}{chapter}{Answers}
+
+<!--chapter:end:18-Linear-Regression-II.Rmd-->
+
+# Answers {-}
 
 \setstretch{1.0}
 \raggedright
 
-\subsection*{Chapter 1 Answers - Exploratory Data Analysis}\label{chapter-1-answers---exploratory-data-analysis}
-\addcontentsline{toc}{subsection}{Chapter 1 Answers - Exploratory Data Analysis}
+### Chapter 1 Answers - Exploratory Data Analysis {-}
 
 \begingroup
 \footnotesize
 
-\protect\phantomsection\label{ex11a}{}
+[]{#ex11a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex11q]{Exercise 1.1}}{Exercise 1.1}}\label{exercise-1.1-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 1.1}}
+#### [Exercise 1.1](#ex11q) {-}
 
 \begin{enumerate}
     \item 
@@ -23059,10 +22779,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \item Categorical: \textit{activity level} and \textit{smoker}. Continuous: \textit{height} and \textit{mass}. Discrete: \textit{pulse}.
 \end{enumerate}
 
-\protect\phantomsection\label{ex12a}{}
+[]{#ex12a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex12q]{Exercise 1.2}}{Exercise 1.2}}\label{exercise-1.2-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 1.2}}
+#### [Exercise 1.2](#ex12q) {-}
 
 \begin{enumerate}
     \begin{multicols}{3}
@@ -23072,10 +22791,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{multicols}
 \end{enumerate}
 
-\protect\phantomsection\label{ex13a}{}
+[]{#ex13a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex13q]{Exercise 1.3}}{Exercise 1.3}}\label{exercise-1.3-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 1.3}}
+#### [Exercise 1.3](#ex13q) {-}
 
 \begin{enumerate}
     \begin{multicols}{4}
@@ -23086,10 +22804,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{multicols}
 \end{enumerate}
 
-\protect\phantomsection\label{ex14a}{}
+[]{#ex14a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex14q]{Exercise 1.4}}{Exercise 1.4}}\label{exercise-1.4-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 1.4}}
+#### [Exercise 1.4](#ex14q) {-}
 
 \begin{enumerate}
     \item 
@@ -23163,10 +22880,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{multicols}
 \end{enumerate}
 
-\protect\phantomsection\label{ex15a}{}
+[]{#ex15a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex15q]{Exercise 1.5}}{Exercise 1.5}}\label{exercise-1.5-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 1.5}}
+#### [Exercise 1.5](#ex15q) {-}
 
 \begin{enumerate}
     \item $\tfrac{23}{94}$ or $0.2447$
@@ -23181,10 +22897,9 @@ The website wishes to allow users the ability to input the number of miles in th
 \begingroup
 \footnotesize
 
-\protect\phantomsection\label{ex16a}{}
+[]{#ex16a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex16q]{Exercise 1.6}}{Exercise 1.6}}\label{exercise-1.6-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 1.6}}
+#### [Exercise 1.6](#ex16q) {-}
 
 \begin{enumerate}
     \begin{multicols}{2}
@@ -23220,10 +22935,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{enumerate}
 \end{enumerate}
 
-\protect\phantomsection\label{ex17a}{}
+[]{#ex17a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex17q]{Exercise 1.7}}{Exercise 1.7}}\label{exercise-1.7-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 1.7}}
+#### [Exercise 1.7](#ex17q) {-}
 
 \begin{enumerate}
     \item The population of hazelnuts masses appear to follow a positively skewed distribution.
@@ -23232,10 +22946,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \item The population of number of successful passes appears to follow a bimodal distribution.
 \end{enumerate}
 
-\protect\phantomsection\label{ex18a}{}
+[]{#ex18a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex18q]{Exercise 1.8}}{Exercise 1.8}}\label{exercise-1.8-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 1.8}}
+#### [Exercise 1.8](#ex18q) {-}
 
 \begin{enumerate}
     \item 
@@ -23304,10 +23017,9 @@ The website wishes to allow users the ability to input the number of miles in th
 \begingroup
 \footnotesize
 
-\protect\phantomsection\label{re1a}{}
+[]{#re1a}
 
-\subsubsection*{\texorpdfstring{\hyperref[re1q]{Chapter 1 Review Exercise}}{Chapter 1 Review Exercise}}\label{chapter-1-review-exercise}
-\addcontentsline{toc}{subsubsection}{{Chapter 1 Review Exercise}}
+#### [Chapter 1 Review Exercise](#re1q) {-}
 
 \begin{enumerate}
     \item 
@@ -23365,16 +23077,17 @@ The website wishes to allow users the ability to input the number of miles in th
 
 \endgroup
 
-\subsection*{Chapter 2 Answers - An Introduction to Probability Theory}\label{chapter-2-answers---an-introduction-to-probability-theory}
-\addcontentsline{toc}{subsection}{Chapter 2 Answers - An Introduction to Probability Theory}
+
+
+### Chapter 2 Answers - An Introduction to Probability Theory {-}
 
 \begingroup
 \footnotesize
 
-\protect\phantomsection\label{ex21a}{}
+[]{#ex21a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex21q]{Exercise 2.1}}{Exercise 2.1}}\label{exercise-2.1-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 2.1}}
+#### [Exercise 2.1](#ex21q) {-}
+
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -23425,10 +23138,9 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex22a}{}
+[]{#ex22a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex22q]{Exercise 2.2}}{Exercise 2.2}}\label{exercise-2.2-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 2.2}}
+#### [Exercise 2.2](#ex22q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -23479,10 +23191,9 @@ The website wishes to allow users the ability to input the number of miles in th
 \begingroup
 \footnotesize
 
-\protect\phantomsection\label{ex23a}{}
+[]{#ex23a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex23q]{Exercise 2.3}}{Exercise 2.3}}\label{exercise-2.3-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 2.3}}
+#### [Exercise 2.3](#ex23q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -23740,10 +23451,9 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex24a}{}
+[]{#ex24a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex24q]{Exercise 2.4}}{Exercise 2.4}}\label{exercise-2.4-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 2.4}}
+#### [Exercise 2.4](#ex24q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -23802,10 +23512,9 @@ The website wishes to allow users the ability to input the number of miles in th
 \begingroup
 \footnotesize
 
-\protect\phantomsection\label{ex25a}{}
+[]{#ex25a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex25q]{Exercise 2.5}}{Exercise 2.5}}\label{exercise-2.5-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 2.5}}
+#### [Exercise 2.5](#ex25q) {-}
 
 \begin{multicols}{3}
     \begin{enumerate}
@@ -23837,10 +23546,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{re2a}{}
+[]{#re2a}
 
-\subsubsection*{\texorpdfstring{\hyperref[re2q]{Chapter 2 Review Exercise}}{Chapter 2 Review Exercise}}\label{chapter-2-review-exercise}
-\addcontentsline{toc}{subsubsection}{{Chapter 2 Review Exercise}}
+#### [Chapter 2 Review Exercise](#re2q) {-}
 
 \begin{multicols}{3}
     \begin{enumerate}
@@ -23869,18 +23577,18 @@ The website wishes to allow users the ability to input the number of miles in th
 
 \endgroup
 
-\subsection*{Chapter 3 Answers - Sampling Theory}\label{chapter-3-answers---sampling-theory}
-\addcontentsline{toc}{subsection}{Chapter 3 Answers - Sampling Theory}
+
+
+### Chapter 3 Answers - Sampling Theory {-}
 
 \begingroup
 \footnotesize
 
 \textbf{Note:} Whilst the answers included here are intended to include an appropriate level of detail, variations in the amount and type of information given in exam questions will require a flexible and common-sense approach to be used in any exam. Past exam questions and marking schemes should be used as a guide, as well as course reports and relevant CPD events.
 
-\protect\phantomsection\label{ex31a}{}
+[]{#ex31a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex31q]{Exercise 3.1}}{Exercise 3.1}}\label{exercise-3.1-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 3.1}}
+#### [Exercise 3.1](#ex31q) {-}
 
 \begin{enumerate}
     \item
@@ -23901,10 +23609,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{enumerate}
 \end{enumerate}
 
-\protect\phantomsection\label{ex32a}{}
+[]{#ex32a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex32q]{Exercise 3.2}}{Exercise 3.2}}\label{exercise-3.2-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 3.2}}
+#### [Exercise 3.2](#ex32q) {-}
 
 \begin{enumerate}
     \item
@@ -23943,10 +23650,11 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{enumerate}
 \end{enumerate}
 
-\protect\phantomsection\label{re3a}{}
 
-\subsubsection*{\texorpdfstring{\hyperref[re3q]{Chapter 3 Review Exercise}}{Chapter 3 Review Exercise}}\label{chapter-3-review-exercise}
-\addcontentsline{toc}{subsubsection}{{Chapter 3 Review Exercise}}
+
+[]{#re3a}
+
+#### [Chapter 3 Review Exercise](#re3q) {-}
 
 \begin{enumerate}
     \item
@@ -23980,16 +23688,14 @@ The website wishes to allow users the ability to input the number of miles in th
 \endgroup
 \pagebreak
 
-\subsection*{Chapter 4 Answers - Further Probability Theory}\label{chapter-4-answers---further-probability-theory}
-\addcontentsline{toc}{subsection}{Chapter 4 Answers - Further Probability Theory}
+### Chapter 4 Answers - Further Probability Theory {-}
 
 \begingroup
 \footnotesize
 
-\protect\phantomsection\label{ex41a}{}
+[]{#ex41a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex41q]{Exercise 4.1}}{Exercise 4.1}}\label{exercise-4.1-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 4.1}}
+#### [Exercise 4.1](#ex41q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -24037,10 +23743,9 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex42a}{}
+[]{#ex42a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex42q]{Exercise 4.2}}{Exercise 4.2}}\label{exercise-4.2-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 4.2}}
+#### [Exercise 4.2](#ex42q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -24066,10 +23771,9 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex43a}{}
+[]{#ex43a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex43q]{Exercise 4.3}}{Exercise 4.3}}\label{exercise-4.3-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 4.3}}
+#### [Exercise 4.3](#ex43q) {-}
 
 \begin{multicols}{3}
     \begin{enumerate}
@@ -24092,10 +23796,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex44a}{}
+[]{#ex44a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex44q]{Exercise 4.4}}{Exercise 4.4}}\label{exercise-4.4-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 4.4}}
+#### [Exercise 4.4](#ex44q) {-}
 
 \begin{multicols}{3}
     \begin{enumerate}
@@ -24117,10 +23820,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex45a}{}
+[]{#ex45a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex45q]{Exercise 4.5}}{Exercise 4.5}}\label{exercise-4.5-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 4.5}}
+#### [Exercise 4.5](#ex45q) {-}
 
 \begin{multicols}{3}
     \begin{enumerate}
@@ -24142,10 +23844,11 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex46a}{}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex46q]{Exercise 4.6}}{Exercise 4.6}}\label{exercise-4.6-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 4.6}}
+
+[]{#ex46a}
+
+#### [Exercise 4.6](#ex46q) {-}
 
 \begin{multicols}{3}
     \begin{enumerate}
@@ -24159,10 +23862,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex47a}{}
+[]{#ex47a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex47q]{Exercise 4.7}}{Exercise 4.7}}\label{exercise-4.7-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 4.7}}
+#### [Exercise 4.7](#ex47q) {-}
 
 \begin{multicols}{3}
     \begin{enumerate}
@@ -24192,10 +23894,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{re4a}{}
+[]{#re4a}
 
-\subsubsection*{\texorpdfstring{\hyperref[re4q]{Chapter 4 Review Exercise}}{Chapter 4 Review Exercise}}\label{chapter-4-review-exercise}
-\addcontentsline{toc}{subsubsection}{{Chapter 4 Review Exercise}}
+#### [Chapter 4 Review Exercise](#re4q) {-}
 
 \begin{multicols}{3}
     \begin{enumerate}
@@ -24226,87 +23927,76 @@ The website wishes to allow users the ability to input the number of miles in th
 
 \endgroup
 
-\subsection*{Chapter 5 - An Introduction to Linear Regression}\label{chapter-5---an-introduction-to-linear-regression}
-\addcontentsline{toc}{subsection}{Chapter 5 - An Introduction to Linear Regression}
+### Chapter 5 - An Introduction to Linear Regression {-}
 
 \begingroup
 \footnotesize
 
-\protect\phantomsection\label{ex51a}{}
+[]{#ex51a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex51q]{Exercise 5.1}}{Exercise 5.1}}\label{exercise-5.1-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 5.1}}
+#### [Exercise 5.1](#ex51q) {-}
 
-\protect\phantomsection\label{ex52a}{}
+[]{#ex52a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex52q]{Exercise 5.2}}{Exercise 5.2}}\label{exercise-5.2-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 5.2}}
+#### [Exercise 5.2](#ex52q) {-}
 
-\protect\phantomsection\label{ex53a}{}
+[]{#ex53a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex53q]{Exercise 5.3}}{Exercise 5.3}}\label{exercise-5.3-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 5.3}}
+#### [Exercise 5.3](#ex53q) {-}
 
-\protect\phantomsection\label{re5a}{}
 
-\subsubsection*{\texorpdfstring{\hyperref[re5q]{Chapter 5 Review Exercise}}{Chapter 5 Review Exercise}}\label{chapter-5-review-exercise}
-\addcontentsline{toc}{subsubsection}{{Chapter 5 Review Exercise}}
+[]{#re5a}
+
+#### [Chapter 5 Review Exercise](#re5q) {-}
+
 
 \endgroup
 
-\subsection*{Chapter 6 - Random Variables}\label{chapter-6---random-variables}
-\addcontentsline{toc}{subsection}{Chapter 6 - Random Variables}
+### Chapter 6 - Random Variables {-}
 
 \begingroup
 \footnotesize
 
-\protect\phantomsection\label{ex61a}{}
+[]{#ex61a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex61q]{Exercise 6.1}}{Exercise 6.1}}\label{exercise-6.1-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 6.1}}
+#### [Exercise 6.1](#ex61q) {-}
 
-\protect\phantomsection\label{ex62a}{}
+[]{#ex62a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex62q]{Exercise 6.2}}{Exercise 6.2}}\label{exercise-6.2-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 6.2}}
+#### [Exercise 6.2](#ex62q) {-}
 
-\protect\phantomsection\label{ex63a}{}
+[]{#ex63a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex63q]{Exercise 6.3}}{Exercise 6.3}}\label{exercise-6.3-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 6.3}}
+#### [Exercise 6.3](#ex63q) {-}
 
-\protect\phantomsection\label{ex64a}{}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex64q]{Exercise 6.4}}{Exercise 6.4}}\label{exercise-6.4-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 6.4}}
+[]{#ex64a}
 
-\protect\phantomsection\label{ex65a}{}
+#### [Exercise 6.4](#ex64q) {-}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex65q]{Exercise 6.5}}{Exercise 6.5}}\label{exercise-6.5-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 6.5}}
+[]{#ex65a}
 
-\protect\phantomsection\label{ex66a}{}
+#### [Exercise 6.5](#ex65q) {-}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex66q]{Exercise 6.6}}{Exercise 6.6}}\label{exercise-6.6-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 6.6}}
+[]{#ex66a}
 
-\protect\phantomsection\label{re6a}{}
+#### [Exercise 6.6](#ex66q) {-}
 
-\subsubsection*{\texorpdfstring{\hyperref[re6q]{Chapter 6 Review Exercise}}{Chapter 6 Review Exercise}}\label{chapter-6-review-exercise}
-\addcontentsline{toc}{subsubsection}{{Chapter 6 Review Exercise}}
+
+[]{#re6a}
+
+#### [Chapter 6 Review Exercise](#re6q) {-}
 
 \endgroup
 
-\subsection*{Chapter 7 - Discrete Distributions}\label{chapter-7---discrete-distributions}
-\addcontentsline{toc}{subsection}{Chapter 7 - Discrete Distributions}
+### Chapter 7 - Discrete Distributions {-}
 
 \begingroup
 \footnotesize
 
-\protect\phantomsection\label{ex71a}{}
+[]{#ex71a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex71q]{Exercise 7.1}}{Exercise 7.1}}\label{exercise-7.1-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 7.1}}
+#### [Exercise 7.1](#ex71q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -24343,10 +24033,10 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex72a}{}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex72q]{Exercise 7.2}}{Exercise 7.2}}\label{exercise-7.2-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 7.2}}
+[]{#ex72a}
+
+#### [Exercise 7.2](#ex72q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -24363,10 +24053,10 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex73a}{}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex73q]{Exercise 7.3}}{Exercise 7.3}}\label{exercise-7.3-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 7.3}}
+[]{#ex73a}
+
+#### [Exercise 7.3](#ex73q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -24398,11 +24088,10 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{enumerate}
 \end{enumerate}
 \end{multicols}
+    
+[]{#ex74a}
 
-\protect\phantomsection\label{ex74a}{}
-
-\subsubsection*{\texorpdfstring{\hyperref[ex74q]{Exercise 7.4}}{Exercise 7.4}}\label{exercise-7.4-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 7.4}}
+#### [Exercise 7.4](#ex74q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -24437,10 +24126,10 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex75a}{}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex75q]{Exercise 7.5}}{Exercise 7.5}}\label{exercise-7.5-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 7.5}}
+[]{#ex75a}
+
+#### [Exercise 7.5](#ex75q) {-}
 
 \begin{enumerate}
     \item 
@@ -24457,10 +24146,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{enumerate}
 \end{enumerate}
 
-\protect\phantomsection\label{ex76a}{}
+[]{#ex76a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex76q]{Exercise 7.6}}{Exercise 7.6}}\label{exercise-7.6-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 7.6}}
+#### [Exercise 7.6](#ex76q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -24486,10 +24174,9 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex77a}{}
+[]{#ex77a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex77q]{Exercise 7.7}}{Exercise 7.7}}\label{exercise-7.7-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 7.7}}
+#### [Exercise 7.7](#ex77q) {-}
 
 \begin{enumerate}
     \item $0.9473$
@@ -24499,10 +24186,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \item $0.0144$
 \end{enumerate}
 
-\protect\phantomsection\label{re7a}{}
+[]{#re7a}
 
-\subsubsection*{\texorpdfstring{\hyperref[re7q]{Chapter 7 Review Exercise}}{Chapter 7 Review Exercise}}\label{chapter-7-review-exercise}
-\addcontentsline{toc}{subsubsection}{{Chapter 7 Review Exercise}}
+#### [Chapter 7 Review Exercise](#re7q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -24550,16 +24236,14 @@ The website wishes to allow users the ability to input the number of miles in th
 
 \endgroup
 
-\subsection*{Chapter 8 Answers - Continuous Distributions}\label{chapter-8-answers---continuous-distributions}
-\addcontentsline{toc}{subsection}{Chapter 8 Answers - Continuous Distributions}
+### Chapter 8 Answers - Continuous Distributions {-}
 
 \begingroup
 \footnotesize
 
-\protect\phantomsection\label{ex81a}{}
+[]{#ex81a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex81q]{Exercise 8.1}}{Exercise 8.1}}\label{exercise-8.1-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 8.1}}
+#### [Exercise 8.1](#ex81q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -24621,10 +24305,9 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex82a}{}
+[]{#ex82a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex82q]{Exercise 8.2}}{Exercise 8.2}}\label{exercise-8.2-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 8.2}}
+#### [Exercise 8.2](#ex82q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -24641,10 +24324,9 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex83a}{}
+[]{#ex83a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex83q]{Exercise 8.3}}{Exercise 8.3}}\label{exercise-8.3-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 8.3}}
+#### [Exercise 8.3](#ex83q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -24678,10 +24360,9 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex84a}{}
+[]{#ex84a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex84q]{Exercise 8.4}}{Exercise 8.4}}\label{exercise-8.4-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 8.4}}
+#### [Exercise 8.4](#ex84q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -24726,10 +24407,9 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex85a}{}
+[]{#ex85a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex85q]{Exercise 8.5}}{Exercise 8.5}}\label{exercise-8.5-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 8.5}}
+#### [Exercise 8.5](#ex85q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -24764,10 +24444,9 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex86a}{}
+[]{#ex86a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex86q]{Exercise 8.6}}{Exercise 8.6}}\label{exercise-8.6-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 8.6}}
+#### [Exercise 8.6](#ex86q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -24782,10 +24461,9 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex87a}{}
+[]{#ex87a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex87q]{Exercise 8.7}}{Exercise 8.7}}\label{exercise-8.7-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 8.7}}
+#### [Exercise 8.7](#ex87q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -24815,10 +24493,9 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex88a}{}
+[]{#ex88a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex88q]{Exercise 8.8}}{Exercise 8.8}}\label{exercise-8.8-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 8.8}}
+#### [Exercise 8.8](#ex88q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -24861,10 +24538,9 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{re8a}{}
+[]{#re8a}
 
-\subsubsection*{\texorpdfstring{\hyperref[re8q]{Chapter 8 Review Exercise}}{Chapter 8 Review Exercise}}\label{chapter-8-review-exercise}
-\addcontentsline{toc}{subsubsection}{{Chapter 8 Review Exercise}}
+#### [Chapter 8 Review Exercise](#re8q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -24906,16 +24582,14 @@ The website wishes to allow users the ability to input the number of miles in th
 
 \endgroup
 
-\subsection*{Chapter 9 - Distribution of the Sample Mean}\label{chapter-9---distribution-of-the-sample-mean}
-\addcontentsline{toc}{subsection}{Chapter 9 - Distribution of the Sample Mean}
+### Chapter 9 - Distribution of the Sample Mean {-}
 
 \begingroup
 \footnotesize
 
-\protect\phantomsection\label{ex91a}{}
+[]{#ex91a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex91q]{Exercise 9.1}}{Exercise 9.1}}\label{exercise-9.1-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 9.1}}
+#### [Exercise 9.1](#ex91q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -24949,10 +24623,9 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex92a}{}
+[]{#ex92a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex92q]{Exercise 9.2}}{Exercise 9.2}}\label{exercise-9.2-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 9.2}}
+#### [Exercise 9.2](#ex92q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -24974,10 +24647,9 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{re9a}{}
+[]{#re9a}
 
-\subsubsection*{\texorpdfstring{\hyperref[re9q]{Chapter 9 Review Exercise}}{Chapter 9 Review Exercise}}\label{chapter-9-review-exercise}
-\addcontentsline{toc}{subsubsection}{{Chapter 9 Review Exercise}}
+#### [Chapter 9 Review Exercise](#re9q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -25019,16 +24691,14 @@ The website wishes to allow users the ability to input the number of miles in th
 
 \endgroup
 
-\subsection*{Chapter 10 - An Introduction to Hypothesis Testing}\label{chapter-10---an-introduction-to-hypothesis-testing}
-\addcontentsline{toc}{subsection}{Chapter 10 - An Introduction to Hypothesis Testing}
+### Chapter 10 - An Introduction to Hypothesis Testing {-}
 
 \begingroup
 \footnotesize
 
-\protect\phantomsection\label{ex101a}{}
+[]{#ex101a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex101q]{Exercise 10.1}}{Exercise 10.1}}\label{exercise-10.1-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 10.1}}
+#### [Exercise 10.1](#ex101q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -25047,13 +24717,10 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex102a}{}
+[]{#ex102a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex102q]{Exercise 10.2}}{Exercise 10.2}}\label{exercise-10.2-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 10.2}}
-
-\}
-
+#### [Exercise 10.2](#ex102q) {-}
+}
 \begin{enumerate}
     \item $0.0162<0.05\implies \textit{reject }H_0$
     \item $0.1056>0.01\implies \textit{do not reject }H_0$
@@ -25061,10 +24728,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \item $0.0764>0.05\implies \textit{do not reject }H_0$
 \end{enumerate}
 
-\protect\phantomsection\label{ex103a}{}
+[]{#ex103a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex103q]{Exercise 10.3}}{Exercise 10.3}}\label{exercise-10.3-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 10.3}}
+#### [Exercise 10.3](#ex103q) {-}
 
 \begin{enumerate}
     \item $0.0286<0.1\implies \textit{reject }H_0$
@@ -25077,10 +24743,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \item $0.0250>0.01\implies \textit{do not reject }H_0$
 \end{enumerate}
 
-\protect\phantomsection\label{ex104a}{}
+[]{#ex104a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex104q]{Exercise 10.4}}{Exercise 10.4}}\label{exercise-10.4-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 10.4}}
+#### [Exercise 10.4](#ex104q) {-}
 
 \begin{enumerate}
     \item $1.67<1.96\implies \textit{do not reject }H_0$
@@ -25090,10 +24755,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \item $2.00>1.96\implies \textit{reject }H_0$
 \end{enumerate}
 
-\protect\phantomsection\label{ex105a}{}
+[]{#ex105a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex105q]{Exercise 10.5}}{Exercise 10.5}}\label{exercise-10.5-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 10.5}}
+#### [Exercise 10.5](#ex105q) {-}
 
 \begin{enumerate}
     \item $-2.985<-1.895\implies \textit{reject }H_0$
@@ -25102,10 +24766,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \item $-3.531<-2.821\implies \textit{reject }H_0$
 \end{enumerate}
 
-\protect\phantomsection\label{ex106a}{}
+[]{#ex106a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex106q]{Exercise 10.6}}{Exercise 10.6}}\label{exercise-10.6-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 10.6}}
+#### [Exercise 10.6](#ex106q) {-}
 
 \begin{enumerate}
     \item $1.52<1.64\implies \textit{do not reject }H_0$
@@ -25116,10 +24779,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \item $-2.2<-1.64\implies \textit{reject }H_0$
 \end{enumerate}
 
-\protect\phantomsection\label{re10a}{}
+[]{#re10a}
 
-\subsubsection*{\texorpdfstring{\hyperref[re10q]{Chapter 10 Review Exercise}}{Chapter 10 Review Exercise}}\label{chapter-10-review-exercise}
-\addcontentsline{toc}{subsubsection}{{Chapter 10 Review Exercise}}
+#### [Chapter 10 Review Exercise](#re10q) {-}
 
 \begin{enumerate}
     \item $-2.54<-2.33\implies \textit{reject }H_0$
@@ -25131,16 +24793,14 @@ The website wishes to allow users the ability to input the number of miles in th
 
 \endgroup
 
-\subsection*{Chapter 11 - Confidence Intervals}\label{chapter-11---confidence-intervals}
-\addcontentsline{toc}{subsection}{Chapter 11 - Confidence Intervals}
+### Chapter 11 - Confidence Intervals {-}
 
 \begingroup
 \footnotesize
 
-\protect\phantomsection\label{ex111a}{}
+[]{#ex111a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex111q]{Exercise 11.1}}{Exercise 11.1}}\label{exercise-11.1-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 11.1}}
+#### [Exercise 11.1](#ex111q) {-}
 
 \begin{enumerate}
     \item $(55.18 ,58.82)$
@@ -25158,10 +24818,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \item $10.0$
 \end{enumerate}
 
-\protect\phantomsection\label{ex112a}{}
+[]{#ex112a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex112q]{Exercise 11.2}}{Exercise 11.2}}\label{exercise-11.2-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 11.2}}
+#### [Exercise 11.2](#ex112q) {-}
 
 \begin{enumerate}
     \item $(499.1,510.9)\implies \text{within, comment}$
@@ -25172,10 +24831,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \item $(28580,30020\implies \text{within, comment})$
 \end{enumerate}
 
-\protect\phantomsection\label{ex113a}{}
+[]{#ex113a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex113q]{Exercise 11.3}}{Exercise 11.3}}\label{exercise-11.3-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 11.3}}
+#### [Exercise 11.3](#ex113q) {-}
 
 \begin{enumerate}
     \item $(6.88,7.87)$
@@ -25185,10 +24843,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \item $(2.760,4.740)\implies \text{outwith, comment}$
 \end{enumerate}
 
-\protect\phantomsection\label{ex114a}{}
+[]{#ex114a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex114q]{Exercise 11.4}}{Exercise 11.4}}\label{exercise-11.4-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 11.4}}
+#### [Exercise 11.4](#ex114q) {-}
 
 \begin{enumerate}
     \item $(0.598,0.736)$
@@ -25205,10 +24862,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{enumerate}
 \end{enumerate}
 
-\protect\phantomsection\label{re11a}{}
+[]{#re11a}
 
-\subsubsection*{\texorpdfstring{\hyperref[re11q]{Chapter 11 Review Exercise}}{Chapter 11 Review Exercise}}\label{chapter-11-review-exercise}
-\addcontentsline{toc}{subsubsection}{{Chapter 11 Review Exercise}}
+#### [Chapter 11 Review Exercise](#re11q) {-}
 
 \begin{enumerate}
     \item $(63.98,82.77)$
@@ -25228,133 +24884,126 @@ The website wishes to allow users the ability to input the number of miles in th
 
 \endgroup
 
-\subsection*{Chapter 12 - Control Charts}\label{chapter-12---control-charts}
-\addcontentsline{toc}{subsection}{Chapter 12 - Control Charts}
+### Chapter 12 - Control Charts {-}
 
 \begingroup
 \footnotesize
 
-\protect\phantomsection\label{ex121a}{}
+[]{#ex121a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex121q]{Exercise 12.1}}{Exercise 12.1}}\label{exercise-12.1-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 12.1}}
+#### [Exercise 12.1](#ex121q) {-}
 
-\protect\phantomsection\label{ex122a}{}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex122q]{Exercise 12.2}}{Exercise 12.2}}\label{exercise-12.2-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 12.2}}
+[]{#ex122a}
 
-\protect\phantomsection\label{ex123a}{}
+#### [Exercise 12.2](#ex122q) {-}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex123q]{Exercise 12.3}}{Exercise 12.3}}\label{exercise-12.3-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 12.3}}
 
-\protect\phantomsection\label{ex124a}{}
+[]{#ex123a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex124q]{Exercise 12.4}}{Exercise 12.4}}\label{exercise-12.4-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 12.4}}
+#### [Exercise 12.3](#ex123q) {-}
 
-\protect\phantomsection\label{re12a}{}
 
-\subsubsection*{\texorpdfstring{\hyperref[re12q]{Chapter 12 Review Exercise}}{Chapter 12 Review Exercise}}\label{chapter-12-review-exercise}
-\addcontentsline{toc}{subsubsection}{{Chapter 12 Review Exercise}}
+[]{#ex124a}
+
+#### [Exercise 12.4](#ex124q) {-}
+
+
+[]{#re12a}
+
+#### [Chapter 12 Review Exercise](#re12q) {-}
 
 \endgroup
 
-\subsection*{Chapter 13 - Chi-Squared Goodness-of-Fit Test}\label{chapter-13---chi-squared-goodness-of-fit-test}
-\addcontentsline{toc}{subsection}{Chapter 13 - Chi-Squared Goodness-of-Fit Test}
+### Chapter 13 - Chi-Squared Goodness-of-Fit Test {-}
 
 \begingroup
 \footnotesize
 
-\protect\phantomsection\label{ex131a}{}
+[]{#ex131a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex131q]{Exercise 13.1}}{Exercise 13.1}}\label{exercise-13.1-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 13.1}}
+#### [Exercise 13.1](#ex131q) {-}
 
-\protect\phantomsection\label{ex132a}{}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex132q]{Exercise 13.2}}{Exercise 13.2}}\label{exercise-13.2-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 13.2}}
+[]{#ex132a}
 
-\protect\phantomsection\label{ex133a}{}
+#### [Exercise 13.2](#ex132q) {-}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex133q]{Exercise 13.3}}{Exercise 13.3}}\label{exercise-13.3-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 13.3}}
 
-\protect\phantomsection\label{re13a}{}
+[]{#ex133a}
 
-\subsubsection*{\texorpdfstring{\hyperref[re13q]{Chapter 13 Review Exercise}}{Chapter 13 Review Exercise}}\label{chapter-13-review-exercise}
-\addcontentsline{toc}{subsubsection}{{Chapter 13 Review Exercise}}
+#### [Exercise 13.3](#ex133q) {-}
+
+
+
+[]{#re13a}
+
+#### [Chapter 13 Review Exercise](#re13q) {-}
 
 \endgroup
 
-\subsection*{Chapter 14 - Chi-Squared Test for Association}\label{chapter-14---chi-squared-test-for-association}
-\addcontentsline{toc}{subsection}{Chapter 14 - Chi-Squared Test for Association}
+### Chapter 14 - Chi-Squared Test for Association {-}
 
 \begingroup
 \footnotesize
 
-\protect\phantomsection\label{ex141a}{}
+[]{#ex141a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex141q]{Exercise 14.1}}{Exercise 14.1}}\label{exercise-14.1-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 14.1}}
+#### [Exercise 14.1](#ex141q) {-}
 
-\protect\phantomsection\label{ex142a}{}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex142q]{Exercise 14.2}}{Exercise 14.2}}\label{exercise-14.2-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 14.2}}
+[]{#ex142a}
 
-\protect\phantomsection\label{re14a}{}
+#### [Exercise 14.2](#ex142q) {-}
 
-\subsubsection*{\texorpdfstring{\hyperref[re14q]{Chapter 14 Review Exercise}}{Chapter 14 Review Exercise}}\label{chapter-14-review-exercise}
-\addcontentsline{toc}{subsubsection}{{Chapter 14 Review Exercise}}
+
+[]{#re14a}
+
+#### [Chapter 14 Review Exercise](#re14q) {-}
 
 \endgroup
 
-\subsection*{Chapter 15 - Two-Sample Parametric Tests}\label{chapter-15---two-sample-parametric-tests}
-\addcontentsline{toc}{subsection}{Chapter 15 - Two-Sample Parametric Tests}
+
+### Chapter 15 - Two-Sample Parametric Tests {-}
 
 \begingroup
 \footnotesize
 
-\protect\phantomsection\label{ex151a}{}
+[]{#ex151a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex151q]{Exercise 15.1}}{Exercise 15.1}}\label{exercise-15.1-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 15.1}}
+#### [Exercise 15.1](#ex151q) {-}
 
-\protect\phantomsection\label{ex152a}{}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex152q]{Exercise 15.2}}{Exercise 15.2}}\label{exercise-15.2-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 15.2}}
+[]{#ex152a}
 
-\protect\phantomsection\label{ex153a}{}
+#### [Exercise 15.2](#ex152q) {-}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex153q]{Exercise 15.3}}{Exercise 15.3}}\label{exercise-15.3-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 15.3}}
 
-\protect\phantomsection\label{ex154a}{}
+[]{#ex153a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex154q]{Exercise 15.4}}{Exercise 15.4}}\label{exercise-15.4-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 15.4}}
+#### [Exercise 15.3](#ex153q) {-}
 
-\protect\phantomsection\label{re15a}{}
 
-\subsubsection*{\texorpdfstring{\hyperref[re15q]{Chapter 15 Review Exercise}}{Chapter 15 Review Exercise}}\label{chapter-15-review-exercise}
-\addcontentsline{toc}{subsubsection}{{Chapter 15 Review Exercise}}
+[]{#ex154a}
+
+#### [Exercise 15.4](#ex154q) {-}
+
+
+[]{#re15a}
+
+#### [Chapter 15 Review Exercise](#re15q) {-}
+
 
 \endgroup
 
-\subsection*{Chapter 16 - Wilcoxon Signed Rank Test}\label{chapter-16---wilcoxon-signed-rank-test}
-\addcontentsline{toc}{subsection}{Chapter 16 - Wilcoxon Signed Rank Test}
+### Chapter 16 - Wilcoxon Signed Rank Test {-}
 
 \begingroup
 \footnotesize
 
-\protect\phantomsection\label{ex161a}{}
+[]{#ex161a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex161q]{Exercise 16.1}}{Exercise 16.1}}\label{exercise-16.1-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 16.1}}
+#### [Exercise 16.1](#ex161q) {-}
 
 \begin{enumerate}
     \item $9>3\implies\text{ do not reject }H_0$
@@ -25366,10 +25015,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \item $6.5>5\implies\text{ do not reject }H_0$
 \end{enumerate}
 
-\protect\phantomsection\label{ex162a}{}
+[]{#ex162a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex162q]{Exercise 16.2}}{Exercise 16.2}}\label{exercise-16.2-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 16.2}}
+#### [Exercise 16.2](#ex162q) {-}
 
 \begin{enumerate}
     \item $8.5<13\implies\text{ reject }H_0$
@@ -25379,10 +25027,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \item $4<8\implies\text{ reject }H_0$
 \end{enumerate}
 
-\protect\phantomsection\label{ex163a}{}
+[]{#ex163a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex163q]{Exercise 16.3}}{Exercise 16.3}}\label{exercise-16.3-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 16.3}}
+#### [Exercise 16.3](#ex163q) {-}
 
 \begin{enumerate}
     \item $-0.34>-1.96\implies\text{ do not reject }H_0$
@@ -25396,10 +25043,10 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{enumerate}
 \end{enumerate}
 
-\protect\phantomsection\label{re16a}{}
 
-\subsubsection*{\texorpdfstring{\hyperref[re16q]{Chapter 16 Review Exercise}}{Chapter 16 Review Exercise}}\label{chapter-16-review-exercise}
-\addcontentsline{toc}{subsubsection}{{Chapter 16 Review Exercise}}
+[]{#re16a}
+
+#### [Chapter 16 Review Exercise](#re16q) {-}
 
 \begin{enumerate}
     \item $5\leqslant5\implies\text{ reject }H_0$
@@ -25410,16 +25057,14 @@ The website wishes to allow users the ability to input the number of miles in th
 
 \endgroup
 
-\subsection*{Chapter 17 - Mann Whitney Rank Sum Test}\label{chapter-17---mann-whitney-rank-sum-test}
-\addcontentsline{toc}{subsection}{Chapter 17 - Mann Whitney Rank Sum Test}
+### Chapter 17 - Mann Whitney Rank Sum Test {-}
 
 \begingroup
 \footnotesize
 
-\protect\phantomsection\label{ex171a}{}
+[]{#ex171a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex171q]{Exercise 17.1}}{Exercise 17.1}}\label{exercise-17.1-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 17.1}}
+#### [Exercise 17.1](#ex171q) {-}
 
 \begin{enumerate}
     \item 
@@ -25441,10 +25086,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{enumerate}
 \end{enumerate}
 
-\protect\phantomsection\label{ex172a}{}
+[]{#ex172a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex172q]{Exercise 17.2}}{Exercise 17.2}}\label{exercise-17.2-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 17.2}}
+#### [Exercise 17.2](#ex172q) {-}
 
 \begin{enumerate}
     \item 
@@ -25461,10 +25105,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{enumerate}
 \end{enumerate}
 
-\protect\phantomsection\label{ex173a}{}
+[]{#ex173a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex173q]{Exercise 17.3}}{Exercise 17.3}}\label{exercise-17.3-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 17.3}}
+#### [Exercise 17.3](#ex173q) {-}
 
 \begin{enumerate}
     \item 
@@ -25497,10 +25140,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{enumerate}
 \end{enumerate}
 
-\protect\phantomsection\label{re17a}{}
+[]{#re17a}
 
-\subsubsection*{\texorpdfstring{\hyperref[re17q]{Chapter 17 Review Exercise}}{Chapter 17 Review Exercise}}\label{chapter-17-review-exercise}
-\addcontentsline{toc}{subsubsection}{{Chapter 17 Review Exercise}}
+#### [Chapter 17 Review Exercise](#re17q) {-}
 
 \begin{enumerate}
     \item $34>29\implies\text{ do not reject }H_0$
@@ -25521,16 +25163,14 @@ The website wishes to allow users the ability to input the number of miles in th
 
 \endgroup
 
-\subsection*{Chapter 18 - Further Linear Regression}\label{chapter-18---further-linear-regression}
-\addcontentsline{toc}{subsection}{Chapter 18 - Further Linear Regression}
+### Chapter 18 - Further Linear Regression {-}
 
 \begingroup
 \footnotesize
 
-\protect\phantomsection\label{ex181a}{}
+[]{#ex181a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex181q]{Exercise 18.1}}{Exercise 18.1}}\label{exercise-18.1-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 18.1}}
+#### [Exercise 18.1](#ex181q) {-}
 
 \begin{enumerate}
     \begin{multicols}{3}
@@ -25544,10 +25184,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{multicols}
 \end{enumerate}
 
-\protect\phantomsection\label{ex182a}{}
+[]{#ex182a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex182q]{Exercise 18.2}}{Exercise 18.2}}\label{exercise-18.2-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 18.2}}
+#### [Exercise 18.2](#ex182q) {-}
 
 \begin{enumerate}
     \item
@@ -25571,10 +25210,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{enumerate}
 \end{enumerate}
 
-\protect\phantomsection\label{ex183a}{}
+[]{#ex183a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex183q]{Exercise 18.3}}{Exercise 18.3}}\label{exercise-18.3-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 18.3}}
+#### [Exercise 18.3](#ex183q) {-}
 
 \begin{multicols}{2}
 \begin{enumerate}
@@ -25585,10 +25223,9 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex184a}{}
+[]{#ex184a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex184q]{Exercise 18.4}}{Exercise 18.4}}\label{exercise-18.4-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 18.4}}
+#### [Exercise 18.4](#ex184q) {-}
 
 \begin{multicols}{2}
 \begin{enumerate}
@@ -25599,10 +25236,9 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex185a}{}
+[]{#ex185a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex185q]{Exercise 18.5}}{Exercise 18.5}}\label{exercise-18.5-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 18.5}}
+#### [Exercise 18.5](#ex185q) {-}
 
 \begin{enumerate}
     \item
@@ -25626,10 +25262,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{enumerate}
 \end{enumerate}
 
-\protect\phantomsection\label{ex186a}{}
+[]{#ex186a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex186q]{Exercise 18.6}}{Exercise 18.6}}\label{exercise-18.6-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 18.6}}
+#### [Exercise 18.6](#ex186q) {-}
 
 \begin{enumerate}
     \begin{multicols}{3}
@@ -25645,10 +25280,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{multicols}
 \end{enumerate}
 
-\protect\phantomsection\label{ex187a}{}
+[]{#ex187a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex187q]{Exercise 18.7}}{Exercise 18.7}}\label{exercise-18.7-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 18.7}}
+#### [Exercise 18.7](#ex187q) {-}
 
 \begin{enumerate}
     \item The residual plot shows a random scatter of points centred on zero ($\text{E}(\epsilon)=0$) with constant variance ($\text{V}(\epsilon)=\sigma^2$) which suggests the linear regression model is suitable.
@@ -25659,10 +25293,9 @@ The website wishes to allow users the ability to input the number of miles in th
     \item The residual plot shows a random scatter of points centred on zero ($\text{E}(\epsilon)=0$) with constant variance ($\text{V}(\epsilon)\ne\sigma^2$) which suggests the linear regression model is suitable.
 \end{enumerate}
 
-\protect\phantomsection\label{ex188a}{}
+[]{#ex188a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex188q]{Exercise 18.8}}{Exercise 18.8}}\label{exercise-18.8-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 18.8}}
+#### [Exercise 18.8](#ex188q) {-}
 
 \begin{multicols}{4}
 \begin{enumerate}
@@ -25673,10 +25306,9 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{enumerate}
 \end{multicols}
 
-\protect\phantomsection\label{ex189a}{}
+[]{#ex189a}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex189q]{Exercise 18.9}}{Exercise 18.9}}\label{exercise-18.9-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 18.9}}
+#### [Exercise 18.9](#ex189q) {-}
 
 \begin{enumerate}
     \item The residual plot shows a clear U-shaped curve which suggests that a linear model is not suitable for the diameter and maximum mass held before breaking of the cables.
@@ -25684,13 +25316,14 @@ The website wishes to allow users the ability to input the number of miles in th
     \item The residual plot appears to show a pattern with variable variance so the linear model fitted is not suitable.
 \end{enumerate}
 
-\protect\phantomsection\label{re18a}{}
+[]{#re18a}
 
-\subsubsection*{\texorpdfstring{\hyperref[re18q]{Chapter 18 Review Exercise}}{Chapter 18 Review Exercise}}\label{chapter-18-review-exercise}
-\addcontentsline{toc}{subsubsection}{{Chapter 18 Review Exercise}}
+#### [Chapter 18 Review Exercise](#re18q) {-}
 
 \endgroup
 
-\bibliography{book.bib,packages.bib}
 
-\end{document}
+
+
+<!--chapter:end:Answers.Rmd-->
+
