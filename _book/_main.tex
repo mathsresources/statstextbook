@@ -7121,57 +7121,53 @@ This suggests that an increase by \(1\) in the theory is associated with an incr
 \end{center}
 It is determined from inspecting a scatterplot that there appears to be a linear relationship between the variables.\\
 Obtain the equation of the least squares regression line of $y$ on $x$.
-\item 31 randomly selected black cherry trees have their diameter at a set distance from the ground measured, in inches, with the height of each tree also measured, in feet. The equation of the least squares regression line for $y$ on $x$ is obtained, and shown on the scatterplot below.
+\item 26 randomly selected trees in a forest have their diameter at a set distance from the ground measured, in inches, and the height of each tree also measured, in feet. The equation of the least squares regression line for $y$ on $x$ is obtained, and shown on the scatterplot below.
     \begin{center}
     \begin{tikzpicture}
-        \draw (0,0) -- (6.5,0);
+        \draw (0,0) -- (6.2,0);
         \foreach \x in {0,1,...,6}{
         \draw (\x,-0.1) -- (\x,0) node[below] {\x};
         }
-        \node at (3.25,-0.75) {Tree diameter (inches)};
+        \node at (3.1,-1) {Tree diameter (inches)};
         \draw (0,0) -- (0,3.5);
-        \foreach \y in {60,68,...,84}{
-        \draw (-0.1,0.125*\y-0.125*60) -- (0,0.125*\y-0.125*60) node[left] {\y};
+        \foreach \y in {40,50,...,70}{
+        \draw (-0.1,0.1*\y-4) -- (0,0.1*\y-4) node[left] {\y};
         }
-        \node[rotate=90] at (-1,2) {Tree height (feet)};
-        \draw[black!70,fill=black!70] (0.15,1.25) circle (0.03);
-\draw[black!70,fill=black!70] (0.3,0.625) circle (0.03);
-\draw[black!70,fill=black!70] (0.4,0.375) circle (0.03);
-\draw[black!70,fill=black!70] (1.25,1.5) circle (0.03);
-\draw[black!70,fill=black!70] (1.35,2.625) circle (0.03);
-\draw[black!70,fill=black!70] (1.4,2.875) circle (0.03);
-\draw[black!70,fill=black!70] (1.5,0.75) circle (0.03);
-\draw[black!70,fill=black!70] (1.5,1.875) circle (0.03);
-\draw[black!70,fill=black!70] (1.55,2.5) circle (0.03);
-\draw[black!70,fill=black!70] (1.6,1.875) circle (0.03);
-\draw[black!70,fill=black!70] (1.65,2.375) circle (0.03);
-\draw[black!70,fill=black!70] (1.7,2) circle (0.03);
-\draw[black!70,fill=black!70] (1.7,2) circle (0.03);
-\draw[black!70,fill=black!70] (1.85,1.125) circle (0.03);
-\draw[black!70,fill=black!70] (2,1.875) circle (0.03);
-\draw[black!70,fill=black!70] (2.45,1.75) circle (0.03);
-\draw[black!70,fill=black!70] (2.45,3.125) circle (0.03);
-\draw[black!70,fill=black!70] (2.65,3.25) circle (0.03);
-\draw[black!70,fill=black!70] (2.85,1.375) circle (0.03);
-\draw[black!70,fill=black!70] (2.9,0.5) circle (0.03);
-\draw[black!70,fill=black!70] (3,2.25) circle (0.03);
-\draw[black!70,fill=black!70] (3.1,2.5) circle (0.03);
-\draw[black!70,fill=black!70] (3.25,1.75) circle (0.03);
-\draw[black!70,fill=black!70] (4,1.5) circle (0.03);
-\draw[black!70,fill=black!70] (4.15,2.125) circle (0.03);
-\draw[black!70,fill=black!70] (4.65,2.625) circle (0.03);
-\draw[black!70,fill=black!70] (4.75,2.75) circle (0.03);
-\draw[black!70,fill=black!70] (4.95,3.5) circle (0.03);
-\draw[black!70,fill=black!70] (5,1.5) circle (0.03);
-\draw[black!70,fill=black!70] (6.3,3.375) circle (0.03);  
-\draw[thick] (0,1.3) -- (6.5,2.774);
+        \node[rotate=90] at (-1,1.5) {Tree height (feet)};
+        \draw[fill] (1.9105299,0.770579) circle (0.04);
+\draw[fill] (1.3785325,0.69114) circle (0.04);
+\draw[fill] (3.2509885,1.498287) circle (0.04);
+\draw[fill] (2.6561971,1.476465) circle (0.04);
+\draw[fill] (2.3019625,1.029073) circle (0.04);
+\draw[fill] (4.1137320,2.031838) circle (0.04);
+\draw[fill] (4.6348381,1.993941) circle (0.04);
+\draw[fill] (4.0255839,1.979729) circle (0.04);
+\draw[fill] (3.0719203,1.107316) circle (0.04);
+\draw[fill] (3.0112276,1.693147) circle (0.04);
+\draw[fill] (1.6596826,0.769995) circle (0.04);
+\draw[fill] (0.6852867,0.305975) circle (0.04);
+\draw[fill] (4.1634116,2.721377) circle (0.04);
+\draw[fill] (2.0116826,0.902836) circle (0.04);
+\draw[fill] (2.2682249,1.229465) circle (0.04);
+\draw[fill] (2.4287568,1.118901) circle (0.04);
+\draw[fill] (0.8326677,0.405922) circle (0.04);
+\draw[fill] (5.1418401,2.338565) circle (0.04);
+\draw[fill] (2.0077846,0.88656) circle (0.04);
+\draw[fill] (2.8900263,1.346886) circle (0.04);
+\draw[fill] (3.7153178,1.717603) circle (0.04);
+\draw[fill] (3.4376590,1.858157) circle (0.04);
+\draw[fill] (4.4480587,2.256075) circle (0.04);
+\draw[fill] (4.3065294,1.907684) circle (0.04);
+\draw[fill] (3.4964072,1.882385) circle (0.04);
+\draw[fill] (0.9111540,0.914811) circle (0.04);
+\draw[thick] (0.5,0.1*40.57-4+0.473*0.5) -- (5.5,0.1*40.57-4+0.473*5.5);
 \node[right] at (9,3.5) {Summary statistics:};
-\node[right] at (9,2.9) {$\sum x=410.7$};
-\node[right] at (9,2.3) {$\sum x^2=5736$};
-\node[right] at (9,1.7) {$\sum y=2356$};
-\node[right] at (9,1.1) {$\sum y^2=180274$};
-\node[right] at (9,0.5) {$\sum xy=31524$};
-\node[right] at (9,-0.1) {$n=31$};
+\node[right] at (9,2.9) {$\sum x=74.76$};
+\node[right] at (9,2.3) {$\sum x^2=253.76$};
+\node[right] at (9,1.7) {$\sum y=1408.3$};
+\node[right] at (9,1.1) {$\sum y^2=77277$};
+\node[right] at (9,0.5) {$\sum xy=4233.1$};
+\node[right] at (9,-0.1) {$n=26$};
     \end{tikzpicture}
 \end{center}
     Calculate the equation of the least squares regression line of $y$ on $x$.
@@ -18837,7 +18833,146 @@ Students sitting a biology exam are given a mark for each of the two papers: the
 \subsubsection*{\texorpdfstring{\hyperref[ex181a]{Exercise 18.1}}{Exercise 18.1}}\label{exercise-18.1}
 \addcontentsline{toc}{subsubsection}{{Exercise 18.1}}
 
-\newpage
+\begin{enumerate}
+    \item Copy and complete the table below:
+    \begin{center}
+    \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{|c|c|c|c|c|}
+             \hline
+             Regression Line $\hat{Y}=ax+b$ & Observed $x$ & Observed $y$ & Fitted $\hat{Y}$ & Residual $\epsilon$\\
+             \hline
+             $\hat{Y}=5.3+0.1x$ & 7 & 8 & &  \\
+             \hline
+             $\hat{Y}=-0.7+0.3x$ & 6.1 & 1.04 & &  \\
+             \hline
+             $\hat{Y}=180-2.5x$ & 40 & 178 &  & \\
+             \hline
+             $\hat{Y}=-45+3.5x$ & 200 & & & $-$30 \\
+             \hline
+             $\hat{Y}=100+20x$ & -15 & & & $+$50 \\
+             \hline
+        \end{tabular}
+    \renewcommand{\arraystretch}{1}
+    \end{center}
+    \item The relationship between the number of calories ($x$) and the carbohydrate content ($y$ grams) of different types of drinks available in a city's coffee shops can be described using the least squares regression line:
+        \[\hat{Y}=5.5572+0.6361x\]
+    \begin{enumerate}
+        \item Calculate the expected carbohydrate content for a small cappuccino, which contains 50 calories.
+        \item Determine the value of the residuals for each of the following:
+        \begin{enumerate}
+            \item An extra large white chocolate mocha (450 calories and 310 grams of carbohydrates).
+            \item A large caramel macchiato (240 calories and 150 grams of carbohydrates).
+            \item A double espresso (10 calories and 1 gram of carbohydrates).
+        \end{enumerate}
+    \end{enumerate}
+    \item The heights ($x$ cm) and weights ($y$ kg) are recorded for a sample of male professional footballers. 
+    \begin{center}
+        \begin{tikzpicture}[scale=0.8]
+        \draw[-stealth] (0,0) -- (10,0) node[below] {$x$};
+        \draw[-stealth] (0,0) -- (0,5.5) node[left] {$y$};
+        \draw[thick] (0.2*160-32,0.1*58.6-5) -- (0.2*205-32,0.1*93-5) node[right] {$\hat{Y}=-63.77+0.7649x$};
+        \foreach \x in {160,170,...,200}{
+        \draw (0.2*\x-32,0) -- (0.2*\x-32,-0.1) node[below] {\x};
+        }
+        \node[below] at (0.2*185-32,-0.8) {height (cm)};
+        \foreach \y in {50,60,...,100}{
+        \draw (0,0.1*\y-5) -- (-0.1,0.1*\y-5) node[left] {\y};
+        }
+        \node[above,rotate=90] at (-1,3) {weight (kg)};
+            \draw[fill] (3.6,2.3) circle (0.04);
+\draw[fill] (2,2.5) circle (0.04);
+\draw[fill] (5.2,2) circle (0.04);
+\draw[fill] (0.8,1.1) circle (0.04);
+\draw[fill] (3.8,1.9) circle (0.04);
+\draw[fill] (2.6,2.1) circle (0.04);
+\draw[fill] (2,1.5) circle (0.04);
+\draw[fill] (2.8,1.2) circle (0.04);
+\draw[fill] (3.4,2.2) circle (0.04);
+\draw[fill] (1.4,1.5) circle (0.04);
+\draw[fill] (1.6,1.9) circle (0.04);
+\draw[fill] (3,2.5) circle (0.04);
+\draw[fill] (6.2,3.9) circle (0.04);
+\draw[fill] (3.6,2.3) circle (0.04);
+\draw[fill] (3.2,1.6) circle (0.04);
+\draw[fill] (2.6,1.9) circle (0.04);
+\draw[fill] (3,1.8) circle (0.04);
+\draw[fill] (2.4,1.7) circle (0.04);
+\draw[fill] (2,0.5) circle (0.04);
+\draw[fill] (2.6,1.4) circle (0.04);
+\draw[fill] (3.8,2) circle (0.04);
+\draw[fill] (4.6,2.3) circle (0.04);
+\draw[fill] (6.6,3.3) circle (0.04);
+\draw[fill] (3,2.3) circle (0.04);
+\draw[fill] (2.8,1.9) circle (0.04);
+\draw[fill] (4,3) circle (0.04);
+\draw[fill] (3,1.9) circle (0.04);
+\draw[fill] (4,2.5) circle (0.04);
+\draw[fill] (3.2,2.6) circle (0.04);
+\draw[fill] (4.4,2) circle (0.04);
+\draw[fill] (1.2,1) circle (0.04);
+\draw[fill] (2,1.8) circle (0.04);
+\draw[fill] (5,2.4) circle (0.04);
+\draw[fill] (4,2.8) circle (0.04);
+\draw[fill] (5.8,3.2) circle (0.04);
+\draw[fill] (1.6,1.6) circle (0.04);
+\draw[fill] (4.2,1.5) circle (0.04);
+\draw[fill] (5.6,3.3) circle (0.04);
+\draw[fill] (5,3.5) circle (0.04);
+\draw[fill] (2.2,1.2) circle (0.04);
+\draw[fill] (3.8,2.2) circle (0.04);
+\draw[fill] (2.8,1.7) circle (0.04);
+\draw[fill] (3.2,3.1) circle (0.04);
+\draw[fill] (3.6,2) circle (0.04);
+\draw[fill] (1.6,1.5) circle (0.04);
+\draw[fill] (4.2,2.3) circle (0.04);
+\draw[fill] (2.4,1.7) circle (0.04);
+\draw[fill] (5.2,2.9) circle (0.04);
+\draw[fill] (4.6,3.4) circle (0.04);
+\draw[fill] (7.8,4) circle (0.04);
+\draw[fill] (0.4,1.9) circle (0.04);
+\draw[fill] (1.6,1.7) circle (0.04);
+\draw[fill] (4.2,2.3) circle (0.04);
+\draw[fill] (3.6,2.9) circle (0.04);
+\draw[fill] (5.2,2) circle (0.04);
+\draw[fill] (3.2,2) circle (0.04);
+\draw[fill] (5.2,2.6) circle (0.04);
+\draw[fill] (4.4,2.2) circle (0.04);
+\draw[fill] (8.8,5.2) circle (0.04);
+\draw[fill] (3,1.8) circle (0.04);
+\draw[fill] (4.2,1.9) circle (0.04);
+\draw[fill] (3.2,2) circle (0.04);
+\draw[fill] (2,1.6) circle (0.04);
+\draw[fill] (5.6,2.1) circle (0.04);
+\draw[fill] (5.6,3.2) circle (0.04);
+\draw[fill] (3.2,2) circle (0.04);
+\draw[fill] (4.8,2.4) circle (0.04);
+\draw[fill] (2.2,2.7) circle (0.04);
+\draw[fill] (5.2,3.3) circle (0.04);
+        \end{tikzpicture}
+    \end{center}
+    A linear model is fit to the data as shown with a regression line equation of:
+    \begin{center}
+        \texttt{weight = -63.77 + 0.7649 $\times$ height}
+    \end{center}
+    \begin{enumerate}
+        \item State whether each of the following have positive or negative residuals:
+        \begin{enumerate}
+            \begin{multicols}{2}
+                \item The tallest footballer shown.
+                \item The lightest footballer shown.
+            \end{multicols}
+        \end{enumerate}
+        \item Find the value of the residual for a footballer with:
+        \begin{enumerate}
+        \begin{multicols}{2}
+            \item Height 186cm and weight 70kg.
+            \item Height 191cm and weight 89kg.
+        \end{multicols}
+    \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
 
 \section{Estimating the Error Variance}\label{estimating-the-error-variance}
 
@@ -18942,6 +19077,118 @@ Students sitting a biology exam are given a mark for each of the two papers: the
 
 \subsubsection*{\texorpdfstring{\hyperref[ex182a]{Exercise 18.2}}{Exercise 18.2}}\label{exercise-18.2}
 \addcontentsline{toc}{subsubsection}{{Exercise 18.2}}
+
+\begin{enumerate}
+    \item A bivariate random sample has summary statistics:
+\begin{center}
+  \begin{tabular}{ccccccc}
+      $S_{xx}=28.92$ & \quad & $S_{yy}=495.0$ & \quad & $S_{xy}=105.3$ & \quad & $n=14$
+  \end{tabular}
+\end{center}
+It is determined that linear relationship appears to exist between the variables. 
+\begin{enumerate}
+        \item Obtain an estimate $s^2$ for the error variance, $\sigma^2$.
+        \item Hence determine the value of $s$ for this bivariate data.
+    \end{enumerate}
+\item 26 randomly selected trees in a forest have their diameter ($x$) at a set distance from the ground measured, in inches, and the height ($y$) of each tree also measured, in feet. The equation of the least squares regression line for $y$ on $x$ is obtained, and shown on the scatterplot below.
+    \begin{center}
+    \begin{tikzpicture}[scale=1.1]
+        \draw (0,0) -- (6.2,0);
+        \foreach \x in {0,1,...,6}{
+        \draw (\x,-0.1) -- (\x,0) node[below] {\x};
+        }
+        \node at (3.1,-1) {Tree diameter (inches)};
+        \draw (0,0) -- (0,3.5);
+        \foreach \y in {40,50,...,70}{
+        \draw (-0.1,0.1*\y-4) -- (0,0.1*\y-4) node[left] {\y};
+        }
+        \node[rotate=90] at (-1,1.5) {Tree height (feet)};
+        \draw[fill] (1.9105299,0.770579) circle (0.03);
+\draw[fill] (1.3785325,0.69114) circle (0.03);
+\draw[fill] (3.2509885,1.498287) circle (0.03);
+\draw[fill] (2.6561971,1.476465) circle (0.03);
+\draw[fill] (2.3019625,1.029073) circle (0.03);
+\draw[fill] (4.1137320,2.031838) circle (0.03);
+\draw[fill] (4.6348381,1.993941) circle (0.03);
+\draw[fill] (4.0255839,1.979729) circle (0.03);
+\draw[fill] (3.0719203,1.107316) circle (0.03);
+\draw[fill] (3.0112276,1.693147) circle (0.03);
+\draw[fill] (1.6596826,0.769995) circle (0.03);
+\draw[fill] (0.6852867,0.305975) circle (0.03);
+\draw[fill] (4.1634116,2.721377) circle (0.03);
+\draw[fill] (2.0116826,0.902836) circle (0.03);
+\draw[fill] (2.2682249,1.229465) circle (0.03);
+\draw[fill] (2.4287568,1.118901) circle (0.03);
+\draw[fill] (0.8326677,0.405922) circle (0.03);
+\draw[fill] (5.1418401,2.338565) circle (0.03);
+\draw[fill] (2.0077846,0.88656) circle (0.03);
+\draw[fill] (2.8900263,1.346886) circle (0.03);
+\draw[fill] (3.7153178,1.717603) circle (0.03);
+\draw[fill] (3.4376590,1.858157) circle (0.03);
+\draw[fill] (4.4480587,2.256075) circle (0.03);
+\draw[fill] (4.3065294,1.907684) circle (0.03);
+\draw[fill] (3.4964072,1.882385) circle (0.03);
+\draw[fill] (0.9111540,0.914811) circle (0.03);
+\draw[thick] (0.5,0.1*40.57-4+0.473*0.5) -- (5.5,0.1*40.57-4+0.473*5.5);
+\node[right] at (8,3.5) {Summary statistics:};
+\node[right] at (8,2.9) {$\sum x=74.76$};
+\node[right] at (8,2.3) {$\sum x^2=253.76$};
+\node[right] at (8,1.7) {$\sum y=1408.3$};
+\node[right] at (8,1.1) {$\sum y^2=77277$};
+\node[right] at (8,0.5) {$\sum xy=4233.1$};
+\node[right] at (8,-0.1) {$n=26$};
+    \end{tikzpicture}
+\end{center}
+    \begin{enumerate}
+        \item Obtain an estimate $s^2$ for the error variance, $\sigma^2$.
+        \item Hence determine the value of $s$ for this bivariate data.
+    \end{enumerate}
+\item A running website randomly selected eleven amateur runners who recently completed a marathon and asked them to complete a survey which included their finishing time in the marathon and information about their training routine. The scatterplot below shows, for each runner, their finishing time ($x$, in hours) and the total distance they ran in the final four weeks of their training ($y$, in miles).
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+\foreach \x in {1,2,...,7}{
+\draw (\x,0) -- (\x,-0.1);
+\node[below] at (\x,0) {\x};
+}
+\foreach \y in {0,25,...,175}{
+\draw (1,0.02*\y) -- (0.9,0.02*\y);
+\node[left] at (1,0.02*\y) {\y};
+}
+\draw[black!70,fill=black!70] (2.4,2.7) circle (0.03);
+\draw[black!70,fill=black!70] (2.9,2.84) circle (0.03);
+\draw[black!70,fill=black!70] (3.1,2.42) circle (0.03);
+\draw[black!70,fill=black!70] (3.7,2.3) circle (0.03);
+\draw[black!70,fill=black!70] (3.9,1.9) circle (0.03);
+\draw[black!70,fill=black!70] (4,2.08) circle (0.03);
+\draw[black!70,fill=black!70] (4.2,1.88) circle (0.03);
+\draw[black!70,fill=black!70] (4.4,1.74) circle (0.03);
+\draw[black!70,fill=black!70] (4.7,1.62) circle (0.03);
+\draw[black!70,fill=black!70] (5,1.18) circle (0.03);
+\draw[black!70,fill=black!70] (6.2,1.3) circle (0.03);
+\draw[thick] (2,2.96) -- (6.5,0.84);
+\draw[-stealth] (1,0) -- (7,0) node[right] {$x$};
+\draw[-stealth] (1,0) -- (1,3.6) node[above] {$y$};
+\node at (4,-1) {Time (hours)};
+\node at (-0.7,2.5) {Distance};
+\node at (-0.7,2) {(miles)};
+\node[right] at (-4.5,4) {Summary statistics:};
+\node[right] at (-4.5,3.4) {$\sum x=44.5$};
+\node[right] at (-4.5,2.8) {$\sum x^2=191.21$};
+\node[right] at (-4.5,2.2) {$\sum y=1098$};
+\node[right] at (-4.5,1.6) {$\sum y^2=116768$};
+\node[right] at (-4.5,1) {$\sum xy=4179.2$};
+\node[right] at (-4.5,0.4) {$n=11$};
+\end{tikzpicture}
+\end{center}  
+\vspace{-1cm}
+\begin{enumerate}
+        \item Make a comment on the scatterplot.
+        \item Obtain an estimate $s^2$ for the error variance, $\sigma^2$.
+        \item Determine the equation of the least squares regression line.
+        \item Calculate the correlation coefficient for the data and comment on its value.
+        \item A runner, not shown, completed the marathon in 3 hours and 30 minutes, after running a total of 110 miles in the four weeks before the race. Calculate the residual for this runner.
+    \end{enumerate}
+\end{enumerate}
 
 \newpage
 
@@ -19085,80 +19332,84 @@ The conclusion from the example above could also be phrased as:
 \addcontentsline{toc}{subsubsection}{{Exercise 18.3}}
 
 \begin{enumerate}
-    \item Calculate the sum of squared residuals and hence estimate the error variance for each of Contexts 1 to 5.
-    \item The age in months of 30 randomly selected primary school pupils ($x$) and the length of their right foot in centimetres ($y$) were recorded, with the following results:
-     \begin{center}
-    \begin{tikzpicture}
-        \node[right] at (7,2.9) {Summary data for sample:};
-        \node[right] at (7,2.4) {$\Sigma x=2964$};
-        \node[right] at (7,1.9) {$\Sigma x^2=294248$};
-        \node[right] at (7,1.4) {$\Sigma y=577.3$};
-        \node[right] at (7,0.9) {$\Sigma y^2=11152.71$};
-        \node[right] at (7,0.4) {$\Sigma xy=57262.7$};
-        \node[right] at (7,-0.1) {$n=30$};
-        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
-        \draw[-stealth] (0,0.1) -- (0,3.25) node[above] {$y$}; 
-        \node at (2.5,-1) {Age (months)};
-        \node at (-2,1.75) {Foot length};
-        \node at (-2,1.25) {(cm)};
-        \foreach \x in {0,1,...,5}{
-        \draw (\x,0) -- (\x,-0.1);
+    \item A bivariate random sample has summary statistics:
+\begin{center}
+  \begin{tabular}{ccccccc}
+      $S_{xx}=28.92$ & \quad & $S_{yy}=495.0$ & \quad & $S_{xy}=105.3$ & \quad & $n=14$
+  \end{tabular}
+\end{center}
+Calculate the coefficient of determination and give a suitable interpretation for this value. 
+\item A seller on an online auction site has a stock of used digital cameras, all having been used for somewhere between 2 and 12 years. For each camera, the total number of photos taken (the \textit{shutter count}) is determined using special software. A scatterplot of the results is shown below. A correlation coefficient is calculated for the data of $0.718$.
+    \begin{center}
+    \begin{tikzpicture}[scale=0.8]
+        \draw (0,0) -- (12,0);
+        \foreach \x in {0,1,...,12}{
+        \draw (\x,-0.1) -- (\x,0) node[below] {\x};
         }
-        \foreach \y in {0.5,1,...,3}{
-        \draw (0,\y) -- (-0.1,\y);
+        \node at (6,-1) {Time used for (years)};
+        \draw (0,0) -- (0,5);
+        \foreach \y in {0,40,...,240}{
+        \draw (-0.1,0.02*\y) -- (0,0.02*\y) node[left] {\y};
         }
-        \node[left] at (0,0.5) {17};
-        \node[left] at (0,1) {18};
-        \node[left] at (0,1.5) {19};
-        \node[left] at (0,2) {20};
-        \node[left] at (0,2.5) {21};
-        \node[left] at (0,3) {22};
-        \node[below] at (0,0) {85};
-        \node[below] at (1,0) {90};
-        \node[below] at (2,0) {95};
-        \node[below] at (3,0) {100};
-        \node[below] at (4,0) {105};
-        \node[below] at (5,0) {110};
-\draw (1,1) circle (0.05);
-\draw (0.2,0.75) circle (0.05);
-\draw (4,2.1) circle (0.05);
-\draw (1.2,1.2) circle (0.05);
-\draw (0.4,0.699999999999999) circle (0.05);
-\draw (3.4,2.25) circle (0.05);
-\draw (0.6,0.75) circle (0.05);
-\draw (2,1.05) circle (0.05);
-\draw (4.2,2.2) circle (0.05);
-\draw (3.8,2.65) circle (0.05);
-\draw (1.8,1.15) circle (0.05);
-\draw (0.8,0.949999999999999) circle (0.05);
-\draw (3,1.5) circle (0.05);
-\draw (5,2.65) circle (0.05);
-\draw (4.4,2.05) circle (0.05);
-\draw (2.6,1.65) circle (0.05);
-\draw (3,1.75) circle (0.05);
-\draw (2,1.1) circle (0.05);
-\draw (4.2,2.15) circle (0.05);
-\draw (2.4,1.2) circle (0.05);
-\draw (4.8,2.55) circle (0.05);
-\draw (2.4,0.800000000000001) circle (0.05);
-\draw (3,1.6) circle (0.05);
-\draw (1.8,1.4) circle (0.05);
-\draw (2.8,1.75) circle (0.05);
-\draw (4.2,2) circle (0.05);
-\draw (3.4,2.2) circle (0.05);
-\draw (2,1.2) circle (0.05);
-\draw (3.8,2.35) circle (0.05);
-\draw (4.6,2) circle (0.05);
-\draw[semithick] (0.2*86-17,-8+0.5*16.986) -- (0.2*110-17,-8+0.5*20.986);
+        \node[rotate=90] at (-1.5,2.5) {Shutter count (1000s)};
+        \draw[fill] (2.508951,0.6451956) circle (0.04);
+\draw[fill] (9.714307,2.9647776) circle (0.04);
+\draw[fill] (9.569008,2.1042426) circle (0.04);
+\draw[fill] (7.268574,1.573807) circle (0.04);
+\draw[fill] (7.206802,1.0707652) circle (0.04);
+\draw[fill] (3.065248,1.8232118) circle (0.04);
+\draw[fill] (10.851609,3.0522744) circle (0.04);
+\draw[fill] (4.887548,2.0035418) circle (0.04);
+\draw[fill] (5.137478,1.2028036) circle (0.04);
+\draw[fill] (7.601205,2.6299626) circle (0.04);
+\draw[fill] (11.147960,3.43012) circle (0.04);
+\draw[fill] (6.584115,1.372305) circle (0.04);
+\draw[fill] (7.862420,2.142585) circle (0.04);
+\draw[fill] (2.693626,0.9625282) circle (0.04);
+\draw[fill] (5.211253,2.0635796) circle (0.04);
+\draw[fill] (7.685726,2.2079374) circle (0.04);
+\draw[fill] (8.058602,2.341819) circle (0.04);
+\draw[fill] (10.148348,1.9606018) circle (0.04);
+\draw[fill] (7.581803,1.71700) circle (0.04);
+\draw[fill] (9.189001,2.0807656) circle (0.04);
+\draw[fill] (8.581003,1.8187134) circle (0.04);
+\draw[fill] (7.890510,1.9076222) circle (0.04);
+\draw[fill] (4.154752,0.5478264) circle (0.04);
+\draw[fill] (6.385113,1.5288734) circle (0.04);
+\draw[fill] (5.184973,2.046625) circle (0.04);
+\draw[fill] (11.385195,2.9369504) circle (0.04);
+\draw[fill] (8.608347,2.20363) circle (0.04);
+\draw[fill] (5.351157,2.0786898) circle (0.04);
+\draw[fill] (7.056653,1.94687) circle (0.04);
+\draw[fill] (5.008728,1.2969188) circle (0.04);
+\draw[fill] (6.732449,1.9605508) circle (0.04);
+\draw[fill] (9.371964,2.4504972) circle (0.04);
+\draw[fill] (8.258763,1.9367106) circle (0.04);
+\draw[fill] (5.246074,1.2270958) circle (0.04);
+\draw[fill] (8.010611,2.2363078) circle (0.04);
+\draw[fill] (3.883770,1.24995) circle (0.04);
+\draw[fill] (8.002125,2.2142538) circle (0.04);
+\draw[fill] (5.373115,1.4885146) circle (0.04);
+\draw[fill] (8.457208,1.8678776) circle (0.04);
+\draw[fill] (6.312100,2.6993688) circle (0.04);
+\draw[fill] (5.023064,1.6103086) circle (0.04);
+\draw[fill] (7.861285,2.3503146) circle (0.04);
+\draw[fill] (8.176399,1.73557) circle (0.04);
+\draw[fill] (7.213514,2.6942954) circle (0.04);
+\draw[fill] (4.832261,1.588767) circle (0.04);
+\draw[fill] (7.238037,2.7131304) circle (0.04);
+\draw[fill] (7.640759,2.1611378) circle (0.04);
+\draw[thick] (0.5,0.02*24.2+0.02*0.5*10.335) -- (11.8,0.02*24.2+0.02*11.8*10.335);
     \end{tikzpicture}
 \end{center}
     \begin{enumerate}
-        \item Find the equation of the least squares regression line of $y$ on $x$.
-        \item Estimate the error variance.
+        \item Make a comment on what the scatterplot shows.
+        \item Interpret the correlation coefficient.
+        \item Calculate the coefficient of determination, and interpret it.
     \end{enumerate}
 \end{enumerate}
 
-\pagebreak
+\newpage
 
 \section{\texorpdfstring{Test for the Slope Parameter \(\beta\)}{Test for the Slope Parameter \textbackslash beta}}\label{test-for-the-slope-parameter-beta}
 
@@ -22202,7 +22453,7 @@ A second linear model was created between speed ($x$) and the square root of the
 \begin{enumerate}
     \item[(a)] Comment on the appropriateness of the linear model of $y$ on $x$.
     \item[(b)] Comment on the suitability of the new model of $\sqrt{y}$ on $x$.
-    \item[(c)] By calculating $\sqrt{\text{distance}}$ from the table, find the coefficient of determination for this new model and interpret its value.
+    \item[(c)] By first creating a new table for $x$ and $\sqrt{y}$ and finding summary statistics for this data, calculate the coefficient of determination for this new model and interpret its value.
     \item[(d)] Estimate the stopping distance at a speed of 50 kilometres per hour.
 \end{enumerate}
 
