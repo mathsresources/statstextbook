@@ -1,10 +1,11 @@
-x<-rtruncnorm(48,1,13,7,2)
-e<-rtruncnorm(48,-50,50,0,20)
-a<-30
-b<-10
+x<-c(1:20)
+e<-rtruncnorm(20,-15,15,0,5)
+a<-60
+b<- -0.3
 y<-a+b*x+e
-df_shutter <- data.frame(x,y)
+df_electrolyte <- data.frame(x,y)
 plot(x,y)
+cor.test(x,y)
 
 sums <- function(dfr){
   attach(dfr)
@@ -17,6 +18,6 @@ sums <- function(dfr){
   detach(dfr)
 }
 
-sums(df_shutter)
+sums(df_strings)
 
 

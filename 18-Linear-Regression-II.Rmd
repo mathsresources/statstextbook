@@ -1061,7 +1061,7 @@ The slope parameter $\beta$ can be *positive*, *negative* or *zero*. Where $\bet
 \begin{minipage}[c]{.33\textwidth}
   \centering
 \begin{centering}
-\begin{tcolorbox}[halign title=center,title=Test Statistic,center,colback=red!5,colframe=red!70!black,width=5cm,height=2.5cm]
+\begin{tcolorbox}[halign title=center,title=Test Statistic,center,colback=red!5,colframe=red!70!black,width=5cm,height=2.4cm]
 \vspace{-0.3cm}
 \[t_{n-2}=\dfrac{b\sqrt{S_{xx}}}{s}\]
 \end{tcolorbox}
@@ -1070,7 +1070,7 @@ The slope parameter $\beta$ can be *positive*, *negative* or *zero*. Where $\bet
   \centering
 \begin{minipage}[c]{.66\textwidth}
   \centering
-\begin{tcolorbox}[halign title=center,title=Conditions,center,colback=red!5,colframe=red!70!black,width=12cm,height=2.5cm]
+\begin{tcolorbox}[halign title=center,title=Conditions,center,colback=red!5,colframe=red!70!black,width=12cm,height=2.4cm]
 \begin{itemize}
     \item $\varepsilon_i$ are independent and identically distributed as $\text{N}(0,\sigma^2)$.
     \item The data was obtained through random sampling.
@@ -1081,20 +1081,24 @@ The slope parameter $\beta$ can be *positive*, *negative* or *zero*. Where $\bet
 
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
-\textbf{Problem:} A bivariate sample of 8 values produces a regression line with equation $\hat{Y}=7.9-0.8456x$. The following summary statistics were also obtained:
+\textbf{Problem:} A bivariate sample has summary statistics:
 
-\vspace{-0.3cm}
+\vspace{-0.15cm}
+
 \begin{center}
-  \begin{tabular}{ccccccccccc}
-      $S_{xx}=157.875$ & \quad & $S_{yy}=188$ & \quad & $S_{xy}=-133.5$
+  \begin{tabular}{ccccccc}
+      $S_{xx}=157.875$ & \qquad & $S_{yy}=188$ & \qquad & $S_{xy}=-133.5$ & \qquad & $n=8$
   \end{tabular}
 \end{center}
 
-\vspace{-0.3cm}
-Test at the $\alpha=0.1$ level for evidence that a linear regression model would be useful for prediction.
+\vspace{-0.15cm}
+
+Test at the 5\% significance level whether a linear regression model would be useful for prediction.
 
 \tcblower
 \textbf{Solution:}\\
+
+\vspace{-0.25cm}
 
 \begin{math}
 \begin{array}{ll}
@@ -1103,7 +1107,7 @@ Test at the $\alpha=0.1$ level for evidence that a linear regression model would
     \end{array}
 \left]
     \begin{array}{l}
-      \alpha=0.1\\
+      \alpha=0.05\\
       \textnormal{Two-tailed}
     \end{array}
   \right.
@@ -1111,7 +1115,9 @@ Test at the $\alpha=0.1$ level for evidence that a linear regression model would
 
 \vspace{0.3cm}
 
-$\text{\text{SSR}}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=188-\dfrac{(-133.5)^2}{157.875}=75.11, \quad s=\sqrt{\dfrac{\text{\text{SSR}}}{n-2}}=\sqrt{\dfrac{75.11}{8-2}}=3.538$\\[2em]
+$b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{-133.5}{157.875}=-0.8456$\\[0.5em]
+
+$\text{\text{SSR}}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=188-\dfrac{(-133.5)^2}{157.875}=75.11, \quad s=\sqrt{\dfrac{\text{\text{SSR}}}{n-2}}=\sqrt{\dfrac{75.11}{8-2}}=3.538$\\[1.4em]
 
 Test statistic: $t=\dfrac{b\sqrt{S_{xx}}}{s}=\dfrac{-0.8456\times \sqrt{157.875}}{3.538}=-3.003$
 
@@ -1135,25 +1141,27 @@ Test statistic: $t=\dfrac{b\sqrt{S_{xx}}}{s}=\dfrac{-0.8456\times \sqrt{157.875}
   grid = major,
   hide y axis
   ]
-\addplot [draw=none, fill=black!70, domain=-3:-1.64] {gauss(x, 0, 1)} \closedcycle;
-\addplot [draw=none, fill=black!70, domain=1.64:3] {gauss(x, 0, 1)} \closedcycle;
+\addplot [draw=none, fill=black!70, domain=-3:-1.96] {gauss(x, 0, 1)} \closedcycle;
+\addplot [draw=none, fill=black!70, domain=1.96:3] {gauss(x, 0, 1)} \closedcycle;
  \addplot [semithick] {gauss(x, 0, 1)};
-\pgfmathsetmacro\valueA{gauss(-1.64,0,1)}
+\pgfmathsetmacro\valueA{gauss(-1.96,0,1)}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
-\draw [semithick, black]  (axis cs:-1.64,0) -- (axis cs:-1.64,\valueA);
-\draw [semithick, black]  (axis cs:1.64,0) -- (axis cs:1.64,\valueA);
+\draw [semithick, black]  (axis cs:-1.96,0) -- (axis cs:-1.96,\valueA);
+\draw [semithick, black]  (axis cs:1.96,0) -- (axis cs:1.96,\valueA);
 \node[below] at (axis cs: 0,0)  {$0$};
 \node[above] at (axis cs: 0,\valueB)  {$t_6$};
-\node[below] at (axis cs: -1.7, 0) {$-1.943$};
-\node[above] at (axis cs: -2.2,\valueA) {5\%};
-\node[below] at (axis cs: 1.7, 0) {$1.943$};
-\node[above] at (axis cs: 2.2,\valueA) {5\%};
+\node[below] at (axis cs: -1.9, 0) {$-2.447$};
+\node[above] at (axis cs: -2.4,\valueA) {2.5\%};
+\node[below] at (axis cs: 1.9, 0) {$2.447$};
+\node[above] at (axis cs: 2.4,\valueA) {2.5\%};
 \end{axis}
 \end{tikzpicture}\\
 
-Critical value: $t_{6,0.95}=-1.943$\\
+\vspace{-0.3cm}
 
-Since $-3.003<-1.943$, reject $\text{H}_0$ at the 10\% level of significance. There is  evidence to suggest that the slope parameter is not zero, so evidence that a linear model would be useful for prediction.
+Critical value: $t_{6,0.95}=-2.447$\\
+
+Since $-3.003<-2.447$, reject $\text{H}_0$ at the 5\% level of significance. There is  evidence to suggest that the slope parameter is not zero, so evidence that a linear model would be useful for prediction.
 
 \end{tcolorbox}
 
@@ -1162,6 +1170,24 @@ Since $-3.003<-1.943$, reject $\text{H}_0$ at the 10\% level of significance. Th
 []{#ex184q}
 
 #### [Exercise 18.4](#ex184a) {-}
+
+\begin{enumerate}
+        \item A random sample of bivariate data, sample size 27, yields a sample correlation coefficient of $-$0.763. A test for linear association is to be performed on the data.
+        \begin{enumerate}
+        \item State suitable null and alternative hypotheses.
+        \item Show the calculations required to reach a test statistic of $-$5.902.
+        \item State the degrees of freedom, $\nu$, of the $t$-distribution required for the test.
+        \item Conclude the test at the 5\% level of significance.
+    \end{enumerate}
+    \item The top speed reached (in mph) and the lap times (in seconds) are recorded for a sample of drivers on a race track. Computer output related to a linear model constructed using this data is below.\\[0.5em]
+    \begin{tabular}{lllllll}
+        \texttt{y on x regression line} & \qquad &\texttt{n} & \qquad &\texttt{s} & \qquad & \texttt{sum of squares for x}\\
+        \texttt{top\_speed = 269.2 - 1.72 $\times$ lap\_time} && \texttt{34} && \texttt{8.49} && \texttt{638.6}
+    \end{tabular}\\[0.5em]
+    Perform a test for the slope parameter $\beta$ at the 10\% level of significance, to assess whether there is evidence that a linear model is useful for prediction for this data.
+\end{enumerate}
+
+\newpage
 
 \begin{enumerate}
     \item Six metal plates were immersed in a weak acid solution for various lengths of time. Their percentage losses in mass were then measured and a scatterplot drawn of time in solution ($x$ hours) against mass loss ($y$\%). The equation of the least squares regression line for $y$ on $x$ was obtained.\\[0.5em] 
@@ -1437,9 +1463,9 @@ The \textit{parametric} \textbf{Test for Rho} assesses a sample of bivariate dat
 Any conclusion should comment on the evidence for a linear association between the two variables.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
-\textbf{Problem:} 
+\textbf{Problem:} A bivariate sample has summary statistics:
 
-A bivariate sample has summary statistics:
+\vspace{-0.1cm}
 
 \begin{center}
   \begin{tabular}{ccccccc}
@@ -1447,7 +1473,9 @@ A bivariate sample has summary statistics:
   \end{tabular}
 \end{center}
 
-Test at the 1\% significance level for evidence of a linear association between $x$ and $y$.
+\vspace{-0.1cm}
+
+Test at the 5\% significance level for evidence of a linear association between $x$ and $y$.
 
 \tcblower
 \textbf{Solution:}\\[0.1em]
@@ -1459,7 +1487,7 @@ Test at the 1\% significance level for evidence of a linear association between 
     \end{array}
 \left]
     \begin{array}{l}
-      \alpha=0.01\\
+      \alpha=0.05\\
       \textnormal{Two-tailed}
     \end{array}
   \right.
@@ -1490,111 +1518,27 @@ Test statistic: $t=\dfrac{r\sqrt{n-2}}{\sqrt{1-r^2}}=\dfrac{-0.7749\sqrt{8-2}}{\
   grid = major,
   hide y axis
   ]
-\addplot [draw=none, fill=black!70, domain=-3:-2.2] {gauss(x, 0, 1)} \closedcycle;
-\addplot [draw=none, fill=black!70, domain=2.2:3] {gauss(x, 0, 1)} \closedcycle;
+\addplot [draw=none, fill=black!70, domain=-3:-1.96] {gauss(x, 0, 1)} \closedcycle;
+\addplot [draw=none, fill=black!70, domain=1.96:3] {gauss(x, 0, 1)} \closedcycle;
  \addplot [semithick] {gauss(x, 0, 1)};
-\pgfmathsetmacro\valueA{gauss(-2.2,0,1)}
+\pgfmathsetmacro\valueA{gauss(-1.96,0,1)}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
-\draw [semithick, black]  (axis cs:-2.2,0) -- (axis cs:-2.2,\valueA);
-\draw [semithick, black]  (axis cs:2.2,0) -- (axis cs:2.2,\valueA);
+\draw [semithick, black]  (axis cs:-1.96,0) -- (axis cs:-1.96,\valueA);
+\draw [semithick, black]  (axis cs:1.96,0) -- (axis cs:1.96,\valueA);
 \node[below] at (axis cs: 0,0)  {$0$};
 \node[above] at (axis cs: 0,\valueB)  {$t_6$};
-\node[below] at (axis cs: -2.2, 0) {$-3.707$};
-\node[above] at (axis cs: -2.4,\valueA) {0.5\%};
-\node[below] at (axis cs: 2.2, 0) {$3.707$};
-\node[above] at (axis cs: 2.4,\valueA) {0.5\%};
+\node[below] at (axis cs: -1.9, 0) {$-2.447$};
+\node[above] at (axis cs: -2.4,\valueA) {2.5\%};
+\node[below] at (axis cs: 1.9, 0) {$2.447$};
+\node[above] at (axis cs: 2.4,\valueA) {2.5\%};
 \end{axis}
 \end{tikzpicture}\\
 
-Critical value: $t_{6,0.995}=-3.707$\\
+Critical value: $t_{6,0.995}=-2.447$\\
 
-Since $-3.003>-3.707$, do not reject $\text{H}_0$ at the 1\% level of significance.\newline There is insufficient evidence to suggest that there is a linear relationship between the two variables.
+Since $-3.003>-2.447$, reject $\text{H}_0$ at the 5\% level of significance.\newline There is evidence to suggest that there is a linear association between the two variables.
 
 \end{tcolorbox}
-
-\pagebreak
-
-\begin{enumerate}
-    \item A researcher is wanting to know if there is a link between the number of calories ($x$) and the carbohydrate content ($y$) of different types of caffeinated drinks available at coffee shops. Summary statistics are obtained from a random sample of 22 caffeinated drink options from a range of coffee shops. \\[0.5em] 
-    \textit{(See Context 2)}\\[0.5em]
-    Perform a test at the 5\% level of significance to assess whether there is evidence to suggest that there is a linear relationship between the number of calories a caffeinated drink contains and its carbohydrate content.
-    \item Researchers collect marks for 9 students randomly selected from a group of students taking both a maths test ($x$) and a physics test ($y$).\\[0.5em] 
-    \textit{(See Context 4)}\\[0.5em]
-    Perform a test at the 10\% level of significance to assess the linear association.
-    \item A researcher laid a transect from the base of a tree and placed a quadrat at one metre intervals along the transect line. The number of seeds dropped by the tree contained in each quadrat was recorded.
-     \begin{center}
-    \begin{tikzpicture}
-        \node[right] at (7,2.9) {Summary data for sample:};
-        \node[right] at (7,2.2) {$\Sigma x=21$};
-        \node[right] at (7,1.5) {$\Sigma x^2=91$};
-        \node[right] at (7,0.8) {$S_{yy}=54.833$};
-        \node[right] at (7,0.1) {$S_{xy}=3.5$};
-        \node[right] at (7,-0.6) {$n=6$};
-        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
-        \draw[-stealth] (0,0) -- (0,3.25) node[above] {$y$}; 
-        \node at (2.5,-1) {Distance from base (metres)};
-        \node at (-2,1.5) {No. of seeds};
-        \foreach \x in {0,0.8,...,4.8}{
-        \draw (\x,0) -- (\x,-0.1);
-        }
-        \foreach \y in {0,0.6,...,3}{
-        \draw (0,\y) -- (-0.1,\y);
-        }
-        \node[left] at (0,0) {0};
-        \node[left] at (0,0.6) {2};
-        \node[left] at (0,1.2) {4};
-        \node[left] at (0,1.8) {6};
-        \node[left] at (0,2.4) {8};
-        \node[left] at (0,3) {10};
-        \node[below] at (0,0) {0};
-        \node[below] at (0.8,0) {1};
-        \node[below] at (1.6,0) {2};
-        \node[below] at (2.4,0) {3};
-        \node[below] at (3.2,0) {4};
-        \node[below] at (4.0,0) {5};
-        \node[below] at (4.8,0) {6};
-        \draw[fill=black] (0.8,0*0.3) circle (0.06);
-        \draw[fill=black] (1.6,9*0.3) circle (0.06);
-        \draw[fill=black] (2.4,4*0.3) circle (0.06);
-        \draw[fill=black] (3.2,3*0.3) circle (0.06);
-        \draw[fill=black] (4,7*0.3) circle (0.06);
-        \draw[fill=black] (4.8,3*0.3) circle (0.06);
-    \end{tikzpicture}
-\end{center}
-        Calculate the sample product moment correlation coefficient and test at the 10\% significance level for a linear association between the variables.
-    \item When a type of metal bar is heated it expands. The amount by which it expands (in mm) and the increase in temperature (in $^{\circ}\text{C}$) for a random sample of 6 such bars heated to specific temperatures is recorded.
-    \begin{center}
-    \begin{tikzpicture}
-        \node[right] at (7,2.9) {Summary data for sample:};
-        \node[right] at (7,2.2) {$r=0.981$};
-        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
-        \draw[-stealth] (0,0) -- (0,3.25) node[above] {$y$}; 
-        \node at (2.5,-1) {Temperature rise ($^{\circ}\text{C}$)};
-        \node at (-2.5,1.5) {Expansion (mm)};
-        \foreach \x in {0,0.4,...,4.8}{
-        \draw (\x,0) -- (\x,-0.1);
-        }
-        \foreach \y in {0,0.5,...,3}{
-        \draw (0,\y) -- (-0.1,\y);
-        }
-        \node[left] at (0,0) {0};
-        \node[left] at (0,1) {10};
-        \node[left] at (0,2) {20};
-        \node[left] at (0,3) {30};
-        \node[below] at (0,0) {0};
-        \node[below] at (1.6,0) {100};
-        \node[below] at (3.2,0) {200};
-        \node[below] at (4.8,0) {300};
-        \draw[fill=black] (0.8,0.35) circle (0.06);
-        \draw[fill=black] (1.6,0.85) circle (0.06);
-        \draw[fill=black] (2.4,1.2) circle (0.06);
-        \draw[fill=black] (3.2,1.54) circle (0.06);
-        \draw[fill=black] (4,1.92) circle (0.06);
-        \draw[fill=black] (4.8,2.32) circle (0.06);
-    \end{tikzpicture}
-\end{center}
-        Use a parametric hypothesis test to assess, at the 0.1\% level of significance, the evidence for a linear association between temperature rise and expansion.
-\end{enumerate}
 
 \pagebreak
 
@@ -1603,20 +1547,128 @@ Since $-3.003>-3.707$, do not reject $\text{H}_0$ at the 1\% level of significan
 #### [Exercise 18.5](#ex185a) {-}
 
 \begin{enumerate}
-    \item For each of Contexts 1 to 5, calculate the coefficient of determination and interpret it in context.
-    \item The age in months of 30 randomly selected primary school pupils ($x$) and the length of their right foot in centimetres ($y$) were recorded, with the following summary data obtained:
-     \begin{center}
-        \begin{tabular}{cccccc}
-            $\Sigma x=2964$ & $\Sigma x^2=294248$ & $\Sigma y=577.3$ & $\Sigma y^2=11152.71$ & $\Sigma xy=57262.7$ & $n=30$
+    \item A random sample of bivariate data, sample size 27, yields a sample correlation coefficient of $-$0.763. A test for linear association is to be performed on the data.
+    \begin{enumerate}
+        \item State suitable null and alternative hypotheses.
+        \item Show the calculations required to reach a test statistic of $-$5.902.
+        \item State the degrees of freedom, $\nu$, of the $t$-distribution required for the test.
+        \item Conclude the test at the 5\% level of significance.
+    \end{enumerate}
+    \item A bivariate random sample has summary statistics:
+    \begin{center}
+        \begin{tabular}{ccccccc}
+            $S_{xx}=28.92$ & \quad & $S_{yy}=495.0$ & \quad & $S_{xy}=105.3$ & \quad & $n=14$
         \end{tabular}
     \end{center}
-    \begin{enumerate}
-        \item Calculate the coefficient of determination.
-        \item Interpret the result from (a).
-    \end{enumerate}
+    Perform a parametric test to assess at the 10\% level of significance whether there is evidence to suggest a linear association exists between $x$ and $y$.
+    \item A guitarist records over the course of several years the price of sets of strings that she buys and the number of days that they last without a string breaking. A scatterplot of the data collected is shown below alongside some summary statistics from computer software.
+    \begin{multicols}{2}
+    \begin{center}
+        \begin{tikzpicture}
+        \draw (0,0) rectangle (5,3.5);
+        \node[above] at (2.5,3.5) {scatterplot of price vs days lasted};
+        \foreach \x in {8,10,...,16}{
+        \draw (0.5*\x-3.5,-0.1) -- (0.5*\x-3.5,0) node[below] {\x};
+        }
+        \node[below] at (2.5,-0.5) {price (£)};
+        \foreach \y in {0,30,...,120}{
+        \draw (-0.1,0.025*\y) -- (0,0.025*\y) node[left] {\y};
+        }
+        \node[above,rotate=90] at (-1,1.75) {days lasted};
+            \draw[fill] (3.620632,2.42879425) circle (0.04);
+\draw[fill] (3.1599475,2.17301825) circle (0.04);
+\draw[fill] (2.251858,2.3056665) circle (0.04);
+\draw[fill] (1.261534,0.53321475) circle (0.04);
+\draw[fill] (2.257877,1.46449) circle (0.04);
+\draw[fill] (1.874575,1.998568) circle (0.04);
+\draw[fill] (3.941508,2.35303725) circle (0.04);
+\draw[fill] (3.2640525,1.307669) circle (0.04);
+\draw[fill] (3.2003315,1.4427435) circle (0.04);
+\draw[fill] (4.098323,1.40786875) circle (0.04);
+\draw[fill] (3.4929035,3.0956315) circle (0.04);
+\draw[fill] (3.3260935,1.69551225) circle (0.04);
+\draw[fill] (3.327406,1.99964525) circle (0.04);
+\draw[fill] (2.893828,1.58491525) circle (0.04);
+        \end{tikzpicture}
+    \end{center}
+
+    \texttt{data:}\\[0.1em]
+    \texttt{guitar\_strings}
+
+    \vspace{0.4cm}
+    
+    \texttt{sample correlation coefficient:}\\[0.1em]
+    \texttt{0.437}
+
+    \vspace{0.4cm}
+
+    \texttt{sample size:}\\[0.1em]
+    \texttt{14}
+    
+    \vfill\null
+    \end{multicols}
+    
+    \vspace{-0.4cm}
+    Test at the 1\% level of significance whether her data provides evidence of a linear association between the price of a set of strings and the time until a string breaks.
+    \item \textit{Electrolyte powders} are often used to help improve hydration during exercise. A keen cyclist records the time ($y$ minutes) it takes them to complete a familiar route during a series of rides over the summer, randomly choosing the mass ($x$ grams) of electrolyte powder to add to their water bottle each time. 
+    \begin{multicols}{2}
+    Summary statistics for the rides are below:
+    \begin{center}
+        \begin{tabular}{ccccccc}
+            $S_{xx}$ & $\quad$ & $S_{yy}$ & $\quad$ & $S_{xy}$ & $\quad$ & $n$\\[0.4em]
+            665 & & 567.2 && -346.4 && 20
+        \end{tabular}
+    \end{center}
+    Test whether the data supports a claim from the cyclist that a linear association exists between the amount of electrolyte powder they use and their cycling performance, stating one assumption.
+    \vfill\null
+    \columnbreak
+    \begin{center}
+        \begin{tikzpicture}[scale=0.8]
+        \draw (0,-0.5) rectangle (5.5,4.5);
+        \foreach \x in {0,5,...,20}{
+        \draw (0.25*\x,-0.1-0.5) -- (0.25*\x,0-0.5) node[below] {\x};
+        }
+        \node[below] at (2.75,-1.1) {electrolytes (g)};
+        \foreach \y in {50,55,...,70}{
+        \draw (-0.1,0.2*\y-10) -- (0,0.2*\y-10) node[left] {\y};
+        }
+        \node[above,rotate=90] at (-1.1,2) {time (mins)};
+            \draw[fill] (0.25,2.262406) circle (0.06);
+\draw[fill] (0.5,1.744682) circle (0.06);
+\draw[fill] (0.75,1.616336) circle (0.06);
+\draw[fill] (1,3.958988) circle (0.06);
+\draw[fill] (1.25,3.480328) circle (0.06);
+\draw[fill] (1.5,0.900392) circle (0.06);
+\draw[fill] (1.75,2.58095) circle (0.06);
+\draw[fill] (2,2.809518) circle (0.06);
+\draw[fill] (2.25,0.56031) circle (0.06);
+\draw[fill] (2.5,0.886592) circle (0.06);
+\draw[fill] (2.75,1.872582) circle (0.06);
+\draw[fill] (3,0.24728) circle (0.06);
+\draw[fill] (3.25,2.01819) circle (0.06);
+\draw[fill] (3.5,-0.140848) circle (0.06);
+\draw[fill] (3.75,0.812994) circle (0.06);
+\draw[fill] (4,1.244736) circle (0.06);
+\draw[fill] (4.25,1.22806) circle (0.06);
+\draw[fill] (4.5,1.430054) circle (0.06);
+\draw[fill] (4.75,0.055756) circle (0.06);
+\draw[fill] (5,1.04067) circle (0.06);
+        \end{tikzpicture}
+    \end{center}
+    \end{multicols}
+    \item Test whether the sample data below provides evidence of a linear association between $x$ and $y$.
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+            \hline
+            $x$ & 38 & 27 & 19 & 45 & 8 & 23 & 11 & 34\\
+            \hline
+            $y$ & 34 & 53 & 42 & 13 & 19 & 30 & 29 & 45\\
+            \hline
+        \end{tabular}
+    \end{center}
 \end{enumerate}
 
-\newpage
+\pagebreak
 
 ## Regression Line of $x$ on $y$
 
