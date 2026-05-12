@@ -428,7 +428,7 @@ Both the formula for estimating the error variance $\sigma^2$ and the more conve
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} 
 
-Students sitting a French exam are given a mark for each of the two components: speaking ($x$) and listening ($y$). From a random sample of 12 students: $S_{xx}=290,S_{yy}=256.25,S_{xy}=255$.\\
+Students sitting a French exam are given a mark for each of the two components: speaking ($x$) and listening ($y$). From a random sample of 12 students: $S_{xx}=344.9,\,S_{yy}=132.9,\,S_{xy}=193.6$.\\
 
 \text{(a)   } Calculate the sum of squared residuals for this data set.\\[0.3em]
 \text{(b)   } Obtain an estimate of the error variance.
@@ -436,8 +436,8 @@ Students sitting a French exam are given a mark for each of the two components: 
 \tcblower
 \textbf{Solution:}
 
-\text{(a)   } $\text{SSR}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=256.25-\dfrac{255^2}{290}=32.026$\\[0.7em]
-\text{(b)   } $s^2=\dfrac{SRR}{n-2}=\dfrac{32.026}{12-2}=3.203$
+\text{(a)   } $\text{SSR}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=132.9-\dfrac{193.6^2}{344.9}=24.23$\\[0.7em]
+\text{(b)   } $s^2=\dfrac{SRR}{n-2}=\dfrac{24.23}{12-2}=2.423$
 \end{tcolorbox}
 
 \pagebreak
@@ -660,7 +660,7 @@ Students sitting a French exam are given a mark for each of the two components: 
 
 \begin{center}
     \begin{tabular}{ccccc}
-        $S_{xx}=290$ & $S_{yy}=256.25$ & $S_{xy}=255$ & $n=12$
+        $S_{xx}=334.9$ & $S_{yy}=132.9$ & $S_{xy}=193.6$ & $n=12$
     \end{tabular}
 \end{center}
 
@@ -668,7 +668,7 @@ A linear regression model is proposed, and an equation for the regression line o
 
 \begin{center}
     \begin{tabular}{c}
-        $\hat{Y}=2.581+0.879x$
+        $\hat{Y}=4.854+0.578x$
     \end{tabular}
 \end{center}
 
@@ -680,17 +680,17 @@ Calculate the coefficient of determination and interpret this value in context.
 \vspace{-0.5cm}
 
 \begin{align*}
-r&=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}=\dfrac{255}{\sqrt{290\times 256.25}}=0.935\\[1em]
-R^2&=r^2=0.935^2=0.8742
+r&=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}=\dfrac{193.6}{\sqrt{334.9\times 132.9}}=0.9177\\[1em]
+R^2&=r^2=0.935^2=0.842
 \end{align*}
 
-This suggests that 87.4\% of the variation in listening scores can be explained by the linear model.
+This suggests that 84.2\% of the variation in listening marks can be explained by the linear model.
 
 \end{tcolorbox}
 
 The conclusion from the example above could also be phrased as:
 
-"*87.4\% of the variation in listening scores can be explained by the theory scores.*"
+"*87.4\% of the variation in listening marks can be explained by the speaking marks.*"
 
 \pagebreak
 
@@ -1081,7 +1081,7 @@ The slope parameter $\beta$ can be *positive*, *negative* or *zero*. Where $\bet
 
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
-\textbf{Problem:} A bivariate sample of 8 values produces a regression line with equation $\hat{Y}=-0.8456x$. The following summary statistics were also obtained
+\textbf{Problem:} A bivariate sample of 8 values produces a regression line with equation $\hat{Y}=7.9-0.8456x$. The following summary statistics were also obtained:
 
 \vspace{-0.3cm}
 \begin{center}
@@ -1704,25 +1704,25 @@ Students sitting a French exam are given a mark for each of the two components: 
 
 \begin{center}
     \begin{tabular}{ccccc}
-        $\Sigma x=132$ & $\Sigma x^2 =1742$ & $\Sigma y=147$ & $\Sigma y^2=2057$ & $\Sigma xy=1872$\\[1em]
-        $S_{xx}=290$ & $S_{yy}=256.25$ & $S_{xy}=255$ & $n=12$ & $r=0.935$
+        $\Sigma x=157$ & $\Sigma x^2 =2389$ & $\Sigma y=149$ & $\Sigma y^2=1983$ & $\Sigma xy=2143$\\[1em]
+        $S_{xx}=334.9$ & $S_{yy}=132.9$ & $S_{xy}=193.6$ & $n=12$ & $r=0.9177$
     \end{tabular}
 \end{center}
 
-Determine the equation for the least squares regression line of $x$ on $y$, and hence predict the theory paper mark for a student who has only sat the listening paper and obtained a mark of 17 in it.
+Determine the equation for the least squares regression line of $x$ on $y$, and hence predict the speaking mark for a student who has only completed the listening component and obtained a mark of 17 in it.
 
 \tcblower
 \textbf{Solution:}\\
 
-$b=\dfrac{S_{xy}}{S_{yy}}=\dfrac{255}{256.25}=0.995$\\[0.1em]
+$b=\dfrac{S_{xy}}{S_{yy}}=\dfrac{193.6}{132.9}=1.457$\\[0.1em]
 
-$a=\bar{x}-b\bar{y}=\dfrac{132}{12}-0.995\times \dfrac{147}{12}=-1.189$\\[0.1em]
+$a=\bar{x}-b\bar{y}=\dfrac{157}{12}-1.457\times \dfrac{149}{12}=-5.008$\\[0.1em]
 
-$\hat{X}=-1.189+0.995y$\\[0.5em]
+$\hat{X}=-5.008+1.457y$\\[0.5em]
 
 For a student with a listening mark ($y$) of 17:\\[0.1em]
 
-$\hat{X}=-1.189+0.995\times 17=15.7$
+$\hat{X}=-5.008+1.457\times 17=15.39$
 
 \end{tcolorbox}
 
@@ -1953,107 +1953,137 @@ It should be observed that the residual plot broadly appears to show:
 
 This means that the residual plot would give no reason to doubt the assumptions made regarding the errors. This *ideal* residual plot would suggest that the linear regression model is **appropriate**.
 
-A helpful way of visualising that the residuals are *centred on zero* with a *constant variance* is to view the residual plot as a series of isolated *vertical strips*, as shown below:
+The following residual plots are accompanied with relevant comments and suitable conclusions.
 
-\begin{center}
-    \begin{tikzpicture}[xscale=2]
-        \draw[fill=black!10] (3,-2.5) rectangle (9,2.55);
-        \draw[fill=white] (3.2,-2.3) rectangle (8.8,2.35);
-        \foreach \x in {3.2,4,...,8.8}{
-        \draw (\x,-2.3) -- (\x,2.35);
-        }
+\begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.44\textwidth}
+    \begin{tikzpicture}
+        \draw (3,-1.75) rectangle (9,1.75);
         \draw[dashed] (3,0) -- (9,0);
-        \foreach \x in {3.6,4.4,...,8.4}{
-        \draw[ultra thick,Latex-Latex,black!10] (\x,1.2) -- (\x,-1.2);
-        } 
-        \draw[black!70,fill=black!70] (8.39307409253776,1.06597870442773) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (8.32968519061489,-1.61965740143367) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (8.26629628869203,0.810826416487654) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (8.20290738676917,0.20628000785721) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (8.13951848484631,-1.04343977077903) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (8.07612958292345,0.491422480686081) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (8.01274068100058,-0.76588717995288) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (7.94935177907772,1.33003189599524) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (7.88596287715486,0.803712653216053) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (7.822573975232,1.18394403701253) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (7.75918507330913,1.2559050324715) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (7.69579617138627,-0.797284696837558) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (7.63240726946341,-0.127982904712902) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (7.56901836754055,-1.0606158539821) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (7.50562946561769,1.10430802829229) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (7.44224056369482,-0.895799278715006) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (7.37885166177196,2.04471485680382) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (7.3154627598491,0.529161004139815) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (7.25207385792624,1.0536366836668) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (7.18868495600337,-0.166255344660351) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (7.12529605408051,-1.55824141393781) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (7.06190715215765,0.377485349309505) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (6.99851825023479,-0.217512434888576) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (6.93512934831192,-0.652314483422991) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (6.87174044638906,-0.0409319879715797) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (6.8083515444662,-1.91272626873808) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (6.74496264254334,0.74993057085495) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (6.68157374062048,0.459638352250112) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (6.61818483869761,1.04938121642708) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (6.55479593677475,-0.522066160159615) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (6.49140703485189,-0.26189463853979) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (6.42801813292903,1.48734724546986) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (6.36462923100616,-1.72657372844454) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (6.3012403290833,-1.84751190397833) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (6.23785142716044,-0.522735870794731) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (6.17446252523758,0.0601822043199776) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (6.11107362331472,0.441278282071078) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (6.04768472139185,-0.88588389061914) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (5.98429581946899,-0.461806301564692) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (5.92090691754613,0.51844062480529) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (5.85751801562327,-1.53950329599386) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (5.79412911370041,-0.0200979420094498) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (5.73074021177754,1.76390695853312) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (5.66735130985468,-0.671626219216023) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (5.60396240793182,0.171880026350582) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (5.54057350600896,-1.27873383490603) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (5.4771846040861,0.0856474691807509) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (5.41379570216323,-1.23486265849681) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (5.35040680024037,-0.8241076277901) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (5.28701789831751,-0.783297799076014) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (5.22362899639465,-0.303583955523175) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (5.16024009447178,-0.140019024737982) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (5.09685119254892,-1.12298064777596) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (5.03346229062606,1.40836616958759) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (4.9700733887032,-0.228846845017033) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (4.90668448678034,-0.339743530316203) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (4.84329558485748,-0.67794713661462) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (4.77990668293461,0.531971252878876) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (4.71651778101175,1.48375210295433) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (4.65312887908889,0.420763072390794) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (4.58973997716603,0.77809957818618) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (4.52635107524316,-0.916206787870849) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (4.4629621733203,0.0652862801421619) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (4.39957327139744,1.02786287723927) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (4.33618436947458,-0.126031603733287) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (4.27279546755172,0.871038014314441) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (4.20940656562886,0.463252380701839) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (4.14601766370599,0.955294551098615) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (4.08262876178313,-0.750536746111899) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (4.01923985986027,-0.320492778859177) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (3.95585095793741,0.267844572286051) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (3.89246205601455,1.63085862905224) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (3.82907315409168,1.40261928845938) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (3.76568425216882,-0.578454854410304) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (3.70229535024596,-0.114701266213262) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (3.6389064483231,-1.12380210667804) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (3.57551754640024,-1.2557534811089) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (3.51212864447737,0.814218263679825) ellipse (0.015 and 0.03);
-\draw[black!70,fill=black!70] (3.44873974255451,0.254649561114014) ellipse (0.015 and 0.03);
-    \node at (6,-3) {Fitted values};
-    \node at (6,3.05) {\textbf{Residual plot}};
-    \node[rotate=90] at (2.4,0) {Residuals};
+\draw[fill] (6.921656,0.58540879) circle (0.02);
+\draw[fill] (8.986631,-0.16543505) circle (0.02);
+\draw[fill] (6.731327,0.07627713) circle (0.02);
+\draw[fill] (4.384056,-0.17604643) circle (0.02);
+\draw[fill] (3.072061,0.07318899) circle (0.02);
+\draw[fill] (4.381586,-0.06463663) circle (0.02);
+\draw[fill] (8.595033,0.47153754) circle (0.02);
+\draw[fill] (7.144716,0.57790475) circle (0.02);
+\draw[fill] (7.429830,0.04888756) circle (0.02);
+\draw[fill] (5.410006,0.02299296) circle (0.02);
+\draw[fill] (8.206445,0.46463723) circle (0.02);
+\draw[fill] (8.564104,0.06921277) circle (0.02);
+\draw[fill] (4.915587,-0.51156637) circle (0.02);
+\draw[fill] (5.974507,0.07400576) circle (0.02);
+\draw[fill] (7.561248,-0.14734389) circle (0.02);
+\draw[fill] (4.786558,0.42948334) circle (0.02);
+\draw[fill] (3.469316,0.84879656) circle (0.02);
+\draw[fill] (4.557178,-0.56100225) circle (0.02);
+\draw[fill] (4.214738,-0.09264347) circle (0.02);
+\draw[fill] (4.040027,0.77886524) circle (0.02);
+\draw[fill] (6.496811,0.09232398) circle (0.02);
+\draw[fill] (6.703654,-0.26190039) circle (0.02);
+\draw[fill] (7.637673,0.69018726) circle (0.02);
+\draw[fill] (3.092048,-0.48147012) circle (0.02);
+\draw[fill] (8.907415,0.75813491) circle (0.02);
+\draw[fill] (6.416982,0.11930000) circle (0.02);
+\draw[fill] (5.620077,0.36611110) circle (0.02);
+\draw[fill] (6.198247,-0.12632113) circle (0.02);
+\draw[fill] (3.062816,0.05535416) circle (0.02);
+\draw[fill] (5.217000,0.17543989) circle (0.02);
+\draw[fill] (6.680272,-0.09901247) circle (0.02);
+\draw[fill] (6.068540,0.43216990) circle (0.02);
+\draw[fill] (8.945738,0.19412400) circle (0.02);
+\draw[fill] (7.606984,-0.51974551) circle (0.02);
+\draw[fill] (4.804875,0.77766658) circle (0.02);
+\draw[fill] (6.801789,0.36762987) circle (0.02);
+\draw[fill] (7.258201,0.08407078) circle (0.02);
+\draw[fill] (4.779059,-0.21599576) circle (0.02);
+\draw[fill] (4.645275,0.32154718) circle (0.02);
+\draw[fill] (8.101368,0.42729624) circle (0.02);
+\draw[fill] (8.354286,0.97520646) circle (0.02);
+\draw[fill] (8.754650,-0.34416803) circle (0.02);
+\draw[fill] (5.085025,0.59838374) circle (0.02);
+\draw[fill] (7.248088,0.42669842) circle (0.02);
+\draw[fill] (8.488572,0.41880026) circle (0.02);
+\draw[fill] (7.070764,0.79272947) circle (0.02);
+\draw[fill] (7.379870,-0.46743622) circle (0.02);
+\draw[fill] (4.247142,-0.33133325) circle (0.02);
+\draw[fill] (3.794045,0.40759597) circle (0.02);
+\draw[fill] (6.631483,-0.22824065) circle (0.02);
+\draw[fill] (7.508533,-0.08690390) circle (0.02);
+\draw[fill] (6.347008,-0.45480061) circle (0.02);
+\draw[fill] (8.561039,-0.16903703) circle (0.02);
+\draw[fill] (8.585689,0.12535870) circle (0.02);
+\draw[fill] (8.584559,-0.34118768) circle (0.02);
+\draw[fill] (5.134435,0.56795804) circle (0.02);
+\draw[fill] (7.261177,-0.44842223) circle (0.02);
+\draw[fill] (6.026182,-0.25898378) circle (0.02);
+\draw[fill] (3.560710,0.77678417) circle (0.02);
+\draw[fill] (7.623215,0.02754754) circle (0.02);
+\draw[fill] (4.837537,-0.61545533) circle (0.02);
+\draw[fill] (3.544065,-0.53970597) circle (0.02);
+\draw[fill] (5.988546,-0.19666463) circle (0.02);
+\draw[fill] (7.136066,0.95461527) circle (0.02);
+\draw[fill] (3.541441,-0.20780954) circle (0.02);
+\draw[fill] (8.580504,-0.13835933) circle (0.02);
+\draw[fill] (8.107633,-0.80404410) circle (0.02);
+\draw[fill] (7.162024,-0.79359096) circle (0.02);
+\draw[fill] (7.184295,0.10705588) circle (0.02);
+\draw[fill] (5.853877,-0.31211564) circle (0.02);
+\draw[fill] (7.512211,0.51670334) circle (0.02);
+\draw[fill] (6.194334,0.42800438) circle (0.02);
+\draw[fill] (4.669871,0.17383263) circle (0.02);
+\draw[fill] (4.881762,-0.52014457) circle (0.02);
+\draw[fill] (7.050366,-0.22760942) circle (0.02);
+\draw[fill] (6.194233,-0.87579688) circle (0.02);
+\draw[fill] (7.580314,-0.87491549) circle (0.02);
+\draw[fill] (6.587579,-0.24660031) circle (0.02);
+\draw[fill] (5.619600,0.67949922) circle (0.02);
+\draw[fill] (4.413177,-0.63264938) circle (0.02);
+\draw[fill] (6.172940,0.32510858) circle (0.02);
+\draw[fill] (5.538022,0.32647914) circle (0.02);
+\draw[fill] (5.373646,-0.73458112) circle (0.02);
+\draw[fill] (5.344426,-0.14061831) circle (0.02);
+\draw[fill] (6.182985,-0.18220891) circle (0.02);
+\draw[fill] (7.053626,-0.43952177) circle (0.02);
+\draw[fill] (5.147160,0.17785147) circle (0.02);
+\draw[fill] (8.425983,0.37999181) circle (0.02);
+\draw[fill] (3.233132,-0.25257680) circle (0.02);
+\draw[fill] (6.123868,-0.58344624) circle (0.02);
+\draw[fill] (7.628992,0.03616068) circle (0.02);
+\draw[fill] (5.368108,-0.23062271) circle (0.02);
+\draw[fill] (7.424909,-0.62570227) circle (0.02);
+\draw[fill] (6.257443,0.83967316) circle (0.02);
+\draw[fill] (8.602672,0.44383923) circle (0.02);
+\draw[fill] (5.546362,-0.01880866) circle (0.02);
+\draw[fill] (5.093635,-0.49160833) circle (0.02);
+\draw[fill] (6.832993,0.10937551) circle (0.02);
+\draw[fill] (4.372138,-0.02781314) circle (0.02);
+\draw[fill] (6.368337,-0.55032886) circle (0.02);
+    \node at (6,-2) {Fitted value};
+    \node[rotate=90] at (2.2,0) {Residual};
     \node[left] at (3,0) {$0$};
     \end{tikzpicture}
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.56\textwidth}
+The residual plot appears to show a random scatter of points centred on zero, with a constant variance as the fitted value increases. 
+
+\vspace{-1cm}
+\begin{center}
+    \begin{align*}
+        \text{E}(\varepsilon_i)&=0\\
+        \text{V}(\varepsilon_i)&=\sigma^2
+    \end{align*}
 \end{center}
 
-\newpage
-The following residual plots are accompanied with relevant comments and suitable conclusions.
+
+This suggests the that linear model is \textbf{appropriate}.
+\end{minipage}
+\end{figure}
+
+\pagebreak
 
 \begin{figure}[H]
   \centering
