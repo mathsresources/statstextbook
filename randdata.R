@@ -1,11 +1,13 @@
-x<-c(1:20)
-e<-rtruncnorm(20,-15,15,0,5)
-a<-60
-b<- -0.3
-y<-a+b*x+e
-df_electrolyte <- data.frame(x,y)
+library(truncnorm)
+
+x<-runif(10,0.1,4.9)
+e<-rtruncnorm(10,-1.9,1.9,0,0.1)
+a<--1
+b<-0.7
+y<-a+0.5*(x-3)^2+e
+resid <- data.frame(x,y)
 plot(x,y)
-cor.test(x,y)
+
 
 sums <- function(dfr){
   attach(dfr)
@@ -18,6 +20,6 @@ sums <- function(dfr){
   detach(dfr)
 }
 
-sums(df_strings)
+sums(df_bivariatetestq1)
 
 
