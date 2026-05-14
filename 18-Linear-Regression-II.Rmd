@@ -2088,7 +2088,7 @@ It should be observed that the residual plot broadly appears to show:
 \end{center}
 \end{tcolorbox}
 
-This means that the residual plot would give no reason to doubt the assumptions made regarding the errors. This *ideal* residual plot would suggest that the linear regression model is **appropriate**.
+This means that the residual plot would give no reason to doubt the assumptions made regarding the errors. This *ideal* residual plot would suggest that the linear regression model is *appropriate*.
 
 The following residual plots are accompanied with relevant comments and suitable conclusions.
 
@@ -2805,7 +2805,7 @@ Use the residual plot to comment on the validity of the linear model.
 
 \end{tcolorbox}
 
-\newpage
+\pagebreak
 
 []{#ex187q}
 
@@ -2814,6 +2814,9 @@ Use the residual plot to comment on the validity of the linear model.
 \begin{enumerate}
     \item For each, comment on the validity of the linear model from which they were produced.
 \end{enumerate}
+
+\vspace{-0.7cm}
+
 \begin{multicols}{3}
 
 \begin{center}
@@ -3568,81 +3571,158 @@ Use the residual plot to comment on the validity of the linear model.
 \pagebreak
 
 \begin{enumerate}[resume]
-    \item Metal cables are tested under laboratory conditions to determine their breaking strength. Each cable is fixed between two points, and masses attached to the middle of the cable, with the mass steadily increased until the cable breaks. The scatterplot below shows the cable diameter ($x$ mm) against the maximum mass held before breaking ($y$ kg).
+    \item Suspension clamps are used to hold electricity cables in place on pylons. Over time these clamps are subject to wear, making them more likely to fail. A random sample of clamps are subject to an increasing force, until they fail. A proposed linear regression line is shown on the scatterplot of force at failure (kN) against age in years below, as well as a residual plot.
     \begin{multicols}{2}
 \begin{center}
     \begin{tikzpicture}
         \draw (0,0) -- (5,0);
-        \foreach \x in {0,0.5,...,4.5}{
-        \draw (\x,0) -- (\x,-0.1);
+        \foreach \x in {0,5,...,25}{
+        \draw (0.2*\x,0) -- (0.2*\x,-0.1) node[below] {\x};
         }
-        \foreach \y in {0,0.5,...,3.5}{
-        \draw (0,\y) -- (-0.1,\y);
+        \foreach \y in {20,40,...,100}{
+        \draw (0,0.05*\y-1) -- (-0.1,0.05*\y-1) node[left] {\y};
         }
-        \foreach \x in {0,1,...,5}{
-        \draw (\x,-0.1) -- (\x,0) node[below] {\x};
-        }
-        \node at (2.75,-0.75) {Diameter (mm)};
-        \draw (0,0) -- (0,3.8);
-        \foreach \y in {0,200,...,600}{
-        \draw (-0.1,0.005*\y) -- (0,0.005*\y) node[left] {\y};
-        }
-        \node[rotate=90] at (-1.3,2) {Max mass (kg)};
-        \draw[black!70,fill=black!70] (1,0.01425) circle (0.05);
-\draw[black!70,fill=black!70] (1.5,0.05705) circle (0.05);
-\draw[black!70,fill=black!70] (2,0.17755) circle (0.05);
-\draw[black!70,fill=black!70] (2.5,0.32715) circle (0.05);
-\draw[black!70,fill=black!70] (3,0.61035) circle (0.05);
-\draw[black!70,fill=black!70] (3.5,1.01405) circle (0.05);
-\draw[black!70,fill=black!70] (4,1.63255) circle (0.05);
-\draw[black!70,fill=black!70] (4.5,2.4923) circle (0.05);
-\draw[black!70,fill=black!70] (5,3.5018) circle (0.05);
-        \draw[thick] (1.7,0) -- (5,2.7); 
+        \node at (2.75,-1) {Age (years)};
+        \draw (0,0) -- (0,4);
+        \node[rotate=90] at (-1.3,2) {Force at failure (kN)};
+        \draw[fill] (3.630143,2.0218995) circle (0.02);
+\draw[fill] (1.4453402,3.289677) circle (0.02);
+\draw[fill] (1.8116678,3.315242) circle (0.02);
+\draw[fill] (2.5771956,2.7947995) circle (0.02);
+\draw[fill] (4.064723,1.913654) circle (0.02);
+\draw[fill] (2.3344016,3.0680195) circle (0.02);
+\draw[fill] (3.0707534,2.361041) circle (0.02);
+\draw[fill] (4.5264104,0.9887265) circle (0.02);
+\draw[fill] (0.6279384,3.788211) circle (0.02);
+\draw[fill] (1.8287328,2.992588) circle (0.02);
+\draw[fill] (3.487018,1.9609475) circle (0.02);
+\draw[fill] (2.5428668,2.850443) circle (0.02);
+\draw[fill] (1.833092,3.10968) circle (0.02);
+\draw[fill] (1.7052946,3.1639905) circle (0.02);
+\draw[fill] (3.3870232,1.87735) circle (0.02);
+\draw[fill] (2.8127196,2.69650) circle (0.02);
+\draw[fill] (0.2558314,3.4816625) circle (0.02);
+\draw[fill] (4.172297,1.3260895) circle (0.02);
+\draw[fill] (2.2027196,3.1132305) circle (0.02);
+\draw[fill] (0.3384556,3.683499) circle (0.02);
+\draw[fill] (4.0884744,1.786707) circle (0.02);
+\draw[fill] (1.844939,3.285492) circle (0.02);
+\draw[fill] (3.549142,2.063713) circle (0.02);
+\draw[fill] (2.3490556,2.532148) circle (0.02);
+\draw[fill] (0.3183348,3.54711) circle (0.02);
+\draw[fill] (1.6108176,3.126666) circle (0.02);
+\draw[fill] (0.5140318,3.46457) circle (0.02);
+\draw[fill] (1.8232156,2.9302375) circle (0.02);
+\draw[fill] (1.2478772,3.5809895) circle (0.02);
+\draw[fill] (1.7060162,2.714661) circle (0.02);
+\draw[fill] (3.978391,1.9435575) circle (0.02);
+\draw[fill] (2.2689178,2.6328795) circle (0.02);
+\draw[fill] (1.1970252,3.06944) circle (0.02);
+\draw[fill] (2.4484372,2.8638665) circle (0.02);
+\draw[fill] (2.0734102,3.1495955) circle (0.02);
+\draw[fill] (4.6865708,1.449207) circle (0.02);
+\draw[fill] (3.3561196,2.490937) circle (0.02);
+\draw[fill] (1.6129192,2.813682) circle (0.02);
+\draw[fill] (0.499301,3.331152) circle (0.02);
+\draw[fill] (2.1096812,2.882074) circle (0.02);
+\draw[fill] (4.1379452,1.938183) circle (0.02);
+\draw[fill] (0.4189616,3.429026) circle (0.02);
+\draw[fill] (1.3236244,3.2711015) circle (0.02);
+\draw[fill] (2.992392,2.4923485) circle (0.02);
+\draw[fill] (1.3324948,3.062279) circle (0.02);
+\draw[fill] (3.8305352,1.8509045) circle (0.02);
+\draw[fill] (1.875472,3.253121) circle (0.02);
+\draw[fill] (4.0238886,1.56307) circle (0.02);
+\draw[fill] (4.5811854,1.406686) circle (0.02);
+\draw[fill] (4.1616276,1.4907345) circle (0.02);
+\draw[fill] (4.3506052,1.377773) circle (0.02);
+\draw[fill] (3.1352468,2.4677285) circle (0.02);
+\draw[fill] (1.667284,3.1505565) circle (0.02);
+\draw[fill] (2.7289742,2.3884475) circle (0.02);
+\draw[fill] (0.2511666,3.58807) circle (0.02);
+\draw[fill] (3.2515416,2.289014) circle (0.02);
+\draw[fill] (4.4461832,1.222778) circle (0.02);
+\draw[fill] (2.4465276,2.843314) circle (0.02);
+\draw[fill] (3.5338362,1.9805925) circle (0.02);
+\draw[fill] (4.7863762,1.019772) circle (0.02);
+\draw (0.2,3.856) -- (4.8,1.349);
     \end{tikzpicture}
 \end{center}
 
 \begin{center}
     \begin{tikzpicture}
-        \draw (-0.5,-2) -- (-0.5,2);
-        \draw (-0.3,0) -- (6.6,0);
-        \draw (-0.5,0) -- (-0.6,0);
-        \draw (-0.5,1) -- (-0.6,1);
-        \draw (-0.5,2) -- (-0.6,2);
-        \draw (-0.5,-1) -- (-0.6,-1);
-        \draw (-0.5,-2) -- (-0.6,-2);
-        \node at (2.5,2) {Residual plot};
-        \draw (0,0) -- (0,-0.1);
-        \draw (1,0) -- (1,-0.1);
-        \draw (2,0) -- (2,-0.1);
-        \draw (3,0) -- (3,-0.1);
-        \draw (4,0) -- (4,-0.1);
-        \draw (5,0) -- (5,-0.1);
-        \draw (6,0) -- (6,-0.1);
-        \node[below] at (0,0) {$0$};
-        \node[below] at (2,0) {$200$};
-        \node[below] at (4,0) {$400$};
-        \node[below] at (6,0) {$600$};
-        \node[rotate=90] at (-1.75,0) {Residuals};
-        \node[left] at (-0.5,0) {$0$};
-        \node[left] at (-0.5,2) {$200$};
-        \node[left] at (-0.5,1) {$100$};
-        \node[left] at (-0.5,-1) {$-100$};
-        \node[left] at (-0.5,-2) {$-200$};
-        \node at (2.5,-2) {Fitted maximum mass (kg)};
-       \draw[black!70,fill=black!70] (-0.129934444444445,1.15843444444444) circle (0.05);
-\draw[black!70,fill=black!70] (0.698493888888889,0.415606111111111) circle (0.05);
-\draw[black!70,fill=black!70] (1.52692222222222,-0.171822222222222) circle (0.05);
-\draw[black!70,fill=black!70] (2.35535055555556,-0.701050555555555) circle (0.05);
-\draw[black!70,fill=black!70] (3.18377888888889,-0.963078888888889) circle (0.05);
-\draw[black!70,fill=black!70] (4.01220722222222,-0.984107222222221) circle (0.05);
-\draw[black!70,fill=black!70] (4.84063555555556,-0.575535555555555) circle (0.05);
-\draw[black!70,fill=black!70] (5.66906388888889,0.315536111111111) circle (0.05);
-\draw[black!70,fill=black!70] (6.49749222222222,1.50610777777778) circle (0.05);
+        \draw (3.4,-2) rectangle (10,2);
+        \draw[thin,dashed] (3.4,0) -- (10,0);
+        \node[rotate=90,above] at (2.9,0) {Residuals};
+        \node[left] at (3.4,0) {$0$};
+        \node at (6.7,-2.35) {Fitted force at failure};
+        \node at (6.7,2.5) {Residual plot};
+       \draw[fill] (6.043799,0.06957013) circle (0.02);
+\draw[fill] (8.579354,0.22237574) circle (0.02);
+\draw[fill] (8.630484,0.67302266) circle (0.02);
+\draw[fill] (7.589599,0.46702398) circle (0.02);
+\draw[fill] (5.827308,0.32703271) circle (0.02);
+\draw[fill] (8.136039,0.74867226) circle (0.02);
+\draw[fill] (6.722082,0.13778122) circle (0.02);
+\draw[fill] (3.977453,-1.01930573) circle (0.02);
+\draw[fill] (9.576422,0.32798342) circle (0.02);
+\draw[fill] (7.985176,0.04632595) circle (0.02);
+\draw[fill] (5.921895,-0.20842692) circle (0.02);
+\draw[fill] (7.700886,0.54087215) circle (0.02);
+\draw[fill] (8.21936,0.28526392) circle (0.02);
+\draw[fill] (8.327981,0.2545094) circle (0.02);
+\draw[fill] (5.75469,-0.48468582) circle (0.02);
+\draw[fill] (7.39299,0.52727794) circle (0.02);
+\draw[fill] (8.963325,-0.69093371) circle (0.02);
+\draw[fill] (4.652179,-0.73077666) circle (0.02);
+\draw[fill] (8.226461,0.69548205) circle (0.02);
+\draw[fill] (9.366998,-0.19715024) circle (0.02);
+\draw[fill] (5.573414,0.0990414) circle (0.02);
+\draw[fill] (8.570984,0.64980843) circle (0.02);
+\draw[fill] (6.127426,0.06485696) circle (0.02);
+\draw[fill] (7.064296,-0.30708926) circle (0.02);
+\draw[fill] (9.09422,-0.4918721) circle (0.02);
+\draw[fill] (8.253332,0.07682381) circle (0.02);
+\draw[fill] (8.92913,-0.44353483) circle (0.02);
+\draw[fill] (7.860475,-0.08439179) circle (0.02);
+\draw[fill] (9.161979,0.58964682) circle (0.02);
+\draw[fill] (7.429322,-0.64336319) circle (0.02);
+\draw[fill] (5.887115,0.29268548) circle (0.02);
+\draw[fill] (7.265759,-0.19302418) circle (0.02);
+\draw[fill] (8.13887,-0.48892081) circle (0.02);
+\draw[fill] (7.727733,0.46473374) circle (0.02);
+\draw[fill] (8.299191,0.62718621) circle (0.02);
+\draw[fill] (4.898414,0.07632623) circle (0.02);
+\draw[fill] (6.981874,0.70879487) circle (0.02);
+\draw[fill] (7.627364,-0.54685284) circle (0.02);
+\draw[fill] (8.662304,-0.72642656) circle (0.02);
+\draw[fill] (7.764148,0.13170108) circle (0.02);
+\draw[fill] (5.876366,0.45594631) circle (0.02);
+\draw[fill] (8.858052,-0.61829651) circle (0.02);
+\draw[fill] (8.542203,0.05248123) circle (0.02);
+\draw[fill] (6.984697,0.3149351) circle (0.02);
+\draw[fill] (8.124558,-0.35548998) circle (0.02);
+\draw[fill] (5.701809,-0.05387249) circle (0.02);
+\draw[fill] (8.506242,0.61836606) circle (0.02);
+\draw[fill] (5.12613,-0.41867989) circle (0.02);
+\draw[fill] (4.813372,-0.12364853) circle (0.02);
+\draw[fill] (4.981469,-0.41312226) circle (0.02);
+\draw[fill] (4.755546,-0.43294626) circle (0.02);
+\draw[fill] (6.935457,0.4214932) circle (0.02);
+\draw[fill] (8.301113,0.18618631) circle (0.02);
+\draw[fill] (6.776895,-0.18015026) circle (0.02);
+\draw[fill] (9.17613,-0.4832159) circle (0.02);
+\draw[fill] (6.578028,0.19089543) circle (0.02);
+\draw[fill] (4.445556,-0.63869809) circle (0.02);
+\draw[fill] (7.686628,0.42154562) circle (0.02);
+\draw[fill] (5.961185,-0.11807709) circle (0.02);
+\draw[fill] (4.039544,-0.67369598) circle (0.02);
     \end{tikzpicture}
 \end{center}
 \end{multicols}
+\vspace{-0.3cm}
     Comment on the suitability of the linear model fitted.
-    \item 31 randomly selected black cherry trees have their diameter at a set distance from the ground measured, in inches, with the height of each tree also measured, in feet. The equation of the least squares regression line for $y$ on $x$ is obtained, and shown on the scatterplot below alongside a residual plot.
+    \item A number of randomly selected mobile phones returned as faulty within a six month warranty period each have their time since purchase ($x$) and number of completed battery cycles ($y$) recorded. The equation of the least squares regression line for $y$ on $x$ is obtained, and shown on the scatterplot below alongside a residual plot.
     \begin{multicols}{2}
     \begin{center}
     \begin{tikzpicture}
@@ -3650,12 +3730,12 @@ Use the residual plot to comment on the validity of the linear model.
         \foreach \x in {0,1,...,6}{
         \draw (\x,-0.1) -- (\x,0) node[below] {\x};
         }
-        \node at (3.25,-0.75) {Tree diameter (inches)};
+        \node at (3.25,-0.75) {Time since purchase (months)};
         \draw (0,0) -- (0,3.5);
         \foreach \y in {60,68,...,84}{
         \draw (-0.1,0.125*\y-0.125*60) -- (0,0.125*\y-0.125*60) node[left] {\y};
         }
-        \node[rotate=90] at (-1,2) {Tree height (feet)};
+        \node[rotate=90] at (-1,2) {Battery cycles};
         \draw[black!70,fill=black!70] (0.15,1.25) circle (0.03);
 \draw[black!70,fill=black!70] (0.3,0.625) circle (0.03);
 \draw[black!70,fill=black!70] (0.4,0.375) circle (0.03);
@@ -3694,9 +3774,9 @@ Use the residual plot to comment on the validity of the linear model.
     \begin{tikzpicture}
         \draw (0,-2) rectangle (7,2);
         \draw[dashed] (0,0) -- (7,0);
-        \node[rotate=90] at (-0.75,0) {Residual};
+        \node[rotate=90] at (-0.9,0) {Residual};
         \node[left] at (0,0) {$0$};
-        \node at (3.5,-2.25) {Fitted height (ft)};
+        \node at (3.5,-2.35) {Fitted battery cycles};
         \draw[black!70,fill=black!70] (0.393730557642215,-0.118119167292664) circle (0.03);
 \draw[black!70,fill=black!70] (0.551885879002775,-0.915565763700832) circle (0.03);
 \draw[black!70,fill=black!70] (0.657322759909817,-1.24719682797295) circle (0.03);
@@ -3731,21 +3811,22 @@ Use the residual plot to comment on the validity of the linear model.
     \end{tikzpicture}
 \end{center}
 \end{multicols}
+    \vspace{-0.3cm}
     Explain why the residual plot suggests that a linear model would be suitable for the data.  
     \item A student investigating the relationship between the length of a pendulum and the time taken for one complete swing to occur made a simple pendulum from string and a metal disc, suspended from a clamp over the edge of a table. The time taken for one complete swing ($y$ seconds) was recorded for 12 different string lengths ($x$ cm).
     \begin{multicols}{2}
     \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=1.2]
         \draw (0,0) -- (5,0);
         \foreach \x in {0,10,...,50}{
         \draw (0.1*\x,-0.1) -- (0.1*\x,0) node[below] {\x};
         }
-        \node at (2.5,-1) {Length (cm)};
+        \node at (2.5,-0.8) {Length (cm)};
         \draw (0,0) -- (0,3.2);
         \foreach \y in {0,0.5,...,1.5}{
         \draw (-0.1,2*\y) -- (0,2*\y) node[left] {\y};
         }
-        \node[rotate=90] at (-1,1.6) {Time (seconds)};
+        \node[rotate=90] at (-0.9,1.6) {Time (seconds)};
         \draw[black!80,fill=black!80] (0.65,1.02) circle (0.03);
 \draw[black!80,fill=black!80] (1.1,1.36) circle (0.03);
 \draw[black!80,fill=black!80] (1.32,1.46) circle (0.03);
@@ -3764,27 +3845,27 @@ Use the residual plot to comment on the validity of the linear model.
 
 \begin{center}
     \begin{tikzpicture}
-        \draw (0,-1.5) rectangle (6,1.5);
+        \draw (0,-2) rectangle (6,2);
         \draw[dashed] (0,0) -- (6,0);
         \node[rotate=90] at (-0.75,0) {Residuals};
         \node[left] at (0,0) {$0$};
-        \node at (3,-1.75) {Fitted time (seconds)};
-        \node at (3,1.75) {Residual plot};
-        \draw[black!80,fill=black!80] (0.490870774468948,-1.43623591489649) circle (0.05);
-\draw[black!80,fill=black!80] (1.11423900294745,-0.114130009824835) circle (0.05);
-\draw[black!80,fill=black!80] (1.41899680353694,-0.129989345123138) circle (0.05);
-\draw[black!80,fill=black!80] (1.66834409492834,0.238853016905525) circle (0.05);
-\draw[black!80,fill=black!80] (2.08392291391401,0.653590286953298) circle (0.05);
-\draw[black!80,fill=black!80] (2.79040690618965,0.498643646034507) circle (0.05);
-\draw[black!80,fill=black!80] (2.97049106108344,0.298363129721877) circle (0.05);
-\draw[black!80,fill=black!80] (3.27524886167293,0.682503794423575) circle (0.05);
-\draw[black!80,fill=black!80] (3.8155013263543,-0.118337754514322) circle (0.05);
-\draw[black!80,fill=black!80] (4.34190116373614,0.726996120879524) circle (0.05);
-\draw[black!80,fill=black!80] (4.79903786462038,-0.396792882067931) circle (0.05);
-\draw[black!80,fill=black!80] (5.33929032930175,-1.39763443100583) circle (0.05);
+        \node at (3,-2.35) {Fitted time (seconds)};
+        \draw[black!80,fill=black!80] (0.490870774468948,-1.43623591489649) circle (0.03);
+\draw[black!80,fill=black!80] (1.11423900294745,-0.114130009824835) circle (0.03);
+\draw[black!80,fill=black!80] (1.41899680353694,-0.129989345123138) circle (0.03);
+\draw[black!80,fill=black!80] (1.66834409492834,0.238853016905525) circle (0.03);
+\draw[black!80,fill=black!80] (2.08392291391401,0.653590286953298) circle (0.03);
+\draw[black!80,fill=black!80] (2.79040690618965,0.498643646034507) circle (0.03);
+\draw[black!80,fill=black!80] (2.97049106108344,0.298363129721877) circle (0.03);
+\draw[black!80,fill=black!80] (3.27524886167293,0.682503794423575) circle (0.03);
+\draw[black!80,fill=black!80] (3.8155013263543,-0.118337754514322) circle (0.03);
+\draw[black!80,fill=black!80] (4.34190116373614,0.726996120879524) circle (0.03);
+\draw[black!80,fill=black!80] (4.79903786462038,-0.396792882067931) circle (0.03);
+\draw[black!80,fill=black!80] (5.33929032930175,-1.39763443100583) circle (0.03);
     \end{tikzpicture}
 \end{center}
 \end{multicols}
+\vspace{-0.3cm}
     Comment on the suitability of the linear model fitted.
 \end{enumerate}
 
@@ -4186,15 +4267,17 @@ This new, better-fitting model also produces an improved value for the coefficie
 
 Creating a model such as this, in which one or both variables have some operation performed on them (such as taking the \textit{square root}) is called applying a \textbf{transformation} to the data. In practice, knowing which transformation(s) to try will generally be guided by a background understanding of the variables, or previous studies. In this course, any required transformations will be clearly specified.
 
-The value of applying transformations in this way, where possible, is that linear regression can hence be extended to nonlinear relationships.
 
-Continuing with the example of the model of the *square root* of $y$ *on* $x$, the various calculations required for linear regression can be *translated* in terms of $x$ and $\sqrt{y}$, instead of $x$ and $y$, such as:
-
-Equation of the $\sqrt{y}$ *on* $x$ regression line: $\hat{\sqrt{Y}}=ax+b$ where $b=\dfrac{S_{x\sqrt{y}}}{S_{xx}}$ and $a=\overline{\sqrt{y}}+bx$.
-
-Sample correlation coefficient: $r=\dfrac{S_{x\sqrt{y}}}{\sqrt{S_{xx}S_{\sqrt{y}\sqrt{y}}}}$.
-
-The sum of squared residuals is $\text{SSR}=S_{\sqrt{y}\sqrt{y}}-\dfrac{S^2_{x\sqrt{y}}}{S_{xx}}$ and an estimate for $\sigma^2$ is given by $\dfrac{\text{SSR}}{n-2}$.
+\begin{center}
+    \textbf{Table 1}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Speed ($x$) & 8.0 & 12.9 & 12.9 & 24.1 & 29.0 & 33.8 & 41.8 & 48.3 & 56.3 & 64.4\\
+        \hline
+        Distance ($y$) & 2.4 & 4.0 & 3.4 & 4.9 & 10.4 & 11.9 & 12.5 & 20.4 & 32.6 & 33.5\\
+        \hline
+    \end{tabular}
+\end{center}
 
 Predictions may be made using an $\sqrt{y}$ *on* $x$ regression line.\newline Any value of $\sqrt{y}$ obtained must be squared to find a predicted value for $y$ itself for any given $x$ value.
 
