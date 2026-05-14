@@ -4268,166 +4268,168 @@ This new, better-fitting model also produces an improved value for the coefficie
 Creating a model such as this, in which one or both variables have some operation performed on them (such as taking the \textit{square root}) is called applying a \textbf{transformation} to the data. In practice, knowing which transformation(s) to try will generally be guided by a background understanding of the variables, or previous studies. In this course, any required transformations will be clearly specified.
 
 
+Familiar statistics may still be calculated using transformed variables:
+
 \begin{center}
-    \textbf{Table 1}
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
-        \hline
-        Speed ($x$) & 8.0 & 12.9 & 12.9 & 24.1 & 29.0 & 33.8 & 41.8 & 48.3 & 56.3 & 64.4\\
-        \hline
-        Distance ($y$) & 2.4 & 4.0 & 3.4 & 4.9 & 10.4 & 11.9 & 12.5 & 20.4 & 32.6 & 33.5\\
-        \hline
+    \renewcommand{\arraystretch}{2.5}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+        Statistic & Formula for an $y$ on $x$ model & Example model & New formula\\
+    \hline
+        Sum of Squares for $x$ & $S_{xx}=\Sigma x^2 - \dfrac{\left(\Sigma x \right)^2}{n}$ & $y$ on $\sqrt{x}$ & $S_{\sqrt{x}\sqrt{x}}=\Sigma (\sqrt{x})^2 - \dfrac{\left(\Sigma \sqrt{x} \right)^2}{n}$\\
+    \hline
+        Slope parameter estimate & $b=\dfrac{S_{xy}}{S_{xx}}$ & $\log_ay$ on $x$ & $b=\dfrac{S_{x\log_ay}}{S_{xx}}$\\
+    \hline
+        Correlation coefficient & $r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$ & $y^3$ on $x$ & $r=\dfrac{S_{xy^3}}{\sqrt{S_{xx}S_{y^3y^3}}}$\\
+    \hline
     \end{tabular}
+    \renewcommand{\arraystretch}{1}
 \end{center}
 
-Predictions may be made using an $\sqrt{y}$ *on* $x$ regression line.\newline Any value of $\sqrt{y}$ obtained must be squared to find a predicted value for $y$ itself for any given $x$ value.
+Care should be taken when interpreting these statistics and when calculating using regression line equations.\newline The example opposite illustrates this for the coefficient of determination, and calculating a predicted value. 
 
 \pagebreak
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 
-\textbf{Problem:} Data was obtained for a sample of 10 cars of the stopping distance ($y$ metres) when travelling at various speeds ($x$ kilometres per hour). \textbf{Table 1} below shows the results.
+\textbf{Problem:} Data was recorded for a sample of 10 cars of their stopping distance ($y$ metres) when travelling at a range of speeds ($x$ miles per hour). The table below shows the results.
 
 \begin{center}
-    \textbf{Table 1}
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
         \hline
-        Speed ($x$) & 8.0 & 12.9 & 12.9 & 24.1 & 29.0 & 33.8 & 41.8 & 48.3 & 56.3 & 64.4\\
+        Speed ($x$) & 16.7 & 21.0 & 26.8 & 29.4 & 34.7 & 42.3 & 51.7 & 58.0 & 65.5 & 73.2\\
         \hline
-        Distance ($y$) & 2.4 & 4.0 & 3.4 & 4.9 & 10.4 & 11.9 & 12.5 & 20.4 & 32.6 & 33.5\\
+        Distance ($y$) & 6 & 8 & 13 & 18 & 22 & 38 & 51 & 66 & 82 & 107\\
         \hline
     \end{tabular}
 \end{center}
 
-The line $\hat{Y}=-5.11+0.5697x$ was fitted, and a scatterplot and a residual plot drawn (\textbf{Figures 1 and 2}).
+The line $\hat{Y}=-32.3+1.75x$ was fitted, and a scatterplot and a residual plot drawn.
 
 \vspace{-0.2cm}
 
 \begin{figure}[H]
   \centering
-\begin{minipage}[c]{.5\textwidth}
+\begin{minipage}[c]{.6\textwidth}
   \centering
     \begin{tikzpicture}
-        \draw[RoyalBlue!1!] (-1,-1) rectangle (7,3.3);
-        \node at (3,3) {\textbf{Figure 1}};
-        \draw[-stealth] (0,0) -- (6.5,0) node[below] {$x$};
-        \draw[-stealth] (0,0) -- (0,3) node[left] {$y$};
-        \node at (3,-0.8) {speed};
-        \node[rotate=90] at (-0.8,1.25) {distance};
-        \foreach \x in {10,20,...,60}{
-        \draw (0.1*\x,0) -- (0.1*\x,-0.1) node[below] {$\scriptstyle{\x}$};
+        \draw[RoyalBlue!1!] (-1,-1) rectangle (7.3,3.3);
+        \draw[-stealth] (0,0) -- (6.8,0) node[below] {$x$};
+        \draw[-stealth] (0,0) -- (0,3.35) node[left] {$y$};
+        \node at (3.4,-0.8) {speed};
+        \node[rotate=90] at (-1,1.3) {distance};
+        \foreach \x in {10,20,...,80}{
+        \draw (0.08*\x,0) -- (0.08*\x,-0.1) node[below] {$\scriptstyle{\x}$};
         };
-        \foreach \y in {10,20,30}{
-        \draw (0,0.08*\y) -- (-0.1,0.08*\y) node[left] {$\scriptstyle{\y}$};
+        \foreach \y in {20,40,...,120}{
+        \draw (0,0.025*\y) -- (-0.1,0.025*\y) node[left] {$\scriptstyle{\y}$};
         };
-        \draw[fill] (0.1*8.0,0.08*2.4) circle (0.05);
-        \draw[fill] (0.1*12.9,0.08*4.0) circle (0.05);
-        \draw[fill] (0.1*12.9,0.08*3.4) circle (0.05);
-        \draw[fill] (0.1*24.1,0.08*4.9) circle (0.05);
-        \draw[fill] (0.1*29.0,0.08*10.4) circle (0.05);
-        \draw[fill] (0.1*33.8,0.08*11.9) circle (0.05);
-        \draw[fill] (0.1*41.8,0.08*12.5) circle (0.05);
-        \draw[fill] (0.1*48.3,0.08*20.4) circle (0.05);
-        \draw[fill] (0.1*56.3,0.08*32.6) circle (0.05);
-        \draw[fill] (0.1*64.4,0.08*33.5) circle (0.05);
-        \draw[thick] (0.1*9,-0.08*5.11+0.08*0.5697*9) -- (0.1*65,-0.08*5.11+0.08*0.5697*65);
+        \draw[fill] (1.336,0.15) circle (0.04);
+\draw[fill] (1.68,0.2) circle (0.04);
+\draw[fill] (2.144,0.325) circle (0.04);
+\draw[fill] (2.352,0.45) circle (0.04);
+\draw[fill] (2.776,0.55) circle (0.04);
+\draw[fill] (3.384,0.95) circle (0.04);
+\draw[fill] (4.136,1.275) circle (0.04);
+\draw[fill] (4.64,1.65) circle (0.04);
+\draw[fill] (5.24,2.05) circle (0.04);
+\draw[fill] (5.856,2.675) circle (0.04);
+        \draw (1.48,0.001875) -- (6,2.47375);
     \end{tikzpicture}
 \end{minipage}%
   \centering
-\begin{minipage}[c]{.5\textwidth}
+\begin{minipage}[c]{.4\textwidth}
   \centering
     \begin{tikzpicture}
-        \draw[RoyalBlue!1!] (-1.5,-2.5) rectangle (6.5,1.8);
-        \node at (3,1.5) {\textbf{Figure 2}};
-        \draw[thick] (-0.3,0) -- (6.5,0);
-        \draw (-0.3,-1.7) -- (6.5,-1.7);
-        \draw (-0.3,-1.7) -- (-0.3,1.5);
-        \node at (3,-2.3) {fitted value};
+        \draw[RoyalBlue!1!] (-1.5,-2.5) rectangle (4.5,1.8);
+        \draw[thick] (0,-1.5) rectangle (3.6,1.5);
+        \draw[dashed] (0,0) -- (3.6,0);
+        \node at (1.8,-2.3) {fitted value};
         \node[rotate=90] at (-1,0) {residual};
-        \foreach \x in {0,5,...,30}{
-        \draw (0.2*\x,-1.7) -- (0.2*\x,-1.75);
-        \node[below] at (0.2*\x,-1.7) {$\scriptstyle{\x}$};
+        \foreach \x in {0,20,...,120}{
+        \draw (0.03*\x,-1.6) -- (0.03*\x,-1.5);
+        \node[below] at (0.03*\x,-1.5) {$\scriptstyle{\x}$};
         };
-        \foreach \y in {-6,-4,...,6}{
-        \draw (-0.3,0.25*\y) -- (-0.35,0.25*\y);
-        \node[left] at (-0.3,0.25*\y) {$\scriptstyle{\y}$};
+        \foreach \y in {-12,-8,...,12}{
+        \draw (-0.1,0.1*\y) -- (0,0.1*\y);
+        \node[left] at (0,0.1*\y) {$\scriptstyle{\y}$};
         };
-        \draw[fill] (0.2*-0.6,0.25*2.9524) circle (0.05);
-        \draw[fill] (0.2*2.23913,0.25*1.76087) circle (0.05);
-        \draw[fill] (0.2*2.23913,0.25*1.16087) circle (0.05);
-        \draw[fill] (0.2*8.61977,0.25*-3.71977) circle (0.05);
-        \draw[fill] (0.2*11.4,0.25*-1.0113) circle (0.05);
-        \draw[fill] (0.2*14.14586,0.25*-2.24586) circle (0.05);
-        \draw[fill] (0.2*18.70346,0.25*-6.20346) circle (0.05);
-        \draw[fill] (0.2*22.40651,0.25*-2.00651) circle (0.05);
-        \draw[fill] (0.2*26.96411,0.25*5.63589) circle (0.05);
-        \draw[fill] (0.2*31.57868,0.25*1.92132) circle (0.05);
+        \draw[fill] (0.18,0.90633953) circle (0.04);
+\draw[fill] (0.24,0.35365384) circle (0.04);
+\draw[fill] (0.39,-0.16159663) circle (0.04);
+\draw[fill] (0.54,-0.11670891) circle (0.04);
+\draw[fill] (0.66,-0.64443778) circle (0.04);
+\draw[fill] (1.14,-0.37476598) circle (0.04);
+\draw[fill] (1.53,-0.72017191) circle (0.04);
+\draw[fill] (1.98,-0.32294396) circle (0.04);
+\draw[fill] (2.46,-0.03576784) circle (0.04);
+\draw[fill] (3.21,1.11639964) circle (0.04);
+
     \end{tikzpicture}
 \end{minipage}
 \end{figure}
 
 \vspace{-0.5cm}
 
-A second linear model was created between speed ($x$) and the square root of the stopping distance ($\sqrt{y}$). For this new model, a scatterplot (\textbf{Figure 3}) and residual plot (\textbf{Figure 4}) were produced, and a least squares regression line was computed as: \texttt{square root of distance = 0.797 + 0.078 $\times$ speed}
+A new linear model was created between speed ($x$) and the square root of the stopping distance ($\sqrt{y}$). For this new model, a scatterplot and residual plot were produced, and a least squares regression line was computed as: \texttt{square root of distance = -0.016 + 0.14 $\times$ speed}
 
 \begin{figure}[H]
   \centering
-\begin{minipage}[c]{.5\textwidth}
+\begin{minipage}[c]{.6\textwidth}
   \centering
     \begin{tikzpicture}
-        \draw[RoyalBlue!1!] (-1,-1) rectangle (7,3.3);
-        \node at (3,3) {\textbf{Figure 3}};
-        \draw[-stealth] (0,0) -- (6.5,0) node[below] {$x$};
+        \draw[RoyalBlue!1!] (-1,-1) rectangle (7.3,3.3);
+        \draw[-stealth] (0,0) -- (6.8,0) node[below] {$x$};
         \draw[-stealth] (0,0) -- (0,3) node[left] {$\sqrt{y}$};
-        \node at (3,-0.8) {speed};
-        \node[rotate=90] at (-0.8,1.25) {$\sqrt{\text{distance}}$};
-        \foreach \x in {10,20,...,60}{
-        \draw (0.1*\x,0) -- (0.1*\x,-0.1) node[below] {$\scriptstyle{\x}$};
+        \node at (3.4,-0.8) {speed};
+        \node[rotate=90] at (-1,1.3) {$\sqrt{\text{distance}}$};
+        \foreach \x in {10,20,...,80}{
+        \draw (0.08*\x,0) -- (0.08*\x,-0.1) node[below] {$\scriptstyle{\x}$};
         };
-        \foreach \y in {1,2,...,5}{
-        \draw (0,0.5*\y) -- (-0.1,0.5*\y) node[left] {$\scriptstyle{\y}$};
+        \foreach \y in {0,2,...,10}{
+        \draw (0,0.25*\y) -- (-0.1,0.25*\y) node[left] {$\scriptstyle{\y}$};
         };
-        \draw[fill] (0.1*8.0,0.5*2.4^0.5) circle (0.05);
-        \draw[fill] (0.1*12.9,0.5*4.0^0.5) circle (0.05);
-        \draw[fill] (0.1*12.9,0.5*3.4^0.5) circle (0.05);
-        \draw[fill] (0.1*24.1,0.5*4.9^0.5) circle (0.05);
-        \draw[fill] (0.1*29.0,0.5*10.4^0.5) circle (0.05);
-        \draw[fill] (0.1*33.8,0.5*11.9^0.5) circle (0.05);
-        \draw[fill] (0.1*41.8,0.5*12.5^0.5) circle (0.05);
-        \draw[fill] (0.1*48.3,0.5*20.4^0.5) circle (0.05);
-        \draw[fill] (0.1*56.3,0.5*32.6^0.5) circle (0.05);
-        \draw[fill] (0.1*64.4,0.5*33.5^0.5) circle (0.05);
-        \draw[thick] (0.1*5,0.5*0.797+0.5*0.078*5) -- (0.1*65,0.5*0.797+0.5*0.078*65);
+    \draw[fill] (1.336,0.6123725) circle (0.04);
+\draw[fill] (1.68,0.70710675) circle (0.04);
+\draw[fill] (2.144,0.90138775) circle (0.04);
+\draw[fill] (2.352,1.06066025) circle (0.04);
+\draw[fill] (2.776,1.172604) circle (0.04);
+\draw[fill] (3.384,1.5411035) circle (0.04);
+\draw[fill] (4.136,1.785357) circle (0.04);
+\draw[fill] (4.64,2.0310095) circle (0.04);
+\draw[fill] (5.24,2.26384625) circle (0.04);
+\draw[fill] (5.856,2.58602) circle (0.04);
+    \draw (0.8,0.346) -- (6.4,2.796);
     \end{tikzpicture}
 \end{minipage}%
   \centering
-\begin{minipage}[c]{.5\textwidth}
+\begin{minipage}[c]{.4\textwidth}
   \centering
     \begin{tikzpicture}
-        \draw[RoyalBlue!1!] (-1.8,-2.5) rectangle (6.2,1.8);
-        \node at (2.6,1.5) {\textbf{Figure 4}};
-        \draw[thick] (-0.3,0) -- (6.2,0);
-        \draw (-0.3,-1.7) -- (6.2,-1.7);
-        \draw (-0.3,-1.7) -- (-0.3,1.5);
-        \node at (3,-2.3) {fitted value};
-        \node[rotate=90] at (-1.3,0) {residual};
-        \foreach \x in {0,5,...,30}{
-        \draw (0.2*\x,-1.7) -- (0.2*\x,-1.75);
-        \node[below] at (0.2*\x,-1.7) {$\scriptstyle{\x}$};
+        \draw[RoyalBlue!1!] (-1.5,-2.5) rectangle (4.5,1.8);
+        \draw[thick] (0,-1.5) rectangle (3.6,1.5);
+        \draw[dashed] (0,0) -- (3.6,0);
+        \node at (1.8,-2.3) {fitted value};
+        \node[rotate=90] at (-1,0) {residual};
+        \foreach \x in {0,2,...,12}{
+        \draw (0.3*\x,-1.6) -- (0.3*\x,-1.5);
+        \node[below] at (0.3*\x,-1.5) {$\scriptstyle{\x}$};
         };
-        \foreach \y in {-0.6,-0.3,...,0.6}{
-        \draw (-0.3,2*\y) -- (-0.35,2*\y);
-        \node[left] at (-0.3,2*\y) {$\scriptstyle{\y}$};
+        \foreach \y in {-0.2,-0.1,0,0.1,0.2}{
+        \draw (-0.1,5*\y) -- (0,5*\y);
+        \node[left] at (0,5*\y) {$\scriptstyle{\y}$};
         };
-        \draw[fill] (1.4,2*0.12819333848297) circle (0.05);
-        \draw[fill] (1.8032,2*0.1968) circle (0.05);
-        \draw[fill] (1.8032,2*0.04070889145858) circle (0.05);
-        \draw[fill] (2.6768,2*-0.46320563788213) circle (0.05);
-        \draw[fill] (3.1,2*0.16590309931942) circle (0.05);
-        \draw[fill] (3.4334,2*0.01623766213207) circle (0.05);
-        \draw[fill] (4.0574,2*-0.52186609406726) circle (0.05);
-        \draw[fill] (4.5644,2*-0.04776408374551) circle (0.05);
-        \draw[fill] (5.1884,2*0.52124096944808) circle (0.05);
-        \draw[fill] (5.8202,2*-0.03228154860489) circle (0.05);
+        \draw[fill] (0.734847,0.618051685) circle (0.04);
+\draw[fill] (0.8485281,-0.502807) circle (0.04);
+\draw[fill] (1.0816653,-0.684666355) circle (0.04);
+\draw[fill] (1.2727923,0.67742755) circle (0.04);
+\draw[fill] (1.4071248,-0.80053236) circle (0.04);
+\draw[fill] (1.8493242,1.239657335) circle (0.04);
+\draw[fill] (2.1424284,-0.46739347) circle (0.04);
+\draw[fill] (2.4372114,0.027531465) circle (0.04);
+\draw[fill] (2.7166155,-0.57540742) circle (0.04);
+\draw[fill] (3.103224,0.468138565) circle (0.04);
+
     \end{tikzpicture}
 \end{minipage}
 \end{figure}
@@ -4436,20 +4438,20 @@ A second linear model was created between speed ($x$) and the square root of the
 
 \begin{enumerate}
     \item[(a)] Comment on the appropriateness of the linear model of $y$ on $x$.
-    \item[(b)] Comment on the suitability of the new model of $\sqrt{y}$ on $x$.
+    \item[(b)] Comment on the appropriateness of the new model of $\sqrt{y}$ on $x$.
     \item[(c)] By first creating a new table for $x$ and $\sqrt{y}$ and finding summary statistics for this data, calculate the coefficient of determination for this new model and interpret its value.
-    \item[(d)] Estimate the stopping distance at a speed of 50 kilometres per hour.
+    \item[(d)] Estimate the stopping distance at a speed of 50 miles per hour.
 \end{enumerate}
 
 \tcblower
 \textbf{Solution:}
 
 \begin{enumerate}
-    \item[(a)] The residual plot appears to show a curved pattern, so this linear model is not suitable.
+    \item[(a)] The residual plot appears to show a curved pattern, so this linear model is not appropriate.
     \item[(b)] The residual plot for the new model appears to show a random scatter of points centered on zero, with a constant variance as fitted values increase, so the new model seems appropriate.
-    \item[(c)] $r=\dfrac{S_{x\sqrt{y}}}{\sqrt{S_{xx}S_{\sqrt{y}\sqrt{y}}}}=\dfrac{264.36}{\sqrt{3369.025\times 21.586}}=0.9803$ and $R^2=0.9803^2=0.961$.\newline
-    $96.1$\% of the variation of $\sqrt{\text{distance}}$ is explained by the model.
-    \item[(d)] $\sqrt{\text{distance}}=0.797+0.078\times 50=4.697\text{, so distance}=4.697^2=22.1\text{ metres}$
+    \item[(c)] $r=\dfrac{S_{x\sqrt{y}}}{\sqrt{S_{xx}S_{\sqrt{y}\sqrt{y}}}}=\dfrac{3400.0}{\sqrt{10758.9\times 5951.5}}=0.9987$ and $R^2=0.99987^2=0.997$.\\[0.5em]
+    99.7\% of the variation of $\sqrt{\text{distance}}$ is explained by the model.
+    \item[(d)] $\sqrt{\text{distance}}=-0.016+0.14\times 50=6.984\text{, so distance}=6.984^2=48.8\text{ metres}$
 \end{enumerate}
 
 \end{tcolorbox}
