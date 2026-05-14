@@ -22895,26 +22895,31 @@ This new, better-fitting model also produces an improved value for the coefficie
 
 Creating a model such as this, in which one or both variables have some operation performed on them (such as taking the \textit{square root}) is called applying a \textbf{transformation} to the data. In practice, knowing which transformation(s) to try will generally be guided by a background understanding of the variables, or previous studies. In this course, any required transformations will be clearly specified.
 
+Familiar statistics may still be calculated using transformed variables:
+
 \begin{center}
-    \textbf{Table 1}
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
-        \hline
-        Speed ($x$) & 8.0 & 12.9 & 12.9 & 24.1 & 29.0 & 33.8 & 41.8 & 48.3 & 56.3 & 64.4\\
-        \hline
-        Distance ($y$) & 2.4 & 4.0 & 3.4 & 4.9 & 10.4 & 11.9 & 12.5 & 20.4 & 32.6 & 33.5\\
-        \hline
+    \renewcommand{\arraystretch}{2.5}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+        Statistic & Formula for an $y$ on $x$ model & Example model & New formula\\
+    \hline
+        Sum of Squares for $x$ & $S_{xx}=\Sigma x^2 - \dfrac{\left(\Sigma x \right)^2}{n}$ & $y$ on $\sqrt{x}$ & $S_{\sqrt{x}\sqrt{x}}=\Sigma (\sqrt{x})^2 - \dfrac{\left(\Sigma \sqrt{x} \right)^2}{n}$\\
+    \hline
+        Slope parameter estimate & $b=\dfrac{S_{xy}}{S_{xx}}$ & $\log_ay$ on $x$ & $b=\dfrac{S_{x\log_ay}}{S_{xx}}$\\
+    \hline
+        Correlation coefficient & $r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$ & $y^3$ on $x$ & $r=\dfrac{S_{xy^3}}{\sqrt{S_{xx}S_{y^3y^3}}}$\\
+    \hline
     \end{tabular}
+    \renewcommand{\arraystretch}{1}
 \end{center}
 
-Predictions may be made using an \(\sqrt{y}\) \emph{on} \(x\) regression line.\newline Any value of \(\sqrt{y}\) obtained must be squared to find a predicted value for \(y\) itself for any given \(x\) value.
+Care should be taken when interpreting these statistics and when calculating using regression line equations.\newline The example opposite illustrates this for the coefficient of determination, and calculating a predicted value.
 
-\newpage
+\pagebreak
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 
-\textbf{Problem:} 
-
-Data was recorded for a sample of 10 cars of their stopping distance ($y$ metres) when travelling at a range of speeds ($x$ miles per hour). The table below shows the results.
+\textbf{Problem:} Data was recorded for a sample of 10 cars of their stopping distance ($y$ metres) when travelling at a range of speeds ($x$ miles per hour). The table below shows the results.
 
 \begin{center}
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
