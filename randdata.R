@@ -1,11 +1,11 @@
 library(truncnorm)
 
-x<-c(1:10)
-e<-0.1*ceiling(rtruncnorm(10,-50,50,0,25))
-a<-1
-b<-0.1
-y <- x^2+e
-df_stopping <- data.frame(x,y)
+x<-rtruncnorm(50,0.1,3.9,2,0.8)
+e<-rtruncnorm(50,-0.9,0.9,0,0.2)
+a<-1.2
+b<-0.3
+y <- e*x
+df_temp <- data.frame(x,y)
 plot(x,y)
 
 y <- sqrty^2

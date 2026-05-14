@@ -4265,22 +4265,27 @@ This new, better-fitting model also produces an improved value for the coefficie
 
 \vspace{-0.5cm}
 
-Creating a model such as this, in which one or both variables have some operation performed on them (such as taking the \textit{square root}) is called applying a \textbf{transformation} to the data. In practice, knowing which transformation(s) to try will generally be guided by a background understanding of the variables, or previous studies. In this course, any required transformations will be clearly specified.
+Creating a model such as this, in which one or both variables have some operation performed on them (such as taking the \textit{square root}) is called applying a \textit{transformation} to the data. In practice, knowing which transformation(s) to try will generally be guided by a background understanding of the variables, or previous studies. In this course, any required transformations will be clearly specified.
 
 
 Familiar statistics may still be calculated using transformed variables:
 
 \begin{center}
-    \renewcommand{\arraystretch}{2.5}
+    \renewcommand{\arraystretch}{1.5}
     \begin{tabular}{|c|c|c|c|}
     \hline
-        Statistic & Formula for an $y$ on $x$ model & Example model & New formula\\
+        Statistic & For an $y$ on $x$ model & New model & New formula\\
     \hline
+    &&&\\[-0.8em]
         Sum of Squares for $x$ & $S_{xx}=\Sigma x^2 - \dfrac{\left(\Sigma x \right)^2}{n}$ & $y$ on $\sqrt{x}$ & $S_{\sqrt{x}\sqrt{x}}=\Sigma (\sqrt{x})^2 - \dfrac{\left(\Sigma \sqrt{x} \right)^2}{n}$\\
+        &&&\\[-0.8em]
     \hline
-        Slope parameter estimate & $b=\dfrac{S_{xy}}{S_{xx}}$ & $\log_ay$ on $x$ & $b=\dfrac{S_{x\log_ay}}{S_{xx}}$\\
+    &&&\\[-0.8em]
+        Slope parameter estimate & $b=\dfrac{S_{xy}}{S_{xx}}$ & $\log_ay$ on $x$ & $b=\dfrac{S_{x\log_ay}}{S_{xx}}$\\[2ex]
+    &&&\\[-0.8em]
     \hline
-        Correlation coefficient & $r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$ & $y^3$ on $x$ & $r=\dfrac{S_{xy^3}}{\sqrt{S_{xx}S_{y^3y^3}}}$\\
+    &&&\\[-0.8em]
+        Correlation coefficient & $r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$ & $y^3$ on $x$ & $r=\dfrac{S_{xy^3}}{\sqrt{S_{xx}S_{y^3y^3}}}$\\[4ex]
     \hline
     \end{tabular}
     \renewcommand{\arraystretch}{1}
@@ -4463,97 +4468,527 @@ A new linear model was created between speed ($x$) and the square root of the st
 #### [Exercise 18.8](#ex188a) {-}
 
 \begin{enumerate}
-    \item An study was carried out in a factory to investigate the relationship between tool-wear ($w$ \%) and run-time ($x$ minutes) of a particular type of tool. A tool was randomly selected, and the results of the experiment are displayed in the scatterplot below. The line $\hat{W}=2.556+0.12287x$ was fitted to the data.
+    \item For each of the following, in context:
+    \begin{itemize}
+        \item Describe any relationship shown by the scatterplot.
+        \item Interpret the coefficient of determination of the proposed linear model shown by the regression line.
+    \end{itemize}
+    \begin{enumerate}
+        \begin{multicols}{2}
+        \item Original data:\\[0.1em] $x=$ distance\\[0.1em] $y=$ power\\
+            \begin{tikzpicture}
+                \draw[white] (-1.3,-1) rectangle (5,4.5);
+                \draw[-stealth] (0,0) -- (4.4,0) node[right] {$x$};
+                \draw[-stealth] (0,0) -- (0,3.4) node[above] {$\sqrt{y}$};
+                \node[above,rotate=90] at (-0.1,1.75) {$\sqrt{\text{power}}$};
+                \node[below] at (2.25,-0.1) {distance};
+                \draw[fill] (1.1343375,1.6726866) circle (0.04);
+\draw[fill] (3.4495000,0.4068567) circle (0.04);
+\draw[fill] (1.9237378,0.6798563) circle (0.04);
+\draw[fill] (2.1707807,1.3094805) circle (0.04);
+\draw[fill] (2.7624626,0.8850825) circle (0.04);
+\draw[fill] (2.7998040,1.0657789) circle (0.04);
+\draw[fill] (3.3598131,0.3311152) circle (0.04);
+\draw[fill] (3.2823934,0.7867488) circle (0.04);
+\draw[fill] (2.3139681,1.2941601) circle (0.04);
+\draw[fill] (1.8680511,1.5786889) circle (0.04);
+\draw[fill] (1.0099683,2.0940976) circle (0.04);
+\draw[fill] (1.7743316,1.8949057) circle (0.04);
+\draw[fill] (2.9176960,0.8636994) circle (0.04);
+\draw[fill] (1.8042795,1.5917084) circle (0.04);
+\draw[fill] (3.5009274,0.5053226) circle (0.04);
+\draw[fill] (3.0373298,0.1600278) circle (0.04);
+\draw[fill] (0.6336943,2.4433959) circle (0.04);
+\draw[fill] (2.1217727,1.3026409) circle (0.04);
+\draw[fill] (1.6447863,2.0932187) circle (0.04);
+\draw[fill] (0.3458931,2.0746691) circle (0.04);
+\draw[dashed] (0.2,2.65-0.636*0.2) -- (3.9,-3.9*0.636+2.65);
+\node at (2.1,3.5) {$R^2=0.805$};
+            \end{tikzpicture}
+        \item Original data:\\[0.1em] $x=$ rating\\[0.1em]$y=$ energy\\
+            \begin{tikzpicture}
+                \draw[white] (-1.3,-1) rectangle (5,4.5);
+                \draw[-stealth] (0,0) -- (4.4,0) node[right] {$x$};
+                \draw[-stealth] (0,0) -- (0,3.4) node[above] {$\log_{10}{y}$};
+                \node[above,rotate=90] at (-0.1,1.75) {$\log_{10}{\text{energy}}$};
+                \node[below] at (2.25,-0.1) {rating};
+               \draw[fill] (1.6953703,1.8024727) circle (0.04);
+               \node at (2.1,3.5) {$R^2=0.382$};
+\draw[fill] (0.7515029,1.4576628) circle (0.04);
+\draw[fill] (1.7200280,1.5028064) circle (0.04);
+\draw[fill] (0.8200360,0.2665884) circle (0.04);
+\draw[fill] (4.0828855,2.2335931) circle (0.04);
+\draw[fill] (1.2073717,1.6680051) circle (0.04);
+\draw[fill] (3.9721255,2.1216959) circle (0.04);
+\draw[fill] (2.4968793,1.5168328) circle (0.04);
+\draw[fill] (2.8114819,1.3875356) circle (0.04);
+\draw[fill] (2.4221493,1.5084155) circle (0.04);
+\draw[fill] (3.1644698,1.1215200) circle (0.04);
+\draw[fill] (0.3515495,0.5447814) circle (0.04);
+\draw[fill] (1.1162134,1.5353750) circle (0.04);
+\draw[fill] (1.7742625,1.5487202) circle (0.04);
+\draw[fill] (2.1027258,1.3155067) circle (0.04);
+\draw[fill] (2.1169761,0.7912284) circle (0.04);
+\draw[fill] (1.6177322,2.1380298) circle (0.04);
+\draw[fill] (2.2899032,2.1569719) circle (0.04);
+\draw[fill] (1.5038142,1.2246076) circle (0.04);
+\draw[fill] (2.5660804,2.5129638) circle (0.04);
+\draw[fill] (2.2453159,0.8387867) circle (0.04);
+\draw[fill] (1.3234595,1.1851994) circle (0.04);
+\draw[fill] (3.3412528,2.4774945) circle (0.04);
+\draw[fill] (2.5728475,2.2418002) circle (0.04);
+\draw[fill] (2.0809492,1.6754961) circle (0.04);
+\draw[fill] (2.4096829,1.1651102) circle (0.04);
+\draw[fill] (1.2628246,1.1938389) circle (0.04);
+\draw[fill] (2.0966906,0.8330979) circle (0.04);
+\draw[fill] (2.1894195,0.7527688) circle (0.04);
+\draw[fill] (2.5081760,1.7274377) circle (0.04);
+\draw[fill] (3.1003466,1.5201941) circle (0.04);
+\draw[fill] (0.9367985,0.4608441) circle (0.04);
+\draw[fill] (1.8398491,1.6042693) circle (0.04);
+\draw[fill] (1.1639462,0.6906614) circle (0.04);
+\draw[fill] (2.6236138,1.6110642) circle (0.04);
+\draw[fill] (3.2612566,2.1624834) circle (0.04);
+\draw[fill] (1.6511258,1.5694897) circle (0.04);
+\draw[fill] (0.3539495,0.7028981) circle (0.04);
+\draw[fill] (1.5677722,1.7184026) circle (0.04);
+\draw[fill] (1.9271770,1.1285897) circle (0.04);
+\draw[fill] (1.7656377,0.9655674) circle (0.04);
+\draw[fill] (3.3397689,1.8393889) circle (0.04);
+\draw[fill] (2.4731848,1.3563888) circle (0.04);
+\draw[fill] (1.7990456,1.2689363) circle (0.04);
+\draw[fill] (1.2483035,0.8231336) circle (0.04);
+\draw[fill] (2.0573095,1.2494335) circle (0.04);
+\draw[fill] (1.8826167,1.2271349) circle (0.04);
+\draw[fill] (3.7885421,2.1959310) circle (0.04);
+\draw[fill] (1.4956894,1.5239921) circle (0.04);
+\draw[fill] (1.1224145,1.4440349) circle (0.04);
+\draw[fill] (2.0475624,1.7332993) circle (0.04);
+\draw[fill] (3.7441263,2.5436200) circle (0.04);
+\draw[fill] (2.9496009,1.2428402) circle (0.04);
+\draw[fill] (2.9067131,1.9195236) circle (0.04);
+\draw[fill] (2.6306206,1.2428278) circle (0.04);
+\draw[fill] (2.7350188,0.7737969) circle (0.04);
+\draw[fill] (3.3295390,1.6282031) circle (0.04);
+\draw[fill] (2.4658159,2.5382640) circle (0.04);
+\draw[fill] (1.2886559,1.7483917) circle (0.04);
+\draw[fill] (0.5306388,0.8861893) circle (0.04);
+\draw[fill] (3.5256717,1.9564356) circle (0.04);
+\draw[fill] (2.4451752,2.3768695) circle (0.04);
+\draw[fill] (3.3489123,1.4964675) circle (0.04);
+\draw[fill] (1.8875809,1.0453335) circle (0.04);
+\draw[fill] (2.8831713,1.6182796) circle (0.04);
+\draw[fill] (2.3420286,1.6654183) circle (0.04);
+\draw[fill] (3.2285056,1.8046636) circle (0.04);
+\draw[fill] (2.4291010,1.9047513) circle (0.04);
+\draw[fill] (1.9033555,1.0591276) circle (0.04);
+\draw[fill] (1.3918676,0.4259730) circle (0.04);
+\draw[fill] (3.6464859,2.0660368) circle (0.04);
+\draw[fill] (2.5185994,2.1141477) circle (0.04);
+\draw[fill] (2.8559220,2.3599254) circle (0.04);
+\draw[fill] (1.6585913,0.7067321) circle (0.04);
+\draw[fill] (3.0431606,2.1671866) circle (0.04);
+\draw[fill] (1.1456933,1.6781471) circle (0.04);
+\draw[fill] (3.1525956,1.9062798) circle (0.04);
+\draw[fill] (1.0358606,1.3771660) circle (0.04);
+\draw[fill] (1.9334015,1.5322238) circle (0.04);
+\draw[fill] (0.3112253,0.2552299) circle (0.04);
+\draw[dashed] (0.1,0.66+0.385*0.1) -- (4.5,0.66+0.385*4.5);
+            \end{tikzpicture}
+        \end{multicols}
+        \vspace{-1cm}
+        \begin{multicols}{2}
+        \item Original data:\\[0.1em] $x=$ time\\[0.1em]$y=$ population size\\
+            \begin{tikzpicture}
+                \draw[white] (-1.3,-1) rectangle (5,4.5);
+                \draw[-stealth] (0,0) -- (4.4,0) node[right] {$\log_{2} x$};
+                \draw[-stealth] (0,0) -- (0,3.4) node[above] {$\log_{2} y$};
+                \node[above,rotate=90] at (-0.1,1.75) {$\log_{2}{\text{population}}$};
+                \node[below] at (2.25,-0.1) {$\log_2{\text{time}}$};
+                \node at (2.1,3.5) {$R^2=0.974$};
+                \draw[dashed] (0.2,0.2*0.205+1.5) -- (4,4*0.205+1.5);
+                \draw[fill] (3.1873467,2.166073) circle (0.05);
+\draw[fill] (2.6680954,2.031357) circle (0.05);
+\draw[fill] (1.1784601,1.762532) circle (0.05);
+\draw[fill] (1.5444367,1.856884) circle (0.05);
+\draw[fill] (2.6189338,2.044090) circle (0.05);
+\draw[fill] (3.5305620,2.244221) circle (0.05);
+\draw[fill] (3.1520008,2.123213) circle (0.05);
+\draw[fill] (2.2568033,1.957069) circle (0.05);
+\draw[fill] (1.9521927,1.897202) circle (0.05);
+\draw[fill] (0.8586135,1.649572) circle (0.05);
+\draw[fill] (2.2764577,1.986190) circle (0.05);
+\draw[fill] (1.4678087,1.823880) circle (0.05);
+            \end{tikzpicture}
+        \item Original data:\\[0.1em] $x=$ quality\\[0.1em] $y=$ cost\\
+            \begin{tikzpicture}
+                \draw[white] (-1.3,-1) rectangle (5,4.5);
+                \draw[-stealth] (0,0) -- (4.4,0) node[right] {$x$};
+                \draw[-stealth] (0,0) -- (0,3.4) node[above] {$\dfrac{1}{y}$};
+                \node[left] at (-0.1,1.75) {$\dfrac{1}{\text{cost}}$};
+                \node[below] at (2.25,-0.1) {quality};
+                \node at (2.1,3.5) {$R^2=0.001$};
+                \draw[dashed] (0.2,1.7) -- (4.2,1.6);
+                \draw[fill] (2.6633322,2.1078449) circle (0.04);
+\draw[fill] (2.7987867,1.5743967) circle (0.04);
+\draw[fill] (1.2091872,1.2332630) circle (0.04);
+\draw[fill] (2.3059846,2.2657675) circle (0.04);
+\draw[fill] (2.7159586,2.6251418) circle (0.04);
+\draw[fill] (1.3366591,0.3310746) circle (0.04);
+\draw[fill] (1.3059072,2.0939323) circle (0.04);
+\draw[fill] (2.0235416,1.4253206) circle (0.04);
+\draw[fill] (1.6233932,2.0049530) circle (0.04);
+\draw[fill] (1.9949447,1.7886263) circle (0.04);
+\draw[fill] (2.1844602,1.9296788) circle (0.04);
+\draw[fill] (2.9267323,0.4400398) circle (0.04);
+\draw[fill] (2.3096074,1.3258616) circle (0.04);
+\draw[fill] (2.7207827,2.2575680) circle (0.04);
+\draw[fill] (1.5446259,2.6128916) circle (0.04);
+\draw[fill] (2.3108225,0.8584940) circle (0.04);
+\draw[fill] (1.4830599,2.2774113) circle (0.04);
+\draw[fill] (2.5256656,1.8047746) circle (0.04);
+\draw[fill] (2.2747982,1.6653673) circle (0.04);
+\draw[fill] (1.5676608,1.4549851) circle (0.04);
+\draw[fill] (2.2264991,2.6037072) circle (0.04);
+\draw[fill] (2.3465623,1.1292597) circle (0.04);
+\draw[fill] (3.5585621,0.5919046) circle (0.04);
+\draw[fill] (1.1823042,2.6572399) circle (0.04);
+\draw[fill] (2.2631085,1.8064112) circle (0.04);
+\draw[fill] (2.8326272,0.5438660) circle (0.04);
+\draw[fill] (2.9944875,2.1730358) circle (0.04);
+\draw[fill] (3.0528087,0.9773006) circle (0.04);
+\draw[fill] (1.8488090,1.5777642) circle (0.04);
+\draw[fill] (1.3958835,0.7479945) circle (0.04);
+\draw[fill] (2.6119485,1.2189574) circle (0.04);
+\draw[fill] (2.3378058,2.4426733) circle (0.04);
+\draw[fill] (3.5022591,1.9350712) circle (0.04);
+\draw[fill] (3.4808831,2.0445760) circle (0.04);
+\draw[fill] (2.0817205,1.8083703) circle (0.04);
+\draw[fill] (3.8236102,1.1489090) circle (0.04);
+\draw[fill] (3.3449729,1.6512649) circle (0.04);
+\draw[fill] (2.7405913,2.1579420) circle (0.04);
+\draw[fill] (1.9429451,1.5909164) circle (0.04);
+\draw[fill] (2.8689850,1.7445862) circle (0.04);
+\draw[fill] (0.4772686,1.0665465) circle (0.04);
+\draw[fill] (1.5794001,1.1889841) circle (0.04);
+\draw[fill] (2.6317207,1.8998650) circle (0.04);
+\draw[fill] (2.0965646,0.4598825) circle (0.04);
+\draw[fill] (2.4205907,2.9979536) circle (0.04);
+\draw[fill] (2.2228914,1.0117136) circle (0.04);
+\draw[fill] (1.7100033,0.8098390) circle (0.04);
+\draw[fill] (2.4407255,2.3954294) circle (0.04);
+\draw[fill] (1.8774302,2.2205408) circle (0.04);
+\draw[fill] (2.8059604,0.1048603) circle (0.04);
+            \end{tikzpicture}
+        \end{multicols}
+    \end{enumerate}
+    \vspace{-0.8cm}
+    \item It is determined that a linear relationship exists between $x$ and $\dfrac{1}{y}$.\newline Summary statistics for this model are as follows:
+    \begin{center}
+        \begin{tabular}{ccccccccccc}
+            $\Sigma x=35.9$ & \quad & $\Sigma \dfrac{1}{y}=133.4$ & \quad & $\Sigma x^2=142.3$ & \quad & $\Sigma \dfrac{1}{y^2}=1922.4$ & \quad & $\Sigma x\dfrac{1}{y}=517.8$ & \quad & $n=10$
+        \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item Determine the equation of the least squares regression line for the model.
+        \item Calculate an estimate for the value of $y$ when $x=5$.
+    \end{enumerate}
+    \item It is determined that a linear relationship exists between $\log x$ and $\log y$.\newline Summary statistics for this model are as follows:
+    \begin{center}
+        \begin{tabular}{lllll}
+            $\Sigma \log x=46.3$ & \quad & $\Sigma \log y=1870.4$ & \quad & $\Sigma (\log x)^2=308.4$\\[0.5em]
+            $\Sigma (\log y)^2=350761.2$ & \quad & $\Sigma (\log x)(\log y)=8370.3$ & \quad & $n=10$
+        \end{tabular}
+    \end{center}
+    Calculate the correlation coefficient for the linear model.
+\end{enumerate}
+    
+\pagebreak
+    
+\begin{enumerate}[resume]
+    \item A linear model created by a statistician for variables $x$ and $y$ is used to produce a residual plot. After studying the residual plot, the statistician concludes that the assumption for the population of errors that $\text{V}(\epsilon_i)=0$ is not supported.
+    \begin{enumerate}
+        \item Suggest a feature of the residual plot which could have led to their conclusion.
+    \end{enumerate}
+    The statistician tries three different transformations, producing three new models (A, B and C).\newline Residual plots for each model are below:
+    \begin{multicols}{3}
+        \begin{center}
+            \begin{tikzpicture}
+                \draw[white] (-1,-1.6) rectangle (4.5,1.6);
+                \node[below] at (1.75,1.6) {Model A};
+                \draw (0,-1) rectangle (4,1);
+                \node[above] at (1.75,-1.6) {fitted values};
+                \node[above,rotate=90] at (-0.4,0) {residuals};
+                \node[left] at (0,0) {0};
+                \draw[dashed] (0,0) -- (4,0);
+                \draw[fill] (0.6470585,-0.04059208) circle (0.04);
+\draw[fill] (0.5116363,0.07980830) circle (0.04);
+\draw[fill] (2.6484519,0.60769115) circle (0.04);
+\draw[fill] (1.0374884,-0.03257977) circle (0.04);
+\draw[fill] (1.4186437,0.11842971) circle (0.04);
+\draw[fill] (2.8959051,0.34314825) circle (0.04);
+\draw[fill] (2.1966061,-0.76800125) circle (0.04);
+\draw[fill] (2.7117935,0.93268046) circle (0.04);
+\draw[fill] (1.5732512,0.23995998) circle (0.04);
+\draw[fill] (1.0351903,-0.46650943) circle (0.04);
+\draw[fill] (2.1799162,0.72259800) circle (0.04);
+\draw[fill] (1.1880995,0.04519235) circle (0.04);
+\draw[fill] (0.5475668,-0.03216454) circle (0.04);
+\draw[fill] (1.6492526,-0.09201117) circle (0.04);
+\draw[fill] (2.2395919,0.52341370) circle (0.04);
+\draw[fill] (2.9695057,0.30500921) circle (0.04);
+\draw[fill] (2.3004606,-0.47920268) circle (0.04);
+\draw[fill] (1.2775720,-0.23628843) circle (0.04);
+\draw[fill] (2.7232256,-0.12417786) circle (0.04);
+\draw[fill] (1.8709065,-0.64107055) circle (0.04);
+\draw[fill] (1.5787415,-0.41107235) circle (0.04);
+\draw[fill] (2.8583194,-0.96108984) circle (0.04);
+\draw[fill] (1.8973765,0.11685406) circle (0.04);
+\draw[fill] (0.3437122,-0.01404111) circle (0.04);
+\draw[fill] (2.2917904,-0.30884252) circle (0.04);
+\draw[fill] (0.9796167,-0.13793196) circle (0.04);
+\draw[fill] (2.1595126,-0.19223149) circle (0.04);
+\draw[fill] (2.6221979,-0.30916782) circle (0.04);
+\draw[fill] (2.2085427,0.06959747) circle (0.04);
+\draw[fill] (2.5805395,-0.93548214) circle (0.04);
+\draw[fill] (0.8868318,0.15666772) circle (0.04);
+\draw[fill] (1.8029292,-0.40703998) circle (0.04);
+\draw[fill] (0.7687322,-0.03576612) circle (0.04);
+\draw[fill] (1.6194300,0.02388511) circle (0.04);
+\draw[fill] (1.8808871,-0.41795996) circle (0.04);
+\draw[fill] (1.4534812,-0.31390721) circle (0.04);
+\draw[fill] (2.1313774,-0.43264452) circle (0.04);
+\draw[fill] (1.3266854,0.01186285) circle (0.04);
+\draw[fill] (1.6658994,0.29216854) circle (0.04);
+\draw[fill] (0.9878164,0.08605737) circle (0.04);
+\draw[fill] (1.1916964,0.15407973) circle (0.04);
+\draw[fill] (1.5368275,0.12578414) circle (0.04);
+\draw[fill] (1.4376566,0.35162354) circle (0.04);
+\draw[fill] (2.8335757,0.90574906) circle (0.04);
+\draw[fill] (0.4427453,-0.04355489) circle (0.04);
+\draw[fill] (1.8685152,0.40154442) circle (0.04);
+\draw[fill] (2.8958124,-0.12803180) circle (0.04);
+\draw[fill] (2.3466078,0.03615000) circle (0.04);
+\draw[fill] (2.8480444,-0.42906703) circle (0.04);
+\draw[fill] (1.5636003,-0.38358796) circle (0.04);
+            \end{tikzpicture}
+        \end{center}
+        \begin{center}
+            \begin{tikzpicture}
+                \draw[white] (-1,-1.6) rectangle (4.5,1.6);
+                \node[below] at (1.75,1.6) {Model B};
+                \draw (0,-1) rectangle (4,1);
+                \node[above] at (1.75,-1.6) {fitted values};
+                \node[above,rotate=90] at (-0.4,0) {residuals};
+                \node[left] at (0,0) {0};
+                \draw[dashed] (0,0) -- (4,0);
+                \draw[fill] (3.0044156,-1.135290E-01) circle (0.04);
+\draw[fill] (1.0562790,4.850260E-02) circle (0.04);
+\draw[fill] (1.7391578,1.234653E-05) circle (0.04);
+\draw[fill] (0.7048212,3.226567E-01) circle (0.04);
+\draw[fill] (1.0490011,1.474861E-01) circle (0.04);
+\draw[fill] (2.0641801,-1.406002E-01) circle (0.04);
+\draw[fill] (2.3476568,-2.741677E-01) circle (0.04);
+\draw[fill] (1.3424322,1.836561E-01) circle (0.04);
+\draw[fill] (1.4269832,-2.944139E-01) circle (0.04);
+\draw[fill] (2.0654165,-1.259089E-01) circle (0.04);
+\draw[fill] (3.2766566,3.169325E-01) circle (0.04);
+\draw[fill] (1.2166327,-9.423789E-02) circle (0.04);
+\draw[fill] (2.7418555,-5.732371E-02) circle (0.04);
+\draw[fill] (1.9227022,-3.402523E-01) circle (0.04);
+\draw[fill] (2.7044443,1.428010E-01) circle (0.04);
+\draw[fill] (3.3604843,3.627974E-01) circle (0.04);
+\draw[fill] (1.9261469,-2.768002E-02) circle (0.04);
+\draw[fill] (2.5164373,-1.486628E-01) circle (0.04);
+\draw[fill] (3.2316731,1.659822E-01) circle (0.04);
+\draw[fill] (3.0732272,4.370812E-01) circle (0.04);
+\draw[fill] (2.2457967,-1.056615E-01) circle (0.04);
+\draw[fill] (1.1004969,1.525192E-01) circle (0.04);
+\draw[fill] (1.7600208,-6.047385E-02) circle (0.04);
+\draw[fill] (3.3345039,5.810087E-01) circle (0.04);
+\draw[fill] (1.1404438,2.910169E-01) circle (0.04);
+\draw[fill] (2.7655821,1.338291E-01) circle (0.04);
+\draw[fill] (1.9831120,-1.097895E-01) circle (0.04);
+\draw[fill] (2.2344103,-1.066311E-01) circle (0.04);
+\draw[fill] (2.4210747,-2.679786E-01) circle (0.04);
+\draw[fill] (3.7323824,7.416601E-01) circle (0.04);
+\draw[fill] (2.5088274,-1.392474E-01) circle (0.04);
+\draw[fill] (1.4153755,-8.054776E-02) circle (0.04);
+\draw[fill] (0.7806028,1.498767E-01) circle (0.04);
+\draw[fill] (2.2538071,-2.173948E-01) circle (0.04);
+\draw[fill] (1.1712017,2.683278E-01) circle (0.04);
+\draw[fill] (1.5907641,3.486107E-03) circle (0.04);
+\draw[fill] (3.1161522,1.535890E-01) circle (0.04);
+\draw[fill] (2.4349209,-1.438444E-02) circle (0.04);
+\draw[fill] (1.6402690,-4.005343E-01) circle (0.04);
+\draw[fill] (3.0619040,1.146166E-01) circle (0.04);
+\draw[fill] (2.6218787,-4.397149E-02) circle (0.04);
+\draw[fill] (2.3592289,-3.408045E-02) circle (0.04);
+\draw[fill] (2.6451800,1.081672E-01) circle (0.04);
+\draw[fill] (2.1354859,-1.792032E-01) circle (0.04);
+\draw[fill] (3.4998076,4.051575E-01) circle (0.04);
+\draw[fill] (1.3097235,-3.533967E-01) circle (0.04);
+\draw[fill] (0.5842089,3.754320E-01) circle (0.04);
+\draw[fill] (1.6095577,-7.001728E-02) circle (0.04);
+\draw[fill] (1.8866857,-2.693639E-01) circle (0.04);
+\draw[fill] (1.5212213,-6.592425E-02) circle (0.04);
+            \end{tikzpicture}
+        \end{center}
+        \begin{center}
+            \begin{tikzpicture}
+                \draw[white] (-1,-1.6) rectangle (4.5,1.6);
+                \node[below] at (1.75,1.6) {Model C};
+                \draw (0,-1) rectangle (4,1);
+                \node[above] at (1.75,-1.6) {fitted values};
+                \node[above,rotate=90] at (-0.4,0) {residuals};
+                \node[left] at (0,0) {0};
+                \draw[dashed] (0,0) -- (4,0);
+                \draw[fill] (2.0636565,-0.31871737) circle (0.04);
+\draw[fill] (2.1935839,-0.06480673) circle (0.04);
+\draw[fill] (2.9738197,0.07171417) circle (0.04);
+\draw[fill] (3.2055554,0.16399227) circle (0.04);
+\draw[fill] (2.1111059,0.01897989) circle (0.04);
+\draw[fill] (1.1356689,-0.07372349) circle (0.04);
+\draw[fill] (0.9520039,-0.25076596) circle (0.04);
+\draw[fill] (1.2934665,0.10669272) circle (0.04);
+\draw[fill] (2.7628386,0.23287830) circle (0.04);
+\draw[fill] (1.2064909,0.47857528) circle (0.04);
+\draw[fill] (1.8161208,-0.45652579) circle (0.04);
+\draw[fill] (1.9252034,-0.19086369) circle (0.04);
+\draw[fill] (2.5484851,0.37734704) circle (0.04);
+\draw[fill] (1.9275689,-0.12917066) circle (0.04);
+\draw[fill] (2.6656261,0.06569272) circle (0.04);
+\draw[fill] (0.7067917,0.28082106) circle (0.04);
+\draw[fill] (1.3876843,-0.05515972) circle (0.04);
+\draw[fill] (0.3205877,-0.10659963) circle (0.04);
+\draw[fill] (0.6464521,-0.17429433) circle (0.04);
+\draw[fill] (3.6036778,-0.26214731) circle (0.04);
+\draw[fill] (2.1753896,0.09428669) circle (0.04);
+\draw[fill] (2.3892962,-0.15553041) circle (0.04);
+\draw[fill] (1.2494578,-0.17699813) circle (0.04);
+\draw[fill] (1.4857622,-0.20843322) circle (0.04);
+\draw[fill] (2.3918954,0.40264738) circle (0.04);
+\draw[fill] (2.4096991,0.16711738) circle (0.04);
+\draw[fill] (1.1112176,-0.25853492) circle (0.04);
+\draw[fill] (2.8626680,0.21770261) circle (0.04);
+\draw[fill] (2.1408213,0.06869123) circle (0.04);
+\draw[fill] (2.3686937,0.66142123) circle (0.04);
+\draw[fill] (1.2380665,-0.18959736) circle (0.04);
+\draw[fill] (2.9662293,0.41468591) circle (0.04);
+\draw[fill] (2.7317638,0.08344994) circle (0.04);
+\draw[fill] (3.5342192,-0.04965646) circle (0.04);
+\draw[fill] (1.4876619,0.67164530) circle (0.04);
+\draw[fill] (2.4998367,-0.16983692) circle (0.04);
+\draw[fill] (2.3719682,0.01786897) circle (0.04);
+\draw[fill] (2.4375141,-0.04206274) circle (0.04);
+\draw[fill] (2.7100147,0.05292762) circle (0.04);
+\draw[fill] (1.6069233,-0.50118781) circle (0.04);
+\draw[fill] (2.6639242,-0.32412573) circle (0.04);
+\draw[fill] (2.5675724,-0.13874394) circle (0.04);
+\draw[fill] (1.2458406,0.55490196) circle (0.04);
+\draw[fill] (0.1048559,-0.40030332) circle (0.04);
+\draw[fill] (1.8940048,0.18981138) circle (0.04);
+\draw[fill] (1.3701361,0.20771481) circle (0.04);
+\draw[fill] (2.3221529,-0.25162172) circle (0.04);
+\draw[fill] (1.5776673,0.60445305) circle (0.04);
+\draw[fill] (2.4567632,0.09423159) circle (0.04);
+\draw[fill] (1.7263909,0.39659891) circle (0.04);
+            \end{tikzpicture}
+        \end{center}
+    \end{multicols}
+    \begin{enumerate}[resume]
+        \item State which model the statistician should use, with justification.
+    \end{enumerate}
+    \item A study was carried out in a factory to investigate the relationship between tool-wear ($y$ \%) and run-time ($x$ minutes) of a particular type of tool. A tool was randomly selected, and the results of the experiment are displayed in the scatterplot below. The line $\hat{Y}=2.556+0.12287x$ was fitted to the data.
     \vspace{-0.2cm}
     \begin{figure}[H]
   \centering
 \begin{minipage}[c]{.5\textwidth}
   \centering
-    \begin{tikzpicture}[scale=0.7]
+    \begin{tikzpicture}[scale=0.7,yscale=1.5]
         \draw[-stealth] (0,0) -- (7,0) node[below] {$x$};
-        \draw[-stealth] (0,0) -- (0,2.5) node[left] {$w$};
+        \draw[-stealth] (0,0) -- (0,2.5) node[left] {$y$};
         \foreach \x in {0,10,20,...,50}{
         \draw (0.13*\x,0) -- (0.13*\x,-0.1) node[below] {$\scriptstyle{\x}$};
         };
         \foreach \y in {0,2,4,6,8}{
         \draw (0,0.25*\y) -- (-0.1,0.25*\y) node[left] {$\scriptstyle{\y}$};
         };
-        \draw[fill] (0.13*5,0.25*3.4) circle (0.05);
-        \draw[fill] (0.13*10,0.25*3.9) circle (0.05);
-        \draw[fill] (0.13*15,0.25*4.2) circle (0.05);
-        \draw[fill] (0.13*20,0.25*4.8) circle (0.05);
-        \draw[fill] (0.13*25,0.25*5.4) circle (0.05);
-        \draw[fill] (0.13*30,0.25*6) circle (0.05);
-        \draw[fill] (0.13*35,0.25*6.6) circle (0.05);
-        \draw[fill] (0.13*40,0.25*7.3) circle (0.05);
-        \draw[fill] (0.13*45,0.25*8.4) circle (0.05);
+        \draw[fill] (0.13*5,0.25*3.4) ellipse (0.06 and 0.04);
+        \draw[fill] (0.13*10,0.25*3.9) ellipse (0.06 and 0.04);
+        \draw[fill] (0.13*15,0.25*4.2) ellipse (0.06 and 0.04);
+        \draw[fill] (0.13*20,0.25*4.8) ellipse (0.06 and 0.04);
+        \draw[fill] (0.13*25,0.25*5.4) ellipse (0.06 and 0.04);
+        \draw[fill] (0.13*30,0.25*6) ellipse (0.06 and 0.04);
+        \draw[fill] (0.13*35,0.25*6.6) ellipse (0.06 and 0.04);
+        \draw[fill] (0.13*40,0.25*7.3) ellipse (0.06 and 0.04);
+        \draw[fill] (0.13*45,0.25*8.4) ellipse (0.06 and 0.04);
         \draw[thick] (0.13*6,0.25*2.556+0.25*0.12287*6) -- (0.13*50,0.25*2.556+0.25*0.12287*50);
     \end{tikzpicture}
 \end{minipage}%
   \centering
 \begin{minipage}[c]{.5\textwidth}
   \centering
-    \begin{tikzpicture}[scale=0.7]
-        \draw[thick] (1,0) -- (8.5,0);
+    \begin{tikzpicture}[scale=0.7,yscale=1.5]
+        \draw[dashed] (1,0) -- (8.5,0);
         \draw (1,-1.4) -- (8.2,-1.4) node[right] {fit};
         \draw (1,-1.4) -- (1,1.5);
         \foreach \x in {2,3,...,8}{
         \draw (\x,-1.4) -- (\x,-1.45);
-        \node[rotate=90] at (-0.5,0) {residual}; 
         \node[below] at (\x,-1.7) {$\scriptstyle{\x}$};
         };
+        \node[rotate=90] at (-0.4,0) {residual}; 
         \foreach \y in {-0.4,-0.2,...,0.4}{
         \draw (1,3*\y) -- (0.95,3*\y);
         \node[left] at (0.95,3*\y) {$\scriptstyle{\y}$};
         };
-        \draw[fill] (3.17035,3*0.22965) circle (0.05);
-\draw[fill] (3.7847,3*0.1153) circle (0.05);
-\draw[fill] (4.39905,3*-0.19905) circle (0.05);
-\draw[fill] (5.0134,3*-0.2134) circle (0.05);
-\draw[fill] (5.62775,3*-0.22775) circle (0.05);
-\draw[fill] (6.2421,3*-0.2421) circle (0.05);
-\draw[fill] (6.85645,3*-0.25645) circle (0.05);
-\draw[fill] (7.4708,3*-0.1708) circle (0.05);
-\draw[fill] (8.08515,3*0.31485) circle (0.05);
+        \draw[fill] (3.17035,3*0.22965) ellipse (0.06 and 0.04);
+\draw[fill] (3.7847,3*0.1153) ellipse (0.06 and 0.04);
+\draw[fill] (4.39905,3*-0.19905) ellipse (0.06 and 0.04);
+\draw[fill] (5.0134,3*-0.2134) ellipse (0.06 and 0.04);
+\draw[fill] (5.62775,3*-0.22775) ellipse (0.06 and 0.04);
+\draw[fill] (6.2421,3*-0.2421) ellipse (0.06 and 0.04);
+\draw[fill] (6.85645,3*-0.25645) ellipse (0.06 and 0.04);
+\draw[fill] (7.4708,3*-0.1708) ellipse (0.06 and 0.04);
+\draw[fill] (8.08515,3*0.31485) ellipse (0.06 and 0.04);
     \end{tikzpicture}
 \end{minipage}
 \end{figure}
-\vspace{-0.5cm}
 \begin{enumerate}
-    \item Comment on the suitability of the linear model of $w$ on $x$.
+    \item Comment on the suitability of the linear model of $y$ on $x$.
 \end{enumerate}
-A transformation using $y=log_{10}w$ was applied, and a new least squares regression line of $y$ on $x$ found, with the following scatterplot and residual plot.
+A transformation using $w=log_{10}y$ was applied, and a new least squares regression line of $w$ on $x$ found, with the following scatterplot and residual plot.
 \vspace{-0.2cm}
 \begin{figure}[H]
   \centering
 \begin{minipage}[c]{.5\textwidth}
   \centering
-    \begin{tikzpicture}[scale=0.7]
+    \begin{tikzpicture}[scale=0.7,yscale=1.5]
         \draw[-stealth] (0,0.5) -- (7,0.5) node[below] {$x$};
-        \draw[-stealth] (0,0.5) -- (0,3) node[left] {$y$};
+        \draw[-stealth] (0,0.5) -- (0,3) node[left] {$w$};
         \foreach \x in {0,10,20,...,50}{
         \draw (0.13*\x,0.5) -- (0.13*\x,0.4) node[below] {$\scriptstyle{\x}$};
         };
         \foreach \y in {0.4,0.8,1.2}{a
         \draw (0,2*\y) -- (-0.1,2*\y) node[left] {$\scriptstyle{\y}$};
         };
-        \draw[fill] (0.13*5,2*0.531478917042255) circle (0.05);
-        \draw[fill] (0.13*10,2*0.591064607026499) circle (0.05);
-        \draw[fill] (0.13*15,2*0.6232492903979) circle (0.05);
-        \draw[fill] (0.13*20,2*0.681241237375587) circle (0.05);
-        \draw[fill] (0.13*25,2*0.732393759822969) circle (0.05);
-        \draw[fill] (0.13*30,2*0.778151250383644) circle (0.05);
-        \draw[fill] (0.13*35,2*0.819543935541869) circle (0.05);
-        \draw[fill] (0.13*40,2*0.863322860120456) circle (0.05);
-        \draw[fill] (0.13*45,2*0.924279286061882) circle (0.05);
+        \draw[fill] (0.13*5,2*0.531478917042255) ellipse (0.06 and 0.04);
+        \draw[fill] (0.13*10,2*0.591064607026499) ellipse (0.06 and 0.04);
+        \draw[fill] (0.13*15,2*0.6232492903979) ellipse (0.06 and 0.04);
+        \draw[fill] (0.13*20,2*0.681241237375587) ellipse (0.06 and 0.04);
+        \draw[fill] (0.13*25,2*0.732393759822969) ellipse (0.06 and 0.04);
+        \draw[fill] (0.13*30,2*0.778151250383644) ellipse (0.06 and 0.04);
+        \draw[fill] (0.13*35,2*0.819543935541869) ellipse (0.06 and 0.04);
+        \draw[fill] (0.13*40,2*0.863322860120456) ellipse (0.06 and 0.04);
+        \draw[fill] (0.13*45,2*0.924279286061882) ellipse (0.06 and 0.04);
         \draw[thick] (0.13*5,2*0.483+2*0.00965*5) -- (0.13*50,2*0.483+2*0.00965*50);
     \end{tikzpicture}
 \end{minipage}%
   \centering
 \begin{minipage}[c]{.5\textwidth}
   \centering
-    \begin{tikzpicture}[scale=0.7]
-        \draw[thick] (3.5,0) -- (10,0); 
+    \begin{tikzpicture}[scale=0.7,yscale=1.5]
+        \draw[dashed] (3.5,0) -- (10,0); 
         \draw (3.5,-1.2) -- (10,-1.2) node[right] {fit};
         \draw (3.5,-1.2) -- (3.5,1.5);
         \foreach \x in {0.5,0.625,...,1}{
@@ -4565,26 +5000,30 @@ A transformation using $y=log_{10}w$ was applied, and a new least squares regres
         \node[left] at (3.45,90*\y) {$\scriptstyle{\y}$};
         };
         \node[rotate=90] at (1.6,0) {residual}; 
-        \draw[fill] (10*0.53125,90*0.000228917042255) circle (0.05);
-        \draw[fill] (10*0.5795,90*0.011564607026499) circle (0.05);
-        \draw[fill] (10*0.62775,90*-0.0045007096021) circle (0.05);
-        \draw[fill] (10*0.676,90*0.005241237375587) circle (0.05);
-        \draw[fill] (10*0.72425,90*0.008143759822969) circle (0.05);
-        \draw[fill] (10*0.7725,90*0.005651250383644) circle (0.05);
-        \draw[fill] (10*0.82075,90*-0.001206064458131) circle (0.05);
-        \draw[fill] (10*0.869,90*-0.005677139879544) circle (0.05);
-        \draw[fill] (10*0.91725,90*0.007029286061882) circle (0.05);
+        \draw[fill] (10*0.53125,90*0.000228917042255) ellipse (0.06 and 0.04);
+        \draw[fill] (10*0.5795,90*0.011564607026499) ellipse (0.06 and 0.04);
+        \draw[fill] (10*0.62775,90*-0.0045007096021) ellipse (0.06 and 0.04);
+        \draw[fill] (10*0.676,90*0.005241237375587) ellipse (0.06 and 0.04);
+        \draw[fill] (10*0.72425,90*0.008143759822969) ellipse (0.06 and 0.04);
+        \draw[fill] (10*0.7725,90*0.005651250383644) ellipse (0.06 and 0.04);
+        \draw[fill] (10*0.82075,90*-0.001206064458131) ellipse (0.06 and 0.04);
+        \draw[fill] (10*0.869,90*-0.005677139879544) ellipse (0.06 and 0.04);
+        \draw[fill] (10*0.91725,90*0.007029286061882) ellipse (0.06 and 0.04);
     \end{tikzpicture}
 \end{minipage}
 \end{figure}
-\vspace{-0.5cm}
 \begin{enumerate}[resume]
-    \item Comment on the suitability of this new model of $y$ on $x$.
+    \item Comment on the suitability of this new model of $w$ on $x$.
 \end{enumerate}
-The new model has summary statistics of $\Sigma x=225,\;\Sigma y =6.564,\;\Sigma x^2=7125,\;S_{xy}=14.474,\;n=0$.
+The new model has summary statistics: 
+\begin{center}
+    \begin{tabular}{ccccccccc}
+        $\Sigma x=225$ & \quad & $\Sigma w =6.564$ & \quad & $\Sigma x^2=7125$ & \quad & $S_{xw}=14.474$ & \quad & $n=0$
+    \end{tabular}
+\end{center}
 \begin{enumerate}[resume]
-    \item Find the new least squares regression line of $y$ on $x$.
-    \item Estimate the tool-wear corresponding to a run-time of 32 minutes.\newline (Hint: $\log_a{t}=b$ can be written as $a^b=t$).
+    \item Find the new least squares regression line of $w$ on $x$.
+    \item Estimate the tool-wear corresponding to a run-time of 32 minutes.\\[0.3em] (Hint: $\log_a{t}=b$ can be written as $a^b=t$).
 \end{enumerate}
 \end{enumerate}
 
