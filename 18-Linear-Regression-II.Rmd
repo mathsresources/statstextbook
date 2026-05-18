@@ -4475,7 +4475,7 @@ A new linear model was created between speed ($x$) and the square root of the st
     \end{itemize}
     \begin{enumerate}
         \begin{multicols}{2}
-        \item Original data:\\[0.1em] $x=$ distance\\[0.1em] $y=$ power\\
+        \item Data before transformation:\\[0.1em] $x=$ distance\\[0.1em] $y=$ power\\
             \begin{tikzpicture}
                 \draw[white] (-1.3,-1) rectangle (5,4.5);
                 \draw[-stealth] (0,0) -- (4.4,0) node[right] {$x$};
@@ -4505,7 +4505,7 @@ A new linear model was created between speed ($x$) and the square root of the st
 \draw[dashed] (0.2,2.65-0.636*0.2) -- (3.9,-3.9*0.636+2.65);
 \node at (2.1,3.5) {$R^2=0.805$};
             \end{tikzpicture}
-        \item Original data:\\[0.1em] $x=$ rating\\[0.1em]$y=$ energy\\
+        \item Data before transformation:\\[0.1em] $x=$ rating\\[0.1em]$y=$ energy\\
             \begin{tikzpicture}
                 \draw[white] (-1.3,-1) rectangle (5,4.5);
                 \draw[-stealth] (0,0) -- (4.4,0) node[right] {$x$};
@@ -4598,7 +4598,7 @@ A new linear model was created between speed ($x$) and the square root of the st
         \end{multicols}
         \vspace{-1cm}
         \begin{multicols}{2}
-        \item Original data:\\[0.1em] $x=$ time\\[0.1em]$y=$ population size\\
+        \item Data before transformation:\\[0.1em] $x=$ time\\[0.1em]$y=$ population size\\
             \begin{tikzpicture}
                 \draw[white] (-1.3,-1) rectangle (5,4.5);
                 \draw[-stealth] (0,0) -- (4.4,0) node[right] {$\log_{2} x$};
@@ -4620,7 +4620,7 @@ A new linear model was created between speed ($x$) and the square root of the st
 \draw[fill] (2.2764577,1.986190) circle (0.05);
 \draw[fill] (1.4678087,1.823880) circle (0.05);
             \end{tikzpicture}
-        \item Original data:\\[0.1em] $x=$ quality\\[0.1em] $y=$ cost\\
+        \item Data before transformation:\\[0.1em] $x=$ quality\\[0.1em] $y=$ cost\\
             \begin{tikzpicture}
                 \draw[white] (-1.3,-1) rectangle (5,4.5);
                 \draw[-stealth] (0,0) -- (4.4,0) node[right] {$x$};
@@ -4899,131 +4899,159 @@ A new linear model was created between speed ($x$) and the square root of the st
     \begin{enumerate}[resume]
         \item State which model the statistician should use, with justification.
     \end{enumerate}
-    \item A study was carried out in a factory to investigate the relationship between tool-wear ($y$ \%) and run-time ($x$ minutes) of a particular type of tool. A tool was randomly selected, and the results of the experiment are displayed in the scatterplot below. The line $\hat{Y}=2.556+0.12287x$ was fitted to the data.
-    \vspace{-0.2cm}
+    \item Data was collected on each weekday across four weeks of a university computer's peak processing speed ($p$ GHz) and the amount of power consumed ($x$ kWh). The regression line $\hat{U}=2.245+0.106x$ is fitted to the data.
+    \vspace{-0.4cm}
     \begin{figure}[H]
   \centering
 \begin{minipage}[c]{.5\textwidth}
   \centering
-    \begin{tikzpicture}[scale=0.7,yscale=1.5]
-        \draw[-stealth] (0,0) -- (7,0) node[below] {$x$};
-        \draw[-stealth] (0,0) -- (0,2.5) node[left] {$y$};
-        \foreach \x in {0,10,20,...,50}{
-        \draw (0.13*\x,0) -- (0.13*\x,-0.1) node[below] {$\scriptstyle{\x}$};
+    \begin{tikzpicture}[scale=1]
+        \draw[-stealth] (1,0) -- (7.2,0) node[below] {$x$};
+        \draw[-stealth] (1,0) -- (1,3.3) node[left] {$p$};
+        \foreach \x in {4,6,...,16}{
+        \draw (0.4*\x,0) -- (0.4*\x,-0.1) node[below] {$\scriptstyle{\x}$};
         };
-        \foreach \y in {0,2,4,6,8}{
-        \draw (0,0.25*\y) -- (-0.1,0.25*\y) node[left] {$\scriptstyle{\y}$};
+        \foreach \y in {2.5,3.0,3.5,4.0}{a
+        \draw (1,2*\y-5) -- (0.9,2*\y-5) node[left] {$\scriptstyle{\y}$};
         };
-        \draw[fill] (0.13*5,0.25*3.4) ellipse (0.06 and 0.04);
-        \draw[fill] (0.13*10,0.25*3.9) ellipse (0.06 and 0.04);
-        \draw[fill] (0.13*15,0.25*4.2) ellipse (0.06 and 0.04);
-        \draw[fill] (0.13*20,0.25*4.8) ellipse (0.06 and 0.04);
-        \draw[fill] (0.13*25,0.25*5.4) ellipse (0.06 and 0.04);
-        \draw[fill] (0.13*30,0.25*6) ellipse (0.06 and 0.04);
-        \draw[fill] (0.13*35,0.25*6.6) ellipse (0.06 and 0.04);
-        \draw[fill] (0.13*40,0.25*7.3) ellipse (0.06 and 0.04);
-        \draw[fill] (0.13*45,0.25*8.4) ellipse (0.06 and 0.04);
-        \draw[thick] (0.13*6,0.25*2.556+0.25*0.12287*6) -- (0.13*50,0.25*2.556+0.25*0.12287*50);
+        \draw[fill] (2.8737916,0.982320) circle (0.04);
+\draw[fill] (3.6507364,1.457880) circle (0.04);
+\draw[fill] (6.174554,2.623164) circle (0.04);
+\draw[fill] (3.6067156,1.520622) circle (0.04);
+\draw[fill] (5.2663204,2.216838) circle (0.04);
+\draw[fill] (2.026468,0.586542) circle (0.04);
+\draw[fill] (1.8489288,0.396772) circle (0.04);
+\draw[fill] (2.609892,0.897454) circle (0.04);
+\draw[fill] (4.5353788,1.92123) circle (0.04);
+\draw[fill] (4.6145856,1.958822) circle (0.04);
+\draw[fill] (3.2811544,1.20337) circle (0.04);
+\draw[fill] (3.8898964,1.660992) circle (0.04);
+\draw[fill] (3.7886328,1.579484) circle (0.04);
+\draw[fill] (2.367098,0.647738) circle (0.04);
+\draw[fill] (4.3550668,1.778252) circle (0.04);
+\draw[fill] (4.374402,1.84879) circle (0.04);
+\draw[fill] (4.3297284,1.808348) circle (0.04);
+\draw[fill] (3.6201088,1.467338) circle (0.04);
+\draw[fill] (2.4416404,0.705840) circle (0.04);
+\draw[fill] (2.4951548,0.790986) circle (0.04);
+\draw (6.8,3.094) -- (1.2,0.126);
     \end{tikzpicture}
 \end{minipage}%
   \centering
 \begin{minipage}[c]{.5\textwidth}
   \centering
-    \begin{tikzpicture}[scale=0.7,yscale=1.5]
-        \draw[dashed] (1,0) -- (8.5,0);
-        \draw (1,-1.4) -- (8.2,-1.4) node[right] {fit};
-        \draw (1,-1.4) -- (1,1.5);
-        \foreach \x in {2,3,...,8}{
-        \draw (\x,-1.4) -- (\x,-1.45);
-        \node[below] at (\x,-1.7) {$\scriptstyle{\x}$};
-        };
-        \node[rotate=90] at (-0.4,0) {residual}; 
-        \foreach \y in {-0.4,-0.2,...,0.4}{
-        \draw (1,3*\y) -- (0.95,3*\y);
-        \node[left] at (0.95,3*\y) {$\scriptstyle{\y}$};
-        };
-        \draw[fill] (3.17035,3*0.22965) ellipse (0.06 and 0.04);
-\draw[fill] (3.7847,3*0.1153) ellipse (0.06 and 0.04);
-\draw[fill] (4.39905,3*-0.19905) ellipse (0.06 and 0.04);
-\draw[fill] (5.0134,3*-0.2134) ellipse (0.06 and 0.04);
-\draw[fill] (5.62775,3*-0.22775) ellipse (0.06 and 0.04);
-\draw[fill] (6.2421,3*-0.2421) ellipse (0.06 and 0.04);
-\draw[fill] (6.85645,3*-0.25645) ellipse (0.06 and 0.04);
-\draw[fill] (7.4708,3*-0.1708) ellipse (0.06 and 0.04);
-\draw[fill] (8.08515,3*0.31485) ellipse (0.06 and 0.04);
+    \begin{tikzpicture}
+        \draw[dashed] (13,0) node[left] {$0$} -- (20,0); 
+        \draw (13,-1.5) rectangle (20,1.5);
+        \node[above,rotate=90] at (12.5,0) {residual};
+        \node[below] at (16.5,-1.5) {fitted value};
+        \draw[fill] (14.955800,-0.3144142) circle (0.04);
+\draw[fill] (16.144700,0.32332400) circle (0.04);
+\draw[fill] (19.05791,-1.4002734) circle (0.04);
+\draw[fill] (16.301555,1.1840568) circle (0.04);
+\draw[fill] (18.042095,-0.6498142) circle (0.04);
+\draw[fill] (13.966355,0.218681) circle (0.04);
+\draw[fill] (13.49193,-0.7380514) circle (0.04);
+\draw[fill] (14.743635,0.2356156) circle (0.04);
+\draw[fill] (17.303075,0.2681512) circle (0.04);
+\draw[fill] (17.397055,0.2242642) circle (0.04);
+\draw[fill] (15.508425,-0.2629682) circle (0.04);
+\draw[fill] (16.65248,1.086873) circle (0.04);
+\draw[fill] (16.44871,0.8085014) circle (0.04);
+\draw[fill] (14.119345,-0.9747154) circle (0.04);
+\draw[fill] (16.94563,-0.2059624) circle (0.04);
+\draw[fill] (17.121975,0.396933) circle (0.04);
+\draw[fill] (17.02087,0.2292972) circle (0.04);
+\draw[fill] (16.168345,0.580237) circle (0.04);
+\draw[fill] (14.264600,-0.78877800) circle (0.04);
+\draw[fill] (14.477465,-0.2209572) circle (0.04);
     \end{tikzpicture}
 \end{minipage}
 \end{figure}
 \begin{enumerate}
-    \item Comment on the suitability of the linear model of $y$ on $x$.
+    \item Comment on the suitability of the linear model of $p$ on $x$.
 \end{enumerate}
-A transformation using $w=log_{10}y$ was applied, and a new least squares regression line of $w$ on $x$ found, with the following scatterplot and residual plot.
+A transformation using $y=2^p$ was applied, and a new least squares regression line of $y$ on $x$ found, with the following scatterplot and residual plot.
 \vspace{-0.2cm}
 \begin{figure}[H]
   \centering
 \begin{minipage}[c]{.5\textwidth}
   \centering
-    \begin{tikzpicture}[scale=0.7,yscale=1.5]
-        \draw[-stealth] (0,0.5) -- (7,0.5) node[below] {$x$};
-        \draw[-stealth] (0,0.5) -- (0,3) node[left] {$w$};
-        \foreach \x in {0,10,20,...,50}{
-        \draw (0.13*\x,0.5) -- (0.13*\x,0.4) node[below] {$\scriptstyle{\x}$};
+    \begin{tikzpicture}[scale=1]
+        \draw[-stealth] (1,1.5) -- (7.2,1.5) node[below] {$x$};
+        \draw[-stealth] (1,1.5) -- (1,4.6) node[left] {$y$};
+        \foreach \x in {4,6,...,16}{
+        \draw (0.4*\x,0+1.5) -- (0.4*\x,-0.1+1.5) node[below] {$\scriptstyle{\x}$};
         };
-        \foreach \y in {0.4,0.8,1.2}{a
-        \draw (0,2*\y) -- (-0.1,2*\y) node[left] {$\scriptstyle{\y}$};
+        \foreach \y in {6,8,...,14}{a
+        \draw (1,0.3*\y) -- (0.9,0.3*\y) node[left] {$\scriptstyle{\y}$};
         };
-        \draw[fill] (0.13*5,2*0.531478917042255) ellipse (0.06 and 0.04);
-        \draw[fill] (0.13*10,2*0.591064607026499) ellipse (0.06 and 0.04);
-        \draw[fill] (0.13*15,2*0.6232492903979) ellipse (0.06 and 0.04);
-        \draw[fill] (0.13*20,2*0.681241237375587) ellipse (0.06 and 0.04);
-        \draw[fill] (0.13*25,2*0.732393759822969) ellipse (0.06 and 0.04);
-        \draw[fill] (0.13*30,2*0.778151250383644) ellipse (0.06 and 0.04);
-        \draw[fill] (0.13*35,2*0.819543935541869) ellipse (0.06 and 0.04);
-        \draw[fill] (0.13*40,2*0.863322860120456) ellipse (0.06 and 0.04);
-        \draw[fill] (0.13*45,2*0.924279286061882) ellipse (0.06 and 0.04);
-        \draw[thick] (0.13*5,2*0.483+2*0.00965*5) -- (0.13*50,2*0.483+2*0.00965*50);
+        \draw[fill] (2.8737916,2.3853393) circle (0.04);
+\draw[fill] (3.6507364,2.812737) circle (0.04);
+\draw[fill] (6.174554,4.2123225) circle (0.04);
+\draw[fill] (3.6067156,2.8745691) circle (0.04);
+\draw[fill] (5.2663204,3.6590106) circle (0.04);
+\draw[fill] (2.026468,2.0795991) circle (0.04);
+\draw[fill] (1.8489288,1.9472259) circle (0.04);
+\draw[fill] (2.609892,2.3162028) circle (0.04);
+\draw[fill] (4.5353788,3.3027084) circle (0.04);
+\draw[fill] (4.6145856,3.3460185) circle (0.04);
+\draw[fill] (3.2811544,2.5752624) circle (0.04);
+\draw[fill] (3.8898964,3.0178695) circle (0.04);
+\draw[fill] (3.7886328,2.9338125) circle (0.04);
+\draw[fill] (2.367098,2.1241767) circle (0.04);
+\draw[fill] (4.3550668,3.1430397) circle (0.04);
+\draw[fill] (4.374402,3.2208228) circle (0.04);
+\draw[fill] (4.3297284,3.1759953) circle (0.04);
+\draw[fill] (3.6201088,2.8219725) circle (0.04);
+\draw[fill] (2.4416404,2.1673839) circle (0.04);
+\draw[fill] (2.4951548,2.2322943) circle (0.04);
+\draw (1.6,1.77) -- (6.8,4.4805);
     \end{tikzpicture}
 \end{minipage}%
   \centering
 \begin{minipage}[c]{.5\textwidth}
   \centering
-    \begin{tikzpicture}[scale=0.7,yscale=1.5]
-        \draw[dashed] (3.5,0) -- (10,0); 
-        \draw (3.5,-1.2) -- (10,-1.2) node[right] {fit};
-        \draw (3.5,-1.2) -- (3.5,1.5);
-        \foreach \x in {0.5,0.625,...,1}{
-        \draw (10*\x,-1.2) -- (10*\x,-1.25);
-        \node[below] at (10*\x,-1.25) {$\scriptstyle{\x}$};
-        };
-        \foreach \y in {-0.01,0,0.01}{
-        \draw (3.5,90*\y) -- (3.45,90*\y);
-        \node[left] at (3.45,90*\y) {$\scriptstyle{\y}$};
-        };
-        \node[rotate=90] at (1.6,0) {residual}; 
-        \draw[fill] (10*0.53125,90*0.000228917042255) ellipse (0.06 and 0.04);
-        \draw[fill] (10*0.5795,90*0.011564607026499) ellipse (0.06 and 0.04);
-        \draw[fill] (10*0.62775,90*-0.0045007096021) ellipse (0.06 and 0.04);
-        \draw[fill] (10*0.676,90*0.005241237375587) ellipse (0.06 and 0.04);
-        \draw[fill] (10*0.72425,90*0.008143759822969) ellipse (0.06 and 0.04);
-        \draw[fill] (10*0.7725,90*0.005651250383644) ellipse (0.06 and 0.04);
-        \draw[fill] (10*0.82075,90*-0.001206064458131) ellipse (0.06 and 0.04);
-        \draw[fill] (10*0.869,90*-0.005677139879544) ellipse (0.06 and 0.04);
-        \draw[fill] (10*0.91725,90*0.007029286061882) ellipse (0.06 and 0.04);
+    \begin{tikzpicture}
+        \draw[dashed] (3,0) node[left] {$0$} -- (10,0); 
+        \draw (3,-1.5) rectangle (10,1.5);
+        \node[above,rotate=90] at (2.5,0) {residual};
+        \node[below] at (6.5,-1.5) {fitted value};
+        \draw[fill] (5.5657917,-0.658154392) circle (0.04);
+\draw[fill] (6.563053,-0.363027048) circle (0.04);
+\draw[fill] (9.2287525,0.245423556) circle (0.04);
+\draw[fill] (6.7073279,0.7675555) circle (0.04);
+\draw[fill] (8.3376914,-0.315470768) circle (0.04);
+\draw[fill] (4.8523979,1.15828802) circle (0.04);
+\draw[fill] (4.5435271,0.628064616) circle (0.04);
+\draw[fill] (5.4044732,0.255399728) circle (0.04);
+\draw[fill] (7.7063196,0.017397948) circle (0.04);
+\draw[fill] (7.8073765,0.043995272) circle (0.04);
+\draw[fill] (6.0089456,-0.958979808) circle (0.04);
+\draw[fill] (7.0416955,0.708758504) circle (0.04);
+\draw[fill] (6.8455625,0.292266804) circle (0.04);
+\draw[fill] (4.9564123,-0.616362112) circle (0.04);
+\draw[fill] (7.3337593,-0.857478920) circle (0.04);
+\draw[fill] (7.5152532,0.045152764) circle (0.04);
+\draw[fill] (7.4106557,-0.24184898) circle (0.04);
+\draw[fill] (6.5846025,-0.026878684) circle (0.04);
+\draw[fill] (5.0572291,-0.558695800) circle (0.04);
+\draw[fill] (5.2086867,-0.065406200) circle (0.04);
     \end{tikzpicture}
 \end{minipage}
 \end{figure}
 \begin{enumerate}[resume]
-    \item Comment on the suitability of this new model of $w$ on $x$.
+    \item Comment on the suitability of this new model of $y$ on $x$.
 \end{enumerate}
 The new model has summary statistics: 
 \begin{center}
     \begin{tabular}{ccccccccc}
-        $\Sigma x=225$ & \quad & $\Sigma w =6.564$ & \quad & $\Sigma x^2=7125$ & \quad & $S_{xw}=14.474$ & \quad & $n=0$
+        $\Sigma x=180.4$ & \quad & $\Sigma y = 187.8$ & \quad & $\Sigma x^2=1779$ & \quad & $S_{xy}=105.9$ & \quad & $n=20$
     \end{tabular}
 \end{center}
 \begin{enumerate}[resume]
-    \item Find the new least squares regression line of $w$ on $x$.
-    \item Estimate the tool-wear corresponding to a run-time of 32 minutes.\\[0.3em] (Hint: $\log_a{t}=b$ can be written as $a^b=t$).
+    \item Find the new least squares regression line of $y$ on $x$.
+    \item Estimate the peak processing speed corresponding to a power consumption of 145 kWh.\\[0.3em] (Note: $t=a^b$ can be written as $b=\log_a{t}$).
 \end{enumerate}
 \end{enumerate}
 
