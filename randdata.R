@@ -1,12 +1,15 @@
 library(truncnorm)
 
-x<-rtruncnorm(50,0.1,3.9,2,0.8)
-e<-rtruncnorm(50,-0.9,0.9,0,0.2)
-a<-1.2
-b<-0.3
-y <- e*x
-df_temp <- data.frame(x,y)
+x<- rtruncnorm(26,0,20,10,4)
+e<- rtruncnorm(26,-80,80,0,30)
+a<- 50
+b<- 3
+y<- a+b*x+e
+df_marketing <- data.frame(x,y)
 plot(x,y)
+cor.test(x,y)
+summary(lm(y~x))
+
 
 y <- sqrty^2
 df_transf_before <- data.frame(x,y)

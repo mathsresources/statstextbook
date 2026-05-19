@@ -5407,7 +5407,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     \begin{multicols}{2}
     Summary statistics are calculated as:
     \begin{align*}
-        \sum x &= 157\\[0.5em]
+        \Sigma x &= 157\\[0.5em]
         S_{xx} &= 334.9\\[0.5em]
         s &= 1.45\\[0.5em]
         n&=12
@@ -5444,8 +5444,8 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     \vspace{-0.6cm}
     A pupil achieves a speaking score of 15. They are yet to complete the listening component.
     \begin{enumerate}
-    \item Obtain a confidence interval for the mean listening score given a speaking score of 15.
-    \item Obtain a prediction interval for the listening score given a speaking score of 15.
+    \item Obtain a 95\% confidence interval for the mean listening score given a speaking score of 15.
+    \item Obtain a 95\% prediction interval for the listening score given a speaking score of 15.
 \end{enumerate}
     \item 26 randomly selected trees in a forest have their diameter at a set distance from the ground measured, in inches, and the height of each tree also measured, in feet. The equation of the least squares regression line for $x$ on $y$ is obtained, and shown on the scatterplot below.
 \vspace{-0.2cm}
@@ -5497,8 +5497,8 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 \end{center}
 \vspace{-0.6cm}
 \begin{enumerate}
-    \item Obtain a confidence interval for the mean height of a tree with diameter 4 inches.
-    \item Obtain a prediction interval for the height of a tree with diameter 4 inches.
+    \item Obtain a 99\% confidence interval for the mean height of a tree with diameter 4 inches.
+    \item Obtain a 99\% prediction interval for the height of a tree with diameter 4 inches.
 \end{enumerate}
     \item A seller on an online auction site has a stock of used digital cameras, all aged somewhere between 2 and 12 years. For a random sample of 48 cameras, the total number of photos taken (the \textit{shutter count}) is determined using special software. A scatterplot with a least squares regression line is below.
     \begin{multicols}{2}
@@ -5579,9 +5579,130 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     \end{multicols}
     \vspace{-0.6cm}
     \begin{enumerate}
-    \item Obtain a prediction interval for the shutter count of a 6 year old camera.
-    \item Obtain a confidence interval for the mean shutter count of a 6 year old camera.
+    \item Obtain a 90\% prediction interval for the shutter count of a 6 year old camera.
+    \item Obtain a 90\% confidence interval for the mean shutter count of a 6 year old camera.
 \end{enumerate}
+    \pagebreak
+    \item The top speed reached (in mph) and the lap times (in seconds) are recorded for a sample of drivers on a race track. Computer output related to a linear model constructed using this data is below.\\[0.5em]
+    \begin{tabular}{lllllllll}
+        \texttt{y on x regression line} & \qquad &\texttt{n} & \qquad &\texttt{s} & \qquad & \texttt{sum of squares for x} & \qquad & \texttt{sigma x}\\
+        \texttt{speed = 269.2 - 1.72 $\times$ time} && \texttt{34} && \texttt{8.49} && \texttt{638.6} && \texttt{72.05}
+    \end{tabular}\\[0.5em]
+    One driver completed their lap in a time of 52 seconds, but their top speed was not recorded. They wish to estimate a range of values for their top speed. Obtain a suitable interval at the 95\% level.
+    \item The heights ($x$ cm) and weights ($y$ kg) are recorded for a random sample of professional footballers. 
+    \begin{center}
+        \begin{tikzpicture}
+        \draw[-stealth] (0,0) -- (10,0) node[below] {$x$};
+        \draw[-stealth] (0,0) -- (0,5.5) node[left] {$y$};
+        \draw[thick] (0.2*160-32,0.1*58.6-5) -- (0.2*205-32,0.1*93-5) node[right] {$\hat{Y}=-63.77+0.7649x$};
+        \foreach \x in {160,170,...,200}{
+        \draw (0.2*\x-32,0) -- (0.2*\x-32,-0.1) node[below] {\x};
+        }
+        \node[below] at (0.2*185-32,-0.8) {height (cm)};
+        \foreach \y in {50,60,...,100}{
+        \draw (0,0.1*\y-5) -- (-0.1,0.1*\y-5) node[left] {\y};
+        }
+        \node[above,rotate=90] at (-1,3) {weight (kg)};
+            \draw[fill] (3.6,2.3) circle (0.04);
+\draw[fill] (2,2.5) circle (0.04);
+\draw[fill] (5.2,2) circle (0.04);
+\draw[fill] (0.8,1.1) circle (0.04);
+\draw[fill] (3.8,1.9) circle (0.04);
+\draw[fill] (2.6,2.1) circle (0.04);
+\draw[fill] (2,1.5) circle (0.04);
+\draw[fill] (2.8,1.2) circle (0.04);
+\draw[fill] (3.4,2.2) circle (0.04);
+\draw[fill] (1.4,1.5) circle (0.04);
+\draw[fill] (1.6,1.9) circle (0.04);
+\draw[fill] (3,2.5) circle (0.04);
+\draw[fill] (6.2,3.9) circle (0.04);
+\draw[fill] (3.6,2.3) circle (0.04);
+\draw[fill] (3.2,1.6) circle (0.04);
+\draw[fill] (2.6,1.9) circle (0.04);
+\draw[fill] (3,1.8) circle (0.04);
+\draw[fill] (2.4,1.7) circle (0.04);
+\draw[fill] (2,0.5) circle (0.04);
+\draw[fill] (2.6,1.4) circle (0.04);
+\draw[fill] (3.8,2) circle (0.04);
+\draw[fill] (4.6,2.3) circle (0.04);
+\draw[fill] (6.6,3.3) circle (0.04);
+\draw[fill] (3,2.3) circle (0.04);
+\draw[fill] (2.8,1.9) circle (0.04);
+\draw[fill] (4,3) circle (0.04);
+\draw[fill] (3,1.9) circle (0.04);
+\draw[fill] (4,2.5) circle (0.04);
+\draw[fill] (3.2,2.6) circle (0.04);
+\draw[fill] (4.4,2) circle (0.04);
+\draw[fill] (1.2,1) circle (0.04);
+\draw[fill] (2,1.8) circle (0.04);
+\draw[fill] (5,2.4) circle (0.04);
+\draw[fill] (4,2.8) circle (0.04);
+\draw[fill] (5.8,3.2) circle (0.04);
+\draw[fill] (1.6,1.6) circle (0.04);
+\draw[fill] (4.2,1.5) circle (0.04);
+\draw[fill] (5.6,3.3) circle (0.04);
+\draw[fill] (5,3.5) circle (0.04);
+\draw[fill] (2.2,1.2) circle (0.04);
+\draw[fill] (3.8,2.2) circle (0.04);
+\draw[fill] (2.8,1.7) circle (0.04);
+\draw[fill] (3.2,3.1) circle (0.04);
+\draw[fill] (3.6,2) circle (0.04);
+\draw[fill] (1.6,1.5) circle (0.04);
+\draw[fill] (4.2,2.3) circle (0.04);
+\draw[fill] (2.4,1.7) circle (0.04);
+\draw[fill] (5.2,2.9) circle (0.04);
+\draw[fill] (4.6,3.4) circle (0.04);
+\draw[fill] (7.8,4) circle (0.04);
+\draw[fill] (0.4,1.9) circle (0.04);
+\draw[fill] (1.6,1.7) circle (0.04);
+\draw[fill] (4.2,2.3) circle (0.04);
+\draw[fill] (3.6,2.9) circle (0.04);
+\draw[fill] (5.2,2) circle (0.04);
+\draw[fill] (3.2,2) circle (0.04);
+\draw[fill] (5.2,2.6) circle (0.04);
+\draw[fill] (4.4,2.2) circle (0.04);
+\draw[fill] (8.8,5.2) circle (0.04);
+\draw[fill] (3,1.8) circle (0.04);
+\draw[fill] (4.2,1.9) circle (0.04);
+\draw[fill] (3.2,2) circle (0.04);
+\draw[fill] (2,1.6) circle (0.04);
+\draw[fill] (5.6,2.1) circle (0.04);
+\draw[fill] (5.6,3.2) circle (0.04);
+\draw[fill] (3.2,2) circle (0.04);
+\draw[fill] (4.8,2.4) circle (0.04);
+\draw[fill] (2.2,2.7) circle (0.04);
+\draw[fill] (5.2,3.3) circle (0.04);
+        \end{tikzpicture}
+    \end{center}
+    A linear model is fit to the data as shown with a regression line equation of:
+    \begin{center}
+        \texttt{weight = -63.77 + 0.7649 $\times$ height}
+    \end{center}
+    A footballer, whose weight is unknown, has a height of 190 centimetres.
+    \begin{enumerate}
+        \item Use the equation of the regression line to calculate an estimate for the footballer's weight.
+    \end{enumerate}
+    Computer output is used to generate a 95\% prediction interval for the weight of a footballer with a height of 190 centimetres.
+    \vspace{-0.3cm}
+    \begin{center}
+        \texttt{95\% PI}\\[0.5em]
+        \texttt{(71.59,****)}
+    \end{center}
+    \vspace{-0.2cm}
+    \begin{enumerate}[resume]
+        \item Determine the missing upper value for the prediction interval above, indicated by '\texttt{****}'.
+        \item State the assumptions about the population of errors required for the predication interval above.
+    \end{enumerate}
+    Summary statistics are obtained for the data, as shown below:
+    \begin{center}
+        \begin{tabular}{ccccccc}
+            $S_{xx}=4319.0$ & \qquad & $S_{yy}=4122.4$ & \qquad & $S_{xy}=3303.6$ & \qquad & $n=69$
+        \end{tabular}
+    \end{center}
+    \begin{enumerate}[resume]
+        \item Calculate a confidence interval for the weight of a footballer of height 172cm.
+        \item Explain why the method used above may not be appropriate to help estimate the mean weight of a footballer with a height of 158 centimetres.
+    \end{enumerate}
 \end{enumerate}
 
 \pagebreak
@@ -5589,6 +5710,152 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 []{#re18q}
 
 ## [Review Exercise](#re18a) {-}
+
+\begin{enumerate}
+    \item Biologists studying populations of European hamsters record the tail length ($x$ centimetres) and body mass ($y$ grams) of a random sample of 12 wild hamsters found living in central Vienna. The linear regression equation was calculated for the data shown in the scatterplot as $\hat{Y}=-15.24+71.88x$.
+    \begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.22\textwidth}
+\begin{center}
+        \begin{tikzpicture}
+            \draw[black!10,step=0.25] (0,0.5) grid (2,2.5);
+            \node[above,rotate=90] at (0,1.5) {mass};
+            \node[below] at (1,0.5) {tail length};
+            \draw (0,0.5) rectangle (2,2.5);
+            \draw[fill] (1.026584,1.738622) circle (0.03);
+            \draw[fill] (1.231034,1.644741) circle (0.03);
+            \draw[fill] (1.672522,2.274302) circle (0.03);
+            \draw[fill] (1.751120,1.537935) circle (0.03);
+            \draw[fill] (1.161184,1.750612) circle (0.03);
+            \draw[fill] (1.380849,1.824813) circle (0.03);
+            \draw[fill] (0.284826,1.080322) circle (0.03);
+            \draw[fill] (1.339594,1.190204) circle (0.03);
+            \draw[fill] (0.449474,0.8729) circle (0.03);
+            \draw[fill] (1.763575,2.009393) circle (0.03);
+            \draw[fill] (0.539653,0.934839) circle (0.03);
+            \draw[fill] (1.649056,2.056133) circle (0.03);
+            \draw (0,0.7228) -- (2,2.1604);
+        \end{tikzpicture}
+    \end{center}
+\end{minipage}%
+\begin{minipage}[c]{.78\textwidth}
+    \vspace{-0.3cm}
+    \begin{center}
+        \begin{tabular}{ccccc}
+            $\Sigma x=62.25$, & $\Sigma y=4291.5$, & $\Sigma x^2=325.9$, & $\Sigma y^2=1558042$, & $\Sigma xy=22475$
+        \end{tabular}
+    \end{center}
+    \vspace{0.2cm}
+    \begin{enumerate}
+        \item Calculate the residual of a 410 gram hamster with a tail length of 5.2cm.
+        \item Use a suitable hypothesis test to assess the usefulness of the linear model for prediction at the 10\% level of significance.
+    \end{enumerate}
+\end{minipage}
+\end{figure}
+    \item Data is collected on the tempo ($T$ beats per minute) and duration ($d$ minutes) of a random sample of pop-punk songs. The regression line $\hat{T}=256.65-20.65d$ is obtained for the data.
+    \begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.22\textwidth}
+\begin{center}
+        \begin{tikzpicture}
+            \draw[black!10,step=0.25] (0,0) grid (2,2);
+            \node[above,rotate=90] at (0,1) {tempo};
+            \node[below] at (1,0) {duration};
+            \draw (0,0) rectangle (2,2);
+            \draw[fill] (0.271909,1.5685) circle (0.03);
+\draw[fill] (0.954002,1.003012) circle (0.03);
+\draw[fill] (1.518625,0.616146) circle (0.03);
+\draw[fill] (1.052261,1.463466) circle (0.03);
+\draw[fill] (0.526589,1.55913) circle (0.03);
+\draw[fill] (1.086741,1.189316) circle (0.03);
+\draw[fill] (0.485662,0.811234) circle (0.03);
+\draw[fill] (0.543473,1.166124) circle (0.03);
+\draw[fill] (1.219950,0.892968) circle (0.03);
+\draw[fill] (0.305407,1.000574) circle (0.03);
+\draw[fill] (1.203110,0.790258) circle (0.03);
+\draw[fill] (1.088995,1.296402) circle (0.03);
+\draw[fill] (1.476785,0.834164) circle (0.03);
+\draw[fill] (1.616641,0.743838) circle (0.03);
+\draw[fill] (0.732727,1.326566) circle (0.03);
+\draw[fill] (0.536167,1.267304) circle (0.03);
+\draw[fill] (1.173768,1.199898) circle (0.03);
+\draw[fill] (0.799466,1.661934) circle (0.03);
+\draw (0,1.5135) -- (2,0.6875);
+        \end{tikzpicture}
+    \end{center}
+\end{minipage}%
+\begin{minipage}[c]{.78\textwidth}
+    \begin{center}
+        \begin{tabular}{lllll}
+            $\Sigma d=43.6$ & \qquad & $\Sigma T=3719.5$ & \qquad & $\Sigma dT=8947.2$\\
+            $\Sigma d^2=108.5$ & \qquad & $\Sigma T^2=772792$ & \qquad & $n=18$
+        \end{tabular}
+    \end{center}
+    \vspace{0.2cm}
+    \begin{enumerate}
+        \item Calculate the coefficient of determination and interpret its value.
+        \item Perform a hypothesis test at the 1\% level of significance to check for evidence of a linear association between the tempo and duration of pop-punk songs.
+    \end{enumerate}
+\end{minipage}
+\end{figure}
+\item The creators of a brand new sports website collect data on the annual social media marketing spend (£$x$ thousand) and new daily visitors ($y$) of similar sites, to plan their own budget. The results are shown below, including a least squares regression line of equation $\hat{Y}=29.5+5.6x$.
+    \begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.22\textwidth}
+\begin{center}
+        \begin{tikzpicture}
+            \draw[black!10,step=0.25] (0,0) grid (2,2);
+            \node[above,rotate=90] at (0,1) {visitors};
+            \node[below] at (1,0) {spend};
+            \draw (0,0) rectangle (2,2);
+            \draw[fill] (1.1647391,1.1783408) circle (0.03);
+\draw[fill] (0.8090751,0.7181106) circle (0.03);
+\draw[fill] (1.4203657,0.6667498) circle (0.03);
+\draw[fill] (0.7376863,0.6330009) circle (0.03);
+\draw[fill] (0.7992638,1.04413) circle (0.03);
+\draw[fill] (0.5559804,0.5879035) circle (0.03);
+\draw[fill] (0.9191813,0.9374849) circle (0.03);
+\draw[fill] (0.9062243,0.9502923) circle (0.03);
+\draw[fill] (1.0550061,1.3054602) circle (0.03);
+\draw[fill] (0.6104323,0.6460021) circle (0.03);
+\draw[fill] (1.571969,1.3949794) circle (0.03);
+\draw[fill] (0.7107671,1.1828142) circle (0.03);
+\draw[fill] (0.613051,0.5444485) circle (0.03);
+\draw[fill] (0.5577118,0.4361321) circle (0.03);
+\draw[fill] (1.0066336,0.5363694) circle (0.03);
+\draw[fill] (1.3639911,0.8686892) circle (0.03);
+\draw[fill] (0.8762089,0.9756425) circle (0.03);
+\draw[fill] (0.6112497,0.2880614) circle (0.03);
+\draw[fill] (0.796287,0.6231761) circle (0.03);
+\draw[fill] (0.7930843,0.9719763) circle (0.03);
+\draw[fill] (0.7583231,0.8542987) circle (0.03);
+\draw[fill] (0.3622993,0.3587117) circle (0.03);
+\draw[fill] (1.0794175,0.7770448) circle (0.03);
+\draw[fill] (0.9938819,0.6212644) circle (0.03);
+\draw[fill] (0.9659331,0.53864) circle (0.03);
+\draw[fill] (1.0196479,0.9428888) circle (0.03);
+\draw (0,0.295) -- (2,1.415);
+        \end{tikzpicture}
+    \end{center}
+\end{minipage}%
+\begin{minipage}[c]{.78\textwidth}
+    \begin{center}
+        \begin{tabular}{lllllllll}
+            $\Sigma x=230.6$ & \quad & $\Sigma x^2=2244.6$ & \quad & $S_{xy}=1118.6$ & \quad & $S_{yy}=20640.9$ & \quad & $n=26$
+        \end{tabular}
+    \end{center}
+    \vspace{0.2cm}
+    \begin{enumerate}
+        \item Calculate an estimate of the error variance.
+        \item Calculate a 95\% prediction interval for the daily new visitors of a site with an annual social media marking spend of £15,000.
+        \item Explain why a prediction interval is more likely to be of interest to the magazine's creators than a confidence interval.
+    \end{enumerate}
+\end{minipage}
+\end{figure}
+\end{enumerate}
+
+\newpage
+
 
 \begin{enumerate}
     \item As part of a study on intensive exercise, a sports scientist recorded the peak heart rates ($y$) of a random selection of fifteen volunteers of different ages ($x$) who took regular exercise. The linear regression equation was calculated for the data shown in the scatter diagram and found to be $\hat{Y}=212.3−0.96x$.
