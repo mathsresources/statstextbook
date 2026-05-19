@@ -24343,6 +24343,151 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 \addcontentsline{toc}{section}{{Review Exercise}}
 
 \begin{enumerate}
+    \item Biologists studying populations of European hamsters record the tail length ($x$ centimetres) and body mass ($y$ grams) of a random sample of 12 wild hamsters found living in central Vienna. The linear regression equation was calculated for the data shown in the scatterplot as $\hat{Y}=-15.24+71.88x$.
+    \begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.22\textwidth}
+\begin{center}
+        \begin{tikzpicture}
+            \draw[black!10,step=0.25] (0,0.5) grid (2,2.5);
+            \node[above,rotate=90] at (0,1.5) {mass};
+            \node[below] at (1,0.5) {tail length};
+            \draw (0,0.5) rectangle (2,2.5);
+            \draw[fill] (1.026584,1.738622) circle (0.03);
+            \draw[fill] (1.231034,1.644741) circle (0.03);
+            \draw[fill] (1.672522,2.274302) circle (0.03);
+            \draw[fill] (1.751120,1.537935) circle (0.03);
+            \draw[fill] (1.161184,1.750612) circle (0.03);
+            \draw[fill] (1.380849,1.824813) circle (0.03);
+            \draw[fill] (0.284826,1.080322) circle (0.03);
+            \draw[fill] (1.339594,1.190204) circle (0.03);
+            \draw[fill] (0.449474,0.8729) circle (0.03);
+            \draw[fill] (1.763575,2.009393) circle (0.03);
+            \draw[fill] (0.539653,0.934839) circle (0.03);
+            \draw[fill] (1.649056,2.056133) circle (0.03);
+            \draw (0,0.7228) -- (2,2.1604);
+        \end{tikzpicture}
+    \end{center}
+\end{minipage}%
+\begin{minipage}[c]{.78\textwidth}
+    \vspace{-0.3cm}
+    \begin{center}
+        \begin{tabular}{ccccc}
+            $\Sigma x=62.25$, & $\Sigma y=4291.5$, & $\Sigma x^2=325.9$, & $\Sigma y^2=1558042$, & $\Sigma xy=22475$
+        \end{tabular}
+    \end{center}
+    \vspace{0.2cm}
+    \begin{enumerate}
+        \item Calculate the residual of a 410 gram hamster with a tail length of 5.2cm.
+        \item Use a suitable hypothesis test to assess the usefulness of the linear model for prediction at the 10\% level of significance.
+    \end{enumerate}
+\end{minipage}
+\end{figure}
+    \item Data is collected on the tempo ($T$ beats per minute) and duration ($d$ minutes) of a random sample of pop-punk songs. The regression line $\hat{T}=256.65-20.65d$ is obtained for the data.
+    \begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.22\textwidth}
+\begin{center}
+        \begin{tikzpicture}
+            \draw[black!10,step=0.25] (0,0) grid (2,2);
+            \node[above,rotate=90] at (0,1) {tempo};
+            \node[below] at (1,0) {duration};
+            \draw (0,0) rectangle (2,2);
+            \draw[fill] (0.271909,1.5685) circle (0.03);
+\draw[fill] (0.954002,1.003012) circle (0.03);
+\draw[fill] (1.518625,0.616146) circle (0.03);
+\draw[fill] (1.052261,1.463466) circle (0.03);
+\draw[fill] (0.526589,1.55913) circle (0.03);
+\draw[fill] (1.086741,1.189316) circle (0.03);
+\draw[fill] (0.485662,0.811234) circle (0.03);
+\draw[fill] (0.543473,1.166124) circle (0.03);
+\draw[fill] (1.219950,0.892968) circle (0.03);
+\draw[fill] (0.305407,1.000574) circle (0.03);
+\draw[fill] (1.203110,0.790258) circle (0.03);
+\draw[fill] (1.088995,1.296402) circle (0.03);
+\draw[fill] (1.476785,0.834164) circle (0.03);
+\draw[fill] (1.616641,0.743838) circle (0.03);
+\draw[fill] (0.732727,1.326566) circle (0.03);
+\draw[fill] (0.536167,1.267304) circle (0.03);
+\draw[fill] (1.173768,1.199898) circle (0.03);
+\draw[fill] (0.799466,1.661934) circle (0.03);
+\draw (0,1.5135) -- (2,0.6875);
+        \end{tikzpicture}
+    \end{center}
+\end{minipage}%
+\begin{minipage}[c]{.78\textwidth}
+    \begin{center}
+        \begin{tabular}{lllll}
+            $\Sigma d=43.6$ & \qquad & $\Sigma T=3719.5$ & \qquad & $\Sigma dT=8947.2$\\
+            $\Sigma d^2=108.5$ & \qquad & $\Sigma T^2=772792$ & \qquad & $n=18$
+        \end{tabular}
+    \end{center}
+    \vspace{0.2cm}
+    \begin{enumerate}
+        \item Calculate the coefficient of determination and interpret its value.
+        \item Perform a hypothesis test at the 1\% level of significance to check for evidence of a linear association between the tempo and duration of pop-punk songs.
+    \end{enumerate}
+\end{minipage}
+\end{figure}
+\item The creators of a brand new sports website collect data on the annual social media marketing spend (£$x$ thousand) and new daily visitors ($y$) of similar sites, to plan their own budget. The results are shown below, including a least squares regression line of equation $\hat{Y}=29.5+5.6x$.
+    \begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.22\textwidth}
+\begin{center}
+        \begin{tikzpicture}
+            \draw[black!10,step=0.25] (0,0) grid (2,2);
+            \node[above,rotate=90] at (0,1) {visitors};
+            \node[below] at (1,0) {spend};
+            \draw (0,0) rectangle (2,2);
+            \draw[fill] (1.1647391,1.1783408) circle (0.03);
+\draw[fill] (0.8090751,0.7181106) circle (0.03);
+\draw[fill] (1.4203657,0.6667498) circle (0.03);
+\draw[fill] (0.7376863,0.6330009) circle (0.03);
+\draw[fill] (0.7992638,1.04413) circle (0.03);
+\draw[fill] (0.5559804,0.5879035) circle (0.03);
+\draw[fill] (0.9191813,0.9374849) circle (0.03);
+\draw[fill] (0.9062243,0.9502923) circle (0.03);
+\draw[fill] (1.0550061,1.3054602) circle (0.03);
+\draw[fill] (0.6104323,0.6460021) circle (0.03);
+\draw[fill] (1.571969,1.3949794) circle (0.03);
+\draw[fill] (0.7107671,1.1828142) circle (0.03);
+\draw[fill] (0.613051,0.5444485) circle (0.03);
+\draw[fill] (0.5577118,0.4361321) circle (0.03);
+\draw[fill] (1.0066336,0.5363694) circle (0.03);
+\draw[fill] (1.3639911,0.8686892) circle (0.03);
+\draw[fill] (0.8762089,0.9756425) circle (0.03);
+\draw[fill] (0.6112497,0.2880614) circle (0.03);
+\draw[fill] (0.796287,0.6231761) circle (0.03);
+\draw[fill] (0.7930843,0.9719763) circle (0.03);
+\draw[fill] (0.7583231,0.8542987) circle (0.03);
+\draw[fill] (0.3622993,0.3587117) circle (0.03);
+\draw[fill] (1.0794175,0.7770448) circle (0.03);
+\draw[fill] (0.9938819,0.6212644) circle (0.03);
+\draw[fill] (0.9659331,0.53864) circle (0.03);
+\draw[fill] (1.0196479,0.9428888) circle (0.03);
+\draw (0,0.295) -- (2,1.415);
+        \end{tikzpicture}
+    \end{center}
+\end{minipage}%
+\begin{minipage}[c]{.78\textwidth}
+    \begin{center}
+        \begin{tabular}{lllllllll}
+            $\Sigma x=230.6$ & \quad & $\Sigma x^2=2244.6$ & \quad & $S_{xy}=1118.6$ & \quad & $S_{yy}=20640.9$ & \quad & $n=26$
+        \end{tabular}
+    \end{center}
+    \vspace{0.2cm}
+    \begin{enumerate}
+        \item Calculate an estimate of the error variance.
+        \item Calculate a 95\% prediction interval for the daily new visitors of a site with an annual social media marking spend of £15,000.
+        \item Explain why a prediction interval is more likely to be of interest to the magazine's creators than a confidence interval.
+    \end{enumerate}
+\end{minipage}
+\end{figure}
+\end{enumerate}
+
+\newpage
+
+\begin{enumerate}
     \item As part of a study on intensive exercise, a sports scientist recorded the peak heart rates ($y$) of a random selection of fifteen volunteers of different ages ($x$) who took regular exercise. The linear regression equation was calculated for the data shown in the scatter diagram and found to be $\hat{Y}=212.3−0.96x$.
 \begin{multicols}{2}
 
