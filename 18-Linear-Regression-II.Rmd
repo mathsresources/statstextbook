@@ -2,11 +2,11 @@
 
 \vspace{-1cm}
 
-A straight-line relationship can be valuable in many situations in establishing and summarising the dependence of one variable on another, and in making predictions. Linear regression will be explored in more detail in this chapter.
+A straight line relationship can be valuable in many situations in establishing and summarising the dependence of one variable on another, and in making predictions. Linear regression will be explored in more detail in this chapter.
 
 ### The Method of Least Squares Regression {-}
 
-In most experiments, it is assumed that $x$ is under the control of the experimenter and can be known exactly. In such cases $x$ is called the \textit{predictor} (or \textit{independent}) variable, whilst $Y$ is a \textbf{random variable} known as the \textit{response} (or \textit{dependent}) variable.
+In most experiments, it is assumed that $x$ is under the control of the experimenter and can be known exactly. In such cases $x$ is called the \textit{predictor} (or \textit{independent}) variable, whilst $Y$ is a \textit{random variable} known as the \textit{response} (or \textit{dependent}) variable.
 
 \begin{multicols}{2}
 
@@ -36,13 +36,13 @@ In most experiments, it is assumed that $x$ is under the control of the experime
     \end{tikzpicture}
 \end{center}
 
-The theoretical model for linear regression is that of a straight line of form $y=\alpha+\beta x$ describing the best fit for a relationship between variables. However, the population of bivariate data will not perfectly lie along this line due to chance variation.
+The theoretical model for linear regression is that of a straight line of form $y=\alpha+\beta x$ describing the best fit for a relationship between variables. However, the population of bivariate data will not perfectly lie along this line due to chance variation, known as \textbf{errors}.
 
 \begin{tcolorbox}[halign title=center,title=The Linear Regression Model,center,colback=red!5,colframe=red!70!black,width=6.5cm]
 \[Y_i=\alpha+\beta x_i+\varepsilon_i\]
 \end{tcolorbox}
  
-$\varepsilon$ (\textit{"epsilon"}) is a random variable called the \textbf{error} that describes how far $Y$ is from its expected value. 
+$\varepsilon_i$ (\textit{"epsilon"}) are random variables called \textit{errors} that describe how far $Y_i$ is from its expected value for $x_i$. 
 
 \end{multicols}
 
@@ -134,13 +134,13 @@ The difference between an observed data value $y_i$ and a corresponding fitted v
     \end{tikzpicture}
 \end{center}
 
-Data points \textit{above} the regression line have a \textit{positive} residual; the observed $y_i$ was \textit{greater} than that predicted by the regression line for the value of $x_i$.
+Data points \textit{above} the regression line have a \textit{positive} residual: the observed $y_i$ was \textit{greater} than that predicted by the regression line for the value of $x_i$.
 
-Data points  \textit{below} the regression line have a \textit{negative} residual; the observed $y_i$ was \textit{less} than that predicted by the regression line for the value of $x_i$.
+Data points  \textit{below} the regression line have a \textit{negative} residual: the observed $y_i$ was \textit{less} than that predicted by the regression line for the value of $x_i$.
 
 \end{multicols}
 
-To calculate a residual the fitted value, $\hat{Y}_i$ needs to first be found using the equation of the regression line.
+To calculate a residual the fitted value, $\hat{Y}_i$, needs to first be found using the equation of the regression line.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 \textbf{Problem:}
@@ -360,7 +360,7 @@ The *error variance* is the variance of the population of data *relative to the 
     \draw[ultra thick,stealth-stealth,black!30] (5,5*0.39+2.13+1.4) -- (5,5*0.39+2.13-1.4);
     \draw[ultra thick,stealth-stealth,black!30] (7,7*0.39+2.13+1.4) -- (7,7*0.39+2.13-1.4);
     \draw[ultra thick,stealth-stealth,black!30] (9,9*0.39+2.13+1.4) -- (9,9*0.39+2.13-1.4);
-        \draw[thick] (0,2.13) -- (10,6.02) node[right] {$\hat{Y}=a+bx$};
+        \draw[thick] (0,2.13) -- (10,6.02) node[right] {$\hat{Y}=\alpha+\beta x$};
         \draw[fill] (6.955968,6.2978298) circle (0.05);
 \draw[fill] (7.912889,5.8402953) circle (0.05);
 \draw[fill] (1.868432,1.6709538) circle (0.05);
@@ -421,7 +421,7 @@ The error variance $\sigma^2$ is estimated by:
 \[s^2=\dfrac{\text{\text{SSR}}}{n-2}\]
 \end{tcolorbox}
 
-Where the (always positive) \textit{sum of squared residuals}, $\text{\text{SSR}}$, is calculated as:\hspace{0.5cm} $\text{\text{SSR}}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}$
+Where the (always positive) \textit{sum of squared residuals}, $\text{\text{SSR}}$, is calculated as:\hspace{0.5cm} $\text{\text{SSR}}=S_{yy}-\dfrac{S^2_{\phantom{..}xy}}{S_{xx}}$
 
 Both the formula for estimating the error variance $\sigma^2$ and the more convenient second formula for the sum of squared residuals $\text{SSR}$ are given on page 5 of the Data Booklet.
 
@@ -436,8 +436,8 @@ Students sitting a French exam are given a mark for each of the two components: 
 \tcblower
 \textbf{Solution:}
 
-\text{(a)   } $\text{SSR}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=132.9-\dfrac{193.6^2}{344.9}=24.23$\\[0.7em]
-\text{(b)   } $s^2=\dfrac{SRR}{n-2}=\dfrac{24.23}{12-2}=2.423$
+\text{(a)   } $\text{SSR}=S_{yy}-\dfrac{S^2_{\phantom{..}xy}}{S_{xx}}=132.9-\dfrac{193.6^2}{344.9}=24.23$\\[0.7em]
+\text{(b)   } $s^2=\dfrac{\text{SRR}}{n-2}=\dfrac{24.23}{12-2}=2.423$
 \end{tcolorbox}
 
 \pagebreak
@@ -558,7 +558,7 @@ It is determined that linear relationship appears to exist between the variables
     \end{enumerate}
 \end{enumerate}
 
-\newpage
+\\pagebreak
 
 ## The Coefficient of Determination
 
@@ -681,7 +681,7 @@ Calculate the coefficient of determination and interpret this value in context.
 
 \begin{align*}
 r&=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}=\dfrac{193.6}{\sqrt{334.9\times 132.9}}=0.9177\\[1em]
-R^2&=r^2=0.935^2=0.842
+R^2&=r^2=0.9177^2=0.842
 \end{align*}
 
 This suggests that 84.2\% of the variation in listening marks can be explained by the linear model.
@@ -829,7 +829,7 @@ Determine the value of the coefficient of determination and interpret it.
         \texttt{top\_speed = 269.2 - 1.72 $\times$ lap\_time} && \texttt{34} && \texttt{-0.670}&& \texttt{8.49}
     \end{tabular}
 \end{enumerate} 
-\item A seller on an online auction site has a stock of used digital cameras, all aged somewhere between 2 and 12 years. For each camera, the total number of photos taken (the \textit{shutter count}) is determined using special software. A scatterplot of the results is shown below. A correlation coefficient is calculated for the data of $0.718$.
+\item A seller on an online auction site has a stock of used digital cameras, all aged somewhere between 2 and 12 years. For each camera, the total number of photos taken (the \textit{shutter count}) is determined using special software. A $y$ on $x$ regression line is shown on the scatterplot of the data below. A correlation coefficient is calculated for the data of $0.718$.
     \begin{multicols}{2}
     \begin{enumerate}
         \item Make one comment on the scatterplot.
@@ -1159,7 +1159,7 @@ Test statistic: $t=\dfrac{b\sqrt{S_{xx}}}{s}=\dfrac{-0.8456\times \sqrt{157.875}
 
 \vspace{-0.3cm}
 
-Critical value: $t_{6,0.95}=-2.447$\\
+Critical value: $t_{6,0.975}=-2.447$\\
 
 Since $-3.003<-2.447$, reject $\text{H}_0$ at the 5\% level of significance. There is  evidence to suggest that the slope parameter is not zero, so evidence that a linear model would be useful for prediction.
 
@@ -1175,13 +1175,13 @@ Since $-3.003<-2.447$, reject $\text{H}_0$ at the 5\% level of significance. The
         \item A random sample of bivariate data, sample size 27, yields the following summary statistics:
         \begin{center}
             \begin{tabular}{ccccccc}
-                $S_{xx}=87.8$ & \qquad & $S_{yy}=-1242.5$ & \qquad & $S_{xy}=-129.6$ & \qquad & $\text{SSR}=224.45$ 
+                $S_{xx}=87.8$ & \qquad & $S_{yy}=415.5$ & \qquad & $S_{xy}=-129.6$ & \qquad & $\text{SSR}=224.2$ 
             \end{tabular}
         \end{center}
         A test for $\beta$  is to be performed on the data.
         \begin{enumerate}
         \item State suitable null and alternative hypotheses.
-        \item Show the calculations required to reach a test statistic of $-$4.612.
+        \item Show the calculations required to reach a test statistic of $-$4.618.
         \item State the degrees of freedom, $\nu$, of the $t$-distribution required for the test.
         \item Conclude the test at the 5\% level of significance.
     \end{enumerate}
@@ -4461,7 +4461,7 @@ A new linear model was created between speed ($x$) and the square root of the st
 
 \end{tcolorbox}
 
-\newpage
+\\pagebreak
 
 []{#ex188q}
 
@@ -5711,6 +5711,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 
 ## [Review Exercise](#re18a) {-}
 
+
 \begin{enumerate}
     \item Biologists studying populations of European hamsters record the tail length ($x$ centimetres) and body mass ($y$ grams) of a random sample of 12 wild hamsters found living in central Vienna. The linear regression equation was calculated for the data shown in the scatterplot as $\hat{Y}=-15.24+71.88x$.
     \begin{figure}[H]
@@ -5852,191 +5853,20 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     \end{enumerate}
 \end{minipage}
 \end{figure}
-\end{enumerate}
-
-\newpage
-
-
-\begin{enumerate}
-    \item As part of a study on intensive exercise, a sports scientist recorded the peak heart rates ($y$) of a random selection of fifteen volunteers of different ages ($x$) who took regular exercise. The linear regression equation was calculated for the data shown in the scatter diagram and found to be $\hat{Y}=212.3−0.96x$.
-\begin{multicols}{2}
-
-\begin{center}
-\begin{tikzpicture}
-\draw[semithick] (1.8,0.1*160) -- (1.8,0.1*200);
-\draw[semithick] (2.0,15.9) -- (6.0,15.9);
-\node[rotate=90] at (0.4,0.1*180) {Heart rate (bpm)};
-\node at (4,14.9) {Age (years)};
-\foreach \y in {160,170,...,200}
-\node at (1.3,0.1*\y) {\y};
-\foreach \y in {160,165,...,200}
-\draw[semithick] (1.8,0.1*\y) -- (1.6,0.1*\y);
-\foreach \x in {20,25,...,60}
-\node at (0.1*\x,15.5) {\x};
-\foreach \x in {20,25,...,60}
-\draw[semithick] (0.1*\x,15.8) -- (0.1*\x,16);
-\draw[fill=black] (2,0.1*198) circle (0.05);
-\draw[fill=black] (2.2,0.1*191) circle (0.05);
-\draw[fill=black] (2.4,0.1*185) circle (0.05);
-\draw[fill=black] (2.6,0.1*190) circle (0.05);
-\draw[fill=black] (2.8,0.1*179) circle (0.05);
-\draw[fill=black] (2.9,0.1*187) circle (0.05);
-\draw[fill=black] (3.2,0.1*177) circle (0.05);
-\draw[fill=black] (3.5,0.1*178) circle (0.05);
-\draw[fill=black] (3.6,0.1*180) circle (0.05);
-\draw[fill=black] (3.9,0.1*179) circle (0.05);
-\draw[fill=black] (4.0,0.1*175) circle (0.05);
-\draw[fill=black] (4.4,0.1*168) circle (0.05);
-\draw[fill=black] (4.6,0.1*168) circle (0.05);
-\draw[fill=black] (4.6,0.1*170) circle (0.05);
-\draw[fill=black] (5.1,0.1*162) circle (0.05);
-\draw[thick] (2,21.23-0.096*20) -- (5.2,21.23-0.096*52);
-\end{tikzpicture}
-\end{center}
-
-\begin{center}
-    \begin{tabular}{lll}
-        $\Sigma x=518$ & $\Sigma y=2687$ & $\Sigma xy=91534$\\[0.5em]
-        $\Sigma x^2=19196$ & $\Sigma y^2=482691$ & $n=15$
-    \end{tabular}
-\end{center}
-
-\begin{enumerate}
-    \item Calculate the residual of a volunteer aged 32 with a heart rate of 177 bpm.
-    \item Use a suitable hypothesis test to assess the usefulness of the linear model for prediction at the 1\% level of significance.
-\end{enumerate}
-
-\end{multicols}
-
-    \item When a type of metal bar is heated it expands. The amount by which it expands ($e$, in mm) and for a given increase in temperature ($t$, in $\degree \text{C}$) is recorded for a random sample of six such bars. A regression line with equation is $\hat{E}=0.23+0.077t$ is obtained for the data, as well as summary statistics.
-
-\begin{multicols}{2}
-
-\begin{center}
-\begin{tikzpicture}
-\draw (0,0) -- (3,0);
-\draw (0,0) -- (0,3);
-\node[rotate=90] at (-1.3,1.5) {Expansion (mm)};
-\node at (1.5,-1.2) {Temperature rise ($^{\circ}C)$};
-\foreach \y in {0,10,...,30}
-\node[anchor=east] at (-0.2,0.1*\y) {\y};
-\foreach \y in {0,10,...,30}
-\draw[semithick] (0,0.1*\y) -- (-0.1,0.1*\y);
-\foreach \x in {0,100,...,300}
-\node at (0.01*\x,-0.5) {\x};
-\foreach \x in {0,50,...,300}
-\draw[semithick] (0.01*\x,0) -- (0.01*\x,-0.1);
-\draw[fill=black] (0.5,0.35) circle (0.05);
-\draw[fill=black] (1,0.85) circle (0.05);
-\draw[fill=black] (1.5,1.2) circle (0.05);
-\draw[fill=black] (2,1.54) circle (0.05);
-\draw[fill=black] (2.5,1.92) circle (0.05);
-\draw[fill=black] (3,2.32) circle (0.05);
-\draw[thick] (0.4,0.0023+0.08*4) -- (3,0.0023+0.08*30);
-\end{tikzpicture}
-\end{center}
-
-
-\begin{center}
-    \begin{tabular}{llc}
-        $\Sigma t=1050$ & $\Sigma e=81.8$ & $\Sigma te=17665$\\[0.5em]
-        $\Sigma t^2=227500$ & $\Sigma e^2=1372.54$ & $n=6$ 
-    \end{tabular}
-\end{center}
-
-\begin{enumerate}
-         \item Calculate the coefficient of determination and interpret its value.
-        \item Perform an appropriate hypothesis test at the 0.1\% level of significance to provide evidence of a linear association between temperature rise and expansion.
-\end{enumerate}
-
-\end{multicols}
-
-    \item A strength and conditioning coach wants to increase the vertical jump height performance in their trainees and considers whether back squat weight has an impact on vertical jump height performance. The summary statistics below are taken from the back squat weight ($x$ in kg) and vertical jump height ($y$ in cm) achieved by a random sample of 29 of the coach’s trainees.
-
-\begin{multicols}{2}
-
-
-\begin{center}
-\begin{tikzpicture}
-\draw (0,-0.1) -- (1.6*4,-0.1);
-\draw (0,0) -- (0,5*0.8);
-\node[rotate=90] at (-1.3,2.5*0.8) {Vertical jump height (cm)};
-\node at (1.6*2,-1.2) {Back squat weight (kg)};
-\foreach \y in {40,50,...,90}
-\node[anchor=east] at (-0.2,0.1*\y*0.8-4*0.8) {\y};
-\foreach \y in {40,45,...,90}
-\draw[semithick] (0,0.1*\y*0.8-4*0.8) -- (-0.1,0.1*\y*0.8-4*0.8);
-\foreach \x in {120,130,...,200}
-\node at (1.6*0.05*\x-1.6*6,-0.6) {\x};
-\foreach \x in {120,125,...,200}
-\draw[semithick] (1.6*0.05*\x-1.6*6,-0.2) -- (1.6*0.05*\x-1.6*6,-0.1);
-\draw[fill=black] (1.6*0,0.600000000000001*0.8) circle (0.05);
-\draw[fill=black] (1.6*0.350000000000001,2.2*0.8) circle (0.05);
-\draw[fill=black] (1.6*0.5,1.8*0.8) circle (0.05);
-\draw[fill=black] (1.6*1.5,2.6*0.8) circle (0.05);
-\draw[fill=black] (1.6*3,3*0.8) circle (0.05);
-\draw[fill=black] (1.6*2.6,2.4*0.8) circle (0.05);
-\draw[fill=black] (1.6*2.4,2*0.8) circle (0.05);
-\draw[fill=black] (1.6*1.9,2.2*0.8) circle (0.05);
-\draw[fill=black] (1.6*2,2.1*0.8) circle (0.05);
-\draw[fill=black] (1.6*2.75,4.4*0.8) circle (0.05);
-\draw[fill=black] (1.6*2.5,3.7*0.8) circle (0.05);
-\draw[fill=black] (1.6*0.75,1.6*0.8) circle (0.05);
-\draw[fill=black] (1.6*2,2.2*0.8) circle (0.05);
-\draw[fill=black] (1.6*1,1.5*0.8) circle (0.05);
-\draw[fill=black] (1.6*2.9,3.6*0.8) circle (0.05);
-\draw[fill=black] (1.6*2.1,2.5*0.8) circle (0.05);
-\draw[fill=black] (1.6*2.25,2.6*0.8) circle (0.05);
-\draw[fill=black] (1.6*2.9,3.2*0.8) circle (0.05);
-\draw[fill=black] (1.6*1.25,1.8*0.8) circle (0.05);
-\draw[fill=black] (1.6*1.1,1.5*0.8) circle (0.05);
-\draw[fill=black] (1.6*3.5,3.4*0.8) circle (0.05);
-\draw[fill=black] (1.6*2.4,2.6*0.8) circle (0.05);
-\draw[fill=black] (1.6*3,3.1*0.8) circle (0.05);
-\draw[fill=black] (1.6*2.25,2.6*0.8) circle (0.05);
-\draw[fill=black] (1.6*3.5,3.7*0.8) circle (0.05);
-\draw[fill=black] (1.6*1.25,1.6*0.8) circle (0.05);
-\draw[fill=black] (1.6*2.25,2.5*0.8) circle (0.05);
-\draw[fill=black] (1.6*2.5,2.8*0.8) circle (0.05);
-\draw[fill=black] (1.6*3.25,3.1*0.8) circle (0.05);
-\draw[thick] (1.6*0.05*120-1.6*6,0.019113*120*0.8+3.6639*0.8-4*0.8) -- (1.6*0.05*200-1.6*6,0.019113*200*0.8+3.6639*0.8-4*0.8);
-\node at (3,0.6) {$\hat{Y}=7.237+0.359x$};
-\end{tikzpicture}
-\end{center}  
-
-\begin{center}
-\begin{tabular}{lll}
-  $\Sigma x=4673$ & $S_{xy}=3630.45$ & $n=29$\\[0.5em]
-  $\Sigma x^2=763101$ & $S_{yy}=1899.45$ & 
-\end{tabular}
-\end{center}
-
-    \begin{enumerate}
-        \item Calculate an estimate for the error variance.
-        \item Calculate a 95\% prediction interval for vertical height for a traineee with a back squat weight of 172kg.
-        \item Explain why a prediction interval is more likely to be of interest to the coach in this context than a confidence interval.
-      \end{enumerate}
-
-\end{multicols}
-
-\pagebreak
-
-\item James Forbes was a Scottish physicist who, amongst other things, was interested in finding a way to estimate altitude from measurements of the boiling temperature of water. Some of his observations on boiling point ($y$, in $F^{\circ}$) and barometric pressure ($x$, in inches of mercury) are summarised below.\\[0.1em]
-
-After plotting a scatterplot for this data, a least squares regression line was obtained with the equation $\hat{Y}=155.29+1.9018x$, from which a residual plot was also created. 
-
+    \item The Scottish physicist James Forbes was interested in finding a way to estimate altitude from measurements of the boiling temperature of water. Some of his observations on boiling point ($y$, in $F^{\circ}$) and barometric pressure ($x$, in inches of mercury) are summarised below. After plotting a scatterplot for this data, a least squares regression line was obtained with the equation $\hat{Y}=155.29+1.9018x$, from which a residual plot was also created. 
+\vspace{-0.3cm}
 \begin{multicols}{2}
     \begin{center}
-    \begin{tikzpicture}
-        \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
-        \draw[-stealth] (0,0.1) -- (0,3.25) node[above] {$y$}; 
+    \begin{tikzpicture}[scale=0.8]
+        \draw[-stealth] (0,0) -- (5.25,0) node[below] {$x$};
+        \draw[-stealth] (0,0.1) -- (0,3) node[left] {$y$}; 
         \node at (2.5,-1) {Barometric pressure (inches of mercury)};
-        \node at (-2.2,1.75) {Boiling point};
-        \node at (-2.5,1.25) {($F^{\circ}$)};
+        \node at (-2.8,1.75) {Boiling point};
+        \node at (-2.8,1) {($F^{\circ}$)};
         \foreach \x in {0.25,0.75,...,4.75}{
         \draw (\x,0) -- (\x,-0.1);
         }
-        \foreach \y in {0.5,1,...,3}{
+        \foreach \y in {0.5,1,...,2.5}{
         \draw (0,\y) -- (-0.1,\y);
         }
         \node[left] at (0,0.5) {195};
@@ -6047,115 +5877,125 @@ After plotting a scatterplot for this data, a least squares regression line was 
         \node[below] at (2.25,0) {25};
         \node[below] at (3.25,0) {27};
         \node[below] at (4.25,0) {29};
-        \draw[fill=black] (0.145,0.45) circle (0.03);
-\draw[fill=black] (0.145,0.430000000000001) circle (0.03);
-\draw[fill=black] (0.949999999999999,0.790000000000001) circle (0.03);
-\draw[fill=black] (1.085,0.840000000000001) circle (0.03);
-\draw[fill=black] (1.325,0.940000000000001) circle (0.03);
-\draw[fill=black] (1.425,0.990000000000001) circle (0.03);
-\draw[fill=black] (1.695,1.09) circle (0.03);
-\draw[fill=black] (1.745,1.11) circle (0.03);
-\draw[fill=black] (1.76,1.14) circle (0.03);
-\draw[fill=black] (1.755,1.13) circle (0.03);
-\draw[fill=black] (2.32,1.36) circle (0.03);
-\draw[fill=black] (3.035,1.46) circle (0.03);
-\draw[fill=black] (3.995,1.95) circle (0.03);
-\draw[fill=black] (3.63,1.86) circle (0.03);
-\draw[fill=black] (4.27,2.07) circle (0.03);
-\draw[fill=black] (4.69,2.19) circle (0.03);
-\draw[fill=black] (4.78,2.22) circle (0.03);
+        \draw[fill=black] (0.145,0.45) circle (0.06);
+\draw[fill=black] (0.145,0.430000000000001) circle (0.06);
+\draw[fill=black] (0.949999999999999,0.790000000000001) circle (0.06);
+\draw[fill=black] (1.085,0.840000000000001) circle (0.06);
+\draw[fill=black] (1.325,0.940000000000001) circle (0.06);
+\draw[fill=black] (1.425,0.990000000000001) circle (0.06);
+\draw[fill=black] (1.695,1.09) circle (0.06);
+\draw[fill=black] (1.745,1.11) circle (0.06);
+\draw[fill=black] (1.76,1.14) circle (0.06);
+\draw[fill=black] (1.755,1.13) circle (0.06);
+\draw[fill=black] (2.32,1.36) circle (0.06);
+\draw[fill=black] (3.035,1.46) circle (0.06);
+\draw[fill=black] (3.995,1.95) circle (0.06);
+\draw[fill=black] (3.63,1.86) circle (0.06);
+\draw[fill=black] (4.27,2.07) circle (0.06);
+\draw[fill=black] (4.69,2.19) circle (0.06);
+\draw[fill=black] (4.78,2.22) circle (0.06);
 \draw[semithick] (20.8*0.5-10.25,194.82*0.1-19) -- (30.5*0.5-10.25,213.25*0.1-19);
     \end{tikzpicture}
 \end{center}
 
 \begin{center}
-    \begin{tikzpicture}
-        \draw[black!70,fill=black!70] (0.965827657571288,-0.658276575712875) circle (0.05);
-\draw[black!70,fill=black!70] (0.965827657571288,-1.05827657571285) circle (0.05);
-\draw[black!70,fill=black!70] (1.57820195230497,0.0179804769502994) circle (0.05);
-\draw[black!70,fill=black!70] (1.68089826260193,-0.00898262601930355) circle (0.05);
-\draw[black!70,fill=black!70] (1.86346948090762,0.165305190923789) circle (0.05);
-\draw[black!70,fill=black!70] (1.93954082186833,0.404591781316697) circle (0.05);
-\draw[black!70,fill=black!70] (2.14493344246224,0.350665575377661) circle (0.05);
-\draw[black!70,fill=black!70] (2.18296911294259,0.370308870574092) circle (0.05);
-\draw[black!70,fill=black!70] (2.19437981408669,0.85620185913308) circle (0.05);
-\draw[black!70,fill=black!70] (2.19057624703866,0.694237529613417) circle (0.05);
-\draw[black!70,fill=black!70] (2.62037932346665,0.996206765333511) circle (0.05);
-\draw[black!70,fill=black!70] (3.1642894113357,-2.442894113357) circle (0.05);
-\draw[black!70,fill=black!70] (3.89457428455848,0.0542571544152111) circle (0.05);
-\draw[black!70,fill=black!70] (3.6169138900519,1.030861099481) circle (0.05);
-\draw[black!70,fill=black!70] (4.10377047220042,0.36229527799577) circle (0.05);
-\draw[black!70,fill=black!70] (4.42327010423539,-0.43270104235387) circle (0.05);
-\draw[black!70,fill=black!70] (4.49173431110002,-0.51734311100023) circle (0.05);
-    \draw (0,-2.7) rectangle (6,1.5);
+    \begin{tikzpicture}[scale=0.7]
+        \draw[black!70,fill=black!70] (0.965827657571288,-0.658276575712875) circle (0.06);
+\draw[black!70,fill=black!70] (0.965827657571288,-1.05827657571285) circle (0.06);
+\draw[black!70,fill=black!70] (1.57820195230497,0.0179804769502994) circle (0.06);
+\draw[black!70,fill=black!70] (1.68089826260193,-0.00898262601930355) circle (0.06);
+\draw[black!70,fill=black!70] (1.86346948090762,0.165305190923789) circle (0.06);
+\draw[black!70,fill=black!70] (1.93954082186833,0.404591781316697) circle (0.06);
+\draw[black!70,fill=black!70] (2.14493344246224,0.350665575377661) circle (0.06);
+\draw[black!70,fill=black!70] (2.18296911294259,0.370308870574092) circle (0.06);
+\draw[black!70,fill=black!70] (2.19437981408669,0.85620185913308) circle (0.06);
+\draw[black!70,fill=black!70] (2.19057624703866,0.694237529613417) circle (0.06);
+\draw[black!70,fill=black!70] (2.62037932346665,0.996206765333511) circle (0.06);
+\draw[black!70,fill=black!70] (3.1642894113357,-2.142894113357) circle (0.06);
+\draw[black!70,fill=black!70] (3.89457428455848,0.0542571544152111) circle (0.06);
+\draw[black!70,fill=black!70] (3.6169138900519,1.030861099481) circle (0.06);
+\draw[black!70,fill=black!70] (4.10377047220042,0.36229527799577) circle (0.06);
+\draw[black!70,fill=black!70] (4.42327010423539,-0.43270104235387) circle (0.06);
+\draw[black!70,fill=black!70] (4.49173431110002,-0.51734311100023) circle (0.06);
+    \draw (0,-2.3) rectangle (6,1.5);
     \draw[dashed] (0,0) -- (6,0);
     \node at (3,1.8) {Residual plot};
     \node[left] at (0,0) {$0$};
-    \node[rotate=90] at (-0.7,-0.5) {Fitted Values};
+    \node[rotate=90] at (-1,-0.5) {Fitted Values};
     \node at (3,-3) {Residuals};
     \end{tikzpicture}
 \end{center}
 
 \end{multicols}
-
+\vspace{-0.2cm}
 \begin{enumerate}[resume]
     \item  Comment on the suitability of the linear model.
     \item Suggest what next steps might be taken on the basis of the residual plot for the linear model.
 \end{enumerate}
 
-\item A running website randomly selected eleven amateur runners who recently completed a marathon and asked them to complete a survey which included their finishing time in the marathon and information about their training routine. The scatterplot below shows, for each runner, their finishing time ($x$, in hours) and the total distance they ran in the final four weeks of their training ($y$, in miles). 
-
-\begin{center}
-\begin{tikzpicture}
-\foreach \x in {0,1,...,7}{
-\draw (\x,0) -- (\x,-0.1);
-\node[below] at (\x,0) {\x};
-}
-\foreach \y in {0,25,...,175}{
-\draw (0,0.02*\y) -- (-0.1,0.02*\y);
-\node[left] at (0,0.02*\y) {\y};
-}
-\draw[black!70,fill=black!70] (2.4,2.7) circle (0.03);
-\draw[black!70,fill=black!70] (2.9,2.84) circle (0.03);
-\draw[black!70,fill=black!70] (3.1,2.42) circle (0.03);
-\draw[black!70,fill=black!70] (3.7,2.3) circle (0.03);
-\draw[black!70,fill=black!70] (3.9,1.9) circle (0.03);
-\draw[black!70,fill=black!70] (4,2.08) circle (0.03);
-\draw[black!70,fill=black!70] (4.2,1.88) circle (0.03);
-\draw[black!70,fill=black!70] (4.4,1.74) circle (0.03);
-\draw[black!70,fill=black!70] (4.7,1.62) circle (0.03);
-\draw[black!70,fill=black!70] (5,1.18) circle (0.03);
-\draw[black!70,fill=black!70] (6.2,1.3) circle (0.03);
-\draw[thick] (2,2.96) -- (6.5,0.84);
-\draw[-stealth] (0,0) -- (7,0) node[right] {$x$};
-\draw[-stealth] (0,0) -- (0,3.6) node[above] {$y$};
-\node at (3.5,-1) {Time (hours)};
-\node at (-2,2.5) {Distance};
-\node at (-2,2) {(miles)};
-\node[right] at (9,4) {Summary statistics:};
-\node[right] at (9,3.4) {$\sum x=44.5$};
-\node[right] at (9,2.8) {$\sum x^2=191.21$};
-\node[right] at (9,2.2) {$\sum y=1098$};
-\node[right] at (9,1.6) {$\sum y^2=116768$};
-\node[right] at (9,1) {$\sum xy=4179.2$};
-\node[right] at (9,0.4) {$n=11$};
-\end{tikzpicture}
-\end{center}  
-
-A least squares regression line for $y$ on $x$ is shown on the graph, with equation $\hat{Y}=194.8-23.48x$.
-
-\begin{enumerate}
-    \item[(a)] Calculate the correlation coefficient, and comment on its value.
-\end{enumerate}
-
-The website wishes to allow users the ability to input the number of miles in their training plan for the four weeks leading up to the rate, and receive in response an estimate for their finishing time.
-
-\begin{enumerate}
-    \item[(b)] Explain why the equation provided above is unsuitable for this purpose.
-    \item[(c)] Obtain a suitable equation which could instead be used.
-\end{enumerate}
-
 \end{enumerate}
 
 \pagebreak
+
+\begin{enumerate}[resume]
+    \item The website \textit{Fife Walking} contains an extensive collection of walking routes grouped by area. The length ($x$ miles) and total vertical ascent ($y$ metres) is shown in \textbf{table 1} below for a random sample of eleven routes in the \textit{Ochil Hills} area.
+    \vspace{-0.4cm}
+    \begin{center}
+        \textbf{Table 1}\\[0.3em]
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \textbf{Route Name} & \textbf{Distance (miles)} & \textbf{Ascent (metres)}\\
+            \hline
+            Beld Hill and Craig Rossie&	6	&460\\\hline
+            Dumyat&	3.8	&500\\\hline
+            Myretoun Hill and Balquharn Glen&	4	&470\\\hline
+            Colsnaur Circuit&	5	&580\\\hline
+            Core Hill	&6.5	&480\\\hline
+            Eastbow Hills and Steele's Knowe	&6.2	&430\\\hline
+            King's Seat Circuit&	5.6&	600\\\hline
+            Burn of Sorrow Circular&	6	&700\\\hline
+            Hilfoot Hill and Castle Campbell	&3.2&	300\\\hline
+            Innerdownie, Whitewisp and Glenquey Circuit&	8&	550\\\hline
+            Ben Shee	&5	&365\\
+            \hline
+        \end{tabular}
+    \end{center}
+    The data is displayed below in a scatterplot below (\textbf{figure 1}), with the equation of a $y$ on $x$ least squares regression line calculated as $\hat{Y}=304.08+35.25x$.
+    \begin{center}
+        \textbf{Figure 1}\\[0.3em]
+        \begin{tikzpicture}
+            \draw (0,0) -- (10,0);
+            \draw (0,0) -- (0,8);
+            \foreach \x in {0,1,...,10}{
+            \draw (\x,0) -- (\x,-0.2) node[below] {\x};
+            }
+            \foreach \y in {0,100,...,800}{
+            \draw (0,0.01*\y) -- (-0.2,0.01*\y) node[left] {\y};
+            }
+            \node at (5,-1.2) {distance (miles)};
+            \node[above,rotate=90] at (-1.2,4) {ascent (metres)};
+            \draw[fill] (6,4.6) circle (0.08);
+            \draw[fill] (3.8,5) circle (0.08);
+            \draw[fill] (4,4.7) circle (0.08);
+            \draw[fill] (5,5.8) circle (0.08);
+            \draw[fill] (6.5,4.8) circle (0.08);
+            \draw[fill] (6.2,4.3) circle (0.08);
+            \draw[fill] (5.6,6) circle (0.08);
+            \draw[fill] (6,7) circle (0.08);
+            \draw[fill] (3.2,3) circle (0.08);
+            \draw[fill] (8,5.5) circle (0.08);
+            \draw[fill] (5,3.65) circle (0.08);
+            \draw (2.5,3.92205) -- (9,6.2133) node[right] {$\hat{Y}=304.08+35.25x$};
+        \end{tikzpicture}
+    \end{center}
+    \begin{enumerate}
+        \item Calculate the correlation coefficient and interpret it, with reference to the context.
+        \item Explain why the regression line obtained would not be suitable for estimating the distance a route covers if it is known that the total ascent is 430 metres.
+        \item Determine the equation of a more suitable regression line, and use it to estimate the distance covered for a route with an ascent of 430 metres.
+        \item A walker completes a route in the Lomond Hills area, which also features on the \textit{Fife Walking} website. Explain why it would may not be appropriate for them to use either of the regression lines obtained to predict their total ascent if their distance covered is known.
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
 

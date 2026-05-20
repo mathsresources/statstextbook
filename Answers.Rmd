@@ -2432,14 +2432,53 @@
 #### [Exercise 18.1](#ex181q) {-}
 
 \begin{enumerate}
+    \item Completed table:
+    \begin{center}
+    \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{|c|c|c|c|c|}
+             \hline
+             Regression Line $\hat{Y}=ax+b$ & Observed $x$ & Observed $y$ & Fitted $\hat{Y}$ & Residual $\epsilon$\\
+             \hline
+             $\hat{Y}=5.3+0.1x$ & 7 & 8 & 6 & 2 \\
+             \hline
+             $\hat{Y}=-0.7+0.3x$ & 6.1 & 1.04 & 1.13 & $-$0.09 \\
+             \hline
+             $\hat{Y}=180-2.5x$ & 40 & 178 & 80 & 98\\
+             \hline
+             $\hat{Y}=-45+3.5x$ & 200 & 625 & 655 & $-$30 \\
+             \hline
+             $\hat{Y}=100+20x$ & -15 & -150 & -200 & 50 \\
+             \hline
+        \end{tabular}
+    \renewcommand{\arraystretch}{1}
+    \end{center}
+    \item 
+    \begin{enumerate}
+        \item 37.36 grams
+    \item
     \begin{multicols}{3}
-    \item $\text{residual} = 1.4 – 1.215 = 0.185$
-    \item $\text{residual} = 61 – 68 = -7$
-    \item $\text{residual} =16 – 12.48 = 3.52$
+        \begin{enumerate}
+            \item   $\text{Fitted}=291.8$\\
+                    $\text{Residual}=18.2$\\
+            \item   $\text{Fitted}=158.2$\\
+                    $\text{Residual}=-8.2$\\
+            \item   $\text{Fitted}=11.9$\\
+                    $\text{Residual}=-1.9$\\
+        \end{enumerate}
     \end{multicols}
+    \end{enumerate}
+    \item
     \begin{multicols}{3}
-    \item $\text{residual} =81 – 72.378 = 8.622$
-    \item $\text{residual} =24 – 25.475 = - 1.475$
+        \begin{enumerate}
+            \item i. positive\newline ii. negative
+            \item 
+            \begin{enumerate}
+                \item   $\text{Fitted}=78.5$\\
+                        $\text{Residual}=8.5$\\
+                \item   $\text{Fitted}=82.3$\\
+                        $\text{Residual}=-6.7$\\
+            \end{enumerate}
+        \end{enumerate}
     \end{multicols}
 \end{enumerate}
 
@@ -2448,24 +2487,29 @@
 #### [Exercise 18.2](#ex182q) {-}
 
 \begin{enumerate}
-    \item
-    \begin{enumerate}
-    \begin{multicols}{3}
-        \item $\text{Context 1: SSR}=0.1229, s2 = 0.0307$
-        \item $\text{Context 2: SSR}=521.268, s2 = 26.06$
-        \item $\text{Context 3: SSR}=72.7617, s2 = 18.19$
+    \begin{multicols}{2}
+    \item 
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item $s^2=9.3$
+            \item $s=3.05$
+        \end{enumerate}
     \end{multicols}
-    \end{enumerate}
-    \begin{enumerate}[resume]
-    \begin{multicols}{3}
-        \item $\text{Context 4: SSR}=687.369, s2 = 98.196$
-        \item $\text{Context 5: SSR}=4.4762, s2 = 0.746$
+    \item 
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item $s^2=5.257$
+            \item $s=2.29$
+        \end{enumerate}
     \end{multicols}
-    \end{enumerate}
-    \item
+    \end{multicols}
+    \item 
     \begin{enumerate}
-        \item 
-        \item $\text{SSR}=7.3493, s2 = 0.262$
+        \item The scatterplot suggests there is a strong negative linear association between the distance a runner covers in training in the four weeks before a marathon and their finishing time.
+        \item $s^2=10.97$
+        \item $\hat{Y}=194.8-23.48x$
+        \item $r=-0.928$\newline The correlation coefficient also suggests there is a strong negative linear association between the distance a runner covers in training in the four weeks before a marathon and their finishing time.
+        \item Fitted $=112.6$, residual $=-2.6$
     \end{enumerate}
 \end{enumerate}
 
@@ -2473,14 +2517,22 @@
 
 #### [Exercise 18.3](#ex183q) {-}
 
-\begin{multicols}{2}
 \begin{enumerate}
-    \item $8.99>2.776$ so reject $\text{H}_0$
-    \item $-23.94 < -1.942$ so reject $\text{H}_0$
-    \item $11.75 > 2.763$ so reject $\text{H}_0$
-    \item $51.62 > 2.947$ so reject $\text{H}_0$
+    \item $R^2=0.775$. This suggests that 77.5\% of the variation in $Y$ is explained by the linear model.
+    \item 
+    \begin{enumerate}
+        \item $R^2=0.734$. This suggests that 73.4\% of the variation in the exmployees' salaries is explained by the linear model.\newline (Or: \textit{...by the number of years they have been employed for}).
+        \item $R^2=0.573$. This suggests that 57.3\% of the variation in red squirrel mass is explained by the linear model.\newline (Or: \textit{...by the height of the red squirrels}).
+        \item $R^2=0.449$. This suggests that 44.9\% of the variation in the top speed reached is explained by the linear model.\newline (Or: \textit{...by their lap time}).
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item The scatterplot appears to show a moderate/strong, positive linear association between a camera's shutter count and age.
+        \item The correlation coefficient also suggests there is a moderate/strong, positive linear association between a camera's shutter count and its age.
+        \item $R^2=0.516$. This suggests that 51,6\% of the variation in a camera's shutter count is explained by the linear model.\newline (Or: \textit{...by its age}).
+        \item Since the data collected only includes digital cameras from within the last 12 years, any results from it may not apply to much older film cameras.\newline Also, the regression line is $y$ on $x$, suitable only for predicting shutter count based on a camera's age.
+    \end{enumerate}
 \end{enumerate}
-\end{multicols}
 
 []{#ex184a}
 
