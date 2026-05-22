@@ -54,7 +54,7 @@
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 \usepackage{booktabs}
-\usepackage[a4paper,top=1cm,bottom=1cm,left=1.5cm,right=1.5cm,includehead]{geometry}
+\usepackage[a4paper,top=1.25cm,bottom=1.25cm,left=1.5cm,right=1.5cm,includehead]{geometry}
 \usepackage{fancyhdr}
   \pagestyle{fancy}
   \fancypagestyle{plain}{%
@@ -19781,7 +19781,7 @@ Test statistic: $t=\dfrac{b\sqrt{S_{xx}}}{s}=\dfrac{-0.8456\times \sqrt{157.875}
 
 \vspace{-0.3cm}
 
-Critical value: $t_{6,0.95}=-2.447$\\
+Critical value: $t_{6,0.975}=-2.447$\\
 
 Since $-3.003<-2.447$, reject $\text{H}_0$ at the 5\% level of significance. There is  evidence to suggest that the slope parameter is not zero, so evidence that a linear model would be useful for prediction.
 
@@ -19798,13 +19798,13 @@ Since $-3.003<-2.447$, reject $\text{H}_0$ at the 5\% level of significance. The
         \item A random sample of bivariate data, sample size 27, yields the following summary statistics:
         \begin{center}
             \begin{tabular}{ccccccc}
-                $S_{xx}=87.8$ & \qquad & $S_{yy}=-1242.5$ & \qquad & $S_{xy}=-129.6$ & \qquad & $\text{SSR}=224.45$ 
+                $S_{xx}=87.8$ & \qquad & $S_{yy}=415.5$ & \qquad & $S_{xy}=-129.6$ & \qquad & $\text{SSR}=224.2$ 
             \end{tabular}
         \end{center}
         A test for $\beta$  is to be performed on the data.
         \begin{enumerate}
         \item State suitable null and alternative hypotheses.
-        \item Show the calculations required to reach a test statistic of $-$4.612.
+        \item Show the calculations required to reach a test statistic of $-$4.618.
         \item State the degrees of freedom, $\nu$, of the $t$-distribution required for the test.
         \item Conclude the test at the 5\% level of significance.
     \end{enumerate}
@@ -19909,7 +19909,7 @@ Since $-3.003<-2.447$, reject $\text{H}_0$ at the 5\% level of significance. The
 
 \section{\texorpdfstring{Test for the Correlation Coefficient \(\rho\)}{Test for the Correlation Coefficient \textbackslash rho}}\label{test-for-the-correlation-coefficient-rho}
 
-The previously calculated correlation coefficient, \(r\), is a sample statistic which measures the strength of the linear association between two variables. It is an estimate of the population parameter \(\rho\) (\textit{``rho''}), where \(-1\leqslant \rho \leqslant 1\). If \(\rho=0\) then there is no \textit{linear} relationship between the variables. Given a sample of bivariate data for which there exists \textit{no} linear relationship, it is regardless common for the sample to give a \textit{non-zero} value for \(r\):
+The previously introduced correlation coefficient, \(r\), is a sample statistic which measures the strength of the linear association between two variables. It is an estimate of the population parameter \(\rho\) (\textit{``rho''}), where \(-1\leqslant \rho \leqslant 1\). If \(\rho=0\) then there is no \textit{linear} relationship between the variables. Given a sample of bivariate data for which there exists \textit{no} linear relationship, it is regardless common for the sample to give a \textit{non-zero} value for \(r\):
 
 \vspace{-0.3cm}
 \begin{center}
@@ -27220,7 +27220,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     \begin{enumerate}
         \item The scatterplot suggests there is a strong negative linear association between the distance a runner covers in training in the four weeks before a marathon and their finishing time.
         \item $s^2=10.97$
-        \item $\hat{y}=194.8-23.48$
+        \item $\hat{Y}=194.8-23.48x$
         \item $r=-0.928$\newline The correlation coefficient also suggests there is a strong negative linear association between the distance a runner covers in training in the four weeks before a marathon and their finishing time.
         \item Fitted $=112.6$, residual $=-2.6$
     \end{enumerate}
@@ -27235,15 +27235,15 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     \item $R^2=0.775$. This suggests that 77.5\% of the variation in $Y$ is explained by the linear model.
     \item 
     \begin{enumerate}
-        \item $R^2=0.734$. This suggests that 73.4\$ of the variation in the exmployees' salaries is explained by the linear model.\newline (Or: \textit{...by the number of years they have been employed for}).
-        \item $R^2=0.573$. This suggests that 57.3\$ of the variation in red squirrel mass is explained by the linear model.\newline (Or: \textit{...by the height of the red squirrels}).
-        \item $R^2=0.449$. This suggests that 44.9\$ of the variation in the top speed reached is explained by the linear model.\newline (Or: \textit{...by their lap time}).
+        \item $R^2=0.734$. This suggests that 73.4\% of the variation in the exmployees' salaries is explained by the linear model.\newline (Or: \textit{...by the number of years they have been employed for}).
+        \item $R^2=0.573$. This suggests that 57.3\% of the variation in red squirrel mass is explained by the linear model.\newline (Or: \textit{...by the height of the red squirrels}).
+        \item $R^2=0.449$. This suggests that 44.9\% of the variation in the top speed reached is explained by the linear model.\newline (Or: \textit{...by their lap time}).
     \end{enumerate}
     \item 
     \begin{enumerate}
-        \item The scatterplot appears to show a moderate/strong, positive linear association between a camera's shutter count and its age.
+        \item The scatterplot appears to show a moderate/strong, positive linear association between a camera's shutter count and age.
         \item The correlation coefficient also suggests there is a moderate/strong, positive linear association between a camera's shutter count and its age.
-        \item $R^2=0.516$. This suggests that 51,6\$ of the variation in a camera's shutter count is explained by the linear model.\newline (Or: \textit{...by its age}).]
+        \item $R^2=0.516$. This suggests that 51,6\% of the variation in a camera's shutter count is explained by the linear model.\newline (Or: \textit{...by its age}).
         \item Since the data collected only includes digital cameras from within the last 12 years, any results from it may not apply to much older film cameras.\newline Also, the regression line is $y$ on $x$, suitable only for predicting shutter count based on a camera's age.
     \end{enumerate}
 \end{enumerate}
@@ -27253,14 +27253,31 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 \subsubsection*{\texorpdfstring{\hyperref[ex184q]{Exercise 18.4}}{Exercise 18.4}}\label{exercise-18.4-1}
 \addcontentsline{toc}{subsubsection}{\hyperref[ex184q]{Exercise 18.4}}
 
-\begin{multicols}{2}
 \begin{enumerate}
-    \item $15.98 > 2.086$ so reject $\text{H}_0$
-    \item $1.037 < 1.895$ so do not reject $\text{H}_0$
-    \item $0.227 < 2.132$ so do not reject $\text{H}_0$
-    \item $10.11 > 4.604$ so reject $\text{H}_0$
+    \item 
+    \begin{enumerate}
+        \item $\text{H}_0$: $\beta=0$ \newline $\text{H}_1$: $\beta\ne 0$
+        \item 
+        \begin{flalign*}
+            s^2 &= \dfrac{224.2}{27-2}=8.968&&\\
+            s &= \sqrt{8.987}=2.995&&\\
+            b &= \dfrac{-129.6}{87.8}=-1.476&&\\
+            t &= \dfrac{-1.476\times \sqrt{87.8}}{2.995}=-4.618&&
+        \end{flalign*}
+        \item $\nu=27-2=25$
+        \item Critical value for $\nu=25$ and a 5\% two tailed test (and a negative test statistic) is $t_{25,0.975}=-2.060$.\newline Since $-4.618<-2.060$ reject $\text{H}_0$ at the 5\% level of significance.\newline There is evidence to suggest that the slope parameter $\beta\ne 0$, and so the linear model is useful for prediction.
+    \end{enumerate}
+    \item Test statistic $t=-5.120$, critical value $t_{32,0.95}=-1.694$, reject $H_0$ since $-5.120<-1.694$.
+    \item 
+    \begin{enumerate}
+        \item $\text{H}_0$: $\beta=0$ \newline $\text{H}_1$: $\beta\ne 0$
+        \item $n=40$
+        \item Critical value $t_{0.975,38}=-2.024$. Since $-0.42295>-2.024$, do not rejecrt $H_0$ at the 5\% significance level. There is insufficient evidence to suggest that the slope parameter $\beta$ is not equal to zero, and so no evidence that the linear model is useful for prediction.
+        \item Assume that the population of errors are independent and identically distributed as $\text{N}(0,\sigma^2)$.
+    \end{enumerate}
+    \item Test statistic $t=-13.458$, critical value $t_{68,0.995}=-2.576$, reject $H_0$ since $-13.458<-2.576$.
+    \item Test statistic $t=0.013$, critical value $t_{6,0.975}=2.447$, do not reject $H_0$ at the 5\% level since $0.013<2.447$.
 \end{enumerate}
-\end{multicols}
 
 \phantomsection\label{ex185a}{}
 
@@ -27268,25 +27285,20 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 \addcontentsline{toc}{subsubsection}{\hyperref[ex185q]{Exercise 18.5}}
 
 \begin{enumerate}
-    \item
+    \item 
     \begin{enumerate}
-    \begin{multicols}{3}
-    \item $\text{Context 1}: 95.3\%$
-    \item $\text{Context 2}: 92.7\%$
-    \item $\text{Context 3}: 57.5\%$
-    \end{multicols}
+        \item $\text{H}_0$: $\rho=0$ \newline $\text{H}_1$: $\rho\ne 0$
+        \item 
+        \begin{flalign*}
+            t &= \dfrac{-0.678\sqrt{27-2}}{\sqrt{1-(-0.678)^2}}=-4.612&&
+        \end{flalign*}
+        \item $\nu=27-2=25$
+        \item Critical value for $\nu=25$ and a 5\% two tailed test (and a negative test statistic) is $t_{25,0.975}=-2.060$.\newline Since $-4.612<-2.060$ reject $\text{H}_0$ at the 5\% level of significance.\newline There is evidence to suggest that there is a linear association between the variables.
     \end{enumerate}
-    \begin{enumerate}[resume]
-    \begin{multicols}{3}
-    \item $\text{Context 4}: 13.3\%$
-    \item $\text{Context 5}: 99\%$
-    \end{multicols}
-    \end{enumerate}
-    \item
-    \begin{enumerate}
-        \item $r=0.9117$
-        \item $R^2=0.8312$
-    \end{enumerate}
+    \item Test statistic $t=6.418$, critical value $t_{12,0.95}=1.782$, reject $H_0$ at the 10\% level since $6.418>1.782$.
+    \item Test statistic $t=1.683$, critical value $t_{12,0.995}=3.055$, do not reject $H_0$ at the 1\% level since $1.683<3.055$.
+    \item Test statistic $t=-2.898$, critical value $t_{18,0.975}=-2.101$, reject $H_0$ at the 5\% level since $-2.898<-2.101$.\newline Assume that electrolytes amount and time are independent and follow approximately bivariate normal distributions.
+    \item Test statistic $t=0.013$, critical value $t_{6,0.975}=2.447$, do not reject $H_0$ at the 5\% level since $0.013<2.447$.
 \end{enumerate}
 
 \phantomsection\label{ex186a}{}
@@ -27295,17 +27307,20 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 \addcontentsline{toc}{subsubsection}{\hyperref[ex186q]{Exercise 18.6}}
 
 \begin{enumerate}
-    \begin{multicols}{3}
-    \item $\hat{X}=−33.455+196.15y$\newline $\text{time in solutio}= 378.4$
-    \item $\hat{X}=247.91+0.46y$\newline $\text{calorie}= 263.7$
-    \item $\hat{X}=95.95+1.86y$\newline $\text{systolic b}= 116.44$
-    \end{multicols}
-\end{enumerate}
-\begin{enumerate}[resume]
-    \begin{multicols}{3}
-    \item $\hat{X}=23.69+0.549y$\newline $\text{maths mar}= 64.92$
-    \item $\hat{X}=18.86−0.62y$\newline $\text{weed killer concentratio}= 13.86$
-    \end{multicols}
+    \item $\hat{X}=73.2-0.719y$
+    \item
+    \begin{enumerate}
+        \item $\hat{X}=-7.09+0.184y$
+        \item 4.87 inches
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item The existing regression line is a $y$ on $x$ regression line, suitable for predicting the distance covered based on their finish time. To predict a finish time based on the distance covered in training, an $x$ on $y$ regression model is needed.
+        \item $\hat{X}=7.709-0.0367y$
+        \item 5.14 hours
+        \item This would be an example of extrapolation, which may not be considered reliable.
+    \end{enumerate}
+    \item $\hat{X}=25.46+0.0051y$
 \end{enumerate}
 
 \phantomsection\label{ex187a}{}
@@ -27327,25 +27342,10 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 \subsubsection*{\texorpdfstring{\hyperref[ex188q]{Exercise 18.8}}{Exercise 18.8}}\label{exercise-18.8-1}
 \addcontentsline{toc}{subsubsection}{\hyperref[ex188q]{Exercise 18.8}}
 
-\begin{multicols}{4}
-\begin{enumerate}
-    \item $(0.672, 1.272)$
-    \item $(64.576, 71.424)$
-    \item $(-2.57, 39.85)$
-    \item $(50.768, 93,938)$
-\end{enumerate}
-\end{multicols}
-
 \phantomsection\label{ex189a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex189q]{Exercise 18.9}}{Exercise 18.9}}\label{exercise-18.9-1}
 \addcontentsline{toc}{subsubsection}{\hyperref[ex189q]{Exercise 18.9}}
-
-\begin{enumerate}
-    \item The residual plot shows a clear U-shaped curve which suggests that a linear model is not suitable for the diameter and maximum mass held before breaking of the cables.
-    \item The residual plot appears to show a random scatter of points centred on zero with constant variance so a linear model would be suitable for the data.
-    \item The residual plot appears to show a pattern with variable variance so the linear model fitted is not suitable.
-\end{enumerate}
 
 \phantomsection\label{re18a}{}
 
