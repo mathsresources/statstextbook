@@ -55,7 +55,7 @@
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 \usepackage{booktabs}
-\usepackage[a4paper,top=1cm,bottom=1cm,left=1.5cm,right=1.5cm,includehead]{geometry}
+\usepackage[a4paper,top=1.25cm,bottom=1.25cm,left=1.5cm,right=1.5cm,includehead]{geometry}
 \usepackage{fancyhdr}
   \pagestyle{fancy}
   \fancypagestyle{plain}{%
@@ -19910,7 +19910,7 @@ Since $-3.003<-2.447$, reject $\text{H}_0$ at the 5\% level of significance. The
 
 \section{\texorpdfstring{Test for the Correlation Coefficient \(\rho\)}{Test for the Correlation Coefficient \textbackslash rho}}\label{test-for-the-correlation-coefficient-rho}
 
-The previously calculated correlation coefficient, \(r\), is a sample statistic which measures the strength of the linear association between two variables. It is an estimate of the population parameter \(\rho\) (\textit{``rho''}), where \(-1\leqslant \rho \leqslant 1\). If \(\rho=0\) then there is no \textit{linear} relationship between the variables. Given a sample of bivariate data for which there exists \textit{no} linear relationship, it is regardless common for the sample to give a \textit{non-zero} value for \(r\):
+The previously introduced correlation coefficient, \(r\), is a sample statistic which measures the strength of the linear association between two variables. It is an estimate of the population parameter \(\rho\) (\textit{``rho''}), where \(-1\leqslant \rho \leqslant 1\). If \(\rho=0\) then there is no \textit{linear} relationship between the variables. Given a sample of bivariate data for which there exists \textit{no} linear relationship, it is regardless common for the sample to give a \textit{non-zero} value for \(r\):
 
 \vspace{-0.3cm}
 \begin{center}
@@ -20128,7 +20128,7 @@ Test statistic: $t=\dfrac{r\sqrt{n-2}}{\sqrt{1-r^2}}=\dfrac{-0.7749\sqrt{8-2}}{\
 \end{axis}
 \end{tikzpicture}\\
 
-Critical value: $t_{6,0.995}=-2.447$\\
+Critical value: $t_{6,0.975}=-2.447$\\
 
 Since $-3.003>-2.447$, reject $\text{H}_0$ at the 5\% level of significance.\newline There is evidence to suggest that there is a linear association between the two variables.
 
@@ -23089,7 +23089,7 @@ A new linear model was created between speed ($x$) and the square root of the st
 
 \end{tcolorbox}
 
-\textbackslash pagebreak
+\pagebreak
 
 \protect\phantomsection\label{ex188q}{}
 
@@ -23319,7 +23319,7 @@ A new linear model was created between speed ($x$) and the square root of the st
         \end{tabular}
     \end{center}
     \begin{enumerate}
-        \item Determine the equation of the least squares regression line for the model.
+        \item Determine the equation of the least squares regression line for the model of $\dfrac{1}{y}$ on $x$.
         \item Calculate an estimate for the value of $y$ when $x=5$.
     \end{enumerate}
     \item It is determined that a linear relationship exists between $\log x$ and $\log y$.\newline Summary statistics for this model are as follows:
@@ -23329,7 +23329,7 @@ A new linear model was created between speed ($x$) and the square root of the st
             $\Sigma (\log y)^2=350761.2$ & \quad & $\Sigma (\log x)(\log y)=8370.3$ & \quad & $n=10$
         \end{tabular}
     \end{center}
-    Calculate the correlation coefficient for the linear model.
+    Calculate the correlation coefficient for the linear model and interpret it.
 \end{enumerate}
 
 \pagebreak
@@ -27133,6 +27133,8 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 
 \endgroup
 
+\newpage
+
 \subsection*{Chapter 18 - Further Linear Regression}\label{chapter-18---further-linear-regression}
 \addcontentsline{toc}{subsection}{Chapter 18 - Further Linear Regression}
 
@@ -27249,19 +27251,37 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     \end{enumerate}
 \end{enumerate}
 
+\endgroup
+
+\pagebreak
+
+\begingroup
+\footnotesize
+
 \protect\phantomsection\label{ex184a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex184q]{Exercise 18.4}}{Exercise 18.4}}\label{exercise-18.4-1}
 \addcontentsline{toc}{subsubsection}{{Exercise 18.4}}
 
-\begin{multicols}{2}
 \begin{enumerate}
-    \item $15.98 > 2.086$ so reject $\text{H}_0$
-    \item $1.037 < 1.895$ so do not reject $\text{H}_0$
-    \item $0.227 < 2.132$ so do not reject $\text{H}_0$
-    \item $10.11 > 4.604$ so reject $\text{H}_0$
+    \item 
+    \begin{enumerate}
+        \item $\text{H}_0$: $\beta=0$ \newline $\text{H}_1$: $\beta\ne 0$
+        \item $s^2 = \dfrac{224.2}{27-2}=8.968,\:s = \sqrt{8.987}=2.995,\:b = \dfrac{-129.6}{87.8}=-1.476,\:t = \dfrac{-1.476\times \sqrt{87.8}}{2.995}=-4.618$
+        \item $\nu=27-2=25$
+        \item Critical value for $\nu=25$ and a 5\% two tailed test (and a negative test statistic) is $t_{25,0.975}=-2.060$.\newline Since $-4.618<-2.060$ reject $\text{H}_0$ at the 5\% level of significance.\newline There is evidence to suggest that the slope parameter $\beta\ne 0$, and so the linear model is useful for prediction.
+    \end{enumerate}
+    \item Test statistic $t=-5.120$, critical value $t_{32,0.95}=-1.694$, reject $H_0$ since $-5.120<-1.694$.
+    \item 
+    \begin{enumerate}
+        \item $\text{H}_0$: $\beta=0$ \newline $\text{H}_1$: $\beta\ne 0$
+        \item $n=40$
+        \item Critical value $t_{0.975,38}=-2.024$. Since $-0.42295>-2.024$, do not rejecrt $H_0$ at the 5\% significance level. There is insufficient evidence to suggest that the slope parameter $\beta$ is not equal to zero, and so no evidence that the linear model is useful for prediction.
+        \item Assume that the population of errors are independent and identically distributed as $\text{N}(0,\sigma^2)$.
+    \end{enumerate}
+    \item Test statistic $t=-13.458$, critical value $t_{68,0.995}=-2.576$, reject $H_0$ since $-13.458<-2.576$.
+    \item Test statistic $t=0.013$, critical value $t_{6,0.975}=2.447$, do not reject $H_0$ at the 5\% level since $0.013<2.447$.
 \end{enumerate}
-\end{multicols}
 
 \protect\phantomsection\label{ex185a}{}
 
@@ -27269,25 +27289,20 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 \addcontentsline{toc}{subsubsection}{{Exercise 18.5}}
 
 \begin{enumerate}
-    \item
+    \item 
     \begin{enumerate}
-    \begin{multicols}{3}
-    \item $\text{Context 1}: 95.3\%$
-    \item $\text{Context 2}: 92.7\%$
-    \item $\text{Context 3}: 57.5\%$
-    \end{multicols}
+        \item $\text{H}_0$: $\rho=0$ \newline $\text{H}_1$: $\rho\ne 0$
+        \item 
+        \begin{flalign*}
+            t &= \dfrac{-0.678\sqrt{27-2}}{\sqrt{1-(-0.678)^2}}=-4.612&&
+        \end{flalign*}
+        \item $\nu=27-2=25$
+        \item Critical value for $\nu=25$ and a 5\% two tailed test (and a negative test statistic) is $t_{25,0.975}=-2.060$.\newline Since $-4.612<-2.060$ reject $\text{H}_0$ at the 5\% level of significance.\newline There is evidence to suggest that there is a linear association between the variables.
     \end{enumerate}
-    \begin{enumerate}[resume]
-    \begin{multicols}{3}
-    \item $\text{Context 4}: 13.3\%$
-    \item $\text{Context 5}: 99\%$
-    \end{multicols}
-    \end{enumerate}
-    \item
-    \begin{enumerate}
-        \item $r=0.9117$
-        \item $R^2=0.8312$
-    \end{enumerate}
+    \item Test statistic $t=6.418$, critical value $t_{12,0.95}=1.782$, reject $H_0$ at the 10\% level since $6.418>1.782$.
+    \item Test statistic $t=1.683$, critical value $t_{12,0.995}=3.055$, do not reject $H_0$ at the 1\% level since $1.683<3.055$.
+    \item Test statistic $t=-2.898$, critical value $t_{18,0.975}=-2.101$, reject $H_0$ at the 5\% level since $-2.898<-2.101$.\newline Assume that electrolytes amount and time are independent and follow approximately bivariate normal distributions.
+    \item Test statistic $t=0.013$, critical value $t_{6,0.975}=2.447$, do not reject $H_0$ at the 5\% level since $0.013<2.447$.
 \end{enumerate}
 
 \protect\phantomsection\label{ex186a}{}
@@ -27296,18 +27311,28 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 \addcontentsline{toc}{subsubsection}{{Exercise 18.6}}
 
 \begin{enumerate}
-    \begin{multicols}{3}
-    \item $\hat{X}=−33.455+196.15y$\newline $\text{time in solutio}= 378.4$
-    \item $\hat{X}=247.91+0.46y$\newline $\text{calorie}= 263.7$
-    \item $\hat{X}=95.95+1.86y$\newline $\text{systolic b}= 116.44$
-    \end{multicols}
+    \item $\hat{X}=73.2-0.719y$
+    \item
+    \begin{enumerate}
+        \item $\hat{X}=-7.09+0.184y$
+        \item 4.87 inches
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item The existing regression line is a $y$ on $x$ regression line, suitable for predicting the distance covered based on their finish time. To predict a finish time based on the distance covered in training, an $x$ on $y$ regression model is needed.
+        \item $\hat{X}=7.709-0.0367y$
+        \item 5.14 hours
+        \item This would be an example of extrapolation, which may not be considered reliable.
+    \end{enumerate}
+    \item $\hat{X}=25.46+0.0051y$
 \end{enumerate}
-\begin{enumerate}[resume]
-    \begin{multicols}{3}
-    \item $\hat{X}=23.69+0.549y$\newline $\text{maths mar}= 64.92$
-    \item $\hat{X}=18.86−0.62y$\newline $\text{weed killer concentratio}= 13.86$
-    \end{multicols}
-\end{enumerate}
+
+\endgroup
+
+\pagebreak
+
+\begingroup
+\footnotesize
 
 \protect\phantomsection\label{ex187a}{}
 
@@ -27315,12 +27340,24 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 \addcontentsline{toc}{subsubsection}{{Exercise 18.7}}
 
 \begin{enumerate}
-    \item The residual plot shows a random scatter of points centred on zero ($\text{E}(\epsilon)=0$) with constant variance ($\text{V}(\epsilon)=\sigma^2$) which suggests the linear regression model is suitable.
-    \item The residual plot appears to show the points in the pattern of a curve ($\text{E}(\epsilon)\ne0$) with constant variance ($\text{V}(\epsilon)=\sigma^2$) which suggests that the linear regression model is not suitable.
-    \item The residual plot appears to show the points centred on zero ($\text{E}(\epsilon)=0$) in a funnel pattern with decreasing variance ($\text{V}(\epsilon)\ne\sigma^2$) which suggests that the linear regression model is not suitable.
-    \item The residual plot appears to show the points in the pattern of a U-shaped curve ($\text{E}(\epsilon)\ne0$) with constant variance ($\text{V}(\epsilon)=\sigma^2$) which suggests that the linear regression model is not suitable.
-    \item The residual plot appears to show the points centred on zero ($\text{E}(\epsilon)=0$) in a funnel pattern with increasing variance ($\text{V}(\epsilon)\ne\sigma^2$) which suggests that the linear regression model is not suitable.
+    \item
+    \begin{enumerate}
+    \item The residual plot shows a random scatter of points centred on zero ($\text{E}(\epsilon)=0$) with constant variance ($\text{V}(\epsilon)=\sigma^2$), which suggests the linear regression model is suitable.
+    \item The residual plot appears to show the points centred on zero ($\text{E}(\epsilon)=0$) in a funnel pattern with decreasing variance as fitted values increase ($\text{V}(\epsilon)\ne\sigma^2$), which suggests that the linear regression model is not suitable.
+    \item The residual plot appears to show the points in the pattern of a curve ($\text{E}(\epsilon)\ne0$) with constant variance ($\text{V}(\epsilon)=\sigma^2$), which suggests that the linear regression model is not suitable.
+    \item The residual plot shows a random scatter of points not centred on zero ($\text{E}(\epsilon)\ne0$) with constant variance ($\text{V}(\epsilon)=\sigma^2$), which suggests the linear regression model is not suitable.
     \item The residual plot shows a random scatter of points centred on zero ($\text{E}(\epsilon)=0$) with constant variance ($\text{V}(\epsilon)\ne\sigma^2$) which suggests the linear regression model is suitable.
+    \item The residual plot shows a random scatter of points centred on zero ($\text{E}(\epsilon)=0$) with constant variance ($\text{V}(\epsilon)\ne\sigma^2$) which suggests the linear regression model is suitable.
+    \item The residual plot appears to show the points in the pattern of a U-shaped curve ($\text{E}(\epsilon)\ne0$) with constant variance ($\text{V}(\epsilon)=\sigma^2$) which suggests that the linear regression model is not suitable.
+    \item The residual plot appears to show the points centred on zero ($\text{E}(\epsilon)=0$) in a funnel pattern with increasing variance as fitted values increase ($\text{V}(\epsilon)\ne\sigma^2$), which suggests that the linear regression model is not suitable.
+    \item The residual plot shows a random scatter of points not centred on zero ($\text{E}(\epsilon)\ne0$) with constant variance ($\text{V}(\epsilon)=\sigma^2$), which suggests the linear regression model is not suitable.
+    \item The residual plot shows a random scatter of points centred on zero ($\text{E}(\epsilon)=0$) with constant variance ($\text{V}(\epsilon)=\sigma^2$), which suggests the linear regression model is suitable.
+    \item The residual plot shows a random scatter of points centred on zero ($\text{E}(\epsilon)=0$) with constant variance ($\text{V}(\epsilon)=\sigma^2$), which suggests the linear regression model is suitable.
+    \item The residual plot appears to show the points in the pattern of a curve ($\text{E}(\epsilon)\ne0$), which suggests that the linear regression model is not suitable.
+    \end{enumerate}
+    \item The residual plot appears to show the points form a curved pattern ($\text{E}(\epsilon)=0$) with increasing variance as fitted values increase ($\text{V}(\epsilon)\ne\sigma^2$), which suggests that the linear regression model is not suitable.
+    \item The residual plot shows a random scatter of points centred on zero ($\text{E}(\epsilon)=0$) with constant variance ($\text{V}(\epsilon)=\sigma^2$), which suggests the linear regression model is suitable.
+    \item The residual plot appears to show the points in the pattern of a curve ($\text{E}(\epsilon)\ne0$), which suggests that the linear regression model is not suitable.
 \end{enumerate}
 
 \protect\phantomsection\label{ex188a}{}
@@ -27328,14 +27365,32 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 \subsubsection*{\texorpdfstring{\hyperref[ex188q]{Exercise 18.8}}{Exercise 18.8}}\label{exercise-18.8-1}
 \addcontentsline{toc}{subsubsection}{{Exercise 18.8}}
 
-\begin{multicols}{4}
 \begin{enumerate}
-    \item $(0.672, 1.272)$
-    \item $(64.576, 71.424)$
-    \item $(-2.57, 39.85)$
-    \item $(50.768, 93,938)$
+    \item
+    \begin{enumerate}
+        \item There appears to be a strong negative linear association between `distance' and `$\sqrt{\text{power}}$'.\newline The coefficient of determination suggests 80.5\% of the variation in `$\sqrt{\text{power}}$' is explained by the model.
+        \item There appears to be a weak positive linear association between `rating' and `$\log_{10}\text{energy}$'.\newline The coefficient of determination suggests 38.2\% of the variation in `$\log_2{\text{energy}}$' is explained by the model.
+        \item There appears to be a very strong positive linear association between `$\log_2\text{time}$' and `$\log_2\text{population}$'.\newline The coefficient of determination suggests 97.4\% of the variation in `$\log_2{\text{population}}$' is explained by the model.
+        \item There appears to be no linear association between `quality' and `$\dfrac{1}{\text{cost}}$'.\newline The coefficient of determination suggests 0.1\% of the variation in `$\dfrac{1}{\text{cost}}$' is explained by the model.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $\widehat{\dfrac{1}{Y}}=2.936+2.898x$
+        \item 0.0574
+    \end{enumerate}
+    \item $r=-0.984$. This suggests that there is a very strong negative linear correlation between $\log x$ and $\log y$.
+    \item 
+    \begin{enumerate}
+        \item They would have observed the points not showing an equal variance as fitted values increased, such as a funnel shape.
+        \item They should use model C, as it is the only one whose residual plot appears to show a random scatter of points centred on zero, with a constant variance as fitted values increase. This suggests it is the only model of the three which is appropriate.
+    \end{enumerate}
+    \begin{enumerate}
+        \item The residual plot appears to show a curved pattern, suggesting a linear model between $p$ and $x$ is not appropriate.
+        \item The residual plot for this new model appears to show a random scatter of points centred around zero, with a constant variance, so this model appears to be appropriate.
+        \item $\hat{Y}=0.0598+8.85x$
+        \item 10.3
+    \end{enumerate}
 \end{enumerate}
-\end{multicols}
 
 \protect\phantomsection\label{ex189a}{}
 
@@ -27343,15 +27398,68 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 \addcontentsline{toc}{subsubsection}{{Exercise 18.9}}
 
 \begin{enumerate}
-    \item The residual plot shows a clear U-shaped curve which suggests that a linear model is not suitable for the diameter and maximum mass held before breaking of the cables.
-    \item The residual plot appears to show a random scatter of points centred on zero with constant variance so a linear model would be suitable for the data.
-    \item The residual plot appears to show a pattern with variable variance so the linear model fitted is not suitable.
+    \item
+    \begin{enumerate}
+        \item (12.53,14.52)
+        \item (10.14,16.90)
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item (57.80,61.17)
+        \item (52.95,66.02)
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item (49.69,123.0)
+        \item (80.52,92.17)
+    \end{enumerate}
+    \item (161.35,198.62)
+    \item 
+    \begin{enumerate}
+        \item 81.56 kg
+        \item 91.53
+        \item Assume that the population of errors are independently and iedntically distributed as $\text{N}(0,\sigma^2)$.
+        \item (66.34,69.24)
+        \item This is an example of extrapolation, which may not be reliable.
+    \end{enumerate}
 \end{enumerate}
 
 \protect\phantomsection\label{re18a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[re18q]{Chapter 18 Review Exercise}}{Chapter 18 Review Exercise}}\label{chapter-18-review-exercise}
 \addcontentsline{toc}{subsubsection}{{Chapter 18 Review Exercise}}
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item 51.46
+        \item Since $4.380>1.812$ reject $H_0$.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $R^2=0.300$. This suggests that 30.0\% of the variation in the tempo of a pop-punk song is explained by the linear model.
+        \item Since $-2.620<-2.921$ do not reject $H_0$.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item 598.9
+        \item (57.58,169.46)
+        \item They are interested in a range of values for the number of daily visitors they might receive, rather than the mean number of daily visitors received by websites spending the same amount.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item The residual plot shows a curved pattern of points, suggesting that the linear model of boiling point on barometric pressure is not appropriate.
+        \item A transformation could be taken on one or both of the variables and a new linear model created between those transformed variables.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $r=0.436$, suggesting that there is a moderate positive linear association between the distance a route covers and the ascent.
+        \item The regression line given is a $y$ on $x$ regression line, suitable for predicting the ascent of a route given its distance. To predict the distance given the ascent, an $x$ on $y$ regression line would be needed.
+        \item $\hat{X}=2.73+0.00539y$\newline
+        predicted distance $=5.05$ miles
+        \item This data has only been taken from the Ochil Hills, and any results from this data may not be relevant for routes in the Lomond Hills.
+    \end{enumerate}
+\end{enumerate}
 
 \endgroup
 

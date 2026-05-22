@@ -2422,6 +2422,8 @@
 
 \endgroup
 
+\newpage
+
 ### Chapter 18 - Further Linear Regression {-}
 
 \begingroup
@@ -2534,6 +2536,13 @@
     \end{enumerate}
 \end{enumerate}
 
+\endgroup
+
+\pagebreak
+
+\begingroup
+\footnotesize
+
 []{#ex184a}
 
 #### [Exercise 18.4](#ex184q) {-}
@@ -2542,13 +2551,7 @@
     \item 
     \begin{enumerate}
         \item $\text{H}_0$: $\beta=0$ \newline $\text{H}_1$: $\beta\ne 0$
-        \item 
-        \begin{flalign*}
-            s^2 &= \dfrac{224.2}{27-2}=8.968&&\\
-            s &= \sqrt{8.987}=2.995&&\\
-            b &= \dfrac{-129.6}{87.8}=-1.476&&\\
-            t &= \dfrac{-1.476\times \sqrt{87.8}}{2.995}=-4.618&&
-        \end{flalign*}
+        \item $s^2 = \dfrac{224.2}{27-2}=8.968,\:s = \sqrt{8.987}=2.995,\:b = \dfrac{-129.6}{87.8}=-1.476,\:t = \dfrac{-1.476\times \sqrt{87.8}}{2.995}=-4.618$
         \item $\nu=27-2=25$
         \item Critical value for $\nu=25$ and a 5\% two tailed test (and a negative test statistic) is $t_{25,0.975}=-2.060$.\newline Since $-4.618<-2.060$ reject $\text{H}_0$ at the 5\% level of significance.\newline There is evidence to suggest that the slope parameter $\beta\ne 0$, and so the linear model is useful for prediction.
     \end{enumerate}
@@ -2606,6 +2609,13 @@
     \item $\hat{X}=25.46+0.0051y$
 \end{enumerate}
 
+\endgroup
+
+\pagebreak
+
+\begingroup
+\footnotesize
+
 []{#ex187a}
 
 #### [Exercise 18.7](#ex187q) {-}
@@ -2635,16 +2645,99 @@
 
 #### [Exercise 18.8](#ex188q) {-}
 
-
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item There appears to be a strong negative linear association between `distance' and `$\sqrt{\text{power}}$'.\newline The coefficient of determination suggests 80.5\% of the variation in `$\sqrt{\text{power}}$' is explained by the model.
+        \item There appears to be a weak positive linear association between `rating' and `$\log_{10}\text{energy}$'.\newline The coefficient of determination suggests 38.2\% of the variation in `$\log_2{\text{energy}}$' is explained by the model.
+        \item There appears to be a very strong positive linear association between `$\log_2\text{time}$' and `$\log_2\text{population}$'.\newline The coefficient of determination suggests 97.4\% of the variation in `$\log_2{\text{population}}$' is explained by the model.
+        \item There appears to be no linear association between `quality' and `$\dfrac{1}{\text{cost}}$'.\newline The coefficient of determination suggests 0.1\% of the variation in `$\dfrac{1}{\text{cost}}$' is explained by the model.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $\widehat{\dfrac{1}{Y}}=2.936+2.898x$
+        \item 0.0574
+    \end{enumerate}
+    \item $r=-0.984$. This suggests that there is a very strong negative linear correlation between $\log x$ and $\log y$.
+    \item 
+    \begin{enumerate}
+        \item They would have observed the points not showing an equal variance as fitted values increased, such as a funnel shape.
+        \item They should use model C, as it is the only one whose residual plot appears to show a random scatter of points centred on zero, with a constant variance as fitted values increase. This suggests it is the only model of the three which is appropriate.
+    \end{enumerate}
+    \begin{enumerate}
+        \item The residual plot appears to show a curved pattern, suggesting a linear model between $p$ and $x$ is not appropriate.
+        \item The residual plot for this new model appears to show a random scatter of points centred around zero, with a constant variance, so this model appears to be appropriate.
+        \item $\hat{Y}=0.0598+8.85x$
+        \item 10.3
+    \end{enumerate}
+\end{enumerate}
 
 []{#ex189a}
 
 #### [Exercise 18.9](#ex189q) {-}
 
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item (12.53,14.52)
+        \item (10.14,16.90)
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item (57.80,61.17)
+        \item (52.95,66.02)
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item (49.69,123.0)
+        \item (80.52,92.17)
+    \end{enumerate}
+    \item (161.35,198.62)
+    \item 
+    \begin{enumerate}
+        \item 81.56 kg
+        \item 91.53
+        \item Assume that the population of errors are independently and iedntically distributed as $\text{N}(0,\sigma^2)$.
+        \item (66.34,69.24)
+        \item This is an example of extrapolation, which may not be reliable.
+    \end{enumerate}
+\end{enumerate}
 
 []{#re18a}
 
 #### [Chapter 18 Review Exercise](#re18q) {-}
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item 51.46
+        \item Since $4.380>1.812$ reject $H_0$.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $R^2=0.300$. This suggests that 30.0\% of the variation in the tempo of a pop-punk song is explained by the linear model.
+        \item Since $-2.620<-2.921$ do not reject $H_0$.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item 598.9
+        \item (57.58,169.46)
+        \item They are interested in a range of values for the number of daily visitors they might receive, rather than the mean number of daily visitors received by websites spending the same amount.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item The residual plot shows a curved pattern of points, suggesting that the linear model of boiling point on barometric pressure is not appropriate.
+        \item A transformation could be taken on one or both of the variables and a new linear model created between those transformed variables.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $r=0.436$, suggesting that there is a moderate positive linear association between the distance a route covers and the ascent.
+        \item The regression line given is a $y$ on $x$ regression line, suitable for predicting the ascent of a route given its distance. To predict the distance given the ascent, an $x$ on $y$ regression line would be needed.
+        \item $\hat{X}=2.73+0.00539y$\newline
+        predicted distance $=5.05$ miles
+        \item This data has only been taken from the Ochil Hills, and any results from this data may not be relevant for routes in the Lomond Hills.
+    \end{enumerate}
+\end{enumerate}
 
 \endgroup
 
