@@ -53,18 +53,18 @@ However, if something occurs within the manufacturing process that results in a 
 
 ### The Principle of a Control Chart {-}
 
-The control chart was invented in the 1920’s by Walter Shewart, who was working for a communications company whose engineers wanted to improve the reliability of their telephone transmission systems. His theory was based around the normal distribution bell curve.
+The control chart was invented in the 1920’s by Walter Shewhart, who was working for a communications company whose engineers wanted to improve the reliability of their telephone transmission systems. His theory was based around the normal distribution bell curve.
 
 The Advanced Higher Statistics course covers two types of control charts:
 
 \begin{itemize}
-    \item A Shewart $x$-bar chart for the sample \textbf{mean}.
-    \item A Shewart $p$ chart for the sample \textbf{proportion}.
+    \item A Shewhart $x$-bar chart for the sample \textbf{mean}.
+    \item A Shewhart $p$ chart for the sample \textbf{proportion}.
 \end{itemize}
 
 In either case, random samples of the product are taken at regular intervals and the sample means or sample proportions are plotted onto the control chart. A line on the chart is drawn to indicate the target value for the population mean or population proportion, as well as $1$-sigma , $2$-sigma and $3$-sigma lines either side of the target value.
 
-The $3$-sigma ($3\sigma$) limits are often referred to as the *upper* and *lower control limits*, with the other limits called *warning lines*.
+The $3$-sigma ($3\sigma$) limits are often referred to as the *upper* and *lower control limits*, with the other limits called *warning lines*. The diagram below indicates the probability of any given sample falling within each set of limits, assuming the process is *in control* and certain conditions are met.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9,declare function={gaussy(\x,\y,\z)=1/(\y*sqrt(2*pi))*exp(-((\x-\z)^2)/(2*\y^2));}]
@@ -133,9 +133,9 @@ The $3$-sigma ($3\sigma$) limits are often referred to as the *upper* and *lower
 \end{tikzpicture}
 \end{center}
 
-The Western Electric Company Rules (*WECO Rules*) are commonly used to determine whether the production process is *in or out of statistical control*, and are provided on Page 4 of the SQA booklet of Formulae and Tables.
+The Western Electric Company Rules (*WECO Rules*) are commonly used to determine whether a process is *in or out of statistical control*, and are provided on Page 4 of the Data Booklet.
 
-A process maybe out of statistical control when:
+A process may be considered out of statistical control using the WECO Rules when:
 
 \begin{itemize}
   \item \textit{Any} single data point falls outside a $3\sigma$ limit.
@@ -206,6 +206,7 @@ Each rule must be carefully checked for to determine whether a process is *in st
 
 \begin{center}
 \begin{tikzpicture}
+    \node at (-0.6,1.8) {1.};
     \coordinate (A) at (0.6,-0.4);
     \coordinate (B) at (1.2,1);
     \coordinate (C) at (1.8,0.3);
@@ -249,6 +250,7 @@ Each rule must be carefully checked for to determine whether a process is *in st
 
 \begin{center}
 \begin{tikzpicture}
+    \node at (-0.6,1.8) {3.};
     \coordinate (A) at (0.6,-1);
     \coordinate (B) at (1.2,-0.3);
     \coordinate (C) at (1.8,0.9);
@@ -292,6 +294,7 @@ Each rule must be carefully checked for to determine whether a process is *in st
 
 \begin{center}
 \begin{tikzpicture}
+    \node at (-0.6,1.8) {2.};
     \coordinate (A) at (0.6,0.95);
     \coordinate (B) at (1.2,-1.6);
     \coordinate (C) at (1.8,-0.9);
@@ -335,6 +338,7 @@ Each rule must be carefully checked for to determine whether a process is *in st
 
 \begin{center}
 \begin{tikzpicture}
+    \node at (-0.6,1.8) {4.};
     \coordinate (A) at (0.6,-0.9);
     \coordinate (B) at (1.2,1);
     \coordinate (C) at (1.8,0.8);
@@ -380,25 +384,25 @@ Each rule must be carefully checked for to determine whether a process is *in st
 
 \pagebreak
 
-## Shewart \textit{x}-bar Charts with a Known Population Mean
+## Shewhart \textit{x}-bar Charts for the Mean
 
-Suppose that a manufacturing process is working properly and its performance is normally distributed, with mean $\mu$ and standard deviation $\sigma$. If samples of size $n$ are taken regularly from the product, and the mean obtained for each sample, then:
+Suppose that a manufacturing process is working properly and its performance is normally distributed, with mean $\mu$ and standard deviation $\sigma$. If samples of size $n$ are taken regularly from the product, and the mean obtained for each sample, then those sample means will themselves also be normally distributed:
 
-\vspace{-0.5cm}
+\vspace{-0.3cm}
 
-$$\overline{X}\sim N\left(\mu,\dfrac{\sigma^2}{n}\right)$$
+\[\overline{X}\sim N\left(\mu,\dfrac{\sigma^2}{n}\right)\]
 
-\vspace{-0.5cm}
+\vspace{-0.2cm}
 
-Sigma limits can be calculated as:
+The standard error of each sample mean obtained is given by $\dfrac{\sigma}{\sqrt{n}}$, and the sigma limits are given by:
 
-\vspace{-0.5cm}
+\vspace{-0.3cm}
 
 \begin{center}
     \begin{tikzpicture}
         \node at (-5,0) {$1\sigma \text{ limits: }\mu \text{ }\pm \text{ }\dfrac{\sigma}{\sqrt{n}}$};
-        \node at (0,0) {$2\sigma \text{ limits: }\mu \text{ }\pm \text{ }\dfrac{2\sigma}{\sqrt{n}}$};
-        \node at (5,0) {$3\sigma \text{ limits: }\mu \text{ }\pm \text{ }\dfrac{3\sigma}{\sqrt{n}}$};
+        \node at (0,0) {$2\sigma \text{ limits: }\mu \text{ }\pm \text{ }2\times\dfrac{\sigma}{\sqrt{n}}$};
+        \node at (5,0) {$3\sigma \text{ limits: }\mu \text{ }\pm \text{ }3\times\dfrac{\sigma}{\sqrt{n}}$};
         \draw[decorate, 
 	decoration = {brace,
 		amplitude=7pt}] (1.8,-0.8) --  (-6.8,-0.8);
@@ -415,55 +419,75 @@ Sigma limits can be calculated as:
 A control chart is created with horizontal lines indicating the population mean and each of the 6 sigma limits calculated. The sample mean for each of the samples drawn at regular intervals is plotted on the chart, and the *WECO rules* applied to determine if or when the production process is out of control. 
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A machine fills cans of soda with mean volume 350ml and standard deviation 5ml. Every hour a sample of 3 cans is taken, their volumes measured, and the sample mean calculated before being added to an $x$-bar chart. 
+\textbf{Problem:} A machine fills cans with mean mass 300 grams and standard deviation 5 grams of chopped tomatoes. Every hour a sample of 4 cans is taken, the masses of their contents measured, and the sample mean calculated before being added to an $x$-bar chart. 
 
 \begin{center}
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
         \hline
         Sample number & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
         \hline
-        Sample mean & 347.67 & 341.67 & 353.67 & 358 & 350.67 & 340.33 & 340.67 & 351.67\\
+        Sample mean & 298 & 293 & 303 & 306 & 301 & 292 & 292 & 302\\
         \hline
     \end{tabular}
 \end{center}
 
 \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=0.8]
+        \draw (0,-3.5) rectangle (12,3.5);
+        \node at (6,-4.8) {sample number};
+        \node[rotate=90] at (-1.8,0) {sample mean (g)};
+        \node at (6,4) {$x$-bar chart of chopped tomatoes masses};
+        \draw[thick, densely dashed] (0.1,3) -- (11.9,3);
+        \draw[dashed] (0.1,2) -- (11.9,2);
+        \draw[dashed] (0.1,1) -- (11.9,1);
+        \draw[thick] (0.1,0) -- (11.9,0);
+        \draw[dashed] (0.1,-1) -- (11.9,-1);
+        \draw[dashed] (0.1,-2) -- (11.9,-2);
+        \draw[thick, densely dashed] (0.1,-3) -- (11.9,-3);
+        \node[left] at (13.2,3) {UCL};
+        \node[left] at (13.2,2) {$+2\sigma$};
+        \node[left] at (13.2,1) {$+1\sigma$};
+        \node[left] at (13.2,0) {$\mu$};
+        \node[left] at (13.2,-1) {$-1\sigma$};
+        \node[left] at (13.2,-2) {$-2\sigma$};
+        \node[left] at (13.2,-3) {LCL};
+        \node[right] at (13,3) {$=307.5$};
+        \node[right] at (13,2) {$=305$};
+        \node[right] at (13,1) {$=302.5$};
+        \node[right] at (13,0) {$=300$};
+        \node[right] at (13,-1) {$=297.5$};
+        \node[right] at (13,-2) {$=295$};
+        \node[right] at (13,-3) {$=292.5$};
         \foreach \x in {1,2,...,8}{
-        \draw[very thin] (1.5*\x,0.25*340-340*0.25) -- (1.5*\x,0.25*360-340*0.25) node[below] at (1.5*\x,0) {\x};
+        \draw (1.5*\x-0.7,-3.5) -- (1.5*\x-0.7,-3.7) node[below] {\x};
         }
-        \foreach \y in {340,360}{
-        \draw[very thin] (1.5*1,0.25*\y-340*0.25) -- (1.5*9,0.25*\y-340*0.25) node[left] at (1.5*1,0.25*\y-340*0.25) {\y}; 
-        }
-        \draw[very thin] (1.5*9,340*0.25-0.25*340) -- (1.5*9,360*0.25-0.25*340);
-        \node[below] at (1.5*5,-0.5) {sample number};
-        \node[rotate=90] at (0,350*0.25-0.25*340) {sample mean (ml)};
-        \node[above] at (1.5*5,361*0.25-0.25*340) {$x$-bar chart of soda can volume};
-        \draw[very thick, densely dashed] (1.5*1,0.25*358.66-340*0.25) -- (1.5*9,0.25*358.66-340*0.25) node[right] {$+3\sigma=358.66$};
-        \draw[very thick, dashed] (1.5*1,0.25*355.77-340*0.25) -- (1.5*9,0.25*355.77-340*0.25) node[right] {$+2\sigma=355.77$};
-        \draw[very thick,dashed] (1.5*1,0.25*352.89-340*0.25) -- (1.5*9,0.25*352.89-340*0.25) node[right] {$+1\sigma=352.89$};
-        \draw[very thick] (1.5*1,0.25*350-340*0.25) -- (1.5*9,0.25*350-340*0.25) node[right] {$\mu=350$};
-        \draw[very thick,dashed] (1.5*1,0.25*347.11-340*0.25) -- (1.5*9,0.25*347.11-340*0.25) node[right] {$-1\sigma=347.11$};
-        \draw[very thick,dashed] (1.5*1,0.25*344.23-340*0.25) -- (1.5*9,0.25*344.23-340*0.25) node[right] {$-2\sigma=344.23$};
-        \draw[very thick, densely dashed] (1.5*1,0.25*341.34-340*0.25) -- (1.5*9,0.25*341.34-340*0.25) node[right] {$-3\sigma=341.34$};
-        \coordinate (A) at (1.5*1,-340*0.25+0.25*347.67);
-        \coordinate (B) at (1.5*2,-340*0.25+0.25*341.67);
-        \coordinate (C) at (1.5*3,-340*0.25+0.25*353.67);
-        \coordinate (D) at (1.5*4,-340*0.25+0.25*358);
-        \coordinate (E) at (1.5*5,-340*0.25+0.25*350.67);
-        \coordinate (F) at (1.5*6,-340*0.25+0.25*340.33);
-        \coordinate (G) at (1.5*7,-340*0.25+0.25*340.67);
-        \coordinate (H) at (1.5*8,-340*0.25+0.25*351.67);
+        \node[left] at (0,-3.2) {292};
+        \node[left] at (0,-2.4) {294};
+        \node[left] at (0,-1.6) {296};
+        \node[left] at (0,-0.8) {298};
+        \node[left] at (0,0) {300};
+        \node[left] at (0,0.8) {302};
+        \node[left] at (0,1.6) {304};
+        \node[left] at (0,2.4) {306};
+        \node[left] at (0,3.2) {308};
+        \coordinate (A) at (0.8,-0.8);
+        \coordinate (B) at (2.3,-2.8);
+        \coordinate (C) at (3.8,1.2);
+        \coordinate (D) at (5.3,2.4);
+        \coordinate (E) at (6.8,0.4);
+        \coordinate (F) at (8.3,-3.2);
+        \coordinate (G) at (9.8,-3.2);
+        \coordinate (H) at (11.3,0.8);
         \draw[fill=black] (A) circle (2pt);
-    \draw[fill=black] (B) circle (2pt);
-    \draw[fill=black] (C) circle (2pt);
-    \draw[fill=black] (D) circle (2pt);
-    \draw[fill=black] (E) circle (2pt);
-    \draw[fill=black] (F) circle (2pt);
-    \draw[fill=black] (G) circle (2pt);
-    \draw[fill=black] (H) circle (2pt);
-    \draw (A) -- (B)-- (C) -- (D) -- (E) -- (F) -- (G) -- (H);
-    \end{tikzpicture}
+        \draw[fill=black] (B) circle (2pt);
+        \draw[fill=black] (C) circle (2pt);
+        \draw[fill=black] (D) circle (2pt);
+        \draw[fill=black] (E) circle (2pt);
+        \draw[fill=black] (F) circle (2pt);
+        \draw[fill=black] (G) circle (2pt);
+        \draw[fill=black] (H) circle (2pt);
+        \draw (A) -- (B)-- (C) -- (D) -- (E) -- (F) -- (G) -- (H);
+        \end{tikzpicture}
 \end{center}
 
 \begin{enumerate}
@@ -475,8 +499,8 @@ A control chart is created with horizontal lines indicating the population mean 
 \textbf{Solution:}
 
 \begin{enumerate}
-    \item[(a)] $2\sigma$ limits: $\mu \text{ }\pm \text{ } \dfrac{2\sigma}{\sqrt{n}}=350\text{ }\pm\text{ }\dfrac{2\times 5}{\sqrt{3}}=350\text{ }\pm\text{ }5.77$, so $344.23$ and $355.77$.
-    \item[(b)] The process is out of control for samples 6 and 7 as the sample means both lie below the lower control limit ($-3\sigma$ limit). The process needs to be investigated.
+    \item[(a)] $2\sigma$ limits: $\mu \text{ }\pm \text{ } 2\times\dfrac{\sigma}{\sqrt{n}}=300\text{ }\pm\text{ }2\times\dfrac{5}{\sqrt{4}}=300\text{ }\pm\text{ }5$, so $295$ and $305$.
+    \item[(b)] The process is out of statistical control, which can be identified at sample 6 when sample mean falls below the lower control limit ($-3\sigma$ limit). The process should be stopped and investigated.
 \end{enumerate}
 
 \end{tcolorbox}
@@ -636,7 +660,7 @@ Confirm the $1\sigma$ limits shown on the chart and determine if the packing pro
 \includegraphics[scale=0.4]{images/1223.png}
 
 Given that each sample is of size 4, confirm the upper and lower control limits shown on the chart and determine if the process was in control for all the samples given. 
-    \item A machine dispenses sea salt flakes into bags. The mass of salt in the bags is known to be normally distributed with mean 200 grams and standard deviation 12g. Samples of 5 bags are taken every 30 minutes and the sample mean plotted on a Shewart $x$-bar chart.
+    \item A machine dispenses sea salt flakes into bags. The mass of salt in the bags is known to be normally distributed with mean 200 grams and standard deviation 12g. Samples of 5 bags are taken every 30 minutes and the sample mean plotted on a Shewhart $x$-bar chart.
     
 \includegraphics[scale=0.4]{images/1224.png}
 
@@ -664,8 +688,6 @@ Confirm the 1 and 2 sigma limits on the chart and determine whether the process 
 
 Calculate the upper and lower control limits and determine if the process is in statistical control for the day sampled.
 \end{enumerate}
-
-## Shewart \textit{x}-bar Charts with an Unknown Population Mean {-}
 
 If the population mean is unknown, the value for $\mu$ must be estimated from the *mean of the mean* of the first few sample measurements, known as $\bar{\bar{x}}$. This situation would be common when a control chart for a manufacturing process is being set up for the first time. 
 When $\mu$ is unknown, often $\sigma$ is also unknown. It goes beyond the syllabus for this course to estimate the value of $\sigma$ so it will be stated in the question.
@@ -734,7 +756,7 @@ When $\mu$ is unknown, often $\sigma$ is also unknown. It goes beyond the syllab
 
 \pagebreak
 
-## Shewart \textit{p}-Charts for a Proportion
+## Shewhart \textit{p}-Charts for a Proportion
 
 For some quality control processes the attribute of interest will be a *quality* rather than a numerical value, meaning calculating a mean is not possible. For such cases, a control chart for $x$-bar is not appropriate. Such a *quality* may typically take the form of a binary outcome, such as *defective* or *not defective*. The *proportion* of products within each sample that take a particular outcome (such as *defective*) may instead be calculated, and a control chart for proportion, or $p$-chart, created.
 
