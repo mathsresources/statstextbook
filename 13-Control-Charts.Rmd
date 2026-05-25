@@ -510,6 +510,122 @@ A control chart is created with horizontal lines indicating the population mean 
 #### Exercise 13.2 {-}
 
 \begin{enumerate}
+    \item Control charts are to be produced for sample means taken from to monitor the following processes. If the samples are random, and it can be assumed that the processes can be suitably described by the normal distribution, copy and complete the following tables showing limits for the $x$-bar charts:
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item Population mean $=80$\\
+            Population standard deviation $=3$\\
+            Sample size $=16$\\[0.2em]
+                \begingroup
+                \renewcommand{\arraystretch}{1.5}
+                \begin{tabular}{|l|l|}
+                \hline
+                    Upper Control Limit & \phantom{blahblahblahblah}\\
+                    \hline
+                    $+2\sigma$ Limit & \\
+                    \hline
+                    $+1\sigma$ Limit & \\
+                    \hline
+                    Target Value & \\
+                    \hline
+                    $-1\sigma$ Limit & \\
+                    \hline
+                    $-2\sigma$ Limit & \\
+                    \hline
+                    Lower Control Limit & \\
+                    \hline
+                \end{tabular}
+                \endgroup
+            \item Population mean $=486$\\
+            Population standard deviation $=17$\\
+            Sample size $=12$\\[0.2em]
+                \begingroup
+                \renewcommand{\arraystretch}{1.5}
+                \begin{tabular}{|l|l|}
+                \hline
+                    Upper Control Limit & \phantom{blahblahblahblah}\\
+                    \hline
+                    $+2\sigma$ Limit & \\
+                    \hline
+                    $+1\sigma$ Limit & \\
+                    \hline
+                    Target Value & \\
+                    \hline
+                    $-1\sigma$ Limit & \\
+                    \hline
+                    $-2\sigma$ Limit & \\
+                    \hline
+                    Lower Control Limit & \\
+                    \hline
+                \end{tabular}
+                \endgroup
+        \end{enumerate}
+    \end{multicols}
+    \item A factory produces plastic guitar plectrums which are sold with a labelled thickness of 1.4mm. The actual thickness of a plectrums produced by the factory's equipment is normally distributed with a mean of 1.4mm and standard deviation 0.1mm. An $x$-bar chart is to be produced to monitor the performance of the process. Calculate the 2-sigma limits for the control chart.
+    \item A cosmetic company has a machine which dispenses shampoo into bottles. The machine has been calibrated to dispense a mean volume of 230ml into each bottle, and the amount dispensed has been found to be normally distributed with a standard deviation of 4ml. To monitor the performance of the machine, a sample of five bottles is taken each hour, the volume of shampoo measured precisely and an $x$-bar chart created on which to track the sample means.
+    \begin{enumerate}
+        \item Calculate the 1-sigma limits for the $x$-bar chart.
+    \end{enumerate}
+    The control chart below shows the results of the first twelve samples of the day.
+\begin{center}
+    \begin{tikzpicture}[scale=0.8]
+        \draw (0,-3.5) rectangle (12,3.5);
+        \node at (6,-4.8) {sample number};
+        \node[rotate=90] at (-1.5,0) {sample mean (ml)};
+        \node at (6,4) {$x$-bar chart of mean shampoo volume};
+        \draw[thick, densely dashed] (0.1,3) -- (11.9,3) node[right] {UCL};
+        \draw[dashed] (0.1,2) -- (11.9,2);
+        \draw[dashed] (0.1,1) -- (11.9,1);
+        \draw[thick] (0.1,0) -- (11.9,0) node[right] {target};
+        \draw[dashed] (0.1,-1) -- (11.9,-1);
+        \draw[dashed] (0.1,-2) -- (11.9,-2);
+        \draw[thick, densely dashed] (0.1,-3) -- (11.9,-3) node[right] {LCL};
+        \foreach \x in {1,2,...,12}{
+        \draw (\x-0.5,-3.5) -- (\x-0.5,-3.7) node[below] {\x};
+        }
+        \node[left] at (0,3*2*0.559) {236};
+        \node[left] at (0,2*2*0.559) {234};
+        \node[left] at (0,1*2*0.559) {232};
+        \node[left] at (0,0*2*0.559) {230};
+        \node[left] at (0,-1*2*0.559) {228};
+        \node[left] at (0,-2*2*0.559) {226};
+        \node[left] at (0,-3*2*0.559) {224};
+        \coordinate (A) at (1-0.5,0.15);
+        \coordinate (B) at (2-0.5,-0.2);
+        \coordinate (C) at (3-0.5,0.8);
+        \coordinate (D) at (4-0.5,-1.3);
+        \coordinate (E) at (5-0.5,0.2);
+        \coordinate (F) at (6-0.5,0.85);
+        \coordinate (G) at (7-0.5,-0.45);
+        \coordinate (H) at (8-0.5,0.8);
+        \coordinate (I) at (9-0.5,2.15);
+        \coordinate (J) at (10-0.5,1.3);
+        \coordinate (K) at (11-0.5,2.34);
+        \coordinate (L) at (12-0.5,-0.2);
+        \draw[fill=black] (A) circle (2pt);
+        \draw[fill=black] (B) circle (2pt);
+        \draw[fill=black] (C) circle (2pt);
+        \draw[fill=black] (D) circle (2pt);
+        \draw[fill=black] (E) circle (2pt);
+        \draw[fill=black] (F) circle (2pt);
+        \draw[fill=black] (G) circle (2pt);
+        \draw[fill=black] (H) circle (2pt);
+        \draw[fill=black] (I) circle (2pt);
+        \draw[fill=black] (J) circle (2pt);
+        \draw[fill=black] (K) circle (2pt);
+        \draw[fill=black] (L) circle (2pt);
+        \draw (A) -- (B)-- (C) -- (D) -- (E) -- (F) -- (G) -- (H) -- (I) -- (J) -- (K) -- (L);
+        \end{tikzpicture}
+\end{center}
+    \begin{enumerate}[resume]
+        \item Determine if the machine is under statistical control during this period.
+        \item State an assumption required for the described use of the $x$-bar chart to be appropriate.
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+\begin{enumerate}
     \item A machine dispenses crisps into sharing-sized bags with a mean mass of 150g and a standard deviation of 2g. It is known that the mass of the crisps is normally distributed. A random sample of 5 of the sharing-sized bags of crisps is taken every hour to check that the machine is in statistical control. A control chart showing 12 consecutive samples from a particular shift is shown.
   
 \begin{center}
