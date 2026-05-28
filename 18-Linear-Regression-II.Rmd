@@ -2,11 +2,11 @@
 
 \vspace{-1cm}
 
-A straight line relationship can be valuable in many situations in establishing and summarising the dependence of one variable on another, and in making predictions. Linear regression will be explored in more detail in this chapter.
+In Chapter 5 the concept of using *least squares regression* to explore straight-line relationships between variables, and make predictions, was introduced. Linear regression will now be explored in more detail in this chapter.
 
 ### The Method of Least Squares Regression {-}
 
-In most experiments, it is assumed that $x$ is under the control of the experimenter and can be known exactly. In such cases $x$ is called the \textit{predictor} (or \textit{independent}) variable, whilst $Y$ is a \textit{random variable} known as the \textit{response} (or \textit{dependent}) variable.
+Given bivariate data, it is $x$ is generally selected as the \textit{predictor} (or \textit{independent}) variable, whilst $Y$ is a \textit{random variable} known as the \textit{response} (or \textit{dependent}) variable. In other words, it is typical to be aiming to predict an unknown $Y$ value given a known $x$ value.
 
 \begin{multicols}{2}
 
@@ -36,7 +36,7 @@ In most experiments, it is assumed that $x$ is under the control of the experime
     \end{tikzpicture}
 \end{center}
 
-The theoretical model for linear regression is that of a straight line of form $y=\alpha+\beta x$ describing the best fit for a relationship between variables. However, the population of bivariate data will not perfectly lie along this line due to chance variation, known as \textbf{errors}.
+The theoretical model for linear regression is that of a straight line of form $y=\alpha+\beta x$ describing the \textit{best fit} for a relationship between variables.  However, the population of bivariate data will not perfectly lie along this line due to chance variation, known as \textbf{errors}.
 
 \begin{tcolorbox}[halign title=center,title=The Linear Regression Model,center,colback=red!5,colframe=red!70!black,width=6.5cm]
 \[Y_i=\alpha+\beta x_i+\varepsilon_i\]
@@ -46,7 +46,7 @@ $\varepsilon_i$ (\textit{"epsilon"}) are random variables called \textit{errors}
 
 \end{multicols}
 
-The values of parameters $\alpha$ and $\beta$ cannot be known exactly without examining all possible occurrences of $Y$ and $x$. However the sample observations $(x_i,y_i)$ can be used to give estimates, $a$ and $b$, of $\alpha$ and $\beta$. This leads to the relationship $\hat{Y}_i=a+bx_i$, where $\hat{Y}_i$ (*"y-hat"*) denotes the predicted value of $Y_i$ for a given $x_i$.
+The values of  $\alpha$ and $\beta$ cannot be known exactly without examining all possible occurrences of $Y$ and $x$. However the sample observations $(x_i,y_i)$ can be used to give estimates, $a$ and $b$, of $\alpha$ and $\beta$. This leads to the relationship $\hat{Y}_i=a+bx_i$, where $\hat{Y}_i$ (*"y-hat"*) denotes the predicted value of $Y_i$ for a given $x_i$.
 
 The method of least squares gives formulae for $a$ and $b$ derived by considering how $\sum \varepsilon_i^2$ might be minimised:
 

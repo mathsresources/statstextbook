@@ -623,14 +623,14 @@ A control chart is created with horizontal lines indicating the population mean 
     \end{enumerate}
 \end{enumerate}
 
-\newpage
+\pagebreak
 
 \begin{enumerate}[resume]
     \item A video game producer monitors the responsiveness of the connections it provides to online gamers by measuring the amount of delay they experience, called their \textit{ping}. This is measured in milliseconds and it is known that the amount of \textit{ping} experienced by gamers is normally distributed with a mean of 144 milliseconds and a standard deviation of 18 milliseconds. Every hour, the ping is recorded for a random sample of 7 gamers, and the results added to an $x$-bar control chart, shown below.
 \begin{center}
     \begin{tikzpicture}[scale=0.8]
         \draw (0,-3.5) rectangle (12,3.5);
-        \node at (6,-5) {sample time};
+        \node at (6,-4.7) {sample time};
         \node[rotate=90] at (-1.8,0) {sample mean (ms)};
         \node at (6,4) {control chart for ping};
         \draw[thick, densely dashed] (0.1,3) -- (11.9,3);
@@ -710,11 +710,11 @@ It correctly determined from the control chart that the process is under statist
 \begin{enumerate}[resume]
     \item State the range of possible values for the next sample mean, $\bar{x}$, to be taken at 5pm, such that the process would still be found to be in statistical control.
 \end{enumerate}
-    \item A camera lens manufacturer uses an $x$-bar control chart to monitor the quality of copies of a particular model of lens which it produces. The resolution of the lens is measured using \textit{MTF testing}, where a higher score indicates a higher resolution, which is desired. It is targeting a resolution score of 3600, but the manufacturer knows that the actual resolution of copies of the lens it produces varies, with a standard deviation in resolution score of 120. Samples are taken at regular intervals, and their sample means plotted on the chart are below.
+    \item A camera lens manufacturer uses an $x$-bar control chart to monitor the quality of copies of a particular model of lens which it produces. The resolution of the lenses are measured using \textit{MTF testing}, where a higher score indicates a higher resolution, which is desired. The manufacturer knows that the resolution of copies of the lens it produces varies, with a mean of 3600 and standard deviation of 120. Samples are taken at regular intervals, and their sample means plotted on the chart are below.
     \begin{center}
     \begin{tikzpicture}[scale=0.8]
         \draw (0,-3.5) rectangle (12,3.5);
-        \node at (6,-5) {sample number};
+        \node at (6,-4.7) {sample number};
         \node[rotate=90] at (-1.8,0) {resolution (MTF)};
         \node at (6,4) {$x$-bar chart for lens resolution};
         \draw[thick, densely dashed] (0.1,3) -- (11.9,3);
@@ -727,7 +727,7 @@ It correctly determined from the control chart that the process is under statist
         \node[right] at (12,3) {UCL};
         \node[right] at (12,2) {$+2\sigma=3680$};
         \node[right] at (12,1) {$+1\sigma$};
-        \node[right] at (12,-0.05) {$\mu$};
+        \node[right] at (12,-0.05) {\phantom{$-$}$\mu$};
         \node[right] at (12,-1) {$-1\sigma$};
         \node[right] at (12,-2) {$-2\sigma$};
         \node[right] at (12,-3) {LCL};
@@ -778,44 +778,192 @@ It correctly determined from the control chart that the process is under statist
         \end{tikzpicture}
 \end{center}
     \begin{enumerate}
-        \item Describe the feature of the $x$-bar chart which means the process is out of statistical control.
-        \item Explain why the lens manufacturers may actually not be concerned with the process.
-        \item Use the $+2\sigma$-limit shown to determine the size of each sample of lenses taken.
+        \item Describe the feature of the $x$-bar chart which means the process is out of statistical control, and explain why the lens manufacturers may actually not be concerned about this.
+        \item Use the $2\sigma$-limit shown to determine the size of each sample of lenses taken.
+        \item State two assumptions required for the use of the $x$-bar chart by the manufacturers.
     \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+\begin{enumerate}[resume]
+    \item A coffee company sells canned, chilled `espresso' drinks in supermarkets. The amount of caffeine contained in each can is known to be normally distributed with a mean of 115mg and a standard deviation of 8mg. To comply with legal requirements, the company uses an $x$-bar control chart to monitor the manufacturing process, taking a random sample of 16 cans each hour and measuring the amount of caffeine they contain, recording the sample mean each time. The results of a series of 10 consecutive samples is shown in the table below.
+  
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{Sample} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10}\\
+        \hline
+        Caffeine (mg) & 113.7& 119.7 &118.6& 120.9 &114.6 &113.9 &110.4 &113.1 &116.5 & 114.2\\
+        \hline
+    \end{tabular}
+\end{center}
+    \begin{enumerate}
+        \item Calculate each of the control limits and hence explain why it can be identified that the process is out of statistical control at sample 4.
+    \end{enumerate}
+    The coffee company has created a new `chilled cappuccino' drink, also sold in cans, and wishes to use an $x$-bar control chart to monitor caffeine content of the cans produced by the manufacturing process. Since at this stage the population mean caffeine content is unknown, its value must be estimated from the \textit{mean of the sample means} of the first batch of sample measurements, known as `$x$ bar bar' ($\bar{\bar{x}}$), as is common when a control chart for a manufacturing process is being set up for the first time.\\[0.1em]
+    The results of the first 20 samples are shown in the table below.
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        \textbf{Sample} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10}\\
+        \hline
+        Caffeine (mg) & 96.3 &92.1& 97.4 &89.8& 98.0 &92.4 &90.5 &90.2 &90.6 &95.2\\
+        \hline
+        \textbf{Sample} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{17} & \textbf{18} & \textbf{19} & \textbf{20}\\
+        \hline
+        Caffeine (mg) &  92.1& 90.3 &94.4 &91.7& 88.9& 91.4& 90.4 &88.3 &90.7& 89.3\\
+        \hline
+    \end{tabular}
+\end{center}
+\begin{enumerate}[resume]
+    \item Determine $\bar{\bar{x}}$, an estimate for the population mean caffeine content of the production process.
+    \item Given that the population standard deviation is subsequently determined to be 6mg, determine the values of the upper and lower control limits for samples of size 4.
+\end{enumerate}
+\item Control charts are to be produced for sample means taken from to monitor the following processes. If the samples are random, and it can be assumed that the processes can be suitably described by the normal distribution, copy and complete the following tables for the $x$-bar charts:
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item \phantom{ }\\
+                \begingroup
+                \renewcommand{\arraystretch}{1.5}
+                \begin{tabular}{|r|l|}
+                \hline
+                    Population mean & \\
+                    \hline
+                    Standard deviation & \\
+                    \hline
+                    Sample size & 25\\
+                    \hline
+                    \hline
+                    Upper Control Limit & \phantom{blahblahblahblah}\\
+                    \hline
+                    $+2\sigma$ Limit & 78\\
+                    \hline
+                    $+1\sigma$ Limit & \\
+                    \hline
+                    Target Value & \\
+                    \hline
+                    $-1\sigma$ Limit & \\
+                    \hline
+                    $-2\sigma$ Limit & 66\\
+                    \hline
+                    Lower Control Limit & \\
+                    \hline
+                \end{tabular}
+                \endgroup
+            \item \phantom{ }\\
+                \begingroup
+                \renewcommand{\arraystretch}{1.5}
+                \begin{tabular}{|r|l|}
+                \hline
+                    Population mean & 2800\\
+                    \hline
+                    Standard deviation & 60\\
+                    \hline
+                    Sample size & \\
+                    \hline
+                    \hline
+                    Upper Control Limit & \phantom{blahblahblahblah}\\
+                    \hline
+                    $+2\sigma$ Limit & \\
+                    \hline
+                    $+1\sigma$ Limit & \\
+                    \hline
+                    Target Value & \\
+                    \hline
+                    $-1\sigma$ Limit & \\
+                    \hline
+                    $-2\sigma$ Limit & 2760\\
+                    \hline
+                    Lower Control Limit & \\
+                    \hline
+                \end{tabular}
+                \endgroup
+        \end{enumerate}
+    \end{multicols}
 \end{enumerate}
 
 \pagebreak
 
 ## Shewhart \textit{p}-Charts for a Proportion
 
-For some quality control processes the attribute of interest will be a *quality* rather than a numerical value, meaning calculating a mean is not possible. For such cases, a control chart for $x$-bar is not appropriate. Such a *quality* may typically take the form of a binary outcome, such as *defective* or *not defective*. The *proportion* of products within each sample that take a particular outcome (such as *defective*) may instead be calculated, and a control chart for proportion, or $p$-chart, created.
+For some quality control processes the attribute of interest will be a *quality* rather than a numerical value, hence calculating a mean is not possible. For such cases, a control chart for $x$-bar is not appropriate. Such a *quality* may typically take the form of a binary outcome, such as *defective* or *not defective*. The *proportion* of products within each random sample (of size $n$) that take a particular outcome (such as *defective*) may instead be calculated, and a control chart for proportion, or $p$-chart, created.
 
-For $np,nq>5$ the distribution of the sample proportion may be described by $\hat{P}\approx N\left(p,\dfrac{pq}{n}\right)$.
+For $np,nq>5$ the distribution of the sample proportion may be described by $\hat{P}\approx \text{N}\left(p,\dfrac{pq}{n}\right)$.
 
-This leads to the 3-sigma control limits for a $p$-chart being given, for population proportion $p$, by $p\text{ }\pm \text{ }3\sqrt{\dfrac{pq}{n}}$.
+This leads to the 3-sigma control limits for a $p$-chart, for population proportion $p$, of $p\text{ }\pm \text{ }3\sqrt{\dfrac{pq}{n}}$.
 
-Similarly, the $1\sigma$ and $2\sigma$ limits be be calculated respectively as $p\text{ }\pm \text{ }\sqrt{\dfrac{pq}{n}}$ and $p\text{ }\pm \text{ }2\sqrt{\dfrac{pq}{n}}$.
+Similarly, the $1\sigma$ and $2\sigma$ limits can be calculated respectively as $p\text{ }\pm \text{ }\sqrt{\dfrac{pq}{n}}$ and $p\text{ }\pm \text{ }2\sqrt{\dfrac{pq}{n}}$.
 
 It should be noted that, depending on the value of $p$, it is not unusual for the lower control limit to be negative or the upper control limit to be greater than 1. When this happens the lower control limit should be given as 0 or the upper control limit given as 1.
 
-If no historical value of the population proportion has been suggested, then $p$ must be estimated from the sample data provided, and $\hat{p}$ used.
-
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A machine fills Christmas crackers. 30\% of the crackers are supposed to contain joke A. Every 30 minutes a sample of 50 crackers is taken and the number containing joke A is found. The proportion of each sample that has joke A is plotted on a $p$-chart.
+\textbf{Problem:} A machine produces packs of football stickers. 15\% of the packs are supposed to contain a \textit{`shiny'} sticker. Every 30 minutes a sample of 60 packs are taken and the number containing a `shiny' is counted, with the proportion for each sample plotted on a $p$-chart.
 
-\includegraphics[scale=0.4]{images/1225e.png}
+\begin{center}
+    \begin{tikzpicture}[scale=0.8]
+        \draw (0,-3.5) rectangle (12,3.5);
+        \node at (6,-4.8) {sample number};
+        \node[rotate=90] at (-1.8,0) {sample proportion};
+        \node at (6,4) {$p$-chart of proportion of packs containing a `shiny'};
+        \draw[thick, densely dashed] (0.1,3) -- (11.9,3) node[right] {UCL};
+        \draw[dashed] (0.1,2) -- (11.9,2) node[right] {$+2\sigma$};
+        \draw[dashed] (0.1,1) -- (11.9,1) node[right] {$+1\sigma$};
+        \draw[thick] (0.1,0) -- (11.9,0) node[right] {target};
+        \draw[dashed] (0.1,-1) -- (11.9,-1) node[right] {$-1\sigma$};
+        \draw[dashed] (0.1,-2) -- (11.9,-2) node[right] {$-2\sigma$};
+        \draw[thick, densely dashed] (0.1,-3) -- (11.9,-3) node[right] {LCL};
+        \foreach \x in {1,2,...,12}{
+        \draw (\x-0.5,-3.5) -- (\x-0.5,-3.7) node[below] {\x};
+        }
+        \node[left] at (0,3*1.08465) {0.30};
+        \node[left] at (0,2*1.08465) {0.25};
+        \node[left] at (0,1*1.08465) {0.20};
+        \node[left] at (0,0*1.08465) {0.15};
+        \node[left] at (0,-1*1.08465) {0.10};
+        \node[left] at (0,-2*1.08465) {0.05};
+        \node[left] at (0,-3*1.08465) {0.00};
+        \coordinate (A) at (0.5,-0.723101526062187);
+\coordinate (B) at (1.5,0);
+\coordinate (C) at (2.5,0.361550763031094);
+\coordinate (D) at (3.5,-0.361550763031094);
+\coordinate (E) at (4.5,-0.723101526062187);
+\coordinate (F) at (5.5,-0.361550763031094);
+\coordinate (G) at (6.5,-0.723101526062187);
+\coordinate (H) at (7.5,0.723101526062187);
+\coordinate (I) at (8.5,2.16930457818656);
+\coordinate (J) at (9.5,0.723101526062187);
+\coordinate (K) at (10.5,2.53085534121766);
+\coordinate (L) at (11.5,2.16930457818656);
+        \draw[fill=black] (A) circle (2pt);
+        \draw[fill=black] (B) circle (2pt);
+        \draw[fill=black] (C) circle (2pt);
+        \draw[fill=black] (D) circle (2pt);
+        \draw[fill=black] (E) circle (2pt);
+        \draw[fill=black] (F) circle (2pt);
+        \draw[fill=black] (G) circle (2pt);
+        \draw[fill=black] (H) circle (2pt);
+        \draw[fill=black] (I) circle (2pt);
+        \draw[fill=black] (J) circle (2pt);
+        \draw[fill=black] (K) circle (2pt);
+        \draw[fill=black] (L) circle (2pt);
+        \draw (A) -- (B)-- (C) -- (D) -- (E) -- (F) -- (G) -- (H) -- (I) -- (J) -- (K) -- (L);
+        \end{tikzpicture}
+\end{center}
 
-Verify the $3\sigma$ limits on the chart and determine if the $p$-chart is in statistical control for the samples given.
+Calculate the $3\sigma$ limits and determine if the $p$-chart is in statistical control for the samples given.
 
 \tcblower
 \textbf{Solution:}
 
-$3\sigma$ limits: $p \text{ }\pm \text{ } 3\times\sqrt{\dfrac{pq}{n}}=0.3\text{ }\pm\text{ }3\times\sqrt{\dfrac{0.3\times0.7}{50}}=0.3\text{ }\pm\text{ }0.1944$, so $0.1056$ and $0.4944$.\\
-The process is out of statistical control at sample 6 as two out of three consecutive sample means lie above the upper $2\sigma$ limit. The process needs to be investigated.
+$3\sigma$ limits: $p \text{ }\pm \text{ } 3\times\sqrt{\dfrac{pq}{n}}=0.15\text{ }\pm\text{ }3\times\sqrt{\dfrac{0.15\times0.85}{60}}=0.15\text{ }\pm\text{ }0.1383$, so $0.0117$ and $0.2883$.\\[0.1em]
+The process is out of statistical control at sample 11 as two out of three consecutive sample means (from 9 to 11) lie above the upper $2\sigma$ limit. The process needs to be stopped and investigated.
 
 \end{tcolorbox}
 
-\newpage
+If no historical value of the population proportion has been suggested, then $p$ must be estimated from the sample data provided, and $\hat{p}$ used.
+
+\pagebreak
 
 #### Exercise 13.3 {-}
 
