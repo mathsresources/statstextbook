@@ -15088,7 +15088,7 @@ A control chart is created with horizontal lines indicating the population mean 
     \end{enumerate}
 \end{enumerate}
 
-\pagebreak
+\newpage
 
 \begin{enumerate}[resume]
     \item A video game producer monitors the responsiveness of the connections it provides to online gamers by measuring the amount of delay they experience, called their \textit{ping}. This is measured in milliseconds and it is known that the amount of \textit{ping} experienced by gamers is normally distributed with a mean of 144 milliseconds and a standard deviation of 18 milliseconds. Every hour, the ping is recorded for a random sample of 7 gamers, and the results added to an $x$-bar control chart, shown below.
@@ -15173,110 +15173,80 @@ A control chart is created with horizontal lines indicating the population mean 
 \end{enumerate}
 It correctly determined from the control chart that the process is under statistical control for the duration of the times shown, since none of the WECO Rules have been broken.
 \begin{enumerate}[resume]
-    \item State the range of possible values for the next sample mean, to be taken at 5pm, such that the process would still be found to be in statistical control.
+    \item State the range of possible values for the next sample mean, $\bar{x}$, to be taken at 5pm, such that the process would still be found to be in statistical control.
 \end{enumerate}
-\end{enumerate}
-
-\newpage
-
-\begin{enumerate}[resume]
-    \item When a process for cracking crude oil is working to specification it yields petrol for which random samples give octane ratings which are normally distributed with mean 87.0 and standard deviation 0.40.
-  
-\includegraphics[scale=0.4]{images/1223.png}
-
-Given that each sample is of size 4, confirm the upper and lower control limits shown on the chart and determine if the process was in control for all the samples given. 
-    \item A machine dispenses sea salt flakes into bags. The mass of salt in the bags is known to be normally distributed with mean 200 grams and standard deviation 12g. Samples of 5 bags are taken every 30 minutes and the sample mean plotted on a Shewhart $x$-bar chart.
-    
-\includegraphics[scale=0.4]{images/1224.png}
-
-Confirm the 1 and 2 sigma limits on the chart and determine whether the process was in statistical control for the samples shown. State an assumption that has been made.
-\end{enumerate}
-
-\pagebreak
-
-\begin{enumerate}[resume]
-    \item When a medical manufacturing process is in a state of statistical control, it produces tablets with masses which are normally distributed with mean 6.0mg and standard deviation 0.13mg. Random samples of 5 tablets are taken at regular intervals and the mean mass recorded. The sample means obtained during a day’s production, used to produce a control chart, are shown in the table below.
-  
-\begin{center}
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
-        \hline
-        \textbf{Sample number} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8}\\
-        \hline
-        Mass (mg) & 6.04 & 5.89 & 5.99 & 6.06 & 5.96 & 6.08 & 5.87 & 6.25\\
-        \hline
-        \textbf{Sample number} & \textbf{9} & \textbf{10} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16}\\
-        \hline
-        Mass (mg) & 6.05 & 5.86 & 5.96 & 6.08 & 6.19 & 6.05 & 5.92 & 5.90\\
-        \hline
-    \end{tabular}
-\end{center}
-
-Calculate the upper and lower control limits and determine if the process is in statistical control for the day sampled.
-\end{enumerate}
-
-If the population mean is unknown, the value for \(\mu\) must be estimated from the \emph{mean of the mean} of the first few sample measurements, known as \(\bar{\bar{x}}\). This situation would be common when a control chart for a manufacturing process is being set up for the first time.
-When \(\mu\) is unknown, often \(\sigma\) is also unknown. It goes beyond the syllabus for this course to estimate the value of \(\sigma\) so it will be stated in the question.
-
-\begin{enumerate}[resume]
-    \item A new medical manufacturing process is set up to produce a new tablet. In order to ensure the process is in statistical control, a control chart is created from random samples of size 5. The first ten sample means were used to create the target value $\bar{\bar{x}}$ for the chart, and it is known that $\sigma = 0.06\text{ mg}$.
-
-\begin{center}
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
-        \hline
-        \textbf{Sample number} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10}\\
-        \hline
-        Mass (mg) & 4.92    & 4.94 &    5.04 &  5.01 &  4.98 &  5.07    & 4.97  & 4.99 &    5.06 &  5.02\\
-        \hline
-        \textbf{Sample number} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{17} & \textbf{18} & \textbf{19} & \textbf{20}\\
-        \hline
-        Mass (mg) & 4.99 & 4.98 &   4.92 &  4.95 &  4.93 &  4.97 &  4.91 &  5.01 &  5.04 &  4.98 \\
-        \hline
-    \end{tabular}
-\end{center}
-
-\begin{center}
-    \begin{tikzpicture}
-        \foreach \x in {1,2,...,8}{
-        \draw[very thin] (1.5*\x,0.25*340-340*0.25) -- (1.5*\x,0.25*360-340*0.25) node[below] at (1.5*\x,0) {\x};
+    \item A camera lens manufacturer uses an $x$-bar control chart to monitor the quality of copies of a particular model of lens which it produces. The resolution of the lens is measured using \textit{MTF testing}, where a higher score indicates a higher resolution, which is desired. It is targeting a resolution score of 3600, but the manufacturer knows that the actual resolution of copies of the lens it produces varies, with a standard deviation in resolution score of 120. Samples are taken at regular intervals, and their sample means plotted on the chart are below.
+    \begin{center}
+    \begin{tikzpicture}[scale=0.8]
+        \draw (0,-3.5) rectangle (12,3.5);
+        \node at (6,-5) {sample number};
+        \node[rotate=90] at (-1.8,0) {resolution (MTF)};
+        \node at (6,4) {$x$-bar chart for lens resolution};
+        \draw[thick, densely dashed] (0.1,3) -- (11.9,3);
+        \draw[dashed] (0.1,2) -- (11.9,2);
+        \draw[dashed] (0.1,1) -- (11.9,1);
+        \draw[thick] (0.1,0) -- (11.9,0);
+        \draw[dashed] (0.1,-1) -- (11.9,-1);
+        \draw[dashed] (0.1,-2) -- (11.9,-2);
+        \draw[thick, densely dashed] (0.1,-3) -- (11.9,-3);
+        \node[right] at (12,3) {UCL};
+        \node[right] at (12,2) {$+2\sigma=3680$};
+        \node[right] at (12,1) {$+1\sigma$};
+        \node[right] at (12,-0.05) {$\mu$};
+        \node[right] at (12,-1) {$-1\sigma$};
+        \node[right] at (12,-2) {$-2\sigma$};
+        \node[right] at (12,-3) {LCL};
+        \foreach \x in {1,2,3,...,16}{
+        \draw (0.7*\x,-3.5) -- (0.7*\x,-3.7) node[below] {\x};
         }
-        \foreach \y in {340,345,...,360}{
-        \draw[very thin] (1.5*1,0.25*\y-340*0.25) -- (1.5*9,0.25*\y-340*0.25) node[left] at (1.5*1,0.25*\y-340*0.25) {\y}; 
+        \node[left] at (0,2.5) {3700};
+        \node[left] at (0,1.25) {3650};
+        \node[left] at (0,0) {3600};
+        \node[left] at (0,-1.25) {3550};
+        \node[left] at (0,-2.5) {3500};
+        \foreach \y in {-2.5,-1.25,0,1.25,2.5}{
+        \draw (0,\y) -- (-0.1,\y);
         }
-        \draw[very thin] (1.5*9,340*0.25-0.25*340) -- (1.5*9,360*0.25-0.25*340);
-        \node[below] at (1.5*5,-0.5) {sample number};
-        \node[rotate=90] at (0,350*0.25-0.25*340) {sample mean (ml)};
-        \node[above] at (1.5*5,361*0.25-0.25*340) {$x$-bar chart of soda can volume};
-        \draw[very thick, densely dashed] (1.5*1,0.25*358.66-340*0.25) -- (1.5*9,0.25*358.66-340*0.25) node[right] {$+3\sigma=358.66$};
-        \draw[very thick, dashed] (1.5*1,0.25*355.77-340*0.25) -- (1.5*9,0.25*355.77-340*0.25) node[right] {$+2\sigma=355.77$};
-        \draw[very thick,dashed] (1.5*1,0.25*352.89-340*0.25) -- (1.5*9,0.25*352.89-340*0.25) node[right] {$+1\sigma=352.89$};
-        \draw[very thick] (1.5*1,0.25*350-340*0.25) -- (1.5*9,0.25*350-340*0.25) node[right] {$\mu=350$};
-        \draw[very thick,dashed] (1.5*1,0.25*347.11-340*0.25) -- (1.5*9,0.25*347.11-340*0.25) node[right] {$-1\sigma=347.11$};
-        \draw[very thick,dashed] (1.5*1,0.25*344.23-340*0.25) -- (1.5*9,0.25*344.23-340*0.25) node[right] {$-2\sigma=344.23$};
-        \draw[very thick, densely dashed] (1.5*1,0.25*341.34-340*0.25) -- (1.5*9,0.25*341.34-340*0.25) node[right] {$-3\sigma=341.34$};
-        \coordinate (A) at (1.5*1,-340*0.25+0.25*347.67);
-        \coordinate (B) at (1.5*2,-340*0.25+0.25*341.67);
-        \coordinate (C) at (1.5*3,-340*0.25+0.25*353.67);
-        \coordinate (D) at (1.5*4,-340*0.25+0.25*358);
-        \coordinate (E) at (1.5*5,-340*0.25+0.25*350.67);
-        \coordinate (F) at (1.5*6,-340*0.25+0.25*340.33);
-        \coordinate (G) at (1.5*7,-340*0.25+0.25*340.67);
-        \coordinate (H) at (1.5*8,-340*0.25+0.25*351.67);
+        \coordinate (A) at (0.7,0.154436860641377);
+\coordinate (B) at (1.4,0.321811220337897);
+\coordinate (C) at (2.1,-1.37111248654158);
+\coordinate (D) at (2.8,0.479119042455258);
+\coordinate (E) at (3.5,0.773478705099278);
+\coordinate (F) at (4.2,-0.3884358156992);
+\coordinate (G) at (4.9,-0.0106885821941205);
+\coordinate (H) at (5.6,-1.29623399750069);
+\coordinate (I) at (6.3,1.12017796406863);
+\coordinate (J) at (7,0.572769916162298);
+\coordinate (K) at (7.7,0.41040670415183);
+\coordinate (L) at (8.4,0.202306747804308);
+\coordinate (M) at (9.1,2.12893972218359);
+\coordinate (N) at (9.8,0.3421464501245687);
+\coordinate (O) at (10.5,0.608272461080391);
+\coordinate (P) at (11.2,2.06833702762749);
         \draw[fill=black] (A) circle (2pt);
-    \draw[fill=black] (B) circle (2pt);
-    \draw[fill=black] (C) circle (2pt);
-    \draw[fill=black] (D) circle (2pt);
-    \draw[fill=black] (E) circle (2pt);
-    \draw[fill=black] (F) circle (2pt);
-    \draw[fill=black] (G) circle (2pt);
-    \draw[fill=black] (H) circle (2pt);
-    \draw (A) -- (B)-- (C) -- (D) -- (E) -- (F) -- (G) -- (H);
-    \end{tikzpicture}
+        \draw[fill=black] (B) circle (2pt);
+        \draw[fill=black] (C) circle (2pt);
+        \draw[fill=black] (D) circle (2pt);
+        \draw[fill=black] (E) circle (2pt);
+        \draw[fill=black] (F) circle (2pt);
+        \draw[fill=black] (G) circle (2pt);
+        \draw[fill=black] (H) circle (2pt);
+        \draw[fill=black] (I) circle (2pt);
+        \draw[fill=black] (J) circle (2pt);
+        \draw[fill=black] (K) circle (2pt);
+        \draw[fill=black] (L) circle (2pt);
+        \draw[fill=black] (M) circle (2pt);
+        \draw[fill=black] (N) circle (2pt);
+        \draw[fill=black] (O) circle (2pt);
+        \draw[fill=black] (P) circle (2pt);
+        \draw (A) -- (B)-- (C) -- (D) -- (E) -- (F) -- (G) -- (H) -- (I) -- (J) -- (K) -- (L) -- (M) -- (N) -- (O) -- (P);
+        \end{tikzpicture}
 \end{center}
-
-\begin{enumerate}
-    \item[(a)] Confirm the value $\bar{\bar{x}}=5\text{ mg}$ using the first 10 sample means.
-    \item[(b)] Determine if the process is in statistical control for the initial 20 samples.
-\end{enumerate}
+    \begin{enumerate}
+        \item Describe the feature of the $x$-bar chart which means the process is out of statistical control.
+        \item Explain why the lens manufacturers may actually not be concerned with the process.
+        \item Use the $+2\sigma$-limit shown to determine the size of each sample of lenses taken.
+    \end{enumerate}
 \end{enumerate}
 
 \pagebreak
