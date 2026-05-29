@@ -18820,22 +18820,24 @@ There is evidence to suggest that the median number of shutter actuations before
 
 \vspace{-1cm}
 
-A straight line relationship can be valuable in many situations in establishing and summarising the dependence of one variable on another, and in making predictions. Linear regression will be explored in more detail in this chapter.
+In Chapter 5 the concept of using \textit{linear regression} to explore straight-line relationships between variables, and to make predictions, was introduced. Linear regression will now be explored in much more detail.
 
 \subsection*{The Method of Least Squares Regression}\label{the-method-of-least-squares-regression}
 \addcontentsline{toc}{subsection}{The Method of Least Squares Regression}
 
-In most experiments, it is assumed that \(x\) is under the control of the experimenter and can be known exactly. In such cases \(x\) is called the \textit{predictor} (or \textit{independent}) variable, whilst \(Y\) is a \textit{random variable} known as the \textit{response} (or \textit{dependent}) variable.
+Given bivariate data, it is \(x\) is generally selected as the \textbf{predictor} (or \textit{independent}) variable, whilst \(Y\) is a \textit{random variable} known as the \textbf{response} (or \textit{dependent}) variable. In other words, it is typical to want to be able to to predict an unknown \(Y\) value given a known \(x\) value.
 
-\begin{multicols}{2}
-
+\begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.4\textwidth}
+  \centering
 \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=0.8]
         \draw[-stealth] (0,0) -- (7,0) node[below] {$x$};
         \draw[-stealth] (0,0) -- (0,5) node[left] {$y$};
-        \node[below] at (3.5,-0.3) {independent variable};
-        \node[rotate=90,above] at (-0.3,2.5) {response variable};
-        \draw[very thick] (0.5,1.6) -- (5.5,4.2) node[right] {$y=\alpha+\beta x$};
+        \node[below] at (3.5,0) {predictor variable};
+        \node[rotate=90,above] at (0,2.5) {response variable};
+        \draw[very thick] (0.5,1.6) -- (5.25,4.07) node[above] {$y=\alpha+\beta x$};
         \draw[fill,densely dashed] (3.5258224,3.072553) circle (0.05) -- (3.5258224,3.173427648);
 \draw[fill,densely dashed] (3.3020558,2.331238) circle (0.05) -- (3.3020558,3.057069016);
 \draw[fill,densely dashed] (3.7090608,3.683062) circle (0.05) -- (3.7090608,3.268711616);
@@ -18854,28 +18856,28 @@ In most experiments, it is assumed that \(x\) is under the control of the experi
 \draw[fill,densely dashed] (3.2025879,3.355931) circle (0.05) -- (3.2025879,3.005345708);
     \end{tikzpicture}
 \end{center}
-
-The theoretical model for linear regression is that of a straight line of form $y=\alpha+\beta x$ describing the best fit for a relationship between variables. However, the population of bivariate data will not perfectly lie along this line due to chance variation, known as \textbf{errors}.
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.6\textwidth}
+    The theoretical model for linear regression is that of a straight line of form $y=\alpha+\beta x$ describing the \textit{best fit} for a relationship between variables.  However, the population of bivariate data will not perfectly lie along this line due to chance variation.
 
 \begin{tcolorbox}[halign title=center,title=The Linear Regression Model,center,colback=red!5,colframe=red!70!black,width=6.5cm]
 \[Y_i=\alpha+\beta x_i+\varepsilon_i\]
 \end{tcolorbox}
  
-$\varepsilon_i$ (\textit{"epsilon"}) are random variables called \textit{errors} that describe how far $Y_i$ is from its expected value for $x_i$. 
+$\varepsilon_i$ (\textit{"epsilon"}) are random variables called \textbf{errors} which account for observed values of $Y_i$ being greater than or less than those predicted by the regression line for any given value of $x_i$. 
+\end{minipage}
+\end{figure}
 
-\end{multicols}
-
-The values of parameters \(\alpha\) and \(\beta\) cannot be known exactly without examining all possible occurrences of \(Y\) and \(x\). However the sample observations \((x_i,y_i)\) can be used to give estimates, \(a\) and \(b\), of \(\alpha\) and \(\beta\). This leads to the relationship \(\hat{Y}_i=a+bx_i\), where \(\hat{Y}_i\) (\emph{``y-hat''}) denotes the predicted value of \(Y_i\) for a given \(x_i\).
-
-The method of least squares gives formulae for \(a\) and \(b\) derived by considering how \(\sum \varepsilon_i^2\) might be minimised:
+The true values of \textbf{intercept parameter} \(\alpha\) and \textbf{slope parameter} \(\beta\) cannot be known exactly without access to the full \textit{population} of bivariate data. However the sample observations \((x_i,y_i)\) can be used to give estimates, \(a\) and \(b\), of \(\alpha\) and \(\beta\). The method of least squares gives formulae for \(a\) and \(b\) derived by considering how \(\sum \varepsilon_i^2\) might be minimised. These rely on several assumptions about the population of errors given on Page 5 of the Data Booklet, along with the formulae:
 
 \begin{multicols}{2}
 
 $$b=\dfrac{S_{xy}}{S_{xx}} \qquad \text{and} \qquad a=\bar{y}-b\bar{x}$$
 
-These estimates rely on several assumptions about the population of errors, $\varepsilon_i$, which are given on Page 5 of the Data Booklet.
+This leads to the relationship $\hat{Y}_i=a+bx_i$, where $\hat{Y}_i$ (\textit{"y-hat"}) denotes the expected value of $Y_i$ for a given $x_i$, and also the best \textit{`fitting'} prediction.
 
-\begin{tcolorbox}[halign title=center,title=Assumptions for the Errors,center,colback=red!5,colframe=red!70!black,width=6.5cm]
+\begin{tcolorbox}[halign title=center,title=Assumptions for the Errors,center,colback=red!5,colframe=red!70!black,width=6.7cm]
 \begin{center}
     \begin{itemize}
         \item $\varepsilon_i$ are independent.
