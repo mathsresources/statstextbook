@@ -76,9 +76,9 @@ This leads to the relationship $\hat{Y}_i=a+bx_i$, where $\hat{Y}_i$ (\textit{"y
 
 ## Calculating the Value of a Residual
 
-For any given $x_i$, the equation of the least squares regression line $\hat{Y_i}=a+bx_i$ gives a \textit{predicted} value $\hat{Y_i}$, also referred to as a \textit{fitted} value. For any observed data point $(x_i,y_i)$, the value of $y_i$ may be called the \textbf{data} value.
+For any given $x_i$, the equation of the least squares regression line $\hat{Y_i}=a+bx_i$ gives a \textit{predicted} value $\hat{Y_i}$, also referred to as a \textbf{fitted} value. For any data point $(x_i,y_i)$, the value of $y_i$ may be called the \textbf{observed} value.
 
-The difference between an observed data value $y_i$ and a corresponding fitted value $\hat{Y_i}$ is called a \textbf{residual}:
+The difference between an observed value $y_i$ and a corresponding fitted value $\hat{Y_i}$ is called a \textbf{residual}:
 
 \begin{center}
     \begin{tikzpicture}
@@ -90,7 +90,7 @@ The difference between an observed data value $y_i$ and a corresponding fitted v
         \draw[dashed] (3,1) -- (3,2);
         \draw[fill] (3,1) circle (1pt);
         \draw[-stealth] (4.5,2) -- (3.2,2);
-        \node[right] at (4.5,2) {Data, $y_i$};
+        \node[right] at (4.5,2) {Observed, $y_i$};
         \draw[-stealth] (4.5,1) -- (3.2,1);
         \node[right] at (4.5,1) {Fitted, $\hat{Y_i}$};
         \draw[stealth-,dashed,thin] (3.2,1.5) -- (8,1.5);
@@ -107,8 +107,8 @@ The difference between an observed data value $y_i$ and a corresponding fitted v
             \begin{tcolorbox}[halign title=center,title=Calculating a Residual,center,colback=red!5,colframe=red!70!black]
             \vspace{-0.5cm}
 \begin{align*}
-    \text{Residual}&=\text{Data}-\text{Fitted}\\
-    &=\hspace{0.2cm}y_i\hspace{0.3cm}-\hspace{0.1cm}\hat{Y}_i
+    \text{Residual}&=\text{Observed}-\text{Fitted}\\
+    &=\hspace{0.7cm}y_i\hspace{0.55cm}-\hspace{0.3cm}\hat{Y}_i
 \end{align*}
 \end{tcolorbox}
         \end{minipage}};
@@ -911,7 +911,7 @@ Determine the value of the coefficient of determination and interpret it.
 
 ## Test for the Slope Parameter $\beta$
 
-The value of the \textit{slope parameter}, $\beta$, cannot be known without obtaining a full population. The \textit{sample statistic} $b$ is an estimator for $\beta$, and may differ slightly or substantially from it, as shown below.  
+The true value of the \textit{slope parameter}, $\beta$, cannot be known without obtaining a full population. The \textit{sample statistic} $b$ is an estimator for $\beta$, and may differ slightly or substantially from it, as shown below.  
 
 \begin{multicols}{2}
     \begin{center}
