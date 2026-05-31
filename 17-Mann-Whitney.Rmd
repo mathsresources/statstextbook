@@ -1,22 +1,26 @@
 # Mann-Whitney Rank Sum Test
 
-The Mann-Whitney Rank Sum test is a \textbf{two-sample} test, which is \textbf{non-parametric}. It is an example of a \textit{permutation test}, which are those that can be approached by considering every possible equally-likely arrangement of sample data. Consider random samples of two mice of species $A$ and four of species $B$, which will ordered from lightest to heaviest, and then ranks from $1$ to $6$ assigned. Below are each of the $15$ possible arrangements of ranks for the six mice, and alongside each arrangement is the \textit{sum of the ranks} obtained by the two mice of species $A$:
+\section*{Mann-Whitney Rank Sum Test}
+
+The parametric two-sample $t$-test for population means relies on an assumption that each population is normally distributed. Where this assumption cannot be safely made, the \textbf{non-parametric} \textit{Mann-Whitney Rank Sum test} may be used to explore a difference in population \textbf{medians}. It is an example of a \textit{permutation test}, which are those that can be approached by considering equally-likely possibilities. 
+
+Consider random samples of two mice of species A and four of species B, which will be ordered from lightest to heaviest, and then ranks from 1 to 6 assigned. Below are all 15 possible arrangements of ranks for the six mice, and the \textit{sum of the ranks} obtained by the two mice of species A:
 
 \begin{center}
     \begin{tabular}{|c|c|c|c|c|c|}
     \hline
     Arrangement & Rank Sum & Arrangement & Rank Sum & Arrangement & Rank Sum\\
     \hline
-    $AABBBB$ & $1+2=3$ & $ABBBAB$ & $1+5=6$ & $BBABAB$ & $3+5=8$\\
-    $ABABBB$ & $1+3=4$ & $ABBBBA$ & $1+6=7$ & $BBABBA$ & $3+6=9$\\
-    $ABBABB$ & $1+4=5$ & $BABBAB$ & $2+5=7$ & $BBBAAB$ & $4+5=9$\\
-    $BAABBB$ & $2+3=5$ & $BBAABB$ & $3+4=7$ & $BBBABA$ & $4+6=10$\\
-    $BABABB$ & $2+4=6$ & $BABBBA$ & $2+6=8$ & $BBBBAA$ & $5+6=11$\\
+    AABBBB & $1+2=3$ & ABBBAB & $1+5=6$ & BBABAB & $3+5=8$\\
+    ABABBB & $1+3=4$ & ABBBBA & $1+6=7$ & BBABBA & $3+6=9$\\
+    ABBABB & $1+4=5$ & BABBAB & $2+5=7$ & BBBAAB & $4+5=9$\\
+    BAABBB & $2+3=5$ & BBAABB & $3+4=7$ & BBBABA & $4+6=10$\\
+    BABABB & $2+4=6$ & BABBBA & $2+6=8$ & BBBBAA & $5+6=11$\\
     \hline
     \end{tabular}
 \end{center}
 
-If the population distributions of mass for mice from species $A$ and mice from species $B$ are \textit{identical} then the probability of obtaining for $A$ a rank sum less than or equal to 4 (for example) by random chance can be calculated:
+If the population distributions of mass for mice from species A and mice from species B are \textit{identical} then the probability of obtaining for A a rank sum less than or equal to 4 (for example) by random chance is:
 
 $$\text{P}(\text{rank sum obtained}\leqslant4)=\dfrac{2}{15}=0.1333$$
 
@@ -25,8 +29,8 @@ If it is assumed that the two population distributions of mice masses have the \
 \begin{center}
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \eta_A=\eta_B\\[0.5em]
-      \text{H}_1: & \eta_A< \eta_B
+      \text{H}_0: & \eta_\text{A}=\eta_\text{B}\\[0.5em]
+      \text{H}_1: & \eta_\text{A}< \eta_\text{B}
     \end{array}
 \left]
     \begin{array}{l}
@@ -37,9 +41,9 @@ If it is assumed that the two population distributions of mice masses have the \
 \end{math}
 \end{center}
 
-The $p$\text{-value} of 0.1333 obtained about would not provide evidence to suggest, at the 5\% level of significance, that the median mass of a mouse of species $A$ is less than the median mass of a mouse of species $B$ (since $0.1333>0.05$).
+The $p$\text{-value} of 0.1333 obtained about would not provide evidence to suggest, at the 5\% level of significance, that the median mass of a mouse of species A is less than the median mass of a mouse of species B (since $0.1333>0.05$).
 
-Since the process of listing possible arrangements would become excessively time-consuming for anything other than small samples, Mann-Whitney tests will be typically conducted using \textit{critical values} from the SQA Data Booklet, and \textit{test statistics}. However it is also necessary to be able to perform the test \textit{from first principles} as above, covered on Page 200.
+Since the process of listing possible arrangements would become excessively time-consuming for anything other than small samples, Mann-Whitney tests will be typically conducted using \textit{critical values} from the Data Booklet, and \textit{test statistics}. However it is also necessary to be able to perform the test \textit{from first principles} as above, covered in more detail later in this chapter.
 
 \pagebreak
 
