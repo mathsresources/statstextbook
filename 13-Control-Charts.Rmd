@@ -198,7 +198,9 @@ Each rule must be carefully checked for to determine whether a process is *in st
 
 \end{tcolorbox}
 
-#### Exercise 13.1 {-}
+[]{#ex131q}
+
+#### [Exercise 13.1](#ex131a) {-}
 
 *For each control charts below, determine whether the process is in control. If it is out of control, identify at which sample this could be determined, with justification.*
 
@@ -507,7 +509,9 @@ A control chart is created with horizontal lines indicating the population mean 
 
 \pagebreak
 
-#### Exercise 13.2 {-}
+[]{#ex132q}
+
+#### [Exercise 13.2](#ex132a) {-}
 
 \begin{enumerate}
     \item Control charts are to be produced for sample means taken from to monitor the following processes. If the samples are random, and it can be assumed that the processes can be suitably described by the normal distribution, copy and complete the following tables showing limits for the $x$-bar charts:
@@ -965,7 +969,9 @@ If no historical value of the population proportion has been suggested, then it 
 
 \pagebreak
 
-#### Exercise 13.3 {-}
+[]{#ex133q}
+
+#### [Exercise 13.3](#ex133a) {-}
 
 \begin{enumerate}
     \item Control charts are to be produced for sample proportions taken from to monitor the following processes. If the samples are random, copy and complete the following tables showing limits for the $p$ charts:
@@ -1034,33 +1040,31 @@ If no historical value of the population proportion has been suggested, then it 
         \draw[thick] (0.1,0) -- (11.9,0) node[right] {target};
         \draw[dashed] (0.1,-1) -- (11.9,-1) node[right] {$-1\sigma$};
         \draw[dashed] (0.1,-2) -- (11.9,-2) node[right] {$-2\sigma$};
-        \draw[thick, densely dashed] (0.1,-3) -- (11.9,-3) node[right] {LCL};
+        \draw[thick, densely dashed] (0.1,-8*0.32) -- (11.9,-8*0.32) node[right] {LCL};
         \foreach \x in {1,2,...,16}{
         \draw (0.7*\x,-3.5) -- (0.7*\x,-3.7) node[below] {\x};
         }
-        \node[left] at (0,3*1.08465) {0.30};
-        \node[left] at (0,2*1.08465) {0.25};
-        \node[left] at (0,1*1.08465) {0.20};
-        \node[left] at (0,0*1.08465) {0.15};
-        \node[left] at (0,-1*1.08465) {0.10};
-        \node[left] at (0,-2*1.08465) {0.05};
-        \node[left] at (0,-3*1.08465) {0.00};
-        \coordinate (A) at (0.7,1.56851282079834);
-\coordinate (B) at (1.4,-0.26178940048981);
-\coordinate (C) at (2.1,-1.44804240712605);
-\coordinate (D) at (2.8,0.220762850938769);
-\coordinate (E) at (3.5,-1.06110446193906);
-\coordinate (F) at (4.2,-0.62353053182347);
-\coordinate (G) at (4.9,-1.28906903378973);
-\coordinate (H) at (5.6,-0.876249900843499);
-\coordinate (I) at (6.3,-0.240264771200819);
-\coordinate (J) at (7,-0.503734181116678);
-\coordinate (K) at (7.7,0.805718247167571);
-\coordinate (L) at (8.4,1.71388644069928);
-\coordinate (M) at (9.1,-0.220723969985148);
-\coordinate (N) at (9.8,1.50644527484183);
-\coordinate (O) at (10.5,0.356436628326396);
-\coordinate (P) at (11.2,-0.130105256642258);
+        \node[left] at (0,8*0.32) {0.16};
+        \node[left] at (0,4*0.32) {0.12};
+        \node[left] at (0,0*0.32) {0.08};
+        \node[left] at (0,-4*0.32) {0.04};
+        \node[left] at (0,-8*0.32) {0.00};
+        \coordinate (A) at (0.7,1.62);
+\coordinate (B) at (1.4,-0.32);
+\coordinate (C) at (2.1,-1.29);
+\coordinate (D) at (2.8,0.32);
+\coordinate (E) at (3.5,-1.29);
+\coordinate (F) at (4.2,-0.32);
+\coordinate (G) at (4.9,-1.29);
+\coordinate (H) at (5.6,-0.92);
+\coordinate (I) at (6.3,-0.32);
+\coordinate (J) at (7,-0.64);
+\coordinate (K) at (7.7,0.97);
+\coordinate (L) at (8.4,1.62);
+\coordinate (M) at (9.1,-0.32);
+\coordinate (N) at (9.8,1.29);
+\coordinate (O) at (10.5,0.65);
+\coordinate (P) at (11.2,-0.32);
         \draw[fill=black] (A) circle (2pt);
         \draw[fill=black] (B) circle (2pt);
         \draw[fill=black] (C) circle (2pt);
@@ -1106,7 +1110,7 @@ If no historical value of the population proportion has been suggested, then it 
         \node[left] at (13.2,3) {UCL};
         \node[left] at (13.2,2) {$+2\sigma$};
         \node[left] at (13.2,1) {$+1\sigma$};
-        \node[left] at (13.2,-0.05) {mean};
+        \node[left] at (13.2,-0.05) {target};
         \node[left] at (13.2,-1) {$-1\sigma$};
         \node[left] at (13.2,-2) {$-2\sigma$};
         \node[left] at (13.2,-11*0.226) {LCL};
@@ -1117,23 +1121,23 @@ If no historical value of the population proportion has been suggested, then it 
         \draw (\x-0.5,-3.5) -- (\x-0.5,-3.7) node[below] {\x};
         }
         \node[left] at (0,14*0.226) {0.25};
-        \node[left] at (0,9*0.226,0) {0.20};
-        \node[left] at (0,4*0.226,0) {0.15};
+        \node[left] at (0,9*0.226) {0.20};
+        \node[left] at (0,4*0.226) {0.15};
         \node[left] at (0,-1*0.226) {0.10};
         \node[left] at (0,-6*0.226) {0.05};
         \node[left] at (0,-11*0.226) {0.00};
-        \coordinate (A) at (0.5,1.56851282079834);
-\coordinate (B) at (1.5,-0.26178940048981);
-\coordinate (C) at (2.5,-1.44804240712605);
-\coordinate (D) at (3.5,0.220762850938769);
-\coordinate (E) at (4.5,-1.06110446193906);
-\coordinate (F) at (5.5,-0.62353053182347);
-\coordinate (G) at (6.5,-1.28906903378973);
-\coordinate (H) at (7.5,-0.876249900843499);
-\coordinate (I) at (8.5,-0.240264771200819);
-\coordinate (J) at (9.5,-0.503734181116678);
-\coordinate (K) at (10.5,0.805718247167571);
-\coordinate (L) at (11.5,1.71388644069928);
+        \coordinate (A) at (0.5,1.58);
+\coordinate (B) at (1.5,-0.23);
+\coordinate (C) at (2.5,-1.58);
+\coordinate (D) at (3.5,0.25);
+\coordinate (E) at (4.5,-1.58);
+\coordinate (F) at (5.5,-1.13);
+\coordinate (G) at (6.5,-1.58);
+\coordinate (H) at (7.5,-0.68);
+\coordinate (I) at (8.5,-0.23);
+\coordinate (J) at (9.5,-0.68);
+\coordinate (K) at (10.5,0.25);
+\coordinate (L) at (11.5,1.58);
         \draw[fill=black] (A) circle (2pt);
         \draw[fill=black] (B) circle (2pt);
         \draw[fill=black] (C) circle (2pt);
@@ -1155,7 +1159,8 @@ If no historical value of the population proportion has been suggested, then it 
     \item State how it can be observed that the process is out of statistical control.
     \item Explain why the company will likely not be concerned about this.
 \end{enumerate}
-    \item A car insurance provider sets a target for 80\% of claims to be processed and resolved within two weeks. To monitor this, each month 60 submitted claims are randomly selected to be tracked, and the proportion of these claims resolved within two weeks recorded on a $p$ chart. Below are the results for 2024.
+    \item A car insurance provider sets a target for 80\% of claims to be processed and resolved within two weeks. To monitor this, each month 60 claims are randomly selected to be tracked, and the proportion of these claims resolved within two weeks recorded on a $p$ chart. Below is the data for 2024.
+    \vspace{-0.5cm}
     \begin{center}
         \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
             \hline
@@ -1176,4 +1181,108 @@ If no historical value of the population proportion has been suggested, then it 
 \end{enumerate}
 
 \pagebreak
+
+\begin{enumerate}[resume]
+    \item A factory uses a machine to insert rubber corks to seal bottles of wine. When this process fails, the bottle is diverted back into the line of bottles waiting to be sealed, slowing down the process. The factory wishes to set up a $p$ chart to monitor the proportion of bottles which fail to be sealed on the first attempt, especially since an increase may suggest the machine is in need of additional maintenance. Each day over the course of two weeks, a random sample of 50 bottles are tagged and monitored, and the number of bottles for each sample which fail to be sealed on the first attempt is recorded. A table showing the results is shown below.
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|}
+            \hline
+            Week 1 & Mon & Tue & Wed & Thu & Fri & Sat & Sun\\
+            \hline
+            Failures & 8 & 5 & 7 & 5 & 6 & 6 & 4\\
+            \hline
+            \hline
+            Week 2 & Mon & Tue & Wed & Thu & Fri & Sat & Sun\\
+            \hline
+            Failures & 7 & 8 & 4 & 5 & 7 & 6 & 6\\
+            \hline
+        \end{tabular}
+    \end{center}
+    It is decided that this data is sufficient to allow a $p$ chart to be created to monitor the proportion of bottles which fail to be sealed by the machine, taking the total sample proportion $\hat{p}$ for the two weeks as a reliable estimator for the population proportion, $p$.
+    \begin{enumerate}
+        \item Calculate the value of $\hat{p}$ from the table above, to be used as an estimator for $p$.
+        \item Show the calculations required to obtain 2-sigma limits for the $p$-chart of 0.028 and 0.212.
+    \end{enumerate}
+    A $p$ chart is constructed and data from the next two weeks is plotted on the chart.
+    \begin{center}
+    \begin{tikzpicture}[scale=1]
+        \draw (0,-3.5) rectangle (12,3.5);
+        \node at (6,-4.8) {sample number};
+        \node[rotate=90] at (-1.8,0) {sample proportion};
+        \node at (6,4) {$p$ chart of proportion of failed bottles};
+        \draw[thick, densely dashed] (0.1,3) -- (11.9,3);
+        \draw[dashed] (0.1,2) -- (11.9,2);
+        \draw[dashed] (0.1,1) -- (11.9,1);
+        \draw[thick] (0.1,0) -- (11.9,0);
+        \draw[dashed] (0.1,-1) -- (11.9,-1);
+        \draw[dashed] (0.1,-2) -- (11.9,-2);
+        \draw[thick, densely dashed] (0.1,-13*0.2176) -- (11.9,-13*0.2176);
+        \node[left] at (13.2,3) {UCL};
+        \node[left] at (13.2,2) {$+2\sigma$};
+        \node[left] at (13.2,1) {$+1\sigma$};
+        \node[left] at (13.2,-0.05) {target};
+        \node[left] at (13.2,-1) {$-1\sigma$};
+        \node[left] at (13.2,-2) {$-2\sigma$};
+        \node[left] at (13.2,-13*0.2176) {LCL};
+        \node[right] at (13,2) {$=0.212$};
+        \node[right] at (13,0) {$=0.12$};
+        \node[right] at (13,-2) {$=0.028$};
+        \foreach \x in {1,2,...,14}{
+        \draw (0.8*\x,-3.5) -- (0.8*\x,-3.7) node[below] {\x};
+        }
+        \node[left] at (0,13*0.2176) {0.25};
+        \node[left] at (0,8*0.2176) {0.20};
+        \node[left] at (0,3*0.2176) {0.15};
+        \node[left] at (0,-2*0.2176) {0.10};
+        \node[left] at (0,-7*0.2176) {0.05};
+        \node[left] at (0,-13*0.2176) {0.00};
+\coordinate (A) at (1*0.8,21.76*0.02*8-0.12*21.76);
+\coordinate (B) at (2*0.8,21.76*0.02*3-0.12*21.76);
+\coordinate (C) at (3*0.8,21.76*0.02*2-0.12*21.76);
+\coordinate (D) at (4*0.8,21.76*0.02*6-0.12*21.76);
+\coordinate (E) at (5*0.8,21.76*0.02*7-0.12*21.76);
+\coordinate (F) at (6*0.8,21.76*0.02*6-0.12*21.76);
+\coordinate (G) at (7*0.8,21.76*0.02*3-0.12*21.76);
+\coordinate (H) at (8*0.8,21.76*0.02*7-0.12*21.76);
+\coordinate (I) at (9*0.8,21.76*0.02*8-0.12*21.76);
+\coordinate (J) at (10*0.8,21.76*0.02*0-0.12*21.76);
+\coordinate (K) at (11*0.8,21.76*0.02*8-0.12*21.76);
+\coordinate (L) at (12*0.8,21.76*0.02*6-0.12*21.76);
+\coordinate (M) at (13*0.8,21.76*0.02*2-0.12*21.76);
+\coordinate (N) at (14*0.8,21.76*0.02*7-0.12*21.76);
+        \draw[fill=black] (A) circle (2pt);
+        \draw[fill=black] (B) circle (2pt);
+        \draw[fill=black] (C) circle (2pt);
+        \draw[fill=black] (D) circle (2pt);
+        \draw[fill=black] (E) circle (2pt);
+        \draw[fill=black] (F) circle (2pt);
+        \draw[fill=black] (G) circle (2pt);
+        \draw[fill=black] (H) circle (2pt);
+        \draw[fill=black] (I) circle (2pt);
+        \draw[fill=black] (J) circle (2pt);
+        \draw[fill=black] (K) circle (2pt);
+        \draw[fill=black] (L) circle (2pt);
+        \draw[fill=black] (M) circle (2pt);
+        \draw[fill=black] (N) circle (2pt);
+        \draw (A) -- (B)-- (C) -- (D) -- (E) -- (F) -- (G) -- (H) -- (I) -- (J) -- (K) -- (L) -- (M) -- (N);
+        \end{tikzpicture}
+\end{center}
+    \begin{enumerate}[resume]
+        \item Determine whether the process is under control during the two week period.
+    \end{enumerate}
+    \item A $p$ chart is created using regular random samples.\newline The 2-sigma limits are calculated as 0.4 and 0.8.\newline
+    Determine:
+    \begin{enumerate}
+        \item The value of the population proportion, $p$.
+        \item The upper and lower control limits.
+        \item The size of each sample.
+        \item Show that the sample size and the proportion meet the requirements for constructing a $p$ chart.
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
+
+[]{#re18q}
+
+## [Review Exercise](#re18a) {-}
 
