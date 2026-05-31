@@ -1,4 +1,5 @@
 # Answers {-}
+\sectionmark{Answers}
 
 \setstretch{1.0}
 \raggedright
@@ -2143,7 +2144,7 @@
 
 \endgroup
 
-### Chapter 12 - Control Charts {-}
+### Chapter 12 - Chi-Squared Goodness-of-Fit Test {-}
 
 \begingroup
 \footnotesize
@@ -2174,7 +2175,9 @@
 
 \endgroup
 
-### Chapter 13 - Chi-Squared Goodness-of-Fit Test {-}
+\newpage
+
+### Chapter 13 - Control Charts {-}
 
 \begingroup
 \footnotesize
@@ -2183,23 +2186,230 @@
 
 #### [Exercise 13.1](#ex131q) {-}
 
+\begin{enumerate}
+    \item The process is out of statistical control, since sample 6 falls below the lower control line. The process should have been stopped after sample 6.
+    \item The process is out of statistical control, since from samples 4 to 8 at least four of the five samples lie above the upper 1-sigma line. The process should have been stopped after sample 8.
+    \item The process is under statistical control.
+    \item The process is out of statistical control, since from samples 2 to 9 eight consecutive samples lie above the centre line. The process should have been stopped after sample 9.
+\end{enumerate}
 
 []{#ex132a}
 
 #### [Exercise 13.2](#ex132q) {-}
 
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item UCL = 82.5, +2$\sigma$ = 81.75, +1$\sigma$ = 80.75, target = 80, -1$\sigma$ = 79.25, -2$\sigma$ = 78.5, LCL = 77.75
+        \item UCL = 500.72, +2$\sigma$ = 495.81, +1$\sigma$ = 490.91, target = 486, -1$\sigma$ = 481.09, -2$\sigma$ = 476.19, LCL = 471.28
+    \end{enumerate}
+    \item $+2\sigma=1.447$, $-2\sigma=1.353$
+    \item 
+    \begin{enumerate}
+        \item $+1\sigma=231.79$, $-1\sigma=228.21$
+        \item The process is out of statistical control since, from samples 9 to 11, two of the three samples lie above the upper 2-sigma limit. The process should have been stopped after sample 11.
+        \item A required assumption is that the samples of bottles are random.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $144-3\times\dfrac{18}{\sqrt{7}}=123.59$
+        \item $130.4\leqslant \bar{x} \leqslant 164.4$
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item The process is out of statistical control since eight consecutive points lie above the centre line, from samples 9 to 16. However, since these values suggest the lenses being produced have a higher resolution than the target value, which is a good thing, they may not be concerned.
+        \item Samples of size 9 are being taken.
+        \item Two required assumptions are that:
+        \begin{itemize}
+            \item The samples of lenses taken are random.
+            \item The resolution scores of manufactured lenses are normally distributed.
+        \end{itemize}
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item UCL = 121, +2$\sigma$ = 119, +1$\sigma$ = 117, target = 115, -1$\sigma$ = 113, -2$\sigma$ = 111, LCL = 109.\newline
+        The process is out of statistical control since, from samples 2 to 4, two out of three sample means lie above the upper 2-sigma limit.
+        \item $\bar{\bar{x}}=92$
+        \item UCL = 101, LCL = 83 
+    \end{enumerate}
+    \item 
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item \phantom{ }\\
+                \begingroup
+                \renewcommand{\arraystretch}{1.5}
+                \begin{tabular}{|r|l|}
+                \hline
+                    Population mean & 72\\
+                    \hline
+                    Standard deviation & 15\\
+                    \hline
+                    Sample size & 25\\
+                    \hline
+                    \hline
+                    Upper Control Limit & 81\\
+                    \hline
+                    $+2\sigma$ Limit & 78\\
+                    \hline
+                    $+1\sigma$ Limit &75\\
+                    \hline
+                    Target Value & 72\\
+                    \hline
+                    $-1\sigma$ Limit & 69\\
+                    \hline
+                    $-2\sigma$ Limit & 66\\
+                    \hline
+                    Lower Control Limit & 63\\
+                    \hline
+                \end{tabular}
+                \endgroup
+            \item \phantom{ }\\
+                \begingroup
+                \renewcommand{\arraystretch}{1.5}
+                \begin{tabular}{|r|l|}
+                \hline
+                    Population mean & 2800\\
+                    \hline
+                    Standard deviation & 60\\
+                    \hline
+                    Sample size & 9\\
+                    \hline
+                    \hline
+                    Upper Control Limit & 2860\\
+                    \hline
+                    $+2\sigma$ Limit & 2840\\
+                    \hline
+                    $+1\sigma$ Limit & 2820\\
+                    \hline
+                    Target Value & 2800\\
+                    \hline
+                    $-1\sigma$ Limit & 2780\\
+                    \hline
+                    $-2\sigma$ Limit & 2760\\
+                    \hline
+                    Lower Control Limit & 2740\\
+                    \hline
+                \end{tabular}
+                \endgroup
+        \end{enumerate}
+    \end{multicols}
+\end{enumerate}
+
+\endgroup
+
+\pagebreak
+
+\begingroup
+\footnotesize
 
 []{#ex133a}
 
 #### [Exercise 13.3](#ex133q) {-}
 
-
+\begin{enumerate}
+    \item 
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item Population proportion $=0.6$\\
+            Sample size $=24$\\[0.2em]
+                \begingroup
+                \renewcommand{\arraystretch}{1.5}
+                \begin{tabular}{|r|l|}
+                \hline
+                    Upper Control Limit & 0.9\\
+                    \hline
+                    $+2\sigma$ Limit & 0.8\\
+                    \hline
+                    $+1\sigma$ Limit & 0.7\\
+                    \hline
+                    Target Value & 0.6\\
+                    \hline
+                    $-1\sigma$ Limit & 0.5\\
+                    \hline
+                    $-2\sigma$ Limit & 0.4\\
+                    \hline
+                    Lower Control Limit & 0.3\\
+                    \hline
+                \end{tabular}
+                \endgroup
+            \item Population proportion $=0.16$\\
+            Sample size $=50$\\[0.2em]
+                \begingroup
+                \renewcommand{\arraystretch}{1.5}
+                \begin{tabular}{|r|l|}
+                \hline
+                    Upper Control Limit & 0.316\\
+                    \hline
+                    $+2\sigma$ Limit & 0.264\\
+                    \hline
+                    $+1\sigma$ Limit & 0.212\\
+                    \hline
+                    Target Value & 0.16\\
+                    \hline
+                    $-1\sigma$ Limit & 0.108\\
+                    \hline
+                    $-2\sigma$ Limit & 0.056\\
+                    \hline
+                    Lower Control Limit & 0.004\\
+                    \hline
+                \end{tabular}
+                \endgroup
+        \end{enumerate}
+    \end{multicols}
+    \item 
+    \begin{enumerate}
+        \item The samples of mugs would not be random. Also, for appropriate use of a $p$ chart it is required that $np>5$ and $nq>5$. Here, $0.08\times 30=2.4<5$. 
+        \item Upper 2-sigma limit = 0.14265 and lower 2-sigma limit = 0.01735.
+        \item The process is under statistical control for the samples shown, as none of the WECO rules have been violated.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $0.11+3\times\sqrt{\dfrac{0.11\times 0.89}{50}}=0.2427$
+        \item The calculated lower limit would be -0.0227. However, a negative sample proportion is not possible, so the lower control limit is set as 0.
+        \item The process is out of statistical control since, from samples 3 to 7, four out of five samples lie below the lower 2-sigma limit.
+        \item Since these sample proportions suggest less seeds aere failing to germinate than expected, which is a good thing, the company many not be concerned.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item UCL = 0.9549, LCL = 0.6451.
+        \item The process is out of statistical control since, from February to September, eight consecutive sample proportions fall below the target value.
+        \item The sample size needs to be at least 30 to ensure both $np>5$ and $nq>5$.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $\hat{p}=0.12$
+        \item Upper 2-sigma limit $=0.12+2\times\sqrt{\dfrac{0.12\times0.88}{50}}=0.212$ and lower 2-sigma limit $=0.12-2\times\sqrt{\dfrac{0.12\times0.88}{50}}=0.028$
+        \item The process is under statistical control for the samples shown, as none of the WECO rules have been violated.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item The population proportion is $p=0.6$.
+        \item UCL = 0.9 and LCL = 0.3.
+        \item The sample size is $n=24$.
+        \item The sample size and population proportion are appropriate since both of  $24\times 0.6=14.4$ and $24\times 0.4 = 9.6$ are greater than $5$.
+    \end{enumerate}
+\end{enumerate}
 
 []{#re13a}
 
 #### [Chapter 13 Review Exercise](#re13q) {-}
 
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Upper 2-sigma limit $=60.12$ and lower 2-sigma limit $=55.88$.
+        \item The process is out of statistical control since the sample mean is below the lower control limit at sample 14.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Upper 1-sigma limit $=0.926$ and lower 1-sigma limit $=0.834$.
+        \item $0.88\leqslant \hat{p} \leqslant 1$
+    \end{enumerate}
+\end{enumerate}
+
 \endgroup
+
+\pagebreak
 
 ### Chapter 14 - Chi-Squared Test for Association {-}
 

@@ -14661,8 +14661,10 @@ Each rule must be carefully checked for to determine whether a process is \emph{
 
 \end{tcolorbox}
 
-\subsubsection*{Exercise 13.1}\label{exercise-13.1}
-\addcontentsline{toc}{subsubsection}{Exercise 13.1}
+\protect\phantomsection\label{ex131q}{}
+
+\subsubsection*{\texorpdfstring{\hyperref[ex131a]{Exercise 13.1}}{Exercise 13.1}}\label{exercise-13.1}
+\addcontentsline{toc}{subsubsection}{{Exercise 13.1}}
 
 \emph{For each control charts below, determine whether the process is in control. If it is out of control, identify at which sample this could be determined, with justification.}
 
@@ -14971,8 +14973,10 @@ A control chart is created with horizontal lines indicating the population mean 
 
 \pagebreak
 
-\subsubsection*{Exercise 13.2}\label{exercise-13.2}
-\addcontentsline{toc}{subsubsection}{Exercise 13.2}
+\protect\phantomsection\label{ex132q}{}
+
+\subsubsection*{\texorpdfstring{\hyperref[ex132a]{Exercise 13.2}}{Exercise 13.2}}\label{exercise-13.2}
+\addcontentsline{toc}{subsubsection}{{Exercise 13.2}}
 
 \begin{enumerate}
     \item Control charts are to be produced for sample means taken from to monitor the following processes. If the samples are random, and it can be assumed that the processes can be suitably described by the normal distribution, copy and complete the following tables showing limits for the $x$-bar charts:
@@ -15026,7 +15030,7 @@ A control chart is created with horizontal lines indicating the population mean 
                 \endgroup
         \end{enumerate}
     \end{multicols}
-    \item A factory produces plastic guitar plectrums which are sold with a labelled thickness of 1.4mm. The actual thickness of a plectrums produced by the factory's equipment is normally distributed with a mean of 1.4mm and standard deviation 0.1mm. An $x$-bar chart is to be produced to monitor the performance of the process. Calculate the 2-sigma limits for the control chart.
+    \item A factory produces plastic guitar plectrums which are sold with a labelled thickness of 1.4mm. The actual thickness of a plectrums produced by the factory's equipment is normally distributed with a mean of 1.4mm and standard deviation 0.1mm. An $x$-bar chart is to be produced to monitor the performance of the process, using random samples of size 18. Calculate the 2-sigma limits for the control chart.
     \item A cosmetic company has a machine which dispenses shampoo into bottles. The machine has been calibrated to dispense a mean volume of 230ml into each bottle, and the amount dispensed has been found to be normally distributed with a standard deviation of 4ml. To monitor the performance of the machine, a sample of five bottles is taken each hour, the volume of shampoo measured precisely and an $x$-bar chart created on which to track the sample means.
     \begin{enumerate}
         \item Calculate the 1-sigma limits for the $x$-bar chart.
@@ -15430,8 +15434,10 @@ If no historical value of the population proportion has been suggested, then it 
 
 \pagebreak
 
-\subsubsection*{Exercise 13.3}\label{exercise-13.3}
-\addcontentsline{toc}{subsubsection}{Exercise 13.3}
+\protect\phantomsection\label{ex133q}{}
+
+\subsubsection*{\texorpdfstring{\hyperref[ex133a]{Exercise 13.3}}{Exercise 13.3}}\label{exercise-13.3}
+\addcontentsline{toc}{subsubsection}{{Exercise 13.3}}
 
 \begin{enumerate}
     \item Control charts are to be produced for sample proportions taken from to monitor the following processes. If the samples are random, copy and complete the following tables showing limits for the $p$ charts:
@@ -15500,7 +15506,7 @@ If no historical value of the population proportion has been suggested, then it 
         \draw[thick] (0.1,0) -- (11.9,0) node[right] {target};
         \draw[dashed] (0.1,-1) -- (11.9,-1) node[right] {$-1\sigma$};
         \draw[dashed] (0.1,-2) -- (11.9,-2) node[right] {$-2\sigma$};
-        \draw[thick, densely dashed] (0.1,-8*0.32) -- (11.9,-8*0.32) node[right] {LCL};
+        \draw[thick] (0.1,-8*0.32) -- (11.9,-8*0.32) node[right] {LCL};
         \foreach \x in {1,2,...,16}{
         \draw (0.7*\x,-3.5) -- (0.7*\x,-3.7) node[below] {\x};
         }
@@ -15566,7 +15572,7 @@ If no historical value of the population proportion has been suggested, then it 
         \draw[thick] (0.1,0) -- (11.9,0);
         \draw[dashed] (0.1,-1) -- (11.9,-1);
         \draw[dashed] (0.1,-2) -- (11.9,-2);
-        \draw[thick, densely dashed] (0.1,-11*0.226) -- (11.9,-11*0.226);
+        \draw[thick] (0.1,-11*0.226) -- (11.9,-11*0.226);
         \node[left] at (13.2,3) {UCL};
         \node[left] at (13.2,2) {$+2\sigma$};
         \node[left] at (13.2,1) {$+1\sigma$};
@@ -15676,14 +15682,14 @@ If no historical value of the population proportion has been suggested, then it 
         \draw[thick] (0.1,0) -- (11.9,0);
         \draw[dashed] (0.1,-1) -- (11.9,-1);
         \draw[dashed] (0.1,-2) -- (11.9,-2);
-        \draw[thick, densely dashed] (0.1,-13*0.2176) -- (11.9,-13*0.2176);
+        \draw[thick] (0.1,-12*0.2176) -- (11.9,-12*0.2176);
         \node[left] at (13.2,3) {UCL};
         \node[left] at (13.2,2) {$+2\sigma$};
         \node[left] at (13.2,1) {$+1\sigma$};
         \node[left] at (13.2,-0.05) {target};
         \node[left] at (13.2,-1) {$-1\sigma$};
         \node[left] at (13.2,-2) {$-2\sigma$};
-        \node[left] at (13.2,-13*0.2176) {LCL};
+        \node[left] at (13.2,-12*0.2176) {LCL};
         \node[right] at (13,2) {$=0.212$};
         \node[right] at (13,0) {$=0.12$};
         \node[right] at (13,-2) {$=0.028$};
@@ -15695,7 +15701,7 @@ If no historical value of the population proportion has been suggested, then it 
         \node[left] at (0,3*0.2176) {0.15};
         \node[left] at (0,-2*0.2176) {0.10};
         \node[left] at (0,-7*0.2176) {0.05};
-        \node[left] at (0,-13*0.2176) {0.00};
+        \node[left] at (0,-12*0.2176) {0.00};
 \coordinate (A) at (1*0.8,21.76*0.02*8-0.12*21.76);
 \coordinate (B) at (2*0.8,21.76*0.02*3-0.12*21.76);
 \coordinate (C) at (3*0.8,21.76*0.02*2-0.12*21.76);
@@ -15730,12 +15736,12 @@ If no historical value of the population proportion has been suggested, then it 
     \begin{enumerate}[resume]
         \item Determine whether the process is under control during the two week period.
     \end{enumerate}
-    \item A $p$ chart is created using regular random samples.\newline The 2-sigma limits are calculated as 0.4 and 0.8.\newline
-    Determine:
+    \item A $p$ chart is created using regular, random samples. The 2-sigma limits are calculated as 0.4 and 0.8.
+    
     \begin{enumerate}
-        \item The value of the population proportion, $p$.
-        \item The upper and lower control limits.
-        \item The size of each sample.
+        \item State the value of the population proportion, $p$.
+        \item Calculate the upper and lower control limits.
+        \item Determine the size of each sample.
         \item Show that the sample size and the proportion meet the requirements for constructing a $p$ chart.
     \end{enumerate}
 \end{enumerate}
@@ -15746,6 +15752,145 @@ If no historical value of the population proportion has been suggested, then it 
 
 \section*{\texorpdfstring{\hyperref[re18a]{Review Exercise}}{Review Exercise}}\label{review-exercise-12}
 \addcontentsline{toc}{section}{{Review Exercise}}
+
+\begin{enumerate}
+    \item Eggs are group according to size by a machine, and the eggs sorted into the \textit{medium} category are known to be have a mean mass of 58 grams with standard deviation 3 grams. To monitor the performance of the machine, eight eggs are randomly selected every fifteen minutes and the mean mass for each sample recorded on an $x$-bar chart, shown below.
+\begin{center}
+    \begin{tikzpicture}[scale=0.8]
+        \draw (0,-3.5) rectangle (12,3.5);
+        \node at (6,-4.7) {sample time};
+        \node[rotate=90] at (-1.8,0) {sample mean (g)};
+        \node at (6,4) {$x$-bar chart for medium egg mass};
+        \draw[thick, densely dashed] (0.1,3) -- (11.9,3);
+        \draw[dashed] (0.1,2) -- (11.9,2);
+        \draw[dashed] (0.1,1) -- (11.9,1);
+        \draw[thick] (0.1,0) -- (11.9,0);
+        \draw[dashed] (0.1,-1) -- (11.9,-1);
+        \draw[dashed] (0.1,-2) -- (11.9,-2);
+        \draw[thick, densely dashed] (0.1,-3) -- (11.9,-3);
+        \node[left] at (13.4,3) {UCL};
+        \node[left] at (13.4,2) {$+2\sigma$};
+        \node[left] at (13.4,1) {$+1\sigma$};
+        \node[left] at (13.4,-0.05) {mean};
+        \node[left] at (13.4,-1) {$-1\sigma$};
+        \node[left] at (13.4,-2) {$-2\sigma$};
+        \node[left] at (13.4,-3) {LCL};
+        \foreach \x in {1,3,...,15}{
+        \draw (0.7*\x,-3.5) -- (0.7*\x,-3.7) node[below] {\x};
+        }
+        \foreach \x in {2,4,...,16}{
+        \draw (0.7*\x,-3.5) -- (0.7*\x,-3.7);
+        }
+        \foreach \x in {55,56,...,61}{
+        \draw (0,\x*0.942809-58*0.942809) -- (-0.1,\x*0.942809-58*0.942809) node[left] {\x};
+        }
+        \coordinate (A) at (1*0.7,-0.11);
+        \coordinate (B) at (2*0.7,0.67);
+        \coordinate (C) at (3*0.7,-0.74);
+        \coordinate (D) at (4*0.7,-0.88);
+        \coordinate (E) at (5*0.7,-0.39);
+        \coordinate (F) at (6*0.7,-0.54);
+        \coordinate (G) at (7*0.7,2.06);
+        \coordinate (H) at (8*0.7,0.15);
+        \coordinate (I) at (9*0.7,-2.17);
+        \coordinate (J) at (10*0.7,-0.37);
+        \coordinate (K) at (11*0.7,0.35);
+        \coordinate (L) at (12*0.7,-2.12);
+        \coordinate (M) at (13*0.7,2.80);
+        \coordinate (N) at (14*0.7,-3.13);
+        \coordinate (O) at (15*0.7,-2.52);
+        \coordinate (P) at (16*0.7,-1.33);
+        \draw[fill=black] (A) circle (2pt);
+        \draw[fill=black] (B) circle (2pt);
+        \draw[fill=black] (C) circle (2pt);
+        \draw[fill=black] (D) circle (2pt);
+        \draw[fill=black] (E) circle (2pt);
+        \draw[fill=black] (F) circle (2pt);
+        \draw[fill=black] (G) circle (2pt);
+        \draw[fill=black] (H) circle (2pt);
+        \draw[fill=black] (I) circle (2pt);
+        \draw[fill=black] (J) circle (2pt);
+        \draw[fill=black] (K) circle (2pt);
+        \draw[fill=black] (L) circle (2pt);
+        \draw[fill=black] (M) circle (2pt);
+        \draw[fill=black] (N) circle (2pt);
+        \draw[fill=black] (O) circle (2pt);
+        \draw[fill=black] (P) circle (2pt);
+        \draw (A) -- (B)-- (C) -- (D) -- (E) -- (F) -- (G) -- (H) -- (I) -- (J) -- (K) -- (L) -- (M) -- (N) -- (O) -- (P);
+        \end{tikzpicture}
+\end{center}
+\begin{enumerate}
+    \item Calculate the 2-sigma limits for the $x$-bar chart
+    \item Determine whether the process is under statistical control for the 16 samples shown.
+\end{enumerate}
+    \item A large company which employs tens of thousands of people uses $p$ charts to monitor its employee satisfaction. Each month, 50 employees are selected at random and asked to complete a short questionnaire, including being asked to rate their current satisfaction with their job. It is known that historically 88\% of employees respond that they are either \textit{satisfied} or \textit{very satisfied}. The results of the last 14 months data is below, which is found to be \textit{under statistical control}.
+    \begin{center}
+    \begin{tikzpicture}[scale=0.8]
+        \draw (0,-3.5) rectangle (12,3.5);
+        \node at (6,-4.8) {sample number};
+        \node[rotate=90] at (-1.8,0) {sample proportion};
+        \node at (6,4) {$p$ chart of proportion of satisfied/very satisfied employees};
+        \draw[thick] (0.1,12*0.2176) -- (11.9,12*0.2176);
+        \draw[dashed] (0.1,2) -- (11.9,2);
+        \draw[dashed] (0.1,1) -- (11.9,1);
+        \draw[thick] (0.1,0) -- (11.9,0);
+        \draw[dashed] (0.1,-1) -- (11.9,-1);
+        \draw[dashed] (0.1,-2) -- (11.9,-2);
+        \draw[thick, densely dashed] (0.1,-3) -- (11.9,-3);
+        \node[left] at (13.2,2) {$+2\sigma$};
+        \node[left] at (13.2,1) {$+1\sigma$};
+        \node[left] at (12.6,-0.05) {$p$};
+        \node[left] at (13.2,-1) {$-1\sigma$};
+        \node[left] at (13.2,-2) {$-2\sigma$};
+        \node[left] at (13.2,-3) {LCL};
+        \node[right] at (12.4,0) {$=0.88$};
+        \foreach \x in {1,2,...,14}{
+        \draw (0.8*\x,-3.5) -- (0.8*\x,-3.7) node[below] {\x};
+        }
+        \node[left] at (0,12*0.2176) {1.00};
+        \node[left] at (0,7*0.2176) {0.95};
+        \node[left] at (0,2*0.2176) {0.90};
+        \node[left] at (0,-3*0.2176) {0.85};
+        \node[left] at (0,-8*0.2176) {0.80};
+        \node[left] at (0,-13*0.2176) {0.75};
+\coordinate (A) at (1*0.8,21.76*0.02*45-0.88*21.76);
+\coordinate (B) at (2*0.8,21.76*0.02*44-0.88*21.76);
+\coordinate (C) at (3*0.8,21.76*0.02*42-0.88*21.76);
+\coordinate (D) at (4*0.8,21.76*0.02*46-0.88*21.76);
+\coordinate (E) at (5*0.8,21.76*0.02*49-0.88*21.76);
+\coordinate (F) at (6*0.8,21.76*0.02*44-0.88*21.76);
+\coordinate (G) at (7*0.8,21.76*0.02*45-0.88*21.76);
+\coordinate (H) at (8*0.8,21.76*0.02*43-0.88*21.76);
+\coordinate (I) at (9*0.8,21.76*0.02*39-0.88*21.76);
+\coordinate (J) at (10*0.8,21.76*0.02*41-0.88*21.76);
+\coordinate (K) at (11*0.8,21.76*0.02*40-0.88*21.76);
+\coordinate (L) at (12*0.8,21.76*0.02*38-0.88*21.76);
+\coordinate (M) at (13*0.8,21.76*0.02*41-0.88*21.76);
+\coordinate (N) at (14*0.8,21.76*0.02*42-0.88*21.76);
+        \draw[fill=black] (A) circle (2pt);
+        \draw[fill=black] (B) circle (2pt);
+        \draw[fill=black] (C) circle (2pt);
+        \draw[fill=black] (D) circle (2pt);
+        \draw[fill=black] (E) circle (2pt);
+        \draw[fill=black] (F) circle (2pt);
+        \draw[fill=black] (G) circle (2pt);
+        \draw[fill=black] (H) circle (2pt);
+        \draw[fill=black] (I) circle (2pt);
+        \draw[fill=black] (J) circle (2pt);
+        \draw[fill=black] (K) circle (2pt);
+        \draw[fill=black] (L) circle (2pt);
+        \draw[fill=black] (M) circle (2pt);
+        \draw[fill=black] (N) circle (2pt);
+        \draw (A) -- (B)-- (C) -- (D) -- (E) -- (F) -- (G) -- (H) -- (I) -- (J) -- (K) -- (L) -- (M) -- (N);
+        \end{tikzpicture}
+\end{center}
+    \begin{enumerate}
+        \item Calculate the 1-sigma limits for the control chart.
+        \item Given that the process is still found to be under control after the next month's data, state the range of possible values for the sample proportion $\hat{p}$ obtained from sample 15.
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
 
 \chapter{Chi-Squared Test for Association}\label{chi-squared-test-for-association}
 
@@ -25086,6 +25231,8 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 \chapter*{Answers}\label{answers}
 \addcontentsline{toc}{chapter}{Answers}
 
+\sectionmark{Answers}
+
 \setstretch{1.0}
 \raggedright
 
@@ -27295,8 +27442,8 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 
 \endgroup
 
-\subsection*{Chapter 12 - Control Charts}\label{chapter-12---control-charts}
-\addcontentsline{toc}{subsection}{Chapter 12 - Control Charts}
+\subsection*{Chapter 12 - Chi-Squared Goodness-of-Fit Test}\label{chapter-12---chi-squared-goodness-of-fit-test}
+\addcontentsline{toc}{subsection}{Chapter 12 - Chi-Squared Goodness-of-Fit Test}
 
 \begingroup
 \footnotesize
@@ -27328,8 +27475,10 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 
 \endgroup
 
-\subsection*{Chapter 13 - Chi-Squared Goodness-of-Fit Test}\label{chapter-13---chi-squared-goodness-of-fit-test}
-\addcontentsline{toc}{subsection}{Chapter 13 - Chi-Squared Goodness-of-Fit Test}
+\newpage
+
+\subsection*{Chapter 13 - Control Charts}\label{chapter-13---control-charts}
+\addcontentsline{toc}{subsection}{Chapter 13 - Control Charts}
 
 \begingroup
 \footnotesize
@@ -27339,22 +27488,233 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 \subsubsection*{\texorpdfstring{\hyperref[ex131q]{Exercise 13.1}}{Exercise 13.1}}\label{exercise-13.1-1}
 \addcontentsline{toc}{subsubsection}{{Exercise 13.1}}
 
+\begin{enumerate}
+    \item The process is out of statistical control, since sample 6 falls below the lower control line. The process should have been stopped after sample 6.
+    \item The process is out of statistical control, since from samples 4 to 8 at least four of the five samples lie above the upper 1-sigma line. The process should have been stopped after sample 8.
+    \item The process is under statistical control.
+    \item The process is out of statistical control, since from samples 2 to 9 eight consecutive samples lie above the centre line. The process should have been stopped after sample 9.
+\end{enumerate}
+
 \protect\phantomsection\label{ex132a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex132q]{Exercise 13.2}}{Exercise 13.2}}\label{exercise-13.2-1}
 \addcontentsline{toc}{subsubsection}{{Exercise 13.2}}
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item UCL = 82.5, +2$\sigma$ = 81.75, +1$\sigma$ = 80.75, target = 80, -1$\sigma$ = 79.25, -2$\sigma$ = 78.5, LCL = 77.75
+        \item UCL = 500.72, +2$\sigma$ = 495.81, +1$\sigma$ = 490.91, target = 486, -1$\sigma$ = 481.09, -2$\sigma$ = 476.19, LCL = 471.28
+    \end{enumerate}
+    \item $+2\sigma=1.447$, $-2\sigma=1.353$
+    \item 
+    \begin{enumerate}
+        \item $+1\sigma=231.79$, $-1\sigma=228.21$
+        \item The process is out of statistical control since, from samples 9 to 11, two of the three samples lie above the upper 2-sigma limit. The process should have been stopped after sample 11.
+        \item A required assumption is that the samples of bottles are random.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $144-3\times\dfrac{18}{\sqrt{7}}=123.59$
+        \item $130.4\leqslant \bar{x} \leqslant 164.4$
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item The process is out of statistical control since eight consecutive points lie above the centre line, from samples 9 to 16. However, since these values suggest the lenses being produced have a higher resolution than the target value, which is a good thing, they may not be concerned.
+        \item Samples of size 9 are being taken.
+        \item Two required assumptions are that:
+        \begin{itemize}
+            \item The samples of lenses taken are random.
+            \item The resolution scores of manufactured lenses are normally distributed.
+        \end{itemize}
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item UCL = 121, +2$\sigma$ = 119, +1$\sigma$ = 117, target = 115, -1$\sigma$ = 113, -2$\sigma$ = 111, LCL = 109.\newline
+        The process is out of statistical control since, from samples 2 to 4, two out of three sample means lie above the upper 2-sigma limit.
+        \item $\bar{\bar{x}}=92$
+        \item UCL = 101, LCL = 83 
+    \end{enumerate}
+    \item 
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item \phantom{ }\\
+                \begingroup
+                \renewcommand{\arraystretch}{1.5}
+                \begin{tabular}{|r|l|}
+                \hline
+                    Population mean & 72\\
+                    \hline
+                    Standard deviation & 15\\
+                    \hline
+                    Sample size & 25\\
+                    \hline
+                    \hline
+                    Upper Control Limit & 81\\
+                    \hline
+                    $+2\sigma$ Limit & 78\\
+                    \hline
+                    $+1\sigma$ Limit &75\\
+                    \hline
+                    Target Value & 72\\
+                    \hline
+                    $-1\sigma$ Limit & 69\\
+                    \hline
+                    $-2\sigma$ Limit & 66\\
+                    \hline
+                    Lower Control Limit & 63\\
+                    \hline
+                \end{tabular}
+                \endgroup
+            \item \phantom{ }\\
+                \begingroup
+                \renewcommand{\arraystretch}{1.5}
+                \begin{tabular}{|r|l|}
+                \hline
+                    Population mean & 2800\\
+                    \hline
+                    Standard deviation & 60\\
+                    \hline
+                    Sample size & 9\\
+                    \hline
+                    \hline
+                    Upper Control Limit & 2860\\
+                    \hline
+                    $+2\sigma$ Limit & 2840\\
+                    \hline
+                    $+1\sigma$ Limit & 2820\\
+                    \hline
+                    Target Value & 2800\\
+                    \hline
+                    $-1\sigma$ Limit & 2780\\
+                    \hline
+                    $-2\sigma$ Limit & 2760\\
+                    \hline
+                    Lower Control Limit & 2740\\
+                    \hline
+                \end{tabular}
+                \endgroup
+        \end{enumerate}
+    \end{multicols}
+\end{enumerate}
+
+\endgroup
+
+\pagebreak
+
+\begingroup
+\footnotesize
 
 \protect\phantomsection\label{ex133a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex133q]{Exercise 13.3}}{Exercise 13.3}}\label{exercise-13.3-1}
 \addcontentsline{toc}{subsubsection}{{Exercise 13.3}}
 
+\begin{enumerate}
+    \item 
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item Population proportion $=0.6$\\
+            Sample size $=24$\\[0.2em]
+                \begingroup
+                \renewcommand{\arraystretch}{1.5}
+                \begin{tabular}{|r|l|}
+                \hline
+                    Upper Control Limit & 0.9\\
+                    \hline
+                    $+2\sigma$ Limit & 0.8\\
+                    \hline
+                    $+1\sigma$ Limit & 0.7\\
+                    \hline
+                    Target Value & 0.6\\
+                    \hline
+                    $-1\sigma$ Limit & 0.5\\
+                    \hline
+                    $-2\sigma$ Limit & 0.4\\
+                    \hline
+                    Lower Control Limit & 0.3\\
+                    \hline
+                \end{tabular}
+                \endgroup
+            \item Population proportion $=0.16$\\
+            Sample size $=50$\\[0.2em]
+                \begingroup
+                \renewcommand{\arraystretch}{1.5}
+                \begin{tabular}{|r|l|}
+                \hline
+                    Upper Control Limit & 0.316\\
+                    \hline
+                    $+2\sigma$ Limit & 0.264\\
+                    \hline
+                    $+1\sigma$ Limit & 0.212\\
+                    \hline
+                    Target Value & 0.16\\
+                    \hline
+                    $-1\sigma$ Limit & 0.108\\
+                    \hline
+                    $-2\sigma$ Limit & 0.056\\
+                    \hline
+                    Lower Control Limit & 0.004\\
+                    \hline
+                \end{tabular}
+                \endgroup
+        \end{enumerate}
+    \end{multicols}
+    \item 
+    \begin{enumerate}
+        \item The samples of mugs would not be random. Also, for appropriate use of a $p$ chart it is required that $np>5$ and $nq>5$. Here, $0.08\times 30=2.4<5$. 
+        \item Upper 2-sigma limit = 0.14265 and lower 2-sigma limit = 0.01735.
+        \item The process is under statistical control for the samples shown, as none of the WECO rules have been violated.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $0.11+3\times\sqrt{\dfrac{0.11\times 0.89}{50}}=0.2427$
+        \item The calculated lower limit would be -0.0227. However, a negative sample proportion is not possible, so the lower control limit is set as 0.
+        \item The process is out of statistical control since, from samples 3 to 7, four out of five samples lie below the lower 2-sigma limit.
+        \item Since these sample proportions suggest less seeds aere failing to germinate than expected, which is a good thing, the company many not be concerned.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item UCL = 0.9549, LCL = 0.6451.
+        \item The process is out of statistical control since, from February to September, eight consecutive sample proportions fall below the target value.
+        \item The sample size needs to be at least 30 to ensure both $np>5$ and $nq>5$.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $\hat{p}=0.12$
+        \item Upper 2-sigma limit $=0.12+2\times\sqrt{\dfrac{0.12\times0.88}{50}}=0.212$ and lower 2-sigma limit $=0.12-2\times\sqrt{\dfrac{0.12\times0.88}{50}}=0.028$
+        \item The process is under statistical control for the samples shown, as none of the WECO rules have been violated.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item The population proportion is $p=0.6$.
+        \item UCL = 0.9 and LCL = 0.3.
+        \item The sample size is $n=24$.
+        \item The sample size and population proportion are appropriate since both of  $24\times 0.6=14.4$ and $24\times 0.4 = 9.6$ are greater than $5$.
+    \end{enumerate}
+\end{enumerate}
+
 \protect\phantomsection\label{re13a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[re13q]{Chapter 13 Review Exercise}}{Chapter 13 Review Exercise}}\label{chapter-13-review-exercise}
 \addcontentsline{toc}{subsubsection}{{Chapter 13 Review Exercise}}
 
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Upper 2-sigma limit $=60.12$ and lower 2-sigma limit $=55.88$.
+        \item The process is out of statistical control since the sample mean is below the lower control limit at sample 14.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Upper 1-sigma limit $=0.926$ and lower 1-sigma limit $=0.834$.
+        \item $0.88\leqslant \hat{p} \leqslant 1$
+    \end{enumerate}
+\end{enumerate}
+
 \endgroup
+
+\pagebreak
 
 \subsection*{Chapter 14 - Chi-Squared Test for Association}\label{chapter-14---chi-squared-test-for-association}
 \addcontentsline{toc}{subsection}{Chapter 14 - Chi-Squared Test for Association}

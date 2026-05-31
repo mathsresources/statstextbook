@@ -565,7 +565,7 @@ A control chart is created with horizontal lines indicating the population mean 
                 \endgroup
         \end{enumerate}
     \end{multicols}
-    \item A factory produces plastic guitar plectrums which are sold with a labelled thickness of 1.4mm. The actual thickness of a plectrums produced by the factory's equipment is normally distributed with a mean of 1.4mm and standard deviation 0.1mm. An $x$-bar chart is to be produced to monitor the performance of the process. Calculate the 2-sigma limits for the control chart.
+    \item A factory produces plastic guitar plectrums which are sold with a labelled thickness of 1.4mm. The actual thickness of a plectrums produced by the factory's equipment is normally distributed with a mean of 1.4mm and standard deviation 0.1mm. An $x$-bar chart is to be produced to monitor the performance of the process, using random samples of size 18. Calculate the 2-sigma limits for the control chart.
     \item A cosmetic company has a machine which dispenses shampoo into bottles. The machine has been calibrated to dispense a mean volume of 230ml into each bottle, and the amount dispensed has been found to be normally distributed with a standard deviation of 4ml. To monitor the performance of the machine, a sample of five bottles is taken each hour, the volume of shampoo measured precisely and an $x$-bar chart created on which to track the sample means.
     \begin{enumerate}
         \item Calculate the 1-sigma limits for the $x$-bar chart.
@@ -1040,7 +1040,7 @@ If no historical value of the population proportion has been suggested, then it 
         \draw[thick] (0.1,0) -- (11.9,0) node[right] {target};
         \draw[dashed] (0.1,-1) -- (11.9,-1) node[right] {$-1\sigma$};
         \draw[dashed] (0.1,-2) -- (11.9,-2) node[right] {$-2\sigma$};
-        \draw[thick, densely dashed] (0.1,-8*0.32) -- (11.9,-8*0.32) node[right] {LCL};
+        \draw[thick] (0.1,-8*0.32) -- (11.9,-8*0.32) node[right] {LCL};
         \foreach \x in {1,2,...,16}{
         \draw (0.7*\x,-3.5) -- (0.7*\x,-3.7) node[below] {\x};
         }
@@ -1106,7 +1106,7 @@ If no historical value of the population proportion has been suggested, then it 
         \draw[thick] (0.1,0) -- (11.9,0);
         \draw[dashed] (0.1,-1) -- (11.9,-1);
         \draw[dashed] (0.1,-2) -- (11.9,-2);
-        \draw[thick, densely dashed] (0.1,-11*0.226) -- (11.9,-11*0.226);
+        \draw[thick] (0.1,-11*0.226) -- (11.9,-11*0.226);
         \node[left] at (13.2,3) {UCL};
         \node[left] at (13.2,2) {$+2\sigma$};
         \node[left] at (13.2,1) {$+1\sigma$};
@@ -1216,14 +1216,14 @@ If no historical value of the population proportion has been suggested, then it 
         \draw[thick] (0.1,0) -- (11.9,0);
         \draw[dashed] (0.1,-1) -- (11.9,-1);
         \draw[dashed] (0.1,-2) -- (11.9,-2);
-        \draw[thick, densely dashed] (0.1,-13*0.2176) -- (11.9,-13*0.2176);
+        \draw[thick] (0.1,-12*0.2176) -- (11.9,-12*0.2176);
         \node[left] at (13.2,3) {UCL};
         \node[left] at (13.2,2) {$+2\sigma$};
         \node[left] at (13.2,1) {$+1\sigma$};
         \node[left] at (13.2,-0.05) {target};
         \node[left] at (13.2,-1) {$-1\sigma$};
         \node[left] at (13.2,-2) {$-2\sigma$};
-        \node[left] at (13.2,-13*0.2176) {LCL};
+        \node[left] at (13.2,-12*0.2176) {LCL};
         \node[right] at (13,2) {$=0.212$};
         \node[right] at (13,0) {$=0.12$};
         \node[right] at (13,-2) {$=0.028$};
@@ -1235,7 +1235,7 @@ If no historical value of the population proportion has been suggested, then it 
         \node[left] at (0,3*0.2176) {0.15};
         \node[left] at (0,-2*0.2176) {0.10};
         \node[left] at (0,-7*0.2176) {0.05};
-        \node[left] at (0,-13*0.2176) {0.00};
+        \node[left] at (0,-12*0.2176) {0.00};
 \coordinate (A) at (1*0.8,21.76*0.02*8-0.12*21.76);
 \coordinate (B) at (2*0.8,21.76*0.02*3-0.12*21.76);
 \coordinate (C) at (3*0.8,21.76*0.02*2-0.12*21.76);
@@ -1270,12 +1270,12 @@ If no historical value of the population proportion has been suggested, then it 
     \begin{enumerate}[resume]
         \item Determine whether the process is under control during the two week period.
     \end{enumerate}
-    \item A $p$ chart is created using regular random samples.\newline The 2-sigma limits are calculated as 0.4 and 0.8.\newline
-    Determine:
+    \item A $p$ chart is created using regular, random samples. The 2-sigma limits are calculated as 0.4 and 0.8.
+    
     \begin{enumerate}
-        \item The value of the population proportion, $p$.
-        \item The upper and lower control limits.
-        \item The size of each sample.
+        \item State the value of the population proportion, $p$.
+        \item Calculate the upper and lower control limits.
+        \item Determine the size of each sample.
         \item Show that the sample size and the proportion meet the requirements for constructing a $p$ chart.
     \end{enumerate}
 \end{enumerate}
@@ -1286,3 +1286,141 @@ If no historical value of the population proportion has been suggested, then it 
 
 ## [Review Exercise](#re18a) {-}
 
+\begin{enumerate}
+    \item Eggs are group according to size by a machine, and the eggs sorted into the \textit{medium} category are known to be have a mean mass of 58 grams with standard deviation 3 grams. To monitor the performance of the machine, eight eggs are randomly selected every fifteen minutes and the mean mass for each sample recorded on an $x$-bar chart, shown below.
+\begin{center}
+    \begin{tikzpicture}[scale=0.8]
+        \draw (0,-3.5) rectangle (12,3.5);
+        \node at (6,-4.7) {sample time};
+        \node[rotate=90] at (-1.8,0) {sample mean (g)};
+        \node at (6,4) {$x$-bar chart for medium egg mass};
+        \draw[thick, densely dashed] (0.1,3) -- (11.9,3);
+        \draw[dashed] (0.1,2) -- (11.9,2);
+        \draw[dashed] (0.1,1) -- (11.9,1);
+        \draw[thick] (0.1,0) -- (11.9,0);
+        \draw[dashed] (0.1,-1) -- (11.9,-1);
+        \draw[dashed] (0.1,-2) -- (11.9,-2);
+        \draw[thick, densely dashed] (0.1,-3) -- (11.9,-3);
+        \node[left] at (13.4,3) {UCL};
+        \node[left] at (13.4,2) {$+2\sigma$};
+        \node[left] at (13.4,1) {$+1\sigma$};
+        \node[left] at (13.4,-0.05) {mean};
+        \node[left] at (13.4,-1) {$-1\sigma$};
+        \node[left] at (13.4,-2) {$-2\sigma$};
+        \node[left] at (13.4,-3) {LCL};
+        \foreach \x in {1,3,...,15}{
+        \draw (0.7*\x,-3.5) -- (0.7*\x,-3.7) node[below] {\x};
+        }
+        \foreach \x in {2,4,...,16}{
+        \draw (0.7*\x,-3.5) -- (0.7*\x,-3.7);
+        }
+        \foreach \x in {55,56,...,61}{
+        \draw (0,\x*0.942809-58*0.942809) -- (-0.1,\x*0.942809-58*0.942809) node[left] {\x};
+        }
+        \coordinate (A) at (1*0.7,-0.11);
+        \coordinate (B) at (2*0.7,0.67);
+        \coordinate (C) at (3*0.7,-0.74);
+        \coordinate (D) at (4*0.7,-0.88);
+        \coordinate (E) at (5*0.7,-0.39);
+        \coordinate (F) at (6*0.7,-0.54);
+        \coordinate (G) at (7*0.7,2.06);
+        \coordinate (H) at (8*0.7,0.15);
+        \coordinate (I) at (9*0.7,-2.17);
+        \coordinate (J) at (10*0.7,-0.37);
+        \coordinate (K) at (11*0.7,0.35);
+        \coordinate (L) at (12*0.7,-2.12);
+        \coordinate (M) at (13*0.7,2.80);
+        \coordinate (N) at (14*0.7,-3.13);
+        \coordinate (O) at (15*0.7,-2.52);
+        \coordinate (P) at (16*0.7,-1.33);
+        \draw[fill=black] (A) circle (2pt);
+        \draw[fill=black] (B) circle (2pt);
+        \draw[fill=black] (C) circle (2pt);
+        \draw[fill=black] (D) circle (2pt);
+        \draw[fill=black] (E) circle (2pt);
+        \draw[fill=black] (F) circle (2pt);
+        \draw[fill=black] (G) circle (2pt);
+        \draw[fill=black] (H) circle (2pt);
+        \draw[fill=black] (I) circle (2pt);
+        \draw[fill=black] (J) circle (2pt);
+        \draw[fill=black] (K) circle (2pt);
+        \draw[fill=black] (L) circle (2pt);
+        \draw[fill=black] (M) circle (2pt);
+        \draw[fill=black] (N) circle (2pt);
+        \draw[fill=black] (O) circle (2pt);
+        \draw[fill=black] (P) circle (2pt);
+        \draw (A) -- (B)-- (C) -- (D) -- (E) -- (F) -- (G) -- (H) -- (I) -- (J) -- (K) -- (L) -- (M) -- (N) -- (O) -- (P);
+        \end{tikzpicture}
+\end{center}
+\begin{enumerate}
+    \item Calculate the 2-sigma limits for the $x$-bar chart
+    \item Determine whether the process is under statistical control for the 16 samples shown.
+\end{enumerate}
+    \item A large company which employs tens of thousands of people uses $p$ charts to monitor its employee satisfaction. Each month, 50 employees are selected at random and asked to complete a short questionnaire, including being asked to rate their current satisfaction with their job. It is known that historically 88\% of employees respond that they are either \textit{satisfied} or \textit{very satisfied}. The results of the last 14 months data is below, which is found to be \textit{under statistical control}.
+    \begin{center}
+    \begin{tikzpicture}[scale=0.8]
+        \draw (0,-3.5) rectangle (12,3.5);
+        \node at (6,-4.8) {sample number};
+        \node[rotate=90] at (-1.8,0) {sample proportion};
+        \node at (6,4) {$p$ chart of proportion of satisfied/very satisfied employees};
+        \draw[thick] (0.1,12*0.2176) -- (11.9,12*0.2176);
+        \draw[dashed] (0.1,2) -- (11.9,2);
+        \draw[dashed] (0.1,1) -- (11.9,1);
+        \draw[thick] (0.1,0) -- (11.9,0);
+        \draw[dashed] (0.1,-1) -- (11.9,-1);
+        \draw[dashed] (0.1,-2) -- (11.9,-2);
+        \draw[thick, densely dashed] (0.1,-3) -- (11.9,-3);
+        \node[left] at (13.2,2) {$+2\sigma$};
+        \node[left] at (13.2,1) {$+1\sigma$};
+        \node[left] at (12.6,-0.05) {$p$};
+        \node[left] at (13.2,-1) {$-1\sigma$};
+        \node[left] at (13.2,-2) {$-2\sigma$};
+        \node[left] at (13.2,-3) {LCL};
+        \node[right] at (12.4,0) {$=0.88$};
+        \foreach \x in {1,2,...,14}{
+        \draw (0.8*\x,-3.5) -- (0.8*\x,-3.7) node[below] {\x};
+        }
+        \node[left] at (0,12*0.2176) {1.00};
+        \node[left] at (0,7*0.2176) {0.95};
+        \node[left] at (0,2*0.2176) {0.90};
+        \node[left] at (0,-3*0.2176) {0.85};
+        \node[left] at (0,-8*0.2176) {0.80};
+        \node[left] at (0,-13*0.2176) {0.75};
+\coordinate (A) at (1*0.8,21.76*0.02*45-0.88*21.76);
+\coordinate (B) at (2*0.8,21.76*0.02*44-0.88*21.76);
+\coordinate (C) at (3*0.8,21.76*0.02*42-0.88*21.76);
+\coordinate (D) at (4*0.8,21.76*0.02*46-0.88*21.76);
+\coordinate (E) at (5*0.8,21.76*0.02*49-0.88*21.76);
+\coordinate (F) at (6*0.8,21.76*0.02*44-0.88*21.76);
+\coordinate (G) at (7*0.8,21.76*0.02*45-0.88*21.76);
+\coordinate (H) at (8*0.8,21.76*0.02*43-0.88*21.76);
+\coordinate (I) at (9*0.8,21.76*0.02*39-0.88*21.76);
+\coordinate (J) at (10*0.8,21.76*0.02*41-0.88*21.76);
+\coordinate (K) at (11*0.8,21.76*0.02*40-0.88*21.76);
+\coordinate (L) at (12*0.8,21.76*0.02*38-0.88*21.76);
+\coordinate (M) at (13*0.8,21.76*0.02*41-0.88*21.76);
+\coordinate (N) at (14*0.8,21.76*0.02*42-0.88*21.76);
+        \draw[fill=black] (A) circle (2pt);
+        \draw[fill=black] (B) circle (2pt);
+        \draw[fill=black] (C) circle (2pt);
+        \draw[fill=black] (D) circle (2pt);
+        \draw[fill=black] (E) circle (2pt);
+        \draw[fill=black] (F) circle (2pt);
+        \draw[fill=black] (G) circle (2pt);
+        \draw[fill=black] (H) circle (2pt);
+        \draw[fill=black] (I) circle (2pt);
+        \draw[fill=black] (J) circle (2pt);
+        \draw[fill=black] (K) circle (2pt);
+        \draw[fill=black] (L) circle (2pt);
+        \draw[fill=black] (M) circle (2pt);
+        \draw[fill=black] (N) circle (2pt);
+        \draw (A) -- (B)-- (C) -- (D) -- (E) -- (F) -- (G) -- (H) -- (I) -- (J) -- (K) -- (L) -- (M) -- (N);
+        \end{tikzpicture}
+\end{center}
+    \begin{enumerate}
+        \item Calculate the 1-sigma limits for the control chart.
+        \item Given that the process is still found to be under control after the next month's data, state the range of possible values for the sample proportion $\hat{p}$ obtained from sample 15.
+    \end{enumerate}
+\end{enumerate}
+
+\pagebreak
