@@ -24,7 +24,6 @@
 \usepackage{subcaption}
 \usepackage{units}
 \usepackage{amssymb}
-\usepackage{amsfonts}
 \usepackage{pifont}
 \usepackage{nth}
 \usepackage{mathtools}
@@ -102,22 +101,12 @@
 \usepackage[switch, modulo]{lineno}
 
 \usepackage[dvipsnames]{xcolor}
-\usepackage{fontspec}
-\usepackage{lmodern}
-\setmainfont{lmss}
-\renewcommand{\familydefault}{lmss}
 
-\makeatletter
-\DeclareSymbolFont{sfnumbers}{T1}{\familydefault}{m}{n}
-\SetSymbolFont{sfnumbers}{bold}{T1}{\familydefault}{b}{n}
-\makeatother
-\DeclareMathSymbol{0}\mathalpha{sfnumbers}{"30}
-\DeclareMathSymbol{1}\mathalpha{sfnumbers}{"31}
-\DeclareMathSymbol{2}\mathalpha{sfnumbers}{"32}
-\DeclareMathSymbol{3}\mathalpha{sfnumbers}{"33}
-\DeclareMathSymbol{4}\mathalpha{sfnumbers}{"34}
-\DeclareMathSymbol{5}\mathalpha{sfnumbers}{"35}
-\DeclareMathSymbol{6}\mathalpha{sfnumbers}{"36}
-\DeclareMathSymbol{7}\mathalpha{sfnumbers}{"37}
-\DeclareMathSymbol{8}\mathalpha{sfnumbers}{"38}
-\DeclareMathSymbol{9}\mathalpha{sfnumbers}{"39}
+\usepackage{unicode-math}
+\usepackage{fontspec}
+
+\usepackage{lmodern}
+%\renewcommand*{\familydefault}{\sfdefault}
+
+
+
