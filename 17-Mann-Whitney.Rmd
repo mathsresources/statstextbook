@@ -1,8 +1,6 @@
 # Mann-Whitney Rank Sum Test
 
-\section*{Mann-Whitney Rank Sum Test}
-
-The parametric two-sample $t$-test for population means relies on an assumption that each population is normally distributed. Where this assumption cannot be safely made, the \textbf{non-parametric} \textit{Mann-Whitney Rank Sum test} may be used to explore a difference in population \textbf{medians}. It is an example of a \textit{permutation test}, which are those that can be approached by considering equally-likely possibilities. 
+The parametric two-sample $t$-test for population means relies on an assumption that each population is normally distributed. Where this assumption cannot be safely made, the \textbf{non-parametric} \textit{Mann-Whitney Rank Sum test} may be used to explore a difference in population \textbf{medians}, provided certain other assumptions can be made. It is an example of a \textit{permutation test}, which are those that can be approached by considering equally-likely possibilities. 
 
 Consider random samples of two mice of species A and four of species B, which will be ordered from lightest to heaviest, and then ranks from 1 to 6 assigned. Below are all 15 possible arrangements of ranks for the six mice, and the \textit{sum of the ranks} obtained by the two mice of species A:
 
@@ -24,7 +22,7 @@ If the population distributions of mass for mice from species A and mice from sp
 
 $$\text{P}(\text{rank sum obtained}\leqslant4)=\dfrac{2}{15}=0.1333$$
 
-If it is assumed that the two population distributions of mice masses have the \textit{same shape and variance} then hypotheses may be formed which focus on a possible difference in the \textit{medians}, $\eta_A$ and $\eta_B$, of the distributions. Hypotheses for this two-sample test may be one-tailed or two-tailed. Here, a one-tailed example is given:
+If it is assumed that the two population distributions of mice masses have the \textit{same shape and variance} then hypotheses may be formed which focus on a possible difference in the \textit{medians}, $\eta_\text{A}$ and $\eta_\text{B}$, of the distributions. Hypotheses for this two-sample test may be one-tailed or two-tailed. Here, a one-tailed example is given:
 
 \begin{center}
 \begin{math}
@@ -41,7 +39,7 @@ If it is assumed that the two population distributions of mice masses have the \
 \end{math}
 \end{center}
 
-The $p$\text{-value} of 0.1333 obtained about would not provide evidence to suggest, at the 5\% level of significance, that the median mass of a mouse of species A is less than the median mass of a mouse of species B (since $0.1333>0.05$).
+The $p$\text{-value} of $0.1333$ obtained about would not provide evidence to suggest, at the $5$\% level of significance, that the median mass of a mouse of species A is less than the median mass of a mouse of species B (since $0.1333>0.05$).
 
 Since the process of listing possible arrangements would become excessively time-consuming for anything other than small samples, Mann-Whitney tests will be typically conducted using \textit{critical values} from the Data Booklet, and \textit{test statistics}. However it is also necessary to be able to perform the test \textit{from first principles} as above, covered in more detail later in this chapter.
 
@@ -49,14 +47,14 @@ Since the process of listing possible arrangements would become excessively time
 
 ## Mann-Whitney Rank Sum Test
 
-Given two independent samples, the non-parametric **Mann-Whitney Rank Sum test** can be used to assess whether the two population distributions have different *medians*. It is typically used in place of a two-sample $t$-test where the two distributions are not *normal* and sample sizes are small. Instead a required assumption is that the population distributions have the *same shape and variance*, to test whether there is evidence of a difference in *locations*:
+Given two independent samples, the non-parametric Mann-Whitney Rank Sum test can be used to assess whether the two population distributions have different *medians*. It is typically used in place of a two-sample $t$-test where the two distributions are not *normal* and sample sizes are small. Instead a required assumption is that the population distributions have the **same shape and variance**, to test whether there is evidence of a difference in *locations*:
 
 \begin{figure}[H]
   \centering
 \captionsetup[figure]{labelformat=empty}%
 \begin{minipage}[t]{.5\textwidth}
 \begin{center}
-\begin{tikzpicture}[ 
+\begin{tikzpicture}[scale=0.8, 
     declare function={gamma(\z)=
     (2.506628274631*sqrt(1/\z) + 0.20888568*(1/\z)^(1.5) + 0.00870357*(1/\z)^(2.5) - (174.2106599*(1/\z)^(3.5))/25920 - (715.6423511*(1/\z)^(4.5))/1244160)*exp((-ln(1/\z)-1)*\z);},
     declare function={gammapdf(\x,\k,\theta) = \x^(\k-1)*exp(-\x/\theta) / (\theta^\k*gamma(\k));}
@@ -96,7 +94,7 @@ Given two independent samples, the non-parametric **Mann-Whitney Rank Sum test**
   \centering
 \begin{minipage}[t]{.5\textwidth}
 \begin{center}
-\begin{tikzpicture}[ 
+\begin{tikzpicture}[scale=0.8, 
     declare function={gamma(\z)=
     (2.506628274631*sqrt(1/\z) + 0.20888568*(1/\z)^(1.5) + 0.00870357*(1/\z)^(2.5) - (174.2106599*(1/\z)^(3.5))/25920 - (715.6423511*(1/\z)^(4.5))/1244160)*exp((-ln(1/\z)-1)*\z);},
     declare function={gammapdf(\x,\k,\theta) = \x^(\k-1)*exp(-\x/\theta) / (\theta^\k*gamma(\k));}
@@ -130,35 +128,35 @@ Given two independent samples, the non-parametric **Mann-Whitney Rank Sum test**
 \end{axis}
 \end{tikzpicture}
 \end{center}
-\captionof{figure}{\textbf{Different locations:} $\eta_1\ne\eta_2$}
+\captionof{figure}{\textit{Different locations:} $\eta_1\ne\eta_2$}
   \label{fig:test1}
 \end{minipage}
 \end{figure}
 
 \begin{centering}
-\tcbset{width=16cm}
+\tcbset{width=15cm}
 \begin{tcolorbox}[adjusted title=Conditions for valid use of the Mann-Whitney Rank Sum Test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
-    \item The two distributions of the underlying populations have \textbf{the same shape and variance}.
-    \item The data were obtained through \textbf{random} and \textbf{independent samples}
+    \item The two populations have \textbf{the same shape and variance}.
+    \item The samples are \textbf{independent} and the data was obtained through \textbf{random sampling}.
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
 
-Consider two independent samples taken from populations $A$ and $B$ and the following hypotheses:
+Consider two independent samples taken from populations A and B and the following hypotheses:
 
 \begin{center}
     \begin{tikzpicture}
-        \node[left] at (-0.20,0.3) {$\text{H}_0:\eta_A=\eta_B$};
-        \node[left] at (-0.2,-0.3) {$\text{H}_0:\eta_A\ne\eta_B$};
+        \node[left] at (-0.20,0.3) {$\text{H}_0:\eta_\text{A}=\eta_\text{B}$};
+        \node[left] at (-0.2,-0.3) {$\text{H}_1:\eta_\text{A}\ne\eta_\text{B}$};
         \draw [decorate,
 	decoration = {brace}] (0,0.5) --  (0,-0.5);
         \node[right] at (0.2,0.3) {$\alpha=0.05$};
         \node[right] at (0.2,-0.3) {Two-tailed};
         \draw (3.2,0) -- (9.3,0);
         \draw (4,-0.5) -- (4,0.5);
-        \node at (3.6,0.3) {$A$};
-        \node at (3.6,-0.3) {$B$};
+        \node at (3.6,0.3) {A};
+        \node at (3.6,-0.3) {B};
         \node at (4.4,0.3) {2.8};
         \node at (5.3,0.3) {3.2};
         \node at (6.2,0.3) {3.3};
@@ -188,7 +186,7 @@ Consider two independent samples taken from populations $A$ and $B$ and the foll
     \end{tikzpicture}
 \end{center}
 
-To perform the test using a test statistic and critical value approach, first the samples are combined, ordered and ranked, with **rank sums** $W_A$ and $W_B$ obtained:
+To perform the test using a test statistic and critical value approach, first the samples are combined, ordered and ranked, with **rank sums** $W_\text{A}$ and $W_\text{B}$ obtained:
 
 \begin{figure}[H]
   \centering
@@ -215,15 +213,15 @@ To perform the test using a test statistic and critical value approach, first th
 
 \begin{center}
 \begin{tabular}{l}
-    $W_A=35$\\
-    $W_B=31$
+    $W_\text{A}=35$\\
+    $W_\text{B}=31$
 \end{tabular}
 \end{center}
 
 \end{minipage}
 \end{figure}
 
-The test statistic, $W$, is the *smallest possible rank sum that can be obtained for the smaller sample*, here $B$. A time-consuming approach would be to reorder the values and rerank them to check if this produces a smaller rank sum $W_B$.
+The test statistic, $W$, is the *smallest possible rank sum that can be obtained for the smaller sample*, here B.\newline One option would be to reorder the values and rerank them to see if this produces a smaller rank sum $W_\text{B}$.
 
 \begin{figure}[H]
   \centering
@@ -250,17 +248,19 @@ The test statistic, $W$, is the *smallest possible rank sum that can be obtained
 
 \begin{center}
 \begin{tabular}{l}
-    $W_A=37$\\
-    $W_B=29$
+    $W_\text{A}=37$\\
+    $W_\text{B}=29$
 \end{tabular}
 \end{center}
 
 \end{minipage}
 \end{figure}
 
-Hence, the test statistic can now be confirmed as $W=29$. However this value can be obtained without reordering using the formula $m(m+n+1)-W_m$, where $m$ and $n$ represent the sizes of the smaller and larger samples respectively:
+Hence, the test statistic can now be confirmed as $W=29$. 
 
-$$5(5+6+1)-31=29$$
+However this value can be obtained without reordering using the formula $m(m+n+1)-W_m$, where $m$ and $n$ represent the sizes of the smaller and larger samples respectively:
+
+$$m(m+n+1)-W_m= 5(5+6+1)-31=29$$
 
 \pagebreak
 
@@ -277,9 +277,7 @@ $$5(5+6+1)-31=29$$
 
 Taking as the test statistic the value $W=29$, the test can now be concluded.
 
-From page 16 of the SQA Data Booklet the critical value of $18$ can be obtained, using $m=5$, $n=6$ and a two-tailed test at the 5\% significance level. 
-
-Since $29>18$, $\text{H}_0$ can not be rejected at the 5\% level of significance. There is insufficient evidence to suggest that the two distributions have different population medians.
+From page 16 of the Data Booklet the critical value of $W=18$ can be obtained, using $m=5$, $n=6$ and a two-tailed test at the 5\% significance level. Since $29>18$, $\text{H}_0$ cannot be rejected at the 5\% level of significance. There is insufficient evidence to suggest that the two distributions have different population medians.
 
 Note that whilst only the rank sum for the \textit{smaller sample} is required, to minimise errors it is recommended to calculate rank sums for both samples and check that they add to the required total of $\frac{1}{2}(m+n)(m+n+1)$. Here $\frac{1}{2}\times 11\times 12=66$, and it should be observed that for each pair of rank sums the total is $66$.
 
@@ -327,7 +325,11 @@ Note that whilst only the rank sum for the \textit{smaller sample} is required, 
 
 Stating an assumption required, perform a non-parametric test to assess the data for evidence of a difference in the median time taken for hockey and rugby players to run 5km.
 \tcblower
-\textbf{Solution:} \textit{Assume the distributions of time taken to run 5km for hockey players and rugbey players have the same shape and variance.}\\
+\textbf{Solution:}
+
+Assume the distributions of time taken to run 5km for hockey players and rugbey players have the same shape and variance.
+
+\vspace{0.2cm}
 
 \begin{math}
 \begin{array}{ll}
@@ -342,6 +344,8 @@ Stating an assumption required, perform a non-parametric test to assess the data
   \right.
 \end{math}
 
+\vspace{0.1cm}
+
 \begin{center}
 \begin{tabular}{c c c c c c c c c c c c c} 
     Values & 18 & 19 & 20 & 22 & 23 & 23 & 24 & 27 & 28 & 29 & 30 & 33\\
@@ -352,8 +356,8 @@ Stating an assumption required, perform a non-parametric test to assess the data
 
 \begin{center}
 \begin{tabular}{l c l c r}
-    $n=7$ & \qquad & $W_H=30.5$ & \qquad & $\frac{1}{2}\times 12 \times 13=78$\\[0.5em]
-    $m=5$ & \qquad & $W_R=47.5$ & & \textit{Check: }$30.5+47.5=78$
+    $n=7$ & \qquad & $W_\text{hockey}=30.5$ & \qquad & $\frac{1}{2}\times 12 \times 13=78$\\[0.5em]
+    $m=5$ & \qquad & $W_\text{rugby}=47.5$ & & \textit{Check: }$30.5+47.5=78$
 \end{tabular}
 \end{center}
 
@@ -361,8 +365,10 @@ Find the smaller of: $W_R=47.5$ and $5\times 12-47.5=17.5$\\
 
 \begin{tabular}{l l l }
 Test statistic: & $W=17.5$ & \\[0.5em]
-Critical value: & $CV=20$ & \quad ($\alpha=0.05$, $m=5,n=7$ \text{and two-tailed.})
-\end{tabular}\\
+Critical value: & $W=20$ & \quad ($\alpha=0.05$, $m=5,n=7$ \text{and two-tailed.})
+\end{tabular}
+
+\vspace{0.3cm}
 
 Since $17.5<20$, reject $H_0$ at the 5\% level of significance. 
 There is evidence to suggest that the median time taken for rugby players to run 5km is different than the median time taken for hockey players.
@@ -385,7 +391,7 @@ There is evidence to suggest that the median time taken for rugby players to run
         \end{tabular}
     \end{center}
     \begin{center}
-        \begin{tikzpicture}
+        \begin{tikzpicture}[scale=0.9]
             \draw[-stealth] (0,0) -- (11,0);
             \node[right] at (11,0) {higher};
             \node[above] at (-1,0.2) {First Year};
@@ -409,70 +415,72 @@ There is evidence to suggest that the median time taken for rugby players to run
         \item Use the data provided in the table to verify the test statistic of 20.5. 
         \item Conclude the test at the 5\% level of significance.
     \end{enumerate}
-    \item A highways official wants to compare two brands of paint used for road markings. Twenty similar locations are selected and at ten of them brand A is used and at the others brand B. The number of months the markings last for were recorded and the
-results shown below.
-    \begin{center}
-        \begin{tabular}{ccccccccccc}
-            Brand A & 35.6 & 36.1 & 37.0 & 35.8 & 34.9 & 34.9 & 36.0 & 37.8 & 36.6 & 36.5\\
-            \hline
-            Brand B & 37.2 & 36.4 & 39.7 & 37.5 & 37.2 & 40.5 & 38.8 & 38.2 & 37.7 & 36.6
-        \end{tabular}
-    \end{center}
-    Perform a Mann-Whitney test, using the rank sum for Brand A of 65.5, to determine whether there is a difference between the two brands' durability. 
-    \item The durability of two brands of power lawn mowers are to be compared. For independent random samples from each brand, the number of years each lawn mower lasted before breaking down beyond repair is recorded:
+    \item A shopper regularly buys boxes of \textit{medium-sized} eggs from two different supermarkets, \textit{WaitThistle} and \textit{Largl}. Over a period of time, they randomly select a single egg from each box they buy and measure their masses, in grams. The results are shown in the table below.
       \begin{center}
       \begin{tabular}{c|cccccc}
-          Brand X & 2.3 & 3.7 & 1.9 & 6.8 & 3.5 & 4.4\\
+          WaitThistle & 59.7 & 56.9 & 53.9 & 54.4 & 50.0 & 51.9\\
           \hline
-          Brand Y & 5.9 & 3.8 & 6.4 & 5.6 & 4.9 & 5.9 
+          Largl & 55.8 & 49.3 & 49.4 & 56.3 & 51.2 & 
       \end{tabular}
       \end{center}
-      Test at the 10\% level of significance whether the data indicates that there is a difference in median number of year that power lawn mowers from each brand last.
-      \item The contents of a random sample of six pots of ‘Extrafrute’ jam were measured. The results, in grams, were:
+      Test at the 10\% level of significance whether the data indicates that there is a difference in median egg mass between the two supermarkets, for medium eggs.
+    \item A medical trial wishes to compare the effectiveness of two new types of mild painkiller. Twenty volunteers are selected and randomly assigned either painkiller A or painkiller B, and a effectiveness score from 0 to 5 is obtained for each person though an industry-recognised pain tolerance test using ice-cold water.
+    \begin{center}
+        \begin{tabular}{ccccccccccc}
+            Painkiller A & 2.5 & 1.4 & 1.6 & 1.9 & 2.2 & 1.4 & 1.5 & 2.9 & 1.6 & 2.5\\
+            \hline
+            Painkiller B & 2.2 & 1.6 & 2.0 & 2.3 & 3.7 & 3.4 & 2.8 & 3.0 & 2.7 & 3.8
+        \end{tabular}
+    \end{center}
+    Perform a Mann-Whitney test at the 2\% level, using the rank sum for painkiller A of 18.5, to determine whether there is a difference between the effectiveness of the two painkillers. 
+      \item The contents of a random sample of six bags of coffee beans sold by \textit{Brewhemian Rhapsody} were measured.\newline The results, in grams, were:
       \begin{center}
       \begin{tabular}{cccccc}
-      342 & 354 & 349 & 350 & 347 & 356
+      254 & 255 & 254 & 248 & 256 & 251
       \end{tabular}
       \end{center}
-      The results for a random sample of eight pots of ‘Jambo’ jam were:
+      The results for a random sample of eight bags sold by \textit{The Bean Supremacy} were:
       \begin{center}
       \begin{tabular}{cccccccc}
-      340 & 341 & 348 & 342 & 346 & 347 & 342 & 344
+      240 & 249 & 244 & 246 & 245 & 250 & 240 & 253
       \end{tabular}
       \end{center}
-      Use a non-parametric test to assess the evidence that the pots of the ‘Extrafrute’ brand have more jam in them.
+      Use a non-parametric test to assess the evidence that the \textit{Brewhemian Rhapsody} bags have more coffee in them.
       \pagebreak
-      \item A farmer decides to test a new diet for egg production. A group of twelve hens is randomly divided into two groups of six. One group is fed the new diet and the other the old. The egg yields recorded in the first year of the test are displayed in the stem-and-leaf diagram below.
+\item A gardener tests a new bag of compost against their old stored compost by sowing twenty seeds for the \textit{Monstera deliciosa} plant in a large seed tray with individual compartments to keep each separate. Ten compartments were randomly selected to be filled with the new compost, and ten with the old compost. Only nine seeds from each group germinated, and their heights after one month were recorded, and are displayed in the stem-and-leaf diagram below.
       \begin{center}
           \begin{tikzpicture}
               \draw (-0.4,0.3) -- (-0.4,-2.4);
               \draw (0.4,0.3) -- (0.4,-2.4);
-              \node at (0,0) {$22$};
-              \node at (0,-0.5) {$23$};
-              \node at (0,-1) {$24$};
-              \node at (0,-1.5) {$25$};
-              \node at (0,-2) {$26$};
-              \node at (1,-1) {$5$};
-              \node at (1.5,-1) {$8$};
-              \node at (1,-1.5) {$5$};
-              \node at (1.5,-1.5) {$8$};
-              \node at (2,-1.5) {$9$};
+              \node at (0,0) {$1$};
+              \node at (0,-0.5) {$2$};
+              \node at (0,-1) {$3$};
+              \node at (0,-1.5) {$4$};
+              \node at (0,-2) {$5$};
+              \node at (1,-0.5) {$8$};
+              \node at (1,-1) {$4$};
+              \node at (1.5,-1) {$7$};
+              \node at (2,-1) {$9$};
+              \node at (1,-1.5) {$4$};
+              \node at (1.5,-1.5) {$3$};
+              \node at (2,-1.5) {$5$};
+              \node at (2.5,-1.5) {$6$};
               \node at (1,-2) {$0$};
               \node at (-1,0) {$7$};
-              \node at (-1,-0.5) {$0$};
+              \node at (-1,-0.5) {$4$};
+              \node at (-1.5,-0.5) {$9$};
               \node at (-1,-1) {$2$};
               \node at (-1.5,-1) {$4$};
+              \node at (-2,-1) {$6$};
+              \node at (-2.5,-1) {$8$};
               \node at (-1,-1.5) {$0$};
               \node at (-1,-2) {$1$};
-              \node[above] at (-2,0.3) {Old Diet};
-              \node[above] at (2,0.3) {New Diet};
-              \draw (5.4,-2.1) -- (5.4,-1.4);
-              \node at (5.1,-1.75) {$24$};
-              \node at (7.52,-1.79) {$8$ represents 248 grams};
+              \node[above] at (-2,0.3) {Old Compost};
+              \node[above] at (2,0.3) {New Compost};
+              \node at (7.52,-1.79) {$5$ | $4$ represents 5.4 cm};
         \end{tikzpicture}
       \end{center}
-      Use a Mann-Whitney test at the 5\% level to test the hypothesis that the new diet
-leads to improved egg production.
+      Use a Mann-Whitney test whether the data suggests that the new compost supports faster growth.
       \item The times (in minutes) it took six randomly selected field mice to learn to run a simple maze and the times it took six randomly selected house mice to learn to run the same maze are given. 
       \begin{multicols}{2}
     \begin{center}
@@ -510,30 +518,31 @@ leads to improved egg production.
     \end{center}
     \end{multicols}
     Stating an assumption required, use a non-parametric test to determine if there is a difference in learning rate between the two types of mice.
-    \item An investigation was conducted into the dust content in the flue gases of two types of solid-fuel boilers. Thirteen boilers of type A and nine boilers of type B were used under identical fuelling and extraction conditions. Over a similar period, the following quantities, in grams, of dust were deposited in similar traps inserted in each of the twenty-two flues.
+    \item A motoring magazine tested the range of electric car models from two manufacturers. A looping route was devised with a mix of road conditions, and each car was driven around this route until they ran out of charge. Twelve cars from \textit{Omh-G Motors} and nine from \textit{Watts-Up Motors} were tested, and their observed range in miles for the route recorded in the table below.
     \begin{center}
-    \begin{tabular}{c|ccccccccccccc}
-        Type A & 73.1 & 56.4 & 82.1 & 67.2 & 55.2 & 78.7 & 75.1 & 48.0 & 60.6 & 63.1 & 53.3 & 55.5 & 61.5\\
+    \begin{tabular}{c|cccccccccccc}
+        Ohm-G & 314 &327 &364 &352 &373 &385 &305 &384 &326 &387 &352 &330\\
         \hline
-        Type B & 53.0 & 39.3 & 55.8 & 46.0 & 56.4 & 58.8 & 41.2 & 66.6 & 58.9  &  &  &  & 	
+        Watts-Up & 355 &320 &295 &314 &329 &291 &332 &305 &336
     \end{tabular}
     \end{center}
     A non-parametric test for a difference in population medians was performed at the 5\% level of significance.\vspace{0.5cm}\\
     \texttt{Mann-Whitney rank sum test}\\
-    \texttt{data: TypeA and TypeB}\\
+    \texttt{data: Ohm-G and Watts-Up}\\
     \texttt{alternative hypothesis: true location shift is not equal to 0}\\
-    \texttt{W for TypeB = 134.5}\qquad \texttt{p-value = 0.0416}\\[1em]
+    \texttt{W for Watts-Up = ???}\qquad \texttt{p-value = 0.04262}\\[0.1em]
     \begin{enumerate}
         \item State the suitable null and alternative hypotheses the the test conducted.
-        \item By performing the usual check and the rank sum for Type B given in the computer output, obtain the required test statistic.
+        \item By performing the usual check and the rank sum for \textit{Watts-Up} given in the computer output, obtain the required test statistic.
         \item Use the answer from (b) to complete the hypothesis test and interpret the result.
-        \item State three assumptions required for the test performed to be valid.
     \end{enumerate}
 \end{enumerate}
 
 \pagebreak
 
 ## Normal Approximation to the Mann-Whitney Rank Sum Test
+
+Whilst large samples may allow data from *not-normally-distributed* populations to be assessed using a parametric test due to the Central Limit Theorem, non-parametric tests can sometimes be more robust when handling data from *significantly-non-normal* populations. This means the Mann-Whitney test is not only used for small samples.
 
 The Data Booklet only provides Mann-Whitney critical values for sample sizes where $n\leqslant 20$ and $m\leqslant 20$. When dealing with larger samples, where $m,n>20$, a Mann-Whitney Rank Sum Test may still be performed using a **normal approximation**. Page 16 of the Data Booklet  provides the required properties of the distribution of the test statistic, $W$:
 
@@ -586,9 +595,11 @@ $\text{V}(W)=\dfrac{1}{12}\times 24\times 26 \times (24+26+1)=2652$\\
 
 $W\approx \text{N}(612,2652)$
 
+\vspace{0.3cm}
+
 Test statistic: $z=\dfrac{452.5-612}{\sqrt{2652}}=-3.10$\\
 
-\vspace{0.3cm}
+\vspace{0.2cm}
 
 Critical value: $-1.96$
 \hspace{4cm}
@@ -628,7 +639,7 @@ Critical value: $-1.96$
 \end{axis}
 \end{tikzpicture}\\
 
-\vspace{0.5cm}
+\vspace{0.2cm}
 
 Since $-3.10<-1.96$, reject $H_0$ at the 5\% level of significance. 
 There is evidence to suggest that the median length of an Atlantic herring differs from that of a North Sea herring.
@@ -642,38 +653,34 @@ There is evidence to suggest that the median length of an Atlantic herring diffe
 #### [Exercise 17.2](#ex172a) {-}
 
 \begin{enumerate}
-    \item A commuter made a number of car journeys, on weekday mornings, from Perth to Glasgow. She believed that journeys on wet days would take longer, on average, than journeys on dry days. Journey length (in minutes) and weather conditions (either \textit{dry}, D, or \textit{wet}, W) for 48 randomly chosen days throughout the Autumn months, of which 21 were classified as \textit{dry}. The results are shown below.
+    \item A professional landscape photographer with an interest in dramatic scenes believes she takes more photographs which she wants to save, which she calls \textit{keepers}, on rainy days than on dry days. Over the course of one Spring, she sets out every day and records for each day whether it is dry or rainy, and the number of \textit{keepers} she took.
     \begin{center}
     \begin{tabular}{c|ccc|ccc|ccc|ccc|ccc|c}
-    40&D&\qquad&50&D&\qquad&55&D&\qquad&59&D&\qquad&61&W&\qquad&70&W\\
-    44&D&\qquad&51&W&\qquad&56&W&\qquad&59&W&\qquad&62&W&\qquad&72&W\\
-    45&W&\qquad&51&W&\qquad&56&D&\qquad&59&W&\qquad&63&W&\qquad&73&W\\
-    45&D&\qquad&52&D&\qquad&56&D&\qquad&59&D&\qquad&63&W&\qquad&74&D\\
-    47&D&\qquad&52&D&\qquad&57&D&\qquad&60&W&\qquad&63&W&\qquad&77&W\\
-    47&W&\qquad&54&W&\qquad&57&W&\qquad&61&W&\qquad&68&W&\qquad&77&W\\
-    48&D&\qquad&54&W&\qquad&58&W&\qquad&61&W&\qquad&68&W&\qquad&82&D\\
-    50&D&\qquad&55&D&\qquad&58&W&\qquad&61&D&\qquad&70&W&\qquad&86&W 
+    Dry&20&\qquad&Dry&30&\qquad&Dry&35&\qquad&Dry&39&\qquad&Rainy&41&\qquad&Rainy&50\\
+    Dry&24&\qquad&Rainy&31&\qquad&Rainy&36&\qquad&Rainy&39&\qquad&Rainy&42&\qquad&Rainy&52\\
+    Rainy&25&\qquad&Rainy&31&\qquad&Dry&36&\qquad&Rainy&39&\qquad&Rainy&43&\qquad&Rainy&53\\
+    Dry&25&\qquad&Dry&32&\qquad&Dry&36&\qquad&Dry&39&\qquad&Rainy&43&\qquad&Dry&54\\
+    Dry&27&\qquad&Dry&32&\qquad&Dry&37&\qquad&Rainy&40&\qquad&Rainy&43&\qquad&Rainy&57\\
+    Rainy&27&\qquad&Rainy&34&\qquad&Rainy&37&\qquad&Rainy&41&\qquad&Rainy&48&\qquad&Rainy&57\\
+    Dry&28&\qquad&Rainy&34&\qquad&Rainy&38&\qquad&Rainy&41&\qquad&Rainy&48&\qquad&Dry&62\\
+    Dry&30&\qquad&Dry&35&\qquad&Rainy&38&\qquad&Dry&41&\qquad&Rainy&50&\qquad&Rainy&66 
     \end{tabular}
     \end{center}
-    The data were ranked with the shortest time given rank 1, and the rank sum for the \textit{dry} days was 399.
-    \begin{enumerate}
-        \item Perform a Mann-Whitney test at the 1\% significance level to determine whether or not her belief is supported by the data.
-        \item State an assumption required for the Mann-Whitney test conducted in part (a) to be valid.
-    \end{enumerate}
-    \item Archaeologists determined the silver content (\%Ag) of random samples of 30 coins discovered in Cyprus from each of the first and second mintages of the reign of King Manuel I. The data were ranked and ranks sums obtained:
+    The data wwas ranked from smallest to largest, and the rank sum for the \textit{dry} days was 399. Perform a Mann-Whitney test at the 1\% significance level to determine whether or not her belief is supported by the data.
+    \item An agricultural scientist measures the soil pH level of thirty randomly selected fields in the North West of England and thirty in the South East of England. The data was ranked and rank sums were obtained:
     \begin{center}
         \begin{tabular}{ccc}
-        First mintage rank sum $=1015$ \qquad \qquad & Second mintage rank sum $=815$
+        North West rank sum $=1015$ \qquad \qquad & South East rank sum $=815$
         \end{tabular}
     \end{center}
-    Carry out a hypothesis test to compare the medians of the silver content for the two mintages.
-    \item During the development of a new adhesive, a research team tested the tensile strength ($N/m^2$) of random samples of 21 bonds made with Formulation A and 25 bonds made with Formulation B. The results were ranked and ranks sums were:
+    Carry out a hypothesis test to assess the evidence for a difference in median soil pH levels for fields in the two regions, at the 5\% level.
+    \item A technology magazine tested the cooling power of random samples of 21 fans from brand A and 25 from brand B. When ranked from lowest cooling power to highest, the brand A fans had the higher rank sum. The results were ranked and ranks sums were:
     \begin{center}
     \begin{tabular}{ccc}
-        $W_A = 583$ & \qquad \qquad & $W_B = 498$
+        $W_\text{A} = 583$ & \qquad \qquad & $W_\text{B} = 498$
     \end{tabular}
     \end{center}
-    Perform a non-parametric hypothesis test to determine whether or not the data provide evidence that Formulation A makes stronger bands than Formulation B.
+    Perform a non-parametric hypothesis test to assess whether the data provides evidence that brand A fans have more cooling power.
     \item A factory which makes electric heaters has two manufacturing lines in operation, one older and one newer. A quality control inspector wishing to compare the performance of each line selects a random sample of 28 heaters from the old line and 24 heaters from the new line. A quality rating is given for each heater from 0 (terrible) to 10 (flawless), and the results displayed in the dot plots below.
     \begin{center}
         \begin{tikzpicture}
