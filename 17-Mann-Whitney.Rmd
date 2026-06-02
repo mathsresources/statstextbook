@@ -1,8 +1,6 @@
 # Mann-Whitney Rank Sum Test
 
-The parametric two-sample $t$-test for population means relies on an assumption that each population is normally distributed. Where this assumption cannot be safely made, the \textbf{non-parametric} \textit{Mann-Whitney Rank Sum test} may be used to explore a difference in population \textbf{medians}, provided certain other assumptions can be made. It is an example of a \textit{permutation test}, which are those that can be approached by considering equally-likely possibilities. 
-
-Consider random samples of two mice of species A and four of species B, which will be ordered from lightest to heaviest, and then ranks from 1 to 6 assigned. Below are all 15 possible arrangements of ranks for the six mice, and the \textit{sum of the ranks} obtained by the two mice of species A:
+Consider random samples of two mice of species A and four of species B, which will be ordered from lightest to heaviest, and then ranks from 1 to 6 assigned. Below are all 15 possible \textbf{equally-likely} arrangements of ranks for the 6 mice, and the \textit{sum of the ranks} obtained by the two from species A:
 
 \begin{center}
     \begin{tabular}{|c|c|c|c|c|c|}
@@ -20,9 +18,33 @@ Consider random samples of two mice of species A and four of species B, which wi
 
 If the population distributions of mass for mice from species A and mice from species B are \textit{identical} then the probability of obtaining for A a rank sum less than or equal to 4 (for example) by random chance is:
 
+\begin{center}
+    \begin{tikzpicture}
+        \draw (2,0) -- (12,0);
+        \foreach \x in {3,4,...,11}{
+        \draw (\x,-0.1) -- (\x,0) node[below] {\x};
+        }
+        \draw[fill=black!25] (3,0.4) circle (0.1);
+        \draw[fill=black!25] (4,0.4) circle (0.1);
+        \draw (5,0.4) circle (0.1);
+        \draw (5,0.8) circle (0.1);
+        \draw (6,0.4) circle (0.1);
+        \draw (6,0.8) circle (0.1);
+        \draw (7,0.4) circle (0.1);
+        \draw (7,0.8) circle (0.1);
+        \draw (7,1.2) circle (0.1);
+        \draw (8,0.4) circle (0.1);
+        \draw (8,0.8) circle (0.1);
+        \draw (9,0.4) circle (0.1);
+        \draw (9,0.8) circle (0.1);
+        \draw (10,0.4) circle (0.1);
+        \draw (11,0.4) circle (0.1);
+    \end{tikzpicture}
+\end{center}
+
 $$\text{P}(\text{rank sum obtained}\leqslant4)=\dfrac{2}{15}=0.1333$$
 
-If it is assumed that the two population distributions of mice masses have the \textit{same shape and variance} then hypotheses may be formed which focus on a possible difference in the \textit{medians}, $\eta_\text{A}$ and $\eta_\text{B}$, of the distributions. Hypotheses for this two-sample test may be one-tailed or two-tailed. Here, a one-tailed example is given:
+If it is assumed that the two population distributions of mice masses have the \textit{same shape and variance} then hypotheses may be formed which focus on a possible difference in the \textit{medians}, $\eta_\text{A}$ and $\eta_\text{B}$, of the distributions. Hypotheses for this \textit{Mann-Whitney Rank Sum} test may be one-tailed or two-tailed. Here, a one-tailed example is given:
 
 \begin{center}
 \begin{math}
@@ -47,7 +69,7 @@ Since the process of listing possible arrangements would become excessively time
 
 ## Mann-Whitney Rank Sum Test
 
-Given two independent samples, the non-parametric Mann-Whitney Rank Sum test can be used to assess whether the two population distributions have different *medians*. It is typically used in place of a two-sample $t$-test where the two distributions are not *normal* and sample sizes are small. Instead a required assumption is that the population distributions have the **same shape and variance**, to test whether there is evidence of a difference in *locations*:
+Given two independent samples, the *non-parametric* Mann-Whitney Rank Sum test can be used to assess whether the two population distributions from which the samples were taken have different *medians*. It is typically used in place of a two-sample $t$-test where the two distributions cannot be assumed to be *normal* and sample sizes are small. Instead a required assumption is that the population distributions have the **same shape and variance**, to test whether there is evidence of a difference in *locations*:
 
 \begin{figure}[H]
   \centering
@@ -275,9 +297,11 @@ $$m(m+n+1)-W_m= 5(5+6+1)-31=29$$
 \end{tcolorbox}
 \end{centering}
 
-Taking as the test statistic the value $W=29$, the test can now be concluded.
+Taking as the test statistic the value $W=29$, the test can now be concluded. 
 
-From page 16 of the Data Booklet the critical value of $W=18$ can be obtained, using $m=5$, $n=6$ and a two-tailed test at the 5\% significance level. Since $29>18$, $\text{H}_0$ cannot be rejected at the 5\% level of significance. There is insufficient evidence to suggest that the two distributions have different population medians.
+Page 16 of the Data Booklet contains *critical values* for the Mann-Whitney Rank Sum test, which have been determined by considering taking the *smallest possible rank sum* from the *smaller sample*. It is only because the table of critical values has been constructed form this perspective that it is also necessary to take this approach in this course.
+
+The critical value of $W=18$ can be obtained, using $m=5$, $n=6$ and a two-tailed test at the 5\% significance level. Since $29>18$, $\text{H}_0$ cannot be rejected at the 5\% level of significance. There is insufficient evidence to suggest that the two distributions have different population medians.
 
 Note that whilst only the rank sum for the \textit{smaller sample} is required, to minimise errors it is recommended to calculate rank sums for both samples and check that they add to the required total of $\frac{1}{2}(m+n)(m+n+1)$. Here $\frac{1}{2}\times 11\times 12=66$, and it should be observed that for each pair of rank sums the total is $66$.
 
@@ -370,7 +394,7 @@ Critical value: & $W=20$ & \quad ($\alpha=0.05$, $m=5,n=7$ \text{and two-tailed.
 
 \vspace{0.3cm}
 
-Since $17.5<20$, reject $H_0$ at the 5\% level of significance. 
+Since $17.5<20$, reject $\text{H}_0$ at the 5\% level of significance. 
 There is evidence to suggest that the median time taken for rugby players to run 5km is different than the median time taken for hockey players.
 
 \end{tcolorbox}
@@ -461,8 +485,8 @@ There is evidence to suggest that the median time taken for rugby players to run
               \node at (1,-1) {$4$};
               \node at (1.5,-1) {$7$};
               \node at (2,-1) {$9$};
-              \node at (1,-1.5) {$4$};
-              \node at (1.5,-1.5) {$3$};
+              \node at (1,-1.5) {$3$};
+              \node at (1.5,-1.5) {$4$};
               \node at (2,-1.5) {$5$};
               \node at (2.5,-1.5) {$6$};
               \node at (1,-2) {$0$};
@@ -518,7 +542,7 @@ There is evidence to suggest that the median time taken for rugby players to run
     \end{center}
     \end{multicols}
     Stating an assumption required, use a non-parametric test to determine if there is a difference in learning rate between the two types of mice.
-    \item A motoring magazine tested the range of electric car models from two manufacturers. A looping route was devised with a mix of road conditions, and each car was driven around this route until they ran out of charge. Twelve cars from \textit{Omh-G Motors} and nine from \textit{Watts-Up Motors} were tested, and their observed range in miles for the route recorded in the table below.
+    \item A motoring magazine tested the range of electric car models from two manufacturers. A looping route was devised with a mix of road conditions, and each car was driven around this route until they ran out of charge. Twelve cars from \textit{Omh-G Motors} and nine from \textit{Watts-Up Motors} were tested, and their observed driving range in miles for the route recorded in the table below.
     \begin{center}
     \begin{tabular}{c|cccccccccccc}
         Ohm-G & 314 &327 &364 &352 &373 &385 &305 &384 &326 &387 &352 &330\\
@@ -526,11 +550,11 @@ There is evidence to suggest that the median time taken for rugby players to run
         Watts-Up & 355 &320 &295 &314 &329 &291 &332 &305 &336
     \end{tabular}
     \end{center}
-    A non-parametric test for a difference in population medians was performed at the 5\% level of significance.\vspace{0.5cm}\\
+    A non-parametric test for a difference in population medians was performed at the 5\% level of significance.\vspace{0.5cm}\newline The computer software used is known to return a test statistic which may or may not be the \textit{smallest possible} rank sum.\\
     \texttt{Mann-Whitney rank sum test}\\
     \texttt{data: Ohm-G and Watts-Up}\\
     \texttt{alternative hypothesis: true location shift is not equal to 0}\\
-    \texttt{W for Watts-Up = ???}\qquad \texttt{p-value = 0.04262}\\[0.1em]
+    \texttt{W for Watts-Up = 128}\qquad \texttt{p-value = 0.04262}\\[0.1em]
     \begin{enumerate}
         \item State the suitable null and alternative hypotheses the the test conducted.
         \item By performing the usual check and the rank sum for \textit{Watts-Up} given in the computer output, obtain the required test statistic.
@@ -566,8 +590,8 @@ Since here a *discrete* distribution is being approximated by the *continuous* n
 
 \begin{math}
 \begin{array}{ll}
-      H_0: & \eta_{\text{Atlantic}}=\eta_{\text{North Sea}}\\
-      H_1: & \eta_{\text{Atlantic}}\ne \eta_{\text{North Sea}}
+      \text{H}_0: & \eta_{\text{Atlantic}}=\eta_{\text{North Sea}}\\
+      \text{H}_1: & \eta_{\text{Atlantic}}\ne \eta_{\text{North Sea}}
     \end{array}
 \left]
     \begin{array}{l}
@@ -601,7 +625,7 @@ Test statistic: $z=\dfrac{452.5-612}{\sqrt{2652}}=-3.10$\\
 
 \vspace{0.2cm}
 
-Critical value: $-1.96$
+Critical value: $z=-1.96$
 \hspace{4cm}
 \begin{tikzpicture}[overlay]
 \begin{axis}[
@@ -641,7 +665,7 @@ Critical value: $-1.96$
 
 \vspace{0.2cm}
 
-Since $-3.10<-1.96$, reject $H_0$ at the 5\% level of significance. 
+Since $-3.10<-1.96$, reject $\text{H}_0$ at the 5\% level of significance. 
 There is evidence to suggest that the median length of an Atlantic herring differs from that of a North Sea herring.
 
 \end{tcolorbox}
@@ -653,27 +677,27 @@ There is evidence to suggest that the median length of an Atlantic herring diffe
 #### [Exercise 17.2](#ex172a) {-}
 
 \begin{enumerate}
-    \item A professional landscape photographer with an interest in dramatic scenes believes she takes more photographs which she wants to save, which she calls \textit{keepers}, on rainy days than on dry days. Over the course of one Spring, she sets out every day and records for each day whether it is dry or rainy, and the number of \textit{keepers} she took.
+    \item A professional street photographer with an interest in dramatic scenes believes she takes more photographs which she wants to save, which she calls \textit{keepers}, on rainy days than on dry days. She randomly selects 48 of the days from the previous year during which she was out taking photographs and uses her dated database of photographs to note for each day whether it was dry or rainy, and the number of \textit{keepers} she took.
     \begin{center}
     \begin{tabular}{c|ccc|ccc|ccc|ccc|ccc|c}
     Dry&20&\qquad&Dry&30&\qquad&Dry&35&\qquad&Dry&39&\qquad&Rainy&41&\qquad&Rainy&50\\
     Dry&24&\qquad&Rainy&31&\qquad&Rainy&36&\qquad&Rainy&39&\qquad&Rainy&42&\qquad&Rainy&52\\
     Rainy&25&\qquad&Rainy&31&\qquad&Dry&36&\qquad&Rainy&39&\qquad&Rainy&43&\qquad&Rainy&53\\
-    Dry&25&\qquad&Dry&32&\qquad&Dry&36&\qquad&Dry&39&\qquad&Rainy&43&\qquad&Dry&54\\
+    Dry&25&\qquad&Dry&32&\qquad&Dry&36&\qquad&Dry&39&\qquad&Dry&43&\qquad&Dry&54\\
     Dry&27&\qquad&Dry&32&\qquad&Dry&37&\qquad&Rainy&40&\qquad&Rainy&43&\qquad&Rainy&57\\
-    Rainy&27&\qquad&Rainy&34&\qquad&Rainy&37&\qquad&Rainy&41&\qquad&Rainy&48&\qquad&Rainy&57\\
+    Rainy&27&\qquad&Rainy&34&\qquad&Rainy&37&\qquad&Dry&41&\qquad&Rainy&48&\qquad&Rainy&57\\
     Dry&28&\qquad&Rainy&34&\qquad&Rainy&38&\qquad&Rainy&41&\qquad&Rainy&48&\qquad&Dry&62\\
     Dry&30&\qquad&Dry&35&\qquad&Rainy&38&\qquad&Dry&41&\qquad&Rainy&50&\qquad&Rainy&66 
     \end{tabular}
     \end{center}
-    The data wwas ranked from smallest to largest, and the rank sum for the \textit{dry} days was 399. Perform a Mann-Whitney test at the 1\% significance level to determine whether or not her belief is supported by the data.
-    \item An agricultural scientist measures the soil pH level of thirty randomly selected fields in the North West of England and thirty in the South East of England. The data was ranked and rank sums were obtained:
+    The data wwas ranked from smallest to largest, and the rank sum for the 21 \textit{dry} days was 396.5. Perform a Mann-Whitney test using $\alpha=0.05$ to determine whether or not her belief is supported.
+    \item An agricultural scientist measures the soil pH level of thirty randomly selected fields in the North West of England and thirty in the South East. The data was ranked and rank sums were obtained:
     \begin{center}
         \begin{tabular}{ccc}
         North West rank sum $=1015$ \qquad \qquad & South East rank sum $=815$
         \end{tabular}
     \end{center}
-    Carry out a hypothesis test to assess the evidence for a difference in median soil pH levels for fields in the two regions, at the 5\% level.
+    Carry out a hypothesis test to assess the evidence for a difference in median soil pH levels for fields in the two regions, at the 1\% level.
     \item A technology magazine tested the cooling power of random samples of 21 fans from brand A and 25 from brand B. When ranked from lowest cooling power to highest, the brand A fans had the higher rank sum. The results were ranked and ranks sums were:
     \begin{center}
     \begin{tabular}{ccc}
@@ -681,60 +705,61 @@ There is evidence to suggest that the median length of an Atlantic herring diffe
     \end{tabular}
     \end{center}
     Perform a non-parametric hypothesis test to assess whether the data provides evidence that brand A fans have more cooling power.
-    \item A factory which makes electric heaters has two manufacturing lines in operation, one older and one newer. A quality control inspector wishing to compare the performance of each line selects a random sample of 28 heaters from the old line and 24 heaters from the new line. A quality rating is given for each heater from 0 (terrible) to 10 (flawless), and the results displayed in the dot plots below.
+    \item A driving test centre notes, for a random selection of students who sit and pass their test, how many \textit{minor faults} they made and which of the town's two driving schools they used, between \textit{Brake My Day} and \textit{Clutch Academy}. The results are shown on dotplots below.
     \begin{center}
         \begin{tikzpicture}
-            \draw (0,0) -- (10,0);
-            \foreach \x in {0,1,...,10}{
+            \draw (0,0) -- (14,0);
+            \foreach \x in {0,1,...,14}{
             \draw (\x,0) -- (\x,-0.1);
             }
-            \foreach \x in {0,1,...,10}{
+            \foreach \x in {0,1,...,14}{
             \node[below] at (\x,0) {\x};
             }
-            \draw (0,-2) -- (10,-2);
-            \foreach \x in {0,1,...,10}{
+            \draw (0,-2) -- (14,-2);
+            \foreach \x in {0,1,...,14}{
             \draw (\x,-2) -- (\x,-2.1);
             }
-            \foreach \x in {0,1,...,10}{
+            \foreach \x in {0,1,...,14}{
             \node[below] at (\x,-2) {\x};
             }
-        \node[left] at (0,1) {old line};
-        \node[left] at (0,-1) {new line};
+        \node[left] at (14,1) {\textit{Brake My Day}};
+        \node[left] at (14,0.5) {$n=27$};
+        \node[left] at (14,-1) {\textit{Clutch Academy}};
+        \node[left] at (14,-1.5) {$n=26$};
         \draw[fill=black] (0,0.2) circle (2pt);
-        \draw[fill=black] (0,0.4) circle (2pt);
         \draw[fill=black] (1,0.2) circle (2pt);
         \draw[fill=black] (1,0.4) circle (2pt);
-        \draw[fill=black] (1,0.6) circle (2pt);
-        \draw[fill=black] (1,0.8) circle (2pt);
         \draw[fill=black] (2,0.2) circle (2pt);
         \draw[fill=black] (2,0.4) circle (2pt);
         \draw[fill=black] (3,0.2) circle (2pt);
+        \draw[fill=black] (3,0.4) circle (2pt);
         \draw[fill=black] (4,0.2) circle (2pt);
         \draw[fill=black] (5,0.2) circle (2pt);
         \draw[fill=black] (5,0.4) circle (2pt);
-        \draw[fill=black] (5,0.6) circle (2pt);
         \draw[fill=black] (6,0.2) circle (2pt);
         \draw[fill=black] (6,0.4) circle (2pt);
         \draw[fill=black] (6,0.6) circle (2pt);
         \draw[fill=black] (6,0.8) circle (2pt);
+        \draw[fill=black] (6,1.0) circle (2pt);
         \draw[fill=black] (7,0.2) circle (2pt);
         \draw[fill=black] (7,0.4) circle (2pt);
         \draw[fill=black] (7,0.6) circle (2pt);
         \draw[fill=black] (7,0.8) circle (2pt);
         \draw[fill=black] (7,1.0) circle (2pt);
+        \draw[fill=black] (7,1.2) circle (2pt);
         \draw[fill=black] (8,0.2) circle (2pt);
         \draw[fill=black] (8,0.4) circle (2pt);
         \draw[fill=black] (8,0.6) circle (2pt);
         \draw[fill=black] (8,0.8) circle (2pt);
+        \draw[fill=black] (8,1.0) circle (2pt);
         \draw[fill=black] (9,0.2) circle (2pt);
-        \draw[fill=black] (9,0.4) circle (2pt);
-        \draw[fill=black] (0,-1.8) circle (2pt);
         \draw[fill=black] (1,-1.8) circle (2pt);
-        \draw[fill=black] (1,-1.6) circle (2pt);
         \draw[fill=black] (2,-1.8) circle (2pt);
-        \draw[fill=black] (2,-1.6) circle (2pt);
-        \draw[fill=black] (2,-1.4) circle (2pt);
+        \draw[fill=black] (3,-1.6) circle (2pt);
         \draw[fill=black] (3,-1.8) circle (2pt);
+        \draw[fill=black] (4,-1.6) circle (2pt);
+        \draw[fill=black] (4,-1.8) circle (2pt);
+        \draw[fill=black] (5,-1.6) circle (2pt);
         \draw[fill=black] (5,-1.8) circle (2pt);
         \draw[fill=black] (6,-1.8) circle (2pt);
         \draw[fill=black] (6,-1.6) circle (2pt);
@@ -751,15 +776,18 @@ There is evidence to suggest that the median length of an Atlantic herring diffe
         \draw[fill=black] (9,-1.6) circle (2pt);
         \draw[fill=black] (9,-1.4) circle (2pt);
         \draw[fill=black] (9,-1.2) circle (2pt);
+        \draw[fill=black] (9,-1.0) circle (2pt);
         \draw[fill=black] (10,-1.8) circle (2pt);
+        \draw[fill=black] (12,-1.8) circle (2pt);
         \end{tikzpicture}
     \end{center}
     \begin{enumerate}
         \item Explain why the dot plots suggest a Mann-Whitney test would be more appropriate for this data than a $t$-test.
     \end{enumerate}
-    The rank sum for the new line is found to be 562.5.
+    The rank sum for \textit{Clutch Academy} is found to be 606.5.
     \begin{enumerate}[resume]
-        \item Carry out a Mann-Whitney test to determine if there is evidence, at the 10\% level of significance, that the median quality rating for heaters produced by the new line is higher than that of the old line.
+        \item Carry out a Mann-Whitney test to determine if there is evidence at the 0.1\% signficance levelthat, on average, students from \textit{Brake My Day} make fewer errors when they pass their test.
+        \item With reference to the target population and sampling frame, why this data may not be helpful to students looking to choose a driving school to help them pass.
     \end{enumerate}
 \end{enumerate}
 
@@ -794,8 +822,8 @@ Assume that the population distributions of number of actuations for each brand'
 
 \begin{math}
 \begin{array}{ll}
-      H_0: & \eta_{\text{A}}=\eta_{\text{B}}\\
-      H_1: & \eta_{\text{A}}< \eta_{\text{B}}
+      \text{H}_0: & \eta_{\text{A}}=\eta_{\text{B}}\\
+      \text{H}_1: & \eta_{\text{A}}< \eta_{\text{B}}
     \end{array}
 \left]
     \begin{array}{l}
@@ -829,7 +857,7 @@ Subsets of relevant arrangements with a rank sum for A$\leqslant9$:
 
 $p\text{-value}=\text{P}(\text{rank sum}\leqslant9)=\dfrac{7}{120}=0.0583$\\
 
-Since $0.0583<0.1$, reject $H_0$ at the 10\% level of significance. 
+Since $0.0583<0.1$, reject $\text{H}_0$ at the 10\% level of significance. 
 There is evidence to suggest that the median number of shutter actuations before failure for Brand A is less than that for Brand B, and so Brand A's cameras are less reliable.
 
 \end{tcolorbox}

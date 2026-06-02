@@ -1,6 +1,6 @@
 # Wilcoxon Signed Rank Test
 
-The $z$ and $t$ hypothesis tests from chapters 10 and 15 which explore the *locations* of distributions have all focused on the *population mean*, $\mu$. Those *parametric* tests each rely on either normally distributed populations or sample sizes greater than $20$ such that the sample mean is approximately normally distributed.
+The $z$-tests and $t$-tests from chapters 10 and 15 which explore the *locations* of distributions have all focused on the *population mean*, $\mu$. Those *parametric* tests each rely on either normally distributed populations or sample sizes greater than $20$ such that the sample mean is approximately normally distributed.
 
 Given small samples ($n<20$) from populations whose distributions may not be assumed to be normally distributed, a number of **non-parametric** tests may be used which instead explore the locations of distributions by considering the **population median**, $\eta$ (*'eta'*).
 
@@ -68,11 +68,11 @@ The Sign Test is a simple non-parametric test that, whilst *not required for the
 \end{minipage}
 \end{figure}
 
-With $4$ out of the $12$ observed values being less than $9$, the $p$-value for this test can be calculated as the probability of observing $4$ or fewer values less than $\eta=9$. Letting random variable $X$ represent the number of such values, which follows a $B(12,0.5)$ distribution under the null hypothesis:
+With $4$ out of the $12$ observed values being less than $9$, the $p$-value for this test can be calculated as the probability of observing $4$ or fewer values less than $\eta=9$. Letting random variable $X$ represent the number of such values, which follows a $\text{B}(12,0.5)$ distribution under the null hypothesis:
 
 \vspace{-0.3cm}
 
-$$p\text{-value}=P(X\leqslant4)=0.1938$$
+$$p\text{-value}=\text{P}(X\leqslant4)=0.1938$$
 
 \vspace{0.1cm}
 
@@ -84,7 +84,7 @@ There is insufficient evidence to suggest that the population median is less tha
 
 ## Wilcoxon Signed Rank Test
 
-Whilst the Sign Test is only concerned with the number of values that fall on either side of the hypothesised population median, $\eta$, the Wilcoxon Signed Rank test also considers how far from the median these values lie. More specifically, it applies weighting to the values by assigning *rank* $1$ to the value closest to $\eta$, *rank* $2$ to the second closest, and so on.
+Whilst the Sign Test is only concerned with the number of values that fall on either side of the hypothesised population median, $\eta$, the Wilcoxon Signed Rank test also considers how *far* from the median these values lie. More specifically, it applies weighting to the values by assigning *rank* $1$ to the value closest to $\eta$, *rank* $2$ to the second closest, and so on.
 
 \textbf{Zeros:} Any values that are exactly equal to the median, $\eta$, are ignored and not given a rank, with the sample size $n$ reduced to reflect the number of *remaining values to be ranked*.
 
@@ -95,7 +95,7 @@ Whilst the Sign Test is only concerned with the number of values that fall on ei
     \item Ranks of values less than the median are denoted as \textit{negative ranks}, and their total as $W_{-}$. 
 \end{itemize}
 
-Consider a random sample of nine values from a distribution with median $\eta=10$: \qquad $2,4,5,6,10,11,12,13,16$
+Consider a random sample of nine values from a distribution with claimed median $\eta=10$: \quad $2,4,5,6,10,11,12,13,16$
 
 \begin{center}
 \begin{math}
@@ -332,7 +332,7 @@ Test statistic: & $W=5.5$ & \\[0.5em]
 Critical value: & $CV=8$ & \quad ($\alpha=0.1$, $n=9$ \text{and two-tailed.})
 \end{tabular}\\
 
-Since $5.5<8$, reject $H_0$ at the 10\% level of significance. 
+Since $5.5<8$, reject $\text{H}_0$ at the 10\% level of significance. 
 There is evidence to suggest that the median score achieved in the hazard perception tests has changed from 44 points.
 
 \end{tcolorbox}
@@ -436,8 +436,8 @@ Stating an assumption required, perform a non-parametric test to assess the evid
 
 \begin{math}
 \begin{array}{ll}
-      H_0: & \eta_d=0\\
-      H_1: & \eta_d>0
+      \text{H}_0: & \eta_d=0\\
+      \text{H}_1: & \eta_d>0
     \end{array}
 \left]
     \begin{array}{l}
@@ -466,7 +466,7 @@ Test statistic: & $W=10.5$ & \\
 Critical value: & $CV=13$ & \quad ($\alpha=0.05$, $n=11$ \text{and one-tailed.})
 \end{tabular}\\
 
-Since $10.5<13$, reject $H_0$ at the 5\% level of significance. 
+Since $10.5<13$, reject $\text{H}_0$ at the 5\% level of significance. 
 There is evidence to suggest that the median difference in 400 metres times is greater than zero, meaning times have improved after the weight training programme.
 
 \end{tcolorbox}
@@ -536,7 +536,7 @@ Stating an assumption required, perform a non-parametric test to assess whether 
 
 The Data Booklet only provides Wilcoxon critical values for effective sample sizes where $n\leqslant20$, due to the complexity of obtaining exact critical values as $n$ increases. When dealing with a larger sample, where $n>20$ after zeros have been removed, a Wilcoxon Signed Rank Test may still be performed using a **normal approximation**. Page 15 of the Data Booklet  provides the required properties of the distribution of the test statistic, $W$:
 
-$$E(W)=\frac{1}{4}n(n+1) \quad \text{and} \quad V(W)=\frac{1}{24}n(n+1)(2n+1)$$
+$$\text{E}(W)=\frac{1}{4}n(n+1) \quad \text{and} \quad \text{V}(W)=\frac{1}{24}n(n+1)(2n+1)$$
 
 Since here a *discrete* distribution is being approximated by the *continuous* normal distribution, a **continuity correction** is required. If the test statistic $W$ is taken as the lower of $W_+$ and $W_-$, a continuity correction of $+0.5$ should be used.
 
@@ -557,8 +557,8 @@ Use a non-parametric test to investigate the resident’s claim.
 
 \begin{math}
 \begin{array}{ll}
-      H_0: & \eta=30\\
-      H_1: & \eta>30
+      \text{H}_0: & \eta=30\\
+      \text{H}_1: & \eta>30
     \end{array}
 \left]
     \begin{array}{l}
@@ -588,7 +588,7 @@ Use a non-parametric test to investigate the resident’s claim.
 \end{tabular}
 \end{center}
 
-$$E(W)=\frac{1}{4}\times 22\times23=126.5 \quad \text{and} \quad V(W)=\frac{1}{24}\times 22\times 23\times 45=948.75$$
+$$\text{E}(W)=\frac{1}{4}\times 22\times23=126.5 \quad \text{and} \quad \text{V}(W)=\frac{1}{24}\times 22\times 23\times 45=948.75$$
 
 \vspace{0.5cm}    
 
@@ -631,7 +631,7 @@ Critical value: $-1.64$
 
 \vspace{0.3cm}
 
-Since $-3.12<-1.64$, reject $H_0$ at the 5\% level of significance. 
+Since $-3.12<-1.64$, reject $\text{H}_0$ at the 5\% level of significance. 
 There is evidence to suggest that the median speed of the vehicles on the road is greater than 30 mph, and so more than 50\% of the vehicles are speeding..
 
 \end{tcolorbox}
