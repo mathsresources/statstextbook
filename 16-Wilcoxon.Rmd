@@ -1,12 +1,12 @@
 # Wilcoxon Signed Rank Test
 
-The $z$-tests and $t$-tests from chapters 10 and 15 which explore the *locations* of distributions have all focused on the *population mean*, $\mu$. Those *parametric* tests each rely on either normally distributed populations or sample sizes greater than $20$ such that the sample mean is approximately normally distributed.
+The $z$-tests and $t$-tests from chapters 10 and 15 which explore the *locations* of distributions have all focused on the *population mean*, $\mu$. Those *parametric* tests each rely on either normally distributed populations or sample sizes greater than $20$ such that the sample mean is approximately normally distributed (through the Central Limit Theorem).
 
 Given small samples ($n<20$) from populations whose distributions may not be assumed to be normally distributed, a number of **non-parametric** tests may be used which instead explore the locations of distributions by considering the **population median**, $\eta$ (*'eta'*).
 
 ### Sign Test {-}
 
-The Sign Test is a simple non-parametric test that, whilst *not required for the Advanced Higher Statistics course*, helps to lay the groundwork for the tests covered later in this chapter. It uses a useful property of the population median, $\eta$, namely that $50\%$ of observations sampled from the population  can be expected to be greater than $\eta$ and $50\%$ can be expected to be less than $\eta$. This means that the number of observations on one side of the population median in a sample of size $n$ should follow a $B(n,0.5)$ distribution. For example, consider the following random sample of values ($n=12$) and a claim that the population median is less than $9$:
+The Sign Test is a simple non-parametric test that, whilst *not required for the Advanced Higher Statistics course*, helps to lay the groundwork for the tests covered later in this chapter. It uses a useful property of the population median, $\eta$, namely that $50\%$ of observations sampled from the population  can be expected to be greater than $\eta$ and $50\%$ can be expected to be less than $\eta$. This means that the number of observations on one side of the population median in a sample of size $n$ should follow a $\text{B}(n,0.5)$ distribution. For example, consider the following random sample of values ($n=12$) and a claim that the population median is less than $9$:
 
 \begin{figure}[H]
   \centering
@@ -84,7 +84,7 @@ There is insufficient evidence to suggest that the population median is less tha
 
 ## Wilcoxon Signed Rank Test
 
-Whilst the Sign Test is only concerned with the number of values that fall on either side of the hypothesised population median, $\eta$, the Wilcoxon Signed Rank test also considers how *far* from the median these values lie. More specifically, it applies weighting to the values by assigning *rank* $1$ to the value closest to $\eta$, *rank* $2$ to the second closest, and so on.
+Whilst the Sign Test is only concerned with the *number* of values that fall on either side of the hypothesised population median, $\eta$, the Wilcoxon Signed Rank test also considers how *far* from the median these values lie. More specifically, it applies weighting to the values by assigning *rank* $1$ to the value closest to $\eta$, *rank* $2$ to the second closest, and so on.
 
 \textbf{Zeros:} Any values that are exactly equal to the median, $\eta$, are ignored and not given a rank, with the sample size $n$ reduced to reflect the number of *remaining values to be ranked*.
 
@@ -95,7 +95,7 @@ Whilst the Sign Test is only concerned with the number of values that fall on ei
     \item Ranks of values less than the median are denoted as \textit{negative ranks}, and their total as $W_{-}$. 
 \end{itemize}
 
-Consider a random sample of nine values from a distribution with claimed median $\eta=10$: \quad $2,4,5,6,10,11,12,13,16$
+Consider a random sample of nine values from a distribution with claimed median $\eta=10$: $2,4,5,6,10,11,12,13,16$
 
 \begin{center}
 \begin{math}
@@ -121,15 +121,15 @@ Consider a random sample of nine values from a distribution with claimed median 
 \draw[semithick,dashed] (10,-0.4) -- (10,0.5);
 \node at (10,0.8) {$\eta$};
 
-\draw[fill=black!35] (11,0) circle (2.5pt) node[anchor=south] {${\scriptstyle 1_{+}}$};
-\draw[fill=black!35] (13,0) circle (2.5pt) node[anchor=south] {${\scriptstyle 3_{+}}$};
-\draw[fill=black!35] (6,0) circle (2.5pt) node[anchor=south] {${\scriptstyle 4_{-}}$};
-\draw[fill=black!35] (16,0) circle (2.5pt) node[anchor=south] {${\scriptstyle 6.5_{+}}$};
-\draw[fill=black!35] (2,0) circle (2.5pt) node[anchor=south] {${\scriptstyle 8_{-}}$};
-\draw[fill=black!35] (5,0) circle (2.5pt) node[anchor=south] {${\scriptstyle 5_{-}}$};
-\draw[fill=black!35] (12,0) circle (2.5pt) node[anchor=south] {${\scriptstyle 2_{+}}$};
-\draw[fill=black!35] (4,0) circle (2.5pt) node[anchor=south] {${\scriptstyle 6.5_{-}}$};
-\draw[fill=black!75] (10,0) circle (2.5pt);
+\draw[fill=black!35] (11,0) circle (2.8pt) node[anchor=south] {${\scriptstyle 1_{+}}$};
+\draw[fill=black!35] (13,0) circle (2.8pt) node[anchor=south] {${\scriptstyle 3_{+}}$};
+\draw[fill=black!35] (6,0) circle (2.8pt) node[anchor=south] {${\scriptstyle 4_{-}}$};
+\draw[fill=black!35] (16,0) circle (2.8pt) node[anchor=south] {${\scriptstyle 6.5_{+}}$};
+\draw[fill=black!35] (2,0) circle (2.8pt) node[anchor=south] {${\scriptstyle 8_{-}}$};
+\draw[fill=black!35] (5,0) circle (2.8pt) node[anchor=south] {${\scriptstyle 5_{-}}$};
+\draw[fill=black!35] (12,0) circle (2.8pt) node[anchor=south] {${\scriptstyle 2_{+}}$};
+\draw[fill=black!35] (4,0) circle (2.8pt) node[anchor=south] {${\scriptstyle 6.5_{-}}$};
+\draw[fill=black!75] (10,0) circle (2.8pt);
 
 \node at (14,-1.6) {$W_+=12.5$};
 \node at (6,-1.6) {$W_-=23.5$};
@@ -152,7 +152,7 @@ Note that the sum of $W_+$ and $W_-$ is $12.5+23.5=36$, which will always be the
 
 \begin{tabular}{l l l }
 Test statistic: & $W=12.5$ & \\[0.5em]
-Critical value: & $CV=3$ & \quad ($\alpha=0.05$, $n=8$ \text{ and two-tailed.})
+Critical value: & $W=3$ & \quad ($\alpha=0.05$, $n=8$ \text{ and two-tailed.})
 \end{tabular}
 
 Since $12.5>3$, do not reject $\text{H}_0$ at the $5\%$ level of significance.  
@@ -160,7 +160,7 @@ There is insufficient evidence to suggest that the population **median** is not 
 
 \pagebreak
 
-The Wilcoxon Signed Rank test will typically be used for small samples for which the Central Limit Theorem cannot be invoked, from populations which cannot be reasonably assumed to be normally distributed in order to use a $t$-test. The table of critical values only extends to samples up to size $n=20$, once zeros have been discarded. 
+The Wilcoxon Signed Rank test is often used for small samples for which the Central Limit Theorem cannot be invoked, from populations which cannot be reasonably assumed to be normally distributed in order to use a $t$-test. The table of critical values only extends to samples up to size $n=20$, once zeros have been discarded. 
 
 \begin{centering}
 \tcbset{width=10cm}
@@ -250,7 +250,7 @@ Assume that the mass of crisps in a bag is symmetrically distributed.\\
 
 \begin{tabular}{l l l }
 Test statistic: & $W=15$ & \\[0.5em]
-Critical value: & $CV=1$ & \quad ($\alpha=0.01$, $n=8$ \text{and one-tailed.})
+Critical value: & $W=1$ & \quad ($\alpha=0.01$, $n=8$ \text{and one-tailed.})
 \end{tabular}\\
 
 Since $15>1$, do not reject $\text{H}_0$ at the 1\% level of significance. 
@@ -329,7 +329,7 @@ Test whether there is evidence, at the 10\% level of significance, that the medi
 
 \begin{tabular}{l l l }
 Test statistic: & $W=5.5$ & \\[0.5em]
-Critical value: & $CV=8$ & \quad ($\alpha=0.1$, $n=9$ \text{and two-tailed.})
+Critical value: & $W=8$ & \quad ($\alpha=0.1$, $n=9$ \text{and two-tailed.})
 \end{tabular}\\
 
 Since $5.5<8$, reject $\text{H}_0$ at the 10\% level of significance. 
