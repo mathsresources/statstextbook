@@ -35,7 +35,7 @@ This process is called *exploratory data analysis*.
 \node[anchor=west] at (4,3.5) {$n=120$};
 \node[anchor=west] at (4,3) {$\bar{x}=168.5$};
 \node[anchor=west] at (4,2.5) {$s=8.26$};
-\node[anchor=west] at (4,2) {med $=168.9$};
+\node[anchor=west] at (4,2) {median $=168.9$};
 \node[anchor=west] at (4,1.5) {$\text{IQR}=10.3$};
 \node[anchor=west] at (4,1) {min  $=149.0$};
 \node[anchor=west] at (4,0.5) {max $=190.1$};
@@ -51,7 +51,7 @@ This process is called *exploratory data analysis*.
 \node[anchor=west] at (0.5,11.5) {\textbf{Patient data table (first five entries only)}};
 \node[anchor=west] at (0.5,11) {age (yrs)};
 \node[anchor=west] at (2.1,11) {height (cm)};
-\node[anchor=west] at (4.3,11) {NHS health board};
+\node[anchor=west] at (4.3,11) {NHS Health Board};
 
 \draw (0.6,10.75) -- (7.3,10.75);
 
@@ -170,7 +170,7 @@ This process is called *exploratory data analysis*.
 
 Knowing what *type* of data has been collected helps inform what kind of graphs and statistics may be appropriate.
 
-Data that is numerical is called *quantitative*, of which there are two types. **Discrete** data consists of values that can be listed, such as someone's shoe size or the number of siblings they have. **Continuous** data can take *any* value within a range, though is often rounded to reflect the precision of measurements taken, such as the mass of a mouse.
+Data that is numerical is called *quantitative*, of which there are two types. **Discrete** data consists of values that can be counted, such as someone's shoe size or the number of siblings they have. **Continuous** data can take *any* value within a range, though in practice values are is often rounded due to measurement precision, such as the mass of a mouse.
 
 *Qualitative* data (also called **categorical**) is *non-numerical*, such as whether a squirrel is red or grey. 
 
@@ -264,7 +264,7 @@ For example, the table below shows data relating to some football players:
 #### [Exercise 1.1](#ex11a) {-}
 
 \begin{enumerate}
-    \item A survey is carried out on the pets owned by a class. State whether the following data is qualitative or quantitative.
+    \item A survey is carried out on the pets owned by a class. State whether the data collected would be qualitative or quantitative.
     \vspace{-0.5cm}
     \begin{enumerate}
     \begin{multicols}{2}
@@ -495,7 +495,7 @@ In a statistical study, the term **population** refers to the entire set of obje
 \end{tikzpicture}
 \end{center}
 
-If data were available for an entire *population* then various **population parameters** could be calculated, such as the *population mean*. Since this is never really possible, instead *samples* are taken from populations. Measures calculated from a sample of data are called **sample statistics**, such as the *sample mean*. 
+If data were available for an entire *population* then various **population parameters** could be calculated, such as the *population mean*. Since this is rarely possible in practice, instead *samples* are taken from populations. Measures calculated from a sample of data are called **sample statistics**, such as the *sample mean*. 
 
 Letters from the Greek alphabet are commonly used to represent population parameters.
 
@@ -526,7 +526,7 @@ It is good practice to refer *clearly* to whether a population parameter or samp
 \end{tikzpicture}
 \end{center}
 
-Population parameters are seen as having fixed values, at the time of the study at least, whilst the values of sample statistics will depend on the sample chosen. 
+Population parameters are fixed values (for a given study), whereas sample statistics vary depending on the sample chosen. 
 
 Sample statistics may be seen as \textit{estimates} of the true value of their respective population parameters, and \hbox{\textbf{inference}} is the process by which claims may be made about population parameters (such as $\mu$) based on observed sample statistics (such as $\bar{x}$). 
 
@@ -556,7 +556,7 @@ Sample statistics may be seen as \textit{estimates} of the true value of their r
 \begin{tabular}{ccccccccccccc}
 n & mean & sd & sum & sum of squares & min & LQ & median & UQ & max & range & IQR & mode\\
   \hline
-11 & 11.45 & 7.54 & 126 & 2012 & 0 & 4 & 14 & 18 & 20 & 20 & 14 & 18
+11 & 11.45 & 7.54 & 126 & 2012 & 0 & 2 & 14 & 18 & 20 & 20 & 14 & 18
 \end{tabular}
 \end{center}
 
@@ -567,7 +567,7 @@ There are two main types of summary statistic: those that measure the \textit{ce
 The three main measures of location, or *averages*, should already be familiar. To avoid ambiguity, statisticians will typically avoid referring to *"the average"*, and will instead specify exactly *which* average they are referring to:
 
 \begin{itemize}
-    \item \textbf{Mode} - the most commonly observed piece of data.
+    \item \textbf{Mode} - the most frequently occuring value.
     \item \textbf{Median} - the middle value after the data has been put into numerical order.
     \item \textbf{Mean} - the sum of the values divided by the number of values.
 \end{itemize}
@@ -604,6 +604,7 @@ The three main measures of location, or *averages*, should already be familiar. 
 \draw[stealth-stealth] (1,-2.3) --(9,-2.3);
 \node at (13,1.2) {\textit{measures of location}};
 \node at (13,-1.75) {\textit{measures of spread}};
+\node at (13,-2.25) {\textit{(illustrative only)}};
 \draw[decoration={brace,mirror,raise=2pt},decorate]
   (11,0.4) -- (11,2);
 \draw[decoration={brace,mirror,raise=2pt},decorate]
@@ -613,11 +614,11 @@ The three main measures of location, or *averages*, should already be familiar. 
 
 #### Measures of Spread {-}
 
-The measure of spread which is usually encountered first in a maths classroom is the *range*, which is the difference between the highest and lowest values. In practice this measure is seldom used by statisticians since it only uses the two most extreme values from the data. There are three main measures of spread commonly used, two of which are likely to already be familiar: 
+The measure of spread which is usually encountered first in a maths classroom is the *range*, less useful than other measures, as it depends only on the two most extreme values. In practice this measure is seldom used by statisticians since it only uses the two most extreme values from the data. There are three main measures of spread commonly used, two of which are likely to already be familiar: 
 
 \begin{itemize}
     \item \textbf{Interquartile Range} - the difference between the upper quartile and the lower quartile.
-    \item \textbf{Variance} - the \textit{mean squared difference} between the values and the mean value.
+    \item \textbf{Variance} - the \textit{mean of the squared differences} between each value and the mean.
     \item \textbf{Standard deviation} - the square root of the variance.
 \end{itemize}
 
@@ -625,7 +626,7 @@ The measure of spread which is usually encountered first in a maths classroom is
 
 ### The Mean and the Standard Deviation {-}
 
-The *mean* and *standard deviation* are perhaps the most commonly used measures of location and spread, respectively, and both link strongly to the commonly-encountered *bell-shaped curve* (see page 13). The formulae for calculating the sample mean and sample standard deviation from sample data are given below using notation, where the Greek letter $\Sigma$ (*"Sigma"*) means a *sum* should be calculated, $x$ represents the all of the values in the sample (a shortened abbreviation of $x_1,x_2,\dots,x_n$ or $x_i$) and $n$ represents the *number* of values in the sample.
+The *mean* and *standard deviation* are perhaps the most commonly used measures of location and spread, respectively, and both link strongly to the commonly-encountered *bell-shaped curve* (see page 13). The formulae for calculating the sample mean and sample standard deviation from sample data are given below using notation, where the Greek letter $\Sigma$ (*"Sigma"*) denotes summation (i.e. adding a set of values), $x_i$ represents each value in the sample (for $i=1,2,\dots,n$) and $n$ represents the *number* of values in the sample.
 
 The *sample mean*, $\bar{x}$, is calculated as: \hspace{0.5cm}$\bar{x}=\dfrac{\Sigma x}{n}$
 
@@ -637,7 +638,7 @@ The *sample variance*, $s^2$, is simply the *square of the standard deviation*.
 
 The median, $\text{Q}_2$, and interquartile range, $\text{IQR}$, are often chosen to measure location and spread when the data is particularly *skewed* (see page 13), as they are less influenced by *extreme values* than the mean and standard deviation.
 
-The *lower quartile* (LQ or $\text{Q}_1$) and the *upper quartile* (UQ or $\text{Q}_3$) split a set of values into quarters along with the median. From the lowest value to $\text{Q}_1$ contains the lowest 25\% of the values, from $\text{Q}_1$ to $\text{Q}_2$ contains the next 25\%, and so on.
+The *lower quartile* (LQ or $\text{Q}_1$) and the *upper quartile* (UQ or $\text{Q}_3$) split data into quarters, along with the median. From the lowest value to $\text{Q}_1$ contains approximately 25\% of the data, from $\text{Q}_1$ to $\text{Q}_2$ contains approximtely the next 25\%, and so on.
 
 \begin{center}
 \begin{tikzpicture}
@@ -678,10 +679,10 @@ The *interquartile range* is calculated as: \hspace{0.5cm}$\text{IQR}=\text{Q}_3
       $\Sigma{x}=359$ & $\Sigma{x^2}=15119$ & $n=10$
     \end{tabular}
     \end{center}
-    \item Daily fuel spend ($f$, in £'s) for 15 drivers is summarised below. Calculate the mean and standard deviation.
+    \item Daily fuel spend ($x$, in £'s) for 15 drivers is summarised below. Calculate the mean and standard deviation.
     \begin{center}
     \begin{tabular}{ccc}
-      $\Sigma{f}=87$ & $\Sigma{f^2}=569$ & $n=15$
+      $\Sigma{x}=87$ & $\Sigma{x^2}=569$ & $n=15$
     \end{tabular}
     \end{center}
     \item The marks, out of 40, of eight pupils sitting a chemistry test are below. Find the mean and standard deviation.
@@ -703,7 +704,7 @@ The *interquartile range* is calculated as: \hspace{0.5cm}$\text{IQR}=\text{Q}_3
 
 ## Displaying Data
 
-Before any analysis of a data set is undertaken, it is common practice to *display* the data in a simple form so that an initial impression of what the data shows can be formed. Some key examples are shown below, using a sample taken by a gardener of the heights of 10 of their sunflowers 8 weeks after germination, measured to the nearest centimetre:
+Before any analysis of a data set is undertaken, it is common practice to *display* the data in a simple form so that an initial impression of the data can be formed. Some key examples are shown below, using a sample taken by a gardener of 10 of their sunflowers' heights 8 weeks after germination, measured to the nearest centimetre:
 
 \begin{center}
 \begin{tabular}{cccccccccccc}
@@ -740,8 +741,8 @@ Before any analysis of a data set is undertaken, it is common practice to *displ
 \fill[black] (0.15*62,0.4) circle (0.05);
 \fill[black] (0.15*73,0.4) circle (0.05);
 \node at (0.15*53,-0.8) {\text{Height (cm)}};
-\node at (8,4.5) {\textbf{Dot Plots}};
-\node[text width = 8cm,below] at (8,4) {Dot plots offer a quick way of presenting data in a manner similar to a bar chart, stacking repeated values.};
+\node at (8,4.5) {\textbf{Dot Plot}};
+\node[text width = 8cm,below] at (8,4) {Dot plots display individual data values, stacking repeated values vertically for clarity.};
 \draw[white] (3.5,-2) rectangle (12.5,5);
 \end{tikzpicture}
 
@@ -771,9 +772,9 @@ Before any analysis of a data set is undertaken, it is common practice to *displ
 \node at (9.5,-0.8) {5};
 \node at (10,-0.2) {$n=10$};
 \draw (9.25,-0.6) -- (9.25,-1);
-\node[anchor=west] at (9.5,-0.8) {means 35 cm};
-\node at (8,4.5) {\textbf{Stem-and-Leaf Diagrams}};
-\node[text width = 8cm,below] at (8,4) {Stem-and-leaf diagrams display data in a manner similar to a grouped bar graph. Leaves should be in order, and a key (or \textit{legend}) and the sample size should be included.};
+\node[anchor=west] at (9.5,-0.8) {represents 35 cm};
+\node at (8,4.5) {\textbf{Stem-and-Leaf Diagram}};
+\node[text width = 8cm,below] at (8,4) {Stem-and-leaf diagrams organise data by place value while preserving the original data values. Leaves should be in order, and a key (or \textit{legend}) and the sample size should be included.};
 \draw[white] (3.5,-2) rectangle (12.5,5);
 \end{tikzpicture}
 
@@ -808,8 +809,8 @@ Before any analysis of a data set is undertaken, it is common practice to *displ
 \draw (0.15*34,0.6) -- (0.15*38,0.6);
 \draw (0.15*51,0.6) -- (0.15*73,0.6);
 \node at (0.15*53,-0.8) {\text{Height (cm)}};
-\node at (8,4.5) {\textbf{Box Plots}};
-\node[text width = 8cm,below] at (8,4) {Box plots offer a visual representation of a five-figure summary, consisting of the mininum value, the lower quartile $\text{Q}_1$, the median, the upper quartile $\text{Q}_3$ and the maximum value.};
+\node at (8,4.5) {\textbf{Box Plot}};
+\node[text width = 8cm,below] at (8,4) {Box plots offer a visual representation of a five-number summary, consisting of the minimum value, the lower quartile $\text{Q}_1$, the median, the upper quartile $\text{Q}_3$ and the maximum value.};
 \draw[white] (3.5,-2) rectangle (12.5,5);
 \end{tikzpicture}
 
@@ -821,27 +822,27 @@ Before any analysis of a data set is undertaken, it is common practice to *displ
 \begin{tikzpicture}
 \draw (30*0.08+3.8,0) -- (80*0.08+3.8,0);
 \draw (30*0.08+3.8,0) -- (30*0.08+3.8,1.2);
-\node at (0.08*30+3.8,-0.3) {$30$};
-\node at (0.08*40+3.8,-0.3) {$40$};
-\node at (0.08*50+3.8,-0.3) {$50$};
-\node at (0.08*60+3.8,-0.3) {$60$};
-\node at (0.08*70+3.8,-0.3) {$70$};
-\node at (0.08*80+3.8,-0.3) {$80$};
-\foreach \x in {30,40,...,80}
-  \draw (0.08*\x+3.8,0) -- (0.08*\x+3.8,-0.1);
-  \foreach \y in {0,...,5}
-  \draw (0.08*29.5+3.8,1.2*0.2*\y) -- (0.08*30+3.8,1.2*0.2*\y);
-\node at (0.08*28.5+3.8,1.2) {5};
-\node at (0.08*28.5+3.8,0) {0};
+\node at (0.08*30+3.8,-0.3) {\scriptsize{30}};
+\node at (0.08*40+3.8,-0.3) {\scriptsize{40}};
+\node at (0.08*50+3.8,-0.3) {\scriptsize{50}};
+\node at (0.08*60+3.8,-0.3) {\scriptsize{60}};
+\node at (0.08*70+3.8,-0.3) {\scriptsize{70}};
+\node at (0.08*80+3.8,-0.3) {\scriptsize{80}};
+\foreach \x in {30,40,...,80}{
+  \draw (0.08*\x+3.8,0) -- (0.08*\x+3.8,-0.1);}
+  \foreach \y in {0,...,5}{
+  \draw (0.08*29.5+3.8,1.2*0.2*\y) -- (0.08*30+3.8,1.2*0.2*\y);}
+\node at (0.08*28.5+3.8,1.2) {\scriptsize{5}};
+\node at (0.08*28.5+3.8,0) {\scriptsize{0}};
 \node at (0.08*25+3,0.5) {frequency};
 \draw[fill=black!25] (0.08*30+3.8,0) rectangle (0.08*40+3.8,0.6*1.2);
 \draw[fill=black!25] (0.08*40+3.8,0) rectangle (0.08*50+3.8,0.8*1.2);
 \draw[fill=black!25] (0.08*50+3.8,0) rectangle (0.08*60+3.8,0.2*1.2);
 \draw[fill=black!25] (0.08*60+3.8,0) rectangle (0.08*70+3.8,0.2*1.2);
 \draw[fill=black!25] (0.08*70+3.8,0) rectangle (0.08*80+3.8,0.2*1.2);
-\node at (0.08*53+3.8,-0.8) {\text{Height (cm)}};
-\node at (8,4.5) {\textbf{Histograms}};
-\node[text width = 8cm,below] at (8,4) {Histograms put continuous numerical data into intervals (or \textit{bins}) and display it in a manner similar to a bar graph.};
+\node at (0.08*53+3.8,-0.8) {\text{height (cm)}};
+\node at (8,4.5) {\textbf{Histogram}};
+\node[text width = 8cm,below] at (8,4) {Histograms display continuous data grouped into intervals (bins). Unlike bar charts, the bars are adjacent (no gaps), and the area of each bar represents frequency.};
 \draw[white] (3.5,-2) rectangle (12.5,5);
 \end{tikzpicture}
 
@@ -861,7 +862,7 @@ Before any analysis of a data set is undertaken, it is common practice to *displ
         16 & 14 & 19 & 13 & 14 & 17 & 16 & 19 & 16 & 17 & 12 & 16 & 14 & 19
     \end{tabular}
     \end{center}
-    \item The price of an ice cream is recorded at 12 stalls, in £'s. Represent the data using a stem-and-leaf diagram.
+    \item The price of an ice cream is recorded at 12 stalls (in £). Represent the data using a stem-and-leaf diagram.
     \begin{center}
     \begin{tabular}{cccccc}
         1.50 & 2.20 & 2.50 & 2.10 & 1.80 & 1.40\\

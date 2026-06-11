@@ -6,7 +6,7 @@ In Chapter 5 the concept of using \textit{linear regression} to explore straight
 
 ### The Method of Least Squares Regression {-}
 
-Given bivariate data, it is $x$ is generally selected as the \textbf{predictor} (or \textit{independent}) variable, whilst $Y$ is a \textit{random variable} known as the \textbf{response} (or \textit{dependent}) variable. In other words, it is typical to want to be able to to predict an unknown $Y$ value given a known $x$ value.
+Given bivariate data, $x$ is generally selected as the \textbf{predictor} (or \textit{independent}) variable, whilst $Y$ is a \textit{random variable} known as the \textbf{response} (or \textit{dependent}) variable. In other words, it is typical to predict an unknown $Y$ value given a known $x$ value.
 
 \begin{figure}[H]
   \centering
@@ -40,7 +40,7 @@ Given bivariate data, it is $x$ is generally selected as the \textbf{predictor} 
 \end{minipage}%
   \centering
 \begin{minipage}[c]{.6\textwidth}
-    The theoretical model for linear regression is that of a straight line of form $y=\alpha+\beta x$ describing the \textit{best fit} for a relationship between variables.  However, the population of bivariate data will not perfectly lie along this line due to chance variation.
+    The theoretical model for linear regression is that of a straight line of the form $y=\alpha+\beta x$ describing the \textit{best fit} for a relationship between the variables.  However, the bivariate data will not perfectly lie along this line due to chance variation.
 
 \begin{tcolorbox}[halign title=center,title=The Linear Regression Model,center,colback=red!5,colframe=red!70!black,width=6.5cm]
 \[Y_i=\alpha+\beta x_i+\varepsilon_i\]
@@ -52,20 +52,20 @@ $\varepsilon_i$ (\textit{"epsilon"}) are random variables called \textbf{errors}
 
 
 
-The true values of \textbf{intercept parameter} $\alpha$ and \textbf{slope parameter} $\beta$ cannot be known exactly without access to the full \textit{population} of bivariate data. However the sample observations $(x_i,y_i)$ can be used to give estimates, $a$ and $b$, of $\alpha$ and $\beta$. The method of least squares gives formulae for $a$ and $b$ derived by considering how $\sum \varepsilon_i^2$ might be minimised. These rely on several assumptions about the population of errors given on Page 5 of the Data Booklet, along with the formulae:
+The true values of the \textbf{intercept parameter} $\alpha$ and the \textbf{slope parameter} $\beta$ cannot be known exactly without access to the full \textit{population} of bivariate data. However the sample observations $(x_i,y_i)$ can be used to give estimates, $a$ and $b$, of $\alpha$ and $\beta$. The method of least squares gives formulae for $a$ and $b$ derived by minimising $\sum \varepsilon_i^2$. These rely on several assumptions about the population of errors given on page 5 of the Data Booklet, along with the formulae:
 
 \begin{multicols}{2}
 
 $$b=\dfrac{S_{xy}}{S_{xx}} \qquad \text{and} \qquad a=\bar{y}-b\bar{x}$$
 
-This leads to the relationship $\hat{Y}_i=a+bx_i$, where $\hat{Y}_i$ (\textit{"y-hat"}) denotes the expected value of $Y_i$ for a given $x_i$, and also the best \textit{`fitting'} prediction.
+This leads to the relationship $\hat{Y}_i=a+bx_i$, where $\hat{Y}_i$ (\textit{"y-hat"}) denotes the predicted (or fitted) value of $Y_i$ for a given $x_i$.
 
 \begin{tcolorbox}[halign title=center,title=Assumptions for the Errors,center,colback=red!5,colframe=red!70!black,width=6.7cm]
 \begin{center}
     \begin{itemize}
         \item $\varepsilon_i$ are independent.
         \item $\text{E}(\varepsilon_i)=0$
-        \item $\text{V}(\varepsilon_i)=\sigma^2$ where $\text{V}(Y)=\sigma^2$
+        \item $\text{V}(\varepsilon_i)=\sigma^2$
     \end{itemize}
 \end{center}
 \end{tcolorbox}
