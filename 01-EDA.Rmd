@@ -32,13 +32,13 @@ This process is called *exploratory data analysis*.
 
 \node[anchor=west] at (0.5,4) {\textbf{Summary (height in cm, all patients)}};
 
-\node[anchor=west] at (4,3.5) {$n=120$};
-\node[anchor=west] at (4,3) {$\bar{x}=168.5$};
-\node[anchor=west] at (4,2.5) {$s=8.26$};
-\node[anchor=west] at (4,2) {median $=168.9$};
-\node[anchor=west] at (4,1.5) {$\text{IQR}=10.3$};
-\node[anchor=west] at (4,1) {min  $=149.0$};
-\node[anchor=west] at (4,0.5) {max $=190.1$};
+\node[anchor=west] at (4,3.5) {$n=\text{120}$};
+\node[anchor=west] at (4,3) {$\bar{x}=\text{168.5}$};
+\node[anchor=west] at (4,2.5) {$s=\text{8.26}$};
+\node[anchor=west] at (4,2) {median $=\text{168.9}$};
+\node[anchor=west] at (4,1.5) {$\text{IQR}=\text{10.3}$};
+\node[anchor=west] at (4,1) {min  $=\text{149.0}$};
+\node[anchor=west] at (4,0.5) {max $=\text{190.1}$};
 
 \node[anchor=west] at (0.5,3.5) {sample size};
 \node[anchor=west] at (0.5,3) {mean};
@@ -210,22 +210,22 @@ For example, the table below shows data relating to some football players:
 \node[anchor=west] at (0,11) {Position};
 \node[anchor=west] at (3,11) {Team};
 \node[anchor=west] at (5.2,11) {Height (m)};
-\node[anchor=west] at (8.1,11) {Caps};
-\node[anchor=west] at (10,11) {Goals};
+\node[anchor=west] at (8.1,11) {Goals};
+\node[anchor=west] at (10,11) {Assists};
 
 \draw (0,10.75) -- (11.5,10.75);
 
 \node at (0.8,10.5) {Midfielder};
-\node at (0.8,10) {Midfielder};
+\node at (0.8,10) {Defender};
 \node at (0.8,9.5) {Forward};
 \node at (0.8,9) {Forward};
 \node at (0.8,8.5) {Midfielder};
 
-\node at (3.6,10.5) {Aston Villa};
-\node at (3.6,10) {Man United};
-\node at (3.6,9.5) {Southampton};
-\node at (3.6,9) {Bournemouth};
-\node at (3.6,8.5) {Celtic};
+\node at (3.6,10.5) {Blackburn Rovers};
+\node at (3.6,10) {Sheffield United};
+\node at (3.6,9.5) {St Mirren};
+\node at (3.6,9) {Celtic};
+\node at (3.6,8.5) {Rangers};
 
 \node at (6.2,10.5) {1.78};
 \node at (6.2,10) {1.93};
@@ -233,17 +233,17 @@ For example, the table below shows data relating to some football players:
 \node at (6.2,9) {1.78};
 \node at (6.2,8.5) {1.75};
 
-\node at (8.6,10.5) {66};
-\node at (8.6,10) {49};
-\node at (8.6,9.5) {30};
-\node at (8.6,9) {49};
-\node at (8.6,8.5) {39};
+\node at (8.6,10.5) {11};
+\node at (8.6,10) {3};
+\node at (8.6,9.5) {23};
+\node at (8.6,9) {19};
+\node at (8.6,8.5) {15};
 
-\node at (10.6,10.5) {18};
-\node at (10.6,10) {8};
-\node at (10.6,9.5) {6};
-\node at (10.6,9) {6};
-\node at (10.6,8.5) {5};
+\node at (10.6,10.5) {14};
+\node at (10.6,10) {5};
+\node at (10.6,9.5) {7};
+\node at (10.6,9) {12};
+\node at (10.6,8.5) {14};
 
 \draw[decoration={brace,mirror,raise=2pt},decorate]
   (0,8.2) -- node[below=5pt] {\textbf{Categorical}} (4.7,8.2);
@@ -264,8 +264,7 @@ For example, the table below shows data relating to some football players:
 #### [Exercise 1.1](#ex11a) {-}
 
 \begin{enumerate}
-    \item A survey is carried out on the pets owned by a class. State whether the data collected would be qualitative or quantitative.
-    \vspace{-0.5cm}
+    \item A survey is carried out on the pets owned by a class. State the type of data that would be collected.
     \begin{enumerate}
     \begin{multicols}{2}
         \item How many pets each pupil owns.
@@ -284,8 +283,7 @@ For example, the table below shows data relating to some football players:
         \item Whether the pet is a mammal.
     \end{multicols}
     \end{enumerate}
-    \item For each of the following, state whether the data collected would be discrete or continuous.
-    \vspace{-0.1cm}
+    \item For each of the following, state whether the quantitative data collected would be discrete or continuous.
     \begin{enumerate}
     \begin{multicols}{2}
         \item The number of people in a room.      
@@ -304,8 +302,7 @@ For example, the table below shows data relating to some football players:
         \item Time taken to complete a puzzle.
     \end{multicols}
     \end{enumerate}
-    \item A random sample of members of a gym were surveyed and the first few results are shown in the table below.
-    \vspace{-0.1cm}
+    \item A sample of members of a gym were surveyed and the first few results are shown in the table below.
     \begin{center}
     \begin{tabular}{|c|c|c|c|c|}
       \hline
@@ -318,7 +315,6 @@ For example, the table below shows data relating to some football players:
       \hline
     \end{tabular}
     \end{center}
-    \vspace{-0.1cm}
     State the type of data that was collected for each variable.
 \end{enumerate}
 
@@ -550,7 +546,7 @@ Sample statistics may be seen as \textit{estimates} of the true value of their r
 
 ## Measures of Location and Spread
 
-*Summary statistics* are a collection of measures taken of the data from a sample, such as the mean, or standard deviation. These offer a quick way to communicate some general sense of the data. For example, for the *raw data* of $0,2,2,6,12,14,16,18,18,18,20$, the table below shows a selection of summary statistics. 
+*Summary statistics* are a collection of measures taken of the data from a sample, such as the mean, or standard deviation. These offer a quick way to communicate some general sense of the data. For example, for the *raw data* of 0, 2, 2, 6, 12, 14, 16, 18, 18, 18, 20, the table below shows a selection of summary statistics. 
 
 \begin{center}
 \begin{tabular}{ccccccccccccc}
@@ -560,7 +556,7 @@ n & mean & sd & sum & sum of squares & min & LQ & median & UQ & max & range & IQ
 \end{tabular}
 \end{center}
 
-There are two main types of summary statistic: those that measure the \textit{central tendency} of data (or its \textbf{location}); and those that measure the \textit{variability} of data (or its \textbf{spread}). It is common to wish to measure both the location *and* spread.
+There are two main types of summary statistic: those that measure the \textit{central tendency} of data (or its \textbf{location}); and those that measure the \textit{variability} of data (or its \textbf{spread}). It is common to measure both the location *and* spread.
 
 #### Measures of Location {-}
 
