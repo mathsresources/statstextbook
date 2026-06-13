@@ -534,7 +534,7 @@ Sample statistics may be seen as \textit{estimates} of the true value of their r
 
 \vspace{-0.2cm}
 
-\textit{For each, state using the context of the question which population parameter or sample statistic has been obtained.}
+\textit{For each, state using the context of the question which population parameter or sample statistic has been obtained, as well as the suitable notation.}
 
 \begin{enumerate}
     \item A year group at a school contains 120 pupils. Data is obtained for the number of merits each pupil in the year group obtained, and the mean of those values is calculated to be 3.4.
@@ -571,11 +571,11 @@ The three main measures of location, or *averages*, should already be familiar. 
 \begin{center}
 \begin{tikzpicture}
 \draw[semithick] (0,0) -- (10,0);
-\node at (0,-0.5) {$0$};
-\node at (2.5,-0.5) {$5$};
-\node at (5,-0.5) {$10$};
-\node at (7.5,-0.5) {$15$};
-\node at (10,-0.5) {$20$};
+\node at (0,-0.5) {0};
+\node at (2.5,-0.5) {5};
+\node at (5,-0.5) {10};
+\node at (7.5,-0.5) {15};
+\node at (10,-0.5) {20};
 \foreach \x in {0,0.5,...,10}
   \draw (\x,0) -- (\x,-0.2);
 \fill[black] (0,0.5) circle (0.07);
@@ -622,47 +622,47 @@ The measure of spread which is usually encountered first in a maths classroom is
 
 ### The Mean and the Standard Deviation {-}
 
-The *mean* and *standard deviation* are perhaps the most commonly used measures of location and spread, respectively, and both link strongly to the commonly-encountered *bell-shaped curve* (see page 13). The formulae for calculating the sample mean and sample standard deviation from sample data are given below using notation, where the Greek letter $\Sigma$ (*"Sigma"*) denotes summation (i.e. adding a set of values), $x_i$ represents each value in the sample (for $i=1,2,\dots,n$) and $n$ represents the *number* of values in the sample.
+The *mean* and *standard deviation* are perhaps the most commonly used measures of location and spread, respectively, and both link strongly to the commonly-encountered *bell-shaped curve* (see page 13). The formulae for calculating the sample mean and sample standard deviation from sample data are given below using notation, where the Greek letter $\Sigma$ (*"Sigma"*) denotes summation (i.e. adding a set of values), $x_i$ represents each value in the sample (for $i=\text{1},\text{2},\dots,n$) and $n$ represents the *number* of values in the sample.
 
 The *sample mean*, $\bar{x}$, is calculated as: \hspace{0.5cm}$\bar{x}=\dfrac{\Sigma x}{n}$
 
-The *sample standard deviation*, $s$, is calculated as: \hspace{0.5cm}$s=\sqrt{\dfrac{S_{xx}}{n-1}}$\hspace{0.5cm}where: \hspace{0.5cm}$S_{xx}=\Sigma x^2-\dfrac{(\Sigma x)^2}{n}$
+The *sample standard deviation*, $s$, is calculated as: \hspace{0.5cm}$s=\sqrt{\dfrac{S_{xx}}{n-1}}$\hspace{0.5cm}where: \hspace{0.5cm}$S_{xx}=\Sigma x^\text{2}-\dfrac{(\Sigma x)^\text{2}}{n}$
 
-The *sample variance*, $s^2$, is simply the *square of the standard deviation*.
+The *sample variance*, $s^\text{2}$, is simply the *square of the standard deviation*.
 
 #### The Median and the Interquartile Range {-}
 
-The median, $\text{Q}_2$, and interquartile range, $\text{IQR}$, are often chosen to measure location and spread when the data is particularly *skewed* (see page 13), as they are less influenced by *extreme values* than the mean and standard deviation.
+The median, $\text{Q}_\text{2}$, and interquartile range, $\text{IQR}$, are often chosen to measure location and spread when the data is particularly *skewed* (see page 13), as they are less influenced by *extreme values* than the mean and standard deviation.
 
-The *lower quartile* (LQ or $\text{Q}_1$) and the *upper quartile* (UQ or $\text{Q}_3$) split data into quarters, along with the median. From the lowest value to $\text{Q}_1$ contains approximately 25\% of the data, from $\text{Q}_1$ to $\text{Q}_2$ contains approximtely the next 25\%, and so on.
+The *lower quartile* (LQ or $\text{Q}_\text{1}$) and the *upper quartile* (UQ or $\text{Q}_\text{3}$) split data into quarters, along with the median. From the lowest value to $\text{Q}_\text{1}$ contains approximately 25\% of the data, from $\text{Q}_\text{1}$ to $\text{Q}_\text{2}$ contains approximtely the next 25\%, and so on.
 
 \begin{center}
 \begin{tikzpicture}
-\node at (1,0) {$4$};
-\node at (2,0) {$5$};
-\node at (3,0) {$8$};
-\node at (4,0) {$8$};
-\node at (5,0) {$10$};
-\node at (6,0) {$11$};
-\node at (7,0) {$13$};
-\node at (8,0) {$17$};
-\node at (9,0) {$17$};
-\node at (10,0) {$18$};
-\node at (11,0) {$21$};
-\node at (12,0) {$22$};
-\node at (13,0) {$22$};
-\node at (14,0) {$26$};
-\draw[thick] (7.5,-0.5) -- (7.5,0.5) node[above] {$\text{Q}_2=15$};
+\node at (1,0) {4};
+\node at (2,0) {5};
+\node at (3,0) {8};
+\node at (4,0) {8};
+\node at (5,0) {10};
+\node at (6,0) {11};
+\node at (7,0) {13};
+\node at (8,0) {17};
+\node at (9,0) {17};
+\node at (10,0) {18};
+\node at (11,0) {21};
+\node at (12,0) {22};
+\node at (13,0) {22};
+\node at (14,0) {26};
+\draw[thick] (7.5,-0.5) -- (7.5,0.5) node[above] {$\text{Q}_\text{2}=\text{15}$};
 \draw[thick] (4,0) circle (0.5);
 \draw[thick] (12,0) circle (0.5);
-\node[above] at (4,0.5) {$\text{Q}_1=8$};
-\node[above] at (12,0.5) {$\text{Q}_3=22$};
-\draw[stealth-] (0.7,0.3) -- (0.3,0.6) node[above left] {$\text{Min}=4$};
-\draw[stealth-] (14.3,0.3) -- (14.6,0.6) node[above right] {$\text{Max}=26$};
+\node[above] at (4,0.5) {$\text{Q}_\text{1}=\text{8}$};
+\node[above] at (12,0.5) {$\text{Q}_\text{3}=\text{22}$};
+\draw[stealth-] (0.7,0.3) -- (0.3,0.6) node[above left] {$\text{Min}=\text{4}$};
+\draw[stealth-] (14.3,0.3) -- (14.6,0.6) node[above right] {$\text{Max}=\text{26}$};
 \end{tikzpicture}
 \end{center}
 
-The *interquartile range* is calculated as: \hspace{0.5cm}$\text{IQR}=\text{Q}_3-\text{Q}_1$
+The *interquartile range* is calculated as: \hspace{0.5cm}$\text{IQR}=\text{Q}_\text{3}-\text{Q}_\text{1}$
 
 []{#ex13q}
 
@@ -672,13 +672,13 @@ The *interquartile range* is calculated as: \hspace{0.5cm}$\text{IQR}=\text{Q}_3
     \item The monthly cost of 10 drivers' car insurance ($x$, in £'s) are recorded. Calculate the mean and standard deviation.
     \begin{center}
     \begin{tabular}{ccc}
-      $\Sigma{x}=359$ & $\Sigma{x^2}=15119$ & $n=10$
+      $\Sigma{x}=\text{359}$ & $\Sigma{x^{\text{2}}}=\text{15119}$ & $n=\text{10}$
     \end{tabular}
     \end{center}
     \item Daily fuel spend ($x$, in £'s) for 15 drivers is summarised below. Calculate the mean and standard deviation.
     \begin{center}
     \begin{tabular}{ccc}
-      $\Sigma{x}=87$ & $\Sigma{x^2}=569$ & $n=15$
+      $\Sigma{x}=\text{87}$ & $\Sigma{x^{\text{2}}}=\text{569}$ & $n=\text{15}$
     \end{tabular}
     \end{center}
     \item The marks, out of 40, of eight pupils sitting a chemistry test are below. Find the mean and standard deviation.
@@ -716,14 +716,14 @@ Before any analysis of a data set is undertaken, it is common practice to *displ
   \centering
 \begin{tikzpicture}
 \draw (33.5*0.15,0) -- (73.5*0.15,0);
-\node at (0.15*35,-0.3) {$35$};
-\node at (0.15*40,-0.3) {$40$};
-\node at (0.15*45,-0.3) {$45$};
-\node at (0.15*50,-0.3) {$50$};
-\node at (0.15*55,-0.3) {$55$};
-\node at (0.15*60,-0.3) {$60$};
-\node at (0.15*65,-0.3) {$65$};
-\node at (0.15*70,-0.3) {$70$};
+\node at (0.15*35,-0.3) {35};
+\node at (0.15*40,-0.3) {40};
+\node at (0.15*45,-0.3) {45};
+\node at (0.15*50,-0.3) {50};
+\node at (0.15*55,-0.3) {55};
+\node at (0.15*60,-0.3) {60};
+\node at (0.15*65,-0.3) {65};
+\node at (0.15*70,-0.3) {70};
 \foreach \x in {34,...,73}
   \draw (0.15*\x,0) -- (0.15*\x,-0.1);
 \fill[black] (0.15*34,0.4) circle (0.05);
@@ -786,14 +786,14 @@ Before any analysis of a data set is undertaken, it is common practice to *displ
 
 \begin{tikzpicture}
 \draw (33.5*0.15,0) -- (73.5*0.15,0);
-\node at (0.15*35,-0.3) {$35$};
-\node at (0.15*40,-0.3) {$40$};
-\node at (0.15*45,-0.3) {$45$};
-\node at (0.15*50,-0.3) {$50$};
-\node at (0.15*55,-0.3) {$55$};
-\node at (0.15*60,-0.3) {$60$};
-\node at (0.15*65,-0.3) {$65$};
-\node at (0.15*70,-0.3) {$70$};
+\node at (0.15*35,-0.3) {35};
+\node at (0.15*40,-0.3) {40};
+\node at (0.15*45,-0.3) {45};
+\node at (0.15*50,-0.3) {50};
+\node at (0.15*55,-0.3) {55};
+\node at (0.15*60,-0.3) {60};
+\node at (0.15*65,-0.3) {65};
+\node at (0.15*70,-0.3) {70};
 \foreach \x in {34,...,73}
   \draw (0.15*\x,0) -- (0.15*\x,-0.1);
 \draw[fill=black!25] (0.15*38,0.4) rectangle (0.15*51,0.8);
@@ -806,7 +806,7 @@ Before any analysis of a data set is undertaken, it is common practice to *displ
 \draw (0.15*51,0.6) -- (0.15*73,0.6);
 \node at (0.15*53,-0.8) {\text{Height (cm)}};
 \node at (8,4.5) {\textbf{Box Plot}};
-\node[text width = 8cm,below] at (8,4) {Box plots offer a visual representation of a five-number summary, consisting of the minimum value, the lower quartile $\text{Q}_1$, the median, the upper quartile $\text{Q}_3$ and the maximum value.};
+\node[text width = 8cm,below] at (8,4) {Box plots offer a visual representation of a five-number summary, consisting of the minimum value, the lower quartile $\text{Q}_\text{1}$, the median, the upper quartile $\text{Q}_\text{3}$ and the maximum value.};
 \draw[white] (3.5,-2) rectangle (12.5,5);
 \end{tikzpicture}
 
@@ -1070,19 +1070,19 @@ Whilst this textbook aims to enable familiarity with common figures, tables and 
     \item Suggest two possible improvements to \textbf{Figure 1}.
     \item Using \textbf{Figure 2}, compare the proportions of pupils in the sample who take the bus between each year group.
     \item From \textbf{Figure 3}, state the approximate median time taken to walk for 3rd year pupils.
-    \item One piece of information from \textbf{Output 1} has been replace by \texttt{****}. State the missing value.
+    \item One piece of information from \textbf{Output 1} has been replaced by \texttt{****}. State the missing value.
 \end{enumerate}
 
 \pagebreak
 
 ## Outliers and Fences
 
-Sometimes a set of data may contain values that seem *extremely high or low* in comparison to the rest of the values. It is important to be wary of such values and the potentially significant impact they could have on any statistical analysis performed. There are a range of objective approaches that can be used to determine whether one or more points are extreme enough to be classed as **outliers**. In this course, *fences* will be used.
+Sometimes a set of data may contain values that seem *extremely high or low* in comparison to the rest of the values. It is important to be wary of such values and the potentially significant impact they could have on any statistical analysis performed. There are a range of objective approaches that can be used to determine whether one or more points are extreme enough to be classified as **outliers**. In this course, *fences* will be used.
 
 \begin{tcolorbox}[center,title=Identifying Outliers,colback=red!5,colframe=red!70!black,width=15cm,halign = center,halign title = center]
 \begin{center}
-Lower Fence $=\text{Q}_1-1.5\times \text{IQR}$.\\[1em]
-Upper Fence $=\text{Q}_3+1.5\times \text{IQR}$.\\[1em]
+Lower Fence $=\text{Q}_\text{1}-\text{1}.\text{5}\times \text{IQR}$.\\[1em]
+Upper Fence $=\text{Q}_\text{3}+\text{1}.\text{5}\times \text{IQR}$.\\[1em]
 Any values \textit{below the lower fence} or \textit{above the upper fence} are \textbf{outliers}.
 \end{center}
 \end{tcolorbox}
@@ -1117,14 +1117,14 @@ n & min & Q1 & median & Q3 & max\\
 \vspace{-1cm}
 
 \begin{align*}
-  \text{IQR}&=\text{Q}_3-\text{Q}_1=51-38=13\\[1em]
-  \text{Lower fence}&=\text{Q}_1-1.5\times \text{IQR}=38-1.5\times 13=18.5\\[1em]
-  \text{Upper fence}&=\text{Q}_3+1.5\times \text{IQR}=51+1.5\times 13=70.5
+  \text{IQR}&=\text{Q}_\text{3}-\text{Q}_\text{1}=51-38=13\\[1em]
+  \text{Lower fence}&=\text{Q}_\text{1}-\text{1}.\text{5}\times \text{IQR}=38-\text{1}.\text{5}\times 13=18.5\\[1em]
+  \text{Upper fence}&=\text{Q}_\text{3}+\text{1}.\text{5}\times \text{IQR}=51+\text{1}.\text{5}\times 13=70.5
 \end{align*}
 
-Since $73>70.5$, it is an outlier.
+Since $\text{73}>\text{70}.\text{5}$, it is an outlier.
 
-On a box plot, outliers are indicated separately as shown below, with the "whiskers" extending only as far as the highest (and lowest) values which are *not* outliers. However the quartiles remain as those calculated using the *full* set of values, including any outliers. *Plotting outliers separately in this way is to highlight their presence, and is not a judgement on whether those values are rogue or valid.*
+On a box plot, outliers are indicated separately as shown below, with the "whiskers" extend only as far as the largest and smallest values that are *not* outliers. However the quartiles remain as those calculated using the *full* set of values, including any outliers. *Plotting outliers separately in this way is to highlight their presence, and is not a judgement on whether those values are rogue or valid.*
 
 \begin{center}
 \begin{tikzpicture}
@@ -1133,14 +1133,14 @@ On a box plot, outliers are indicated separately as shown below, with the "whisk
 \draw[semithick] (33.5*0.25,0.8) -- (73.5*0.25,0.8);
 \foreach \x in {34,...,73}
   \draw (0.25*\x,0.8) -- (0.25*\x,0.6);
-\node at (0.25*35,0.3) {$35$};
-\node at (0.25*40,0.3) {$40$};
-\node at (0.25*45,0.3) {$45$};
-\node at (0.25*50,0.3) {$50$};
-\node at (0.25*55,0.3) {$55$};
-\node at (0.25*60,0.3) {$60$};
-\node at (0.25*65,0.3) {$65$};
-\node at (0.25*70,0.3) {$70$};
+\node at (0.25*35,0.3) {35};
+\node at (0.25*40,0.3) {40};
+\node at (0.25*45,0.3) {45};
+\node at (0.25*50,0.3) {50};
+\node at (0.25*55,0.3) {55};
+\node at (0.25*60,0.3) {60};
+\node at (0.25*65,0.3) {65};
+\node at (0.25*70,0.3) {70};
 \fill[black!15] (38*0.25,1.2) rectangle (51*0.25,1.8);
 \draw[semithick] (34*0.25,1.3) -- (34*0.25,1.7);
 \draw[semithick] (38*0.25,1.2) -- (38*0.25,1.8);
@@ -1164,7 +1164,7 @@ The outlier in this data set could be valid if, for instance, the sunflower plan
 \textbf{Problem:} A vet conducts a survey, asking 10 randomly chosen cat owners registered with his practice to share the mass of their adult cat, in kilograms. The results are:
 \begin{center}
 \begin{tabular}{cccccccccc}
-    4.6 & 3.6 & 4.1 & 4.5 & 3.7 & 3.9 & 4.0 & 0.3 & 3.9 & 4.8\\
+    4.6 & 3.6 & 4.1 & 4.5 & 3.7 & 3.9 & 4.0 & 0.6 & 3.9 & 4.8\\
 \end{tabular}
 \end{center}
 
@@ -1177,10 +1177,10 @@ The outlier in this data set could be valid if, for instance, the sunflower plan
 \textbf{Solution:}
 
 \begin{enumerate}
-    \item[(a)] $\text{Q}_1=3.75$,\hspace{0.2cm} $\text{Q}_3=4.4$,\hspace{0.2cm} $\text{IQR}=4.4-3.75=0.65$.\\[0.5em]
-    Lower fence $=3.75-1.5\times 0.65=2.775$\\[0.5em]
-    Upper fence $=4.4+1.5\times 0.65=5.375$\\[0.5em]
-    Since $0.3<2.775$, the value of $0.3$ is an outlier.
+    \item[(a)] $\text{Q}_\text{1}=\text{3.7}$,\hspace{0.2cm} $\text{Q}_\text{3}=\text{4.5}$,\hspace{0.2cm} $\text{IQR}=\text{4.5}-\text{3.7}=\text{0.8}$.\\[0.5em]
+    Lower fence $=\text{3.7}-\text{1}.\text{5}\times \text{0.8}=\text{2.5}$\\[0.5em]
+    Upper fence $=\text{4.5}+\text{1}.\text{5}\times \text{0.8}=\text{5.7}$\\[0.5em]
+    Since $\text{0.6}<\text{2.5}$, the value of $\text{0.6}$ is an outlier.
     \item[(b)] The owner could have mistakenly measured the mass of their cat in stones instead of kilograms.
 \end{enumerate}
 
@@ -1191,7 +1191,7 @@ The outlier in this data set could be valid if, for instance, the sunflower plan
 #### [Exercise 1.6](#ex16a) {-}
 
 \begin{enumerate}
-    \item Strawberry tarts are sold every day in a bakery over the summer months. The shop manager monitors the sales and takes a random sample of the number of strawberry tarts sold on 10 randomly selected days over one month.
+    \item Strawberry tarts are sold every day in a bakery over the summer months. The shop manager monitors the sales and takes a sample of the number of strawberry tarts sold on 10 randomly selected days over one month.
     \begin{center}
     \begin{tabular}{cccccccccc}
         23 & 31 & 45 & 32 & 35 & 19 & 24 & 25 & 30 & 38
@@ -1224,12 +1224,12 @@ The outlier in this data set could be valid if, for instance, the sunflower plan
 \draw[semithick] (0*0.25,0.4) -- (50*0.25,0.4);
 \foreach \x in {0,...,25}
   \draw (0.5*\x,0.4) -- (0.5*\x,0.3);
-\node at (0.25*0,0.1) {$0$};
-\node at (0.25*10,0.1) {$10$};
-\node at (0.25*20,0.1) {$20$};
-\node at (0.25*30,0.1) {$30$};
-\node at (0.25*40,0.1) {$40$};
-\node at (0.25*50,0.1) {$50$};
+\node at (0.25*0,0.1) {0};
+\node at (0.25*10,0.1) {10};
+\node at (0.25*20,0.1) {20};
+\node at (0.25*30,0.1) {30};
+\node at (0.25*40,0.1) {40};
+\node at (0.25*50,0.1) {50};
 \fill[black!15] (4*0.25,0.5) rectangle (13*0.25,1);
 \draw[semithick] (1*0.25,0.6) -- (1*0.25,0.9);
 \draw[semithick] (4*0.25,0.5) -- (4*0.25,1);
@@ -1254,7 +1254,7 @@ The outlier in this data set could be valid if, for instance, the sunflower plan
 
 ## Describing Data Distributions
 
-Summary statistics alone are not sufficient to describe the full complexity of the way data is distributed. It is also important to consider and be able to describe the **shape** of the distribution, accomplished most easily using a histogram. Whilst real-life rarely *perfectly* follows a precise mathematical model, a number of shapes are commonly observed and a number of descriptions are commonly considered. The following data was generated by *simulating sampling* from populations of data which followed the distributions described. 
+Summary statistics alone are not sufficient to describe the full complexity of the way data is distributed. It is also important to consider and be able to describe the **shape** of the distribution, accomplished most easily using a histogram. Whilst real-life data rarely follows a precise mathematical model *exactly*, a number of shapes are commonly observed. The following data was generated by *simulating random sampling* from populations with the distributions. 
 
 \begin{figure}[H]
   \centering
@@ -1262,7 +1262,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
   \centering
 \begin{tikzpicture}
 \draw[white] (-1,-1) rectangle (7,4.7);
-\node[text width = 6cm,align=center] at (3,4) {\textit{uniformly distributed data} ($n=103$)};
+\node[text width = 6cm,align=center] at (3,4) {\textit{uniformly distributed data} ($n=\text{103}$)};
 \draw (-0.5,0) -- (6.5,0);
 \draw[fill=black!25] (0,0) rectangle (0.25,1.8);
 \draw[fill=black!25] (0.25,0) rectangle (0.5,1.7);
@@ -1302,7 +1302,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
 
 \begin{tikzpicture}
 \draw[white] (-1,-1) rectangle (7,4.7);
-\node[text width = 6cm,align=center] at (3,4) {\textit{normally distributed data, also referred to as a bell-curve} ($n=215$)};
+\node[text width = 6cm,align=center] at (3,4) {\textit{normally distributed data (bell-shaped distribution)} ($n=\text{215}$)};
 \draw (-0.5,0) -- (6.5,0);    
 \draw[fill=black!25] (0,0) rectangle (0.25,0);
 \draw[fill=black!25] (0.25,0) rectangle (0.5,0);
@@ -1344,7 +1344,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
   \centering
 \begin{tikzpicture}
 \draw[white] (-1,-1) rectangle (7,4.7);
-\node[text width = 6cm,align=center] at (3,4) {\textit{bimodal data} ($n=87$)};
+\node[text width = 6cm,align=center] at (3,4) {\textit{bimodal data} ($n=\text{87}$)};
 \draw (-0.5,0) -- (6.5,0);
 \draw[fill=black!25] (0,0) rectangle (0.25,0);
 \draw[fill=black!25] (0.25,0) rectangle (0.5,0);
@@ -1384,7 +1384,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
 
 \begin{tikzpicture}
 \draw[white] (-1,-1) rectangle (7,4.7);
-\node[text width = 6cm,align=center] at (3,4) {\textit{positively skewed data} ($n=134$)};
+\node[text width = 6cm,align=center] at (3,4) {\textit{positively skewed data (and so not symmetrical)} ($n=\text{134}$)};
 \draw (-0.5,0) -- (6.5,0);
 \draw[fill=black!25] (0,0) rectangle (0.25,0);
 \draw[fill=black!25] (0.25,0) rectangle (0.5,0);
@@ -1428,7 +1428,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
   \centering
 \begin{tikzpicture}
 \draw[white] (-1,-1) rectangle (7,4.7);
-\node[text width = 6cm,align=center] at (3,4) {\textit{very hard to infer distributions\\ of data from small samples} ($n=19$)};
+\node[text width = 6cm,align=center] at (3,4) {\textit{very hard to infer distributions\\ of data from small samples} ($n=\text{19}$)};
 \draw (-0.5,0) -- (6.5,0);
 \draw[fill=black!25] (0,0) rectangle (0.25,0);
 \draw[fill=black!25] (0.25,0) rectangle (0.5,1);
@@ -1468,7 +1468,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
 
 \begin{tikzpicture}
 \draw[white] (-1,-1) rectangle (7,4.7);
-\node[text width = 6cm,align=center] at (3,4) {\textit{negatively skewed data} ($n=97$)};
+\node[text width = 6cm,align=center] at (3,4) {\textit{negatively skewed data (and so not symmetrical)} ($n=\text{97}$)};
 \draw (-0.5,0) -- (6.5,0);
 \draw[fill=black!25] (-0.5,0) rectangle (-0.25,0.1);
 \draw[fill=black!25] (-0.25,0) rectangle (0,0.1);
@@ -1506,11 +1506,11 @@ Summary statistics alone are not sufficient to describe the full complexity of t
 \end{minipage}
 \end{figure}
 
-As well as considering whether the **underlying population distribution** of data appears to be *normal*, *skewed*, *uniform* or *bimodal*, the appropriateness of some statistical inference techniques will depend on whether the distribution is *symmetrical*, or whether two sets of data follow the *same distribution*, with matching shapes and spread.
+Note that the histograms above were made by selecting some of the most *well-behaved* random samples. Even when data is drawn from a particular distribution, histograms of this sample data may not appear perfectly shaped, especially for smaller sample sizes. Graphs of sample data do not **show** what the shape, location or spread of distribution of the underlying population is; instead, they merely *suggest* what may or may not be plausible. Any overly definitive conclusion from a visual representation of sample data should be avoided.
 
 \newpage
 
-Whilst the following example references techniques that will be introduced later in the course, it is intended to give an idea of the importance of studying distributions in selecting appropriate methods for statistical inference.
+As well as considering whether the **underlying population distribution** of data appears to be *normal*, *skewed*, *uniform* or *bimodal*, the appropriateness of some statistical inference techniques will depend on whether the distribution is *symmetrical*, or whether two sets of data follow the *same distribution*, with matching shapes and spread. Whilst the following example references techniques that will be introduced later in the course, it is intended to give an idea of the importance of studying distributions in selecting appropriate methods for statistical inference.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=NavyBlue]
 \textbf{Problem:} A environmental scientist collected water samples from a number of rivers in a region to explore whether the concentration of a harmful chemical in the water has changed since farming practises used locally have changed. They are considering the following choices of hypothesis test:
@@ -1711,10 +1711,12 @@ Whilst the following example references techniques that will be introduced later
 
 ## Comparing Distributions
 
-When comparing two or more samples of data, a good starting point is to create suitable plots and obtain summary statistics. Differences and similarities should be noted, considering the location, spread and shape of the distributions of each group.
+When comparing two or more samples of data, a good starting point is to create suitable plots and obtain summary statistics. Differences and similarities should be noted, considering the *location*, *spread* and *shape* of the distributions of data.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=NavyBlue]
-\textbf{Problem:} Within the sport of professional cycling, it is common for riders to specialise in certain types of cycling. \textit{Sprinters} aim to win races that finish on flat road at high speed, whilst \textit{climbers} aim to win races with an uphill finish. A researcher studying the characteristics of elite-level cyclists randomly selects samples of 30 \textit{sprinters} and 30 \textit{climbers}, recording the heights of each. The results are shown summarised in \textbf{Table 1}.
+\textbf{Problem:} Within the sport of professional cycling, it is common for riders to specialise in certain types of cycling. \textit{Sprinters} aim to win races that finish on flat roads at high speed, whilst \textit{climbers} aim to win races with an uphill finish. A researcher studying the characteristics of elite-level cyclists randomly selects samples of 30 \textit{sprinters} and 30 \textit{climbers}, recording the heights of each. The results are shown summarised in \textbf{Table 1}.
+
+\vspace{-0.3cm}
 
 \begin{center}
 \textbf{Table 1}\\\vspace{0.2cm}
@@ -1733,13 +1735,13 @@ Box plots for the two groups of cyclists are shown below in \textbf{Figure 1}, a
 \begin{tikzpicture}
 \node at (0.25*175,-0.2) {\text{Height (cm)}};
 \draw[semithick] (150*0.25,0.8) -- (200*0.25,0.8);
-\foreach \x in {0,...,25}
-  \draw (37.5+0.5*\x,0.8) -- (37.5+0.5*\x,0.6);
-\node at (0.25*155,0.3) {$160$};
-\node at (0.25*165,0.3) {$170$};
-\node at (0.25*175,0.3) {$180$};
-\node at (0.25*185,0.3) {$190$};
-\node at (0.25*195,0.3) {$200$};
+\foreach \x in {0,...,23}
+  \draw (38.25+0.5*\x,0.8) -- (38.25+0.5*\x,0.6);
+\node at (0.25*155,0.3) {160};
+\node at (0.25*165,0.3) {170};
+\node at (0.25*175,0.3) {180};
+\node at (0.25*185,0.3) {190};
+\node at (0.25*195,0.3) {200};
 \draw[semithick,fill=black!40] (163*0.25,1.2) rectangle (170*0.25,1.8);
 \node at (145*0.25,2.5) {sprinters};
 \node at (145*0.25,1.5) {climbers};
@@ -1776,11 +1778,11 @@ Box plots for the two groups of cyclists are shown below in \textbf{Figure 1}, a
 \node at (145*0.25,2.1) {sprinters};
 \node at (145*0.25,0.6) {climbers};
 \node at (175*0.25,-1) {\text{Height (cm)}};
-\node at (155*0.25,-0.3) {$160$};
-\node at (165*0.25,-0.3) {$170$};
-\node at (175*0.25,-0.3) {$180$};
-\node at (185*0.25,-0.3) {$190$};
-\node at (195*0.25,-0.3) {$200$};
+\node at (155*0.25,-0.3) {160};
+\node at (165*0.25,-0.3) {170};
+\node at (175*0.25,-0.3) {180};
+\node at (185*0.25,-0.3) {190};
+\node at (195*0.25,-0.3) {200};
 \draw[semithick,fill=black!40] (0.25*153,0.2) circle (0.06);
 \draw[semithick,fill=black!40] (0.25*155,0.2) circle (0.06);
 \draw[semithick,fill=black!40] (0.25*156,0.2) circle (0.06);
@@ -1869,7 +1871,7 @@ Note that this data is based on the heights of *samples* sprinters and climbers.
 #### [Exercise 1.8](#ex18a) {-}
 
 \begin{enumerate}
-    \item Two models of coffee machines produced by the brand \textit{DOLCAFÉ} are supposed produce a white coffee with the same volume of liquid each time, but natural variation means the actual amount dispensed is not quite the same every time. The volumes dispensed, in ml, are recorded for random samples from each model.
+    \item Two models of coffee machines produced by the brand \textit{DOLCAFÉ} are supposed to produce a white coffee with the same volume of liquid each time, but natural variation means the actual amount dispensed is not quite the same every time. The volumes dispensed, in ml, are recorded for random samples from each model.
     \begin{center}
     \begin{tabular}{c|ccccccc}
         Model A & 295 & 298 & 299 & 301 & 303 & 304 & 309\\
@@ -1887,13 +1889,13 @@ Note that this data is based on the heights of *samples* sprinters and climbers.
 \draw[semithick] (88,1) -- (100,1);
 \foreach \x in {0,...,12}
   \draw (88+\x,1) -- (88+\x,0.8);
-\node at (88,0.5) {$\scriptsize{8.8}$};
-\node at (90,0.5) {$\scriptsize{9.0}$};
-\node at (92,0.5) {$\scriptsize{9.2}$};
-\node at (94,0.5) {$\scriptsize{9.4}$};
-\node at (96,0.5) {$\scriptsize{9.6}$};
-\node at (98,0.5) {$\scriptsize{9.8}$};
-\node at (100,0.5) {$\scriptsize{10.0}$};
+\node at (88,0.5) {\scriptsize{8.8}};
+\node at (90,0.5) {\scriptsize{9.0}};
+\node at (92,0.5) {\scriptsize{9.2}};
+\node at (94,0.5) {\scriptsize{9.4}};
+\node at (96,0.5) {\scriptsize{9.6}};
+\node at (98,0.5) {\scriptsize{9.8}};
+\node at (100,0.5) {\scriptsize{10.0}};
 \draw[semithick,fill=black!40] (90.25,1.2) rectangle (93.75,1.8);
 \draw[semithick,fill=black!40] (101,1.2) rectangle (101.8,1.8);
 \node at (102.5,1.5) {\text{Judge B}};
@@ -1929,11 +1931,11 @@ Note that this data is based on the heights of *samples* sprinters and climbers.
 \draw[semithick] (16,0.4) -- (25,0.4);
 \foreach \x in {0,...,18}
   \draw (16+0.5*\x,0.4) -- (16+0.5*\x,0.3);
-\node at (16,0.1) {$\scriptsize{16}$};
-\node at (18,0.1) {$\scriptsize{18}$};
-\node at (20,0.1) {$\scriptsize{20}$};
-\node at (22,0.1) {$\scriptsize{22}$};
-\node at (24,0.1) {$\scriptsize{24}$};
+\node at (16,0.1) {\scriptsize{16}};
+\node at (18,0.1) {\scriptsize{18}};
+\node at (20,0.1) {\scriptsize{20}};
+\node at (22,0.1) {\scriptsize{22}};
+\node at (24,0.1) {\scriptsize{24}};
 \fill[black!15] (18,0.5) rectangle (23,1);
 \draw[semithick] (16,0.6) -- (16,0.9);
 \draw[semithick] (18,0.5) -- (18,1);
@@ -1952,14 +1954,14 @@ Note that this data is based on the heights of *samples* sprinters and climbers.
 \draw[semithick] (-6*9/14,-0.4) -- (8*9/14,-0.4);
 \foreach \x in {0,...,35}
   \draw (-6*9/14+0.4*\x*9/14,-0.4) -- (-6*9/14+0.4*\x*9/14,-0.5);
-\node at (-6*9/14,-0.7) {$\scriptsize{-6}$};
-\node at (-4*9/14,-0.7) {$\scriptsize{-4}$};
-\node at (-2*9/14,-0.7) {$\scriptsize{-2}$};
-\node at (0*9/14,-0.7) {$\scriptsize{0}$};
-\node at (2*9/14,-0.7) {$\scriptsize{2}$};
-\node at (4*9/14,-0.7) {$\scriptsize{4}$};
-\node at (6*9/14,-0.7) {$\scriptsize{6}$};
-\node at (8*9/14,-0.7) {$\scriptsize{8}$};
+\node at (-6*9/14,-0.7) {\scriptsize{-6}};
+\node at (-4*9/14,-0.7) {\scriptsize{-4}};
+\node at (-2*9/14,-0.7) {\scriptsize{-2}};
+\node at (0*9/14,-0.7) {\scriptsize{0}};
+\node at (2*9/14,-0.7) {\scriptsize{2}};
+\node at (4*9/14,-0.7) {\scriptsize{4}};
+\node at (6*9/14,-0.7) {\scriptsize{6}};
+\node at (8*9/14,-0.7) {\scriptsize{8}};
 \fill[black!40] (-1*9/14,-0.3) rectangle (5*9/14,0.2);
 \draw[semithick] (-6*9/14,-0.2) -- (-6*9/14,0.1);
 \draw[semithick] (-1*9/14,-0.3) -- (-1*9/14,0.2);
@@ -2035,7 +2037,7 @@ Note that this data is based on the heights of *samples* sprinters and climbers.
     \end{tabular}
     \end{center}
     \begin{enumerate}
-        \item Contruct a dot plot to display the data.
+        \item Construct a dot plot to display the data.
         \item Find the median and interquartile range for the sizes of running shoes sold.
         \item Calculate the mean and standard deviation for the sizes of running shoes sold.
         \item State the type of data recorded.
