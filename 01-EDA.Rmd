@@ -325,7 +325,7 @@ For example, the table below shows data relating to some football players:
 In a statistical study, the term **population** refers to the entire set of objects of interest, whilst a **sample** is a selection of some objects chosen from the population. Recognising the difference is fundamental to statistics. 
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.9]
 \draw[semithick,fill=black!10] (0,0) rectangle (8,5);
 \node at (4,5.3) {Population};
 \draw[semithick,fill=black!10] (12,2.5) circle (1.5);
@@ -338,147 +338,147 @@ In a statistical study, the term **population** refers to the entire set of obje
 \draw[very thick,fill=black!10] (2.5,1.05) circle (0.35);
 \draw[very thick,fill=black!10] (6,0.45) circle (0.35);
 
-\node[alice,minimum size=0.04cm] at (11.5,2.75) {};
-\node[alice,minimum size=0.04cm] at (12,1.4) {};
-\node[alice,minimum size=0.04cm] at (11,2) {};
-\node[alice,minimum size=0.04cm] at (12.25,2.3) {};
-\node[alice,minimum size=0.04cm] at (13,2.85) {};
-\node[alice,minimum size=0.04cm] at (12.1,3.5) {};
+\node[alice,minimum size=0.03cm] at (11.5,2.75) {};
+\node[alice,minimum size=0.03cm] at (12,1.4) {};
+\node[alice,minimum size=0.03cm] at (11,2) {};
+\node[alice,minimum size=0.03cm] at (12.25,2.3) {};
+\node[alice,minimum size=0.03cm] at (13,2.85) {};
+\node[alice,minimum size=0.03cm] at (12.1,3.5) {};
 
-\node[alice,minimum size=0.04cm] at (0.5,0.45) {};
-\node[alice,minimum size=0.04cm] at (0.5,1.05) {};
-\node[alice,minimum size=0.04cm] at (0.5,1.65) {};
-\node[alice,minimum size=0.04cm] at (0.5,2.25) {};
-\node[alice,minimum size=0.04cm] at (0.5,2.85) {};
-\node[alice,minimum size=0.04cm] at (0.5,3.45) {};
-\node[alice,minimum size=0.04cm] at (0.5,4.05) {};
-\node[alice,minimum size=0.04cm] at (0.5,4.65) {};
+\node[alice,minimum size=0.03cm] at (0.5,0.45) {};
+\node[alice,minimum size=0.03cm] at (0.5,1.05) {};
+\node[alice,minimum size=0.03cm] at (0.5,1.65) {};
+\node[alice,minimum size=0.03cm] at (0.5,2.25) {};
+\node[alice,minimum size=0.03cm] at (0.5,2.85) {};
+\node[alice,minimum size=0.03cm] at (0.5,3.45) {};
+\node[alice,minimum size=0.03cm] at (0.5,4.05) {};
+\node[alice,minimum size=0.03cm] at (0.5,4.65) {};
 
-\node[alice,minimum size=0.04cm] at (1,0.45) {};
-\node[alice,minimum size=0.04cm] at (1,1.05) {};
-\node[alice,minimum size=0.04cm] at (1,1.65) {};
-\node[alice,minimum size=0.04cm] at (1,2.25) {};
-\node[alice,minimum size=0.04cm] at (1,2.85) {};
-\node[alice,minimum size=0.04cm] at (1,3.45) {};
-\node[alice,minimum size=0.04cm] at (1,4.05) {};
-\node[alice,minimum size=0.04cm] at (1,4.65) {};
+\node[alice,minimum size=0.03cm] at (1,0.45) {};
+\node[alice,minimum size=0.03cm] at (1,1.05) {};
+\node[alice,minimum size=0.03cm] at (1,1.65) {};
+\node[alice,minimum size=0.03cm] at (1,2.25) {};
+\node[alice,minimum size=0.03cm] at (1,2.85) {};
+\node[alice,minimum size=0.03cm] at (1,3.45) {};
+\node[alice,minimum size=0.03cm] at (1,4.05) {};
+\node[alice,minimum size=0.03cm] at (1,4.65) {};
 
-\node[alice,minimum size=0.04cm] at (1.5,0.45) {};
-\node[alice,minimum size=0.04cm] at (1.5,1.05) {};
-\node[alice,minimum size=0.04cm] at (1.5,1.65) {};
-\node[alice,minimum size=0.04cm] at (1.5,2.25) {};
-\node[alice,minimum size=0.04cm] at (1.5,2.85) {};
-\node[alice,minimum size=0.04cm] at (1.5,3.45) {};
-\node[alice,minimum size=0.04cm] at (1.5,4.05) {};
-\node[alice,minimum size=0.04cm] at (1.5,4.65) {};
+\node[alice,minimum size=0.03cm] at (1.5,0.45) {};
+\node[alice,minimum size=0.03cm] at (1.5,1.05) {};
+\node[alice,minimum size=0.03cm] at (1.5,1.65) {};
+\node[alice,minimum size=0.03cm] at (1.5,2.25) {};
+\node[alice,minimum size=0.03cm] at (1.5,2.85) {};
+\node[alice,minimum size=0.03cm] at (1.5,3.45) {};
+\node[alice,minimum size=0.03cm] at (1.5,4.05) {};
+\node[alice,minimum size=0.03cm] at (1.5,4.65) {};
 
-\node[alice,minimum size=0.04cm] at (2,0.45) {};
-\node[alice,minimum size=0.04cm] at (2,1.05) {};
-\node[alice,minimum size=0.04cm] at (2,1.65) {};
-\node[alice,minimum size=0.04cm] at (2,2.25) {};
-\node[alice,minimum size=0.04cm] at (2,2.85) {};
-\node[alice,minimum size=0.04cm] at (2,3.45) {};
-\node[alice,minimum size=0.04cm] at (2,4.05) {};
-\node[alice,minimum size=0.04cm] at (2,4.65) {};
+\node[alice,minimum size=0.03cm] at (2,0.45) {};
+\node[alice,minimum size=0.03cm] at (2,1.05) {};
+\node[alice,minimum size=0.03cm] at (2,1.65) {};
+\node[alice,minimum size=0.03cm] at (2,2.25) {};
+\node[alice,minimum size=0.03cm] at (2,2.85) {};
+\node[alice,minimum size=0.03cm] at (2,3.45) {};
+\node[alice,minimum size=0.03cm] at (2,4.05) {};
+\node[alice,minimum size=0.03cm] at (2,4.65) {};
 
-\node[alice,minimum size=0.04cm] at (2.5,0.45) {};
-\node[alice,minimum size=0.04cm] at (2.5,1.05) {};
-\node[alice,minimum size=0.04cm] at (2.5,1.65) {};
-\node[alice,minimum size=0.04cm] at (2.5,2.25) {};
-\node[alice,minimum size=0.04cm] at (2.5,2.85) {};
-\node[alice,minimum size=0.04cm] at (2.5,3.45) {};
-\node[alice,minimum size=0.04cm] at (2.5,4.05) {};
-\node[alice,minimum size=0.04cm] at (2.5,4.65) {};
+\node[alice,minimum size=0.03cm] at (2.5,0.45) {};
+\node[alice,minimum size=0.03cm] at (2.5,1.05) {};
+\node[alice,minimum size=0.03cm] at (2.5,1.65) {};
+\node[alice,minimum size=0.03cm] at (2.5,2.25) {};
+\node[alice,minimum size=0.03cm] at (2.5,2.85) {};
+\node[alice,minimum size=0.03cm] at (2.5,3.45) {};
+\node[alice,minimum size=0.03cm] at (2.5,4.05) {};
+\node[alice,minimum size=0.03cm] at (2.5,4.65) {};
 
-\node[alice,minimum size=0.04cm] at (3,0.45) {};
-\node[alice,minimum size=0.04cm] at (3,1.05) {};
-\node[alice,minimum size=0.04cm] at (3,1.65) {};
-\node[alice,minimum size=0.04cm] at (3,2.25) {};
-\node[alice,minimum size=0.04cm] at (3,2.85) {};
-\node[alice,minimum size=0.04cm] at (3,3.45) {};
-\node[alice,minimum size=0.04cm] at (3,4.05) {};
-\node[alice,minimum size=0.04cm] at (3,4.65) {};
+\node[alice,minimum size=0.03cm] at (3,0.45) {};
+\node[alice,minimum size=0.03cm] at (3,1.05) {};
+\node[alice,minimum size=0.03cm] at (3,1.65) {};
+\node[alice,minimum size=0.03cm] at (3,2.25) {};
+\node[alice,minimum size=0.03cm] at (3,2.85) {};
+\node[alice,minimum size=0.03cm] at (3,3.45) {};
+\node[alice,minimum size=0.03cm] at (3,4.05) {};
+\node[alice,minimum size=0.03cm] at (3,4.65) {};
 
-\node[alice,minimum size=0.04cm] at (3.5,0.45) {};
-\node[alice,minimum size=0.04cm] at (3.5,1.05) {};
-\node[alice,minimum size=0.04cm] at (3.5,1.65) {};
-\node[alice,minimum size=0.04cm] at (3.5,2.25) {};
-\node[alice,minimum size=0.04cm] at (3.5,2.85) {};
-\node[alice,minimum size=0.04cm] at (3.5,3.45) {};
-\node[alice,minimum size=0.04cm] at (3.5,4.05) {};
-\node[alice,minimum size=0.04cm] at (3.5,4.65) {};
+\node[alice,minimum size=0.03cm] at (3.5,0.45) {};
+\node[alice,minimum size=0.03cm] at (3.5,1.05) {};
+\node[alice,minimum size=0.03cm] at (3.5,1.65) {};
+\node[alice,minimum size=0.03cm] at (3.5,2.25) {};
+\node[alice,minimum size=0.03cm] at (3.5,2.85) {};
+\node[alice,minimum size=0.03cm] at (3.5,3.45) {};
+\node[alice,minimum size=0.03cm] at (3.5,4.05) {};
+\node[alice,minimum size=0.03cm] at (3.5,4.65) {};
 
-\node[alice,minimum size=0.04cm] at (4,0.45) {};
-\node[alice,minimum size=0.04cm] at (4,1.05) {};
-\node[alice,minimum size=0.04cm] at (4,1.65) {};
-\node[alice,minimum size=0.04cm] at (4,2.25) {};
-\node[alice,minimum size=0.04cm] at (4,2.85) {};
-\node[alice,minimum size=0.04cm] at (4,3.45) {};
-\node[alice,minimum size=0.04cm] at (4,4.05) {};
-\node[alice,minimum size=0.04cm] at (4,4.65) {};
+\node[alice,minimum size=0.03cm] at (4,0.45) {};
+\node[alice,minimum size=0.03cm] at (4,1.05) {};
+\node[alice,minimum size=0.03cm] at (4,1.65) {};
+\node[alice,minimum size=0.03cm] at (4,2.25) {};
+\node[alice,minimum size=0.03cm] at (4,2.85) {};
+\node[alice,minimum size=0.03cm] at (4,3.45) {};
+\node[alice,minimum size=0.03cm] at (4,4.05) {};
+\node[alice,minimum size=0.03cm] at (4,4.65) {};
 
-\node[alice,minimum size=0.04cm] at (4.5,0.45) {};
-\node[alice,minimum size=0.04cm] at (4.5,1.05) {};
-\node[alice,minimum size=0.04cm] at (4.5,1.65) {};
-\node[alice,minimum size=0.04cm] at (4.5,2.25) {};
-\node[alice,minimum size=0.04cm] at (4.5,2.85) {};
-\node[alice,minimum size=0.04cm] at (4.5,3.45) {};
-\node[alice,minimum size=0.04cm] at (4.5,4.05) {};
-\node[alice,minimum size=0.04cm] at (4.5,4.65) {};
+\node[alice,minimum size=0.03cm] at (4.5,0.45) {};
+\node[alice,minimum size=0.03cm] at (4.5,1.05) {};
+\node[alice,minimum size=0.03cm] at (4.5,1.65) {};
+\node[alice,minimum size=0.03cm] at (4.5,2.25) {};
+\node[alice,minimum size=0.03cm] at (4.5,2.85) {};
+\node[alice,minimum size=0.03cm] at (4.5,3.45) {};
+\node[alice,minimum size=0.03cm] at (4.5,4.05) {};
+\node[alice,minimum size=0.03cm] at (4.5,4.65) {};
 
-\node[alice,minimum size=0.04cm] at (5,0.45) {};
-\node[alice,minimum size=0.04cm] at (5,1.05) {};
-\node[alice,minimum size=0.04cm] at (5,1.65) {};
-\node[alice,minimum size=0.04cm] at (5,2.25) {};
-\node[alice,minimum size=0.04cm] at (5,2.85) {};
-\node[alice,minimum size=0.04cm] at (5,3.45) {};
-\node[alice,minimum size=0.04cm] at (5,4.05) {};
-\node[alice,minimum size=0.04cm] at (5,4.65) {};
+\node[alice,minimum size=0.03cm] at (5,0.45) {};
+\node[alice,minimum size=0.03cm] at (5,1.05) {};
+\node[alice,minimum size=0.03cm] at (5,1.65) {};
+\node[alice,minimum size=0.03cm] at (5,2.25) {};
+\node[alice,minimum size=0.03cm] at (5,2.85) {};
+\node[alice,minimum size=0.03cm] at (5,3.45) {};
+\node[alice,minimum size=0.03cm] at (5,4.05) {};
+\node[alice,minimum size=0.03cm] at (5,4.65) {};
 
-\node[alice,minimum size=0.04cm] at (5.5,0.45) {};
-\node[alice,minimum size=0.04cm] at (5.5,1.05) {};
-\node[alice,minimum size=0.04cm] at (5.5,1.65) {};
-\node[alice,minimum size=0.04cm] at (5.5,2.25) {};
-\node[alice,minimum size=0.04cm] at (5.5,2.85) {};
-\node[alice,minimum size=0.04cm] at (5.5,3.45) {};
-\node[alice,minimum size=0.04cm] at (5.5,4.05) {};
-\node[alice,minimum size=0.04cm] at (5.5,4.65) {};
+\node[alice,minimum size=0.03cm] at (5.5,0.45) {};
+\node[alice,minimum size=0.03cm] at (5.5,1.05) {};
+\node[alice,minimum size=0.03cm] at (5.5,1.65) {};
+\node[alice,minimum size=0.03cm] at (5.5,2.25) {};
+\node[alice,minimum size=0.03cm] at (5.5,2.85) {};
+\node[alice,minimum size=0.03cm] at (5.5,3.45) {};
+\node[alice,minimum size=0.03cm] at (5.5,4.05) {};
+\node[alice,minimum size=0.03cm] at (5.5,4.65) {};
 
-\node[alice,minimum size=0.04cm] at (6,0.45) {};
-\node[alice,minimum size=0.04cm] at (6,1.05) {};
-\node[alice,minimum size=0.04cm] at (6,1.65) {};
-\node[alice,minimum size=0.04cm] at (6,2.25) {};
-\node[alice,minimum size=0.04cm] at (6,2.85) {};
-\node[alice,minimum size=0.04cm] at (6,3.45) {};
-\node[alice,minimum size=0.04cm] at (6,4.05) {};
-\node[alice,minimum size=0.04cm] at (6,4.65) {};
+\node[alice,minimum size=0.03cm] at (6,0.45) {};
+\node[alice,minimum size=0.03cm] at (6,1.05) {};
+\node[alice,minimum size=0.03cm] at (6,1.65) {};
+\node[alice,minimum size=0.03cm] at (6,2.25) {};
+\node[alice,minimum size=0.03cm] at (6,2.85) {};
+\node[alice,minimum size=0.03cm] at (6,3.45) {};
+\node[alice,minimum size=0.03cm] at (6,4.05) {};
+\node[alice,minimum size=0.03cm] at (6,4.65) {};
 
-\node[alice,minimum size=0.04cm] at (6.5,0.45) {};
-\node[alice,minimum size=0.04cm] at (6.5,1.05) {};
-\node[alice,minimum size=0.04cm] at (6.5,1.65) {};
-\node[alice,minimum size=0.04cm] at (6.5,2.25) {};
-\node[alice,minimum size=0.04cm] at (6.5,2.85) {};
-\node[alice,minimum size=0.04cm] at (6.5,3.45) {};
-\node[alice,minimum size=0.04cm] at (6.5,4.05) {};
-\node[alice,minimum size=0.04cm] at (6.5,4.65) {};
+\node[alice,minimum size=0.03cm] at (6.5,0.45) {};
+\node[alice,minimum size=0.03cm] at (6.5,1.05) {};
+\node[alice,minimum size=0.03cm] at (6.5,1.65) {};
+\node[alice,minimum size=0.03cm] at (6.5,2.25) {};
+\node[alice,minimum size=0.03cm] at (6.5,2.85) {};
+\node[alice,minimum size=0.03cm] at (6.5,3.45) {};
+\node[alice,minimum size=0.03cm] at (6.5,4.05) {};
+\node[alice,minimum size=0.03cm] at (6.5,4.65) {};
 
-\node[alice,minimum size=0.04cm] at (7,0.45) {};
-\node[alice,minimum size=0.04cm] at (7,1.05) {};
-\node[alice,minimum size=0.04cm] at (7,1.65) {};
-\node[alice,minimum size=0.04cm] at (7,2.25) {};
-\node[alice,minimum size=0.04cm] at (7,2.85) {};
-\node[alice,minimum size=0.04cm] at (7,3.45) {};
-\node[alice,minimum size=0.04cm] at (7,4.05) {};
-\node[alice,minimum size=0.04cm] at (7,4.65) {};
+\node[alice,minimum size=0.03cm] at (7,0.45) {};
+\node[alice,minimum size=0.03cm] at (7,1.05) {};
+\node[alice,minimum size=0.03cm] at (7,1.65) {};
+\node[alice,minimum size=0.03cm] at (7,2.25) {};
+\node[alice,minimum size=0.03cm] at (7,2.85) {};
+\node[alice,minimum size=0.03cm] at (7,3.45) {};
+\node[alice,minimum size=0.03cm] at (7,4.05) {};
+\node[alice,minimum size=0.03cm] at (7,4.65) {};
 
-\node[alice,minimum size=0.04cm] at (7.5,0.45) {};
-\node[alice,minimum size=0.04cm] at (7.5,1.05) {};
-\node[alice,minimum size=0.04cm] at (7.5,1.65) {};
-\node[alice,minimum size=0.04cm] at (7.5,2.25) {};
-\node[alice,minimum size=0.04cm] at (7.5,2.85) {};
-\node[alice,minimum size=0.04cm] at (7.5,3.45) {};
-\node[alice,minimum size=0.04cm] at (7.5,4.05) {};
-\node[alice,minimum size=0.04cm] at (7.5,4.65) {};
+\node[alice,minimum size=0.03cm] at (7.5,0.45) {};
+\node[alice,minimum size=0.03cm] at (7.5,1.05) {};
+\node[alice,minimum size=0.03cm] at (7.5,1.65) {};
+\node[alice,minimum size=0.03cm] at (7.5,2.25) {};
+\node[alice,minimum size=0.03cm] at (7.5,2.85) {};
+\node[alice,minimum size=0.03cm] at (7.5,3.45) {};
+\node[alice,minimum size=0.03cm] at (7.5,4.05) {};
+\node[alice,minimum size=0.03cm] at (7.5,4.65) {};
 
 \draw[semithick,dashed] (7,4.65) -- (12.1,3.5);
 \draw[semithick,dashed] (4,4.05) -- (13,2.85);
@@ -503,30 +503,31 @@ Letters from the Greek alphabet are commonly used to represent population parame
 \end{tabular}
 \end{center}
 
-It is good practice to refer *clearly* to whether a population parameter or sample statistic is being discussed.
-
 \begin{multicols}{2}
 
+Samples statistics vary depending on the sample chosen, and may be seen as *estimates* of the true value of their respective population parameters, which are considered as fixed values (for a given study, at least). *Statistical inference* is the process us using *sample statistics* to make conclusions about *population parameters*.
+
+
 \begin{center}
-\begin{tikzpicture}
-\draw[semithick,fill=white] (2,3) ellipse[x radius = 0.8, y radius = 1.6];
-\node at (2,5) {Population};
-\draw[semithick,fill=white] (8.8,3) ellipse[x radius = 0.4, y radius = 0.8];
-\node at (8.8,4.2) {Sample};
-\node at (2,3) {\large{$\mu$}};
-\node at (8.8,3) {\large{$\bar{x}$}};
-\draw[very thick,-stealth,black!70] (3,3.4) -- (8,3.4);
-\node[black!70] at (5.5,3.8) {\textbf{Sampling}};
-\draw[very thick,stealth-] (3,2.6) -- (8,2.6);
-\node at (5.5,2.2) {\textbf{Inference}};
+\begin{tikzpicture}[scale=0.8]
+\draw[semithick,fill=black!10] (-0.3,2) rectangle (2.7,4);
+\node[align=center] at (1.2,4.5) {Population};
+\draw[semithick,fill=black!10] (9.5,3) circle (1.1cm);
+\node[align=center] at (9.5,4.5) {Sample};
+\node[text width=2cm,align=center] at (1.2,3) {Population parameter};
+\node[text width = 2cm,align=center] at (9.5,3.1) {Sample statistic};
+\draw[very thick,-stealth] (3,3.4)
+      arc[start angle=100,end angle=80,radius=14.3969];
+\node[black] at (5.5,4) {\textit{Sampling}};
+\draw[very thick,stealth-] (3,2.6)
+      arc[start angle=-100,end angle=-80,radius=14.396926];
+\node at (5.5,2) {\textit{Inference}};
 \end{tikzpicture}
 \end{center}
 
-Population parameters are fixed values (for a given study), whereas sample statistics vary depending on the sample chosen. 
-
-Sample statistics may be seen as \textit{estimates} of the true value of their respective population parameters, and \hbox{\textbf{inference}} is the process by which claims may be made about population parameters (such as $\mu$) based on observed sample statistics (such as $\bar{x}$). 
-
 \end{multicols}
+
+Both *sampling techniques* and *statistical inference* will be introduced in later chapters. The reason for discussing sampling at this point is to caution against making any *definitive-sounding* statements based on *sample statistics*, when it is typically the (unknown) *population parameters* that are really of interest.
 
 []{#ex12q}
 
