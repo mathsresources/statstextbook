@@ -892,41 +892,44 @@ In a statistical study, the term \textbf{population} refers to the entire set of
 
 If data were available for an entire \emph{population} then various \textbf{population parameters} could be calculated, such as the \emph{population mean}. Since this is rarely possible in practice, instead \emph{samples} are taken from populations. Measures calculated from a sample of data are called \textbf{sample statistics}, such as the \emph{sample mean}.
 
-Letters from the Greek alphabet are commonly used to represent population parameters.
+Letters from the Greek alphabet are commonly used to represent population parameters. For example:
 
 \begin{center}
 \begin{tabular}{lll}
-    \textbf{Population Parameter} & $\qquad $ & \textbf{Sample Statistic}\\[0.5em]
-    Population mean $\mu$ \textit{(``mu'')} & $\qquad $ & Sample mean $\bar{x}$ \textit{(``x bar'')}\\[0.2em]
+    \textbf{Population Parameters} & $\qquad $ & \textbf{Sample Statistics}\\[0.2em]
+    Population mean $\mu$ \textit{(``mu'')} & $\qquad $ & Sample mean $\bar{x}$ \textit{(``x bar'')}\\[0.1em]
     Population standard deviation $\sigma$ \textit{(``sigma'')}& $\qquad $ & Sample standard deviation $s$\\
 \end{tabular}
 \end{center}
 
+Samples statistics vary based on the sample chosen, and may be seen as \textit{estimates} of the true value of their respective population parameters, which are seen as fixed values (for a given study, at least).
+
 \begin{multicols}{2}
 
-Samples statistics vary depending on the sample chosen, and may be seen as *estimates* of the true value of their respective population parameters, which are considered as fixed values (for a given study, at least). *Statistical inference* is the process us using *sample statistics* to make conclusions about *population parameters*.
+\textit{Statistical inference} is the process of using \textit{sample statistics} to assess claims about \textit{population parameters}. This requires learning about the inherent \textit{random chance} involved in selecting a sample from a population. Statistical inference, and \textit{sampling techniques}, will be introduced in later chapters.
 
+\columnbreak
 
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
 \draw[semithick,fill=black!10] (-0.3,2) rectangle (2.7,4);
-\node[align=center] at (1.2,4.5) {Population};
-\draw[semithick,fill=black!10] (9.5,3) circle (1.1cm);
-\node[align=center] at (9.5,4.5) {Sample};
+\node[align=center] at (1.2,4.4) {Population};
+\draw[semithick,fill=black!10] (7.8,3) circle (1.1cm);
+\node[align=center] at (7.8,4.4) {Sample};
 \node[text width=2cm,align=center] at (1.2,3) {Population parameter};
-\node[text width = 2cm,align=center] at (9.5,3.1) {Sample statistic};
+\node[text width = 2cm,align=center] at (7.8,3.1) {Sample statistic};
 \draw[very thick,-stealth] (3,3.4)
-      arc[start angle=100,end angle=80,radius=14.3969];
-\node[black] at (5.5,4) {\textit{Sampling}};
-\draw[very thick,stealth-] (3,2.6)
-      arc[start angle=-100,end angle=-80,radius=14.396926];
-\node at (5.5,2) {\textit{Inference}};
+      arc[start angle=100,end angle=80,radius=10];
+\node[black] at (4.8,3.9) {\textit{Sampling}};
+\draw[very thick,stealth-] (3,2.8)
+      arc[start angle=-100,end angle=-80,radius=10];
+\node at (4.8,2.3) {\textit{Inference}};
 \end{tikzpicture}
 \end{center}
 
 \end{multicols}
 
-Both \emph{sampling techniques} and \emph{statistical inference} will be introduced in later chapters. The reason for discussing sampling at this point is to caution against making any \emph{definitive-sounding} statements based on \emph{sample statistics}, when it is typically the (unknown) \emph{population parameters} that are really of interest.
+The reason for discussing sampling at this point is to caution against making any \emph{definitive-sounding} statements based on \emph{sample statistics}, when it is typically the (unknown) \emph{population parameters} that are really of interest.
 
 \protect\phantomsection\label{ex12q}{}
 
@@ -935,12 +938,14 @@ Both \emph{sampling techniques} and \emph{statistical inference} will be introdu
 
 \vspace{-0.2cm}
 
-\textit{For each, state using the context of the question which population parameter or sample statistic has been obtained, as well as the suitable notation.}
+\textit{For each, state using words and notation which sample statistic or population parameter has been obtained.}\newline \textit{For example: ``Sample mean (}\(\mu\)\textit{).'' or ``Population standard deviation (}\(\sigma\)\textit{).''}
 
 \begin{enumerate}
-    \item A year group at a school contains 120 pupils. Data is obtained for the number of merits each pupil in the year group obtained, and the mean of those values is calculated to be 3.4.
-    \item A bus company in Scotland checks the total mileage for some of its buses when they come in for a service. The mean mileage is calculated as 45,300 miles.
-    \item A medical trial for a new supplement to increase iron levels in the blood involves a number of patients being given the treatment over the course of a month, and then their blood iron levels being checked. The mean increase for the patients is found to be 27.3 micrograms per decilitre (mcg/dL).
+    \item Whilst studying house price valuations on a street, the valuations are found of every house on the street, and the mean valuation is calculated.
+    \item A bus company in Scotland checks the mileage for some of its buses when they come in for a service, and the mean mileage of these buses is calculated.
+    \item The iron levels are checked for a sample of patients at a hospital, and the standard deviation of these is calculated.
+    \item Whilst researching the capacities of football stadiums in the Scottish Football League, the standard deviation is calculated using a full list of all the stadiums used in the Scottish Football League.
+    \item For a study on lunchtime spending in Scottish schools, the mean lunchtime spend is calculated from surveying every pupil studying as a large secondary school in Edinburgh.
 \end{enumerate}
 
 \pagebreak
