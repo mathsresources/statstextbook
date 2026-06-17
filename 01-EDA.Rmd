@@ -322,7 +322,7 @@ For example, the table below shows data relating to some football players:
 
 ## Population Parameters and Sample Statistics
 
-In a statistical study, the term **population** refers to the entire set of objects of interest, whilst a **sample** is a selection of some objects chosen from the population. Recognising the difference is fundamental to statistics. 
+In a statistical study, the term **population** refers to the entire set of objects of interest, whilst a **sample** is a subset chosen from the population. Recognising the difference is fundamental to statistics. 
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -503,7 +503,7 @@ Letters from the Greek alphabet are commonly used to represent population parame
 \end{tabular}
 \end{center}
 
-Samples statistics vary based on the sample chosen, and may be seen as \textit{estimates} of the true value of their respective population parameters, which are seen as fixed values (for a given study, at least). 
+Sample statistics vary based on the sample chosen, and may be seen as \textit{estimates} of the true value of their respective population parameters, which are seen as fixed values (for a given study, at least). 
 
 \begin{multicols}{2}
 
@@ -530,7 +530,7 @@ Samples statistics vary based on the sample chosen, and may be seen as \textit{e
 
 \end{multicols}
 
-The reason for discussing sampling at this point is to caution against making any *definitive-sounding* statements based on *sample statistics*, when it is typically the (unknown) *population parameters* that are really of interest.
+The reason for discussing sampling at this point is to caution against making *definitive* statements based solely on *sample statistics*, when it is typically the (unknown) *population parameters* that are really of interest.
 
 []{#ex12q}
 
@@ -538,7 +538,7 @@ The reason for discussing sampling at this point is to caution against making an
 
 \vspace{-0.2cm}
 
-\textit{For each, state using words and notation which sample statistic or population parameter has been obtained.}\newline \textit{For example: ``Sample mean (}$\mu$\textit{).'' or ``Population standard deviation (}$\sigma$\textit{).''}
+\textit{For each, state using words and notation which sample statistic or population parameter has been obtained.}\newline \textit{For example: ``Sample mean (}$\bar{x}$\textit{).'' or ``Population standard deviation (}$\sigma$\textit{).''}
 
 \begin{enumerate}
     \item Whilst studying house price valuations on a street, the valuations are found of every house on the street, and the mean valuation is calculated.
@@ -600,6 +600,7 @@ The three main measures of location, or *averages*, should already be familiar. 
 \node at (9,2) {\text{mode}};
 \draw[dashed] (5.7,1.2) -- (5.7,0);
 \draw[dashed] (7,0.7) -- (7,0);
+\draw[dashed] (9,1.7) -- (9,0);
 \node at (5.7,-1) {standard deviation};
 \draw[stealth-stealth] (3.95,-1.3) -- (7.45,-1.3);
 \node at (5,-2) {interquartile range};
