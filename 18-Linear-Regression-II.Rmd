@@ -6,7 +6,7 @@ In Chapter 5 the concept of using \textit{linear regression} to explore straight
 
 ### The Method of Least Squares Regression {-}
 
-Given bivariate data, $x$ is generally selected as the \textbf{predictor} (or \textit{independent}) variable, whilst $Y$ is a \textit{random variable} known as the \textbf{response} (or \textit{dependent}) variable. In other words, it is typical to predict an unknown $Y$ value given a known $x$ value.
+Given bivariate data, one variable is selected as the \textbf{predictor} $x$ , whilst the other variable is selected as the \textbf{response} $Y$. In other words, it is typical to seek to predict an unknown $Y$ value given a known $x$ value.
 
 \begin{figure}[H]
   \centering
@@ -52,15 +52,15 @@ $\varepsilon_i$ (\textit{"epsilon"}) are random variables called \textbf{errors}
 
 
 
-The true values of the \textbf{intercept parameter} $\alpha$ and the \textbf{slope parameter} $\beta$ cannot be known exactly without access to the full \textit{population} of bivariate data. However the sample observations $(x_i,y_i)$ can be used to give estimates, $a$ and $b$, of $\alpha$ and $\beta$. The method of least squares gives formulae for $a$ and $b$ derived by minimising $\sum \varepsilon_i^2$. These rely on several assumptions about the population of errors given on page 5 of the Data Booklet, along with the formulae:
+The true values of the \textbf{intercept parameter} $\alpha$ and the \textbf{slope parameter} $\beta$ are unknown, as they relate to the full \textit{population} of bivariate data. However the sample observations $(x_i,y_i)$ can be used to give estimates, $a$ and $b$, of $\alpha$ and $\beta$. The method of least squares produces formulae for $a$ and $b$ derived by minimising $\sum \varepsilon_i^2$. These rely on several assumptions about the population of errors given on page 5 of the Data Booklet, along with the formulae:
 
 \begin{multicols}{2}
 
 $$b=\dfrac{S_{xy}}{S_{xx}} \qquad \text{and} \qquad a=\bar{y}-b\bar{x}$$
 
-This leads to the relationship $\hat{Y}_i=a+bx_i$, where $\hat{Y}_i$ (\textit{"y-hat"}) denotes the predicted (or fitted) value of $Y_i$ for a given $x_i$.
+This leads to a regression line with equation $\hat{Y}_i=a+bx_i$, where $\hat{Y}_i$ (\textit{"y-hat"}) denotes the predicted (or fitted) value of $Y_i$ for a given $x_i$.
 
-\begin{tcolorbox}[halign title=center,title=Assumptions for the Errors,center,colback=red!5,colframe=red!70!black,width=6.7cm]
+\begin{tcolorbox}[halign title=center,title=Assumptions for the Errors,center,colback=red!5,colframe=red!70!black,width=5.7cm,center]
 \begin{center}
     \begin{itemize}
         \item $\varepsilon_i$ are independent.
@@ -76,15 +76,15 @@ This leads to the relationship $\hat{Y}_i=a+bx_i$, where $\hat{Y}_i$ (\textit{"y
 
 ## Calculating the Value of a Residual
 
-For any given $x_i$, the equation of the least squares regression line $\hat{Y_i}=a+bx_i$ gives a \textit{predicted} value $\hat{Y_i}$, also referred to as a \textbf{fitted} value. For any data point $(x_i,y_i)$, the value of $y_i$ may be called the \textbf{observed} value.
+For any given $x_i$, the equation of the least squares regression line $\hat{Y}_i=a+bx_i$ gives a \textit{predicted} value $\hat{Y}_i$, also referred to as a \textbf{fitted} value. For any data point $(x_i,y_i)$, the value of $y_i$ is called the \textbf{observed} value.
 
-The difference between an observed value $y_i$ and a corresponding fitted value $\hat{Y_i}$ is called a \textbf{residual}:
+The difference between an observed value $y_i$ and a corresponding fitted value $\hat{Y}_i$ is called a \textbf{residual}:
 
 \begin{center}
     \begin{tikzpicture}
         \draw[fill=black!10] (8.2,0.8) rectangle (13,2.3);
         \draw[very thick,dashed] (3,1) -- (3,2);
-        \draw[semithick] (6,0) -- (0,2) node[left] {$\hat{Y_i}=a+bx_i$};
+        \draw[semithick] (6,0) -- (0,2) node[left] {$\hat{Y}_i=a+bx_i$};
         \draw[fill=black] (3,2) circle (2pt) node[above] {$(x_i,y_i)$};
         \node[below] at (3,0.9) {$(x_i,\hat{Y}_i)$};
         \draw[dashed] (3,1) -- (3,2);
@@ -92,7 +92,7 @@ The difference between an observed value $y_i$ and a corresponding fitted value 
         \draw[-stealth] (4.5,2) -- (3.2,2);
         \node[right] at (4.5,2) {Observed, $y_i$};
         \draw[-stealth] (4.5,1) -- (3.2,1);
-        \node[right] at (4.5,1) {Fitted, $\hat{Y_i}$};
+        \node[right] at (4.5,1) {Fitted, $\hat{Y}_i$};
         \draw[stealth-,dashed,thin] (3.2,1.5) -- (8,1.5);
         \node at (9.2,1.9) {Residual};
         \node at (10.25,1.85) {$=$};
@@ -102,7 +102,7 @@ The difference between an observed value $y_i$ and a corresponding fitted value 
         \node at (10.25,1.15) {$=$};
         \node at (10.95,1.2) {$y_i$};
         \node at (11.67,1.15) {$-$};
-        \node at (12.25,1.2) {$\hat{Y_i}$};
+        \node at (12.25,1.2) {$\hat{Y}_i$};
         \node at (10.7,1.55) {\begin{minipage}{6cm}
             \begin{tcolorbox}[halign title=center,title=Calculating a Residual,center,colback=red!5,colframe=red!70!black]
             \vspace{-0.5cm}
@@ -214,7 +214,7 @@ Students sitting a French exam are given a mark for each of the two components: 
     \renewcommand{\arraystretch}{1.2}
         \begin{tabular}{|c|c|c|c|c|}
              \hline
-             Regression Line $\hat{Y}=ax+b$ & Observed $x$ & Observed $y$ & Fitted $\hat{Y}$ & Residual $\epsilon$\\
+             Regression Line $\hat{Y}=a+bx$ & Observed $x$ & Observed $y$ & Fitted $\hat{Y}$ & Residual $\epsilon$\\
              \hline
              $\hat{Y}=5.3+0.1x$ & 7 & 8 & &  \\
              \hline
@@ -351,11 +351,11 @@ Students sitting a French exam are given a mark for each of the two components: 
 
 ## Estimating the Error Variance
 
-The least squares regression model assumes that that the variance of the errors is a constant for all $x_i$ (and $Y_i$):
+The least squares regression model assumes that the variance of the errors is a constant for all $x_i$ (and $Y_i$):
 
 $$\text{V}(\varepsilon_i)=\sigma^2$$
 
-The *error variance* is the variance of the population of data *relative to the regression line's predicted values*, loosely indicated below by the series of arrows below.
+The error variance represents the variability of the response variable around the regression line, loosely indicated below by the series of arrows below.
 
 \begin{center}
     \begin{tikzpicture}[scale=0.9]
@@ -422,10 +422,10 @@ The *error variance* is the variance of the population of data *relative to the 
 The error variance $\sigma^2$ is estimated by:
 
 \begin{tcolorbox}[halign title=center,title=Estimating the Error Variance,center,colback=red!5,colframe=red!70!black,width=6cm]
-\[s^2=\dfrac{\text{\text{SSR}}}{n-2}\]
+\[s^2=\dfrac{\text{SSR}}{n-2}\]
 \end{tcolorbox}
 
-Where the (always positive) \textit{sum of squared residuals}, $\text{\text{SSR}}$, is calculated as:\hspace{0.5cm} $\text{\text{SSR}}=S_{yy}-\dfrac{S^2_{\phantom{..}xy}}{S_{xx}}$
+Where the (always non-negative) \textit{sum of squared residuals}, $\text{SSR}$, is calculated as:\hspace{0.5cm} $\text{SSR}=S_{yy}-\dfrac{S^2_{\phantom{..}xy}}{S_{xx}}$
 
 Both the formula for estimating the error variance $\sigma^2$ and the more convenient second formula for the sum of squared residuals $\text{SSR}$ are given on page 5 of the Data Booklet.
 
@@ -441,7 +441,7 @@ Students sitting a French exam are given a mark for each of the two components: 
 \textbf{Solution:}
 
 \text{(a)   } $\text{SSR}=S_{yy}-\dfrac{S^2_{\phantom{..}xy}}{S_{xx}}=132.9-\dfrac{193.6^2}{344.9}=24.23$\\[0.7em]
-\text{(b)   } $s^2=\dfrac{\text{SRR}}{n-2}=\dfrac{24.23}{12-2}=2.423$
+\text{(b)   } $s^2=\dfrac{\text{SSR}}{n-2}=\dfrac{24.23}{12-2}=2.423$
 \end{tcolorbox}
 
 \pagebreak
@@ -566,7 +566,7 @@ It is determined that linear relationship appears to exist between the variables
 
 ## The Coefficient of Determination
 
-The *coefficient of determination*, $R^2$, is the proportion of the total variation in the response variable, $Y$, that is explained by the linear regression model. The higher the value of $R^2$, the less variation remains for $Y_i$ relative to the total variation of $Y$. This means that the coefficient of determination is a very useful measure of how 'good' a model is for the data.
+The *coefficient of determination*, $R^2$, is the proportion of the total variation in the response variable, $Y$, that is explained by the linear regression model. The higher the value of $R^2$, the less unexplained variation remains in the response variable $Y_i$. This means that the coefficient of determination is a very useful measure of how well a model explains variation in the data. (However, it does not necessarily imply that a model is appropriate, nor does it imply *causation*).
 
 \begin{center}
         \begin{tikzpicture}
@@ -655,7 +655,7 @@ For the linear regression models covered in this course, the coefficient of dete
         \end{tikzpicture}    
 \end{center}
 
-Both the formula above and the interpretation of the coefficient of determination implies that $0\leqslant R^2 \leqslant 1$.
+Both the formula above and the interpretation of the coefficient of determination, as a proportion, implies that $0\leqslant R^2 \leqslant 1$.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 \textbf{Problem:} 
@@ -694,7 +694,7 @@ This suggests that 84.2\% of the variation in listening marks can be explained b
 
 The conclusion from the example above could also be phrased as:
 
-"*87.4\% of the variation in listening marks can be explained by the speaking marks.*"
+"*84.2\% of the variation in listening marks can be explained by the speaking marks.*"
 
 \pagebreak
 
@@ -911,7 +911,7 @@ Determine the value of the coefficient of determination and interpret it.
 
 ## Test for the Slope Parameter $\beta$
 
-The true value of the \textit{slope parameter}, $\beta$, cannot be known without obtaining a full population. The \textit{sample statistic} $b$ is an estimator for $\beta$, and may differ slightly or substantially from it, as shown below.  
+The true value of the \textit{slope parameter}, $\beta$, cannot be known without observing the full population. The \textit{sample statistic} $b$ is an estimator for $\beta$, and may differ slightly or substantially from it, as shown below.  
 
 \begin{multicols}{2}
     \begin{center}
@@ -1109,19 +1109,13 @@ Test at the 5\% significance level whether a linear regression model would be us
       H_0: & \beta=0\\
       H_1: & \beta \ne 0
     \end{array}
-\left]
-    \begin{array}{l}
-      \alpha=0.05\\
-      \textnormal{Two-tailed}
-    \end{array}
-  \right.
 \end{math}
 
 \vspace{0.3cm}
 
 $b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{-133.5}{157.875}=-0.8456$\\[0.5em]
 
-$\text{\text{SSR}}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=188-\dfrac{(-133.5)^2}{157.875}=75.11, \quad s=\sqrt{\dfrac{\text{\text{SSR}}}{n-2}}=\sqrt{\dfrac{75.11}{8-2}}=3.538$\\[1.4em]
+$\text{SSR}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=188-\dfrac{(-133.5)^2}{157.875}=75.11, \quad s=\sqrt{\dfrac{\text{SSR}}{n-2}}=\sqrt{\dfrac{75.11}{8-2}}=3.538$\\[1.4em]
 
 Test statistic: $t=\dfrac{b\sqrt{S_{xx}}}{s}=\dfrac{-0.8456\times \sqrt{157.875}}{3.538}=-3.003$
 
@@ -1163,7 +1157,7 @@ Test statistic: $t=\dfrac{b\sqrt{S_{xx}}}{s}=\dfrac{-0.8456\times \sqrt{157.875}
 
 \vspace{-0.3cm}
 
-Critical value: $t_{6,0.975}=-2.447$\\
+Critical value: $t=-2.447$\quad($\alpha=0.05$, two-tailed and $\nu=6$ degrees of freedom)\\
 
 Since $-3.003<-2.447$, reject $\text{H}_0$ at the 5\% level of significance. There is  evidence to suggest that the slope parameter is not zero, so evidence that a linear model would be useful for prediction.
 
@@ -1290,7 +1284,7 @@ Since $-3.003<-2.447$, reject $\text{H}_0$ at the 5\% level of significance. The
 
 ## Test for the Correlation Coefficient $\rho$
 
-The previously introduced correlation coefficient, $r$, is a sample statistic which measures the strength of the linear association between two variables. It is an estimate of the population parameter $\rho$ (\textit{``rho''}), where $-1\leqslant \rho \leqslant 1$. If $\rho=0$ then there is no \textit{linear} relationship between the variables. Given a sample of bivariate data for which there exists \textit{no} linear relationship, it is regardless common for the sample to give a \textit{non-zero} value for $r$:
+The previously introduced correlation coefficient, $r$, is a sample statistic which measures the strength of the linear association between two variables. It is an estimate of the population parameter $\rho$ (\textit{``rho''}), where $-1\leqslant \rho \leqslant 1$. If $\rho=0$ then there is no \textit{linear} relationship between the variables. Given a sample of bivariate data for which there exists \textit{no} linear relationship, it is common for the sample to give a \textit{non-zero} value for $r$:
 
 \vspace{-0.3cm}
 \begin{center}
@@ -1411,23 +1405,23 @@ The \textit{parametric} \textbf{Test for Rho} assesses a sample of bivariate dat
 
 \begin{figure}[H]
   \centering
-\begin{minipage}[c]{.33\textwidth}
+\begin{minipage}[c]{.25\textwidth}
   \centering
 \begin{centering}
-\begin{tcolorbox}[halign title=center,title=Test Statistic,center,colback=red!5,colframe=red!70!black,width=5cm,height=2.6cm]
+\begin{tcolorbox}[halign title=center,title=Test Statistic,center,colback=red!5,colframe=red!70!black,width=5cm,height=2.8cm]
 \vspace{-0.3cm}
 \[t_{n-2}=\dfrac{r\sqrt{n-2}}{\sqrt{1-r^2}}\]
 \end{tcolorbox}
 \end{centering}
 \end{minipage}%
   \centering
-\begin{minipage}[c]{.66\textwidth}
+\begin{minipage}[c]{.75\textwidth}
   \centering
-\begin{tcolorbox}[halign title=center,title=Conditions,center,colback=red!5,colframe=red!70!black,width=12cm,height=2.6cm]
+\begin{tcolorbox}[halign title=center,title=Conditions,center,colback=red!5,colframe=red!70!black,width=12cm,height=2.8cm]
 \begin{itemize}
 \setlength\itemsep{-0.3em}
-    \item The variables are independent and follow an approximately \newline bivariate normal distribution.
-    \item The data was obtained through random sampling.
+    \item The observations $(x_i,y_i)$ are independent, obtained through random sampling.
+    \item The variables follow an approximately \newline bivariate normal distribution.
 \end{itemize}
 \end{tcolorbox}
 \end{minipage}
@@ -1458,12 +1452,6 @@ Test at the 5\% significance level for evidence of a linear association between 
       H_0: & \rho=0\\
       H_1: & \rho \ne 0
     \end{array}
-\left]
-    \begin{array}{l}
-      \alpha=0.05\\
-      \textnormal{Two-tailed}
-    \end{array}
-  \right.
 \end{math}
 
 \vspace{0.3cm}
@@ -1507,9 +1495,9 @@ Test statistic: $t=\dfrac{r\sqrt{n-2}}{\sqrt{1-r^2}}=\dfrac{-0.7749\sqrt{8-2}}{\
 \end{axis}
 \end{tikzpicture}\\
 
-Critical value: $t_{6,0.975}=-2.447$\\
+Critical value: $t=-2.447$\quad ($\alpha=0.05$, two-tailed with $\nu=6$ degrees of freedom)\\
 
-Since $-3.003>-2.447$, reject $\text{H}_0$ at the 5\% level of significance.\newline There is evidence to suggest that there is a linear association between the two variables.
+Since $-3.003<-2.447$, reject $\text{H}_0$ at the 5\% level of significance.\newline There is evidence to suggest that there is a linear association between the two variables.
 
 \end{tcolorbox}
 
@@ -1645,9 +1633,9 @@ Since $-3.003>-2.447$, reject $\text{H}_0$ at the 5\% level of significance.\new
 
 ## Regression Line of $x$ on $y$
 
-Each least squares regression line met so far has been an $y$ *on* $x$ regression line, calculated with the aim of minimising errors when *predicting* $y$ *values*. However, a $y$ *on* $x$ regression line model cannot be used to predict $x$ values.
+All least squares regression line covered so far have been $y$ *on* $x$ regression lines, calculated with the aim of minimising errors when *predicting* $y$. However, a $y$ *on* $x$ regression line model should not be used to predict $x$ values.
 
-If the prediction of $x$ values based on $y$ values is of interest, it is necessary to obtain the equation of an $x$ *on* $y$ regression line. This takes a different form and different values of $a$ and $b$ as shown below:
+If the prediction of $x$ values based on $y$ values is of interest, it is necessary to obtain the equation of an $x$ *on* $y$ regression line. This takes a different form and uses different values of $a$ and $b$ as shown below:
 
 \begin{tcolorbox}[halign title=center,title=Calculating an $x$ on $y$ Regression Line,center,colback=red!5,colframe=red!70!black,width=11cm]
 $\hat{X}=a+by \qquad \text{where} \qquad b=\dfrac{S_{xy}}{S_{yy}} \qquad \text{and} \qquad a=\bar{x}-b\bar{y}$
@@ -1662,6 +1650,7 @@ $\hat{X}=a+by \qquad \text{where} \qquad b=\dfrac{S_{xy}}{S_{yy}} \qquad \text{a
             \draw[-stealth] (0,0) -- (0,4) node[above] {$y$};
             \draw[-stealth] (0,0) -- (5,0) node[right] {$x$};
             \node at (2.5,-0.5) {Prediction with a $y$ on $x$ model};
+            \node at (2.5,-1) {(Minimises squared vertical distances)};
             \draw[fill] (1.8717487,1.7974477) circle (0.05);
 \draw[fill] (2.7352247,2.0554359) circle (0.05);
 \draw[fill] (2.0775949,3.3894574) circle (0.05);
@@ -1693,6 +1682,7 @@ $\hat{X}=a+by \qquad \text{where} \qquad b=\dfrac{S_{xy}}{S_{yy}} \qquad \text{a
             \draw[-stealth] (0,0) -- (0,4) node[above] {$y$};
             \draw[-stealth] (0,0) -- (5,0) node[right] {$x$};
             \node at (2.5,-0.5) {Prediction with an $x$ on $y$ model};
+            \node at (2.5,-1) {(Minimises squared horizontal distances)};
             \draw[fill] (1.8717487,1.7974477) circle (0.05);
 \draw[fill] (2.7352247,2.0554359) circle (0.05);
 \draw[fill] (2.0775949,3.3894574) circle (0.05);
@@ -1734,7 +1724,7 @@ Students sitting a French exam are given a mark for each of the two components: 
     \end{tabular}
 \end{center}
 
-Determine the equation for the least squares regression line of $x$ on $y$, and hence predict the speaking mark for a student who has only completed the listening component and obtained a mark of 17 in it.
+Determine the equation for the least squares regression line of $x$ on $y$, and hence estimate the speaking mark for a student who has only completed the listening component and obtained a mark of 17 in it.
 
 \tcblower
 \textbf{Solution:}\\
@@ -1747,7 +1737,7 @@ $\hat{X}=-5.008+1.457y$\\[0.5em]
 
 For a student with a listening mark ($y$) of 17:\\[0.1em]
 
-$\hat{X}=-5.008+1.457\times 17=15.39$
+$\hat{X}=-5.008+1.457\times 17=19.76$
 
 \end{tcolorbox}
 
@@ -1863,7 +1853,7 @@ It is determined from inspecting a scatterplot that there appears to be a linear
 
 A least squares regression line for $y$ on $x$ is shown on the graph, with equation $\hat{Y}=40.6+4.73x$.
 
-The website wishes to allow users the ability to input the number of miles in their training plan for the four weeks leading up to the rate, and receive in response an estimate for their finishing time.
+The website wishes to allow users the ability to input the number of miles in their training plan for the four weeks leading up to the race, and receive in response an estimate for their finishing time.
 
 \begin{enumerate}
     \item Explain why a \textit{new} regression line will need to be determined for this tool on the website.
@@ -1871,7 +1861,7 @@ The website wishes to allow users the ability to input the number of miles in th
     \item Determine an estimate of the finishing time for a runner who completed 70 miles.
     \item Explain why the new regression line obtained in part (b) is not suitable for predicting the finish time of a runner who completed 162 miles.
 \end{enumerate}
-    \item Determine the equation of an $x$ and $y$ regression line for the bivariate data below.
+    \item Determine the equation of an $x$ on $y$ regression line for the bivariate data below.
     \begin{center}
         \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
             \hline
@@ -1887,13 +1877,21 @@ The website wishes to allow users the ability to input the number of miles in th
 
 ## Residual Plots
 
-When considering the use of a linear regression model for bivariate data, it is recommended to produce a plot of *residuals* ($\varepsilon_i$) against *fitted values* ($\hat{Y_i}$), which have been calculated using the sample regression line. The purpose of this is both to ascertain whether a linear regression model is *the most appropriate* model, as well as to judge the validity of several commonly required assumptions, including those required to obtain the estimates for $\alpha$ and $\beta$:
+As a reminder, a residual is the difference between an observed value $y_i$ and its predicted value $\hat{Y}_i$.:
+
+\[
+\varepsilon_i = y_i - \hat{Y}_i
+\]
+
+When considering the use of a linear regression model for bivariate data, it is recommended to produce a plot of *residuals* ($\varepsilon_i$) against *fitted values* ($\hat{Y}_i$), which have been calculated using the sample regression line. The purpose of this is both to ascertain whether a linear regression model is *the most appropriate* model, as well as to judge the validity of several commonly required assumptions, including those required to obtain the estimates for $\alpha$ and $\beta$:
 
 \begin{center}
     \begin{tabular}{ccc}
         $\text{E}(\varepsilon_i)=0$ & $\quad$ \text{and} $\quad$ & $\text{V}(\varepsilon_i)=\sigma^2$
     \end{tabular}
 \end{center}
+
+These correspond to residuals being centered around zero and having constant spread across fitted values.
 
 Below is an illustration of a standard scatterplot showing a sample of bivariate data on the left, with a $y$ on $x$ regression line included, and a residual plot for the same data on the right. The data points highlighted with larger circles on the $y$ against $x$ scatterplot have their residuals similarly highlighted on the residual plot.
 
@@ -2080,7 +2078,7 @@ Below is an illustration of a standard scatterplot showing a sample of bivariate
 \end{multicols}
 
 \vspace{-0.5cm}
-It should be observed that the residual plot broadly appears to show:
+From the residual plot, the following can be observed::
 
 \begin{tcolorbox}[halign title=center,title=Interpreting Residual Plots,center,colback=red!5,colframe=red!70!black,width=11cm]
 \begin{center}
@@ -2092,9 +2090,9 @@ It should be observed that the residual plot broadly appears to show:
 \end{center}
 \end{tcolorbox}
 
-This means that the residual plot would give no reason to doubt the assumptions made regarding the errors. This *ideal* residual plot would suggest that the linear regression model is *appropriate*.
+This means that the residual plot would give no reason to doubt the assumptions made regarding the errors. This *ideal* residual plot would suggest that the linear regression model is *appropriate*. 
 
-The following residual plots are accompanied with relevant comments and suitable conclusions.
+Any clear pattern in the residual plot suggests that the assumptions of the linear model may not be valid. The following residual plots are accompanied with relevant comments and suitable conclusions.
 
 \begin{figure}[H]
   \centering
@@ -2220,7 +2218,7 @@ The residual plot appears to show a random scatter of points centred on zero, wi
 \end{center}
 
 
-This suggests the that linear model is \textbf{appropriate}.
+This suggests that the linear model may be \textbf{appropriate}.
 \end{minipage}
 \end{figure}
 
@@ -2349,7 +2347,6 @@ This suggests the that linear model is \textbf{appropriate}.
 \draw[black!70,fill=black!70] (8.79999999999999,0.0387539608917498) circle (0.03);
 \draw[black!70,fill=black!70] (8.84999999999999,-0.732430816447603) circle (0.03);
 \draw[black!70,fill=black!70] (8.9,0.324599319218126) circle (0.03);
-\draw[black!70,fill=black!70] (8.95,) circle (0.03);
 
     \node at (6,-2) {Fitted value};
     \node[rotate=90] at (2.2,0) {Residual};
@@ -2368,7 +2365,7 @@ The residual plot appears to show a `funnel' shaped pattern of points centred on
     \end{align*}
 \end{center}
 
-This suggests the that linear model is \textbf{not appropriate}.
+This suggests that the linear model may be \textbf{not appropriate}.
 \end{minipage}
 \end{figure}
 
@@ -2497,7 +2494,6 @@ This suggests the that linear model is \textbf{not appropriate}.
 \draw[black!70,fill=black!70] (8.79999999999999,0.791387305692009) circle (0.03);
 \draw[black!70,fill=black!70] (8.84999999999999,1.35895988803665) circle (0.03);
 \draw[black!70,fill=black!70] (8.9,0.263712646277711) circle (0.03);
-\draw[black!70,fill=black!70] (8.95,) circle (0.03);
 
     \node at (6,-2) {Fitted value};
     \node[rotate=90] at (2.2,0) {Residual};
@@ -2516,7 +2512,7 @@ The residual plot appears to show a pattern of points following a curve, with co
     \end{align*}
 \end{center}
 
-This suggests that the linear model is \textbf{not appropriate}.
+This suggests that the linear model may be \textbf{not appropriate}.
 \end{minipage}
 \end{figure}
 
@@ -2645,7 +2641,7 @@ This suggests that the linear model is \textbf{not appropriate}.
 \draw[black!70,fill=black!70] (8.79999999999999,-0.790639677383648) circle (0.03);
 \draw[black!70,fill=black!70] (8.84999999999999,-0.84454240842857) circle (0.03);
 \draw[black!70,fill=black!70] (8.9,-0.861565970150315) circle (0.03);
-\draw[black!70,fill=black!70] (8.95,) circle (0.03);
+
 
     \node at (6,-2) {Fitted value};
     \node[rotate=90] at (2.2,0) {Residual};
@@ -2664,7 +2660,7 @@ The residual plot appears to show a pattern of points following a curve, with va
     \end{align*}
 \end{center}
 
-This suggests that the linear model is \textbf{not appropriate}.
+This suggests that the linear model may be \textbf{not appropriate}.
 \end{minipage}
 \end{figure}
 
@@ -2802,10 +2798,10 @@ This suggests that the linear model is \textbf{not appropriate}.
 \end{multicols}
 
 \vspace{-0.5cm}
-Use the residual plot to comment on the validity of the linear model.
+Use the residual plot to comment on the suitability of the linear model.
 
 \tcblower
-\textbf{Solution:} The residual plot appears to show a random scatter of points centred on zero, with a broadly constant variance as the fitted value increases. This suggests the linear model between stopping distance and speed could be appropriate.
+\textbf{Solution:} The residual plot appears to show a random scatter of points centred on zero, with a broadly constant variance as the fitted value increases. This suggests the linear model between stopping distance and speed is likely to be appropriate.
 
 \end{tcolorbox}
 
@@ -2816,7 +2812,7 @@ Use the residual plot to comment on the validity of the linear model.
 #### [Exercise 18.7](#ex187a) {-}
 
 \begin{enumerate}
-    \item For each, comment on the validity of the linear model from which they were produced.
+    \item For each,  of the linear model from which they were produced.
 \end{enumerate}
 
 \vspace{-0.7cm}
@@ -3884,7 +3880,7 @@ Where a \textit{non-linear} relationship seems to exist between two variables th
 \begin{minipage}[c]{.4\textwidth}
 \vspace{-0.5cm}
 
-A linear model might initially seem to describe well relationship between $x$ and $y$, as might the result of $R^2=0.9228$.\\
+A linear model might initially seem to describe the relationship between $x$ and $y$, as might the result of $R^2=0.9228$.\\
 
 However, the residual plot suggests that a\newline linear model between $x$ and $y$ is \textit{not} appropriate, since the residuals follow a curved pattern.
 
@@ -4073,7 +4069,7 @@ However, the residual plot suggests that a\newline linear model between $x$ and 
 
 \vspace{-0.6cm}
 
-The simulated data above was actually generated using a \textit{quadratic} relationship between $x$ and $y$.\newline A scatterplot of $\sqrt{y}$ against $x$ for this data is shown below, alongside a residual plot:
+The simulated data above was actually generated using a \textit{quadratic} relationship between $x$ and $y$, which explains the curved pattern seen in the residuals.\newline A scatterplot of $\sqrt{y}$ against $x$ for this data is shown below, alongside a residual plot:
 
 \begin{figure}[H]
   \centering
@@ -4082,7 +4078,7 @@ The simulated data above was actually generated using a \textit{quadratic} relat
 
 Both the scatterplot and the residual plot for this new model of $\sqrt{y}$ on $x$ suggest that it is appropriate for the data.\\
 
-This new, better-fitting model also produces an improved value for the coefficient of determination, of $R^2=0.9402$.
+This new, better-fitting model also produces an higher value for the coefficient of determination, of $R^2=0.9402$.
 
 \end{minipage}%
 \begin{minipage}[c]{.6\textwidth}
@@ -4458,8 +4454,8 @@ A new linear model was created between speed ($x$) and the square root of the st
 \begin{enumerate}
     \item[(a)] The residual plot appears to show a curved pattern, so this linear model is not appropriate.
     \item[(b)] The residual plot for the new model appears to show a random scatter of points centered on zero, with a constant variance as fitted values increase, so the new model seems appropriate.
-    \item[(c)] $r=\dfrac{S_{x\sqrt{y}}}{\sqrt{S_{xx}S_{\sqrt{y}\sqrt{y}}}}=\dfrac{3400.0}{\sqrt{10758.9\times 5951.5}}=0.9987$ and $R^2=0.99987^2=0.997$.\\[0.5em]
-    99.7\% of the variation of $\sqrt{\text{distance}}$ is explained by the model.
+    \item[(c)] $r=\dfrac{S_{x\sqrt{y}}}{\sqrt{S_{xx}S_{\sqrt{y}\sqrt{y}}}}=\dfrac{3400.0}{\sqrt{10758.9\times 5951.5}}=0.9987$ and $R^2=0.9987^2=0.997$.\\[0.5em]
+    99.7\% of the variation of $\sqrt{\text{distance}}$ is explained by speed.
     \item[(d)] $\sqrt{\text{distance}}=-0.016+0.14\times 50=6.984\text{, so distance}=6.984^2=48.8\text{ metres}$
 \end{enumerate}
 
@@ -5062,9 +5058,9 @@ The new model has summary statistics:
 \pagebreak
 
 ## Confidence Intervals and Prediction Intervals
-One purpose for adopting a regression approach to examine the relationship between two variables is the wish to make predictions related to the response variable ($Y$) when given a particular value for the predictor ($x$). 
+One purpose of adopting a regression approach to examine the relationship between two variables is the wish to make predictions related to the response variable ($Y$) when given a particular value for the predictor variable ($x$). 
 
-The least squares regression line equation of $\hat{Y_i}=a+bx_i$ gives an *estimate* for the **mean** value of the response variable for any given $x_i$, whilst the *true* mean response value for a given $x_i$, which is denoted $\text{E}(Y_i\,|\,x_i)$, is unknown. 
+The least squares regression line equation of $\hat{Y}_i=a+bx_i$ gives an *estimate* for the **mean** value of the response variable for any given $x_i$, whilst the *true* mean response value for a given $x_i$, which is denoted $\text{E}(Y_i\,|\,x_i)$, is unknown. 
 
 It can be desirable to obtain a **confidence interval** for $\text{E}(Y_i\,|\,x_i)$.
 
@@ -5081,7 +5077,7 @@ It can be desirable to obtain a **confidence interval** for $\text{E}(Y_i\,|\,x_
              \draw[ultra thin,dashed] (0.9,0.6) -- (0.9,1.63);
              \draw[fill=black!60,black!60] (0.87,1.965) -- (0.93,1.980) -- (0.93,1.643) -- (0.87,1.619) -- cycle;
              \draw[thick] (0.1,1.51+0.32*0.1) -- (4.8,4.8*0.32+1.51);
-             \draw[stealth-] (0.9,2.1) -- (1.1,3) node[above] {$\text{E}(Y_i|x_i)$};
+             \draw[stealth-] (0.9,2.1) -- (1.1,3) node[above] {$\text{E}(Y_i\,|\,x_i)$};
 \draw[fill] (4.3363950,3.0565871) circle (0.025);
 \draw[fill] (1.8257738,2.1527751) circle (0.025);
 \draw[fill] (3.6696688,2.7455503) circle (0.025);
@@ -5187,7 +5183,7 @@ It can be desirable to obtain a **confidence interval** for $\text{E}(Y_i\,|\,x_
 \end{minipage}%
   \centering
 \begin{minipage}[c]{.55\textwidth}
-It can be shown that the \textit{point estimate} for the mean response, $\hat{Y_i}$, has a sample standard error of:
+It can be shown that the \textit{point estimate} for the mean response, $\text{E}\left(Y_i\,|\,x_i\right)$, has a sample standard error of:
 
 $$s\sqrt{\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}$$
 
@@ -5197,10 +5193,12 @@ If the errors, $\varepsilon_i$, are identically and independently distributed as
 
 
 \begin{tcolorbox}[halign title=center,title=A Confidence Interval for the Mean Response,center,colback=red!5,colframe=red!70!black,width=15.5cm]
-A $100(1-\alpha)\%$ \text{CI} for $\text{E}(Y_i\,|\,x_i)$ is given by: $\hat{Y_i}\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}$
+A $100(1-\alpha)\%$ \text{CI} for $\text{E}(Y_i\,|\,x_i)$ is given by: $\hat{Y}_i\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}$
 \end{tcolorbox}
 
-With all confidence intervals, the level of confidence relates to the success rate of the *procedure used to generate the interval*, rather than the probability of a calculated interval containing the mean response value $\text{E}(Y_i\,|\,x_i)$.
+This interval estimates the mean value of $Y$ for all observations with predictor value $x_i$, not the value for a single observation.
+
+With all confidence intervals, the level of confidence relates to the success rate of the *procedure used to generate the interval*, rather than referring to the probability of a calculated interval containing the mean response value $\text{E}(Y_i\,|\,x_i)$.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 \textbf{Problem:} 
@@ -5218,11 +5216,11 @@ Construct a 95\% confidence interval for the mean length of salmon with mass 3kg
 \tcblower
 \textbf{Solution:}\\
 
-$b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{150}{12}=12.5, \quad a=\bar{y}-b\bar{x}=\dfrac{540}{12}-12.5\times \dfrac{30}{12}=13.75 \quad \implies \quad \hat{Y_i}=13.75+12.5x_i$\\[0.3em]
+$b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{150}{12}=12.5, \quad a=\bar{y}-b\bar{x}=\dfrac{540}{12}-12.5\times \dfrac{30}{12}=13.75 \quad \implies \quad \hat{Y}_i=13.75+12.5x_i$\\[0.3em]
 
 $\hat{Y}=13.75+12.5\times 3=51.75$\\[0.3em]
 
-$\text{\text{SSR}}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=4800-\dfrac{150^2}{12}=2925, \quad s^2=\dfrac{\text{\text{SSR}}}{n-2}=\dfrac{2925}{10}=292.5, \quad s=\sqrt{292.5}=17.1$\\[0.3em]
+$\text{SSR}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=4800-\dfrac{150^2}{12}=2925, \quad s^2=\dfrac{\text{SSR}}{n-2}=\dfrac{2925}{10}=292.5, \quad s=\sqrt{292.5}=17.1$\\[0.3em]
 
 A 95\% CI for $\text{E}(Y\,|\,x=3)$ is $51.75\,\pm\,2.228 \times 17.1\times \sqrt{\dfrac{1}{12}+\dfrac{(3-2.5)^2}{12}}=51.75\,\pm\,12.30$\\[0.3em]
 
@@ -5234,7 +5232,7 @@ So a 95\% confidence interval for the mean length of a 3kg salmon is $(39.45\tex
 
 Instead of an interval for the value of \textit{mean} response, it may be desired to obtain an interval for **individual** response values for a given $x_i$, denoted as $Y_i\,|\,x_i$. 
 
-The desired interval is called a **prediction interval**.
+The desired interval is called a **prediction interval**, and it reflects both the variability of the regression line and the additional variability of individual observations about the line.
 
 \begin{figure}[H]
   \centering
@@ -5357,17 +5355,17 @@ The desired interval is called a **prediction interval**.
   \centering
 \begin{minipage}[c]{.4\textwidth}
 
-Since the value of a randomly sampled individual can be expected to have more variability than the value of a sample mean, a wider interval around $\hat{Y_i}$ is needed.\\[0.5em]
+Prediction intervals are always wider than confidence intervals at the same confidence level, because they account for both uncertainty in the regression line *and* variability of individual observations.\\[0.5em]
 
 Note the more darkly shaded region lying closer to the regression line, showing the narrower confidence interval for the same data.\\[0.5em]
 
-In the long-run, a 95\% prediction interval for $Y_i\,|\,x_i$, such as indicated in the diagram, will tend to capture 95\% of all observed response values for any given $x_i$.
+A 95\% prediction interval for $Y_i\,|\,x_i$, such as indicated in the diagram, will capture approximately 95\% of individual response values in the long run.
 
 \end{minipage}
 \end{figure}
 
 \begin{tcolorbox}[halign title=center,title=A Prediction Interval for an Individual Response,center,colback=red!5,colframe=red!70!black,width=15cm]
-A $100(1-\alpha)\%$ \text{PI} for $Y_i\,|\,x_i$ is given by: $\hat{Y_i}\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{1+\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}$
+A $100(1-\alpha)\%$ \text{PI} for $Y_i\,|\,x_i$ is given by: $\hat{Y}_i\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{1+\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}$
 \end{tcolorbox}
 
 This formula, also given on Page 5 of the Data Booklet, relies also on the errors, $\varepsilon_i$, being identically and independently distributed as $\text{N}\left(0,\sigma^2\right)$
@@ -5388,11 +5386,11 @@ Construct a 95\% prediction interval for the length of salmon with mass 3kg.
 \tcblower
 \textbf{Solution:}\\
 
-$b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{150}{12}=12.5, \quad a=\bar{y}-b\bar{x}=\dfrac{540}{12}-12.5\times \dfrac{30}{12}=13.75 \quad \implies \quad \hat{Y_i}=13.75+12.5x_i$\\[0.5em]
+$b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{150}{12}=12.5, \quad a=\bar{y}-b\bar{x}=\dfrac{540}{12}-12.5\times \dfrac{30}{12}=13.75 \quad \implies \quad \hat{Y}_i=13.75+12.5x_i$\\[0.5em]
 
 $\hat{Y}=13.75+12.5\times 3=51.75$\\[0.5em]
 
-$\text{\text{SSR}}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=4800-\dfrac{150^2}{12}=2925, \quad s^2=\dfrac{\text{\text{SSR}}}{n-2}=\dfrac{2925}{10}=292.5, \quad s=\sqrt{292.5}=17.1$\\[0.5em]
+$\text{SSR}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=4800-\dfrac{150^2}{12}=2925, \quad s^2=\dfrac{\text{SSR}}{n-2}=\dfrac{2925}{10}=292.5, \quad s=\sqrt{292.5}=17.1$\\[0.5em]
 
 A 95\% PI for $Y\,|\,x=3$ is $51.75\,\pm\,2.228 \times 17.1\times \sqrt{1+\dfrac{1}{12}+\dfrac{(3-2.5)^2}{12}}=51.75\,\pm\,40.03$\\[0.5em]
 
@@ -5851,7 +5849,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     \end{center}
     \vspace{0.2cm}
     \begin{enumerate}
-        \item Calculate an estimate of the error variance.
+        \item Calculate an estimate for the error variance.
         \item Calculate a 95\% prediction interval for the daily new visitors of a site with an annual social media marking spend of £15,000.
         \item Explain why a prediction interval is more likely to be of interest to the magazine's creators than a confidence interval.
     \end{enumerate}
@@ -5925,8 +5923,8 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     \draw[dashed] (0,0) -- (6,0);
     \node at (3,1.8) {Residual plot};
     \node[left] at (0,0) {$0$};
-    \node[rotate=90] at (-1,-0.5) {Fitted Values};
-    \node at (3,-3) {Residuals};
+    \node[rotate=90] at (-1,-0.5) {Residuals};
+    \node at (3,-3) {Fitted values};
     \end{tikzpicture}
 \end{center}
 
@@ -5996,7 +5994,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
         \item Calculate the correlation coefficient and interpret it, with reference to the context.
         \item Explain why the regression line obtained would not be suitable for estimating the distance a route covers if it is known that the total ascent is 430 metres.
         \item Determine the equation of a more suitable regression line, and use it to estimate the distance covered for a route with an ascent of 430 metres.
-        \item A walker completes a route in the Lomond Hills area, which also features on the \textit{Fife Walking} website. Explain why it would may not be appropriate for them to use either of the regression lines obtained to predict their total ascent if their distance covered is known.
+        \item A walker completes a route in the Lomond Hills area, which also features on the \textit{Fife Walking} website. Explain why it may not be appropriate for them to use either of the regression lines obtained to predict their total ascent if their distance covered is known.
     \end{enumerate}
 \end{enumerate}
 

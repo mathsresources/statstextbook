@@ -1,12 +1,12 @@
 # Confidence Intervals
 
-From a random sample of data from a population, the sample mean could be calculated and used as a *point estimate* for the true, unknown value of the population mean. If the sample was very small, or the variability of the data is very high, then it would not be appropriate to have a great deal of confidence in the *precision* of this value. To avoid the misleading sense of precision that point estimates on their own can give, many institutions will require *confidence intervals* to routinely be stated as part of any statistical analysis. Statistical software will often also report a confidence interval whenever a hypothesis test is performed.
+From a random sample drawn from a population, the sample mean can be used as a *point estimate* for the true, unknown value of the population mean. If the sample was very small, or the variability of the data is very high, the *precision* of this estimate may be low. To avoid the misleading sense of precision that point estimates on their own can give, many institutions will require *confidence intervals* to routinely be stated as part of any statistical analysis. Statistical software will often also report a confidence interval whenever a hypothesis test is performed.
 
 \begin{center}
 \textit{"A 95\% confidence interval for the mean weight of an adult pine marten, in kg, is (1.42 , 1.58)"}
 \end{center}
 
-A common misconception is that such a confidence interval can be interpreted as *"There is a 95\% probability that the true mean weight is between 1.42 and 1.58."* Care should be taken to *avoid* interpreting the significance level used as a probability relating to any particular generated confidence interval and the parameter it relates to. Instead, *"95\% confidence"* refers to the **long-run success rate of the procedure** used to generate the interval. If random samples are repeatedly taken from a distribution with population mean $\mu$, and a confidence interval produced from each, in the long-run 95\% of these intervals will contain $\mu$. The figure below shows twenty 95\% confidence intervals generated using simulated data, one of which does not contain the true value of the population mean, $\mu$, in the interval.
+A common misconception is that such a confidence interval can be interpreted as *"There is a 95\% probability that the true mean weight is between 1.42 and 1.58."* Care should be taken to *avoid* interpreting the confidence level used as a probability relating to any particular generated confidence interval and the parameter it relates to. Instead, *"95\% confidence"* refers to the **long-run success rate of the procedure** used to generate the interval. If random samples are repeatedly taken from a distribution with population mean $\mu$, and a confidence interval produced from each, in the long-run 95\% of these intervals will contain $\mu$. The figure below shows twenty 95\% confidence intervals generated using simulated data, one of which does not contain the true value of the population mean, $\mu$, in the interval.
 
 \begin{figure}[H]
   \centering
@@ -42,18 +42,32 @@ A common misconception is that such a confidence interval can be interpreted as 
 
 ## A \textit{z}-Confidence Interval for the Population Mean
 
-Given a *random sample* from an distribution that is *normally distributed* with *known population standard deviation* $\sigma$, a $(1-\alpha)\%$ $z$-*confidence interval* for the population mean, $\mu$, can be calculated:
+Given a *random sample* from a distribution that is *normally distributed* with *known population standard deviation* $\sigma$, a $100(1-\alpha)\%$ $z$-*confidence interval* for the population mean, $\mu$, can be calculated:
 
 \begin{centering}
 \tcbset{width=10cm}
 \begin{tcolorbox}[adjusted title=A $z$-confidence interval for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-A $(1-\alpha)\%$ CI for $\mu$ is: $\bar{x}\pm z_{1-\alpha/2} \times \cfrac{\sigma}{\sqrt{n}}$
+A $100(1-\alpha)\%$ CI for $\mu$ is: $\bar{x}\pm z_{1-\alpha/2} \times \cfrac{\sigma}{\sqrt{n}}$
 \end{tcolorbox}
 \end{centering}
 
-Note that the conditions required match those for a $z$-test for the population mean. 
+Note that the conditions required match those for a $z$-test for the population mean:
 
-A sketch can be used to help find the required $z$-value. In this course, only *two-tailed* confidence intervals will calculated.
+\begin{centering}
+\tcbset{width=13cm}
+\begin{tcolorbox}[adjusted title=Conditions for valid use of the one-sample $z$-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,center]
+\begin{itemize}
+    \item The population is \textbf{normally distributed} (or $n>20$).
+    \item The \textit{population standard deviation}, $\sigma$, is \textbf{known}.
+    \item The data was obtained through a \textbf{random sample}.
+\end{itemize}
+\end{tcolorbox}
+\end{centering}
+
+For large sample sizes, where the population standard deviation $\sigma$ is not known, it may be decided that the sample standard deviation is a reasonable estimate ($\sigma \approx s$). In practice, the $t$-distribution is generally preferred when only the sample standard deviation is known, and hence $t$-confidence intervals for the population mean, introduced in the next section, are far more commonly encountered.
+
+Whilst the notation contained in the formula for a confidence interval can look complicated, it should be noted that the $z$-value for a two-tailed 95\% confidence interval corresponds with that for the critical value of a two-tailed $z$ test at the 5\% level of significance. A sketch can be used to help find the required $z$-value, just as in the previous chapter. 
+Although *one-tailed* confidence intervals exist, in this course only *two-tailed* confidence intervals will be calculated.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The masses of ceramic dishes sold by a kitchenware shop are known to be normally distributed with a standard deviation of 12g. A random sample of 15 such ceramic dishes are weighed and the sample mean is 430 grams. Obtain a 95\% confidence interval for the mean mass of a ceramic dish.
@@ -110,65 +124,10 @@ Therefore a 95\% confidence interval for the population mean dish mass, in grams
 
 \end{tcolorbox}
 
-It should be observed that the $z$-confidence interval is symmetrical with the **sample mean at its centre**. The width of the interval is determined by the **standard error** and the confidence level required.
+It should be observed that the $z$-confidence interval is symmetrical with the **sample mean at its centre**. 
 
-\begin{tcolorbox}[title=Example 2,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} An airline picks a random sample of 25 of their flights and records how long it takes for all the passengers to depart the plane from the time the cabin doors are opened. The sample mean of 6.5 minutes is obtained, and a sample standard deviation of 0.8 minutes. Determine a 90\% confidence interval for the mean time taken for all passengers to depart one of the airline's planes, and interpret this confidence interval.
+The width of the interval is determined by the **standard error** and the confidence level required. For the same standard deviation and confidence level, a larger sample size will produce a narrower interval; this is intuitive, as more data collected should lead to a more precise estimate of the population mean.
 
-\tcblower
-\textbf{Solution:}
-$\bar{x}=6.5$, $n=25$, $s=0.8$\\
-
-Since $n>20$ a $z$-confidence interval is appropriate, and $\sigma\approx0.8$.\\
-
-\vspace{-1.6cm}
-
-\hspace{11cm}
-\vspace{-0.5cm}
-\begin{tikzpicture}
-\begin{axis}[
-  no markers, 
-  domain=-3:3, 
-  samples=100,
-  ymin=0,
-  axis lines*=left, 
-  every axis y label/.style={at=(current axis.above origin),anchor=south},
-  every axis x label/.style={at=(current axis.right of origin),anchor=west},
-  height=3cm, 
-  width=6.5cm,
-  xtick=\empty, 
-  ytick=\empty,
-  enlargelimits=false, 
-  clip=false, 
-  axis on top,
-  grid = major,
-  hide y axis
-  ]
-\addplot [draw=none, fill=black!50, domain=-3:-1.64] {gauss(x, 0, 1)} \closedcycle;
-\addplot [draw=none, fill=black!50, domain=1.64:3] {gauss(x, 0, 1)} \closedcycle;
- \addplot [semithick] {gauss(x, 0, 1)};
-\pgfmathsetmacro\valueA{gauss(-1.64,0,1)}
-\pgfmathsetmacro\valueB{gauss(0,0,1)}
-\pgfmathsetmacro\valueC{gauss(1.64,0,1)}
-\draw [semithick, black]  (axis cs:-1.64,0) -- (axis cs:-1.64,\valueA);
-\draw [semithick, black]  (axis cs:1.64,0) -- (axis cs:1.64,\valueC);
-\node[below] at (axis cs: 0,0)  {$0$};
-\node[above] at (axis cs: 0,\valueB)  {$z$};
-\node[below] at (axis cs: -1.64, 0) {$-1.64$};
-\node[above] at (axis cs: -2.1,\valueA) {5\%};
-\node[below] at (axis cs: 1.64, 0) {$1.64$};
-\node[above] at (axis cs: 2.1,\valueC) {5\%};
-\node[above] at (axis cs: 0,\valueC) {90\%};
-\end{axis}
-\end{tikzpicture}
-
-\vspace{0.4cm}
-
-A $90\%$ CI for $\mu$ is: \hspace{0.5cm}$6.5 \pm 1.64 \times \cfrac{0.8}{\sqrt{25}}$\hspace{0.5cm}=\hspace{0.5cm}$6.5 \pm 0.26\quad \therefore\quad (6.24 , 6.76)$\\
-
-90\% of all confidence intervals generated by this procedure will contain the value of the population mean.
-
-\end{tcolorbox}
 
 \pagebreak
 
@@ -187,12 +146,13 @@ A $90\%$ CI for $\mu$ is: \hspace{0.5cm}$6.5 \pm 1.64 \times \cfrac{0.8}{\sqrt{2
       $n=25$ & $\Sigma x=1254$ & $\Sigma x^2=63186$\\ 
     \end{tabular}
     \end{center}
+    It is assumed that the standard deviation is a reasonable estimate for the population standard deviation.\newline
     Obtain a 90\% confidence interval for the mean mass of the chicken eggs laid by the chickens at the farm.
     \item A restaurant manager is concerned about the time a table has to wait to have a drinks order taken once they have been seated. On 30 random occasions throughout a week, the time taken is recorded, in minutes. The manager puts the data into some statistical software and obtains the following summary data:\vspace{0.5cm}\\
     \texttt{x -> drinks order wait data}\\
     \texttt{n = 30}\qquad \texttt{sum of x = 171}\qquad \texttt{x bar = 5.7}\qquad \texttt{SD of x = 0.8}\vspace{0.5cm}\\
-    Obtain a 95\% confidence interval for the mean wait time.
-    \item A workers' rights organisation wishes to understand the number of hours worked per week by full-time employees of the local council. A random sample of 24 employees gives a sample mean of 38.2 hours and a standard deviation of 1.4 hours.
+    Obtain a 95\% $z$-confidence interval for the mean wait time, stating one assumption required.
+    \item A workers' rights organisation wishes to understand the number of hours worked per week by full-time employees of the local council. A random sample of 24 employees gives a sample mean of 38.2 hours and a standard deviation of 1.4 hours. It is decided that the standard deviation obtained is a reasonable estimate for the population standard deviation.
     \begin{enumerate}
         \item Obtain a 95\% confidence interval for the mean number of hours worked by full-time employees of the local council.
         \item The organisation would like a narrower confidence interval, and one organisation member suggests that obtaining instead a 99\% confidence interval will provide this. Calculate the width of a 99\% confidence interval for the mean hours worked and comment on the member's suggestion.
@@ -205,18 +165,29 @@ A $90\%$ CI for $\mu$ is: \hspace{0.5cm}$6.5 \pm 1.64 \times \cfrac{0.8}{\sqrt{2
 
 ## Confidence Intervals and Hypothesis Testing
 
-The calculations involved in calculating a *two-tailed* $z$-confidence interval for the population mean correspond with those for a *two-tailed* $z$-test for the population mean. Such a confidence interval could therefore allow inferences to be made about the population mean, $\mu$.
+Consider the following hypotheses, where $\mu_0$ is a possible value for a population mean of interest:
+
+\begin{center}
+\begin{math}
+\begin{array}{ll}
+      \text{H}_0: & \mu = \mu_0\\[0.5em]
+      \text{H}_1: & \mu \ne \mu_0 
+    \end{array}
+\end{math}
+\end{center}
+
+The calculations involved in calculating a *two-tailed* $z$-confidence interval for the population mean correspond with those for a *two-tailed* $z$-test for the population mean. Such a confidence interval could therefore allow inferences to be made about the population mean.
 
 \begin{centering}
 \tcbset{width=17cm}
 \begin{tcolorbox}[adjusted title=Inference using confidence intervals:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-If a given value for $\mu$ is \textbf{outwith a calculated confidence interval} then this would \textit{support a claim} that it is \textit{not the true value of the population mean}.\\
+If $\mu_0$ is \textbf{outwith a calculated 95\% confidence interval} then this would provide evidence at the 5\% significance level to suggest that the true population mean is different to $\mu_0$.\\
 \vspace{0.5cm}
-If a given value for $\mu$ is \textbf{within a calculated confidence interval} then this would \textit{not support a claim} that it is not the true value of the population mean.
+If $\mu_0$ is \textbf{within a calculated 95\% confidence interval} then this would be insufficient evidence at the 5\% significance level to suggest that the true population mean is different to $\mu_0$.\\
 \end{tcolorbox}
 \end{centering}
 
-In this course, it should be noted that an instruction to perform a \textit{test} requires a hypothesis test to be conducted using either a $p$-value or a test statistic, rather than a confidence interval.
+It should be noted that, in this course, an instruction to perform a \textit{test} requires a hypothesis test to be conducted using either a $p$-value or a test statistic, rather than a confidence interval.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The mass of food eaten each day by a family's cat is normally distributed with a mean of 280 grams and a standard deviation of 13 grams. Recently, they notice that their cat doesn't seem to eat the same amount of food as it used to. On 14 randomly chosen days they measure the mass of food that their cat eats, obtaining a mean of 273 grams per day. Stating an assumption required, obtain a 95\% confidence interval for the mass of food eaten daily by their cat, and comment on their concern that their cat doesn't eat the same amount of the food as it did previously.
@@ -282,6 +253,8 @@ Since 280 lies outwith the confidence interval, this supports their concern that
 
 \end{tcolorbox}
 
+Since any confidence intervals encountered in this course will be two-tailed, it is only appropriate to comment on *two-tailed* conclusions (i.e. ``difference...'') when using language such as *`significance'* and *`evidence'*. If a one-tailed comment is needed, it is advised to use less formal language.
+
 \pagebreak
 
 []{#ex112q}
@@ -323,7 +296,7 @@ Given a random sample of data from an underlying population that is *normally di
 \begin{centering}
 \tcbset{width=10cm}
 \begin{tcolorbox}[adjusted title=A $t$-confidence interval for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-A $(1-\alpha)\%$ CI for $\mu$ is: $\bar{x}\pm t_{n-1,1-\alpha/2} \times \cfrac{s}{\sqrt{n}}$
+A $100(1-\alpha)\%$ CI for $\mu$ is: $\bar{x}\pm t_{n-1,1-\alpha/2} \times \cfrac{s}{\sqrt{n}}$
 \end{tcolorbox}
 \end{centering}
 
@@ -431,7 +404,7 @@ Since 9.7 kWh is within the confidence interval, there is insufficient evidence 
     \texttt{n = 10}\quad \texttt{median = 4.05}\quad \texttt{mean = 4.05}\quad\\ \texttt{sum of x = 40.5}\quad \texttt{sum of x squared = 165.49}\\ \texttt{min = 3.40}\quad \texttt{max = 4.70}\\
     \vspace{0.3cm}
     \begin{enumerate}
-        \item State an assumption required in order to calculate a confidence interval for the mean mass a tripod can withstand before failure.
+        \item State an assumption required in order to calculate a $z$-confidence interval for the mean mass a tripod can withstand before failure.
         \item Obtain a 99\% confidence interval for the mean mass the tripods can support, and comment on the claim that the 4.5kg figure stated is not correct.
     \end{enumerate}
     \item The amount of sugar contained in frozen pizzas, per 100g, is normally distributed. A random sample of 8 brands of frozen pizza gives the following sugar content per 100g, measuring in grams:
@@ -457,7 +430,7 @@ In Chapter 9 a *normal approximation* to the distribution of the sample proporti
 \begin{centering}
 \tcbset{width=10cm}
 \begin{tcolorbox}[adjusted title=A $z$-confidence interval for the population proportion:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-A $(1-\alpha)\%$ CI for $p$ is: $\hat{p}\pm z_{1-\alpha/2} \times \sqrt{\cfrac{\hat{p}\hat{q}}{n}}$
+A $100(1-\alpha)\%$ CI for $p$ is: $\hat{p}\pm z_{1-\alpha/2} \times \sqrt{\cfrac{\hat{p}\hat{q}}{n}}$
 \end{tcolorbox}
 \end{centering}
 
