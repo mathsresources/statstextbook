@@ -1,10 +1,10 @@
 # An Introduction to Probability Theory
 
-The purpose of statistics is to make sense of the world by analysing data. Typically however, it is only possible to obtain data from a random sample of the full population of interest, creating an element of uncertainty that must be navigated carefully. For this reason, developing an understanding of statistical analysis begins with learning about probability theory.
+The purpose of statistics is to make sense of the world by analysing data. Typically, however, it is only possible to obtain data from a random sample of the full population of interest, introducing an element of uncertainty that must be navigated carefully. For this reason, developing an understanding of statistical analysis begins with learning about probability theory.
 
 #### Key definitions {-}
 
-In probability theory, an experiment for which all of the possible *outcomes* can be defined, and yet the actual outcome of any given *trial* cannot be known in advance, is called a *random experiment*. The set of all possible outcomes is called the *sample space* of the random experiment. Probability is assigned to individual outcomes or to sets of outcomes, called *events*. Probability itself is defined as the **long-run relative frequency** of an outcome or event occurring, and values range from 0 (*impossible, and will never happen*) to 1 (*certain, and will happen every time*).
+In probability theory, an experiment for which all of the possible *outcomes* can be defined, and yet the actual outcome of any given *trial* cannot be known in advance, is called a *random experiment*. The set of all possible outcomes is called the *sample space* of the random experiment. Probability is assigned to individual outcomes or to sets of outcomes, called *events*. Probability can be interpreted as the **long-run relative frequency** of an outcome or event occurring, and values range from 0 (*impossible, and will never happen*) to 1 (*certain, and will happen every time*).
 
 \begin{wrapfigure}{r}{0.15\textwidth}
 \centering
@@ -37,7 +37,7 @@ $$\text{P}(5)=\dfrac{1}{6}$$
 
 \vspace{-0.2cm}
 
-The probability of an event can be estimated through repeated trials - this is referred to as the \mbox{\textit{experimental probability}} of the event. For example, if a motorist passes a set of traffic lights every morning and wishes to know the probability of having to wait at a red light on any given morning, they could record the *proportion* of times they have to wait at a red light over a period of time. If, over the course of 200 mornings, they have to wait at a red light 114 times:
+The probability of an event can be estimated through repeated trials - this is referred to as the \mbox{\textit{experimental probability}} of the event. For example, if a motorist passes a set of traffic lights every morning and wishes to know the probability of having to wait at a red light on any given morning, they could record the *proportion* of times they had to wait at a red light over a period of time. If, over the course of 200 mornings, they have to wait at a red light 114 times:
 
 \vspace{-0.1cm}
 
@@ -47,7 +47,7 @@ $$\text{P}(\text{red light})\approx\frac{114}{200}=0.57$$
 
 \vspace{-0.2cm}
 
-When each of the outcomes in the sample space of a random experiment can be reasonably assumed to be \mbox{\textbf{equally likely}} then the probability of any outcomes or events can be determined. This is called *theoretical probability*.
+When each of the outcomes in the sample space of a random experiment can be reasonably assumed to be \mbox{\textbf{equally likely}} then the probability of outcomes or events can be determined. This is called *theoretical probability*.
 
 Equally likely outcomes typically arise from the symmetry of a physical object (such as a coin or die) or a reasonable assumption. The probability of any *individual outcome* in a sample space containing $N$ equally likely outcomes is $\frac{1}{N}$.\newline For example, if a playing card is picked at random from a standard pack of 52 cards, containing no jokers, then the probability of picking the Queen of Hearts is $\frac{1}{52}$.
 
@@ -68,7 +68,7 @@ $$\text{P}(\text{event})=\frac{\text{number of outcomes from the sample space in
 $$\text{P}(\text{green})=\frac{4}{22}=\frac{2}{11}$$
 \end{tcolorbox}
 
-In probability theory, *"and"* means that *both* events are true, and *"or"* means that *at least one* is true.
+In probability theory, *"and"* means that *both* events are true, and *"or"* means that *at least one* of the events is true.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A car dealership has 80 cars in its showroom. They have a mix of electric, hybrid, petrol and diesel cars, both new and second-hand. The table below shows the numbers of each type.

@@ -2,9 +2,9 @@
 
 \vspace{-1cm}
 
-Collected data, without any form of processing having been applied, is referred to as *raw data*. Before conducting any statistical analysis, a statistician will typically want to get a quick sense of the data, checking for any potential issues and identifying any features of note. Common first steps are therefore often to: *organise* the data into suitable lists or tables; *visualise* the data using plots and graphs; and *measure* various properties of the data.
+Data that has been collected but not yet processed is referred to as *raw data*. Before conducting any statistical analysis, a statistician will typically want to get a quick sense of the data, checking for potential issues and identifying important features. Common first steps are therefore often to: *organise* the data into suitable lists or tables; *visualise* the data using plots and graphs; and *measure* key properties of the data.
 
-This process is called *exploratory data analysis*.
+This process is called *exploratory data analysis*. It helps us understand the data before applying more formal statistical methods.
 
 \begin{center}
 \begin{tikzpicture}
@@ -76,11 +76,11 @@ This process is called *exploratory data analysis*.
 \node at (13,11.5) {\textbf{Dot plot and box plot (age, NHS Fife patients)}};
 
 \draw (10,10.2) -- (16.25,10.2);
-\foreach \x in {10,10.25,...,16.25}
+\foreach \x in {10,11.25,12.5,13.75,15,16.25}
 {\draw (\x,10.2) -- (\x,10.15);
 }
 
-\foreach \x in {10,11.25,...,16.25}
+\foreach \x in {10,11.25,12.5,13.75,15,16.25}
 {\draw (\x,10.2) -- (\x,10.1);
 }
 
@@ -168,9 +168,9 @@ This process is called *exploratory data analysis*.
 
 ## Types of Data
 
-Knowing what *type* of data has been collected helps inform what kind of graphs and statistics may be appropriate.
+Knowing what *type* of data has been collected helps determine what kind of graphs and statistics may be appropriate.
 
-Data that is numerical is called *quantitative*, of which there are two types. **Discrete** data consists of values that can be counted, such as someone's shoe size or the number of siblings they have. **Continuous** data can take *any* value within a range, though in practice values are is often rounded due to measurement precision, such as the mass of a mouse.
+Data that is numerical is called *quantitative*, of which there are two types. **Discrete** data consists of values that can be counted, such as the number of siblings someone has. **Continuous** data can take *any* value within a given range, though in practice values are often rounded due to measurement precision, such as the mass of a mouse.
 
 *Qualitative* data (also called **categorical**) is *non-numerical*, such as whether a squirrel is red or grey. 
 
@@ -192,10 +192,10 @@ Data that is numerical is called *quantitative*, of which there are two types. *
 \path[draw,-stealth] (quantitative) -- (6,-3) -- (10,-3) -- (discrete);
 \path[draw,-stealth] (quantitative) -- (6,-3) -- (2,-3) -- (continuous);
 \node[right] at (-6,-3) {\textit{also called}};
-\node[above] at (8,-3) {list of values};
+\node[above] at (8,-3) {countable values};
 \node[below] at (8,-3) {\textit{e.g. counting}};
 \node[below] at (4,-3) {\textit{e.g. measuring}};
-\node[above] at (4,-3) {range of values};
+\node[above] at (4,-3) {measureable values};
 \end{tikzpicture}
 \end{center}
 
@@ -322,7 +322,7 @@ For example, the table below shows data relating to some football players:
 
 ## Population Parameters and Sample Statistics
 
-In a statistical study, the term **population** refers to the entire set of objects of interest, whilst a **sample** is a subset chosen from the population. Recognising the difference is fundamental to statistics. 
+In a statistical study, the term **population** refers to the entire set of objects of interest, whilst a **sample** is a subset chosen from the population. Understanding the difference is fundamental to statistics. 
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -491,7 +491,7 @@ In a statistical study, the term **population** refers to the entire set of obje
 \end{tikzpicture}
 \end{center}
 
-If data were available for an entire *population* then various **population parameters** could be calculated, such as the *population mean*. Since this is rarely possible in practice, instead *samples* are taken from populations. Measures calculated from a sample of data are called **sample statistics**, such as the *sample mean*. 
+If data were available for an entire *population*, then various **population parameters** could be calculated, such as the *population mean*. Since this is rarely possible in practice, instead *samples* are taken from populations. Measures calculated from a sample are called **sample statistics**, such as the *sample mean*. 
 
 Letters from the Greek alphabet are commonly used to represent population parameters. For example:
 
@@ -503,11 +503,11 @@ Letters from the Greek alphabet are commonly used to represent population parame
 \end{tabular}
 \end{center}
 
-Sample statistics vary based on the sample chosen, and may be seen as \textit{estimates} of the true value of their respective population parameters, which are seen as fixed values (for a given study, at least). 
+Sample statistics vary depending on the sample chosen and can be viewed as *estimates* of the true values of their corresponding population parameters, which are treated as fixed (but usually unknown).
 
 \begin{multicols}{2}
 
-\textit{Statistical inference} is the process of using \textit{sample statistics} to assess claims about \textit{population parameters}. This requires learning about the inherent \textit{random chance} involved in selecting a sample from a population. Statistical inference, and \textit{sampling techniques}, will be introduced in later chapters.
+\textit{Statistical inference} is the process of using \textit{sample statistics} to assess claims about \textit{population parameters}. This requires learning about the inherent \textit{random variation} that arises when selecting samples from a population. Statistical inference, and \textit{sampling techniques}, will be introduced in later chapters.
 
 \columnbreak
 
@@ -552,24 +552,24 @@ The reason for discussing sampling at this point is to caution against making *d
 
 ## Measures of Location and Spread
 
-*Summary statistics* are a collection of measures taken of the data from a sample, such as the mean, or standard deviation. These offer a quick way to communicate some general sense of the data. For example, for the *raw data* of 0, 2, 2, 6, 12, 14, 16, 18, 18, 18, 20, the table below shows a selection of summary statistics. 
+*Summary statistics* are a collection of measures taken of the data from a sample, such as the mean, or standard deviation. These provide a quick way to communicate some general sense of the data. For example, for the *raw data* of 0, 2, 2, 6, 12, 14, 16, 18, 18, 18, 20, the table below shows a selection of summary statistics. 
 
 \begin{center}
 \begin{tabular}{ccccccccccccc}
 n & mean & sd & sum & sum of squares & min & LQ & median & UQ & max & range & IQR & mode\\
   \hline
-11 & 11.45 & 7.54 & 126 & 2012 & 0 & 2 & 14 & 18 & 20 & 20 & 14 & 18
+11 & 11.45 & 7.50 & 126 & 2012 & 0 & 2 & 14 & 18 & 20 & 20 & 16 & 18
 \end{tabular}
 \end{center}
 
-There are two main types of summary statistic: those that measure the \textit{central tendency} of data (or its \textbf{location}); and those that measure the \textit{variability} of data (or its \textbf{spread}). It is common to measure both the location *and* spread.
+There are two main types of summary statistic: those that measure the \textit{central tendency} of data (or its \textbf{location}); and those that measure the \textit{variability} of data (or its \textbf{spread}). It is common to measure both the location *and* spread, since two data sets can have the same average but very different variability.
 
 #### Measures of Location {-}
 
 The three main measures of location, or *averages*, should already be familiar. To avoid ambiguity, statisticians will typically avoid referring to *"the average"*, and will instead specify exactly *which* average they are referring to:
 
 \begin{itemize}
-    \item \textbf{Mode} - the most frequently occuring value.
+    \item \textbf{Mode} - the most frequently occurring value.
     \item \textbf{Median} - the middle value after the data has been put into numerical order.
     \item \textbf{Mean} - the sum of the values divided by the number of values.
 \end{itemize}
@@ -617,7 +617,7 @@ The three main measures of location, or *averages*, should already be familiar. 
 
 #### Measures of Spread {-}
 
-The measure of spread which is usually encountered first in a maths classroom is the *range*, less useful than other measures, as it depends only on the two most extreme values. In practice this measure is seldom used by statisticians since it only uses the two most extreme values from the data. There are three main measures of spread commonly used, two of which are likely to already be familiar: 
+The measure of spread which is usually encountered first in a maths classroom is the *range*, less informative than other measures, as it depends only on the two most extreme values. In practice this measure is seldom used by statisticians since it only uses the two most extreme values from the data. There are three main measures of spread commonly used, two of which are likely to already be familiar: 
 
 \begin{itemize}
     \item \textbf{Interquartile Range} - the difference between the upper quartile and the lower quartile.
@@ -629,11 +629,11 @@ The measure of spread which is usually encountered first in a maths classroom is
 
 ### The Mean and the Standard Deviation {-}
 
-The *mean* and *standard deviation* are perhaps the most commonly used measures of location and spread, respectively, and both link strongly to the commonly-encountered *bell-shaped curve* (see page 13). The formulae for calculating the sample mean and sample standard deviation from sample data are given below using notation, where the Greek letter $\Sigma$ (*"Sigma"*) denotes summation (i.e. adding a set of values), $x_i$ represents each value in the sample (for $i=\text{1},\text{2},\dots,n$) and $n$ represents the *number* of values in the sample.
+The *mean* and *standard deviation* are perhaps the most commonly used measures of location and spread, respectively, and both link strongly to the commonly-encountered *bell-shaped curve* (see page 13). The formulae for calculating the sample mean and sample standard deviation from sample data are given below using notation, where the Greek letter $\sum$ (*"Sigma"*) denotes summation (i.e. adding a set of values), $x_i$ represents each value in the sample (for $i=\text{1},\text{2},\dots,n$) and $n$ represents the *number* of values in the sample.
 
-The *sample mean*, $\bar{x}$, is calculated as: \hspace{0.5cm}$\bar{x}=\dfrac{\Sigma x}{n}$
+The *sample mean*, $\bar{x}$, is calculated as: \hspace{0.5cm}$\bar{x}=\dfrac{\sum x}{n}$
 
-The *sample standard deviation*, $s$, is calculated as: \hspace{0.5cm}$s=\sqrt{\dfrac{S_{xx}}{n-1}}$\hspace{0.5cm}where: \hspace{0.5cm}$S_{xx}=\Sigma x^\text{2}-\dfrac{(\Sigma x)^\text{2}}{n}$
+The *sample standard deviation*, $s$, is calculated as: \hspace{0.5cm}$s=\sqrt{\dfrac{S_{xx}}{n-1}}$\hspace{0.5cm}where: \hspace{0.5cm}$S_{xx}=\sum x^\text{2}-\dfrac{(\sum x)^\text{2}}{n}$
 
 The *sample variance*, $s^\text{2}$, is simply the *square of the standard deviation*.
 
@@ -641,7 +641,7 @@ The *sample variance*, $s^\text{2}$, is simply the *square of the standard devia
 
 The median, $\text{Q}_\text{2}$, and interquartile range, $\text{IQR}$, are often chosen to measure location and spread when the data is particularly *skewed* (see page 13), as they are less influenced by *extreme values* than the mean and standard deviation.
 
-The *lower quartile* (LQ or $\text{Q}_\text{1}$) and the *upper quartile* (UQ or $\text{Q}_\text{3}$) split data into quarters, along with the median. From the lowest value to $\text{Q}_\text{1}$ contains approximately 25\% of the data, from $\text{Q}_\text{1}$ to $\text{Q}_\text{2}$ contains approximtely the next 25\%, and so on.
+The *lower quartile* (LQ or $\text{Q}_\text{1}$) and the *upper quartile* (UQ or $\text{Q}_\text{3}$) split an ordered data set into four equal parts, along with the median. From the lowest value to $\text{Q}_\text{1}$ contains approximately 25\% of the data, from $\text{Q}_\text{1}$ to $\text{Q}_\text{2}$ contains approximately the next 25\%, and so on.
 
 \begin{center}
 \begin{tikzpicture}
@@ -679,13 +679,13 @@ The *interquartile range* is calculated as: \hspace{0.5cm}$\text{IQR}=\text{Q}_\
     \item The monthly cost of 10 drivers' car insurance ($x$, in £'s) are recorded. Calculate the mean and standard deviation.
     \begin{center}
     \begin{tabular}{ccc}
-      $\Sigma{x}=\text{359}$ & $\Sigma{x^{\text{2}}}=\text{15119}$ & $n=\text{10}$
+      $\sum{x}=\text{359}$ & $\sum{x^{\text{2}}}=\text{15119}$ & $n=\text{10}$
     \end{tabular}
     \end{center}
     \item Daily fuel spend ($x$, in £'s) for 15 drivers is summarised below. Calculate the mean and standard deviation.
     \begin{center}
     \begin{tabular}{ccc}
-      $\Sigma{x}=\text{87}$ & $\Sigma{x^{\text{2}}}=\text{569}$ & $n=\text{15}$
+      $\sum{x}=\text{87}$ & $\sum{x^{\text{2}}}=\text{569}$ & $n=\text{15}$
     \end{tabular}
     \end{center}
     \item The marks, out of 40, of eight pupils sitting a chemistry test are below. Find the mean and standard deviation.
@@ -707,7 +707,7 @@ The *interquartile range* is calculated as: \hspace{0.5cm}$\text{IQR}=\text{Q}_\
 
 ## Displaying Data
 
-Before any analysis of a data set is undertaken, it is common practice to *display* the data in a simple form so that an initial impression of the data can be formed. Some key examples are shown below, using a sample taken by a gardener of 10 of their sunflowers' heights 8 weeks after germination, measured to the nearest centimetre:
+Before analysing a data set, it is common practice to *display* the data in a simple form so that an initial impression can be formed. Some key examples are shown below, using a sample of 10 sunflower heights measured by a gardener 8 weeks after germination, measured to the nearest centimetre:
 
 \begin{center}
 \begin{tabular}{cccccccccccc}
@@ -1261,7 +1261,7 @@ The outlier in this data set could be valid if, for instance, the sunflower plan
 
 ## Describing Data Distributions
 
-Summary statistics alone are not sufficient to describe the full complexity of the way data is distributed. It is also important to consider and be able to describe the **shape** of the distribution, accomplished most easily using a histogram. Whilst real-life data rarely follows a precise mathematical model *exactly*, a number of shapes are commonly observed. The following data was generated by *simulating random sampling* from populations with the distributions. 
+Summary statistics alone are not sufficient to describe the full complexity of the way data is distributed. It is also important to consider and be able to describe the **shape** of the distribution, accomplished most easily using a histogram. Whilst real-life data rarely follows a precise mathematical model *exactly*, a number of shapes are commonly observed. The following data was generated by *simulating random sampling* from populations with these distributions. 
 
 \begin{figure}[H]
   \centering
@@ -1520,7 +1520,7 @@ Note that the histograms above were made by selecting some of the most *well-beh
 As well as considering whether the **underlying population distribution** of data appears to be *normal*, *skewed*, *uniform* or *bimodal*, the appropriateness of some statistical inference techniques will depend on whether the distribution is *symmetrical*, or whether two sets of data follow the *same distribution*, with matching shapes and spread. Whilst the following example references techniques that will be introduced later in the course, it is intended to give an idea of the importance of studying distributions in selecting appropriate methods for statistical inference.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=NavyBlue]
-\textbf{Problem:} A environmental scientist collected water samples from a number of rivers in a region to explore whether the concentration of a harmful chemical in the water has changed since farming practises used locally have changed. They are considering the following choices of hypothesis test:
+\textbf{Problem:} An environmental scientist collected water samples from a number of rivers in a region to explore whether the concentration of a harmful chemical in the water has changed since farming practices used locally have changed. They are considering the following choices of hypothesis test:
 
 \begin{itemize}
     \item A \textit{t-test}, the most appropriate choice if the data follows a normal distribution.
@@ -1730,7 +1730,7 @@ When comparing two or more samples of data, a good starting point is to create s
 \begin{tabular}{cccccccc}
       variable & n & Min & Q1 & Median & Q3 & Max & IQR\\
     \hline
-      sprinters & 30 & 165 & 174 & 179 & 184 & 200 & 10.5\\
+      sprinters & 30 & 165 & 174 & 179 & 184 & 200 & 10\\
       climbers & 30 & 158 & 168 & 174 & 177 & 195 & 9
 \end{tabular}
 \end{center}
@@ -2073,7 +2073,7 @@ Note that this data is based on the heights of *samples* sprinters and climbers.
     \end{tabular}
     \end{center}
     \begin{enumerate}
-        \item For the species \textit{iris setosa}, determine whether the dataset contains any outliers.
+        \item For the species \textit{iris setosa}, determine whether the data set contains any outliers.
         \item Make two comments comparing the petal lengths of the two species of iris.
     \end{enumerate}
 \end{enumerate}

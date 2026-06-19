@@ -551,7 +551,7 @@ Given the potential for confusion between the population proportion $p$ and the 
 
 ## [Review Exercise](#re11a) {-}
 
-\begin{enumerate}[itemsep=20pt]
+\begin{enumerate}
     \item A road safety researcher randomly selects eight cars passing by on a motorway and records their speed, in mph. The following results are obtained:
     \begin{center}
     \begin{tabular}{c c c c c c c c} 
@@ -562,19 +562,33 @@ Given the potential for confusion between the population proportion $p$ and the 
     \item A random sample of 50 residents of a town are asked whether or not they are aware that a proposal for a large retail park on the outskirts of the town is currently being considered by the local council. 14 of the 50 residents were aware of the proposals, whilst the rest were not. Obtain an approximate 99\% confidence interval for the proportion of the town's residents that are aware of the proposals.
     \item The volume of wine served when a restaurant's customer orders a small glass of wine is normally distributed with a standard deviation of 1.7ml. A random sample of 32 small glasses of wine served by the restaurant gives a mean of 126.3ml per glass.
     \begin{enumerate}
-        \item Obtain a 90\% confidence interval for the mean volume of wine served when a small glass of wine is ordered by a customer in the restaurant, stating an assumption required.
-        \item Comment on the suggestion that the mean volume served is not the correct measure of 125ml, stated on the restaurant's wine list.
+        \item Obtain a 90\% $t$-confidence interval for the mean volume of wine served when a small glass of wine is ordered by a customer in the restaurant, stating an assumption required.
+        \item A repeat customer claims that the mean volume served is not the correct measure of 125ml, as stated on the restaurant's wine list. Comment on this claim with reference to the confidence interval.
     \end{enumerate}
     \item A pharmaceutical company has developed a drug designed to reduce the recovery time needed for a specific type of operation. Following trials involving treating 25 randomly selected patients admitted to hospital for the operation with the drug, it is found that the mean recovery time for these patients is 11.4 days. Computer output summarising this data, measured in days, is as follows:\vspace{0.5cm}\\
     \texttt{summary(recovery time in days)}\\
     \texttt{n = 25}\quad \texttt{mean = 11.4}\quad\\           \texttt{A 95\% z-confidence interval for the mean is:}\\
     \texttt{(10.3 , ******)}\\
-    \vspace{0.3cm}
     \begin{enumerate}
         \item State the value from the computer output that has been replaced by ******.
-        \item The sample standard deviation was considered a reliable estimator for the population standard deviation of recovery time, since the sample was sufficiently large. Determine the value of the sample standard deviation used to calculate the confidence interval.
     \end{enumerate}
-    \item A driving instructor posts an advert online stating nine out of ten of their students pass their driving test first time. A random sample of 60 students taught by the instructor reveals that only 47 of them passed their driving test first time. Obtain an approximate 95\% confidence interval for the proportion of the instructor's students that pass first time, and comment on the claim that the true proportion is not the nine out of ten claimed by the instructor.
+    The sample standard deviation was considered a reliable estimator for the population standard deviation of recovery time, since the sample was sufficiently large.
+    \begin{enumerate}
+        \item Determine the value of the sample standard deviation used to calculate the confidence interval.
+    \end{enumerate}
+    \item A driving instructor posts an advert online stating nine out of ten of their students pass their driving test first time. For a random sample of students taught by the instructor, the table below shows how many of them passed their driving test first time, and how many did not pass the first time. 
+    \begin{center}
+            \begin{tabular}{|c|c|}
+                \hline
+                \textbf{Result of first driving test} & \textbf{Frequency}\\
+                \hline
+                Pass & 47\\
+                \hline
+                Fail & 13\\
+                \hline
+            \end{tabular}
+    \end{center}
+    Obtain an approximate 95\% confidence interval for the proportion of the instructor's students that pass first time, and comment on the claim that the true proportion is not the nine out of ten claimed by the instructor.
 \end{enumerate}
 
 \pagebreak
