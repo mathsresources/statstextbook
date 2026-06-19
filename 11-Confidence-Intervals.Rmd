@@ -1,12 +1,12 @@
 # Confidence Intervals
 
-From a random sample drawn from a population, the sample mean can be used as a *point estimate* for the true, unknown value of the population mean. If the sample was very small, or the variability of the data is very high, the *precision* of this estimate may be low. To avoid the misleading sense of precision that point estimates on their own can give, many institutions will require *confidence intervals* to routinely be stated as part of any statistical analysis. Statistical software will often also report a confidence interval whenever a hypothesis test is performed.
+From a random sample drawn from a population, the sample mean can be used as a *point estimate* for the true, unknown value of the population mean. If the sample size is small, or the variability of the data is very high, the *precision* of this estimate may be low. To avoid the misleading sense of precision that point estimates on their own can give, many institutions will require *confidence intervals* to routinely be stated as part of any statistical analysis. Statistical software will often also report a confidence interval whenever a hypothesis test is performed.
 
 \begin{center}
 \textit{"A 95\% confidence interval for the mean weight of an adult pine marten, in kg, is (1.42 , 1.58)"}
 \end{center}
 
-A common misconception is that such a confidence interval can be interpreted as *"There is a 95\% probability that the true mean weight is between 1.42 and 1.58."* Care should be taken to *avoid* interpreting the confidence level used as a probability relating to any particular generated confidence interval and the parameter it relates to. Instead, *"95\% confidence"* refers to the **long-run success rate of the procedure** used to generate the interval. If random samples are repeatedly taken from a distribution with population mean $\mu$, and a confidence interval produced from each, in the long-run 95\% of these intervals will contain $\mu$. The figure below shows twenty 95\% confidence intervals generated using simulated data, one of which does not contain the true value of the population mean, $\mu$, in the interval.
+A common misconception is that such a confidence interval can be interpreted as *"There is a 95\% probability that the true mean weight is between 1.42 and 1.58."* Care should be taken to *avoid* interpreting the confidence level used as a probability relating to any particular generated confidence interval and the parameter it relates to. Instead, *"95\% confidence"* refers to the **long-run success rate of the procedure** used to generate the interval. A 95\% confidence level means that if the sampling procedure were repeated many times, approximately 95% of the intervals produced would contain the true mean $\mu$. The figure below shows twenty 95\% confidence intervals generated using simulated data, one of which does not contain the true value of the population mean, $\mu$, in the interval.
 
 \begin{figure}[H]
   \centering
@@ -51,15 +51,15 @@ A $100(1-\alpha)\%$ CI for $\mu$ is: $\bar{x}\pm z_{1-\alpha/2} \times \cfrac{\s
 \end{tcolorbox}
 \end{centering}
 
-Note that the conditions required match those for a $z$-test for the population mean:
+As a reminder, the quantity $\dfrac{\sigma}{\sqrt{n}}$ is called the *standard error of the sample mean*.
 
 \begin{centering}
-\tcbset{width=13cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of the one-sample $z$-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,center]
+\tcbset{width=15cm}
+\begin{tcolorbox}[adjusted title=Conditions for a one-sample $z$-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,center]
 \begin{itemize}
-    \item The population is \textbf{normally distributed} (or $n>20$).
-    \item The \textit{population standard deviation}, $\sigma$, is \textbf{known}.
-    \item The data was obtained through a \textbf{random sample}.
+    \item The population is \textbf{normally distributed}, or the sample size is sufficiently large ($n>20$) such that the Central Limit Theorem applies.
+    \item The \textbf{population standard deviation}, $\sigma$, is known (and has not changed).
+    \item The observed data are \textbf{independent} (obtained through a random sample).
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
@@ -126,7 +126,7 @@ Therefore a 95\% confidence interval for the population mean dish mass, in grams
 
 It should be observed that the $z$-confidence interval is symmetrical with the **sample mean at its centre**. 
 
-The width of the interval is determined by the **standard error** and the confidence level required. For the same standard deviation and confidence level, a larger sample size will produce a narrower interval; this is intuitive, as more data collected should lead to a more precise estimate of the population mean.
+The width of the interval is determined by the standard error and the confidence level required. For the same standard deviation and confidence level, a larger sample size will produce a narrower interval; this is intuitive, as more data collected should lead to a more precise estimate of the population mean.
 
 
 \pagebreak
@@ -146,7 +146,7 @@ The width of the interval is determined by the **standard error** and the confid
       $n=25$ & $\Sigma x=1254$ & $\Sigma x^2=63186$\\ 
     \end{tabular}
     \end{center}
-    It is assumed that the standard deviation is a reasonable estimate for the population standard deviation.\newline
+    It is assumed that the sample standard deviation is a reasonable estimate for the population standard deviation.\newline
     Obtain a 90\% confidence interval for the mean mass of the chicken eggs laid by the chickens at the farm.
     \item A restaurant manager is concerned about the time a table has to wait to have a drinks order taken once they have been seated. On 30 random occasions throughout a week, the time taken is recorded, in minutes. The manager puts the data into some statistical software and obtains the following summary data:\vspace{0.5cm}\\
     \texttt{x -> drinks order wait data}\\
@@ -176,14 +176,14 @@ Consider the following hypotheses, where $\mu_0$ is a possible value for a popul
 \end{math}
 \end{center}
 
-The calculations involved in calculating a *two-tailed* $z$-confidence interval for the population mean correspond with those for a *two-tailed* $z$-test for the population mean. Such a confidence interval could therefore allow inferences to be made about the population mean.
+The calculations involved in constructing a *two-tailed* $z$-confidence interval for the population mean correspond with those for a *two-tailed* $z$-test for the population mean. Such a confidence interval could therefore allow inferences to be made about the population mean.
 
 \begin{centering}
 \tcbset{width=17cm}
 \begin{tcolorbox}[adjusted title=Inference using confidence intervals:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-If $\mu_0$ is \textbf{outwith a calculated 95\% confidence interval} then this would provide evidence at the 5\% significance level to suggest that the true population mean is different to $\mu_0$.\\
+If $\mu_0$ is \textbf{outwith a calculated 95\% confidence interval} then there is evidence at the 5\% significance level to suggest that $\mu \ne \mu_0$.\\
 \vspace{0.5cm}
-If $\mu_0$ is \textbf{within a calculated 95\% confidence interval} then this would be insufficient evidence at the 5\% significance level to suggest that the true population mean is different to $\mu_0$.\\
+If $\mu_0$ is \textbf{within a calculated 95\% confidence interval} then there is insufficient evidence at the 5\% significance level to suggest $\mu \ne \mu_0$.\\
 \end{tcolorbox}
 \end{centering}
 
@@ -233,7 +233,7 @@ $\bar{x}=273$, $n=14$, $\sigma=13$\\
 \node[below] at (axis cs: 0,0)  {$0$};
 \node[above] at (axis cs: 0,\valueB)  {$z$};
 \node[below] at (axis cs: -1.96, 0) {$-1.96$};
-\node[above] at (axis cs: -2.4,\valueA) {-2.5\%};
+\node[above] at (axis cs: -2.4,\valueA) {2.5\%};
 \node[below] at (axis cs: 1.96, 0) {$1.96$};
 \node[above] at (axis cs: 2.4,\valueC) {2.5\%};
 \node[above] at (axis cs: 0,\valueC) {95\%};
@@ -249,11 +249,11 @@ Therefore a 95\% confidence interval for the mean mass of food now being eaten d
 
 \vspace{0.1cm}
 
-Since 280 lies outwith the confidence interval, this supports their concern that the cat is not eating the same mean daily mass of 280 grams as it was before.
+Since 280 lies outwith the confidence interval, this provides evidence to suggest that the mean daily mass eaten has changed from 280g.
 
 \end{tcolorbox}
 
-Since any confidence intervals encountered in this course will be two-tailed, it is only appropriate to comment on *two-tailed* conclusions (i.e. ``difference...'') when using language such as *`significance'* and *`evidence'*. If a one-tailed comment is needed, it is advised to use less formal language.
+Since any confidence intervals encountered in this course will be two-tailed, it is only appropriate to comment on *two-tailed* conclusions (i.e. ``difference...'') when using language such as *`significance'* and *`evidence'*. Making one-tailed *conclusions* should be avoided as much as possible.
 
 \pagebreak
 
@@ -281,6 +281,7 @@ Since any confidence intervals encountered in this course will be two-tailed, it
     \texttt{alternative hypothesis: true mean is not equal to 30000}\\
     \texttt{z = -1.91}\qquad \texttt{p-value = 0.0563}\\
     \vspace{0.3cm}
+    Assume the sample standard deviation is a reasonable estimate of the population standard deviation.
     \begin{enumerate}
         \item Obtain a 95\% confidence interval for the mean annual salary of delivery drivers in the city.
         \item With reference to the confidence interval, comment on whether this confidence interval supports the conclusion made by the report.
@@ -291,7 +292,7 @@ Since any confidence intervals encountered in this course will be two-tailed, it
 
 ## A \textit{t}-Confidence Interval for the Population Mean
 
-Given a random sample of data from an underlying population that is *normally distributed*, a $t$-confidence interval can be calculated using the *sample standard deviation*, $s$. The conditions for valid use of the a $t$-confidence interval match those for a one-sample $t$-test, with the degrees of freedom calculated as $\nu=n-1$.
+Given a random sample of data from an underlying population that is *normally distributed*, a $t$-confidence interval can be calculated using the *sample standard deviation*, $s$. 
 
 \begin{centering}
 \tcbset{width=10cm}
@@ -300,9 +301,20 @@ A $100(1-\alpha)\%$ CI for $\mu$ is: $\bar{x}\pm t_{n-1,1-\alpha/2} \times \cfra
 \end{tcolorbox}
 \end{centering}
 
-As with a $z$-confidence interval, a $t$*-confidence interval* can be used in a similar way to **_two-tailed_** *one sample *$t$*-test for the population mean*. 
+A $t$-confidence interval is used when the population standard deviation is unknown and must be estimated using the sample standard deviation. The conditions for valid use of a $t$-confidence interval match those for a one-sample $t$-test, with the degrees of freedom calculated as $\nu=n-1$.
 
-\vspace{0.5cm}
+\begin{centering}
+\tcbset{width=15cm}
+\begin{tcolorbox}[adjusted title=Conditions for a one-sample $t$-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,center]
+\begin{itemize}
+    \item The population is \textbf{normally distributed}.
+    \item The observed data are \textbf{independent} (obtained through a random sample).
+\end{itemize}
+\end{tcolorbox}
+\end{centering}
+
+As with a $z$-confidence interval, a $t$*-confidence interval* can be used to make inferences equivalent to those from a two-tailed one-sample $t$-test. 
+
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Seven mid-terrace houses in Fife are randomly chosen to have their electricity usage for 24 hours recorded. The results, in kWh, are:
 
@@ -367,7 +379,7 @@ Therefore a 99\% CI for the mean daily electricity usage of mid-terrace houses i
 
 \vspace{0.1cm}
 
-Since 9.7 kWh is within the confidence interval, there is insufficient evidence here to support the claim that mid-terrace houses and semi-detached houses in Fife use different mean amounts of electricity.
+Since 9.7 kWh is within the confidence interval, there is insufficient evidence to support the claim that mid-terrace houses and semi-detached houses in Fife use different mean amounts of electricity.
 
 \end{tcolorbox}
 
@@ -404,7 +416,7 @@ Since 9.7 kWh is within the confidence interval, there is insufficient evidence 
     \texttt{n = 10}\quad \texttt{median = 4.05}\quad \texttt{mean = 4.05}\quad\\ \texttt{sum of x = 40.5}\quad \texttt{sum of x squared = 165.49}\\ \texttt{min = 3.40}\quad \texttt{max = 4.70}\\
     \vspace{0.3cm}
     \begin{enumerate}
-        \item State an assumption required in order to calculate a $z$-confidence interval for the mean mass a tripod can withstand before failure.
+        \item State an assumption required in order to calculate a $t$-confidence interval for the mean mass a tripod can withstand before failure.
         \item Obtain a 99\% confidence interval for the mean mass the tripods can support, and comment on the claim that the 4.5kg figure stated is not correct.
     \end{enumerate}
     \item The amount of sugar contained in frozen pizzas, per 100g, is normally distributed. A random sample of 8 brands of frozen pizza gives the following sugar content per 100g, measuring in grams:
@@ -423,9 +435,7 @@ Since 9.7 kWh is within the confidence interval, there is insufficient evidence 
 
 ## A \textit{z}-Confidence Interval for the Population Proportion
 
-In Chapter 9 a *normal approximation* to the distribution of the sample proportion, $\hat{P}$, was introduced, with a standard error of $\sqrt{\cfrac{pq}{n}}$, where $p$ is the null-hypothesised *population proportion*. When calculating a $z$-confidence interval for the population proportion, it is necessary to instead use the \textbf{sample proportion}, $\hat{p}$, to \textit{estimate} the standard error as $\sqrt{\cfrac{\hat{p}\hat{q}}{n}}$.
-
-\vspace{0.5cm}
+In Chapter 10 a *normal approximation* to the distribution of the sample proportion, $\hat{P}$, was introduced, with a standard error of $\sqrt{\frac{pq}{n}}$, where $p$ is the null-hypothesised *population proportion*. When calculating a $z$-confidence interval for the population proportion, it is necessary to instead use the \textbf{sample proportion}, $\hat{p}$, to \textit{estimate} the standard error as $\sqrt{\frac{\hat{p}\hat{q}}{n}}$.
 
 \begin{centering}
 \tcbset{width=10cm}
@@ -434,16 +444,20 @@ A $100(1-\alpha)\%$ CI for $p$ is: $\hat{p}\pm z_{1-\alpha/2} \times \sqrt{\cfra
 \end{tcolorbox}
 \end{centering}
 
-\vspace{0.5cm}
+This is only an *approximate confidence interval* because the sampling distribution of $\hat{p}$ is only *approximately normal* (and only for sufficiently large samples).
 
-As for a $z$-test for proportion, the conditions for validity are that the data is from a *random sample* and that $n\hat{p},n\hat{q}>5$. Since a *normal approximation to the binomial distribution* is being used (see Chapter 10, Section 10.8), it is often referred to as an *approximate confidence interval*.
-
-\vspace{0.5cm}
+\begin{centering}
+\tcbset{width=15cm}
+\begin{tcolorbox}[adjusted title=Conditions for a one-sample $z$-test for the population proportion:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,center]
+\begin{itemize}
+    \item Both $n\hat{p}>5$ and $n\hat{q}>5$.
+    \item The observed data are \textbf{independent} (obtained through a random sample).
+\end{itemize}
+\end{tcolorbox}
+\end{centering}
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A tech website surveys a random selection of its subscribers and finds that 41 out of 50 of them have changed the password for their WiFi router from the default one as recommended by experts. Obtain an approximate 95\% confidence interval for the proportion of its subscribers that have changed their router's password.   
-
-\vspace{0.5cm}
 
 \tcblower
 \textbf{Solution:}
@@ -480,7 +494,7 @@ $\hat{p}=\frac{41}{50}=0.82$, $\hat{q}=0.18$, $n=50$\\
 \node[below] at (axis cs: 0,0)  {$0$};
 \node[above] at (axis cs: 0,\valueB)  {$z$};
 \node[below] at (axis cs: -1.96, 0) {$-1.96$};
-\node[above] at (axis cs: -2.4,\valueA) {-2.5\%};
+\node[above] at (axis cs: -2.4,\valueA) {2.5\%};
 \node[below] at (axis cs: 1.96, 0) {$1.96$};
 \node[above] at (axis cs: 2.4,\valueC) {2.5\%};
 \node[above] at (axis cs: 0,\valueC) {95\%};
@@ -489,7 +503,7 @@ $\hat{p}=\frac{41}{50}=0.82$, $\hat{q}=0.18$, $n=50$\\
 
 \vspace{0.5cm}
 
-A $95\%$ CI for $p$ is: \hspace{0.5cm} = $0.82 \pm 1.96 \times \sqrt{\cfrac{0.82\times0.18}{50}}$\hspace{0.5cm}=\hspace{0.5cm}$0.82 \pm 0.060$\\
+A $95\%$ CI for $p$ is: \hspace{0.5cm} $0.82 \pm 1.96 \times \sqrt{\cfrac{0.82\times0.18}{50}}$\hspace{0.5cm}=\hspace{0.5cm}$0.82 \pm 0.060$\\
 
 \vspace{0.1cm}
 
@@ -497,11 +511,9 @@ Therefore an approximate 95\% confidence interval for the proportion of the webs
 
 \end{tcolorbox}
 
-\vspace{0.5cm}
-
 Given the potential for confusion between the population proportion $p$ and the sample proportion $\hat{p}$, as well as $q$ and $\hat{q}$, it is recommended to check all working carefully to ensure the correct notation is being used.
 
-\newpage
+\pagebreak
 
 []{#ex114q}
 
@@ -560,7 +572,7 @@ Given the potential for confusion between the population proportion $p$ and the 
     \vspace{0.3cm}
     \begin{enumerate}
         \item State the value from the computer output that has been replaced by ******.
-        \item The sample standard deviation was considered a reliable estimator for the population standard deviation recovery time, since the sample was sufficiently large. Determine the value of the sample standard deviation used to calculate the confidence interval.
+        \item The sample standard deviation was considered a reliable estimator for the population standard deviation of recovery time, since the sample was sufficiently large. Determine the value of the sample standard deviation used to calculate the confidence interval.
     \end{enumerate}
     \item A driving instructor posts an advert online stating nine out of ten of their students pass their driving test first time. A random sample of 60 students taught by the instructor reveals that only 47 of them passed their driving test first time. Obtain an approximate 95\% confidence interval for the proportion of the instructor's students that pass first time, and comment on the claim that the true proportion is not the nine out of ten claimed by the instructor.
 \end{enumerate}
