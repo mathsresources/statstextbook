@@ -1,10 +1,10 @@
 # An Introduction to Probability Theory
 
-The purpose of statistics is to make sense of the world by analysing data. Typically, however, it is only possible to obtain data from a random sample of the full population of interest, introducing an element of uncertainty that must be navigated carefully. For this reason, developing an understanding of statistical analysis begins with learning about probability theory.
+The purpose of statistics is to make sense of the world by analysing data. Typically, however, it is only possible to obtain data from a random sample of the full population of interest, introducing uncertainty that must be accounted for. For this reason, developing an understanding of statistical analysis begins with learning about probability theory.
 
 #### Key definitions {-}
 
-In probability theory, an experiment for which all of the possible *outcomes* can be defined, and yet the actual outcome of any given *trial* cannot be known in advance, is called a *random experiment*. The set of all possible outcomes is called the *sample space* of the random experiment. Probability is assigned to individual outcomes or to sets of outcomes, called *events*. Probability can be interpreted as the **long-run relative frequency** of an outcome or event occurring, and values range from 0 (*impossible, and will never happen*) to 1 (*certain, and will happen every time*).
+In probability theory, an experiment for which all possible *outcomes* can be defined, and yet the actual outcome of any given *trial* cannot be known in advance, is called a *random experiment*. The set of all possible outcomes is called the *sample space* of the random experiment. Probability is assigned to individual outcomes or to sets of outcomes, called *events* (subsets of the sample space). Probability can be interpreted as the **long-run relative frequency** of an outcome or event occurring, and values range from 0 (*impossible*) to 1 (*certain*).
 
 \begin{wrapfigure}{r}{0.15\textwidth}
 \centering
@@ -27,29 +27,27 @@ For example, in the context of rolling a fair, cubical die:
 
 The probability that a fair cubical die lands on 5 is *one-in-six*, or $\frac{1}{6}$. Using probability notation:
 
-$$\text{P}(5)=\dfrac{1}{6}$$
+$$\text{P}(\text{rolling a }5)=\dfrac{1}{6}$$
 
 \pagebreak
 
-## Types of Probability
+## Measuring Probability
 
-### Experimental Probability {-}
+#### Experimental Probability {-}
 
-\vspace{-0.2cm}
-
-The probability of an event can be estimated through repeated trials - this is referred to as the \mbox{\textit{experimental probability}} of the event. For example, if a motorist passes a set of traffic lights every morning and wishes to know the probability of having to wait at a red light on any given morning, they could record the *proportion* of times they had to wait at a red light over a period of time. If, over the course of 200 mornings, they have to wait at a red light 114 times:
+The probability of an event can be estimated through repeated trials - this is referred to as the \mbox{\textit{experimental probability}} of the event. For example, if a motorist passes a set of traffic lights every morning and wishes to know the probability of having to wait at a red light on any given morning, they could record the *proportion* of mornings on which they had to wait at a red light over a period of time. If, over the course of 200 mornings, they have to wait at a red light 114 times:
 
 \vspace{-0.1cm}
 
 $$\text{P}(\text{red light})\approx\frac{114}{200}=0.57$$
 
-### Theoretical Probability {-}
-
 \vspace{-0.2cm}
 
-When each of the outcomes in the sample space of a random experiment can be reasonably assumed to be \mbox{\textbf{equally likely}} then the probability of outcomes or events can be determined. This is called *theoretical probability*.
+#### Theoretical Probability {-}
 
-Equally likely outcomes typically arise from the symmetry of a physical object (such as a coin or die) or a reasonable assumption. The probability of any *individual outcome* in a sample space containing $N$ equally likely outcomes is $\frac{1}{N}$.\newline For example, if a playing card is picked at random from a standard pack of 52 cards, containing no jokers, then the probability of picking the Queen of Hearts is $\frac{1}{52}$.
+When each of the outcomes in the sample space of a random experiment can be reasonably assumed to be \mbox{\textbf{equally likely}}, then the probability of outcomes or events can be determined. This is called *theoretical probability*.
+
+Equally likely outcomes typically arise from the symmetry of a physical object (such as a coin or die) or a reasonable assumption. The probability of any *individual outcome* in a sample space containing $N$ equally likely outcomes is $\frac{1}{N}$. For example, if a playing card is picked at random from a standard pack of 52 cards, containing no jokers, then the probability of picking the Queen of Hearts is $\frac{1}{52}$.
 
 An **event** is a set of one or more outcomes from the sample space. The probability of an event is given by:
 
@@ -68,7 +66,7 @@ $$\text{P}(\text{event})=\frac{\text{number of outcomes from the sample space in
 $$\text{P}(\text{green})=\frac{4}{22}=\frac{2}{11}$$
 \end{tcolorbox}
 
-In probability theory, *"and"* means that *both* events are true, and *"or"* means that *at least one* of the events is true.
+When considering two events in probability theory, *"and"* means that *both* events are true, and *"or"* means that *at least one* of the events is true (including the possibility that they both occur, where applicable).
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A car dealership has 80 cars in its showroom. They have a mix of electric, hybrid, petrol and diesel cars, both new and second-hand. The table below shows the numbers of each type.
@@ -92,7 +90,7 @@ A car is selected at random. Determine the probability that the car selected is 
 $$\text{P}(\text{second-hand and hybrid})=\dfrac{7}{80}=0.0875$$
 \end{tcolorbox}
 
-In this textbook, probabilities will be given as simplified fractions or *rounded to four decimal places* for consistency.
+In this textbook, probabilities will be given as fractions or *rounded to four decimal places* for consistency.
 
 \pagebreak
 
@@ -106,7 +104,7 @@ In this textbook, probabilities will be given as simplified fractions or *rounde
     \begin{enumerate}
         \item A vowel.
         \item A consonant.
-        \item In the word \textit{statistics}.
+        \item In the word \textit{`statistics'}.
     \end{enumerate}
     \end{multicols}
     \item A bag contains four blue, five green and six red counters. Find the probability that a randomly chosen counter is:
@@ -125,7 +123,7 @@ In this textbook, probabilities will be given as simplified fractions or *rounde
         \item \text{P}(not caramel)
     \end{enumerate}
     \end{multicols}
-    \item As of 2024, the UK contains 76 cities, of which 55 are in England, 8 in Scotland, 7 in Wales and 6 in Northern Ireland. If a city in the UK is selected at random, find the probability that the chosen city is:
+    \item The UK contains 76 cities, of which 55 are in England, 8 in Scotland, 7 in Wales and 6 in Northern Ireland. If a city in the UK is selected at random, find the probability that the chosen city is:
     \begin{multicols}{3}
     \begin{enumerate}
         \item In Scotland.
@@ -186,18 +184,20 @@ In this textbook, probabilities will be given as simplified fractions or *rounde
 
 ## Sample Spaces as Lists and Grids
 
-It can help to write out sample spaces. Some sample spaces can be easily described using a simple list, but more organisation may be needed for more complicated sample spaces, such as approaching the list in a structured manner or using a grid. Sample spaces are generally useful only if each of the outcomes is equally likely. 
+It can help to write out sample spaces. Some sample spaces can be easily described using a simple list, but more organisation may be needed for more complicated sample spaces, such as approaching the list in a structured manner or using a grid. Sample spaces are particularly useful when each outcome is equally likely, as this allows probabilities to be calculated directly by counting outcomes.. 
 
 If two coins are tossed, it may be tempting to suggest that the probability of both landing tails is one-in-three, since the experiment can result in either no coins landing tails, only one coin landing tails or two coins landing tails. However a list of the four possible *equally likely* outcomes in the sample space shows that this is not the case:
 
 *Not equally likely outcomes:* $\{\text{no tails},\text{one tail},\textbf{two tails}\}$
 
+These three outcomes are *not* equally likely, so the probability is *not one-in-three*, or: $\text{P}(\text{both tails})\ne\frac{1}{3}$
+
 *Equally likely outcomes:* $\{\text{HH},\text{HT},\text{TH},\textbf{TT}\}$
 
-The probability of both coins landing tails is therefore *one-in-four*, or $\text{P}(\text{both tails})=\frac{1}{4}$.
+These four outcomes *are* equally likely, so the probability is *one-in-four*, or: $\text{P}(\text{both tails})=\frac{1}{4}$.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Three coins are tossed at the same time. Find the probability that exactly two of the coins land tails.
+\textbf{Problem:} Three coins are tossed at the same time. Find the probability that exactly two of the coins land showing tails.
 
 \tcblower
 \textbf{Solution: }\textit{A list of equally likely outcomes will help here. Note there are $2\times 2\times 2=8$ outcomes.}
@@ -297,25 +297,25 @@ For most of the following questions, it is recommended to write out a full list 
         \item A list of all outcomes.
         \item $\text{P}(\text{even and tails})$
     \end{enumerate}
-    \item Each morning, a teacher picks at random whether to start the day with tea, coffee or apple juice, and also picks at random which one of museli, granola, toast or porridge to eat for breakfast. By first writing down all the possible ways the teacher may start their day, determine the probability that on any particular morning the teacher has:
+    \item Each morning, a teacher picks at random whether to start the day with tea, coffee or apple juice, and also picks at random which one of muesli, granola, toast or porridge to eat for breakfast. By first listing all the possible ways the teacher may start their day, determine the probability that on any particular morning the teacher has:
         \begin{enumerate}
             \item Tea and toast.
-            \item Museli but not coffee.
+            \item muesli but not coffee.
             \item Neither porridge nor tea.
         \end{enumerate}
     \item A coin is tossed three times. Find the probability that it shows:
     \begin{tikzpicture}[remember picture,overlay]
-        \node[xshift=2cm,yshift=0.5cm,anchor=north west] {%
+        \node[xshift=1cm,yshift=0.5cm,anchor=north west] {%
         \includegraphics[width=0.3\textwidth]{threecoins.png}};
         \end{tikzpicture}
     \begin{enumerate}
-        \item Tails twice in a row.
+        \item Tails on two consecutive tosses.
         \item Tails at least twice.
     \end{enumerate}   
-    \item A random number is chosen from 1 to 140, inclusive. By writing down all relevant results, determine the probability of the number chosen having digits that sum to 3.
+    \item A random number is chosen from 1 to 140, inclusive. By first listing all relevant results, determine the probability of the number chosen having digits that sum to 3.
     \item Two fair, cubical dice are rolled. Find the probability that the product of the numbers obtained is less than 5.
     \item A tetrahedral (four-sided) die numbered 1 to 4 and a cubical die numbered 1 to 6 are rolled. Find the probability that at least one of the numbers obtained is 2 or less.
-    \item Five coins are placed in a bag, with values of 1p, 2p, 5p, 10p and 20p. Two coins are chosen at random, one after another, with the second selected without the first being replaced. Calculate:
+    \item Five coins are placed in a bag, with values of 1p, 2p, 5p, 10p and 20p. Two coins are chosen at random, one after another, with the second chosen without replacement. Calculate:
     \begin{tikzpicture}[remember picture,overlay]
     \node[xshift=0cm,yshift=0cm,anchor=north west] {%
     \includegraphics[width=0.25\textwidth]{coins.png}};
@@ -326,7 +326,7 @@ For most of the following questions, it is recommended to write out a full list 
         \item $\text{P}(\text{total of the two coins}\geqslant\text{15p})$
         \item $\text{P}(\text{total of the two coins}<\text{12p})$
     \end{enumerate}
-    \item Two friends, Alex and Charlie, are part of a class which contains eight pupils in total. One pupil from the class is randomly chosen to hand out mini-whiteboards, and different pupil is chosen to hand out pens.
+    \item Two friends, Alex and Charlie, are part of a class which contains eight pupils in total. One pupil from the class is randomly chosen to hand out mini-whiteboards, and a different pupil is chosen to hand out pens.
     \begin{enumerate}
         \item Determine the number of possible ways the two tasks can be assigned to two pupils.
         \item Hence, find the probability that:
@@ -342,11 +342,13 @@ For most of the following questions, it is recommended to write out a full list 
 
 ## Tree Diagrams
 
-Tree diagrams can be created to map out the possible results of a random experiment, and they are especially useful when considering two or more events. For example, consider a game involving rolling a cubical die and picking a playing card at random from a standard set, with an interest in the chance of the die landing on a *six* and the card picked being a *diamond*:
+Tree diagrams can be created to map out the possible outcomes of a random experiment, and they are especially useful when considering two or more events. For example, consider a game involving rolling a cubical die and picking a playing card at random from a standard set, with an interest in the chance of the die landing on a *six* and the card picked being a *diamond*:
+
+\vspace{-0.3cm}
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[grow=right]
+\begin{tikzpicture}[grow=right,scale=1.1]
 \tikzstyle{level 1}=[level distance=3.5cm, sibling distance=3.5cm]
 \tikzstyle{level 2}=[level distance=3.5cm, sibling distance=1.75cm]
 \tikzstyle{bag} = [text width=4em, text centered]
@@ -359,54 +361,57 @@ Tree diagrams can be created to map out the possible results of a random experim
                     {diamond}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\frac{1}{4}$}
+                node[below]  {$\dfrac{1}{4}$}
             }
             child {
                 node[end, label=right:
                     {not diamond}] {}
                 edge from parent
-                node[above] {$\frac{3}{4}$}
+                node[above] {$\dfrac{3}{4}$}
                 node[below]  {}
             }
             edge from parent 
             node[above] {}
-            node[below]  {$\frac{5}{6}$}
+            node[below]  {$\dfrac{5}{6}$}
     }
     child {
         node[bag] {six}        
         child {
                 node[end, label=right:
-                    {diamond\hspace{1.4cm}$\text{P}(\text{six }\textbf{and}\text{  diamond})=\frac{1}{6}\times\frac{1}{4}=\frac{1}{24}$}] {}
+                    {diamond\hspace{1.4cm}$\text{P}(\text{six }\textbf{and}\text{  diamond})=\dfrac{1}{6}\times\dfrac{1}{4}=\dfrac{1}{24}$}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\frac{1}{4}$}
+                node[below]  {$\dfrac{1}{4}$}
             }
             child {
                 node[end, label=right:
                     {not diamond}] {}
                 edge from parent
-                node[above] {$\frac{3}{4}$}
+                node[above] {$\dfrac{3}{4}$}
                 node[below]  {}
             }
         edge from parent         
-            node[above] {$\frac{1}{6}$}
+            node[above] {$\dfrac{1}{6}$}
             node[below]  {}
     };
 \end{tikzpicture}
 \end{figure}
 
-- Every branch must be clearly labelled with a probability.
-- The end of each branch must be clearly described, such as *"not diamond"*.
-- Sibling branches must add to 1.
-- Multiplying the probabilities along branches gives the probability of those events occurring together.
+Tree diagrams should be complete with each *branch* labelled with a *probability*, and each *node* labelled with an *event*, as above. Since each split into *sibling branches* should show all the possible things that can happen next, the probabilities on sibling branches should add to 1.
 
-Note that in the tree diagram above the probability of the card being a diamond does not change depending on whether the roll of a die gives a six or not. In the following example the probabilities on the second stage of the tree diagram do change depending on the result of the first stage.
+\[\text{i.e.}\;\frac{1}{6}+\frac{5}{6}=1\;\text{ and }\;\frac{3}{4}+\frac{1}{4}=1\]
+
+Multiplying the probabilities along a path of branches gives the probability of all those events occurring together.
+
+Note that in the tree diagram above the probability of the card being a diamond does not change depending on whether the roll of a die gives a six or not; this is because the roll of a die and the drawing of a card are **independent**. In the following example the probabilities on the second stage of the tree diagram do change depending on the result of the first stage, since the first and second draws of a cube are **not independent**.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} From a bag containing four blue and six red cubes one is drawn at random, followed by another without replacing the first. Find the probability that two red cubes are drawn.
 
 \tcblower
 \textbf{Solution: }
+
+\vspace{-0.3cm}
 
 \begin{tikzpicture}[grow=right]
 \tikzstyle{level 1}=[level distance=3.5cm, sibling distance=3.5cm]
@@ -418,21 +423,21 @@ Note that in the tree diagram above the probability of the card being a diamond 
         node[bag] {red}        
             child {
                 node[end, label=right:
-                    {red\hspace{1.2cm}$\text{P}(\text{both red})=\frac{6}{10}\times\frac{5}{9}=\frac{30}{90}=\frac{1}{3}$}] {}
+                    {red\hspace{1.2cm}$\text{P}(\text{both red})=\dfrac{6}{10}\times\dfrac{5}{9}=\dfrac{30}{90}=\dfrac{1}{3}$}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\frac{5}{9}$}
+                node[below]  {$\dfrac{5}{9}$}
             }
             child {
                 node[end, label=right:
                     {blue}] {}
                 edge from parent
-                node[above] {$\frac{4}{9}$}
+                node[above] {$\dfrac{4}{9}$}
                 node[below]  {}
             }
             edge from parent 
             node[above] {}
-            node[below]  {$\frac{6}{10}$}
+            node[below]  {$\dfrac{6}{10}$}
     }
     child {
         node[bag] {blue}        
@@ -441,17 +446,17 @@ Note that in the tree diagram above the probability of the card being a diamond 
                     {red}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\frac{6}{9}$}
+                node[below]  {$\dfrac{6}{9}$}
             }
             child {
                 node[end, label=right:
                     {blue}] {}
                 edge from parent
-                node[above] {$\frac{3}{9}$}
+                node[above] {$\dfrac{3}{9}$}
                 node[below]  {}
             }
         edge from parent         
-            node[above] {$\frac{4}{10}$}
+            node[above] {$\dfrac{4}{10}$}
             node[below]  {}
     };
 \end{tikzpicture}
@@ -475,7 +480,7 @@ Note that in the tree diagram above the probability of the card being a diamond 
     \end{enumerate}
     \item A game involves a player randomly selecting one card then a second card from a set of six blue cards and four red cards, with replacement. Calculate the probability of a player selecting two cards of the same colour.
     \item In Scotland, 41\% of the population have the blood type \textit{O positive (O+)}. A doctor in Scotland randomly selects two of their patients and asks for them to take part in a blood screening trial, as part of which their blood type will be checked. Calculate the probability that neither of the two patients has blood type \textit{O+}.
-    \item A type of component manufactured for use in wind turbines is tested at two points in the production process, and marked as either \textit{sufficient quality} or \textit{insufficient quality} on the first testing point and then \textit{pass} or \textit{fail} at the second testing point. A component that is not of sufficient quality at the first testing point will continue to be developed and may still pass at the second testing point. Three-quarters of the components are marked as \textit{sufficient quality} initially, of which nine-tenths go on to pass. Of those initially marked as \textit{insufficient quality}, only three-fifths go on to pass.
+    \item A component used in wind turbines is tested at two points in the production process, and marked as either \textit{sufficient quality} or \textit{insufficient quality} on the first testing point and then \textit{pass} or \textit{fail} at the second testing point. A component that is not of sufficient quality at the first testing point will continue to be developed and may still pass at the second testing point. Three-quarters of the components are marked as \textit{sufficient quality} initially, of which nine-tenths go on to pass. Of those initially marked as \textit{insufficient quality}, only three-fifths go on to pass.
     \begin{enumerate}
         \item Construct a tree diagram to represent this information.
         \item Determine the probability that a component selected at random passes at the second testing point.
@@ -483,13 +488,13 @@ Note that in the tree diagram above the probability of the card being a diamond 
     \item A bus for a particular route that is scheduled to run once per day is cancelled on 3\% of days. On the days when it is running, it is running late 12\% of the time.
     \begin{enumerate}
         \item Construct a tree diagram to represent this information.
-        \item Calculate the probability that the bus is running on time on any given day.
+        \item Calculate the probability that the bus is running on time on any given day (i.e. not cancelled and not late).
     \end{enumerate}
     \item A pencil case contains pencils of three different types: four HB pencils, two 2B pencils and one 2H pencil. Two pencils are selected at random, without replacement.
     \begin{enumerate}
         \item Construct a tree diagram to represent the types of the two pencils selected.
         \item Find the probability that both pencils selected are of the same type.
-        \item Determine the probability that the two pencils selected are both of a different type.
+        \item Determine the probability that the two pencils selected both are of different types.
         \item Find the probability that neither pencil selected is an HB pencil.
     \end{enumerate}
     \item A motorist passes through three sets of traffic lights on their way to work each day. If the probability of having to stop at a red light for each set of lights is 0.6, 0.2 and 0.3 respectively then find the probability that:
@@ -505,13 +510,13 @@ Note that in the tree diagram above the probability of the card being a diamond 
 
 ## Venn Diagrams and Set Notation
 
-Venn diagrams are used to show which elements of a set belong or don't belong to one or more subsets. They can offer an alternative way of representing information about a sample space that might otherwise be shown in a table. For instance, the table below shows the twelve dishes from a restaurant's main course menu, broken down by whether or not each is *gluten-free* ($G$) and whether or not each is *vegan* ($V$). Beside it is a Venn diagram showing the same information.
+Venn diagrams are used to show which elements of a set belong to one or more subsets. They can offer an alternative way of representing information about a sample space that might otherwise be shown in a table. For instance, the *contingency table* below shows the twelve dishes from a restaurant's main course menu, broken down by whether or not each is *gluten-free* ($G$) and whether or not each is *vegan* ($V$). Beside it is a Venn diagram showing the same information.
 
 \begin{figure}[H]
   \centering
 \captionsetup[figure]{labelformat=empty}%
 \begin{minipage}{.5\textwidth}
-  \centering
+  \begin{center}
     \begin{tabular}{| c|c c|} 
       \hline
           & vegan & not vegan\\ 
@@ -520,31 +525,33 @@ Venn diagrams are used to show which elements of a set belong or don't belong to
          not gluten-free & 3 & 6\\ 
      \hline
     \end{tabular}
-\captionof{figure}{\textit{Table}}
-  \label{fig:test1}
+\captionof{figure}{\textit{Contingency table}}
+  \label{fig:testTable}
+  \end{center}
+  Where a table is used to show categorical data in terms of frequencies in statistics, it is often referred to as a \textbf{contingency table}.  
 \end{minipage}%
   \centering
 \begin{minipage}{.5\textwidth}
   \centering
-\begin{tikzpicture}[fill=white, line width=0.5pt, font=\footnotesize]
+\begin{tikzpicture}[fill=white, line width=0.5pt]
 \draw (-0.3,-0.2) circle (1.2) (-0.3,0.9)  node [text=black,above] {$G$};
 \draw (1.3,-0.2) circle (1.2) (1.3,0.9)  node [text=black,above] {$V$};
 \draw (-2.5,-1.8) rectangle (3.5,1.8) node [text=black,above] {$S$};
-\draw[fill=black] (-0.6,-0.1) circle (0.06);
-\draw[fill=black] (0.5,0.1) circle (0.06);
-\draw[fill=black] (0.6,-0.4) circle (0.06);
-\draw[fill=black] (1.3,0) circle (0.06);
-\draw[fill=black] (1.7,0.3) circle (0.06);
-\draw[fill=black] (1.9,-0.4) circle (0.06);
-\draw[fill=black] (-2,-0.7) circle (0.06);
-\draw[fill=black] (-1,1.3) circle (0.06);
-\draw[fill=black] (0.5,1.4) circle (0.06);
-\draw[fill=black] (2,1.5) circle (0.06);
-\draw[fill=black] (2.8,0.4) circle (0.06);
-\draw[fill=black] (3,-1) circle (0.06);
+\draw[fill=black] (-0.6,-0.1) circle (0.07);
+\draw[fill=black] (0.5,0.1) circle (0.07);
+\draw[fill=black] (0.6,-0.4) circle (0.07);
+\draw[fill=black] (1.3,0) circle (0.07);
+\draw[fill=black] (1.7,0.3) circle (0.07);
+\draw[fill=black] (1.9,-0.4) circle (0.07);
+\draw[fill=black] (-2,-0.7) circle (0.07);
+\draw[fill=black] (-1,1.3) circle (0.07);
+\draw[fill=black] (0.5,1.4) circle (0.07);
+\draw[fill=black] (2,1.5) circle (0.07);
+\draw[fill=black] (2.8,0.4) circle (0.07);
+\draw[fill=black] (3,-1) circle (0.07);
 \end{tikzpicture}
 \captionof{figure}{\textit{Venn diagram}}
-  \label{fig:test1}
+  \label{fig:testVenn}
 \end{minipage}
 \end{figure}
 
@@ -568,24 +575,22 @@ Venn diagrams help illustrate these. Note that *capital letters* are commonly us
 
 \begin{figure}[H]
   \centering
-\captionsetup[figure]{labelformat=empty}%
 \begin{minipage}[t]{.33\textwidth}
   \centering
-\begin{tikzpicture}[line width=0.5pt, font=\footnotesize]
+\begin{tikzpicture}[line width=0.5pt]
 \fill [gray!15] (-2.1,-1.7) rectangle (3.1,1.5);
 \fill [white] (-0.3,-0.2) circle (1.2);
 \draw (-0.3,-0.2) circle (1.2) (-0.3,0.9)  node [text=black,above] {$A$};
 \draw (1.3,-0.2) circle (1.2) (1.3,0.9)  node [text=black,above] {$B$};
 \draw (-2.1,-1.7) rectangle (3.1,1.5) node [text=black,above] {$S$};
+\draw[fill=gray!15,rounded corners] (-0.4,-2.8) rectangle (1.4,-2.1);
+\node at (0.5,-2.41) {$\overline{A}$ or $A'$};
 \end{tikzpicture}
-\captionof{figure}{$\overline{A}$ or $A'$}
-  \label{fig:test1}
-  \label{fig:test1}
 \end{minipage}%
   \centering
 \begin{minipage}[t]{.33\textwidth}
   \centering
-\begin{tikzpicture}[fill=white, line width=0.5pt, font=\footnotesize]
+\begin{tikzpicture}[fill=white, line width=0.5pt]
 \scope
 \clip (-0.3,-0.2) circle (1.2);
 \fill[gray!15] (1.3,-0.2) circle (1.2);
@@ -593,21 +598,21 @@ Venn diagrams help illustrate these. Note that *capital letters* are commonly us
 \draw (-0.3,-0.2) circle (1.2) (-0.3,0.9)  node [text=black,above] {$A$};
 \draw (1.3,-0.2) circle (1.2) (1.3,0.9)  node [text=black,above] {$B$}
       (-2.1,-1.7) rectangle (3.1,1.5) node [text=black,above] {$S$};
+\draw[fill=gray!15,rounded corners] (-0.4,-2.8) rectangle (1.4,-2.1);
+\node at (0.5,-2.41) {$A\cap B$};
 \end{tikzpicture}
-\captionof{figure}{$A\cap B$}
-  \label{fig:test1}
 \end{minipage}%
   \centering
 \begin{minipage}[t]{.33\textwidth}
   \centering
-\begin{tikzpicture}[fill=white, line width=0.5pt, font=\footnotesize]
+\begin{tikzpicture}[fill=white, line width=0.5pt]
 \fill[gray!15] (-0.3,-0.2) circle (1.2) (-0.3,0.9);
 \draw[fill=gray!15] (1.3,-0.2) circle (1.2) (1.3,0.9)  node [text=black,above] {$B$};
 \draw (-0.3,-0.2) circle (1.2) (-0.3,0.9)  node [text=black,above] {$A$};
 \draw (-2.1,-1.7) rectangle (3.1,1.5) node [text=black,above] {$S$};
+\draw[fill=gray!15,rounded corners] (-0.4,-2.8) rectangle (1.4,-2.1);
+\node at (0.5,-2.41) {$A\cup B$};
 \end{tikzpicture}
-\captionof{figure}{$A\cup B$}
-  \label{fig:test1}
 \end{minipage}
 \end{figure}
 
@@ -647,7 +652,7 @@ $\text{P}(G\cap V)=\dfrac{2}{12}=\dfrac{1}{6}$
     \vfill\null
     \columnbreak
     \begin{center}
-    \begin{tikzpicture}[fill=white, line width=0.5pt, font=\footnotesize]
+    \begin{tikzpicture}[fill=white, line width=0.5pt]
         \draw (-0.7,0) circle (1.2) (-0.7,1.2)  node [text=black,above] {\text{A}};
         \draw (0.7,0) circle (1.2) (0.7,1.2)  node [text=black,above] {\text{B}}
               (-2.8,-1.5) rectangle (2.8,1.7) node [text=black,below right] {$S$};
@@ -667,7 +672,7 @@ $\text{P}(G\cap V)=\dfrac{2}{12}=\dfrac{1}{6}$
     \item The Venn diagram below, containing events $M$ and $N$, shows the \textit{probabilities} associated with each subset.
     \begin{multicols}{2}
     \begin{center}
-    \begin{tikzpicture}[fill=white, line width=0.5pt, font=\footnotesize]
+    \begin{tikzpicture}[fill=white, line width=0.5pt]
     \draw (-0.7,0) circle (1.2) (-0.7,1.2)  node [text=black,above] {$M$};
     \draw (0.7,0) circle (1.2) (0.7,1.2)  node [text=black,above] {$N$}
       (-2.5,-1.7) rectangle (2.5,1.7) node [text=black,below right] {$S$};
@@ -695,9 +700,9 @@ $\text{P}(G\cap V)=\dfrac{2}{12}=\dfrac{1}{6}$
     \item Copy the Venn diagram below, writing each of the integers from 1 to 16 inclusive in an appropriate position. Then, given that an integer from 1 to 16 inclusive is selected at random, state the value of:
     \begin{multicols}{2}
     \begin{center}
-        \begin{tikzpicture}[fill=white, line width=0.5pt, font=\footnotesize]
-        \draw (-0.9,0) circle (1.2) (-0.9,1.2)  node [text=black,above] {\text{prime}};
-        \draw (0.9,0) circle (1.2) (0.9,1.2)  node [text=black,above] {\text{odd}}
+        \begin{tikzpicture}[fill=white, line width=0.5pt]
+        \draw (-0.9,0) circle (1.2) (-0.9,1.5)  node [text=black] {\text{prime}};
+        \draw (0.9,0) circle (1.2) (0.9,1.5)  node [text=black] {\text{odd}}
         (-3.2,-1.6) rectangle (3.2,1.8) node [text=black,below right] {$S$};
     \end{tikzpicture}
     \end{center}
@@ -753,13 +758,13 @@ $\text{P}(G\cap V)=\dfrac{2}{12}=\dfrac{1}{6}$
 
 ## The Addition Rule for the Union
 
-If two sets $A$ and $B$ are such that *no elements lie in both* $A$ *and* $B$, then they are said to be **mutually exclusive**. This is sometimes visualised on a digram by two *disjoint* circles, that do not intersect. In terms of probability theory, this means that the probability of the event "$A$ *and* $B$ " is 0 (impossible).
+If two sets $A$ and $B$ are such that *no outcomes are common to both* $A$ *and* $B$, then they are said to be **mutually exclusive**. This is sometimes visualised on a diagram by two *disjoint* circles, that do not intersect. In terms of probability theory, this means that the probability of the event `$A$ *and* $B$' is 0 (impossible).
 
 \begin{figure}[H]
   \centering
 \begin{minipage}[c]{.5\textwidth}
   \centering
-\begin{tikzpicture}[line width=0.5pt, font=\footnotesize]
+\begin{tikzpicture}[line width=0.5pt]
 \draw (-0.8,-0.2) circle (1.2) (-0.8,0.9)  node [text=black,above] {$A$};
 \draw (1.8,-0.2) circle (1.2) (1.8,0.9)  node [text=black,above] {$B$};
 \draw (-2.6,-1.7) rectangle (3.6,1.5) node [text=black,below right] {$S$};
@@ -774,13 +779,13 @@ $\text{P}(A\cap B)=0$
 \end{minipage}
 \end{figure}
 
-If two sets $A$ and $B$ are such that *every element lies in at least one of* $A$ *or* $B$, then they are said to be **exhaustive**. This can be visualised on a Venn digram by crossing out the area of the sample space outside of the two circles. This means that the probability of the event "$A$ *or* $B$ " is 1 (certain).
+If two sets $A$ and $B$ are such that *every outcome in the sample space lies in at least one of* $A$ *or* $B$, then they are said to be **exhaustive**. This can be visualised on a Venn diagram by crossing out the area of the sample space outside of the two circles. This means that the probability of the event `$A$ *or* $B$' is 1 (certain).
 
 \begin{figure}[H]
   \centering
 \begin{minipage}[c]{.5\textwidth}
   \centering
-\begin{tikzpicture}[line width=0.5pt, font=\footnotesize]
+\begin{tikzpicture}[line width=0.5pt]
 \fill[pattern=north east lines] (-2.6,-1.7) rectangle (3.6,1.5);
 \fill[white] (-0.4,-0.2) circle (1.2);
 \fill[white] (1.4,-0.2) circle (1.2);
@@ -798,7 +803,7 @@ $\text{P}(A\cup B)=1$
 \end{minipage}
 \end{figure}
 
-As well as the two rules above which apply depending on whether $A$ and $B$ are know to be mutually exclusive, exhaustive, or both, the two formulae below apply for *all events* $A,B$:
+In addition to the special cases above (when events are mutually exclusive or exhaustive), the following rules apply to *all* events $A,B$:
 
 \begin{figure}[H]
   \centering
@@ -844,10 +849,10 @@ It should be noted that there are generally numerous different ways to approach 
     \item Calculate the value of $\text{P}(A\cap B)$ if $\text{P}(A)=0.591$, $\text{P}(B)=0.472$ and $\text{P}(A\cup B)=0.9$.
     \item If $\text{P}(\overline{X})=\dfrac{17}{80}$, $\text{P}(\overline{Y})=\dfrac{29}{40}$ and $\text{P}(X\cup Y)=\dfrac{19}{20}$, determine $\text{P}(X\cap Y)$.
     \item Given \textit{exhaustive} events $V$ and $W$ such that $\text{P}(V)=0.4$ and $\text{P}(\overline{W})=0.2$, find $\text{P}(V\cap W)$.
-    \item Given events $H$ and $J$ such that $\text{P}(H)=\dfrac{3}{8}$, \mbox{\text{$\text{P}(H\cup J)=\dfrac{7}{9}$}} and $\text{P}(H\cap J)=\dfrac{1}{2}$, find $\text{P}(\overline{J})$.
+    \item Given events $H$ and $J$ such that $\text{P}(H)=\dfrac{3}{8}$, \mbox{\text{$\text{P}(H\cup J)=\dfrac{7}{9}$}} and $\text{P}(H\cap J)=\dfrac{1}{4}$, find $\text{P}(\overline{J})$.
     \item If $X$ and $Y$ are mutually exclusive, $\text{P}(X)=0.3$ and $\text{P}(\overline{Y})=0.4$, calculate $\text{P}(X\cup Y)$.
     \item Events $A$ and $B$ are exhaustive. If $\text{P}(A)=\dfrac{1}{3}$ and $\text{P}(B\cap A)=\dfrac{1}{6}$, calculate $\text{P}(\overline{B})$.
-    \item In a fish and chip shop, the probability that a customer's order includes both fish and chips is 0.7, whilst the probability that an order will at least include at least one of fish or chips is 0.95. If the probability that an order contains chips is 0.8, calculate the probability that an order contains fish.
+    \item In a fish and chip shop, the probability that a customer's order includes both fish and chips is 0.7, whilst the probability that an order will include at least one of fish or chips is 0.95. If the probability that an order contains chips is 0.8, calculate the probability that an order contains fish.
     \item If, for exhaustive events $M$ and $N$, $\text{P}(M\cap N)=\dfrac{1}{4}$ and $\text{P}(M)=\text{P}(N)$, calculate $\text{P}(\overline{N})$.
     \item Given events $R$ and $Q$ such that $\text{P}(\overline{Q})=0.11$, $\text{P}(R\cap Q)=0.75$ and $\text{P}(R\cup Q)=0.95$, find $\text{P}(\overline{R})$.
     \item For each pair of events, determine whether they are exhaustive or not:
@@ -896,10 +901,10 @@ It should be noted that there are generally numerous different ways to approach 
         \item \text{P}(\text{History} $\cup$ \text{Higher})
     \end{enumerate}
     \item For the exhaustive events $E$ and $F$, such that $\text{P}(F\cap E)=0.7$ and $\text{P}(\overline{E})=0.2$, determine $\text{P}(F)$.
-    \item A parking ticket machine in a remote location in the Cairngorms National Park takes payment by contactless card reader, which connects to the banking network via a 3G phone signal. One some days, the connection fails and the machine cannot take payment. When the humidity is high, the connection will fail on 18\% of days. When the humidity is not high, the connection will fail on 7\% of days. Humidity is high in the area on 34\% of days. Determine the probability on a randomly selected day of the year that the parking machine can take payment.
+    \item A parking ticket machine in a remote location in the Cairngorms National Park takes payment by contactless card reader, which connects to the banking network via a 3G phone signal. On some days, the connection fails and the machine cannot take payment. When the humidity is high, the connection will fail on 18\% of days. When the humidity is not high, the connection will fail on 7\% of days. Humidity is high in the area on 34\% of days. Determine the probability on a randomly selected day of the year that the parking machine can take payment.
     \item A board game begins with an \textit{defending} player rolling a tetrahedral die with sides numbered from 1 to 4, and a \textit{attacking} player rolling a cubical die with sides numbered from 1 to 6. The player who obtains the highest number earns a point, with a tie leading to the dice being rolled again.
     \begin{enumerate}
-        \item Find the probability that the the first point is earned, by either player, without the dice having to be rolled again following a tie.
+        \item Find the probability that the first point is earned, by either player, without the dice having to be rolled again following a tie.
         \item Find the probability that the attacking player earns the first point.
     \end{enumerate}
     If the attacking player wins three points in a row, they are then awarded a \textit{bonus roll} in which they roll \textit{both} dice and gain a bonus point if the product of the numbers obtained is greater than 16.

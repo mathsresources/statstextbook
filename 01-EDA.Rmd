@@ -8,7 +8,6 @@ This process is called *exploratory data analysis*. It helps us understand the d
 
 \begin{center}
 \begin{tikzpicture}
-    \draw[white] (0,-0.9) rectangle (18,12);
 
 \draw[semithick,fill=black!10] (9,6) circle (1.5);
 \node[above] at (9,7.5) {Sample};
@@ -174,36 +173,30 @@ Data that is numerical is called *quantitative*, of which there are two types. *
 
 *Qualitative* data (also called **categorical**) is *non-numerical*, such as whether a squirrel is red or grey. 
 
-\vspace{-0.1cm}
-
 \begin{center}
 \begin{tikzpicture}
-\node[draw,fill=black!5,rectangle, text centered,rounded corners,minimum height=0.7cm] at (0,0) (data) {What type of data is it?};
-\node[draw,fill=black!5,rectangle, text centered,rounded corners,minimum height=0.7cm] at (-6,-2) (qualitative) {Qualitative};
-\path[draw,-stealth] (data) -- (0,-1) -- (-6,-1) -- (qualitative);
+\node[draw,fill=black!5,rectangle, text centered,rounded corners,minimum height=0.7cm] at (0,-0.4) (data) {What type of data is it?};
+\node[draw,fill=black!5,rectangle, text centered,rounded corners,minimum height=0.7cm] at (-5.5,-2) (qualitative) {Qualitative};
+\path[draw,-stealth] (data) -- (0,-1) -- (-5.5,-1) -- (qualitative);
 \node[draw,fill=black!5,rectangle, text centered,rounded corners,minimum height=0.7cm] at (6,-2) (quantitative) {Quantitative};
 \path[draw,-stealth] (data) -- (0,-1) -- (6,-1) -- (quantitative);
 \node[below] at (-3,-1) {data is non-numerical};
 \node[below] at (3,-1) {data is numerical};
-\node[draw,fill=black!15,rectangle, text centered,rounded corners,minimum height=0.7cm] at (-6,-4) (categorical) {\textbf{Categorical}};
+\node[draw,fill=black!15,rectangle, text centered,rounded corners,minimum height=0.7cm] at (-5.5,-4) (categorical) {\textbf{Categorical}};
 \node[draw,fill=black!15,rectangle, text centered,rounded corners,minimum height=0.7cm] at (10,-4) (discrete) {\textbf{Discrete}};
 \node[draw,fill=black!15,rectangle, text centered,rounded corners,minimum height=0.7cm] at (2,-4) (continuous) {\textbf{Continuous}};
 \path[draw,-stealth] (qualitative) -- (categorical);
 \path[draw,-stealth] (quantitative) -- (6,-3) -- (10,-3) -- (discrete);
 \path[draw,-stealth] (quantitative) -- (6,-3) -- (2,-3) -- (continuous);
-\node[right] at (-6,-3) {\textit{also called}};
+\node[right] at (-5.5,-3) {\textit{also called}};
 \node[above] at (8,-3) {countable values};
-\node[below] at (8,-3) {\textit{e.g. counting}};
-\node[below] at (4,-3) {\textit{e.g. measuring}};
+\node[below] at (8,-3) {\textit{e.g. a list of values}};
+\node[below] at (4,-3) {\textit{e.g. a range of values}};
 \node[above] at (4,-3) {measureable values};
 \end{tikzpicture}
 \end{center}
 
-\vspace{-0.2cm}
-
 For example, the table below shows data relating to some football players:
-
-\vspace{-0.3cm}
 
 \begin{center}
 \begin{tikzpicture}
@@ -219,45 +212,38 @@ For example, the table below shows data relating to some football players:
 \node at (0.8,10) {Defender};
 \node at (0.8,9.5) {Forward};
 \node at (0.8,9) {Forward};
-\node at (0.8,8.5) {Midfielder};
 
 \node at (3.6,10.5) {Blackburn Rovers};
 \node at (3.6,10) {Sheffield United};
 \node at (3.6,9.5) {St Mirren};
 \node at (3.6,9) {Celtic};
-\node at (3.6,8.5) {Rangers};
 
 \node at (6.2,10.5) {1.78};
 \node at (6.2,10) {1.93};
 \node at (6.2,9.5) {1.75};
 \node at (6.2,9) {1.78};
-\node at (6.2,8.5) {1.75};
 
 \node at (8.6,10.5) {11};
 \node at (8.6,10) {3};
 \node at (8.6,9.5) {23};
 \node at (8.6,9) {19};
-\node at (8.6,8.5) {15};
 
 \node at (10.6,10.5) {14};
 \node at (10.6,10) {5};
 \node at (10.6,9.5) {7};
 \node at (10.6,9) {12};
-\node at (10.6,8.5) {14};
 
 \draw[decoration={brace,mirror,raise=2pt},decorate]
-  (0,8.2) -- node[below=5pt] {\textbf{Categorical}} (4.7,8.2);
+  (0,8.7) -- node[below=5pt] {\textbf{Categorical}} (4.7,8.7);
 
 \draw[decoration={brace,mirror,raise=2pt},decorate]
-  (5.3,8.2) -- node[below=5pt] {\textbf{Continuous}} (7.2,8.2);
+  (5.3,8.7) -- node[below=5pt] {\textbf{Continuous}} (7.2,8.7);
 
 \draw[decoration={brace,mirror,raise=2pt},decorate]
-  (8.2,8.2) -- node[below=5pt] {\textbf{Discrete}} (11,8.2);
+  (8.2,8.7) -- node[below=5pt] {\textbf{Discrete}} (11,8.7);
 
 \end{tikzpicture}
 \end{center}
-
-\vspace{-1cm}
 
 []{#ex11q}
 
@@ -535,8 +521,6 @@ The reason for discussing sampling at this point is to caution against making *d
 []{#ex12q}
 
 #### [Exercise 1.2](#ex12a) {-}
-
-\vspace{-0.2cm}
 
 \textit{For each, state using words and notation which sample statistic or population parameter has been obtained.}\newline \textit{For example: ``Sample mean (}$\bar{x}$\textit{).'' or ``Population standard deviation (}$\sigma$\textit{).''}
 
@@ -1513,9 +1497,9 @@ Summary statistics alone are not sufficient to describe the full complexity of t
 \end{minipage}
 \end{figure}
 
-Note that the histograms above were made by selecting some of the most *well-behaved* random samples. Even when data is drawn from a particular distribution, histograms of this sample data may not appear perfectly shaped, especially for smaller sample sizes. Graphs of sample data do not **show** what the shape, location or spread of distribution of the underlying population is; instead, they merely *suggest* what may or may not be plausible. Any overly definitive conclusion from a visual representation of sample data should be avoided.
+Note that the histograms above were made by selecting some of the most *well-behaved* random samples. Even when data is drawn from a particular distribution, histograms of this sample data may not appear perfectly shaped, especially for smaller sample sizes. Graphs of sample data do not **show** what the shape, location or spread of distribution of the underlying population is; instead, they merely suggest what may or may not be plausible. Any overly definitive conclusion from a visual representation of sample data should be avoided.
 
-\newpage
+\pagebreak
 
 As well as considering whether the **underlying population distribution** of data appears to be *normal*, *skewed*, *uniform* or *bimodal*, the appropriateness of some statistical inference techniques will depend on whether the distribution is *symmetrical*, or whether two sets of data follow the *same distribution*, with matching shapes and spread. Whilst the following example references techniques that will be introduced later in the course, it is intended to give an idea of the importance of studying distributions in selecting appropriate methods for statistical inference.
 
@@ -1529,7 +1513,7 @@ As well as considering whether the **underlying population distribution** of dat
 
 \begin{center}
 \begin{tikzpicture}
-\node[text width = 6cm,align=center] at (3,2.7) {\textbf{Figure 1:} Concentration\\of chemical in river sites};
+\node[text width = 6cm,align=center] at (10,1) {\textbf{Figure 1:} Concentration\\of chemical in river sites};
 \draw (-0.5,0) -- (7,0);
 \draw (-0.5,0) -- (-0.5,2);
 \foreach \x in {-0.5,1,...,7}{
@@ -1718,7 +1702,15 @@ As well as considering whether the **underlying population distribution** of dat
 
 ## Comparing Distributions
 
-When comparing two or more samples of data, a good starting point is to create suitable plots and obtain summary statistics. Differences and similarities should be noted, considering the *location*, *spread* and *shape* of the distributions of data.
+When comparing two or more samples of data, a good starting point is to create suitable plots and obtain summary statistics. Differences and similarities should be noted, considering:
+
+\begin{itemize}
+    \item \textbf{Location} (i.e. means, medians, or clear visual differences in locations)
+    \item \textbf{Spread} (i.e. standard deviations, interquartile ranges, or clear visual differences in spread)
+    \item \textbf{Shapes} (i.e. symmetrical, skewed, bimodal, bell-shaped curve)
+\end{itemize}
+
+At this *exploratory* stage, it is again important to avoid making and *conclusions* relating to the populations from which the sample data was drawn.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=NavyBlue]
 \textbf{Problem:} Within the sport of professional cycling, it is common for riders to specialise in certain types of cycling. \textit{Sprinters} aim to win races that finish on flat roads at high speed, whilst \textit{climbers} aim to win races with an uphill finish. A researcher studying the characteristics of elite-level cyclists randomly selects samples of 30 \textit{sprinters} and 30 \textit{climbers}, recording the heights of each. The results are shown summarised in \textbf{Table 1}.
@@ -1868,8 +1860,6 @@ The larger interquartile range suggests that the population heights of sprinters
 \end{enumerate}
 
 \end{tcolorbox}
-
-Note that this data is based on the heights of *samples* sprinters and climbers. Without the use of *statistical inference* techniques covered later in the course, it is only possible to *conjecture* rather than ever being able to make any definitive claims about the heights of the full *populations* of sprinters and climbers.
 
 \pagebreak
 

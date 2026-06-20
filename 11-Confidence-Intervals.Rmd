@@ -146,8 +146,7 @@ The width of the interval is determined by the standard error and the confidence
       $n=25$ & $\Sigma x=1254$ & $\Sigma x^2=63186$\\ 
     \end{tabular}
     \end{center}
-    It is assumed that the sample standard deviation is a reasonable estimate for the population standard deviation.\newline
-    Obtain a 90\% confidence interval for the mean mass of the chicken eggs laid by the chickens at the farm.
+    It is assumed that the sample standard deviation is a reasonable estimate for the population standard deviation. Obtain a 90\% confidence interval for the mean mass of the chicken eggs laid by the chickens at the farm.
     \item A restaurant manager is concerned about the time a table has to wait to have a drinks order taken once they have been seated. On 30 random occasions throughout a week, the time taken is recorded, in minutes. The manager puts the data into some statistical software and obtains the following summary data:\vspace{0.5cm}\\
     \texttt{x -> drinks order wait data}\\
     \texttt{n = 30}\qquad \texttt{sum of x = 171}\qquad \texttt{x bar = 5.7}\qquad \texttt{SD of x = 0.8}\vspace{0.5cm}\\
@@ -179,11 +178,11 @@ Consider the following hypotheses, where $\mu_0$ is a possible value for a popul
 The calculations involved in constructing a *two-tailed* $z$-confidence interval for the population mean correspond with those for a *two-tailed* $z$-test for the population mean. Such a confidence interval could therefore allow inferences to be made about the population mean.
 
 \begin{centering}
-\tcbset{width=17cm}
+\tcbset{width=16cm}
 \begin{tcolorbox}[adjusted title=Inference using confidence intervals:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 If $\mu_0$ is \textbf{outwith a calculated 95\% confidence interval} then there is evidence at the 5\% significance level to suggest that $\mu \ne \mu_0$.\\
 \vspace{0.5cm}
-If $\mu_0$ is \textbf{within a calculated 95\% confidence interval} then there is insufficient evidence at the 5\% significance level to suggest $\mu \ne \mu_0$.\\
+If $\mu_0$ is \textbf{within a calculated 95\% confidence interval} then there is insufficient evidence at the 5\% significance level to suggest that $\mu \ne \mu_0$.\\
 \end{tcolorbox}
 \end{centering}
 
@@ -253,7 +252,7 @@ Since 280 lies outwith the confidence interval, this provides evidence to sugges
 
 \end{tcolorbox}
 
-Since any confidence intervals encountered in this course will be two-tailed, it is only appropriate to comment on *two-tailed* conclusions (i.e. ``difference...'') when using language such as *`significance'* and *`evidence'*. Making one-tailed *conclusions* should be avoided as much as possible.
+Since any confidence intervals encountered in this course will be two-tailed, it is only appropriate to comment on *two-tailed* conclusions (i.e. 'difference...') when using language such as 'significance' and 'evidence'. Making *firm one-tailed conclusions* should be avoided.
 
 \pagebreak
 
@@ -262,14 +261,14 @@ Since any confidence intervals encountered in this course will be two-tailed, it
 #### [Exercise 11.2](#ex112a) {-}
 
 \begin{enumerate}[itemsep=16pt]
-    \item A packing process packages ground coffee into bags. The mass of each bag is normally distributed with standard deviation 15g. A random sample of 25 bags is taken and the sample mean is found to be 505g. Obtain a 95\% confidence interval for the mean mass of ground coffee in a bag, and comment on the claim that the mean mass being dispensed is not the 500g that it is supposed to be.
+    \item A packing process packages coffee beans into bags. The mass of each bag is normally distributed with standard deviation 15g. A random sample of 25 bags is taken and the sample mean is found to be 493g. Obtain a 95\% confidence interval for the mean mass of coffee beans in a bag, and comment on the claim that the mean mass being dispensed is not the 500g that it is supposed to be.
     \item The lengths of metal bars produced by a particular machine are normally distributed with standard deviation 12cm. The machine is serviced, after which a random sample of 80 bars gives a mean length of 423cm.
     \begin{enumerate}
         \item Obtain a 99\% confidence interval for the mean length of the bars now produced, assuming the standard deviation remains the same.
         \item Comment on the concern that that the mean bar length produced by the machine is no longer the 420cm that it was prior to it being serviced.
     \end{enumerate}
-    \item A large school is studying the amount of money its teachers spend on photocopying as it prepares its budget for the next academic year. A random sample of 23 teachers gives a mean spend of £10.90 per year and a standard deviation of £2.30. Obtain a 90\% confidence interval for the mean spend per teacher each year, and comment on the suggestion that the figure of £12 used previously is still accurate.
-    \item A sports statistician is analysing the number of goals scored in games of football. A random sample of 35 games gives a sample mean of 2.7 goals and a sample standard deviation of 0.6 goals. Obtain a 99\% confidence interval for the mean number of goals scored in a game, and comment on their claim that the number of goals scored has changed from the historically observed mean of 2.5 goals per game.
+    \item A large school is studying the amount of money its teachers spend on photocopying as it prepares its budget for the next academic year. A random sample of 23 teachers gives a mean spend of £10.90 per year and a standard deviation of £2.30. Assuming that the sample standard deviation is a reasonable estimate of the population standard deviation, construct a 90\% $z$-confidence interval for the mean spend per teacher each year, and comment on the suggestion that the figure of £12 used previously is still accurate.
+    \item A sports statistician is analysing the number of goals scored in games of football. A random sample of 35 games gives a sample mean of 2.7 goals and a sample standard deviation of 0.6 goals. Stating an assumption required, obtain a 99\% $z$-confidence interval for the mean number of goals scored in a game, and comment on their claim that the number of goals scored has changed from the historically observed mean of 2.5 goals per game.
     \item Extensive records of the heights of mature oak trees throughout the 1970s and 1980s in some woodland show that they are normally distributed with a mean of 21 metres and a standard deviation of 1.5 metres. Recently, a random sample of 30 mature oak trees in the woodland trees yielded a sample mean of 20.4 metres.
     \begin{enumerate}
         \item Stating one assumption required, obtain a 90\% confidence interval for the mean height of mature oak trees in the woodland now.
@@ -435,7 +434,11 @@ Since 9.7 kWh is within the confidence interval, there is insufficient evidence 
 
 ## A \textit{z}-Confidence Interval for the Population Proportion
 
-In Chapter 10 a *normal approximation* to the distribution of the sample proportion, $\hat{P}$, was introduced, with a standard error of $\sqrt{\frac{pq}{n}}$, where $p$ is the null-hypothesised *population proportion*. When calculating a $z$-confidence interval for the population proportion, it is necessary to instead use the \textbf{sample proportion}, $\hat{p}$, to \textit{estimate} the standard error as $\sqrt{\frac{\hat{p}\hat{q}}{n}}$.
+The sampling distribution of the sample proportion, $\hat{P}$, has the standard error: $\sqrt{\dfrac{pq}{n}}$.
+
+When calculating a $z$-confidence interval for the population proportion, it is necessary to instead use the \textit{sample proportion}, $\hat{p}$, as an \textit{estimate} for $p$, leading to an **estimated standard error**.
+
+$\text{Estimated standard error of the sample proportion: }\quad\sqrt{\dfrac{\hat{p}\hat{q}}{n}}$.
 
 \begin{centering}
 \tcbset{width=10cm}
@@ -444,7 +447,7 @@ A $100(1-\alpha)\%$ CI for $p$ is: $\hat{p}\pm z_{1-\alpha/2} \times \sqrt{\cfra
 \end{tcolorbox}
 \end{centering}
 
-This is only an *approximate confidence interval* because the sampling distribution of $\hat{p}$ is only *approximately normal* (and only for sufficiently large samples).
+This is only an *approximate confidence interval*, both because the sampling distribution of $\hat{p}$ is only *approximately normal* (and only for sufficiently large samples), and since the standard error is also an estimate.
 
 \begin{centering}
 \tcbset{width=15cm}
@@ -562,7 +565,7 @@ Given the potential for confusion between the population proportion $p$ and the 
     \item A random sample of 50 residents of a town are asked whether or not they are aware that a proposal for a large retail park on the outskirts of the town is currently being considered by the local council. 14 of the 50 residents were aware of the proposals, whilst the rest were not. Obtain an approximate 99\% confidence interval for the proportion of the town's residents that are aware of the proposals.
     \item The volume of wine served when a restaurant's customer orders a small glass of wine is normally distributed with a standard deviation of 1.7ml. A random sample of 32 small glasses of wine served by the restaurant gives a mean of 126.3ml per glass.
     \begin{enumerate}
-        \item Obtain a 90\% $t$-confidence interval for the mean volume of wine served when a small glass of wine is ordered by a customer in the restaurant, stating an assumption required.
+        \item Obtain a 90\% confidence interval for the mean volume of wine served when a small glass of wine is ordered by a customer in the restaurant, stating an assumption required.
         \item A repeat customer claims that the mean volume served is not the correct measure of 125ml, as stated on the restaurant's wine list. Comment on this claim with reference to the confidence interval.
     \end{enumerate}
     \item A pharmaceutical company has developed a drug designed to reduce the recovery time needed for a specific type of operation. Following trials involving treating 25 randomly selected patients admitted to hospital for the operation with the drug, it is found that the mean recovery time for these patients is 11.4 days. Computer output summarising this data, measured in days, is as follows:\vspace{0.5cm}\\
@@ -574,7 +577,7 @@ Given the potential for confusion between the population proportion $p$ and the 
     \end{enumerate}
     The sample standard deviation was considered a reliable estimator for the population standard deviation of recovery time, since the sample was sufficiently large.
     \begin{enumerate}
-        \item Determine the value of the sample standard deviation used to calculate the confidence interval.
+        \item Determine the value of the standard deviation used to calculate the confidence interval.
     \end{enumerate}
     \item A driving instructor posts an advert online stating nine out of ten of their students pass their driving test first time. For a random sample of students taught by the instructor, the table below shows how many of them passed their driving test first time, and how many did not pass the first time. 
     \begin{center}

@@ -5058,9 +5058,10 @@ The new model has summary statistics:
 \pagebreak
 
 ## Confidence Intervals and Prediction Intervals
-One purpose of adopting a regression approach to examine the relationship between two variables is the wish to make predictions related to the response variable ($Y$) when given a particular value for the predictor variable ($x$). 
 
-The least squares regression line equation of $\hat{Y}_i=a+bx_i$ gives an *estimate* for the **mean** value of the response variable for any given $x_i$, whilst the *true* mean response value for a given $x_i$, which is denoted $\text{E}(Y_i\,|\,x_i)$, is unknown. 
+One purpose of adopting a regression approach to examine the relationship between two variables is the wish to make predictions related to the response variable ($Y$) for a particular value for the predictor variable ($x$). 
+
+The least squares regression line equation of $\hat{Y}_i=a+bx_i$ gives an *estimate* for the **mean** value of the response variable for any given $x_i$, whilst the *true* mean response value for a given $x_i$, denoted $\text{E}(Y_i\,|\,x_i)$, is unknown. 
 
 It can be desirable to obtain a **confidence interval** for $\text{E}(Y_i\,|\,x_i)$.
 
@@ -5196,9 +5197,7 @@ If the errors, $\varepsilon_i$, are identically and independently distributed as
 A $100(1-\alpha)\%$ \text{CI} for $\text{E}(Y_i\,|\,x_i)$ is given by: $\hat{Y}_i\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}$
 \end{tcolorbox}
 
-This interval estimates the mean value of $Y$ for all observations with predictor value $x_i$, not the value for a single observation.
-
-With all confidence intervals, the level of confidence relates to the success rate of the *procedure used to generate the interval*, rather than referring to the probability of a calculated interval containing the mean response value $\text{E}(Y_i\,|\,x_i)$.
+This interval estimates the mean value of $Y$ for all observations with predictor value $x_i$, not the value for a single observation. As with all confidence intervals, the level of confidence relates to the success rate of the *procedure used to generate the interval*, rather than referring to the probability of a calculated interval containing the mean response value $\text{E}(Y_i\,|\,x_i)$.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 \textbf{Problem:} 

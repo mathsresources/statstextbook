@@ -43,9 +43,11 @@ From both the table and the Venn diagram, it can be seen that, of the ten pupils
 
 $$\text{P}(\text{Art})=\dfrac{5}{10}=\dfrac{1}{2}$$
 
-Now suppose a pupil is chosen at random and, before it is known whether or not they are taking Art, they reveal that they are taking Biology. The probability that the pupil is also taking Art is no longer $\frac{1}{2}$, since only three of the seven pupils taking Biology are taking Art. The probability now being sought is the probability that they are taking Art *given that they are taking Biology*. This is called a *conditional probability*, and can be notated as:
+Now suppose a pupil is chosen at random and they reveal that they are taking Biology. The probability that the pupil is also taking Art is no longer $\frac{1}{2}$, since only three of the seven pupils taking Biology are taking Art. The probability now being sought is the probability that they are taking Art *given that they are taking Biology*. This is called a *conditional probability*, and can be notated as:
 
 $$\text{P}(\text{Art | Biology})=\dfrac{3}{7}$$
+
+$$\textit{``The probability of Art given Biology...''}$$
 
 Conditional probability is fundamental to many of the statistical analysis techniques that will be introduced.
 
@@ -83,10 +85,12 @@ $\text{P}(\text{fully recovered }|\text{ placebo})=\dfrac{18}{30}=\dfrac{3}{5}$
     \begin{multicols}{2}
     \vfill
     \begin{center}
-    \begin{tikzpicture}[fill=white, line width=0.5pt, font=\footnotesize]
-    \draw (-0.5,0) circle (1.1) (-0.5,1.05)  node [text=black,above] {\text{X}};
-    \draw (0.5,0) circle (1.1) (0.5,1.05)  node [text=black,above] {\text{Y}}
-      (-2.3,-1.2) rectangle (2.3,1.45) node [text=black,below right] {$S$};
+    \begin{tikzpicture}[fill=white, line width=0.5pt]
+    \draw (-0.5,0) circle (1.1);
+    \draw (0.5,0) circle (1.1);
+    \draw (-2.3,-1.2) rectangle (2.3,1.45) node [text=black,below right] {$S$};
+    \node[above] at (-0.5,1) {$X$};
+    \node[above] at (0.5,1) {$Y$};
     \draw[fill=black] (-1.9,0.4) circle (0.08);
     \draw[fill=black] (-1.7,-0.8) circle (0.08);
     \draw[fill=black] (0,0.4) circle (0.08);
@@ -159,11 +163,13 @@ $\text{P}(\text{fully recovered }|\text{ placebo})=\dfrac{18}{30}=\dfrac{3}{5}$
     \begin{multicols}{2}
     \vfill
     \begin{center}
-    \begin{tikzpicture}[fill=white, line width=0.5pt, font=\footnotesize]
-    \draw (-0.8,0) circle (1.2) (-0.8,1.2)  node [text=black,below] {\text{A}};
-    \draw (0.8,0) circle (1.2) (0.8,1.2)  node [text=black,below] {\text{B}};
-    \draw (0,-1.3) circle (1.2) (0,-2.5)  node [text=black,above] {\text{C}}
-      (-3,-2.6) rectangle (3,1.35) node [text=black,below right] {$S$};
+    \begin{tikzpicture}[fill=white, line width=0.5pt]
+    \draw (-0.8,0) circle (1.2);
+    \draw (0.8,0) circle (1.2);
+    \node[below]  at (0.8,1.3) {$B$};
+    \node[below]  at (-0.8,1.3) {$A$};
+    \draw (0,-1.3) circle (1.2) (0,-2.5)  node [text=black,above] {$C$};
+    \draw (-3,-2.6) rectangle (3,1.35) node [text=black,below right] {$S$};
     \draw[fill=black] (-2.3,-2) circle (0.08);
     \draw[fill=black] (-2.1,0.5) circle (0.08);
     \draw[fill=black] (-1.6,-0.5) circle (0.08);
@@ -213,7 +219,7 @@ $\text{P}(\text{fully recovered }|\text{ placebo})=\dfrac{18}{30}=\dfrac{3}{5}$
 
 ## The Conditional Probability Formula
 
-Where a conditional probability cannot be intuitively stated, the formula for conditional probability may be used:
+Where a conditional probability cannot be intuitively stated, the formula for conditional probability may be used, shown below. It can be obtained by rearranging the *multiplication rule*.
 
 \begin{centering}
 \tcbset{width=9cm}
@@ -222,7 +228,7 @@ $\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(A \cap B)$}}}{\text{\normalsi
 \end{tcolorbox}
 \end{centering}
 
-It may be helpful to note that $\text{P}(\overline{A}|B)=1-\text{P}(A|B)$.
+Similarly, the complement rule applies under conditioning: $\text{P}(\overline{A}|B)=1-\text{P}(A|B)$.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given events $V$ and $W$ such that $\text{P}(V)=0.7236$ and $\text{P}(V\cap W)=0.1046$, find $\text{P}(W | V)$. 
@@ -247,7 +253,7 @@ $\text{P}(W | V) = \dfrac{\text{P}(W\cap V)}{\text{P}(V)}=\dfrac{0.1046}{0.7236}
         \begin{enumerate}
             \begin{multicols}{4}
             \item $\text{P}(\overline{A}|B)$
-            \item $\text{P}(\text{}\overline{\text{red}\text{ }}|\text{ blue})$
+            \item $\text{P}(\overline{\text{red}\text{ }}|\text{ blue})$
             \item $\text{P}(\overline{X}|Y)$
             \item $\text{P}(\overline{M}|N)$
             \end{multicols}
@@ -264,24 +270,23 @@ $\text{P}(W | V) = \dfrac{\text{P}(W\cap V)}{\text{P}(V)}=\dfrac{0.1046}{0.7236}
 
 ## Independent Events
 
-The probability of tossing a coin and it landing tails is $\frac{1}{2}$. The probability of it landing tails *given that it is a weekday*, notated as $\text{P}(\text{tails }|\text{ weekday})$, is *still* $\frac{1}{2}$. Since it being a weekday or not makes no different to the probability of a coin showing tails, the two events are said to be *independent*. 
-
+The probability of tossing a coin and it landing tails is $\frac{1}{2}$. The probability of it landing tails *given that it is a weekday*, notated as $\text{P}(\text{tails }|\text{ weekday})$, is *still* $\frac{1}{2}$. Since knowing whether it is a weekday does not change the probability of the coin showing tails, the two events are said to be *independent*.
 \vspace{-0.1cm}
 
 \begin{center}
-\begin{tcolorbox}[title={$A$} and {$B$} are Independent if:, halign = center,halign title = center,colback=red!5,colframe=red!70!black,width=8.5cm]
+\begin{tcolorbox}[title={$A$} and {$B$} are independent if:, halign = center,halign title = center,colback=red!5,colframe=red!70!black,width=8.5cm]
 $\text{P}(A | B)= \text{P}(A)$
 \end{tcolorbox}
 \end{center}
 
 \vspace{-0.1cm}
 
-The probability a randomly selected card from a standard pack of playing cards being a Diamond is $\frac{1}{4}$. The probability the card is a Diamond *given that we discover the card picked is red*, notated as $\text{P}(\text{Diamond }|\text{ red})$, is $\frac{1}{2}$. Since knowing the card picked is red changes the probability of it being a Diamond, the two events are said to be *not independent*.
+The probability a randomly selected card from a standard pack of playing cards being a Diamond is $\frac{1}{4}$. The probability the card is a Diamond *given that we discover the card picked is red*, notated as $\text{P}(\text{Diamond }|\text{ red})$, is $\frac{1}{2}$. Since knowing that the card is red changes the probability of it being a Diamond, the events are *not independent*.
 
 \vspace{-0.1cm}
 
 \begin{center}
-\begin{tcolorbox}[title={$A$} and {$B$} are not Independent if:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8.5cm]
+\begin{tcolorbox}[title={$A$} and {$B$} are not independent if:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8.5cm]
 $\text{P}(A | B)\ne \text{P}(A)$
 \end{tcolorbox}
 \end{center}
@@ -438,7 +443,7 @@ $\text{P}(\text{mutation}\cap \text{yellow}) = \text{P}(\text{mutation}) \times 
     \end{enumerate}
     \item Independent events $X$ and $Y$ are such that $\text{P}(X)=0.4$ and $\text{P}(Y)=0.8$. Determine the value of $\text{P}(X\cup Y)$.
     \item A large box in a maths classroom contains a number of calculators, with 85\% of them made by Arizona Instruments and the rest made by Calculo. 70\% of the calculators overall are working, whilst 80\% of those made by Calculo are working. Determine the probability that a calculator selected at random from the box is a working Calculo calculator.
-    \item As part of an analysis of a large company's vulnerability to a cyber attack, it is found that 16\% of company-issued employee laptops have out-of-date antivirus protection, whilst 24\% are only protected by a weak password. Of those with out-of-date antivirus protection, 60\% are only protected by a weak password. If a laptop is selected at random, determine the probability that it both has out-of-data antivirus protection and is only protected by a weak password.
+    \item As part of an analysis of a large company's vulnerability to a cyber attack, it is found that 16\% of company-issued employee laptops have out-of-date antivirus protection, whilst 24\% are only protected by a weak password. Of those with out-of-date antivirus protection, 60\% are only protected by a weak password. If a laptop is selected at random, determine the probability that it both has out-of-date antivirus protection and is only protected by a weak password.
     \item Given:
     \begin{itemize}
         \item $\text{P}(\overline{\text{pink}})=0.5$
@@ -452,7 +457,7 @@ $\text{P}(\text{mutation}\cap \text{yellow}) = \text{P}(\text{mutation}) \times 
 
 ## Bayes Theorem and Reversing the Condition
 
-In 1763 the Reverend Thomas Bayes, also a statistician, published *"An Essay towards solving a Problem in the Doctrine of Chances"*. In it, he stated a formula that has come to be known as *Bayes' Theorem*, which can be applied in a particular, specialised way to enable existing knowledge to be updated as new information is collected. In turn, this has resulted in an approach towards statistcal inference that has been growing since the mid-20th century called *Bayesian statistics*, substantially made more feasible by modern computing power.
+In 1763 the Reverend Thomas Bayes, also a statistician, published *"An Essay towards solving a Problem in the Doctrine of Chances"*. In it, he stated a formula that has come to be known as *Bayes' Theorem*, which can be applied in a particular, specialised way to enable existing knowledge to be updated as new information is collected. In turn, this has resulted in an approach towards statistical inference that has been growing since the mid-20th century called *Bayesian statistics*, substantially made more feasible by modern computing power.
 
 Whilst knowledge of Bayes' Theorem is required in the Advanced Higher Statistics course, Bayesian *statistics* is *not* part of this course, and so will not be covered here. If you would like to find out more about Bayesian statistics, and whether it may be relevant to you in the future, it is recommended that you discuss this with your teacher at a later point in the course. University modules introducing Bayesian statistics are typically available as part of an undergraduate degree in Mathematics or Statistics.
 
@@ -480,7 +485,7 @@ $\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(B|A)\times \text{P}(A)$}}}{\t
 \end{tcolorbox}
 \end{centering}
 
-Bayes' Theorem provides a the link between a conditional probability and its *reverse*. Using it to find a conditional probability given its reverse is sometimes referred to as *reversing the condition*. 
+Bayes' Theorem provides a link between a conditional probability and its *reverse*. Using it to find a conditional probability given its reverse is sometimes referred to as *reversing the condition*. 
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given events $V$ and $W$ such that $\text{P}(V|W)=0.3$, $\text{P}(W)=0.8$ and $\text{P}(\overline{V})=0.1$, find $\text{P}(W|V)$.
@@ -529,7 +534,7 @@ $\text{P}(\text{garage }|\text{ garden}) = \dfrac{\text{P}(\text{garden }|\text{
     \end{enumerate}
     \vspace{-0.3cm}
     \item A bag contains numbered counters of various colours, a quarter of which are red. Three-eighths of the counters are numbered 1, of which two-fifths are red. If a counter is selected at random and it is red, determine the probability that it is numbered 1.
-    \item Research has shown that 1.7\% of people possess a specific gene. A prototype test for the presence of the gene in a person is being developed, and it shows as \textit{positive} for the gene for 7\% of everyone people tested. It is later established that the probability a test shows as positive for a person known to possess the gene is 0.9. If a person is selected at random to take the test, and it shows positive, determine the probability that they actually do possess the gene.
+    \item Research has shown that 1.7\% of people possess a specific gene. A prototype test for the presence of the gene in a person is being developed, and it shows as \textit{positive} for the gene for 7\% of all people tested. It is later established that the probability a test shows as positive for a person known to possess the gene is 0.9. If a person is selected at random to take the test, and it shows positive, determine the probability that they actually do possess the gene.
     \item Given that $\text{P}(M)=\frac{2}{3}$, $\text{P}(N)=\frac{3}{4}$ and $\text{P}(N|M)=\frac{3}{5}$:
     \begin{enumerate}
         \item Calculate $\text{P}(M|N)$.
@@ -541,7 +546,7 @@ $\text{P}(\text{garage }|\text{ garden}) = \dfrac{\text{P}(\text{garden }|\text{
         \item Cars account for 86\% of all failed tests.
     \end{itemize}
     Determine the proportion of cars that \textit{pass} their first MOT.
-    \item A region has access to a local radio stations, \textit{Pacific 525}, as well as a number of national stations. When a resident of the region directs their car radio to automatically find a station, the probability that it will connect to \textit{Pacific 525} is 0.64, otherwise it will instead connect to a national station. 72\% of the time, when their car automatically connects there will be music playing. When their car radio connects to \textit{Pacific 525} the probability music will be playing is 0.84. If the car radio connects to a station and music is playing, determine the probability that the station is \textit{Pacific 525}.
+    \item A region has access to local radio stations, \textit{Pacific 525}, as well as a number of national stations. When a resident of the region directs their car radio to automatically find a station, the probability that it will connect to \textit{Pacific 525} is 0.64, otherwise it will instead connect to a national station. 72\% of the time, when their car automatically connects there will be music playing. When their car radio connects to \textit{Pacific 525} the probability music will be playing is 0.84. If the car radio connects to a station and music is playing, determine the probability that the station is \textit{Pacific 525}.
     \item Events $E$ and $F$ are such that:
     \begin{itemize}
         \item $\text{P}(\overline{F}|E)=0.23$.
@@ -555,13 +560,13 @@ $\text{P}(\text{garage }|\text{ garden}) = \dfrac{\text{P}(\text{garden }|\text{
 
 ## Total Probability and Tree Diagrams
 
-The *law of total probability* for $X$ conditional on $n$ mutually exclusive, exhaustive events $Y_i$ is:
+The *law of total probability* for $X$ is:
 
-$$\text{P}(X)=\sum_{i=1}^{n}\text{P}(Y_i)\times \text{P}(X|Y_i)$$
+$$\text{P}(X)=\sum_{i=1}^{n}\text{P}(Y_i)\times \text{P}(X|Y_i)\qquad\text{(provided }Y_i\text{ are mutually exclusive and exhaustive)}$$
 
-It may help to recognise the right hand side of the equation as containing the *multiplication rule for the intersection*: the total probability of $X$ is obtained by adding together the probabilities of all (disjoint) intersections in which $X$ occurs. 
+It may help to recognise the right hand side of the equation as containing the *multiplication rule for the intersection*: the total probability of $X$ is obtained by adding together the probabilities of all (disjoint) intersections in which $X$ occurs. In other words, the total probability of an event can be found by considering all the different ways in which it can occur, and adding their probabilities.  
 
-The tree diagram below shows the appropriate notation for each stage, in which first event $A$ and then event $B$ are considered:
+The tree diagram below shows the appropriate notation for each stage. The first stage represents event A, and the second stage represents event B.
 
 \begin{figure}[H]
   \centering
@@ -643,14 +648,14 @@ The advantage of the use of tree diagrams, for questions where they are suitable
         node[bag] {$\overline{\text{late}}$}        
             child {
                 node[end, label=right:
-                    {tie\hspace{1.2cm}$\text{P}(\overline{\text{late}}\cap\overline{\text{tie}})=0.08$\hspace{0.5cm}\text{\large{$\ast$}}}] {}
+                    {$\overline{\text{tie}}$\hspace{1.2cm}$\text{P}(\overline{\text{late}}\cap\overline{\text{tie}})=0.08$\hspace{0.5cm}\text{\large{$\ast$}}}] {}
                 edge from parent
                 node[above] {}
                 node[below]  {$0.1$}
             }
             child {
                 node[end, label=right:
-                    {$\overline{\text{tie}}$}] {}
+                    {tie}] {}
                 edge from parent
                 node[above] {$0.9$}
                 node[below]  {}
@@ -710,14 +715,14 @@ The advantage of the use of tree diagrams, for questions where they are suitable
     \end{itemize}
     Calculate the probability that a tree randomly selected for observation survives.
     \item The star striker for a football team has a probability of 0.7 of scoring in any given game. When they do, the probability that the team goes on to win is 0.8, whilst when they don't the probability of a win drops to 0.45. Calculate the probability that the team win a randomly chosen game.
-    \item When Betty's hears a song on the radio:
+    \item When Betty hears a song on the radio:
     \begin{itemize}
         \item The probability that it is a song she knows is 0.8.
         \item When she knows it, the probability that it is a song she likes is 0.6.
         \item When she doesn't know it, the probability she will like it is 0.3.
     \end{itemize}
     Determine the proportion of songs Betty hears on the radio that she likes.
-    \item An obstacle course consists of three parts, with each part needed to be completed successfully for a competitor to be allowed to move on to the next. 30\% of competitors fail to complete the first part, and of those who make it onto the second part only 40\% manage to make it onto the third part. Of those that do make it on to the third part, however, 65\% successfully complete it. Calculate the probability that a competitor makes it onto the third part.
+    \item An obstacle course consists of three parts, with each part needed to be completed successfully for a competitor to be allowed to move on to the next. 30\% of competitors fail to complete the first part, and of those who make it onto the second part only 40\% manage to make it onto the third part. Of those that do make it on to the third part, however, 65\% successfully complete it. Calculate the probability that a competitor reaches the third part.
     \item As part of a study examining the survival rates of hedgehogs over winter hibernation periods, a number of hedgehogs are captured, weighed, tagged and then released. Depending on their weight they are classed as having a "good weight", an "average weight" or being "underweight", with 18\%, 76\% and 6\% observed respectively in each category. From the study it is found that the probability of survival for each category is 91\%, 72\% and 35\% respectively. Assuming that the distribution of hedgehog weights and probabilities of survival can be taken as representative of hedgehog populations in general, find the proportion of hedgehogs that do not survive winter hibernation. 
     \item The probability of being dealt a pair (such as two fives) in an opening hand in a game of poker is 0.06. If this happens, a particular player knows that based on their game history they have a probability of 0.83 of winning the hand, whilst otherwise they have a probability of 0.36. Calculate the probability they win a hand.
 \end{enumerate}
@@ -726,7 +731,7 @@ The advantage of the use of tree diagrams, for questions where they are suitable
 
 ## Bayes Theorem and Tree Diagrams
 
-In this chapter, Bayes' Theorem has already been used to calculate the *reverse* of a conditional probability: calculating $\text{P}(B|A)$ when $\text{P}(A|B)$ is known. However, this process can be made more intuitive and more readily extended to more complex problems by using tree diagrams combined with the formula for conditional probability:
+In this chapter, Bayes' Theorem has already been used to calculate the *reverse* of a conditional probability, for example calculating $\text{P}(B|A)$ when $\text{P}(A|B)$ is known. However, this process can be made more intuitive and more readily extended to more complex problems by using tree diagrams combined with the formula for conditional probability:
 
 $$\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(A \cap B)$}}}{\text{\normalsize{$\text{P}(B)$}}}$$
 
@@ -740,7 +745,7 @@ A key misunderstanding often made is that a high value for $\text{P}(B|A)$ must 
 If a person is selected at random from the general population to be tested for the condition:
 
 \begin{enumerate}
-    \item[(a) ] Calculate the probability that test comes back \textit{positive}.
+    \item[(a) ] Calculate the probability that the test comes back \textit{positive}.
     \item[(b) ] Given that the test comes back positive, determine the probability that they do actually \textit{have} the condition.
 \end{enumerate}
 
@@ -803,7 +808,9 @@ If a person is selected at random from the general population to be tested for t
 
 \end{tcolorbox}
 
-It may be surprising that a test which appears so effective can lead to such a high proportion of false positives, and calculations such as this should be considered when healthcare professionals establish testing procedures. In practice, the false positive rate can be drastically reduced by deciding when a test may be appropriate. GPs, for example, will ask questions about a patient's symptoms and medical history to determine whether they have reason to suspect that the chance that they have the condition is significantly greater than a random member of the population, and therefore whether a test is appropriate.
+So even though the test is highly accurate, only about 57.65% of people who test positive actually have the condition.
+
+It may be surprising that a test which appears so effective can lead to such a high proportion of false positives, and calculations such as this should be considered when healthcare professionals establish testing procedures.
 
 \pagebreak
 
@@ -828,9 +835,9 @@ It may be surprising that a test which appears so effective can lead to such a h
     \item Anti-virus software is being developed to detect whether attachments sent by email are malicious or safe, and flag those that are malicious. In its current state it can correctly flag that an attachment is malicious 92\% of the time. It incorrectly flags safe attachments 2\% of the time. A company is interested in using the software, and 1.2\% of all attachments emailed to their employees are actually malicious.
     \begin{enumerate}
         \item Determine the proportion of attachments that are flagged as malicious.
-        \item Given that an attachment is flagged, calculate the probability that is malicious.
+        \item Given that an attachment is flagged, calculate the probability that it is malicious.
     \end{enumerate}
-    \item A pupil sitting a multiple choice test is able to answer $\frac{3}{4}$ of the questions and guesses the rest. They know from trying practice tests that the probability that are correct in the questions they are able to answer is 0.9, whilst they have a one-in-five chance of getting a correct answer by guessing. Determine the probability that a question which they get wrong was one that they guessed.
+    \item A pupil sitting a multiple choice test is able to answer $\frac{3}{4}$ of the questions and guesses the rest. They know from trying practice tests that the probability that they are correct in the questions they are able to answer is 0.9, whilst they have a one-in-five chance of getting a correct answer by guessing. Determine the probability that a question which they get wrong was one that they guessed.
     \item A marketing campaign for a new product is estimated to have been seen by three times as many people through its social media advert as by its promotional email. The probability that seeing the social media advert leads to a person visiting their website is 0.037, whilst for the promotional email that figure drops to 0.021. 
     \begin{enumerate}
         \item Determine the probability that someone who sees the marketing campaign in either form visits the website.
@@ -897,7 +904,7 @@ $\text{P}(M\cap B)=\frac{3}{25}$, $\text{P}(M)=\frac{1}{5}$ and $\text{P}(\overl
     \item As part of a machine learning project, a program is created that tries to correctly identify whether it is being shown a picture of a dog, a cat or a human. It has been tested and found to correctly identify a human with the probability 0.8, correctly identify a dog with the probability 0.6 and correctly identify a cat with the probability 0.55. When subsequently put to use by the public, the program is shown a picture of a human 60\% of the time, a dog 25\% of the time and a cat 15\% of the time. Assuming the probabilities of successful detection are the same when used by the public as when under testing, calculate:
     \begin{enumerate}
         \item the proportion of times that the program is incorrect 
-        \item the probability that the program was shown a cat, given that is incorrect.
+        \item the probability that the program was shown a cat, given that it is incorrect.
     \end{enumerate}
 \end{enumerate}
 
