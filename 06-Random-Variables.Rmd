@@ -1,12 +1,14 @@
 # Random Variables
 
-A random variable is a mathematical object that describes the possible outcomes, and their probabilities, of a random experiment. They are used to create a *model* of the behaviour of random processes, stated formally and algebraically. Random variables take a defined list or range of *numerical* values, either *discrete* or *continuous*.
+A random variable is a function that assigns a numerical value (such as a probability) to each outcome of a random experiment, used to *model* the behaviour of random processes. Random variables can be used to describe either *discrete* or *continuous* quantitative variables.
 
-Random variables are notated using *capital letters*, such as $X$ and $Y$, whilst *specific values* that they can take are notated with small letters such as $x$ and $y$. Time spent paying careful attention to which is required when first encountering random variables will help greatly as the course progresses.
+Random variables are notated using *capital letters*, such as $X$ and $Y$, whilst *specific values* that they can take are notated with small letters such as $x$ and $y$. The probability that random variable $X$ takes the value $X$ is notated as:
+
+\[\text{P}(X=x)\]
 
 ### Discrete Random Variables {-}
 
-If a random variable takes *discrete* numerical values, and a probability is assigned to each, then it is a **discrete random variable**. The outcomes are often integers, but this not necessary, and whilst discrete numbers are often described as ones that can be *"listed"*, the list does not have to be finite. Some examples of discrete random variables are:
+If a random variable takes *discrete* numerical values, and a probability is assigned to each, then it is a **discrete random variable**. Discrete values are often described as those that can be listed (either finitely or countably infinitely). Some examples of discrete random variables are:
 
 \begin{center}
 \renewcommand{\arraystretch}{2}
@@ -22,7 +24,7 @@ If a random variable takes *discrete* numerical values, and a probability is ass
 
 ## Probability Distributions for Discrete Random Variables
 
-A *probability function*, or *pf*, assigns probabilities to each possible value of a discrete random variable, and there are a number of ways of presenting the *probability distribution* created. For example, consider a discrete random variable $X$ that takes the value $3$ with probability $0.2$, the value $4$ with probability $0.5$ and the value $5$ with probability $0.3$. Below, the probability distribution for $X$ has been *tabulated* and *graphed*.
+A *probability function* assigns probabilities to each possible value of a discrete random variable, and there are a number of ways of presenting the *probability distribution* created. For example, consider a discrete random variable $X$ that takes the value $3$ with probability $0.2$, the value $4$ with probability $0.5$ and the value $5$ with probability $0.3$. Below, the probability distribution for $X$ has been *tabulated* and *graphed*.
 
 \begin{figure}[H]
   \centering
