@@ -3618,7 +3618,8 @@ The figure below shows two sets of sample means for random samples taken from th
         \foreach \x in {0,1,...,8}{
         \draw (\x,0) -- (\x,-0.1);
         }
-        \draw[thick] (4,0) -- (4,3) node[above] {$\mu$};
+        \node at (4,3.4) {population mean};
+        \draw[thick] (4,0) -- (4,2.6) node[above] {$\mu$};
         \draw[fill] (53*0.2-6,1) circle (1.5pt);
         \draw[fill] (63*0.2-6,1) circle (1.5pt);
         \draw[fill] (49*0.2-6,1) circle (1.5pt);
@@ -3629,7 +3630,9 @@ The figure below shows two sets of sample means for random samples taken from th
         \draw[fill] (57*0.2-6,1) circle (1.5pt);
         \draw[fill] (48*0.2-6,1) circle (1.5pt);
         \draw[fill] (36*0.2-6,1) circle (1.5pt);
-        \draw[stealth-] (8,1) -- (10,1) node[right] {sample means $\bar{x}_i$ for ten samples with $n=5$};
+        \draw[stealth-] (7.5,1) -- (8.5,1) node[right] {ten sample means $\bar{x}_i$ with $n=5$};
+        \node[left] at  (33*0.2-6,2) {\textit{larger sample size}};
+        \node[left] at  (33*0.2-6,1) {\textit{smaller sample size}};
         \draw[fill] (53.6*0.2-6,2) circle (1.5pt);
         \draw[fill] (44.3*0.2-6,2) circle (1.5pt);
         \draw[fill] (54.7*0.2-6,2) circle (1.5pt);
@@ -3640,7 +3643,7 @@ The figure below shows two sets of sample means for random samples taken from th
         \draw[fill] (48*0.2-6,2) circle (1.5pt);
         \draw[fill] (47*0.2-6,2) circle (1.5pt);
         \draw[fill] (52.8*0.2-6,2) circle (1.5pt);
-        \draw[stealth-] (8,2) -- (10,2) node[right] {sample means $\bar{x}_i$ for ten samples with $n=20$};
+        \draw[stealth-] (7.5,2) -- (8.5,2) node[right] {ten sample means $\bar{x}_i$ with $n=20$};
 \end{tikzpicture}
 
 It can be seen that larger sample sizes tend to produce sample statistics that better represent the population parameters they are used to estimate. In other words, as sample size increases, the variability of sample statistics decreases. Larger samples are therefore generally preferred, and statistical studies conducting using only small samples of data should typically be treated with more caution than those based on larger samples. When small samples are used, the reasons are usually one or more of cost, time, and availability of data.
@@ -3667,7 +3670,7 @@ Poor sampling technique may lead to samples that are not \emph{representative} o
         \draw[dashed] (8,0) -- (8,1) node[above] at (8,1) {${\scriptstyle \bar{x}_4}$};
         \draw[dashed] (9.2,0) -- (9.2,1) node[above] at (9.2,1) {${\scriptstyle \bar{x}_5}$};
         \draw[thick] (8.5,-0.2) -- (8.5,1.5) node[above] at (8.5,1.5) {$\mu$};
-        \node at (8.5,-0.5) {\textit{unbiased} (reliable estimation)};
+        \node at (8.5,-0.5) {\textit{unbiased} (accurate estimation)};
         \draw (12,0) -- (17,0);
         \draw[dashed] (16.8,0) -- (16.8,1) node[above] at (16.8,1) {${\scriptstyle \bar{x}_1}$};
         \draw[dashed] (15,0) -- (15,1) node[above] at (15,1) {${\scriptstyle \bar{x}_2}$};
@@ -7625,11 +7628,7 @@ The least squares regression line of $y=155.29+1.9018x$ was fitted. Show the cal
 
 \chapter{Random Variables}\label{random-variables}
 
-A random variable is a function that assigns a numerical value (such as a probability) to each outcome of a random experiment, used to \emph{model} the behaviour of random processes. Random variables can be used to describe either \emph{discrete} or \emph{continuous} quantitative variables.
-
-Random variables are notated using \emph{capital letters}, such as \(X\) and \(Y\), whilst \emph{specific values} that they can take are notated with small letters such as \(x\) and \(y\). The probability that random variable \(X\) takes the value \(X\) is notated as:
-
-\[\text{P}(X=x)\]
+A random variable is a function that assigns a numerical value to each outcome of a random experiment, used to \emph{model} the behaviour of random processes. Random variables are notated using \emph{capital letters}, such as \(X\) and \(Y\), whilst the \emph{specific values} that they can take are notated with corresponding small letters such as \(x\) and \(y\). Random variables can be used to describe either \emph{discrete} or \emph{continuous} quantitative variables.
 
 \subsection*{Discrete Random Variables}\label{discrete-random-variables}
 \addcontentsline{toc}{subsection}{Discrete Random Variables}
@@ -7646,16 +7645,25 @@ If a random variable takes \emph{discrete} numerical values, and a probability i
 \end{tabular}
 \end{center}
 
+The probability that a discrete random variable \(X\) takes the value \(x\) is notated as:
+
+\[\text{P}(X=x)\]
+
+For example, if random variable \(X\) is used to represent the outcome of the roll of a fair, six-sided die, then:
+
+\[\text{P}(X=5)=\frac{1}{6}\]
+
 \pagebreak
 
 \section{Probability Distributions for Discrete Random Variables}\label{probability-distributions-for-discrete-random-variables}
 
-A \emph{probability function} assigns probabilities to each possible value of a discrete random variable, and there are a number of ways of presenting the \emph{probability distribution} created. For example, consider a discrete random variable \(X\) that takes the value \(3\) with probability \(0.2\), the value \(4\) with probability \(0.5\) and the value \(5\) with probability \(0.3\). Below, the probability distribution for \(X\) has been \emph{tabulated} and \emph{graphed}.
+A \emph{probability function} assigns probabilities to each possible value of a discrete random variable, and completely describes its behaviour. There are a number of ways of presenting the \emph{probability distribution} created. For example, consider a discrete random variable \(X\) that takes the value \(3\) with probability \(0.2\), the value \(4\) with probability \(0.5\) and the value \(5\) with probability \(0.3\). Below, the probability distribution for \(X\) has been \emph{tabulated} and \emph{graphed}.
 
 \begin{figure}[H]
   \centering
 \captionsetup[figure]{labelformat=empty}%
 \begin{minipage}{.5\textwidth}
+\textit{Tabulated:}
 \begin{center}
 \begin{tabular}{ c | c c c }
       $x$ & $3$ & $4$ & $5$\\
@@ -7666,7 +7674,9 @@ A \emph{probability function} assigns probabilities to each possible value of a 
 
 \vspace{0.01cm}
 
-Note that a discrete probability distribution must define \textit{mutually exclusive and exhaustive} outcomes, and hence \textit{the sum of all probabilities must equal 1}.
+A discrete probability distribution must define \textit{mutually exclusive} and \textit{exhaustive} outcomes, and so \textit{the sum of all probabilities must equal 1}.
+
+\vspace{-0.2cm}
 
 \begin{center}
 \begin{tabular}{c c c}
@@ -7682,6 +7692,7 @@ Note that a discrete probability distribution must define \textit{mutually exclu
   \centering
 \begin{minipage}{.5\textwidth}
   \centering
+  \textit{Graphed:}\\[-0.5em]
 \begin{tikzpicture}
 \pgfplotsset{
     standard/.style={
@@ -7694,7 +7705,7 @@ Note that a discrete probability distribution must define \textit{mutually exclu
     every axis y label/.style={at={(current axis.above origin)},anchor=south east}
     }
 }
-    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 4.5cm, width = 7cm, ybar,bar width=30pt, xmin=2.5,xmax=5.5,ymin=0,ymax=0.6, xtick={3,4,5},,ytick={0,0.1,0.2,0.3,0.4,0.5},xlabel=$x$,ylabel=probability]
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 4.5cm, width = 7cm, ybar,bar width=10pt, xmin=2.5,xmax=5.5,ymin=0,ymax=0.6, xtick={3,4,5},ytick={0,0.1,0.2,0.3,0.4,0.5},xlabel=$x$,ylabel=probability]
         \addplot[fill=black!25, draw=black] coordinates {
     (3,0.2) 
     (4,0.5) 
@@ -7705,8 +7716,28 @@ Note that a discrete probability distribution must define \textit{mutually exclu
 \end{minipage}
 \end{figure}
 
+\vspace{-0.3cm}
+
+From both the table and the graph, it can be seen that, for example, \(\text{P}(X=3)=0.2\).
+
+Probabilities such as \(\text{P}(X\leqslant4)\) can be calculated by adding the probability of each outcome (since they are mutually exclusive), or by subtracting from \(1\) (since they are exhaustive).
+
+\vspace{-0.3cm}
+
+\[\text{P}(X\leqslant 4)=\text{P}(X = 3)+\text{P}(X= 4)=0.2+0.5=0.7\]
+
+\vspace{-0.7cm}
+
+\[\text{or}\]
+
+\vspace{-0.7cm}
+
+\[\text{P}(X\leqslant 4)=1-\text{P}(X=5)=1-0.3=0.7\]
+
+\vspace{-0.2cm}
+
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} The probability distribution table for the discrete random variable $D$ is below.
+\textbf{Problem:} The probability distribution table for the discrete random variable $D$ is shown below.
 
 \begin{center}
 \begin{tabular}{ c | c c c c c }
@@ -7716,14 +7747,16 @@ Note that a discrete probability distribution must define \textit{mutually exclu
 \end{tabular}
 \end{center}
 
+\vspace{-0.2cm}
+
 \text{(a)   }Calculate the value of $c$.\\
-  \\
+  \\[-0.3em]
 \text{(b)   }Calculate $\text{P}(D\leqslant7)$.\\
-  \\
+  \\[-0.3em]
 \text{(c)   }Calculate $\text{P}(D>7)$.
 
 \tcblower
-\textbf{Solution:}  \\
+\textbf{Solution:}
 
 \text{(a)   }$c=1-(0.35+0.3+0.2+0.1)=0.05$
 
@@ -7734,6 +7767,8 @@ Note that a discrete probability distribution must define \textit{mutually exclu
       $\text{P}(D=d)$ & $0.35$ & $0.3$ & $0.05$ & $0.2$ & $0.1$ 
 \end{tabular}
 \end{center}
+
+\vspace{-0.5cm}
 
 \begin{flalign*}
 \text{(b)   }\text{P}(D\leqslant7)&=\text{P}(D=6)+\text{P}(D=7) &\\
@@ -7754,7 +7789,7 @@ Note that a discrete probability distribution must define \textit{mutually exclu
     every axis y label/.style={at={(current axis.above origin)},anchor=south east}
     }
 }
-    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3.5cm, width = 7cm, ybar,bar width=15pt, xmin=5,xmax=11,ymin=0,ymax=0.5, xtick={6,7,8,9,10},ytick={0,0.1,0.2,0.3,0.4},xlabel=$d$,ylabel=probability]
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3.5cm, width = 7cm, ybar,bar width=10pt, xmin=5,xmax=11,ymin=0,ymax=0.5, xtick={6,7,8,9,10},ytick={0,0.1,0.2,0.3,0.4},xlabel=$d$,ylabel=probability]
 
         \addplot[fill=black!40, draw=black] coordinates {
     (6,0.35) 
@@ -7765,6 +7800,8 @@ Note that a discrete probability distribution must define \textit{mutually exclu
 };
     \end{axis}
 \end{tikzpicture}
+
+\vspace{-1.2cm}
 
 \begin{flalign*}
 \text{(c)   }\text{P}(D>7)&=1-\text{P}(D\leqslant7) &\\
@@ -7910,7 +7947,7 @@ Note that a discrete probability distribution must define \textit{mutually exclu
 
 \section{The Expectation of a Discrete Random Variable}\label{the-expectation-of-a-discrete-random-variable}
 
-Whilst a single roll of a die is equally likely to land on any of the numbers from 1 to 6, if it is rolled many times and the \emph{mean} of the observed values is calculated, it is very likely to be around 3.5. Letting random variable \(X\) represent the result of one roll of the die, the \emph{long-run mean of successive observations of \(X\) will tend to 3.5}. This can be referred to as the \emph{mean}, \(\mu\), of \(X\), the \textbf{expectation} of \(X\), or \(\text{E}(X)\).
+Whilst a single roll of a die is equally likely to land on any of the numbers from 1 to 6, if it is rolled many times and the \emph{mean} of the observed values is calculated, it is very likely to be around 3.5. Letting random variable \(X\) represent the result of one roll of the die, the \emph{long-run mean} of repeated observations of \(X\) will tend towards 3.5. This can be referred to as the \emph{mean}, \(\mu\), of \(X\), the \textbf{expectation} of \(X\), or \(\text{E}(X)\).
 
 \begin{centering}
 \tcbset{width=10cm}
@@ -7918,6 +7955,8 @@ Whilst a single roll of a die is equally likely to land on any of the numbers fr
 $\text{E}(X)=\sum{x_i\text{P}(X=x_i)}$
 \end{tcolorbox}
 \end{centering}
+
+The calculated mean of a finite number of observations of a random variable is likely to not be perfectly equal to the true \emph{expected value}. However, the mean of repeated observations will tend towards the expected value as the number of observations increases. This is known as the \emph{law of large numbers}.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue,height=6cm]
 \textbf{Problem:} Given the probability distribution of random variable $X$ tabulated below, calculate $\text{E}(X)$.
@@ -7928,21 +7967,25 @@ $\text{E}(X)=\sum{x_i\text{P}(X=x_i)}$
 \begin{tabular}{ c | c c c c }
       $x$ & $3$ & $4$ & $5$ & $6$\\
   \hline
-      $\text{P}(X=x)$ & $\frac{1}{8}$ & $\frac{1}{4}$ & $\frac{1}{2}$ & $\frac{1}{8}$ 
+      $\text{P}(X=x)$ & $\tfrac{1}{8}$ & $\tfrac{1}{4}$ & $\tfrac{1}{2}$ & $\tfrac{1}{8}$ 
 \end{tabular}
 \egroup
 \end{center}
 
 \tcblower
 \textbf{Solution:}
-$$\text{E}(X) = 3\times \tfrac{1}{8} + 4\times \tfrac{1}{4} + 5\times \tfrac{1}{2} + 6\times \tfrac{1}{8}= \tfrac{37}{8}$$
+$$\text{E}(X) = 3\times \dfrac{1}{8} + 4\times \dfrac{1}{4} + 5\times \dfrac{1}{2} + 6\times \dfrac{1}{8}= \dfrac{37}{8}=4.625$$
+
+\vspace{-1cm}
 
 \end{tcolorbox}
+
+Note that the expected value is not necessarily a value that the random variable can actually take.
 
 Problems may require a probability distribution to first be tabulated, such as by using a tree diagram.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A bag containing 4 blue and 6 red cubes. One is drawn at random, followed by another without replacing the first. Letting discrete random variable $X$ represent the number of red cubes drawn, calculate $\text{E}(X)$.
+\textbf{Problem:} A bag contains 4 blue and 6 red cubes. One is drawn at random, followed by another without replacing the first. Let discrete random variable $X$ represent the number of red cubes drawn. Find $\text{E}(X)$.
 
 \tcblower
 \textbf{Solution: }
@@ -7994,15 +8037,18 @@ Problems may require a probability distribution to first be tabulated, such as b
             node[below]  {}
     };
 \end{tikzpicture}
+
+\vspace{-0.3cm}
+
 \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c }
             $x$ & $0$ & $1$ & $2$\\
           \hline
-            $\text{P}(X=x)$ & $\frac{2}{15}$ & $\frac{8}{15}$ & $\frac{1}{3}$ 
+            $\text{P}(X=x)$ & $\tfrac{2}{15}$ & $\tfrac{8}{15}$ & $\tfrac{1}{3}$ 
         \end{tabular}
         \egroup
-$$\text{E}(X)=0\times \tfrac{2}{15}+1\times \tfrac{8}{15}+2\times \tfrac{1}{3}=\tfrac{6}{5}$$
+$$\text{E}(X)=0\times \frac{2}{15}+1\times \frac{8}{15}+2\times \frac{1}{3}=\frac{6}{5}=1.2$$
 \end{tcolorbox}
 
 \pagebreak
@@ -8050,7 +8096,7 @@ $$\text{E}(X)=0\times \tfrac{2}{15}+1\times \tfrac{8}{15}+2\times \tfrac{1}{3}=\
         \item Tabulate the probability distribution of $Y$.
         \item Calculate $\text{E}(Y)$.
     \end{enumerate}
-    \item A bag contains three £1 coins and two £2 coins. Two coins are taken at random, without replacement. Let discrete random variable $M$ represent that amount of money that is taken from the bag, in pounds.
+    \item A bag contains three £1 coins and two £2 coins. Two coins are taken at random, without replacement. Let discrete random variable $M$ represent the amount of money that is taken from the bag, in pounds.
     \begin{enumerate}
         \item Tabulate the probability distribution of $M$.
         \item Calculate $\mu$, the mean value of $M$.

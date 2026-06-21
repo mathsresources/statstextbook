@@ -197,7 +197,8 @@ The figure below shows two sets of sample means for random samples taken from th
         \foreach \x in {0,1,...,8}{
         \draw (\x,0) -- (\x,-0.1);
         }
-        \draw[thick] (4,0) -- (4,3) node[above] {$\mu$};
+        \node at (4,3.4) {population mean};
+        \draw[thick] (4,0) -- (4,2.6) node[above] {$\mu$};
         \draw[fill] (53*0.2-6,1) circle (1.5pt);
         \draw[fill] (63*0.2-6,1) circle (1.5pt);
         \draw[fill] (49*0.2-6,1) circle (1.5pt);
@@ -208,7 +209,9 @@ The figure below shows two sets of sample means for random samples taken from th
         \draw[fill] (57*0.2-6,1) circle (1.5pt);
         \draw[fill] (48*0.2-6,1) circle (1.5pt);
         \draw[fill] (36*0.2-6,1) circle (1.5pt);
-        \draw[stealth-] (8,1) -- (10,1) node[right] {sample means $\bar{x}_i$ for ten samples with $n=5$};
+        \draw[stealth-] (7.5,1) -- (8.5,1) node[right] {ten sample means $\bar{x}_i$ with $n=5$};
+        \node[left] at  (33*0.2-6,2) {\textit{larger sample size}};
+        \node[left] at  (33*0.2-6,1) {\textit{smaller sample size}};
         \draw[fill] (53.6*0.2-6,2) circle (1.5pt);
         \draw[fill] (44.3*0.2-6,2) circle (1.5pt);
         \draw[fill] (54.7*0.2-6,2) circle (1.5pt);
@@ -219,7 +222,7 @@ The figure below shows two sets of sample means for random samples taken from th
         \draw[fill] (48*0.2-6,2) circle (1.5pt);
         \draw[fill] (47*0.2-6,2) circle (1.5pt);
         \draw[fill] (52.8*0.2-6,2) circle (1.5pt);
-        \draw[stealth-] (8,2) -- (10,2) node[right] {sample means $\bar{x}_i$ for ten samples with $n=20$};
+        \draw[stealth-] (7.5,2) -- (8.5,2) node[right] {ten sample means $\bar{x}_i$ with $n=20$};
 \end{tikzpicture}
 
 It can be seen that larger sample sizes tend to produce sample statistics that better represent the population parameters they are used to estimate. In other words, as sample size increases, the variability of sample statistics decreases. Larger samples are therefore generally preferred, and statistical studies conducting using only small samples of data should typically be treated with more caution than those based on larger samples. When small samples are used, the reasons are usually one or more of cost, time, and availability of data.
@@ -245,7 +248,7 @@ Poor sampling technique may lead to samples that are not *representative* of the
         \draw[dashed] (8,0) -- (8,1) node[above] at (8,1) {${\scriptstyle \bar{x}_4}$};
         \draw[dashed] (9.2,0) -- (9.2,1) node[above] at (9.2,1) {${\scriptstyle \bar{x}_5}$};
         \draw[thick] (8.5,-0.2) -- (8.5,1.5) node[above] at (8.5,1.5) {$\mu$};
-        \node at (8.5,-0.5) {\textit{unbiased} (reliable estimation)};
+        \node at (8.5,-0.5) {\textit{unbiased} (accurate estimation)};
         \draw (12,0) -- (17,0);
         \draw[dashed] (16.8,0) -- (16.8,1) node[above] at (16.8,1) {${\scriptstyle \bar{x}_1}$};
         \draw[dashed] (15,0) -- (15,1) node[above] at (15,1) {${\scriptstyle \bar{x}_2}$};
