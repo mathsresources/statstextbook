@@ -6,7 +6,7 @@
 
 ### Models, Conditions and Assumptions {-}
 
-The above quote, attributed to the statistician George Box, highlights that no mathematical or statistical *model* can perfectly describe the behaviour of something in the real world. Nevertheless, if a model can get *close enough* then results obtained using it can be sufficiently accurate, and useful.
+The above quote, attributed to the statistician George Box, highlights that no mathematical or statistical *model* can perfectly describe the behaviour of something in the real world. Nevertheless, if a model can get *close enough* then results obtained using it can be sufficiently accurate and useful.
 
 In this chapter, three *discrete probability distributions* that can model real-life data will be introduced:
 
@@ -16,7 +16,7 @@ In this chapter, three *discrete probability distributions* that can model real-
     \item The Poisson Distribution
 \end{itemize}
 
-Studying a problem in context and identifying an appropriate model to use is an important skill for anyone working with data. The validity of the use of a model is based on a number of *conditions* being sufficiently met. When using a model it is vital to consider the conditions required for its use, and specifically whether they are each satisfied. In this chapter, and subsequent chapters introducing more probability distributions and hypothesis testing, the *conditions for the valid use* of models and tests are clearly indicated as they are introduced.
+Studying a problem in context and identifying an appropriate model to use is an important skill for anyone working with data. The validity of the use of a model is based on a number of *conditions* being met. When using a model it is vital to consider the conditions required for its use, and specifically whether they are each satisfied. In this chapter, and subsequent chapters introducing more probability distributions and hypothesis testing, the *conditions for the valid use* of models and tests are clearly indicated as they are introduced.
 
 Sometimes it will be clear that a particular condition has been met, but there will be times when it is unclear. Whenever it is not clear that a condition has been met, statisticians must ask whether they can reasonably make an *assumption* that the condition is satisfied. It should always be recognised when an assumption is required, and it may be necessary to *justify* the use of an assumption in a context.
 
@@ -53,7 +53,7 @@ Consider the discrete random variables $X$ and $Y$, representing the scores obta
     every axis y label/.style={at={(current axis.above origin)},anchor=south east}
     }
 }
-    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 4cm, width = 8cm, ybar,bar width=10pt, xmin=0.5,xmax=6.5,ymin=0,ymax=0.4, xtick={1,2,3,4,5,6},,ytick={0,0.1666},yticklabels={0,$\frac{1}{6}$},xlabel=$x$,ylabel=probability]
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 4cm, width = 8cm, ybar,bar width=10pt, xmin=0.5,xmax=6.5,ymin=0,ymax=0.4, xtick={1,2,3,4,5,6},ytick={0,0.1666},yticklabels={0,$\frac{1}{6}$},xlabel=$x$,ylabel=probability]
         \addplot[fill=black!25, draw=black] coordinates {
     (1,0.1666) 
     (2,0.1666) 
@@ -134,7 +134,7 @@ Whilst $X$ and $Y$ do not follow the same distribution, they share key character
 
 \vspace{0.5cm}
 
-Parameters define the precise distribution that random variables take within *"families"* of distributions. Here, we can say that $X$ *"is distributed uniformly*" with parameter $k=6$ (with values from $1$ to $6$). Using $\sim$, or *"tilde"*, to mean *"is distributed..."*, such statements can be notated more efficiently:
+Parameters define the precise form of a distribution within a *family of distributions*. Here, we can say that $X$ *"is distributed uniformly*" with parameter $k=6$ (with values from $1$ to $6$). Using $\sim$, or *"tilde"*, to mean *"is distributed..."*, such statements can be written more efficiently:
 
 $$X\sim \text{U}(6)\quad\text{ and }\quad Y\sim \text{U}(4)$$
 
@@ -185,7 +185,7 @@ The previously stated values for the expectation and variance of $X$ and $Y$ can
         \item Calculate $\text{E}(X)$ and $\text{V}(X)$.
         \item Evaluate $\text{E}(2X+5)$ and $\text{V}(2X+5)$.
     \end{enumerate}
-    \item A regular, unbiased icosahedral die is rolled. Let the random variable $X$ be the score on the top most face.
+    \item A regular, unbiased icosahedral die is rolled. Let the random variable $X$ be the score on the topmost face.
     \begin{enumerate}
         \item State the distribution of $X$.
         \item Determine the values of $\text{E}(X)$ and $\text{V}(X)$.
@@ -219,7 +219,7 @@ The previously stated values for the expectation and variance of $X$ and $Y$ can
 
 ## The Binomial Distribution
 
-A *Bernoulli trial* is an experiment in which each trial has only two possible outcomes, such as a coin landing on either *heads* or *tails*, or asking a *yes or no* question in a survey. These responses can be more generally referred to as *successes* or *failures*. If random variable $X$ represents the **number of successes** in **_n_** **trials**, each trial having **probability of success** **_p_**, then $X$ is **binomially distributed**.
+A *Bernoulli trial* is an experiment in which each trial has only two possible outcomes, such as a coin landing on either *heads* or *tails*, or asking a *yes or no* question in a survey. These responses can be more generally referred to as *successes* or *failures*. If random variable $X$ represents the **number of successes** in **_n_** **trials**, each trial having a **probability of success** **_p_**, then $X$ is **binomially distributed**.
 
 \begin{centering}
 \tcbset{width=14cm}
@@ -241,7 +241,7 @@ Consider a spinning wheel that lands on a shaded sector with probability $\frac{
 \captionsetup[figure]{labelformat=empty}%
 \begin{minipage}{.4\textwidth}
 
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.7]
 \fill[black!25] (0,0) -- (50:2.5) arc (50:122:2.5) -- (0,0);
 \fill[black!25] (0,0) -- (122:2.5) arc (122:194:2.5) -- (0,0);
 \draw[thick] (0,0) circle (2.5)
@@ -274,7 +274,7 @@ Consider a spinning wheel that lands on a shaded sector with probability $\frac{
     every axis y label/.style={at={(current axis.above origin)},anchor=south east}
     }
 }
-    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 6cm, width = 8cm, ybar,bar width=10pt, xmin=1,xmax=9,ymin=0,ymax=0.4, xtick={2,3,4,5,6,7,8},xticklabels={0,1,2,3,4,5,6},ytick={0,0.1,0.2,0.3},xlabel=$x$,ylabel=probability]
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 5cm, width = 7.5cm, ybar,bar width=10pt, xmin=1,xmax=9,ymin=0,ymax=0.4, xtick={2,3,4,5,6,7,8},xticklabels={0,1,2,3,4,5,6},ytick={0,0.1,0.2,0.3},xlabel=$x$,ylabel=probability]
         \addplot[fill=black!25, draw=black] coordinates {
     (2,0.047)
     (3,0.187) 
@@ -290,7 +290,7 @@ Consider a spinning wheel that lands on a shaded sector with probability $\frac{
 \end{figure}
 
 \vspace{-0.5cm}
-To calculate the probability of *exactly two successes*, consider the probability of the first two spins resulting in success followed by four failures. Since each trial is independent:
+To calculate the probability of *exactly two successes*, consider the probability that the first two spins result in success followed by four failures. Since each trial is independent:
 
 $$\text{P}(\text{success, success, fail, fail, fail, fail})=0.4\times0.4\times0.6\times0.6\times0.6\times0.6=0.4^2\times0.6^4=0.0207$$
 
@@ -325,13 +325,13 @@ $$\text{Given }X\sim \text{B}(n,p)\text{: }\qquad \text{P}(X=x)={}^{n}C_{x}\time
 \tcblower
 \textbf{Solution:} 
 
-Let random variable $X$ represent the number of times that the card drawn is spades from the 12 draws.
+Let random variable $X$ represent the number of times that the card drawn is a spade from the 12 draws.
 
 \vspace{-0.5cm}
 
 \begin{center}
 \begin{align*}
-X&\sim B\left(12,\tfrac{1}{4}\right)\\[1em]
+X&\sim \text{B}\left(12,\tfrac{1}{4}\right)\\[1em]
 \text{P}(X<2)&=\text{P}(X=0)+\text{P}(X=1)\\[1em]
 &={}^{12}C_{0}\times \left(\tfrac{1}{4}\right)^0\times \left(\tfrac{3}{4}\right)^{12}+{}^{12}C_{1}\times \left(\tfrac{1}{4}\right)^1\times \left(\tfrac{3}{4}\right)^{11}\\[1em]
 &=0.0317+0.1267\\[1em]
@@ -566,6 +566,8 @@ As with the binomial distribution, individual Poisson probabilities can be calcu
 
 Given random variable $X\sim \text{Po}(\lambda)$:
 
+\vspace{-0.4cm}
+
 $$\text{P}(X=x)=\frac{e^{-\lambda} \times \lambda^x}{x!}$$
 
 For example $\text{P}(X=4)$ in the probability distribution above can be calculated as:
@@ -590,6 +592,8 @@ $$\text{P}(X=10)=\frac{e^{-6} \times 6^{10}}{10!}=0.0413$$
 
 \end{tcolorbox}
 
+As with the binomial distribution, in general it is much faster to use the cumulative probability tables in the Data Booklet, or a graphical calculator, to calculate Poisson probabilities.
+
 []{#ex75q}
 
 #### [Exercise 7.5](#ex75a) {-}
@@ -609,17 +613,6 @@ $$\text{P}(X=10)=\frac{e^{-6} \times 6^{10}}{10!}=0.0413$$
         \item State the distribution of $X$.
         \item Use the formula to calculate the probability that a game finishes without any goals being scored.
     \end{enumerate}
-\end{enumerate}
-
-### Poisson Calculations using Cumulative Probabilities
-
-As with the binomial distribution, in general it is much faster to use the cumulative probability tables in the  Data Booklet, or a graphical calculator, to calculate Poisson probabilities.
-
-[]{#ex76q}
-
-#### [Exercise 7.6](#ex76a) {-}
-
-\begin{enumerate}
     \item The random variable $X$ follows a Poisson distribution with mean 6. Use the tables to calculate:
     \begin{enumerate}
     \begin{multicols}{4}
@@ -647,7 +640,7 @@ As with the binomial distribution, in general it is much faster to use the cumul
 
 \pagebreak
 
-## The Mean and Variance of the Poisson Distribution
+## Combining Poisson Random Variables
 
 The mean and variance of a Poisson distribution are stated in the  Data Booklet. Given $X\sim \text{Po}(\lambda)$:
 
@@ -736,7 +729,7 @@ $\text{P}(T<8)=\text{P}(T\leqslant 7)=0.2202$
 
 So there is a roughly 22\% probability that Betty receives fewer than 8 emails in total between 10am and 11am, assuming that each event (an email arriving) is independent. This would not be the case if some emails she receives are duplicated between her work and email accounts, such as subscriptions to services emailing all the addresses a customer has registered with them.
 
-\newpage
+\pagebreak
 
 []{#ex77q}
 
@@ -753,11 +746,11 @@ So there is a roughly 22\% probability that Betty receives fewer than 8 emails i
     \end{enumerate}
     \item For a restaurant's Glasgow branch, the number of bottles of champagne sold on a Saturday night follows a Poisson distribution with a mean rate of 3 per night. The number sold for their Edinburgh branch is Poisson distributed with a mean of 5 per night. Stating an assumption required, calculate the probability at least 10 but fewer than 15 bottles of champagne are sold on a Saturday night between the two branches.
     \item Shooting stars can be seen in a section of night sky at a mean rate of 1 per hour, and the number visible in an hour is Poisson distributed. Calculate the probability of watching the night sky for two hours and not seeing a single shooting star.
-    \item A city is experiencing problems with the number of pieces of chewing gum stuck to pavements. A worker from the council's environmental health department notes that in the city's main pedestrian square, that the mean number of pieces of chewing gum per square paving stone was 1.5.\\[0.5em]
+    \item A city is experiencing problems with the number of pieces of chewing gum stuck to pavements. A worker from the council's environmental health department notes that in the city's main pedestrian square, the mean number of pieces of chewing gum per square paving stone was 1.5.\\[0.5em]
     It may be assumed that the number of pieces on a paving stone, $X$, follows a Poisson distribution. 
     \begin{enumerate}
         \item State the distribution of $X$.
-        \item Use the Data Booklet to calculate the probability that a randomly selected paving stone contains at least one of chewing gum.
+        \item Use the Data Booklet to calculate the probability that a randomly selected paving stone contains at least one piece of chewing gum.
     \end{enumerate}
     The worker counts the number of pieces of chewing gum on a grid of 18 paving stones. The diagram below is for illustration, and does not show what the worker observed.
     \begin{center}
@@ -793,7 +786,7 @@ So there is a roughly 22\% probability that Betty receives fewer than 8 emails i
     \item A data storage company using a large number of hard drives has seen that the number of drives failing per day follows a Poisson distribution with a constant mean rate of 1.5 per day. The company has staff monitoring the servers that contain the drives 24 hours per day, working in three separate 8-hour shifts each day. Calculate the probability of more than 2 drives failing during one shift.
 \end{enumerate}
 
-\newpage
+\pagebreak
 
 []{#re7q}
 

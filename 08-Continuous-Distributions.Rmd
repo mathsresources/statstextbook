@@ -1,10 +1,10 @@
 # Continuous Distributions
 
-Data that results from measuring is often continuous, such as the height of a person, the mass of a piece of fruit or the volume of tea in a cup. *Continuous* means that if there were no limits to the precision of the measuring device, there would be an infinite set of possible values in any given range. A **continuous random variable** takes a *range* of real numbers, instead of a list. For example, the time taken to complete a task could take *any real, positive number*, or $\{x\in R,x>0\}$.
+Data that results from measuring is often continuous, such as the height of a person, the mass of a piece of fruit or the volume of tea in a cup. *Continuous* means that if there were no limits to the precision of a measuring device, there would be infinitely many possible values in any given range. A **continuous random variable** takes a *range* of real numbers, instead of a list. For example, the time taken to complete a task could take *any real, positive number*, or $\{x\in \mathbb{R} : x>0\}$.
 
 ### Probability and Continuous Distributions {-}
 
-Since a continuous random variable can take any of an infinite set of possible values, it is not possible for any *precise* value to be assigned a non-zero probability. This leads to the somewhat counter-intuitive result that, for any given value $x$, $\text{P}(X=x)=0$. Instead, probabilities are assigned to *intervals*. For example, letting random variable $X$ represent the time taken to complete a task, measured in seconds, an example of probabilities for this continuous random variable could be:
+Since a continuous random variable can take infinitely many possible values, it is not possible for any *single* value to have a non-zero probability. This leads to the somewhat counter-intuitive result that, for any given value $x$, $\text{P}(X=x)=0$. Instead, probabilities are assigned to *intervals*. For example, letting random variable $X$ represent the time taken to complete a task, measured in seconds, an example of probabilities for this continuous random variable could be:
 
 $$\text{P}(X=26)=0\quad \textit{ but }\quad \text{P}(24<X<28.5)=0.5328$$
 
@@ -97,12 +97,12 @@ If random variable $X$ can take *any real value* between $a$ and $b$ with a *con
   \centering
 
 \begin{centering}
-\tcbset{width=7.5cm}
+\tcbset{width=8cm}
 \begin{tcolorbox}[adjusted title=The Continuous Uniform Distribution:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item Notated $X\sim \text{U}(a,b)$.
     \item Defined by two parameters, $a$ and $b$.
-    \item Real, \textbf{continuous} values from $a$ to $b$.
+    \item Takes \textbf{continuous} values from $a$ to $b$.
     \item Constant probability density of $k$.
 \end{itemize}
 \end{tcolorbox}
@@ -111,7 +111,7 @@ If random variable $X$ can take *any real value* between $a$ and $b$ with a *con
 \end{minipage}
 \end{figure}
 
-The probability for any range of values can be calculated simply as the area of the rectangle enclosed. The value of $k$ can be calculated using the formula given in the SQA Data Booklet, derived from the area under any "curve" for any continuous distribution being **equal to 1**. The formulae for the **expectation** and **variance** for the continuous uniform distribution are also given for $X\sim \text{U}(a,b)$:
+The probability for any range of values can be calculated simply as the area of the rectangle enclosed. The value of $k$ can be calculated using the formula given in the Data Booklet, derived from the area under any "curve" for any continuous distribution being **equal to 1**. The formulae for the **expectation** and **variance** for the continuous uniform distribution are also given for $X\sim \text{U}(a,b)$:
 
 $$k=\frac{1}{b-a}\quad \qquad \quad \text{E}(X)=\frac{a+b}{2}\quad \qquad \quad \text{V}(X)=\frac{(b-a)^2}{12}$$
 
@@ -196,7 +196,7 @@ $\text{P}(31<T<34)=3\times \frac{1}{15}=\frac{3}{15}=\frac{1}{5}$
         \item Find the average amount of time that a person waits.
         \item Find the standard deviation of the waiting time.
     \end{enumerate}
-    \item The average number of donuts a nine-year old child eats per month is uniformly distributed from 0.5 to 4 donuts. Find the probability that a randomly chosen nine-year old child eats more than two donuts on average per month.
+    \item The number of donuts eaten per month by a nine-year-old child is uniformly distributed from 0.5 to 4 donuts. Find the probability that a randomly chosen nine-year old child eats more than two donuts on average per month.
     \item A manufacturer produces sweets of length $L$ millimetres, where $L$ has a continuous uniform distribution with range $(15,30)$.
     \begin{enumerate}
         \item[(a) ] Find the probability that a randomly selected sweet has a length greater than 24 millimetres.
@@ -229,7 +229,7 @@ $\text{P}(31<T<34)=3\times \frac{1}{15}=\frac{3}{15}=\frac{1}{5}$
 
 ## The Normal Distribution
 
-The **normal distribution**, also sometimes called the *Gaussian Distribution*, is one of the most important probability distributions in statistics. One of the reasons for this is that many continuous variables, from the mass of an animal to the time taken to complete a task, have been observed to be **normally distributed**.
+The **normal distribution**, also sometimes called the *Gaussian Distribution*, is one of the most important probability distributions in statistics. One of the reasons for this is that many continuous variables, from the mass of an animal to the time taken to complete a task, can be suitably modelled by the **normally distributed**.
 
 \begin{figure}[H]
   \centering
@@ -268,9 +268,11 @@ The **normal distribution**, also sometimes called the *Gaussian Distribution*, 
 \end{tikzpicture}
 \end{center}
 
+\vspace{-1cm}
+
 \begin{center}
 \begin{equation*}
-\textbf{pdf: }\quad\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^2}
+\textbf{pdf: }\quad\frac{1}{\sigma\sqrt{2\pi}}e^{-\dfrac{1}{2}\left(\dfrac{x-\mu}{\sigma}\right)^2}
 \end{equation*}
 \end{center}
 
@@ -291,14 +293,16 @@ The **normal distribution**, also sometimes called the *Gaussian Distribution*, 
     \item Defined by two parameters, $\mu$ and $\sigma^2$.
     \item Often described as a \textit{"bell-shaped curve"}.
     \item $\mu$, or the \textbf{mean}, gives the \textit{location} of the curve.
-    \item The curve is \textit{symmetrical about the mean}.
     \item $\sigma^2$, or the \textbf{variance}, gives the \textit{spread} of the curve.
+    \item The curve is \textit{symmetrical about the mean}.
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
 
 \end{minipage}
 \end{figure}
+
+\vspace{-1cm}
 
 \begin{center}
 \begin{tikzpicture}
@@ -448,28 +452,28 @@ The shape of the curve illustrates that values closer to the mean are more likel
 #### [Exercise 8.2](#ex82a) {-}
 
 *For each, sketch the distribution, labelling the mean and two standard deviations either side of the mean.*
-\begin{multicols}{2}
+
 \begin{enumerate}[itemsep=0pt]
     \item
     \begin{enumerate}
-        \begin{multicols}{2}
-        \item[(a)] $X\sim \text{N}(60,16)$
-        \item[(c)] $X\sim \text{N}(8,1.3^2)$
-        \item[(b)] $X\sim \text{N}(243,9)$
-        \item[(d)] $X\sim \text{N}(15,1.44)$
+        \begin{multicols}{4}
+        \item $X\sim \text{N}(60,16)$
+        \item $X\sim \text{N}(8,1.3^2)$
+        \item $X\sim \text{N}(243,9)$
+        \item $X\sim \text{N}(15,1.44)$
         \end{multicols}
     \end{enumerate}
+    \vspace{-0.3cm}
     \item The mass of a variety of pumpkin is normally distributed with mean 7kg and standard deviation 2kg.
     \item The time taken to polish a spoon is normally distributed with mean 8 seconds and standard deviation 1.5 seconds.
     \item The depth of water in a city's puddles after heavy rain is normally distributed with mean 32mm and standard deviation 9mm.
 \end{enumerate}
-\end{multicols}
 
 \pagebreak
 
 ## The Standard Normal Distribution \textit{Z}
 
-The random variable $Z$ is specifically defined as normally distributed, with $\mu=0$ and $\sigma=1$:
+The random variable $Z$ is specifically defined as normally distributed, with $\mu=0$ and $\sigma^2=1$ (i.e. mean $0$ and variance $1$):
 
 \begin{center}
 \begin{tikzpicture}
@@ -520,7 +524,7 @@ The random variable $Z$ is specifically defined as normally distributed, with $\
 \end{tikzpicture}
 \end{center}
 
-$Z$ is called the **standard normal distribution**, and it is used to calculate probabilities for **any** normal distribution. Probabilities for the $Z$ distribution can be obtained using the **cumulative probability table** on Page 11 of the SQA Data Booklet, or directly from a graphical calculator. Since the cumulative table only gives probabilities for **positive** $\mathbf{z}$**-values**, negative $z$-values require consideration of the symmetry of the normal distribution. 
+$Z$ is called the **standard normal distribution**, and it is used to calculate probabilities for **any** normal distribution. Probabilities for the $Z$ distribution can be obtained using the **cumulative probability table** on Page 11 of the Data Booklet, or directly from a graphical calculator. Since the cumulative table only gives cumulative probabilities for **positive** $\mathbf{z}$**-values**, negative $z$-values require consideration of the symmetry of the normal distribution. 
 
 \begin{figure}[H]
   \centering
@@ -786,7 +790,7 @@ $Z$ is called the **standard normal distribution**, and it is used to calculate 
 
 ## The \textit{Z}-Transformation
 
-A linear transformation of a normally distributed random variable will result in *another* normally distributed random variable, with the laws of expectation and variance applying as usual. In this way, any normal distributed can be related to the *standard normal distribution*, $Z$. Consider a random variable $X$ with mean $\mu$ and variance $\sigma^2$:
+A linear transformation of a normally distributed random variable will result in *another* normally distributed random variable, with the laws of expectation and variance applying as usual. In this way, any normally distributed variable can be related to the *standard normal distribution*, $Z$. Consider a random variable $X$ with mean $\mu$ and variance $\sigma^2$:
 
 $$X\sim \text{N}(\mu,\sigma^2)$$
 
@@ -815,7 +819,7 @@ $Z=\dfrac{X-\mu}{\text{$\sigma$}}$
 \end{tcolorbox}
 \end{centering}
 
-A useful way of thinking about the result of a $z$-transformation is that it is a measure of *how many standard deviations from the mean any given* $x$*-value is*, which then can be used to calculate a probability. 
+A useful way of thinking about the result of a $z$-transformation is that it is a measure of *how many standard deviations a value is from the mean*, which then can be used to calculate a probability. 
 
 For example, consider normally distributed random variable $X$ with a mean of 20 and standard deviation of 6. The probability that a random observation of $X$ results in a value less than 29 can be sketched on the distribution of $X$, and compared to the *transformed value* of 1.5 on the distribution of $Z$. Note that 29 is 1.5 standard deviations over the mean of 20.
 
@@ -1039,32 +1043,27 @@ $\text{P}(X>300)=\text{P}(Z>\frac{\text{$X-\mu$}}{\text{$\sigma$}})=\text{P}(Z>\
 
 ## Working Backwards
 
-"Working backwards" means calculating a value for a normally distributed random variable when a **probability relating to this value is given**. For example, if random variable $X$ is normally distributed with mean $280$ and variance $16$, it may be desired to calculate the value only exceeded by 10\% of the observations. Typical steps are:
+"Working backwards" means calculating a value for a normally distributed random variable when a **probability relating to this value is given**. For example, if random variable $X$ is normally distributed with mean $280$ and variance $16$, it may be desired to calculate the value exceeded by only 10\% of the observations. Typical steps are:
 
 \begin{figure}[H]
   \centering
 \captionsetup[figure]{labelformat=empty}%
-\begin{minipage}{.3\textwidth}
+\begin{minipage}{.35\textwidth}
 
 \begin{itemize}
-    \item Write a probability statement..
     \item Determine the $z$-value.
-    \item Use the $z$-transformation.
+    \item Use the $z$-transformation.\\[0.1em]
+    \item Solve for $x$.
 \end{itemize}
 
 \end{minipage}%
-  \centering
-\begin{minipage}{.1\textwidth}
-  \centering
-\end{minipage}%
-  \centering
-\begin{minipage}{.6\textwidth}
-  \centering
+\begin{minipage}{.65\textwidth}
 
 \vspace{-0.5cm}
-\begin{align*}
-\text{P}(Z<1.28)=&0.9 &\\
-1.28=&\frac{x-280}{4}\hspace{1cm}
+\begin{flalign*}
+\text{P}(Z<z)=0.9 & \rightarrow z=1.28&&\\
+\frac{x-280}{4}&=1.28\\
+x &= 1.28\times 4 + 280\hspace{1cm}
 \begin{tikzpicture}[overlay]
 \begin{axis}[
   no markers, 
@@ -1098,11 +1097,13 @@ $\text{P}(X>300)=\text{P}(Z>\frac{\text{$X-\mu$}}{\text{$\sigma$}})=\text{P}(Z>\
 \draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
 \end{axis}
 \end{tikzpicture}\\
-x=&285.12
-\end{align*}
+x&=285.12
+\end{flalign*}
 
 \end{minipage}
 \end{figure}
+
+\vspace{-0.7cm}
 
 Hence, in the long run only 10\% of observations exceed 285.12.
 
@@ -1115,7 +1116,7 @@ Hence, in the long run only 10\% of observations exceed 285.12.
 Let random variable $X$ represent the time taken for a TV to fail.
 \begin{align*}
 X\sim &\text{N}(31,4^2)\\
-\text{P}(Z<a)=&0.05 &\\
+\text{P}(Z<z)=&0.05 \rightarrow z=-1.64 &\\
 -1.64=&\frac{x-31}{4}\hspace{3cm}
 \begin{tikzpicture}[overlay]
 \begin{axis}[
@@ -1159,65 +1160,6 @@ Hence, a 25 month warranty should expect to see less than 5\% of TVs fail under 
 \end{tcolorbox}
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} The diameter of the apples grown in a garden are normally distributed with a mean of 7cm and a standard deviation of 0.25cm. Calculate the range of values, symmetrical about the mean, within which the diameters of 95\% of the apples lie.
-
-\tcblower
-\textbf{Solution:}
-
-Let random variable $X$ represent the diameter of an apple.
-\begin{align*}
-X\sim & \text{N}(7,0.25^2)\\
-\text{P}(Z<a)=&0.975 &\\
-1.96=&\frac{x-7}{0.25}\\
-x=&7+1.96\times 0.25\hspace{3cm}
-\begin{tikzpicture}[overlay]
-\begin{axis}[
-  no markers, 
-  domain=-3:3, 
-  samples=100,
-  ymin=0,
-  axis lines*=left, 
-  every axis y label/.style={at=(current axis.above origin),anchor=south},
-  every axis x label/.style={at=(current axis.right of origin),anchor=west},
-  height=3cm, 
-  width=7cm,
-  xtick=\empty, 
-  ytick=\empty,
-  enlargelimits=false, 
-  clip=false, 
-  axis on top,
-  grid = major,
-  hide y axis,
-  hide x axis
-  ]
-\addplot [draw=none, fill=Black!20, domain=-1.96:1.96] {gauss(x, 0, 1)} 
-\closedcycle;
- \addplot [semithick] {gauss(x, 0, 1)};
-\pgfmathsetmacro\valueA{gauss(1.28,0,1)}
-\pgfmathsetmacro\valueB{gauss(0,0,1)}
-\pgfmathsetmacro\valueC{gauss(1.96,0,1)}
-\fill[Black!20] (axis cs: -1.96,-0.02) rectangle (axis cs: 1.96,0);
-\draw [semithick, black]  (axis cs:-1.96,-0.02) -- (axis cs:-1.96,\valueC);
-\draw [semithick, black]  (axis cs:1.96,-0,02) -- (axis cs:1.96,\valueC);
-\node[below] at (axis cs: 1.96,0)  {$1.96$};
-\node[below] at (axis cs: -1.96,0)  {$-1.96$};
-\node[above] at (axis cs: 0,\valueB)  {$Z$};
-\node at (axis cs: 0,\valueA)  {$95\%$};
-\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
-\end{axis}
-\end{tikzpicture}\\
-x=&7.49
-\end{align*}
-
-Whilst the higher value for the diameter of an apple is given by $7+1.96\times0.25=7.49$,\\ the lower value is given by $7-1.96\times0.25=6.51$.
-
-Hence, 95\% of the apples grown have a diameter between 6.51cm and 7.49cm.
-
-\end{tcolorbox}
-
-\pagebreak
-
-\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The masses of pumpkins grown in a farmer's field are normally distributed, with a mean of 6.8kg. Given that only one in every 1000 pumpkins has a mass greater than 10kg, calculate the standard deviation of the mass of a pumpkin.
 
 \tcblower
@@ -1226,7 +1168,7 @@ Hence, 95\% of the apples grown have a diameter between 6.51cm and 7.49cm.
 Let random variable $X$ represent the mass of a pumpkin.
 \begin{align*}
 X\sim & \text{N}(6.8,\sigma^2)\\
-\text{P}(Z<a)=&0.999 &\\
+\text{P}(Z<z)=&0.999 & \rightarrow z=3.09&&\\
 3.09=&\frac{10-6.8}{\sigma}\\
 3.09\sigma=&3.2\\
 \sigma=&\frac{3.2}{3.09}\hspace{3cm}
@@ -1257,7 +1199,7 @@ X\sim & \text{N}(6.8,\sigma^2)\\
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
 \pgfmathsetmacro\valueC{gauss(3.09,0,1)}
 \fill[Black!20] (axis cs: -3.2,-0.02) rectangle (axis cs: 3.09,0);
-\draw [semithick, black]  (axis cs:3.09,-0,02) -- (axis cs:3.09,\valueC);
+\draw [semithick, black]  (axis cs:3.09,-0.02) -- (axis cs:3.09,\valueC);
 \node[below] at (axis cs: 3.09,0)  {$3.09$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
 \node at (axis cs: 0,\valueA)  {$99.9\%$};
@@ -1271,26 +1213,28 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
 
 \end{tcolorbox}
 
+\pagebreak
+
 []{#ex85q}
 
 #### [Exercise 8.5](#ex85a) {-}
 
 \begin{enumerate}
-    \item Given $Z\sim \text{N}(0,1)$, find the value of $a$ if:
+    \item Given $Z\sim \text{N}(0,1)$, find the value of $z$ if:
     \begin{multicols}{4}
     \begin{enumerate}
-        \item[(a)] $\text{P}(Z>a)=0.1$
-        \item[(e)] $\text{P}(Z<a)=0.995$
-        \item[(i)] $\text{P}(Z>a)=0.975$
-        \item[(b)] $\text{P}(Z>a)=0.05$
-        \item[(f)] $\text{P}(Z<a)=0.025$
-        \item[(j)] $\text{P}(Z<a)=0.999$
-        \item[(c)] $\text{P}(Z>a)=0.001$
-        \item[(g)] $\text{P}(Z<a)=0.005$
-        \item[(k)] $\text{P}(Z<a)=0.791$
-        \item[(d)] $\text{P}(Z<a)=0.99$
-        \item[(h)] $\text{P}(Z>a)=0.9$
-        \item[(l)] $\text{P}(Z>a)=0.003$
+        \item[(a)] $\text{P}(Z>z)=0.1$
+        \item[(e)] $\text{P}(Z<z)=0.995$
+        \item[(i)] $\text{P}(Z>z)=0.975$
+        \item[(b)] $\text{P}(Z>z)=0.05$
+        \item[(f)] $\text{P}(Z<z)=0.025$
+        \item[(j)] $\text{P}(Z<z)=0.999$
+        \item[(c)] $\text{P}(Z>z)=0.001$
+        \item[(g)] $\text{P}(Z<z)=0.005$
+        \item[(k)] $\text{P}(Z<z)=0.791$
+        \item[(d)] $\text{P}(Z<z)=0.99$
+        \item[(h)] $\text{P}(Z>z)=0.9$
+        \item[(l)] $\text{P}(Z>z)=0.003$
     \end{enumerate}
     \end{multicols}
     \item Let random variable $X$ represent the total volume of petrol used by a motorist on their daily commute to and from work. The amount of petrol used is normally distributed with a mean of 2.4 litres and standard deviation 0.2 litres.
@@ -1308,27 +1252,25 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
     \item In a Physics exam, the scores obtained by candidates are normally distributed. Given that 25\% of pupils gain a grade A with a mark of 74 required, and 10\% of pupils didn't get the 46 marks required for a grade C, calculate the mean and standard deviation. 
 \end{enumerate}
 
-\pagebreak
+\newpage
 
 ## Combining Normal Random Variables
 
-**Sums and differences** of normally distributed random variables  *are themselves normally distributed*, under the condition that **the normal random variables are independent**. For example, given **independent** normally distributed random variables $X$ and $Y$ with means of $\mu_X$ and $\mu_Y$ and standard deviations of $\sigma_X$ and $\sigma_Y$ respectively:
+*Sums and differences* of normally distributed random variables are *themselves normally distributed*. When these random variables are **independent**, the mean and variance of any linear combination of them may be determined using the laws of expectation and variance introduced in section 6.6 For example, given **independent** normally distributed random variables $X$ and $Y$ with means of $\mu_X$ and $\mu_Y$ and standard deviations of $\sigma_X$ and $\sigma_Y$ respectively:
 
 $$X+Y\sim \text{N}(\mu_X+\mu_Y,\sigma_X^2+\sigma_Y^2)\quad\text{   and   }\quad X-Y\sim \text{N}(\mu_X-\mu_Y,\sigma_X^2+\sigma_Y^2)$$
 
-The mean and variance of these *combined normal random variables* can be calculated using the laws of expectation and variance as usual. 
-
-It is important to remember that $2X$ is **not** the sum of two independent observations of $X$. Instead, the sum of $n$ independent observations of $X$ is $X_1+X_2+...+X_n$.
+It is important to remember that $2X$ is **not** the sum of two independent observations of $X$. Instead, the sum of $n$ independent observations of $X$ is $X_1+X_2+\dots+X_n$.
 
 \begin{align*}
-\text{E}(X_1+X_2+...+X_n)=&\text{E}(X_1)+\text{E}(X_2)+...+\text{E}(X_n)=n\text{E}(X)\\
-\text{V}(X_1+X_2+...+X_n)=&\text{V}(X_1)+\text{V}(X_2)+...+\text{V}(X_n)=n\text{V}(X)
+\text{E}(X_1+X_2+...+X_n)=&\text{E}(X_1)+\text{E}(X_2)+\dots+\text{E}(X_n)=n\text{E}(X)\\
+\text{V}(X_1+X_2+...+X_n)=&\text{V}(X_1)+\text{V}(X_2)+\dots+\text{V}(X_n)=n\text{V}(X)
 \end{align*}
 
 When calculating probabilities relating to combined normal random variables, it can be helpful to name the new random variable using some logical letter choice, such as $T$ for *"Total"*, $D$ for *"Difference"* and so on.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} The actual volume of paint contained within tins marked as containing 25 litres is normally distributed with a mean of 25.2 litres and a standard deviation of 0.3 litres. Calculate the probability that 4 such tins contain less than 100 litres in total.
+\textbf{Problem:} The actual volume of paint contained within tins marked as containing 25 litres is normally distributed with a mean of 25.2 litres and a standard deviation of 0.3 litres. Calculate the probability that the total volume in 4 tins is less than 100 litres.
 
 \tcblower
 \textbf{Solution:}
@@ -1377,38 +1319,6 @@ $T\sim \text{N}(100.8,0.36)$
 
 \pagebreak
 
-\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} The time taken for a washing machine cycle to complete is normally distributed, with mean 57 minutes and standard deviation 2 minutes. The time taken for the owner of the washing machine to start the cycle, run 10 kilometres on their treadmill and get back to the washing machine is normally distributed with mean 58 minutes and standard deviation 3 minutes. Stating an assumption required, calculate the probability that the washing machine cycle is still running when the owner returns to it.
-
-\tcblower
-\textbf{Solution:} \textit{ Define the random variables used.}
-
-\vspace{0.1cm}
-
-Let random variable $X$ represent the time taken for the washing machine cycle, and random variable $Y$ represent the time taken for the owner to complete their run.
-
-\vspace{0.1cm}
-
-$X\sim \text{N}(57,2^2)$ and $Y\sim \text{N}(58,3^2)$
-
-\vspace{0.1cm}
-
-Assuming the time taken for the cycle to complete and the time taken for the owner to complete their run are independent:
-
-\vspace{0.1cm}
-
-\begin{align*}
-\text{P}(X>Y)=&\text{P}(X-Y>0) &\qquad\qquad\qquad \text{E}(X-Y)&=\text{E}(X)-\text{E}(Y)=57-58=-1\\
-=&\text{P}\left(Z>\frac{0-(-1)}{\sqrt{13}}\right) & \text{V}(X-Y)&=\text{V}(X)+\text{V}(Y)=2^2+3^2=13\\
-=&\text{P}(Z>0.28) & X-Y&\sim \text{N}(-1,13)\\
-=&0.3897
-\end{align*}
-\begin{tikzpicture}[overlay]
-\draw[semithick,-stealth] (4.5,3.7) arc (110:70:5);
-\end{tikzpicture}
-
-\end{tcolorbox}
-
 []{#ex86q}
 
 #### [Exercise 8.6](#ex86a) {-}
@@ -1419,12 +1329,12 @@ Assuming the time taken for the cycle to complete and the time taken for the own
         \item Find the distribution of the time taken for Bob to make a portion of mash, stating two assumptions required.
         \item Calculate the probability that it takes Bob under 35 minutes to make a portion.
     \end{enumerate}
-    \item The bar staff in a hotel ignore legal requirements to carefully measure any alcohol poured, and instead just estimate the amount of champagne to pour into each glass. The amount they pour is normally distributed with a mean of 127ml and a standard deviation of 5ml. Assuming that the amount of champagne poured in each of a series of glasses is independent, determine the probability that the total volume in five glasses is less than 625ml.
-    \item The amount of milk a school's Maths department uses per week is normally distributed, with a mean of 3.5 litres and a standard deviation of 0.4 litres. The Business department's milk use is also normally distributed, with a mean of 2.8 litres and a standard deviation of 0.5 litres. In any given week, calculate the probability that the Business department uses more milk than the Maths department, stating any assumptions required.
+    \item The bar staff in a hotel ignore legal requirements to carefully measure any alcohol poured, and instead just estimate the amount of champagne to pour into each glass. The amount they pour is normally distributed with a mean of 127ml and a standard deviation of 5ml. Assuming that the amount of champagne poured in each of several glasses is independent, determine the probability that the total volume in five glasses is less than 625ml.
+    \item The amount of milk a school's Maths department uses per week is normally distributed, with a mean of 3.5 litres and a standard deviation of 0.4 litres. The Business department's milk use is also normally distributed, with a mean of 2.8 litres and a standard deviation of 0.5 litres. For any given week, calculate the probability that the Business department uses more milk than the Maths department, stating any assumptions required.
     \item The length of a best-of-five match of tennis is normally distributed with a mean of 165 minutes and a standard deviation of 21 minutes, whilst the length of a best-of-three match has a mean of 95 minutes and a standard deviation of 10 minutes. A tournament has two best-of-five matches and one best-of-three match scheduled to be played on Court 7, beginning at 10am. Find the probability that the three matches will be completed by 4pm, stating two assumptions required.
 \end{enumerate}
 
-\pagebreak
+\newpage
 
 ## Normal Approximation to the Binomial Distribution
 
@@ -1460,7 +1370,7 @@ Assuming the time taken for the cycle to complete and the time taken for the own
 };
     \end{axis}
 \end{tikzpicture}
-\captionof{figure}{$B(8,0.2)$}
+\captionof{figure}{$\text{B}(8,0.2)$}
   \label{fig:test1}
 \end{center}
 
@@ -1513,8 +1423,8 @@ Assuming the time taken for the cycle to complete and the time taken for the own
 };
     \end{axis}
 \end{tikzpicture}
-\captionof{figure}{$B(25,0.4)$}
-  \label{fig:test1}
+\captionof{figure}{$\text{B}(25,0.4)$}
+  \label{fig:binomapprox}
 \end{center}
   
 \end{minipage}%
@@ -1535,18 +1445,18 @@ Assuming the time taken for the cycle to complete and the time taken for the own
 \addplot [fill=Black!20, fill opacity=0.5] {binom(x,60,0.5)}; 
 \end{axis}
 \end{tikzpicture}
-\captionof{figure}{$B(60,0.5)$}
-  \label{fig:test1}
+\captionof{figure}{$\text{B}(60,0.5)$}
+  \label{fig:test112bakusbd}
 \end{center}
 
 \end{minipage}
 \end{figure}
 
-Under certain conditions the *discrete* binomial distribution can begin to resemble a *continuous* normal distribution.. Given random variable $X\sim B(n,p)$, **a normal distribution can approximate the binomial distribution**, with *sufficiently accuracy*, when:   
+Under certain conditions the *discrete* binomial distribution can begin to resemble a *continuous* normal distribution. Given random variable $X\sim \text{B}(n,p)$, **a normal distribution can approximate the binomial distribution**, with *sufficient accuracy*, when:   
 
 \begin{centering}
 \tcbset{width=12cm}
-\begin{tcolorbox}[adjusted title=Conditions for normal approximation to binomial distributions :, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for normal approximation to binomial distributions:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{center}
 $np>5$\quad \text{ and } \quad $nq>5$
 \end{center}
@@ -1555,11 +1465,11 @@ $np>5$\quad \text{ and } \quad $nq>5$
 
 The mean and variance of the *approximate* normal distribution are, as usual for a binomial distribution, \mbox{$\text{E}(X)=np$} and $\text{V}(X)=npq$. Using '$\approx$' instead of '$\sim$' is important to show that the normal distribution is only an *approximation* to the actual binomial distribution. 
 
-$$\text{If } X\sim B(n,p) \text{ then } X\approx \text{N}(np,npq)$$
+$$\text{If } X\sim \text{B}(n,p) \text{ then } X\approx \text{N}(np,npq)$$
 
 Historically, the ability to approximate the binomial distribution using the normal distribution will have prevented the need for extensive tables of binomial probabilities. Additionally, binomial distribution calculations tend to be more computationally-intensive than normal distributions calculations. Whilst modern computing power may seem to render this argument null, it can still be desirable to speed up computation in return for a trivial loss in accuracy. 
 
-Approximating probabilities for a *discrete* distribution using a *continuous* distribution may lead to inaccuracy unless a **continuity correction** is applied. For example, consider random variable $X\sim B(24,0.5)$, with its normal approximation $X\approx \text{N}(12,6)$ overlaid and the *continous* probability $\text{P}(X<14)$ shaded:
+Approximating probabilities for a *discrete* distribution using a *continuous* distribution may lead to inaccuracy unless a **continuity correction** is applied. For example, consider random variable $X\sim \text{B}(24,0.5)$, with its normal approximation $X\approx \text{N}(12,6)$ overlaid and the *continous* probability $\text{P}(X<14)$ shaded:
 
 \begin{center}
 \hspace{-1cm}
@@ -1622,7 +1532,7 @@ Let random variable $X$ represent the number of questions answered correctly.
 
 \vspace{0.1cm}
 
-$X\sim B(40,0.25)$ 
+$X\sim \text{B}(40,0.25)$ 
 
 \vspace{0.1cm}
 
@@ -1653,7 +1563,7 @@ $X\approx \text{N}(10,7.5)$
 #### [Exercise 8.7](#ex87a) {-}
 
 \begin{enumerate}[itemsep=0pt]
-    \item Given $X\sim B(40,0.4)$:
+    \item Given $X\sim \text{B}(40,0.4)$:
     \begin{enumerate}[itemsep=0pt]
         \item Show that a normal approximation is appropriate.
         \item Find:
@@ -1665,7 +1575,7 @@ $X\approx \text{N}(10,7.5)$
         \end{enumerate}
         \end{multicols}
     \end{enumerate}
-    \item Given $Y\sim B(81,\frac{2}{3})$:
+    \item Given $Y\sim \text{B}(81,\frac{2}{3})$:
     \begin{enumerate}[itemsep=0pt]
         \item Show that a normal approximation is appropriate.
         \item Find:
@@ -1719,8 +1629,8 @@ $X\approx \text{N}(10,7.5)$
 };
     \end{axis}
 \end{tikzpicture}
-\captionof{figure}{$Po(1.5)$}
-  \label{fig:test1}
+\captionof{figure}{$\text{Po}(1.5)$}
+  \label{fig:test1sada}
 \end{center}
 
 \end{minipage}%
@@ -1741,7 +1651,7 @@ $X\approx \text{N}(10,7.5)$
 \addplot [fill=Black!20, fill opacity=0.5] {pois(x,8)}; 
 \end{axis}
 \end{tikzpicture}
-\captionof{figure}{$Po(8)$}
+\captionof{figure}{$\text{Po}(8)$}
   \label{fig:test1}
 \end{center}
   
@@ -1763,14 +1673,14 @@ $X\approx \text{N}(10,7.5)$
 \addplot [fill=Black!20, fill opacity=0.5] {pois(x,25)}; 
 \end{axis}
 \end{tikzpicture}
-\captionof{figure}{$Po(25)$}
+\captionof{figure}{$\text{Po}(25)$}
   \label{fig:test1}
 \end{center}
 
 \end{minipage}
 \end{figure}
 
-As with the binomial distribution, under certain conditions the *discrete* Poisson distribution can also begin to resemble a *continuous* normal distribution. Given random variable $X\sim Po(\lambda)$, **a normal distribution can approximate the Poisson distribution**, with *sufficiently accuracy*, when:   
+As with the binomial distribution, under certain conditions the *discrete* Poisson distribution can also begin to resemble a *continuous* normal distribution. Given random variable $X\sim \text{Po}(\lambda)$, **a normal distribution can approximate the Poisson distribution**, with *sufficient accuracy*, when:   
 
 \begin{centering}
 \tcbset{width=12cm}
@@ -1783,7 +1693,7 @@ $\lambda>10$
 
 The mean and variance of the *approximate* normal distribution are $\text{E}(X)=\text{V}(X)=\lambda$.
 .
-$$\text{If } X\sim Po(\lambda) \text{ then } X\approx \text{N}(\lambda,\lambda)$$
+$$\text{If } X\sim \text{Po}(\lambda) \text{ then } X\approx \text{N}(\lambda,\lambda)$$
 
 Since again this is a *continuous approximation* to a *discrete distribution*, any probabilities calculated will not be sufficiently accurate unless a **continuity correction** is applied. For a continuous approximation to a discrete distribution taking integers values, as is the case with both such approximations encountered in this chapter, continuity corrections will always require an addition or subtraction of 0.5. 
 
@@ -1796,7 +1706,7 @@ Since again this is a *continuous approximation* to a *discrete distribution*, a
 \vspace{0.1cm}
 
 Let random variable $T$ represent the number of goals across the 10 games, with $\lambda=2.5\times 10=25$:
-$T\sim Po(25)$ 
+$T\sim \text{Po}(25)$ 
 
 \vspace{0.1cm}
 
@@ -1832,7 +1742,7 @@ $T\approx \text{N}(25,25)$
 #### [Exercise 8.8](#ex88a) {-}
 
 \begin{enumerate}
-    \item Given $X\sim Po(24)$, use the normal approximation to find:
+    \item Given $X\sim \text{Po}(24)$, use the normal approximation to find:
     \begin{multicols}{3}
     \begin{enumerate}
         \item $\text{P}(X\leqslant25)$
@@ -1840,7 +1750,7 @@ $T\approx \text{N}(25,25)$
         \item $\text{P}(X>23)$
     \end{enumerate}
     \end{multicols}
-    \item Given $X\sim Po(60)$, use the normal approximation to find:
+    \item Given $X\sim \text{Po}(60)$, use the normal approximation to find:
     \begin{multicols}{3}
     \begin{enumerate}
         \item $\text{P}(X\geqslant57)$
