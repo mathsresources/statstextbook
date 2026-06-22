@@ -53,7 +53,7 @@ Consider the discrete random variables $X$ and $Y$, representing the scores obta
     every axis y label/.style={at={(current axis.above origin)},anchor=south east}
     }
 }
-    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 4cm, width = 8cm, ybar,bar width=20pt, xmin=0.5,xmax=6.5,ymin=0,ymax=0.4, xtick={1,2,3,4,5,6},,ytick={0,0.1666},yticklabels={0,$\frac{1}{6}$},xlabel=$x$,ylabel=probability]
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 4cm, width = 8cm, ybar,bar width=10pt, xmin=0.5,xmax=6.5,ymin=0,ymax=0.4, xtick={1,2,3,4,5,6},,ytick={0,0.1666},yticklabels={0,$\frac{1}{6}$},xlabel=$x$,ylabel=probability]
         \addplot[fill=black!25, draw=black] coordinates {
     (1,0.1666) 
     (2,0.1666) 
@@ -66,7 +66,7 @@ Consider the discrete random variables $X$ and $Y$, representing the scores obta
 \end{tikzpicture}
 
 \captionof{figure}{$\text{E}(X)=3.5\text{ and }\text{V}(X)=\frac{35}{12}$}
-  \label{fig:test1}
+  \label{fig:discunif}
 
 \end{minipage}%
   \centering
@@ -100,7 +100,7 @@ Consider the discrete random variables $X$ and $Y$, representing the scores obta
     every axis y label/.style={at={(current axis.above origin)},anchor=south east}
     }
 }
-    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 4cm, width = 8cm, ybar,bar width=20pt, xmin=4.5,xmax=8.5,ymin=0,ymax=0.4, xtick={5,6,7,8},xticklabels={1,2,3,4},ytick={0,0.25},yticklabels={0,$\frac{1}{4}$},xlabel=$x$,ylabel=probability]
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 4cm, width = 8cm, ybar,bar width=10pt, xmin=4.5,xmax=8.5,ymin=0,ymax=0.4, xtick={5,6,7,8},xticklabels={1,2,3,4},ytick={0,0.25},yticklabels={0,$\frac{1}{4}$},xlabel=$x$,ylabel=probability]
         \addplot[fill=black!25, draw=black] coordinates {
     (5,0.25)
     (6,0.25) 
@@ -111,12 +111,12 @@ Consider the discrete random variables $X$ and $Y$, representing the scores obta
 \end{tikzpicture}
 
 \captionof{figure}{$\text{E}(Y)=2.5\text{ and }\text{V}(Y)=\frac{5}{4}$}
-  \label{fig:test1}
+  \label{fig:discunif21}
 
 \end{minipage}
 \end{figure}
 
-Whilst $X$ and $Y$ do not follow the exact same distribution, they share key characteristics, namely that they both take a *finite number of discrete values*, $\{1,2,3,\dots,k\}$, and that *each of these values is equally likely*. It is these *shared characteristics* that define the *discrete uniform distribution*.
+Whilst $X$ and $Y$ do not follow the same distribution, they share key characteristics, namely that they both take a *finite number of integer values*, $\{1,2,3,\dots,k\}$, and that *each of these values is equally likely*. It is these *shared characteristics* that define the *discrete uniform distribution*.
 
 \vspace{0.5cm}
 
@@ -126,7 +126,7 @@ Whilst $X$ and $Y$ do not follow the exact same distribution, they share key cha
 \begin{itemize}
     \item Notated $X\sim \text{U}(k)$.
     \item Defined by one parameter, $k$.
-    \item Takes $k$ discrete values from $1$ to $k$: $\{1,2,3,\dots,k\}$. 
+    \item Takes $k$ integer values from $1$ to $k$: $\{1,2,3,\dots,k\}$. 
     \item Each value is \textit{equally likely}, with probability $\dfrac{1}{k}$.
 \end{itemize}
 \end{tcolorbox}
@@ -222,19 +222,18 @@ The previously stated values for the expectation and variance of $X$ and $Y$ can
 A *Bernoulli trial* is an experiment in which each trial has only two possible outcomes, such as a coin landing on either *heads* or *tails*, or asking a *yes or no* question in a survey. These responses can be more generally referred to as *successes* or *failures*. If random variable $X$ represents the **number of successes** in **_n_** **trials**, each trial having **probability of success** **_p_**, then $X$ is **binomially distributed**.
 
 \begin{centering}
-\tcbset{width=10.5cm}
+\tcbset{width=14cm}
 \begin{tcolorbox}[adjusted title=The Binomial Distribution:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item Notated $X\sim \text{B}(n,p)$.
     \item Defined by two parameters, $n$ and $p$.
-    \item Random variable $X$ represents the number of successes\ in a \textbf{fixed} number of trials, $n$.
-    \item Each trial has the \textbf{same} probability of success, $p$.
-    \item Each trial must be \textbf{independent}.
+    \item $X$ represents the number of successes in a \textbf{fixed} number of trials, $n$.
+    \item Each trial is independent, with the \textbf{same} probability of success, $p$.
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
 
-Consider a spinning wheel that lands on a shaded sector with probability $\frac{2}{5}$, or $0.4$. Let random variable $X$ represent the number of times the wheel will land on the shaded sector *out of 6 trials*, with possible values from $0$ to $6$. Here $X$ is *binomially distributed*, with $n=6$ (number of trials) and $p=0.4$ (probability of success), or: $X\sim \text{B}(6,0.4)$
+Consider a spinning wheel that lands on a shaded sector with probability $\frac{2}{5}$, or $0.4$. Let random variable $X$ represent the number of times the wheel will land on the shaded sector in 6 trials, with possible values from $0$ to $6$. Here $X$ is *binomially distributed*, with $n=6$ (number of trials) and $p=0.4$ (probability of success), or: $X\sim \text{B}(6,0.4)$
 
 \vspace{-0.5cm}
 \begin{figure}[H]
@@ -299,7 +298,7 @@ However there are a number of other possible *combinations* of successes and fai
 
 $$\text{P}(X=2)={}^{6}C_{2}\times0.4^2\times0.6^4=0.3110$$
 
-The  Data Booklet gives the **formula** to calculate *individual* probabilities for the binomial distribution:
+The  Data Booklet gives the **formula** to calculate *individual* probabilities for the binomial distribution, where $q$ is the probability of *failure*, and hence $q=1-p$:
 
 $$\text{Given }X\sim \text{B}(n,p)\text{: }\qquad \text{P}(X=x)={}^{n}C_{x}\times p^x\times q^{n-x}$$
 \pagebreak
@@ -321,7 +320,7 @@ $$\text{Given }X\sim \text{B}(n,p)\text{: }\qquad \text{P}(X=x)={}^{n}C_{x}\time
 \end{tcolorbox}
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} 12 students each take it in turns to select a playing card from a pack at random, before returning it. Calculate the probability that the card drawn is a Spade for fewer than 2 of the students. 
+\textbf{Problem:} 12 students take turns to select a playing card at random, replacing the card each time. Calculate the probability that the card drawn is a Spade for fewer than 2 of the students. 
 
 \tcblower
 \textbf{Solution:} 
@@ -351,17 +350,17 @@ X&\sim B\left(12,\tfrac{1}{4}\right)\\[1em]
     \item Given that $X\sim \text{B}(8,0.6)$, calculate $\text{P}(X=5)$.
     \item Given that $Y\sim \text{B}(13,0.4)$, calculate $\text{P}(Y\leqslant2)$.
     \item 5\% of bluebells have white flowers. The remainder have blue flowers. Determine the probability that a random sample of twelve bluebell plants includes exactly one with white flowers.
-    \item Amongst a group of four friends, let random variable $X$ represent the number of them that were born on a Tuesday.
+    \item Among a group of four friends, let random variable $X$ represent the number of them that were born on a Tuesday.
     \begin{enumerate}
         \item State the distribution of $X$.
         \item Calculate the probability that only one of the four was born on a Tuesday.
     \end{enumerate}
-    \item In Bob's form class of 20 pupils, their form teacher assigns each pupil a number from 1 to 20 using the order listed on the register and, each morning, uses a random number generator to select which pupil should be responsible for read out notices. Calculate the probability that Bob is picked exactly twice in one week.
+    \item In Bob's form class of 20 pupils, their form teacher assigns each pupil a number from 1 to 20 using the order listed on the register and, each morning, uses a random number generator to select which pupil should be responsible for read out notices. Calculate the probability that Bob is picked exactly twice in one school week.
 \end{enumerate}
 
 \pagebreak
 
-## Binomial Calculations using Tables and Calculators
+## Binomial Calculations using Cumulative Probabilities
 
 In practice, it will seldom be necessary to calculate binomial probabilities using the formula. Graphical calculators can be used to calculate both *individual* ($\text{P}(X=x)$) and *cumulative* ($\text{P}(X\leqslant x)$) probabilities. The Data Booklet provides **cumulative probability tables**, giving **"less than or equal to"** probabilities.
 
@@ -437,19 +436,21 @@ $\text{P}(X\geqslant 2)=1-\text{P}(X\leqslant 1)=1-0.6590=0.3410$
 
 ## The Mean and Variance of the Binomial Distribution
 
-The  Data Booklet gives the formulae for the *mean* and *variance* of binomial distribution.
+The  Data Booklet gives the formulae for the *mean* and *variance* of the binomial distribution.
 
-Given random variable $X$ such that $X\sim \text{B}(n,p)$:
+Given random variable $X\sim \text{B}(n,p)$:
 
 $$\text{E}(X)=np \qquad \text{and} \qquad \text{V}(X)=npq$$
 
 Where $q=1-p$, representing the *probability of failure*.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A multiple choice quiz is comprised of eight questions, each with four choices to pick from. Let random variable $X$ represent the number of correct answers obtained out of eight from a student guessing completely at random. Calculate the mean and variance of $X$.
+\textbf{Problem:} A multiple choice quiz is comprised of eight questions, each with four possible choices. Let random variable $X$ represent the number of correct answers obtained out of eight from a student guessing completely at random. Calculate the mean and variance of $X$.
 
 \tcblower
 \textbf{Solution:}
+
+Since the student is guessing randomly, the probability of a correct answer is $p=\tfrac{1}{4}$.
 
 $X\sim \text{B}(8,0.25)$\\[1em]
 $\text{E}(X)=np=8\times 0.25=2$\\[1em]
@@ -498,23 +499,22 @@ $\text{V}(X)=npq=8\times 0.25 \times 0.75=1.5$
 
 ## The Poisson Distribution
 
-Consider a mobile network's customer support department looking at how many call agents to have on duty at any one time. The mean rate of calls may be well known, such as 2.5 per hour. However, in any one hour there may be 4 calls, 10 calls, no calls at all, and so on. Letting the random variable $X$ represent the number of calls in any particular hour, if certain conditions are satisfied then $X$ follows a **Poisson distribution** with mean rate $\lambda=2.5$.
+Consider a mobile network's customer support department looking at how many call agents to have on duty at any one time. The mean rate of calls may be well known, such as 2.5 per hour. However, in any one hour there may be 4 calls, 10 calls, no calls at all, and so on. Let the random variable $X$ represent the number of calls in any particular hour. If the conditions for a Poisson model are satisfied then $X$ follows a **Poisson distribution** with mean rate $\lambda=2.5$.
 
 \begin{centering}
-\tcbset{width=12.5cm}
+\tcbset{width=15.5cm}
 \begin{tcolorbox}[adjusted title=The Poisson Distribution:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item Notated $X\sim \text{Po}(\lambda)$.
     \item Defined by one parameter $\lambda$ \textit{("lambda")}.
-    \item Random variable $X$ represents the number of events occurring\ in a set amount of time or space.
-    \item $\lambda$ represents the \textbf{mean rate of events per unit of time or space}.
+    \item $X$ represents the number of events occurring in a set amount of time or space.
+    \item $\lambda$ represents the \textbf{constant mean rate of events per unit of time or space}.
     \item Each event must be \textbf{independent} and \textbf{occur singly}.
-    \item The mean rate must be \textbf{constant across the time period/space}.
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
 
-Assume that the mean rate of 2.5 phone calls per hour is *constant* across the opening hours of the customer support department, and that there isn't some major network-wide event causing the calls to no longer be *independent*. The Poisson distribution can then be used to calculate, for example, the probability that there are exactly 4 calls in any one hour. Note that the graph below is truncated, and the Poisson distribution has non-zero probabilities for any non-negative integer $\{0,1,2,3,\dots\}$.
+Assume that the mean rate of 2.5 phone calls per hour is *constant* across the opening hours of the customer support department, and that there isn't a major network-wide event causing the calls to no longer be *independent*. The Poisson distribution can then be used to calculate, for example, the probability that there are exactly 4 calls in any one hour. Note that the graph below is truncated, and the Poisson distribution has non-zero probabilities for any non-negative integer $\{0,1,2,3,\dots\}$.
 
 \begin{center}
 \begin{tikzpicture}
@@ -529,7 +529,7 @@ Assume that the mean rate of 2.5 phone calls per hour is *constant* across the o
     every axis y label/.style={at={(current axis.above origin)},anchor=south east}
     }
 }
-    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 5cm, width = 10cm, ybar,bar width=10pt, xmin=1,xmax=12,ymin=0,ymax=0.35, xtick={2,3,4,5,6,7,8,9,10,11},xticklabels={0,1,2,3,4,5,6,7,8,9},ytick={0,0.1,0.2,0.3},xlabel=$x$,ylabel=probability]
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 5cm, width = 7cm, ybar,bar width=10pt, xmin=1,xmax=12,ymin=0,ymax=0.35, xtick={2,3,4,5,6,7,8,9,10,11},xticklabels={0,1,2,3,4,5,6,7,8,9},ytick={0,0.1,0.2,0.3},xlabel=$x$,ylabel=probability]
         \addplot[fill=black!25, draw=black] coordinates {
     (2,0.0821)
     (3,0.2502)
@@ -543,10 +543,26 @@ Assume that the mean rate of 2.5 phone calls per hour is *constant* across the o
     (11,0.0009)
 };
     \end{axis}
+    \draw[stealth-stealth] (7,3.5) -- (11,3.5);
+    \node[fill=white] at (9,3.5) {one hour};
+    \draw (7,2) rectangle (11,2.8);
+    \node[right] at (11,2.4) {3 calls in one hour};
+    \draw (7,1) rectangle (11,1.8);
+    \node[right] at (11,1.4) {5 calls in one hour};
+    \draw (7,0) rectangle (11,0.8);
+    \node[right] at (11,0.4) {0 calls in one hour};
+    \draw[fill] (7.9,2.4) circle (0.05);
+    \draw[fill] (8.4,2.4) circle (0.05);
+    \draw[fill] (10.3,2.4) circle (0.05);
+    \draw[fill] (7.5,1.4) circle (0.05);
+    \draw[fill] (8.8,1.4) circle (0.05);
+    \draw[fill] (9,1.4) circle (0.05);
+    \draw[fill] (9.6,1.4) circle (0.05);
+    \draw[fill] (10.7,1.4) circle (0.05);
 \end{tikzpicture}
 \end{center}
 
-As with the binomial distribution, individual Poisson probabilities can calculated using a formula, provided in the  Data Booklet.
+As with the binomial distribution, individual Poisson probabilities can be calculated using a formula, provided in the  Data Booklet.
 
 Given random variable $X\sim \text{Po}(\lambda)$:
 
@@ -559,7 +575,7 @@ $$\text{P}(X=4)=\frac{e^{-2.5} \times 2.5^4}{4!}=0.1336$$
 \pagebreak
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} During a spell of rain, drops of rain fall on a lawn at a constant mean rate of 6 drops per square metre per second. Calculate the probability that exactly 10 drops fall in one square metres of the lawn in a second.
+\textbf{Problem:} During a spell of rain, drops of rain fall on a lawn at a constant mean rate of 6 drops per square metre per second. Calculate the probability that exactly 10 drops fall in one square metre of the lawn in a second.
 
 \tcblower
 \textbf{Solution:} \textit{(Define a random variable, in context, and define the problem in probability terms.)}\\
@@ -595,9 +611,9 @@ $$\text{P}(X=10)=\frac{e^{-6} \times 6^{10}}{10!}=0.0413$$
     \end{enumerate}
 \end{enumerate}
 
-### Poisson Calculations using Tables and Calculators
+### Poisson Calculations using Cumulative Probabilities
 
-As with the binomial distribution, in general it is far quicker to use the cumulative probability tables in the  Data Booklet, or a grapical calculator, to calculate Poisson probabilities.
+As with the binomial distribution, in general it is much faster to use the cumulative probability tables in the  Data Booklet, or a graphical calculator, to calculate Poisson probabilities.
 
 []{#ex76q}
 
@@ -637,11 +653,66 @@ The mean and variance of a Poisson distribution are stated in the  Data Booklet.
 
 $$\text{E}(X)=\text{V}(X)=\lambda \qquad \text{and} \qquad \text{SD}(X)=\sqrt{\lambda}$$
 
-Given two **independent** random variables $X$ and $Y$ such that $X\sim \text{Po}(\lambda_X)$ and $Y\sim \text{Po}(\lambda_Y)$:
+A key feature of the Poisson distribution is that the mean and variance are equal. 
+This can help to identify whether a Poisson model is appropriate when analysing data.
 
-$$X+Y\sim \text{Po}(\lambda_X+\lambda_Y)$$
+Given two **independent** random variables $X$ and $Y$ such that $X\sim \text{Po}(\lambda_X)$ and $Y\sim \text{Po}(\lambda_Y)$, the *sum* of $X$ and $Y$ is also a Poisson random variable, for which $\lambda=\lambda_X+\lambda_Y$.
 
-The same result can be used to extend, or shorten, the time period of interest for a Poisson distribution, provided there is a *constant mean rate* throughout the entire time period. 
+\begin{center}
+\begin{tikzpicture}
+    \draw [decorate,decoration={brace,amplitude=5pt,raise=1ex}]
+  (0.1,0.8) -- (3.9,0.8) node[midway,above,yshift=0.3cm]{$X\sim \text{Po}\left(\lambda_{X}\right)$};
+  \draw [decorate,decoration={brace,amplitude=5pt,raise=1ex}]
+  (4.1,0.8) -- (9.9,0.8) node[midway,above,yshift=0.3cm]{$Y\sim \text{Po}\left(\lambda_{Y}\right)$};
+    \draw (0,0) rectangle (10,0.8);
+    \draw (4,0) -- (4,0.8);
+    \draw [decorate,decoration={brace,mirror,amplitude=5pt,raise=1ex}]
+  (0.1,0) -- (9.9,0) node[midway,below,yshift=-0.3cm]{$X+Y\sim \text{Po}\left(\lambda_{X}+\lambda_{Y}\right)$};
+  \fill (0.8,0.4) circle (0.05);
+  \fill (1.2,0.4) circle (0.05);
+  \fill (3.5,0.4) circle (0.05);
+  \fill (5.1,0.4) circle (0.05);
+  \fill (5.8,0.4) circle (0.05);
+  \fill (6.8,0.4) circle (0.05);
+  \fill (7.3,0.4) circle (0.05);
+  \fill (9.0,0.4) circle (0.05);
+  \node[left] at (0,0.4) {events};
+\end{tikzpicture}
+\end{center}
+
+The same result can be used to extend, or shorten, the time period of interest for a Poisson distribution, provided there is a *constant mean rate* throughout the entire time period. For example, consider a call centre for which the number of calls per hour, $X$, can be modelled using $X\sim \text{Po}(3)$.
+
+For a five-hour shift at the call centre, the number of calls may be modelled as $Y\sim \text{Po}(15)$ since $\lambda = 3 \times 5=15$.
+
+\begin{center}
+\begin{tikzpicture}
+    \foreach \x in {0,3,6,9,12}{
+    \draw [decorate,decoration={brace,amplitude=5pt,raise=1ex}]
+  (\x+0.1,0.8) -- (\x+2.8,0.8) node[midway,above,yshift=0.3cm]{$X\sim \text{Po}\left(3\right)$};
+    }
+    \draw (0,0) rectangle (15,0.8);
+    \foreach \x in {3,6,...,12}{
+    \draw (\x,0) -- (\x,0.8);
+    }
+    \draw [decorate,decoration={brace,mirror,amplitude=5pt,raise=1ex}]
+  (0.1,0) -- (14.9,0) node[midway,below,yshift=-0.3cm]{$Y\sim \text{Po}\left(15\right)$};
+  \fill (1.3,0.4) circle (0.05);
+  \fill (1.7,0.4) circle (0.05);
+  \fill (3.3,0.4) circle (0.05);
+  \fill (4.2,0.4) circle (0.05);
+  \fill (5.5,0.4) circle (0.05);
+  \fill (5.7,0.4) circle (0.05);
+  \fill (7.3,0.4) circle (0.05);
+  \fill (8.3,0.4) circle (0.05);
+  \fill (8.6,0.4) circle (0.05);
+  \fill (12.6,0.4) circle (0.05);
+  \fill (13.4,0.4) circle (0.05);
+  \fill (14.3,0.4) circle (0.05);
+  \node[left] at (0,0.4) {events};
+\end{tikzpicture}
+\end{center}
+
+This assumes that the number of calls received in each time period is independent.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Betty has observed that the number of work emails she receives on weekdays between 10am and 11am follows a Poisson distribution with a mean rate of 7 emails. The number of personal emails she receives in this time is also Poisson distributed with a mean rate of 3 emails. Calculate the probability that she receives fewer than 8 emails in total on a weekday between 10am and 11am. 
@@ -649,31 +720,80 @@ The same result can be used to extend, or shorten, the time period of interest f
 \tcblower
 \textbf{Solution:}
 
-Let random variable $X$ represent the number of work emails, and $Y$ the number of personal emails.\\[1em]
+Let random variable $X$ represent the number of work emails, and $Y$ the number of personal emails.\\
 
 $\lambda_X=7$ and $X\sim \text{Po}(7)$\\
 
 $\lambda_Y=3$ and $Y\sim \text{Po}(3)$\\
 
-$\lambda_X+\lambda_Y=7+3=10$, so $X+Y\sim \text{Po}(10)$\\
+Let random variable $T$ represent the total number of emails in an hour:\\
 
-$\text{P}(X+Y<8)=0.2202$
+$\lambda_X+\lambda_Y=7+3=10$, so $T\sim \text{Po}(10)$\\
+
+$\text{P}(T<8)=\text{P}(T\leqslant 7)=0.2202$
 
 \end{tcolorbox}
+
+So there is a roughly 22\% probability that Betty receives fewer than 8 emails in total between 10am and 11am, assuming that each event (an email arriving) is independent. This would not be the case if some emails she receives are duplicated between her work and email accounts, such as subscriptions to services emailing all the addresses a customer has registered with them.
+
+\newpage
 
 []{#ex77q}
 
 #### [Exercise 7.7](#ex77a) {-}
 
 \begin{enumerate}
-    \item Given independent random variables $X$,$Y$ such that $X\sim \text{Po}(1.6)$ and $Y\sim \text{Po}(0.4)$, calculate $\text{P}(X+Y\leqslant4)$.
+    \item Given independent random variables $X\sim \text{Po}(1.6)$ and $Y\sim \text{Po}(0.4)$, calculate $\text{P}(X+Y\leqslant4)$.
     \item Given $F\sim \text{Po}(3.3)$ and $G\sim \text{Po}(1.2)$, with $F$ and $G$ independent, calculate $\text{P}(F+G\geqslant2)$.
+    \item The number of wickets taken in a morning session of country cricket in a league in Scotland follows a Poisson distribution with a mean of 3.5. In an afternoon session, the mean is 2.5. 
+    \begin{enumerate}
+        \item Calculate the probability that fewer than 4 wickets are taken in a \textbf{morning} session.
+        \item Find the probability that exactly 8 wickets are taken in a full day, comprising of a morning session and an afternoon session.
+        \item State an assumption required for the calculation in part (b).
+    \end{enumerate}
     \item For a restaurant's Glasgow branch, the number of bottles of champagne sold on a Saturday night follows a Poisson distribution with a mean rate of 3 per night. The number sold for their Edinburgh branch is Poisson distributed with a mean of 5 per night. Stating an assumption required, calculate the probability at least 10 but fewer than 15 bottles of champagne are sold on a Saturday night between the two branches.
     \item Shooting stars can be seen in a section of night sky at a mean rate of 1 per hour, and the number visible in an hour is Poisson distributed. Calculate the probability of watching the night sky for two hours and not seeing a single shooting star.
-    \item A data storage company using a large number of hard drives has seen that the number of drives failing per day follows a Poisson distribution with a constant mean rate of 1.5 per day. The company has staff monitoring the servers that contain the drives 24 hours per day, working in three separate 8 hour shifts each. Calculate the probability of more than 2 drives failing during one shift.
+    \item A city is experiencing problems with the number of pieces of chewing gum stuck to pavements. A worker from the council's environmental health department notes that in the city's main pedestrian square, that the mean number of pieces of chewing gum per square paving stone was 1.5.\\[0.5em]
+    It may be assumed that the number of pieces on a paving stone, $X$, follows a Poisson distribution. 
+    \begin{enumerate}
+        \item State the distribution of $X$.
+        \item Use the Data Booklet to calculate the probability that a randomly selected paving stone contains at least one of chewing gum.
+    \end{enumerate}
+    The worker counts the number of pieces of chewing gum on a grid of 18 paving stones. The diagram below is for illustration, and does not show what the worker observed.
+    \begin{center}
+        \begin{tikzpicture}[scale=0.8]
+            \draw[step=2] (0,0) grid (12,6);
+            \draw[fill=black!15] (1.81610648809231,2.28512724598794) circle (0.06);
+\draw[fill=black!15] (0.983776184910955,2.31330584603028) circle (0.06);
+\draw[fill=black!15] (7.9119049617031,4.31463598771149) circle (0.06);
+\draw[fill=black!15] (10.888537125237,5.24203498769731) circle (0.06);
+\draw[fill=black!15] (1.78466415599035,4.00912775153914) circle (0.06);
+\draw[fill=black!15] (5.01452369767634,2.29004709740606) circle (0.06);
+\draw[fill=black!15] (9.02451508014978,2.0744740268897) circle (0.06);
+\draw[fill=black!15] (8.7384299566202,0.625915658835329) circle (0.06);
+\draw[fill=black!15] (9.23035948349878,1.77366076894073) circle (0.06);
+\draw[fill=black!15] (5.22086077191008,1.77030038983797) circle (0.06);
+\draw[fill=black!15] (7.2740947892201,1.65874930627853) circle (0.06);
+\draw[fill=black!15] (7.45686902798285,3.46468668704474) circle (0.06);
+\draw[fill=black!15] (6.37571126206989,4.13929773281825) circle (0.06);
+\draw[fill=black!15] (1.36268069915271,0.345894547977273) circle (0.06);
+\draw[fill=black!15] (3.73021957614899,3.09439364798087) circle (0.06);
+\draw[fill=black!15] (11.5565405342891,5.17953756090361) circle (0.06);
+\draw[fill=black!15] (10.3074812215872,0.229944104267416) circle (0.06);
+\draw[fill=black!15] (7.13496881340819,1.92962571154649) circle (0.06);
+\draw[fill=black!15] (8.22060440296903,3.4442678973737) circle (0.06);
+\draw[fill=black!15] (0.688646604553531,4.84206581133751) circle (0.06);
+\draw[fill=black!15] (3.68061164611793,0.403999309101427) circle (0.06);
+\draw[fill=black!15] (11.7628004012925,2.43395299514079) circle (0.06);
+        \end{tikzpicture}
+    \end{center}
+    \begin{enumerate}[resume]
+        \item Calculate the probability that a selection of 18 paving stones contains exactly 30 pieces of chewing gum in total, stating an assumption required.
+    \end{enumerate}
+    \item A data storage company using a large number of hard drives has seen that the number of drives failing per day follows a Poisson distribution with a constant mean rate of 1.5 per day. The company has staff monitoring the servers that contain the drives 24 hours per day, working in three separate 8-hour shifts each day. Calculate the probability of more than 2 drives failing during one shift.
 \end{enumerate}
 
-\pagebreak
+\newpage
 
 []{#re7q}
 
@@ -693,16 +813,16 @@ $\text{P}(X+Y<8)=0.2202$
     \item $X$ and $Y$ are independent random variables such that $X\sim \text{Po}(1.7)$ and $Y\sim \text{Po}(6.8)$, find:
     \begin{enumerate}
         \item $\text{P}(X+Y=7)$.
-        \item $\text{P}(X+Y\geqslant9)$
+        \item $\text{P}(X+Y\geqslant9)$.
     \end{enumerate}
     \item The random variable $X$ follows a Poisson distribution with standard deviation 2. Find $\text{P}(X\leqslant3)$.
     \item A gardener plants seeds in batches of 20 and knows that only 85\% of seeds actually germinate.
     \begin{enumerate}
-        \item Find the chance of more that 15 seeds in the batch germinating.
+        \item Find the chance of more than 15 seeds in the batch germinating.
         \item Find the mean and standard deviation of the number of seeds that germinate.
         \item State one assumption required for the valid use of the probability distribution used.
     \end{enumerate}
-    \item A restaurant has two food mixers, A and B. The number of times per week that mixer A breaks down has a Poisson distribution with mean 0.4, while independently the number of times that mixer B breaks down has a Poisson distribution with probability 0.1. Calculate the probability that in the next three weeks:
+    \item A restaurant has two food mixers, A and B. The number of times per week that mixer A breaks down has a Poisson distribution with mean 0.4, while independently the number of times that mixer B breaks down has a Poisson distribution with mean 0.1. Calculate the probability that in the next three weeks:
     \begin{enumerate}
         \item Mixer A will not break down at all.
         \item There will be a total of 2 breakdowns.
@@ -717,19 +837,21 @@ $\text{P}(X+Y<8)=0.2202$
         Not Vegetarian & 4 & 6 & 0\\
     \end{tabular}
     \end{center}
-    Each week, the owner chooses one dish at random to check that the quality is up to standard. Each dish is equally likely to be selected, and a dish being chosen one week does not change the probability that is will be chosen in the following weeks.
+    Each week, the owner chooses one dish at random to check that the quality is up to standard. Each dish is equally likely to be selected, and a dish being chosen one week does not change the probability that it will be chosen in the following weeks.
     \begin{enumerate}
         \item[(a) ] Given that a dish selected to be checked is vegetarian, state the probability that it is a main course.
     \end{enumerate}
-    Let random variable $X$ represent the number of the dishes checked over a 8 week period that are desserts.
+    Let random variable $X$ represent the number of the dishes checked over an 8 week period that are desserts.
     \begin{enumerate}
         \item[(b) ] State the distribution of $X$.
         \item[(c) ] Calculate the probability that more than half of the dishes checked in the 8 week period are dessert dishes.
     \end{enumerate}
-    \item For each random variable, calculate the probability of the value of an observation being more than one standard deviation above the mean.
+    \item For each random variable, calculate the probability of the value of an observation being greater than one standard deviation above the mean.
     \begin{enumerate}
         \item $X\sim \text{U}(20)$.
         \item $Y\sim \text{Po}(6)$.
         \item $Q\sim \text{B}(16,0.2)$.
     \end{enumerate}
 \end{enumerate}
+
+\pagebreak

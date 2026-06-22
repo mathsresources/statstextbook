@@ -500,7 +500,7 @@ $$\text{E}(X)=0\times \frac{2}{15}+1\times \frac{8}{15}+2\times \frac{1}{3}=\fra
 
 ## The Law of Expectation
 
-If discrete random variable $X$ takes values ${x_1,x_2...x_n}$ with probabilities $\text{P}(X=x_i)$, then random variable \mbox{$Y=2X$} takes values ${2x_1,2x_2...2x_n}$ with probabilities $\text{P}(X=x_i)$. For example, let $X$ represent the roll of a die:
+If discrete random variable $X$ takes values ${x_1,x_2,\dots ,x_n}$ with probabilities $\text{P}(X=x_i)$, then random variable \mbox{$Y=2X$} takes values ${2x_1,2x_2,\dots,2x_n}$ with probabilities $\text{P}(X=x_i)$. For example, let $X$ represent the roll of a die:
 
 \begin{figure}[H]
   \centering
@@ -518,7 +518,7 @@ If discrete random variable $X$ takes values ${x_1,x_2...x_n}$ with probabilitie
 \egroup
 \end{center}
 \captionof{figure}{$\text{E}(X)=1\times \frac{1}{6}+...+6\times \frac{1}{6}=3.5$}
-  \label{fig:test1}
+  \label{fig:expx}
 \end{minipage}%
   \centering
 \begin{minipage}{.1\textwidth}
@@ -538,13 +538,13 @@ If discrete random variable $X$ takes values ${x_1,x_2...x_n}$ with probabilitie
 \egroup
 \end{center}
 \captionof{figure}{$\text{E}(2X)=\text{E}(Y)=2\times \frac{1}{6}+...+12\times \frac{1}{6}=7$}
-  \label{fig:test1}
+  \label{fig:exp2x}
 \end{minipage}
 \end{figure}
 
 (Note that the distribution of $2X$ is *not* that of the sum of two *independent* dice rolls.)
 
-It can be seen here that $\text{E}(2X)=2\text{E}(X)$. The expectation of a random variable that is a *linear transformation* of another random variable for which the expectation is known can be calculated using the law:
+It can be seen here that $\text{E}(2X)=2\text{E}(X)$. The expectation of a random variable that is a *linear transformation* of another random variable can be calculated using following law:
 
 \begin{centering}
 \tcbset{width=10cm}
@@ -552,6 +552,8 @@ It can be seen here that $\text{E}(2X)=2\text{E}(X)$. The expectation of a rando
 $\text{E}(aX\pm b)=a\text{E}(X)\pm b$
 \end{tcolorbox}
 \end{centering}
+
+This means that expectation distributes over addition and multiplication by constants.
 
 Proof:
 
@@ -579,10 +581,10 @@ Proof:
 
 \end{tcolorbox}
 
-Given the value of the expectation of $aX\pm b$, the expectation of $X$ may be determined.
+Given the value $\text{E}(aX\pm b)$, the expectation of $X$ may be determined.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Given tht $\text{E}(10-2Y)=50$, determine the value of $\text{E}(Y)$.
+\textbf{Problem:} Given that $\text{E}(10-2Y)=50$, determine the value of $\text{E}(Y)$.
 \tcblower
 \textbf{Solution:}
 
@@ -656,7 +658,7 @@ Given the value of the expectation of $aX\pm b$, the expectation of $X$ may be d
         \item $\text{E}(4X+1)$
     \end{multicols}
     \end{enumerate}
-    \item In a board game a fair, tetrahedral die with faces numbered from 1 to 4 is thrown, and the result is multiplied by 3 to give the number of places a player can move. Letting random variable $M$ represent the number of places a player can move, determine the mean, $\mu$, of $M$.
+    \item In a board game a fair, tetrahedral die with faces numbered from 1 to 4 is thrown, and the result is multiplied by 3 to give the number of places a player can move. Let random variable $M$ represent the number of places a player can move. Determine the mean, $\mu$, of $M$.
     \item Random variables $X$ and $Y$ are defined such that the mean of $X$ is $\frac{1}{4}$ and $Y=6X+4$. Determine the mean of $Y$.
     \item A betting game involves a player rolling a fair, octagonal die with faces numbered from 1 to 8. Let $X$ represent the result of a roll of the die.
     \begin{enumerate}
@@ -675,14 +677,18 @@ Given the value of the expectation of $aX\pm b$, the expectation of $X$ may be d
 
 ## The Variance of a Random Variable
 
-The *variance* of the values observed from successive rolls of a fair cubical die will tend towards a value in the long-run. Letting the random variable $X$ represent the result of a roll of a die, the **variance**, $\sigma^2$, of $X$ is $\frac{35}{12}$, or $\text{V}(X)=\frac{35}{12}$.
+The *variance* of the values observed from repeated rolls of a fair cubical die will tend towards a fixed value in the long-run. Letting the random variable $X$ represent the result of a roll of a die, the **variance**, $\sigma^2$, of $X$ is $\frac{35}{12}$, or $\text{V}(X)=\frac{35}{12}$.
 
 \begin{centering}
 \tcbset{width=10cm}
 \begin{tcolorbox}[adjusted title=The variance $\sigma^2$ of random variable $X$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-$\text{V}(X)=\text{E}(X^2)-E^2(X)$
+$\text{V}(X)=\text{E}(X^2)-\left(E(X)\right)^2$
 \end{tcolorbox}
 \end{centering}
+
+As a reminder, the variance measures how spread out the values of a random variable are about the mean.
+
+Note that $\text{E}\left(X^2\right)$ is not equal to $\left(\text{E}(X)\right)^2$.
 
 Proof:
 
@@ -694,7 +700,7 @@ Proof:
     &=\text{E}[X^2-2\mu X+\mu^2]\\[0.3em]
     &=\text{E}(X^2)-2\mu \text{E}(X)+\mu^2\\[0.3em]
     &=\text{E}(X^2)-2(\text{E}(X))^2 +(\text{E}(X))^2\\[0.3em]
-    &=\text{E}(X^2)-\text{E}^2(X)
+    &=\text{E}(X^2)-\left(\text{E}(X)\right)^2
 \end{align*}
 
 Knowing the *expectation* and *variance* of random variables help statisticians better understand the *long-run* behaviour of repeated observations:
@@ -709,7 +715,7 @@ The standard deviation, $\sigma$, of a random variable $X$, notated $\text{SD}(X
 $$\text{SD}(X)=\sqrt{\text{V}(X)}\qquad\text{and}\qquad \text{SD}(X),\text{V}(X)\geqslant0$$
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} The probability distribution of random variable $X$ is tabulated as: 
+\textbf{Problem:} The probability distribution of random variable $X$ is given below: 
 
 \begin{center}
 \begin{tabular}{ c | c c c c }
@@ -774,7 +780,7 @@ Calculate $\text{E}(X)$ and $\text{V}(X)$
     \item A box contains 6 pink marbles and 4 orange marbles. Two marbles are taken at random without replacement, and $X$ is the number of pink marbles obtained. Find the expectation and variance of $X$.
     \item A box contains 2 red marbles and 6 green marbles. Two marbles are selected at random with replacement, and $Y$ is the number of green marbles obtained. Find $\text{E}(Y)$ and $\text{V}(Y)$.
     \item A discrete random variable $X$ can assume values 4 and 12 only. Given $\text{E}(X)=10$, determine the variance of $X$.
-    \item A multiple-choice quiz gives four possible answers for each question, with 4 marks awarded for a correct answer and 1 mark taken away for an incorrect answer. Determine the expected gain in marks when the answer to a single questions is guessed, and the variance in the number of marks gained.
+    \item A multiple-choice quiz gives four possible answers for each question, with 4 marks awarded for a correct answer and 1 mark taken away for an incorrect answer. Determine the expected gain in marks when the answer to a single question is guessed, and the variance in the number of marks gained.
     \item A game costs £10 to enter, and the player rolls two fair, cubical dice together. If both dice show a six the player wins £50, a single six means the player gets £10 back and no sixes means the player gets nothing. Determine the mean and variance in the amount of profit for playing the game once.
     \item A fair coin is tossed three times. Let random variable $X$ represent the number of tails shown.
     \begin{enumerate}
@@ -793,7 +799,7 @@ Calculate $\text{E}(X)$ and $\text{V}(X)$
 
 ## The Law of Variance
 
-Since variance is a measure of variability based on *squared* differences, $\text{V}(2X)\ne2\text{V}(X)$.
+Since variance is based on *squared* differences from the mean, $\text{V}(2X)\ne2\text{V}(X)$.
 
 \begin{centering}
 \tcbset{width=10cm}
@@ -802,15 +808,17 @@ $\text{V}(aX\pm b)=a^2\text{V}(X)$
 \end{tcolorbox}
 \end{centering}
 
+This shows that multiplying a random variable by a constant changes its variance by the square of that constant, while adding a constant does not affect the variance.
+
 Proof:
 
 \vspace{-0.4cm}
 
 \begin{align*}
-    \text{V}(aX+ b)&=\text{E}[((aX+ b)-(\text{E}(aX+ b))^2]\\[0.5em]
-    &=\text{E}[(aX+b-a\text{E}(X)-b)^2]\\[0.5em]
-    &=\text{E}[(aX-a\text{E}(X))^2]\\[0.5em]
-    &=\text{E}[(a(X-\text{E}(X)))^2]\\[0.5em]
+    \text{V}(aX + b) &= \text{E}\big[(aX + b - \text{E}(aX + b))^2\big]\\[0.5em]
+    &=\text{E}\big[(aX+b-a\text{E}(X)-b)^2\big]\\[0.5em]
+    &=\text{E}\big[(aX-a\text{E}(X))^2\big]\\[0.5em]
+    &=\text{E}\big[(a(X-\text{E}(X)))^2\big]\\[0.5em]
     &=\text{E}[a^2(X-\text{E}(X))^2]\\[0.5em]
     &=a^2 \text{E}[(X-\text{E}(X))^2]\\[0.5em]
     &=a^2 \text{V}(X)
@@ -835,7 +843,7 @@ Proof:
 
 \end{tcolorbox}
 
-Note that any laws relating to the *standard deviation* of a linear transformation ($\text{SD}(aX\pm b)$) would not be able to be expressed so concisely, so such problems must be tackled by *first finding the variance* ($\text{V}(aX\pm b)$).
+Note that any laws relating to the *standard deviation* of a linear transformation ($\text{SD}(aX\pm b)$) cannot be expressed as concisely, so such problems must be tackled by *first finding the variance* ($\text{V}(aX\pm b)$).
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Random variable $Y$ has mean 1.5 and standard deviation 0.8.\\ Determine the standard deviation of $10Y+25$.
@@ -849,7 +857,7 @@ Note that any laws relating to the *standard deviation* of a linear transformati
 \text{V}(10Y+25)&=10^2\text{V}(Y)\\
 &=100\times 0.8^2\\
 &=64\\
-\text{SD}&=8
+\text{SD}(10Y+25)&=8
 \end{align*}
 
 \vspace{-0.3cm}
@@ -913,7 +921,7 @@ Note that any laws relating to the *standard deviation* of a linear transformati
             \item Find $\text{V}(2X+1)$.
         \end{multicols}
         \end{enumerate}
-        \item Given $\text{E}(Y)=-5$ and $\text{V}(Y)=3$ determine the values of:
+        \item Given $\text{E}(Y)=-5$ and $\text{V}(Y)=3$, determine the values of:
         \begin{enumerate}
         \begin{multicols}{3}
             \item $\text{E}(-3Y-2)$
@@ -941,24 +949,25 @@ Note that any laws relating to the *standard deviation* of a linear transformati
 
 \pagebreak
 
-## Bivariate Random Variables
+## Combining Random Variables
 
-As well as linear transformations of a single random variable, new variables can be created by adding (or subtracting) random variables. Given random variables $X$ and $Y$, for example, $W=X+Y$ is a \textit{bivariate} random variable. When studying the long-run behaviour of bivariate random variables, by considering their expectation and variance, it is important to consider whether the variables are **independent**.
+As well as linear transformations of a single random variable, new variables can be created by adding (or subtracting) random variables. Given random variables $X$ and $Y$, for example, $W = X + Y$ is a new random variable formed from the two random variables $X$ and $Y$. When studying the long-run behaviour of combined random variables, by considering their expectation and variance, it is important to consider whether the variables are *independent*, since this affects how their variances combine.
 
 \begin{centering}
-\tcbset{width=14cm}
-\begin{tcolorbox}[adjusted title=For \textbf{independent} random variables $X$ and $Y$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+\begin{tcolorbox}[adjusted title=For random variables $X$ and $Y$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \vspace{-0.3cm}
 \begin{equation*}
   \begin{split}
-    \text{E}(X+Y) &= \text{E}(X)+\text{E}(Y)\\[10pt]
-    \text{E}(X-Y) &= \text{E}(X)-\text{E}(Y)\\[10pt]
+    \text{For all }&X\text{ and }Y\text{:}\\[7pt]
+    \text{E}(X+Y) &= \text{E}(X)+\text{E}(Y)\\[7pt]
+    \text{E}(X-Y) &= \text{E}(X)-\text{E}(Y)\\[7pt]
     \text{E}(aX\pm bY) &= a\text{E}(X)\pm b\text{E}(Y)
   \end{split}
 \quad\text{ and }\quad
   \begin{split}
-    \text{V}(X+Y) &= \text{V}(X)+\text{V}(Y)\\[10pt]
-    \text{V}(X-Y) &= \text{V}(X)+\text{V}(Y)\\[10pt]
+    \text{For independent }&X\text{ and }Y\text{:}\\[7pt]
+    \text{V}(X+Y) &= \text{V}(X)+\text{V}(Y)\\[7pt]
+    \text{V}(X-Y) &= \text{V}(X)+\text{V}(Y)\\[7pt]
     \text{V}(aX\pm bY) &= a^2\text{V}(X)+ b^2\text{V}(Y)
   \end{split}
 \end{equation*}
@@ -966,11 +975,13 @@ As well as linear transformations of a single random variable, new variables can
 \end{tcolorbox}
 \end{centering}
 
+If $X$ and $Y$ are not independent variables then determining $\text{V}(X\pm Y)$ is beyond the scope of the course.
+
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Two independent random variables $F$ and $G$ have means of 15 and 12 and standard deviations of 3 and 4 respectively. Calculate $\text{E}(3G-2F)$ and $\text{V}(F-G)$.
 
 \tcblower
-\textbf{Solution:}\text{ ($\text{E}(X)=15,\text{E}(Y)=12,\text{SD}(X)=3,\text{SD}(Y)=4$)}
+\textbf{Solution:}\text{ ($\text{E}(F)=15,\text{E}(G)=12,\text{SD}(F)=3,\text{SD}(G)=4$)}
 
 \vspace{-1.2cm}
 \begin{multicols}{2}
@@ -994,25 +1005,23 @@ As well as linear transformations of a single random variable, new variables can
 \vfill\null
 \end{multicols}
 
-\vspace{-0.8cm}
+\vspace{-1.4cm}
 
 \end{tcolorbox}
 
-Random variables **independently and identically distributed (i.i.d)** as $X$ are denoted as $X_1,X_2,X_3,\dots$
+Random variables **independently and identically distributed (i.i.d)** with the same distribution as $X$ are denoted as $X_1,X_2,X_3,\dots$
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Books in the fiction section of a library have a mean thickness of 3.1cm with standard deviation 0.2cm. If three books are randomly selected from the fiction section and stacked together, determine the mean and standard deviation of the collected, total thickness of the three books, stating one assumption required.
+\textbf{Problem:} Books in the fiction section of a library have a mean thickness of 3.1cm with standard deviation 0.2cm. If three books are randomly selected from the fiction section and stacked together, determine the mean and standard deviation of the total thickness of the three books, stating one assumption required.
 
 \tcblower
-\textbf{Solution:}
+\textbf{Solution:} Let $X$ represent the thickness of a book, so $\text{E}(X)=3.1$ and $\text{V}(X)=0.2^2=0.04$\\\vskip 0.1cm
 
-Let random variable $X$ represent the thickness of a book, so $\text{E}(X)=3.1$ and $\text{V}(X)=0.2^2=0.04$\\\vskip 0.2cm
+Total thickness $T=X_1+X_2+X_3$. Assuming that the thickness of each book is independent:\\\vskip 0.05cm
 
-Total thickness $T=X_1+X_2+X_3$. Assuming that the thickness of each book is independent:\\\vskip 0.1cm
+$\text{E}(T)=\text{E}(X_1+X_2+X_3)=\text{E}(X_1)+\text{E}(X_2)+\text{E}(X_3)=3.1+3.1+3.1=9.3$\\\vskip 0.05cm
 
-$\text{E}(T)=\text{E}(X_1+X_2+X_3)=\text{E}(X_1)+\text{E}(X_2)+\text{E}(X_3)=3.1+3.1+3.1=9.3$\\\vskip 0.1cm
-
-$\text{V}(T)=\text{V}(X_1+X_2+X_3)=\text{V}(X_1)+\text{V}(X_2)+\text{V}(X_3)=0.04+0.04+0.04=0.12$\\\vskip 0.1cm
+$\text{V}(T)=\text{V}(X_1+X_2+X_3)=\text{V}(X_1)+\text{V}(X_2)+\text{V}(X_3)=0.04+0.04+0.04=0.12$\\\vskip 0.05cm
 
 $\text{SD}(T)=\sqrt{\text{V}(T)}=\sqrt{0.12}=0.346$\\\vskip 0.1cm
 
@@ -1030,7 +1039,7 @@ Hence the mean total thickness of the three books is 9.3cm, and the standard dev
     \item Random variables $J$ and $K$ are defined such that $\text{E}(J)=3$ and $\text{E}(K)=-2$.
     \begin{enumerate}
         \item State the information required to be known about $J$ and $K$ in order to determine whether the laws introduced on the previous page may be applied.
-        \item Assuming that $J$ and $K$ are such that the those laws may be applied, find:
+        \item Assuming that $J$ and $K$ are such that those laws may be applied, find:
     \begin{enumerate}
         \begin{multicols}{3}
             \item $\text{E}(J+K)$
@@ -1038,7 +1047,7 @@ Hence the mean total thickness of the three books is 9.3cm, and the standard dev
             \item $\text{E}(2K-3J)$
         \end{multicols}
     \end{enumerate}
-    \item Assuming that $J$ and $K$ are such that the those laws may be applied, find:
+    \item Assuming that $J$ and $K$ are such that those laws may be applied, find:
     \begin{enumerate}
         \begin{multicols}{3}
             \item $\text{V}(J+K)$
@@ -1058,7 +1067,7 @@ Hence the mean total thickness of the three books is 9.3cm, and the standard dev
             \item $\text{V}(\frac{1}{2}Y-2X)$
         \end{multicols}
     \end{enumerate}
-    \item Random variables $F$ and $G$ have means of 3 and 2 respectively, and standard deviations of 5 and 6 respectively. State the information that is missing which means that it currently is not possible to determine the values of $\text{E}(2F+G)$ and $\text{V}(2F+G)$.
+    \item Random variables $F$ and $G$ have means of 3 and 2 respectively, and standard deviations of 5 and 6 respectively. State the information that is missing which means that it is not currently possible to determine the values of $\text{E}(2F+G)$ and $\text{V}(2F+G)$.
     \item Independent random variables $A$ and $B$ have means of 1.5 and 1.2 respectively, and standard deviations of 1 and 0.8 respectively. Determine the values of $\text{E}(A-B)$ and $\text{V}(A-B)$.
     \item Random variable $X$ is defined such that $\text{E}(X)=10$ and $\text{V}(X)=3$. Random variables \{$X_1, X_2, X_3 \dots$\} represent independent observations of $X$. Determine the mean and variance of $X_1+X_2+X_3+X_4$, representing the sum of four such observations of $X$.
     \item A spreadsheet contains a large amount of cells, each containing numbers such that the mean of the numbers is 12 and the standard deviation is 1.2. Five numbers from the spreadsheet are selected at random, with replacement. Determine the mean and standard deviation of the total of the five numbers.  
