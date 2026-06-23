@@ -272,7 +272,7 @@ The **normal distribution**, also sometimes called the *Gaussian Distribution*, 
 
 \begin{center}
 \begin{equation*}
-\textbf{pdf: }\quad\frac{1}{\sigma\sqrt{2\pi}}e^{-\dfrac{1}{2}\left(\dfrac{x-\mu}{\sigma}\right)^2}
+\textbf{pdf: }\quad\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
 \end{equation*}
 \end{center}
 
@@ -827,7 +827,7 @@ $$z=\frac{\text{$x-\mu$}}{\text{$\sigma$}}=\frac{\text{$29-20$}}{\text{$6$}}=1.5
 
 Hence, a probability statement about $X$ can be rewritten as a probability statement about $Z$:
 
-$$\text{P}(X<29)=\text{P}\left(Z<\dfrac{X-\mu}{\sigma}\right)=\text{P}\left(Z<\dfrac{29-20}{6}\right)=\text{P}(Z<1.5)$$
+$$\text{P}(X<29)=\text{P}\left(Z<\dfrac{x-\mu}{\sigma}\right)=\text{P}\left(Z<\dfrac{29-20}{6}\right)=\text{P}(Z<1.5)$$
 
 \begin{figure}[H]
   \centering
@@ -934,19 +934,13 @@ $\text{P}(Z<1.5)=0.9332$
 \textbf{Problem:} The mass of an adult red squirrel in an area of woodland is normally distributed with a mean of 295g and a standard deviation of 15g. Calculate the probability that a squirrel chosen at random has a mass greater than 300g.
 
 \tcblower
-\textbf{Solution:}\textit{ Defining the random variable clearly is important, and a sketch can be helpful.}
+\textbf{Solution:}\\
 
-\vspace{0.5cm}
+Let random variable $X$ represent the mass of a squirrel.\\
 
-Let random variable $X$ represent the mass of a squirrel.
+$X\sim \text{N}(295,15^2)$\\
 
-\vspace{0.5cm}
-
-$X\sim \text{N}(295,15^2)$
-
-\vspace{0.5cm}
-
-$\text{P}(X>300)=\text{P}(Z>\frac{\text{$X-\mu$}}{\text{$\sigma$}})=\text{P}(Z>\frac{\text{$300-295$}}{\text{$15$}})=\text{P}(Z>0.33)=0.3707$
+$\text{P}(X>300)=\text{P}\left(Z>\dfrac{\text{$300-295$}}{\text{$15$}}\right)=\text{P}(Z>0.33)=0.3707$\\
 
 \begin{center}
 \begin{tikzpicture}
@@ -1168,7 +1162,7 @@ Hence, a 25 month warranty should expect to see less than 5\% of TVs fail under 
 Let random variable $X$ represent the mass of a pumpkin.
 \begin{align*}
 X\sim & \text{N}(6.8,\sigma^2)\\
-\text{P}(Z<z)=&0.999 & \rightarrow z=3.09&\hspace{3cm}
+\text{P}(Z<z)=&0.999 \rightarrow z=3.09\hspace{1cm}
 \begin{tikzpicture}[overlay]
 \begin{axis}[
   no markers, 
@@ -1202,10 +1196,10 @@ X\sim & \text{N}(6.8,\sigma^2)\\
 \node at (axis cs: 0,\valueA)  {$99.9\%$};
 \draw[semithick] (axis cs: -3.2,-0.02) -- (axis cs: 3.2,-0.02);
 \end{axis}
-\end{tikzpicture}\\\\
+\end{tikzpicture}&\\
 3.09=&\frac{10-6.8}{\sigma}\\
 3.09\sigma=&3.2\\
-\sigma=&\frac{3.2}{3.09}
+\sigma=&\frac{3.2}{3.09}\\
 \sigma=&1.04
 \end{align*}
 
@@ -1220,10 +1214,225 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
 #### [Exercise 8.5](#ex85a) {-}
 
 \begin{enumerate}
+    \item Given each sketch of $Z\sim \text{N}(0,1)$ below, use page 12 of the Data Booklet to state the value of $z$:
+    \begin{enumerate}
+    \begin{multicols}{3}
+        \item $\text{P}(Z<z)=0.99$\\
+        \begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=Black!20, domain=-3:2.33] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(2.33,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[Black!20] (axis cs: -3,-0.02) rectangle (axis cs: 2.33,0);
+\draw [semithick, black]  (axis cs:2.33,-0.02) -- (axis cs:2.33,\valueA);
+\node[below] at (axis cs: 2.33,0)  {$z$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node at (axis cs: 0,0.2)  {$99\%$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}
+\item $\text{P}(Z<z)=0.95$\\
+        \begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=Black!20, domain=-3:1.64] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(1.64,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[Black!20] (axis cs: -3,-0.02) rectangle (axis cs: 1.64,0);
+\draw [semithick, black]  (axis cs:1.64,-0.02) -- (axis cs:1.64,\valueA);
+\node[below] at (axis cs: 1.64,0)  {$z$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node at (axis cs: 0,0.2)  {$95\%$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}
+\item $\text{P}(Z<z)=0.75$\\
+        \begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=Black!20, domain=-3:0.67] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(0.67,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[Black!20] (axis cs: -3,-0.02) rectangle (axis cs: 0.67,0);
+\draw [semithick, black]  (axis cs:0.67,-0.02) -- (axis cs:0.67,\valueA);
+\node[below] at (axis cs: 0.67,0)  {$z$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node at (axis cs: 0,0.2)  {$75\%$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}
+    \end{multicols}
+    \end{enumerate}
+    \begin{enumerate}[resume]
+\begin{multicols}{3}
+        \item $\text{P}(Z>z)=0.90$\\
+        \begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=Black!20, domain=-1.28:3] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(-1.28,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[Black!20] (axis cs: -1.28,-0.02) rectangle (axis cs: 3,0);
+\draw [semithick, black]  (axis cs:-1.28,-0.02) -- (axis cs:-1.28,\valueA);
+\node[below] at (axis cs: -1.28,0)  {$z$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node at (axis cs: 0,0.2)  {$90\%$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}
+\item $\text{P}(Z>z)=0.1$\\
+        \begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=Black!20, domain=1.64:3] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(1.64,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[Black!20] (axis cs: 1.64,-0.02) rectangle (axis cs: 3,0);
+\draw [semithick, black]  (axis cs:1.64,-0.02) -- (axis cs:1.64,\valueA);
+\node[below] at (axis cs: 1.64,0)  {$z$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node at (axis cs: 2.2,0.2)  {$10\%$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}
+\item $\text{P}(-z<Z<z)=0.95$\\
+        \begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=6cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=Black!20, domain=-1.96:1.96] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(1.96,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[Black!20] (axis cs: -1.96,-0.02) rectangle (axis cs: 1.96,0);
+\draw [semithick, black]  (axis cs:1.96,-0.02) -- (axis cs:1.96,\valueA);
+\draw [semithick, black]  (axis cs:-1.96,-0.02) -- (axis cs:-1.96,\valueA);
+\node[below] at (axis cs: 1.96,0)  {$z$};
+\node[below] at (axis cs: -1.96,0)  {$-z$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node at (axis cs: 0,0.2)  {$95\%$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}
+    \end{multicols}
+    \end{enumerate}
     \item Given $Z\sim \text{N}(0,1)$, use a sketch to find the value of $z$ if:
     \begin{multicols}{4}
     \begin{enumerate}
-    \setlength{\itemsep}{0.3em}
+    \setlength{\itemsep}{0.5em}
         \item[(a)] $\text{P}(Z>z)=0.1$
         \item[(e)] $\text{P}(Z<z)=0.995$
         \item[(i)] $\text{P}(Z>z)=0.975$
@@ -1253,11 +1462,11 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
     \item In a Physics exam, the scores obtained by candidates are normally distributed. Given that 25\% of pupils gain a grade A with a mark of 74 required, and 10\% of pupils didn't get the 46 marks required for a grade C, calculate the mean and standard deviation. 
 \end{enumerate}
 
-\newpage
+\pagebreak
 
 ## Combining Normal Random Variables
 
-*Sums and differences* of independent and normally distributed random variables are *themselves normally distributed*, and the mean and variance of these may be determined using the laws of expectation and variance introduced in section 6.6 For example, given **independent** normally distributed random variables $X$ and $Y$ with means of $\mu_X$ and $\mu_Y$ and standard deviations of $\sigma_X$ and $\sigma_Y$ respectively:
+*Sums and differences* of independent and normally distributed random variables are *themselves normally distributed*, and the mean and variance of these may be determined using the laws of expectation and variance introduced in section 6.6. For example, given **independent** normally distributed random variables $X$ and $Y$ with means of $\mu_X$ and $\mu_Y$ and standard deviations of $\sigma_X$ and $\sigma_Y$ respectively:
 
 $$X+Y\sim \text{N}(\mu_X+\mu_Y,\sigma_X^2+\sigma_Y^2)\quad\text{   and   }\quad X-Y\sim \text{N}(\mu_X-\mu_Y,\sigma_X^2+\sigma_Y^2)$$
 
@@ -1332,6 +1541,15 @@ $\text{P}(T<200)=\text{P}\left(Z<\dfrac{200-201.6}{\sqrt{0.72}}\right)=\text{P}(
 #### [Exercise 8.6](#ex86a) {-}
 
 \begin{enumerate}
+    \item The time taken for a chef to chop an onion is normally distributed with mean 19 seconds and standard deviation 3 seconds. Assuming the time taken to chop each onion is independent, calculate the probability that it takes over \textbf{one minute} in total for the chef to chop three onions.
+    \item The mass of a library book in a school's library is normally distributed, with a mean of 400g and a standard deviation of 60g. Twenty books are selected at random to be placed on a table as part of a display.
+    \begin{enumerate}
+        \item Calculate the probability of the total mass of the 20 books being less than 8000g.
+        \item State an assumption required, and explain why this assumption may be reasonable.
+    \end{enumerate}
+    \item A coffee machine has an option which dispenses a portion of milk. The volume of milk dispensed each time is normally distributed with mean 28ml and variance 3$\text{ml}^2$. Assuming that the volume of each portion is independent, determine the probability that the total volume of four portions exceeds 110ml.
+    \item The mass of a \textit{house martin}, a species of bird, is normally distributed with mean 18g and variance 2$\text{g}^2$. Five house martins are observed perched together on a telephone line. Stating an assumption required, determine the probability that the total mass of the five birds is greater than 70g.
+    \item Basketball games are played across four \textit{quarters}, each lasting ten minutes. Extensively collected data shows that the distance run by professional basketball players during a quarter follows a normal distribution with a mean of 1km and a variance of 0.1$\text{km}^2$. Give a reason why this does not necessarily imply that the total distance run by a player during a full game of four quarters can be modelled by a normal distribution with mean 4km and variance 0.4$\text{km}^2$.
     \item Bob observes that making his usual portion of mashed potatoes can be broken down into three distinct processes. The time taken to peel the potatoes is normally distributed with a mean of 5 minutes and a standard deviation of 1.2 minutes. The time taken to boil the potatoes is also normally distributed with a mean of 27 minutes and a standard deviation of 3.4 minutes. Finally, the mean time taken to mash and season the potatoes is 2 minutes with a standard deviation of 0.3 minutes.
     \begin{enumerate}
         \item Find the distribution of the time taken for Bob to make a portion of mash, stating two assumptions required.
@@ -1342,7 +1560,7 @@ $\text{P}(T<200)=\text{P}\left(Z<\dfrac{200-201.6}{\sqrt{0.72}}\right)=\text{P}(
     \item The length of a best-of-five match of tennis is normally distributed with a mean of 165 minutes and a standard deviation of 21 minutes, whilst the length of a best-of-three match has a mean of 95 minutes and a standard deviation of 10 minutes. A tournament has two best-of-five matches and one best-of-three match scheduled to be played on Court 7, beginning at 10am. Find the probability that the three matches will be completed by 4pm, stating two assumptions required.
 \end{enumerate}
 
-\newpage
+\pagebreak
 
 ## Normal Approximation to the Binomial Distribution
 
@@ -1460,7 +1678,9 @@ $\text{P}(T<200)=\text{P}\left(Z<\dfrac{200-201.6}{\sqrt{0.72}}\right)=\text{P}(
 \end{minipage}
 \end{figure}
 
-Under certain conditions the *discrete* binomial distribution can begin to resemble a *continuous* normal distribution. Given random variable $X\sim \text{B}(n,p)$, **a normal distribution can approximate the binomial distribution**, with *sufficient accuracy*, when:   
+\vspace{-0.5cm}
+
+As the number of trials $n$ grows (and for probabilities of success closer to $0.5$), the *discrete* binomial distribution can begin to resemble a *continuous* normal distribution. Given random variable $X\sim \text{B}(n,p)$, a *normal distribution* can approximate the binomial distribution, with *sufficient accuracy*, when:   
 
 \begin{centering}
 \tcbset{width=12cm}
@@ -1473,96 +1693,101 @@ $np>5$\quad \text{ and } \quad $nq>5$
 
 The mean and variance of the *approximate* normal distribution are, as usual for a binomial distribution, \mbox{$\text{E}(X)=np$} and $\text{V}(X)=npq$. Using '$\approx$' instead of '$\sim$' is important to show that the normal distribution is only an *approximation* to the actual binomial distribution. 
 
-$$\text{If } X\sim \text{B}(n,p) \text{ then } X\approx \text{N}(np,npq)$$
+\vspace{-0.3cm}
+
+\[\text{If } X\sim \text{B}(n,p) \text{ then } X\approx \text{N}(np,npq)\]
+
+\vspace{-0.3cm}
 
 Historically, the ability to approximate the binomial distribution using the normal distribution will have prevented the need for extensive tables of binomial probabilities. Additionally, binomial distribution calculations tend to be more computationally-intensive than normal distributions calculations. Whilst modern computing power may seem to render this argument null, it can still be desirable to speed up computation in return for a trivial loss in accuracy. 
 
-Approximating probabilities for a *discrete* distribution using a *continuous* distribution may lead to inaccuracy unless a **continuity correction** is applied. For example, consider random variable $X\sim \text{B}(24,0.5)$, with its normal approximation $X\approx \text{N}(12,6)$ overlaid and the *continous* probability $\text{P}(X<14)$ shaded:
+Approximating probabilities for a *discrete* distribution using a *continuous* distribution may lead to inaccuracy unless a **continuity correction** is applied. The continuity correction adjusts for the fact that a discrete distribution assigns probability to whole numbers, while a continuous distribution assigns probability over intervals. For example, consider random variable $X\sim \text{B}(11,0.5)$, with its normal approximation $X\approx \text{N}(5.5,2.75)$ overlaid and the *discrete* probability $\text{P}(X<7)$ shaded:
+
+
+\begin{figure}[H]
+  \centering
+\begin{minipage}{.6\textwidth}
 
 \begin{center}
-\hspace{-1cm}
-\begin{tikzpicture}
-\begin{axis}[
-  no markers, 
-  height=5cm,
-  width=7cm,
-  domain=12:15.5, 
-  samples=100,
-  ymin=0,
-  axis lines*=left, 
-  every axis y label/.style={at=(current axis.above origin),anchor=south},
-  every axis x label/.style={at=(current axis.right of origin),anchor=west},
-  xtick=\empty, 
-  ytick=\empty,
-  enlargelimits=false, 
-  clip=false, 
-  axis on top,
-  grid = major,
-  hide y axis
-  ]
-\addplot [draw=none, fill=Black!20, domain=11.5:14] {gauss(x, 12, 6)} 
-\closedcycle;
- \addplot [semithick] {gauss(x,12,6)};
-\pgfmathsetmacro\valueA{gauss(12,12,6)}
-\pgfmathsetmacro\valueB{gauss(13,12,6)}
-\pgfmathsetmacro\valueC{gauss(14,12,6)}
-\pgfmathsetmacro\valueD{gauss(15,12,6)}
-\draw [semithick, black]  (axis cs:14,0) -- (axis cs:14,\valueC);
-\node[below] at (axis cs: 12,0)  {$12$};
-\node[below] at (axis cs: 13,0)  {$13$};
-\node[below] at (axis cs: 14,0)  {$14$};
-\node[below] at (axis cs: 15,0)  {$15$};
-\draw[semithick] (axis cs: 11.5,0) rectangle (axis cs: 12.5,\valueA);
-\draw[semithick] (axis cs: 12.5,0) rectangle (axis cs: 13.5,\valueB);
-\draw[semithick] (axis cs: 13.5,0) rectangle (axis cs: 14.5,\valueC);
-\draw[semithick] (axis cs: 14.5,0) rectangle (axis cs: 15.5,\valueD);
-\draw [semithick, black,dashed]  (axis cs:14.5,-0.01) -- (axis cs:14.5,\valueA+0.01);
-\node[below] at (axis cs: 14.5,-0.01)  {\text{\small{$14.5$}}};
-\draw [semithick, black,dashed]  (axis cs:13.5,-0.01) -- (axis cs:13.5,\valueA+0.01);
-\node[below] at (axis cs: 13.5,-0.01)  {\text{\small{$13.5$}}};
-\end{axis}
+\begin{tikzpicture}[xscale=0.8]
+    \draw[fill=black!10] (-0.5,0) rectangle (0.5,10*0.00049);
+    \draw[fill=black!10] (0.5,0) rectangle (1.5,10*0.00537);
+    \draw[fill=black!10] (1.5,0) rectangle (2.5,10*0.02686);
+    \draw[fill=black!10] (2.5,0) rectangle (3.5,10*0.08057);
+    \draw[fill=black!10] (3.5,0) rectangle (4.5,10*0.16113);
+    \draw[fill=black!10] (4.5,0) rectangle (5.5,10*0.22559);
+    \draw[fill=black!10] (5.5,0) rectangle (6.5,10*0.22559);
+    \draw (6.5,0) rectangle (7.5,10*0.16113);
+    \draw (7.5,0) rectangle (8.5,10*0.08057);
+    \draw (8.5,0) rectangle (9.5,10*0.02686);
+    \draw (9.5,0) rectangle (10.5,10*0.00537);
+    \draw (10.5,0) rectangle (11.5,10*0.00049);    
+    \draw[very thick,domain=-3:3,smooth,samples=50,yscale=10/1.658,xshift=5.5cm,xscale=1.658] plot (\x,{1/((2*3.14)^0.5)) * 2.718^(-0.5*(\x)^2)}) -- (1.3,0);
+    \foreach \x in {0,1,...,11}{
+    \draw (\x,0) -- (\x,-0.1) node[below] {\x};
+    }
+    \node at (5.5,-1.5) {$\text{P}(X<7)=\text{P}\left(Z<\dfrac{6+0.5-5.5}{\sqrt{2.75}}\right)$};
 \end{tikzpicture}
 \end{center}
 
-When calculating the discrete probability $\text{P}(X\leqslant 14)$, the bar representing the discrete integer 14 ought to be included. The continuous probability $\text{P}(X<14.5)$, making a **continuity correction**, would provide a more accurate estimate of the desired probability. For the discrete probability $\text{P}(X<14)$, with the discrete integer value of 14 not to be included, the continuous probability $\text{P}(X<13.5)$ would be more accurate.
+\end{minipage}%
+  \centering
+\begin{minipage}{.02\textwidth}
+  \centering
+  
+  
+\end{minipage}%
+  \centering
+\begin{minipage}{.38\textwidth}
+  \centering
+
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+        Discrete & Continuous approximation\\
+        \hline
+        $\text{P}(X=7)$ & $\text{P}(6.5<X<7.5)$\\
+        \hline
+        $\text{P}(X<7)$ & $\text{P}(X<6.5)$\\
+        \hline
+        $\text{P}(X\leqslant 7)$ & $\text{P}(X<7.5)$\\
+        \hline
+        $\text{P}(X>7)$ & $\text{P}(X>7.5)$\\
+        \hline
+        $\text{P}(X\geqslant 7)$ & $\text{P}(X>6.5)$\\
+        \hline
+    \end{tabular}
+\end{center}
+
+\end{minipage}
+\end{figure}
+
+
+When calculating the discrete probability $\text{P}(X<7)$, the bar representing the discrete integer 7 should not be included. The continuous probability $\text{P}(X<6.5)$, making a **continuity correction**, would provide a more accurate estimate of the desired probability. For the discrete probability $\text{P}(X\leqslant 7)$, where the discrete integer value of 7 should be included, the continuous probability $\text{P}(X<7.5)$ would be more accurate.
 
 \pagebreak
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A quiz contains 40 multiple choice questions, with four answers for every question. If a pupil picks answers entirely at random, use a suitable approximation to calculate the probability that they get at least half of the questions correct, and justify the suitability of the approximation used.  
+\textbf{Problem:} A quiz contains 40 multiple choice questions, with four answers for every question. If a pupil picks answers entirely at random, use a suitable approximation to calculate the probability that they get at least half correct, justifying the suitability of the approximation used.  
 
 \tcblower
-\textbf{Solution:} \textit{"Suitable approximation" highlights that the normal approximation should be used, even if a graphical calculator can obtain the precise probability.}
+\textbf{Solution:} \textit{"Suitable approximation" highlights that the normal approximation should be used, even if a graphical calculator can obtain the precise probability.}\\
 
-\vspace{0.5cm}
+Let random variable $X$ represent the number of questions answered correctly.\\
 
-Let random variable $X$ represent the number of questions answered correctly.
-
-\vspace{0.1cm}
-
-$X\sim \text{B}(40,0.25)$ 
-
-\vspace{0.1cm}
+$X\sim \text{B}(40,0.25)$\\
 
 $np=40\times 0.25=10$, $nq=40\times 0.75=30$\\
-$np>5$ and $nq>5$ therefore a normal approximation is appropriate.
 
-\vspace{0.1cm}
+$np>5$ and $nq>5$ therefore a normal approximation is appropriate.\\
 
-$\text{E}(X)=np=10$ \quad \text{ and } \quad $\text{V}(X)=npq=40\times 0.25 \times 0.75=7.5$
+$\text{E}(X)=np=10$ \quad \text{ and } \quad $\text{V}(X)=npq=40\times 0.25 \times 0.75=7.5$\\
 
-\vspace{0.1cm}
+$X\approx \text{N}(10,7.5)$\\
 
-$X\approx \text{N}(10,7.5)$
-
-\vspace{0.1cm}
-
-\begin{align*}
-\text{P}(X\geqslant 20)= &\text{P}(X>19.5) &\\
-= &\text{P}\left(Z>\frac{19.5-10}{\sqrt{7.5}}\right)\\
-= &\text{P}(Z>3.47)\\
-= &0.0003
-\end{align*}
+$\text{P}(X\geqslant 20)=\text{P}\left(Z>\dfrac{19.5-10}{\sqrt{7.5}}\right)
+= \text{P}(Z>3.47)
+= 0.0003$
 
 \end{tcolorbox}
 
@@ -1654,7 +1879,7 @@ $X\approx \text{N}(10,7.5)$
     axis y line=middle,
     samples at={0,...,16},
     ybar=0pt, bar width=1,every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
-    every axis y label/.style={at={(current axis.above origin)},anchor=south east},x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3cm, width = 6cm,xtick={0,8,16},,xticklabels={0,8,16},xlabel=$x$,ylabel=probability,ymax=0.2,ytick=\empty,yticklabels=\empty
+    every axis y label/.style={at={(current axis.above origin)},anchor=south east},x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3cm, width = 6cm,xtick={0,8,16},xticklabels={0,8,16},xlabel=$x$,ylabel=probability,ymax=0.2,ytick=\empty,yticklabels=\empty
 ]
 \addplot [fill=Black!20, fill opacity=0.5] {pois(x,8)}; 
 \end{axis}
@@ -1676,7 +1901,7 @@ $X\approx \text{N}(10,7.5)$
     axis y line=middle,
     samples at={0,...,50},
     ybar=0pt, bar width=1,every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
-    every axis y label/.style={at={(current axis.above origin)},anchor=south east},x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3cm, width = 6cm,xtick={0,25,50},,xticklabels={0,25,50},xlabel=$x$,ylabel=probability,ytick=\empty,yticklabels=\empty
+    every axis y label/.style={at={(current axis.above origin)},anchor=south east},x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3cm, width = 6cm,xtick={0,25,50},xticklabels={0,25,50},xlabel=$x$,ylabel=probability,ytick=\empty,yticklabels=\empty
 ]
 \addplot [fill=Black!20, fill opacity=0.5] {pois(x,25)}; 
 \end{axis}
@@ -1688,11 +1913,11 @@ $X\approx \text{N}(10,7.5)$
 \end{minipage}
 \end{figure}
 
-As with the binomial distribution, under certain conditions the *discrete* Poisson distribution can also begin to resemble a *continuous* normal distribution. Given random variable $X\sim \text{Po}(\lambda)$, **a normal distribution can approximate the Poisson distribution**, with *sufficient accuracy*, when:   
+As with the binomial distribution, the *discrete* Poisson distribution can also begin to resemble a *continuous* normal distribution; it will do so when it becomes closer to symmetrical as $\lambda$ increases. Given the random variable $X\sim \text{Po}(\lambda)$, a normal distribution can *approximate* the Poisson distribution with sufficient accuracy when:   
 
 \begin{centering}
 \tcbset{width=12cm}
-\begin{tcolorbox}[adjusted title=Conditions for normal approximation to Poisson distributions :, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for normal approximation to Poisson distributions:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{center}
 $\lambda>10$
 \end{center}
@@ -1703,7 +1928,7 @@ The mean and variance of the *approximate* normal distribution are $\text{E}(X)=
 .
 $$\text{If } X\sim \text{Po}(\lambda) \text{ then } X\approx \text{N}(\lambda,\lambda)$$
 
-Since again this is a *continuous approximation* to a *discrete distribution*, any probabilities calculated will not be sufficiently accurate unless a **continuity correction** is applied. For a continuous approximation to a discrete distribution taking integers values, as is the case with both such approximations encountered in this chapter, continuity corrections will always require an addition or subtraction of 0.5. 
+Since again this is a *continuous approximation* to a *discrete distribution*, any probabilities calculated will not be sufficiently accurate unless a **continuity correction** is applied. For a continuous approximation to a discrete distribution taking integer values, as is the case with both such approximations encountered in this chapter, continuity corrections will always require an addition or subtraction of 0.5. 
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} In a football league, goals occur at a constant mean rate of 2.5 goals per game. A full weekend of fixtures includes 10 games. Using a suitable approximation, and justifying its use, calculate the probability that there will be between 15 and 20 goals in total, inclusive, in a full weekend of fixtures. 
@@ -1711,35 +1936,25 @@ Since again this is a *continuous approximation* to a *discrete distribution*, a
 \tcblower
 \textbf{Solution:}
 
-\vspace{0.1cm}
+Let random variable $T$ represent the number of goals across the 10 games, with $\lambda=2.5\times 10=25$.\\
 
-Let random variable $T$ represent the number of goals across the 10 games, with $\lambda=2.5\times 10=25$:
-$T\sim \text{Po}(25)$ 
+$T\sim \text{Po}(25)$\\
 
-\vspace{0.1cm}
+Since $\lambda>10$, a normal approximation is appropriate.\\
 
-Since $\lambda>10$, a normal approximation is appropriate.
-
-\vspace{0.1cm}
-
-$\text{E}(T)=\text{V}(T)=25$
-
-\vspace{0.1cm}
+$\text{E}(T)=\text{V}(T)=25$\\
 
 $T\approx \text{N}(25,25)$
 
-\vspace{0.1cm}
+\vspace{-0.3cm}
 
 \begin{align*}
-\text{P}(15\leqslant T \leqslant 20)= &\text{P}(14.5<T<20.5) &\\
-= &\text{P}\left(\frac{14.5-25}{\sqrt{25}}<Z<\frac{20.5-25}{\sqrt{25}}\right)\\
-= &\text{P}(-2.1<Z<-0.9)\\
-= &\text{P}(Z<-0.9)-\text{P}(Z<-2.1)\\
-= &0.1841-0.0179\\
-= &0.1662\\
+\text{P}(15\leqslant T \leqslant 20)= &\text{P}\left(\frac{14.5-25}{\sqrt{25}}<Z<\frac{20.5-25}{\sqrt{25}}\right)&\\[0.2em]
+= &\text{P}(-2.1<Z<-0.9)\\[0.2em]
+= &\text{P}(Z<-0.9)-\text{P}(Z<-2.1)\\[0.2em]
+= &0.1841-0.0179\\[0.2em]
+= &0.1662
 \end{align*}
-
-\vspace{-0.5cm}
 
 \end{tcolorbox}
 

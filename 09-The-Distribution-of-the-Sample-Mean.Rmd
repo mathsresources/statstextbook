@@ -1,6 +1,6 @@
 # The Distribution of the Sample Mean
 
-\vspace{-0.7cm}Previous chapters have investigated probabilities related to *individual* observations from random variables with known distributions. However, statisticians are rarely in the business of making a single observation from a population - instead, they are far more likely to draw a *sample* of observations and, commonly, calculate the *sample mean*. Given random variable $X$, the sample mean of $X$ is also a random variable and is denoted $\overline{X}$. 
+Previous chapters have investigated probabilities related to *individual* observations from random variables with known distributions. However, statisticians are rarely in the business of making a single observation from a population - instead, they are far more likely to draw a *sample* of observations and, commonly, calculate the *sample mean*. Given a random variable $X$, the sample mean of observations from $X$ is also a random variable and is denoted $\overline{X}$. 
 
 Letting $X_1,X_2,\dots,X_n$ represent a sample of $n$ **independent and identically distributed** (**i.i.d.**) observations, where independence may be assumed through the use of *random sampling* methods, the sample mean may be expressed as:
 
@@ -8,9 +8,9 @@ $$\overline{X}=\frac{1}{n}\left(X_1+X_2+X_3+...+X_n\right)$$
 
 ### The Expectation and Variance of the Sample Mean {-}
 
-The expected value of the sample mean is equal to the true value of the population mean, meaning it is an *unbiased estimator* of the population mean. That is, if a series of samples are taken from a distribution with population mean $\mu$ and the mean is calculated for each sample, in the long-run the mean of these sample means tends toward $\mu$.
+The expected value of the sample mean is equal to the true value of the population mean, meaning the sample mean is an *unbiased estimator* of the population mean. That is, if a series of samples are taken from a distribution with population mean $\mu$ and the mean is calculated for each sample, in the long-run, the mean of these sample means tends toward $\mu$.
 
-The *standard deviation of the sample mean* $\overline{X}$ is called the **standard error**. For an underlying population with standard deviation $\sigma$, the standard error of the sample mean for a sample of size $n$ is $\dfrac{\sigma}{\sqrt{n}}$.
+The *standard deviation of the sample mean* $\overline{X}$ is called the **standard error** (SE). For an underlying population with standard deviation $\sigma$, the standard error of the sample mean for a sample of size $n$ is $\dfrac{\sigma}{\sqrt{n}}$.
 
 **Proof**: Given random variable $X$ such that $\text{E}(X)=\mu$ and $\text{V}(X)=\sigma^2$, from which a sample of $n$ independent observations ($X_1,X_2,\dots,X_n$) are drawn:
 
@@ -40,11 +40,13 @@ a column separator -->
 :::
 ::::::
 
+This shows that, as the sample size $n$ increases, the variability of the sample mean decreases. The result for the variance relies on the observations being independent, which is typically ensured through the use of random sampling.
+
 \pagebreak
 
 ## The Sample Mean of a Normally Distributed Random Variable
 
-Since the sample mean $\overline{X}$ is a linear combination of independent observations from $X$, **if** $X$ **is normally distributed then** $\overline{X}$ **is also normally distributed.**
+Since the sample mean $\overline{X}$ is a linear combination of independent observations of $X$, if $X$ is normally distributed then $\overline{X}$ is *also normally distributed.*
 
 \begin{centering}
 \tcbset{width=9cm}
@@ -53,12 +55,14 @@ Since the sample mean $\overline{X}$ is a linear combination of independent obse
 \end{tcolorbox}
 \end{centering}
 
-Due to the lower variance of the sample mean, *extreme results are less likely* when taking the mean of a sample in comparison to a single observation. For example, suppose the mass of adult red squirrels in a location is known to be normally distributed, with mean 250 grams and standard deviation 12 grams. If a single squirrel is randomly selected and its mass measured, it would not be that unlikely to encounter a squirrel lighter than 240 grams or heavier than 260 grams. However, if a random sample of three squirrels is taken, each weighed and the mean of the sample calculated then it would be very unlikely for the sample mean to be lower than 240 grams or heavier than 260 grams.
+Due to the lower variance of the sample mean, *extreme results are less likely* when taking the mean of a sample in comparison to a single observation. For example, suppose the mass of adult red squirrels in a location is known to be normally distributed, with mean 250 grams and standard deviation 12 grams. If a single squirrel is randomly selected and its mass measured, it would not be particularly unlikely to encounter a squirrel lighter than 240 grams or heavier than 260 grams. However, if a random sample of three squirrels is taken, each weighed and the mean of the sample calculated, then it would be very unlikely for the sample mean to be lower than 240 grams or heavier than 260 grams.
 
-The histograms below show 100 simulated individual observations of squirrel masses compared to the means of 100 simulated samples, each of size 3. Note that the sample means also show a distribution that looks normal with a mean of 250 grams, but that the spread of the sample means is much less than that of the individual observations.
+The histograms below show 100 simulated individual observations of squirrel masses compared to the means of 100 simulated samples, each of size 3. Note that the sample means also show a distribution that looks normal with a mean of 250 grams, but that the spread of the sample means is much less than that of the individual observations. This reflects the fact that the standard deviation of the sample mean (the standard error) is $\dfrac{\sigma}{\sqrt{n}}$, which is smaller than $\sigma$.
+
+\vspace{-0.7cm}
 
 \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=0.9]
         \draw (0,-0.2) -- (6,-0.2);
         \draw (-0.2,0) -- (-0.2,0.75*5);
         \foreach \x in {0,1,...,6}{
@@ -79,7 +83,8 @@ The histograms below show 100 simulated individual observations of squirrel mass
         \node[left] at (-0.4,0.75*4) {$20$};
         \node[left] at (-0.4,0.75*5) {$25$};
         \node[left,rotate=90] at (-1.5,0.75*4) {Frequency};
-        \node at (3,0.75*6) {100 Individual Observations};
+        \node at (3,0.8*6) {Normally distributed $X$};
+        \node at (3,0.70*6) {(100 Individual Observations)};
         \draw[fill=black!10] (0.2,0) rectangle (0.4,0.75*0.2);
         \draw[fill=black!10] (0.6,0) rectangle (0.8,0.75*0.2);
         \draw[fill=black!10] (0.8,0) rectangle (1.0,0.75*0.2);
@@ -124,7 +129,8 @@ The histograms below show 100 simulated individual observations of squirrel mass
         \node[left] at (-0.4+10,0.75*4) {$20$};
         \node[left] at (-0.4+10,0.75*5) {$25$};
         \node[left,rotate=90] at (-1.5+10,0.75*4) {Frequency};
-        \node at (3+10,0.75*6) {100 Sample Means};
+        \node at (3+10,0.80*6) {Normally distributed $\bar{X}$};
+        \node at (3+10,0.70*6) {(100 Sample Means)};
         \draw[fill=black!10] (2+10,0) rectangle (2.2+10,0.75*0.2);
         \draw[fill=black!10] (2.2+10,0) rectangle (2.4+10,0.75*0.6);
         \draw[fill=black!10] (2.4+10,0) rectangle (2.6+10,0.75*2);
@@ -135,14 +141,17 @@ The histograms below show 100 simulated individual observations of squirrel mass
         \draw[fill=black!10] (3.4+10,0) rectangle (3.6+10,0.75*1.6);
         \draw[fill=black!10] (3.6+10,0) rectangle (3.8+10,0.75*1.6);
         \draw[fill=black!10] (3.8+10,0) rectangle (4+10,0.75*0.6);
+        \draw[thick,domain=-2.4:2.4,smooth,samples=50,yscale=10/3,xshift=3cm,xscale=1.2] plot (\x,{1/((2*3.14)^0.5)) * 2.718^(-0.5*(\x)^2)});
+        \draw[thick,domain=-3.5:3.5,smooth,samples=50,yscale=9,xshift=13cm,xscale=0.4] plot (\x,{1/((2*3.14)^0.5)) * 2.718^(-0.5*(\x)^2)});
     \end{tikzpicture}
 \end{center}
 
-Given $X\sim\text{N}(\mu,\sigma^2)$:
 
-The $z$-transformation for *single observations* from $X$ has the *standard deviation* as the denominator: $Z=\dfrac{X-\mu}{\sigma}$
+\vspace{-0.5cm}
 
-The $z$-transformation for the **sample mean** has the **standard error** as its denominator instead:
+The $z$-transformation for *single observations* from $X\sim\text{N}(\mu,\sigma^2)$ is $Z=\dfrac{X-\mu}{\sigma}$.
+
+The $z$-transformation for the **sample mean** $\overline{X}\sim \text{N}\left(\mu,\dfrac{\sigma^2}{n}\right)$ has the **standard error** as its denominator:
 
 \begin{centering}
 \tcbset{width=9cm}
@@ -151,32 +160,25 @@ $Z=\dfrac{\overline{X}-\mu}{\dfrac{\sigma}{\sqrt{n}}}$
 \end{tcolorbox}
 \end{centering}
 
+This result holds exactly for normally distributed populations, regardless of sample size.
+
 \pagebreak
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} The length of a mass-produced brand of fence panels is normally distributed with a mean of 180cm and a standard deviation of 0.4cm. A random sample of nine panels is taken and each is measured.
-
-\begin{enumerate}
-    \item[a) ] State the distribution of the length of a fence panel, and calculate the probability of a randomly picked fence panel having a length greater than 180.1cm.
-    \item[b) ] State the distribution of the mean of a random sample of nine panels, and calculate the probability of the sample mean being greater than 180.1cm.
-\end{enumerate}
+\textbf{Problem:} The length of a mass-produced brand of fence panels is normally distributed with a mean of 180cm and a standard deviation of 0.4cm. A random sample of nine panels is taken and each is measured. State the distribution of the mean of a random sample of nine panels, and calculate the probability of the sample mean being greater than 180.1cm.
 
 \tcblower
-\textbf{Solution:}\text{ Let r.v. $X$ represent the length of a fence panel.}
+\textbf{Solution:} Let r.v. $X$ represent the length of a fence panel.\\
 
-\begin{enumerate}
-    \item[a) ] $X\sim \text{N}(180,0.4^2)$\\[0.1cm]
-    $\text{P}(X>180.1)=\text{P}\left(Z>\dfrac{180.1-180}{0.4}\right)=\text{P}(Z>0.25)=0.4013$\\[0.1cm]
-    \item[b) ] $\overline{X}\sim \text{N}\left(180,\dfrac{0.4^2}{9}\right)$\\[0.1cm]
+$\overline{X}\sim \text{N}\left(180,\dfrac{0.4^2}{9}\right)$\\[0.1cm]
     $\text{P}(\overline{X}>180.1)=\text{P}\left(Z>\dfrac{180.1-180}{\dfrac{0.4}{\sqrt{9}}}\right)=\text{P}(Z>0.75)=0.2266$
-\end{enumerate}
+
 \end{tcolorbox}
 
 []{#ex91q}
 
 #### [Exercise 9.1](#ex91a) {-}
 
-\begin{multicols}{2}
 \begin{enumerate}
     \item Given random variable $X \sim \text{N}(24,4^2)$:
     \begin{enumerate}
@@ -198,56 +200,197 @@ $Z=\dfrac{\overline{X}-\mu}{\dfrac{\sigma}{\sqrt{n}}}$
         \item Determine the probability that an interview lasts over half an hour.
         \item Stating an assumption required, calculate the probability that a sample of five interviews will have a mean length greater than half an hour.
     \end{enumerate}
-\end{enumerate}
-
-\begin{enumerate}
-    \item[4. ] The mass of a medium-sized whole chicken sold by a supermarket is normally distributed with a mean of 2.5kg and a standard deviation of 0.15kg. Calculate the probability that the mean mass of a random sample of 9 medium-sized chickens is less than 2.4kg.
-    \item[5. ] The amount of food waste discarded by a family per day is normally distributed with a mean of 1.96kg and a standard deviation of 0.4kg.
+    \item The mass of a medium-sized whole chicken sold by a supermarket is normally distributed with a mean of 2.5kg and a standard deviation of 0.15kg. Calculate the probability that the mean mass of a random sample of 9 medium-sized chickens is less than 2.4kg.
+    \item The amount of food waste discarded by a family per day is normally distributed with a mean of 1.96kg and a standard deviation of 0.4kg.
     \begin{enumerate}
         \item Calculate the probability that, on any random day, less than 1kg is discarded.
-        \item Calculate the probability that over the course of a week the mean amount of daily food waste discarded is greater than 2kg.
+        \item Calculate the probability that over the course of a week the mean amount of daily food waste discarded exceeds 2kg.
         \item Suggest a reason why the calculation in part (b) may not be reliable.
     \end{enumerate}
-    \item[6. ] The distances recorded in long-jump attempts by a group of junior long-jump specialists at an athletics club are normally distributed with a mean of 6.5m and a standard deviation of 0.2m. The long-jump distances recorded by the junior heptathletes are also normally distributed, with mean 6.3m and standard deviation 0.4m. A coach randomly observes attempts by 4 long-jump specialists and 3 heptathletes. Calculate the probability that the heptathletes' mean distance is greater than that of the the long-jump specialists. \textit{(Extension)}
+    \item The distances recorded in long-jump attempts by a group of junior long-jump specialists at an athletics club are normally distributed with a mean of 6.5m and a standard deviation of 0.2m. The long-jump distances recorded by the junior heptathletes are also normally distributed, with mean 6.3m and standard deviation 0.4m. A coach randomly observes attempts by 4 long-jump specialists and 3 heptathletes. Calculate the probability that the heptathletes' mean distance is greater than that of the long-jump specialists. \textit{(Extension)}
 \end{enumerate}
-\end{multicols}
 
 \pagebreak
 
 ## The Central Limit Theorem
 
-The Central Limit Theorem (CLT) is one of the most important and useful concepts in statistics. It gives an insight into the prevalence of the normal distribution and, crucially for statisticians, allows the normal distribution to be used for statistical inference even when the data of interest is *not* normally distributed. The CLT says:
+The Central Limit Theorem (CLT) is one of the most important and useful concepts in statistics. It provides insight into the widespread occurrence of the normal distribution and, crucially for statisticians, allows the normal distribution to be used for statistical inference even when the underlying data is *not* normally distributed. The CLT says:
 
 \begin{center}
-\begin{minipage}{0.95\textwidth}
+\begin{minipage}{0.75\textwidth}
 \begin{center}
-\text{"When the underlying population is }\textit{not}\text{ normally distributed, for sufficiently large sample sizes }\\
-\textbf{the sample mean will still be approximately normally distributed.}"
+When the underlying population is \textit{not} normally distributed,\newline the distribution of the \textbf{sample mean} is \textbf{approximately normal}\newline for sufficiently large sample sizes.
 \end{center}
 \end{minipage}
 \end{center}
 
-Note that a *"sufficiently large sample"* in this course is **greater than 20** ($n>20$). Other statistical textbooks may use the value of 30, whilst in reality many statisticians appreciate that the nature of the underlying distribution may allow for smaller samples to be used or require larger samples in order for the distribution of the sample mean to be sufficiently approximately normal.
+This approximation relies on independent observations (typically ensured through random sampling) and becomes more accurate as the sample size increases. A *"sufficiently large sample"* in this course is **greater than 20** ($n>20$); however, some statisticians may use a value of 30, whilst in practice the nature of the underlying distribution may allow for smaller samples to be sufficient, or require larger samples for the distribution of the sample mean to be sufficiently close to normal.
 
 Proof of the CLT is beyond the scope of this course (and this textbook), but statistical software and/or experimentation can help give a sense of what this looks like in practice. The simulations below show random individual observations from distributions on the left, with corresponding distributions of sample means to the right. Every random sample in both cases was of size 25.
 
-```{r echo=FALSE,fig.align = 'center'}
-par(mfrow=c(2,2))
-set.seed(234)
-X<-sample(c(1:6),50000,replace=TRUE)
-barplot(table(X),main="Discrete uniform X",yaxt="n")
-set.seed(345)
-Xbar<-replicate(5000,mean(sample(c(1:6),25,replace=TRUE)))
-hist(Xbar,main="5000 Sample Means for X",yaxt="n",xlab=NA,ylab=NA,breaks=10)
-set.seed(456)
-Y<-rbeta(50000,2,9,ncp=0)
-hist(Y,main="Continuous skewed Y",yaxt="n",xlab=NA,ylab=NA,breaks=100)
-set.seed(567)
-Ybar<-replicate(5000,mean(rbeta(1000,2,9,ncp=0)))
-hist(Ybar,main="5000 Sample Means for Y",yaxt="n",xlab=NA,ylab=NA,breaks=10)
-```
+\begin{center}
+    \begin{tikzpicture}[scale=0.8]
+        \draw (0,-0.2) -- (6.5,-0.2);
+        \draw (-0.2,0) -- (-0.2,0.75*5);
+        \foreach \x in {1,2,...,6}{
+        \draw (\x,-0.2) -- (\x,-0.5);
+        };
+        \node[below] at (1,-0.5) {$1$};
+        \node[below] at (2,-0.5) {$2$};
+        \node[below] at (3,-0.5) {$3$};
+        \node[below] at (4,-0.5) {$4$};
+        \node[below] at (5,-0.5) {$5$};
+        \node[below] at (6,-0.5) {$6$};
+        \foreach \y in {0,1,...,5}{
+        \draw (-0.2,0.75*\y) -- (-0.4,0.75*\y);
+        };
+        \node[below] at (3,-1.2) {Dice score};
+        \node[left] at (-0.4,0) {$0$};
+        \node[left] at (-0.4,0.75*1) {$5$};
+        \node[left] at (-0.4,0.75*2) {$10$};
+        \node[left] at (-0.4,0.75*3) {$15$};
+        \node[left] at (-0.4,0.75*4) {$20$};
+        \node[left] at (-0.4,0.75*5) {$25$};
+        \node[left,rotate=90] at (-1.5,0.75*4) {Frequency};
+        \node at (3,0.8*6) {Discrete uniform $X$};
+        \node at (3,0.70*6) {(100 Individual Observations)};
+        \draw[fill=black!10] (0.7,0) rectangle (1.3,17*0.15);
+        \draw[fill=black!10] (1.7,0) rectangle (2.3,21*0.15);
+        \draw[fill=black!10] (2.7,0) rectangle (3.3,11*0.15);
+        \draw[fill=black!10] (3.7,0) rectangle (4.3,15*0.15);
+        \draw[fill=black!10] (4.7,0) rectangle (5.3,14*0.15);
+        \draw[fill=black!10] (5.7,0) rectangle (6.3,22*0.15);
+        \draw (0+10,-0.2) -- (6+10.5,-0.2);
+        \draw (-0.2+10,0) -- (-0.2+10,0.75*5);
+        \foreach \x in {1,2,...,6}{
+        \draw (\x+10,-0.2) -- (\x+10,-0.5);
+        };
+        \node[below] at (11,-0.5) {$1$};
+        \node[below] at (12,-0.5) {$2$};
+        \node[below] at (13,-0.5) {$3$};
+        \node[below] at (14,-0.5) {$4$};
+        \node[below] at (15,-0.5) {$5$};
+        \node[below] at (16,-0.5) {$6$};
+        \foreach \y in {0,1,...,5}{
+        \draw (-0.2+10,0.75*\y) -- (-0.4+10,0.75*\y);
+        };
+        \node[below] at (3+10,-1.2) {Mean dice score};
+        \node[left] at (-0.4+10,0) {$0$};
+        \node[left] at (-0.4+10,0.75*1) {$5$};
+        \node[left] at (-0.4+10,0.75*2) {$10$};
+        \node[left] at (-0.4+10,0.75*3) {$15$};
+        \node[left] at (-0.4+10,0.75*4) {$20$};
+        \node[left] at (-0.4+10,0.75*5) {$25$};
+        \node[left,rotate=90] at (-1.5+10,0.75*4) {Frequency};
+        \node at (3+10,0.80*6) {Approximately normal $\bar{X}$};
+        \node at (3+10,0.70*6) {(100 Sample Means, $n=25$)};
+        
+        \draw[fill=black!10] (2.6+10,0) rectangle (2.8+10,0.15*3);
+        \draw[fill=black!10] (2.8+10,0) rectangle (3.0+10,0.15*1);
+        \draw[fill=black!10] (3.0+10,0) rectangle (3.2+10,0.15*15);
+        \draw[fill=black!10] (3.2+10,0) rectangle (3.4+10,0.15*22);
+        \draw[fill=black!10] (3.4+10,0) rectangle (3.6+10,0.15*21);
+        \draw[fill=black!10] (3.6+10,0) rectangle (3.8+10,0.15*25);
+        \draw[fill=black!10] (3.8+10,0) rectangle (4.0+10,0.15*9);
+        \draw[fill=black!10] (4.0+10,0) rectangle (4.2+10,0.15*3);
+        \draw[fill=black!10] (4.2+10,0) rectangle (4.4+10,0.15*0);
+        \draw[fill=black!10] (4.4+10,0) rectangle (4.6+10,0.15*1);
+        \draw[thick,domain=-3.5:3.5,smooth,samples=50,yscale=9.5,xshift=13.5cm,xscale=0.4] plot (\x,{1/((2*3.14)^0.5)) * 2.718^(-0.5*(\x)^2)});
+    \end{tikzpicture}
+\end{center}
 
-The **approximate** distribution of the sample mean can be stated provided the expectation and variance (or standard deviation) of the underlying distribution are known, or can be calculated. The notation '$\approx$' is used to highlight that this is an *approximate* distribution.
+\begin{center}
+    \begin{tikzpicture}[scale=0.8]
+        \draw (0,-0.2) -- (7.5,-0.2);
+        \draw (-0.2,0) -- (-0.2,0.75*5);
+        \foreach \x in {1,2,...,7}{
+        \draw (\x,-0.2) -- (\x,-0.5);
+        };
+        \draw[fill=black!10] (0,0) rectangle (0.5*0.5,0.15*4);
+        \draw[fill=black!10] (0.5*0.5,0) rectangle (0.5*1,0.15*6);
+        \draw[fill=black!10] (0.5*1,0) rectangle (0.5*1.5,0.15*6);
+        \draw[fill=black!10] (0.5*1.5,0) rectangle (0.5*2,0.15*3);
+        \draw[fill=black!10] (0.5*2,0) rectangle (0.5*2.5,0.15*8);
+        \draw[fill=black!10] (0.5*2.5,0) rectangle (0.5*3,0.15*12);
+        \draw[fill=black!10] (0.5*3,0) rectangle (0.5*3.5,0.15*10);
+        \draw[fill=black!10] (0.5*3.5,0) rectangle (0.5*4,0.15*11);
+        \draw[fill=black!10] (0.5*4,0) rectangle (0.5*4.5,0.15*7);
+        \draw[fill=black!10] (0.5*4.5,0) rectangle (0.5*5,0.15*7);
+        \draw[fill=black!10] (0.5*5,0) rectangle (0.5*5.5,0.15*4);
+        \draw[fill=black!10] (0.5*5.5,0) rectangle (0.5*6,0.15*4);
+        \draw[fill=black!10] (0.5*6,0) rectangle (0.5*6.5,0.15*2);
+        \draw[fill=black!10] (0.5*6.5,0) rectangle (0.5*7,0.15*3);
+        \draw[fill=black!10] (0.5*7,0) rectangle (0.5*7.5,0.15*2);
+        \draw[fill=black!10] (0.5*7.5,0) rectangle (0.5*8,0.15*1);
+        \draw[fill=black!10] (0.5*8,0) rectangle (0.5*8.5,0.15*2);
+        \draw[fill=black!10] (0.5*8.5,0) rectangle (0.5*9,0.15*1);
+        \draw[fill=black!10] (0.5*9,0) rectangle (0.5*9.5,0.15*2);
+        \draw[fill=black!10] (0.5*10,0) rectangle (0.5*10.5,0.15*2);
+        \draw[fill=black!10] (0.5*11,0) rectangle (0.5*11.5,0.15*1);
+        \draw[fill=black!10] (0.5*13,0) rectangle (0.5*13.5,0.15*2);
+        \node[below] at (0,-0.5) {$0$};
+        \node[below] at (1,-0.5) {$2$};
+        \node[below] at (2,-0.5) {$4$};
+        \node[below] at (3,-0.5) {$6$};
+        \node[below] at (4,-0.5) {$8$};
+        \node[below] at (5,-0.5) {$10$};
+        \node[below] at (6,-0.5) {$12$};
+        \node[below] at (7,-0.5) {$14$};
+        \foreach \y in {0,1,...,5}{
+        \draw (-0.2,0.75*\y) -- (-0.4,0.75*\y);
+        };
+        \node[below] at (3,-1.2) {Tree height (m)};
+        \node[left] at (-0.4,0) {$0$};
+        \node[left] at (-0.4,0.75*1) {$5$};
+        \node[left] at (-0.4,0.75*2) {$10$};
+        \node[left] at (-0.4,0.75*3) {$15$};
+        \node[left] at (-0.4,0.75*4) {$20$};
+        \node[left] at (-0.4,0.75*5) {$25$};
+        \node[left,rotate=90] at (-1.5,0.75*4) {Frequency};
+        \node at (3,0.8*6) {Continuous skewed $X$};
+        \node at (3,0.70*6) {(100 Individual Observations)};
+        \draw (0+10,-0.2) -- (6+10.5,-0.2);
+        \draw (-0.2+10,0) -- (-0.2+10,0.75*5);
+        \foreach \x in {0,1,...,6}{
+        \draw (\x+10,-0.2) -- (\x+10,-0.5);
+        };
+\node[below] at (10,-0.5) {$0$};
+        \node[below] at (11,-0.5) {$2$};
+        \node[below] at (12,-0.5) {$4$};
+        \node[below] at (13,-0.5) {$6$};
+        \node[below] at (14,-0.5) {$8$};
+        \node[below] at (15,-0.5) {$10$};
+        \node[below] at (16,-0.5) {$12$};
+        \foreach \y in {0,1,...,5}{
+        \draw (-0.2+10,0.75*\y) -- (-0.4+10,0.75*\y);
+        };
+        \node[below] at (3+10,-1.2) {Mean tree height (m)};
+        \node[left] at (-0.4+10,0) {$0$};
+        \node[left] at (-0.4+10,0.75*1) {$5$};
+        \node[left] at (-0.4+10,0.75*2) {$10$};
+        \node[left] at (-0.4+10,0.75*3) {$15$};
+        \node[left] at (-0.4+10,0.75*4) {$20$};
+        \node[left] at (-0.4+10,0.75*5) {$25$};
+        \node[left,rotate=90] at (-1.5+10,0.75*4) {Frequency};
+        \node at (3+10,0.80*6) {Approximately normal $\bar{X}$};
+        \node at (3+10,0.70*6) {(100 Sample Means, $n=25$)};
+        
+        \draw[fill=black!10] (0.5+10,0) rectangle (0.7+10,0.15*9);
+        \draw[fill=black!10] (0.7+10,0) rectangle (0.9+10,0.15*23);
+        \draw[fill=black!10] (0.9+10,0) rectangle (1.1+10,0.15*25);
+        \draw[fill=black!10] (1.1+10,0) rectangle (1.3+10,0.15*24);
+        \draw[fill=black!10] (1.3+10,0) rectangle (1.5+10,0.15*13);
+        \draw[fill=black!10] (1.5+10,0) rectangle (1.7+10,0.15*5);
+        \draw[fill=black!10] (1.7+10,0) rectangle (1.9+10,0.15*1);
+        \draw[fill=black!10] (1.9+10,0) rectangle (2.1+10,0.15*0);
+        \draw[fill=black!10] (2.1+10,0) rectangle (2.3+10,0.15*1);
+        \draw[fill=black!10] (2.3+10,0) rectangle (2.5+10,0.15*0);
+        \draw[thick,domain=-2.8:2.8
+        ,smooth,samples=50,yscale=9.5,xshift=11cm,xscale=0.4] plot (\x,{1/((2*3.14)^0.5)) * 2.718^(-0.5*(\x)^2)});
+    \end{tikzpicture}
+\end{center}
+
+The **approximate** distribution of the sample mean can be stated provided the expectation and variance of the underlying distribution are known, or can be determined. The notation '$\approx$' is used to highlight that this is an *approximate* distribution.
 
 \begin{centering}
 \tcbset{width=15cm}
@@ -259,19 +402,19 @@ The **approximate** distribution of the sample mean can be stated provided the e
 \pagebreak
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} The mean mass of ceramic bowls produced by a potter is 400g and the standard deviation is 20g, and they can be ordered singly or in bulk. Bulk orders contain 36 mugs and, when such an order is placed, the potter selects the 36 mugs at random to be boxed up and shipped. Letting the random variable $X$ represent the weight of a bowl, and $\overline{X}$ the mean bowl mass in a bulk order:
+\textbf{Problem:} The mean mass of ceramic bowls produced by a potter is 400g and the standard deviation is 20g, and they can be ordered singly or in bulk. Bulk orders contain 36 bowls and, when such an order is placed, the potter selects the 36 bowls at random to be boxed up and shipped. Letting the random variable $X$ represent the weight of a bowl, and $\overline{X}$ the mean bowl mass in a bulk order:
 
 \begin{enumerate}
     \item[a. ] State the distribution of $\overline{X}$.
-    \item[b. ] Calculate the probability that the mean bowl mass in a bulk order is greater than 402g.
+    \item[b. ] Calculate the probability that the mean bowl mass in a bulk order exceeds 402g.
 \end{enumerate}
 
 \tcblower
-\textbf{Solution:}\textit{(Even through the underlying distribution of bowl masses is unknown, the CLT can be invoked since $n>20$. The mean bowl mass in a sample of 36 bowls is approximately normally distributed.)}
+\textbf{Solution:}\\
 
 \begin{enumerate}
     \item[a. ] $\overline{X}\approx \text{N}\left(400,\frac{20^2}{36}\right)$
-    \item[b. ] $\text{P}(\overline{X}>402)=\text{P}\left(Z>\dfrac{\overline{x}-\mu}{\frac{\sigma}{\sqrt{n}}}\right)=\text{P}\left(Z>\dfrac{402-400}{\frac{20}{\sqrt{36}}}\right)=\text{P}(Z>0.6)=0.2743$
+    \item[b. ] $\text{P}(\overline{X}>402)=\text{P}\left(Z>\dfrac{402-400}{\frac{20}{\sqrt{36}}}\right)=\text{P}(Z>0.6)=0.2743$
 \end{enumerate}
 
 \end{tcolorbox}
@@ -290,8 +433,8 @@ The **approximate** distribution of the sample mean can be stated provided the e
     \end{enumerate}
     \item The discrete random variable $A$ has a mean of 18 and a standard deviation of 5. Calculate the probability that a sample of size 30 taken from $A$ results in a mean less than 20.
     \item The continuous random variable $B$ has a mean of 248 and a variance of 16. Determine the probability of the mean of a sample of size 24 being greater than 250.
-    \item The mean height of the sunflowers grown in a field is 1.05m, with a standard deviation of 25cm. The grower measures the height of a random sample of 40 sunflowers. What is the probability that the mean height of the sample of sunflowers is less than a metre? 
-    \item Eggs classified as \textit{medium} by a farm have a mean mass of 78g and a standard deviation of 5g. Calculate the probability that, for a box of 24 randomly selected eggs, the mean egg mass is actually 78 when given correct to the nearest gram.  
+    \item The mean height of the sunflowers grown in a field is 1.05m, with a standard deviation of 0.25m. The grower measures the height of a random sample of 40 sunflowers. What is the probability that the mean height of the sample of sunflowers is less than a metre? 
+    \item Eggs classified as \textit{medium} by a farm have a mean mass of 78g and a standard deviation of 5g. Calculate the probability that, for a box of 24 randomly selected eggs, the mean egg mass is recorded as 78g when given to the nearest gram.  
     \item When \textit{"40 litres"} of petrol is dispensed by a fuel pump design used by a supermarket, the mean actual amount dispensed is 40.1 litres with a standard deviation of 0.35 litres.
     \begin{enumerate}
         \item[(a)] Explain why the known information is not sufficient to calculate the probability that a single \textit{"40 litre"} fill actual gives less than 40 litres.
@@ -337,7 +480,7 @@ The **approximate** distribution of the sample mean can be stated provided the e
         \end{enumerate}
         \item[(c)] The bakery changes its process, and now when a customer orders a number of mince pies the bakery staff places them on a set of weighing scales, one by one. Explain why this change is likely to mean the distribution of $\overline{X}$ is no longer as it previously was.
     \end{enumerate}
-    \item Let discrete random variable $X$ represent the number of Video Assistant Refereem (VAR) reviews during the course of a game of football, known to follow a Poisson distribution with a mean of 4.5 reviews per game.
+    \item Let discrete random variable $X$ represent the number of Video Assistant Referee (VAR) reviews during the course of a game of football, known to follow a Poisson distribution with a mean of 4.5 reviews per game.
     \begin{enumerate}[itemsep=8pt]
         \item[(a)] State the distribution of $X$.
         \item[(b)] Calculate the probability that a football game has no more than two VAR reviews.
