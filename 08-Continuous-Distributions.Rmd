@@ -821,7 +821,7 @@ $Z=\dfrac{X-\mu}{\text{$\sigma$}}$
 
 A useful way of thinking about the result of a $z$-transformation is that it is a measure of *how many standard deviations a value is from the mean*, which then can be used to calculate a probability. 
 
-For example, consider normally distributed random variable $X$ with a mean of 20 and standard deviation of 6. The probability that a random observation of $X$ results in a value less than 29 can be sketched on the distribution of $X$, and compared to the *transformed value* of 1.5 on the distribution of $Z$. Note that 29 is 1.5 standard deviations over the mean of 20.
+For example, consider normally distributed random variable $X$ with a mean of 20 and standard deviation of 6. The probability that a random observation of $X$ results in a value less than 29 can be sketched on the distribution of $X$, and compared to the *transformed value* of 1.5 on the distribution of $Z$. Note that 29 is 1.5 standard deviations greater than the mean of 20.
 
 $$z=\frac{\text{$x-\mu$}}{\text{$\sigma$}}=\frac{\text{$29-20$}}{\text{$6$}}=1.5$$
 
@@ -1074,7 +1074,7 @@ x &= 1.28\times 4 + 280\hspace{1cm}
   every axis y label/.style={at=(current axis.above origin),anchor=south},
   every axis x label/.style={at=(current axis.right of origin),anchor=west},
   height=3cm, 
-  width=7cm,
+  width=6cm,
   xtick=\empty, 
   ytick=\empty,
   enlargelimits=false, 
@@ -1168,10 +1168,7 @@ Hence, a 25 month warranty should expect to see less than 5\% of TVs fail under 
 Let random variable $X$ represent the mass of a pumpkin.
 \begin{align*}
 X\sim & \text{N}(6.8,\sigma^2)\\
-\text{P}(Z<z)=&0.999 & \rightarrow z=3.09&&\\
-3.09=&\frac{10-6.8}{\sigma}\\
-3.09\sigma=&3.2\\
-\sigma=&\frac{3.2}{3.09}\hspace{3cm}
+\text{P}(Z<z)=&0.999 & \rightarrow z=3.09&\hspace{3cm}
 \begin{tikzpicture}[overlay]
 \begin{axis}[
   no markers, 
@@ -1205,7 +1202,10 @@ X\sim & \text{N}(6.8,\sigma^2)\\
 \node at (axis cs: 0,\valueA)  {$99.9\%$};
 \draw[semithick] (axis cs: -3.2,-0.02) -- (axis cs: 3.2,-0.02);
 \end{axis}
-\end{tikzpicture}\\
+\end{tikzpicture}\\\\
+3.09=&\frac{10-6.8}{\sigma}\\
+3.09\sigma=&3.2\\
+\sigma=&\frac{3.2}{3.09}
 \sigma=&1.04
 \end{align*}
 
@@ -1220,9 +1220,10 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
 #### [Exercise 8.5](#ex85a) {-}
 
 \begin{enumerate}
-    \item Given $Z\sim \text{N}(0,1)$, find the value of $z$ if:
+    \item Given $Z\sim \text{N}(0,1)$, use a sketch to find the value of $z$ if:
     \begin{multicols}{4}
     \begin{enumerate}
+    \setlength{\itemsep}{0.3em}
         \item[(a)] $\text{P}(Z>z)=0.1$
         \item[(e)] $\text{P}(Z<z)=0.995$
         \item[(i)] $\text{P}(Z>z)=0.975$
@@ -1256,65 +1257,72 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
 
 ## Combining Normal Random Variables
 
-*Sums and differences* of normally distributed random variables are *themselves normally distributed*. When these random variables are **independent**, the mean and variance of any linear combination of them may be determined using the laws of expectation and variance introduced in section 6.6 For example, given **independent** normally distributed random variables $X$ and $Y$ with means of $\mu_X$ and $\mu_Y$ and standard deviations of $\sigma_X$ and $\sigma_Y$ respectively:
+*Sums and differences* of independent and normally distributed random variables are *themselves normally distributed*, and the mean and variance of these may be determined using the laws of expectation and variance introduced in section 6.6 For example, given **independent** normally distributed random variables $X$ and $Y$ with means of $\mu_X$ and $\mu_Y$ and standard deviations of $\sigma_X$ and $\sigma_Y$ respectively:
 
 $$X+Y\sim \text{N}(\mu_X+\mu_Y,\sigma_X^2+\sigma_Y^2)\quad\text{   and   }\quad X-Y\sim \text{N}(\mu_X-\mu_Y,\sigma_X^2+\sigma_Y^2)$$
 
-It is important to remember that $2X$ is **not** the sum of two independent observations of $X$. Instead, the sum of $n$ independent observations of $X$ is $X_1+X_2+\dots+X_n$.
+Note that $2X$ is *not* the same thing as the sum of two independent observations of $X$, which can be expressed as $X_1+X_2$. They share the same expectation, but different variance. Given $X\sim \text{N}\left(\mu,\sigma^2\right)$:
+
+\vspace{-0.3cm}
+
+\begin{multicols}{2}
 
 \begin{align*}
-\text{E}(X_1+X_2+...+X_n)=&\text{E}(X_1)+\text{E}(X_2)+\dots+\text{E}(X_n)=n\text{E}(X)\\
+    \text{E}(X_1+X_2)&=\text{E}(X_1)+\text{E}(X_2)\\
+    &=2\text{E}(X)\\[0.5em]
+    \text{V}(X_1+X_2)&=\text{V}(X_1)+\text{V}(X_2)\\
+    &=2\text{V}(X)\\[0.5em]
+\end{align*}
+
+\columnbreak
+
+\begin{align*}
+    \text{E}(2X)&=2\text{E}(X)\\
+    &\phantom{=2\text{E}(X)}\\[0.5em]
+    \text{V}(2X)&=2^2\times\text{V}(X)\\
+    &=4\text{V}(X)\\[0.5em]
+\end{align*}
+    
+\end{multicols}
+
+\vspace{-0.3cm}
+
+The sum of $n$ independent observations of $X$ is $X_1+X_2+\dots+X_n$.
+
+\vspace{-0.2cm}
+
+\begin{align*}
+\text{E}(X_1+X_2+...+X_n)=&\text{E}(X_1)+\text{E}(X_2)+\dots+\text{E}(X_n)=n\text{E}(X)\\[0.2em]
 \text{V}(X_1+X_2+...+X_n)=&\text{V}(X_1)+\text{V}(X_2)+\dots+\text{V}(X_n)=n\text{V}(X)
 \end{align*}
 
-When calculating probabilities relating to combined normal random variables, it can be helpful to name the new random variable using some logical letter choice, such as $T$ for *"Total"*, $D$ for *"Difference"* and so on.
+When combining normal random variables, it can be helpful to define a new random variable, such as $T$ for *total*, $D$ for *difference* and so on.
+
+
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} The actual volume of paint contained within tins marked as containing 25 litres is normally distributed with a mean of 25.2 litres and a standard deviation of 0.3 litres. Calculate the probability that the total volume in 4 tins is less than 100 litres.
+\textbf{Problem:} The actual volume of paint contained within tins marked as containing 25 litres is normally distributed with a mean of 25.2 litres and a standard deviation of 0.3 litres. Calculate the probability that the total volume in 8 tins is less than 200 litres, stating an assumption required
 
 \tcblower
 \textbf{Solution:}
 
 \vspace{0.1cm}
 
-Let random variable $X$ represent the volume of paint in a tin.
+Let random variable $X\sim \text{N}(25.2,0.3^2)$ represent the volume of paint in a tin.\\[0.1em]
 
-\vspace{0.1cm}
+Let $T$ represent the total volume of paint in the eight tins.\\[0.1em]
 
-$X\sim \text{N}(25.2,0.3^2)$
+Assuming the volume of paint in each tin is independent.\\[0.1em]
 
-\vspace{0.1cm}
+$T=X_1+X_2+\dots+X_8$\\[0.1em]
 
-Let $T$ represent the total volume of paint in the four tins.
+$\text{E}(T)=8\times\text{E}(X)=8\times25.2=201.6$\\[0.1em]
 
-\vspace{0.1cm}
+$\text{V}(T)=8\times\text{V}(X)=8\times0.3^2=0.72$\\[0.1em]
 
-Assuming the volume of paint in each tin is independent:
+$T\sim \text{N}(201.6,0.72)$\\[0.1em]
 
-\vspace{0.1cm}
-
-$T=X_1+X_2+X_3+X_4$
-
-\vspace{0.1cm}
-
-$\text{E}(T)=\text{E}(X_1+X_2+X_3+X_4)=\text{E}(X_1)+\text{E}(X_2)+\text{E}(X_3)+\text{E}(X_4)=4\times25.2=100.8$
-
-\vspace{0.1cm}
-
-$\text{V}(T)=\text{V}(X_1+X_2+X_3+X_4)=\text{V}(X_1)+\text{V}(X_2)+\text{V}(X_3)+\text{V}(X_4)=4\times0.3^2=0.36$
-
-\vspace{0.1cm}
-
-$T\sim \text{N}(100.8,0.36)$
-
-\vspace{0.1cm}
-
-\begin{align*}
-\text{P}(T<100)=&\text{P}\left(Z<\frac{100-100.8}{\sqrt{0.36}}\right)\\
-=&\text{P}(Z<-1.33)\\
-=&0.0918
-\end{align*}
-
+$\text{P}(T<200)=\text{P}\left(Z<\dfrac{200-201.6}{\sqrt{0.72}}\right)=\text{P}(Z<-1.89)=0.0294$
 \end{tcolorbox}
 
 \pagebreak
