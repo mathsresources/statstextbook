@@ -12454,20 +12454,22 @@ Most statistical studies begin with a claim, which is called the \textbf{alterna
 It should also first be decided whether evidence is being sought for the true value of the population mean being \emph{less than} a specified value, \emph{greater than} a specified value, or simply \emph{different from} a specified value. When the alternative hypothesis is only interested in a \emph{single direction}, the test being performed is described as \textbf{\emph{one-tailed}}. When the alternative hypothesis is interested in a change in \emph{either direction} from the specified value, it is referred to as a \textbf{\emph{two-tailed}} test.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Using suitable notation, state the null and alternative hypotheses for each of the following claims.
+\textbf{Problem:} State the null and alternative hypotheses for each of the following claims.
 
 \vspace{0.2cm}
 
 \begin{enumerate}
-    \item[a. ] The mean volume of liquid in espressos sold by a coffee store is less than the 30ml stated on their menu. 
-    \item[b. ] The mean mass of red squirrels in a woodland population is different to the previously measured 240g.
+    \item[(a)] The mean volume of liquid in espressos sold by a coffee store is less than the 30ml stated on their menu. 
+    \item[(b)] The mean mass of red squirrels in a woodland population is different to the previously measured 240g.
 \end{enumerate}
 
 \tcblower
 \textbf{Solution:}
 \begin{enumerate}
-    \item[a. ] $\text{H}_\text{0}:$  $\mu=30$ \quad \textnormal{  One-tailed.}\\ $\text{H}_\text{1}:$  $\mu<30$
-    \item[b. ] $\text{H}_\text{0}:$  $\mu=240$ \quad \textnormal{Two-tailed.}\\ $\text{H}_\text{1}:$  $\mu\ne240$
+    \begin{multicols}{2}
+    \item[(a)] $\text{H}_\text{0}:$  $\mu=30$ \quad \textnormal{  One-tailed.}\\ $\text{H}_\text{1}:$  $\mu<30$
+    \item[(b)] $\text{H}_\text{0}:$  $\mu=240$ \quad \textnormal{Two-tailed.}\\ $\text{H}_\text{1}:$  $\mu\ne240$
+    \end{multicols}
 \end{enumerate}
 \end{tcolorbox}
 
@@ -12476,14 +12478,16 @@ It should also first be decided whether evidence is being sought for the true va
 \subsubsection*{\texorpdfstring{\hyperref[ex101a]{Exercise 10.1}}{Exercise 10.1}}\label{exercise-10.1}
 \addcontentsline{toc}{subsubsection}{{Exercise 10.1}}
 
-For each proposed hypothesis test, state the \textbf{null hypothesis} and the \textbf{alternative hypothesis} using appropriate notation.
+For each proposed hypothesis test, state the \textbf{null hypothesis} and the \textbf{alternative hypothesis}.
 
-\begin{enumerate}[itemsep=18pt]
+\begin{enumerate}
     \item A telecommunications provider wishes to test whether the mean amount of data used by its customers is more than 8.6 gigabytes per month.
     \item A large school plans to test whether the mean amount its teachers spend on photocopying is different from the £12 per year they currently budget for.
     \item A farmer wants to test whether the mean mass of the newborn lambs from his flock is less than 4.2 kilograms.
     \item A sports statistician is planning a hypothesis test to assess the evidence that the mean actual playing time during a game of football has changed from 58 minutes.
-    \item A kettle manufacturer wishes to test whether the mean time for its kettles to boil one litre of water is more than the one minute and 5 seconds stated on the packaging.
+    \item A kettle manufacturer wishes to test whether the mean time for its kettles to boil one litre of water is more than 65 seconds stated on the packaging.
+    \item A teacher is monitoring the time a sample of teachers from across Scotland spend marking writing reports during a school year, to assess whether there is evidence that an education authority's claim that the mean is 10 hours is valid.
+    \item A music fan measures the tempo (in beats per minute) of a sample of songs on a streaming platform to test if a suggested mean of 160 beats per minute is too low.
     \item The mean volume of petrol a driver uses driving from Glasgow to Blackburn is 15.7 litres. The driver wishes to test whether the mean volume of petrol used has changed.
 \end{enumerate}
 
@@ -12820,6 +12824,86 @@ Since $0.0456<0.05$, reject $\text{H}_\text{0}$ at the 5\% level of significance
 \addcontentsline{toc}{subsubsection}{{Exercise 10.2}}
 
 \begin{enumerate}
+    \item A practice question is below, followed by a student's \textbf{flawed} solution, featuring a number of issues.
+    \begin{tcolorbox}[colback=white,colframe=black!50]
+\textbf{Practice question:} The mass of dried tea leaves contained in each bag sold by tea company \textit{Brewed Awakenings} is known to be normally distributed with a standard deviation of 0.4 grams, and the mean amount contained in each bag should be 2.5 grams. It is suspected that the company's new machine is putting to little dried tea into each bag. A random sample of 10 bags have their contents measured, and the mean mass obtained from this sample is 2.3 grams.\\[0.5em] Perform a $z$-test to assess whether the new machine is putting too little dried tea into the bags, at the 5\% level of significance.
+
+\tcblower
+\textbf{Student's flawed solution:}\\
+
+\begin{math}
+\begin{array}{ll}
+      \text{H}_\text{0}: & \text{mean}=2.5\\
+      \text{H}_\text{1}: & \text{mean}< 2.5
+    \end{array}
+\end{math}\\
+
+Under $\text{H}_\text{0}$:\hspace{7cm}
+\begin{tikzpicture}[remember picture, overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=7cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=Black!20, domain=-3:-0.5] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(-0.5,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[Black!20] (axis cs: -3,-0.02) rectangle (axis cs: -0.5,0);
+\draw [semithick, black]  (axis cs:-0.5,-0.02) -- (axis cs:-0.5,\valueA);
+\node[below] at (axis cs:-0.5,0)  {$-0.5$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node at (axis cs: -2.2,0.2)  {$30.85\%$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}\\ 
+
+\vspace{-0.1cm}
+
+$\text{P}(\bar{X}<2.3)=0.3085$\\
+
+$p\text{-value}=0.3085$\\
+
+Since $0.3085>0.05$, accept $\text{H}_\text{0}$ at the 5\% level of significance. There is insufficient evidence to suggest that the mass of dried tea leaves in a bag bag is less than 2.5 grams.
+
+\end{tcolorbox}
+The hypotheses given by the student lack the required clarity.
+\begin{enumerate}
+    \item State suitable hypotheses which should be used instead.\\[-0.6em]
+\end{enumerate}
+The $p$-value calculated by the student is correct, but it lacks sufficient working.
+\begin{enumerate}[resume]
+    \item Show a minimum of two additional steps of working, which lead to the value of $0.3085$.\\[-0.6em]
+\end{enumerate}
+Modern statisticians (and Advanced Higher Statistics students) must avoid using the outdated phrase '\textit{accept} $\textit{H}_\text{0}$', since it suggests the sample provides evidence \textit{for} the null hypothesis.
+\begin{enumerate}[resume]
+    \item State an appropriate phrase to use instead of '\textit{accept} $\textit{H}_\text{0}$'.\\[-0.6em]
+\end{enumerate}
+The final sentence in the student's conclusion is missing an important word.
+\begin{enumerate}[resume]
+    \item State the essential word which is missing.\\[-0.6em]
+\end{enumerate}
+    \item The mass of ground coffee contained in each bag sold by coffee company \textit{Déjà Brew} is known to be normally distributed with a standard deviation of 7 grams, and the mean amount contained in each bag should be 240 grams. It is suspected that the company's new machine is putting to much ground coffee into each bag. A random sample of 18 bags have their contents measured, and the mean mass obtained from this sample is 242 grams.\\[0.5em] Perform a $z$-test to assess whether the new machine is putting too much ground coffee into the bags, at the 10\% level of significance.
+\end{enumerate}
+
+\newpage
+
+\begin{enumerate}[resume]
     \item The length of cookery videos uploaded to a video sharing platform has been historically found to be normally distributed, with a mean of 11.7 minutes and a standard deviation of 2.3 minutes. A random sample of 30 videos uploaded this year tagged as 'cookery' on the platform gives a mean of 10.8 minutes. Assuming that the standard deviation of video length remains unchanged, test at the 5\% level of significance the claim that the mean length of cookery videos on the platform is now less than 11.7 minutes.
     \item The time taken for a teacher to mark an exam paper is normally distributed with a mean of 6.3 minutes and a standard deviation of 0.8 minutes. After more detailed marking instructions are issued, a random sample of 25 papers results in a mean marking time of 6.5 minutes per paper. Assuming that the standard deviation of time taken remains unchanged, assess at the 1\% significant level the claim that the mean marking time has increased since the new marking instructions were introduced, using a hypothesis test.
     \item The figure often quoted as the mean time spent with the ball being in play during a game of football is 58 minutes, with the standard deviation being 4 minutes, and it is assumed that the time for which the ball is in play is normally distributed. In the face of increasing complaints by fans about the impact of timewasting on actual playing time, a sports statistician is planning a hypothesis test to assess the evidence that the mean time during which the ball is in play has changed from 58 minutes. A random sample of 15 games gives a mean time in play of 61 minutes.
@@ -12842,27 +12926,6 @@ Since $0.0456<0.05$, reject $\text{H}_\text{0}$ at the 5\% level of significance
 
 \pagebreak
 
-\textit{These questions match those from page 117, and the conclusions reached should correspond.}
-
-\begin{enumerate}[resume]
-    \item The mass of a pine marten in Scotland is historically known to be normally distributed, with a mean of 1.31kg and a standard deviation of 0.23kg. A sample of 22 pine martens captured, weighed and released in Scotland in 2023 gives a mean mass of 1.38kg. Stating two assumptions required, test at the 5\% level of significance the claim that the mean mass of a pine marten in Scotland has increased.
-    \item The time taken by runners to complete a 5km run in a weekly race in a local park is normally distributed with a mean time of 26.3 minutes and a standard deviation of 1.4 minutes. Following some development works completed in the park, the route is unchanged but some of the running surfaces have changed. A random sample of 40 runners completing the course after the development work gives a mean of 25.9 minutes. Stating one assumption required, test the claim at the 0.1\% significance level that the mean run time is no longer 26.3 minutes.
-    \item A telecommunications provider wishes to test whether the mean amount of data used by its customer is more than 8.6 gigabytes per month. The amount of data used by a customer is known to be normally distributed with a standard deviation of 1.7 gigabytes. A random sample of 32 customers gives a mean of 9.1 gigabytes. Perform a hypothesis test at the 5\% level of significance to assess the evidence that the mean amount of data used by a customer is greater than 8.6 gigabytes.
-    \item A large school plans to test whether the mean amount that its teachers spend on photocopying is different from the £12 per year they currently budget for. A random sample of 23 teachers gives a mean of £10.90 and a standard deviation of £2.30. 
-    \begin{enumerate}
-        \item Explain why a $z$-test for the mean amount spent can still be performed despite the population standard deviation of spend per teacher is not known.
-        \item Perform a hypothesis test at the 10\% level of significance to assess the evidence that the mean spend per teacher is different from £12.
-    \end{enumerate}
-    \item A kettle manufacturer wishes to test whether the mean time for its kettles to boil one litre of water is more than the 1 minute and 5 seconds stated on the packaging. The standard deviation in the boiling time is 4 seconds, and the time taken to boil is normally distributed. A sample of 32 kettles gives a mean time of one minute and 7 seconds. Assuming that the standard deviation remains unchanged, perform a hypothesis test at the 5\% level of significance to assess the evidence that the mean time taken to boil one litre is more than the packaging states.
-    \item The volume of petrol a driver uses driving from Glasgow to Blackburn is normally distributed, with previous studies showing the mean to be 15.7 litres and the standard deviation to be 0.3 litres. The driver believes their new driving style may have caused the mean volume of petrol used to change. Subsequently, recording the fuel consumption for 5 journeys gives a mean volume of petrol for a journey of 15.4 litres.
-    \begin{enumerate}
-        \item State two assumptions required for the valid use of a $z$-test.
-        \item Perform a $z$-test at the 1\% level of significance to assess the evidence for their claim. 
-    \end{enumerate}
-\end{enumerate}
-
-\pagebreak
-
 \section{\texorpdfstring{One-Sample \textit{z}-Test for the Population Mean using a Test Statistic}{One-Sample -Test for the Population Mean using a Test Statistic}}\label{one-sample--test-for-the-population-mean-using-a-test-statistic}
 
 Obtaining a \(p\)-value in the previous section required calculating the probability of the observed sample mean, \(\bar{x}\), by first using the \(z\)\emph{-transformation for a sample mean} to obtain what is called a \(z\)\emph{-score}. Instead of concluding a \(z\)-test by comparing a \(p\)-value to the significance level, an alternative approach is to compare the \(z\)-score, referred to as the \textbf{test statistic}, to pre-determined cut-off values, called \textbf{critical values}.
@@ -12878,7 +12941,7 @@ A \(z\)\emph{-test statistic} of \(0\) occurs when the sample mean of the observ
 
 \emph{Critical values} can be found by first considering \emph{critical regions}. These are the most extreme regions of the sampling distribution of the test statistic; if the calculated test statistic lies within these regions, the null hypothesis is rejected.
 
-Critical values are the \emph{boundaries} of these critical regions. Below are examples of critical regions, and critical values, for a \(z\) test statistic with a 5\% level of significance.
+Critical values are the \emph{boundaries} of these critical regions. Below are examples of critical regions (shaded), and critical values (below the axis), for a \(z\) test statistic with a 5\% level of significance.
 
 \begin{figure}[H]
   \centering
