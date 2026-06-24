@@ -5544,7 +5544,7 @@ If a person is selected at random from the general population to be tested for t
             }
             child {
                 node[end, label=right:
-                    {$\text{positive}$\hspace{0.85cm}$\text{P}(\overline{\text{condition}}\cap \text{positive})=0.0288$\hspace{0.3cm}\text{\large{$\ast$}}}] {}
+                    {$\text{positive}$\hspace{0.85cm}$\text{P}(\overline{\text{condition}}\cap \text{positive})=0.0288$}] {}
                 edge from parent
                 node[above] {$0.03$}
                 node[below]  {}
@@ -5564,7 +5564,7 @@ If a person is selected at random from the general population to be tested for t
             }
             child {
                 node[end, label=right:
-                    {$\text{positive}$\hspace{0.75cm}$\text{P}(\text{condition}\cap \text{positive})=0.0392$\hspace{0.3cm}\text{\large{$\ast$}}\hspace{0.2cm}\ding{51}}] {}
+                    {$\text{positive}$\hspace{0.75cm}$\text{P}(\text{condition}\cap \text{positive})=0.0392$}] {}
                 edge from parent
                 node[above] {$0.98$}
                 node[below]  {}
@@ -5578,7 +5578,7 @@ If a person is selected at random from the general population to be tested for t
 
 \begin{enumerate}
     \item[(a) ] $\text{P}(\text{positive})=0.0392+0.0288=0.068$
-    \item[(b) ] $\text{P}(\text{condition | positive})=\dfrac{\text{P}(\text{condition }\cap \text{  positive})}{\text{P}(\text{positive})}=\dfrac{0.0392}{0.068}=0.5765$\hspace{4cm}$\dfrac{\text{ \ding{51} }}{\text{ }\ast+\ast\text{ }}$
+    \item[(b) ] $\text{P}(\text{condition | positive})=\dfrac{\text{P}(\text{condition }\cap \text{  positive})}{\text{P}(\text{positive})}=\dfrac{0.0392}{0.068}=0.5765$
 \end{enumerate}
 
 \end{tcolorbox}
@@ -10562,7 +10562,7 @@ $\text{P}(Z<1.5)=0.9332$
 \end{figure}
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} The mass of an adult red squirrel in an area of woodland is normally distributed with a mean of 295g and a standard deviation of 15g. Calculate the probability that a squirrel chosen at random has a mass greater than 300g.
+\textbf{Problem:} The mass of an adult red squirrel in an area of woodland is normally distributed with a mean of 295g and a standard deviation of 15g. Calculate the probability that a squirrel chosen at random has a mass greater than 312g.
 
 \tcblower
 \textbf{Solution:}\\
@@ -10571,9 +10571,13 @@ Let random variable $X$ represent the mass of a squirrel.\\
 
 $X\sim \text{N}(295,15^2)$\\
 
-$\text{P}(X>300)=\text{P}\left(Z>\dfrac{\text{$300-295$}}{\text{$15$}}\right)=\text{P}(Z>0.33)=0.3707$\\
+$\text{P}(X>312)=\text{P}\left(Z>\dfrac{\text{$312-295$}}{\text{$15$}}\right)=\text{P}(Z>1.13)=0.1292$\\
 
-\begin{center}
+\begin{figure}[H]
+  \centering
+\begin{minipage}{.5\textwidth}
+\centering
+
 \begin{tikzpicture}
 \begin{axis}[
   no markers, 
@@ -10594,19 +10598,64 @@ $\text{P}(X>300)=\text{P}\left(Z>\dfrac{\text{$300-295$}}{\text{$15$}}\right)=\t
   hide y axis,
   hide x axis
   ]
-\addplot [draw=none, fill=Black!20, domain=0.33:3] {gauss(x, 0, 1)} 
+\addplot [draw=none, fill=Black!20, domain=1.13:3] {gauss(x, 0, 1)} 
 \closedcycle;
  \addplot [semithick] {gauss(x, 0, 1)};
-\pgfmathsetmacro\valueA{gauss(0.33,0,1)}
+\pgfmathsetmacro\valueA{gauss(1.13,0,1)}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
-\fill[Black!20] (axis cs: 0.33,-0.02) rectangle (axis cs: 3,0);
-\draw [semithick, black]  (axis cs:0.33,-0.02) -- (axis cs:0.33,\valueA);
-\node[below] at (axis cs: 0.33,0)  {$0.33$};
-\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\fill[Black!20] (axis cs: 1.13,-0.02) rectangle (axis cs: 3,0);
+\draw [semithick, black]  (axis cs:1.13,-0.02) -- (axis cs:1.13,\valueA);
+\node[below] at (axis cs: 1.13,0)  {$312$};
+\node[above] at (axis cs: 0,\valueB)  {$X$};
+\node[below] at (axis cs: 0,0)  {$295$};
 \draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\node at (axis cs: 2.1,0.2)  {$12.92\%$};
 \end{axis}
 \end{tikzpicture}
-\end{center}
+
+
+\end{minipage}%
+  \centering
+\begin{minipage}{.5\textwidth}
+  \centering
+
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=8cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=Black!20, domain=1.13:3] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(1.13,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[Black!20] (axis cs: 1.13,-0.02) rectangle (axis cs: 3,0);
+\draw [semithick, black]  (axis cs:1.13,-0.02) -- (axis cs:1.13,\valueA);
+\node[below] at (axis cs: 1.13,0)  {$1.13$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node[below] at (axis cs: 0,0)  {$0$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\node at (axis cs: 2.1,0.2)  {$12.92\%$};
+\end{axis}
+\end{tikzpicture}
+
+\end{minipage}
+\end{figure}
 
 \end{tcolorbox}
 
@@ -10720,6 +10769,7 @@ x &= 1.28\times 4 + 280\hspace{1cm}
 \node[below] at (axis cs: 1.28,0)  {$1.28$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
 \node at (axis cs: 0,\valueA)  {$90\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
 \draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
 \end{axis}
 \end{tikzpicture}\\
@@ -10775,6 +10825,7 @@ X\sim &\text{N}(31,4^2)\\
 \node[below] at (axis cs: -1.64,0)  {$-1.64$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
 \node at (axis cs: 0,\valueA)  {$95\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
 \draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
 \end{axis}
 \end{tikzpicture}\\
@@ -10826,6 +10877,7 @@ X\sim & \text{N}(6.8,\sigma^2)\\
 \node[below] at (axis cs: 3.09,0)  {$3.09$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
 \node at (axis cs: 0,\valueA)  {$99.9\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
 \draw[semithick] (axis cs: -3.2,-0.02) -- (axis cs: 3.2,-0.02);
 \end{axis}
 \end{tikzpicture}&\\
@@ -10881,6 +10933,7 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
 \node[below] at (axis cs: 2.33,0)  {$z$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
 \node at (axis cs: 0,0.2)  {$99\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
 \draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
 \end{axis}
 \end{tikzpicture}
@@ -10915,6 +10968,7 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
 \node[below] at (axis cs: 1.64,0)  {$z$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
 \node at (axis cs: 0,0.2)  {$95\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
 \draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
 \end{axis}
 \end{tikzpicture}
@@ -10949,6 +11003,7 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
 \node[below] at (axis cs: 0.67,0)  {$z$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
 \node at (axis cs: 0,0.2)  {$75\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
 \draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
 \end{axis}
 \end{tikzpicture}
@@ -10987,6 +11042,7 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
 \node[below] at (axis cs: -1.28,0)  {$z$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
 \node at (axis cs: 0,0.2)  {$90\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
 \draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
 \end{axis}
 \end{tikzpicture}
@@ -11021,6 +11077,7 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
 \node[below] at (axis cs: 1.64,0)  {$z$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
 \node at (axis cs: 2.2,0.2)  {$10\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
 \draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
 \end{axis}
 \end{tikzpicture}
@@ -11057,6 +11114,7 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
 \node[below] at (axis cs: -1.96,0)  {$-z$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
 \node at (axis cs: 0,0.2)  {$95\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
 \draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
 \end{axis}
 \end{tikzpicture}
@@ -11158,7 +11216,41 @@ $T=X_1+X_2+\dots+X_8$\\[0.1em]
 
 $\text{E}(T)=8\times\text{E}(X)=8\times25.2=201.6$\\[0.1em]
 
-$\text{V}(T)=8\times\text{V}(X)=8\times0.3^2=0.72$\\[0.1em]
+$\text{V}(T)=8\times\text{V}(X)=8\times0.3^2=0.72$\hspace{3cm}
+\begin{tikzpicture}[remember picture, overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=8cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=Black!20, domain=-3:-1.89] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(-1.89,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[Black!20] (axis cs: -3,-0.02) rectangle (axis cs: -1.89,0);
+\draw [semithick, black]  (axis cs:-1.89,-0.02) -- (axis cs:-1.89,\valueA);
+\node[below] at (axis cs: -1.89,0)  {$-1.89$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node at (axis cs: -2.5,0.2)  {$2.94\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}\\[0.1em]
 
 $T\sim \text{N}(201.6,0.72)$\\[0.1em]
 
@@ -11375,7 +11467,7 @@ Approximating probabilities for a \emph{discrete} distribution using a \emph{con
 \begin{center}
     \begin{tabular}{|c|c|}
         \hline
-        Discrete & Continuous\\
+        Discrete & Continuous approximation\\
         \hline
         $\text{P}(X=7)$ & $\text{P}(6.5<X<7.5)$\\
         \hline
@@ -11411,9 +11503,45 @@ $np=40\times 0.25=10$, $nq=40\times 0.75=30$\\
 
 $np>5$ and $nq>5$ therefore a normal approximation is appropriate.\\
 
-$\text{E}(X)=np=10$ \quad \text{ and } \quad $\text{V}(X)=npq=40\times 0.25 \times 0.75=7.5$\\
+$\text{E}(X)=np=10$\\
 
-$X\approx \text{N}(10,7.5)$\\
+$\text{V}(X)=npq=40\times 0.25 \times 0.75=7.5$\\
+
+$X\approx \text{N}(10,7.5)$\hspace{6.5cm}
+\begin{tikzpicture}[remember picture, overlay]
+\begin{axis}[
+  no markers, 
+  domain=-4:4, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3.5cm, 
+  width=8cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=Black!20, domain=3.47:4] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(3.47,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[Black!20] (axis cs: 3.47,-0.02) rectangle (axis cs: 4,0);
+\draw [semithick, black]  (axis cs:3.47,-0.02) -- (axis cs:3.47,\valueA);
+\node[below] at (axis cs: 3.47,0)  {$3.47$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node at (axis cs: 3.8,0.1)  {$0.03\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
+\draw[semithick] (axis cs: -4,-0.02) -- (axis cs: 4,-0.02);
+\end{axis}
+\end{tikzpicture}\\
 
 $\text{P}(X\geqslant 20)=\text{P}\left(Z>\dfrac{19.5-10}{\sqrt{7.5}}\right)
 = \text{P}(Z>3.47)
@@ -11578,13 +11706,51 @@ $T\approx \text{N}(25,25)$
 
 \vspace{-0.3cm}
 
-\begin{align*}
-\text{P}(15\leqslant T \leqslant 20)= &\text{P}\left(\frac{14.5-25}{\sqrt{25}}<Z<\frac{20.5-25}{\sqrt{25}}\right)&\\[0.2em]
+\begin{flalign*}
+\text{P}(15\leqslant T \leqslant 20)= &\text{P}\left(\frac{14.5-25}{\sqrt{25}}<Z<\frac{20.5-25}{\sqrt{25}}\right)\hspace{1.5cm}
+\begin{tikzpicture}[remember picture, overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=7cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=Black!20, domain=-2.1:-0.9] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(-2.1,0,1)}
+\pgfmathsetmacro\valueC{gauss(-0.9,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[Black!20] (axis cs: -2.1,-0.02) rectangle (axis cs: -0.9,0);
+\draw [semithick, black]  (axis cs:-2.1,-0.02) -- (axis cs:-2.1,\valueA);
+\draw [semithick, black]  (axis cs:-0.9,-0.02) -- (axis cs:-0.9,\valueC);
+\draw[dashed] (axis cs: -0.9,-0.01) -- (axis cs: -0.9,-0.09);
+\node[below] at (axis cs: -0.9,-0.1)  {$-0.9$};
+\node[below] at (axis cs: -2.1,0)  {$-2.1$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node at (axis cs: -2.2,0.2)  {$16.62\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}&\\[0.2em]
 = &\text{P}(-2.1<Z<-0.9)\\[0.2em]
 = &\text{P}(Z<-0.9)-\text{P}(Z<-2.1)\\[0.2em]
 = &0.1841-0.0179\\[0.2em]
 = &0.1662
-\end{align*}
+\end{flalign*}
 
 \end{tcolorbox}
 
@@ -11688,7 +11854,7 @@ $T\approx \text{N}(25,25)$
 
 Previous chapters have investigated probabilities related to \emph{individual} observations from random variables with known distributions. However, statisticians are rarely in the business of making a single observation from a population - instead, they are far more likely to draw a \emph{sample} of observations and, commonly, calculate the \emph{sample mean}. Given a random variable \(X\), the sample mean of observations from \(X\) is also a random variable and is denoted \(\overline{X}\).
 
-Letting \(X_1,X_2,\dots,X_n\) represent a sample of \(n\) \textbf{independent and identically distributed} (\textbf{i.i.d.}) observations, where independence may be assumed through the use of \emph{random sampling} methods, the sample mean may be expressed as:
+Letting \(X_1,X_2,\dots,X_n\) represent a sample of \(n\) \emph{independent and identically distributed} (i.i.d.) observations, where independence may be assumed through the use of \emph{random sampling} methods, the sample mean may be expressed as:
 
 \[\overline{X}=\frac{1}{n}\left(X_1+X_2+X_3+...+X_n\right)\]
 
@@ -11860,7 +12026,40 @@ This result holds exactly for normally distributed populations, regardless of sa
 \tcblower
 \textbf{Solution:} Let r.v. $X$ represent the length of a fence panel.\\
 
-$\overline{X}\sim \text{N}\left(180,\dfrac{0.4^2}{9}\right)$\\[0.1cm]
+$\overline{X}\sim \text{N}\left(180,\dfrac{0.4^2}{9}\right)$\hspace{6.5cm}
+\begin{tikzpicture}[remember picture, overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=2.5cm, 
+  width=6cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=Black!20, domain=0.75:3] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(0.75,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[Black!20] (axis cs: 0.75,-0.02) rectangle (axis cs: 3,0);
+\draw [semithick, black]  (axis cs:0.75,-0.02) -- (axis cs:0.75,\valueA);
+\node[below] at (axis cs:0.75,0)  {$0.75$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node at (axis cs: 2.5,0.2)  {$22.66\%$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}\\[0.1cm]
     $\text{P}(\overline{X}>180.1)=\text{P}\left(Z>\dfrac{180.1-180}{\dfrac{0.4}{\sqrt{9}}}\right)=\text{P}(Z>0.75)=0.2266$
 
 \end{tcolorbox}
@@ -12066,18 +12265,18 @@ Proof of the CLT is beyond the scope of this course (and this textbook), but sta
         \node at (3+10,0.80*6) {Approximately normal $\bar{X}$};
         \node at (3+10,0.70*6) {(100 Sample Means, $n=25$)};
         
-        \draw[fill=black!10] (0.5+10,0) rectangle (0.7+10,0.15*9);
-        \draw[fill=black!10] (0.7+10,0) rectangle (0.9+10,0.15*23);
-        \draw[fill=black!10] (0.9+10,0) rectangle (1.1+10,0.15*25);
-        \draw[fill=black!10] (1.1+10,0) rectangle (1.3+10,0.15*24);
-        \draw[fill=black!10] (1.3+10,0) rectangle (1.5+10,0.15*13);
-        \draw[fill=black!10] (1.5+10,0) rectangle (1.7+10,0.15*5);
-        \draw[fill=black!10] (1.7+10,0) rectangle (1.9+10,0.15*1);
-        \draw[fill=black!10] (1.9+10,0) rectangle (2.1+10,0.15*0);
-        \draw[fill=black!10] (2.1+10,0) rectangle (2.3+10,0.15*1);
-        \draw[fill=black!10] (2.3+10,0) rectangle (2.5+10,0.15*0);
-        \draw[thick,domain=-2.8:2.8
-        ,smooth,samples=50,yscale=9.5,xshift=11cm,xscale=0.4] plot (\x,{1/((2*3.14)^0.5)) * 2.718^(-0.5*(\x)^2)});
+        \draw[fill=black!10] (0.5*2.8+10,0) rectangle (0.5*3.1+10,0.15*5);
+        \draw[fill=black!10] (0.5*3.1+10,0) rectangle (0.5*3.4+10,0.15*11);
+        \draw[fill=black!10] (0.5*3.4+10,0) rectangle (0.5*3.7+10,0.15*21);
+        \draw[fill=black!10] (0.5*3.7+10,0) rectangle (0.5*4.0+10,0.15*17);
+        \draw[fill=black!10] (0.5*4.0+10,0) rectangle (0.5*4.3+10,0.15*19);
+        \draw[fill=black!10] (0.5*4.3+10,0) rectangle (0.5*4.6+10,0.15*14);
+        \draw[fill=black!10] (0.5*4.6+10,0) rectangle (0.5*4.9+10,0.15*9);
+        \draw[fill=black!10] (0.5*4.9+10,0) rectangle (0.5*5.2+10,0.15*1);
+        \draw[fill=black!10] (0.5*5.2+10,0) rectangle (0.5*5.5+10,0.15*2);
+        \draw[fill=black!10] (0.5*5.5+10,0) rectangle (0.5*5.8+10,0.15*1);
+        \draw[thick,domain=-3.5:3.5
+        ,smooth,samples=50,yscale=8.5,xshift=12cm,xscale=0.3] plot (\x,{1/((2*3.14)^0.5)) * 2.718^(-0.5*(\x)^2)});
     \end{tikzpicture}
 \end{center}
 
@@ -12104,7 +12303,40 @@ The \textbf{approximate} distribution of the sample mean can be stated provided 
 \textbf{Solution:}\\
 
 \begin{enumerate}
-    \item[a. ] $\overline{X}\approx \text{N}\left(400,\frac{20^2}{36}\right)$
+    \item[a. ] $\overline{X}\approx \text{N}\left(400,\frac{20^2}{36}\right)$\hspace{6.5cm}
+\begin{tikzpicture}[remember picture, overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=2.5cm, 
+  width=6cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=Black!20, domain=0.6:3] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(0.6,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[Black!20] (axis cs: 0.6,-0.02) rectangle (axis cs: 3,0);
+\draw [semithick, black]  (axis cs:0.6,-0.02) -- (axis cs:0.6,\valueA);
+\node[below] at (axis cs:0.6,0)  {$0.6$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node at (axis cs: 2.5,0.2)  {$27.43\%$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}
     \item[b. ] $\text{P}(\overline{X}>402)=\text{P}\left(Z>\dfrac{402-400}{\frac{20}{\sqrt{36}}}\right)=\text{P}(Z>0.6)=0.2743$
 \end{enumerate}
 
@@ -12186,7 +12418,7 @@ The \textbf{approximate} distribution of the sample mean can be stated provided 
 
 \chapter{An Introduction to Hypothesis Testing}\label{an-introduction-to-hypothesis-testing}
 
-In brief, hypothesis testing is an approach to assessing the statistical evidence for a claim through the analysis of data from a random sample. The claim will typically relate to some aspect of the distribution of a population of interest, often a \emph{parameter} such as the \emph{population mean}, \(\mu\), and the foundation of hypothesis testing is \emph{probability}.
+In brief, hypothesis testing is an approach to assessing the statistical evidence for a claim through the analysis of data from a random sample. The claim will typically relate to some aspect of the distribution of a population of interest, often a \emph{parameter} such as the \emph{population mean}, \(\mu\), and the foundation of hypothesis testing lies in \emph{probability}.
 
 \subsection*{The Logic of Hypothesis Testing}\label{the-logic-of-hypothesis-testing}
 \addcontentsline{toc}{subsection}{The Logic of Hypothesis Testing}
@@ -12217,9 +12449,9 @@ An \emph{objective} process is required that allows a decision to be made betwee
 
 \section{The Null Hypothesis and the Alternative Hypothesis}\label{the-null-hypothesis-and-the-alternative-hypothesis}
 
-Most statistical studies begin with a claim, which is called the \textbf{alternative hypothesis}, or \(H_1\). Initially in this chapter, these will consist of a claim about the value of the \emph{population mean}, \(\mu\). A conservative stance in opposition to the alternative hypothesis will used as the basis for all calculations, assuming that claim is \emph{not true}. This is called the \textbf{null hypothesis}, or \(H_0\). It is \emph{essential} that both hypotheses are formed \emph{before} observing the data.
+Most statistical studies begin with a claim, which is called the \textbf{alternative hypothesis}, or \(\text{H}_\text{1}\). Initially in this chapter, these will consist of a claim about the value of the \emph{population mean}, \(\mu\). A conservative stance in opposition to the alternative hypothesis will be used as the basis for all calculations, assuming that the claim is \emph{not true}. This is called the \textbf{null hypothesis}, or \(\text{H}_\text{0}\). It is \emph{essential} that both hypotheses are formed \emph{before} observing the data.
 
-It should also first be decided whether evidence is being sought for the true value of the population mean being \emph{less than} a specified value, \emph{greater than} a specified value, or simply \emph{different than} a specified value. When the alternative hypothesis is only interested in a \emph{single direction}, the test being performed is described as \textbf{\emph{one-tailed}}. When the alternative hypothesis is interested in a change in \emph{either direction}, it is referred to as a \textbf{\emph{two-tailed}} test.
+It should also first be decided whether evidence is being sought for the true value of the population mean being \emph{less than} a specified value, \emph{greater than} a specified value, or simply \emph{different from} a specified value. When the alternative hypothesis is only interested in a \emph{single direction}, the test being performed is described as \textbf{\emph{one-tailed}}. When the alternative hypothesis is interested in a change in \emph{either direction} from the specified value, it is referred to as a \textbf{\emph{two-tailed}} test.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Using suitable notation, state the null and alternative hypotheses for each of the following claims.
@@ -12234,8 +12466,8 @@ It should also first be decided whether evidence is being sought for the true va
 \tcblower
 \textbf{Solution:}
 \begin{enumerate}
-    \item[a. ] $H_0:$  $\mu=30$ \quad \textnormal{  One-tailed.}\\ $H_1:$  $\mu<30$
-    \item[b. ] $H_0:$  $\mu=240$ \quad \textnormal{Two-tailed.}\\ $H_1:$  $\mu\ne240$
+    \item[a. ] $\text{H}_\text{0}:$  $\mu=30$ \quad \textnormal{  One-tailed.}\\ $\text{H}_\text{1}:$  $\mu<30$
+    \item[b. ] $\text{H}_\text{0}:$  $\mu=240$ \quad \textnormal{Two-tailed.}\\ $\text{H}_\text{1}:$  $\mu\ne240$
 \end{enumerate}
 \end{tcolorbox}
 
@@ -12248,7 +12480,7 @@ For each proposed hypothesis test, state the \textbf{null hypothesis} and the \t
 
 \begin{enumerate}[itemsep=18pt]
     \item A telecommunications provider wishes to test whether the mean amount of data used by its customers is more than 8.6 gigabytes per month.
-    \item A large school plans to test whether the mean amount its teachers spend on photocopying is different than the £12 per year they currently budget for.
+    \item A large school plans to test whether the mean amount its teachers spend on photocopying is different from the £12 per year they currently budget for.
     \item A farmer wants to test whether the mean mass of the newborn lambs from his flock is less than 4.2 kilograms.
     \item A sports statistician is planning a hypothesis test to assess the evidence that the mean actual playing time during a game of football has changed from 58 minutes.
     \item A kettle manufacturer wishes to test whether the mean time for its kettles to boil one litre of water is more than the one minute and 5 seconds stated on the packaging.
@@ -12260,67 +12492,95 @@ For each proposed hypothesis test, state the \textbf{null hypothesis} and the \t
 \subsection*{Evidence to Suggest}\label{evidence-to-suggest}
 \addcontentsline{toc}{subsection}{Evidence to Suggest}
 
-The \emph{true value} of a population parameter cannot be known by studying a sample. This means that, without a census of the entire population, a statistician will never say that they have \emph{proved} or \emph{disproved} a claim. Instead they will say that they have \textbf{evidence to suggest} or \textbf{insufficient evidence to suggest} a particular claim is true.
+The \emph{true value} of a population parameter cannot be known by studying a sample. This means that, without a census of the entire population, a statistician will never say that they have \emph{proved} or \emph{disproved} a claim, and statistical conclusions are always expressed in terms of evidence, rather than certainty. A suitable conclusion should make a judgement on whether there is \textbf{sufficient evidence to suggest} or \textbf{insufficient evidence to suggest} a particular claim (represented by \(\text{H}_\text{1}\)) is true.
 
 \subsection*{\texorpdfstring{The Significance Level and the \textit{p}-value}{The Significance Level and the -value}}\label{the-significance-level-and-the--value}
 \addcontentsline{toc}{subsection}{The Significance Level and the \textit{p}-value}
 
-Once the null and alternative hypotheses have been stated, a conservative viewpoint is taken - it is \emph{assumed that the null hypothesis is true}. Only an observed value that is then \emph{very unlikely to have occurred by random chance} will lead to the decision to \textbf{reject the null hypothesis} in favour of the alternative hypothesis. The decision to \emph{reject or not reject} is made in relation to the \emph{null hypothesis}, whilst the \emph{evidence (to suggest)}, or lack of, relates to the \emph{alternative hypothesis}:
+Once the null and alternative hypotheses have been stated, a conservative viewpoint is taken - it is \emph{assumed that the null hypothesis is true}. Only an observed value that is then \emph{very unlikely to have occurred by random chance} will lead to the decision to \textbf{reject the null hypothesis} in favour of the alternative hypothesis. The decision to \emph{reject or not reject} is made with respect to the \emph{null hypothesis}, whilst the \emph{evidence (to suggest)}, or lack of, relates to the \emph{alternative hypothesis}:
 
-The probability of such an extreme sample purely by chance is called the \textbf{\emph{p}-value}. A decision should be made in advance of collecting the data regarding the \textbf{significance level}, \(\alpha\), or \emph{``alpha''}. When the \(p\)-value is less than \(\alpha\) this is referred to as a \emph{statistically-significant} result.
+The probability of observing a result at least as extreme as the one obtained, assuming the null hypothesis is true, is called the \(p\)-value. A decision should be made in advance of collecting the data regarding the \textbf{significance level}, \(\alpha\), or \emph{``alpha''}. A significance level of 5\%, or \(\alpha=0.05\), is common, and it is recommended to use this value if a question does not already specify one. It can be interpreted as the level of `unlikeliness' that it would take in order to abandon \(\text{H}_\text{0}\) in favour of \(\text{H}_\text{1}\).
+
+When the \(p\)-value is less than \(\alpha\) this is referred to as a \emph{statistically-significant} result, and smaller \(p\)-values indicate stronger evidence against the null hypothesis.
 
 \begin{centering}
 \tcbset{width=16cm}
 \begin{tcolorbox}[adjusted title=The decision rule for the $p$-value and the significance level $\alpha$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-If $p$-value $<$ $\alpha$ then \textbf{reject }$\mathbf{H_0}$ and conclude that\\ there is \textit{evidence to suggest} that the  alternative hypothesis is true.\\
+If $p\text{-value}\leqslant\alpha$ then \textbf{reject }$\mathbf{\text{H}_\text{0}}$ and conclude that\\ there is \textit{sufficient evidence to suggest} that the  alternative hypothesis is true.\\
 \vspace{0.5cm}
-If $p$-value $>$ $\alpha$ then \textbf{do not reject }$\mathbf{H_0}$ and conclude that\\ there is \textit{insufficient evidence to suggest} that the alternative hypothesis is true.
+If $p\text{-value}>\alpha$ then \textbf{do not reject }$\mathbf{\text{H}_\text{0}}$ and conclude that\\ there is \textit{insufficient evidence to suggest} that the alternative hypothesis is true.
 \end{tcolorbox}
 \end{centering}
 
-A significance level of 5\%, or \(\alpha=0.05\), is common, and it is recommended to use this value if a question does not already specify one. In some fields a smaller value is chosen to reduce the risk of making a \emph{Type I Error} - incorrectly rejecting the null hypothesis when it is in fact true. Failing to reject the null hypothesis error when it is in fact false is called a \emph{Type II Error}.
+Failing to reject the null hypothesis does not prove that it is true; it simply indicates that there is insufficient evidence against it.
 
-\begin{center}
+\begin{figure}[H]
+  \centering
+\begin{minipage}{.45\textwidth}
+
+The level of significance influences the long-run risk of making a \textit{Type I Error} - incorrectly rejecting the null hypothesis when it is in fact true. Failing to reject the null hypothesis when it is in fact false is called a \textit{Type II Error}.
+
+\end{minipage}%
+  \centering
+\begin{minipage}{.0\textwidth}
+  \centering
+  
+  
+\end{minipage}%
+  \centering
+\begin{minipage}{.55\textwidth}
+  \centering
+
+\begin{flushright}
   \begin{tabular}{| c|c c |} 
   \hline
-      & Do Not Reject $H_0$ & Reject $H_0$\\ 
+      & Do Not Reject $\text{H}_\text{0}$ & Reject $\text{H}_\text{0}$\\ 
   \hline
-     $H_0$ is true & \textit{Correct decision} & \textit{Type I error}\\ 
-     $H_1$ is true & \textit{Type II error} & \textit{Correct decision}\\ 
+     $\text{H}_\text{0}$ is true & \textit{Correct decision} & \textit{Type I error}\\ 
+     $\text{H}_\text{1}$ is true & \textit{Type II error} & \textit{Correct decision}\\ 
   \hline
 \end{tabular}
-\end{center}
+\end{flushright}
+
+\end{minipage}
+\end{figure}
 
 When performing \emph{any} significance test the following procedure is generally performed:
 
-\begin{enumerate}
-    \item State $H_0$ and $H_1$, and whether the test will be one-tailed or two-tailed.
-    \item Consider the appropriate distribution under $H_0$.
-    \item Decide on the significance level of the test, $\alpha$, and the rejection criteria.
-    \item Calculate the test statistic and/or $p$-value.
-    \item Decide whether to reject or not reject $H_0$ and write a conclusion in statistical and in layman's terms, using context.
-\end{enumerate}
+\begin{itemize}
+    \item Determine \textbf{which hypothesis test} is appropriate for the data and the focus of the study.
+    \item Decide on a suitable \textbf{significance level} ($\alpha$).
+    \item State the \textbf{null hypothesis} ($\text{H}_\text{0}$) and the \textbf{alternative hypothesis} ($\text{H}_\text{1}$).
+    \item Calculate the \textbf{test statistic} under the assumption that \textit{the null hypothesis is true}.
+    \item Determine the \textbf{critical value}, or calculate the $p$-value.
+    \item Decide whether to \textbf{reject or not reject} $\text{H}_\text{0}$.
+    \item Write a suitable statistical \textbf{conclusion}.
+\end{itemize}
+
+A conclusion should always be written in context, referring to the original claim.
 
 \pagebreak
 
 \section{\texorpdfstring{One-Sample \textit{z}-Test for the Population Mean using a \textit{p}-value}{One-Sample -Test for the Population Mean using a -value}}\label{one-sample--test-for-the-population-mean-using-a--value}
 
-The \emph{one-sample }\(z\)\emph{-test for the population mean} is a hypothesis test used when a sample of data is taken from a population so that a claim about the \emph{true value of the population mean}, \(\mu\), can be assessed. Since \(z\)-tests are based on the normal distribution, they are called \textbf{parametric tests}.
+The \emph{one-sample }\(z\)\emph{-test for the population mean} is a hypothesis test used when a sample of data is taken from a population so that a claim about the \emph{true value of the population mean}, \(\mu\), can be assessed. Since \(z\)-tests rely on assumptions about population parameters and the normal distribution, they are classed as \textbf{parametric tests}.
 
 \begin{centering}
-\tcbset{width=14cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of the one-sample $z$-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+\tcbset{width=16cm}
+\begin{tcolorbox}[adjusted title=Conditions for the one-sample $z$-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
-    \item The \textit{sample mean} is \textbf{normally distributed}.
+    \item The \textit{distribution of the sample mean} is \textbf{normal} (or approximately normal)
     \item The \textit{population standard deviation}, $\sigma$, is \textbf{known}.
-    \item The data was obtained through a \textbf{random sample}.
+    \item The observations are \textbf{independent} (typically assured through \textit{random sampling}).
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
 
 If one or more of these conditions is not known to be satisfied, then it is required to make an \textbf{assumption} that it \emph{is} satisfied for the test to be valid. In any statistical study assumptions that have been made should be recognised and consideration should be given as to whether they could be justified.
 
-Note that when the sample size is greater than 20 \textbf{the CLT can be invoked}, so the sample mean is at least \emph{approximately} normally distributed regardless of the distribution of the underlying population. Also, again for sample sizes greater than 20, the \emph{sample} standard deviation, \(s\), is considered to provide a \emph{sufficiently accurate estimate} for the \emph{population} standard deviation, \(\sigma\). These concepts remove the need for the first two assumptions to be made for \emph{sufficiently large samples}.
+Note that when the sample size is greater than 20 \textbf{the CLT can be invoked}, so the sample mean is at least \emph{approximately} normally distributed regardless of the distribution of the underlying population. Also, for large sample sizes, the sample standard deviation, \(s\), may be used as a reliable estimate of the population standard deviation, \(\sigma\).
+
+Probabilities relating to observed sample means have already been covered in Chapter 9, and the following examples will demonstrate how this leads to a calculated \(p\)-value for a hypothesis test based on a sample mean. Note below that, with a sample mean of 257 observed, and an alternative hypothesis that the true population mean is \emph{less than} 260, the \(p\)-value is the probability of observing a sample mean \emph{as extreme or more extreme} than 257. In the context of a claim that \(\mu<260\), the \(p\)-value is therefore \(\text{P}\left(\bar{X}<257\right)\).
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The designers of an electric car state that the distance that can be covered on a full charge is normally distributed, with a mean of 260 miles and a standard deviation of 10 miles. A car magazine randomly selects 14 of them from showrooms to be tested, with a sample mean of 257 miles obtained. Stating one assumption required, perform a hypothesis test to assess, at the 1\% level of significance, the claim by the car magazine that the mean distance is actually less than the designers' claim.
@@ -12337,8 +12597,8 @@ Assume that the standard deviation of distance covered on a full charge is uncha
 
 \begin{math}
 \begin{array}{ll}
-      H_0: & \mu=260\\
-      H_1: & \mu<260
+      \text{H}_\text{0}: & \mu=260\\
+      \text{H}_\text{1}: & \mu<260
     \end{array}
 \left]
     \begin{array}{l}
@@ -12350,7 +12610,41 @@ Assume that the standard deviation of distance covered on a full charge is uncha
 
 \vspace{0.5cm}
 
-Under $H_0$:\\ 
+Under $\text{H}_\text{0}$:\hspace{6cm}
+\begin{tikzpicture}[remember picture, overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=7cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=Black!20, domain=-3:-1.12] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(-1.12,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[Black!20] (axis cs: -3,-0.02) rectangle (axis cs: -1.12,0);
+\draw [semithick, black]  (axis cs:-1.12,-0.02) -- (axis cs:-1.12,\valueA);
+\node[below] at (axis cs:-1.12,0)  {$-1.12$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node[below] at (axis cs: 0,0)  {$0$};
+\node at (axis cs: -2.3,0.2)  {$13.14\%$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}\\ 
 
 \vspace{0.1cm}
 
@@ -12358,7 +12652,7 @@ $P(\bar{X}<257)=P\left(Z<\dfrac{257-260}{\frac{10}{\sqrt{14}}}\right)=P(Z<-1.12)
 
 \vspace{0.1cm}
 
-Since $0.1314>0.01$, do not reject $H_0$ at the 1\% level of significance. There is insufficient evidence to suggest that the mean distance the car can cover on a full charge is less than the stated 260 miles, and so no evidence to support the car magazine's claim.
+Since $0.1314>0.01$, do not reject $\text{H}_\text{0}$ at the 1\% level of significance. There is insufficient evidence to suggest that the mean distance the car can cover on a full charge is less than the stated 260 miles, and so no evidence to support the car magazine's claim.
 
 \end{tcolorbox}
 
@@ -12375,8 +12669,8 @@ $\mu=150$, $\bar{x}=150.8$, $n=30$, $\sigma=2$\\
 
 \begin{math}
 \begin{array}{ll}
-      H_0: & \mu=150\\
-      H_1: & \mu>150
+      \text{H}_\text{0}: & \mu=150\\
+      \text{H}_\text{1}: & \mu>150
     \end{array}
 \left]
     \begin{array}{l}
@@ -12388,36 +12682,70 @@ $\mu=150$, $\bar{x}=150.8$, $n=30$, $\sigma=2$\\
 
 \vspace{0.3cm}
 
-Under $H_0$:\\ 
+Under $\text{H}_\text{0}$:\hspace{7cm}
+\begin{tikzpicture}[remember picture, overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=7cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=Black!20, domain=2.19:3] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(2.19,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[Black!20] (axis cs: 3,-0.02) rectangle (axis cs: 2.19,0);
+\draw [semithick, black]  (axis cs:2.19,-0.02) -- (axis cs:2.19,\valueA);
+\node[below] at (axis cs:2.19,0)  {$2.19$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node[below] at (axis cs: 0,0)  {$0$};
+\node at (axis cs: 3,0.2)  {$1.43\%$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}\\ 
 
-\vspace{-0.2cm}
+\vspace{-0.1cm}
 
-$P(\bar{X}>150.8)=P\left(Z>\dfrac{150.8-150}{\frac{2}{\sqrt{30}}}\right)=P(Z>2.19)=0.0143$\\
+$P(\bar{X}>150.8)=P\left(Z>\dfrac{150.8-150}{\frac{2}{\sqrt{30}}}\right)=P(Z>2.19)=0.0143$\\[0.2em]
 
-Since $0.0143<0.05$, reject $H_0$ at the 5\% level of significance.\\ There is evidence to suggest that the mean mass of crisps dispensed per bag is more than 150g.
+Since $0.0143<0.05$, reject $\text{H}_\text{0}$ at the 5\% level of significance. There is sufficient evidence to suggest that the mean mass of crisps dispensed per bag is more than 150g.
 
 \end{tcolorbox}
 
-For a \emph{two-tailed} test, the probability of such an extreme result \emph{in either direction} must be considered. Given a symmetrical distribution of the test statistic, such as with a \(z\)-test, a \(p\)-value for a two-tailed test is \emph{double} the initial probability obtained.
+For a \emph{two-tailed} test, the probability of such an extreme result \emph{in either direction} must be considered.
+
+For the example below, this equates to the probability of observing a sample mean with a difference of 1 gram or more from 82. Given a symmetrical distribution of the test statistic, such as with a \(z\)-test, a \(p\)-value for a two-tailed test is \emph{double} the initial probability obtained by only considering probability in \emph{one} tail.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A tomato grower has been monitoring the mass of the tomatoes he grows, with the mean mass of a tomato shown to be 82 grams. Following a change in the soil composition in which they are grown, the grower wants to see whether the mean mass of their tomatoes has been affected. A sample of 36 tomatoes gives a mean mass of 83 grams and a standard deviation of 3 grams. Perform a hypothesis test to determine whether there is evidence to suggest that the mean mass of their tomatoes has changed, stating one assumption required and justifying the validity of the test with reference to the sample size.
+\textbf{Problem:} A tomato grower has been monitoring the mass of the tomatoes he grows, with the mean mass of a tomato shown to be 82 grams. Following a change in the soil composition in which they are grown, the grower wants to see whether the mean mass of their tomatoes has been affected. A sample of 36 tomatoes gives a mean mass of 83 grams and a standard deviation of 3 grams. It is assumed that the sample standard deviation is a reliable estimate of the population standard deviation. Perform a hypothesis test to determine whether there is evidence to suggest that the mean mass of their tomatoes has changed, stating one further assumption required and justifying the validity of the test with reference to the sample size.
 
 \tcblower
 \textbf{Solution:}
-$\mu=82$, $\bar{x}=83$, $n=36$, $s=3$\\
+$\mu=82$, $\bar{x}=83$, $n=36$, $\sigma\approx 3$\\
 
 \vspace{0.01cm}
 
-Assume that the sample of tomatoes was random. Since $n>20$, the distribution of the sample mean is approximately normally distributed regardless of the underlying distribution of the mass of a tomato, and the sample standard deviation, $s$, provides a sufficiently reliable estimate for the population standard deviation, $\sigma$.\\
+Assume that the sample of tomatoes was random. Since $n>20$, the distribution of the sample mean is approximately normally distributed regardless of the underlying distribution of the mass of a tomato.\\
 
-$\sigma\approx3$
-
-\vspace{0.5cm}
+\vspace{0.3cm}
 \begin{math}
 \begin{array}{ll}
-      H_0: & \mu=82\\
-      H_1: & \mu\ne 82
+      \text{H}_\text{0}: & \mu=82\\
+      \text{H}_\text{1}: & \mu\ne 82
     \end{array}
 \left]
     \begin{array}{l}
@@ -12429,19 +12757,58 @@ $\sigma\approx3$
 
 \vspace{0.5cm}
 
-Under $H_0$:\\
+Under $\text{H}_\text{0}$:\hspace{7cm}
+\begin{tikzpicture}[remember picture, overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=7cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=Black!20, domain=-3:-2] {gauss(x, 0, 1)} 
+\closedcycle;
+\addplot [draw=none, fill=Black!20, domain=2:3] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(-2,0,1)}
+\pgfmathsetmacro\valueC{gauss(2,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[Black!20] (axis cs: 3,-0.02) rectangle (axis cs: 2,0);
+\fill[Black!20] (axis cs: -3,-0.02) rectangle (axis cs: -2,0);
+\draw [semithick, black]  (axis cs:2,-0.02) -- (axis cs:2,\valueA);
+\draw [semithick, black]  (axis cs:-2,-0.02) -- (axis cs:-2,\valueA);
+\node[below] at (axis cs:2,0)  {$2$};
+\node[below] at (axis cs:-2,0)  {$-2$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node[below] at (axis cs: 0,0)  {$0$};
+\node at (axis cs: 3,0.2)  {$2.28\%$};
+\node at (axis cs: -3,0.2)  {$2.28\%$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}\\
 
-\vspace{-0.2cm}
+\vspace{-0.05cm}
 
 $P(\bar{X}>83)=P\left(Z>\dfrac{83-82}{\frac{3}{\sqrt{36}}}\right)=P(Z>2)=0.0228$\\
 
-\vspace{0.01cm}
+\vspace{0.1cm}
 
-$p$-value $=2 \times 0.0228 = 0.0456$ and $\alpha=0.05$\\
+$p$-value $=2 \times 0.0228 = 0.0456$ and $\alpha=0.05$\\[0.2em]
 
-\vspace{0.01cm}
-
-Since $0.0.0456<0.5$, reject $H_0$ at the 5\% level of significance.\\ There is evidence to suggest that the mean mass of the grower's tomatoes has changed from 82 grams.
+Since $0.0456<0.05$, reject $\text{H}_\text{0}$ at the 5\% level of significance. There is sufficient evidence to suggest that the mean mass of the grower's tomatoes has changed from 82 grams.
 
 \end{tcolorbox}
 
@@ -12453,11 +12820,11 @@ Since $0.0.0456<0.5$, reject $H_0$ at the 5\% level of significance.\\ There is 
 \addcontentsline{toc}{subsubsection}{{Exercise 10.2}}
 
 \begin{enumerate}
-    \item The length of cookery videos uploaded to a video sharing platform has been historically found to be normally distributed, with a mean of 11.7 minutes and a standard deviation of 2.3 minutes. A random sample of 30 videos uploaded this year tagged as 'cookery' on the platform  gives a mean of 10.8 minutes. Assuming that the standard deviation of video length has not changed, test at the 5\% level of significant the claim that the mean length of cookery videos on the platform is now less than 11.7 minutes.
-    \item The time taken for a teacher to mark an exam paper is normally distributed with a mean of 6.3 minutes and a standard deviation of 0.8 minutes. After more detailed marking instructions are issued, a random sample of 25 papers result in a mean marking time of 6.5 minutes per paper. Assuming that the standard deviation of time taken remains unchanged, assess at the 1\% significant level the claim that the mean marking time has increased since the new marking instructions were introduced, using a hypothesis test.
-    \item The figure often quoted as the mean time spent with the ball being in-play during a game of football 58 minutes, with the standard deviation being 4 minutes, and it is assumed that the time for which the ball is in-play is normally distributed. In the face of increasing complaints by fans about the impact of timewasting on actual playing time, a sports statistician is planning a hypothesis test to assess the evidence that the mean time during which the ball is in-play has changed from 58 minutes. A random sample of 15 games gives a mean in-play time of 61 minutes.
+    \item The length of cookery videos uploaded to a video sharing platform has been historically found to be normally distributed, with a mean of 11.7 minutes and a standard deviation of 2.3 minutes. A random sample of 30 videos uploaded this year tagged as 'cookery' on the platform gives a mean of 10.8 minutes. Assuming that the standard deviation of video length remains unchanged, test at the 5\% level of significance the claim that the mean length of cookery videos on the platform is now less than 11.7 minutes.
+    \item The time taken for a teacher to mark an exam paper is normally distributed with a mean of 6.3 minutes and a standard deviation of 0.8 minutes. After more detailed marking instructions are issued, a random sample of 25 papers results in a mean marking time of 6.5 minutes per paper. Assuming that the standard deviation of time taken remains unchanged, assess at the 1\% significant level the claim that the mean marking time has increased since the new marking instructions were introduced, using a hypothesis test.
+    \item The figure often quoted as the mean time spent with the ball being in play during a game of football is 58 minutes, with the standard deviation being 4 minutes, and it is assumed that the time for which the ball is in play is normally distributed. In the face of increasing complaints by fans about the impact of timewasting on actual playing time, a sports statistician is planning a hypothesis test to assess the evidence that the mean time during which the ball is in play has changed from 58 minutes. A random sample of 15 games gives a mean time in play of 61 minutes.
     \begin{enumerate}
-        \item State one assumption required for the valid use of a $z$-test for the mean time spent with the ball in-play.
+        \item State one assumption required for the valid use of a $z$-test for the mean time spent with the ball in play.
         \item Perform a parametric test at the 1\% level of significance to assess the evidence that the mean actual playing time has changed from 58 minutes.
     \end{enumerate}
     \item A farmer wants to test whether the mean mass of the newborn lambs from his flock is less than 4.2 kilograms. The mass of his newborn lambs is normally distributed, and the standard deviation has been previously established to be 0.3 kilograms. A random sample of 8 newborn lambs are weighed, and the sample mean is found to be 4.0 kilograms.
@@ -12480,13 +12847,13 @@ Since $0.0.0456<0.5$, reject $H_0$ at the 5\% level of significance.\\ There is 
 \begin{enumerate}[resume]
     \item The mass of a pine marten in Scotland is historically known to be normally distributed, with a mean of 1.31kg and a standard deviation of 0.23kg. A sample of 22 pine martens captured, weighed and released in Scotland in 2023 gives a mean mass of 1.38kg. Stating two assumptions required, test at the 5\% level of significance the claim that the mean mass of a pine marten in Scotland has increased.
     \item The time taken by runners to complete a 5km run in a weekly race in a local park is normally distributed with a mean time of 26.3 minutes and a standard deviation of 1.4 minutes. Following some development works completed in the park, the route is unchanged but some of the running surfaces have changed. A random sample of 40 runners completing the course after the development work gives a mean of 25.9 minutes. Stating one assumption required, test the claim at the 0.1\% significance level that the mean run time is no longer 26.3 minutes.
-    \item A telecommunications provider wishes to test whether the mean amount of data used by its customer is more than 8.6 gigabytes per month. The amount of data used by a customer is known to be normally distributed with standard deviation of 1.7 gigabytes. A random sample of 32 customers gives a mean of 9.1 gigabytes. Perform a hypothesis test at the 5\% level of significance to assess the evidence that the mean amount of data used by a customer is greater than 8.6 gigabytes.
-    \item A large school plans to test whether the mean amount its teachers spend on photocopying is different than the £12 per year they currently budget for. A random sample of 23 teachers gives a mean of £10.90 and a standard deviation of £2.30. 
+    \item A telecommunications provider wishes to test whether the mean amount of data used by its customer is more than 8.6 gigabytes per month. The amount of data used by a customer is known to be normally distributed with a standard deviation of 1.7 gigabytes. A random sample of 32 customers gives a mean of 9.1 gigabytes. Perform a hypothesis test at the 5\% level of significance to assess the evidence that the mean amount of data used by a customer is greater than 8.6 gigabytes.
+    \item A large school plans to test whether the mean amount that its teachers spend on photocopying is different from the £12 per year they currently budget for. A random sample of 23 teachers gives a mean of £10.90 and a standard deviation of £2.30. 
     \begin{enumerate}
-        \item Explain why a $z$-test for the mean amount spent can still be performed despite the population standard deviation spend is not known.
-        \item Perform a hypothesis test at the 10\% level of significant to assess the evidence that the mean spend per teacher is different than £12.
+        \item Explain why a $z$-test for the mean amount spent can still be performed despite the population standard deviation of spend per teacher is not known.
+        \item Perform a hypothesis test at the 10\% level of significance to assess the evidence that the mean spend per teacher is different from £12.
     \end{enumerate}
-    \item A kettle manufacturer wishes to test whether the mean time for its kettles to boil one litre of water is more than the one minute and 5 seconds stated on the packaging. The standard deviation in the boiling time is 4 seconds, and the time taken to boil is normally distributed. A sample of 32 kettles gives a mean time of one minute and 7 seconds. Assuming that the standard deviation remains unchanged, perform a hypothesis test at the 5\% level of significance to assess the evidence that the mean time taken to boil one litre is more than the packaging states.
+    \item A kettle manufacturer wishes to test whether the mean time for its kettles to boil one litre of water is more than the 1 minute and 5 seconds stated on the packaging. The standard deviation in the boiling time is 4 seconds, and the time taken to boil is normally distributed. A sample of 32 kettles gives a mean time of one minute and 7 seconds. Assuming that the standard deviation remains unchanged, perform a hypothesis test at the 5\% level of significance to assess the evidence that the mean time taken to boil one litre is more than the packaging states.
     \item The volume of petrol a driver uses driving from Glasgow to Blackburn is normally distributed, with previous studies showing the mean to be 15.7 litres and the standard deviation to be 0.3 litres. The driver believes their new driving style may have caused the mean volume of petrol used to change. Subsequently, recording the fuel consumption for 5 journeys gives a mean volume of petrol for a journey of 15.4 litres.
     \begin{enumerate}
         \item State two assumptions required for the valid use of a $z$-test.
@@ -12498,7 +12865,7 @@ Since $0.0.0456<0.5$, reject $H_0$ at the 5\% level of significance.\\ There is 
 
 \section{\texorpdfstring{One-Sample \textit{z}-Test for the Population Mean using a Test Statistic}{One-Sample -Test for the Population Mean using a Test Statistic}}\label{one-sample--test-for-the-population-mean-using-a-test-statistic}
 
-Every hypothesis test performed so far has involved calculating the probability of the observed sample mean, \(\bar{x}\), by first using the \(z\)\emph{-transformation for a sample mean} to obtain what is called a \(z\)\emph{-score}. Instead of comparing a \(p\)-value to the significance level, another approach is to instead compare the \(z\)-score, referred to as the \textbf{test statistic}, to separately calculated cut-off values, called \textbf{critical values}.
+Obtaining a \(p\)-value in the previous section required calculating the probability of the observed sample mean, \(\bar{x}\), by first using the \(z\)\emph{-transformation for a sample mean} to obtain what is called a \(z\)\emph{-score}. Instead of concluding a \(z\)-test by comparing a \(p\)-value to the significance level, an alternative approach is to compare the \(z\)-score, referred to as the \textbf{test statistic}, to pre-determined cut-off values, called \textbf{critical values}.
 
 \begin{centering}
 \tcbset{width=10cm}
@@ -12509,7 +12876,9 @@ Test statistic: $z=\dfrac{\bar{x}-\mu}{\dfrac{\sigma}{\sqrt{n}}}$
 
 A \(z\)\emph{-test statistic} of \(0\) occurs when the sample mean of the observed data is equal to the value for \(\mu\) claimed by the null hypothesis. The further the test statistic is from \(0\), the more extreme the observed data is.
 
-\emph{Critical values} can be found by considering \emph{where the 5\% least-likely }\(z\)\emph{-scores lie that, if observed, would cause the null hypothesis to be rejected}. For a two-tailed test, the 5\% least-likely observed values for the sample mean are split between 2.5\% in the upper tail of the distribution and 2.5\% in the lower tail. The symmetry of the distribution means that the values to the left of the mean are the \emph{negative} of the equivalent values on the right.
+\emph{Critical values} can be found by first considering \emph{critical regions}. These are the most extreme regions of the sampling distribution of the test statistic; if the calculated test statistic lies within these regions, the null hypothesis is rejected.
+
+Critical values are the \emph{boundaries} of these critical regions. Below are examples of critical regions, and critical values, for a \(z\) test statistic with a 5\% level of significance.
 
 \begin{figure}[H]
   \centering
@@ -12541,7 +12910,7 @@ A \(z\)\emph{-test statistic} of \(0\) occurs when the sample mean of the observ
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
 \draw [semithick, black]  (axis cs:-1.64,0) -- (axis cs:-1.64,\valueA);
 \node[below] at (axis cs: 0,0)  {$0$};
-\node[above] at (axis cs: 0,\valueB)  {$H_1: \mu<...$};
+\node[above] at (axis cs: 0,\valueB)  {$\text{H}_\text{1}: \mu<...$};
 \node[below] at (axis cs: -1.64, 0) {$-1.64$};
 \node[above] at (axis cs: -1.9,\valueA) {5\%};
 \end{axis}
@@ -12578,7 +12947,7 @@ A \(z\)\emph{-test statistic} of \(0\) occurs when the sample mean of the observ
 \draw [semithick, black]  (axis cs:-1.96,0) -- (axis cs:-1.96,\valueA);
 \draw [semithick, black]  (axis cs:1.96,0) -- (axis cs:1.96,\valueC);
 \node[below] at (axis cs: 0,0)  {$0$};
-\node[above] at (axis cs: 0,\valueB)  {$H_1: \mu\ne...$};
+\node[above] at (axis cs: 0,\valueB)  {$\text{H}_\text{1}: \mu\ne...$};
 \node[below] at (axis cs: -1.96, 0) {$-1.96$};
 \node[above] at (axis cs: -2.4,\valueA) {2.5\%};
 \node[below] at (axis cs: 1.96, 0) {$1.96$};
@@ -12614,7 +12983,7 @@ A \(z\)\emph{-test statistic} of \(0\) occurs when the sample mean of the observ
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
 \draw [semithick, black]  (axis cs:1.64,0) -- (axis cs:1.64,\valueA);
 \node[below] at (axis cs: 0,0)  {$0$};
-\node[above] at (axis cs: 0,\valueB)  {$H_1: \mu>...$};
+\node[above] at (axis cs: 0,\valueB)  {$\text{H}_\text{1}: \mu>...$};
 \node[below] at (axis cs: 1.64, 0) {$1.64$};
 \node[above] at (axis cs: 1.9,\valueA) {5\%};
 \end{axis}
@@ -12622,22 +12991,26 @@ A \(z\)\emph{-test statistic} of \(0\) occurs when the sample mean of the observ
 \end{minipage}
 \end{figure}
 
-The relevant areas of the \(z\)-distribution \emph{beyond} the critical values, shown shaded on in the diagrams above, are often referred to as \textbf{critical regions}, and a test statistic within a critical region leads to the null hypothesis being rejected in favour of the alternative hypothesis.
+For a one-tailed test, the most extreme 5\% of the distribution in the tail of interest is considered.
+
+For a two-tailed test, the 5\% least-likely observed values for the test statistic \emph{in either direction} are considered. The significance level is split between 2.5\% in the upper tail and 2.5\% in the lower tail. The symmetry of the distribution means that the values to the left of the mean are the \emph{negative} of the equivalent values on the right.
 
 \begin{centering}
 \tcbset{width=17cm}
 \begin{tcolorbox}[adjusted title=The decision rule for test statistics and critical values for parametric tests:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-If the \textbf{test statistic is further from zero than the critical value(s)} then \textbf{reject }$\mathbf{H_0}$\\ and conclude that there is \textit{evidence to suggest} that the  alternative hypothesis is true.\\
+If the \textbf{test statistic is further from zero than the critical value(s)} then \textbf{reject }$\mathbf{\text{H}_\text{0}}$\\ and conclude that there is \textit{sufficient evidence to suggest} that the  alternative hypothesis is true.\\
 \vspace{0.5cm}
-If the \textbf{test statistic is not further zero than the critical value(s)} then \textbf{do not reject }$\mathbf{H_0}$\\ and conclude that there is \textit{insufficient evidence to suggest} that the alternative hypothesis is true.
+If the \textbf{test statistic is not further from zero than the critical value(s)} then \textbf{do not reject }$\mathbf{\text{H}_\text{0}}$\\ and conclude that there is \textit{insufficient evidence to suggest} that the alternative hypothesis is true.
 \end{tcolorbox}
 \end{centering}
 
-One key need for this approach is that it can be difficult to calculate \(p\)-values for some distributions. \textbf{Page 12 of the SQA Data Booklet} can be used to find common critical values for \(z\)-tests without the need for more extensive probability tables or a graphical calculator. It is expected that a statistician is able to both calculate and interpret a \(p\)-value when required, as well as use test statistics and critical values. For the remainder of this textbook, the predominant approach used in examples will be \textbf{test statistics and critical values}.
+This approach is equivalent to the \(p\)-value method and will always lead to the same conclusion.
+
+One need for this approach is that it can be difficult to calculate \(p\)-values for some distributions. The Data Booklet provides common critical values for a range of tests without the need for more extensive probability tables or a graphical calculator. For the remainder of this textbook, the predominant approach used in examples will be to consider \emph{test statistics and critical values}.
 
 \pagebreak
 
-Note that the following examples approach problems already covered in the examples on Pages 120-121, which used a \emph{p}-value approach, and lead to identical conclusions to the hypothesis tests conducted.
+Note that the following examples approach problems already covered in the examples for the previous section, which used a \emph{p}-value approach, and lead to identical conclusions to the hypothesis tests conducted.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The designers of an electric car state that the distance that can be covered on a full charge is normally distributed, with a mean of 260 miles and a standard deviation of 10 miles. A car magazine randomly selects 14 of them from showrooms to be tested, with a sample mean of 257 miles obtained. Perform a hypothesis test to assess, at the 1\% level of significance, the claim by the car magazine that the mean distance is actually less than the designers' claim.
@@ -12649,8 +13022,8 @@ $\mu=260$, $\bar{x}=257$, $n=14$, $\sigma=10$\\
 \vspace{0.3cm}
 \begin{math}
 \begin{array}{ll}
-      H_0: & \mu=260\\
-      H_1: & \mu<260
+      \text{H}_\text{0}: & \mu=260\\
+      \text{H}_\text{1}: & \mu<260
     \end{array}
 \left]
     \begin{array}{l}
@@ -12700,9 +13073,11 @@ Test statistic: $z=\dfrac{257-260}{\dfrac{10}{\sqrt{14}}}=-1.12$
 
 Critical value: $-2.33$\\
 
-Since $-1.12>-2.33$, do not reject $H_0$ at the 1\% level of significance. There is insufficient evidence to suggest that the mean distance the car can cover on a full charge is less than the stated 260 miles, and so no evidence to support the car magazine's claim.
+Since $-1.12>-2.33$, do not reject $\text{H}_\text{0}$ at the 1\% level of significance. There is insufficient evidence to suggest that the mean distance the car can cover on a full charge is less than the stated 260 miles, and so no evidence to support the car magazine's claim.
 
 \end{tcolorbox}
+
+When choosing a critical value for a two-tailed test, in which there are two critical regions, the critical value whose sign (positive or negative) matches the observed test statistic should be used in the conclusion.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A tomato grower has been monitoring the mass of the tomatoes he grows, with the mean mass of a tomato shown to be 82 grams. Following a change in the soil composition in which they are grown, the grower wants to see whether the mean mass of their tomatoes has been affected. A sample of 36 tomatoes gives a mean mass of 83 grams and a standard deviation of 3 grams. Perform a hypothesis test to determine whether there is evidence to suggest that the mean mass of their tomatoes has changed.
@@ -12716,8 +13091,8 @@ Since $n>20$, take $\sigma\approx3$.
 \vspace{0.3cm}
 \begin{math}
 \begin{array}{ll}
-      H_0: & \mu=82\\
-      H_1: & \mu\ne 82
+      \text{H}_\text{0}: & \mu=82\\
+      \text{H}_\text{1}: & \mu\ne 82
     \end{array}
 \left]
     \begin{array}{l}
@@ -12771,7 +13146,7 @@ Test statistic: $z=\dfrac{83-82}{\dfrac{3}{\sqrt{36}}}=2$
 
 Critical value: $1.96$\\
 
-Since $2>1.96$, reject $H_0$ at the 5\% level of significance.\\ There is evidence to suggest that the mean mass of the grower's tomatoes has changed from 82 grams.
+Since $2>1.96$, reject $\text{H}_\text{0}$ at the 5\% level of significance.\\ There is sufficient evidence to suggest that the mean mass of the grower's tomatoes has changed from 82 grams.
 
 \end{tcolorbox}
 
@@ -12809,10 +13184,10 @@ Since $2>1.96$, reject $H_0$ at the 5\% level of significance.\\ There is eviden
     \item The mass of a pine marten in Scotland is historically known to be normally distributed, with a mean of 1.31kg and a standard deviation of 0.23kg. A sample of 22 pine martens captured, weighed and released in Scotland in 2023 gives a mean mass of 1.38kg. Stating two assumptions required, test at the 5\% level of significance the claim that the mean mass of a pine marten in Scotland has increased.
     \item The time taken by runners to complete a 5km run in a weekly race in a local park is normally distributed with a mean time of 26.3 minutes and a standard deviation of 1.4 minutes. Following some development works completed in the park, the route is unchanged but some of the running surfaces have changed. A random sample of 40 runners completing the course after the development work gives a mean of 25.9 minutes. Stating one assumption required, test the claim at the 0.1\% significance level that the mean run time is no longer 26.3 minutes.
     \item A telecommunications provider wishes to test whether the mean amount of data used by its customer is more than 8.6 gigabytes per month. The amount of data used by a customer is known to be normally distributed with standard deviation of 1.7 gigabytes. A random sample of 32 customers gives a mean of 9.1 gigabytes. Perform a hypothesis test at the 5\% level of significance to assess the evidence that the mean amount of data used by a customer is greater than 8.6 gigabytes.
-    \item A large school plans to test whether the mean amount its teachers spend on photocopying is different than the £12 per year they currently budget for. A random sample of 23 teachers gives a mean of £10.90 and a standard deviation of £2.30. 
+    \item A large school plans to test whether the mean amount its teachers spend on photocopying is different from the £12 per year they currently budget for. A random sample of 23 teachers gives a mean of £10.90 and a standard deviation of £2.30. 
     \begin{enumerate}
         \item Explain why a $z$-test for the mean amount spent can still be performed despite the population standard deviation spend is not known.
-        \item Perform a hypothesis test at the 10\% level of significant to assess the evidence that the mean spend per teacher is different than £12.
+        \item Perform a hypothesis test at the 10\% level of significance to assess the evidence that the mean spend per teacher is different from £12.
     \end{enumerate}
     \item A kettle manufacturer wishes to test whether the mean time for its kettles to boil one litre of water is more than the one minute and 5 seconds stated on the packaging. The standard deviation in the boiling time is 4 seconds, and the time taken to boil is normally distributed. A sample of 32 kettles gives a mean time of one minute and 7 seconds. Assuming that the standard deviation remains unchanged, perform a hypothesis test at the 5\% level of significance to assess the evidence that the mean time taken to boil one litre is more than the packaging states.
     \item The volume of petrol a driver uses driving from Glasgow to Blackburn is normally distributed, with previous studies showing the mean to be 15.7 litres and the standard deviation to be 0.3 litres. The driver believes their new driving style may have caused the mean volume of petrol used to change. Subsequently, recording the fuel consumption for 5 journeys gives a mean volume of petrol for a journey of 15.4 litres.
@@ -12914,7 +13289,7 @@ The one-sample \(t\)-test for population mean is a \textbf{parametric test} that
 
 \begin{centering}
 \tcbset{width=14cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of the one-sample t-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for the one-sample t-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The \textit{underlying population} is \textbf{normally distributed}.
     \item The data was obtained through a \textbf{random sample}.
@@ -12958,8 +13333,8 @@ Assume that the mass of crisps in a bag is normally distributed.\\
 
 \begin{math}
 \begin{array}{ll}
-      H_0: & \mu=150\\
-      H_1: & \mu<150
+      \text{H}_\text{0}: & \mu=150\\
+      \text{H}_\text{1}: & \mu<150
     \end{array}
 \left]
     \begin{array}{l}
@@ -13008,7 +13383,7 @@ Degrees of freedom: $\nu=n-1=8-1=7$\\
 
 Critical value: $-2.998$\\
 
-Since $-1.127>-2.998$, do not reject $H_0$ at the 1\% level of significance. There is insufficient evidence to suggest that the mean mass of crisps in a bag is less than the stated value of 150g.
+Since $-1.127>-2.998$, do not reject $\text{H}_\text{0}$ at the 1\% level of significance. There is insufficient evidence to suggest that the mean mass of crisps in a bag is less than the stated value of 150g.
 
 \end{tcolorbox}
 
@@ -13027,8 +13402,8 @@ $\mu=72$, $\bar{x}=81.57$, $n=7$, $s=6.754$\\
 
 \begin{math}
 \begin{array}{ll}
-      H_0: & \mu=72\\
-      H_1: & \mu\ne 72
+      \text{H}_\text{0}: & \mu=72\\
+      \text{H}_\text{1}: & \mu\ne 72
     \end{array}
 \left]
     \begin{array}{l}
@@ -13081,7 +13456,7 @@ Degrees of freedom: $\nu=n-1=7-1=6$\\
 
 Critical value: $2.447$\\
 
-Since $3.749>2.447$, reject $H_0$ at the 5\% level of significance. There is evidence to suggest that the mean mark students will achieve is no longer 72, and that the difficulty of the exam has changed.
+Since $3.749>2.447$, reject $\text{H}_\text{0}$ at the 5\% level of significance. There is sufficient evidence to suggest that the mean mark students will achieve is no longer 72, and that the difficulty of the exam has changed.
 
 \end{tcolorbox}
 
@@ -13208,7 +13583,7 @@ Note that \(\sqrt{\dfrac{pq}{n}}\) is called the \textbf{standard error of the s
 
 \begin{centering}
 \tcbset{width=14cm}
-\begin{tcolorbox}[adjusted title=Conditions for valid use of the one-sample z-test for the population proportion:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+\begin{tcolorbox}[adjusted title=Conditions for the one-sample z-test for the population proportion:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item $\mathbf{\textbf{\emph{np}}>5}$ \textbf{ and } $\mathbf{\textbf{\emph{nq}}>5}$
     \item The data was obtained through a \textbf{random sample}.
@@ -13231,8 +13606,8 @@ $p=0.1$ , $q=0.9$ , $n=60$ , $\hat{p}=\frac{11}{60}=0.183$\\
 
 \begin{math}
 \begin{array}{ll}
-      H_0: & p=0.1\\
-      H_1: & p>0.1
+      \text{H}_\text{0}: & p=0.1\\
+      \text{H}_\text{1}: & p>0.1
     \end{array}
 \left]
     \begin{array}{l}
@@ -13283,7 +13658,7 @@ Critical value: $1.64$\\
 
 \vspace{0.3cm}
 
-Since $2.14>1.64$, reject $H_0$ at the 5\% level of significance.\\ There is evidence to suggest that the proportion of the new hard drives that fail within their first year of use is higher than 10\%.
+Since $2.14>1.64$, reject $\text{H}_\text{0}$ at the 5\% level of significance.\\ There is sufficient evidence to suggest that the proportion of the new hard drives that fail within their first year of use is higher than 10\%.
 
 \end{tcolorbox}
 
@@ -13298,8 +13673,8 @@ $p=0.85$ , $q=0.15$ , $n=80$ , $\hat{p}=\frac{56}{80}=0.7$\\
 
 \begin{math}
 \begin{array}{ll}
-      H_0: & p=0.85\\
-      H_1: & p\ne 0.85
+      \text{H}_\text{0}: & p=0.85\\
+      \text{H}_\text{1}: & p\ne 0.85
     \end{array}
 \left]
     \begin{array}{l}
@@ -13354,7 +13729,7 @@ Critical value: $2.58$\\
 
 \vspace{0.3cm}
 
-Since $3.76>2.58$, reject $H_0$ at the 1\% level of significance.\\ There is evidence to suggest that the true proportion of voters intending to vote for that candidate is not 85\%, and that the candidates claim may be untrue.
+Since $3.76>2.58$, reject $\text{H}_\text{0}$ at the 1\% level of significance.\\ There is sufficient evidence to suggest that the true proportion of voters intending to vote for that candidate is not 85\%, and that the candidates claim may be untrue.
 
 \end{tcolorbox}
 
@@ -13434,7 +13809,7 @@ Selecting the appropriate hypothesis test to be used in any given context is an 
       2.9 & 2.6 & 3.3 & 3.1 & 3.0 & 2.9 & 3.1 & 2.8\\ 
     \end{tabular}
     \end{center}
-    Perform a parametric test at the 5\% level of significance to determine whether there is evidence to suggest that the mean mass of the part produced by the new machine has changed, stating an assumption required.
+    Perform a parametric test at the 5\% level of significance to determine whether there is sufficient evidence to suggest that the mean mass of the part produced by the new machine has changed, stating an assumption required.
     \item The speed of cars passing through a village is being studied in an effort to improve safety for pedestrians, and is known to be normally distributed. The mean speed has previously been monitored over a number of years and found to be consistently at 33 mph, with a standard deviation of 4 mph. Following the installation of speed bumps, the speed of 15 randomly selected cars is measured at the same point as before, with a sample mean of 31 mph observed. 
     \begin{enumerate}
         \item Perform a parametric test to determine whether the data provides evidence to support the council's claim that the speed bumps have been successful in reducing the mean speed of cars passing through the village.

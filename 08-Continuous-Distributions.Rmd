@@ -931,7 +931,7 @@ $\text{P}(Z<1.5)=0.9332$
 \end{figure}
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} The mass of an adult red squirrel in an area of woodland is normally distributed with a mean of 295g and a standard deviation of 15g. Calculate the probability that a squirrel chosen at random has a mass greater than 300g.
+\textbf{Problem:} The mass of an adult red squirrel in an area of woodland is normally distributed with a mean of 295g and a standard deviation of 15g. Calculate the probability that a squirrel chosen at random has a mass greater than 312g.
 
 \tcblower
 \textbf{Solution:}\\
@@ -940,9 +940,13 @@ Let random variable $X$ represent the mass of a squirrel.\\
 
 $X\sim \text{N}(295,15^2)$\\
 
-$\text{P}(X>300)=\text{P}\left(Z>\dfrac{\text{$300-295$}}{\text{$15$}}\right)=\text{P}(Z>0.33)=0.3707$\\
+$\text{P}(X>312)=\text{P}\left(Z>\dfrac{\text{$312-295$}}{\text{$15$}}\right)=\text{P}(Z>1.13)=0.1292$\\
 
-\begin{center}
+\begin{figure}[H]
+  \centering
+\begin{minipage}{.5\textwidth}
+\centering
+
 \begin{tikzpicture}
 \begin{axis}[
   no markers, 
@@ -963,19 +967,64 @@ $\text{P}(X>300)=\text{P}\left(Z>\dfrac{\text{$300-295$}}{\text{$15$}}\right)=\t
   hide y axis,
   hide x axis
   ]
-\addplot [draw=none, fill=Black!20, domain=0.33:3] {gauss(x, 0, 1)} 
+\addplot [draw=none, fill=Black!20, domain=1.13:3] {gauss(x, 0, 1)} 
 \closedcycle;
  \addplot [semithick] {gauss(x, 0, 1)};
-\pgfmathsetmacro\valueA{gauss(0.33,0,1)}
+\pgfmathsetmacro\valueA{gauss(1.13,0,1)}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
-\fill[Black!20] (axis cs: 0.33,-0.02) rectangle (axis cs: 3,0);
-\draw [semithick, black]  (axis cs:0.33,-0.02) -- (axis cs:0.33,\valueA);
-\node[below] at (axis cs: 0.33,0)  {$0.33$};
-\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\fill[Black!20] (axis cs: 1.13,-0.02) rectangle (axis cs: 3,0);
+\draw [semithick, black]  (axis cs:1.13,-0.02) -- (axis cs:1.13,\valueA);
+\node[below] at (axis cs: 1.13,0)  {$312$};
+\node[above] at (axis cs: 0,\valueB)  {$X$};
+\node[below] at (axis cs: 0,0)  {$295$};
 \draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\node at (axis cs: 2.1,0.2)  {$12.92\%$};
 \end{axis}
 \end{tikzpicture}
-\end{center}
+
+
+\end{minipage}%
+  \centering
+\begin{minipage}{.5\textwidth}
+  \centering
+
+\begin{tikzpicture}
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=8cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=Black!20, domain=1.13:3] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(1.13,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[Black!20] (axis cs: 1.13,-0.02) rectangle (axis cs: 3,0);
+\draw [semithick, black]  (axis cs:1.13,-0.02) -- (axis cs:1.13,\valueA);
+\node[below] at (axis cs: 1.13,0)  {$1.13$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node[below] at (axis cs: 0,0)  {$0$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\node at (axis cs: 2.1,0.2)  {$12.92\%$};
+\end{axis}
+\end{tikzpicture}
+
+\end{minipage}
+\end{figure}
 
 \end{tcolorbox}
 
@@ -1088,6 +1137,7 @@ x &= 1.28\times 4 + 280\hspace{1cm}
 \node[below] at (axis cs: 1.28,0)  {$1.28$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
 \node at (axis cs: 0,\valueA)  {$90\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
 \draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
 \end{axis}
 \end{tikzpicture}\\
@@ -1143,6 +1193,7 @@ X\sim &\text{N}(31,4^2)\\
 \node[below] at (axis cs: -1.64,0)  {$-1.64$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
 \node at (axis cs: 0,\valueA)  {$95\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
 \draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
 \end{axis}
 \end{tikzpicture}\\
@@ -1194,6 +1245,7 @@ X\sim & \text{N}(6.8,\sigma^2)\\
 \node[below] at (axis cs: 3.09,0)  {$3.09$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
 \node at (axis cs: 0,\valueA)  {$99.9\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
 \draw[semithick] (axis cs: -3.2,-0.02) -- (axis cs: 3.2,-0.02);
 \end{axis}
 \end{tikzpicture}&\\
@@ -1248,6 +1300,7 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
 \node[below] at (axis cs: 2.33,0)  {$z$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
 \node at (axis cs: 0,0.2)  {$99\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
 \draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
 \end{axis}
 \end{tikzpicture}
@@ -1282,6 +1335,7 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
 \node[below] at (axis cs: 1.64,0)  {$z$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
 \node at (axis cs: 0,0.2)  {$95\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
 \draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
 \end{axis}
 \end{tikzpicture}
@@ -1316,6 +1370,7 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
 \node[below] at (axis cs: 0.67,0)  {$z$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
 \node at (axis cs: 0,0.2)  {$75\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
 \draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
 \end{axis}
 \end{tikzpicture}
@@ -1354,6 +1409,7 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
 \node[below] at (axis cs: -1.28,0)  {$z$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
 \node at (axis cs: 0,0.2)  {$90\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
 \draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
 \end{axis}
 \end{tikzpicture}
@@ -1388,6 +1444,7 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
 \node[below] at (axis cs: 1.64,0)  {$z$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
 \node at (axis cs: 2.2,0.2)  {$10\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
 \draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
 \end{axis}
 \end{tikzpicture}
@@ -1424,6 +1481,7 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
 \node[below] at (axis cs: -1.96,0)  {$-z$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
 \node at (axis cs: 0,0.2)  {$95\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
 \draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
 \end{axis}
 \end{tikzpicture}
@@ -1527,7 +1585,41 @@ $T=X_1+X_2+\dots+X_8$\\[0.1em]
 
 $\text{E}(T)=8\times\text{E}(X)=8\times25.2=201.6$\\[0.1em]
 
-$\text{V}(T)=8\times\text{V}(X)=8\times0.3^2=0.72$\\[0.1em]
+$\text{V}(T)=8\times\text{V}(X)=8\times0.3^2=0.72$\hspace{3cm}
+\begin{tikzpicture}[remember picture, overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=8cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=Black!20, domain=-3:-1.89] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(-1.89,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[Black!20] (axis cs: -3,-0.02) rectangle (axis cs: -1.89,0);
+\draw [semithick, black]  (axis cs:-1.89,-0.02) -- (axis cs:-1.89,\valueA);
+\node[below] at (axis cs: -1.89,0)  {$-1.89$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node at (axis cs: -2.5,0.2)  {$2.94\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}\\[0.1em]
 
 $T\sim \text{N}(201.6,0.72)$\\[0.1em]
 
@@ -1781,16 +1873,51 @@ $np=40\times 0.25=10$, $nq=40\times 0.75=30$\\
 
 $np>5$ and $nq>5$ therefore a normal approximation is appropriate.\\
 
-$\text{E}(X)=np=10$ \quad \text{ and } \quad $\text{V}(X)=npq=40\times 0.25 \times 0.75=7.5$\\
+$\text{E}(X)=np=10$\\
 
-$X\approx \text{N}(10,7.5)$\\
+$\text{V}(X)=npq=40\times 0.25 \times 0.75=7.5$\\
+
+$X\approx \text{N}(10,7.5)$\hspace{6.5cm}
+\begin{tikzpicture}[remember picture, overlay]
+\begin{axis}[
+  no markers, 
+  domain=-4:4, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3.5cm, 
+  width=8cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=Black!20, domain=3.47:4] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(3.47,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[Black!20] (axis cs: 3.47,-0.02) rectangle (axis cs: 4,0);
+\draw [semithick, black]  (axis cs:3.47,-0.02) -- (axis cs:3.47,\valueA);
+\node[below] at (axis cs: 3.47,0)  {$3.47$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node at (axis cs: 3.8,0.1)  {$0.03\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
+\draw[semithick] (axis cs: -4,-0.02) -- (axis cs: 4,-0.02);
+\end{axis}
+\end{tikzpicture}\\
 
 $\text{P}(X\geqslant 20)=\text{P}\left(Z>\dfrac{19.5-10}{\sqrt{7.5}}\right)
 = \text{P}(Z>3.47)
 = 0.0003$
 
 \end{tcolorbox}
-
 []{#ex87q}
 
 #### [Exercise 8.7](#ex87a) {-}
@@ -1948,13 +2075,51 @@ $T\approx \text{N}(25,25)$
 
 \vspace{-0.3cm}
 
-\begin{align*}
-\text{P}(15\leqslant T \leqslant 20)= &\text{P}\left(\frac{14.5-25}{\sqrt{25}}<Z<\frac{20.5-25}{\sqrt{25}}\right)&\\[0.2em]
+\begin{flalign*}
+\text{P}(15\leqslant T \leqslant 20)= &\text{P}\left(\frac{14.5-25}{\sqrt{25}}<Z<\frac{20.5-25}{\sqrt{25}}\right)\hspace{1.5cm}
+\begin{tikzpicture}[remember picture, overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=3cm, 
+  width=7cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=Black!20, domain=-2.1:-0.9] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(-2.1,0,1)}
+\pgfmathsetmacro\valueC{gauss(-0.9,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[Black!20] (axis cs: -2.1,-0.02) rectangle (axis cs: -0.9,0);
+\draw [semithick, black]  (axis cs:-2.1,-0.02) -- (axis cs:-2.1,\valueA);
+\draw [semithick, black]  (axis cs:-0.9,-0.02) -- (axis cs:-0.9,\valueC);
+\draw[dashed] (axis cs: -0.9,-0.01) -- (axis cs: -0.9,-0.09);
+\node[below] at (axis cs: -0.9,-0.1)  {$-0.9$};
+\node[below] at (axis cs: -2.1,0)  {$-2.1$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node at (axis cs: -2.2,0.2)  {$16.62\%$};
+\node[below] at (axis cs: 0,0)  {$0$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}&\\[0.2em]
 = &\text{P}(-2.1<Z<-0.9)\\[0.2em]
 = &\text{P}(Z<-0.9)-\text{P}(Z<-2.1)\\[0.2em]
 = &0.1841-0.0179\\[0.2em]
 = &0.1662
-\end{align*}
+\end{flalign*}
 
 \end{tcolorbox}
 

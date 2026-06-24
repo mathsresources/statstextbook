@@ -2,7 +2,7 @@
 
 Previous chapters have investigated probabilities related to *individual* observations from random variables with known distributions. However, statisticians are rarely in the business of making a single observation from a population - instead, they are far more likely to draw a *sample* of observations and, commonly, calculate the *sample mean*. Given a random variable $X$, the sample mean of observations from $X$ is also a random variable and is denoted $\overline{X}$. 
 
-Letting $X_1,X_2,\dots,X_n$ represent a sample of $n$ **independent and identically distributed** (**i.i.d.**) observations, where independence may be assumed through the use of *random sampling* methods, the sample mean may be expressed as:
+Letting $X_1,X_2,\dots,X_n$ represent a sample of $n$ *independent and identically distributed* (i.i.d.) observations, where independence may be assumed through the use of *random sampling* methods, the sample mean may be expressed as:
 
 $$\overline{X}=\frac{1}{n}\left(X_1+X_2+X_3+...+X_n\right)$$
 
@@ -170,7 +170,40 @@ This result holds exactly for normally distributed populations, regardless of sa
 \tcblower
 \textbf{Solution:} Let r.v. $X$ represent the length of a fence panel.\\
 
-$\overline{X}\sim \text{N}\left(180,\dfrac{0.4^2}{9}\right)$\\[0.1cm]
+$\overline{X}\sim \text{N}\left(180,\dfrac{0.4^2}{9}\right)$\hspace{6.5cm}
+\begin{tikzpicture}[remember picture, overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=2.5cm, 
+  width=6cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=Black!20, domain=0.75:3] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(0.75,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[Black!20] (axis cs: 0.75,-0.02) rectangle (axis cs: 3,0);
+\draw [semithick, black]  (axis cs:0.75,-0.02) -- (axis cs:0.75,\valueA);
+\node[below] at (axis cs:0.75,0)  {$0.75$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node at (axis cs: 2.5,0.2)  {$22.66\%$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}\\[0.1cm]
     $\text{P}(\overline{X}>180.1)=\text{P}\left(Z>\dfrac{180.1-180}{\dfrac{0.4}{\sqrt{9}}}\right)=\text{P}(Z>0.75)=0.2266$
 
 \end{tcolorbox}
@@ -375,18 +408,18 @@ Proof of the CLT is beyond the scope of this course (and this textbook), but sta
         \node at (3+10,0.80*6) {Approximately normal $\bar{X}$};
         \node at (3+10,0.70*6) {(100 Sample Means, $n=25$)};
         
-        \draw[fill=black!10] (0.5+10,0) rectangle (0.7+10,0.15*9);
-        \draw[fill=black!10] (0.7+10,0) rectangle (0.9+10,0.15*23);
-        \draw[fill=black!10] (0.9+10,0) rectangle (1.1+10,0.15*25);
-        \draw[fill=black!10] (1.1+10,0) rectangle (1.3+10,0.15*24);
-        \draw[fill=black!10] (1.3+10,0) rectangle (1.5+10,0.15*13);
-        \draw[fill=black!10] (1.5+10,0) rectangle (1.7+10,0.15*5);
-        \draw[fill=black!10] (1.7+10,0) rectangle (1.9+10,0.15*1);
-        \draw[fill=black!10] (1.9+10,0) rectangle (2.1+10,0.15*0);
-        \draw[fill=black!10] (2.1+10,0) rectangle (2.3+10,0.15*1);
-        \draw[fill=black!10] (2.3+10,0) rectangle (2.5+10,0.15*0);
-        \draw[thick,domain=-2.8:2.8
-        ,smooth,samples=50,yscale=9.5,xshift=11cm,xscale=0.4] plot (\x,{1/((2*3.14)^0.5)) * 2.718^(-0.5*(\x)^2)});
+        \draw[fill=black!10] (0.5*2.8+10,0) rectangle (0.5*3.1+10,0.15*5);
+        \draw[fill=black!10] (0.5*3.1+10,0) rectangle (0.5*3.4+10,0.15*11);
+        \draw[fill=black!10] (0.5*3.4+10,0) rectangle (0.5*3.7+10,0.15*21);
+        \draw[fill=black!10] (0.5*3.7+10,0) rectangle (0.5*4.0+10,0.15*17);
+        \draw[fill=black!10] (0.5*4.0+10,0) rectangle (0.5*4.3+10,0.15*19);
+        \draw[fill=black!10] (0.5*4.3+10,0) rectangle (0.5*4.6+10,0.15*14);
+        \draw[fill=black!10] (0.5*4.6+10,0) rectangle (0.5*4.9+10,0.15*9);
+        \draw[fill=black!10] (0.5*4.9+10,0) rectangle (0.5*5.2+10,0.15*1);
+        \draw[fill=black!10] (0.5*5.2+10,0) rectangle (0.5*5.5+10,0.15*2);
+        \draw[fill=black!10] (0.5*5.5+10,0) rectangle (0.5*5.8+10,0.15*1);
+        \draw[thick,domain=-3.5:3.5
+        ,smooth,samples=50,yscale=8.5,xshift=12cm,xscale=0.3] plot (\x,{1/((2*3.14)^0.5)) * 2.718^(-0.5*(\x)^2)});
     \end{tikzpicture}
 \end{center}
 
@@ -413,7 +446,40 @@ The **approximate** distribution of the sample mean can be stated provided the e
 \textbf{Solution:}\\
 
 \begin{enumerate}
-    \item[a. ] $\overline{X}\approx \text{N}\left(400,\frac{20^2}{36}\right)$
+    \item[a. ] $\overline{X}\approx \text{N}\left(400,\frac{20^2}{36}\right)$\hspace{6.5cm}
+\begin{tikzpicture}[remember picture, overlay]
+\begin{axis}[
+  no markers, 
+  domain=-3:3, 
+  samples=100,
+  ymin=0,
+  axis lines*=left, 
+  every axis y label/.style={at=(current axis.above origin),anchor=south},
+  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+  height=2.5cm, 
+  width=6cm,
+  xtick=\empty, 
+  ytick=\empty,
+  enlargelimits=false, 
+  clip=false, 
+  axis on top,
+  grid = major,
+  hide y axis,
+  hide x axis
+  ]
+\addplot [draw=none, fill=Black!20, domain=0.6:3] {gauss(x, 0, 1)} 
+\closedcycle;
+ \addplot [semithick] {gauss(x, 0, 1)};
+\pgfmathsetmacro\valueA{gauss(0.6,0,1)}
+\pgfmathsetmacro\valueB{gauss(0,0,1)}
+\fill[Black!20] (axis cs: 0.6,-0.02) rectangle (axis cs: 3,0);
+\draw [semithick, black]  (axis cs:0.6,-0.02) -- (axis cs:0.6,\valueA);
+\node[below] at (axis cs:0.6,0)  {$0.6$};
+\node[above] at (axis cs: 0,\valueB)  {$Z$};
+\node at (axis cs: 2.5,0.2)  {$27.43\%$};
+\draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
+\end{axis}
+\end{tikzpicture}
     \item[b. ] $\text{P}(\overline{X}>402)=\text{P}\left(Z>\dfrac{402-400}{\frac{20}{\sqrt{36}}}\right)=\text{P}(Z>0.6)=0.2743$
 \end{enumerate}
 

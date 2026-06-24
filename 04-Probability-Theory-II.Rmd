@@ -769,7 +769,7 @@ If a person is selected at random from the general population to be tested for t
             }
             child {
                 node[end, label=right:
-                    {$\text{positive}$\hspace{0.85cm}$\text{P}(\overline{\text{condition}}\cap \text{positive})=0.0288$\hspace{0.3cm}\text{\large{$\ast$}}}] {}
+                    {$\text{positive}$\hspace{0.85cm}$\text{P}(\overline{\text{condition}}\cap \text{positive})=0.0288$}] {}
                 edge from parent
                 node[above] {$0.03$}
                 node[below]  {}
@@ -789,7 +789,7 @@ If a person is selected at random from the general population to be tested for t
             }
             child {
                 node[end, label=right:
-                    {$\text{positive}$\hspace{0.75cm}$\text{P}(\text{condition}\cap \text{positive})=0.0392$\hspace{0.3cm}\text{\large{$\ast$}}\hspace{0.2cm}\ding{51}}] {}
+                    {$\text{positive}$\hspace{0.75cm}$\text{P}(\text{condition}\cap \text{positive})=0.0392$}] {}
                 edge from parent
                 node[above] {$0.98$}
                 node[below]  {}
@@ -803,7 +803,7 @@ If a person is selected at random from the general population to be tested for t
 
 \begin{enumerate}
     \item[(a) ] $\text{P}(\text{positive})=0.0392+0.0288=0.068$
-    \item[(b) ] $\text{P}(\text{condition | positive})=\dfrac{\text{P}(\text{condition }\cap \text{  positive})}{\text{P}(\text{positive})}=\dfrac{0.0392}{0.068}=0.5765$\hspace{4cm}$\dfrac{\text{ \ding{51} }}{\text{ }\ast+\ast\text{ }}$
+    \item[(b) ] $\text{P}(\text{condition | positive})=\dfrac{\text{P}(\text{condition }\cap \text{  positive})}{\text{P}(\text{positive})}=\dfrac{0.0392}{0.068}=0.5765$
 \end{enumerate}
 
 \end{tcolorbox}
