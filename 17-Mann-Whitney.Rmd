@@ -164,7 +164,7 @@ Given two independent samples, the *non-parametric* Mann-Whitney Rank Sum test c
 \begin{tcolorbox}[adjusted title=Conditions for valid use of the Mann-Whitney Rank Sum Test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The two populations have \textbf{the same shape and variance}.
-    \item The samples are \textbf{independent} and the data was obtained through \textbf{random sampling}.
+    \item The observations are \textbf{independent} (typically assured through \textit{random sampling}).
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
@@ -300,15 +300,15 @@ The test statistic can now be confirmed as $W=\text{min}(31,29)=29$.
         $W=\text{min}\left(W_m,\;m(m+n+1)-W_m\right)$
     \end{center}
     \vspace{-0.2cm}
-    \item The \textbf{critical value} can be obtained from Page 16 of the Data Booklet.
+    \item The \textbf{critical value} can be obtained from the Data Booklet.
     \item $\text{H}_0$ is rejected if the test statistic $W$ is \textbf{less than or equal to} the critical value.
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
 
-Taking as the test statistic the value $W=29$, the test can now be concluded. Page 16 of the Data Booklet contains critical values for the Mann-Whitney Rank Sum test, which are based on the smallest possible rank sum for the smaller sample. Using this approach, *small values* for the test statistic $W$ offer support towards rejecting $\text{H}_0$ in favour of $\text{H}_1$.
+Taking as the test statistic the value $W=29$, the test can now be concluded. **Page 16** of the Data Booklet contains critical values for the Mann-Whitney Rank Sum test, which are based on the smallest possible rank sum for the smaller sample. Using this approach, *small values* for the test statistic $W$ offer support towards rejecting $\text{H}_0$ in favour of $\text{H}_1$.
 
-The critical value of $W=18$ can be obtained from the Data Booklet, using $m=5$, $n=6$ and a two-tailed test at the 5\% significance level. Since $29>18$, $\text{H}_0$ cannot be rejected at the 5\% level of significance. There is insufficient evidence to suggest that the two distributions have different population medians.
+The critical value of $W=18$ can be obtained, using $m=5$, $n=6$ and a two-tailed test at the 5\% significance level. Since $29>18$, $\text{H}_0$ cannot be rejected at the 5\% level of significance. There is insufficient evidence to suggest that the two distributions have different population medians.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Times taken to run 5km for a random sample of 7 hockey players and a random sample of 5 rugby players are recorded. The table below gives the results, to the nearest minute:
@@ -563,7 +563,7 @@ There is evidence to suggest that the median time taken for rugby players to run
 
 Although large samples may allow data from *not normally-distributed* populations to be assessed using a parametric test due to the Central Limit Theorem, non-parametric tests are typically more robust when handling data from *strongly non-normal* populations. This means the Mann-Whitney test is not only used for small samples.
 
-The Data Booklet only provides Mann-Whitney critical values for sample sizes where $n\leqslant 20$ and $m\leqslant 20$. When dealing with larger samples, where $m,n>20$, a Mann-Whitney Rank Sum test can still be performed using a **normal approximation** to the distribution of $W$ (under $\text{H}_0$). Page 16 of the Data Booklet provides the required properties of the this distribution:
+The Data Booklet only provides Mann-Whitney critical values for sample sizes where $n\leqslant 20$ and $m\leqslant 20$. When dealing with larger samples, where $m,n>20$, a Mann-Whitney Rank Sum test can still be performed using a **normal approximation** to the distribution of $W$ (under $\text{H}_0$). **Page 16** of the Data Booklet provides the required properties of the this distribution:
 
 $$\text{E}(W)=\frac{1}{2}m(m+n+1) \quad \text{and} \quad \text{V}(W)=\frac{1}{12}mn(m+n+1)$$
 
@@ -639,10 +639,11 @@ Test statistic: $z=\dfrac{452+0.5-612}{\sqrt{2652}}=-3.10$
 \draw [semithick, black]  (axis cs:1.96,0) -- (axis cs:1.96,\valueC);
 \node[below] at (axis cs: 0,0)  {$0$}; 
 \node[below] at (axis cs: -1.96, 0) {$-1.96$};
-\node[above] at (axis cs: -2.4,\valueA) {2.5\%};
+\node[above] at (axis cs: -2.3,\valueA) {2.5\%};
 \node[below] at (axis cs: 1.96, 0) {$1.96$};
-\node[above] at (axis cs: 2.4,\valueC) {2.5\%};
+\node[above] at (axis cs: 2.3,\valueC) {2.5\%};
 \node[above] at (axis cs: 0,\valueB)  {$z$};
+\draw[very thick] (axis cs: -2.9,0) -- (axis cs: -2.9,0.44) node[above] {$-3.10$};
 \end{axis}
 \end{tikzpicture}\\
 

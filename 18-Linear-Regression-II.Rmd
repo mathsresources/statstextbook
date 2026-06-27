@@ -2,11 +2,9 @@
 
 \vspace{-1cm}
 
-In Chapter 5 the concept of using \textit{linear regression} to explore straight-line relationships between variables, and to make predictions, was introduced. Linear regression will now be explored in much more detail.
+Given bivariate data, one variable is selected as the \textbf{predictor} $x$, whilst the other variable is selected as the \textbf{response} $Y$ (and is considered as a random variable). It is common to seek to estimate an unknown $Y_i$ value given a known $x_i$ value.
 
-### The Method of Least Squares Regression {-}
-
-Given bivariate data, one variable is selected as the \textbf{predictor} $x$ , whilst the other variable is selected as the \textbf{response} $Y$. In other words, it is typical to seek to predict an unknown $Y$ value given a known $x$ value.
+\vspace{-0.3cm}
 
 \begin{figure}[H]
   \centering
@@ -18,7 +16,7 @@ Given bivariate data, one variable is selected as the \textbf{predictor} $x$ , w
         \draw[-stealth] (0,0) -- (0,5) node[left] {$y$};
         \node[below] at (3.5,0) {predictor variable};
         \node[rotate=90,above] at (0,2.5) {response variable};
-        \draw[very thick] (0.5,1.6) -- (5.25,4.07) node[above] {$y=\alpha+\beta x$};
+        \draw[very thick] (0.5,1.6) -- (5.25,4.07);
         \draw[fill,densely dashed] (3.5258224,3.072553) circle (0.05) -- (3.5258224,3.173427648);
 \draw[fill,densely dashed] (3.3020558,2.331238) circle (0.05) -- (3.3020558,3.057069016);
 \draw[fill,densely dashed] (3.7090608,3.683062) circle (0.05) -- (3.7090608,3.268711616);
@@ -40,25 +38,32 @@ Given bivariate data, one variable is selected as the \textbf{predictor} $x$ , w
 \end{minipage}%
   \centering
 \begin{minipage}[c]{.6\textwidth}
-    The theoretical model for linear regression is that of a straight line of the form $y=\alpha+\beta x$ describing the \textit{best fit} for a relationship between the variables.  However, the bivariate data will not perfectly lie along this line due to chance variation.
+    The model for linear regression is a line describing the \textit{best fit} for a relationship between variables.  However, observed data will not lie exactly along this line due to random variation in the population.
 
 \begin{tcolorbox}[halign title=center,title=The Linear Regression Model,center,colback=red!5,colframe=red!70!black,width=6.5cm]
 \[Y_i=\alpha+\beta x_i+\varepsilon_i\]
 \end{tcolorbox}
  
-$\varepsilon_i$ (\textit{"epsilon"}) are random variables called \textbf{errors} which account for observed values of $Y_i$ being greater than or less than those predicted by the regression line for any given value of $x_i$. 
+$\varepsilon_i$ (\textit{"epsilon"}) are random variables called \textbf{errors} which represent the random deviation of observed values $y_i$ from the true regression line.
+
 \end{minipage}
 \end{figure}
 
+The true values of the \textbf{intercept parameter} $\alpha$ and the \textbf{slope parameter} $\beta$ are unknown, as they relate to the full \textit{population} of bivariate data. However the sample observations $(x_i,y_i)$ can be used to give estimates, $a$ and $b$, of $\alpha$ and $\beta$. 
 
+Since *errors* are the vertical distances between observations $(x_i,y_i)$ and the *true* regression line defined by $\alpha$ and $\beta$, they cannot be known precisely. Instead, vertical distances to the *estimated* regression line (using $a$ and $b$) are considered, called **residuals** ($e_i$). Samples of residuals can be seen as estimates of populations of errors.
 
-The true values of the \textbf{intercept parameter} $\alpha$ and the \textbf{slope parameter} $\beta$ are unknown, as they relate to the full \textit{population} of bivariate data. However the sample observations $(x_i,y_i)$ can be used to give estimates, $a$ and $b$, of $\alpha$ and $\beta$. The method of least squares produces formulae for $a$ and $b$ derived by minimising $\sum \varepsilon_i^2$. These rely on several assumptions about the population of errors given on page 5 of the Data Booklet, along with the formulae:
+The method of least squares produces formulae for $a$ and $b$ derived by minimising the sum of squared residuals, $\sum e_i^2$. These rely on several assumptions about the population of errors given on **page 5** of the Data Booklet, along with the formulae:
+
+\vspace{-0.4cm}
 
 \begin{multicols}{2}
 
 $$b=\dfrac{S_{xy}}{S_{xx}} \qquad \text{and} \qquad a=\bar{y}-b\bar{x}$$
 
-This leads to a regression line with equation $\hat{Y}_i=a+bx_i$, where $\hat{Y}_i$ (\textit{"y-hat"}) denotes the predicted (or fitted) value of $Y_i$ for a given $x_i$.
+\vspace{-0.2cm}
+
+This leads to the regression line $\hat{Y}_i=a+bx_i$.
 
 \begin{tcolorbox}[halign title=center,title=Assumptions for the Errors,center,colback=red!5,colframe=red!70!black,width=5.7cm,center]
 \begin{center}
@@ -71,6 +76,8 @@ This leads to a regression line with equation $\hat{Y}_i=a+bx_i$, where $\hat{Y}
 \end{tcolorbox}
 
 \end{multicols}
+
+Whilst the terms 'errors' and 'residuals' are often casually used interchangeably, recognising the distinction is helpful. Assumptions about a population of *errors* $\varepsilon_i$ plays an important role in linear regression, and we learn about those errors by observing a sample of *residuals* $e_i$.
 
 \pagebreak
 

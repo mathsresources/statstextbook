@@ -111,7 +111,7 @@ If random variable $X$ can take *any real value* between $a$ and $b$ with a *con
 \end{minipage}
 \end{figure}
 
-The probability for any range of values can be calculated simply as the area of the rectangle enclosed. The value of $k$ can be calculated using the formula given in the Data Booklet, derived from the area under any "curve" for any continuous distribution being **equal to 1**. The formulae for the **expectation** and **variance** for the continuous uniform distribution are also given for $X\sim \text{U}(a,b)$:
+The probability for any range of values can be calculated simply as the area of the rectangle enclosed. The value of $k$ can be calculated using the formula given on **page 4** of the Data Booklet, derived from the area under any "curve" for any continuous distribution being **equal to 1**. The formulae for the **expectation** and **variance** for the continuous uniform distribution are also given for $X\sim \text{U}(a,b)$:
 
 $$k=\frac{1}{b-a}\quad \qquad \quad \text{E}(X)=\frac{a+b}{2}\quad \qquad \quad \text{V}(X)=\frac{(b-a)^2}{12}$$
 
@@ -524,7 +524,7 @@ The random variable $Z$ is specifically defined as normally distributed, with $\
 \end{tikzpicture}
 \end{center}
 
-$Z$ is called the **standard normal distribution**, and it is used to calculate probabilities for **any** normal distribution. Probabilities for the $Z$ distribution can be obtained using the **cumulative probability table** on Page 11 of the Data Booklet, or directly from a graphical calculator. Since the cumulative table only gives cumulative probabilities for **positive** $\mathbf{z}$**-values**, negative $z$-values require consideration of the symmetry of the normal distribution. 
+$Z$ is called the **standard normal distribution**, and it is used to calculate probabilities for **any** normal distribution. Probabilities for the $Z$ distribution can be obtained using the **cumulative probability table** on **page 11** of the Data Booklet, or directly from a graphical calculator. Since the cumulative table only gives cumulative probabilities for **positive** $\mathbf{z}$**-values**, negative $z$-values require consideration of the symmetry of the normal distribution. 
 
 \begin{figure}[H]
   \centering

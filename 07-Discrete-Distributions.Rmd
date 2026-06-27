@@ -138,7 +138,7 @@ Parameters define the precise form of a distribution within a *family of distrib
 
 $$X\sim \text{U}(6)\quad\text{ and }\quad Y\sim \text{U}(4)$$
 
-The  Data Booklet gives the formulae to calculate *expectation* and *variance* for the discrete uniform distribution. For $X\sim \text{U}(k)$:
+The  Data Booklet (**page 4**) gives the formulae to calculate *expectation* and *variance* for the discrete uniform distribution. For $X\sim \text{U}(k)$:
 
 $$\text{E}(X)=\frac{k+1}{2}\quad \text{ and }\quad \text{V}(X)=\frac{k^2-1}{12}$$
 
@@ -298,7 +298,7 @@ However there are a number of other possible *combinations* of successes and fai
 
 $$\text{P}(X=2)={}^{6}C_{2}\times0.4^2\times0.6^4=0.3110$$
 
-The  Data Booklet gives the **formula** to calculate *individual* probabilities for the binomial distribution, where $q$ is the probability of *failure*, and hence $q=1-p$:
+The  Data Booklet (**page 4**) gives the **formula** to calculate *individual* probabilities for the binomial distribution, where $q$ is the probability of *failure*, and hence $q=1-p$:
 
 $$\text{Given }X\sim \text{B}(n,p)\text{: }\qquad \text{P}(X=x)={}^{n}C_{x}\times p^x\times q^{n-x}$$
 \pagebreak
@@ -362,7 +362,7 @@ X&\sim \text{B}\left(12,\tfrac{1}{4}\right)\\[1em]
 
 ## Binomial Calculations using Cumulative Probabilities
 
-In practice, it will seldom be necessary to calculate binomial probabilities using the formula. Graphical calculators can be used to calculate both *individual* ($\text{P}(X=x)$) and *cumulative* ($\text{P}(X\leqslant x)$) probabilities. The Data Booklet provides **cumulative probability tables**, giving **"less than or equal to"** probabilities.
+In practice, it will seldom be necessary to calculate binomial probabilities using the formula. Graphical calculators can be used to calculate both *individual* ($\text{P}(X=x)$) and *cumulative* ($\text{P}(X\leqslant x)$) probabilities. On **page 7**, the Data Booklet provides **cumulative probability tables**, giving **"less than or equal to"** probabilities.
 
 It is therefore important to be able to write any given probability that uses an inequality in terms of a *less than or equal to* probability.
 
@@ -436,7 +436,7 @@ $\text{P}(X\geqslant 2)=1-\text{P}(X\leqslant 1)=1-0.6590=0.3410$
 
 ## The Mean and Variance of the Binomial Distribution
 
-The  Data Booklet gives the formulae for the *mean* and *variance* of the binomial distribution.
+The Data Booklet gives the formulae for the *mean* and *variance* of the binomial distribution on **page 4**.
 
 Given random variable $X\sim \text{B}(n,p)$:
 
@@ -562,7 +562,7 @@ Assume that the mean rate of 2.5 phone calls per hour is *constant* across the o
 \end{tikzpicture}
 \end{center}
 
-As with the binomial distribution, individual Poisson probabilities can be calculated using a formula, provided in the  Data Booklet.
+As with the binomial distribution, individual Poisson probabilities can be calculated using a formula, provided on **page 4** of the Data Booklet.
 
 Given random variable $X\sim \text{Po}(\lambda)$:
 
@@ -592,7 +592,7 @@ $$\text{P}(X=10)=\frac{e^{-6} \times 6^{10}}{10!}=0.0413$$
 
 \end{tcolorbox}
 
-As with the binomial distribution, in general it is much faster to use the cumulative probability tables in the Data Booklet, or a graphical calculator, to calculate Poisson probabilities.
+As with the binomial distribution, in general it is much faster to use the cumulative probability tables from **page 10** of the Data Booklet, or a graphical calculator, to calculate Poisson probabilities.
 
 []{#ex75q}
 
@@ -642,7 +642,7 @@ As with the binomial distribution, in general it is much faster to use the cumul
 
 ## Combining Poisson Random Variables
 
-The mean and variance of a Poisson distribution are stated in the  Data Booklet. Given $X\sim \text{Po}(\lambda)$:
+The mean and variance of a Poisson distribution are stated on **page 4** of the Data Booklet. Given $X\sim \text{Po}(\lambda)$:
 
 $$\text{E}(X)=\text{V}(X)=\lambda \qquad \text{and} \qquad \text{SD}(X)=\sqrt{\lambda}$$
 

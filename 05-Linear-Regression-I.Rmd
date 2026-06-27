@@ -564,7 +564,7 @@ $r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$
 \end{tcolorbox}
 \end{center}
 
-The formulae for the *"Three Ss"* and the *"Five Sigmas"* are given in the data booklet:
+The formulae for the *"Three Ss"* and the *"Five Sigmas"* are given on **page 4** in the Data Booklet:
 
 \begin{figure}[H]
 \centering
@@ -1242,7 +1242,7 @@ n&=8
 
 ## Least Squares Linear Regression 
 
-A $y$ *on* $x$ regression model is a one constructed with the aim of producing a trend line which can be used to predict unknown values of $Y$ based on known values of $x$. For a population of bivariate data $(x_1,y_1), (x_2,y_2) ...  (x_n,y_n)$, this *regression line* has an equation of the form $\hat{Y}_i=\alpha + \beta x_i$, where: 
+A $y$ *on* $x$ regression model is one constructed with the aim of producing a trend line which can be used to predict unknown values of $Y_i$ based on known values of $x_i$. For a sample of bivariate data $(x_1,y_1), (x_2,y_2), ...  ,(x_n,y_n)$, this *regression line* has an equation of the form $\hat{Y}_i=a + b x_i$, where: 
 
 \begin{center}
     \begin{tikzpicture}[scale=1]
@@ -1255,10 +1255,10 @@ A $y$ *on* $x$ regression model is a one constructed with the aim of producing a
         \draw[fill] (3,1.10) circle (0.04) node[below] {$(x_3,y_3)$};
         \draw[fill] (4,1.43) circle (0.04) node[right] {$(x_4,y_4)$};
         \draw[fill] (5,2.47) circle (0.04) node[above] {$(x_5,y_5)$};
-        \draw[thick] (0.7,0.7*0.21+1.016) -- (5.6,5.6*0.21+1.016) node[right] {$\hat{Y}_i=\alpha + \beta x_i$};
-        \node[right] at (8.7,3) {$\hat{Y}_i$ (\textit{`Y hat'}) is the \textit{best estimate} of $Y_i$ given $x_i$};
-        \node[right] at (8.7,2) {$\alpha$ (\textit{``alpha''}) represents the \textit{intercept parameter}};
-        \node[right] at (8.7,1) {$\beta$ (\textit{``beta''}) represents the \textit{slope parameter}};
+        \draw[thick] (0.7,0.7*0.21+1.016) -- (5.6,5.6*0.21+1.016) node[right] {$\hat{Y}_i=a + b x_i$};
+        \node[right] at (8.7,3) {$\hat{Y}_i$ (\textit{`Y hat'}) is the \textit{best estimate} of $y_i$ given $x_i$};
+        \node[right] at (8.7,2) {$a$ represents the line's \textbf{intercept}, and is an estimate for the true \textit{intercept parameter} $\alpha$ (\textit{``alpha''})};
+        \node[right] at (8.7,1) {$b$ represents the line's \textbf{slope}, and is an estimate for the true \textit{slope parameter} $\beta$ (\textit{``beta''})};
     \end{tikzpicture}
 \end{center}
 
@@ -1422,7 +1422,7 @@ S_{xx}&=\Sigma x^2-\frac{(\Sigma x)^2}{n}=1742-\frac{132^2}{12}=290&&\\[1em]
 S_{xy}&=\Sigma xy-\frac{\Sigma x\Sigma y}{n}=1872-\frac{132\times 147}{12}=255\\[1em]
 b&=\dfrac{S_{xy}}{S_{xx}}=\dfrac{255}{290}=0.879\\[1em]
 a&=\bar{y}-b \bar{x}=\dfrac{147}{12}-0.879\times \dfrac{132}{12}=2.578\\[1em]
-\hat{Y}&=2.578+0.879x
+\hat{Y_i}&=2.578+0.879x_i
 \end{flalign*}
     \item[(b)] $\hat{Y}=2.578 + 0.879\times 8=9.61$
     \item[(c)] This is an example of interpolation as the value of $x$ used is within the range of values of the other students, and consequently it can be considered a robust prediction, especially given the strong linear relationship suggested by the scatterplot.  

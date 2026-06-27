@@ -2146,6 +2146,98 @@
 
 ### Chapter 12 - Chi-Squared Goodness-of-Fit Test {-}
 
+\begin{multicols}{2}
+
+\textbf{Exercise 12.1}
+
+\begin{enumerate}
+    \item $6.333<7.815$, do not reject $\text{H}_0$
+    \item $7.143<10.645$, do not reject $\text{H}_0$
+    \item $13.88>9.210$, reject $\text{H}_0$
+\end{enumerate}
+
+\textbf{Exercise 12.2}
+
+\begin{enumerate}
+    \item $7.779<9.488$, do not reject $\text{H}_0$
+    \item $3.049<11.345$, do not reject $\text{H}_0$
+    \item $14.906>7.815$, reject $\text{H}_0$
+\end{enumerate}
+
+\textbf{Exercise 12.3}
+
+\begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $X\sim \text{B}(4,0.2)$
+        \item
+        \begin{enumerate}
+            \item $0.4096$
+            \item $0.4096$
+            \item $0.1536$
+            \item $0.0256$
+            \item $0.0016$
+        \end{enumerate}
+        \item $6.266>4.605$, reject $\text{H}_0$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $X\sim \text{B}(5,0.25)$
+        \item $257.862>9.488$, reject $\text{H}_0$ at the 5\% level
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $3.144<5.991$, do not reject $\text{H}_0$
+        \item An additional $1$ must be subtracted from the number of categories to obtain the degrees of freedom.
+    \end{enumerate}
+\end{enumerate}
+
+\textbf{Exercise 12.4}
+
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item
+        \begin{enumerate}
+            \item $0.3679$
+            \item $0.3679$
+            \item $0.1839$
+            \item $0.0803$
+        \end{enumerate}
+        \item $9.173>7.815$, reject $\text{H}_0$
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item $\lambda=2$
+        \item $14.839>11.345$, reject $\text{H}_0$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $98.443>14.067$, reject $\text{H}_0$ at the 5\% level
+        \item $\lambda=3.28$
+    \end{enumerate}
+\end{enumerate}
+
+\textbf{Review Exercise}
+
+\begin{enumerate}
+    \item $3.759<5.991$, do not reject $\text{H}_0$
+    \item 
+    \begin{enumerate}
+        \item $9.790>4.605$, reject $\text{H}_0$
+        \item Some players being better penalty takers than others would mean the probability of success for each trial (penalty attempt) would not be equal, and hence a binomial distribution would not be appropriate.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\lambda=1.5$
+        \item $25.10,0.45$
+        \item $1.553<11.345$, do not reject $\text{H}_0$
+        \item The test statistic would still be $1.553$, whilst the critical value would instead be $13.277$
+    \end{enumerate}
+\end{enumerate}
+
+\end{multicols}
+
 \begingroup
 \footnotesize
 
@@ -2412,6 +2504,39 @@
 \pagebreak
 
 ### Chapter 14 - Chi-Squared Test for Association {-}
+
+
+\textbf{Exercise 14A}
+
+\begin{enumerate}
+    \item $3.436>2.706$, reject $\text{H}_0$
+    \item $0.807<3.841$, do not reject $\text{H}_0$
+    \item $4.121>2.706$, reject $\text{H}_0$
+    \item $0.0465<5.991$, do not reject $\text{H}_0$
+    \item $0.282<11.345$, do not reject $\text{H}_0$
+\end{enumerate}
+
+\textbf{Exercise 14B}
+
+\begin{enumerate}
+    \item $3.328>7.815$, do not reject $\text{H}_0$
+    \item $15.737>12.592$, reject $\text{H}_0$
+    \item $25.106>4.605$, reject $\text{H}_0$
+\end{enumerate}
+
+\textbf{Review Exercise}
+
+\begin{enumerate}
+    \item $6.254>2.706$, reject $\text{H}_0$
+    \item $23.478>7.378$, reject $\text{H}_0$
+    \item 
+    \begin{enumerate}
+        \item No, with justification
+        \item 10\%
+        \item There is no association between the type of feed used and the growth of a chick.
+        \item $0.2804>0.1$, do not reject $\text{H}_0$, with context
+    \end{enumerate}
+\end{enumerate}
 
 \begingroup
 \footnotesize

@@ -1,6 +1,6 @@
 # Chi-Squared Test for Association
 
-Categorical variables can be described as *independent* if knowledge about one of the variables reveals nothing about the other. Another way of saying this is that there is **no association** between the variables. For example, knowing a person's *favourite colour* reveals nothing about whether or not they are *left-handed or right-handed*, and so there is no association between the someone's favourite colour and their handedness. 
+Categorical variables can be described as *independent* if knowledge about one of the variables reveals nothing about the other. Another way of saying this is that there is **no association** between the variables. For example, knowing a person's *favourite colour* reveals nothing about whether or not they are *left-handed or right-handed*, and so there is no association between someone's favourite colour and their handedness. 
 
 On the other hand, knowing whether or not someone *enjoys camping* is likely to help in predicting whether or not they *own a tent*, and so these variables are *not independent*. Another way of saying this is that there **is an association** between enjoying camping and owning a tent.
 
@@ -15,9 +15,9 @@ Suppose a researcher wishes to investigate whether there is a link between someo
 \end{tabular}
 \end{center}
 
-The contingency table shows that 5\% (4 out of 80) of left-handed people had colour-blindness, whilst slightly over 8\% (58 out of 720) of right-handed people had colour-blindness. However, this difference in proportions may have occurred due to an association between colour-blindness and handedness, or through *random chance*, since this is a *random sample* of individuals.
+The contingency table shows that 5\% (4 out of 80) of left-handed people had colour-blindness, whilst approximately 8.1\% (58 out of 720) of right-handed people had colour-blindness. However, this difference in proportions may have occurred due to an association between colour-blindness and handedness, or through *random chance*.
 
-A hypothesis test is required to assess whether the data in the contingency table gives evidence to suggest that there is in fact an association between handedness and colour-blindness.
+A hypothesis test is required to assess whether the data in the contingency table gives sufficient evidence to suggest that there is in fact an association between handedness and colour-blindness.
 
 The hypotheses for this test will be as follows:
 
@@ -34,7 +34,7 @@ The hypotheses for this test will be as follows:
 
 The $\chi^2$ test for association is used to explore a possible *association* between *two categorical variables*, the data for which are typically displayed in a **contingency table**. 
 
-The hypotheses for this **non-parametric** test should be stated *in context*.
+The hypotheses for this **non-parametric** test should be stated *in context* with reference to the *categorical variables*.
 
 \vspace{0.3cm}
 
@@ -43,8 +43,8 @@ The hypotheses for this **non-parametric** test should be stated *in context*.
 \begin{tcolorbox}[adjusted title=$\chi^2$ Test for Association hypotheses:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{center}
 \begin{tabular}{r l}
-    $\text{H}_0:$ & There is \textbf{no association} between the variables.\\[0.5em]
-    $\text{H}_1:$ & There is an \textbf{association} between the variables.
+    $\text{H}_0:$ & There is \textbf{no association} between the variables...\\[0.5em]
+    $\text{H}_1:$ & There is an \textbf{association} between the variables...
 \end{tabular}
 \end{center}
 \end{tcolorbox}
@@ -52,9 +52,9 @@ The hypotheses for this **non-parametric** test should be stated *in context*.
 
 \vspace{0.3cm}
 
-The test uses the *same test statistic and conditions for validity* as the $\chi^2$ goodness-of-fit test, given on page 6 of the SQA Data Booklet. The decision rule also matches that for the goodness-of-fit test, stated in Chapter 13.
+The test uses the *same test statistic and conditions for validity* as the $\chi^2$ goodness-of-fit test, given on **page 6** of the Data Booklet. The decision rule also matches that for the goodness-of-fit test (stated in chapter 12). The calculation for degrees of freedom, however, is different.
 
-Returning to the data on handedness and colour-blindness, a $\chi^2$ test for association can now be performed. The first step is to include *marginal totals* for each row and column of the contingency table, as well as an total number of observations. The expected value for each cell can then be calculated by multiplying marginal totals and dividing by the total frequency, as shown below:
+Returning to the data on handedness and colour-blindness, a $\chi^2$ test for association can now be performed. The first step is to include *marginal totals* for each row and column of the contingency table, as well as the total number of observations. The expected value for each cell can then be calculated by multiplying marginal totals and dividing by the total frequency, as shown below:
 
 \vspace{0.5cm}
 \begin{figure}[H]
@@ -92,17 +92,17 @@ Returning to the data on handedness and colour-blindness, a $\chi^2$ test for as
 \end{minipage}
 \end{figure}
 \begin{tikzpicture}[overlay]
-    \draw[stealth-] (15.3,2.6) -- (16.5,3.5) node[right] {$\dfrac{80\times 738}{800}$};
+    \draw[stealth-] (15.0,2.8) -- (16.2,3.7) node[right] {$\dfrac{80\times 738}{800}$};
     \node at (0,0) {};
 \end{tikzpicture}
 
-\vspace{-0.5cm}The expected values produced meet the required conditions, in that all are at least 1, and at least 80\% are at least 5. Note that these expected values can also be produced quickly using some graphical calculators, as can the $\chi^2$ test statistic:
+\vspace{-0.5cm}The expected values produced meet the required conditions, in that all are at least 1, and at least 80\% are at least 5. Note that these expected values can also be produced quickly using some graphical calculators, as can the $\chi^2$ test statistic. However, such tools will rarely first check that the expected frequencies meet the required conditions.
 
-$$X^2=\frac{(4-6.2)^2}{6.2}+\frac{(76-73.8)^2}{73.8}+\frac{(58-55.8)^2}{55.8}+\frac{(662-664.2)^2}{664.2}=0.940$$
+$$\chi^2=\frac{(4-6.2)^2}{6.2}+\frac{(76-73.8)^2}{73.8}+\frac{(58-55.8)^2}{55.8}+\frac{(662-664.2)^2}{664.2}=0.940$$
 
 The number of *degrees of freedom* for the test statistic is calculated as $\nu=(r-1)(c-1)$, where $r$ is the number of rows and $c$ is the number of columns of data in the contingency table, *not including marginal rows and columns*.
 
-Here there are *two rows* ($r=2$) and *two columns* ($c=2$), so $\nu=(2-1)(2-1)=1$. The $\chi^2_1$ critical value, taking a 5\% level of significance, can be obtained from Page 14 of the Data Booklet:  
+Here there are *two rows* ($r=2$) and *two columns* ($c=2$), so $\nu=(2-1)(2-1)=1$. The $\chi^2_1$ critical value, taking a 5\% level of significance, can be obtained from **page 14** of the Data Booklet:  
 
 \begin{figure}[H]
   \centering
@@ -110,7 +110,7 @@ Here there are *two rows* ($r=2$) and *two columns* ($c=2$), so $\nu=(2-1)(2-1)=
 \begin{minipage}[c]{.45\textwidth}
   \centering
 \begin{center}
-Critical value: $\chi^2_{1,0.95}=3.841$
+Critical value: $\chi^2=3.841$
 \end{center}
 \end{minipage}%
 \begin{minipage}[c]{.1\textwidth}
@@ -150,15 +150,16 @@ Critical value: $\chi^2_{1,0.95}=3.841$
 \node[above] at (axis cs: 6,0.1)  {$\chi^2_1$};
 \node[below] at (axis cs: 9.5,0) {$3.841$};
 \node[above] at (axis cs: 12,0.03) {5\%};
+\draw[very thick] (axis cs: 0.940,0) -- (axis cs: 0.940,0.25) node[above] {$0.940$};
 \end{axis}
 \end{tikzpicture}
 \end{center}
 \end{minipage}
 \end{figure}
 
-Since $0.940<3.841$, $\text{H}_0$ is not rejected at the 5\% level of significance.
+Since $0.940<3.841$, $\text{H}_0$ is not rejected at the 5\% level of significance.\newline There is insufficient evidence to suggest that there is an association between handedness and colour-blindness. 
 
-There is insufficient evidence to suggest that there is an association between handedness and colour-blindness. 
+Note that whilst the $\chi^2$ test statistic is a measure of how well data fits a model of *no association* between the variables, the test for association does not show *evidence* of no association - it only assesses whether the data provides evidence *for* an association.
 
 \pagebreak
 
@@ -191,26 +192,20 @@ Perform a $\chi^2$ test at the 1\% level of significance to assess whether there
       \text{H}_0: & \text{There is no association between playing a musical instrument and learning a language.}\\[0.5em]
       \text{H}_1: & \text{There is an association between playing a musical instrument and learning a language.}
     \end{array}
-\left]
-    \begin{array}{l}
-      \alpha=0.01\\[0.5em]
-      \textnormal{One-tailed}
-    \end{array}
-  \right.
 \end{math}\\
 
 \vspace{0.8cm}
 
 \begin{center}
 \begin{tabular}{ c | c c | c c c |  c c | c} 
-     \textbf{Observed} & Language & No language & & \qquad \qquad & \textbf{Expected} & Language & No language & \\
+     \textbf{Observed} & Language & No language & & \qquad & \textbf{Expected} & Language & No language & \\
   \cline{1-4}
   \cline{6-9}
      Instrument & 32 & 18 & \textit{50} & \qquad & Instrument & 26.25 & 23.75 & \textit{50}\\
      No instrument & 10 & 20 & \textit{30} & \qquad & No instrument & 15.75 & 14.25 & \textit{30}\\
   \cline{1-4}
   \cline{6-9}
-      & \textit{42} & \textit{38} & \textit{80} & \qquad \qquad &  & \textit{42} & \textit{38} & \textit{80}\\
+      & \textit{42} & \textit{38} & \textit{80} & \qquad &  & \textit{42} & \textit{38} & \textit{80}\\
 \end{tabular}
 \end{center}
 
@@ -220,11 +215,11 @@ $\nu=(r-1)(c-1)=(2-1)(2-1)=1$\\
 
 \vspace{0.8cm}
 
-Test statistic: $X^2=\dfrac{(32-26.24)^2}{26.25}+...+\dfrac{(20-14.25)^2}{14.25}=7.071$\\
+Test statistic: $\chi^2=\dfrac{(32-26.25)^2}{26.25}+...+\dfrac{(20-14.25)^2}{14.25}=7.071$\\
 
 \vspace{0.8cm}
 
-Critical value: $\chi^2_{1,0.99}=6.635$
+Critical value: $\chi^2=6.635$
 \hspace{7cm}
 \begin{tikzpicture}[overlay, 
     declare function={gamma(\z)=
@@ -256,27 +251,39 @@ Critical value: $\chi^2_{1,0.99}=6.635$
 \node[above] at (axis cs: 4,0.13)  {$\chi^2_1$};
 \node[below] at (axis cs: 6, 0) {$6.635$};
 \node[above] at (axis cs: 8,0.05) {1\%};
+\draw[very thick] (axis cs: 7.071,0) -- (axis cs: 7.071,0.25) node[above] {$7.071$};
 \end{axis}
 \end{tikzpicture}\\
 
 \vspace{0.8cm}
 
-Since $7.017>6.635$, reject $\text{H}_0$ at the 1\% level of significance. There is evidence to suggest that there is an association between playing a musical instrument and learning a language.
+Since $7.071>6.635$, reject $\text{H}_0$ at the 1\% level of significance. There is evidence to suggest that there is an association between playing a musical instrument and learning a language.
 
 \end{tcolorbox}
 
-A vital check carried out before calculating degrees of freedom and the test statistic was that the conditions for validity were met. Here, none of the expected values were less than 1 and at least 80\% were at least 5.
+A vital check carried out before calculating degrees of freedom and the test statistic was that the conditions for validity were met. 
 
-Marginal totals are helpful when manually calculating expected values. When a graphical calculator is available, expected values can be quickly produced using matrices.
+\begin{center}
+``At least 80\% of the $E_i$ should be at least 5 and none should be less than 1.''
+\end{center}
+
+Here, none of the expected values were less than 1 and at least 80\% ($\frac{4}{4}=100\%$) were at least 5.
 
 \pagebreak
 
-It should be noted that since the test's purpose of looking for evidence for an *association* is the same thing as looking for a *lack of independence*, the wording of a question may be framed in that manner, as below. 
+It should be noted that since the test's purpose of looking for evidence for an *association* is the same thing as looking for a *lack of independence*. The following hypotheses are statistically equivalent to those used in the example below:
 
-In such cases, reworded yet equivalent hypothesis should be used for the test for consistency.
+\begin{center}
+\begin{tabular}{r c l}
+    $\text{H}_0:$ & \quad & There is \textbf{no association} between \textit{test centre used} and \textit{test outcome}.\\[0.5em]
+    $\text{H}_1:$ & \quad & There is an \textbf{association} between \textit{test centre used} and \textit{test outcome}.
+\end{tabular}
+\end{center}
+
+It is not uncommon (outside of this course) to see a null hypothesis of **independence** between variables and an alternative hypothesis of **an association** between variables, combining the two choices of wording.
 
 \begin{tcolorbox}[title=Example 2,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} The outcomes for a random sample of 80 driving tests sat in three different test centres located across Lancashire are recorded. The organisation responsible for overseeing driving test standards is seeking to explore a claim made that the centres do not use the same standards, and that the outcome of driver's test is not independent to location chosen.
+\textbf{Problem:} The outcomes for a random sample of 80 driving tests sat in three different test centres located across Lancashire are recorded. The organisation responsible for overseeing driving test standards is seeking to explore a claim made that the centres do not use the same standards, and that the outcome of a driver's test is not independent of the location chosen.
 
 
 \begin{center}
@@ -333,11 +340,11 @@ $\nu=(r-1)(c-1)=(2-1)(3-1)=2$\\
 
 \vspace{0.5cm}
 
-Test statistic: $X^2=\dfrac{(17-14.4)^2}{14.4}+...+\dfrac{(9-6.6)^2}{6.6}=6.726$\\
+Test statistic: $\chi^2=\dfrac{(19-14.4)^2}{14.4}+...+\dfrac{(10-6.6)^2}{6.6}=6.726$\\
 
 \vspace{0.5cm}
 
-Critical value: $\chi^2_{2,0.9}=4.605$
+Critical value: $\chi^2=4.605$
 \hspace{6.5cm}
 \begin{tikzpicture}[overlay, 
     declare function={gamma(\z)=
@@ -374,7 +381,7 @@ Critical value: $\chi^2_{2,0.9}=4.605$
 
 \vspace{0.5cm}
 
-Since $6.726<4.605$, reject $\text{H}_0$ at the 10\% level of significance.\\
+Since $6.726>4.605$, reject $\text{H}_0$ at the 10\% level of significance.\\
 There is evidence to suggest the driving centre used and the outcome of the test are not independent. This suggests the claim may be true (although there could be other reasons apart from a difference in standards applied by the centres).\\
 
 \end{tcolorbox}
@@ -444,7 +451,14 @@ Note that an equivalent conclusion would be that there is evidence to suggest th
 
 ## Combining Columns or Rows
 
-Where the conditions for validity for a $\chi^2$ test of association are not met, it may be still possible to carry out a test by *combining rows and/or columns*. It is generally advised to collapse those which most naturally may be combined.
+Where the conditions for validity for a $\chi^2$ test of association are not met, it may be still possible to carry out a test by *combining rows and/or columns*. It is generally advised to combine either:
+
+\begin{itemize}
+    \item Those rows or columns with the lowest expected frequencies.
+    \item Those rows or columns which most naturally fit together.
+\end{itemize}
+
+In the example below, it would feel counterproductive to combine those patients who experienced a *reduction* in reported pain with those who experienced an *increase*.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A pharmaceutical company arranges for a random sample of 120 patients to take part in a trial of a new pain relief medication. Some will be given the new medication, whilst others will instead be given a placebo treatment that is identical in appearance and packaging. At the end of the week, each patient will be asked whether they experienced a reduction, an increase in pain, or no change. The data collected is shown in the table below:
@@ -505,11 +519,11 @@ $\nu=(r-1)(c-1)=(2-1)(2-1)=1$\\
 
 \vspace{0.5cm}
 
-Test statistic: $X^2=\dfrac{(45-40)^2}{40}+...+\dfrac{(26-21.15)^2}{21.15}=3.324$\\
+Test statistic: $\chi^2=\dfrac{(45-40.15)^2}{40.15}+...+\dfrac{(26-21.15)^2}{21.15}=3.324$\\
 
 \vspace{0.5cm}
 
-Critical value: $\chi^2_{1,0.95}=3.841$
+Critical value: $\chi^2=3.841$
 \hspace{6.5cm}
 \begin{tikzpicture}[overlay, 
     declare function={gamma(\z)=
@@ -551,8 +565,6 @@ There is insufficient evidence to suggest that there is an association between t
 
 \end{tcolorbox}
 
-As with all hypothesis tests, a decision to not reject $\text{H}_0$ does not mean there is evidence that it is true - only that there is insufficient evidence to suggest that it is *not* true in favour of $\text{H}_1$.
-
 \pagebreak
 
 []{#ex142q}
@@ -560,10 +572,20 @@ As with all hypothesis tests, a decision to not reject $\text{H}_0$ does not mea
 #### [Exercise 14.2](#ex142a) {-}
 
 \begin{enumerate}
-    \item A random sample of residents listed on the electoral register in four Scottish cities are selected and contacted to find out whether they voted in the most recent UK General Election, and the results shown in a contingency table. A \textit{spoiled vote} means they deliberately left their ballot paper blank or otherwise voided it, often seen as a `protest vote'.
+    \item A website invited visitors via a pop-up survey to indicate whether their experience of using the site's new layout was \textit{positive} or \textit{negative}. The website logged the device type (\textit{desktop} or \textit{mobile}) used by each visitor, as well as the outcome of the survey. Some users ignored the survey, and this data was also captured as \textit{NR} (no response). The results are shown in the table below:
+    \begin{center}
+        \begin{tabular}{ C{3cm} | C{1cm} C{1cm} C{1cm}} 
+           & Positive & Negative & NR\\ 
+        \hline
+          Desktop & 15 & 3 & 20\\ 
+          Mobile & 35 & 7 & 23
+        \end{tabular}
+    \end{center}
+    Perform a chi-squared test to determine whether there is evidence of an association between the device a visitor uses to access a website, and their response to the survey, at the 5\% level of significance.
+    \item A random sample of residents listed on the electoral register in four Scottish towns are selected and contacted to find out whether they voted in the most recent UK General Election, and the results shown in a contingency table. A \textit{spoiled vote} means they deliberately left their ballot paper blank or otherwise voided it, often seen as a `protest vote'.
 \begin{center}
-\begin{tabular}{ C{2cm} | C{1cm} C{1cm} C{1.2cm} C{1.2cm} C{0.5cm} C{2cm} | C{1cm} C{1cm} C{1.2cm} C{1.2cm}} 
-     Observed & Perth & Stirling & Glasgow & Dundee & & Expected & Perth & Stirling & Glasgow & Dundee\\ 
+\begin{tabular}{ C{1.9cm} | C{1cm} C{1cm} C{1cm} C{1cm} C{0.5cm} C{1.9cm} | C{1cm} C{1cm} C{1cm} C{1cm}} 
+     Observed & Renfrew & Crieff & Moffat & Paisley & & Expected & Renfrew & Crieff & Moffat & Paisley\\ 
   \cline{1-5}
   \cline{7-11}
      Voted & 51 & 43 & 27 & 40 & & Voted & 47.24 & 40.58 & 31.27 & 41.91\\ 
@@ -571,7 +593,7 @@ As with all hypothesis tests, a decision to not reject $\text{H}_0$ does not mea
      Spoiled & 3 & 7 & 2 & 1 & & Spoiled & 3.81 & 3.28 & 2.52 & 3.38
 \end{tabular}
 \end{center}
-Perform a hypothesis test to assess whether there is an association between voting habit and city of residence.
+Perform a hypothesis test to assess whether there is an association between voting habit and town of residence.
 \vspace{1cm}
     \item Data is collected from a random sample of people living across the United Kingdom on how many teaspoons (\text{tsp}) of sugar they typically add to a cup of tea. The contingency table below shows the results:
     \begin{center}
@@ -646,7 +668,7 @@ Perform a non-parametric test at the 10\% level of significance to assess whethe
     Computer output for a hypothesis test conducted on this data is shown below:\\[0.5em]
     \texttt{chi-squared test for association}\\
     \texttt{n = 71}\qquad \qquad \texttt{df = 2}\\
-    \texttt{alternative hypothesis: there is an asociation between the variables}\\
+    \texttt{alternative hypothesis: there is an association between the variables}\\
     \texttt{test statistic = 2.543}\qquad \texttt{critical value = 4.605}\qquad \texttt{p-value = 0.2804}\\[0.5em]
     \begin{enumerate}
         \item Use the degrees of freedom (\textit{df}) to explain whether any columns or rows were combined.
@@ -657,35 +679,3 @@ Perform a non-parametric test at the 10\% level of significance to assess whethe
 \end{enumerate}
 
 \pagebreak
-
-\textbf{Exercise 14A}
-
-\begin{enumerate}
-    \item $3.436>2.706$, reject $\text{H}_0$
-    \item $0.807<3.841$, do not reject $\text{H}_0$
-    \item $4.121>2.706$, reject $\text{H}_0$
-    \item $0.0465<5.991$, do not reject $\text{H}_0$
-    \item $0.282<11.345$, do not reject $\text{H}_0$
-\end{enumerate}
-
-\textbf{Exercise 14B}
-
-\begin{enumerate}
-    \item $3.328>7.815$, do not reject $\text{H}_0$
-    \item $15.737>12.592$, reject $\text{H}_0$
-    \item $25.106>4.605$, reject $\text{H}_0$
-\end{enumerate}
-
-\textbf{Review Exercise}
-
-\begin{enumerate}
-    \item $6.254>2.706$, reject $\text{H}_0$
-    \item $23.478>7.378$, reject $\text{H}_0$
-    \item 
-    \begin{enumerate}
-        \item No, with justification
-        \item 10\%
-        \item There is no association between the type of feed used and the growth of a chick.
-        \item $0.2804>0.1$, do not reject $\text{H}_0$, with context
-    \end{enumerate}
-\end{enumerate}
