@@ -5689,7 +5689,7 @@ $\text{P}(M\cap B)=\frac{3}{25}$, $\text{P}(M)=\frac{1}{5}$ and $\text{P}(\overl
 
 \chapter{An Introduction to Linear Regression}\label{an-introduction-to-linear-regression}
 
-A common interest for anyone working with data is a possible relationship between two numerical variables. For example, suppose a sports scientist wishes to explore the relationship between runners' \(\text{VO}_{\text{2}}\) Max, which is a measure of aerobic fitness, and their 5km running times. From a sample of eight runners, they may record the values of the two \emph{variables} for each individual, presenting the results in a table as follows:
+A common interest when working with data is a possible relationship between two numerical variables. For example, suppose a sports scientist wishes to explore the relationship between runners' \(\text{VO}_{\text{2}}\) Max, which is a measure of aerobic fitness, and their 5km running times. From a sample of eight runners, they may record the values of the two \emph{variables} for each individual, presenting the results in a table as follows:
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
@@ -5872,7 +5872,7 @@ In \textbf{Figure 3}, as one variable increases, there appears to be no clear pa
 
 \textbf{Figure 4} is also an example of \emph{no linear relationship} between \(x\) and \(y\), although there appears to be some non-linear (possibly quadratic) association between the variables.
 
-Note that \textbf{correlation doesn't imply causation}. A linear relationship can exist between variables without meaning that one causes the other; there may be other variables influencing both. Seemingly linear relationships can also appear by chance - this is referred to as \emph{spurious correlation}.
+Note that \textbf{correlation does not imply causation}. A linear relationship can exist between variables without meaning that one causes the other; there may be other variables influencing both. Seemingly linear relationships can also appear by chance - this is referred to as \emph{spurious correlation}.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A French class takes two tests, one \textit{listening} and one \textit{reading}. The results of the 10 pupils are shown in the table and scatterplot below, along with some summary statistics. Comment on the scatterplot.
@@ -5932,7 +5932,7 @@ Note that \textbf{correlation doesn't imply causation}. A linear relationship ca
 
 Note that there is no universally agreed definition of a `strong', `moderate' or `weak' linear relationship. However, it is still recommended for comments to include some description of the strength of a linear relationship.
 
-Scatterplots should always be constructed and closely scrutinised before any analysis of bivariate data is undertaken. Through this visualisation, it may become apparent, for instance, that the dataset may actually be clearly separated into two or more \emph{distinct groups}, or that possible \emph{outliers} are present which should be carefully considered.
+Scatterplots should always be constructed and closely scrutinised before any analysis of bivariate data is undertaken. Through this visualisation, it may become apparent, for instance, that the dataset is separated into \emph{distinct groups}, or that possible \emph{outliers} are present which should be carefully considered.
 
 \pagebreak
 
@@ -6295,7 +6295,7 @@ S_{xy}&=\Sigma(x-\bar{x})(y-\bar{y})=\Sigma xy-\frac{\Sigma x\Sigma y}{n}
 \end{minipage}
 \end{figure}
 
-For all sets of data, \(-1\leqslant r\leqslant 1\). A correlation coefficient of zero suggests there is \emph{no linear relationship} between the two variables, whilst any non-zero correlation coefficient suggests that \emph{a linear relationship may exist}. Each of figures below show a scatterplot of sample data along with its sample correlation coefficient, \(r\), and an interpretation.
+For all sets of data, \(-1\leqslant r\leqslant 1\). A correlation coefficient of zero suggests there is \emph{no linear relationship} between the two variables, whilst any non-zero correlation coefficient suggests the possibility of a linear relationship. Each figure below shows a scatterplot of sample data along with its sample correlation coefficient, \(r\), and an interpretation.
 
 \begin{multicols}{5}
 
@@ -6932,7 +6932,26 @@ n&=8
 
 \section{Least Squares Linear Regression}\label{least-squares-linear-regression}
 
-A \(y\) \emph{on} \(x\) regression model is a one constructed with the aim of producing a trend line which can be used to predict unknown values of \(Y_i\) based on known values of \(x_i\). For a population of bivariate data \((x_1,y_1), (x_2,y_2), ...  ,(x_n,y_n)\), this \emph{regression line} has an equation of the form \(\hat{Y}_i=\alpha + \beta x_i\), where:
+A \(y\) \emph{on} \(x\) regression model is one constructed with the aim of producing a trend line which can be used to predict unknown values of \(Y_i\) based on known values of \(x_i\). For a sample of bivariate data \((x_1,y_1), (x_2,y_2), ...  ,(x_n,y_n)\), this \emph{regression line} has an equation of the form \(\hat{Y}_i=a + b x_i\), where:
+
+\begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.54\textwidth}
+
+$\hat{Y}_i$ (\textit{`Y hat'}) is the \textit{best estimate} of $y_i$ given $x_i$.\\
+
+Sample statistic $a$ represents the line's \textbf{intercept}, and is an estimate for the true \textit{intercept parameter} $\alpha$ (\textit{``alpha''}).\\
+
+Sample statistic $b$ represents the line's \textbf{slope}, and is an estimate for the true \textit{slope parameter} $\beta$ (\textit{``beta'')}. Each 
+
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.03\textwidth}
+  \centering
+  \phantom{I}
+  \end{minipage}%
+  \centering
+\begin{minipage}[c]{.43\textwidth}
 
 \begin{center}
     \begin{tikzpicture}[scale=1]
@@ -6945,12 +6964,12 @@ A \(y\) \emph{on} \(x\) regression model is a one constructed with the aim of pr
         \draw[fill] (3,1.10) circle (0.04) node[below] {$(x_3,y_3)$};
         \draw[fill] (4,1.43) circle (0.04) node[right] {$(x_4,y_4)$};
         \draw[fill] (5,2.47) circle (0.04) node[above] {$(x_5,y_5)$};
-        \draw[thick] (0.7,0.7*0.21+1.016) -- (5.6,5.6*0.21+1.016) node[right] {$\hat{Y}_i=\alpha + \beta x_i$};
-        \node[right] at (8.7,3) {$\hat{Y}_i$ (\textit{`Y hat'}) is the \textit{best estimate} of $Y_i$ given $x_i$};
-        \node[right] at (8.7,2) {$\alpha$ (\textit{``alpha''}) represents the \textit{intercept parameter}};
-        \node[right] at (8.7,1) {$\beta$ (\textit{``beta''}) represents the \textit{slope parameter}};
+        \draw[thick] (0.7,0.7*0.21+1.016) -- (5.1,5.1*0.21+1.016) node[right] {$\hat{Y}_i=a + b x_i$};
     \end{tikzpicture}
 \end{center}
+
+\end{minipage}
+\end{figure}
 
 To determine the equation of this regression line, the method of \emph{least squares regression} is used. Since the goal is to produce the \emph{best estimates} for \(Y_i\), vertical distances between observed values and the line are considered. The \emph{least squares} regression line is that which minimises the sum of the squares of these vertical distances.
 
@@ -7020,7 +7039,7 @@ Once values for \(a\) and \(b\) have been calculated, and so the least squares r
 
 \begin{vwcol}[widths={0.65,0.35},
  sep=.8cm,rule=0pt]
-Whether a linear relationship will continue to hold for $x$ values lower or higher than any observed within the range of the data can be unpredictable, and should not be assumed.\\[0.3em]\textbf{Interpolation}, prediction within the range of the control data, is generally reliable if the correlation is high.\\[0.3em]However, \textbf{extrapolation}, prediction out with the range of the data, should be avoided as unreliable and unsupported.
+Whether a linear relationship will continue to hold for $x$ values lower or higher than any observed within the range of the data can be unpredictable, and should not be assumed.\\[0.3em]\textbf{Interpolation}, prediction within the range of the control data, is generally reliable if the correlation is high.\\[0.3em]However, \textbf{extrapolation}, prediction outwith the range of the data, should be avoided as unreliable and unsupported.
 
 \begin{tikzpicture}
     \draw[fill=black!10,black!10] (0,0) rectangle (4.9,2.6);
@@ -7109,7 +7128,7 @@ S_{xx}&=\Sigma x^2-\frac{(\Sigma x)^2}{n}=1742-\frac{132^2}{12}=290&&\\[1em]
 S_{xy}&=\Sigma xy-\frac{\Sigma x\Sigma y}{n}=1872-\frac{132\times 147}{12}=255\\[1em]
 b&=\dfrac{S_{xy}}{S_{xx}}=\dfrac{255}{290}=0.879\\[1em]
 a&=\bar{y}-b \bar{x}=\dfrac{147}{12}-0.879\times \dfrac{132}{12}=2.578\\[1em]
-\hat{Y_i}&=2.578+0.879x_i
+\hat{Y}_i&=2.578+0.879x_i
 \end{flalign*}
     \item[(b)] $\hat{Y}=2.578 + 0.879\times 8=9.61$
     \item[(c)] This is an example of interpolation as the value of $x$ used is within the range of values of the other students, and consequently it can be considered a robust prediction, especially given the strong linear relationship suggested by the scatterplot.  
@@ -7117,7 +7136,7 @@ a&=\bar{y}-b \bar{x}=\dfrac{147}{12}-0.879\times \dfrac{132}{12}=2.578\\[1em]
 
 \end{tcolorbox}
 
-Another way of writing the equation found above is: \(\text{practical}=2.578+0.879\times\text{ theoretical}\). This suggests that each increase of \(1\) mark in the theory test is associated with a increase of \(0.879\) marks in the practical test.
+Another way of writing the equation found above is: \(\text{practical}=2.578+0.879\times\text{ theoretical}\). This suggests that each increase of \(1\) mark in the theory test is associated with an increase of \(0.879\) marks in the practical test.
 
 \protect\phantomsection\label{ex53q}{}
 
@@ -17605,7 +17624,7 @@ Perform a non-parametric test at the 10\% level of significance to assess whethe
 
 \vspace{-0.5cm}
 
-Chapter 10 introduced three hypothesis tests which use a single sample of data to assess the evidence for claims relating to the population mean. For example, a study on the longevity of a brand's light bulbs might check a random sample of such bulbs, to assess whether their is evidence to suggest the population mean lifespan is greater than 1000 hours. The data from the sample is shown below, with the sample mean \(\bar{x}\) indicated:
+Chapter 10 introduced three hypothesis tests which use a single sample of data to assess the evidence for claims relating to a population parameter. For example, a study on the longevity of a brand's light bulbs might check a random sample of such bulbs, to assess whether there is sufficient evidence to suggest the population mean lifespan is greater than 1000 hours. The data from the sample is shown below, with the sample mean \(\bar{x}\) indicated:
 
 \begin{figure}[H]
   \centering
@@ -17657,11 +17676,11 @@ Chapter 10 introduced three hypothesis tests which use a single sample of data t
 \end{minipage}
 \end{figure}
 
-This use of a \emph{single sample} of data, investigating a \emph{single} population parameter, is an example of a \textbf{one-sample test}.
+This use of a \emph{one} sample of data, investigating \emph{one} population's parameter, requires a \textbf{one-sample test}.
 
-Should a study instead wish to compare the longevity of \emph{two different brands' light bulbs} they would instead check \emph{two samples} of data: one sample from \emph{Brand A} and one sample from \emph{Brand B}. In such a case, a typical set of hypotheses might instead ask whether there is evidence to suggest that there is a difference between the population mean lifespan for Brand A, \(\mu_A\), and the population mean lifespan for Brand B, \(\mu_B\). The data from the samples are shown below, with the sample means \(\bar{x}_A\) and \(\bar{x}_B\) indicated:
+Should a study instead wish to compare the longevity of \emph{two different brands' light bulbs} they would instead take \emph{two samples} of data: one sample from \emph{Brand A} and one sample from \emph{Brand B}. In such a case, a typical set of hypotheses might instead ask whether there is sufficient evidence to suggest that there is a difference between the population mean lifespan for Brand A, \(\mu_\text{A}\), and the population mean lifespan for Brand B, \(\mu_\text{B}\). The data from the samples are shown below, with the sample means \(\bar{x}_\text{A}\) and \(\bar{x}_\text{B}\) indicated:
 
-\vspace{-0.5cm}
+\vspace{-0.2cm}
 
 \begin{figure}[H]
   \centering
@@ -17672,8 +17691,8 @@ Should a study instead wish to compare the longevity of \emph{two different bran
 \begin{center}
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \mu_A=\mu_B\\[0.5em]
-      \text{H}_1: & \mu_A\ne\mu_B
+      \text{H}_0: & \mu_\text{A}=\mu_\text{B}\\[0.5em]
+      \text{H}_1: & \mu_\text{A}\ne\mu_\text{B}
     \end{array}
 \end{math}
 \end{center}
@@ -17696,7 +17715,7 @@ Should a study instead wish to compare the longevity of \emph{two different bran
 \foreach \x in {900,1000,...,1200}
 \node at (0.03*\x-26.5,-0.3) {\x};
 \draw[semithick,dashed] (0.03*1010-26.5,0) -- (0.03*1010-26.5,1.2);
-\node at (0.03*1010-26.5,1.4) {$\bar{x}_A$};
+\node at (0.03*1010-26.5,1.4) {$\bar{x}_\text{A}$};
 
 \draw[fill=black!25] (0.03*925-26.5,0.5) circle (3pt);
 \draw[fill=black!25] (0.03*960-26.5,0.5) circle (3pt);
@@ -17713,7 +17732,7 @@ Should a study instead wish to compare the longevity of \emph{two different bran
 \foreach \x in {900,1000,...,1200}
 \node at (0.03*\x-26.5,-2.3) {\x};
 \draw[semithick,dashed] (0.03*1059-26.5,-2) -- (0.03*1059-26.5,-0.8);
-\node at (0.03*1059-26.5,-0.6) {$\bar{x}_B$};
+\node at (0.03*1059-26.5,-0.6) {$\bar{x}_\text{B}$};
 
 \draw[fill=black!25] (0.03*950-26.5,-1.5) circle (3pt);
 \draw[fill=black!25] (0.03*970-26.5,-1.5) circle (3pt);
@@ -17731,12 +17750,12 @@ Should a study instead wish to compare the longevity of \emph{two different bran
 \end{minipage}
 \end{figure}
 
-Such a test, comparing the parameters of \emph{two} populations by using \emph{two samples}, is an example of a \textbf{two-sample test}. Either one-tailed or two-tailed tests can be performed:
+Such a test, comparing the parameters of \emph{two} populations by using \emph{two samples}, requires a \textbf{two-sample test}. Either one-tailed or two-tailed tests can be performed:
 
 \begin{center}
     \begin{tabular}{ccccc}
-        $\text{H}_0:\mu_A=\mu_B$ & \qquad \qquad & $\text{H}_0:\mu_A = \mu_B$ & \qquad \qquad & $\text{H}_0:\mu_A=\mu_B$\\
-        $\text{H}_1:\mu_A \ne \mu_B$ & & $\text{H}_1:\mu_A>\mu_B$ & & $\text{H}_1:\mu_A<\mu_B$ 
+        $\text{H}_0:\mu_\text{A}=\mu_\text{B}$ & \qquad \qquad & $\text{H}_0:\mu_\text{A} = \mu_\text{B}$ & \qquad \qquad & $\text{H}_0:\mu_\text{A}=\mu_\text{B}$\\
+        $\text{H}_1:\mu_\text{A} \ne \mu_\text{B}$ & & $\text{H}_1:\mu_\text{A}>\mu_\text{B}$ & & $\text{H}_1:\mu_\text{A}<\mu_\text{B}$ 
     \end{tabular}
 \end{center}
 
@@ -17744,7 +17763,7 @@ Such a test, comparing the parameters of \emph{two} populations by using \emph{t
 
 \section{\texorpdfstring{Two-Sample \textit{z}-test for Population Means}{Two-Sample -test for Population Means}}\label{two-sample--test-for-population-means}
 
-If independent random samples of sizes \(n_1\) and \(n_2\) are obtained from each of two normally distributed populations which have population means \(\mu_1\) and \(\mu_2\) respectively, and population standard deviations \(\sigma_1\) and \(\sigma_2\) respectively, then the difference in sample means \(\bar{X}_1\) and \(\bar{X}_2\) is also normally distributed, as below:
+If \textbf{independent} random samples of sizes \(n_1\) and \(n_2\) are obtained from each of two normally distributed populations which have population means \(\mu_1\) and \(\mu_2\) respectively, and population standard deviations \(\sigma_1\) and \(\sigma_2\) respectively, then the difference in sample means \(\bar{X}_1\) and \(\bar{X}_2\) is also normally distributed, as below:
 
 \[\overline{X}_1\sim \text{N}\left(\mu_1,\frac{\sigma_1^2}{n_1}\right) \quad \text{and} \quad \overline{X}_2\sim \text{N}\left(\mu_2,\frac{\sigma_2^2}{n_2}\right)\quad\implies\quad\overline{X}_1-\overline{X}_2\sim \text{N}\left(\mu_1-\mu_2,\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}\right)\]
 
@@ -17754,7 +17773,7 @@ This leads to the test statistic for the \emph{two-sample} \(z\)\emph{-test for 
 
 From the Data Booklet:
 \vspace{-0.1cm}
-\[Z=\dfrac{(\overline{X}_1-\overline{X}_2)-(\mu_1-\mu_2)}{\sqrt{\dfrac{\sigma_1^2}{n_1}+\dfrac{\sigma_2^2}{n_2}}}\]
+\[Z\sim\dfrac{(\overline{X}_1-\overline{X}_2)-(\mu_1-\mu_2)}{\sqrt{\dfrac{\sigma_1^2}{n_1}+\dfrac{\sigma_2^2}{n_2}}}\]
 
 \vfill\null
 \columnbreak
@@ -17766,6 +17785,8 @@ Test statistic: $z=\dfrac{\overline{x}_1-\overline{x}_2}{\sqrt{\dfrac{\sigma_1^2
 \end{centering}
 
 \end{multicols}
+
+\vspace{-0.2cm}
 
 \begin{centering}
 \tcbset{width=14cm}
@@ -17781,23 +17802,17 @@ Test statistic: $z=\dfrac{\overline{x}_1-\overline{x}_2}{\sqrt{\dfrac{\sigma_1^2
 Note when sample sizes \(n_1\) and \(n_2\) are greater than 20 the \emph{Central Limit Theorem} can be invoked, so the sample means are at least approximately normally distributed regardless of the distribution of the underlying population. Also, for larger sample sizes the sample standard deviations \(s_1\) and \(s_2\) might be taken as \emph{sufficiently accurate estimates} for the \emph{population} standard deviations \(\sigma_1\) and \(\sigma_2\).
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} To compare the longevity of two brands' light bulbs, a random sample of eight bulbs from \textit{AlwaysBrite} and eight bulbs from \textit{BulbCity} are tested. The sample of AlwaysBrite bulbs had have a mean lifespan 1015 hours, with a sample mean of 1059 hours before failure for BulbCity. Assuming that the lifespan for both populations of bulbs is known to be normally distributed, with a standard deviation of 84 hours, use a parametric test to determine whether there is evidence for a difference in longevity between the brands.
+\textbf{Problem:} To compare the longevity of two brands' light bulbs, a random sample of eight bulbs from \textit{AlwaysBrite} and eight bulbs from \textit{BulbCity} are tested. The sample of AlwaysBrite bulbs had a mean lifespan 1015 hours, with a sample mean of 1059 hours before failure for BulbCity. Assuming that the lifespan for both populations of bulbs is known to be normally distributed, with a standard deviation of 84 hours, use a parametric test to determine whether there is evidence for a difference in longevity between the brands.
 
 \tcblower
 \textbf{Solution:}
-$\bar{x}_A=1015$, $\bar{x}_B=1059$, $\sigma_A=84$, $\sigma_B=84$ $n_A=8$, $n_B=8$\\[0.1em]
+$\bar{x}_A=1015$, $\bar{x}_B=1059$, $\sigma_{\text{A}}=84$, $\sigma_{\text{B}}=84$, $n_{\text{A}}=8$, $n_{\text{B}}=8$\\[0.1em]
 
 \begin{math}
 \begin{array}{ll}
-      H_0: & \mu_A=\mu_B\\
-      H_1: & \mu_A\ne \mu_B
+      H_0: & \mu_\text{A}=\mu_\text{B}\\
+      H_1: & \mu_\text{A}\ne \mu_\text{B}
     \end{array}
-\left]
-    \begin{array}{l}
-      \alpha=0.05\\
-      \textnormal{Two-tailed}
-    \end{array}
-  \right.
 \end{math}
 
 \vspace{0.5cm}
@@ -17837,12 +17852,13 @@ Test statistic: $z=\dfrac{1015-1059}{\sqrt{\dfrac{84^2}{8}+\dfrac{84^2}{8}}}=-1.
 \node[below] at (axis cs: 1.96, 0) {$1.96$};
 \node[above] at (axis cs: 2.4,\valueC) {2.5\%};
 \node[above] at (axis cs: 0,\valueB)  {$z$};
+\draw[very thick] (axis cs: -1.05,0) -- (axis cs: -1.05,0.44) node[above] {$-1.05$};
 \end{axis}
 \end{tikzpicture}\\[0.1em]
 
-Critical value: $z_{0.025}=-1.96$\\
+Critical value: $z=-1.96$\\
 
-Since $-1.05>-1.96$, do not reject $\text{H}_0$ at the 5\% level of significance. There is insufficient evidence to suggest that there is a difference in the mean lifespans of the two brands of light bulbs.
+Since $-1.05>-1.96$, do not reject $\text{H}_0$ at the 5\% level of significance. There is insufficient evidence to suggest a difference in the mean lifespans of the two brands of light bulbs.
 
 \end{tcolorbox}
 
@@ -17913,28 +17929,28 @@ Test the hypothesis that the minor overhaul has had no effect on the mean mass o
 
 If random, independent samples of data are obtained from each of two populations, and the two \textbf{sample proportions} \(\hat{p}_1\) and \(\hat{p}_2\) are obtained, then a \emph{two-sample} \(z\)\emph{-test for population proportions} may be used to explore evidence for a difference in the \textbf{population proportions}, \(p_1\) and \(p_2\).
 
-The test statistic is provided in the SQA Data Booklet, and it uses an \emph{estimate of the pooled population proportion}, \(\hat{p}\):
+The test statistic is provided in the Data Booklet, and it uses an \emph{estimate of the pooled population proportion}, \(\hat{p}\):
 
 \begin{centering}
 \tcbset{width=13cm}
 \begin{tcolorbox}[adjusted title=For a two-sample $z$-test for population proportions:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-Test statistic: $z=\dfrac{\hat{p}_1-\hat{p}_2}{\sqrt{\hat{p} \hat{q} \left( \dfrac{1}{n_1}+ \dfrac{1}{n_2}\right)}}$ \qquad where \qquad $\hat{p}=\dfrac{\hat{p_1}n_1+n_2\hat{p}_2}{n_1+n_2}$
+Test statistic: $z=\dfrac{\hat{p}_1-\hat{p}_2}{\sqrt{\hat{p} \hat{q} \left( \dfrac{1}{n_1}+ \dfrac{1}{n_2}\right)}}$ \qquad where \qquad $\hat{p}=\dfrac{n_1\hat{p_1}+n_2\hat{p}_2}{n_1+n_2}$
 \end{tcolorbox}
 \end{centering}
 
-The test statistic may be derived from the use of the normal approximation to a binomial distribution to describe the approximate distribution of the sample proportion (see section 10.5) and the distribution of the difference of two \emph{independent} sample proportions (similar to section 15.1). The conditions for the use of this hypothesis follow.
+The test statistic may be derived from the use of the normal approximation to a binomial distribution to describe the approximate distribution of the sample proportion (see section 10.5) and the distribution of the difference of two \emph{independent} sample proportions (similar to section 15.1). The conditions required for the use of this hypothesis test follow.
 
 \begin{centering}
 \tcbset{width=14cm}
 \begin{tcolorbox}[adjusted title=Conditions for valid use of the two-sample $z$-test for population proportions:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
-    \item Each of $n_1 \hat{p}_1,n_1 \hat{q}_1,n_2 \hat{p}_2$ and $n_2 \hat{q}_2$ are \textbf{greater than 5}.
+    \item Each of $n_1 \hat{p}_1,n_1 \hat{q}_1,n_2 \hat{p}_2$ and $n_2 \hat{q}_2$ must be \textbf{greater than 5}.
     \item The data was obtained through \textbf{random} and \textbf{independent samples}.
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
 
-This parametric test can take one-tailed or two-tailed hypotheses which relation to the population proportions, \(p_1\) and \(p_2\):
+This parametric test can take one-tailed or two-tailed hypotheses which relate to the population proportions, \(p_1\) and \(p_2\):
 
 \begin{center}
     \begin{tabular}{ccccc}
@@ -17944,7 +17960,7 @@ This parametric test can take one-tailed or two-tailed hypotheses which relation
 \end{center}
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A sample of 50 randomly selected men with high triglyceride levels consumed 2 tablespoons of oat bran daily for 6 weeks. After 6 weeks, 60\% of the men had lowered their triglyceride levels. A sample of 80 men consumed 2 tablespoons of wheat bran for 6 weeks. After 6 weeks 25\% had lower triglyceride levels. Assess the evidence for a difference in the proportions at the 1\% significance level.
+\textbf{Problem:} A sample of 50 randomly selected men with high triglyceride levels consumed 2 tablespoons of oat bran daily for 6 weeks. After 6 weeks, 60\% of the men had lowered their triglyceride levels. A sample of 80 men consumed 2 tablespoons of wheat bran for 6 weeks. After 6 weeks, 25\% had lower triglyceride levels. Assess the evidence for a difference in the proportions at the 1\% significance level.
 
 \tcblower
 \textbf{Solution:}
@@ -17955,12 +17971,6 @@ $\hat{p}_{oat}=0.6$, $\hat{p}_{wheat}=0.25$, $n_{oat}=50$, $n_{wheat}=80$\\[0.1e
       H_0: & p_{oat}=p_{wheat}\\
       H_1: & p_{oat} \ne p_{wheat}
     \end{array}
-\left]
-    \begin{array}{l}
-      \alpha=0.01\\
-      \textnormal{Two-tailed}
-    \end{array}
-  \right.
 \end{math}
 
 \vspace{0.5cm}
@@ -18003,12 +18013,13 @@ Test statistic: $z=\dfrac{0.6-0.25}{\sqrt{0.385 \times 0.615 \left( \dfrac{1}{50
 \node[above] at (axis cs: 2.2,\valueA) {0.5\%};
 \node[below] at (axis cs: -1.96, 0) {$-2.58$};
 \node[above] at (axis cs: -2.2,\valueA) {0.5\%};
+\draw[very thick,stealth-] (axis cs: 3,0.2) -- (axis cs: 2,0.4) node[above] {$3.99$};
 \end{axis}
 \end{tikzpicture}\\
 
-Critical value: $z_{0.995}=2.58$\\
+Critical value: $z=2.58$\\
 
-Since $3.99>2.58$, reject $\text{H}_0$ at the 1\% level of significance. There is evidence to suggest that the proportions of men who experience a reduction in triglyceride levels by consuming oat bran or wheat bran daily are not the same. 
+Since $3.99>2.58$, reject $\text{H}_0$ at the 1\% level of significance. There is sufficient evidence to suggest that the proportions of men who experience a reduction in triglyceride levels by consuming oat bran or wheat bran daily are not the same. 
 
 \end{tcolorbox}
 
@@ -18068,7 +18079,7 @@ Since $3.99>2.58$, reject $\text{H}_0$ at the 1\% level of significance. There i
 
 \section{\texorpdfstring{Two-Sample \textit{t}-test for Population Means}{Two-Sample -test for Population Means}}\label{two-sample--test-for-population-means-1}
 
-When one or both sample sizes are small and population standard deviations are unknown, a two-sample \(z\)-test for population means is not appropriate. Instead, a \emph{two-sample} \(t\)\emph{-test for population means} may be used, given certain conditions are met:
+If random, independent samples of data are obtained from each of two \emph{normally distributed} populations with \textbf{unknown population standard deviations}, then a \emph{two-sample} \(t\)\emph{-test for population means} may be used to explore evidence for a difference in the \textbf{population means}, \(\mu_1\) and \(\mu_2\). This is particularly important where sample sizes are not sufficiently large to assume the sample standard deviations may be used as reliable estimates for the population standard deviations (in which case a \(z\)-test might be used).
 
 \begin{centering}
 \tcbset{width=13cm}
@@ -18081,7 +18092,7 @@ When one or both sample sizes are small and population standard deviations are u
 \end{tcolorbox}
 \end{centering}
 
-The test statistic is provided in the SQA Data Booklet, and follows a \(t\)-distribution with \(\nu=n_1+n_2-2\) degrees of freedom. It requires calculation of a \emph{pooled estimate of the variance}, \(s^2\), and as with the two-sample \(z\)-test, a more streamline version of the test statistic under a null hypothesis of \(\mu_1=\mu_2\) is as follows:
+The test statistic is provided in the Data Booklet, and follows a \(t\)-distribution with \(\nu=n_1+n_2-2\) degrees of freedom. It requires calculation of a \emph{pooled estimate of the variance}, \(s^2\), and as with the two-sample \(z\)-test, a more streamlined version of the test statistic under a null hypothesis of \(\mu_1=\mu_2\) is as follows:
 
 \begin{centering}
 \tcbset{width=15.5cm}
@@ -18090,24 +18101,20 @@ Test statistic: $t_{n_1+n_2-2}=\dfrac{\bar{x}_1-\bar{x}_2}{s\sqrt{\dfrac{1}{n_1}
 \end{tcolorbox}
 \end{centering}
 
+Whilst \(t\)-tests are especially valuable when dealing with small sample sizes, they remain the statistically \emph{correct} test to use even when dealing with very large samples. Modern computing power reduces the need to switch to a \(z\)-test for very large samples where critical values for the \(t\)-distribution may not have been so easily obtain.
+
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} It is known that the volume of hot drinks dispensed by a type of machine is normally distributed. A random sample of 10 hot drinks from Dispenser A has a mean volume of 203 ml and a standard deviation of 3 ml. A random sample of 15 hot drinks from Dispenser B has corresponding values of 206 ml and 5 ml. Test, at the 5\% significance level, the hypothesis that there is no difference in the mean volume dispensed by the two machines.  
 
 \tcblower
 \textbf{Solution:}
-$\bar{x}_A=203$, $\bar{x}_B=206$, $s_A=3$, $s_B=5$, $n_A=10$, $n_B=15$\\[0.1em]
+$\bar{x}_A=203$, $\bar{x}_B=206$, $s_A=3$, $s_B=5$, $n_{\text{A}}=10$, $n_{\text{B}}=15$\\[0.1em]
 
 \begin{math}
 \begin{array}{ll}
-      H_0: & \mu_A=\mu_B\\
-      H_1: & \mu_A \ne \mu_B
+      H_0: & \mu_\text{A}=\mu_\text{B}\\
+      H_1: & \mu_\text{A} \ne \mu_\text{B}
     \end{array}
-\left]
-    \begin{array}{l}
-      \alpha=0.05\\
-      \textnormal{Two-tailed}
-    \end{array}
-  \right.
 \end{math}
 
 \vspace{0.5cm}
@@ -18157,7 +18164,7 @@ Test statistic: $t=\dfrac{203-206}{4.329 \times \sqrt{\dfrac{1}{10}+ \dfrac{1}{1
 
 Critical value: $t_{23,0.975}=-2.069$\\
 
-Since $-1.697>-2.069$, do not reject $\text{H}_0$ at the 5\% level of significance. There is insufficient evidence to suggest that the mean volume dispensed by the two machines is different.
+Since $-1.697>-2.069$, do not reject $\text{H}_0$ at the 5\% level of significance. There is insufficient evidence to suggest that there is a difference in the mean volume dispensed by the two machines.
 
 \end{tcolorbox}
 
@@ -20302,7 +20309,7 @@ There is evidence to suggest that the median number of shutter actuations before
 
 \vspace{-1cm}
 
-Given bivariate data, one variable is selected as the \textbf{predictor} \(x\) , whilst the other variable is selected as the \textbf{response} \(Y\) (and is considered as a random variable). It is common to seek to estimate an unknown \(Y_i\) value given a known \(x_i\) value.
+Given bivariate data, one variable is selected as the \textbf{predictor} \(x_i\), whilst the other variable is selected as the \textbf{response} \(Y_i\) (modelled as a random variable). It is common to seek to estimate an unknown \(Y_i\) value given a known \(x_i\) value.
 
 \vspace{-0.3cm}
 
@@ -20338,20 +20345,21 @@ Given bivariate data, one variable is selected as the \textbf{predictor} \(x\) ,
 \end{minipage}%
   \centering
 \begin{minipage}[c]{.6\textwidth}
-    The theoretical model for linear regression is that of a straight line describing the \textit{best fit} for a relationship between the variables.  However, the bivariate data will not exactly lie along this line due to chance variation.
+    The linear regression model assumes a straight line describing the best fit for a relationship between variables.  However, observed data will not lie exactly along this line due to random variation.
 
 \begin{tcolorbox}[halign title=center,title=The Linear Regression Model,center,colback=red!5,colframe=red!70!black,width=6.5cm]
 \[Y_i=\alpha+\beta x_i+\varepsilon_i\]
 \end{tcolorbox}
  
-$\varepsilon_i$ (\textit{"epsilon"}) are random variables called \textbf{errors} which account for observed values of $y_i$ being greater than or less than those described by the regression line for any given value of $x_i$.
+ 
+The \textbf{errors} $\varepsilon_i$ (\textit{"epsilon"}) represent the random deviation of the response variable from the true regression line.
 
 \end{minipage}
 \end{figure}
 
-The true values of the \textbf{intercept parameter} \(\alpha\) and the \textbf{slope parameter} \(\beta\) are unknown, as they relate to the full \textit{population} of bivariate data. However the sample observations \((x_i,y_i)\) can be used to give estimates, \(a\) and \(b\), of \(\alpha\) and \(\beta\).
+The true values of the \textbf{intercept parameter} \(\alpha\) and the \textbf{slope parameter} \(\beta\) are unknown, as they relate to the full \textit{population} of bivariate data. However, the sample observations \((x_i,y_i)\) can be used to give estimates, \(a\) and \(b\), of \(\alpha\) and \(\beta\).
 
-Since \emph{errors} are the vertical distances between observations \((x_i,y_i)\) and the \emph{true} regression line defined by \(\alpha\) and \(\beta\), they cannot be known precisely. Instead, vertical distances to the \emph{estimated} regression line (using \(a\) and \(b\)) are considered, called \textbf{residuals} (\(e_i\)). Samples of residuals can be seen as estimates of populations of errors.
+Since \emph{errors} are the vertical distances between observations \((x_i,y_i)\) and the \emph{true} regression line defined by \(\alpha\) and \(\beta\), they cannot be known precisely. Instead, vertical distances to the \emph{estimated} regression line (using \(a\) and \(b\)) are considered, called \textbf{residuals} (\(e_i\)). Residuals provide observable estimates of the underlying errors.
 
 The method of least squares produces formulae for \(a\) and \(b\) derived by minimising the sum of squared residuals, \(\sum e_i^2\). These rely on several assumptions about the population of errors given on \textbf{page 5} of the Data Booklet, along with the formulae:
 
@@ -20377,7 +20385,7 @@ This leads to the regression line $\hat{Y}_i=a+bx_i$.
 
 \end{multicols}
 
-Whilst the terms `errors' and `residuals' are often casually used interchangeably, recognising the distinction is helpful. Assumptions about a population of \emph{errors} \(\varepsilon_i\) plays an important role in linear regression, and we learn about those errors by observing a sample of \emph{residuals} \(e_i\).
+Whilst the terms `errors' and `residuals' are often casually used interchangeably, recognising the distinction is helpful. Assumptions about a population of \emph{errors} \(\varepsilon_i\) play an important role in linear regression, and learning about these errors (which are treated as random variables) comes from observing a sample of \emph{residuals} \(e_i\).
 
 \pagebreak
 
@@ -20415,7 +20423,7 @@ The difference between an observed value \(y_i\) and a corresponding fitted valu
             \vspace{-0.5cm}
 \begin{align*}
     \text{Residual}&=\text{Observed}-\text{Fitted}\\
-    &=\hspace{0.7cm}y_i\hspace{0.55cm}-\hspace{0.3cm}\hat{Y}_i
+    e_i&=\hspace{0.7cm}y_i\hspace{0.5cm}-\hspace{0.3cm}\hat{Y}_i
 \end{align*}
 \end{tcolorbox}
         \end{minipage}};
@@ -20522,7 +20530,7 @@ Students sitting a French exam are given a mark for each of the two components: 
     \renewcommand{\arraystretch}{1.2}
         \begin{tabular}{|c|c|c|c|c|}
              \hline
-             Regression Line $\hat{Y}=a+bx$ & Observed $x$ & Observed $y$ & Fitted $\hat{Y}$ & Residual $\epsilon$\\
+             Regression Line $\hat{Y}=a+bx$ & Observed $x$ & Observed $y$ & Fitted $\hat{Y}$ & Residual $\varepsilon$\\
              \hline
              $\hat{Y}=5.3+0.1x$ & 7 & 8 & &  \\
              \hline
@@ -20723,11 +20731,11 @@ The error variance represents the variability of the response variable around th
 \draw[fill] (3.810106,4.7228958) circle (0.05);
 \draw[fill] (3.983993,2.6769287) circle (0.05);
 \draw[fill] (8.486224,3.7495115) circle (0.05);
-    \node at (6,1) {constant variance of the errors $\epsilon_i$};
+    \node at (6,1) {constant variance of the errors $\varepsilon_i$};
     \end{tikzpicture}
 \end{center}
 
-The error variance \(\sigma^2\) is estimated by:
+The error variance \(\sigma^2\) is estimated using the sample of \textit{residuals} as:
 
 \begin{tcolorbox}[halign title=center,title=Estimating the Error Variance,center,colback=red!5,colframe=red!70!black,width=6cm]
 \[s^2=\dfrac{\text{SSR}}{n-2}\]
@@ -20766,7 +20774,7 @@ Students sitting a French exam are given a mark for each of the two components: 
       $S_{xx}=28.92$ & \quad & $S_{yy}=495.0$ & \quad & $S_{xy}=105.3$ & \quad & $n=14$
   \end{tabular}
 \end{center}
-It is determined that linear relationship appears to exist between the variables. 
+It is determined that a linear relationship appears to exist between the variables. 
 \begin{enumerate}
         \item Obtain an estimate $s^2$ for the error variance, $\sigma^2$.
         \item Hence determine the value of $s$ for this bivariate data.
@@ -20875,7 +20883,9 @@ It is determined that linear relationship appears to exist between the variables
 
 \section{The Coefficient of Determination}\label{the-coefficient-of-determination}
 
-The \emph{coefficient of determination}, \(R^2\), is the proportion of the total variation in the response variable, \(Y\), that is explained by the linear regression model. The higher the value of \(R^2\), the less unexplained variation remains in the response variable \(Y_i\). This means that the coefficient of determination is a very useful measure of how well a model explains variation in the data. (However, it does not necessarily imply that a model is appropriate, nor does it imply \emph{causation}).
+The \emph{coefficient of determination}, \(R^2\), is the proportion of the total variation in the response variable, \(Y_i\), that is explained by the linear regression model. The higher the value of \(R^2\), the less unexplained variation remains in the response variable \(Y_i\). This means that the coefficient of determination is a very useful measure of how well a model explains variation in the data. (However, it guarantee that a linear model is appropriate, nor does it imply \emph{causation}).
+
+\vspace{-0.3cm}
 
 \begin{center}
         \begin{tikzpicture}
@@ -20964,7 +20974,7 @@ For the linear regression models covered in this course, the coefficient of dete
         \end{tikzpicture}    
 \end{center}
 
-Both the formula above and the interpretation of the coefficient of determination, as a proportion, implies that \(0\leqslant R^2 \leqslant 1\).
+Both the formula above and the interpretation of the coefficient of determination, as a proportion, implies that \(0\leqslant R^2 \leqslant 1\). Note that \(R^2\) does not indicate the direction of the relationship; the sign of \(r\) must be used for this.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 \textbf{Problem:} 
@@ -20997,7 +21007,7 @@ r&=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}=\dfrac{193.6}{\sqrt{334.9\times 132.9}}=0
 R^2&=r^2=0.9177^2=0.842
 \end{align*}
 
-This suggests that 84.2\% of the variation in listening marks can be explained by the linear model.
+This indicates that 84.2\% of the variation in listening marks can be explained by the linear model.
 
 \end{tcolorbox}
 
@@ -21464,8 +21474,6 @@ Test statistic: $t=\dfrac{b\sqrt{S_{xx}}}{s}=\dfrac{-0.8456\times \sqrt{157.875}
 \end{axis}
 \end{tikzpicture}\\
 
-\vspace{-0.3cm}
-
 Critical value: $t=-2.447$\quad($\alpha=0.05$, two-tailed and $\nu=6$ degrees of freedom)\\
 
 Since $-3.003<-2.447$, reject $\text{H}_0$ at the 5\% level of significance. There is  evidence to suggest that the slope parameter is not zero, so evidence that a linear model would be useful for prediction.
@@ -21716,29 +21724,34 @@ The \textit{parametric} \textbf{Test for Rho} assesses a sample of bivariate dat
 
 \begin{figure}[H]
   \centering
-\begin{minipage}[c]{.25\textwidth}
+\begin{minipage}[c]{.24\textwidth}
   \centering
 \begin{centering}
-\begin{tcolorbox}[halign title=center,title=Test Statistic,center,colback=red!5,colframe=red!70!black,width=5cm,height=2.8cm]
+\begin{tcolorbox}[halign title=center,title=Test Statistic,center,colback=red!5,colframe=red!70!black,height=2.8cm]
 \vspace{-0.3cm}
 \[t_{n-2}=\dfrac{r\sqrt{n-2}}{\sqrt{1-r^2}}\]
 \end{tcolorbox}
 \end{centering}
 \end{minipage}%
   \centering
+\begin{minipage}[c]{.01\textwidth}
+  \centering
+  \phantom{I}
+  \end{minipage}%
+  \centering
 \begin{minipage}[c]{.75\textwidth}
   \centering
-\begin{tcolorbox}[halign title=center,title=Conditions,center,colback=red!5,colframe=red!70!black,width=12cm,height=2.8cm]
+\begin{tcolorbox}[halign title=center,title=Conditions,center,colback=red!5,colframe=red!70!black,height=2.8cm]
 \begin{itemize}
 \setlength\itemsep{-0.3em}
-    \item The observations $(x_i,y_i)$ are independent, obtained through random sampling.
-    \item The variables follow an approximately \newline bivariate normal distribution.
+    \item The observations $(x_i,y_i)$ are independent (through random sampling).\\[-0.7em]
+    \item The variables follow an approximately bivariate normal distribution.
 \end{itemize}
 \end{tcolorbox}
 \end{minipage}
 \end{figure}
 
-Any conclusion should comment on the evidence for a linear association between the two variables.
+Any conclusion should state whether there is sufficient evidence to suggest a linear association between the variables.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 \textbf{Problem:} A bivariate sample has summary statistics:
@@ -21765,7 +21778,7 @@ Test at the 5\% significance level for evidence of a linear association between 
     \end{array}
 \end{math}
 
-\vspace{0.3cm}
+\vspace{0.5cm}
 
 $r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}=\dfrac{-133.5}{\sqrt{157.875\times 188}}=-0.7749$\\[1em]
 
@@ -21804,11 +21817,11 @@ Test statistic: $t=\dfrac{r\sqrt{n-2}}{\sqrt{1-r^2}}=\dfrac{-0.7749\sqrt{8-2}}{\
 \node[below] at (axis cs: 1.9, 0) {$2.447$};
 \node[above] at (axis cs: 2.4,\valueA) {2.5\%};
 \end{axis}
-\end{tikzpicture}\\
+\end{tikzpicture}\\[0.8em]
 
 Critical value: $t=-2.447$\quad ($\alpha=0.05$, two-tailed with $\nu=6$ degrees of freedom)\\
 
-Since $-3.003<-2.447$, reject $\text{H}_0$ at the 5\% level of significance.\newline There is evidence to suggest that there is a linear association between the two variables.
+Since $-3.003<-2.447$, reject $\text{H}_0$ at the 5\% level of significance.\newline There is sufficient evidence to suggest that there is a linear association between the two variables.
 
 \end{tcolorbox}
 
@@ -21833,7 +21846,7 @@ Since $-3.003<-2.447$, reject $\text{H}_0$ at the 5\% level of significance.\new
             $S_{xx}=28.92$ & \quad & $S_{yy}=495.0$ & \quad & $S_{xy}=105.3$ & \quad & $n=14$
         \end{tabular}
     \end{center}
-    Perform a parametric test to assess at the 10\% level of significance whether there is evidence to suggest a linear association exists between $x$ and $y$.
+    Perform a parametric test to assess at the 10\% level of significance whether there is sufficient evidence to suggest a linear association exists between $x$ and $y$.
     \item A guitarist records over the course of several years the price of sets of strings that she buys and the number of days that they last without a string breaking. A scatterplot of the data collected is shown below alongside some summary statistics from computer software.
     \begin{multicols}{2}
     \begin{center}
@@ -21945,7 +21958,7 @@ Since $-3.003<-2.447$, reject $\text{H}_0$ at the 5\% level of significance.\new
 
 \section{\texorpdfstring{Regression Line of \(x\) on \(y\)}{Regression Line of x on y}}\label{regression-line-of-x-on-y}
 
-All least squares regression line covered so far have been \(y\) \emph{on} \(x\) regression lines, calculated with the aim of minimising errors when \emph{predicting} \(y\). However, a \(y\) \emph{on} \(x\) regression line model should not be used to predict \(x\) values.
+All least squares regression lines covered so far have been \(y\) \emph{on} \(x\) regression lines, calculated with the aim of minimising errors when \emph{predicting} \(y\). However, a \(y\) \emph{on} \(x\) regression line model should not be used to predict \(x\) values. This is because the \(y\) on \(x\) line minimises vertical distances, not horizontal distances.
 
 If the prediction of \(x\) values based on \(y\) values is of interest, it is necessary to obtain the equation of an \(x\) \emph{on} \(y\) regression line. This takes a different form and uses different values of \(a\) and \(b\) as shown below:
 
@@ -22045,7 +22058,7 @@ $b=\dfrac{S_{xy}}{S_{yy}}=\dfrac{193.6}{132.9}=1.457$\\[0.1em]
 
 $a=\bar{x}-b\bar{y}=\dfrac{157}{12}-1.457\times \dfrac{149}{12}=-5.008$\\[0.1em]
 
-$\hat{X}=-5.008+1.457y$\\[0.5em]
+$\hat{X}_i=-5.008+1.457y_i$\\[0.5em]
 
 For a student with a listening mark ($y$) of 17:\\[0.1em]
 
@@ -22190,13 +22203,13 @@ The website wishes to allow users the ability to input the number of miles in th
 
 \section{Residual Plots}\label{residual-plots}
 
-As a reminder, a residual is the difference between an observed value \(y_i\) and its predicted value \(\hat{Y}_i\).:
+As a reminder, a residual is the difference between an observed value \(y_i\) and its predicted value \(\hat{Y}_i\):
 
 \[
-\varepsilon_i = y_i - \hat{Y}_i
+e_i = y_i - \hat{Y}_i
 \]
 
-When considering the use of a linear regression model for bivariate data, it is recommended to produce a plot of \emph{residuals} (\(\varepsilon_i\)) against \emph{fitted values} (\(\hat{Y}_i\)), which have been calculated using the sample regression line. The purpose of this is both to ascertain whether a linear regression model is \emph{the most appropriate} model, as well as to judge the validity of several commonly required assumptions, including those required to obtain the estimates for \(\alpha\) and \(\beta\):
+When considering the use of a linear regression model for bivariate data, it is standard practice to produce a plot of \emph{residuals} (\(e_i\)) against \emph{fitted values} (\(\hat{Y}_i\)), which have been calculated using the sample regression line. The purpose of this is both to ascertain whether a linear regression model is \emph{the most appropriate} model, as well as to use the observed \textbf{residuals} to assess whether key assumptions about the \textbf{errors} are reasonable, including those required to obtain the estimates for \(\alpha\) and \(\beta\):
 
 \begin{center}
     \begin{tabular}{ccc}
@@ -22204,7 +22217,7 @@ When considering the use of a linear regression model for bivariate data, it is 
     \end{tabular}
 \end{center}
 
-These correspond to residuals being centered around zero and having constant spread across fitted values.
+These correspond to residuals being centered around zero and having constant spread across the fitted values.
 
 Below is an illustration of a standard scatterplot showing a sample of bivariate data on the left, with a \(y\) on \(x\) regression line included, and a residual plot for the same data on the right. The data points highlighted with larger circles on the \(y\) against \(x\) scatterplot have their residuals similarly highlighted on the residual plot.
 
@@ -22392,7 +22405,7 @@ Below is an illustration of a standard scatterplot showing a sample of bivariate
 
 \vspace{-0.5cm}
 
-From the residual plot, the following can be observed::
+From the residual plot, the following can be observed:
 
 \begin{tcolorbox}[halign title=center,title=Interpreting Residual Plots,center,colback=red!5,colframe=red!70!black,width=11cm]
 \begin{center}
@@ -22515,7 +22528,7 @@ Any clear pattern in the residual plot suggests that the assumptions of the line
 \draw[fill] (4.372138,-0.02781314) circle (0.02);
 \draw[fill] (6.368337,-0.55032886) circle (0.02);
     \node at (6,-2) {Fitted value};
-    \node[rotate=90] at (2.2,0) {Residual};
+    \node[rotate=90] at (2.2,0) {Residuals};
     \node[left] at (3,0) {$0$};
     \end{tikzpicture}
 \end{minipage}%
@@ -22663,7 +22676,7 @@ This suggests that the linear model may be \textbf{appropriate}.
 \draw[black!70,fill=black!70] (8.9,0.324599319218126) circle (0.03);
 
     \node at (6,-2) {Fitted value};
-    \node[rotate=90] at (2.2,0) {Residual};
+    \node[rotate=90] at (2.2,0) {Residuals};
     \node[left] at (3,0) {$0$};
     \end{tikzpicture}
 \end{minipage}%
@@ -22810,7 +22823,7 @@ This suggests that the linear model may be \textbf{not appropriate}.
 \draw[black!70,fill=black!70] (8.9,0.263712646277711) circle (0.03);
 
     \node at (6,-2) {Fitted value};
-    \node[rotate=90] at (2.2,0) {Residual};
+    \node[rotate=90] at (2.2,0) {Residuals};
     \node[left] at (3,0) {$0$};
     \end{tikzpicture}
 \end{minipage}%
@@ -22958,7 +22971,7 @@ This suggests that the linear model may be \textbf{not appropriate}.
 
 
     \node at (6,-2) {Fitted value};
-    \node[rotate=90] at (2.2,0) {Residual};
+    \node[rotate=90] at (2.2,0) {Residuals};
     \node[left] at (3,0) {$0$};
     \end{tikzpicture}
 \end{minipage}%
@@ -24089,7 +24102,7 @@ Use the residual plot to comment on the suitability of the linear model.
     \begin{tikzpicture}
         \draw (0,-2) rectangle (7,2);
         \draw[dashed] (0,0) -- (7,0);
-        \node[rotate=90] at (-0.9,0) {Residual};
+        \node[rotate=90] at (-0.9,0) {Residuals};
         \node[left] at (0,0) {$0$};
         \node at (3.5,-2.35) {Fitted battery cycles};
         \draw[black!70,fill=black!70] (0.393730557642215,-0.118119167292664) circle (0.03);
@@ -24393,7 +24406,7 @@ The simulated data above was actually generated using a \textit{quadratic} relat
 
 Both the scatterplot and the residual plot for this new model of $\sqrt{y}$ on $x$ suggest that it is appropriate for the data.\\
 
-This new, better-fitting model also produces an higher value for the coefficient of determination, of $R^2=0.9402$.
+This new, better-fitting model also produces a higher value for the coefficient of determination, of $R^2=0.9402$.
 
 \end{minipage}%
 \begin{minipage}[c]{.6\textwidth}
@@ -24588,7 +24601,7 @@ Familiar statistics may still be calculated using transformed variables:
     \renewcommand{\arraystretch}{1.5}
     \begin{tabular}{|c|c|c|c|}
     \hline
-        Statistic & For an $y$ on $x$ model & New model & New formula\\
+        Statistic & For a $y$ on $x$ model & New model & New formula\\
     \hline
     &&&\\[-0.8em]
         Sum of Squares for $x$ & $S_{xx}=\Sigma x^2 - \dfrac{\left(\Sigma x \right)^2}{n}$ & $y$ on $\sqrt{x}$ & $S_{\sqrt{x}\sqrt{x}}=\Sigma (\sqrt{x})^2 - \dfrac{\left(\Sigma \sqrt{x} \right)^2}{n}$\\
@@ -24664,7 +24677,7 @@ The line $\hat{Y}=-32.3+1.75x$ was fitted, and a scatterplot and a residual plot
         \draw[thick] (0,-1.5) rectangle (3.6,1.5);
         \draw[dashed] (0,0) -- (3.6,0);
         \node at (1.8,-2.3) {fitted value};
-        \node[rotate=90] at (-1,0) {residual};
+        \node[rotate=90] at (-1,0) {residuals};
         \foreach \x in {0,20,...,120}{
         \draw (0.03*\x,-1.6) -- (0.03*\x,-1.5);
         \node[below] at (0.03*\x,-1.5) {$\scriptstyle{\x}$};
@@ -24729,7 +24742,7 @@ A new linear model was created between speed ($x$) and the square root of the st
         \draw[thick] (0,-1.5) rectangle (3.6,1.5);
         \draw[dashed] (0,0) -- (3.6,0);
         \node at (1.8,-2.3) {fitted value};
-        \node[rotate=90] at (-1,0) {residual};
+        \node[rotate=90] at (-1,0) {residuals};
         \foreach \x in {0,2,...,12}{
         \draw (0.3*\x,-1.6) -- (0.3*\x,-1.5);
         \node[below] at (0.3*\x,-1.5) {$\scriptstyle{\x}$};
@@ -25021,7 +25034,7 @@ A new linear model was created between speed ($x$) and the square root of the st
 \pagebreak
 
 \begin{enumerate}[resume]
-    \item A linear model created by a statistician for variables $x$ and $y$ is used to produce a residual plot. After studying the residual plot, the statistician concludes that the assumption for the population of errors that $\text{V}(\epsilon_i)=0$ is not supported.
+    \item A linear model created by a statistician for variables $x$ and $y$ is used to produce a residual plot. After studying the residual plot, the statistician concludes that the assumption for the population of errors that $\text{V}(\varepsilon_i)=0$ is not supported.
     \begin{enumerate}
         \item Suggest a feature of the residual plot which could have led to their conclusion.
     \end{enumerate}
@@ -25258,7 +25271,7 @@ A new linear model was created between speed ($x$) and the square root of the st
     \begin{tikzpicture}
         \draw[dashed] (13,0) node[left] {$0$} -- (20,0); 
         \draw (13,-1.5) rectangle (20,1.5);
-        \node[above,rotate=90] at (12.5,0) {residual};
+        \node[above,rotate=90] at (12.5,0) {residuals};
         \node[below] at (16.5,-1.5) {fitted value};
         \draw[fill] (14.955800,-0.3144142) circle (0.04);
 \draw[fill] (16.144700,0.32332400) circle (0.04);
@@ -25330,7 +25343,7 @@ A transformation using $y=2^p$ was applied, and a new least squares regression l
     \begin{tikzpicture}
         \draw[dashed] (3,0) node[left] {$0$} -- (10,0); 
         \draw (3,-1.5) rectangle (10,1.5);
-        \node[above,rotate=90] at (2.5,0) {residual};
+        \node[above,rotate=90] at (2.5,0) {residuals};
         \node[below] at (6.5,-1.5) {fitted value};
         \draw[fill] (5.5657917,-0.658154392) circle (0.04);
 \draw[fill] (6.563053,-0.363027048) circle (0.04);

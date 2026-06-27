@@ -2,7 +2,7 @@
 
 \vspace{-0.5cm}
 
-Chapter 10 introduced three hypothesis tests which use a single sample of data to assess the evidence for claims relating to the population mean. For example, a study on the longevity of a brand's light bulbs might check a random sample of such bulbs, to assess whether their is evidence to suggest the population mean lifespan is greater than 1000 hours. The data from the sample is shown below, with the sample mean $\bar{x}$ indicated:
+Chapter 10 introduced three hypothesis tests which use a single sample of data to assess the evidence for claims relating to a population parameter. For example, a study on the longevity of a brand's light bulbs might check a random sample of such bulbs, to assess whether there is sufficient evidence to suggest the population mean lifespan is greater than 1000 hours. The data from the sample is shown below, with the sample mean $\bar{x}$ indicated:
 
 \begin{figure}[H]
   \centering
@@ -54,11 +54,11 @@ Chapter 10 introduced three hypothesis tests which use a single sample of data t
 \end{minipage}
 \end{figure}
 
-This use of a *single sample* of data, investigating a *single* population parameter, is an example of a **one-sample test**.
+This use of a *one* sample of data, investigating *one* population's parameter, requires a **one-sample test**.
 
-Should a study instead wish to compare the longevity of *two different brands' light bulbs* they would instead check *two samples* of data: one sample from *Brand A* and one sample from *Brand B*. In such a case, a typical set of hypotheses might instead ask whether there is evidence to suggest that there is a difference between the population mean lifespan for Brand A, $\mu_A$, and the population mean lifespan for Brand B, $\mu_B$. The data from the samples are shown below, with the sample means $\bar{x}_A$ and $\bar{x}_B$ indicated:
+Should a study instead wish to compare the longevity of *two different brands' light bulbs* they would instead take *two samples* of data: one sample from *Brand A* and one sample from *Brand B*. In such a case, a typical set of hypotheses might instead ask whether there is sufficient evidence to suggest that there is a difference between the population mean lifespan for Brand A, $\mu_\text{A}$, and the population mean lifespan for Brand B, $\mu_\text{B}$. The data from the samples are shown below, with the sample means $\bar{x}_\text{A}$ and $\bar{x}_\text{B}$ indicated:
 
-\vspace{-0.5cm}
+\vspace{-0.2cm}
 
 \begin{figure}[H]
   \centering
@@ -69,8 +69,8 @@ Should a study instead wish to compare the longevity of *two different brands' l
 \begin{center}
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \mu_A=\mu_B\\[0.5em]
-      \text{H}_1: & \mu_A\ne\mu_B
+      \text{H}_0: & \mu_\text{A}=\mu_\text{B}\\[0.5em]
+      \text{H}_1: & \mu_\text{A}\ne\mu_\text{B}
     \end{array}
 \end{math}
 \end{center}
@@ -93,7 +93,7 @@ Should a study instead wish to compare the longevity of *two different brands' l
 \foreach \x in {900,1000,...,1200}
 \node at (0.03*\x-26.5,-0.3) {\x};
 \draw[semithick,dashed] (0.03*1010-26.5,0) -- (0.03*1010-26.5,1.2);
-\node at (0.03*1010-26.5,1.4) {$\bar{x}_A$};
+\node at (0.03*1010-26.5,1.4) {$\bar{x}_\text{A}$};
 
 \draw[fill=black!25] (0.03*925-26.5,0.5) circle (3pt);
 \draw[fill=black!25] (0.03*960-26.5,0.5) circle (3pt);
@@ -110,7 +110,7 @@ Should a study instead wish to compare the longevity of *two different brands' l
 \foreach \x in {900,1000,...,1200}
 \node at (0.03*\x-26.5,-2.3) {\x};
 \draw[semithick,dashed] (0.03*1059-26.5,-2) -- (0.03*1059-26.5,-0.8);
-\node at (0.03*1059-26.5,-0.6) {$\bar{x}_B$};
+\node at (0.03*1059-26.5,-0.6) {$\bar{x}_\text{B}$};
 
 \draw[fill=black!25] (0.03*950-26.5,-1.5) circle (3pt);
 \draw[fill=black!25] (0.03*970-26.5,-1.5) circle (3pt);
@@ -128,12 +128,12 @@ Should a study instead wish to compare the longevity of *two different brands' l
 \end{minipage}
 \end{figure}
 
-Such a test, comparing the parameters of *two* populations by using *two samples*, is an example of a **two-sample test**.  Either one-tailed or two-tailed tests can be performed:
+Such a test, comparing the parameters of *two* populations by using *two samples*, requires a **two-sample test**.  Either one-tailed or two-tailed tests can be performed:
 
 \begin{center}
     \begin{tabular}{ccccc}
-        $\text{H}_0:\mu_A=\mu_B$ & \qquad \qquad & $\text{H}_0:\mu_A = \mu_B$ & \qquad \qquad & $\text{H}_0:\mu_A=\mu_B$\\
-        $\text{H}_1:\mu_A \ne \mu_B$ & & $\text{H}_1:\mu_A>\mu_B$ & & $\text{H}_1:\mu_A<\mu_B$ 
+        $\text{H}_0:\mu_\text{A}=\mu_\text{B}$ & \qquad \qquad & $\text{H}_0:\mu_\text{A} = \mu_\text{B}$ & \qquad \qquad & $\text{H}_0:\mu_\text{A}=\mu_\text{B}$\\
+        $\text{H}_1:\mu_\text{A} \ne \mu_\text{B}$ & & $\text{H}_1:\mu_\text{A}>\mu_\text{B}$ & & $\text{H}_1:\mu_\text{A}<\mu_\text{B}$ 
     \end{tabular}
 \end{center}
 
@@ -141,7 +141,7 @@ Such a test, comparing the parameters of *two* populations by using *two samples
 
 ## Two-Sample \textit{z}-test for Population Means
 
-If independent random samples of sizes $n_1$ and $n_2$ are obtained from each of two normally distributed populations which have population means $\mu_1$ and $\mu_2$ respectively, and population standard deviations $\sigma_1$ and $\sigma_2$ respectively, then the difference in sample means $\bar{X}_1$ and $\bar{X}_2$ is also normally distributed, as below:
+If **independent** random samples of sizes $n_1$ and $n_2$ are obtained from each of two normally distributed populations which have population means $\mu_1$ and $\mu_2$ respectively, and population standard deviations $\sigma_1$ and $\sigma_2$ respectively, then the difference in sample means $\bar{X}_1$ and $\bar{X}_2$ is also normally distributed, as below:
 
 \[\overline{X}_1\sim \text{N}\left(\mu_1,\frac{\sigma_1^2}{n_1}\right) \quad \text{and} \quad \overline{X}_2\sim \text{N}\left(\mu_2,\frac{\sigma_2^2}{n_2}\right)\quad\implies\quad\overline{X}_1-\overline{X}_2\sim \text{N}\left(\mu_1-\mu_2,\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}\right)\]
 
@@ -151,7 +151,7 @@ This leads to the test statistic for the *two-sample* $z$*-test for population m
 
 From the Data Booklet:
 \vspace{-0.1cm}
-\[Z=\dfrac{(\overline{X}_1-\overline{X}_2)-(\mu_1-\mu_2)}{\sqrt{\dfrac{\sigma_1^2}{n_1}+\dfrac{\sigma_2^2}{n_2}}}\]
+\[Z\sim\dfrac{(\overline{X}_1-\overline{X}_2)-(\mu_1-\mu_2)}{\sqrt{\dfrac{\sigma_1^2}{n_1}+\dfrac{\sigma_2^2}{n_2}}}\]
 
 \vfill\null
 \columnbreak
@@ -163,6 +163,8 @@ Test statistic: $z=\dfrac{\overline{x}_1-\overline{x}_2}{\sqrt{\dfrac{\sigma_1^2
 \end{centering}
 
 \end{multicols}
+
+\vspace{-0.2cm}
 
 \begin{centering}
 \tcbset{width=14cm}
@@ -178,23 +180,17 @@ Test statistic: $z=\dfrac{\overline{x}_1-\overline{x}_2}{\sqrt{\dfrac{\sigma_1^2
  Note when sample sizes $n_1$ and $n_2$ are greater than 20 the *Central Limit Theorem* can be invoked, so the sample means are at least approximately normally distributed regardless of the distribution of the underlying population. Also, for larger sample sizes the sample standard deviations $s_1$ and $s_2$ might be taken as *sufficiently accurate estimates* for the *population* standard deviations $\sigma_1$ and $\sigma_2$.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} To compare the longevity of two brands' light bulbs, a random sample of eight bulbs from \textit{AlwaysBrite} and eight bulbs from \textit{BulbCity} are tested. The sample of AlwaysBrite bulbs had have a mean lifespan 1015 hours, with a sample mean of 1059 hours before failure for BulbCity. Assuming that the lifespan for both populations of bulbs is known to be normally distributed, with a standard deviation of 84 hours, use a parametric test to determine whether there is evidence for a difference in longevity between the brands.
+\textbf{Problem:} To compare the longevity of two brands' light bulbs, a random sample of eight bulbs from \textit{AlwaysBrite} and eight bulbs from \textit{BulbCity} are tested. The sample of AlwaysBrite bulbs had a mean lifespan 1015 hours, with a sample mean of 1059 hours before failure for BulbCity. Assuming that the lifespan for both populations of bulbs is known to be normally distributed, with a standard deviation of 84 hours, use a parametric test to determine whether there is evidence for a difference in longevity between the brands.
 
 \tcblower
 \textbf{Solution:}
-$\bar{x}_A=1015$, $\bar{x}_B=1059$, $\sigma_A=84$, $\sigma_B=84$ $n_A=8$, $n_B=8$\\[0.1em]
+$\bar{x}_A=1015$, $\bar{x}_B=1059$, $\sigma_{\text{A}}=84$, $\sigma_{\text{B}}=84$, $n_{\text{A}}=8$, $n_{\text{B}}=8$\\[0.1em]
 
 \begin{math}
 \begin{array}{ll}
-      H_0: & \mu_A=\mu_B\\
-      H_1: & \mu_A\ne \mu_B
+      H_0: & \mu_\text{A}=\mu_\text{B}\\
+      H_1: & \mu_\text{A}\ne \mu_\text{B}
     \end{array}
-\left]
-    \begin{array}{l}
-      \alpha=0.05\\
-      \textnormal{Two-tailed}
-    \end{array}
-  \right.
 \end{math}
 
 \vspace{0.5cm}
@@ -234,12 +230,13 @@ Test statistic: $z=\dfrac{1015-1059}{\sqrt{\dfrac{84^2}{8}+\dfrac{84^2}{8}}}=-1.
 \node[below] at (axis cs: 1.96, 0) {$1.96$};
 \node[above] at (axis cs: 2.4,\valueC) {2.5\%};
 \node[above] at (axis cs: 0,\valueB)  {$z$};
+\draw[very thick] (axis cs: -1.05,0) -- (axis cs: -1.05,0.44) node[above] {$-1.05$};
 \end{axis}
 \end{tikzpicture}\\[0.1em]
 
-Critical value: $z_{0.025}=-1.96$\\
+Critical value: $z=-1.96$\\
 
-Since $-1.05>-1.96$, do not reject $\text{H}_0$ at the 5\% level of significance. There is insufficient evidence to suggest that there is a difference in the mean lifespans of the two brands of light bulbs.
+Since $-1.05>-1.96$, do not reject $\text{H}_0$ at the 5\% level of significance. There is insufficient evidence to suggest a difference in the mean lifespans of the two brands of light bulbs.
 
 \end{tcolorbox}
 
@@ -309,28 +306,28 @@ Test the hypothesis that the minor overhaul has had no effect on the mean mass o
 
 If random, independent samples of data are obtained from each of two populations, and the two \textbf{sample proportions} $\hat{p}_1$ and $\hat{p}_2$ are obtained, then a *two-sample* $z$*-test for population proportions* may be used to explore evidence for a difference in the \textbf{population proportions}, $p_1$ and $p_2$.  
 
-The test statistic is provided in the SQA Data Booklet, and it uses an *estimate of the pooled population proportion*, $\hat{p}$:
+The test statistic is provided in the Data Booklet, and it uses an *estimate of the pooled population proportion*, $\hat{p}$:
 
 \begin{centering}
 \tcbset{width=13cm}
 \begin{tcolorbox}[adjusted title=For a two-sample $z$-test for population proportions:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-Test statistic: $z=\dfrac{\hat{p}_1-\hat{p}_2}{\sqrt{\hat{p} \hat{q} \left( \dfrac{1}{n_1}+ \dfrac{1}{n_2}\right)}}$ \qquad where \qquad $\hat{p}=\dfrac{\hat{p_1}n_1+n_2\hat{p}_2}{n_1+n_2}$
+Test statistic: $z=\dfrac{\hat{p}_1-\hat{p}_2}{\sqrt{\hat{p} \hat{q} \left( \dfrac{1}{n_1}+ \dfrac{1}{n_2}\right)}}$ \qquad where \qquad $\hat{p}=\dfrac{n_1\hat{p_1}+n_2\hat{p}_2}{n_1+n_2}$
 \end{tcolorbox}
 \end{centering}
 
-The test statistic may be derived from the use of the normal approximation to a binomial distribution to describe the approximate distribution of the sample proportion (see section 10.5) and the distribution of the difference of two *independent* sample proportions (similar to section 15.1). The conditions for the use of this hypothesis follow.
+The test statistic may be derived from the use of the normal approximation to a binomial distribution to describe the approximate distribution of the sample proportion (see section 10.5) and the distribution of the difference of two *independent* sample proportions (similar to section 15.1). The conditions required for the use of this hypothesis test follow.
 
 \begin{centering}
 \tcbset{width=14cm}
 \begin{tcolorbox}[adjusted title=Conditions for valid use of the two-sample $z$-test for population proportions:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
-    \item Each of $n_1 \hat{p}_1,n_1 \hat{q}_1,n_2 \hat{p}_2$ and $n_2 \hat{q}_2$ are \textbf{greater than 5}.
+    \item Each of $n_1 \hat{p}_1,n_1 \hat{q}_1,n_2 \hat{p}_2$ and $n_2 \hat{q}_2$ must be \textbf{greater than 5}.
     \item The data was obtained through \textbf{random} and \textbf{independent samples}.
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
 
-This parametric test can take one-tailed or two-tailed hypotheses which relation to the population proportions, $p_1$ and $p_2$:
+This parametric test can take one-tailed or two-tailed hypotheses which relate to the population proportions, $p_1$ and $p_2$:
 
 \begin{center}
     \begin{tabular}{ccccc}
@@ -340,7 +337,7 @@ This parametric test can take one-tailed or two-tailed hypotheses which relation
 \end{center}
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A sample of 50 randomly selected men with high triglyceride levels consumed 2 tablespoons of oat bran daily for 6 weeks. After 6 weeks, 60\% of the men had lowered their triglyceride levels. A sample of 80 men consumed 2 tablespoons of wheat bran for 6 weeks. After 6 weeks 25\% had lower triglyceride levels. Assess the evidence for a difference in the proportions at the 1\% significance level.
+\textbf{Problem:} A sample of 50 randomly selected men with high triglyceride levels consumed 2 tablespoons of oat bran daily for 6 weeks. After 6 weeks, 60\% of the men had lowered their triglyceride levels. A sample of 80 men consumed 2 tablespoons of wheat bran for 6 weeks. After 6 weeks, 25\% had lower triglyceride levels. Assess the evidence for a difference in the proportions at the 1\% significance level.
 
 \tcblower
 \textbf{Solution:}
@@ -351,12 +348,6 @@ $\hat{p}_{oat}=0.6$, $\hat{p}_{wheat}=0.25$, $n_{oat}=50$, $n_{wheat}=80$\\[0.1e
       H_0: & p_{oat}=p_{wheat}\\
       H_1: & p_{oat} \ne p_{wheat}
     \end{array}
-\left]
-    \begin{array}{l}
-      \alpha=0.01\\
-      \textnormal{Two-tailed}
-    \end{array}
-  \right.
 \end{math}
 
 \vspace{0.5cm}
@@ -399,12 +390,13 @@ Test statistic: $z=\dfrac{0.6-0.25}{\sqrt{0.385 \times 0.615 \left( \dfrac{1}{50
 \node[above] at (axis cs: 2.2,\valueA) {0.5\%};
 \node[below] at (axis cs: -1.96, 0) {$-2.58$};
 \node[above] at (axis cs: -2.2,\valueA) {0.5\%};
+\draw[very thick,stealth-] (axis cs: 3,0.2) -- (axis cs: 2,0.4) node[above] {$3.99$};
 \end{axis}
 \end{tikzpicture}\\
 
-Critical value: $z_{0.995}=2.58$\\
+Critical value: $z=2.58$\\
 
-Since $3.99>2.58$, reject $\text{H}_0$ at the 1\% level of significance. There is evidence to suggest that the proportions of men who experience a reduction in triglyceride levels by consuming oat bran or wheat bran daily are not the same. 
+Since $3.99>2.58$, reject $\text{H}_0$ at the 1\% level of significance. There is sufficient evidence to suggest that the proportions of men who experience a reduction in triglyceride levels by consuming oat bran or wheat bran daily are not the same. 
 
 \end{tcolorbox}
 
@@ -463,7 +455,7 @@ Since $3.99>2.58$, reject $\text{H}_0$ at the 1\% level of significance. There i
 
 ## Two-Sample \textit{t}-test for Population Means
 
-When one or both sample sizes are small and population standard deviations are unknown, a two-sample $z$-test for population means is not appropriate. Instead, a *two-sample* $t$*-test for population means* may be used, given certain conditions are met:
+If random, independent samples of data are obtained from each of two *normally distributed* populations with **unknown population standard deviations**, then a *two-sample* $t$*-test for population means* may be used to explore evidence for a difference in the \textbf{population means}, $\mu_1$ and $\mu_2$. This is particularly important where sample sizes are not sufficiently large to assume the sample standard deviations may be used as reliable estimates for the population standard deviations (in which case a $z$-test might be used).
 
 \begin{centering}
 \tcbset{width=13cm}
@@ -476,7 +468,7 @@ When one or both sample sizes are small and population standard deviations are u
 \end{tcolorbox}
 \end{centering}
 
-The test statistic is provided in the SQA Data Booklet, and follows a $t$-distribution with $\nu=n_1+n_2-2$ degrees of freedom. It requires calculation of a *pooled estimate of the variance*, $s^2$, and as with the two-sample $z$-test, a more streamline version of the test statistic under a null hypothesis of $\mu_1=\mu_2$ is as follows:
+The test statistic is provided in the Data Booklet, and follows a $t$-distribution with $\nu=n_1+n_2-2$ degrees of freedom. It requires calculation of a *pooled estimate of the variance*, $s^2$, and as with the two-sample $z$-test, a more streamlined version of the test statistic under a null hypothesis of $\mu_1=\mu_2$ is as follows:
 
 \begin{centering}
 \tcbset{width=15.5cm}
@@ -485,24 +477,20 @@ Test statistic: $t_{n_1+n_2-2}=\dfrac{\bar{x}_1-\bar{x}_2}{s\sqrt{\dfrac{1}{n_1}
 \end{tcolorbox}
 \end{centering}
 
+Whilst $t$-tests are especially valuable when dealing with small sample sizes, they remain the statistically *correct* test to use even when dealing with very large samples. Modern computing power reduces the need to switch to a $z$-test for very large samples where critical values for the $t$-distribution may not have been so easily obtain.
+
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} It is known that the volume of hot drinks dispensed by a type of machine is normally distributed. A random sample of 10 hot drinks from Dispenser A has a mean volume of 203 ml and a standard deviation of 3 ml. A random sample of 15 hot drinks from Dispenser B has corresponding values of 206 ml and 5 ml. Test, at the 5\% significance level, the hypothesis that there is no difference in the mean volume dispensed by the two machines.  
 
 \tcblower
 \textbf{Solution:}
-$\bar{x}_A=203$, $\bar{x}_B=206$, $s_A=3$, $s_B=5$, $n_A=10$, $n_B=15$\\[0.1em]
+$\bar{x}_A=203$, $\bar{x}_B=206$, $s_A=3$, $s_B=5$, $n_{\text{A}}=10$, $n_{\text{B}}=15$\\[0.1em]
 
 \begin{math}
 \begin{array}{ll}
-      H_0: & \mu_A=\mu_B\\
-      H_1: & \mu_A \ne \mu_B
+      H_0: & \mu_\text{A}=\mu_\text{B}\\
+      H_1: & \mu_\text{A} \ne \mu_\text{B}
     \end{array}
-\left]
-    \begin{array}{l}
-      \alpha=0.05\\
-      \textnormal{Two-tailed}
-    \end{array}
-  \right.
 \end{math}
 
 \vspace{0.5cm}
@@ -552,7 +540,7 @@ Test statistic: $t=\dfrac{203-206}{4.329 \times \sqrt{\dfrac{1}{10}+ \dfrac{1}{1
 
 Critical value: $t_{23,0.975}=-2.069$\\
 
-Since $-1.697>-2.069$, do not reject $\text{H}_0$ at the 5\% level of significance. There is insufficient evidence to suggest that the mean volume dispensed by the two machines is different.
+Since $-1.697>-2.069$, do not reject $\text{H}_0$ at the 5\% level of significance. There is insufficient evidence to suggest that there is a difference in the mean volume dispensed by the two machines.
 
 \end{tcolorbox}
 
