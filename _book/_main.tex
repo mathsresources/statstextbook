@@ -17929,7 +17929,7 @@ Test the hypothesis that the minor overhaul has had no effect on the mean mass o
 
 If random, independent samples of data are obtained from each of two populations, and the two \textbf{sample proportions} \(\hat{p}_1\) and \(\hat{p}_2\) are obtained, then a \emph{two-sample} \(z\)\emph{-test for population proportions} may be used to explore evidence for a difference in the \textbf{population proportions}, \(p_1\) and \(p_2\).
 
-The test statistic is provided in the Data Booklet, and it uses an \emph{estimate of the pooled population proportion}, \(\hat{p}\):
+The test statistic, provided in the Data Booklet, uses an \emph{estimate of the pooled population proportion}, \(\hat{p}\):
 
 \begin{centering}
 \tcbset{width=13cm}
@@ -18100,7 +18100,7 @@ Test statistic: $t_{n_1+n_2-2}=\dfrac{\bar{x}_1-\bar{x}_2}{s\sqrt{\dfrac{1}{n_1}
 \end{tcolorbox}
 \end{centering}
 
-Whilst \(t\)-tests are especially valuable when dealing with small sample sizes, they remain the statistically \emph{correct} test to use even when dealing with very large samples. Modern computing power reduces the need to switch to a \(z\)-test for very large samples where critical values for the \(t\)-distribution may not have been so easily obtain.
+While \(t\)-tests are especially valuable when dealing with small sample sizes, they remain the statistically \emph{correct} test to use even when dealing with very large samples. Modern computing power reduces the need to switch to a \(z\)-test for very large samples where critical values for the \(t\)-distribution may not have been so easily obtained.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} It is known that the volume of hot drinks dispensed by a type of machine is normally distributed. A random sample of 10 hot drinks from Dispenser A has a mean volume of 203 ml and a standard deviation of 3 ml. A random sample of 15 hot drinks from Dispenser B has corresponding values of 206 ml and 5 ml. Test, at the 5\% significance level, the hypothesis that there is no difference in the mean volume dispensed by the two machines.  
@@ -18215,7 +18215,7 @@ Since $-1.697>-2.069$, do not reject $\text{H}_0$ at the 5\% level of significan
         Brand B & 37.2 & 36.4 & 39.7 & 37.5 & 37.2 & 40.5 & 38.8 & 38.2 & 37.7 & 36.6
     \end{tabular}
     \end{center}
-    Carry out a hypothesis test to assess for any evidence of a different in the brands' durability, stating one assumption.
+    Carry out a hypothesis test to assess for any evidence of a difference in the brands' durability, stating one assumption.
     \item The U.S. Bureau of Labour Statistics conducts monthly surveys to estimate hourly earnings of nonsupervisory employees in various industry groups. Results of the surveys can be found in Employment and Earnings. Independent random samples of 14 mine workers and 17 construction workers yielded the following statistics.
     \begin{center}
     \begin{tabular}{c|cc}
@@ -18232,7 +18232,7 @@ Since $-1.697>-2.069$, do not reject $\text{H}_0$ at the 5\% level of significan
 
 \section{\texorpdfstring{Paired \textit{t}-test for the Population Mean Difference}{Paired -test for the Population Mean Difference}}\label{paired--test-for-the-population-mean-difference}
 
-Suppose six randomly selected athletes have their times to complete a 100 metres sprint recorded, then they each repeat the sprint a month later after some training on technique. Here the two sets of data, \emph{time before} and \emph{time after}, are \emph{not independent}. Instead, each value from the first set of data pairs with a value from the second set; this is called \emph{paired data}. In such a case, the previous two-sample tests in this chapter would be inappropriate. Instead, a single sample of \emph{differences}, \(d_i\), for each pair should be calculated and the mean difference assessed using a \emph{paired} \(t\)\emph{-test}. Possible hypotheses would then related to the population mean difference, \(\mu_d\):
+Suppose six randomly selected athletes have their times to complete a 100 metres sprint recorded, then they each repeat the sprint a month later after some training on technique. Here the two sets of data, \emph{time before} and \emph{time after}, are \emph{not independent}. Instead, each value from the first set of data pairs with a value from the second set; this is called \emph{paired data}. In such a case, the previous two-sample tests in this chapter would be inappropriate. Instead, a single sample of \emph{differences}, \(d_i\), for each pair should be calculated and the mean difference assessed using a \emph{paired} \(t\)\emph{-test}. Possible hypotheses would then relate to the population mean difference, \(\mu_d\):
 
 \begin{center}
     \begin{tabular}{ccccc}
@@ -18260,14 +18260,14 @@ Test statistic: $t_{n-1}=\dfrac{\bar{d}-\mu_d}{\dfrac{s_d}{\sqrt{n}}}$
 \tcbset{width=11cm,height=2.7cm}
 \begin{tcolorbox}[adjusted title=Conditions for valid use of a paired $t$-test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
-    \item The \textit{populations of differences} is \textbf{normally distributed}.
+    \item The \textit{population of differences} is \textbf{normally distributed}.
     \item The data was obtained through \textbf{random sampling}.
 \end{itemize}
 \end{tcolorbox}
 \end{minipage}
 \end{figure}
 
-Careful attention to how the sample differences was created is needed for one-tailed hypotheses.
+Careful attention to how the sample of differences was created is needed for one-tailed hypotheses.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Six randomly selected children have their IQ measured before and after starting a regular programme of exercise.
@@ -18299,12 +18299,6 @@ $\bar{d}=1.33$, $s_d=3.88$, $n=6$\\[0.1em]
       H_0: & \mu_d=0\\
       H_1: & \mu_d \ne 0
     \end{array}
-\left]
-    \begin{array}{l}
-      \alpha=0.05\\
-      \textnormal{Two-tailed}
-    \end{array}
-  \right.
 \end{math}
 
 \vspace{0.3cm}
@@ -18347,10 +18341,11 @@ Test statistic: $t=\dfrac{1.33-0}{\dfrac{3.88}{\sqrt{6}}}=0.840$
 \node[above] at (axis cs: -2.4,\valueA) {2.5\%};
 \node[below] at (axis cs: 2.2, 0) {$2.571$};
 \node[above] at (axis cs: 2.4,\valueA) {2.5\%};
+\draw[very thick] (axis cs: 0.84,0) -- (axis cs: 0.84,0.44) node[above] {$0.840$};
 \end{axis}
 \end{tikzpicture}\\[0.1em]
 
-Critical value: $t_{5,0.975}=2.571$\\
+Critical value: $t=2.571$\\
 
 Since $0.840<2.571$, do not reject $\text{H}_0$ at the 5\% level of significance. There is insufficient evidence to suggest that the mean difference in IQ measurement is not zero, and so no evidence that exercise affects IQ measurement.
 
@@ -18457,11 +18452,11 @@ Since $0.840<2.571$, do not reject $\text{H}_0$ at the 5\% level of significance
     \end{tabular}
     \end{center}
     Assuming the differences in pairs to be normally distributed, test, at the 5\% level of significance the hypothesis of no difference in the mean mark on the two papers.
-    \item Blood pressure levels were measured in a random sample of 19 men with a particular illness, aged 50 to 59 years. The sample mean systolic blood pressure was 146.6 mmHg and the sample standard deviation was 17.9 mmHG. In a second random sample of 15 men, aged 50 to 59 years, in good health, the mean systolic blood pressure reading was 137.4 mmHg and the standard deviation was 15.1 mmHG.\\[1em]
+    \item Blood pressure levels were measured in a random sample of 19 men with a particular illness, aged 50 to 59 years. The sample mean systolic blood pressure was 146.6 mmHg and the sample standard deviation was 17.9 mmHG. In a second random sample of 15 men, aged 50 to 59 years, in good health, the mean systolic blood pressure reading was 137.4 mmHg and the standard deviation was 15.1 mmHg.\\[1em]
 Assess the evidence at the 5\% level that the mean systolic blood pressure in men with the illness is greater than that of men in good health.
     \item In a random sample of 120 workers from a factory in city A, it was found that 5\% were unable to read, while in a random sample of 200 workers from a similar factory in city B, it was found that 11\% were unable to read.
     \begin{enumerate}
-        \item Perform a parametric test to assess at the 10\% level of significant whether there is evidence of a difference in the proportions of readers in each location.
+        \item Perform a parametric test to assess at the 10\% level of significance whether there is evidence of a difference in the proportions of readers in each location.
         \item Explain why the sampling approach chosen means that it may not be appropriate to use data gathered in this way to reach a conclusion of a difference in the proportions of those able to read between the two cities.
     \end{enumerate}
     \item The standard deviation of the scores obtained on a particular test of mathematical ability is known to be 15. A school experiments with a new method of teaching which is supposed to increase general mathematical awareness. A group of 36 students are randomly assigned to one of two classes. The 20 students in Class A are given the new method of teaching while the other 16 students in Class B are taught in the standard way.\\[1em]
