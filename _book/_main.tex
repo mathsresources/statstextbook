@@ -17767,12 +17767,12 @@ If \textbf{independent} random samples of sizes \(n_1\) and \(n_2\) are obtained
 
 \[\overline{X}_1\sim \text{N}\left(\mu_1,\frac{\sigma_1^2}{n_1}\right) \quad \text{and} \quad \overline{X}_2\sim \text{N}\left(\mu_2,\frac{\sigma_2^2}{n_2}\right)\quad\implies\quad\overline{X}_1-\overline{X}_2\sim \text{N}\left(\mu_1-\mu_2,\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}\right)\]
 
-This leads to the test statistic for the \emph{two-sample} \(z\)\emph{-test for population means} given in the data booklet. Under the typical null hypothesis of no difference between the population means, or \(\mu_1-\mu_2=0\), the test statistic in the box may be used.
+This leads to the test statistic for the \emph{two-sample} \(z\)\emph{-test for population means} given in the data booklet. Under the typical null hypothesis of no difference between the population means, or \(\mu_1-\mu_2=0\), the test statistic in the box may be used. From the Data Booklet:
+
+\vspace{-0.2cm}
 
 \begin{multicols}{2}
 
-From the Data Booklet:
-\vspace{-0.1cm}
 \[Z\sim\dfrac{(\overline{X}_1-\overline{X}_2)-(\mu_1-\mu_2)}{\sqrt{\dfrac{\sigma_1^2}{n_1}+\dfrac{\sigma_2^2}{n_2}}}\]
 
 \vfill\null
@@ -17964,12 +17964,12 @@ This parametric test can take one-tailed or two-tailed hypotheses which relate t
 
 \tcblower
 \textbf{Solution:}
-$\hat{p}_{oat}=0.6$, $\hat{p}_{wheat}=0.25$, $n_{oat}=50$, $n_{wheat}=80$\\[0.1em]
+$\hat{p}_\text{oat}=0.6$, $\hat{p}_\text{wheat}=0.25$, $n_\text{oat}=50$, $n_\text{wheat}=80$\\[0.1em]
 
 \begin{math}
 \begin{array}{ll}
-      H_0: & p_{oat}=p_{wheat}\\
-      H_1: & p_{oat} \ne p_{wheat}
+      H_0: & p_\text{oat}=p_\text{wheat}\\
+      H_1: & p_\text{oat} \ne p_\text{wheat}
     \end{array}
 \end{math}
 
@@ -17979,8 +17979,9 @@ Estimate of pooled population proportion: $\hat{p}=\dfrac{0.6\times50+0.25\times
 
 \vspace{0.5cm}
 
-Test statistic: $z=\dfrac{0.6-0.25}{\sqrt{0.385 \times 0.615 \left( \dfrac{1}{50}+ \dfrac{1}{80}\right)}}=3.99$
-\hspace{3cm}
+Test statistic: $z=\dfrac{0.6-0.25}{\sqrt{0.385 \times 0.615 \left( \dfrac{1}{50}+ \dfrac{1}{80}\right)}}=3.99$\\
+
+Critical value: $z=2.58$\hspace{6cm}
 \begin{tikzpicture}[overlay]
 \begin{axis}[
   no markers, 
@@ -18016,8 +18017,6 @@ Test statistic: $z=\dfrac{0.6-0.25}{\sqrt{0.385 \times 0.615 \left( \dfrac{1}{50
 \draw[very thick,stealth-] (axis cs: 3,0.2) -- (axis cs: 2,0.4) node[above] {$3.99$};
 \end{axis}
 \end{tikzpicture}\\
-
-Critical value: $z=2.58$\\
 
 Since $3.99>2.58$, reject $\text{H}_0$ at the 1\% level of significance. There is sufficient evidence to suggest that the proportions of men who experience a reduction in triglyceride levels by consuming oat bran or wheat bran daily are not the same. 
 
@@ -18108,7 +18107,7 @@ Whilst \(t\)-tests are especially valuable when dealing with small sample sizes,
 
 \tcblower
 \textbf{Solution:}
-$\bar{x}_A=203$, $\bar{x}_B=206$, $s_A=3$, $s_B=5$, $n_{\text{A}}=10$, $n_{\text{B}}=15$\\[0.1em]
+$\bar{x}_\text{A}=203$, $\bar{x}_\text{B}=206$, $s_\text{A}=3$, $s_\text{B}=5$, $n_{\text{A}}=10$, $n_{\text{B}}=15$\\[0.1em]
 
 \begin{math}
 \begin{array}{ll}
@@ -18125,8 +18124,9 @@ $s=\sqrt{18.739}=4.329$
 
 \vspace{0.5cm}
 
-Test statistic: $t=\dfrac{203-206}{4.329 \times \sqrt{\dfrac{1}{10}+ \dfrac{1}{15}}}=-1.697$
-\hspace{3cm}
+Test statistic: $t=\dfrac{203-206}{4.329 \times \sqrt{\dfrac{1}{10}+ \dfrac{1}{15}}}=-1.697$\\
+
+Critical value: $t=-2.069$\hspace{6cm}
 \begin{tikzpicture}[overlay]
 \begin{axis}[
   no markers, 
@@ -18159,10 +18159,9 @@ Test statistic: $t=\dfrac{203-206}{4.329 \times \sqrt{\dfrac{1}{10}+ \dfrac{1}{1
 \node[above] at (axis cs: -2.4,\valueA) {2.5\%};
 \node[below] at (axis cs: 2.2, 0) {$2.069$};
 \node[above] at (axis cs: 2.4,\valueA) {2.5\%};
+\draw[very thick] (axis cs: -1.697,0) -- (axis cs: -1.697,0.44) node[above] {$-1.697$};
 \end{axis}
-\end{tikzpicture}\\
-
-Critical value: $t_{23,0.975}=-2.069$\\
+\end{tikzpicture}\\[0.5em]
 
 Since $-1.697>-2.069$, do not reject $\text{H}_0$ at the 5\% level of significance. There is insufficient evidence to suggest that there is a difference in the mean volume dispensed by the two machines.
 
