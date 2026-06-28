@@ -1046,9 +1046,9 @@ The one-sample $t$-test for population mean is a **parametric test** that should
 The $t$-test statistic is identical to that of the equivalent $z$-test, except the use of the sample standard deviation, $s$, instead of the population standard deviation, $\sigma$.
 
 \begin{centering}
-\tcbset{width=14cm}
+\tcbset{width=12cm}
 \begin{tcolorbox}[adjusted title=For a one-sample t-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-Test statistic: $t=\dfrac{\bar{x}-\mu}{\dfrac{s}{\sqrt{n}}}$ with $\nu=n-1$ degrees of freedom.
+Test statistic: $t=\dfrac{\bar{x}-\mu}{\dfrac{s}{\sqrt{n}}}$ \; with $\nu=n-1$ degrees of freedom
 \end{tcolorbox}
 \end{centering}
 
