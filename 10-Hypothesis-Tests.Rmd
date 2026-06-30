@@ -1034,7 +1034,7 @@ As the sample size increases, and hence $\nu$ increases, the $t$-distribution ap
 The one-sample $t$-test for population mean is a **parametric test** that should be used in place of the equivalent $z$-test when the population standard deviation, $\sigma$, is not known, and the sample standard deviation, $s$, is to be used instead.
 
 \begin{centering}
-\tcbset{width=14cm}
+\tcbset{width=14.5cm}
 \begin{tcolorbox}[adjusted title=Conditions for the one-sample t-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The \textit{underlying population} is \textbf{normally distributed}.

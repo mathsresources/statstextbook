@@ -2,7 +2,7 @@
 
 \vspace{-1cm}
 
-Data that has been collected but not yet processed is referred to as *raw data*. Before conducting any statistical analysis, a statistician will typically want to get a quick sense of the data, checking for potential issues and identifying important features. Common first steps are therefore often to: *organise* the data into suitable lists or tables; *visualise* the data using plots and graphs; and *measure* key properties of the data.
+Data that has been collected but not yet processed is referred to as *raw data*. Before conducting any statistical analysis, a statistician will typically want to get a quick sense of the data, checking for potential issues and identifying key features. Common first steps are therefore often to: *organise* the data into suitable lists or tables; *visualise* the data using plots and graphs; and *measure* key properties of the data.
 
 This process is called *exploratory data analysis*. It helps us understand the data before applying more formal statistical methods.
 
@@ -192,7 +192,7 @@ Data that is numerical is called *quantitative*, of which there are two types. *
 \node[above] at (8,-3) {countable values};
 \node[below] at (8,-3) {\textit{e.g. a list of values}};
 \node[below] at (4,-3) {\textit{e.g. a range of values}};
-\node[above] at (4,-3) {measureable values};
+\node[above] at (4,-3) {measurable values};
 \end{tikzpicture}
 \end{center}
 
@@ -250,7 +250,7 @@ For example, the table below shows data relating to some football players:
 #### [Exercise 1.1](#ex11a) {-}
 
 \begin{enumerate}
-    \item A survey is carried out on the pets owned by a class. State the type of data that would be collected.
+    \item A survey is carried out on the pets owned by a class. State whether each would result in \textbf{quantitative} or \textbf{qualitative} data.
     \begin{enumerate}
     \begin{multicols}{2}
         \item How many pets each pupil owns.
@@ -269,7 +269,7 @@ For example, the table below shows data relating to some football players:
         \item Whether the pet is a mammal.
     \end{multicols}
     \end{enumerate}
-    \item For each of the following, state whether the quantitative data collected would be discrete or continuous.
+    \item For each of the following, state whether the quantitative data collected would be \textbf{discrete} or \textbf{continuous}.
     \begin{enumerate}
     \begin{multicols}{2}
         \item The number of people in a room.      
@@ -302,6 +302,400 @@ For example, the table below shows data relating to some football players:
     \end{tabular}
     \end{center}
     State the type of data that was collected for each variable.
+\end{enumerate}
+
+\pagebreak
+
+## Displaying Data
+
+Before analysing a data set, it is common practice to *display* the data in a simple form so that an initial impression can be formed. Some key \textit{figures} for the course are shown below, using a sample of 10 sunflower heights measured by a gardener 8 weeks after germination, measured to the nearest centimetre:
+
+\begin{center}
+\begin{tabular}{cccccccccccc}
+34 & 35 & 38 & 41 & 46 & 47 & 47 & 51 & 62 & 73
+\end{tabular}
+\end{center}
+
+
+\begin{figure}[H]
+  \centering
+\begin{minipage}{.5\textwidth}
+  \centering
+\begin{tikzpicture}
+\draw (33.5*0.15,0) -- (73.5*0.15,0);
+\node at (0.15*35,-0.3) {35};
+\node at (0.15*40,-0.3) {40};
+\node at (0.15*45,-0.3) {45};
+\node at (0.15*50,-0.3) {50};
+\node at (0.15*55,-0.3) {55};
+\node at (0.15*60,-0.3) {60};
+\node at (0.15*65,-0.3) {65};
+\node at (0.15*70,-0.3) {70};
+\foreach \x in {34,...,73}
+  \draw (0.15*\x,0) -- (0.15*\x,-0.1);
+\fill[black] (0.15*34,0.4) circle (0.05);
+\fill[black] (0.15*35,0.4) circle (0.05);
+\fill[black] (0.15*38,0.4) circle (0.05);
+\fill[black] (0.15*41,0.4) circle (0.05);
+\fill[black] (0.15*46,0.4) circle (0.05);
+\fill[black] (0.15*47,0.4) circle (0.05);
+\fill[black] (0.15*47,0.8) circle (0.05);
+\fill[black] (0.15*51,0.4) circle (0.05);
+\fill[black] (0.15*62,0.4) circle (0.05);
+\fill[black] (0.15*73,0.4) circle (0.05);
+\node at (0.15*53,-0.8) {\text{Height (cm)}};
+\node at (8,3.5) {\textbf{Figure 1: Dot Plot}};
+\node[text width = 8cm,below] at (8,3.2) {Dot plots display individual data values, stacking repeated values vertically for clarity. They are best suited to \textit{discrete} data};
+\draw[white] (3.5,-2) rectangle (12.5,4);
+\end{tikzpicture}
+
+\end{minipage}%
+  \centering
+\begin{minipage}{.5\textwidth}
+  \centering
+
+\begin{tikzpicture}
+\draw (6,-1) -- (6,1.4);
+\node at (5.7,1.2) {3};
+\node at (5.7,0.7) {4};
+\node at (5.7,0.2) {5};
+\node at (5.7,-0.3) {6};
+\node at (5.7,-0.8) {7};
+\node at (6.3,1.2) {4};
+\node at (6.8,1.2) {5};
+\node at (7.3,1.2) {8};
+\node at (6.3,0.7) {1};
+\node at (6.8,0.7) {6};
+\node at (7.3,0.7) {7};
+\node at (7.8,0.7) {7};
+\node at (6.3,0.2) {1};
+\node at (6.3,-0.3) {2};
+\node at (6.3,-0.8) {3};
+\node at (9,-0.8) {3};
+\node at (9.5,-0.8) {5};
+\node at (10,-0.2) {$n=\text{10}$};
+\draw (9.25,-0.6) -- (9.25,-1);
+\node[anchor=west] at (9.5,-0.8) {represents 35 cm};
+\node at (8,3.5) {\textbf{Figure 2: Stem-and-Leaf Diagram}};
+\node[text width = 8cm,below] at (8,3.2) {Stem-and-leaf diagrams group data while preserving the original values. Leaves should be in order, and a \textit{key} and the sample size ($n$) included.};
+\draw[white] (3.5,-2) rectangle (12.5,4);
+\end{tikzpicture}
+
+\end{minipage}
+\end{figure}
+
+\vspace{-1.2cm}
+
+\begin{figure}[H]
+  \centering
+\begin{minipage}{.5\textwidth}
+  \centering
+
+\begin{tikzpicture}
+\draw (33.5*0.15,0) -- (73.5*0.15,0);
+\node at (0.15*35,-0.3) {35};
+\node at (0.15*40,-0.3) {40};
+\node at (0.15*45,-0.3) {45};
+\node at (0.15*50,-0.3) {50};
+\node at (0.15*55,-0.3) {55};
+\node at (0.15*60,-0.3) {60};
+\node at (0.15*65,-0.3) {65};
+\node at (0.15*70,-0.3) {70};
+\foreach \x in {34,...,73}
+  \draw (0.15*\x,0) -- (0.15*\x,-0.1);
+\draw[fill=black!25] (0.15*38,0.4) rectangle (0.15*51,0.8);
+\draw (0.15*34,0.4) -- (0.15*34,0.8) node[above] {\scriptsize{min}};
+\draw (0.15*38,0.4) -- (0.15*38,0.8) node[above] {\scriptsize{LQ}};
+\draw (0.15*46.5,0.4) -- (0.15*46.5,0.8) node[above] {\scriptsize{med}};
+\draw (0.15*51,0.4) -- (0.15*51,0.8) node[above] {\scriptsize{UQ}};
+\draw (0.15*73,0.4) -- (0.15*73,0.8) node[above] {\scriptsize{max}};
+\draw (0.15*34,0.6) -- (0.15*38,0.6);
+\draw (0.15*51,0.6) -- (0.15*73,0.6);
+\node at (0.15*53,-0.8) {\text{Height (cm)}};
+\node at (8,3.9) {\textbf{Figure 3: Box Plot}};
+\node[text width = 8cm,below] at (8,3.6) {Box plots offer a visual representation of a \textit{five-number summary}, consisting of the minimum value, lower quartile LQ, median, upper quartile UQ, and maximum value.};
+\draw[white] (3.5,-2) rectangle (12.5,5);
+\end{tikzpicture}
+
+\end{minipage}%
+  \centering
+\begin{minipage}{.5\textwidth}
+  \centering
+
+\begin{tikzpicture}
+\draw (30*0.08+3.8,0) -- (80*0.08+3.8,0);
+\draw (30*0.08+3.8,0) -- (30*0.08+3.8,1.2);
+\node at (0.08*30+3.8,-0.3) {\scriptsize{30}};
+\node at (0.08*40+3.8,-0.3) {\scriptsize{40}};
+\node at (0.08*50+3.8,-0.3) {\scriptsize{50}};
+\node at (0.08*60+3.8,-0.3) {\scriptsize{60}};
+\node at (0.08*70+3.8,-0.3) {\scriptsize{70}};
+\node at (0.08*80+3.8,-0.3) {\scriptsize{80}};
+\foreach \x in {30,40,...,80}{
+  \draw (0.08*\x+3.8,0) -- (0.08*\x+3.8,-0.1);}
+  \foreach \y in {0,...,5}{
+  \draw (0.08*29.5+3.8,1.2*0.2*\y) -- (0.08*30+3.8,1.2*0.2*\y);}
+\node at (0.08*28.5+3.8,1.2) {\scriptsize{5}};
+\node at (0.08*28.5+3.8,0) {\scriptsize{0}};
+\node at (0.08*25+3,0.5) {frequency};
+\draw[fill=black!25] (0.08*30+3.8,0) rectangle (0.08*40+3.8,0.6*1.2);
+\draw[fill=black!25] (0.08*40+3.8,0) rectangle (0.08*50+3.8,0.8*1.2);
+\draw[fill=black!25] (0.08*50+3.8,0) rectangle (0.08*60+3.8,0.2*1.2);
+\draw[fill=black!25] (0.08*60+3.8,0) rectangle (0.08*70+3.8,0.2*1.2);
+\draw[fill=black!25] (0.08*70+3.8,0) rectangle (0.08*80+3.8,0.2*1.2);
+\node at (0.08*53+3.8,-0.8) {\text{height (cm)}};
+\node at (8,3.9) {\textbf{Figure 4: Histogram}};
+\node[text width = 8cm,below] at (8,3.6) {Histograms display continuous data grouped into intervals. Unlike bar charts, the bars are adjacent (no gaps). When interval widths are equal, the height of each bar represents frequency.};
+\draw[white] (3.5,-2) rectangle (12.5,5);
+\end{tikzpicture}
+
+\end{minipage}
+\end{figure}
+
+\vspace{-1cm}
+
+[]{#ex12q}
+
+#### [Exercise 1.2](#ex12a) {-}
+
+\begin{enumerate}
+    \item The ages (in years) of competitors in a junior golf tournament are below. Draw a dot plot to represent this data.
+    \vspace{-0.3cm}
+    \begin{center}
+    \begin{tabular}{cccccccccccccc}
+        16 & 14 & 19 & 13 & 14 & 17 & 16 & 19 & 16 & 17 & 12 & 16 & 14 & 19
+    \end{tabular}
+    \end{center}
+    \item The price of an ice cream is recorded at 12 stalls (in £). Represent the data using a stem-and-leaf diagram.
+    \begin{center}
+    \begin{tabular}{cccccccccccc}
+        1.50 & 2.20 & 2.50 & 2.10 & 1.80 & 1.40 & 2.00 & 1.90 & 3.60 & 0.90 & 1.70 & 1.50
+    \end{tabular}
+    \end{center}
+    \item The masses (in kg) of the luggage of 10 passengers on a plane to Barra were recorded, and a five-number summary of the data obtained using \texttt{computer output} from statistical software. Construct a box plot.
+    \begin{center}
+    \begin{tabular}{ccccccc}
+        \texttt{min} & \texttt{LQ} & \texttt{median} & \texttt{mean} & \texttt{UQ} & \texttt{max} & \texttt{n}\\
+        \texttt{10} & \texttt{14} & \texttt{16.5} & \texttt{16.6} & \texttt{19} & \texttt{22} & \texttt{10}
+    \end{tabular}
+    \end{center}
+    \item The \textit{frequency table} below shows the masses (in grams) of 40 medium-sized eggs, grouped into equal-width intervals and counted. Construct a histogram to display the data.
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+            Interval & 52-53.99 & 54-55.99 & 56-57.99 & 58-59.99 & 60-61.99 & 62-63.99\\
+        \hline
+            Frequency & 2 & 4 & 11 & 17 & 5 & 1\\
+        \hline
+        \end{tabular}
+    \end{center}
+\end{enumerate}
+
+\pagebreak
+
+## Tables, Figures and Output
+
+There are many ways in which data can be presented, extending beyond those covered on the previous page. In statistical reports they are often clearly labelled as **tables** or **figures**, and numbered so they can be more easily referred to. 
+
+\begin{multicols}{3}
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[white] (0,0) rectangle (5,4);
+        \node[above, text width=5cm] at (2.5,4) {\textbf{Table 1:} Contingency table of mode of transport.}; 
+        \draw (0,0) rectangle (0.8,2.4);
+        \node[rotate=90] at (0.4,1.2) {Year Group};
+        \draw[step=0.8cm] (0.8,0) grid (4.8,2.4);
+        \draw[step=0.8cm] (1.6,2.4) grid (4.8,3.2);
+        \draw (1.6,3.2) rectangle (4.8,4);
+        \node at (3.2,3.6) {Transport};
+        \node[rotate=45] at (2,2.8) {\small{walk}};
+        \node[rotate=45] at (2.8,2.8) {\small{bus}};
+        \node[rotate=45] at (3.6,2.8) {\small{car}};
+        \node[rotate=45] at (4.4,2.8) {\small{bike}};
+        \node at (1.2,2) {3rd};
+        \node at (1.2,1.2) {2nd};
+        \node at (1.2,0.4) {1st};
+        \node at (2,0.4) {4};
+        \node at (2,1.2) {7};
+        \node at (2,2) {12};
+        \node at (2.8,0.4) {14};
+        \node at (2.8,1.2) {13};
+        \node at (2.8,2) {15};
+        \node at (3.6,0.4) {11};
+        \node at (3.6,1.2) {8};
+        \node at (3.6,2) {3};
+        \node at (4.4,0.4) {2};
+        \node at (4.4,1.2) {1};
+        \node at (4.4,2) {4};
+    \end{tikzpicture}
+\end{center}
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[above, text width=5cm] at (2.5,4) {\textbf{Figure 1:} Bar chart of mode of transport.}; 
+        \draw (0.5,1) -- (0.5,4);
+        \node[rotate=90] at (0.2,2.4) {frequency};
+        \draw (0.5,1) -- (4.2,1);
+        \node at (2.2,0.2) {year group};
+        
+        \draw[pattern=north west lines] (0.6,1) rectangle (0.8,1.8);
+        \draw[fill=black!20] (0.8,1) rectangle (1,3.8);
+        \draw (1,1) rectangle (1.2,3.2);
+        \draw[fill=black!50] (1.2,1) rectangle (1.4,1.4);
+        \node at (1,0.7) {1st};
+
+        \draw[pattern=north west lines] (1.7,1) rectangle (1.9,2.4);
+        \draw[fill=black!20] (1.9,1) rectangle (2.1,3.6);
+        \draw (2.1,1) rectangle (2.3,2.6);
+        \draw[fill=black!50] (2.3,1) rectangle (2.5,1.2);
+        \node at (2.1,0.7) {2nd};
+
+        \draw[pattern=north west lines] (2.8,1) rectangle (3,3.4);
+        \draw[fill=black!20] (3,1) rectangle (3.2,4);
+        \draw (3.2,1) rectangle (3.4,1.6);
+        \draw[fill=black!50] (3.4,1) rectangle (3.6,1.8);
+        \node at (3.2,0.7) {3rd};
+        
+    \end{tikzpicture}
+\end{center}
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[above,text width=5cm] at (2.5,4) {\textbf{Figure 2:} Chart of transport percentages.}; 
+        \node at (0.5,3.5) {3rd};
+        \node at (0.5,2.7) {2nd};
+        \node at (0.5,1.9) {1st};
+
+        \draw[pattern=north west lines] (1,3.2) rectangle (1.7,3.8);
+        \draw[fill=black!20] (1.7,3.2) rectangle (2.6,3.8);
+        \draw (2.6,3.2) rectangle (2.78,3.8);
+        \draw[fill=black!50] (2.78,3.2) rectangle (3,3.8);
+
+        \draw[pattern=north west lines] (1,2.4) rectangle (1.5,3);
+        \draw[fill=black!20] (1.5,2.4) rectangle (2.4,3);
+        \draw (2.4,2.4) rectangle (2.95,3);
+        \draw[fill=black!50] (2.95,2.4) rectangle (3,3);
+
+        \draw[pattern=north west lines] (1,1.6) rectangle (1.26,2.2);
+        \draw[fill=black!20] (1.26,1.6) rectangle (2.16,2.2);
+        \draw (2.16,1.6) rectangle (2.86,2.2);
+        \draw[fill=black!50] (2.86,1.6) rectangle (3,2.2);
+
+        \draw (1,1.4) -- (3,1.4);
+        \draw (1,1.3) -- (1,1.4) node[below] {0\%}; 
+        \draw (3,1.3) -- (3,1.4) node[below] {100\%}; 
+        \draw (2,1.3) -- (2,1.4);
+        \draw (1.5,1.3) -- (1.5,1.4);
+        \draw (2.5,1.3) -- (2.5,1.4);
+
+        \draw[pattern=north west lines] (0.5,0.75) rectangle (0.75,0.5);
+        \draw[fill=black!20] (1.75,0.75) rectangle (2,0.5);
+        \draw (3,0.75) rectangle (3.25,0.5);
+        \draw[fill=black!50] (4.25,0.75) rectangle (4.5,0.5);
+
+        \node at (0.625,0.25) {walk};
+        \node at (1.875,0.25) {bus};
+        \node at (3.125,0.2) {car};
+        \node at (4.375,0.25) {bike};
+    \end{tikzpicture}
+\end{center}
+
+\end{multicols}
+
+Not all graphs encountered in real life will be up to scratch; some graphs may be unclear, accidentally misleading or even intentionally misleading. Being alert to potential flaws in tables and figures and identifying possible improvements is an important skill.
+
+The widespread availability of computing power means that specialist software is often used by statisticians to avoid the need for time-consuming calculations where possible. Whilst this course requires no use of statistical software, examples of \texttt{computer output} will be displayed from which the required information must be extracted.
+
+\begin{multicols}{2}
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[above, text width=7cm] at (3.5,4) {\textbf{Figure 3:} Dot plots of time (mins) to walk to school for 2nd and 3rd years.}; 
+        \draw (0,3) -- (5,3);
+        \foreach \x in {0,0.5,...,5}{
+        \draw (\x,2.8) -- (\x,3);
+        }
+        \node[below] at (0,2.9) {0};
+        \node[below] at (1,2.9) {10};
+        \node[below] at (2,2.9) {20};
+        \node[below] at (3,2.9) {30};
+        \node[below] at (4,2.9) {40};
+        \node[below] at (5,2.9) {50};
+        \draw (0,1) -- (5,1);
+        \foreach \x in {0,0.5,...,5}{
+        \draw (\x,0.8) -- (\x,1);
+        }
+        \node[below] at (0,0.9) {0};
+        \node[below] at (1,0.9) {10};
+        \node[below] at (2,0.9) {20};
+        \node[below] at (3,0.9) {30};
+        \node[below] at (4,0.9) {40};
+        \node[below] at (5,0.9) {50};
+
+        \node at (6,3.5) {3rd years};
+        \node at (6,1.5) {2nd years};
+        \draw[fill] (0.6,3.3) circle (2pt);
+        \draw[fill] (1.0,3.3) circle (2pt);
+        \draw[fill] (1.0,3.5) circle (2pt);
+        \draw[fill] (1.3,3.3) circle (2pt);
+        \draw[fill] (1.3,3.5) circle (2pt);
+        \draw[fill] (1.3,3.7) circle (2pt);
+        \draw[fill] (1.7,3.3) circle (2pt);
+        \draw[fill] (1.9,3.3) circle (2pt);
+        \draw[fill] (2.2,3.3) circle (2pt);
+        \draw[fill] (2.2,3.5) circle (2pt);
+        \draw[fill] (2.7,3.3) circle (2pt);
+        \draw[fill] (3.6,3.3) circle (2pt);
+
+        \draw[fill] (0.3,1.3) circle (2pt);
+        \draw[fill] (0.8,1.3) circle (2pt);
+        \draw[fill] (1.3,1.3) circle (2pt);
+        \draw[fill] (1.7,1.3) circle (2pt);
+        \draw[fill] (1.7,1.5) circle (2pt);
+        \draw[fill] (2.0,1.3) circle (2pt);
+        \draw[fill] (2.6,1.3) circle (2pt);
+    \end{tikzpicture}
+\end{center}
+
+\columnbreak
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[above, text width=7cm] at (3.5,4) {\textbf{Output 1:} Summary data for walk times (mins) for 2nd and 3rd years.}; 
+        \node[right] at (0,3.5) {\texttt{data: walk time}};
+        \node[right] at (0,2.7) {\texttt{3rd yr:  n=12}};
+        \node[right] at (0,1.9) {\texttt{2nd yr:  n=****}};
+        \node[right] at (3.2,2.7) {\texttt{mean=17.3}};
+        \node[right] at (3.2,1.9) {\texttt{mean=14.9}};
+        \node[right] at (5.5,2.7) {\texttt{sd=8.42}};
+        \node[right] at (5.5,1.9) {\texttt{sd=7.65}};
+        \node[right] at (0,1.1) {\texttt{alternative hypothesis: means are not equal}};
+        \node[right] at (0,0.3) {\texttt{t=0.619, df=17, p-value=0.544}};
+    \end{tikzpicture}
+\end{center}
+
+\end{multicols}
+
+Whilst this textbook aims to enable familiarity with common figures, tables and computer output, the best way to practise obtaining information from them is to *read a wide range of relevant statistical articles and reports*. 
+
+[]{#ex13q}
+
+#### [Exercise 1.3](#ex13a) {-}
+
+\begin{enumerate}
+    \item Use \textbf{Table 1} to calculate the proportion of pupils in the sample that walk to school, as a:
+    \begin{enumerate}
+    \begin{multicols}{3}
+        \item Fraction.
+        \item Decimal.
+        \item Percentage.
+    \end{multicols}
+    \end{enumerate}
+    \item Suggest two possible improvements to \textbf{Figure 1}.
+    \item Using \textbf{Figure 2 only}, compare the proportions of pupils who take the bus between each year group.
+    \item From \textbf{Figure 3}, state the approximate \textit{shortest} and \textit{longest} walking times amongst 2nd and 3rd year pupils.
+    \item One piece of information from \textbf{Output 1} has been replaced by \texttt{****}. State the missing value.
 \end{enumerate}
 
 \pagebreak
@@ -477,9 +871,9 @@ In a statistical study, the term **population** refers to the entire set of obje
 \end{tikzpicture}
 \end{center}
 
-If data were available for an entire *population*, then various **population parameters** could be calculated, such as the *population mean*. Since this is rarely possible in practice, instead *samples* are taken from populations. Measures calculated from a sample are called **sample statistics**, such as the *sample mean*. 
+If data were available for an entire *population*, then various **population parameters** could be calculated *exactly*, such as the *population mean*. Since this is rarely possible in practice, instead *samples* are taken from populations. Measures calculated from a sample are called **sample statistics**, such as the *sample mean*. 
 
-Letters from the Greek alphabet are commonly used to represent population parameters. For example:
+The distinction between population parameters and sample statistics is often reflected in the notation used. Letters from the Greek alphabet are commonly used to represent population parameters. For example:
 
 \begin{center}
 \begin{tabular}{lll}
@@ -516,11 +910,11 @@ Sample statistics vary depending on the sample chosen and can be viewed as *esti
 
 \end{multicols}
 
-The reason for discussing sampling at this point is to caution against making *definitive* statements based solely on *sample statistics*, when it is typically the (unknown) *population parameters* that are really of interest.
+The purpose of discussing sampling at this point is to caution against making *definitive* statements based solely on *sample statistics*, when it is the (usually unknown) *population parameters* that are of primary interest.
 
-[]{#ex12q}
+[]{#ex14q}
 
-#### [Exercise 1.2](#ex12a) {-}
+#### [Exercise 1.4](#ex14a) {-}
 
 \textit{For each, state using words and notation which sample statistic or population parameter has been obtained.}\newline \textit{For example: ``Sample mean (}$\bar{x}$\textit{).'' or ``Population standard deviation (}$\sigma$\textit{).''}
 
@@ -529,14 +923,14 @@ The reason for discussing sampling at this point is to caution against making *d
     \item A bus company in Scotland checks the mileage for some of its buses when they come in for a service, and the mean mileage of these buses is calculated.
     \item The iron levels are checked for a sample of patients at a hospital, and the standard deviation of these is calculated.
     \item Whilst researching the capacities of football stadiums in the Scottish Football League, the standard deviation is calculated using a full list of all the stadiums used in the Scottish Football League.
-    \item For a study on lunchtime spending in Scottish schools, the mean lunchtime spend is calculated from surveying every pupil studying as a large secondary school in Edinburgh.
+    \item For a study on lunchtime spending in Scottish schools, the mean lunchtime spend is calculated from surveying every pupil studying at a large secondary school in Edinburgh.
 \end{enumerate}
 
 \pagebreak
 
 ## Measures of Location and Spread
 
-*Summary statistics* are a collection of measures taken of the data from a sample, such as the mean, or standard deviation. These provide a quick way to communicate some general sense of the data. For example, for the *raw data* of 0, 2, 2, 6, 12, 14, 16, 18, 18, 18, 20, the table below shows a selection of summary statistics. 
+*Summary statistics* are numerical measures calculated from sample data, such as the mean or standard deviation. These provide a concise way to describe key features of the data. For example, for the *raw data set* of 0, 2, 2, 6, 12, 14, 16, 18, 18, 18, 20, the table below shows a selection of summary statistics. 
 
 \begin{center}
 \begin{tabular}{ccccccccccccc}
@@ -546,11 +940,11 @@ n & mean & sd & sum & sum of squares & min & LQ & median & UQ & max & range & IQ
 \end{tabular}
 \end{center}
 
-There are two main types of summary statistic: those that measure the \textit{central tendency} of data (or its \textbf{location}); and those that measure the \textit{variability} of data (or its \textbf{spread}). It is common to measure both the location *and* spread, since two data sets can have the same average but very different variability.
+There are two main types of summary statistic: those that describe the \textit{central tendency} of data (or its \textbf{location}); and those that describe the \textit{variability} of data (or its \textbf{spread}). It is common to measure both the location *and* spread, since two data sets can have the same average but very different variability.
 
-#### Measures of Location {-}
+### Measures of Location {-}
 
-The three main measures of location, or *averages*, should already be familiar. To avoid ambiguity, statisticians will typically avoid referring to *"the average"*, and will instead specify exactly *which* average they are referring to:
+The three main measures of location (or *averages*) may already be familiar. To avoid ambiguity, statisticians will typically avoid referring to an *'average'*, and will instead specify *which* average they are referring to:
 
 \begin{itemize}
     \item \textbf{Mode} - the most frequently occurring value.
@@ -582,9 +976,9 @@ The three main measures of location, or *averages*, should already be familiar. 
 \node at (5.7,1.5) {\text{mean}};
 \node at (7,1) {\text{median}};
 \node at (9,2) {\text{mode}};
-\draw[dashed] (5.7,1.2) -- (5.7,0);
-\draw[dashed] (7,0.7) -- (7,0);
-\draw[dashed] (9,1.7) -- (9,0);
+\draw[dashed,thin] (5.7,1.2) -- (5.7,0);
+\draw[dashed,thin] (7,0.7) -- (7,0);
+\draw[dashed,thin] (9,1.7) -- (9,0);
 \node at (5.7,-1) {standard deviation};
 \draw[stealth-stealth] (3.95,-1.3) -- (7.45,-1.3);
 \node at (5,-2) {interquartile range};
@@ -599,9 +993,9 @@ The three main measures of location, or *averages*, should already be familiar. 
 \end{tikzpicture}
 \end{center}
 
-#### Measures of Spread {-}
+### Measures of Spread {-}
 
-The measure of spread which is usually encountered first in a maths classroom is the *range*, less informative than other measures, as it depends only on the two most extreme values. In practice this measure is seldom used by statisticians since it only uses the two most extreme values from the data. There are three main measures of spread commonly used, two of which are likely to already be familiar: 
+The measure of spread which is usually encountered first in a maths classroom is the *range*, defined as the difference between the largest and smallest values. The range, however, is less informative than other measures as it uses only the two most extreme values. There are three main measures of spread commonly used, two of which are likely to already be familiar: 
 
 \begin{itemize}
     \item \textbf{Interquartile Range} - the difference between the upper quartile and the lower quartile.
@@ -611,464 +1005,271 @@ The measure of spread which is usually encountered first in a maths classroom is
 
 \pagebreak
 
-### The Mean and the Standard Deviation {-}
+### The Sample Median and the Sample Interquartile Range {-}
 
-The *mean* and *standard deviation* are perhaps the most commonly used measures of location and spread, respectively, and both link strongly to the commonly-encountered *bell-shaped curve* (see page 13). The formulae for calculating the sample mean and sample standard deviation from sample data are given below using notation, where the Greek letter $\sum$ (*"Sigma"*) denotes summation (i.e. adding a set of values), $x_i$ represents each value in the sample (for $i=\text{1},\text{2},\dots,n$) and $n$ represents the *number* of values in the sample.
+A lay person's interpretation of what an 'average' seeks to describe is the *typical* value for a data set. However, consider the hourly rate of pay of six people working in a store, with one manager and five shop workers:
 
-The *sample mean*, $\bar{x}$, is calculated as: \hspace{0.5cm}$\bar{x}=\dfrac{\sum x}{n}$
+\vspace{-0.2cm}
+\begin{center}
+    \begin{tabular}{cccccccc}
+        £10 & £10 & £10 & £10 & £14 & £51
+    \end{tabular}
+\end{center}
 
-The *sample standard deviation*, $s$, is calculated as: \hspace{0.5cm}$s=\sqrt{\dfrac{S_{xx}}{n-1}}$\hspace{0.5cm}where: \hspace{0.5cm}$S_{xx}=\sum x^\text{2}-\dfrac{(\sum x)^\text{2}}{n}$
+\vspace{-0.2cm}
 
-The *sample variance*, $s^\text{2}$, is simply the *square of the standard deviation*.
+The mean of these values is £17.50, yet this figure does not seem to represent a *typical* hourly rate of pay of people working in the store. This example may seem contrived, yet this exact issue is why countries' average salaries are not measured using the mean. This is because the *mean* takes into account *all values* in any data set, and so is influenced by *extreme* values. 
 
-#### The Median and the Interquartile Range {-}
+The median ($\text{Q}_\text{2}$) and interquartile range ($\text{IQR}$) are often chosen to measure location and spread when the data is particularly *skewed* (see page 15), as they are less influenced by *extreme values* than the mean and standard deviation. The *median* represents the *middle* of a data set: a value which approximately 50\% of the data lies below, and approximately 50\% of the data lies above. Where a data set has an *odd* number of values, the median is simply the middle value. Where a data set has an *even* number of values, the median is the mean of the *two* middle values. The median is used to describe the *location* of a population.
 
-The median, $\text{Q}_\text{2}$, and interquartile range, $\text{IQR}$, are often chosen to measure location and spread when the data is particularly *skewed* (see page 13), as they are less influenced by *extreme values* than the mean and standard deviation.
 
-The *lower quartile* (LQ or $\text{Q}_\text{1}$) and the *upper quartile* (UQ or $\text{Q}_\text{3}$) split an ordered data set into four equal parts, along with the median. From the lowest value to $\text{Q}_\text{1}$ contains approximately 25\% of the data, from $\text{Q}_\text{1}$ to $\text{Q}_\text{2}$ contains approximately the next 25\%, and so on.
+\vspace{-0.4cm}
+\begin{center}
+\begin{tikzpicture}
+\draw[white] (-5.5,-2.5) rectangle (12,1.3);
+\node[right] at (-5,-0.3) {Data set A ($n=\text{11}$):};
+\node at (1,-0.3) {4};
+\node at (2,-0.3) {6};
+\node at (3,-0.3) {6};
+\node at (4,-0.3) {7};
+\node at (5,-0.3) {9};
+\node at (6,-0.3) {9};
+\node at (7,-0.3) {11};
+\node at (8,-0.3) {12};
+\node at (9,-0.3) {13};
+\node at (10,-0.3) {16};
+\node at (11,-0.3) {18};
+\draw (6,-0.3) circle (0.4cm);
+\node[above] at (6,0.1) {$\text{median}=\text{9}$};
+\node[right] at (-5,-2) {Data set B ($n=\text{10}$):};
+\node at (1,-2) {5};
+\node at (2,-2) {7};
+\node at (3,-2) {7};
+\node at (4,-2) {9};
+\node at (5,-2) {11};
+\draw[thick] (5.5,-2.4) -- (5.5,-1.6) node[above] {$\text{median}=\text{12}$};
+\node at (6,-2) {13};
+\node at (7,-2) {13};
+\node at (8,-2) {15};
+\node at (9,-2) {17};
+\node at (10,-2) {17};
+\end{tikzpicture}
+\end{center}
+
+The *lower quartile* (LQ or $\text{Q}_\text{1}$) and the *upper quartile* (UQ or $\text{Q}_\text{3}$) split an ordered data set into four approximately equal parts, along with the median. From the lowest value to LQ contains approximately 25\% of the data, from LQ to the median contains approximately the next 25\%, and so on.
+
 
 \begin{center}
 \begin{tikzpicture}
+\draw[white] (-5.5,-2.5) rectangle (12,1.3);
+\draw[pattern = north east lines] (6,0) circle (0.4cm);
+\node[right] at (-5,0) {Data set A ($n=\text{11}$):};
 \node at (1,0) {4};
-\node at (2,0) {5};
-\node at (3,0) {8};
-\node at (4,0) {8};
-\node at (5,0) {10};
-\node at (6,0) {11};
-\node at (7,0) {13};
-\node at (8,0) {17};
-\node at (9,0) {17};
-\node at (10,0) {18};
-\node at (11,0) {21};
-\node at (12,0) {22};
-\node at (13,0) {22};
-\node at (14,0) {26};
-\draw[thick] (7.5,-0.5) -- (7.5,0.5) node[above] {$\text{Q}_\text{2}=\text{15}$};
-\draw[thick] (4,0) circle (0.5);
-\draw[thick] (12,0) circle (0.5);
-\node[above] at (4,0.5) {$\text{Q}_\text{1}=\text{8}$};
-\node[above] at (12,0.5) {$\text{Q}_\text{3}=\text{22}$};
-\draw[stealth-] (0.7,0.3) -- (0.3,0.6) node[above left] {$\text{Min}=\text{4}$};
-\draw[stealth-] (14.3,0.3) -- (14.6,0.6) node[above right] {$\text{Max}=\text{26}$};
+\node at (2,0) {6};
+\node at (3,0) {6};
+\node at (4,0) {7};
+\node at (5,0) {9};
+\node at (6,0) {9};
+\node at (7,0) {11};
+\node at (8,0) {12};
+\node at (9,0) {13};
+\node at (10,0) {16};
+\node at (11,0) {18};
+\draw (3,0) circle (0.4cm);
+\draw (9,0) circle (0.4cm);
+\node[above] at (3,0.4) {$\text{LQ}=\text{6}$};
+\node[above] at (9,0.4) {$\text{UQ}=\text{13}$};
+\node[right] at (-5,-2) {Data set B ($n=\text{10}$):};
+\draw[stealth-] (6,0.5) -- (6,0.8) node[above] {\scriptsize{ignore middle value}};
+\node at (1,-2) {5};
+\node at (2,-2) {7};
+\node at (3,-2) {7};
+\node at (4,-2) {9};
+\node at (5,-2) {11};
+\draw (3,-2) circle (0.4cm);
+\draw (8,-2) circle (0.4cm);
+\node[above] at (3,-1.6) {$\text{LQ}=\text{7}$};
+\node[above] at (8,-1.6) {$\text{UQ}=\text{15}$};
+\draw[thick] (5.5,-2.4) -- (5.5,-1.6);
+\node at (6,-2) {13};
+\node at (7,-2) {13};
+\node at (8,-2) {15};
+\node at (9,-2) {17};
+\node at (10,-2) {17};
 \end{tikzpicture}
 \end{center}
 
-The *interquartile range* is calculated as: \hspace{0.5cm}$\text{IQR}=\text{Q}_\text{3}-\text{Q}_\text{1}$
+The *interquartile range*, calculated as $\text{IQR}=\text{UQ}-\text{LQ}$, measures the range of the approximate 'middle 50\%' of a data set, ignoring the remaining lowest and highest quarters. On a box plot (sometimes called a *box-and-whisker* plot), the interquartile range defines the *width of the box*, ignoring the 'whiskers' at either side. The larger a data set's interquartile range is, the more spread it suggests the data may be.
 
-[]{#ex13q}
+\begin{center}
+\begin{tikzpicture}
+\draw[white] (-5.5,-0.5) rectangle (12,3.4);
+\draw (0,0.1) -- (10,0.1);
+\node[right] at (-5,2.5) {Data set A:};
+\node[right] at (-5,1.9) {$\text{IQR}=\text{13}-\text{6}=\text{7}$};
+\draw (0.5*4,2.2) -- (0.5*18,2.2);
+\draw (0.5*4,1.9) -- (0.5*4,2.5) node[above left] {\scriptsize{$\min=\text{4}$}};
+\draw (0.5*18,1.9) -- (0.5*18,2.5) node[above right] {\scriptsize{$\max=\text{18}$}};;
+\draw[fill=black!20] (0.5*6,1.9) rectangle (0.5*13,2.5);
+\draw (0.5*9,1.9) -- (0.5*9,2.5) node[above] {\scriptsize{$\text{median}=\text{9}$}};
+\draw[stealth-] (0.5*6,2.6) -- ++ (0,0.3) node[above] {\scriptsize{$\text{LQ}=\text{6}$}};
+\draw[stealth-] (0.5*13,2.6) -- ++ (0,0.3) node[above] {\scriptsize{$\text{UQ}=\text{13}$}};
+\node[right] at (-5,0.9) {Data set B:};
+\node[right] at (-5,0.3) {$\text{IQR}=\text{15}-\text{7}=\text{8}$};
+\draw (0.5*5,0.6) -- (0.5*17,0.6);
+\draw (0.5*5,0.3) -- (0.5*5,0.9) node[above left] {\scriptsize{$\min=\text{5}$}};;
+\draw (0.5*17,0.3) -- (0.5*17,0.9) node[above right] {\scriptsize{$\max=\text{17}$}};;
+\draw[fill=black!20] (0.5*7,0.3) rectangle (0.5*15,0.9);
+\draw (0.5*12,0.3) -- (0.5*12,0.9) node[above] {\scriptsize{$\text{median}=\text{12}$}};
+\draw[stealth-] (0.5*7,1) -- ++ (0,0.3) node[above] {\scriptsize{$\text{LQ}=\text{7}$}};
+\draw[stealth-] (0.5*15,1) -- ++ (0,0.3) node[above] {\scriptsize{$\text{UQ}=\text{15}$}};
+\foreach \x in {0,2,...,20}{
+    \draw (0.5*\x,0) -- (0.5*\x,0.1) node[below] {\x};
+}
+\end{tikzpicture}
+\end{center}
 
-#### [Exercise 1.3](#ex13a) {-}
+The box plots above suggest that population B may have a higher median value than population A, and that population B's distribution may be slightly more varied, since its sample gave a higher interquartile range.
 
-\begin{enumerate}
-    \item The monthly cost of 10 drivers' car insurance ($x$, in £'s) are recorded. Calculate the mean and standard deviation.
-    \begin{center}
-    \begin{tabular}{ccc}
-      $\sum{x}=\text{359}$ & $\sum{x^{\text{2}}}=\text{15119}$ & $n=\text{10}$
-    \end{tabular}
-    \end{center}
-    \item Daily fuel spend ($x$, in £'s) for 15 drivers is summarised below. Calculate the mean and standard deviation.
-    \begin{center}
-    \begin{tabular}{ccc}
-      $\sum{x}=\text{87}$ & $\sum{x^{\text{2}}}=\text{569}$ & $n=\text{15}$
-    \end{tabular}
-    \end{center}
-    \item The marks, out of 40, of eight pupils sitting a chemistry test are below. Find the mean and standard deviation.
-    \begin{center}
-        \begin{tabular}{cccccccc}
-            32 & 25 & 29 & 37 & 16 & 39 & 23 & 32 
-        \end{tabular}
-    \end{center}
-    \item The ages (in years) of 18 customers in a shop are recorded. Calculate the median and interquartile range.
-    \begin{center}
-    \begin{tabular}{ccccccccc}
-        17 & 63 & 34 & 23 & 40 & 57 & 72 & 70 & 43\\
-        56 & 29 & 37 & 41 & 50 & 13 & 24 & 30 & 58
-    \end{tabular}
-    \end{center}
-\end{enumerate}
+
+\newpage
+
+### The Sample Mean and the Sample Standard Deviation {-}
+
+The mean (*'add up all the values then divide by how many there are'*) is what most people are typically thinking of when they talk about *the average*. It has the property of taking into account *every value* in a data set, which is often desirable except when *extreme values* are present, as discussed on the previous page.
+
+If data for an entire *population* of values $x_\text{1}, x_\text{2}, \dots, x_N$ were available, where $N$ is the population size, then the **population mean** ($\mu$) could be calculated. This can be expressed concisely using summation notation, $\sum$ ("Sigma"), where $\sum x_i$ denotes the sum of all values from $x_\text{1}$ to $x_N$.
+
+\[\mu=\frac{x_\text{1}+x_\text{2}+\dots +x_N}{N}= \frac{\sum x_i}{N} \quad \text{or, abbreviated} \quad \mu=\frac{\sum x_i}{N}\]
+
+Since in practice a population is rarely available, instead it is common to calculate the **sample mean** ($\bar{x}$), using a sample of data from a population. Given a sample of data $x_\text{1}, x_\text{2}, \dots, x_n$, where $n$ is the sample size, the sample mean can be calculated as, in its most commonly used form:
+
+\[\bar{x}=\frac{\sum x}{n}\]
+
+The sample mean is an *unbiased estimator* of the population mean, meaning that, on average, it gives the correct value across repeated sampling.
+
+Similarly, if data for an entire *population* of values $x_\text{1}, x_\text{2}, \dots, x_N$ were available, then the **population variance** ($\sigma^\text{2}$) could be obtained. More useful for its mathematical properties than as a value to *interpret*, it is the *mean of the squared differences* between each value $x_i$ and the population mean, $\mu$. Its units are the *square* of the units of the original data, and so for data measured in grams, units of variance are (somewhat unintuitively) $\text{grams}^\text{2}$. It can be calculated, again using an abbreviated form of summation, as:
+
+\[\sigma^\text{2}=\frac{\sum \left(x - \mu\right)^\text{2}}{N}\]
+
+Replicating the same formula using sample data gives a *biased* estimate for variance. This is because the formula requires the population mean $\mu$ be replaced with the *sample mean* $\bar{x}$ as its estimate, which will tend to minimize the sum of square deviations and so tend to lead to an *underestimate* of the true population variance. *Bessel's correction* is therefore used to produce a formula for the **sample variance** ($s^\text{2}$), which is an *unbiased* estimator for the population variance. The below two forms are equivalent.
+
+\[s^\text{2}=\frac{\sum \left(x - \bar{x}\right)^\text{2}}{n-\text{1}} \quad \text{or} \quad s^\text{2}=\frac{\sum x^\text{2} - \frac{\left(\sum x\right)^\text{2}}{n}}{n-\text{1}}\]
+
+The *standard deviation* is the *square root* of the variance, which brings the units it takes back to match those of the original data (e.g. grams). The formula for the **sample standard deviation** ($s$) appears on **page 4** of the Data Booklet. It is given in terms of the *sum of squares for* $x$, notated as $S_{xx}$, which is the numerator of the right-hand formula above. A formula for the sample standard deviation is therefore:
+
+\[s=\sqrt{\dfrac{S_{xx}}{n-1}}\quad\text{ where }\quad S_{xx}=\sum x^\text{2}-\dfrac{(\sum x)^\text{2}}{n}\]
+
+In practice, only the *sample mean* and *sample standard deviation* (and sample variance) will need to be calculated in this course, and both can be performed by a graphical calculator directly from a sample of values with no need for manual calculation. However, an insight into their formulae is essential in particular for anyone who wishes to take statistics further beyond this course.
 
 \pagebreak
 
-## Displaying Data
+For example, calculating the mean and standard deviation sample data set: 4, 6, 7, 9, 10
 
-Before analysing a data set, it is common practice to *display* the data in a simple form so that an initial impression can be formed. Some key examples are shown below, using a sample of 10 sunflower heights measured by a gardener 8 weeks after germination, measured to the nearest centimetre:
+\[\sum x^\text{2} = \text{282},\; \sum x = \text{36},\; n=\text{5} \qquad \bar{x}=\frac{36}{5}=\text{7.2} \qquad s=\sqrt{\frac{\text{282}-\frac{\text{36}^\text{2}}{\text{5}}}{\text{4}}}=\text{2.387}\text{ (to 3dp)}\]
 
-\begin{center}
-\begin{tabular}{cccccccccccc}
-34 & 35 & 38 & 41 & 46 & 47 & 47 & 51 & 62 & 73
-\end{tabular}
-\end{center}
-
-\vspace{-0.5cm}
-
-\begin{figure}[H]
-  \centering
-\begin{minipage}{.5\textwidth}
-  \centering
-\begin{tikzpicture}
-\draw (33.5*0.15,0) -- (73.5*0.15,0);
-\node at (0.15*35,-0.3) {35};
-\node at (0.15*40,-0.3) {40};
-\node at (0.15*45,-0.3) {45};
-\node at (0.15*50,-0.3) {50};
-\node at (0.15*55,-0.3) {55};
-\node at (0.15*60,-0.3) {60};
-\node at (0.15*65,-0.3) {65};
-\node at (0.15*70,-0.3) {70};
-\foreach \x in {34,...,73}
-  \draw (0.15*\x,0) -- (0.15*\x,-0.1);
-\fill[black] (0.15*34,0.4) circle (0.05);
-\fill[black] (0.15*35,0.4) circle (0.05);
-\fill[black] (0.15*38,0.4) circle (0.05);
-\fill[black] (0.15*41,0.4) circle (0.05);
-\fill[black] (0.15*46,0.4) circle (0.05);
-\fill[black] (0.15*47,0.4) circle (0.05);
-\fill[black] (0.15*47,0.8) circle (0.05);
-\fill[black] (0.15*51,0.4) circle (0.05);
-\fill[black] (0.15*62,0.4) circle (0.05);
-\fill[black] (0.15*73,0.4) circle (0.05);
-\node at (0.15*53,-0.8) {\text{Height (cm)}};
-\node at (8,4.5) {\textbf{Dot Plot}};
-\node[text width = 8cm,below] at (8,4) {Dot plots display individual data values, stacking repeated values vertically for clarity.};
-\draw[white] (3.5,-2) rectangle (12.5,5);
-\end{tikzpicture}
-
-\end{minipage}%
-  \centering
-\begin{minipage}{.5\textwidth}
-  \centering
-
-\begin{tikzpicture}
-\draw (6,-1) -- (6,1.4);
-\node at (5.7,1.2) {3};
-\node at (5.7,0.7) {4};
-\node at (5.7,0.2) {5};
-\node at (5.7,-0.3) {6};
-\node at (5.7,-0.8) {7};
-\node at (6.3,1.2) {4};
-\node at (6.8,1.2) {5};
-\node at (7.3,1.2) {8};
-\node at (6.3,0.7) {1};
-\node at (6.8,0.7) {6};
-\node at (7.3,0.7) {7};
-\node at (7.8,0.7) {7};
-\node at (6.3,0.2) {1};
-\node at (6.3,-0.3) {2};
-\node at (6.3,-0.8) {3};
-\node at (9,-0.8) {3};
-\node at (9.5,-0.8) {5};
-\node at (10,-0.2) {$n=10$};
-\draw (9.25,-0.6) -- (9.25,-1);
-\node[anchor=west] at (9.5,-0.8) {represents 35 cm};
-\node at (8,4.5) {\textbf{Stem-and-Leaf Diagram}};
-\node[text width = 8cm,below] at (8,4) {Stem-and-leaf diagrams organise data by place value while preserving the original data values. Leaves should be in order, and a key (or \textit{legend}) and the sample size should be included.};
-\draw[white] (3.5,-2) rectangle (12.5,5);
-\end{tikzpicture}
-
-\end{minipage}
-\end{figure}
-
-\vspace{-1cm}
-
-\begin{figure}[H]
-  \centering
-\begin{minipage}{.5\textwidth}
-  \centering
-
-\begin{tikzpicture}
-\draw (33.5*0.15,0) -- (73.5*0.15,0);
-\node at (0.15*35,-0.3) {35};
-\node at (0.15*40,-0.3) {40};
-\node at (0.15*45,-0.3) {45};
-\node at (0.15*50,-0.3) {50};
-\node at (0.15*55,-0.3) {55};
-\node at (0.15*60,-0.3) {60};
-\node at (0.15*65,-0.3) {65};
-\node at (0.15*70,-0.3) {70};
-\foreach \x in {34,...,73}
-  \draw (0.15*\x,0) -- (0.15*\x,-0.1);
-\draw[fill=black!25] (0.15*38,0.4) rectangle (0.15*51,0.8);
-\draw (0.15*34,0.4) -- (0.15*34,0.8);
-\draw (0.15*38,0.4) -- (0.15*38,0.8);
-\draw (0.15*46.5,0.4) -- (0.15*46.5,0.8);
-\draw (0.15*51,0.4) -- (0.15*51,0.8);
-\draw (0.15*73,0.4) -- (0.15*73,0.8);
-\draw (0.15*34,0.6) -- (0.15*38,0.6);
-\draw (0.15*51,0.6) -- (0.15*73,0.6);
-\node at (0.15*53,-0.8) {\text{Height (cm)}};
-\node at (8,4.5) {\textbf{Box Plot}};
-\node[text width = 8cm,below] at (8,4) {Box plots offer a visual representation of a five-number summary, consisting of the minimum value, the lower quartile $\text{Q}_\text{1}$, the median, the upper quartile $\text{Q}_\text{3}$ and the maximum value.};
-\draw[white] (3.5,-2) rectangle (12.5,5);
-\end{tikzpicture}
-
-\end{minipage}%
-  \centering
-\begin{minipage}{.5\textwidth}
-  \centering
-
-\begin{tikzpicture}
-\draw (30*0.08+3.8,0) -- (80*0.08+3.8,0);
-\draw (30*0.08+3.8,0) -- (30*0.08+3.8,1.2);
-\node at (0.08*30+3.8,-0.3) {\scriptsize{30}};
-\node at (0.08*40+3.8,-0.3) {\scriptsize{40}};
-\node at (0.08*50+3.8,-0.3) {\scriptsize{50}};
-\node at (0.08*60+3.8,-0.3) {\scriptsize{60}};
-\node at (0.08*70+3.8,-0.3) {\scriptsize{70}};
-\node at (0.08*80+3.8,-0.3) {\scriptsize{80}};
-\foreach \x in {30,40,...,80}{
-  \draw (0.08*\x+3.8,0) -- (0.08*\x+3.8,-0.1);}
-  \foreach \y in {0,...,5}{
-  \draw (0.08*29.5+3.8,1.2*0.2*\y) -- (0.08*30+3.8,1.2*0.2*\y);}
-\node at (0.08*28.5+3.8,1.2) {\scriptsize{5}};
-\node at (0.08*28.5+3.8,0) {\scriptsize{0}};
-\node at (0.08*25+3,0.5) {frequency};
-\draw[fill=black!25] (0.08*30+3.8,0) rectangle (0.08*40+3.8,0.6*1.2);
-\draw[fill=black!25] (0.08*40+3.8,0) rectangle (0.08*50+3.8,0.8*1.2);
-\draw[fill=black!25] (0.08*50+3.8,0) rectangle (0.08*60+3.8,0.2*1.2);
-\draw[fill=black!25] (0.08*60+3.8,0) rectangle (0.08*70+3.8,0.2*1.2);
-\draw[fill=black!25] (0.08*70+3.8,0) rectangle (0.08*80+3.8,0.2*1.2);
-\node at (0.08*53+3.8,-0.8) {\text{height (cm)}};
-\node at (8,4.5) {\textbf{Histogram}};
-\node[text width = 8cm,below] at (8,4) {Histograms display continuous data grouped into intervals (bins). Unlike bar charts, the bars are adjacent (no gaps), and the area of each bar represents frequency.};
-\draw[white] (3.5,-2) rectangle (12.5,5);
-\end{tikzpicture}
-
-\end{minipage}
-\end{figure}
-
-\vspace{-1cm}
-
-[]{#ex14q}
-
-#### [Exercise 1.4](#ex14a) {-}
-
-\begin{enumerate}
-    \item The ages (in years) of competitors in a junior golf tournament are below. Draw a dot plot to represent this data.
-    \begin{center}
-    \begin{tabular}{cccccccccccccc}
-        16 & 14 & 19 & 13 & 14 & 17 & 16 & 19 & 16 & 17 & 12 & 16 & 14 & 19
-    \end{tabular}
-    \end{center}
-    \item The price of an ice cream is recorded at 12 stalls (in £). Represent the data using a stem-and-leaf diagram.
-    \begin{center}
-    \begin{tabular}{cccccc}
-        1.50 & 2.20 & 2.50 & 2.10 & 1.80 & 1.40\\
-        2.00 & 1.90 & 3.60 & 0.90 & 1.70 & 1.50
-    \end{tabular}
-    \end{center}
-    \item The masses (in kg) of the luggage of 10 passengers on a plane to Barra were recorded. Construct a box plot.
-    \begin{center}
-    \begin{tabular}{cccccccccc}
-        15 & 18 & 14 & 22 & 19 & 14 & 10 & 21 & 17 & 16  
-    \end{tabular}
-    \end{center}
-\end{enumerate}
-
-\pagebreak
-
-## Tables, Figures and Output
-
-There are many ways in which data can be presented, extending beyond those covered on the previous page. In statistical reports they are often clearly labelled as **tables** or **figures**, and numbered so they can be more easily referred to. 
-
-\begin{multicols}{3}
-
-\begin{center}
-    \begin{tikzpicture}
-        \draw[white] (0,0) rectangle (5,4);
-        \node[above, text width=5cm] at (2.5,4) {\textbf{Table 1:} Contingency table of mode of transport.}; 
-        \draw (0,0) rectangle (0.8,2.4);
-        \node[rotate=90] at (0.4,1.2) {Year Group};
-        \draw[step=0.8cm] (0.8,0) grid (4.8,2.4);
-        \draw[step=0.8cm] (1.6,2.4) grid (4.8,3.2);
-        \draw (1.6,3.2) rectangle (4.8,4);
-        \node at (3.2,3.6) {Transport};
-        \node[rotate=45] at (2,2.8) {\small{walk}};
-        \node[rotate=45] at (2.8,2.8) {\small{bus}};
-        \node[rotate=45] at (3.6,2.8) {\small{car}};
-        \node[rotate=45] at (4.4,2.8) {\small{bike}};
-        \node at (1.2,2) {3rd};
-        \node at (1.2,1.2) {2nd};
-        \node at (1.2,0.4) {1st};
-        \node at (2,0.4) {4};
-        \node at (2,1.2) {7};
-        \node at (2,2) {12};
-        \node at (2.8,0.4) {14};
-        \node at (2.8,1.2) {13};
-        \node at (2.8,2) {15};
-        \node at (3.6,0.4) {11};
-        \node at (3.6,1.2) {8};
-        \node at (3.6,2) {3};
-        \node at (4.4,0.4) {2};
-        \node at (4.4,1.2) {1};
-        \node at (4.4,2) {4};
-    \end{tikzpicture}
-\end{center}
-
-\begin{center}
-    \begin{tikzpicture}
-        \node[above, text width=5cm] at (2.5,4) {\textbf{Figure 1:} Bar chart of mode of transport.}; 
-        \draw (0.5,1) -- (0.5,4);
-        \node[rotate=90] at (0.2,2.4) {frequency};
-        \draw (0.5,1) -- (4.2,1);
-        \node at (2.2,0.2) {year group};
-        
-        \draw[pattern=north west lines] (0.6,1) rectangle (0.8,1.8);
-        \draw[fill=black!20] (0.8,1) rectangle (1,3.8);
-        \draw (1,1) rectangle (1.2,3.2);
-        \draw[fill=black!50] (1.2,1) rectangle (1.4,1.4);
-        \node at (1,0.7) {1st};
-
-        \draw[pattern=north west lines] (1.7,1) rectangle (1.9,2.4);
-        \draw[fill=black!20] (1.9,1) rectangle (2.1,3.6);
-        \draw (2.1,1) rectangle (2.3,2.6);
-        \draw[fill=black!50] (2.3,1) rectangle (2.5,1.2);
-        \node at (2.1,0.7) {2nd};
-
-        \draw[pattern=north west lines] (2.8,1) rectangle (3,3.4);
-        \draw[fill=black!20] (3,1) rectangle (3.2,4);
-        \draw (3.2,1) rectangle (3.4,1.6);
-        \draw[fill=black!50] (3.4,1) rectangle (3.6,1.8);
-        \node at (3.2,0.7) {3rd};
-        
-    \end{tikzpicture}
-\end{center}
-
-\begin{center}
-    \begin{tikzpicture}
-        \node[above,text width=5cm] at (2.5,4) {\textbf{Figure 2:} Chart of transport percentages.}; 
-        \node at (0.5,3.5) {3rd};
-        \node at (0.5,2.7) {2nd};
-        \node at (0.5,1.9) {1st};
-
-        \draw[pattern=north west lines] (1,3.2) rectangle (1.7,3.8);
-        \draw[fill=black!20] (1.7,3.2) rectangle (2.6,3.8);
-        \draw (2.6,3.2) rectangle (2.78,3.8);
-        \draw[fill=black!50] (2.78,3.2) rectangle (3,3.8);
-
-        \draw[pattern=north west lines] (1,2.4) rectangle (1.5,3);
-        \draw[fill=black!20] (1.5,2.4) rectangle (2.4,3);
-        \draw (2.4,2.4) rectangle (2.95,3);
-        \draw[fill=black!50] (2.95,2.4) rectangle (3,3);
-
-        \draw[pattern=north west lines] (1,1.6) rectangle (1.26,2.2);
-        \draw[fill=black!20] (1.26,1.6) rectangle (2.16,2.2);
-        \draw (2.16,1.6) rectangle (2.86,2.2);
-        \draw[fill=black!50] (2.86,1.6) rectangle (3,2.2);
-
-        \draw (1,1.4) -- (3,1.4);
-        \draw (1,1.3) -- (1,1.4) node[below] {0\%}; 
-        \draw (3,1.3) -- (3,1.4) node[below] {100\%}; 
-        \draw (2,1.3) -- (2,1.4);
-        \draw (1.5,1.3) -- (1.5,1.4);
-        \draw (2.5,1.3) -- (2.5,1.4);
-
-        \draw[pattern=north west lines] (0.5,0.75) rectangle (0.75,0.5);
-        \draw[fill=black!20] (1.75,0.75) rectangle (2,0.5);
-        \draw (3,0.75) rectangle (3.25,0.5);
-        \draw[fill=black!50] (4.25,0.75) rectangle (4.5,0.5);
-
-        \node at (0.625,0.25) {walk};
-        \node at (1.875,0.25) {bus};
-        \node at (3.125,0.2) {car};
-        \node at (4.375,0.25) {bike};
-    \end{tikzpicture}
-\end{center}
-
-\end{multicols}
-
-Not all graphs encountered in real life will be up to scratch; some graphs may be unclear, accidentally misleading or even intentionally misleading. Being alert to potential flaws in tables and figures and identifying possible improvements is an important skill.
-
-The widespread availability of computing power means that specialist software is often used by statisticians to avoid the need for time-consuming calculations where possible. Whilst this course requires no use of statistical software, examples of computer **output** will be displayed from which the required information must be extracted.
-
-\begin{multicols}{2}
-
-\begin{center}
-    \begin{tikzpicture}
-        \node[above, text width=7cm] at (3.5,4) {\textbf{Figure 3:} Dot plots of time (mins) to walk to school for 2nd and 3rd years.}; 
-        \draw (0,3) -- (5,3);
-        \foreach \x in {0,0.5,...,5}{
-        \draw (\x,2.8) -- (\x,3);
-        }
-        \node[below] at (0,2.9) {0};
-        \node[below] at (1,2.9) {10};
-        \node[below] at (2,2.9) {20};
-        \node[below] at (3,2.9) {30};
-        \node[below] at (4,2.9) {40};
-        \node[below] at (5,2.9) {50};
-        \draw (0,1) -- (5,1);
-        \foreach \x in {0,0.5,...,5}{
-        \draw (\x,0.8) -- (\x,1);
-        }
-        \node[below] at (0,0.9) {0};
-        \node[below] at (1,0.9) {10};
-        \node[below] at (2,0.9) {20};
-        \node[below] at (3,0.9) {30};
-        \node[below] at (4,0.9) {40};
-        \node[below] at (5,0.9) {50};
-
-        \node at (6,3.5) {3rd years};
-        \node at (6,1.5) {2nd years};
-        \draw[fill] (0.6,3.3) circle (2pt);
-        \draw[fill] (1.0,3.3) circle (2pt);
-        \draw[fill] (1.0,3.5) circle (2pt);
-        \draw[fill] (1.3,3.3) circle (2pt);
-        \draw[fill] (1.3,3.5) circle (2pt);
-        \draw[fill] (1.3,3.7) circle (2pt);
-        \draw[fill] (1.7,3.3) circle (2pt);
-        \draw[fill] (1.9,3.3) circle (2pt);
-        \draw[fill] (2.2,3.3) circle (2pt);
-        \draw[fill] (2.2,3.5) circle (2pt);
-        \draw[fill] (2.7,3.3) circle (2pt);
-        \draw[fill] (3.6,3.3) circle (2pt);
-
-        \draw[fill] (0.3,1.3) circle (2pt);
-        \draw[fill] (0.8,1.3) circle (2pt);
-        \draw[fill] (1.3,1.3) circle (2pt);
-        \draw[fill] (1.7,1.3) circle (2pt);
-        \draw[fill] (1.7,1.5) circle (2pt);
-        \draw[fill] (2.0,1.3) circle (2pt);
-        \draw[fill] (2.6,1.3) circle (2pt);
-    \end{tikzpicture}
-\end{center}
-
-\columnbreak
-
-\begin{center}
-    \begin{tikzpicture}
-        \node[above, text width=7cm] at (3.5,4) {\textbf{Output 1:} Summary data for walk times (mins) for 2nd and 3rd years.}; 
-        \node[right] at (0,3.5) {\texttt{data: walk time}};
-        \node[right] at (0,2.7) {\texttt{3rd yr:  n=12}};
-        \node[right] at (0,1.9) {\texttt{2nd yr:  n=****}};
-        \node[right] at (3.2,2.7) {\texttt{mean=17.3}};
-        \node[right] at (3.2,1.9) {\texttt{mean=14.9}};
-        \node[right] at (5.5,2.7) {\texttt{sd=8.42}};
-        \node[right] at (5.5,1.9) {\texttt{sd=7.65}};
-        \node[right] at (0,1.1) {\texttt{alternative hypothesis: means are not equal}};
-        \node[right] at (0,0.3) {\texttt{t=0.619, df=17, p-value=0.544}};
-    \end{tikzpicture}
-\end{center}
-
-\end{multicols}
-
-Whilst this textbook aims to enable familiarity with common figures, tables and computer output, the best way to practise obtaining information from them is to *read a wide range of relevant statistical articles and reports*. 
 
 []{#ex15q}
 
 #### [Exercise 1.5](#ex15a) {-}
 
 \begin{enumerate}
-    \item Use \textbf{Table 1} to calculate the proportion of pupils in the sample that walk to school.
-    \item Suggest two possible improvements to \textbf{Figure 1}.
-    \item Using \textbf{Figure 2}, compare the proportions of pupils in the sample who take the bus between each year group.
-    \item From \textbf{Figure 3}, state the approximate median time taken to walk for 3rd year pupils.
-    \item One piece of information from \textbf{Output 1} has been replaced by \texttt{****}. State the missing value.
+    \item Summary statistics from sample data are given below. Use appropriate formulae to calculate the mean and standard deviation for each sample.
+    \begin{enumerate}
+    \begin{multicols}{2}
+        \item $\sum{x}=\text{359}$,\; $\sum{x^{\text{2}}}=\text{15119}$,\; $n=\text{10}$
+        \item $S_{xx}=\text{1037.75}$,\; $\sum x=\text{994}$,\; $n=\text{16}$
+    \end{multicols}
+    \end{enumerate}
+    \item Sets of sample data are shown below. Using a graphical calculator if available, and formulae otherwise, find the mean and standard deviation for each.
+    \begin{enumerate}
+    \begin{multicols}{2}
+    \item 
+    \begin{tabular}{cccccccc}
+            32 & 25 & 29 & 37 & 16 & 39 & 23 & 32 
+        \end{tabular}
+    \item 
+    \begin{tabular}{ccccccccc}
+        17 & 63 & 34 & 23 & 40 & 57 & 72 & 70 & 43\\
+        56 & 29 & 37 & 41 & 50 & 13 & 24 & 30 & 58
+    \end{tabular}
+    \end{multicols}
+    \end{enumerate}
+    \item The frequency tables below represent sample data. Calculate the mean for each data set.
+    \begin{enumerate}
+    \begin{multicols}{2}
+    \item 
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        Value & 6 & 7 & 8 & 9 & 10\\
+        \hline
+        Frequency & 1 & 5 & 4 & 3 & 2\\ 
+        \hline
+    \end{tabular}
+    \item 
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        Value & 0 & 1 & 2 & 3 & 4 & 5 & 6\\
+        \hline
+        Frequency & 3 & 7 & 5 & 0 & 4 & 1 & 2\\ 
+        \hline
+    \end{tabular}
+    \end{multicols}
+    \end{enumerate}
+    \item Sets of sample data are shown below. Using a graphical calculator, or by first putting the data set in order, find the median and interquartile range for each data set.
+    \begin{enumerate}
+    \begin{multicols}{2}
+    \item 
+    \begin{tabular}{cccccccc}
+            32 & 25 & 29 & 37 & 16 & 39 & 23 & 32 
+        \end{tabular}
+    \item 
+    \begin{tabular}{ccccccccc}
+        17 & 63 & 34 & 23 & 40 & 57 & 72 & 70 & 43\\
+        56 & 29 & 37 & 41 & 50 & 13 & 24 & 30 & 58
+    \end{tabular}
+    \end{multicols}
+    \end{enumerate}
+    \item Random samples of data from populations A and B are shown below.
+    \begin{center}
+        \begin{tabular}{c|cccccccc}
+            Sample A & 4 & 7 & 9 & 10 & 10 & 14 & 15 & 20\\
+            \hline
+            Sample B & 9 & 10 & 10 & 11 & 12 & 12 & 17 &   
+        \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item Find the mean and standard deviation for sample A.
+        \item Calculate the variance for sample A.
+        \item Calculate the median and interquartile range for sample B.
+        \item Suggest two further statistics that could be calculated to make a fair comparison between the location and spread of the two populations.
+    \end{enumerate}
+    \item Eight physics students sit a test in September and a test in November, each out of ten. Each student calculates the \textit{difference} in their marks between the two tests ($\text{November}-\text{September}$). The results are shown in the table below, with the differences for the final four students yet to be calculated:
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+            \hline
+            Student & A & B & C & D & E & F & G & H\\
+            \hline
+            September & 6 & 9 & 4 & 10 & 8 & 5 & 7 & 8\\
+            \hline
+            November & 8 & 8 & 6 & 10 & 9 & 3 & 7 & 7\\
+            \hline
+            Difference & 2 & -1 & 2 & 0 & ? & ? & ? & ? \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item Calculate the remaining four differences.
+        \item Find the \textit{median of the differences} and the \textit{interquartile range of the differences}.
+        \item Find the \textit{mean of the differences} and the \textit{standard deviation of the differences} (writing the answers as $\bar{x}_d$ and $s_d$, instead of $\bar{x}$ and $s$ respectively, for clarity).
+    \end{enumerate}
 \end{enumerate}
 
 \pagebreak
 
 ## Outliers and Fences
 
-Sometimes a set of data may contain values that seem *extremely high or low* in comparison to the rest of the values. It is important to be wary of such values and the potentially significant impact they could have on any statistical analysis performed. There are a range of objective approaches that can be used to determine whether one or more points are extreme enough to be classified as **outliers**. In this course, *fences* will be used.
+Sometimes a data set may contain values that seem *extremely high or low* in comparison to the rest of the values. It is important to be wary of such values and the potentially significant impact they could have on any statistical analysis performed. There is a range of objective approaches that can be used to determine whether one or more points are extreme enough to be classified as **outliers**. In this course, *fences* will be used.
 
 \begin{tcolorbox}[center,title=Identifying Outliers,colback=red!5,colframe=red!70!black,width=15cm,halign = center,halign title = center]
 \begin{center}
@@ -1078,9 +1279,9 @@ Any values \textit{below the lower fence} or \textit{above the upper fence} are 
 \end{center}
 \end{tcolorbox}
 
-If an outlier is identified in a set of data, an investigation should be conducted to determine the cause. If it is concluded that the outlier is a rogue point, such as an error in measurement, it can be removed from the data set and summary statistics re-calculated. However, if an outlier is a valid point in the data set then it should not be removed.
+If an outlier is identified in a data set, an investigation should be conducted to determine the cause. If it is concluded that the outlier is a rogue point, such as an error in measurement, it can be removed from the data set and summary statistics re-calculated. However, if an outlier is a valid point in the data set then it should not be removed.
 
-Returning to the sunflower heights from page 6, the data can now be checked for possible outliers:
+Returning to the sunflower heights from page 5, the data can now be checked for possible outliers:
 
 \begin{multicols}{2}
 
@@ -1108,9 +1309,9 @@ n & min & Q1 & median & Q3 & max\\
 \vspace{-1cm}
 
 \begin{align*}
-  \text{IQR}&=\text{Q}_\text{3}-\text{Q}_\text{1}=51-38=13\\[1em]
-  \text{Lower fence}&=\text{Q}_\text{1}-\text{1}.\text{5}\times \text{IQR}=38-\text{1}.\text{5}\times 13=18.5\\[1em]
-  \text{Upper fence}&=\text{Q}_\text{3}+\text{1}.\text{5}\times \text{IQR}=51+\text{1}.\text{5}\times 13=70.5
+  \text{IQR}&=\text{Q}_\text{3}-\text{Q}_\text{1}=\text{51}-\text{38}=\text{13}\\[1em]
+  \text{Lower fence}&=\text{Q}_\text{1}-\text{1}.\text{5}\times \text{IQR}=38-\text{1}.\text{5}\times \text{13}=\text{18}.\text{5}\\[1em]
+  \text{Upper fence}&=\text{Q}_\text{3}+\text{1}.\text{5}\times \text{IQR}=51+\text{1}.\text{5}\times \text{13}=\text{70}.\text{5}
 \end{align*}
 
 Since $\text{73}>\text{70}.\text{5}$, it is an outlier.
@@ -1160,7 +1361,7 @@ The outlier in this data set could be valid if, for instance, the sunflower plan
 \end{center}
 
 \begin{enumerate}
-    \item[(a)] Show that the set of data contains an outlier.
+    \item[(a)] Show that the data set contains an outlier.
     \item[(b)] Suggest a possible cause for this outlier which would mean it should be removed.
 \end{enumerate}
 
@@ -1200,6 +1401,13 @@ The outlier in this data set could be valid if, for instance, the sunflower plan
         \item Identify any possible outliers.
         \item Draw a box plot to display this data.
     \end{enumerate}
+    \item A call centre records the times (in minutes) a sample of customers have to wait before being connected to an agent.
+    \begin{center}
+\begin{tabular}{cccccccccc}
+    55 & 20 & 31 & 12 & 18 & 32 & 28 & 16 & 14 & 33
+\end{tabular}
+\end{center}
+    Show that the data set contains at least one outlier.
     \item A hospital trust compiled data relating to the length of stay of patients in a particular hospital. A random sample of 18 patients gave the following summary data, measured in days.
     \begin{center}
     \begin{tabular}{cccccccc}
@@ -1243,9 +1451,9 @@ The outlier in this data set could be valid if, for instance, the sunflower plan
 
 \pagebreak
 
-## Describing Data Distributions
+## Describing the Shapes of Distributions
 
-Summary statistics alone are not sufficient to describe the full complexity of the way data is distributed. It is also important to consider and be able to describe the **shape** of the distribution, accomplished most easily using a histogram. Whilst real-life data rarely follows a precise mathematical model *exactly*, a number of shapes are commonly observed. The following data was generated by *simulating random sampling* from populations with these distributions. 
+Summary statistics alone are not sufficient to describe the full complexity of the way data is distributed. It is also important to consider and be able to describe the **shape** of the distribution, visualised most easily using a graph. Whilst real-life data rarely follows a precise mathematical model *exactly*, a number of shapes are commonly observed. The following data was generated by *simulating random sampling* from populations with the described distributions. 
 
 \begin{figure}[H]
   \centering
@@ -1253,7 +1461,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
   \centering
 \begin{tikzpicture}
 \draw[white] (-1,-1) rectangle (7,4.7);
-\node[text width = 6cm,align=center] at (3,4) {\textit{uniformly distributed data} ($n=\text{103}$)};
+\node[text width = 6cm,align=center] at (3,4) {\textit{uniformly distributed} ($n=\text{103}$)};
 \draw (-0.5,0) -- (6.5,0);
 \draw[fill=black!25] (0,0) rectangle (0.25,1.8);
 \draw[fill=black!25] (0.25,0) rectangle (0.5,1.7);
@@ -1293,7 +1501,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
 
 \begin{tikzpicture}
 \draw[white] (-1,-1) rectangle (7,4.7);
-\node[text width = 6cm,align=center] at (3,4) {\textit{normally distributed data (bell-shaped distribution)} ($n=\text{215}$)};
+\node[text width = 6cm,align=center] at (3,4) {\textit{normally distributed (bell-shaped distribution)} ($n=\text{215}$)};
 \draw (-0.5,0) -- (6.5,0);    
 \draw[fill=black!25] (0,0) rectangle (0.25,0);
 \draw[fill=black!25] (0.25,0) rectangle (0.5,0);
@@ -1335,7 +1543,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
   \centering
 \begin{tikzpicture}
 \draw[white] (-1,-1) rectangle (7,4.7);
-\node[text width = 6cm,align=center] at (3,4) {\textit{bimodal data} ($n=\text{87}$)};
+\node[text width = 6cm,align=center] at (3,4) {\textit{bimodal} ($n=\text{87}$)};
 \draw (-0.5,0) -- (6.5,0);
 \draw[fill=black!25] (0,0) rectangle (0.25,0);
 \draw[fill=black!25] (0.25,0) rectangle (0.5,0);
@@ -1375,7 +1583,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
 
 \begin{tikzpicture}
 \draw[white] (-1,-1) rectangle (7,4.7);
-\node[text width = 6cm,align=center] at (3,4) {\textit{positively skewed data (and so not symmetrical)} ($n=\text{134}$)};
+\node[text width = 6cm,align=center] at (3,4) {\textit{positively skewed (and so not symmetrical)} ($n=\text{134}$)};
 \draw (-0.5,0) -- (6.5,0);
 \draw[fill=black!25] (0,0) rectangle (0.25,0);
 \draw[fill=black!25] (0.25,0) rectangle (0.5,0);
@@ -1419,7 +1627,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
   \centering
 \begin{tikzpicture}
 \draw[white] (-1,-1) rectangle (7,4.7);
-\node[text width = 6cm,align=center] at (3,4) {\textit{very hard to infer distributions\\ of data from small samples} ($n=\text{19}$)};
+\node[text width = 6cm,align=center] at (3,4) {\textit{difficult to infer distributions\\ from small samples} ($n=\text{19}$)};
 \draw (-0.5,0) -- (6.5,0);
 \draw[fill=black!25] (0,0) rectangle (0.25,0);
 \draw[fill=black!25] (0.25,0) rectangle (0.5,1);
@@ -1459,7 +1667,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
 
 \begin{tikzpicture}
 \draw[white] (-1,-1) rectangle (7,4.7);
-\node[text width = 6cm,align=center] at (3,4) {\textit{negatively skewed data (and so not symmetrical)} ($n=\text{97}$)};
+\node[text width = 6cm,align=center] at (3,4) {\textit{negatively skewed (and so not symmetrical)} ($n=\text{97}$)};
 \draw (-0.5,0) -- (6.5,0);
 \draw[fill=black!25] (-0.5,0) rectangle (-0.25,0.1);
 \draw[fill=black!25] (-0.25,0) rectangle (0,0.1);
@@ -1710,7 +1918,7 @@ When comparing two or more samples of data, a good starting point is to create s
     \item \textbf{Shapes} (i.e. symmetrical, skewed, bimodal, bell-shaped curve)
 \end{itemize}
 
-At this *exploratory* stage, it is again important to avoid making and *conclusions* relating to the populations from which the sample data was drawn.
+At this *exploratory* stage, it is again important to avoid making any *conclusions* relating to the populations from which the sample data was drawn.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=NavyBlue]
 \textbf{Problem:} Within the sport of professional cycling, it is common for riders to specialise in certain types of cycling. \textit{Sprinters} aim to win races that finish on flat roads at high speed, whilst \textit{climbers} aim to win races with an uphill finish. A researcher studying the characteristics of elite-level cyclists randomly selects samples of 30 \textit{sprinters} and 30 \textit{climbers}, recording the heights of each. The results are shown summarised in \textbf{Table 1}.
@@ -1855,8 +2063,8 @@ Box plots for the two groups of cyclists are shown below in \textbf{Figure 1}, a
 
 \begin{enumerate}[itemsep=5pt]
     \item[(a) ] The sample median height of the sprinters was greater than that of the climbers.\\[0.5em]
-The larger interquartile range suggests that the population heights of sprinters are more varied.
-    \item[(b) ] The dot plot suggests the underlying distribution of heights for climbers is negatively skewed.
+The larger interquartile range suggests that the population of sprinters' heights is more varied.
+    \item[(b) ] The dot plot suggests the underlying distribution of climbers' heights is negatively skewed.
 \end{enumerate}
 
 \end{tcolorbox}
@@ -1920,7 +2128,7 @@ The larger interquartile range suggests that the population heights of sprinters
 \draw[semithick] (97,2.3) -- (99,2.3);
 \end{tikzpicture}
 \end{center}
-    Using the box plots, make two comments comparing the scoring of the two judges.
+    Using the box plots, make two comments comparing the location and spread of the judges' scoring.
     \item The temperature at 2pm was noted for 14 randomly selected days in January and June at a local tourist spot and box plots drawn to display the results.
 \begin{center}
 \begin{tikzpicture}
@@ -1989,8 +2197,8 @@ The larger interquartile range suggests that the population heights of sprinters
     \end{center}   
     \begin{enumerate}
         \item Draw dot plots to represent the data.
-        \item Calculate the mean and standard deviation for each sample.
-        \item Make two comments comparing the two lemonade production lines.
+        \item Find the mean and standard deviation for each sample.
+        \item Make two comments comparing location and spread for the two lemonade production lines.
     \end{enumerate}
 \end{enumerate}
 
@@ -2025,7 +2233,7 @@ The larger interquartile range suggests that the population heights of sprinters
             \item Continuous data.
             \end{multicols}
         \end{enumerate}
-        \item If it was suspected that one of the tracks is an outlier in terms of length, state what could be calculated in order to determine whether it is in fact an outlier.
+        \item If it was suspected that \textit{Something In The Way} is an outlier in terms of length, state what could be calculated in order to determine whether it is in fact an outlier.
     \end{enumerate}
     \item A sports clothing store is seeking to better understand its sales of running shoes. For a random sample of twelve sales of pairs of running shoes, the sizes are recorded as follows:
     \begin{center}
@@ -2036,7 +2244,7 @@ The larger interquartile range suggests that the population heights of sprinters
     \begin{enumerate}
         \item Construct a dot plot to display the data.
         \item Find the median and interquartile range for the sizes of running shoes sold.
-        \item Calculate the mean and standard deviation for the sizes of running shoes sold.
+        \item Find the mean and standard deviation for the sizes of running shoes sold.
         \item State the type of data recorded.
     \end{enumerate}
     \item The back-to-back stem-and-leaf diagram below shows the heights of trees in two areas of woodland. 
@@ -2051,7 +2259,7 @@ The larger interquartile range suggests that the population heights of sprinters
     \end{center}
     \begin{enumerate}
         \item Suggest one improvement needed for the diagram.
-        \item Make one comment comparing the heights of trees in the two areas of woodland.
+        \item Without performing any calculations, make one comment comparing the heights of trees in the two areas.
     \end{enumerate}
     \item The petal lengths (in centimetres) for samples of flowers from two species of iris flowers is recorded: \textit{iris setosa} and \textit{iris versicolor}. The data is summarised in the table below using statistical software:
     \begin{center}

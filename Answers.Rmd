@@ -1,8 +1,11 @@
 # Answers {-}
 \markboth{Answers}{ANSWERS}
 
+\vspace{-1cm}
+
 \setstretch{1.0}
 \raggedright
+\setlist[enumerate]{nosep}
 
 ### Chapter 1 Answers - Exploratory Data Analysis {-}
 
@@ -14,7 +17,7 @@
 #### [Exercise 1.1](#ex11q) {-}
 
 \begin{enumerate}
-    \item 
+    \item
     \begin{enumerate}
         \begin{multicols}{6}
         \item Quantitative
@@ -44,30 +47,18 @@
 #### [Exercise 1.2](#ex12q) {-}
 
 \begin{enumerate}
-    \begin{multicols}{3}
-    \item Population parameter (population mean)
-    \item Sample statistic (sample mean)
-    \item Sample statistic (sample mean)
+    \begin{multicols}{5}
+    \item Population mean\newline $\mu$
+    \item Sample mean\newline  $\bar{x}$
+    \item Sample standard deviation\newline  $s$
+    \item Population standard deviation\newline  $\sigma$
+    \item Sample mean\newline  $\bar{x}$
     \end{multicols}
 \end{enumerate}
 
 []{#ex13a}
 
 #### [Exercise 1.3](#ex13q) {-}
-
-\begin{enumerate}
-    \begin{multicols}{4}
-    \item $\bar{x}=35.9,s=15.74$
-    \item $\bar{f}=5.8,s=2.145$
-    \item $\bar{x}=29.125,s=7.586$
-    \item $\text{median}=40.5,\text{IQR}=27.5$
-    \end{multicols}
-\end{enumerate}
-
-[]{#ex14a}
-
-#### [Exercise 1.4](#ex14q) {-}
-
 \begin{enumerate}
     \item 
     \begin{multicols}{3}
@@ -103,21 +94,21 @@
         \node at (0,3) {$1$};
         \node at (0,2.5) {$2$};
         \node at (0,2) {$3$};
-        \node at (1,3.5) {$90$};
-        \node at (1,3) {$40$};
-        \node at (1.7,3) {$50$};
-        \node at (2.4,3) {$50$};
-        \node at (3.1,3) {$70$};
-        \node at (3.8,3) {$80$};
-        \node at (4.5,3) {$90$};
-        \node at (1,2.5) {$00$};
-        \node at (1.7,2.5) {$10$};
-        \node at (2.4,2.5) {$20$};
-        \node at (3.1,2.5) {$50$};
-        \node at (1,2) {$60$};
+        \node at (1,3.5) {$9$};
+        \node at (1,3) {$4$};
+        \node at (1.7,3) {$5$};
+        \node at (2.4,3) {$5$};
+        \node at (3.1,3) {$7$};
+        \node at (3.8,3) {$8$};
+        \node at (4.5,3) {$9$};
+        \node at (1,2.5) {$0$};
+        \node at (1.7,2.5) {$1$};
+        \node at (2.4,2.5) {$2$};
+        \node at (3.1,2.5) {$5$};
+        \node at (1,2) {$6$};
         \node at (2.5,4.6) {stem-and-leaf diagram};
         \node at (2.5,4.1) {(ice cream cost)};
-        \node[left] at (5,1) {$2|50$ represents £2.50};
+        \node[left] at (5,1) {$2|5$ represents £2.50};
         \node[left] at (5,1.5) {$n=12$};
     \end{tikzpicture}
     \item 
@@ -140,6 +131,19 @@
     \end{multicols}
 \end{enumerate}
 
+[]{#ex14a}
+
+#### [Exercise 1.4](#ex14q) {-}
+
+\begin{enumerate}
+    \begin{multicols}{4}
+    \item $\bar{x}=35.9,s=15.74$
+    \item $\bar{x}=5.8,s=2.145$
+    \item $\bar{x}=29.125,s=7.586$
+    \item $\text{median}=40.5,\text{IQR}=28$
+    \end{multicols}
+\end{enumerate}
+
 []{#ex15a}
 
 #### [Exercise 1.5](#ex15q) {-}
@@ -152,21 +156,16 @@
     \item 7
 \end{enumerate}
 
-\endgroup
-\pagebreak
-\begingroup
-\footnotesize
-
 []{#ex16a}
 
 #### [Exercise 1.6](#ex16q) {-}
 
 \begin{enumerate}
     \begin{multicols}{2}
-    \item Lower fence $=7.5$ and upper fence $=51.5$. Since all values lie within this interval, there are no outliers.
+    \item Lower fence $=7.5$ and upper fence $=51.5$. Since all values lie within the interval $(7.5,51.5)$ there are no outliers.\\[0.5em]
     \item 
     \begin{enumerate}
-        \item Lower fence $=6.5$ and upper fence $=22.5$. Since both 4 and 27 lie outwith this interval, they are outliers.
+        \item Lower fence $=6.5$ and upper fence $=22.5$. Since $4<6.5$ and $27>22.5$ they are both outliers.
         \item 
         \begin{tikzpicture}[baseline=(current bounding box.north)]
         \draw (0,0) -- (0.2*30,0);
@@ -187,23 +186,28 @@
         \draw (0.2*15,0.7) -- (0.2*15,1.3);
         \end{tikzpicture}
     \end{enumerate}
-    \end{multicols}
     \item 
     \begin{enumerate}
-        \item Upper fence $=26.5$. Since both circled points shown on the box plot are greater than 26.25, they are outliers.
+        \item Upper fence $=26.5$. Since both circled points shown on the box plot (47 and what appears to be 28) are greater than 26.25, they are outliers.\\[1em]
         \item If the lengths of their stays were incorrectly recorded in the hospital's records, it would be valid to remove them from the data set before conducting any further analysis. \textit{Other valid reasons are possible.}
     \end{enumerate}
+        \end{multicols}
 \end{enumerate}
+
+\endgroup
+\newpage
+\begingroup
+\footnotesize
 
 []{#ex17a}
 
 #### [Exercise 1.7](#ex17q) {-}
 
 \begin{enumerate}
-    \item The population of hazelnuts masses appear to follow a positively skewed distribution.
-    \item The population of tree heights appear to be normally distributed.
-    \item The population of waiting times appear to be uniformly distributed.
-    \item The population of number of successful passes appears to follow a bimodal distribution.
+    \item The population of hazelnuts masses appear to possibly follow a positively skewed distribution.
+    \item The population of tree heights appear to possibly follow a symmetrical distributed (such as a normally distribution).
+    \item The population of waiting times appear to be possibly uniformly distributed.
+    \item The population of number of successful passes appears to possibly follow a bimodal distribution.
 \end{enumerate}
 
 []{#ex18a}
@@ -216,8 +220,9 @@
     \begin{multicols}{2}
         \item $\bar{x}_A=301.3,s_A=4.57$\\
         $\bar{x}_B=302.3,s_B=12.3$
-        \item The median volume of coffee dispensed by Model B is greater.\\
-        The amount of coffee dispensed by Model B is more varied.
+        \columnbreak
+        \item The mean volume of coffee dispensed by Model B is appears to be greater (larger sample mean).\\
+        The amount of coffee dispensed by Model B is more varied (larger sample standard deviation).
     \end{multicols}
     \end{enumerate}
     \item The median score awarded by judge A was higher.\\
@@ -240,7 +245,7 @@
         \foreach \x in {70,71,...,87}{
         \draw (0.8*\x,1.9) -- (0.8*\x,2) node[below] {\x};
         }
-        \node at (0.8*78.5,3.7) {Production line data};
+        \node at (0.8*78.5,3.2) {Production line data};
         \node at (0.8*68.5,2.3) {New};
         \node at (0.8*68.5,0.3) {Old};
         \node at (0.8*78.5,-0.8) {Crates completed (per hour)};
@@ -272,11 +277,6 @@
     \end{enumerate}
 \end{enumerate}
 
-\endgroup
-\pagebreak
-\begingroup
-\footnotesize
-
 []{#re1a}
 
 #### [Chapter 1 Review Exercise](#re1q) {-}
@@ -292,7 +292,7 @@
             \item Length.
             \end{multicols}
         \end{enumerate}
-        \item Fences could be calculated to determine whether it is an outlier.
+        \item The upper fence could be calculated to determine whether it is an outlier.
     \end{enumerate}
     \item 
     \begin{enumerate}
@@ -318,7 +318,7 @@
     \draw[fill] (6,0.6) circle (2pt);
     \draw[fill] (5,0.3) circle (2pt);
     \end{tikzpicture}
-    \item $\text{median}=7.5$ and $\text{interquartile range}=3.25$
+    \item $\text{median}=7.5$ and $\text{interquartile range}=3.5$
     \item $\text{mean}=7.33$ and $\text{sd}=2.35$
     \item Shoe sizes are discrete data.
     \end{multicols}
@@ -330,12 +330,13 @@
     \end{enumerate}
     \item 
     \begin{enumerate}
-        \item The fences are $1.13$ and $1.85$. Since both the minimum value of $1.00$ and the maximum of $1.90$ lie outwith this interval, the \textit{iris setosa} data contains at least two outliers.
+        \item The fences are $1.13$ and $1.85$. Since both the minimum value of $1.00$ and the maximum of $1.90$ lie outwith the interval ($1.00<1.13$ and ($1.90>1.85$) the \textit{iris setosa} data contains at least two outliers.
         \item The median length of \textit{iris versicolor} petals appears to be greater than the length of \textit{iris setosa} petals. The length of \textit{iris versicolor} petals appears to be more varied than those of the \textit{iris setosa} species, as seen by their interquartile ranges of $0.18$ and $0.60$ centimetres respectively.
     \end{enumerate}
 \end{enumerate}
 
 \endgroup
+\pagebreak
 
 
 
@@ -447,7 +448,7 @@
 \end{multicols}
 
 \endgroup
-\pagebreak
+\newpage
 \begingroup
 \footnotesize
 
@@ -768,7 +769,7 @@
 \end{multicols}
 
 \endgroup
-\pagebreak
+\newpage
 \begingroup
 \footnotesize
 
@@ -946,7 +947,7 @@
 \end{enumerate}
 
 \endgroup
-\pagebreak
+\newpage
 
 ### Chapter 4 Answers - Further Probability Theory {-}
 
@@ -2389,7 +2390,7 @@
 
 \endgroup
 
-\pagebreak
+\newpage
 
 \begingroup
 \footnotesize
@@ -2501,7 +2502,7 @@
 
 \endgroup
 
-\pagebreak
+\newpage
 
 ### Chapter 14 - Chi-Squared Test for Association {-}
 
@@ -2874,7 +2875,7 @@
 
 \endgroup
 
-\pagebreak
+\newpage
 
 \begingroup
 \footnotesize
@@ -2947,7 +2948,7 @@
 
 \endgroup
 
-\pagebreak
+\newpage
 
 \begingroup
 \footnotesize

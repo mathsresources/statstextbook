@@ -251,6 +251,7 @@ Since $-1.13>-1.96$, do not reject $\text{H}_0$ at the 5\% level of significance
 \begin{enumerate}
     \item A two-sample $z$-test for a difference in population means is to be carried out based on two independent random samples of data taken from normally distributed populations (A and B). The sample mean for A is 87 based on a sample size of 11, whilst the sample mean for B is 92 based on a sample size of 13. Populations A and B have standard deviations 7 and 5 respectively.
     \begin{enumerate}
+        \item State suitable null and alternative hypotheses.
         \item Show the calculation required to obtain a test statistic of $z=-1.98$.
         \item Conclude the test at the 5\% level of significance.
     \end{enumerate}
@@ -559,10 +560,87 @@ Since $1.120<1.771$, do not reject $\text{H}_0$ at the 10\% level of significanc
 #### [Exercise 15.3](#ex153a) {-}
 
 \begin{enumerate}
-    \item Placeholder
+    \item A two-sample $t$-test for a difference in population means is to be carried out based on two independent random samples of data taken from normally distributed populations (A and B), which are assumed to have equal variances. A sample of 11 observations from A produces a mean of 87 and a standard deviation of 8, whilst a sample of 13 observations from B produces a mean of 92 and a standard deviation of 5.
+    \begin{enumerate}
+        \item State suitable null and alternative hypotheses.
+        \item Show the calculation required to obtain a test statistic of $t=-1.072$.
+        \item Conclude the test at the 5\% level of significance.
+    \end{enumerate}
+    \item A motorist and keen statistician tosses a coin before each of a series of drives to determine whether to use her car's air conditioning or not. The fuel efficiency (in miles per gallon) for those drives are:
+    \begin{center}
+        \begin{tabular}{l|ccccccc}
+        With air conditioning (mpg) & 47 & 48 & 51 & 52 & 52 & 53 & 55\\
+        \hline
+        Without air conditioning (mpg) & 49 & 50 & 52 & 54 & 55 & 55 &
+        \end{tabular}
+    \end{center}
+    Assume that fuel efficiency is normally distributed for each population (with air conditioning and without), and that the population variances are equal. Perform a parametric test to determine whether the data supports her belief that fuel efficiency is higher when driving without air conditioning, at the 5\% level of significance.
+    \item The contents of a random sample of six bags of coffee beans sold by \textit{Brewhemian Rhapsody} were measured. The results, in grams, were:
+      \begin{center}
+      \begin{tabular}{cccccc}
+      254 & 255 & 254 & 248 & 256 & 251
+      \end{tabular}
+      \end{center}
+      The results for a random sample of eight bags sold by \textit{The Bean Supremacy} were:
+      \begin{center}
+      \begin{tabular}{cccccccc}
+      240 & 249 & 244 & 246 & 245 & 250 & 240 & 253
+      \end{tabular}
+      \end{center}
+      It is assumed that the mass of coffee in a bag is normally distributed, for each population. Use a parametric test to assess the evidence that the \textit{Brewhemian Rhapsody} bags contain more coffee, stating one further assumption required.
+      \item A medical trial wishes to compare the effectiveness of two new types of mild painkiller. Twenty volunteers are selected and randomly assigned either painkiller A or painkiller B, and an effectiveness score from 0 to 5 is obtained for each person through an industry-recognised pain tolerance test using ice-cold water. Computer output of summary statistics for the samples are shown below:
+      \begin{center}
+          \begin{tabular}{llll}
+            \texttt{data} & \texttt{sample mean} & \texttt{sample sd} & \texttt{n}\\
+            \texttt{painkiller A} & \texttt{1.95} & \texttt{0.54} & \texttt{10}\\
+            \texttt{painkiller B} & \texttt{2.75} & \texttt{0.74} & \texttt{10}
+          \end{tabular}
+      \end{center}
+    Perform a $t$-test at the 2\% level to assess whether there is evidence of a difference between the effectiveness of the two painkillers, stating two assumptions required.
+    \item Times taken to run 5km for a random sample of 7 hockey players and a random sample of 5 rugby players are recorded. The table below gives the results, to the nearest minute:
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw (-7.6,0) -- (-0.9,0);
+        \draw (-6,-0.6) -- (-6,0.6);
+        \node[left] at (-6,0.3) {Hockey};
+        \node[left] at (-6,-0.3) {Rugby};
+        \foreach \x in {0,0.5,...,7.5}{
+        \draw (\x,0.1) -- (\x,-0.1);
+        }
+        \node at (0,-0.3) {18};
+        \node at (7.5,0.3) {33};
+        \node at (-5.5,0.3) {18};
+        \node at (-4.8,0.3) {19};
+        \node at (-4.1,0.3) {20};
+        \node at (-3.4,0.3) {22};
+        \node at (-2.7,0.3) {23};
+        \node at (-2,0.3) {24};
+        \node at (-1.3,0.3) {27};
+        \node at (-5.5,-0.3) {23};
+        \node at (-4.8,-0.3) {28};
+        \node at (-4.1,-0.3) {29};
+        \node at (-3.4,-0.3) {30};
+        \node at (-2.7,-0.3) {33};
+        \draw (0,0) -- (7.5,0);
+        \draw[fill=black!20] (0,0.4) circle (2pt);
+        \draw[fill=black!20] (0.5,0.4) circle (2pt);
+        \draw[fill=black!20] (1,0.4) circle (2pt);
+        \draw[fill=black!20] (2,0.4) circle (2pt);
+        \draw[fill=black!20] (2.5,0.4) circle (2pt);
+        \draw[fill=black!20] (3,0.4) circle (2pt);
+        \draw[fill=black!20] (4.5,0.4) circle (2pt);
+        \draw[fill=black!50] (2.5,-0.4) circle (2pt);
+        \draw[fill=black!50] (5,-0.4) circle (2pt);
+        \draw[fill=black!50] (5.5,-0.4) circle (2pt);
+        \draw[fill=black!50] (6,-0.4) circle (2pt);
+        \draw[fill=black!50] (7.5,-0.4) circle (2pt);
+    \end{tikzpicture}
+\end{center}
+Assume that the time taken to run 5km is normally distributed for both the hockey and rugby players, and that the population variances in 5km time are equal. Perform a parametric test to assess the data for evidence of a difference in the mean time taken for hockey and rugby players to run 5km.
 \end{enumerate}
 
-\newpage
+\pagebreak
 
 ## Paired \textit{t}-test for the Population Mean Difference
 
@@ -589,7 +667,7 @@ The test statistic derives from the one-sample $t$-test covered in Chapter 10, w
 \begin{centering}
 \tcbset{width=6cm,height=2.7cm}
 \begin{tcolorbox}[adjusted title=For a paired $t$-test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-Test statistic: $t=\dfrac{\bar{x}_d-\mu_d}{\dfrac{s_d}{\sqrt{n}}}$
+Test statistic: $t=\dfrac{\bar{x}_d-\mu_d}{\dfrac{s_d}{\sqrt{n}}}$\\[-0.8em] with $\nu=n-1$ \phantom{blahblahbl}
 \end{tcolorbox}
 \end{centering}
 \end{minipage}%
@@ -696,24 +774,41 @@ Since $1.627<2.015$, do not reject $\text{H}_0$ at the 5\% level of significance
 #### [Exercise 15.4](#ex154a) {-}
 
 \begin{enumerate}
-    \item A school is seeking to assess whether a new online numeracy website is helping pupils improve their times tables knowledge. Seven pupils are randomly selected to answer as many times tables questions correctly as they can in one minute. Six months later, after regular use of the online numeracy website, the same seven pupils try again to answer as many times tables questions correctly as they can in one minute. The results are:
+    \item A paired $t$-test for a population mean difference not equal to zero is to be carried out based on pairs of observations from a sample of six individuals. The population of differences is assumed to be normally distributed. The table below shows the results:
+    \begin{center}
+        \begin{tabular}{c|cccccc}
+            \hline
+              Individual & A & B & C & D & E & F\\
+            \hline
+              Observation 1 & 35 & 65 & 43 & 66 & 58 & 61\\
+            \hline
+              Observation 2 & 31 & 57 & 39 & 71 & 58 & 60\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item State suitable null and alternative hypotheses.
+        \item Show the calculation required to obtain a test statistic of $t=0.251$.
+        \item Conclude the test at the 5\% level of significance.
+    \end{enumerate}
+    \item A school is studying whether a digital homework platform is helping pupils improve their times tables knowledge. Seven pupils are randomly selected to answer as many times tables questions correctly as they can in one minute. Six months later, after regular use of the homework platform, the same seven pupils try again to answer as many times tables questions correctly as they can in one minute. The results are:
     \begin{center}
         \begin{tabular}{c|ccccccc}
             \hline
               Pupil & 1 & 2 & 3 & 4 & 5 & 6 & 7\\
             \hline
-              Before & 34 & 16 & 30 & 22 & 17 & 28 & 27\\
+              Before & 31 & 13 & 27 & 19 & 14 & 25 & 24\\
             \hline
-              After & 45 & 18 & 29 & 22 & 21 & 25 & 29\\
+              After & 42 & 15 & 26 & 19 & 18 & 22 & 26\\
             \hline
         \end{tabular}
     \end{center}
-    Perform a hypothesis test at the 10\% level of significance to assess whether the data suggests that the online numeracy website improves times tables ability, stating one assumption required.
+    Perform a $t$-test at the 10\% level of significance to assess whether the data suggests that there has been an improvement in the pupils' times tables ability.
     \item Eight amateur runners are selected to study the effects of consuming energy gels before running on runners' performances at middle-distances. Each has their finish time recorded for a 5000m run without consuming energy gels beforehand, then a month later their time is recorded again for a 5000m run before which each consumed two energy gels. The data is shown in the table below, with times recorded to the nearest minute.
     \begin{center}
         \begin{tabular}{c|cccccccc}
             \hline
-              Runners & A & B & C & D & E & F & G & H\\
+              Runner & A & B & C & D & E & F & G & H\\
             \hline
               Without gels & 24 & 19 & 21 & 17 & 26 & 32 & 18 & 20\\
             \hline
@@ -721,36 +816,20 @@ Since $1.627<2.015$, do not reject $\text{H}_0$ at the 5\% level of significance
             \hline
         \end{tabular}
     \end{center}
-    Perform a hypothesis test at the 5\% level of significance to assess whether the data supports a conclusion that consuming energy gels leads to a difference in performances for runners.
-    \item A group of 8 patients with a particular illness were given a special diet and it was desired to test the mass gain in kg at the end of a 2-week period. Their masses are shown below.
+    Perform a hypothesis test at the 5\% level of significance to assess whether consuming energy gels leads to a difference in running performance
+    \item Seven red kites from a region's population have their masses measured using specially adapted feeding posts fitted with electronic scales. A year later, the masses of the same seven red kites are recorded, in kg. For each bird, the \textbf{differences} in mass between the first and second measurement are shown below.
     \begin{center}
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
-      \hline
-        Person & A & B & C & D & E & F & G & H\\
-      \hline
-        Before & 82.27 & 78.18 & 86.36 & 85.00 & 95.45 & 75.45 & 83.18 & 83.64\\
-      \hline
-        After & 82.87 & 79.54 & 87.36 & 86.10 & 94.99 & 75.48 & 83.54 & 82.15\\
-      \hline
+    \begin{tabular}{cccccccc}
+      differences in kg ($\text{second}-\text{first}$) & 0.3 & -0.2 & 0.4 & 0.0 & 0.1 & 0.2 & 0.1
     \end{tabular}
     \end{center}
-    A hypothesis test is conducted to assess the data, with the computer output produced shown below.\vspace{0.5cm}\\
+    It is assumed that the population of differences in masses is normally distributed, and that the differences in mass for the sample are independent. A hypothesis test is conducted to assess the data for evidence of an increase in mass among the region's red kites:\\[0.5em]
     \texttt{paired t-test}\\
     \texttt{alternative hypothesis: true difference in means is greater than 0}\\
-    \texttt{t = 0.94}\qquad \texttt{df=7} \qquad \texttt{p-value = 0.189}\\
+    \texttt{t = 1.722}\qquad \texttt{df=6} \qquad \texttt{p-value = 0.06798}\\
     \texttt{sample estimates:}\\
-    \texttt{mean of differences = 0.313}\qquad \texttt{standard deviation of differences = 0.941}\\[1em]
-    Confirm the test statistic given and determine if there is evidence at the 5\% level that the diet has resulted in significant mass gain, stating any assumptions made.
-    \item The percentage body fat of 25 randomly selected eleven-year-old boys was measured before and after an exercise program. The difference for each boy was calculated and the summary statistics were calculated:  
-    \begin{center}
-    \begin{tabular}{cc}
-        $\Sigma d=-30.2$ & $\Sigma d^2=286.92$
-    \end{tabular}
-    \end{center}
-    \begin{enumerate}
-        \item Test the hypothesis, at the 1\% significance level, that the exercise program has made no difference to the percentage of body fat, stating any assumption made.
-        \item Calculate a 99\% confidence interval for the mean decrease in percentage body fat and comment on your answer with respect to part a).
-    \end{enumerate}
+    \texttt{mean of differences = 0.1286}\qquad \texttt{standard deviation of differences = 0.1976}\\[1em]
+    Show the calculation required to obtain the test statistic given, and give an appropriate conclusion to the test at the 10\% level of significance.
 \end{enumerate}
 
 \pagebreak
@@ -760,43 +839,62 @@ Since $1.627<2.015$, do not reject $\text{H}_0$ at the 5\% level of significance
 ## [Review Exercise](#re15a) {-}
 
 \begin{enumerate}
-    \item An estate agent compares the selling prices of homes in two neighbouring villages to see if there is a difference in price. The results of the study are shown below, measured in pounds.
+    \item A commercial timber-selling company is concerned that the pine fence posts they are receiving from their new supplier have a lower density than those received from their old supplier. They measure the density (in kg/$\text{m}^3$) of a random sample of eight of the old fence posts and seven of the new fence posts. The results are:
+    \begin{center}
+        \begin{tabular}{lcccccccc}
+            old & 563 & 576 & 534 & 580 & 556 & 519 & 540 & 548\\
+            new & 550 & 571 & 527 & 506 & 524 & 549 & 571
+        \end{tabular}
+    \end{center}
+    Perform a parametric hypothesis test at the 5\% level of significance to assess whether the company's concerns are supported by the data.
+    \item A number of fifth year and sixth year pupils studying maths at a school were randomly selected from the school's register by a maths teacher and asked whether or not they had attended at least one support session during this academic year. The results are shown in the table below:
+    \begin{center}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Year & Fifth & Sixth\\
+            \hline
+            Attended at least one & 14 & 11 \\
+            \hline
+            Has not attended any & 17 & 16\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item Show clearly that the data satisfies the conditions for the use of a $z$-test.
+        \item Perform a $z$-test at the 1\% level of significance to assess whether there is evidence of a difference in the proportions of pupils who attend maths support sessions between the two year groups.
+    \end{enumerate}
+    \item A random sample of nine students from a sports science course completed a 10km course whilst wearing \textit{regular} running shoes. The same nine students then completed the same course again one week later, this time wearing \textit{carbon plates} running shoes. The results are shown below, rounded to the nearest tenth of a minute.
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+      \hline
+        Student & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\
+      \hline
+        Regular & 46.1 & 41.0 & 53.2 & 42.9 & 40.2 & 38.7 & 48.7 & 50.2 & 46.5\\
+      \hline
+        Carbon plate & 45.6 & 38.7 & 53.3 & 41.8 & 40.2 & 35.6 & 47.5 & 50.0 & 46.1\\
+      \hline
+    \end{tabular}
+    \end{center}
+    Assuming the population of differences in times to be normally distributed, test at the 5\% level of significance whether the data gives evidence to suggest \textit{carbon plate} running shoes improve 10km running times.
+    \item Last year a road safety campaigner recorded the speeds of randomly selected cars as they drove past a sign in their village which displays the car's speed. This year, after the council claimed average speeds of cars through the village had decreased, the campaigner recorded the speeds of another random sample of cars. The results are shown in the table below, measured in miles per hour:
     \begin{center}
     \begin{tabular}{|c|c|}
       \hline
-        Village 1 & Village 2\\
+        Last year & This year\\
       \hline
-        $\bar{x}_1=281904$ & $\bar{x}_2=265872$\\
+        $\bar{x}_1=32.4$ & $\bar{x}_2=29.7$\\
       \hline
-        $s_1=30267$ & $s_2=41092$\\
+        $s_1=4.3$ & $s_2=1.3$\\
       \hline
-        $n_1=35$ & $n_2=40$\\
-      \hline
-    \end{tabular}
-    \end{center}
-    Determine if there is evidence at the 1\% level to reject the claim that the mean cost of homes in both villages is the same, stating any assumptions made.
-    \item A random sample of eleven students sat a Chemistry examination consisting of one theory paper and one practical paper. Their marks out of 100 are given in the table below:
-    \begin{center}
-    \begin{tabular}{|c|ccccccccccc|}
-      \hline
-        Student & A & B & C & D & E & F & G & H & I & J & K\\
-      \hline
-        Theory Mark & 30 & 42 & 49 & 50 & 63 & 38 & 43 & 36 & 54 & 42 & 26\\
-      \hline
-        Practical Mark & 52 & 58 & 42 & 67 & 94 & 68 & 22 & 34 & 55 & 48 & 17\\
+        $n_1=29$ & $n_2=34$\\
       \hline
     \end{tabular}
     \end{center}
-    Assuming the differences in pairs to be normally distributed, test, at the 5\% level of significance the hypothesis of no difference in the mean mark on the two papers.
-    \item Blood pressure levels were measured in a random sample of 19 men with a particular illness, aged 50 to 59 years. The sample mean systolic blood pressure was 146.6 mmHg and the sample standard deviation was 17.9 mmHG. In a second random sample of 15 men, aged 50 to 59 years, in good health, the mean systolic blood pressure reading was 137.4 mmHg and the standard deviation was 15.1 mmHg.\\[1em]
-Assess the evidence at the 5\% level that the mean systolic blood pressure in men with the illness is greater than that of men in good health.
-    \item In a random sample of 120 workers from a factory in city A, it was found that 5\% were unable to read, while in a random sample of 200 workers from a similar factory in city B, it was found that 11\% were unable to read.
+    Assume that the sample standard deviations in speed are reliable estimates of the population standard deviations.
     \begin{enumerate}
-        \item Perform a parametric test to assess at the 10\% level of significance whether there is evidence of a difference in the proportions of readers in each location.
-        \item Explain why the sampling approach chosen means that it may not be appropriate to use data gathered in this way to reach a conclusion of a difference in the proportions of those able to read between the two cities.
+        \item Perform a $z$-test at the 10\% level of significance to determine whether the data provides evidence to suggest that the council's claim is valid.
+        \item By considering the sample standard deviations, explain why a two-sample $t$-test may not be appropriate for this data.
     \end{enumerate}
-    \item The standard deviation of the scores obtained on a particular test of mathematical ability is known to be 15. A school experiments with a new method of teaching which is supposed to increase general mathematical awareness. A group of 36 students are randomly assigned to one of two classes. The 20 students in Class A are given the new method of teaching while the other 16 students in Class B are taught in the standard way.\\[1em]
-At the end of the year, the two classes are given the same test of mathematical ability. The mean for Class A is 120.4 and the mean for Class B is 113.1. Test at the 5\% significance level the hypothesis that the new method leads to a higher mean performance.
 \end{enumerate}
 
 \pagebreak

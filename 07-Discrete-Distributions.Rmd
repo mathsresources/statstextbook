@@ -544,7 +544,7 @@ Assume that the mean rate of 2.5 phone calls per hour is *constant* across the o
 };
     \end{axis}
     \draw[stealth-stealth] (7,3.5) -- (11,3.5);
-    \node[fill=white] at (9,3.5) {one hour};
+    \node[fill=white] at (9,3.5) {one hour, $\lambda=2.5$};
     \draw (7,2) rectangle (11,2.8);
     \node[right] at (11,2.4) {3 calls in one hour};
     \draw (7,1) rectangle (11,1.8);
@@ -679,16 +679,16 @@ For a five-hour shift at the call centre, the number of calls may be modelled as
 
 \begin{center}
 \begin{tikzpicture}
-    \foreach \x in {0,3,6,9,12}{
+    \foreach \x in {1,2,3,4,5}{
     \draw [decorate,decoration={brace,amplitude=5pt,raise=1ex}]
-  (\x+0.1,0.8) -- (\x+2.8,0.8) node[midway,above,yshift=0.3cm]{$X\sim \text{Po}\left(3\right)$};
+  (3*\x-3+0.1,0.8) -- (3*\x-3+2.8,0.8) node[midway,above,yshift=0.3cm]{$X_\x \sim \text{Po}\left(3\right)$};
     }
     \draw (0,0) rectangle (15,0.8);
-    \foreach \x in {3,6,...,12}{
-    \draw (\x,0) -- (\x,0.8);
+    \foreach \x in {1,2,...,5}{
+    \draw (3*\x,0) -- (3*\x,0.8);
     }
     \draw [decorate,decoration={brace,mirror,amplitude=5pt,raise=1ex}]
-  (0.1,0) -- (14.9,0) node[midway,below,yshift=-0.3cm]{$Y\sim \text{Po}\left(15\right)$};
+  (0.1,0) -- (14.9,0) node[midway,below,yshift=-0.3cm]{$Y\sim \text{Po} \left(15\right)$};
   \fill (1.3,0.4) circle (0.05);
   \fill (1.7,0.4) circle (0.05);
   \fill (3.3,0.4) circle (0.05);
@@ -752,7 +752,7 @@ So there is a roughly 22\% probability that Betty receives fewer than 8 emails i
         \item State the distribution of $X$.
         \item Use the Data Booklet to calculate the probability that a randomly selected paving stone contains at least one piece of chewing gum.
     \end{enumerate}
-    The worker counts the number of pieces of chewing gum on a grid of 18 paving stones. The diagram below is for illustration, and does not show what the worker observed.
+    The worker counts the number of pieces of chewing gum on a grid of 18 paving stones. The diagram below is for illustration, and does not show what the actual number of pieces the worker observed.
     \begin{center}
         \begin{tikzpicture}[scale=0.8]
             \draw[step=2] (0,0) grid (12,6);

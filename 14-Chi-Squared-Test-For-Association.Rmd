@@ -314,12 +314,6 @@ Use a suitable non-parametric test to assess the data in the contingency table a
       \text{H}_0: & \text{The test outcome and test centre used are independent.}\\[0.5em]
       \text{H}_1: & \text{The test outcome and test centre used are not independent.}
     \end{array}
-\left]
-    \begin{array}{l}
-      \alpha=0.1\\[0.5em]
-      \textnormal{One-tailed}
-    \end{array}
-  \right.
 \end{math}\\
 
 \vspace{0.5cm}
@@ -485,17 +479,11 @@ Assess at the 5\% level of significance whether there is evidence of an associat
       \text{H}_0: & \text{There is no association between the treatment given and pain reported.}\\[0.5em]
       \text{H}_1: & \text{There is an association between the treatment given and pain reported.}
     \end{array}
-\left]
-    \begin{array}{l}
-      \alpha=0.05\\[0.5em]
-      \textnormal{One-tailed}
-    \end{array}
-  \right.
 \end{math}\\
 
 \begin{center}
 \begin{tabular}{ c | c c c  c c | c c c }
-    \textbf{Observed} & Reduction & No change & Increase & $\qquad$ & \textbf{Expected} & Reduction & No change & Increase\\
+    \textbf{Observed} & Reduction & No change & Increase & $\quad$ & \textbf{Expected} & Reduction & No change & Increase\\
     \cline{1-4}
     \cline{6-9}
     Medication & 45 & 17 & 4 & & Medication & 40.15 & 22 & 3.85\\

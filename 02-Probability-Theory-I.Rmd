@@ -2,6 +2,8 @@
 
 The purpose of statistics is to make sense of the world by analysing data. Typically, however, it is only possible to obtain data from a random sample of the full population of interest, introducing uncertainty that must be accounted for. For this reason, developing an understanding of statistical analysis begins with learning about probability theory.
 
+People talk about *chance* regularly. For example, 'St Mirren are unlikely to win this weekend', or 'It is probably going to rain today'. However, neither of these comments seek to assign a numerical value to quantify those chances. In this chapter, probability as a *numerical measure* will be studied.
+
 #### Key definitions {-}
 
 In probability theory, an experiment for which all possible *outcomes* can be defined, and yet the actual outcome of any given *trial* cannot be known in advance, is called a *random experiment*. The set of all possible outcomes is called the *sample space* of the random experiment. Probability is assigned to individual outcomes or to sets of outcomes, called *events* (subsets of the sample space). Probability can be interpreted as the **long-run relative frequency** of an outcome or event occurring, and values range from 0 (*impossible*) to 1 (*certain*).
@@ -17,17 +19,17 @@ For example, in the context of rolling a fair, cubical die:
 
 - each roll of the die may be referred to as a **trial**.
 
-- the **sample space** consists of a list of all of the possible **outcomes**: $\{1,2,3,4,5,6\}$
+- the **sample space** consists of a list of all of the possible **outcomes**: $\{\text{1},\text{2},\text{3},\text{4},\text{5},\text{6}\}$
 
-- the **probability** of a $5$ is $\frac{1}{6}$ since *in the long-run* it can be expected to occur $\frac{1}{6}$ of the time.
+- the **probability** of a $5$ is $\frac{\text{1}}{\text{6}}$ since *in the long-run* it can be expected to occur $\frac{\text{1}}{\text{6}}$ of the time.
 
-- a possible **event** of interest may be that the outcome is *prime*: $\{2,3,5\}$ 
+- a possible **event** of interest may be that the outcome is *prime*: $\{\text{2},\text{3},\text{5}\}$ 
 
 #### Probability notation {-}
 
-The probability that a fair cubical die lands on 5 is *one-in-six*, or $\frac{1}{6}$. Using probability notation:
+The probability that a fair cubical die lands on 5 is *one-in-six*, or $\frac{\text{1}}{\text{6}}$. Using probability notation:
 
-$$\text{P}(\text{rolling a }5)=\dfrac{1}{6}$$
+$$\text{P}(\text{rolling a }\text{5})=\dfrac{\text{1}}{\text{6}}$$
 
 \pagebreak
 
@@ -39,7 +41,7 @@ The probability of an event can be estimated through repeated trials - this is r
 
 \vspace{-0.1cm}
 
-$$\text{P}(\text{red light})\approx\frac{114}{200}=0.57$$
+$$\text{P}(\text{red light})\approx\frac{\text{114}}{\text{200}}=\text{0.57}$$
 
 \vspace{-0.2cm}
 
@@ -47,7 +49,7 @@ $$\text{P}(\text{red light})\approx\frac{114}{200}=0.57$$
 
 When each of the outcomes in the sample space of a random experiment can be reasonably assumed to be \mbox{\textbf{equally likely}}, then the probability of outcomes or events can be determined. This is called *theoretical probability*.
 
-Equally likely outcomes typically arise from the symmetry of a physical object (such as a coin or die) or a reasonable assumption. The probability of any *individual outcome* in a sample space containing $N$ equally likely outcomes is $\frac{1}{N}$. For example, if a playing card is picked at random from a standard pack of 52 cards, containing no jokers, then the probability of picking the Queen of Hearts is $\frac{1}{52}$.
+Equally likely outcomes typically arise from the symmetry of a physical object (such as a coin or die) or a reasonable assumption. The probability of any *individual outcome* in a sample space containing $N$ equally likely outcomes is $\frac{\text{1}}{N}$. For example, if a playing card is picked at random from a standard pack of 52 cards, containing no jokers, then the probability of picking the Queen of Hearts is $\frac{\text{1}}{\text{52}}$.
 
 An **event** is a set of one or more outcomes from the sample space. The probability of an event is given by:
 
@@ -63,7 +65,7 @@ $$\text{P}(\text{event})=\frac{\text{number of outcomes from the sample space in
 \tcblower
 \textbf{Solution:}
 \vspace{-0.3cm}
-$$\text{P}(\text{green})=\frac{4}{22}=\frac{2}{11}$$
+$$\text{P}(\text{green})=\frac{\text{4}}{\text{22}}=\frac{\text{2}}{\text{11}}$$
 \end{tcolorbox}
 
 When considering two events in probability theory, *"and"* means that *both* events are true, and *"or"* means that *at least one* of the events is true (including the possibility that they both occur, where applicable).
@@ -87,7 +89,7 @@ A car is selected at random. Determine the probability that the car selected is 
 \tcblower
 \textbf{Solution:}
 \vspace{-0.3cm}
-$$\text{P}(\text{second-hand and hybrid})=\dfrac{7}{80}=0.0875$$
+$$\text{P}(\text{second-hand and hybrid})=\dfrac{\text{7}}{\text{80}}=\text{0.0875}$$
 \end{tcolorbox}
 
 In this textbook, probabilities will be given as fractions or *rounded to four decimal places* for consistency.
@@ -190,21 +192,21 @@ If two coins are tossed, it may be tempting to suggest that the probability of b
 
 *Not equally likely outcomes:* $\{\text{no tails},\text{one tail},\textbf{two tails}\}$
 
-These three outcomes are *not* equally likely, so the probability is *not one-in-three*, or: $\text{P}(\text{both tails})\ne\frac{1}{3}$
+These three outcomes are *not* equally likely, so the probability is *not one-in-three*, or: $\text{P}(\text{both tails})\ne\frac{\text{1}}{\text{3}}$
 
 *Equally likely outcomes:* $\{\text{HH},\text{HT},\text{TH},\textbf{TT}\}$
 
-These four outcomes *are* equally likely, so the probability is *one-in-four*, or: $\text{P}(\text{both tails})=\frac{1}{4}$.
+These four outcomes *are* equally likely, so the probability is *one-in-four*, or: $\text{P}(\text{both tails})=\frac{\text{1}}{\text{4}}$.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Three coins are tossed at the same time. Find the probability that exactly two of the coins land showing tails.
 
 \tcblower
-\textbf{Solution: }\textit{A list of equally likely outcomes will help here. Note there are $2\times 2\times 2=8$ outcomes.}
+\textbf{Solution: }\textit{A list of equally likely outcomes will help here. Note there are $\text{2}\times \text{2}\times \text{2}=\text{8}$ outcomes.}
 
 $$HHH \quad HHT \quad HTH \quad \underbrace{HTT} \quad THH \quad \underbrace{THT} \quad \underbrace{TTH} \quad TTT$$
 
-$$\text{P}(\text{exactly two tails})=\dfrac{3}{8}$$
+$$\text{P}(\text{exactly two tails})=\dfrac{\text{3}}{\text{8}}$$
 
 \end{tcolorbox}
 
@@ -212,7 +214,7 @@ $$\text{P}(\text{exactly two tails})=\dfrac{3}{8}$$
 \textbf{Problem:} Two fair dice are rolled. Determine the probability that the sum obtained is at least nine.
 
 \tcblower
-\textbf{Solution: }\textit{A grid of outcomes will help here. Note there are $6\times 6=36$ outcomes.}\vspace{0.5cm}
+\textbf{Solution: }\textit{A grid of outcomes will help here. Note there are $\text{6}\times \text{6}=\text{36}$ outcomes.}\vspace{0.5cm}
 
 \begin{tikzpicture}
 \fill [gray!40] (-3,-3) rectangle (-2,4);
@@ -279,7 +281,7 @@ $$\text{P}(\text{exactly two tails})=\dfrac{3}{8}$$
 \draw (2.5,-2.5) circle (0.4);
 \node at (3.5,-2.5) {12};
 \draw (3.5,-2.5) circle (0.4);
-\node at (7,0.5) {$\text{P}(\text{sum}\geqslant9)=\dfrac{10}{36}=\dfrac{5}{18}$};
+\node at (7,0.5) {$\text{P}(\text{sum}\geqslant9)=\dfrac{\text{10}}{\text{36}}=\dfrac{\text{5}}{\text{18}}$};
 \end{tikzpicture}
 \end{tcolorbox}
 
@@ -361,37 +363,37 @@ Tree diagrams can be created to map out the possible outcomes of a random experi
                     {diamond}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\dfrac{1}{4}$}
+                node[below]  {$\dfrac{\text{1}}{\text{4}}$}
             }
             child {
                 node[end, label=right:
                     {not diamond}] {}
                 edge from parent
-                node[above] {$\dfrac{3}{4}$}
+                node[above] {$\dfrac{\text{3}}{\text{4}}$}
                 node[below]  {}
             }
             edge from parent 
             node[above] {}
-            node[below]  {$\dfrac{5}{6}$}
+            node[below]  {$\dfrac{\text{5}}{\text{6}}$}
     }
     child {
         node[bag] {six}        
         child {
                 node[end, label=right:
-                    {diamond\hspace{1.4cm}$\text{P}(\text{six }\textbf{and}\text{  diamond})=\dfrac{1}{6}\times\dfrac{1}{4}=\dfrac{1}{24}$}] {}
+                    {diamond\hspace{1.4cm}$\text{P}(\text{six }\textbf{and}\text{  diamond})=\dfrac{\text{1}}{\text{6}}\times\dfrac{\text{1}}{\text{4}}=\dfrac{\text{1}}{\text{24}}$}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\dfrac{1}{4}$}
+                node[below]  {$\dfrac{\text{1}}{\text{4}}$}
             }
             child {
                 node[end, label=right:
                     {not diamond}] {}
                 edge from parent
-                node[above] {$\dfrac{3}{4}$}
+                node[above] {$\dfrac{\text{3}}{\text{4}}$}
                 node[below]  {}
             }
         edge from parent         
-            node[above] {$\dfrac{1}{6}$}
+            node[above] {$\dfrac{\text{1}}{\text{6}}$}
             node[below]  {}
     };
 \end{tikzpicture}
@@ -399,7 +401,7 @@ Tree diagrams can be created to map out the possible outcomes of a random experi
 
 Tree diagrams should be complete with each *branch* labelled with a *probability*, and each *node* labelled with an *event*, as above. Since each split into *sibling branches* should show all the possible things that can happen next, the probabilities on sibling branches should add to 1.
 
-\[\text{i.e.}\;\frac{1}{6}+\frac{5}{6}=1\;\text{ and }\;\frac{3}{4}+\frac{1}{4}=1\]
+\[\text{i.e.}\;\frac{\text{1}}{\text{6}}+\frac{\text{5}}{\text{6}}=\text{1}\;\text{ and }\;\frac{\text{3}}{\text{4}}+\frac{\text{1}}{\text{4}}=\text{1}\]
 
 Multiplying the probabilities along a path of branches gives the probability of all those events occurring together.
 
@@ -423,21 +425,21 @@ Note that in the tree diagram above the probability of the card being a diamond 
         node[bag] {red}        
             child {
                 node[end, label=right:
-                    {red\hspace{1.2cm}$\text{P}(\text{both red})=\dfrac{6}{10}\times\dfrac{5}{9}=\dfrac{30}{90}=\dfrac{1}{3}$}] {}
+                    {red\hspace{1.2cm}$\text{P}(\text{both red})=\dfrac{\text{6}}{\text{10}}\times\dfrac{\text{5}}{\text{9}}=\dfrac{\text{30}}{\text{90}}=\dfrac{\text{1}}{\text{3}}$}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\dfrac{5}{9}$}
+                node[below]  {$\dfrac{\text{5}}{\text{9}}$}
             }
             child {
                 node[end, label=right:
                     {blue}] {}
                 edge from parent
-                node[above] {$\dfrac{4}{9}$}
+                node[above] {$\dfrac{\text{4}}{\text{9}}$}
                 node[below]  {}
             }
             edge from parent 
             node[above] {}
-            node[below]  {$\dfrac{6}{10}$}
+            node[below]  {$\dfrac{\text{6}}{\text{10}}$}
     }
     child {
         node[bag] {blue}        
@@ -446,17 +448,17 @@ Note that in the tree diagram above the probability of the card being a diamond 
                     {red}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\dfrac{6}{9}$}
+                node[below]  {$\dfrac{\text{6}}{\text{9}}$}
             }
             child {
                 node[end, label=right:
                     {blue}] {}
                 edge from parent
-                node[above] {$\dfrac{3}{9}$}
+                node[above] {$\dfrac{\text{3}}{\text{9}}$}
                 node[below]  {}
             }
         edge from parent         
-            node[above] {$\dfrac{4}{10}$}
+            node[above] {$\dfrac{\text{4}}{\text{10}}$}
             node[below]  {}
     };
 \end{tikzpicture}
@@ -622,7 +624,7 @@ Venn diagrams help illustrate these. Note that *capital letters* are commonly us
 \tcblower
 \textbf{Solution:}
 
-$\text{P}(G\cap V)=\dfrac{2}{12}=\dfrac{1}{6}$
+$\text{P}(G\cap V)=\dfrac{\text{2}}{\text{12}}=\dfrac{\text{1}}{\text{6}}$
 
 \end{tcolorbox}
 
@@ -676,9 +678,9 @@ $\text{P}(G\cap V)=\dfrac{2}{12}=\dfrac{1}{6}$
     \draw (-0.7,0) circle (1.2) (-0.7,1.2)  node [text=black,above] {$M$};
     \draw (0.7,0) circle (1.2) (0.7,1.2)  node [text=black,above] {$N$}
       (-2.5,-1.7) rectangle (2.5,1.7) node [text=black,below right] {$S$};
-    \node at (-2,-1.3) {$0.3$};
-    \node at (-1,0.5) {$0.15$};
-    \node at (1.1,-0.2) {$0.2$};
+    \node at (-2,-1.3) {0.3};
+    \node at (-1,0.5) {0.15};
+    \node at (1.1,-0.2) {0.2};
     \node at (0,0) {$x$};
     \end{tikzpicture}
     \end{center}
@@ -810,7 +812,7 @@ In addition to the special cases above (when events are mutually exclusive or ex
 \begin{minipage}[c]{.4\textwidth}
   \centering
 \begin{tcolorbox}[title=The Complement of {$A$}:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=6cm,height=1.8cm]
-$\text{P}(A)+\text{P}(\overline{A})=1$
+$\text{P}(A)+\text{P}(\overline{A})=\text{1}$
 \end{tcolorbox}
 \end{minipage}%
   \centering
@@ -825,13 +827,13 @@ $\text{P}(A \cup B)=\text{P}(A)+\text{P}(B)-\text{P}(A \cap B)$
 It should be noted that there are generally numerous different ways to approach probability problems, including using a Venn diagram, a tree diagram or formulae. Whilst the problems on the next page have been designed to allow practice using formulae, a flexible approach may help.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Given events $F$ and $G$ such that ${\text{P}(\overline{F})=0.3}$, ${\text{P}(G)=0.4}$ and ${\text{P}(F\cap G)=0.1}$ show that $F$ and $G$ are exhaustive.
+\textbf{Problem:} Given events $F$ and $G$ such that ${\text{P}(\overline{F})=\text{0.3}}$, ${\text{P}(G)=\text{0.4}}$ and ${\text{P}(F\cap G)=\text{0.1}}$ show that $F$ and $G$ are exhaustive.
 
 \tcblower
 \textbf{Solution:} \begin{align*}
 \text{P}(F\cup G) & = \text{P}(F)+\text{P}(G)-\text{P}(F \cap G)\vspace{-0.5cm}\\
-& = 0.7+0.4-0.1\\
-& = 1\hspace{0.5cm}\therefore\text{ events $F$ and $G$ are exhaustive}
+& = \text{0.7}+\text{0.4}-\text{0.1}\\
+& = \text{1}\hspace{0.5cm}\therefore\text{ events $F$ and $G$ are exhaustive}
 \end{align*}
 \end{tcolorbox}
 
@@ -842,30 +844,30 @@ It should be noted that there are generally numerous different ways to approach 
 #### [Exercise 2.5](#ex25a) {-}
 
 \begin{enumerate}
-    \item Given events $X$ and $Y$ such that $\text{P}(X\cap Y)=0.3$, $\text{P}(X)=0.4$ and $\text{P}(Y)=0.5$, find $\text{P}(X\cup Y)$.
-    \item If $\text{P}(\overline{A})=\dfrac{1}{5}$, $\text{P}(B)=\dfrac{2}{3}$ and $\text{P}(A\cap B)=\dfrac{1}{2}$, determine the value of $\text{P}(A\cup B)$.
-    \item Calculate the value of $\text{P}(E\cup F)$ given $\text{P}(E)=0.32$, $\text{P}(F)=0.29$ and that events $E$ and $F$ are \textit{mutually exclusive}.
-    \item Given mutually exclusive events $C$ and $D$ such that $\text{P}(\overline{C})=\dfrac{5}{7}$ and $\text{P}(D)=\dfrac{1}{2}$, find $\text{P}(C\cup D)$.
-    \item Calculate the value of $\text{P}(A\cap B)$ if $\text{P}(A)=0.591$, $\text{P}(B)=0.472$ and $\text{P}(A\cup B)=0.9$.
-    \item If $\text{P}(\overline{X})=\dfrac{17}{80}$, $\text{P}(\overline{Y})=\dfrac{29}{40}$ and $\text{P}(X\cup Y)=\dfrac{19}{20}$, determine $\text{P}(X\cap Y)$.
-    \item Given \textit{exhaustive} events $V$ and $W$ such that $\text{P}(V)=0.4$ and $\text{P}(\overline{W})=0.2$, find $\text{P}(V\cap W)$.
-    \item Given events $H$ and $J$ such that $\text{P}(H)=\dfrac{3}{8}$, \mbox{\text{$\text{P}(H\cup J)=\dfrac{7}{9}$}} and $\text{P}(H\cap J)=\dfrac{1}{4}$, find $\text{P}(\overline{J})$.
-    \item If $X$ and $Y$ are mutually exclusive, $\text{P}(X)=0.3$ and $\text{P}(\overline{Y})=0.4$, calculate $\text{P}(X\cup Y)$.
-    \item Events $A$ and $B$ are exhaustive. If $\text{P}(A)=\dfrac{1}{3}$ and $\text{P}(B\cap A)=\dfrac{1}{6}$, calculate $\text{P}(\overline{B})$.
+    \item Given events $X$ and $Y$ such that $\text{P}(X\cap Y)=\text{0.3}$, $\text{P}(X)=\text{0.4}$ and $\text{P}(Y)=\text{0.5}$, find $\text{P}(X\cup Y)$.
+    \item If $\text{P}(\overline{A})=\dfrac{\text{1}}{\text{5}}$, $\text{P}(B)=\dfrac{\text{2}}{\text{3}}$ and $\text{P}(A\cap B)=\dfrac{\text{1}}{\text{2}}$, determine the value of $\text{P}(A\cup B)$.
+    \item Calculate the value of $\text{P}(E\cup F)$ given $\text{P}(E)=\text{0.32}$, $\text{P}(F)=\text{0.29}$ and that events $E$ and $F$ are \textit{mutually exclusive}.
+    \item Given mutually exclusive events $C$ and $D$ such that $\text{P}(\overline{C})=\dfrac{\text{5}}{\text{7}}$ and $\text{P}(D)=\dfrac{\text{1}}{\text{2}}$, find $\text{P}(C\cup D)$.
+    \item Calculate the value of $\text{P}(A\cap B)$ if $\text{P}(A)=\text{0.591}$, $\text{P}(B)=\text{0.472}$ and $\text{P}(A\cup B)=\text{0.9}$.
+    \item If $\text{P}(\overline{X})=\dfrac{\text{17}}{\text{80}}$, $\text{P}(\overline{Y})=\dfrac{\text{29}}{\text{40}}$ and $\text{P}(X\cup Y)=\dfrac{\text{19}}{\text{20}}$, determine $\text{P}(X\cap Y)$.
+    \item Given \textit{exhaustive} events $V$ and $W$ such that $\text{P}(V)=\text{0.4}$ and $\text{P}(\overline{W})=\text{0.2}$, find $\text{P}(V\cap W)$.
+    \item Given events $H$ and $J$ such that $\text{P}(H)=\dfrac{\text{3}}{\text{8}}$, \mbox{\text{$\text{P}(H\cup J)=\dfrac{\text{7}}{\text{9}}$}} and $\text{P}(H\cap J)=\dfrac{\text{1}}{\text{4}}$, find $\text{P}(\overline{J})$.
+    \item If $X$ and $Y$ are mutually exclusive, $\text{P}(X)=\text{0.3}$ and $\text{P}(\overline{Y})=\text{0.4}$, calculate $\text{P}(X\cup Y)$.
+    \item Events $A$ and $B$ are exhaustive. If $\text{P}(A)=\dfrac{\text{1}}{\text{3}}$ and $\text{P}(B\cap A)=\dfrac{\text{1}}{\text{6}}$, calculate $\text{P}(\overline{B})$.
     \item In a fish and chip shop, the probability that a customer's order includes both fish and chips is 0.7, whilst the probability that an order will include at least one of fish or chips is 0.95. If the probability that an order contains chips is 0.8, calculate the probability that an order contains fish.
-    \item If, for exhaustive events $M$ and $N$, $\text{P}(M\cap N)=\dfrac{1}{4}$ and $\text{P}(M)=\text{P}(N)$, calculate $\text{P}(\overline{N})$.
-    \item Given events $R$ and $Q$ such that $\text{P}(\overline{Q})=0.11$, $\text{P}(R\cap Q)=0.75$ and $\text{P}(R\cup Q)=0.95$, find $\text{P}(\overline{R})$.
+    \item If, for exhaustive events $M$ and $N$, $\text{P}(M\cap N)=\dfrac{\text{1}}{\text{4}}$ and $\text{P}(M)=\text{P}(N)$, calculate $\text{P}(\overline{N})$.
+    \item Given events $R$ and $Q$ such that $\text{P}(\overline{Q})=\text{0.11}$, $\text{P}(R\cap Q)=\text{0.75}$ and $\text{P}(R\cup Q)=\text{0.95}$, find $\text{P}(\overline{R})$.
     \item For each pair of events, determine whether they are exhaustive or not:
     \begin{enumerate}
-        \item $X$ and $Y$ given $\text{P}(X)=0.4$, $\text{P}(Y)=0.7$ and $\text{P}(X \cap Y)=0.2$.
-        \item $R$ and $T$ given $\text{P}(R)=\dfrac{4}{5}$, $\text{P}(\overline{T})=\dfrac{1}{10}$ and $\text{P}(T \cap R)=\dfrac{7}{10}$.
-        \item $E$ and $F$ given $\text{P}(E)=0.31$, $\text{P}(F)=0.82$ and $\text{P}(E \cap F)=0.28$.
+        \item $X$ and $Y$ given $\text{P}(X)=\text{0.4}$, $\text{P}(Y)=\text{0.7}$ and $\text{P}(X \cap Y)=\text{0.2}$.
+        \item $R$ and $T$ given $\text{P}(R)=\dfrac{\text{4}}{\text{5}}$, $\text{P}(\overline{T})=\dfrac{\text{1}}{\text{10}}$ and $\text{P}(T \cap R)=\dfrac{\text{7}}{\text{10}}$.
+        \item $E$ and $F$ given $\text{P}(E)=\text{0.31}$, $\text{P}(F)=\text{0.82}$ and $\text{P}(E \cap F)=\text{0.28}$.
     \end{enumerate}
     \item For each pair of events, determine whether they are mutually exclusive or not:
     \begin{enumerate}
-        \item $W$ and $V$ given $\text{P}(W)=0.35$, $\text{P}(V)=0.45$ and $\text{P}(W \cup V)=0.5$.
-        \item $X$ and $Y$ given $\text{P}(X)=\dfrac{1}{3}$, $\text{P}(\overline{Y})=\dfrac{4}{5}$ and $\text{P}(X \cup Y)=\dfrac{8}{15}$.
-        \item $A$ and $B$ given $\text{P}(\overline{A})=0.5$, $\text{P}(\overline{B})=0.8$ and $\text{P}(\overline{B} \cap \overline{A})=0.3$.
+        \item $W$ and $V$ given $\text{P}(W)=\text{0.35}$, $\text{P}(V)=\text{0.45}$ and $\text{P}(W \cup V)=\text{0.5}$.
+        \item $X$ and $Y$ given $\text{P}(X)=\dfrac{\text{1}}{\text{3}}$, $\text{P}(\overline{Y})=\dfrac{\text{4}}{\text{5}}$ and $\text{P}(X \cup Y)=\dfrac{\text{8}}{\text{15}}$.
+        \item $A$ and $B$ given $\text{P}(\overline{A})=\text{0.5}$, $\text{P}(\overline{B})=\text{0.8}$ and $\text{P}(\overline{B} \cap \overline{A})=\text{0.3}$.
     \end{enumerate}
 \end{enumerate}
 
@@ -900,7 +902,7 @@ It should be noted that there are generally numerous different ways to approach 
         \item \text{P}(\text{English} $\cap$ \text{National 5})
         \item \text{P}(\text{History} $\cup$ \text{Higher})
     \end{enumerate}
-    \item For the exhaustive events $E$ and $F$, such that $\text{P}(F\cap E)=0.7$ and $\text{P}(\overline{E})=0.2$, determine $\text{P}(F)$.
+    \item For the exhaustive events $E$ and $F$, such that $\text{P}(F\cap E)=\text{0.7}$ and $\text{P}(\overline{E})=\text{0.2}$, determine $\text{P}(F)$.
     \item A parking ticket machine in a remote location in the Cairngorms National Park takes payment by contactless card reader, which connects to the banking network via a 3G phone signal. On some days, the connection fails and the machine cannot take payment. When the humidity is high, the connection will fail on 18\% of days. When the humidity is not high, the connection will fail on 7\% of days. Humidity is high in the area on 34\% of days. Determine the probability on a randomly selected day of the year that the parking machine can take payment.
     \item A board game begins with an \textit{defending} player rolling a tetrahedral die with sides numbered from 1 to 4, and a \textit{attacking} player rolling a cubical die with sides numbered from 1 to 6. The player who obtains the highest number earns a point, with a tie leading to the dice being rolled again.
     \begin{enumerate}
@@ -923,7 +925,7 @@ It should be noted that there are generally numerous different ways to approach 
     \end{tabular}
     \end{center}
     A member of the orchestra is selected at random. Let $B$ be the event the member selected is in the \textit{brass} section and $A$ that they can \textit{attend} the upcoming concert. State $\text{P}(B\cup \overline{A})$.
-    \item Exhaustive events $A$, $B$ and $C$ are such that $\text{P}(A)=0.25$, $\text{P}(A\cap B)=0.1$, $\text{P}(\overline{B})=0.3$ and $\text{P}(A\cup C)=0.6$. Events $A$ and $C$ are mutually exclusive. Determine the value of $\text{P}(B\cap C)$.
+    \item Exhaustive events $A$, $B$ and $C$ are such that $\text{P}(A)=\text{0.25}$, $\text{P}(A\cap B)=\text{0.1}$, $\text{P}(\overline{B})=\text{0.3}$ and $\text{P}(A\cup C)=\text{0.6}$. Events $A$ and $C$ are mutually exclusive. Determine the value of $\text{P}(B\cap C)$.
 \end{enumerate}
 
 \pagebreak

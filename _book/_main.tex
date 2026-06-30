@@ -181,7 +181,7 @@
 \chapter*{Introduction}\label{introduction}
 \addcontentsline{toc}{chapter}{Introduction}
 
-Statistics is the science of collecting, organising, presenting and analysing data. It is vital in helping us develop a better understanding of the world, and to allow decisions to be made in a rational manner based on the information that is available to us. Governments, organisations, businesses and individuals across a diverse range of fields rely on statistics and statisticians.
+Statistics is the science of collecting, organising, presenting, and analysing data. It plays a vital role in helping us understand the world and enables informed decision-making based on available information. Governments, organisations, businesses, and individuals across a wide range of fields rely on statistics and statisticians.
 
 \begin{center}
 \begin{tikzpicture}
@@ -349,34 +349,36 @@ Statistics is the science of collecting, organising, presenting and analysing da
 \end{tikzpicture}
 \end{center}
 
-The \emph{Advanced Higher Statistics} course aims to equip learners with a sound foundation of statistical knowledge. This textbook has been created to serve as a source of key facts, examples, and exercises to support progress through the course, covering all of the key stages involved in statistical research and investigations, including:
+The \emph{Advanced Higher Statistics} course aims to equip learners with a sound foundation in statistical knowledge. This textbook has been designed to provide key facts, examples, and exercises to support progression through the course. It covers all major stages of statistical investigations, including:
 
 \begin{itemize}
 \item
-  Gathering data using appropriate \emph{sampling techniques}.
+  Collecting data using appropriate \emph{sampling techniques}.
 \item
-  Initial exploration of data using \emph{descriptive statistics}, including:
+  Exploring data using \emph{descriptive statistics}, such as:
 
   \begin{itemize}
+  \tightlist
   \item
-    Visualising data with charts and graphs.
+    Visualising data with charts and graphs\\
   \item
-    Calculating sample statistics.
+    Calculating sample statistics
   \end{itemize}
 \item
-  Using \emph{statistical inference} to assess the evidence for claims about population parameters, including:
+  Applying \emph{statistical inference} to evaluate claims about population parameters, including:
 
   \begin{itemize}
+  \tightlist
   \item
-    An introduction to \textit{probability theory}, which underpins all statistical inference
+    An introduction to \textit{probability theory}, which underpins statistical inference\\
   \item
-    Conducting hypothesis tests
+    Performing hypothesis tests\\
   \item
     Constructing confidence intervals
   \end{itemize}
 \end{itemize}
 
-Techniques suitable for a range of contexts will be covered, and it is expected that by the end of the course students should have sufficient knowledge and confidence to collect their own data and conduct their own statistical investigations.
+By the end of the course, students should have the knowledge and confidence to collect their own data and carry out independent statistical investigations.
 
 \pagebreak
 
@@ -393,7 +395,7 @@ Techniques suitable for a range of contexts will be covered, and it is expected 
 
 \vspace{-1cm}
 
-Data that has been collected but not yet processed is referred to as \emph{raw data}. Before conducting any statistical analysis, a statistician will typically want to get a quick sense of the data, checking for potential issues and identifying important features. Common first steps are therefore often to: \emph{organise} the data into suitable lists or tables; \emph{visualise} the data using plots and graphs; and \emph{measure} key properties of the data.
+Data that has been collected but not yet processed is referred to as \emph{raw data}. Before conducting any statistical analysis, a statistician will typically want to get a quick sense of the data, checking for potential issues and identifying key features. Common first steps are therefore often to: \emph{organise} the data into suitable lists or tables; \emph{visualise} the data using plots and graphs; and \emph{measure} key properties of the data.
 
 This process is called \emph{exploratory data analysis}. It helps us understand the data before applying more formal statistical methods.
 
@@ -583,7 +585,7 @@ Data that is numerical is called \emph{quantitative}, of which there are two typ
 \node[above] at (8,-3) {countable values};
 \node[below] at (8,-3) {\textit{e.g. a list of values}};
 \node[below] at (4,-3) {\textit{e.g. a range of values}};
-\node[above] at (4,-3) {measureable values};
+\node[above] at (4,-3) {measurable values};
 \end{tikzpicture}
 \end{center}
 
@@ -642,7 +644,7 @@ For example, the table below shows data relating to some football players:
 \addcontentsline{toc}{subsubsection}{{Exercise 1.1}}
 
 \begin{enumerate}
-    \item A survey is carried out on the pets owned by a class. State the type of data that would be collected.
+    \item A survey is carried out on the pets owned by a class. State whether each would result in \textbf{quantitative} or \textbf{qualitative} data.
     \begin{enumerate}
     \begin{multicols}{2}
         \item How many pets each pupil owns.
@@ -661,7 +663,7 @@ For example, the table below shows data relating to some football players:
         \item Whether the pet is a mammal.
     \end{multicols}
     \end{enumerate}
-    \item For each of the following, state whether the quantitative data collected would be discrete or continuous.
+    \item For each of the following, state whether the quantitative data collected would be \textbf{discrete} or \textbf{continuous}.
     \begin{enumerate}
     \begin{multicols}{2}
         \item The number of people in a room.      
@@ -694,6 +696,401 @@ For example, the table below shows data relating to some football players:
     \end{tabular}
     \end{center}
     State the type of data that was collected for each variable.
+\end{enumerate}
+
+\pagebreak
+
+\section{Displaying Data}\label{displaying-data}
+
+Before analysing a data set, it is common practice to \emph{display} the data in a simple form so that an initial impression can be formed. Some key \textit{figures} for the course are shown below, using a sample of 10 sunflower heights measured by a gardener 8 weeks after germination, measured to the nearest centimetre:
+
+\begin{center}
+\begin{tabular}{cccccccccccc}
+34 & 35 & 38 & 41 & 46 & 47 & 47 & 51 & 62 & 73
+\end{tabular}
+\end{center}
+
+\begin{figure}[H]
+  \centering
+\begin{minipage}{.5\textwidth}
+  \centering
+\begin{tikzpicture}
+\draw (33.5*0.15,0) -- (73.5*0.15,0);
+\node at (0.15*35,-0.3) {35};
+\node at (0.15*40,-0.3) {40};
+\node at (0.15*45,-0.3) {45};
+\node at (0.15*50,-0.3) {50};
+\node at (0.15*55,-0.3) {55};
+\node at (0.15*60,-0.3) {60};
+\node at (0.15*65,-0.3) {65};
+\node at (0.15*70,-0.3) {70};
+\foreach \x in {34,...,73}
+  \draw (0.15*\x,0) -- (0.15*\x,-0.1);
+\fill[black] (0.15*34,0.4) circle (0.05);
+\fill[black] (0.15*35,0.4) circle (0.05);
+\fill[black] (0.15*38,0.4) circle (0.05);
+\fill[black] (0.15*41,0.4) circle (0.05);
+\fill[black] (0.15*46,0.4) circle (0.05);
+\fill[black] (0.15*47,0.4) circle (0.05);
+\fill[black] (0.15*47,0.8) circle (0.05);
+\fill[black] (0.15*51,0.4) circle (0.05);
+\fill[black] (0.15*62,0.4) circle (0.05);
+\fill[black] (0.15*73,0.4) circle (0.05);
+\node at (0.15*53,-0.8) {\text{Height (cm)}};
+\node at (8,3.5) {\textbf{Figure 1: Dot Plot}};
+\node[text width = 8cm,below] at (8,3.2) {Dot plots display individual data values, stacking repeated values vertically for clarity. They are best suited to \textit{discrete} data};
+\draw[white] (3.5,-2) rectangle (12.5,4);
+\end{tikzpicture}
+
+\end{minipage}%
+  \centering
+\begin{minipage}{.5\textwidth}
+  \centering
+
+\begin{tikzpicture}
+\draw (6,-1) -- (6,1.4);
+\node at (5.7,1.2) {3};
+\node at (5.7,0.7) {4};
+\node at (5.7,0.2) {5};
+\node at (5.7,-0.3) {6};
+\node at (5.7,-0.8) {7};
+\node at (6.3,1.2) {4};
+\node at (6.8,1.2) {5};
+\node at (7.3,1.2) {8};
+\node at (6.3,0.7) {1};
+\node at (6.8,0.7) {6};
+\node at (7.3,0.7) {7};
+\node at (7.8,0.7) {7};
+\node at (6.3,0.2) {1};
+\node at (6.3,-0.3) {2};
+\node at (6.3,-0.8) {3};
+\node at (9,-0.8) {3};
+\node at (9.5,-0.8) {5};
+\node at (10,-0.2) {$n=\text{10}$};
+\draw (9.25,-0.6) -- (9.25,-1);
+\node[anchor=west] at (9.5,-0.8) {represents 35 cm};
+\node at (8,3.5) {\textbf{Figure 2: Stem-and-Leaf Diagram}};
+\node[text width = 8cm,below] at (8,3.2) {Stem-and-leaf diagrams group data while preserving the original values. Leaves should be in order, and a \textit{key} and the sample size ($n$) included.};
+\draw[white] (3.5,-2) rectangle (12.5,4);
+\end{tikzpicture}
+
+\end{minipage}
+\end{figure}
+
+\vspace{-1.2cm}
+
+\begin{figure}[H]
+  \centering
+\begin{minipage}{.5\textwidth}
+  \centering
+
+\begin{tikzpicture}
+\draw (33.5*0.15,0) -- (73.5*0.15,0);
+\node at (0.15*35,-0.3) {35};
+\node at (0.15*40,-0.3) {40};
+\node at (0.15*45,-0.3) {45};
+\node at (0.15*50,-0.3) {50};
+\node at (0.15*55,-0.3) {55};
+\node at (0.15*60,-0.3) {60};
+\node at (0.15*65,-0.3) {65};
+\node at (0.15*70,-0.3) {70};
+\foreach \x in {34,...,73}
+  \draw (0.15*\x,0) -- (0.15*\x,-0.1);
+\draw[fill=black!25] (0.15*38,0.4) rectangle (0.15*51,0.8);
+\draw (0.15*34,0.4) -- (0.15*34,0.8) node[above] {\scriptsize{min}};
+\draw (0.15*38,0.4) -- (0.15*38,0.8) node[above] {\scriptsize{LQ}};
+\draw (0.15*46.5,0.4) -- (0.15*46.5,0.8) node[above] {\scriptsize{med}};
+\draw (0.15*51,0.4) -- (0.15*51,0.8) node[above] {\scriptsize{UQ}};
+\draw (0.15*73,0.4) -- (0.15*73,0.8) node[above] {\scriptsize{max}};
+\draw (0.15*34,0.6) -- (0.15*38,0.6);
+\draw (0.15*51,0.6) -- (0.15*73,0.6);
+\node at (0.15*53,-0.8) {\text{Height (cm)}};
+\node at (8,3.9) {\textbf{Figure 3: Box Plot}};
+\node[text width = 8cm,below] at (8,3.6) {Box plots offer a visual representation of a \textit{five-number summary}, consisting of the minimum value, lower quartile LQ, median, upper quartile UQ, and maximum value.};
+\draw[white] (3.5,-2) rectangle (12.5,5);
+\end{tikzpicture}
+
+\end{minipage}%
+  \centering
+\begin{minipage}{.5\textwidth}
+  \centering
+
+\begin{tikzpicture}
+\draw (30*0.08+3.8,0) -- (80*0.08+3.8,0);
+\draw (30*0.08+3.8,0) -- (30*0.08+3.8,1.2);
+\node at (0.08*30+3.8,-0.3) {\scriptsize{30}};
+\node at (0.08*40+3.8,-0.3) {\scriptsize{40}};
+\node at (0.08*50+3.8,-0.3) {\scriptsize{50}};
+\node at (0.08*60+3.8,-0.3) {\scriptsize{60}};
+\node at (0.08*70+3.8,-0.3) {\scriptsize{70}};
+\node at (0.08*80+3.8,-0.3) {\scriptsize{80}};
+\foreach \x in {30,40,...,80}{
+  \draw (0.08*\x+3.8,0) -- (0.08*\x+3.8,-0.1);}
+  \foreach \y in {0,...,5}{
+  \draw (0.08*29.5+3.8,1.2*0.2*\y) -- (0.08*30+3.8,1.2*0.2*\y);}
+\node at (0.08*28.5+3.8,1.2) {\scriptsize{5}};
+\node at (0.08*28.5+3.8,0) {\scriptsize{0}};
+\node at (0.08*25+3,0.5) {frequency};
+\draw[fill=black!25] (0.08*30+3.8,0) rectangle (0.08*40+3.8,0.6*1.2);
+\draw[fill=black!25] (0.08*40+3.8,0) rectangle (0.08*50+3.8,0.8*1.2);
+\draw[fill=black!25] (0.08*50+3.8,0) rectangle (0.08*60+3.8,0.2*1.2);
+\draw[fill=black!25] (0.08*60+3.8,0) rectangle (0.08*70+3.8,0.2*1.2);
+\draw[fill=black!25] (0.08*70+3.8,0) rectangle (0.08*80+3.8,0.2*1.2);
+\node at (0.08*53+3.8,-0.8) {\text{height (cm)}};
+\node at (8,3.9) {\textbf{Figure 4: Histogram}};
+\node[text width = 8cm,below] at (8,3.6) {Histograms display continuous data grouped into intervals. Unlike bar charts, the bars are adjacent (no gaps). When interval widths are equal, the height of each bar represents frequency.};
+\draw[white] (3.5,-2) rectangle (12.5,5);
+\end{tikzpicture}
+
+\end{minipage}
+\end{figure}
+
+\vspace{-1cm}
+
+\protect\phantomsection\label{ex12q}{}
+
+\subsubsection*{\texorpdfstring{\hyperref[ex12a]{Exercise 1.2}}{Exercise 1.2}}\label{exercise-1.2}
+\addcontentsline{toc}{subsubsection}{{Exercise 1.2}}
+
+\begin{enumerate}
+    \item The ages (in years) of competitors in a junior golf tournament are below. Draw a dot plot to represent this data.
+    \vspace{-0.3cm}
+    \begin{center}
+    \begin{tabular}{cccccccccccccc}
+        16 & 14 & 19 & 13 & 14 & 17 & 16 & 19 & 16 & 17 & 12 & 16 & 14 & 19
+    \end{tabular}
+    \end{center}
+    \item The price of an ice cream is recorded at 12 stalls (in £). Represent the data using a stem-and-leaf diagram.
+    \begin{center}
+    \begin{tabular}{cccccccccccc}
+        1.50 & 2.20 & 2.50 & 2.10 & 1.80 & 1.40 & 2.00 & 1.90 & 3.60 & 0.90 & 1.70 & 1.50
+    \end{tabular}
+    \end{center}
+    \item The masses (in kg) of the luggage of 10 passengers on a plane to Barra were recorded, and a five-number summary of the data obtained using \texttt{computer output} from statistical software. Construct a box plot.
+    \begin{center}
+    \begin{tabular}{ccccccc}
+        \texttt{min} & \texttt{LQ} & \texttt{median} & \texttt{mean} & \texttt{UQ} & \texttt{max} & \texttt{n}\\
+        \texttt{10} & \texttt{14} & \texttt{16.5} & \texttt{16.6} & \texttt{19} & \texttt{22} & \texttt{10}
+    \end{tabular}
+    \end{center}
+    \item The \textit{frequency table} below shows the masses (in grams) of 40 medium-sized eggs, grouped into equal-width intervals and counted. Construct a histogram to display the data.
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+            Interval & 52-53.99 & 54-55.99 & 56-57.99 & 58-59.99 & 60-61.99 & 62-63.99\\
+        \hline
+            Frequency & 2 & 4 & 11 & 17 & 5 & 1\\
+        \hline
+        \end{tabular}
+    \end{center}
+\end{enumerate}
+
+\pagebreak
+
+\section{Tables, Figures and Output}\label{tables-figures-and-output}
+
+There are many ways in which data can be presented, extending beyond those covered on the previous page. In statistical reports they are often clearly labelled as \textbf{tables} or \textbf{figures}, and numbered so they can be more easily referred to.
+
+\begin{multicols}{3}
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw[white] (0,0) rectangle (5,4);
+        \node[above, text width=5cm] at (2.5,4) {\textbf{Table 1:} Contingency table of mode of transport.}; 
+        \draw (0,0) rectangle (0.8,2.4);
+        \node[rotate=90] at (0.4,1.2) {Year Group};
+        \draw[step=0.8cm] (0.8,0) grid (4.8,2.4);
+        \draw[step=0.8cm] (1.6,2.4) grid (4.8,3.2);
+        \draw (1.6,3.2) rectangle (4.8,4);
+        \node at (3.2,3.6) {Transport};
+        \node[rotate=45] at (2,2.8) {\small{walk}};
+        \node[rotate=45] at (2.8,2.8) {\small{bus}};
+        \node[rotate=45] at (3.6,2.8) {\small{car}};
+        \node[rotate=45] at (4.4,2.8) {\small{bike}};
+        \node at (1.2,2) {3rd};
+        \node at (1.2,1.2) {2nd};
+        \node at (1.2,0.4) {1st};
+        \node at (2,0.4) {4};
+        \node at (2,1.2) {7};
+        \node at (2,2) {12};
+        \node at (2.8,0.4) {14};
+        \node at (2.8,1.2) {13};
+        \node at (2.8,2) {15};
+        \node at (3.6,0.4) {11};
+        \node at (3.6,1.2) {8};
+        \node at (3.6,2) {3};
+        \node at (4.4,0.4) {2};
+        \node at (4.4,1.2) {1};
+        \node at (4.4,2) {4};
+    \end{tikzpicture}
+\end{center}
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[above, text width=5cm] at (2.5,4) {\textbf{Figure 1:} Bar chart of mode of transport.}; 
+        \draw (0.5,1) -- (0.5,4);
+        \node[rotate=90] at (0.2,2.4) {frequency};
+        \draw (0.5,1) -- (4.2,1);
+        \node at (2.2,0.2) {year group};
+        
+        \draw[pattern=north west lines] (0.6,1) rectangle (0.8,1.8);
+        \draw[fill=black!20] (0.8,1) rectangle (1,3.8);
+        \draw (1,1) rectangle (1.2,3.2);
+        \draw[fill=black!50] (1.2,1) rectangle (1.4,1.4);
+        \node at (1,0.7) {1st};
+
+        \draw[pattern=north west lines] (1.7,1) rectangle (1.9,2.4);
+        \draw[fill=black!20] (1.9,1) rectangle (2.1,3.6);
+        \draw (2.1,1) rectangle (2.3,2.6);
+        \draw[fill=black!50] (2.3,1) rectangle (2.5,1.2);
+        \node at (2.1,0.7) {2nd};
+
+        \draw[pattern=north west lines] (2.8,1) rectangle (3,3.4);
+        \draw[fill=black!20] (3,1) rectangle (3.2,4);
+        \draw (3.2,1) rectangle (3.4,1.6);
+        \draw[fill=black!50] (3.4,1) rectangle (3.6,1.8);
+        \node at (3.2,0.7) {3rd};
+        
+    \end{tikzpicture}
+\end{center}
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[above,text width=5cm] at (2.5,4) {\textbf{Figure 2:} Chart of transport percentages.}; 
+        \node at (0.5,3.5) {3rd};
+        \node at (0.5,2.7) {2nd};
+        \node at (0.5,1.9) {1st};
+
+        \draw[pattern=north west lines] (1,3.2) rectangle (1.7,3.8);
+        \draw[fill=black!20] (1.7,3.2) rectangle (2.6,3.8);
+        \draw (2.6,3.2) rectangle (2.78,3.8);
+        \draw[fill=black!50] (2.78,3.2) rectangle (3,3.8);
+
+        \draw[pattern=north west lines] (1,2.4) rectangle (1.5,3);
+        \draw[fill=black!20] (1.5,2.4) rectangle (2.4,3);
+        \draw (2.4,2.4) rectangle (2.95,3);
+        \draw[fill=black!50] (2.95,2.4) rectangle (3,3);
+
+        \draw[pattern=north west lines] (1,1.6) rectangle (1.26,2.2);
+        \draw[fill=black!20] (1.26,1.6) rectangle (2.16,2.2);
+        \draw (2.16,1.6) rectangle (2.86,2.2);
+        \draw[fill=black!50] (2.86,1.6) rectangle (3,2.2);
+
+        \draw (1,1.4) -- (3,1.4);
+        \draw (1,1.3) -- (1,1.4) node[below] {0\%}; 
+        \draw (3,1.3) -- (3,1.4) node[below] {100\%}; 
+        \draw (2,1.3) -- (2,1.4);
+        \draw (1.5,1.3) -- (1.5,1.4);
+        \draw (2.5,1.3) -- (2.5,1.4);
+
+        \draw[pattern=north west lines] (0.5,0.75) rectangle (0.75,0.5);
+        \draw[fill=black!20] (1.75,0.75) rectangle (2,0.5);
+        \draw (3,0.75) rectangle (3.25,0.5);
+        \draw[fill=black!50] (4.25,0.75) rectangle (4.5,0.5);
+
+        \node at (0.625,0.25) {walk};
+        \node at (1.875,0.25) {bus};
+        \node at (3.125,0.2) {car};
+        \node at (4.375,0.25) {bike};
+    \end{tikzpicture}
+\end{center}
+
+\end{multicols}
+
+Not all graphs encountered in real life will be up to scratch; some graphs may be unclear, accidentally misleading or even intentionally misleading. Being alert to potential flaws in tables and figures and identifying possible improvements is an important skill.
+
+The widespread availability of computing power means that specialist software is often used by statisticians to avoid the need for time-consuming calculations where possible. Whilst this course requires no use of statistical software, examples of \texttt{computer output} will be displayed from which the required information must be extracted.
+
+\begin{multicols}{2}
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[above, text width=7cm] at (3.5,4) {\textbf{Figure 3:} Dot plots of time (mins) to walk to school for 2nd and 3rd years.}; 
+        \draw (0,3) -- (5,3);
+        \foreach \x in {0,0.5,...,5}{
+        \draw (\x,2.8) -- (\x,3);
+        }
+        \node[below] at (0,2.9) {0};
+        \node[below] at (1,2.9) {10};
+        \node[below] at (2,2.9) {20};
+        \node[below] at (3,2.9) {30};
+        \node[below] at (4,2.9) {40};
+        \node[below] at (5,2.9) {50};
+        \draw (0,1) -- (5,1);
+        \foreach \x in {0,0.5,...,5}{
+        \draw (\x,0.8) -- (\x,1);
+        }
+        \node[below] at (0,0.9) {0};
+        \node[below] at (1,0.9) {10};
+        \node[below] at (2,0.9) {20};
+        \node[below] at (3,0.9) {30};
+        \node[below] at (4,0.9) {40};
+        \node[below] at (5,0.9) {50};
+
+        \node at (6,3.5) {3rd years};
+        \node at (6,1.5) {2nd years};
+        \draw[fill] (0.6,3.3) circle (2pt);
+        \draw[fill] (1.0,3.3) circle (2pt);
+        \draw[fill] (1.0,3.5) circle (2pt);
+        \draw[fill] (1.3,3.3) circle (2pt);
+        \draw[fill] (1.3,3.5) circle (2pt);
+        \draw[fill] (1.3,3.7) circle (2pt);
+        \draw[fill] (1.7,3.3) circle (2pt);
+        \draw[fill] (1.9,3.3) circle (2pt);
+        \draw[fill] (2.2,3.3) circle (2pt);
+        \draw[fill] (2.2,3.5) circle (2pt);
+        \draw[fill] (2.7,3.3) circle (2pt);
+        \draw[fill] (3.6,3.3) circle (2pt);
+
+        \draw[fill] (0.3,1.3) circle (2pt);
+        \draw[fill] (0.8,1.3) circle (2pt);
+        \draw[fill] (1.3,1.3) circle (2pt);
+        \draw[fill] (1.7,1.3) circle (2pt);
+        \draw[fill] (1.7,1.5) circle (2pt);
+        \draw[fill] (2.0,1.3) circle (2pt);
+        \draw[fill] (2.6,1.3) circle (2pt);
+    \end{tikzpicture}
+\end{center}
+
+\columnbreak
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[above, text width=7cm] at (3.5,4) {\textbf{Output 1:} Summary data for walk times (mins) for 2nd and 3rd years.}; 
+        \node[right] at (0,3.5) {\texttt{data: walk time}};
+        \node[right] at (0,2.7) {\texttt{3rd yr:  n=12}};
+        \node[right] at (0,1.9) {\texttt{2nd yr:  n=****}};
+        \node[right] at (3.2,2.7) {\texttt{mean=17.3}};
+        \node[right] at (3.2,1.9) {\texttt{mean=14.9}};
+        \node[right] at (5.5,2.7) {\texttt{sd=8.42}};
+        \node[right] at (5.5,1.9) {\texttt{sd=7.65}};
+        \node[right] at (0,1.1) {\texttt{alternative hypothesis: means are not equal}};
+        \node[right] at (0,0.3) {\texttt{t=0.619, df=17, p-value=0.544}};
+    \end{tikzpicture}
+\end{center}
+
+\end{multicols}
+
+Whilst this textbook aims to enable familiarity with common figures, tables and computer output, the best way to practise obtaining information from them is to \emph{read a wide range of relevant statistical articles and reports}.
+
+\protect\phantomsection\label{ex13q}{}
+
+\subsubsection*{\texorpdfstring{\hyperref[ex13a]{Exercise 1.3}}{Exercise 1.3}}\label{exercise-1.3}
+\addcontentsline{toc}{subsubsection}{{Exercise 1.3}}
+
+\begin{enumerate}
+    \item Use \textbf{Table 1} to calculate the proportion of pupils in the sample that walk to school, as a:
+    \begin{enumerate}
+    \begin{multicols}{3}
+        \item Fraction.
+        \item Decimal.
+        \item Percentage.
+    \end{multicols}
+    \end{enumerate}
+    \item Suggest two possible improvements to \textbf{Figure 1}.
+    \item Using \textbf{Figure 2 only}, compare the proportions of pupils who take the bus between each year group.
+    \item From \textbf{Figure 3}, state the approximate \textit{shortest} and \textit{longest} walking times amongst 2nd and 3rd year pupils.
+    \item One piece of information from \textbf{Output 1} has been replaced by \texttt{****}. State the missing value.
 \end{enumerate}
 
 \pagebreak
@@ -869,9 +1266,9 @@ In a statistical study, the term \textbf{population} refers to the entire set of
 \end{tikzpicture}
 \end{center}
 
-If data were available for an entire \emph{population}, then various \textbf{population parameters} could be calculated, such as the \emph{population mean}. Since this is rarely possible in practice, instead \emph{samples} are taken from populations. Measures calculated from a sample are called \textbf{sample statistics}, such as the \emph{sample mean}.
+If data were available for an entire \emph{population}, then various \textbf{population parameters} could be calculated \emph{exactly}, such as the \emph{population mean}. Since this is rarely possible in practice, instead \emph{samples} are taken from populations. Measures calculated from a sample are called \textbf{sample statistics}, such as the \emph{sample mean}.
 
-Letters from the Greek alphabet are commonly used to represent population parameters. For example:
+The distinction between population parameters and sample statistics is often reflected in the notation used. Letters from the Greek alphabet are commonly used to represent population parameters. For example:
 
 \begin{center}
 \begin{tabular}{lll}
@@ -908,12 +1305,12 @@ Sample statistics vary depending on the sample chosen and can be viewed as \emph
 
 \end{multicols}
 
-The reason for discussing sampling at this point is to caution against making \emph{definitive} statements based solely on \emph{sample statistics}, when it is typically the (unknown) \emph{population parameters} that are really of interest.
+The purpose of discussing sampling at this point is to caution against making \emph{definitive} statements based solely on \emph{sample statistics}, when it is the (usually unknown) \emph{population parameters} that are of primary interest.
 
-\protect\phantomsection\label{ex12q}{}
+\protect\phantomsection\label{ex14q}{}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex12a]{Exercise 1.2}}{Exercise 1.2}}\label{exercise-1.2}
-\addcontentsline{toc}{subsubsection}{{Exercise 1.2}}
+\subsubsection*{\texorpdfstring{\hyperref[ex14a]{Exercise 1.4}}{Exercise 1.4}}\label{exercise-1.4}
+\addcontentsline{toc}{subsubsection}{{Exercise 1.4}}
 
 \textit{For each, state using words and notation which sample statistic or population parameter has been obtained.}\newline \textit{For example: ``Sample mean (}\(\bar{x}\)\textit{).'' or ``Population standard deviation (}\(\sigma\)\textit{).''}
 
@@ -922,14 +1319,14 @@ The reason for discussing sampling at this point is to caution against making \e
     \item A bus company in Scotland checks the mileage for some of its buses when they come in for a service, and the mean mileage of these buses is calculated.
     \item The iron levels are checked for a sample of patients at a hospital, and the standard deviation of these is calculated.
     \item Whilst researching the capacities of football stadiums in the Scottish Football League, the standard deviation is calculated using a full list of all the stadiums used in the Scottish Football League.
-    \item For a study on lunchtime spending in Scottish schools, the mean lunchtime spend is calculated from surveying every pupil studying as a large secondary school in Edinburgh.
+    \item For a study on lunchtime spending in Scottish schools, the mean lunchtime spend is calculated from surveying every pupil studying at a large secondary school in Edinburgh.
 \end{enumerate}
 
 \pagebreak
 
 \section{Measures of Location and Spread}\label{measures-of-location-and-spread}
 
-\emph{Summary statistics} are a collection of measures taken of the data from a sample, such as the mean, or standard deviation. These provide a quick way to communicate some general sense of the data. For example, for the \emph{raw data} of 0, 2, 2, 6, 12, 14, 16, 18, 18, 18, 20, the table below shows a selection of summary statistics.
+\emph{Summary statistics} are numerical measures calculated from sample data, such as the mean or standard deviation. These provide a concise way to describe key features of the data. For example, for the \emph{raw data set} of 0, 2, 2, 6, 12, 14, 16, 18, 18, 18, 20, the table below shows a selection of summary statistics.
 
 \begin{center}
 \begin{tabular}{ccccccccccccc}
@@ -939,12 +1336,12 @@ n & mean & sd & sum & sum of squares & min & LQ & median & UQ & max & range & IQ
 \end{tabular}
 \end{center}
 
-There are two main types of summary statistic: those that measure the \textit{central tendency} of data (or its \textbf{location}); and those that measure the \textit{variability} of data (or its \textbf{spread}). It is common to measure both the location \emph{and} spread, since two data sets can have the same average but very different variability.
+There are two main types of summary statistic: those that describe the \textit{central tendency} of data (or its \textbf{location}); and those that describe the \textit{variability} of data (or its \textbf{spread}). It is common to measure both the location \emph{and} spread, since two data sets can have the same average but very different variability.
 
-\subsubsection*{Measures of Location}\label{measures-of-location}
-\addcontentsline{toc}{subsubsection}{Measures of Location}
+\subsection*{Measures of Location}\label{measures-of-location}
+\addcontentsline{toc}{subsection}{Measures of Location}
 
-The three main measures of location, or \emph{averages}, should already be familiar. To avoid ambiguity, statisticians will typically avoid referring to \emph{``the average''}, and will instead specify exactly \emph{which} average they are referring to:
+The three main measures of location (or \emph{averages}) may already be familiar. To avoid ambiguity, statisticians will typically avoid referring to an \emph{`average'}, and will instead specify \emph{which} average they are referring to:
 
 \begin{itemize}
     \item \textbf{Mode} - the most frequently occurring value.
@@ -976,9 +1373,9 @@ The three main measures of location, or \emph{averages}, should already be famil
 \node at (5.7,1.5) {\text{mean}};
 \node at (7,1) {\text{median}};
 \node at (9,2) {\text{mode}};
-\draw[dashed] (5.7,1.2) -- (5.7,0);
-\draw[dashed] (7,0.7) -- (7,0);
-\draw[dashed] (9,1.7) -- (9,0);
+\draw[dashed,thin] (5.7,1.2) -- (5.7,0);
+\draw[dashed,thin] (7,0.7) -- (7,0);
+\draw[dashed,thin] (9,1.7) -- (9,0);
 \node at (5.7,-1) {standard deviation};
 \draw[stealth-stealth] (3.95,-1.3) -- (7.45,-1.3);
 \node at (5,-2) {interquartile range};
@@ -993,10 +1390,10 @@ The three main measures of location, or \emph{averages}, should already be famil
 \end{tikzpicture}
 \end{center}
 
-\subsubsection*{Measures of Spread}\label{measures-of-spread}
-\addcontentsline{toc}{subsubsection}{Measures of Spread}
+\subsection*{Measures of Spread}\label{measures-of-spread}
+\addcontentsline{toc}{subsection}{Measures of Spread}
 
-The measure of spread which is usually encountered first in a maths classroom is the \emph{range}, less informative than other measures, as it depends only on the two most extreme values. In practice this measure is seldom used by statisticians since it only uses the two most extreme values from the data. There are three main measures of spread commonly used, two of which are likely to already be familiar:
+The measure of spread which is usually encountered first in a maths classroom is the \emph{range}, defined as the difference between the largest and smallest values. The range, however, is less informative than other measures as it uses only the two most extreme values. There are three main measures of spread commonly used, two of which are likely to already be familiar:
 
 \begin{itemize}
     \item \textbf{Interquartile Range} - the difference between the upper quartile and the lower quartile.
@@ -1006,450 +1403,167 @@ The measure of spread which is usually encountered first in a maths classroom is
 
 \pagebreak
 
-\subsection*{The Mean and the Standard Deviation}\label{the-mean-and-the-standard-deviation}
-\addcontentsline{toc}{subsection}{The Mean and the Standard Deviation}
+\subsection*{The Sample Median and the Sample Interquartile Range}\label{the-sample-median-and-the-sample-interquartile-range}
+\addcontentsline{toc}{subsection}{The Sample Median and the Sample Interquartile Range}
 
-The \emph{mean} and \emph{standard deviation} are perhaps the most commonly used measures of location and spread, respectively, and both link strongly to the commonly-encountered \emph{bell-shaped curve} (see page 13). The formulae for calculating the sample mean and sample standard deviation from sample data are given below using notation, where the Greek letter \(\sum\) (\emph{``Sigma''}) denotes summation (i.e.~adding a set of values), \(x_i\) represents each value in the sample (for \(i=\text{1},\text{2},\dots,n\)) and \(n\) represents the \emph{number} of values in the sample.
+A lay person's interpretation of what an `average' seeks to describe is the \emph{typical} value for a data set. However, consider the hourly rate of pay of six people working in a store, with one manager and five shop workers:
 
-The \emph{sample mean}, \(\bar{x}\), is calculated as: \hspace{0.5cm}\(\bar{x}=\dfrac{\sum x}{n}\)
+\vspace{-0.2cm}
+\begin{center}
+    \begin{tabular}{cccccccc}
+        £10 & £10 & £10 & £10 & £14 & £51
+    \end{tabular}
+\end{center}
 
-The \emph{sample standard deviation}, \(s\), is calculated as: \hspace{0.5cm}\(s=\sqrt{\dfrac{S_{xx}}{n-1}}\)\hspace{0.5cm}where: \hspace{0.5cm}\(S_{xx}=\sum x^\text{2}-\dfrac{(\sum x)^\text{2}}{n}\)
+\vspace{-0.2cm}
 
-The \emph{sample variance}, \(s^\text{2}\), is simply the \emph{square of the standard deviation}.
+The mean of these values is £17.50, yet this figure does not seem to represent a \emph{typical} hourly rate of pay of people working in the store. This example may seem contrived, yet this exact issue is why countries' average salaries are not measured using the mean. This is because the \emph{mean} takes into account \emph{all values} in any data set, and so is influenced by \emph{extreme} values.
 
-\subsubsection*{The Median and the Interquartile Range}\label{the-median-and-the-interquartile-range}
-\addcontentsline{toc}{subsubsection}{The Median and the Interquartile Range}
+The median (\(\text{Q}_\text{2}\)) and interquartile range (\(\text{IQR}\)) are often chosen to measure location and spread when the data is particularly \emph{skewed} (see page 15), as they are less influenced by \emph{extreme values} than the mean and standard deviation. The \emph{median} represents the \emph{middle} of a data set: a value which approximately 50\% of the data lies below, and approximately 50\% of the data lies above. Where a data set has an \emph{odd} number of values, the median is simply the middle value. Where a data set has an \emph{even} number of values, the median is the mean of the \emph{two} middle values. The median is used to describe the \emph{location} of a population.
 
-The median, \(\text{Q}_\text{2}\), and interquartile range, \(\text{IQR}\), are often chosen to measure location and spread when the data is particularly \emph{skewed} (see page 13), as they are less influenced by \emph{extreme values} than the mean and standard deviation.
+\vspace{-0.4cm}
+\begin{center}
+\begin{tikzpicture}
+\draw[white] (-5.5,-2.5) rectangle (12,1.3);
+\node[right] at (-5,-0.3) {Data set A ($n=\text{11}$):};
+\node at (1,-0.3) {4};
+\node at (2,-0.3) {6};
+\node at (3,-0.3) {6};
+\node at (4,-0.3) {7};
+\node at (5,-0.3) {9};
+\node at (6,-0.3) {9};
+\node at (7,-0.3) {11};
+\node at (8,-0.3) {12};
+\node at (9,-0.3) {13};
+\node at (10,-0.3) {16};
+\node at (11,-0.3) {18};
+\draw (6,-0.3) circle (0.4cm);
+\node[above] at (6,0.1) {$\text{median}=\text{9}$};
+\node[right] at (-5,-2) {Data set B ($n=\text{10}$):};
+\node at (1,-2) {5};
+\node at (2,-2) {7};
+\node at (3,-2) {7};
+\node at (4,-2) {9};
+\node at (5,-2) {11};
+\draw[thick] (5.5,-2.4) -- (5.5,-1.6) node[above] {$\text{median}=\text{12}$};
+\node at (6,-2) {13};
+\node at (7,-2) {13};
+\node at (8,-2) {15};
+\node at (9,-2) {17};
+\node at (10,-2) {17};
+\end{tikzpicture}
+\end{center}
 
-The \emph{lower quartile} (LQ or \(\text{Q}_\text{1}\)) and the \emph{upper quartile} (UQ or \(\text{Q}_\text{3}\)) split an ordered data set into four equal parts, along with the median. From the lowest value to \(\text{Q}_\text{1}\) contains approximately 25\% of the data, from \(\text{Q}_\text{1}\) to \(\text{Q}_\text{2}\) contains approximately the next 25\%, and so on.
+The \emph{lower quartile} (LQ or \(\text{Q}_\text{1}\)) and the \emph{upper quartile} (UQ or \(\text{Q}_\text{3}\)) split an ordered data set into four approximately equal parts, along with the median. From the lowest value to LQ contains approximately 25\% of the data, from LQ to the median contains approximately the next 25\%, and so on.
 
 \begin{center}
 \begin{tikzpicture}
+\draw[white] (-5.5,-2.5) rectangle (12,1.3);
+\draw[pattern = north east lines] (6,0) circle (0.4cm);
+\node[right] at (-5,0) {Data set A ($n=\text{11}$):};
 \node at (1,0) {4};
-\node at (2,0) {5};
-\node at (3,0) {8};
-\node at (4,0) {8};
-\node at (5,0) {10};
-\node at (6,0) {11};
-\node at (7,0) {13};
-\node at (8,0) {17};
-\node at (9,0) {17};
-\node at (10,0) {18};
-\node at (11,0) {21};
-\node at (12,0) {22};
-\node at (13,0) {22};
-\node at (14,0) {26};
-\draw[thick] (7.5,-0.5) -- (7.5,0.5) node[above] {$\text{Q}_\text{2}=\text{15}$};
-\draw[thick] (4,0) circle (0.5);
-\draw[thick] (12,0) circle (0.5);
-\node[above] at (4,0.5) {$\text{Q}_\text{1}=\text{8}$};
-\node[above] at (12,0.5) {$\text{Q}_\text{3}=\text{22}$};
-\draw[stealth-] (0.7,0.3) -- (0.3,0.6) node[above left] {$\text{Min}=\text{4}$};
-\draw[stealth-] (14.3,0.3) -- (14.6,0.6) node[above right] {$\text{Max}=\text{26}$};
+\node at (2,0) {6};
+\node at (3,0) {6};
+\node at (4,0) {7};
+\node at (5,0) {9};
+\node at (6,0) {9};
+\node at (7,0) {11};
+\node at (8,0) {12};
+\node at (9,0) {13};
+\node at (10,0) {16};
+\node at (11,0) {18};
+\draw (3,0) circle (0.4cm);
+\draw (9,0) circle (0.4cm);
+\node[above] at (3,0.4) {$\text{LQ}=\text{6}$};
+\node[above] at (9,0.4) {$\text{UQ}=\text{13}$};
+\node[right] at (-5,-2) {Data set B ($n=\text{10}$):};
+\draw[stealth-] (6,0.5) -- (6,0.8) node[above] {\scriptsize{ignore middle value}};
+\node at (1,-2) {5};
+\node at (2,-2) {7};
+\node at (3,-2) {7};
+\node at (4,-2) {9};
+\node at (5,-2) {11};
+\draw (3,-2) circle (0.4cm);
+\draw (8,-2) circle (0.4cm);
+\node[above] at (3,-1.6) {$\text{LQ}=\text{7}$};
+\node[above] at (8,-1.6) {$\text{UQ}=\text{15}$};
+\draw[thick] (5.5,-2.4) -- (5.5,-1.6);
+\node at (6,-2) {13};
+\node at (7,-2) {13};
+\node at (8,-2) {15};
+\node at (9,-2) {17};
+\node at (10,-2) {17};
 \end{tikzpicture}
 \end{center}
 
-The \emph{interquartile range} is calculated as: \hspace{0.5cm}\(\text{IQR}=\text{Q}_\text{3}-\text{Q}_\text{1}\)
+The \emph{interquartile range}, calculated as \(\text{IQR}=\text{UQ}-\text{LQ}\), measures the range of the approximate `middle 50\%' of a data set, ignoring the remaining lowest and highest quarters. On a box plot (sometimes called a \emph{box-and-whisker} plot), the interquartile range defines the \emph{width of the box}, ignoring the `whiskers' at either side. The larger a data set's interquartile range is, the more spread it suggests the data may be.
 
-\protect\phantomsection\label{ex13q}{}
+\begin{center}
+\begin{tikzpicture}
+\draw[white] (-5.5,-0.5) rectangle (12,3.4);
+\draw (0,0.1) -- (10,0.1);
+\node[right] at (-5,2.5) {Data set A:};
+\node[right] at (-5,1.9) {$\text{IQR}=\text{13}-\text{6}=\text{7}$};
+\draw (0.5*4,2.2) -- (0.5*18,2.2);
+\draw (0.5*4,1.9) -- (0.5*4,2.5) node[above left] {\scriptsize{$\min=\text{4}$}};
+\draw (0.5*18,1.9) -- (0.5*18,2.5) node[above right] {\scriptsize{$\max=\text{18}$}};;
+\draw[fill=black!20] (0.5*6,1.9) rectangle (0.5*13,2.5);
+\draw (0.5*9,1.9) -- (0.5*9,2.5) node[above] {\scriptsize{$\text{median}=\text{9}$}};
+\draw[stealth-] (0.5*6,2.6) -- ++ (0,0.3) node[above] {\scriptsize{$\text{LQ}=\text{6}$}};
+\draw[stealth-] (0.5*13,2.6) -- ++ (0,0.3) node[above] {\scriptsize{$\text{UQ}=\text{13}$}};
+\node[right] at (-5,0.9) {Data set B:};
+\node[right] at (-5,0.3) {$\text{IQR}=\text{15}-\text{7}=\text{8}$};
+\draw (0.5*5,0.6) -- (0.5*17,0.6);
+\draw (0.5*5,0.3) -- (0.5*5,0.9) node[above left] {\scriptsize{$\min=\text{5}$}};;
+\draw (0.5*17,0.3) -- (0.5*17,0.9) node[above right] {\scriptsize{$\max=\text{17}$}};;
+\draw[fill=black!20] (0.5*7,0.3) rectangle (0.5*15,0.9);
+\draw (0.5*12,0.3) -- (0.5*12,0.9) node[above] {\scriptsize{$\text{median}=\text{12}$}};
+\draw[stealth-] (0.5*7,1) -- ++ (0,0.3) node[above] {\scriptsize{$\text{LQ}=\text{7}$}};
+\draw[stealth-] (0.5*15,1) -- ++ (0,0.3) node[above] {\scriptsize{$\text{UQ}=\text{15}$}};
+\foreach \x in {0,2,...,20}{
+    \draw (0.5*\x,0) -- (0.5*\x,0.1) node[below] {\x};
+}
+\end{tikzpicture}
+\end{center}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex13a]{Exercise 1.3}}{Exercise 1.3}}\label{exercise-1.3}
-\addcontentsline{toc}{subsubsection}{{Exercise 1.3}}
+The box plots above suggest that population B may have a higher median value than population A, and that population B's distribution may be slightly more varied, since its sample gave a higher interquartile range.
 
-\begin{enumerate}
-    \item The monthly cost of 10 drivers' car insurance ($x$, in £'s) are recorded. Calculate the mean and standard deviation.
-    \begin{center}
-    \begin{tabular}{ccc}
-      $\sum{x}=\text{359}$ & $\sum{x^{\text{2}}}=\text{15119}$ & $n=\text{10}$
-    \end{tabular}
-    \end{center}
-    \item Daily fuel spend ($x$, in £'s) for 15 drivers is summarised below. Calculate the mean and standard deviation.
-    \begin{center}
-    \begin{tabular}{ccc}
-      $\sum{x}=\text{87}$ & $\sum{x^{\text{2}}}=\text{569}$ & $n=\text{15}$
-    \end{tabular}
-    \end{center}
-    \item The marks, out of 40, of eight pupils sitting a chemistry test are below. Find the mean and standard deviation.
-    \begin{center}
-        \begin{tabular}{cccccccc}
-            32 & 25 & 29 & 37 & 16 & 39 & 23 & 32 
-        \end{tabular}
-    \end{center}
-    \item The ages (in years) of 18 customers in a shop are recorded. Calculate the median and interquartile range.
-    \begin{center}
-    \begin{tabular}{ccccccccc}
-        17 & 63 & 34 & 23 & 40 & 57 & 72 & 70 & 43\\
-        56 & 29 & 37 & 41 & 50 & 13 & 24 & 30 & 58
-    \end{tabular}
-    \end{center}
-\end{enumerate}
+\newpage
+
+\subsection*{The Sample Mean and the Sample Standard Deviation}\label{the-sample-mean-and-the-sample-standard-deviation}
+\addcontentsline{toc}{subsection}{The Sample Mean and the Sample Standard Deviation}
+
+The mean (\emph{`add up all the values then divide by how many there are'}) is what most people are typically thinking of when they talk about \emph{the average}. It has the property of taking into account \emph{every value} in a data set, which is often desirable except when \emph{extreme values} are present, as discussed on the previous page.
+
+If data for an entire \emph{population} of values \(x_\text{1}, x_\text{2}, \dots, x_N\) were available, where \(N\) is the population size, then the \textbf{population mean} (\(\mu\)) could be calculated. This can be expressed concisely using summation notation, \(\sum\) (``Sigma''), where \(\sum x_i\) denotes the sum of all values from \(x_\text{1}\) to \(x_N\).
+
+\[\mu=\frac{x_\text{1}+x_\text{2}+\dots +x_N}{N}= \frac{\sum x_i}{N} \quad \text{or, abbreviated} \quad \mu=\frac{\sum x_i}{N}\]
+
+Since in practice a population is rarely available, instead it is common to calculate the \textbf{sample mean} (\(\bar{x}\)), using a sample of data from a population. Given a sample of data \(x_\text{1}, x_\text{2}, \dots, x_n\), where \(n\) is the sample size, the sample mean can be calculated as, in its most commonly used form:
+
+\[\bar{x}=\frac{\sum x}{n}\]
+
+The sample mean is an \emph{unbiased estimator} of the population mean, meaning that, on average, it gives the correct value across repeated sampling.
+
+Similarly, if data for an entire \emph{population} of values \(x_\text{1}, x_\text{2}, \dots, x_N\) were available, then the \textbf{population variance} (\(\sigma^\text{2}\)) could be obtained. More useful for its mathematical properties than as a value to \emph{interpret}, it is the \emph{mean of the squared differences} between each value \(x_i\) and the population mean, \(\mu\). Its units are the \emph{square} of the units of the original data, and so for data measured in grams, units of variance are (somewhat unintuitively) \(\text{grams}^\text{2}\). It can be calculated, again using an abbreviated form of summation, as:
+
+\[\sigma^\text{2}=\frac{\sum \left(x - \mu\right)^\text{2}}{N}\]
+
+Replicating the same formula using sample data gives a \emph{biased} estimate for variance. This is because the formula requires the population mean \(\mu\) be replaced with the \emph{sample mean} \(\bar{x}\) as its estimate, which will tend to minimize the sum of square deviations and so tend to lead to an \emph{underestimate} of the true population variance. \emph{Bessel's correction} is therefore used to produce a formula for the \textbf{sample variance} (\(s^\text{2}\)), which is an \emph{unbiased} estimator for the population variance. The below two forms are equivalent.
+
+\[s^\text{2}=\frac{\sum \left(x - \bar{x}\right)^\text{2}}{n-\text{1}} \quad \text{or} \quad s^\text{2}=\frac{\sum x^\text{2} - \frac{\left(\sum x\right)^\text{2}}{n}}{n-\text{1}}\]
+
+The \emph{standard deviation} is the \emph{square root} of the variance, which brings the units it takes back to match those of the original data (e.g.~grams). The formula for the \textbf{sample standard deviation} (\(s\)) appears on \textbf{page 4} of the Data Booklet. It is given in terms of the \emph{sum of squares for} \(x\), notated as \(S_{xx}\), which is the numerator of the right-hand formula above. A formula for the sample standard deviation is therefore:
+
+\[s=\sqrt{\dfrac{S_{xx}}{n-1}}\quad\text{ where }\quad S_{xx}=\sum x^\text{2}-\dfrac{(\sum x)^\text{2}}{n}\]
+
+In practice, only the \emph{sample mean} and \emph{sample standard deviation} (and sample variance) will need to be calculated in this course, and both can be performed by a graphical calculator directly from a sample of values with no need for manual calculation. However, an insight into their formulae is essential in particular for anyone who wishes to take statistics further beyond this course.
 
 \pagebreak
 
-\section{Displaying Data}\label{displaying-data}
+For example, calculating the mean and standard deviation sample data set: 4, 6, 7, 9, 10
 
-Before analysing a data set, it is common practice to \emph{display} the data in a simple form so that an initial impression can be formed. Some key examples are shown below, using a sample of 10 sunflower heights measured by a gardener 8 weeks after germination, measured to the nearest centimetre:
-
-\begin{center}
-\begin{tabular}{cccccccccccc}
-34 & 35 & 38 & 41 & 46 & 47 & 47 & 51 & 62 & 73
-\end{tabular}
-\end{center}
-
-\vspace{-0.5cm}
-
-\begin{figure}[H]
-  \centering
-\begin{minipage}{.5\textwidth}
-  \centering
-\begin{tikzpicture}
-\draw (33.5*0.15,0) -- (73.5*0.15,0);
-\node at (0.15*35,-0.3) {35};
-\node at (0.15*40,-0.3) {40};
-\node at (0.15*45,-0.3) {45};
-\node at (0.15*50,-0.3) {50};
-\node at (0.15*55,-0.3) {55};
-\node at (0.15*60,-0.3) {60};
-\node at (0.15*65,-0.3) {65};
-\node at (0.15*70,-0.3) {70};
-\foreach \x in {34,...,73}
-  \draw (0.15*\x,0) -- (0.15*\x,-0.1);
-\fill[black] (0.15*34,0.4) circle (0.05);
-\fill[black] (0.15*35,0.4) circle (0.05);
-\fill[black] (0.15*38,0.4) circle (0.05);
-\fill[black] (0.15*41,0.4) circle (0.05);
-\fill[black] (0.15*46,0.4) circle (0.05);
-\fill[black] (0.15*47,0.4) circle (0.05);
-\fill[black] (0.15*47,0.8) circle (0.05);
-\fill[black] (0.15*51,0.4) circle (0.05);
-\fill[black] (0.15*62,0.4) circle (0.05);
-\fill[black] (0.15*73,0.4) circle (0.05);
-\node at (0.15*53,-0.8) {\text{Height (cm)}};
-\node at (8,4.5) {\textbf{Dot Plot}};
-\node[text width = 8cm,below] at (8,4) {Dot plots display individual data values, stacking repeated values vertically for clarity.};
-\draw[white] (3.5,-2) rectangle (12.5,5);
-\end{tikzpicture}
-
-\end{minipage}%
-  \centering
-\begin{minipage}{.5\textwidth}
-  \centering
-
-\begin{tikzpicture}
-\draw (6,-1) -- (6,1.4);
-\node at (5.7,1.2) {3};
-\node at (5.7,0.7) {4};
-\node at (5.7,0.2) {5};
-\node at (5.7,-0.3) {6};
-\node at (5.7,-0.8) {7};
-\node at (6.3,1.2) {4};
-\node at (6.8,1.2) {5};
-\node at (7.3,1.2) {8};
-\node at (6.3,0.7) {1};
-\node at (6.8,0.7) {6};
-\node at (7.3,0.7) {7};
-\node at (7.8,0.7) {7};
-\node at (6.3,0.2) {1};
-\node at (6.3,-0.3) {2};
-\node at (6.3,-0.8) {3};
-\node at (9,-0.8) {3};
-\node at (9.5,-0.8) {5};
-\node at (10,-0.2) {$n=10$};
-\draw (9.25,-0.6) -- (9.25,-1);
-\node[anchor=west] at (9.5,-0.8) {represents 35 cm};
-\node at (8,4.5) {\textbf{Stem-and-Leaf Diagram}};
-\node[text width = 8cm,below] at (8,4) {Stem-and-leaf diagrams organise data by place value while preserving the original data values. Leaves should be in order, and a key (or \textit{legend}) and the sample size should be included.};
-\draw[white] (3.5,-2) rectangle (12.5,5);
-\end{tikzpicture}
-
-\end{minipage}
-\end{figure}
-
-\vspace{-1cm}
-
-\begin{figure}[H]
-  \centering
-\begin{minipage}{.5\textwidth}
-  \centering
-
-\begin{tikzpicture}
-\draw (33.5*0.15,0) -- (73.5*0.15,0);
-\node at (0.15*35,-0.3) {35};
-\node at (0.15*40,-0.3) {40};
-\node at (0.15*45,-0.3) {45};
-\node at (0.15*50,-0.3) {50};
-\node at (0.15*55,-0.3) {55};
-\node at (0.15*60,-0.3) {60};
-\node at (0.15*65,-0.3) {65};
-\node at (0.15*70,-0.3) {70};
-\foreach \x in {34,...,73}
-  \draw (0.15*\x,0) -- (0.15*\x,-0.1);
-\draw[fill=black!25] (0.15*38,0.4) rectangle (0.15*51,0.8);
-\draw (0.15*34,0.4) -- (0.15*34,0.8);
-\draw (0.15*38,0.4) -- (0.15*38,0.8);
-\draw (0.15*46.5,0.4) -- (0.15*46.5,0.8);
-\draw (0.15*51,0.4) -- (0.15*51,0.8);
-\draw (0.15*73,0.4) -- (0.15*73,0.8);
-\draw (0.15*34,0.6) -- (0.15*38,0.6);
-\draw (0.15*51,0.6) -- (0.15*73,0.6);
-\node at (0.15*53,-0.8) {\text{Height (cm)}};
-\node at (8,4.5) {\textbf{Box Plot}};
-\node[text width = 8cm,below] at (8,4) {Box plots offer a visual representation of a five-number summary, consisting of the minimum value, the lower quartile $\text{Q}_\text{1}$, the median, the upper quartile $\text{Q}_\text{3}$ and the maximum value.};
-\draw[white] (3.5,-2) rectangle (12.5,5);
-\end{tikzpicture}
-
-\end{minipage}%
-  \centering
-\begin{minipage}{.5\textwidth}
-  \centering
-
-\begin{tikzpicture}
-\draw (30*0.08+3.8,0) -- (80*0.08+3.8,0);
-\draw (30*0.08+3.8,0) -- (30*0.08+3.8,1.2);
-\node at (0.08*30+3.8,-0.3) {\scriptsize{30}};
-\node at (0.08*40+3.8,-0.3) {\scriptsize{40}};
-\node at (0.08*50+3.8,-0.3) {\scriptsize{50}};
-\node at (0.08*60+3.8,-0.3) {\scriptsize{60}};
-\node at (0.08*70+3.8,-0.3) {\scriptsize{70}};
-\node at (0.08*80+3.8,-0.3) {\scriptsize{80}};
-\foreach \x in {30,40,...,80}{
-  \draw (0.08*\x+3.8,0) -- (0.08*\x+3.8,-0.1);}
-  \foreach \y in {0,...,5}{
-  \draw (0.08*29.5+3.8,1.2*0.2*\y) -- (0.08*30+3.8,1.2*0.2*\y);}
-\node at (0.08*28.5+3.8,1.2) {\scriptsize{5}};
-\node at (0.08*28.5+3.8,0) {\scriptsize{0}};
-\node at (0.08*25+3,0.5) {frequency};
-\draw[fill=black!25] (0.08*30+3.8,0) rectangle (0.08*40+3.8,0.6*1.2);
-\draw[fill=black!25] (0.08*40+3.8,0) rectangle (0.08*50+3.8,0.8*1.2);
-\draw[fill=black!25] (0.08*50+3.8,0) rectangle (0.08*60+3.8,0.2*1.2);
-\draw[fill=black!25] (0.08*60+3.8,0) rectangle (0.08*70+3.8,0.2*1.2);
-\draw[fill=black!25] (0.08*70+3.8,0) rectangle (0.08*80+3.8,0.2*1.2);
-\node at (0.08*53+3.8,-0.8) {\text{height (cm)}};
-\node at (8,4.5) {\textbf{Histogram}};
-\node[text width = 8cm,below] at (8,4) {Histograms display continuous data grouped into intervals (bins). Unlike bar charts, the bars are adjacent (no gaps), and the area of each bar represents frequency.};
-\draw[white] (3.5,-2) rectangle (12.5,5);
-\end{tikzpicture}
-
-\end{minipage}
-\end{figure}
-
-\vspace{-1cm}
-
-\protect\phantomsection\label{ex14q}{}
-
-\subsubsection*{\texorpdfstring{\hyperref[ex14a]{Exercise 1.4}}{Exercise 1.4}}\label{exercise-1.4}
-\addcontentsline{toc}{subsubsection}{{Exercise 1.4}}
-
-\begin{enumerate}
-    \item The ages (in years) of competitors in a junior golf tournament are below. Draw a dot plot to represent this data.
-    \begin{center}
-    \begin{tabular}{cccccccccccccc}
-        16 & 14 & 19 & 13 & 14 & 17 & 16 & 19 & 16 & 17 & 12 & 16 & 14 & 19
-    \end{tabular}
-    \end{center}
-    \item The price of an ice cream is recorded at 12 stalls (in £). Represent the data using a stem-and-leaf diagram.
-    \begin{center}
-    \begin{tabular}{cccccc}
-        1.50 & 2.20 & 2.50 & 2.10 & 1.80 & 1.40\\
-        2.00 & 1.90 & 3.60 & 0.90 & 1.70 & 1.50
-    \end{tabular}
-    \end{center}
-    \item The masses (in kg) of the luggage of 10 passengers on a plane to Barra were recorded. Construct a box plot.
-    \begin{center}
-    \begin{tabular}{cccccccccc}
-        15 & 18 & 14 & 22 & 19 & 14 & 10 & 21 & 17 & 16  
-    \end{tabular}
-    \end{center}
-\end{enumerate}
-
-\pagebreak
-
-\section{Tables, Figures and Output}\label{tables-figures-and-output}
-
-There are many ways in which data can be presented, extending beyond those covered on the previous page. In statistical reports they are often clearly labelled as \textbf{tables} or \textbf{figures}, and numbered so they can be more easily referred to.
-
-\begin{multicols}{3}
-
-\begin{center}
-    \begin{tikzpicture}
-        \draw[white] (0,0) rectangle (5,4);
-        \node[above, text width=5cm] at (2.5,4) {\textbf{Table 1:} Contingency table of mode of transport.}; 
-        \draw (0,0) rectangle (0.8,2.4);
-        \node[rotate=90] at (0.4,1.2) {Year Group};
-        \draw[step=0.8cm] (0.8,0) grid (4.8,2.4);
-        \draw[step=0.8cm] (1.6,2.4) grid (4.8,3.2);
-        \draw (1.6,3.2) rectangle (4.8,4);
-        \node at (3.2,3.6) {Transport};
-        \node[rotate=45] at (2,2.8) {\small{walk}};
-        \node[rotate=45] at (2.8,2.8) {\small{bus}};
-        \node[rotate=45] at (3.6,2.8) {\small{car}};
-        \node[rotate=45] at (4.4,2.8) {\small{bike}};
-        \node at (1.2,2) {3rd};
-        \node at (1.2,1.2) {2nd};
-        \node at (1.2,0.4) {1st};
-        \node at (2,0.4) {4};
-        \node at (2,1.2) {7};
-        \node at (2,2) {12};
-        \node at (2.8,0.4) {14};
-        \node at (2.8,1.2) {13};
-        \node at (2.8,2) {15};
-        \node at (3.6,0.4) {11};
-        \node at (3.6,1.2) {8};
-        \node at (3.6,2) {3};
-        \node at (4.4,0.4) {2};
-        \node at (4.4,1.2) {1};
-        \node at (4.4,2) {4};
-    \end{tikzpicture}
-\end{center}
-
-\begin{center}
-    \begin{tikzpicture}
-        \node[above, text width=5cm] at (2.5,4) {\textbf{Figure 1:} Bar chart of mode of transport.}; 
-        \draw (0.5,1) -- (0.5,4);
-        \node[rotate=90] at (0.2,2.4) {frequency};
-        \draw (0.5,1) -- (4.2,1);
-        \node at (2.2,0.2) {year group};
-        
-        \draw[pattern=north west lines] (0.6,1) rectangle (0.8,1.8);
-        \draw[fill=black!20] (0.8,1) rectangle (1,3.8);
-        \draw (1,1) rectangle (1.2,3.2);
-        \draw[fill=black!50] (1.2,1) rectangle (1.4,1.4);
-        \node at (1,0.7) {1st};
-
-        \draw[pattern=north west lines] (1.7,1) rectangle (1.9,2.4);
-        \draw[fill=black!20] (1.9,1) rectangle (2.1,3.6);
-        \draw (2.1,1) rectangle (2.3,2.6);
-        \draw[fill=black!50] (2.3,1) rectangle (2.5,1.2);
-        \node at (2.1,0.7) {2nd};
-
-        \draw[pattern=north west lines] (2.8,1) rectangle (3,3.4);
-        \draw[fill=black!20] (3,1) rectangle (3.2,4);
-        \draw (3.2,1) rectangle (3.4,1.6);
-        \draw[fill=black!50] (3.4,1) rectangle (3.6,1.8);
-        \node at (3.2,0.7) {3rd};
-        
-    \end{tikzpicture}
-\end{center}
-
-\begin{center}
-    \begin{tikzpicture}
-        \node[above,text width=5cm] at (2.5,4) {\textbf{Figure 2:} Chart of transport percentages.}; 
-        \node at (0.5,3.5) {3rd};
-        \node at (0.5,2.7) {2nd};
-        \node at (0.5,1.9) {1st};
-
-        \draw[pattern=north west lines] (1,3.2) rectangle (1.7,3.8);
-        \draw[fill=black!20] (1.7,3.2) rectangle (2.6,3.8);
-        \draw (2.6,3.2) rectangle (2.78,3.8);
-        \draw[fill=black!50] (2.78,3.2) rectangle (3,3.8);
-
-        \draw[pattern=north west lines] (1,2.4) rectangle (1.5,3);
-        \draw[fill=black!20] (1.5,2.4) rectangle (2.4,3);
-        \draw (2.4,2.4) rectangle (2.95,3);
-        \draw[fill=black!50] (2.95,2.4) rectangle (3,3);
-
-        \draw[pattern=north west lines] (1,1.6) rectangle (1.26,2.2);
-        \draw[fill=black!20] (1.26,1.6) rectangle (2.16,2.2);
-        \draw (2.16,1.6) rectangle (2.86,2.2);
-        \draw[fill=black!50] (2.86,1.6) rectangle (3,2.2);
-
-        \draw (1,1.4) -- (3,1.4);
-        \draw (1,1.3) -- (1,1.4) node[below] {0\%}; 
-        \draw (3,1.3) -- (3,1.4) node[below] {100\%}; 
-        \draw (2,1.3) -- (2,1.4);
-        \draw (1.5,1.3) -- (1.5,1.4);
-        \draw (2.5,1.3) -- (2.5,1.4);
-
-        \draw[pattern=north west lines] (0.5,0.75) rectangle (0.75,0.5);
-        \draw[fill=black!20] (1.75,0.75) rectangle (2,0.5);
-        \draw (3,0.75) rectangle (3.25,0.5);
-        \draw[fill=black!50] (4.25,0.75) rectangle (4.5,0.5);
-
-        \node at (0.625,0.25) {walk};
-        \node at (1.875,0.25) {bus};
-        \node at (3.125,0.2) {car};
-        \node at (4.375,0.25) {bike};
-    \end{tikzpicture}
-\end{center}
-
-\end{multicols}
-
-Not all graphs encountered in real life will be up to scratch; some graphs may be unclear, accidentally misleading or even intentionally misleading. Being alert to potential flaws in tables and figures and identifying possible improvements is an important skill.
-
-The widespread availability of computing power means that specialist software is often used by statisticians to avoid the need for time-consuming calculations where possible. Whilst this course requires no use of statistical software, examples of computer \textbf{output} will be displayed from which the required information must be extracted.
-
-\begin{multicols}{2}
-
-\begin{center}
-    \begin{tikzpicture}
-        \node[above, text width=7cm] at (3.5,4) {\textbf{Figure 3:} Dot plots of time (mins) to walk to school for 2nd and 3rd years.}; 
-        \draw (0,3) -- (5,3);
-        \foreach \x in {0,0.5,...,5}{
-        \draw (\x,2.8) -- (\x,3);
-        }
-        \node[below] at (0,2.9) {0};
-        \node[below] at (1,2.9) {10};
-        \node[below] at (2,2.9) {20};
-        \node[below] at (3,2.9) {30};
-        \node[below] at (4,2.9) {40};
-        \node[below] at (5,2.9) {50};
-        \draw (0,1) -- (5,1);
-        \foreach \x in {0,0.5,...,5}{
-        \draw (\x,0.8) -- (\x,1);
-        }
-        \node[below] at (0,0.9) {0};
-        \node[below] at (1,0.9) {10};
-        \node[below] at (2,0.9) {20};
-        \node[below] at (3,0.9) {30};
-        \node[below] at (4,0.9) {40};
-        \node[below] at (5,0.9) {50};
-
-        \node at (6,3.5) {3rd years};
-        \node at (6,1.5) {2nd years};
-        \draw[fill] (0.6,3.3) circle (2pt);
-        \draw[fill] (1.0,3.3) circle (2pt);
-        \draw[fill] (1.0,3.5) circle (2pt);
-        \draw[fill] (1.3,3.3) circle (2pt);
-        \draw[fill] (1.3,3.5) circle (2pt);
-        \draw[fill] (1.3,3.7) circle (2pt);
-        \draw[fill] (1.7,3.3) circle (2pt);
-        \draw[fill] (1.9,3.3) circle (2pt);
-        \draw[fill] (2.2,3.3) circle (2pt);
-        \draw[fill] (2.2,3.5) circle (2pt);
-        \draw[fill] (2.7,3.3) circle (2pt);
-        \draw[fill] (3.6,3.3) circle (2pt);
-
-        \draw[fill] (0.3,1.3) circle (2pt);
-        \draw[fill] (0.8,1.3) circle (2pt);
-        \draw[fill] (1.3,1.3) circle (2pt);
-        \draw[fill] (1.7,1.3) circle (2pt);
-        \draw[fill] (1.7,1.5) circle (2pt);
-        \draw[fill] (2.0,1.3) circle (2pt);
-        \draw[fill] (2.6,1.3) circle (2pt);
-    \end{tikzpicture}
-\end{center}
-
-\columnbreak
-
-\begin{center}
-    \begin{tikzpicture}
-        \node[above, text width=7cm] at (3.5,4) {\textbf{Output 1:} Summary data for walk times (mins) for 2nd and 3rd years.}; 
-        \node[right] at (0,3.5) {\texttt{data: walk time}};
-        \node[right] at (0,2.7) {\texttt{3rd yr:  n=12}};
-        \node[right] at (0,1.9) {\texttt{2nd yr:  n=****}};
-        \node[right] at (3.2,2.7) {\texttt{mean=17.3}};
-        \node[right] at (3.2,1.9) {\texttt{mean=14.9}};
-        \node[right] at (5.5,2.7) {\texttt{sd=8.42}};
-        \node[right] at (5.5,1.9) {\texttt{sd=7.65}};
-        \node[right] at (0,1.1) {\texttt{alternative hypothesis: means are not equal}};
-        \node[right] at (0,0.3) {\texttt{t=0.619, df=17, p-value=0.544}};
-    \end{tikzpicture}
-\end{center}
-
-\end{multicols}
-
-Whilst this textbook aims to enable familiarity with common figures, tables and computer output, the best way to practise obtaining information from them is to \emph{read a wide range of relevant statistical articles and reports}.
+\[\sum x^\text{2} = \text{282},\; \sum x = \text{36},\; n=\text{5} \qquad \bar{x}=\frac{36}{5}=\text{7.2} \qquad s=\sqrt{\frac{\text{282}-\frac{\text{36}^\text{2}}{\text{5}}}{\text{4}}}=\text{2.387}\text{ (to 3dp)}\]
 
 \protect\phantomsection\label{ex15q}{}
 
@@ -1457,18 +1571,102 @@ Whilst this textbook aims to enable familiarity with common figures, tables and 
 \addcontentsline{toc}{subsubsection}{{Exercise 1.5}}
 
 \begin{enumerate}
-    \item Use \textbf{Table 1} to calculate the proportion of pupils in the sample that walk to school.
-    \item Suggest two possible improvements to \textbf{Figure 1}.
-    \item Using \textbf{Figure 2}, compare the proportions of pupils in the sample who take the bus between each year group.
-    \item From \textbf{Figure 3}, state the approximate median time taken to walk for 3rd year pupils.
-    \item One piece of information from \textbf{Output 1} has been replaced by \texttt{****}. State the missing value.
+    \item Summary statistics from sample data are given below. Use appropriate formulae to calculate the mean and standard deviation for each sample.
+    \begin{enumerate}
+    \begin{multicols}{2}
+        \item $\sum{x}=\text{359}$,\; $\sum{x^{\text{2}}}=\text{15119}$,\; $n=\text{10}$
+        \item $S_{xx}=\text{1037.75}$,\; $\sum x=\text{994}$,\; $n=\text{16}$
+    \end{multicols}
+    \end{enumerate}
+    \item Sets of sample data are shown below. Using a graphical calculator if available, and formulae otherwise, find the mean and standard deviation for each.
+    \begin{enumerate}
+    \begin{multicols}{2}
+    \item 
+    \begin{tabular}{cccccccc}
+            32 & 25 & 29 & 37 & 16 & 39 & 23 & 32 
+        \end{tabular}
+    \item 
+    \begin{tabular}{ccccccccc}
+        17 & 63 & 34 & 23 & 40 & 57 & 72 & 70 & 43\\
+        56 & 29 & 37 & 41 & 50 & 13 & 24 & 30 & 58
+    \end{tabular}
+    \end{multicols}
+    \end{enumerate}
+    \item The frequency tables below represent sample data. Calculate the mean for each data set.
+    \begin{enumerate}
+    \begin{multicols}{2}
+    \item 
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        Value & 6 & 7 & 8 & 9 & 10\\
+        \hline
+        Frequency & 1 & 5 & 4 & 3 & 2\\ 
+        \hline
+    \end{tabular}
+    \item 
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+        \hline
+        Value & 0 & 1 & 2 & 3 & 4 & 5 & 6\\
+        \hline
+        Frequency & 3 & 7 & 5 & 0 & 4 & 1 & 2\\ 
+        \hline
+    \end{tabular}
+    \end{multicols}
+    \end{enumerate}
+    \item Sets of sample data are shown below. Using a graphical calculator, or by first putting the data set in order, find the median and interquartile range for each data set.
+    \begin{enumerate}
+    \begin{multicols}{2}
+    \item 
+    \begin{tabular}{cccccccc}
+            32 & 25 & 29 & 37 & 16 & 39 & 23 & 32 
+        \end{tabular}
+    \item 
+    \begin{tabular}{ccccccccc}
+        17 & 63 & 34 & 23 & 40 & 57 & 72 & 70 & 43\\
+        56 & 29 & 37 & 41 & 50 & 13 & 24 & 30 & 58
+    \end{tabular}
+    \end{multicols}
+    \end{enumerate}
+    \item Random samples of data from populations A and B are shown below.
+    \begin{center}
+        \begin{tabular}{c|cccccccc}
+            Sample A & 4 & 7 & 9 & 10 & 10 & 14 & 15 & 20\\
+            \hline
+            Sample B & 9 & 10 & 10 & 11 & 12 & 12 & 17 &   
+        \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item Find the mean and standard deviation for sample A.
+        \item Calculate the variance for sample A.
+        \item Calculate the median and interquartile range for sample B.
+        \item Suggest two further statistics that could be calculated to make a fair comparison between the location and spread of the two populations.
+    \end{enumerate}
+    \item Eight physics students sit a test in September and a test in November, each out of ten. Each student calculates the \textit{difference} in their marks between the two tests ($\text{November}-\text{September}$). The results are shown in the table below, with the differences for the final four students yet to be calculated:
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+            \hline
+            Student & A & B & C & D & E & F & G & H\\
+            \hline
+            September & 6 & 9 & 4 & 10 & 8 & 5 & 7 & 8\\
+            \hline
+            November & 8 & 8 & 6 & 10 & 9 & 3 & 7 & 7\\
+            \hline
+            Difference & 2 & -1 & 2 & 0 & ? & ? & ? & ? \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item Calculate the remaining four differences.
+        \item Find the \textit{median of the differences} and the \textit{interquartile range of the differences}.
+        \item Find the \textit{mean of the differences} and the \textit{standard deviation of the differences} (writing the answers as $\bar{x}_d$ and $s_d$, instead of $\bar{x}$ and $s$ respectively, for clarity).
+    \end{enumerate}
 \end{enumerate}
 
 \pagebreak
 
 \section{Outliers and Fences}\label{outliers-and-fences}
 
-Sometimes a set of data may contain values that seem \emph{extremely high or low} in comparison to the rest of the values. It is important to be wary of such values and the potentially significant impact they could have on any statistical analysis performed. There are a range of objective approaches that can be used to determine whether one or more points are extreme enough to be classified as \textbf{outliers}. In this course, \emph{fences} will be used.
+Sometimes a data set may contain values that seem \emph{extremely high or low} in comparison to the rest of the values. It is important to be wary of such values and the potentially significant impact they could have on any statistical analysis performed. There is a range of objective approaches that can be used to determine whether one or more points are extreme enough to be classified as \textbf{outliers}. In this course, \emph{fences} will be used.
 
 \begin{tcolorbox}[center,title=Identifying Outliers,colback=red!5,colframe=red!70!black,width=15cm,halign = center,halign title = center]
 \begin{center}
@@ -1478,9 +1676,9 @@ Any values \textit{below the lower fence} or \textit{above the upper fence} are 
 \end{center}
 \end{tcolorbox}
 
-If an outlier is identified in a set of data, an investigation should be conducted to determine the cause. If it is concluded that the outlier is a rogue point, such as an error in measurement, it can be removed from the data set and summary statistics re-calculated. However, if an outlier is a valid point in the data set then it should not be removed.
+If an outlier is identified in a data set, an investigation should be conducted to determine the cause. If it is concluded that the outlier is a rogue point, such as an error in measurement, it can be removed from the data set and summary statistics re-calculated. However, if an outlier is a valid point in the data set then it should not be removed.
 
-Returning to the sunflower heights from page 6, the data can now be checked for possible outliers:
+Returning to the sunflower heights from page 5, the data can now be checked for possible outliers:
 
 \begin{multicols}{2}
 
@@ -1508,9 +1706,9 @@ n & min & Q1 & median & Q3 & max\\
 \vspace{-1cm}
 
 \begin{align*}
-  \text{IQR}&=\text{Q}_\text{3}-\text{Q}_\text{1}=51-38=13\\[1em]
-  \text{Lower fence}&=\text{Q}_\text{1}-\text{1}.\text{5}\times \text{IQR}=38-\text{1}.\text{5}\times 13=18.5\\[1em]
-  \text{Upper fence}&=\text{Q}_\text{3}+\text{1}.\text{5}\times \text{IQR}=51+\text{1}.\text{5}\times 13=70.5
+  \text{IQR}&=\text{Q}_\text{3}-\text{Q}_\text{1}=\text{51}-\text{38}=\text{13}\\[1em]
+  \text{Lower fence}&=\text{Q}_\text{1}-\text{1}.\text{5}\times \text{IQR}=38-\text{1}.\text{5}\times \text{13}=\text{18}.\text{5}\\[1em]
+  \text{Upper fence}&=\text{Q}_\text{3}+\text{1}.\text{5}\times \text{IQR}=51+\text{1}.\text{5}\times \text{13}=\text{70}.\text{5}
 \end{align*}
 
 Since \(\text{73}>\text{70}.\text{5}\), it is an outlier.
@@ -1560,7 +1758,7 @@ The outlier in this data set could be valid if, for instance, the sunflower plan
 \end{center}
 
 \begin{enumerate}
-    \item[(a)] Show that the set of data contains an outlier.
+    \item[(a)] Show that the data set contains an outlier.
     \item[(b)] Suggest a possible cause for this outlier which would mean it should be removed.
 \end{enumerate}
 
@@ -1601,6 +1799,13 @@ The outlier in this data set could be valid if, for instance, the sunflower plan
         \item Identify any possible outliers.
         \item Draw a box plot to display this data.
     \end{enumerate}
+    \item A call centre records the times (in minutes) a sample of customers have to wait before being connected to an agent.
+    \begin{center}
+\begin{tabular}{cccccccccc}
+    55 & 20 & 31 & 12 & 18 & 32 & 28 & 16 & 14 & 33
+\end{tabular}
+\end{center}
+    Show that the data set contains at least one outlier.
     \item A hospital trust compiled data relating to the length of stay of patients in a particular hospital. A random sample of 18 patients gave the following summary data, measured in days.
     \begin{center}
     \begin{tabular}{cccccccc}
@@ -1644,9 +1849,9 @@ The outlier in this data set could be valid if, for instance, the sunflower plan
 
 \pagebreak
 
-\section{Describing Data Distributions}\label{describing-data-distributions}
+\section{Describing the Shapes of Distributions}\label{describing-the-shapes-of-distributions}
 
-Summary statistics alone are not sufficient to describe the full complexity of the way data is distributed. It is also important to consider and be able to describe the \textbf{shape} of the distribution, accomplished most easily using a histogram. Whilst real-life data rarely follows a precise mathematical model \emph{exactly}, a number of shapes are commonly observed. The following data was generated by \emph{simulating random sampling} from populations with these distributions.
+Summary statistics alone are not sufficient to describe the full complexity of the way data is distributed. It is also important to consider and be able to describe the \textbf{shape} of the distribution, visualised most easily using a graph. Whilst real-life data rarely follows a precise mathematical model \emph{exactly}, a number of shapes are commonly observed. The following data was generated by \emph{simulating random sampling} from populations with the described distributions.
 
 \begin{figure}[H]
   \centering
@@ -1654,7 +1859,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
   \centering
 \begin{tikzpicture}
 \draw[white] (-1,-1) rectangle (7,4.7);
-\node[text width = 6cm,align=center] at (3,4) {\textit{uniformly distributed data} ($n=\text{103}$)};
+\node[text width = 6cm,align=center] at (3,4) {\textit{uniformly distributed} ($n=\text{103}$)};
 \draw (-0.5,0) -- (6.5,0);
 \draw[fill=black!25] (0,0) rectangle (0.25,1.8);
 \draw[fill=black!25] (0.25,0) rectangle (0.5,1.7);
@@ -1694,7 +1899,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
 
 \begin{tikzpicture}
 \draw[white] (-1,-1) rectangle (7,4.7);
-\node[text width = 6cm,align=center] at (3,4) {\textit{normally distributed data (bell-shaped distribution)} ($n=\text{215}$)};
+\node[text width = 6cm,align=center] at (3,4) {\textit{normally distributed (bell-shaped distribution)} ($n=\text{215}$)};
 \draw (-0.5,0) -- (6.5,0);    
 \draw[fill=black!25] (0,0) rectangle (0.25,0);
 \draw[fill=black!25] (0.25,0) rectangle (0.5,0);
@@ -1736,7 +1941,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
   \centering
 \begin{tikzpicture}
 \draw[white] (-1,-1) rectangle (7,4.7);
-\node[text width = 6cm,align=center] at (3,4) {\textit{bimodal data} ($n=\text{87}$)};
+\node[text width = 6cm,align=center] at (3,4) {\textit{bimodal} ($n=\text{87}$)};
 \draw (-0.5,0) -- (6.5,0);
 \draw[fill=black!25] (0,0) rectangle (0.25,0);
 \draw[fill=black!25] (0.25,0) rectangle (0.5,0);
@@ -1776,7 +1981,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
 
 \begin{tikzpicture}
 \draw[white] (-1,-1) rectangle (7,4.7);
-\node[text width = 6cm,align=center] at (3,4) {\textit{positively skewed data (and so not symmetrical)} ($n=\text{134}$)};
+\node[text width = 6cm,align=center] at (3,4) {\textit{positively skewed (and so not symmetrical)} ($n=\text{134}$)};
 \draw (-0.5,0) -- (6.5,0);
 \draw[fill=black!25] (0,0) rectangle (0.25,0);
 \draw[fill=black!25] (0.25,0) rectangle (0.5,0);
@@ -1820,7 +2025,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
   \centering
 \begin{tikzpicture}
 \draw[white] (-1,-1) rectangle (7,4.7);
-\node[text width = 6cm,align=center] at (3,4) {\textit{very hard to infer distributions\\ of data from small samples} ($n=\text{19}$)};
+\node[text width = 6cm,align=center] at (3,4) {\textit{difficult to infer distributions\\ from small samples} ($n=\text{19}$)};
 \draw (-0.5,0) -- (6.5,0);
 \draw[fill=black!25] (0,0) rectangle (0.25,0);
 \draw[fill=black!25] (0.25,0) rectangle (0.5,1);
@@ -1860,7 +2065,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
 
 \begin{tikzpicture}
 \draw[white] (-1,-1) rectangle (7,4.7);
-\node[text width = 6cm,align=center] at (3,4) {\textit{negatively skewed data (and so not symmetrical)} ($n=\text{97}$)};
+\node[text width = 6cm,align=center] at (3,4) {\textit{negatively skewed (and so not symmetrical)} ($n=\text{97}$)};
 \draw (-0.5,0) -- (6.5,0);
 \draw[fill=black!25] (-0.5,0) rectangle (-0.25,0.1);
 \draw[fill=black!25] (-0.25,0) rectangle (0,0.1);
@@ -2112,7 +2317,7 @@ When comparing two or more samples of data, a good starting point is to create s
     \item \textbf{Shapes} (i.e. symmetrical, skewed, bimodal, bell-shaped curve)
 \end{itemize}
 
-At this \emph{exploratory} stage, it is again important to avoid making and \emph{conclusions} relating to the populations from which the sample data was drawn.
+At this \emph{exploratory} stage, it is again important to avoid making any \emph{conclusions} relating to the populations from which the sample data was drawn.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=NavyBlue]
 \textbf{Problem:} Within the sport of professional cycling, it is common for riders to specialise in certain types of cycling. \textit{Sprinters} aim to win races that finish on flat roads at high speed, whilst \textit{climbers} aim to win races with an uphill finish. A researcher studying the characteristics of elite-level cyclists randomly selects samples of 30 \textit{sprinters} and 30 \textit{climbers}, recording the heights of each. The results are shown summarised in \textbf{Table 1}.
@@ -2257,8 +2462,8 @@ Box plots for the two groups of cyclists are shown below in \textbf{Figure 1}, a
 
 \begin{enumerate}[itemsep=5pt]
     \item[(a) ] The sample median height of the sprinters was greater than that of the climbers.\\[0.5em]
-The larger interquartile range suggests that the population heights of sprinters are more varied.
-    \item[(b) ] The dot plot suggests the underlying distribution of heights for climbers is negatively skewed.
+The larger interquartile range suggests that the population of sprinters' heights is more varied.
+    \item[(b) ] The dot plot suggests the underlying distribution of climbers' heights is negatively skewed.
 \end{enumerate}
 
 \end{tcolorbox}
@@ -2323,7 +2528,7 @@ The larger interquartile range suggests that the population heights of sprinters
 \draw[semithick] (97,2.3) -- (99,2.3);
 \end{tikzpicture}
 \end{center}
-    Using the box plots, make two comments comparing the scoring of the two judges.
+    Using the box plots, make two comments comparing the location and spread of the judges' scoring.
     \item The temperature at 2pm was noted for 14 randomly selected days in January and June at a local tourist spot and box plots drawn to display the results.
 \begin{center}
 \begin{tikzpicture}
@@ -2392,8 +2597,8 @@ The larger interquartile range suggests that the population heights of sprinters
     \end{center}   
     \begin{enumerate}
         \item Draw dot plots to represent the data.
-        \item Calculate the mean and standard deviation for each sample.
-        \item Make two comments comparing the two lemonade production lines.
+        \item Find the mean and standard deviation for each sample.
+        \item Make two comments comparing location and spread for the two lemonade production lines.
     \end{enumerate}
 \end{enumerate}
 
@@ -2429,7 +2634,7 @@ The larger interquartile range suggests that the population heights of sprinters
             \item Continuous data.
             \end{multicols}
         \end{enumerate}
-        \item If it was suspected that one of the tracks is an outlier in terms of length, state what could be calculated in order to determine whether it is in fact an outlier.
+        \item If it was suspected that \textit{Something In The Way} is an outlier in terms of length, state what could be calculated in order to determine whether it is in fact an outlier.
     \end{enumerate}
     \item A sports clothing store is seeking to better understand its sales of running shoes. For a random sample of twelve sales of pairs of running shoes, the sizes are recorded as follows:
     \begin{center}
@@ -2440,7 +2645,7 @@ The larger interquartile range suggests that the population heights of sprinters
     \begin{enumerate}
         \item Construct a dot plot to display the data.
         \item Find the median and interquartile range for the sizes of running shoes sold.
-        \item Calculate the mean and standard deviation for the sizes of running shoes sold.
+        \item Find the mean and standard deviation for the sizes of running shoes sold.
         \item State the type of data recorded.
     \end{enumerate}
     \item The back-to-back stem-and-leaf diagram below shows the heights of trees in two areas of woodland. 
@@ -2455,7 +2660,7 @@ The larger interquartile range suggests that the population heights of sprinters
     \end{center}
     \begin{enumerate}
         \item Suggest one improvement needed for the diagram.
-        \item Make one comment comparing the heights of trees in the two areas of woodland.
+        \item Without performing any calculations, make one comment comparing the heights of trees in the two areas.
     \end{enumerate}
     \item The petal lengths (in centimetres) for samples of flowers from two species of iris flowers is recorded: \textit{iris setosa} and \textit{iris versicolor}. The data is summarised in the table below using statistical software:
     \begin{center}
@@ -2478,6 +2683,8 @@ The larger interquartile range suggests that the population heights of sprinters
 
 The purpose of statistics is to make sense of the world by analysing data. Typically, however, it is only possible to obtain data from a random sample of the full population of interest, introducing uncertainty that must be accounted for. For this reason, developing an understanding of statistical analysis begins with learning about probability theory.
 
+People talk about \emph{chance} regularly. For example, `St Mirren are unlikely to win this weekend', or `It is probably going to rain today'. However, neither of these comments seek to assign a numerical value to quantify those chances. In this chapter, probability as a \emph{numerical measure} will be studied.
+
 \subsubsection*{Key definitions}\label{key-definitions}
 \addcontentsline{toc}{subsubsection}{Key definitions}
 
@@ -2496,19 +2703,19 @@ For example, in the context of rolling a fair, cubical die:
 \item
   each roll of the die may be referred to as a \textbf{trial}.
 \item
-  the \textbf{sample space} consists of a list of all of the possible \textbf{outcomes}: \(\{1,2,3,4,5,6\}\)
+  the \textbf{sample space} consists of a list of all of the possible \textbf{outcomes}: \(\{\text{1},\text{2},\text{3},\text{4},\text{5},\text{6}\}\)
 \item
-  the \textbf{probability} of a \(5\) is \(\frac{1}{6}\) since \emph{in the long-run} it can be expected to occur \(\frac{1}{6}\) of the time.
+  the \textbf{probability} of a \(5\) is \(\frac{\text{1}}{\text{6}}\) since \emph{in the long-run} it can be expected to occur \(\frac{\text{1}}{\text{6}}\) of the time.
 \item
-  a possible \textbf{event} of interest may be that the outcome is \emph{prime}: \(\{2,3,5\}\)
+  a possible \textbf{event} of interest may be that the outcome is \emph{prime}: \(\{\text{2},\text{3},\text{5}\}\)
 \end{itemize}
 
 \subsubsection*{Probability notation}\label{probability-notation}
 \addcontentsline{toc}{subsubsection}{Probability notation}
 
-The probability that a fair cubical die lands on 5 is \emph{one-in-six}, or \(\frac{1}{6}\). Using probability notation:
+The probability that a fair cubical die lands on 5 is \emph{one-in-six}, or \(\frac{\text{1}}{\text{6}}\). Using probability notation:
 
-\[\text{P}(\text{rolling a }5)=\dfrac{1}{6}\]
+\[\text{P}(\text{rolling a }\text{5})=\dfrac{\text{1}}{\text{6}}\]
 
 \pagebreak
 
@@ -2521,7 +2728,7 @@ The probability of an event can be estimated through repeated trials - this is r
 
 \vspace{-0.1cm}
 
-\[\text{P}(\text{red light})\approx\frac{114}{200}=0.57\]
+\[\text{P}(\text{red light})\approx\frac{\text{114}}{\text{200}}=\text{0.57}\]
 
 \vspace{-0.2cm}
 
@@ -2530,7 +2737,7 @@ The probability of an event can be estimated through repeated trials - this is r
 
 When each of the outcomes in the sample space of a random experiment can be reasonably assumed to be \mbox{\textbf{equally likely}}, then the probability of outcomes or events can be determined. This is called \emph{theoretical probability}.
 
-Equally likely outcomes typically arise from the symmetry of a physical object (such as a coin or die) or a reasonable assumption. The probability of any \emph{individual outcome} in a sample space containing \(N\) equally likely outcomes is \(\frac{1}{N}\). For example, if a playing card is picked at random from a standard pack of 52 cards, containing no jokers, then the probability of picking the Queen of Hearts is \(\frac{1}{52}\).
+Equally likely outcomes typically arise from the symmetry of a physical object (such as a coin or die) or a reasonable assumption. The probability of any \emph{individual outcome} in a sample space containing \(N\) equally likely outcomes is \(\frac{\text{1}}{N}\). For example, if a playing card is picked at random from a standard pack of 52 cards, containing no jokers, then the probability of picking the Queen of Hearts is \(\frac{\text{1}}{\text{52}}\).
 
 An \textbf{event} is a set of one or more outcomes from the sample space. The probability of an event is given by:
 
@@ -2545,7 +2752,7 @@ $$\text{P}(\text{event})=\frac{\text{number of outcomes from the sample space in
 \tcblower
 \textbf{Solution:}
 \vspace{-0.3cm}
-$$\text{P}(\text{green})=\frac{4}{22}=\frac{2}{11}$$
+$$\text{P}(\text{green})=\frac{\text{4}}{\text{22}}=\frac{\text{2}}{\text{11}}$$
 \end{tcolorbox}
 
 When considering two events in probability theory, \emph{``and''} means that \emph{both} events are true, and \emph{``or''} means that \emph{at least one} of the events is true (including the possibility that they both occur, where applicable).
@@ -2569,7 +2776,7 @@ A car is selected at random. Determine the probability that the car selected is 
 \tcblower
 \textbf{Solution:}
 \vspace{-0.3cm}
-$$\text{P}(\text{second-hand and hybrid})=\dfrac{7}{80}=0.0875$$
+$$\text{P}(\text{second-hand and hybrid})=\dfrac{\text{7}}{\text{80}}=\text{0.0875}$$
 \end{tcolorbox}
 
 In this textbook, probabilities will be given as fractions or \emph{rounded to four decimal places} for consistency.
@@ -2673,21 +2880,21 @@ If two coins are tossed, it may be tempting to suggest that the probability of b
 
 \emph{Not equally likely outcomes:} \(\{\text{no tails},\text{one tail},\textbf{two tails}\}\)
 
-These three outcomes are \emph{not} equally likely, so the probability is \emph{not one-in-three}, or: \(\text{P}(\text{both tails})\ne\frac{1}{3}\)
+These three outcomes are \emph{not} equally likely, so the probability is \emph{not one-in-three}, or: \(\text{P}(\text{both tails})\ne\frac{\text{1}}{\text{3}}\)
 
 \emph{Equally likely outcomes:} \(\{\text{HH},\text{HT},\text{TH},\textbf{TT}\}\)
 
-These four outcomes \emph{are} equally likely, so the probability is \emph{one-in-four}, or: \(\text{P}(\text{both tails})=\frac{1}{4}\).
+These four outcomes \emph{are} equally likely, so the probability is \emph{one-in-four}, or: \(\text{P}(\text{both tails})=\frac{\text{1}}{\text{4}}\).
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Three coins are tossed at the same time. Find the probability that exactly two of the coins land showing tails.
 
 \tcblower
-\textbf{Solution: }\textit{A list of equally likely outcomes will help here. Note there are $2\times 2\times 2=8$ outcomes.}
+\textbf{Solution: }\textit{A list of equally likely outcomes will help here. Note there are $\text{2}\times \text{2}\times \text{2}=\text{8}$ outcomes.}
 
 $$HHH \quad HHT \quad HTH \quad \underbrace{HTT} \quad THH \quad \underbrace{THT} \quad \underbrace{TTH} \quad TTT$$
 
-$$\text{P}(\text{exactly two tails})=\dfrac{3}{8}$$
+$$\text{P}(\text{exactly two tails})=\dfrac{\text{3}}{\text{8}}$$
 
 \end{tcolorbox}
 
@@ -2695,7 +2902,7 @@ $$\text{P}(\text{exactly two tails})=\dfrac{3}{8}$$
 \textbf{Problem:} Two fair dice are rolled. Determine the probability that the sum obtained is at least nine.
 
 \tcblower
-\textbf{Solution: }\textit{A grid of outcomes will help here. Note there are $6\times 6=36$ outcomes.}\vspace{0.5cm}
+\textbf{Solution: }\textit{A grid of outcomes will help here. Note there are $\text{6}\times \text{6}=\text{36}$ outcomes.}\vspace{0.5cm}
 
 \begin{tikzpicture}
 \fill [gray!40] (-3,-3) rectangle (-2,4);
@@ -2762,7 +2969,7 @@ $$\text{P}(\text{exactly two tails})=\dfrac{3}{8}$$
 \draw (2.5,-2.5) circle (0.4);
 \node at (3.5,-2.5) {12};
 \draw (3.5,-2.5) circle (0.4);
-\node at (7,0.5) {$\text{P}(\text{sum}\geqslant9)=\dfrac{10}{36}=\dfrac{5}{18}$};
+\node at (7,0.5) {$\text{P}(\text{sum}\geqslant9)=\dfrac{\text{10}}{\text{36}}=\dfrac{\text{5}}{\text{18}}$};
 \end{tikzpicture}
 \end{tcolorbox}
 
@@ -2845,37 +3052,37 @@ Tree diagrams can be created to map out the possible outcomes of a random experi
                     {diamond}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\dfrac{1}{4}$}
+                node[below]  {$\dfrac{\text{1}}{\text{4}}$}
             }
             child {
                 node[end, label=right:
                     {not diamond}] {}
                 edge from parent
-                node[above] {$\dfrac{3}{4}$}
+                node[above] {$\dfrac{\text{3}}{\text{4}}$}
                 node[below]  {}
             }
             edge from parent 
             node[above] {}
-            node[below]  {$\dfrac{5}{6}$}
+            node[below]  {$\dfrac{\text{5}}{\text{6}}$}
     }
     child {
         node[bag] {six}        
         child {
                 node[end, label=right:
-                    {diamond\hspace{1.4cm}$\text{P}(\text{six }\textbf{and}\text{  diamond})=\dfrac{1}{6}\times\dfrac{1}{4}=\dfrac{1}{24}$}] {}
+                    {diamond\hspace{1.4cm}$\text{P}(\text{six }\textbf{and}\text{  diamond})=\dfrac{\text{1}}{\text{6}}\times\dfrac{\text{1}}{\text{4}}=\dfrac{\text{1}}{\text{24}}$}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\dfrac{1}{4}$}
+                node[below]  {$\dfrac{\text{1}}{\text{4}}$}
             }
             child {
                 node[end, label=right:
                     {not diamond}] {}
                 edge from parent
-                node[above] {$\dfrac{3}{4}$}
+                node[above] {$\dfrac{\text{3}}{\text{4}}$}
                 node[below]  {}
             }
         edge from parent         
-            node[above] {$\dfrac{1}{6}$}
+            node[above] {$\dfrac{\text{1}}{\text{6}}$}
             node[below]  {}
     };
 \end{tikzpicture}
@@ -2883,7 +3090,7 @@ Tree diagrams can be created to map out the possible outcomes of a random experi
 
 Tree diagrams should be complete with each \emph{branch} labelled with a \emph{probability}, and each \emph{node} labelled with an \emph{event}, as above. Since each split into \emph{sibling branches} should show all the possible things that can happen next, the probabilities on sibling branches should add to 1.
 
-\[\text{i.e.}\;\frac{1}{6}+\frac{5}{6}=1\;\text{ and }\;\frac{3}{4}+\frac{1}{4}=1\]
+\[\text{i.e.}\;\frac{\text{1}}{\text{6}}+\frac{\text{5}}{\text{6}}=\text{1}\;\text{ and }\;\frac{\text{3}}{\text{4}}+\frac{\text{1}}{\text{4}}=\text{1}\]
 
 Multiplying the probabilities along a path of branches gives the probability of all those events occurring together.
 
@@ -2907,21 +3114,21 @@ Note that in the tree diagram above the probability of the card being a diamond 
         node[bag] {red}        
             child {
                 node[end, label=right:
-                    {red\hspace{1.2cm}$\text{P}(\text{both red})=\dfrac{6}{10}\times\dfrac{5}{9}=\dfrac{30}{90}=\dfrac{1}{3}$}] {}
+                    {red\hspace{1.2cm}$\text{P}(\text{both red})=\dfrac{\text{6}}{\text{10}}\times\dfrac{\text{5}}{\text{9}}=\dfrac{\text{30}}{\text{90}}=\dfrac{\text{1}}{\text{3}}$}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\dfrac{5}{9}$}
+                node[below]  {$\dfrac{\text{5}}{\text{9}}$}
             }
             child {
                 node[end, label=right:
                     {blue}] {}
                 edge from parent
-                node[above] {$\dfrac{4}{9}$}
+                node[above] {$\dfrac{\text{4}}{\text{9}}$}
                 node[below]  {}
             }
             edge from parent 
             node[above] {}
-            node[below]  {$\dfrac{6}{10}$}
+            node[below]  {$\dfrac{\text{6}}{\text{10}}$}
     }
     child {
         node[bag] {blue}        
@@ -2930,17 +3137,17 @@ Note that in the tree diagram above the probability of the card being a diamond 
                     {red}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\dfrac{6}{9}$}
+                node[below]  {$\dfrac{\text{6}}{\text{9}}$}
             }
             child {
                 node[end, label=right:
                     {blue}] {}
                 edge from parent
-                node[above] {$\dfrac{3}{9}$}
+                node[above] {$\dfrac{\text{3}}{\text{9}}$}
                 node[below]  {}
             }
         edge from parent         
-            node[above] {$\dfrac{4}{10}$}
+            node[above] {$\dfrac{\text{4}}{\text{10}}$}
             node[below]  {}
     };
 \end{tikzpicture}
@@ -3108,7 +3315,7 @@ Venn diagrams help illustrate these. Note that \emph{capital letters} are common
 \tcblower
 \textbf{Solution:}
 
-$\text{P}(G\cap V)=\dfrac{2}{12}=\dfrac{1}{6}$
+$\text{P}(G\cap V)=\dfrac{\text{2}}{\text{12}}=\dfrac{\text{1}}{\text{6}}$
 
 \end{tcolorbox}
 
@@ -3163,9 +3370,9 @@ $\text{P}(G\cap V)=\dfrac{2}{12}=\dfrac{1}{6}$
     \draw (-0.7,0) circle (1.2) (-0.7,1.2)  node [text=black,above] {$M$};
     \draw (0.7,0) circle (1.2) (0.7,1.2)  node [text=black,above] {$N$}
       (-2.5,-1.7) rectangle (2.5,1.7) node [text=black,below right] {$S$};
-    \node at (-2,-1.3) {$0.3$};
-    \node at (-1,0.5) {$0.15$};
-    \node at (1.1,-0.2) {$0.2$};
+    \node at (-2,-1.3) {0.3};
+    \node at (-1,0.5) {0.15};
+    \node at (1.1,-0.2) {0.2};
     \node at (0,0) {$x$};
     \end{tikzpicture}
     \end{center}
@@ -3297,7 +3504,7 @@ In addition to the special cases above (when events are mutually exclusive or ex
 \begin{minipage}[c]{.4\textwidth}
   \centering
 \begin{tcolorbox}[title=The Complement of {$A$}:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=6cm,height=1.8cm]
-$\text{P}(A)+\text{P}(\overline{A})=1$
+$\text{P}(A)+\text{P}(\overline{A})=\text{1}$
 \end{tcolorbox}
 \end{minipage}%
   \centering
@@ -3312,13 +3519,13 @@ $\text{P}(A \cup B)=\text{P}(A)+\text{P}(B)-\text{P}(A \cap B)$
 It should be noted that there are generally numerous different ways to approach probability problems, including using a Venn diagram, a tree diagram or formulae. Whilst the problems on the next page have been designed to allow practice using formulae, a flexible approach may help.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Given events $F$ and $G$ such that ${\text{P}(\overline{F})=0.3}$, ${\text{P}(G)=0.4}$ and ${\text{P}(F\cap G)=0.1}$ show that $F$ and $G$ are exhaustive.
+\textbf{Problem:} Given events $F$ and $G$ such that ${\text{P}(\overline{F})=\text{0.3}}$, ${\text{P}(G)=\text{0.4}}$ and ${\text{P}(F\cap G)=\text{0.1}}$ show that $F$ and $G$ are exhaustive.
 
 \tcblower
 \textbf{Solution:} \begin{align*}
 \text{P}(F\cup G) & = \text{P}(F)+\text{P}(G)-\text{P}(F \cap G)\vspace{-0.5cm}\\
-& = 0.7+0.4-0.1\\
-& = 1\hspace{0.5cm}\therefore\text{ events $F$ and $G$ are exhaustive}
+& = \text{0.7}+\text{0.4}-\text{0.1}\\
+& = \text{1}\hspace{0.5cm}\therefore\text{ events $F$ and $G$ are exhaustive}
 \end{align*}
 \end{tcolorbox}
 
@@ -3330,30 +3537,30 @@ It should be noted that there are generally numerous different ways to approach 
 \addcontentsline{toc}{subsubsection}{{Exercise 2.5}}
 
 \begin{enumerate}
-    \item Given events $X$ and $Y$ such that $\text{P}(X\cap Y)=0.3$, $\text{P}(X)=0.4$ and $\text{P}(Y)=0.5$, find $\text{P}(X\cup Y)$.
-    \item If $\text{P}(\overline{A})=\dfrac{1}{5}$, $\text{P}(B)=\dfrac{2}{3}$ and $\text{P}(A\cap B)=\dfrac{1}{2}$, determine the value of $\text{P}(A\cup B)$.
-    \item Calculate the value of $\text{P}(E\cup F)$ given $\text{P}(E)=0.32$, $\text{P}(F)=0.29$ and that events $E$ and $F$ are \textit{mutually exclusive}.
-    \item Given mutually exclusive events $C$ and $D$ such that $\text{P}(\overline{C})=\dfrac{5}{7}$ and $\text{P}(D)=\dfrac{1}{2}$, find $\text{P}(C\cup D)$.
-    \item Calculate the value of $\text{P}(A\cap B)$ if $\text{P}(A)=0.591$, $\text{P}(B)=0.472$ and $\text{P}(A\cup B)=0.9$.
-    \item If $\text{P}(\overline{X})=\dfrac{17}{80}$, $\text{P}(\overline{Y})=\dfrac{29}{40}$ and $\text{P}(X\cup Y)=\dfrac{19}{20}$, determine $\text{P}(X\cap Y)$.
-    \item Given \textit{exhaustive} events $V$ and $W$ such that $\text{P}(V)=0.4$ and $\text{P}(\overline{W})=0.2$, find $\text{P}(V\cap W)$.
-    \item Given events $H$ and $J$ such that $\text{P}(H)=\dfrac{3}{8}$, \mbox{\text{$\text{P}(H\cup J)=\dfrac{7}{9}$}} and $\text{P}(H\cap J)=\dfrac{1}{4}$, find $\text{P}(\overline{J})$.
-    \item If $X$ and $Y$ are mutually exclusive, $\text{P}(X)=0.3$ and $\text{P}(\overline{Y})=0.4$, calculate $\text{P}(X\cup Y)$.
-    \item Events $A$ and $B$ are exhaustive. If $\text{P}(A)=\dfrac{1}{3}$ and $\text{P}(B\cap A)=\dfrac{1}{6}$, calculate $\text{P}(\overline{B})$.
+    \item Given events $X$ and $Y$ such that $\text{P}(X\cap Y)=\text{0.3}$, $\text{P}(X)=\text{0.4}$ and $\text{P}(Y)=\text{0.5}$, find $\text{P}(X\cup Y)$.
+    \item If $\text{P}(\overline{A})=\dfrac{\text{1}}{\text{5}}$, $\text{P}(B)=\dfrac{\text{2}}{\text{3}}$ and $\text{P}(A\cap B)=\dfrac{\text{1}}{\text{2}}$, determine the value of $\text{P}(A\cup B)$.
+    \item Calculate the value of $\text{P}(E\cup F)$ given $\text{P}(E)=\text{0.32}$, $\text{P}(F)=\text{0.29}$ and that events $E$ and $F$ are \textit{mutually exclusive}.
+    \item Given mutually exclusive events $C$ and $D$ such that $\text{P}(\overline{C})=\dfrac{\text{5}}{\text{7}}$ and $\text{P}(D)=\dfrac{\text{1}}{\text{2}}$, find $\text{P}(C\cup D)$.
+    \item Calculate the value of $\text{P}(A\cap B)$ if $\text{P}(A)=\text{0.591}$, $\text{P}(B)=\text{0.472}$ and $\text{P}(A\cup B)=\text{0.9}$.
+    \item If $\text{P}(\overline{X})=\dfrac{\text{17}}{\text{80}}$, $\text{P}(\overline{Y})=\dfrac{\text{29}}{\text{40}}$ and $\text{P}(X\cup Y)=\dfrac{\text{19}}{\text{20}}$, determine $\text{P}(X\cap Y)$.
+    \item Given \textit{exhaustive} events $V$ and $W$ such that $\text{P}(V)=\text{0.4}$ and $\text{P}(\overline{W})=\text{0.2}$, find $\text{P}(V\cap W)$.
+    \item Given events $H$ and $J$ such that $\text{P}(H)=\dfrac{\text{3}}{\text{8}}$, \mbox{\text{$\text{P}(H\cup J)=\dfrac{\text{7}}{\text{9}}$}} and $\text{P}(H\cap J)=\dfrac{\text{1}}{\text{4}}$, find $\text{P}(\overline{J})$.
+    \item If $X$ and $Y$ are mutually exclusive, $\text{P}(X)=\text{0.3}$ and $\text{P}(\overline{Y})=\text{0.4}$, calculate $\text{P}(X\cup Y)$.
+    \item Events $A$ and $B$ are exhaustive. If $\text{P}(A)=\dfrac{\text{1}}{\text{3}}$ and $\text{P}(B\cap A)=\dfrac{\text{1}}{\text{6}}$, calculate $\text{P}(\overline{B})$.
     \item In a fish and chip shop, the probability that a customer's order includes both fish and chips is 0.7, whilst the probability that an order will include at least one of fish or chips is 0.95. If the probability that an order contains chips is 0.8, calculate the probability that an order contains fish.
-    \item If, for exhaustive events $M$ and $N$, $\text{P}(M\cap N)=\dfrac{1}{4}$ and $\text{P}(M)=\text{P}(N)$, calculate $\text{P}(\overline{N})$.
-    \item Given events $R$ and $Q$ such that $\text{P}(\overline{Q})=0.11$, $\text{P}(R\cap Q)=0.75$ and $\text{P}(R\cup Q)=0.95$, find $\text{P}(\overline{R})$.
+    \item If, for exhaustive events $M$ and $N$, $\text{P}(M\cap N)=\dfrac{\text{1}}{\text{4}}$ and $\text{P}(M)=\text{P}(N)$, calculate $\text{P}(\overline{N})$.
+    \item Given events $R$ and $Q$ such that $\text{P}(\overline{Q})=\text{0.11}$, $\text{P}(R\cap Q)=\text{0.75}$ and $\text{P}(R\cup Q)=\text{0.95}$, find $\text{P}(\overline{R})$.
     \item For each pair of events, determine whether they are exhaustive or not:
     \begin{enumerate}
-        \item $X$ and $Y$ given $\text{P}(X)=0.4$, $\text{P}(Y)=0.7$ and $\text{P}(X \cap Y)=0.2$.
-        \item $R$ and $T$ given $\text{P}(R)=\dfrac{4}{5}$, $\text{P}(\overline{T})=\dfrac{1}{10}$ and $\text{P}(T \cap R)=\dfrac{7}{10}$.
-        \item $E$ and $F$ given $\text{P}(E)=0.31$, $\text{P}(F)=0.82$ and $\text{P}(E \cap F)=0.28$.
+        \item $X$ and $Y$ given $\text{P}(X)=\text{0.4}$, $\text{P}(Y)=\text{0.7}$ and $\text{P}(X \cap Y)=\text{0.2}$.
+        \item $R$ and $T$ given $\text{P}(R)=\dfrac{\text{4}}{\text{5}}$, $\text{P}(\overline{T})=\dfrac{\text{1}}{\text{10}}$ and $\text{P}(T \cap R)=\dfrac{\text{7}}{\text{10}}$.
+        \item $E$ and $F$ given $\text{P}(E)=\text{0.31}$, $\text{P}(F)=\text{0.82}$ and $\text{P}(E \cap F)=\text{0.28}$.
     \end{enumerate}
     \item For each pair of events, determine whether they are mutually exclusive or not:
     \begin{enumerate}
-        \item $W$ and $V$ given $\text{P}(W)=0.35$, $\text{P}(V)=0.45$ and $\text{P}(W \cup V)=0.5$.
-        \item $X$ and $Y$ given $\text{P}(X)=\dfrac{1}{3}$, $\text{P}(\overline{Y})=\dfrac{4}{5}$ and $\text{P}(X \cup Y)=\dfrac{8}{15}$.
-        \item $A$ and $B$ given $\text{P}(\overline{A})=0.5$, $\text{P}(\overline{B})=0.8$ and $\text{P}(\overline{B} \cap \overline{A})=0.3$.
+        \item $W$ and $V$ given $\text{P}(W)=\text{0.35}$, $\text{P}(V)=\text{0.45}$ and $\text{P}(W \cup V)=\text{0.5}$.
+        \item $X$ and $Y$ given $\text{P}(X)=\dfrac{\text{1}}{\text{3}}$, $\text{P}(\overline{Y})=\dfrac{\text{4}}{\text{5}}$ and $\text{P}(X \cup Y)=\dfrac{\text{8}}{\text{15}}$.
+        \item $A$ and $B$ given $\text{P}(\overline{A})=\text{0.5}$, $\text{P}(\overline{B})=\text{0.8}$ and $\text{P}(\overline{B} \cap \overline{A})=\text{0.3}$.
     \end{enumerate}
 \end{enumerate}
 
@@ -3389,7 +3596,7 @@ It should be noted that there are generally numerous different ways to approach 
         \item \text{P}(\text{English} $\cap$ \text{National 5})
         \item \text{P}(\text{History} $\cup$ \text{Higher})
     \end{enumerate}
-    \item For the exhaustive events $E$ and $F$, such that $\text{P}(F\cap E)=0.7$ and $\text{P}(\overline{E})=0.2$, determine $\text{P}(F)$.
+    \item For the exhaustive events $E$ and $F$, such that $\text{P}(F\cap E)=\text{0.7}$ and $\text{P}(\overline{E})=\text{0.2}$, determine $\text{P}(F)$.
     \item A parking ticket machine in a remote location in the Cairngorms National Park takes payment by contactless card reader, which connects to the banking network via a 3G phone signal. On some days, the connection fails and the machine cannot take payment. When the humidity is high, the connection will fail on 18\% of days. When the humidity is not high, the connection will fail on 7\% of days. Humidity is high in the area on 34\% of days. Determine the probability on a randomly selected day of the year that the parking machine can take payment.
     \item A board game begins with an \textit{defending} player rolling a tetrahedral die with sides numbered from 1 to 4, and a \textit{attacking} player rolling a cubical die with sides numbered from 1 to 6. The player who obtains the highest number earns a point, with a tie leading to the dice being rolled again.
     \begin{enumerate}
@@ -3412,7 +3619,7 @@ It should be noted that there are generally numerous different ways to approach 
     \end{tabular}
     \end{center}
     A member of the orchestra is selected at random. Let $B$ be the event the member selected is in the \textit{brass} section and $A$ that they can \textit{attend} the upcoming concert. State $\text{P}(B\cup \overline{A})$.
-    \item Exhaustive events $A$, $B$ and $C$ are such that $\text{P}(A)=0.25$, $\text{P}(A\cap B)=0.1$, $\text{P}(\overline{B})=0.3$ and $\text{P}(A\cup C)=0.6$. Events $A$ and $C$ are mutually exclusive. Determine the value of $\text{P}(B\cap C)$.
+    \item Exhaustive events $A$, $B$ and $C$ are such that $\text{P}(A)=\text{0.25}$, $\text{P}(A\cap B)=\text{0.1}$, $\text{P}(\overline{B})=\text{0.3}$ and $\text{P}(A\cup C)=\text{0.6}$. Events $A$ and $C$ are mutually exclusive. Determine the value of $\text{P}(B\cap C)$.
 \end{enumerate}
 
 \pagebreak
@@ -9336,7 +9543,7 @@ Assume that the mean rate of 2.5 phone calls per hour is \emph{constant} across 
 };
     \end{axis}
     \draw[stealth-stealth] (7,3.5) -- (11,3.5);
-    \node[fill=white] at (9,3.5) {one hour};
+    \node[fill=white] at (9,3.5) {one hour, $\lambda=2.5$};
     \draw (7,2) rectangle (11,2.8);
     \node[right] at (11,2.4) {3 calls in one hour};
     \draw (7,1) rectangle (11,1.8);
@@ -9472,16 +9679,16 @@ For a five-hour shift at the call centre, the number of calls may be modelled as
 
 \begin{center}
 \begin{tikzpicture}
-    \foreach \x in {0,3,6,9,12}{
+    \foreach \x in {1,2,3,4,5}{
     \draw [decorate,decoration={brace,amplitude=5pt,raise=1ex}]
-  (\x+0.1,0.8) -- (\x+2.8,0.8) node[midway,above,yshift=0.3cm]{$X\sim \text{Po}\left(3\right)$};
+  (3*\x-3+0.1,0.8) -- (3*\x-3+2.8,0.8) node[midway,above,yshift=0.3cm]{$X_\x \sim \text{Po}\left(3\right)$};
     }
     \draw (0,0) rectangle (15,0.8);
-    \foreach \x in {3,6,...,12}{
-    \draw (\x,0) -- (\x,0.8);
+    \foreach \x in {1,2,...,5}{
+    \draw (3*\x,0) -- (3*\x,0.8);
     }
     \draw [decorate,decoration={brace,mirror,amplitude=5pt,raise=1ex}]
-  (0.1,0) -- (14.9,0) node[midway,below,yshift=-0.3cm]{$Y\sim \text{Po}\left(15\right)$};
+  (0.1,0) -- (14.9,0) node[midway,below,yshift=-0.3cm]{$Y\sim \text{Po} \left(15\right)$};
   \fill (1.3,0.4) circle (0.05);
   \fill (1.7,0.4) circle (0.05);
   \fill (3.3,0.4) circle (0.05);
@@ -9546,7 +9753,7 @@ So there is a roughly 22\% probability that Betty receives fewer than 8 emails i
         \item State the distribution of $X$.
         \item Use the Data Booklet to calculate the probability that a randomly selected paving stone contains at least one piece of chewing gum.
     \end{enumerate}
-    The worker counts the number of pieces of chewing gum on a grid of 18 paving stones. The diagram below is for illustration, and does not show what the worker observed.
+    The worker counts the number of pieces of chewing gum on a grid of 18 paving stones. The diagram below is for illustration, and does not show what the actual number of pieces the worker observed.
     \begin{center}
         \begin{tikzpicture}[scale=0.8]
             \draw[step=2] (0,0) grid (12,6);
@@ -13476,7 +13683,7 @@ As the sample size increases, and hence \(\nu\) increases, the \(t\)-distributio
 The one-sample \(t\)-test for population mean is a \textbf{parametric test} that should be used in place of the equivalent \(z\)-test when the population standard deviation, \(\sigma\), is not known, and the sample standard deviation, \(s\), is to be used instead.
 
 \begin{centering}
-\tcbset{width=14cm}
+\tcbset{width=14.5cm}
 \begin{tcolorbox}[adjusted title=Conditions for the one-sample t-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The \textit{underlying population} is \textbf{normally distributed}.
@@ -17251,12 +17458,6 @@ Use a suitable non-parametric test to assess the data in the contingency table a
       \text{H}_0: & \text{The test outcome and test centre used are independent.}\\[0.5em]
       \text{H}_1: & \text{The test outcome and test centre used are not independent.}
     \end{array}
-\left]
-    \begin{array}{l}
-      \alpha=0.1\\[0.5em]
-      \textnormal{One-tailed}
-    \end{array}
-  \right.
 \end{math}\\
 
 \vspace{0.5cm}
@@ -17423,17 +17624,11 @@ Assess at the 5\% level of significance whether there is evidence of an associat
       \text{H}_0: & \text{There is no association between the treatment given and pain reported.}\\[0.5em]
       \text{H}_1: & \text{There is an association between the treatment given and pain reported.}
     \end{array}
-\left]
-    \begin{array}{l}
-      \alpha=0.05\\[0.5em]
-      \textnormal{One-tailed}
-    \end{array}
-  \right.
 \end{math}\\
 
 \begin{center}
 \begin{tabular}{ c | c c c  c c | c c c }
-    \textbf{Observed} & Reduction & No change & Increase & $\qquad$ & \textbf{Expected} & Reduction & No change & Increase\\
+    \textbf{Observed} & Reduction & No change & Increase & $\quad$ & \textbf{Expected} & Reduction & No change & Increase\\
     \cline{1-4}
     \cline{6-9}
     Medication & 45 & 17 & 4 & & Medication & 40.15 & 22 & 3.85\\
@@ -17874,6 +18069,7 @@ Since $-1.13>-1.96$, do not reject $\text{H}_0$ at the 5\% level of significance
 \begin{enumerate}
     \item A two-sample $z$-test for a difference in population means is to be carried out based on two independent random samples of data taken from normally distributed populations (A and B). The sample mean for A is 87 based on a sample size of 11, whilst the sample mean for B is 92 based on a sample size of 13. Populations A and B have standard deviations 7 and 5 respectively.
     \begin{enumerate}
+        \item State suitable null and alternative hypotheses.
         \item Show the calculation required to obtain a test statistic of $z=-1.98$.
         \item Conclude the test at the 5\% level of significance.
     \end{enumerate}
@@ -18107,7 +18303,7 @@ with $\nu=n_1+n_2-2$ degrees of freedom
 While \(t\)-tests are especially valuable when dealing with small sample sizes, they remain the statistically \emph{correct} test to use even when dealing with very large samples. Modern computing power reduces the need to switch to a \(z\)-test for very large samples where critical values for the \(t\)-distribution may not have been so easily obtained.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} The time taken for runners to complete 5km at each \textit{Parkrun} location is known to be normally distributed. For a random sample of 8 runners at Dundee Parkrun the sample mean 5km time was found to be 30.1 minutes, with a sample standard deviation of 3 minutes. At the Perth Parkrun the sample mean 5km time for 7 runners was 28.6 minutes, with a sample standard deviation of 2 minutes. Perform a $t$-test at the 10\% level of significance to investigate if the data suggests there is a difference in mean 5km running times between the two Parkrun locations.
+\textbf{Problem:} The time taken for runners to complete 5km at each \textit{Parkrun} location is known to be normally distributed. For a random sample of 8 runners at Dundee Parkrun the sample mean 5km time was 30.1 minutes, with a sample standard deviation of 3 minutes. At the Perth Parkrun the sample mean 5km time for 7 runners was 28.6 minutes, with a sample standard deviation of 2 minutes. Perform a $t$-test at the 10\% level of significance to investigate whether the data suggests there is a difference in mean 5km running times between the two Parkrun locations.
 
 \tcblower
 \textbf{Solution:}
@@ -18171,7 +18367,7 @@ Critical value: $t=1.771$\hspace{6cm}
 \end{axis}
 \end{tikzpicture}\\[0.5em]
 
-Since $1.120<1.771$, do not reject $\text{H}_0$ at the 10\% level of significance. There is insufficient evidence to suggest that there is a difference in the mean 5km running times between the two locations.
+Since $1.120<1.771$, do not reject $\text{H}_0$ at the 10\% level of significance. There is insufficient evidence to suggest a difference in the mean 5km running times between the two locations.
 
 \end{tcolorbox}
 
@@ -18183,65 +18379,95 @@ Since $1.120<1.771$, do not reject $\text{H}_0$ at the 10\% level of significanc
 \addcontentsline{toc}{subsubsection}{{Exercise 15.3}}
 
 \begin{enumerate}
-    \item The times (in minutes) it took six randomly selected field mice to learn to run a simple maze and the times it took six randomly selected house mice to learn to run the same maze are given. 
-    \begin{center}
-    \begin{tabular}{|c|cccccc|}
-      \hline
-        Field Mice & 18 & 24 & 12 & 20 & 13 & 15\\
-      \hline
-        House Mice & 25 & 16 & 10 & 19 & 14 & 16\\
-      \hline
-    \end{tabular}
-    \end{center}
-    Use a parametric test to determine if there is a difference in learning rate between the two types of mice.
-    \item Mr Brown is the owner of a small bakery in a large town. He believes that the smell of fresh baking will encourage customers to purchase goods from his bakery. To investigate this belief, he records the daily sales for 10 days when all the bakery’s windows are open and the daily sales for another 10 days when all the windows are closed. The following sales, in £s, are recorded.
-    \begin{center}
-    \begin{tabular}{c|cccccccccc}
-        Windows open & 202.0 & 204.5 & 207.0 & 215.5 & 190.8 & 215.6 & 208.8 & 187.8 & 204.1 & 185.7\\
-        \hline
-        Windows closed & 193.5 & 192.2 & 199.4 & 177.6 & 205.4 & 200.6 & 181.6 & 169.2 & 172.2 & 192.8
-    \end{tabular}
-    \end{center}
-    Assuming that these data may be deemed to be random samples from normal populations with the same variance, investigate the baker’s belief.
-    \item As part of a research study into pattern recognition, subjects were asked to examine a picture and see if they could distinguish a word. The picture contained the word ‘technology’ written backwards and camouflaged by an elaborate pattern. Of the 23 randomly selected librarians who took part, 11 succeeded in recognising the word whilst of 19 randomly selected designers, 13 succeeded. The times, in seconds, for the successful subjects to recognise the word were as follows:
-    \begin{center}
-    \begin{tabular}{c|ccccccccccccc}
-        Librarians & 55 & 18 & 99 & 54 & 87 & 11 & 62 & 68 & 27 & 90 & 57  &   & \\
-        \hline
-        Designers & 23 & 69 & 34 & 27 & 51 & 29 & 45 & 42 & 48 & 74 & 31 & 30 & 31  
-    \end{tabular}
-    \end{center}
+    \item A two-sample $t$-test for a difference in population means is to be carried out based on two independent random samples of data taken from normally distributed populations (A and B), which are assumed to have equal variances. A sample of 11 observations from A produces a mean of 87 and a standard deviation of 8, whilst a sample of 13 observations from B produces a mean of 92 and a standard deviation of 5.
     \begin{enumerate}
-        \item Stating any necessary assumptions, investigate whether the mean   time for the librarians is longer than for the designers.
-        \item Suggest another parametric hypothesis test that could be carried  out using this data and perform this test.
+        \item State suitable null and alternative hypotheses.
+        \item Show the calculation required to obtain a test statistic of $t=-1.072$.
+        \item Conclude the test at the 5\% level of significance.
     \end{enumerate}
-    \item A council official wants to compare two brands of paint used for painting stripes on local roads. Twenty locations are randomly selected for the road stripes. The first brand is used on ten randomly selected locations and the second brand on the remaining 10. The number of months each brand lasts is shown below.
+    \item A motorist and keen statistician tosses a coin before each of a series of drives to determine whether to use her car's air conditioning or not. The fuel efficiency (in miles per gallon) for those drives are:
     \begin{center}
-    \begin{tabular}{c|cccccccccc}
-        Brand A & 35.6 & 36.1 & 37.0 & 35.8 & 34.9 & 34.9 & 36.0 & 37.8 & 36.6 & 36.5\\
+        \begin{tabular}{l|ccccccc}
+        With air conditioning (mpg) & 47 & 48 & 51 & 52 & 52 & 53 & 55\\
         \hline
-        Brand B & 37.2 & 36.4 & 39.7 & 37.5 & 37.2 & 40.5 & 38.8 & 38.2 & 37.7 & 36.6
-    \end{tabular}
+        Without air conditioning (mpg) & 49 & 50 & 52 & 54 & 55 & 55 &
+        \end{tabular}
     \end{center}
-    Carry out a hypothesis test to assess for any evidence of a difference in the brands' durability, stating one assumption.
-    \item The U.S. Bureau of Labour Statistics conducts monthly surveys to estimate hourly earnings of nonsupervisory employees in various industry groups. Results of the surveys can be found in Employment and Earnings. Independent random samples of 14 mine workers and 17 construction workers yielded the following statistics.
-    \begin{center}
-    \begin{tabular}{c|cc}
-        Industry & Mean & Standard Deviation\\
-        \hline
-        Mining & \$13.93 & \$2.25\\
-        Construction & \$14.42 & \$2.36
-    \end{tabular}
-    \end{center}
-    Assuming that the hourly earnings of the employees are normally distributed, determine at the 5\% significance level if the data provide sufficient evidence to conclude that mine workers earn less on average than construction workers.
+    Assume that fuel efficiency is normally distributed for each population (with air conditioning and without), and that the population variances are equal. Perform a parametric test to determine whether the data supports her belief that fuel efficiency is higher when driving without air conditioning, at the 5\% level of significance.
+    \item The contents of a random sample of six bags of coffee beans sold by \textit{Brewhemian Rhapsody} were measured. The results, in grams, were:
+      \begin{center}
+      \begin{tabular}{cccccc}
+      254 & 255 & 254 & 248 & 256 & 251
+      \end{tabular}
+      \end{center}
+      The results for a random sample of eight bags sold by \textit{The Bean Supremacy} were:
+      \begin{center}
+      \begin{tabular}{cccccccc}
+      240 & 249 & 244 & 246 & 245 & 250 & 240 & 253
+      \end{tabular}
+      \end{center}
+      It is assumed that the mass of coffee in a bag is normally distributed, for each population. Use a parametric test to assess the evidence that the \textit{Brewhemian Rhapsody} bags contain more coffee, stating one further assumption required.
+      \item A medical trial wishes to compare the effectiveness of two new types of mild painkiller. Twenty volunteers are selected and randomly assigned either painkiller A or painkiller B, and an effectiveness score from 0 to 5 is obtained for each person through an industry-recognised pain tolerance test using ice-cold water. Computer output of summary statistics for the samples are shown below:
+      \begin{center}
+          \begin{tabular}{llll}
+            \texttt{data} & \texttt{sample mean} & \texttt{sample sd} & \texttt{n}\\
+            \texttt{painkiller A} & \texttt{1.95} & \texttt{0.54} & \texttt{10}\\
+            \texttt{painkiller B} & \texttt{2.75} & \texttt{0.74} & \texttt{10}
+          \end{tabular}
+      \end{center}
+    Perform a $t$-test at the 2\% level to assess whether there is evidence of a difference between the effectiveness of the two painkillers, stating two assumptions required.
+    \item Times taken to run 5km for a random sample of 7 hockey players and a random sample of 5 rugby players are recorded. The table below gives the results, to the nearest minute:
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw (-7.6,0) -- (-0.9,0);
+        \draw (-6,-0.6) -- (-6,0.6);
+        \node[left] at (-6,0.3) {Hockey};
+        \node[left] at (-6,-0.3) {Rugby};
+        \foreach \x in {0,0.5,...,7.5}{
+        \draw (\x,0.1) -- (\x,-0.1);
+        }
+        \node at (0,-0.3) {18};
+        \node at (7.5,0.3) {33};
+        \node at (-5.5,0.3) {18};
+        \node at (-4.8,0.3) {19};
+        \node at (-4.1,0.3) {20};
+        \node at (-3.4,0.3) {22};
+        \node at (-2.7,0.3) {23};
+        \node at (-2,0.3) {24};
+        \node at (-1.3,0.3) {27};
+        \node at (-5.5,-0.3) {23};
+        \node at (-4.8,-0.3) {28};
+        \node at (-4.1,-0.3) {29};
+        \node at (-3.4,-0.3) {30};
+        \node at (-2.7,-0.3) {33};
+        \draw (0,0) -- (7.5,0);
+        \draw[fill=black!20] (0,0.4) circle (2pt);
+        \draw[fill=black!20] (0.5,0.4) circle (2pt);
+        \draw[fill=black!20] (1,0.4) circle (2pt);
+        \draw[fill=black!20] (2,0.4) circle (2pt);
+        \draw[fill=black!20] (2.5,0.4) circle (2pt);
+        \draw[fill=black!20] (3,0.4) circle (2pt);
+        \draw[fill=black!20] (4.5,0.4) circle (2pt);
+        \draw[fill=black!50] (2.5,-0.4) circle (2pt);
+        \draw[fill=black!50] (5,-0.4) circle (2pt);
+        \draw[fill=black!50] (5.5,-0.4) circle (2pt);
+        \draw[fill=black!50] (6,-0.4) circle (2pt);
+        \draw[fill=black!50] (7.5,-0.4) circle (2pt);
+    \end{tikzpicture}
+\end{center}
+Assume that the time taken to run 5km is normally distributed for both the hockey and rugby players, and that the population variances in 5km time are equal. Perform a parametric test to assess the data for evidence of a difference in the mean time taken for hockey and rugby players to run 5km.
 \end{enumerate}
 
-\newpage
+\pagebreak
 
 \section{\texorpdfstring{Paired \textit{t}-test for the Population Mean Difference}{Paired -test for the Population Mean Difference}}\label{paired--test-for-the-population-mean-difference}
 
-Suppose six randomly selected athletes have their times to complete a 100 metres sprint recorded, then they each repeat the sprint a month later after some training on technique. Here the two sets of data, \emph{time before} and \emph{time after}, are \emph{not independent}. Instead, each value from the first set of data pairs with a value from the second set; this is called \emph{paired data}. In such a case, the previous two-sample tests in this chapter would be inappropriate. Instead, a single sample of \emph{differences}, \(d_i\), for each pair should be calculated and the mean difference assessed using a \emph{paired} \(t\)\emph{-test}. Possible hypotheses would then relate to the population mean difference, \(\mu_d\):
+If six randomly selected athletes have their 100 metre sprint times recorded, and then repeat the sprint a month later after some training, the two datasets (\emph{time before} and \emph{time after}) are \emph{not independent}. Instead, each value from the first dataset pairs with a value from the second dataset; this is called \emph{paired data}. The previous two-sample tests in this chapter would be inappropriate, since they require independent samples.
 
+Instead, a sample of \emph{differences}, \(d_i\), for each pair should be calculated and the mean of the differences (also known as the \emph{mean difference}) assessed using a \emph{paired} \(t\)\emph{-test}. Possible hypotheses would then relate to the population mean difference, \(\mu_d\):
+
+\vspace{-0.4cm}
 \begin{center}
     \begin{tabular}{ccccc}
         $\text{H}_0:\mu_d=0$ & \qquad \qquad & $\text{H}_0:\mu_d=0$ & \qquad \qquad & $\text{H}_0:\mu_d=0$\\
@@ -18249,7 +18475,9 @@ Suppose six randomly selected athletes have their times to complete a 100 metres
     \end{tabular}
 \end{center}
 
-The test statistic derives from the one-sample \(t\)-test covered in Chapter 10, with \(\bar{d}\) (or \(\bar{x}_d\)) representing the sample mean difference and \(s_d\) the sample standard deviation in differences.
+\vspace{-0.2cm}
+
+The test statistic derives from the one-sample \(t\)-test covered in Chapter 10, with \(\bar{d}\) (or \(\bar{x}_d\)) representing the sample mean difference and \(s_d\) the sample standard deviation in differences. The degrees of freedom are calculated based on the single sample of differences, as \(\nu=n-1\).
 
 \begin{figure}[H]
   \centering
@@ -18258,7 +18486,7 @@ The test statistic derives from the one-sample \(t\)-test covered in Chapter 10,
 \begin{centering}
 \tcbset{width=6cm,height=2.7cm}
 \begin{tcolorbox}[adjusted title=For a paired $t$-test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-Test statistic: $t_{n-1}=\dfrac{\bar{d}-\mu_d}{\dfrac{s_d}{\sqrt{n}}}$
+Test statistic: $t=\dfrac{\bar{x}_d-\mu_d}{\dfrac{s_d}{\sqrt{n}}}$\\[-0.8em] with $\nu=n-1$ \phantom{blahblahbl}
 \end{tcolorbox}
 \end{centering}
 \end{minipage}%
@@ -18275,37 +18503,37 @@ Test statistic: $t_{n-1}=\dfrac{\bar{d}-\mu_d}{\dfrac{s_d}{\sqrt{n}}}$
 \end{minipage}
 \end{figure}
 
-Careful attention to how the sample of differences was created is needed for one-tailed hypotheses.
+Careful attention must be given to how the sample of differences is defined, particularly for one-tailed hypotheses.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Six randomly selected children have their IQ measured before and after starting a regular programme of exercise.
+\textbf{Problem:} Six randomly selected teachers have their pulse rates (in beats per minute) checked in at 10am and then four hours later at 2pm.
 \begin{center}
 \begin{tabular}{l|cccccc}
-      IQ before programme & 132 & 98 & 112 & 99 & 168 & 125\\
+      Pulse at 10am & 58 & 51 & 68 & 83 & 71 & 78\\
       \hline
-      IQ after programme & 134 & 94 & 117 & 103 & 165 & 129
+      Pulse at 2pm & 65 & 57 & 63 & 98 & 71 & 82\\
 \end{tabular}
 \end{center}
-Assess whether there is evidence that exercise affects IQ measurement, at the 5\% level of significance.
+Assuming that the sample of differences in pulse rate were independent, and that the population of differences is normally distributed, assess whether there is evidence that teachers' pulse rates are higher at 2pm than 10am, at the 5\% level of significance.
 \tcblower
 \textbf{Solution:}
 
-\vspace{-0.3cm}
+\vspace{-0.9cm}
 
 \begin{center}
 \begin{tabular}{c|cccccc}
-      Differences (after$-$before) & 2 & -4 & 5 & 4 & -3 & 4
+      Differences (2pm$-$10am) & 7 & 6 & -5 & 15 & 0 & 4
 \end{tabular}
 \end{center}
 
 \vspace{-0.3cm}
 
-$\bar{d}=1.33$, $s_d=3.88$, $n=6$\\[0.1em]
+$\bar{d}=4.5$, $s_d=6.775$, $n=6$\\[0.1em]
 
 \begin{math}
 \begin{array}{ll}
       H_0: & \mu_d=0\\
-      H_1: & \mu_d \ne 0
+      H_1: & \mu_d > 0
     \end{array}
 \end{math}
 
@@ -18315,7 +18543,7 @@ $\nu=6-1=5$
 
 \vspace{0.3cm}
 
-Test statistic: $t=\dfrac{1.33-0}{\dfrac{3.88}{\sqrt{6}}}=0.840$
+Test statistic: $t=\dfrac{4.5-0}{\dfrac{6.775}{\sqrt{6}}}=1.627$
 \hspace{3cm}
 \begin{tikzpicture}[overlay]
 \begin{axis}[
@@ -18334,28 +18562,27 @@ Test statistic: $t=\dfrac{1.33-0}{\dfrac{3.88}{\sqrt{6}}}=0.840$
   clip=false, 
   axis on top,
   grid = major,
-  hide y axis
+  hide y axis,
+  hide x axis
   ]
-\addplot [draw=none, fill=black!50, domain=-3:-2.2] {gauss(x, 0, 1)} \closedcycle;
-\addplot [draw=none, fill=black!50, domain=2.2:3] {gauss(x, 0, 1)} \closedcycle;
+\addplot [draw=none, fill=black!50, domain=2.015:3] {gauss(x, 0, 1)} \closedcycle;
  \addplot [semithick] {gauss(x, 0, 1)};
-\pgfmathsetmacro\valueA{gauss(-2.2,0,1)}
+\pgfmathsetmacro\valueA{gauss(2.015,0,1)}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
-\draw [semithick, black]  (axis cs:-2.2,0) -- (axis cs:-2.2,\valueA);
-\draw [semithick, black]  (axis cs:2.2,0) -- (axis cs:2.2,\valueA);
-\node[below] at (axis cs: 0,0)  {$0$};
+\draw [semithick, black]  (axis cs:2.015,-0.02) -- (axis cs:2.015,\valueA);
+\fill[black!50] (axis cs: 2.015,-0.02) rectangle (axis cs: 3,0);
+\node[below] at (axis cs: 0,-0.02)  {$0$};
 \node[above] at (axis cs: 0,\valueB)  {$t_5$};
-\node[below] at (axis cs: -2.2, 0) {$-2.571$};
-\node[above] at (axis cs: -2.4,\valueA) {2.5\%};
-\node[below] at (axis cs: 2.2, 0) {$2.571$};
-\node[above] at (axis cs: 2.4,\valueA) {2.5\%};
-\draw[very thick] (axis cs: 0.84,0) -- (axis cs: 0.84,0.44) node[above] {$0.840$};
+\node[below] at (axis cs: 2.015, -0.02) {$2.015$};
+\node[above] at (axis cs: 2.9,\valueA) {5\%};
+\draw[very thick] (axis cs: 1.627,-0.02) -- (axis cs: 1.627,0.44) node[above] {$1.627$};
+\draw (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
 \end{axis}
 \end{tikzpicture}\\[0.1em]
 
-Critical value: $t=2.571$\\
+Critical value: $t=2.015$\\
 
-Since $0.840<2.571$, do not reject $\text{H}_0$ at the 5\% level of significance. There is insufficient evidence to suggest that the mean difference in IQ measurement is not zero, and so no evidence that exercise affects IQ measurement.
+Since $1.627<2.015$, do not reject $\text{H}_0$ at the 5\% level of significance. There is insufficient evidence to suggest that teachers' pulse rates are higher at 2pm than 10am.
 
 \end{tcolorbox}
 
@@ -18367,24 +18594,41 @@ Since $0.840<2.571$, do not reject $\text{H}_0$ at the 5\% level of significance
 \addcontentsline{toc}{subsubsection}{{Exercise 15.4}}
 
 \begin{enumerate}
-    \item A school is seeking to assess whether a new online numeracy website is helping pupils improve their times tables knowledge. Seven pupils are randomly selected to answer as many times tables questions correctly as they can in one minute. Six months later, after regular use of the online numeracy website, the same seven pupils try again to answer as many times tables questions correctly as they can in one minute. The results are:
+    \item A paired $t$-test for a population mean difference not equal to zero is to be carried out based on pairs of observations from a sample of six individuals. The population of differences is assumed to be normally distributed. The table below shows the results:
+    \begin{center}
+        \begin{tabular}{c|cccccc}
+            \hline
+              Individual & A & B & C & D & E & F\\
+            \hline
+              Observation 1 & 35 & 65 & 43 & 66 & 58 & 61\\
+            \hline
+              Observation 2 & 31 & 57 & 39 & 71 & 58 & 60\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item State suitable null and alternative hypotheses.
+        \item Show the calculation required to obtain a test statistic of $t=0.251$.
+        \item Conclude the test at the 5\% level of significance.
+    \end{enumerate}
+    \item A school is studying whether a digital homework platform is helping pupils improve their times tables knowledge. Seven pupils are randomly selected to answer as many times tables questions correctly as they can in one minute. Six months later, after regular use of the homework platform, the same seven pupils try again to answer as many times tables questions correctly as they can in one minute. The results are:
     \begin{center}
         \begin{tabular}{c|ccccccc}
             \hline
               Pupil & 1 & 2 & 3 & 4 & 5 & 6 & 7\\
             \hline
-              Before & 34 & 16 & 30 & 22 & 17 & 28 & 27\\
+              Before & 31 & 13 & 27 & 19 & 14 & 25 & 24\\
             \hline
-              After & 45 & 18 & 29 & 22 & 21 & 25 & 29\\
+              After & 42 & 15 & 26 & 19 & 18 & 22 & 26\\
             \hline
         \end{tabular}
     \end{center}
-    Perform a hypothesis test at the 10\% level of significance to assess whether the data suggests that the online numeracy website improves times tables ability, stating one assumption required.
+    Perform a $t$-test at the 10\% level of significance to assess whether the data suggests that there has been an improvement in the pupils' times tables ability.
     \item Eight amateur runners are selected to study the effects of consuming energy gels before running on runners' performances at middle-distances. Each has their finish time recorded for a 5000m run without consuming energy gels beforehand, then a month later their time is recorded again for a 5000m run before which each consumed two energy gels. The data is shown in the table below, with times recorded to the nearest minute.
     \begin{center}
         \begin{tabular}{c|cccccccc}
             \hline
-              Runners & A & B & C & D & E & F & G & H\\
+              Runner & A & B & C & D & E & F & G & H\\
             \hline
               Without gels & 24 & 19 & 21 & 17 & 26 & 32 & 18 & 20\\
             \hline
@@ -18392,36 +18636,20 @@ Since $0.840<2.571$, do not reject $\text{H}_0$ at the 5\% level of significance
             \hline
         \end{tabular}
     \end{center}
-    Perform a hypothesis test at the 5\% level of significance to assess whether the data supports a conclusion that consuming energy gels leads to a difference in performances for runners.
-    \item A group of 8 patients with a particular illness were given a special diet and it was desired to test the mass gain in kg at the end of a 2-week period. Their masses are shown below.
+    Perform a hypothesis test at the 5\% level of significance to assess whether consuming energy gels leads to a difference in running performance
+    \item Seven red kites from a region's population have their masses measured using specially adapted feeding posts fitted with electronic scales. A year later, the masses of the same seven red kites are recorded, in kg. For each bird, the \textbf{differences} in mass between the first and second measurement are shown below.
     \begin{center}
-    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
-      \hline
-        Person & A & B & C & D & E & F & G & H\\
-      \hline
-        Before & 82.27 & 78.18 & 86.36 & 85.00 & 95.45 & 75.45 & 83.18 & 83.64\\
-      \hline
-        After & 82.87 & 79.54 & 87.36 & 86.10 & 94.99 & 75.48 & 83.54 & 82.15\\
-      \hline
+    \begin{tabular}{cccccccc}
+      differences in kg ($\text{second}-\text{first}$) & 0.3 & -0.2 & 0.4 & 0.0 & 0.1 & 0.2 & 0.1
     \end{tabular}
     \end{center}
-    A hypothesis test is conducted to assess the data, with the computer output produced shown below.\vspace{0.5cm}\\
+    It is assumed that the population of differences in masses is normally distributed, and that the differences in mass for the sample are independent. A hypothesis test is conducted to assess the data for evidence of an increase in mass among the region's red kites:\\[0.5em]
     \texttt{paired t-test}\\
     \texttt{alternative hypothesis: true difference in means is greater than 0}\\
-    \texttt{t = 0.94}\qquad \texttt{df=7} \qquad \texttt{p-value = 0.189}\\
+    \texttt{t = 1.722}\qquad \texttt{df=6} \qquad \texttt{p-value = 0.06798}\\
     \texttt{sample estimates:}\\
-    \texttt{mean of differences = 0.313}\qquad \texttt{standard deviation of differences = 0.941}\\[1em]
-    Confirm the test statistic given and determine if there is evidence at the 5\% level that the diet has resulted in significant mass gain, stating any assumptions made.
-    \item The percentage body fat of 25 randomly selected eleven-year-old boys was measured before and after an exercise program. The difference for each boy was calculated and the summary statistics were calculated:  
-    \begin{center}
-    \begin{tabular}{cc}
-        $\Sigma d=-30.2$ & $\Sigma d^2=286.92$
-    \end{tabular}
-    \end{center}
-    \begin{enumerate}
-        \item Test the hypothesis, at the 1\% significance level, that the exercise program has made no difference to the percentage of body fat, stating any assumption made.
-        \item Calculate a 99\% confidence interval for the mean decrease in percentage body fat and comment on your answer with respect to part a).
-    \end{enumerate}
+    \texttt{mean of differences = 0.1286}\qquad \texttt{standard deviation of differences = 0.1976}\\[1em]
+    Show the calculation required to obtain the test statistic given, and give an appropriate conclusion to the test at the 10\% level of significance.
 \end{enumerate}
 
 \pagebreak
@@ -18432,43 +18660,62 @@ Since $0.840<2.571$, do not reject $\text{H}_0$ at the 5\% level of significance
 \addcontentsline{toc}{section}{{Review Exercise}}
 
 \begin{enumerate}
-    \item An estate agent compares the selling prices of homes in two neighbouring villages to see if there is a difference in price. The results of the study are shown below, measured in pounds.
+    \item A commercial timber-selling company is concerned that the pine fence posts they are receiving from their new supplier have a lower density than those received from their old supplier. They measure the density (in kg/$\text{m}^3$) of a random sample of eight of the old fence posts and seven of the new fence posts. The results are:
+    \begin{center}
+        \begin{tabular}{lcccccccc}
+            old & 563 & 576 & 534 & 580 & 556 & 519 & 540 & 548\\
+            new & 550 & 571 & 527 & 506 & 524 & 549 & 571
+        \end{tabular}
+    \end{center}
+    Perform a parametric hypothesis test at the 5\% level of significance to assess whether the company's concerns are supported by the data.
+    \item A number of fifth year and sixth year pupils studying maths at a school were randomly selected from the school's register by a maths teacher and asked whether or not they had attended at least one support session during this academic year. The results are shown in the table below:
+    \begin{center}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Year & Fifth & Sixth\\
+            \hline
+            Attended at least one & 14 & 11 \\
+            \hline
+            Has not attended any & 17 & 16\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item Show clearly that the data satisfies the conditions for the use of a $z$-test.
+        \item Perform a $z$-test at the 1\% level of significance to assess whether there is evidence of a difference in the proportions of pupils who attend maths support sessions between the two year groups.
+    \end{enumerate}
+    \item A random sample of nine students from a sports science course completed a 10km course whilst wearing \textit{regular} running shoes. The same nine students then completed the same course again one week later, this time wearing \textit{carbon plates} running shoes. The results are shown below, rounded to the nearest tenth of a minute.
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+      \hline
+        Student & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\
+      \hline
+        Regular & 46.1 & 41.0 & 53.2 & 42.9 & 40.2 & 38.7 & 48.7 & 50.2 & 46.5\\
+      \hline
+        Carbon plate & 45.6 & 38.7 & 53.3 & 41.8 & 40.2 & 35.6 & 47.5 & 50.0 & 46.1\\
+      \hline
+    \end{tabular}
+    \end{center}
+    Assuming the population of differences in times to be normally distributed, test at the 5\% level of significance whether the data gives evidence to suggest \textit{carbon plate} running shoes improve 10km running times.
+    \item Last year a road safety campaigner recorded the speeds of randomly selected cars as they drove past a sign in their village which displays the car's speed. This year, after the council claimed average speeds of cars through the village had decreased, the campaigner recorded the speeds of another random sample of cars. The results are shown in the table below, measured in miles per hour:
     \begin{center}
     \begin{tabular}{|c|c|}
       \hline
-        Village 1 & Village 2\\
+        Last year & This year\\
       \hline
-        $\bar{x}_1=281904$ & $\bar{x}_2=265872$\\
+        $\bar{x}_1=32.4$ & $\bar{x}_2=29.7$\\
       \hline
-        $s_1=30267$ & $s_2=41092$\\
+        $s_1=4.3$ & $s_2=1.3$\\
       \hline
-        $n_1=35$ & $n_2=40$\\
-      \hline
-    \end{tabular}
-    \end{center}
-    Determine if there is evidence at the 1\% level to reject the claim that the mean cost of homes in both villages is the same, stating any assumptions made.
-    \item A random sample of eleven students sat a Chemistry examination consisting of one theory paper and one practical paper. Their marks out of 100 are given in the table below:
-    \begin{center}
-    \begin{tabular}{|c|ccccccccccc|}
-      \hline
-        Student & A & B & C & D & E & F & G & H & I & J & K\\
-      \hline
-        Theory Mark & 30 & 42 & 49 & 50 & 63 & 38 & 43 & 36 & 54 & 42 & 26\\
-      \hline
-        Practical Mark & 52 & 58 & 42 & 67 & 94 & 68 & 22 & 34 & 55 & 48 & 17\\
+        $n_1=29$ & $n_2=34$\\
       \hline
     \end{tabular}
     \end{center}
-    Assuming the differences in pairs to be normally distributed, test, at the 5\% level of significance the hypothesis of no difference in the mean mark on the two papers.
-    \item Blood pressure levels were measured in a random sample of 19 men with a particular illness, aged 50 to 59 years. The sample mean systolic blood pressure was 146.6 mmHg and the sample standard deviation was 17.9 mmHG. In a second random sample of 15 men, aged 50 to 59 years, in good health, the mean systolic blood pressure reading was 137.4 mmHg and the standard deviation was 15.1 mmHg.\\[1em]
-Assess the evidence at the 5\% level that the mean systolic blood pressure in men with the illness is greater than that of men in good health.
-    \item In a random sample of 120 workers from a factory in city A, it was found that 5\% were unable to read, while in a random sample of 200 workers from a similar factory in city B, it was found that 11\% were unable to read.
+    Assume that the sample standard deviations in speed are reliable estimates of the population standard deviations.
     \begin{enumerate}
-        \item Perform a parametric test to assess at the 10\% level of significance whether there is evidence of a difference in the proportions of readers in each location.
-        \item Explain why the sampling approach chosen means that it may not be appropriate to use data gathered in this way to reach a conclusion of a difference in the proportions of those able to read between the two cities.
+        \item Perform a $z$-test at the 10\% level of significance to determine whether the data provides evidence to suggest that the council's claim is valid.
+        \item By considering the sample standard deviations, explain why a two-sample $t$-test may not be appropriate for this data.
     \end{enumerate}
-    \item The standard deviation of the scores obtained on a particular test of mathematical ability is known to be 15. A school experiments with a new method of teaching which is supposed to increase general mathematical awareness. A group of 36 students are randomly assigned to one of two classes. The 20 students in Class A are given the new method of teaching while the other 16 students in Class B are taught in the standard way.\\[1em]
-At the end of the year, the two classes are given the same test of mathematical ability. The mean for Class A is 120.4 and the mean for Class B is 113.1. Test at the 5\% significance level the hypothesis that the new method leads to a higher mean performance.
 \end{enumerate}
 
 \pagebreak
@@ -26334,8 +26581,11 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 
 \markboth{Answers}{ANSWERS}
 
+\vspace{-1cm}
+
 \setstretch{1.0}
 \raggedright
+\setlist[enumerate]{nosep}
 
 \subsection*{Chapter 1 Answers - Exploratory Data Analysis}\label{chapter-1-answers---exploratory-data-analysis}
 \addcontentsline{toc}{subsection}{Chapter 1 Answers - Exploratory Data Analysis}
@@ -26349,7 +26599,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 \addcontentsline{toc}{subsubsection}{{Exercise 1.1}}
 
 \begin{enumerate}
-    \item 
+    \item
     \begin{enumerate}
         \begin{multicols}{6}
         \item Quantitative
@@ -26380,10 +26630,12 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 \addcontentsline{toc}{subsubsection}{{Exercise 1.2}}
 
 \begin{enumerate}
-    \begin{multicols}{3}
-    \item Population parameter (population mean)
-    \item Sample statistic (sample mean)
-    \item Sample statistic (sample mean)
+    \begin{multicols}{5}
+    \item Population mean\newline $\mu$
+    \item Sample mean\newline  $\bar{x}$
+    \item Sample standard deviation\newline  $s$
+    \item Population standard deviation\newline  $\sigma$
+    \item Sample mean\newline  $\bar{x}$
     \end{multicols}
 \end{enumerate}
 
@@ -26391,20 +26643,6 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 
 \subsubsection*{\texorpdfstring{\hyperref[ex13q]{Exercise 1.3}}{Exercise 1.3}}\label{exercise-1.3-1}
 \addcontentsline{toc}{subsubsection}{{Exercise 1.3}}
-
-\begin{enumerate}
-    \begin{multicols}{4}
-    \item $\bar{x}=35.9,s=15.74$
-    \item $\bar{f}=5.8,s=2.145$
-    \item $\bar{x}=29.125,s=7.586$
-    \item $\text{median}=40.5,\text{IQR}=27.5$
-    \end{multicols}
-\end{enumerate}
-
-\protect\phantomsection\label{ex14a}{}
-
-\subsubsection*{\texorpdfstring{\hyperref[ex14q]{Exercise 1.4}}{Exercise 1.4}}\label{exercise-1.4-1}
-\addcontentsline{toc}{subsubsection}{{Exercise 1.4}}
 
 \begin{enumerate}
     \item 
@@ -26441,21 +26679,21 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
         \node at (0,3) {$1$};
         \node at (0,2.5) {$2$};
         \node at (0,2) {$3$};
-        \node at (1,3.5) {$90$};
-        \node at (1,3) {$40$};
-        \node at (1.7,3) {$50$};
-        \node at (2.4,3) {$50$};
-        \node at (3.1,3) {$70$};
-        \node at (3.8,3) {$80$};
-        \node at (4.5,3) {$90$};
-        \node at (1,2.5) {$00$};
-        \node at (1.7,2.5) {$10$};
-        \node at (2.4,2.5) {$20$};
-        \node at (3.1,2.5) {$50$};
-        \node at (1,2) {$60$};
+        \node at (1,3.5) {$9$};
+        \node at (1,3) {$4$};
+        \node at (1.7,3) {$5$};
+        \node at (2.4,3) {$5$};
+        \node at (3.1,3) {$7$};
+        \node at (3.8,3) {$8$};
+        \node at (4.5,3) {$9$};
+        \node at (1,2.5) {$0$};
+        \node at (1.7,2.5) {$1$};
+        \node at (2.4,2.5) {$2$};
+        \node at (3.1,2.5) {$5$};
+        \node at (1,2) {$6$};
         \node at (2.5,4.6) {stem-and-leaf diagram};
         \node at (2.5,4.1) {(ice cream cost)};
-        \node[left] at (5,1) {$2|50$ represents £2.50};
+        \node[left] at (5,1) {$2|5$ represents £2.50};
         \node[left] at (5,1.5) {$n=12$};
     \end{tikzpicture}
     \item 
@@ -26478,6 +26716,20 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     \end{multicols}
 \end{enumerate}
 
+\protect\phantomsection\label{ex14a}{}
+
+\subsubsection*{\texorpdfstring{\hyperref[ex14q]{Exercise 1.4}}{Exercise 1.4}}\label{exercise-1.4-1}
+\addcontentsline{toc}{subsubsection}{{Exercise 1.4}}
+
+\begin{enumerate}
+    \begin{multicols}{4}
+    \item $\bar{x}=35.9,s=15.74$
+    \item $\bar{x}=5.8,s=2.145$
+    \item $\bar{x}=29.125,s=7.586$
+    \item $\text{median}=40.5,\text{IQR}=28$
+    \end{multicols}
+\end{enumerate}
+
 \protect\phantomsection\label{ex15a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex15q]{Exercise 1.5}}{Exercise 1.5}}\label{exercise-1.5-1}
@@ -26491,11 +26743,6 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     \item 7
 \end{enumerate}
 
-\endgroup
-\pagebreak
-\begingroup
-\footnotesize
-
 \protect\phantomsection\label{ex16a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex16q]{Exercise 1.6}}{Exercise 1.6}}\label{exercise-1.6-1}
@@ -26503,10 +26750,10 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 
 \begin{enumerate}
     \begin{multicols}{2}
-    \item Lower fence $=7.5$ and upper fence $=51.5$. Since all values lie within this interval, there are no outliers.
+    \item Lower fence $=7.5$ and upper fence $=51.5$. Since all values lie within the interval $(7.5,51.5)$ there are no outliers.\\[0.5em]
     \item 
     \begin{enumerate}
-        \item Lower fence $=6.5$ and upper fence $=22.5$. Since both 4 and 27 lie outwith this interval, they are outliers.
+        \item Lower fence $=6.5$ and upper fence $=22.5$. Since $4<6.5$ and $27>22.5$ they are both outliers.
         \item 
         \begin{tikzpicture}[baseline=(current bounding box.north)]
         \draw (0,0) -- (0.2*30,0);
@@ -26527,13 +26774,18 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
         \draw (0.2*15,0.7) -- (0.2*15,1.3);
         \end{tikzpicture}
     \end{enumerate}
-    \end{multicols}
     \item 
     \begin{enumerate}
-        \item Upper fence $=26.5$. Since both circled points shown on the box plot are greater than 26.25, they are outliers.
+        \item Upper fence $=26.5$. Since both circled points shown on the box plot (47 and what appears to be 28) are greater than 26.25, they are outliers.\\[1em]
         \item If the lengths of their stays were incorrectly recorded in the hospital's records, it would be valid to remove them from the data set before conducting any further analysis. \textit{Other valid reasons are possible.}
     \end{enumerate}
+        \end{multicols}
 \end{enumerate}
+
+\endgroup
+\newpage
+\begingroup
+\footnotesize
 
 \protect\phantomsection\label{ex17a}{}
 
@@ -26541,10 +26793,10 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 \addcontentsline{toc}{subsubsection}{{Exercise 1.7}}
 
 \begin{enumerate}
-    \item The population of hazelnuts masses appear to follow a positively skewed distribution.
-    \item The population of tree heights appear to be normally distributed.
-    \item The population of waiting times appear to be uniformly distributed.
-    \item The population of number of successful passes appears to follow a bimodal distribution.
+    \item The population of hazelnuts masses appear to possibly follow a positively skewed distribution.
+    \item The population of tree heights appear to possibly follow a symmetrical distributed (such as a normally distribution).
+    \item The population of waiting times appear to be possibly uniformly distributed.
+    \item The population of number of successful passes appears to possibly follow a bimodal distribution.
 \end{enumerate}
 
 \protect\phantomsection\label{ex18a}{}
@@ -26558,8 +26810,9 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     \begin{multicols}{2}
         \item $\bar{x}_A=301.3,s_A=4.57$\\
         $\bar{x}_B=302.3,s_B=12.3$
-        \item The median volume of coffee dispensed by Model B is greater.\\
-        The amount of coffee dispensed by Model B is more varied.
+        \columnbreak
+        \item The mean volume of coffee dispensed by Model B is appears to be greater (larger sample mean).\\
+        The amount of coffee dispensed by Model B is more varied (larger sample standard deviation).
     \end{multicols}
     \end{enumerate}
     \item The median score awarded by judge A was higher.\\
@@ -26582,7 +26835,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
         \foreach \x in {70,71,...,87}{
         \draw (0.8*\x,1.9) -- (0.8*\x,2) node[below] {\x};
         }
-        \node at (0.8*78.5,3.7) {Production line data};
+        \node at (0.8*78.5,3.2) {Production line data};
         \node at (0.8*68.5,2.3) {New};
         \node at (0.8*68.5,0.3) {Old};
         \node at (0.8*78.5,-0.8) {Crates completed (per hour)};
@@ -26614,11 +26867,6 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     \end{enumerate}
 \end{enumerate}
 
-\endgroup
-\pagebreak
-\begingroup
-\footnotesize
-
 \protect\phantomsection\label{re1a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[re1q]{Chapter 1 Review Exercise}}{Chapter 1 Review Exercise}}\label{chapter-1-review-exercise}
@@ -26635,7 +26883,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
             \item Length.
             \end{multicols}
         \end{enumerate}
-        \item Fences could be calculated to determine whether it is an outlier.
+        \item The upper fence could be calculated to determine whether it is an outlier.
     \end{enumerate}
     \item 
     \begin{enumerate}
@@ -26661,7 +26909,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     \draw[fill] (6,0.6) circle (2pt);
     \draw[fill] (5,0.3) circle (2pt);
     \end{tikzpicture}
-    \item $\text{median}=7.5$ and $\text{interquartile range}=3.25$
+    \item $\text{median}=7.5$ and $\text{interquartile range}=3.5$
     \item $\text{mean}=7.33$ and $\text{sd}=2.35$
     \item Shoe sizes are discrete data.
     \end{multicols}
@@ -26673,12 +26921,13 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     \end{enumerate}
     \item 
     \begin{enumerate}
-        \item The fences are $1.13$ and $1.85$. Since both the minimum value of $1.00$ and the maximum of $1.90$ lie outwith this interval, the \textit{iris setosa} data contains at least two outliers.
+        \item The fences are $1.13$ and $1.85$. Since both the minimum value of $1.00$ and the maximum of $1.90$ lie outwith the interval ($1.00<1.13$ and ($1.90>1.85$) the \textit{iris setosa} data contains at least two outliers.
         \item The median length of \textit{iris versicolor} petals appears to be greater than the length of \textit{iris setosa} petals. The length of \textit{iris versicolor} petals appears to be more varied than those of the \textit{iris setosa} species, as seen by their interquartile ranges of $0.18$ and $0.60$ centimetres respectively.
     \end{enumerate}
 \end{enumerate}
 
 \endgroup
+\pagebreak
 
 \subsection*{Chapter 2 Answers - An Introduction to Probability Theory}\label{chapter-2-answers---an-introduction-to-probability-theory}
 \addcontentsline{toc}{subsection}{Chapter 2 Answers - An Introduction to Probability Theory}
@@ -26790,7 +27039,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 \end{multicols}
 
 \endgroup
-\pagebreak
+\newpage
 \begingroup
 \footnotesize
 
@@ -27113,7 +27362,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 \end{multicols}
 
 \endgroup
-\pagebreak
+\newpage
 \begingroup
 \footnotesize
 
@@ -27293,7 +27542,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 \end{enumerate}
 
 \endgroup
-\pagebreak
+\newpage
 
 \subsection*{Chapter 4 Answers - Further Probability Theory}\label{chapter-4-answers---further-probability-theory}
 \addcontentsline{toc}{subsection}{Chapter 4 Answers - Further Probability Theory}
@@ -28793,7 +29042,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 
 \endgroup
 
-\pagebreak
+\newpage
 
 \begingroup
 \footnotesize
@@ -28907,7 +29156,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 
 \endgroup
 
-\pagebreak
+\newpage
 
 \subsection*{Chapter 14 - Chi-Squared Test for Association}\label{chapter-14---chi-squared-test-for-association}
 \addcontentsline{toc}{subsection}{Chapter 14 - Chi-Squared Test for Association}
@@ -29294,7 +29543,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 
 \endgroup
 
-\pagebreak
+\newpage
 
 \begingroup
 \footnotesize
@@ -29370,7 +29619,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 
 \endgroup
 
-\pagebreak
+\newpage
 
 \begingroup
 \footnotesize
