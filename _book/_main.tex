@@ -2681,9 +2681,9 @@ The larger interquartile range suggests that the population of sprinters' height
 
 \chapter{An Introduction to Probability Theory}\label{an-introduction-to-probability-theory}
 
-The purpose of statistics is to make sense of the world by analysing data. Typically, however, it is only possible to obtain data from a random sample of the full population of interest, introducing uncertainty that must be accounted for. For this reason, developing an understanding of statistical analysis begins with learning about probability theory.
+The purpose of statistics is to make sense of the world by analysing data. In practice, however, it is only possible to obtain data from a random sample of the full population of interest, introducing uncertainty that must be accounted for. For this reason, developing an understanding of statistical analysis begins with learning about probability theory.
 
-People talk about \emph{chance} regularly. For example, `St Mirren are unlikely to win this weekend', or `It is probably going to rain today'. However, neither of these comments seek to assign a numerical value to quantify those chances. In this chapter, probability as a \emph{numerical measure} will be studied.
+People commonly talk about \emph{chance} in everyday language. For example, `St Mirren are unlikely to win this weekend', or `It is probably going to rain today'. However, neither of these comments seek to assign a numerical value to quantify those chances. In this chapter, probability as a \emph{numerical measure} will be studied.
 
 \subsubsection*{Key definitions}\label{key-definitions}
 \addcontentsline{toc}{subsubsection}{Key definitions}
@@ -2735,7 +2735,7 @@ The probability of an event can be estimated through repeated trials - this is r
 \subsubsection*{Theoretical Probability}\label{theoretical-probability}
 \addcontentsline{toc}{subsubsection}{Theoretical Probability}
 
-When each of the outcomes in the sample space of a random experiment can be reasonably assumed to be \mbox{\textbf{equally likely}}, then the probability of outcomes or events can be determined. This is called \emph{theoretical probability}.
+When each outcome in the sample space can be reasonably assumed to be \mbox{\textbf{equally likely}}, then the probability of outcomes or events can be determined. This is called \emph{theoretical probability}.
 
 Equally likely outcomes typically arise from the symmetry of a physical object (such as a coin or die) or a reasonable assumption. The probability of any \emph{individual outcome} in a sample space containing \(N\) equally likely outcomes is \(\frac{\text{1}}{N}\). For example, if a playing card is picked at random from a standard pack of 52 cards, containing no jokers, then the probability of picking the Queen of Hearts is \(\frac{\text{1}}{\text{52}}\).
 
@@ -2860,7 +2860,7 @@ In this textbook, probabilities will be given as fractions or \emph{rounded to f
      \hline
     \end{tabular}
     \end{center}
-    If member of staff working at the hospital is chosen at random, find the probability that they are:
+    If a member of staff working at the hospital is chosen at random, find the probability that they are:
     \begin{multicols}{3}
     \begin{enumerate}
         \item A nurse.
@@ -2874,7 +2874,7 @@ In this textbook, probabilities will be given as fractions or \emph{rounded to f
 
 \section{Sample Spaces as Lists and Grids}\label{sample-spaces-as-lists-and-grids}
 
-It can help to write out sample spaces. Some sample spaces can be easily described using a simple list, but more organisation may be needed for more complicated sample spaces, such as approaching the list in a structured manner or using a grid. Sample spaces are particularly useful when each outcome is equally likely, as this allows probabilities to be calculated directly by counting outcomes..
+It can help to write out sample spaces. Some sample spaces can be easily described using a simple list, but more organisation may be needed for more complicated sample spaces, such as approaching the list in a structured manner or using a grid. Sample spaces are particularly useful when each outcome is equally likely, as this allows probabilities to be calculated directly by counting outcomes.
 
 If two coins are tossed, it may be tempting to suggest that the probability of both landing tails is one-in-three, since the experiment can result in either no coins landing tails, only one coin landing tails or two coins landing tails. However a list of the four possible \emph{equally likely} outcomes in the sample space shows that this is not the case:
 
@@ -3626,7 +3626,7 @@ It should be noted that there are generally numerous different ways to approach 
 
 \chapter{Sampling Theory}\label{sampling-theory}
 
-\emph{``Garbage In, Garbage Out''} is a phrase used in computer science that may equally be applied to statistics. It is vital to avoid thinking that the task of a statistician begins with raw data; the manner in which data is collected is of fundamental importance. Any statistical inferences made on the basis of data that has not been collected with an appropriate \emph{sampling method} should not be trusted.
+\emph{``Garbage In, Garbage Out''} is a phrase used in computer science that applies equally well to statistics. It is important not to assume that the task of a statistician begins with raw data; the manner in which data is collected is of fundamental importance. Statistical inferences based on data that has not been collected with an appropriate \emph{sampling method} should not be trusted.
 
 \subsection*{Populations and Samples}\label{populations-and-samples}
 \addcontentsline{toc}{subsection}{Populations and Samples}
@@ -3800,7 +3800,7 @@ To recap from chapter 1, the term \textbf{population} refers to the entire set o
 \end{tikzpicture}
 \end{center}
 
-A \textbf{census} is used to collect information from a full population and a \textbf{sample survey} is used to collect data on a sample.
+A \textbf{census} is used to collect information from the entire population and a \textbf{sample survey} is used to collect data on a sample.
 
 It is usually very difficult to carry out a census as it is time consuming, expensive, and requires an accurate and complete list of every member of the population. In some cases, investigating an entire population could destroy the entire population, such as the burn time of candles. It is therefore usually preferable that a sample survey is carried out and, if representative of the population, it should give an accurate indication of the characteristics of the population.
 
@@ -3815,7 +3815,7 @@ Samples are used to infer information about the populations from which they are 
 
 Parameters, such as the population mean, are fixed but usually unknown. If samples are repeatedly taken from a population and their means are obtained, the values of those sample means will sometimes be higher than that of the true population mean and sometimes lower. This comes from \emph{random sampling error} which, despite its name, is a natural effect due to chance variation.
 
-The figure below shows two sets of sample means for random samples taken from the same distribution with a population mean of \(\mu=50\). For one set a sample size of \(n=5\) was used, with \(n=20\) for the other.
+The figure below shows two sets of sample means for random samples taken from the same distribution with a population mean of \(\mu=\text{50}\). For one set a sample size of \(n=\text{5}\) was used, with \(n=\text{20}\) for the other.
 
 \begin{tikzpicture}
         \draw (0,0) -- (8,0);
@@ -3837,7 +3837,7 @@ The figure below shows two sets of sample means for random samples taken from th
         \draw[fill] (57*0.2-6,1) circle (1.5pt);
         \draw[fill] (48*0.2-6,1) circle (1.5pt);
         \draw[fill] (36*0.2-6,1) circle (1.5pt);
-        \draw[stealth-] (7.5,1) -- (8.5,1) node[right] {ten sample means $\bar{x}_i$ with $n=5$};
+        \draw[stealth-] (7.5,1) -- (8.5,1) node[right] {ten sample means $\bar{x}_i$ with $n=\text{5}$};
         \node[left] at  (33*0.2-6,2) {\textit{larger sample size}};
         \node[left] at  (33*0.2-6,1) {\textit{smaller sample size}};
         \draw[fill] (53.6*0.2-6,2) circle (1.5pt);
@@ -3850,10 +3850,10 @@ The figure below shows two sets of sample means for random samples taken from th
         \draw[fill] (48*0.2-6,2) circle (1.5pt);
         \draw[fill] (47*0.2-6,2) circle (1.5pt);
         \draw[fill] (52.8*0.2-6,2) circle (1.5pt);
-        \draw[stealth-] (7.5,2) -- (8.5,2) node[right] {ten sample means $\bar{x}_i$ with $n=20$};
+        \draw[stealth-] (7.5,2) -- (8.5,2) node[right] {ten sample means $\bar{x}_i$ with $n=\text{20}$};
 \end{tikzpicture}
 
-It can be seen that larger sample sizes tend to produce sample statistics that better represent the population parameters they are used to estimate. In other words, as sample size increases, the variability of sample statistics decreases. Larger samples are therefore generally preferred, and statistical studies conducting using only small samples of data should typically be treated with more caution than those based on larger samples. When small samples are used, the reasons are usually one or more of cost, time, and availability of data.
+It can be seen that larger sample sizes tend to produce sample statistics that better represent the population parameters they are used to estimate. In other words, as sample size increases, the variability of sample statistics decreases. Larger samples are therefore generally preferred, and statistical studies conducted using only small samples of data should typically be treated with more caution than those based on larger samples. When small samples are used, the reasons are usually one or more of cost, time, and availability of data.
 
 \subsection*{Bias}\label{bias}
 \addcontentsline{toc}{subsection}{Bias}
@@ -3863,27 +3863,27 @@ Poor sampling technique may lead to samples that are not \emph{representative} o
 \begin{center}
     \begin{tikzpicture}
         \draw (0,0) -- (5,0);
-        \draw[dashed] (0.6,0) -- (0.6,1) node[above] at (0.6,1) {${\scriptstyle \bar{x}_1}$};
-        \draw[dashed] (2.9,0) -- (2.9,1) node[above] at (2.9,1) {${\scriptstyle \bar{x}_2}$};
-        \draw[dashed] (1,0) -- (1,1) node[above] at (1,1) {${\scriptstyle \bar{x}_3}$};
-        \draw[dashed] (0.1,0) -- (0.1,1) node[above] at (0.1,1) {${\scriptstyle \bar{x}_4}$};
-        \draw[dashed] (2,0) -- (2,1) node[above] at (2,1) {${\scriptstyle \bar{x}_5}$};
+        \draw[dashed] (0.6,0) -- (0.6,1) node[above] at (0.6,1) {${\scriptstyle \bar{x}_\text{1}}$};
+        \draw[dashed] (2.9,0) -- (2.9,1) node[above] at (2.9,1) {${\scriptstyle \bar{x}_\text{2}}$};
+        \draw[dashed] (1,0) -- (1,1) node[above] at (1,1) {${\scriptstyle \bar{x}_\text{3}}$};
+        \draw[dashed] (0.1,0) -- (0.1,1) node[above] at (0.1,1) {${\scriptstyle \bar{x}_\text{4}}$};
+        \draw[dashed] (2,0) -- (2,1) node[above] at (2,1) {${\scriptstyle \bar{x}_\text{5}}$};
         \draw[thick] (2.5,-0.2) -- (2.5,1.5) node[above] at (2.5,1.5) {$\mu$};
         \node at (2.5,-0.5) {\textit{biased} (tending to underestimate)};
         \draw (6,0) -- (11,0);
-        \draw[dashed] (8.8,0) -- (8.8,1) node[above] at (8.8,1) {${\scriptstyle \bar{x}_1}$};
-        \draw[dashed] (10.1,0) -- (10.1,1) node[above] at (10.1,1) {${\scriptstyle \bar{x}_2}$};
-        \draw[dashed] (6.6,0) -- (6.6,1) node[above] at (6.6,1) {${\scriptstyle \bar{x}_3}$};
-        \draw[dashed] (8,0) -- (8,1) node[above] at (8,1) {${\scriptstyle \bar{x}_4}$};
-        \draw[dashed] (9.2,0) -- (9.2,1) node[above] at (9.2,1) {${\scriptstyle \bar{x}_5}$};
+        \draw[dashed] (8.8,0) -- (8.8,1) node[above] at (8.8,1) {${\scriptstyle \bar{x}_\text{1}}$};
+        \draw[dashed] (10.1,0) -- (10.1,1) node[above] at (10.1,1) {${\scriptstyle \bar{x}_\text{2}}$};
+        \draw[dashed] (6.6,0) -- (6.6,1) node[above] at (6.6,1) {${\scriptstyle \bar{x}_\text{3}}$};
+        \draw[dashed] (8,0) -- (8,1) node[above] at (8,1) {${\scriptstyle \bar{x}_\text{4}}$};
+        \draw[dashed] (9.2,0) -- (9.2,1) node[above] at (9.2,1) {${\scriptstyle \bar{x}_\text{5}}$};
         \draw[thick] (8.5,-0.2) -- (8.5,1.5) node[above] at (8.5,1.5) {$\mu$};
         \node at (8.5,-0.5) {\textit{unbiased} (accurate estimation)};
         \draw (12,0) -- (17,0);
-        \draw[dashed] (16.8,0) -- (16.8,1) node[above] at (16.8,1) {${\scriptstyle \bar{x}_1}$};
-        \draw[dashed] (15,0) -- (15,1) node[above] at (15,1) {${\scriptstyle \bar{x}_2}$};
-        \draw[dashed] (14,0) -- (14,1) node[above] at (14,1) {${\scriptstyle \bar{x}_3}$};
-        \draw[dashed] (16.3,0) -- (16.3,1) node[above] at (16.3,1) {${\scriptstyle \bar{x}_4}$};
-        \draw[dashed] (15.7,0) -- (15.7,1) node[above] at (15.7,1) {${\scriptstyle \bar{x}_5}$};
+        \draw[dashed] (16.8,0) -- (16.8,1) node[above] at (16.8,1) {${\scriptstyle \bar{x}_\text{1}}$};
+        \draw[dashed] (15,0) -- (15,1) node[above] at (15,1) {${\scriptstyle \bar{x}_\text{2}}$};
+        \draw[dashed] (14,0) -- (14,1) node[above] at (14,1) {${\scriptstyle \bar{x}_\text{3}}$};
+        \draw[dashed] (16.3,0) -- (16.3,1) node[above] at (16.3,1) {${\scriptstyle \bar{x}_\text{4}}$};
+        \draw[dashed] (15.7,0) -- (15.7,1) node[above] at (15.7,1) {${\scriptstyle \bar{x}_\text{5}}$};
         \draw[thick] (14.5,-0.2) -- (14.5,1.5) node[above] at (14.5,1.5) {$\mu$};
         \node at (14.5,-0.5) {\textit{biased} (tending to overestimate)};
     \end{tikzpicture}
@@ -3896,7 +3896,7 @@ It is very difficult to identify that bias has been introduced, and equally diff
 \subsection*{Sampling Frames}\label{sampling-frames}
 \addcontentsline{toc}{subsection}{Sampling Frames}
 
-Any real-life experience of sampling for any kind of study is likely to quickly reveal that it is not quite as straight-forward as \emph{``just choosing at random''}. Several key elements must be identified and problems considered.
+Real-life sampling situations for any kind of study are likely to quickly reveal that it is not quite as straight-forward as \emph{``just choosing at random''}. Several key elements must be identified and problems considered.
 
 \emph{For example, consider the context of wishing to use registration time one morning to survey a sample of pupils at a large secondary school for their views on the school cafeteria.}
 
@@ -3919,13 +3919,13 @@ The \textbf{target population} is the \textit{group being studied}.
 
 \vspace{0.3cm}
 
-The \textbf{sampling frame} is the subset of the target population, of size $N$, from which a sample is actually drawn, typically in the form of an ordered list. 
+The \textbf{sampling frame} is the subset of the target population, of size $N$, from which a sample is actually drawn, typically in the form of a list (often ordered). 
 
 \textit{e.g. a numbered list of the school roll}
 
 \vspace{0.3cm}
 
-The \textbf{sample} consists of the subset of the sampling frame  selected to be studied, with size $n$.
+The \textbf{sample} consists of the subset of the sampling frame selected to be studied, with size $n$.
 
 \textit{e.g. those pupils selected to be surveyed}
 
@@ -3981,9 +3981,9 @@ For example, a simple random sample of 15 pupils from a year group of 120 can be
 \begin{center}
 \begin{tikzpicture}
 \draw[semithick,fill=black!10] (0,0) rectangle (8,5);
-\node at (4,5.3) {Sampling Frame, $N=120$};
+\node at (4,5.3) {Sampling Frame, $N=\text{120}$};
 \draw[semithick,fill=black!10] (12,2.5) circle (1.5);
-\node at (12,4.3) {Sample, $n=15$};
+\node at (12,4.3) {Sample, $n=\text{15}$};
 
 \draw[very thick,fill=black!10] (7,4.65) circle (0.35);
 \draw[very thick,fill=black!10] (4,4.05) circle (0.35);
@@ -4151,21 +4151,21 @@ For example, a simple random sample of 15 pupils from a year group of 120 can be
 \node[alice,minimum size=0.04cm] at (7.5,4.65) {};
 
 \foreach \x in {1,...,15}
-\node at (0.5*\x,4.55) {\tiny$\x$};
+\node at (0.5*\x,4.55) {\tiny\x};
 \foreach \x in {16,...,30}
-\node at (0.5*\x-7.5,3.95) {\tiny$\x$};
+\node at (0.5*\x-7.5,3.95) {\tiny\x};
 \foreach \x in {31,...,45}
-\node at (0.5*\x-15,3.35) {\tiny$\x$};
+\node at (0.5*\x-15,3.35) {\tiny\x};
 \foreach \x in {46,...,60}
-\node at (0.5*\x-22.5,2.75) {\tiny$\x$};
+\node at (0.5*\x-22.5,2.75) {\tiny\x};
 \foreach \x in {61,...,75}
-\node at (0.5*\x-30,2.15) {\tiny$\x$};
+\node at (0.5*\x-30,2.15) {\tiny\x};
 \foreach \x in {76,...,90}
-\node at (0.5*\x-37.5,1.55) {\tiny$\x$};
+\node at (0.5*\x-37.5,1.55) {\tiny\x};
 \foreach \x in {91,...,105}
-\node at (0.5*\x-45,0.95) {\tiny$\x$};
+\node at (0.5*\x-45,0.95) {\tiny\x};
 \foreach \x in {106,...,120}
-\node at (0.5*\x-52.5,0.35) {\tiny$\x$};
+\node at (0.5*\x-52.5,0.35) {\tiny\x};
 
 \draw[semithick,dashed,-stealth] (8.3,2.5) -- (10.2,2.5);
 
@@ -4180,14 +4180,14 @@ For example, a simple random sample of 15 pupils from a year group of 120 can be
 
 \emph{Systematic sampling} involves using an orderly \emph{pattern} to select units, starting from a randomly selected point. In general, for a numbered sampling frame of size \(N\), a random number generator may select a number from 1 to \(N\), with the corresponding sampling unit selected. After that initial selection, \emph{every subsequent} \(\left(\frac{N}{n}\right)\text{th}\) \emph{unit is selected}, looping back to the start of the sampling frame as necessary to complete the sample of size \(n\).
 
-For example, a systematic sample of 15 pupils from a year group of 120 can be made by first selecting a random starting point, such as the \(83rd\) pupil, in an alphabetised list of pupils in the year group. From there, every \(\frac{120}{15}=8th\) pupil from the list is chosen, looping back round at the end of the list until 15 pupils have been chosen.
+For example, a systematic sample of 15 pupils from a year group of 120 can be made by first selecting a random starting point, such as the 83rd pupil, in an alphabetised list of pupils in the year group. From there, every \(\frac{\text{120}}{\text{15}}=\text{8}\)th pupil from the list is chosen, looping back round at the end of the list until 15 pupils have been chosen.
 
 \begin{center}
 \begin{tikzpicture}
 \draw[semithick,fill=black!10] (0,0) rectangle (8,5);
-\node at (4,5.3) {Sampling Frame, $N=120$};
+\node at (4,5.3) {Sampling Frame, $N=\text{120}$};
 \draw[semithick,fill=black!10] (12,2.5) circle (1.5);
-\node at (12,4.3) {Sample, $n=15$};
+\node at (12,4.3) {Sample, $n=\text{15}$};
 
 \draw[very thick,fill=black!10] (4,1.65) circle (0.35);
 \draw[very thick,fill=black!10] (0.5,1.05) circle (0.35);
@@ -4361,21 +4361,21 @@ For example, a systematic sample of 15 pupils from a year group of 120 can be ma
 \node[alice,minimum size=0.04cm] at (7.5,4.65) {};
 
 \foreach \x in {1,...,15}
-\node at (0.5*\x,4.55) {\tiny$\x$};
+\node at (0.5*\x,4.55) {\tiny\x};
 \foreach \x in {16,...,30}
-\node at (0.5*\x-7.5,3.95) {\tiny$\x$};
+\node at (0.5*\x-7.5,3.95) {\tiny\x};
 \foreach \x in {31,...,45}
-\node at (0.5*\x-15,3.35) {\tiny$\x$};
+\node at (0.5*\x-15,3.35) {\tiny\x};
 \foreach \x in {46,...,60}
-\node at (0.5*\x-22.5,2.75) {\tiny$\x$};
+\node at (0.5*\x-22.5,2.75) {\tiny\x};
 \foreach \x in {61,...,75}
-\node at (0.5*\x-30,2.15) {\tiny$\x$};
+\node at (0.5*\x-30,2.15) {\tiny\x};
 \foreach \x in {76,...,90}
-\node at (0.5*\x-37.5,1.55) {\tiny$\x$};
+\node at (0.5*\x-37.5,1.55) {\tiny\x};
 \foreach \x in {91,...,105}
-\node at (0.5*\x-45,0.95) {\tiny$\x$};
+\node at (0.5*\x-45,0.95) {\tiny\x};
 \foreach \x in {106,...,120}
-\node at (0.5*\x-52.5,0.35) {\tiny$\x$};
+\node at (0.5*\x-52.5,0.35) {\tiny\x};
 
 \draw[semithick,dashed,-stealth] (8.3,2.5) -- (10.2,2.5);
 
@@ -4390,19 +4390,19 @@ For example, a systematic sample of 15 pupils from a year group of 120 can be ma
 \subsection*{Stratified Sampling (Random)}\label{stratified-sampling-random}
 \addcontentsline{toc}{subsection}{Stratified Sampling (Random)}
 
-If a target population contains distinct \emph{strata}, where each stratum may have its own distinct characteristics, \emph{stratified sampling} ensures that each stratum will be \emph{proportionally represented}. In general, this involves obtaining an ordered sampling frame for \emph{each stratum} and using the proportion of each stratum in the population to determine how many to sample from each, using simple random sampling. Finally, these samples from the strata are combined.
+If a target population contains distinct \emph{strata}, where each stratum may have its own distinct characteristics, \emph{stratified sampling} ensures that each stratum is \emph{proportionally represented}. In general, this involves obtaining an ordered sampling frame for \emph{each stratum} and using the proportion of each stratum in the population to determine how many to sample from each, using simple random sampling. Finally, these samples from the strata are combined.
 
-For example, a hospital wishing to survey its staff about the food in the staff canteen may split the \(N=120\) staff into management, doctors/nurses and support staff. For a sample of size \(n=12\), covering \(\frac{1}{10}\text{th}\) of the sampling frame, simple random sampling is used to select \(\frac{1}{10}\) of the staff \emph{from each group}. These are then collected to form the stratified sample.
+For example, a hospital wishing to survey its staff about the food in the staff canteen may split the \(N=\text{120}\) staff into management, doctors/nurses and support staff. For a sample of size \(n=\text{12}\), covering \(\frac{\text{1}}{\text{10}}\)th of the sampling frame, simple random sampling is used to select \(\frac{\text{1}}{\text{10}}\) of the staff \emph{from each group}. These are then collected to form the stratified sample.
 
 \begin{center}
 \begin{tikzpicture}
 \draw[semithick,fill=black!10] (0,0) rectangle (8,5);
-\node at (4,5.3) {Stratified Sampling Frames, $N=120$};
+\node at (4,5.3) {Stratified Sampling Frames, $N=\text{120}$};
 \draw[semithick,fill=black!10] (12,2.5) ellipse (1 and 2);
-\node[above] at (12,4.5) {Sample, $n=12$};
-\node[left] at (0,4.35) {$30$};
-\node[left] at (0,2.5) {$60$};
-\node[left] at (0,0.75) {$30$};
+\node[above] at (12,4.5) {Sample, $n=\text{12}$};
+\node[left] at (0,4.35) {30};
+\node[left] at (0,2.5) {60};
+\node[left] at (0,0.75) {30};
 
 \draw[semithick] (0,3.75) -- (8,3.75);
 \draw[semithick] (0,1.35) -- (8,1.35);
@@ -4468,7 +4468,7 @@ For example, a hospital wishing to survey its staff about the food in the staff 
 
 
 \node[above] at (9.25,2.5) {\small{random}};
-\node[below] at (9.25,2.5) {\small{$\frac{1}{10}$ of each}};
+\node[below] at (9.25,2.5) {\small{$\frac{\text{1}}{\text{10}}$ of each}};
 
 
 \end{tikzpicture}
@@ -4634,7 +4634,7 @@ The following sampling methods are \emph{non-random}. Random sampling methods ar
 \subsection*{Convenience Sampling (Non-random)}\label{convenience-sampling-non-random}
 \addcontentsline{toc}{subsection}{Convenience Sampling (Non-random)}
 
-Taking a sample of a target population from an easily obtainable group, with no random process taking place, is called \emph{convenience sampling}. For example, a teacher wishes to investigate the heights of pupils in a particular year group and uses pupils within their class in that year group as the sample.
+Taking a sample of a target population from an easily obtainable group, without any random process taking place, is called \emph{convenience sampling}. For example, a teacher wishes to investigate the heights of pupils in a particular year group and uses pupils within their class in that year group as the sample.
 
 \vspace{-0.3cm}
 
@@ -4885,7 +4885,7 @@ Above all, the greatest concern for the purposes of statistical inference is whe
 \begin{enumerate}
   \item For each, state the sampling method that is being described.
   \begin{enumerate}
-  \item The population is made up of groups, each of which contains broadly similar characteristics to each other, and the population. One or more of these groups are randomly selected, and everyone in those selected groups are chosen to make up the sample.
+  \item The population is made up of groups, each of which contains broadly similar characteristics to each other, and the population. One or more of these groups are randomly selected, and everyone in those selected groups is chosen to make up the sample.
   \item It is recognised that the population contains a number of subgroups, each of which may have their own distinct characteristics. Individuals are randomly selected from each subgroup, such that the proportions of each subgroup in the sample match those proportions of the population.
   \item Once an initial random individual from the population has been selected, subsequent individuals are selected at regular intervals until a sample has been obtained.
   \item Individuals are selected from the population at random, with each having an equal chance of being selected.
@@ -4945,7 +4945,7 @@ Above all, the greatest concern for the purposes of statistical inference is whe
             \item Kitchen staff.
             \item Waiting and bar staff.
         \end{itemize}
-        Each of the restaurants contains a similar mix of the different types of staff.
+        Each of the restaurants contains a similar mix of staff types.
         \begin{enumerate}
             \item Describe how a one-stage cluster sample could be conducted.
             \item Suggest one advantage and one disadvantage of using this method, compared to using systematic sampling.

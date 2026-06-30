@@ -43,7 +43,7 @@ From both the table and the Venn diagram, it can be seen that, of the ten pupils
 
 $$\text{P}(\text{Art})=\dfrac{5}{10}=\dfrac{1}{2}$$
 
-Now suppose a pupil is chosen at random and they reveal that they are taking Biology. The probability that the pupil is also taking Art is no longer $\frac{1}{2}$, since only three of the seven pupils taking Biology are taking Art. The probability now being sought is the probability that they are taking Art *given that they are taking Biology*. This is called a *conditional probability*, and can be notated as:
+Now suppose a pupil is chosen at random and they reveal that they are taking Biology. The probability that the pupil is also taking Art is no longer $\frac{1}{2}$, since only three of the seven pupils taking Biology are taking Art. The probability now being sought is the probability that they are taking Art *given that they are taking Biology*. This is called a *conditional probability* and is written as:
 
 $$\text{P}(\text{Art | Biology})=\dfrac{3}{7}$$
 
@@ -58,7 +58,7 @@ Conditional probability is fundamental to many of the statistical analysis techn
 ## Conditional Probability from Tables and Diagrams
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A medical trial for drug treating a minor illness has patients given either the drug or a placebo, with a test after one month of treatment determining whether or not each patient has fully recovered.
+\textbf{Problem:} A medical trial for a drug treating a minor illness has patients given either the drug or a placebo, with a test after one month of treatment determining whether or not each patient has fully recovered.
 \begin{center}
     \begin{tabular}{| c|c c|} 
       \hline
@@ -281,7 +281,7 @@ $\text{P}(A | B)= \text{P}(A)$
 
 \vspace{-0.1cm}
 
-The probability a randomly selected card from a standard pack of playing cards being a Diamond is $\frac{1}{4}$. The probability the card is a Diamond *given that we discover the card picked is red*, notated as $\text{P}(\text{Diamond }|\text{ red})$, is $\frac{1}{2}$. Since knowing that the card is red changes the probability of it being a Diamond, the events are *not independent*.
+The probability of a randomly selected card from a standard pack of playing cards being a Diamond is $\frac{1}{4}$. The probability the card is a Diamond *given that we discover the card picked is red*, notated as $\text{P}(\text{Diamond }|\text{ red})$, is $\frac{1}{2}$. Since knowing that the card is red changes the probability of it being a Diamond, the events are *not independent*.
 
 \vspace{-0.1cm}
 
@@ -459,7 +459,7 @@ $\text{P}(\text{mutation}\cap \text{yellow}) = \text{P}(\text{mutation}) \times 
 
 In 1763 the Reverend Thomas Bayes, also a statistician, published *"An Essay towards solving a Problem in the Doctrine of Chances"*. In it, he stated a formula that has come to be known as *Bayes' Theorem*, which can be applied in a particular, specialised way to enable existing knowledge to be updated as new information is collected. In turn, this has resulted in an approach towards statistical inference that has been growing since the mid-20th century called *Bayesian statistics*, substantially made more feasible by modern computing power.
 
-Whilst knowledge of Bayes' Theorem is required in the Advanced Higher Statistics course, Bayesian *statistics* is *not* part of this course, and so will not be covered here. If you would like to find out more about Bayesian statistics, and whether it may be relevant to you in the future, it is recommended that you discuss this with your teacher at a later point in the course. University modules introducing Bayesian statistics are typically available as part of an undergraduate degree in Mathematics or Statistics.
+Although knowledge of Bayes' Theorem is required in the Advanced Higher Statistics course, Bayesian *statistics* is *not* part of this course, and so will not be covered here. If you would like to find out more about Bayesian statistics, and whether it may be relevant to you in the future, it is recommended that you discuss this with your teacher at a later point in the course. University modules introducing Bayesian statistics are typically available as part of an undergraduate degree in Mathematics or Statistics.
 
 Bayes' Theorem can be derived directly from the formulae already introduced in this chapter. Note that:
 
@@ -485,7 +485,7 @@ $\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(B|A)\times \text{P}(A)$}}}{\t
 \end{tcolorbox}
 \end{centering}
 
-Bayes' Theorem provides a link between a conditional probability and its *reverse*. Using it to find a conditional probability given its reverse is sometimes referred to as *reversing the condition*. 
+Bayes' Theorem provides a link between a conditional probability and its *reverse*. Using it to find a conditional probability from its reverse is sometimes referred to as *reversing the condition*. 
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given events $V$ and $W$ such that $\text{P}(V|W)=0.3$, $\text{P}(W)=0.8$ and $\text{P}(\overline{V})=0.1$, find $\text{P}(W|V)$.
@@ -714,7 +714,7 @@ The advantage of the use of tree diagrams, for questions where they are suitable
         \item The probability of failure for an alder tree is 0.234.
     \end{itemize}
     Calculate the probability that a tree randomly selected for observation survives.
-    \item The star striker for a football team has a probability of 0.7 of scoring in any given game. When they do, the probability that the team goes on to win is 0.8, whilst when they don't the probability of a win drops to 0.45. Calculate the probability that the team win a randomly chosen game.
+    \item The star striker for a football team has a probability of 0.7 of scoring in any given game. When they do, the probability that the team goes on to win is 0.8, whilst when they don't the probability of a win drops to 0.45. Calculate the probability that the team wins a randomly chosen game.
     \item When Betty hears a song on the radio:
     \begin{itemize}
         \item The probability that it is a song she knows is 0.8.
@@ -738,7 +738,7 @@ $$\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(A \cap B)$}}}{\text{\normals
 A key misunderstanding often made is that a high value for $\text{P}(B|A)$ must lead to a similarly high value for $\text{P}(A|B)$. The following example demonstrates that this is not always the case, and gives an insight into a common problem that must be considered whenever medical testing is being undertaken, especially for rare conditions or diseases:
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A medical test for a condition has a \textit{sensitivity} of 98\%, meaning that when the patient \textit{has the condition}, the test will correctly return a \textit{positive} result with a probability of 0.98. This means there is a \textit{false negative} rate of 2\%. The test has \textit{specificity} of 97\%, meaning that when the patient \textit{does not} have the condition, the test will correctly return a \textit{negative} result with a probability of 0.97. This means there is a \textit{false positive} rate of 3\%. The \textit{prevalence} in the general population is 4\%, meaning only 4\% of people have the condition. 
+\textbf{Problem:} A medical test for a condition has a \textit{sensitivity} of 98\%, meaning that when the patient \textit{has the condition}, the test will correctly return a \textit{positive} result with a probability of 0.98. This means there is a \textit{false negative} rate of 2\%. The test has a \textit{specificity} of 97\%, meaning that when the patient \textit{does not} have the condition, the test will correctly return a \textit{negative} result with a probability of 0.97. This means there is a \textit{false positive} rate of 3\%. The \textit{prevalence} in the general population is 4\%, meaning only 4\% of people have the condition. 
 
 \vspace{0.3cm}
 

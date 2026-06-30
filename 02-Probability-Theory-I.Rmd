@@ -1,8 +1,8 @@
 # An Introduction to Probability Theory
 
-The purpose of statistics is to make sense of the world by analysing data. Typically, however, it is only possible to obtain data from a random sample of the full population of interest, introducing uncertainty that must be accounted for. For this reason, developing an understanding of statistical analysis begins with learning about probability theory.
+The purpose of statistics is to make sense of the world by analysing data. In practice, however, it is only possible to obtain data from a random sample of the full population of interest, introducing uncertainty that must be accounted for. For this reason, developing an understanding of statistical analysis begins with learning about probability theory.
 
-People talk about *chance* regularly. For example, 'St Mirren are unlikely to win this weekend', or 'It is probably going to rain today'. However, neither of these comments seek to assign a numerical value to quantify those chances. In this chapter, probability as a *numerical measure* will be studied.
+People commonly talk about *chance* in everyday language. For example, 'St Mirren are unlikely to win this weekend', or 'It is probably going to rain today'. However, neither of these comments seek to assign a numerical value to quantify those chances. In this chapter, probability as a *numerical measure* will be studied.
 
 #### Key definitions {-}
 
@@ -47,7 +47,7 @@ $$\text{P}(\text{red light})\approx\frac{\text{114}}{\text{200}}=\text{0.57}$$
 
 #### Theoretical Probability {-}
 
-When each of the outcomes in the sample space of a random experiment can be reasonably assumed to be \mbox{\textbf{equally likely}}, then the probability of outcomes or events can be determined. This is called *theoretical probability*.
+When each outcome in the sample space can be reasonably assumed to be \mbox{\textbf{equally likely}}, then the probability of outcomes or events can be determined. This is called *theoretical probability*.
 
 Equally likely outcomes typically arise from the symmetry of a physical object (such as a coin or die) or a reasonable assumption. The probability of any *individual outcome* in a sample space containing $N$ equally likely outcomes is $\frac{\text{1}}{N}$. For example, if a playing card is picked at random from a standard pack of 52 cards, containing no jokers, then the probability of picking the Queen of Hearts is $\frac{\text{1}}{\text{52}}$.
 
@@ -172,7 +172,7 @@ In this textbook, probabilities will be given as fractions or *rounded to four d
      \hline
     \end{tabular}
     \end{center}
-    If member of staff working at the hospital is chosen at random, find the probability that they are:
+    If a member of staff working at the hospital is chosen at random, find the probability that they are:
     \begin{multicols}{3}
     \begin{enumerate}
         \item A nurse.
@@ -186,7 +186,7 @@ In this textbook, probabilities will be given as fractions or *rounded to four d
 
 ## Sample Spaces as Lists and Grids
 
-It can help to write out sample spaces. Some sample spaces can be easily described using a simple list, but more organisation may be needed for more complicated sample spaces, such as approaching the list in a structured manner or using a grid. Sample spaces are particularly useful when each outcome is equally likely, as this allows probabilities to be calculated directly by counting outcomes.. 
+It can help to write out sample spaces. Some sample spaces can be easily described using a simple list, but more organisation may be needed for more complicated sample spaces, such as approaching the list in a structured manner or using a grid. Sample spaces are particularly useful when each outcome is equally likely, as this allows probabilities to be calculated directly by counting outcomes.
 
 If two coins are tossed, it may be tempting to suggest that the probability of both landing tails is one-in-three, since the experiment can result in either no coins landing tails, only one coin landing tails or two coins landing tails. However a list of the four possible *equally likely* outcomes in the sample space shows that this is not the case:
 
