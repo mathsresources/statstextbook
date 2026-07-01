@@ -266,7 +266,7 @@ It is very difficult to identify that bias has been introduced, and equally diff
 
 ### Sampling Frames {-}
 
-Real-life sampling situations for any kind of study are likely to quickly reveal that it is not quite as straight-forward as *"just choosing at random"*. Several key elements must be identified and problems considered.
+Real-life sampling situations for any kind of study are likely to quickly reveal that it is not quite as straightforward as *"just choosing at random"*. Several key elements must be identified and problems considered.
 
 *For example, consider the context of wishing to use registration time one morning to survey a sample of pupils at a large secondary school for their views on the school cafeteria.*
 
@@ -287,48 +287,47 @@ The \textbf{target population} is the \textit{group being studied}.
 
 \textit{e.g. all of the pupils who attend a school}
 
-\vspace{0.3cm}
+\vspace{0.2cm}
 
-The \textbf{sampling frame} is the subset of the target population, of size $N$, from which a sample is actually drawn, typically in the form of a list (often ordered). 
+The \textbf{sampling frame} is the subset of the target population of size $N$ from which a sample is actually drawn, typically in the form of a list (often ordered). 
 
 \textit{e.g. a numbered list of the school roll}
 
-\vspace{0.3cm}
+\vspace{0.2cm}
+
+Sampling frames consist of \textbf{sampling units} which may be selected to form a sample. These may be people, buildings, square grids on a map, and so on. 
+
+\textit{e.g. those pupils listed on the school roll}
+
+\vspace{0.2cm}
 
 The \textbf{sample} consists of the subset of the sampling frame selected to be studied, with size $n$.
 
 \textit{e.g. those pupils selected to be surveyed}
 
-\vspace{0.3cm}
-
-\textbf{Sampling units}, which make up the sampling frame, may be individual people, buildings, measurements taken at different times, square grids on a map, and so on. 
-
 \end{multicols}
 
-The \textit{sampling method} is the way in which sampling units are selected from the sampling frame to create the sample.
+The \textbf{sampling method} is the way in which sampling units are selected from the sampling frame to create the sample. Sampling methods should feature a \textit{random process} to reduce potential bias.
 
-Care should be taken to ensure that sampling frames are representative of the target population. If the sampling frame does not fully represent the target population, some individuals will have no chance of being selected. For example, if walking habits are being studied, a sampling frame containing only residents of Glasgow city centre is unlikely to be *representative* of an intended target population of people living in Scotland.
+Care must be taken to ensure that sampling frames are representative of the target population. If the sampling frame does not fully represent the target population, some individuals will have no chance of being selected. For example, if walking habits are being studied, a sampling frame containing only residents of Glasgow city centre is unlikely to be *representative* of an intended target population of people living in Scotland.
 
-The impact to a study of an ill-defined target population, an unrepresentative sampling frame or a poor sampling technique is likely to be data which is *biased* and *not representative* of the population, and *unreliable conclusions*.
+The impact on a study of an ill-defined target population, an unrepresentative sampling frame or a poor sampling technique is likely to lead to data which is *biased* and *not representative* of the population, and to *unreliable conclusions*.
 
 []{#ex31q}
 
 #### [Exercise 3.1](#ex31a) {-}
 
 \begin{enumerate}
-    \item A researcher wants to study the shopping habits of those who use his local supermarket. To collect data, he plans to stand at the exit of the self-checkout area one Sunday morning and ask shoppers if he can take a photo of their receipt. Since he will not have time to ask everyone, he will pick only those he feels are most likely to agree to this.
+    \item A maths teacher conducts a survey of pupils' confidence in the subject by asking the first twenty pupils who enter the maths corridor at the start of first period. Suggest one issue with the \textbf{sampling frame} and one issue with the \textbf{sampling method}.
+    \item A researcher wants to study the shopping habits of those who use his local supermarket. To collect data, he plans to stand at the exit of the self-checkout area one Sunday morning and ask shoppers if he can take a photo of their receipt. To save time, he will pick only those he feels are most likely to agree to this.
     \begin{enumerate}
-        \item Identify:
-        \begin{enumerate}
-            \item The target population.
-            \item The sampling frame.
-        \end{enumerate}
-        \item Suggest two problems with the sampling frame chosen, and explain the impact this may have on their data.
-        \item Comment on the suitability of the sampling method the researcher plans to use.
+        \item Identify: \qquad (i) The target population. \qquad (ii) The sampling frame.
+        \item Suggest two problems with the \textbf{sampling frame}, and explain the impact this may have on their data.
+        \item Comment on the suitability of the \textbf{sampling method} the researcher plans to use.
     \end{enumerate}
     \item A large field is full of many wildflowers. A botanist wishes to conduct a survey to assess the health and variety of species of the wildflowers. A random number generator will be used to help obtain a sample.
     \begin{enumerate}
-        \item Identify one problem with a proposal to use individual flowers as sampling units, to make up a numbered sampling frame from which to draw a sample.
+        \item Identify one problem with a proposal to use individual flowers as sampling units.
         \item Suggest an alternative sampling unit for the botanist to use instead.
         \item Explain the purpose of a random number generator in producing a sample.
     \end{enumerate}

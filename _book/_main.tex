@@ -1537,25 +1537,25 @@ The mean (\emph{`add up all the values then divide by how many there are'}) is w
 
 If data for an entire \emph{population} of values \(x_\text{1}, x_\text{2}, \dots, x_N\) were available, where \(N\) is the population size, then the \textbf{population mean} (\(\mu\)) could be calculated. This can be expressed concisely using summation notation, \(\sum\) (``Sigma''), where \(\sum x_i\) denotes the sum of all values from \(x_\text{1}\) to \(x_N\).
 
-\[\mu=\frac{x_\text{1}+x_\text{2}+\dots +x_N}{N}= \frac{\sum x_i}{N} \quad \text{or, abbreviated} \quad \mu=\frac{\sum x_i}{N}\]
+\[\mu=\frac{x_\text{1}+x_\text{2}+\dots +x_N}{N}= \frac{\sum x_i}{N}\]
 
 Since in practice a population is rarely available, instead it is common to calculate the \textbf{sample mean} (\(\bar{x}\)), using a sample of data from a population. Given a sample of data \(x_\text{1}, x_\text{2}, \dots, x_n\), where \(n\) is the sample size, the sample mean can be calculated as, in its most commonly used form:
 
-\[\bar{x}=\frac{\sum x}{n}\]
+\[\bar{x}=\frac{\sum x_i}{n}\]
 
 The sample mean is an \emph{unbiased estimator} of the population mean, meaning that, on average, it gives the correct value across repeated sampling.
 
 Similarly, if data for an entire \emph{population} of values \(x_\text{1}, x_\text{2}, \dots, x_N\) were available, then the \textbf{population variance} (\(\sigma^\text{2}\)) could be obtained. More useful for its mathematical properties than as a value to \emph{interpret}, it is the \emph{mean of the squared differences} between each value \(x_i\) and the population mean, \(\mu\). Its units are the \emph{square} of the units of the original data, and so for data measured in grams, units of variance are (somewhat unintuitively) \(\text{grams}^\text{2}\). It can be calculated, again using an abbreviated form of summation, as:
 
-\[\sigma^\text{2}=\frac{\sum \left(x - \mu\right)^\text{2}}{N}\]
+\[\sigma^\text{2}=\frac{\sum \left(x_i - \mu\right)^\text{2}}{N}\]
 
-Replicating the same formula using sample data gives a \emph{biased} estimate for variance. This is because the formula requires the population mean \(\mu\) be replaced with the \emph{sample mean} \(\bar{x}\) as its estimate, which will tend to minimize the sum of square deviations and so tend to lead to an \emph{underestimate} of the true population variance. \emph{Bessel's correction} is therefore used to produce a formula for the \textbf{sample variance} (\(s^\text{2}\)), which is an \emph{unbiased} estimator for the population variance. The below two forms are equivalent.
+Replicating the same formula using sample data gives a \emph{biased} estimate for variance. This is because the formula requires the population mean \(\mu\) be replaced with the \emph{sample mean} \(\bar{x}\) as its estimate, which will tend to minimize the sum of square deviations and so tend to lead to an \emph{underestimate} of the true population variance. \emph{Bessel's correction} is used to produce a formula for the \textbf{sample variance} (\(s^\text{2}\)), which is an \emph{unbiased} estimator for the population variance, taking a denominator of \(n-\text{1}\). The below two forms are equivalent.
 
-\[s^\text{2}=\frac{\sum \left(x - \bar{x}\right)^\text{2}}{n-\text{1}} \quad \text{or} \quad s^\text{2}=\frac{\sum x^\text{2} - \frac{\left(\sum x\right)^\text{2}}{n}}{n-\text{1}}\]
+\[s^\text{2}=\frac{\sum \left(x_i - \bar{x}\right)^\text{2}}{n-\text{1}} \quad \text{or} \quad s^\text{2}=\frac{\sum x_i^\text{2} - \frac{\left(\sum x_i\right)^\text{2}}{n}}{n-\text{1}}\]
 
 The \emph{standard deviation} is the \emph{square root} of the variance, which brings the units it takes back to match those of the original data (e.g.~grams). The formula for the \textbf{sample standard deviation} (\(s\)) appears on \textbf{page 4} of the Data Booklet. It is given in terms of the \emph{sum of squares for} \(x\), notated as \(S_{xx}\), which is the numerator of the right-hand formula above. A formula for the sample standard deviation is therefore:
 
-\[s=\sqrt{\dfrac{S_{xx}}{n-1}}\quad\text{ where }\quad S_{xx}=\sum x^\text{2}-\dfrac{(\sum x)^\text{2}}{n}\]
+\[s=\sqrt{\dfrac{S_{xx}}{n-1}}\quad\text{ where }\quad S_{xx}=\sum x_i^\text{2}-\dfrac{(\sum x_i)^\text{2}}{n}\]
 
 In practice, only the \emph{sample mean} and \emph{sample standard deviation} (and sample variance) will need to be calculated in this course, and both can be performed by a graphical calculator directly from a sample of values with no need for manual calculation. However, an insight into their formulae is essential in particular for anyone who wishes to take statistics further beyond this course.
 
@@ -1563,7 +1563,7 @@ In practice, only the \emph{sample mean} and \emph{sample standard deviation} (a
 
 For example, calculating the mean and standard deviation sample data set: 4, 6, 7, 9, 10
 
-\[\sum x^\text{2} = \text{282},\; \sum x = \text{36},\; n=\text{5} \qquad \bar{x}=\frac{36}{5}=\text{7.2} \qquad s=\sqrt{\frac{\text{282}-\frac{\text{36}^\text{2}}{\text{5}}}{\text{4}}}=\text{2.387}\text{ (to 3dp)}\]
+\[\sum x_i^\text{2} = \text{282},\; \sum x_i = \text{36},\; n=\text{5} \qquad \bar{x}=\frac{36}{5}=\text{7.2} \qquad s=\sqrt{\frac{\text{282}-\frac{\text{36}^\text{2}}{\text{5}}}{\text{4}}}=\text{2.387}\text{ (to 3dp)}\]
 
 \protect\phantomsection\label{ex15q}{}
 
@@ -1571,7 +1571,7 @@ For example, calculating the mean and standard deviation sample data set: 4, 6, 
 \addcontentsline{toc}{subsubsection}{{Exercise 1.5}}
 
 \begin{enumerate}
-    \item Summary statistics from sample data are given below. Use appropriate formulae to calculate the mean and standard deviation for each sample.
+    \item Summary statistics from sample data are given below. Use appropriate formulae to calculate the mean and standard deviation for each sample. Note that summations such as $\sum x_i$ are often simplified to $\sum x$.
     \begin{enumerate}
     \begin{multicols}{2}
         \item $\sum{x}=\text{359}$,\; $\sum{x^{\text{2}}}=\text{15119}$,\; $n=\text{10}$
@@ -2179,38 +2179,38 @@ As well as considering whether the \textbf{underlying population distribution} o
 
 \begin{figure}[H]
   \centering
-\begin{minipage}{.5\textwidth}
+\begin{minipage}{.33\textwidth}
   \centering
-\begin{tikzpicture}
+\begin{tikzpicture}[xscale=0.6]
 \node at (-0.5,2.5) {\text{1.}};
 \draw (-0.5,0) -- (6.5,0);
 \draw[fill=black!25] (0,0) rectangle (0.25,0);
 \draw[fill=black!25] (0.25,0) rectangle (0.5,0.1);
 \draw[fill=black!25] (0.5,0) rectangle (0.75,0.7);
 \draw[fill=black!25] (0.75,0) rectangle (1,1.6);
-\draw[fill=black!25] (1,0) rectangle (1.25,2);
-\draw[fill=black!25] (1.25,0) rectangle (1.5,2.1);
+\draw[fill=black!25] (1,0) rectangle (1.25,2.1);
+\draw[fill=black!25] (1.25,0) rectangle (1.5,2);
 \draw[fill=black!25] (1.5,0) rectangle (1.75,2.2);
 \draw[fill=black!25] (1.75,0) rectangle (2,2.4);
 \draw[fill=black!25] (2,0) rectangle (2.25,2.4);
 \draw[fill=black!25] (2.25,0) rectangle (2.5,2.3);
 \draw[fill=black!25] (2.5,0) rectangle (2.75,2.1);
 \draw[fill=black!25] (2.75,0) rectangle (3,1.6);
-\draw[fill=black!25] (3,0) rectangle (3.25,1.3);
-\draw[fill=black!25] (3.25,0) rectangle (3.5,1.1);
+\draw[fill=black!25] (3,0) rectangle (3.25,1.1);
+\draw[fill=black!25] (3.25,0) rectangle (3.5,1.2);
 \draw[fill=black!25] (3.5,0) rectangle (3.75,0.9);
 \draw[fill=black!25] (3.75,0) rectangle (4,0.8);
-\draw[fill=black!25] (4,0) rectangle (4.25,0.7);
+\draw[fill=black!25] (4,0) rectangle (4.25,0.8);
 \draw[fill=black!25] (4.25,0) rectangle (4.5,0.6);
-\draw[fill=black!25] (4.5,0) rectangle (4.75,0.4);
-\draw[fill=black!25] (4.75,0) rectangle (5,0.4);
+\draw[fill=black!25] (4.5,0) rectangle (4.75,0.2);
+\draw[fill=black!25] (4.75,0) rectangle (5,0.6);
 \draw[fill=black!25] (5,0) rectangle (5.25,0.3);
 \draw[fill=black!25] (5.25,0) rectangle (5.5,0.2);
-\draw[fill=black!25] (5.5,0) rectangle (5.75,0.2);
+\draw[fill=black!25] (5.5,0) rectangle (5.75,0.3);
 \draw[fill=black!25] (5.75,0) rectangle (6,0.1);
 \node at (3,-0.5) {Hazelnut mass (grams)};
 
-\node at (-0.5,-1.5) {\text{3.}};
+\node at (-0.5,-1.5) {\text{4.}};
 \draw (-0.5,-4) -- (6.5,0-4);
 \draw[fill=black!25] (0,0-4) rectangle (0.25,1.4-4);
 \draw[fill=black!25] (0.25,0-4) rectangle (0.5,1.5-4);
@@ -2222,7 +2222,7 @@ As well as considering whether the \textbf{underlying population distribution} o
 \draw[fill=black!25] (1.75,0-4) rectangle (2,1.6-4);
 \draw[fill=black!25] (2,0-4) rectangle (2.25,2-4);
 \draw[fill=black!25] (2.25,0-4) rectangle (2.5,1.5-4);
-\draw[fill=black!25] (2.5,0-4) rectangle (2.75,1-4);
+\draw[fill=black!25] (2.5,0-4) rectangle (2.75,1.4-4);
 \draw[fill=black!25] (2.75,0-4) rectangle (3,1.8-4);
 \draw[fill=black!25] (3,0-4) rectangle (3.25,1.7-4);
 \draw[fill=black!25] (3.25,0-4) rectangle (3.5,1.7-4);
@@ -2231,7 +2231,7 @@ As well as considering whether the \textbf{underlying population distribution} o
 \draw[fill=black!25] (4,0-4) rectangle (4.25,1.7-4);
 \draw[fill=black!25] (4.25,0-4) rectangle (4.5,1.1-4);
 \draw[fill=black!25] (4.5,0-4) rectangle (4.75,1.6-4);
-\draw[fill=black!25] (4.75,0-4) rectangle (5,1-4);
+\draw[fill=black!25] (4.75,0-4) rectangle (5,1.4-4);
 \draw[fill=black!25] (5,0-4) rectangle (5.25,1.7-4);
 \draw[fill=black!25] (5.25,0-4) rectangle (5.5,2-4);
 \draw[fill=black!25] (5.5,0-4) rectangle (5.75,1.6-4);
@@ -2241,18 +2241,18 @@ As well as considering whether the \textbf{underlying population distribution} o
 
 \end{minipage}%
   \centering
-\begin{minipage}{.5\textwidth}
+\begin{minipage}{.33\textwidth}
   \centering
 
-\begin{tikzpicture}
+\begin{tikzpicture}[xscale=0.6]
 \node at (-0.5,2.5) {\text{2.}};
 \draw (-0.5,0) -- (6.5,0);
 \draw[fill=black!25] (0,0) rectangle (0.25,0);
 \draw[fill=black!25] (0.25,0) rectangle (0.5,0.2);
-\draw[fill=black!25] (0.5,0) rectangle (0.75,0.6);
+\draw[fill=black!25] (0.5,0) rectangle (0.75,0.4);
 \draw[fill=black!25] (0.75,0) rectangle (1,0.2);
 \draw[fill=black!25] (1,0) rectangle (1.25,1);
-\draw[fill=black!25] (1.25,0) rectangle (1.5,1.1);
+\draw[fill=black!25] (1.25,0) rectangle (1.5,0.9);
 \draw[fill=black!25] (1.5,0) rectangle (1.75,0.8);
 \draw[fill=black!25] (1.75,0) rectangle (2,1.5);
 \draw[fill=black!25] (2,0) rectangle (2.25,1.9);
@@ -2260,20 +2260,83 @@ As well as considering whether the \textbf{underlying population distribution} o
 \draw[fill=black!25] (2.5,0) rectangle (2.75,2.3);
 \draw[fill=black!25] (2.75,0) rectangle (3,2.1);
 \draw[fill=black!25] (3,0) rectangle (3.25,2.2);
-\draw[fill=black!25] (3.25,0) rectangle (3.5,1.6);
+\draw[fill=black!25] (3.25,0) rectangle (3.5,1.8);
 \draw[fill=black!25] (3.5,0) rectangle (3.75,1);
 \draw[fill=black!25] (3.75,0) rectangle (4,1.4);
 \draw[fill=black!25] (4,0) rectangle (4.25,1.2);
 \draw[fill=black!25] (4.25,0) rectangle (4.5,0.8);
-\draw[fill=black!25] (4.5,0) rectangle (4.75,0.5);
-\draw[fill=black!25] (4.75,0) rectangle (5,0.7);
-\draw[fill=black!25] (5,0) rectangle (5.25,0.3);
-\draw[fill=black!25] (5.25,0) rectangle (5.5,0.1);
+\draw[fill=black!25] (4.5,0) rectangle (4.75,0.6);
+\draw[fill=black!25] (4.75,0) rectangle (5,0.5);
+\draw[fill=black!25] (5,0) rectangle (5.25,0.2);
+\draw[fill=black!25] (5.25,0) rectangle (5.5,0.3);
 \draw[fill=black!25] (5.5,0) rectangle (5.75,0);
 \draw[fill=black!25] (5.75,0) rectangle (6,0.1);
 \node at (3,-0.5) {Tree height (metres)};
 
-\node at (-0.5,-1.5) {\text{4.}};
+\node at (-0.5,-1.5) {\text{5.}};
+\draw (-0.5,-4) -- (6.5,0-4);
+\draw[fill=black!25] (0,0-4) rectangle (0.25,0.1-4);
+\draw[fill=black!25] (0.25,0-4) rectangle (0.5,0.4-4);
+\draw[fill=black!25] (0.5,0-4) rectangle (0.75,0.9-4);
+\draw[fill=black!25] (0.75,0-4) rectangle (1,1.6-4);
+\draw[fill=black!25] (1,0-4) rectangle (1.25,2.3-4);
+\draw[fill=black!25] (1.25,0-4) rectangle (1.5,2.1-4);
+\draw[fill=black!25] (1.5,0-4) rectangle (1.75,2.2-4);
+\draw[fill=black!25] (1.75,0-4) rectangle (2,1.8-4);
+\draw[fill=black!25] (2,0-4) rectangle (2.25,1.6-4);
+\draw[fill=black!25] (2.25,0-4) rectangle (2.5,1.8-4);
+\draw[fill=black!25] (2.5,0-4) rectangle (2.75,1.1-4);
+\draw[fill=black!25] (2.75,0-4) rectangle (3,0.7-4);
+\draw[fill=black!25] (3,0-4) rectangle (3.25,0.8-4);
+\draw[fill=black!25] (3.25,0-4) rectangle (3.5,0.6-4);
+\draw[fill=black!25] (3.5,0-4) rectangle (3.75,0.4-4);
+\draw[fill=black!25] (3.75,0-4) rectangle (4,0.1-4);
+\draw[fill=black!25] (4,0-4) rectangle (4.25,0.4-4);
+\draw[fill=black!25] (4.25,0-4) rectangle (4.5,0.3-4);
+\draw[fill=black!25] (4.5,0-4) rectangle (4.75,0.9-4);
+\draw[fill=black!25] (4.75,0-4) rectangle (5,1.7-4);
+\draw[fill=black!25] (5,0-4) rectangle (5.25,1.8-4);
+\draw[fill=black!25] (5.25,0-4) rectangle (5.5,1.2-4);
+\draw[fill=black!25] (5.5,0-4) rectangle (5.75,0.6-4);
+\draw[fill=black!25] (5.75,0-4) rectangle (6,0.1-4);
+\node at (3,-0.5-4) {Number of successful passes};
+\end{tikzpicture}
+
+\end{minipage}%
+  \centering
+\begin{minipage}{.33\textwidth}
+  \centering
+
+\begin{tikzpicture}[xscale=0.6]
+\node at (-0.5,2.5) {\text{3.}};
+\draw (-0.5,0) -- (6.5,0);
+\draw[fill=black!25] (0,0) rectangle (0.25,0.1);
+\draw[fill=black!25] (0.25,0) rectangle (0.5,0);
+\draw[fill=black!25] (0.5,0) rectangle (0.75,0.1);
+\draw[fill=black!25] (0.75,0) rectangle (1,0.3);
+\draw[fill=black!25] (1,0) rectangle (1.25,0.2);
+\draw[fill=black!25] (1.25,0) rectangle (1.5,0);
+\draw[fill=black!25] (1.5,0) rectangle (1.75,0.3);
+\draw[fill=black!25] (1.75,0) rectangle (2,0.3);
+\draw[fill=black!25] (2,0) rectangle (2.25,0.4);
+\draw[fill=black!25] (2.25,0) rectangle (2.5,0.4);
+\draw[fill=black!25] (2.5,0) rectangle (2.75,0.3);
+\draw[fill=black!25] (2.75,0) rectangle (3,0.6);
+\draw[fill=black!25] (3,0) rectangle (3.25,0.7);
+\draw[fill=black!25] (3.25,0) rectangle (3.5,1.1);
+\draw[fill=black!25] (3.5,0) rectangle (3.75,1.9);
+\draw[fill=black!25] (3.75,0) rectangle (4,1.7);
+\draw[fill=black!25] (4,0) rectangle (4.25,2);
+\draw[fill=black!25] (4.25,0) rectangle (4.5,2.3);
+\draw[fill=black!25] (4.5,0) rectangle (4.75,1.8);
+\draw[fill=black!25] (4.75,0) rectangle (5,1.5);
+\draw[fill=black!25] (5,0) rectangle (5.25,0.7);
+\draw[fill=black!25] (5.25,0) rectangle (5.5,0.9);
+\draw[fill=black!25] (5.5,0) rectangle (5.75,0.5);
+\draw[fill=black!25] (5.75,0) rectangle (6,0.1);
+\node at (3,-0.5) {Number of patients};
+
+\node at (-0.5,-1.5) {\text{6.}};
 \draw (-0.5,-4) -- (6.5,0-4);
 \draw[fill=black!25] (0,0-4) rectangle (0.25,0-4);
 \draw[fill=black!25] (0.25,0-4) rectangle (0.5,0.4-4);
@@ -2299,7 +2362,7 @@ As well as considering whether the \textbf{underlying population distribution} o
 \draw[fill=black!25] (5.25,0-4) rectangle (5.5,1.4-4);
 \draw[fill=black!25] (5.5,0-4) rectangle (5.75,0.6-4);
 \draw[fill=black!25] (5.75,0-4) rectangle (6,0.2-4);
-\node at (3,-0.5-4) {Number of successful passes};
+\node at (3,-0.5-4) {Distance to city centre (km)};
 \end{tikzpicture}
 
 \end{minipage}
@@ -3896,7 +3959,7 @@ It is very difficult to identify that bias has been introduced, and equally diff
 \subsection*{Sampling Frames}\label{sampling-frames}
 \addcontentsline{toc}{subsection}{Sampling Frames}
 
-Real-life sampling situations for any kind of study are likely to quickly reveal that it is not quite as straight-forward as \emph{``just choosing at random''}. Several key elements must be identified and problems considered.
+Real-life sampling situations for any kind of study are likely to quickly reveal that it is not quite as straightforward as \emph{``just choosing at random''}. Several key elements must be identified and problems considered.
 
 \emph{For example, consider the context of wishing to use registration time one morning to survey a sample of pupils at a large secondary school for their views on the school cafeteria.}
 
@@ -3917,29 +3980,31 @@ The \textbf{target population} is the \textit{group being studied}.
 
 \textit{e.g. all of the pupils who attend a school}
 
-\vspace{0.3cm}
+\vspace{0.2cm}
 
-The \textbf{sampling frame} is the subset of the target population, of size $N$, from which a sample is actually drawn, typically in the form of a list (often ordered). 
+The \textbf{sampling frame} is the subset of the target population of size $N$ from which a sample is actually drawn, typically in the form of a list (often ordered). 
 
 \textit{e.g. a numbered list of the school roll}
 
-\vspace{0.3cm}
+\vspace{0.2cm}
+
+Sampling frames consist of \textbf{sampling units} which may be selected to form a sample. These may be people, buildings, square grids on a map, and so on. 
+
+\textit{e.g. those pupils listed on the school roll}
+
+\vspace{0.2cm}
 
 The \textbf{sample} consists of the subset of the sampling frame selected to be studied, with size $n$.
 
 \textit{e.g. those pupils selected to be surveyed}
 
-\vspace{0.3cm}
-
-\textbf{Sampling units}, which make up the sampling frame, may be individual people, buildings, measurements taken at different times, square grids on a map, and so on. 
-
 \end{multicols}
 
-The \textit{sampling method} is the way in which sampling units are selected from the sampling frame to create the sample.
+The \textbf{sampling method} is the way in which sampling units are selected from the sampling frame to create the sample. Sampling methods should feature a \textit{random process} to reduce potential bias.
 
-Care should be taken to ensure that sampling frames are representative of the target population. If the sampling frame does not fully represent the target population, some individuals will have no chance of being selected. For example, if walking habits are being studied, a sampling frame containing only residents of Glasgow city centre is unlikely to be \emph{representative} of an intended target population of people living in Scotland.
+Care must be taken to ensure that sampling frames are representative of the target population. If the sampling frame does not fully represent the target population, some individuals will have no chance of being selected. For example, if walking habits are being studied, a sampling frame containing only residents of Glasgow city centre is unlikely to be \emph{representative} of an intended target population of people living in Scotland.
 
-The impact to a study of an ill-defined target population, an unrepresentative sampling frame or a poor sampling technique is likely to be data which is \emph{biased} and \emph{not representative} of the population, and \emph{unreliable conclusions}.
+The impact on a study of an ill-defined target population, an unrepresentative sampling frame or a poor sampling technique is likely to lead to data which is \emph{biased} and \emph{not representative} of the population, and to \emph{unreliable conclusions}.
 
 \protect\phantomsection\label{ex31q}{}
 
@@ -3947,19 +4012,16 @@ The impact to a study of an ill-defined target population, an unrepresentative s
 \addcontentsline{toc}{subsubsection}{{Exercise 3.1}}
 
 \begin{enumerate}
-    \item A researcher wants to study the shopping habits of those who use his local supermarket. To collect data, he plans to stand at the exit of the self-checkout area one Sunday morning and ask shoppers if he can take a photo of their receipt. Since he will not have time to ask everyone, he will pick only those he feels are most likely to agree to this.
+    \item A maths teacher conducts a survey of pupils' confidence in the subject by asking the first twenty pupils who enter the maths corridor at the start of first period. Suggest one issue with the \textbf{sampling frame} and one issue with the \textbf{sampling method}.
+    \item A researcher wants to study the shopping habits of those who use his local supermarket. To collect data, he plans to stand at the exit of the self-checkout area one Sunday morning and ask shoppers if he can take a photo of their receipt. To save time, he will pick only those he feels are most likely to agree to this.
     \begin{enumerate}
-        \item Identify:
-        \begin{enumerate}
-            \item The target population.
-            \item The sampling frame.
-        \end{enumerate}
-        \item Suggest two problems with the sampling frame chosen, and explain the impact this may have on their data.
-        \item Comment on the suitability of the sampling method the researcher plans to use.
+        \item Identify: \qquad (i) The target population. \qquad (ii) The sampling frame.
+        \item Suggest two problems with the \textbf{sampling frame}, and explain the impact this may have on their data.
+        \item Comment on the suitability of the \textbf{sampling method} the researcher plans to use.
     \end{enumerate}
     \item A large field is full of many wildflowers. A botanist wishes to conduct a survey to assess the health and variety of species of the wildflowers. A random number generator will be used to help obtain a sample.
     \begin{enumerate}
-        \item Identify one problem with a proposal to use individual flowers as sampling units, to make up a numbered sampling frame from which to draw a sample.
+        \item Identify one problem with a proposal to use individual flowers as sampling units.
         \item Suggest an alternative sampling unit for the botanist to use instead.
         \item Explain the purpose of a random number generator in producing a sample.
     \end{enumerate}
@@ -5014,17 +5076,17 @@ Suppose ten pupils in a class are asked whether they are taking Art, and whether
 \end{minipage}
 \end{figure}
 
-From both the table and the Venn diagram, it can be seen that, of the ten pupils, five are taking Art. Therefore, the probability of randomly selecting a pupil from the class and that pupil turning out to be taking Art can be stated:
+From both the table and the Venn diagram, it can be seen that, of the ten pupils, five are taking Art. Therefore, the probability of randomly selecting a pupil from the class and that pupil being found to be taking Art can be stated:
 
-\[\text{P}(\text{Art})=\dfrac{5}{10}=\dfrac{1}{2}\]
+\[\text{P}(\text{Art})=\dfrac{\text{5}}{\text{10}}=\dfrac{\text{1}}{\text{2}}\]
 
-Now suppose a pupil is chosen at random and they reveal that they are taking Biology. The probability that the pupil is also taking Art is no longer \(\frac{1}{2}\), since only three of the seven pupils taking Biology are taking Art. The probability now being sought is the probability that they are taking Art \emph{given that they are taking Biology}. This is called a \emph{conditional probability}, and can be notated as:
+Now suppose a pupil is chosen at random and they reveal that they are taking Biology. The probability that the pupil is also taking Art is no longer \(\frac{1}{2}\), since only three of the seven pupils taking Biology are taking Art. The probability now being sought is the probability that a pupil is taking Art \emph{given that they are taking Biology}. This is called a \emph{conditional probability} and is written as:
 
-\[\text{P}(\text{Art | Biology})=\dfrac{3}{7}\]
+\[\text{P}(\text{Art | Biology})=\dfrac{\text{3}}{\text{7}}\]
 
 \[\textit{``The probability of Art given Biology...''}\]
 
-Conditional probability is fundamental to many of the statistical analysis techniques that will be introduced.
+Conditional probability is fundamental to many statistical analysis techniques introduced later in the course.
 
 \vspace{1cm}
 
@@ -5033,7 +5095,7 @@ Conditional probability is fundamental to many of the statistical analysis techn
 \section{Conditional Probability from Tables and Diagrams}\label{conditional-probability-from-tables-and-diagrams}
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A medical trial for drug treating a minor illness has patients given either the drug or a placebo, with a test after one month of treatment determining whether or not each patient has fully recovered.
+\textbf{Problem:} A medical trial for a drug treating a minor illness has patients given either the drug or a placebo, with a test after one month of treatment determining whether or not each patient has fully recovered.
 \begin{center}
     \begin{tabular}{| c|c c|} 
       \hline
@@ -5048,7 +5110,7 @@ A patient is selected at random to be interviewed. State $\text{P}(\text{fully r
 
 \tcblower
 \textbf{Solution:}
-$\text{P}(\text{fully recovered }|\text{ placebo})=\dfrac{18}{30}=\dfrac{3}{5}$
+$\text{P}(\text{fully recovered }|\text{ placebo})=\dfrac{\text{18}}{\text{30}}=\dfrac{\text{3}}{\text{5}}$
 \end{tcolorbox}
 
 \protect\phantomsection\label{ex41q}{}
@@ -5204,14 +5266,14 @@ $\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(A \cap B)$}}}{\text{\normalsi
 \end{tcolorbox}
 \end{centering}
 
-Similarly, the complement rule applies under conditioning: \(\text{P}(\overline{A}|B)=1-\text{P}(A|B)\).
+Similarly, the complement rule applies under conditioning: \(\text{P}(\overline{A}|B)=\text{1}-\text{P}(A|B)\).
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Given events $V$ and $W$ such that $\text{P}(V)=0.7236$ and $\text{P}(V\cap W)=0.1046$, find $\text{P}(W | V)$. 
+\textbf{Problem:} Given events $V$ and $W$ such that $\text{P}(V)=\text{0.7236}$ and $\text{P}(V\cap W)=\text{0.1046}$, find $\text{P}(W | V)$. 
 
 \tcblower
 \textbf{Solution:}
-$\text{P}(W | V) = \dfrac{\text{P}(W\cap V)}{\text{P}(V)}=\dfrac{0.1046}{0.7236}=0.1446$
+$\text{P}(W | V) = \dfrac{\text{P}(W\cap V)}{\text{P}(V)}=\dfrac{\text{0.1046}}{\text{0.7236}}=\text{0.1446}$
 \end{tcolorbox}
 
 \protect\phantomsection\label{ex42q}{}
@@ -5222,10 +5284,10 @@ $\text{P}(W | V) = \dfrac{\text{P}(W\cap V)}{\text{P}(V)}=\dfrac{0.1046}{0.7236}
 \begin{enumerate}
     \item Find, by first writing out the conditional probability formula for these events:
     \begin{enumerate}
-        \item $\text{P}(A|B)$ given $\text{P}(B)=0.8$ and $\text{P}(A\cap B)=0.16$.
-        \item $\text{P}(\text{red }|\text{ blue})$ given $\text{P}(\text{red}\cap \text{blue})=0.1526$, $\text{P}(\text{blue})=0.3147$ and $\text{P}(\text{red})=0.2142$.
-        \item $\text{P}(X|Y)$ given $\text{P}(Y)=\frac{1}{2}$ and $\text{P}(Y\cap X)=\frac{1}{3}$.
-        \item $\text{P}(M|N)$ given $\text{P}(\overline{N})=0.6137$, $\text{P}(N\cap M)=0.1249$ and $\text{P}(M\cup N)=0.4511$.
+        \item $\text{P}(A|B)$ given $\text{P}(B)=\text{0.8}$ and $\text{P}(A\cap B)=\text{0.16}$.
+        \item $\text{P}(\text{red }|\text{ blue})$ given $\text{P}(\text{red}\cap \text{blue})=\text{0.1526}$, $\text{P}(\text{blue})=\text{0.3147}$ and $\text{P}(\text{red})=\text{0.2142}$.
+        \item $\text{P}(X|Y)$ given $\text{P}(Y)=\frac{\text{1}}{\text{2}}$ and $\text{P}(Y\cap X)=\frac{\text{1}}{\text{3}}$.
+        \item $\text{P}(M|N)$ given $\text{P}(\overline{N})=\text{0.6137}$, $\text{P}(N\cap M)=\text{0.1249}$ and $\text{P}(M\cup N)=\text{0.4511}$.
         \item Using (a) to (d), state:
         \begin{enumerate}
             \begin{multicols}{4}
@@ -5236,18 +5298,18 @@ $\text{P}(W | V) = \dfrac{\text{P}(W\cap V)}{\text{P}(V)}=\dfrac{0.1046}{0.7236}
             \end{multicols}
         \end{enumerate}
     \end{enumerate}
-    \item Given events $V$ and $W$ such that $\text{P}(V\cap W)=0.28$ and $\text{P}(W)=0.4$, find $\text{P}(\overline{V}|W)$.
+    \item Given events $V$ and $W$ such that $\text{P}(V\cap W)=\text{0.28}$ and $\text{P}(W)=\text{0.4}$, find $\text{P}(\overline{V}|W)$.
     \item Numbered cards of different colours are selected at random from a pack during a game such that the probability of a selected card being \textit{yellow} is 20\%, and the probability of it being \textit{yellow and a five} is 4\%. Find the probability that a selected card is a five \textit{given that it is a yellow}.
-    \item A football team knows from looking at their past results that they concede at least two goals in $\frac{2}{5}$ of all games. In $\frac{1}{4}$ of all of their games they concede at least two goals and lose the game. Find the probability that, given that they concede at least two goals in a game, they lose.
-    \item Given events $M$ and $N$ such that $\text{P}(M)=0.6$, $\text{P}(N)=0.4$ and $\text{P}(M\cup N)=0.9$, find $\text{P}(M|N)$.
-    \item For events $V$ and $W$, $\text{P}(V)=0.6$, $\text{P}(V|W)=0.8$ and $\text{P}(V\cap W)=0.5$. Calculate $\text{P}(V \cup W)$.
+    \item A football team knows from looking at their past results that they concede at least two goals in $\frac{\text{2}}{\text{5}}$ of all games. In $\frac{\text{1}}{\text{4}}$ of all of their games they concede at least two goals and lose the game. Find the probability that, given that they concede at least two goals in a game, they lose.
+    \item Given events $M$ and $N$ such that $\text{P}(M)=\text{0.6}$, $\text{P}(N)=\text{0.4}$ and $\text{P}(M\cup N)=\text{0.9}$, find $\text{P}(M|N)$.
+    \item For events $V$ and $W$, $\text{P}(V)=\text{0.6}$, $\text{P}(V|W)=\text{0.8}$ and $\text{P}(V\cap W)=\text{0.5}$. Calculate $\text{P}(V \cup W)$.
 \end{enumerate}
 
 \pagebreak
 
 \section{Independent Events}\label{independent-events}
 
-The probability of tossing a coin and it landing tails is \(\frac{1}{2}\). The probability of it landing tails \emph{given that it is a weekday}, notated as \(\text{P}(\text{tails }|\text{ weekday})\), is \emph{still} \(\frac{1}{2}\). Since knowing whether it is a weekday does not change the probability of the coin showing tails, the two events are said to be \emph{independent}.
+The probability of tossing a coin and it landing tails is \(\frac{\text{1}}{\text{2}}\). The probability of it landing tails \emph{given that it is a weekday}, notated as \(\text{P}(\text{tails }|\text{ weekday})\), is \emph{still} \(\frac{\text{1}}{\text{2}}\). Since knowing whether it is a weekday does not change the probability of the coin showing tails, the two events are said to be \emph{independent}.
 \vspace{-0.1cm}
 
 \begin{center}
@@ -5258,7 +5320,7 @@ $\text{P}(A | B)= \text{P}(A)$
 
 \vspace{-0.1cm}
 
-The probability a randomly selected card from a standard pack of playing cards being a Diamond is \(\frac{1}{4}\). The probability the card is a Diamond \emph{given that we discover the card picked is red}, notated as \(\text{P}(\text{Diamond }|\text{ red})\), is \(\frac{1}{2}\). Since knowing that the card is red changes the probability of it being a Diamond, the events are \emph{not independent}.
+The probability of a randomly selected card from a standard pack of playing cards being a Diamond is \(\frac{\text{1}}{\text{4}}\). The probability the card is a Diamond \emph{given that we discover the card picked is red}, notated as \(\text{P}(\text{Diamond }|\text{ red})\), is \(\frac{\text{1}}{\text{2}}\). Since knowing that the card is red changes the probability of it being a Diamond, the events are \emph{not independent}.
 
 \vspace{-0.1cm}
 
@@ -5271,12 +5333,12 @@ $\text{P}(A | B)\ne \text{P}(A)$
 \vspace{-0.1cm}
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Given $\text{P}(D)=0.25$, $\text{P}(E)=0.6$ and $\text{P}(D\cap E)=0.15$, show that $E$ and $D$ are independent.
+\textbf{Problem:} Given $\text{P}(D)=\text{0.25}$, $\text{P}(E)=\text{0.6}$ and $\text{P}(D\cap E)=\text{0.15}$, show that $E$ and $D$ are independent.
 
 \tcblower
 \textbf{Solution:}
 
-$\text{P}(D|E) = \dfrac{\text{P}(D \cap E)}{\text{P}(E)} = \dfrac{0.15}{0.6} = 0.25$\\
+$\text{P}(D|E) = \dfrac{\text{P}(D \cap E)}{\text{P}(E)} = \dfrac{\text{0.15}}{\text{0.6}} = \text{0.25}$\\
 
 Since $\text{P}(D|E) = \text{P}(D)$, events $D$ and $E$ are independent.
 
@@ -5310,9 +5372,9 @@ Since $\text{P}(D|E) = \text{P}(D)$, events $D$ and $E$ are independent.
     \begin{multicols}{3}
         \item $A$ and $B$ given:
         \begin{itemize}
-            \item $\text{P}(A)=0.3$
-            \item $\text{P}(B)=0.8$
-            \item $\text{P}(A\cap B)=0.16$
+            \item $\text{P}(A)=\text{0.3}$
+            \item $\text{P}(B)=\text{0.8}$
+            \item $\text{P}(A\cap B)=\text{0.16}$
         \end{itemize}
         \item $X$ and $Y$ given:
         \begin{itemize}
@@ -5322,13 +5384,13 @@ Since $\text{P}(D|E) = \text{P}(D)$, events $D$ and $E$ are independent.
         \end{itemize}
         \item $M$ and $N$ given:
         \begin{itemize}
-            \item $\text{P}(M\cup N)=0.67$
-            \item $\text{P}(\overline{M})=0.55$
-            \item $\text{P}(M\cap N)=0.18$
+            \item $\text{P}(M\cup N)=\text{0.67}$
+            \item $\text{P}(\overline{M})=\text{0.55}$
+            \item $\text{P}(M\cap N)=\text{0.18}$
         \end{itemize}
         \end{multicols}
     \end{enumerate}
-    \item A music tutor taught 40 students last year, each learning one of violin, trumpet or saxophone, and each have lessons either midweek or at the weekend. A student is chosen at random to take a survey to give feedback. Let $V$ represent that the student chosen took violin lessons, $T$ that they took trumpet lessons and $W$ that they had lessons at the weekend.
+    \item A music tutor taught 40 students last year, each learning one of the violin, trumpet or saxophone, and each had lessons either midweek or at the weekend. A student is chosen at random to take a survey to give feedback. Let $V$ represent that the student chosen took violin lessons, $T$ that they took trumpet lessons and $W$ that they had lessons at the weekend.
     \begin{multicols}{2}
     \begin{center}
     \begin{tabular}{| c|c | c | c|} 
@@ -5377,7 +5439,7 @@ $\text{P}(A \cap B)=\text{P}(A)\times \text{P}(B)$
 \tcblower
 \textbf{Solution:}
 
-$\text{P}(\text{mutation}\cap \text{yellow}) = \text{P}(\text{mutation}) \times \text{P}(\text{yellow }|\text{ mutation}) = 0.08 \times 0.35=0.028$\\
+$\text{P}(\text{mutation}\cap \text{yellow}) = \text{P}(\text{mutation}) \times \text{P}(\text{yellow }|\text{ mutation}) = \text{0.08} \times \text{0.35}=\text{0.028}$\\
 
 \vspace{-0.3cm}
 
@@ -5394,40 +5456,40 @@ $\text{P}(\text{mutation}\cap \text{yellow}) = \text{P}(\text{mutation}) \times 
     \begin{multicols}{3}
         \item $\text{P}(X\cap Y)$ given:
         \begin{itemize}
-            \item $\text{P}(X)=0.4$
-            \item $\text{P}(Y)=0.26$
-            \item $\text{P}(Y|X)=0.18$
+            \item $\text{P}(X)=\text{0.4}$
+            \item $\text{P}(Y)=\text{0.26}$
+            \item $\text{P}(Y|X)=\text{0.18}$
         \end{itemize}
         \item $\text{P}(\text{blue}\cap \text{yellow})$ given:
         \begin{itemize}
-            \item $\text{P}(\overline{\text{blue}})=\frac{2}{3}$
-            \item $\text{P}(\text{yellow})=\frac{1}{2}$
-            \item $\text{P}(\text{blue }|\text{ yellow})=\frac{3}{4}$
+            \item $\text{P}(\overline{\text{blue}})=\frac{\text{2}}{\text{3}}$
+            \item $\text{P}(\text{yellow})=\frac{\text{1}}{\text{2}}$
+            \item $\text{P}(\text{blue }|\text{ yellow})=\frac{\text{3}}{\text{4}}$
         \end{itemize}
         \item $\text{P}(E\cap F)$ given:
         \begin{itemize}
             \item $E$ and $F$ are independent
-            \item $\text{P}(E)=0.82$
-            \item $\text{P}(\overline{F})=0.7$
+            \item $\text{P}(E)=\text{0.82}$
+            \item $\text{P}(\overline{F})=\text{0.7}$
         \end{itemize}
     \end{multicols}
     \end{enumerate}
-    \item Events $A$ and $B$ are such that $\text{P}(A)=0.4$, $\text{P}(B)=0.7$ and $\text{P}(A|B)=0.56$. Determine the value of:
+    \item Events $A$ and $B$ are such that $\text{P}(A)=\text{0.4}$, $\text{P}(B)=\text{0.7}$ and $\text{P}(A|B)=\text{0.56}$. Determine the value of:
     \begin{enumerate}
-        \begin{multicols}{2}
+        \begin{multicols}{3}
         \item $\text{P}(A \cap B)$
         \item $\text{P}(A \cup B)$
         \item $\text{P}(B|A)$
         \end{multicols}
     \end{enumerate}
-    \item Independent events $X$ and $Y$ are such that $\text{P}(X)=0.4$ and $\text{P}(Y)=0.8$. Determine the value of $\text{P}(X\cup Y)$.
+    \item Independent events $X$ and $Y$ are such that $\text{P}(X)=\text{0.4}$ and $\text{P}(Y)=\text{0.8}$. Determine the value of $\text{P}(X\cup Y)$.
     \item A large box in a maths classroom contains a number of calculators, with 85\% of them made by Arizona Instruments and the rest made by Calculo. 70\% of the calculators overall are working, whilst 80\% of those made by Calculo are working. Determine the probability that a calculator selected at random from the box is a working Calculo calculator.
     \item As part of an analysis of a large company's vulnerability to a cyber attack, it is found that 16\% of company-issued employee laptops have out-of-date antivirus protection, whilst 24\% are only protected by a weak password. Of those with out-of-date antivirus protection, 60\% are only protected by a weak password. If a laptop is selected at random, determine the probability that it both has out-of-date antivirus protection and is only protected by a weak password.
     \item Given:
     \begin{itemize}
-        \item $\text{P}(\overline{\text{pink}})=0.5$
-        \item $\text{P}(\overline{\text{pink}}\text{ }|\text{ }\overline{\text{blue}})=0.4$
-        \item $\text{P}(\overline{\text{pink}}\cap \overline{\text{blue}})=0.32$
+        \item $\text{P}(\overline{\text{pink}})=\text{0.5}$
+        \item $\text{P}(\overline{\text{pink}}\text{ }|\text{ }\overline{\text{blue}})=\text{0.4}$
+        \item $\text{P}(\overline{\text{pink}}\cap \overline{\text{blue}})=\text{0.32}$
     \end{itemize}
     Find the value of $\text{P}(\text{blue}\cap \text{pink})$.
 \end{enumerate}
@@ -5438,7 +5500,7 @@ $\text{P}(\text{mutation}\cap \text{yellow}) = \text{P}(\text{mutation}) \times 
 
 In 1763 the Reverend Thomas Bayes, also a statistician, published \emph{``An Essay towards solving a Problem in the Doctrine of Chances''}. In it, he stated a formula that has come to be known as \emph{Bayes' Theorem}, which can be applied in a particular, specialised way to enable existing knowledge to be updated as new information is collected. In turn, this has resulted in an approach towards statistical inference that has been growing since the mid-20th century called \emph{Bayesian statistics}, substantially made more feasible by modern computing power.
 
-Whilst knowledge of Bayes' Theorem is required in the Advanced Higher Statistics course, Bayesian \emph{statistics} is \emph{not} part of this course, and so will not be covered here. If you would like to find out more about Bayesian statistics, and whether it may be relevant to you in the future, it is recommended that you discuss this with your teacher at a later point in the course. University modules introducing Bayesian statistics are typically available as part of an undergraduate degree in Mathematics or Statistics.
+Although knowledge of Bayes' Theorem is required in the Advanced Higher Statistics course, Bayesian \emph{statistics} is \emph{not} part of this course, and so will not be covered here. If you would like to find out more about Bayesian statistics, and whether it may be relevant to you in the future, it is recommended that you discuss this with your teacher at a later point in the course. University modules introducing Bayesian statistics are typically available as part of an undergraduate degree in Mathematics or Statistics.
 
 Bayes' Theorem can be derived directly from the formulae already introduced in this chapter. Note that:
 
@@ -5465,14 +5527,14 @@ $\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(B|A)\times \text{P}(A)$}}}{\t
 \end{tcolorbox}
 \end{centering}
 
-Bayes' Theorem provides a link between a conditional probability and its \emph{reverse}. Using it to find a conditional probability given its reverse is sometimes referred to as \emph{reversing the condition}.
+Bayes' Theorem provides a link between a conditional probability and its \emph{reverse}. Using it to find a conditional probability from its reverse is sometimes referred to as \emph{reversing the condition}.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Given events $V$ and $W$ such that $\text{P}(V|W)=0.3$, $\text{P}(W)=0.8$ and $\text{P}(\overline{V})=0.1$, find $\text{P}(W|V)$.
+\textbf{Problem:} Given events $V$ and $W$ such that $\text{P}(V|W)=\text{0.3}$, $\text{P}(W)=\text{0.8}$ and $\text{P}(\overline{V})=\text{0.1}$, find $\text{P}(W|V)$.
 
 \tcblower
 \textbf{Solution:}
-$\text{P}(W|V) = \dfrac{\text{P}(V|W)\times \text{P}(W)}{\text{P}(V)} = \dfrac{0.3\times 0.8}{0.9} = \dfrac{4}{15}$
+$\text{P}(W|V) = \dfrac{\text{P}(V|W)\times \text{P}(W)}{\text{P}(V)} = \dfrac{\text{0.3}\times \text{0.8}}{\text{0.9}} = \dfrac{\text{4}}{\text{15}}$
 \end{tcolorbox}
 
 Careful reading of text may be required to identify when a probability provided is a \emph{conditional} probability.
@@ -5482,7 +5544,7 @@ Careful reading of text may be required to identify when a probability provided 
 
 \tcblower
 \textbf{Solution:}
-$\text{P}(\text{garage }|\text{ garden}) = \dfrac{\text{P}(\text{garden }|\text{ garage})\times \text{P}(\text{garage})}{\text{P}(\text{garden})} = \dfrac{0.87\times 0.14}{0.62} = 0.1965$
+$\text{P}(\text{garage }|\text{ garden}) = \dfrac{\text{P}(\text{garden }|\text{ garage})\times \text{P}(\text{garage})}{\text{P}(\text{garden})} = \dfrac{\text{0.87}\times \text{0.14}}{\text{0.62}} = \text{0.1965}$
 \end{tcolorbox}
 
 \pagebreak
@@ -5499,16 +5561,16 @@ $\text{P}(\text{garage }|\text{ garden}) = \dfrac{\text{P}(\text{garden }|\text{
     \begin{multicols}{2}
     \item Events $X$ and $Y$ are such that:
     \begin{itemize}
-        \item $\text{P}(X)=0.7$
-        \item $\text{P}(Y)=0.6$
-        \item $\text{P}(Y|X)=0.5$
+        \item $\text{P}(X)=\text{0.7}$
+        \item $\text{P}(Y)=\text{0.6}$
+        \item $\text{P}(Y|X)=\text{0.5}$
     \end{itemize}
     Calculate $\text{P}(X|Y)$.
     \item For events $V$ and $W$:
     \begin{itemize}
-        \item $\text{P}(W)=\frac{4}{5}$
-        \item $\text{P}(\overline{V})=\frac{1}{3}$
-        \item $\text{P}(W|V)=\frac{3}{4}$
+        \item $\text{P}(W)=\frac{\text{4}}{\text{5}}$
+        \item $\text{P}(\overline{V})=\frac{\text{1}}{\text{3}}$
+        \item $\text{P}(W|V)=\frac{\text{3}}{\text{4}}$
     \end{itemize}
     Determine $\text{P}(V|W)$.
     \end{multicols}
@@ -5516,7 +5578,7 @@ $\text{P}(\text{garage }|\text{ garden}) = \dfrac{\text{P}(\text{garden }|\text{
     \vspace{-0.3cm}
     \item A bag contains numbered counters of various colours, a quarter of which are red. Three-eighths of the counters are numbered 1, of which two-fifths are red. If a counter is selected at random and it is red, determine the probability that it is numbered 1.
     \item Research has shown that 1.7\% of people possess a specific gene. A prototype test for the presence of the gene in a person is being developed, and it shows as \textit{positive} for the gene for 7\% of all people tested. It is later established that the probability a test shows as positive for a person known to possess the gene is 0.9. If a person is selected at random to take the test, and it shows positive, determine the probability that they actually do possess the gene.
-    \item Given that $\text{P}(M)=\frac{2}{3}$, $\text{P}(N)=\frac{3}{4}$ and $\text{P}(N|M)=\frac{3}{5}$:
+    \item Given that $\text{P}(M)=\frac{\text{2}}{\text{3}}$, $\text{P}(N)=\frac{\text{3}}{\text{4}}$ and $\text{P}(N|M)=\frac{\text{3}}{\text{5}}$:
     \begin{enumerate}
         \item Calculate $\text{P}(M|N)$.
         \item Calculate $\text{P}(\overline{M}|N)$.
@@ -5530,9 +5592,9 @@ $\text{P}(\text{garage }|\text{ garden}) = \dfrac{\text{P}(\text{garden }|\text{
     \item A region has access to local radio stations, \textit{Pacific 525}, as well as a number of national stations. When a resident of the region directs their car radio to automatically find a station, the probability that it will connect to \textit{Pacific 525} is 0.64, otherwise it will instead connect to a national station. 72\% of the time, when their car automatically connects there will be music playing. When their car radio connects to \textit{Pacific 525} the probability music will be playing is 0.84. If the car radio connects to a station and music is playing, determine the probability that the station is \textit{Pacific 525}.
     \item Events $E$ and $F$ are such that:
     \begin{itemize}
-        \item $\text{P}(\overline{F}|E)=0.23$.
-        \item $\text{P}(F)=0.87$.
-        \item $\text{P}(\overline{E})=0.09$.
+        \item $\text{P}(\overline{F}|E)=\text{0.23}$.
+        \item $\text{P}(F)=\text{0.87}$.
+        \item $\text{P}(\overline{E})=\text{0.09}$.
     \end{itemize}
     Calculate $\text{P}(\overline{E}|F)$.
 \end{enumerate}
@@ -5629,45 +5691,45 @@ The advantage of the use of tree diagrams, for questions where they are suitable
         node[bag] {$\overline{\text{late}}$}        
             child {
                 node[end, label=right:
-                    {$\overline{\text{tie}}$\hspace{1.2cm}$\text{P}(\overline{\text{late}}\cap\overline{\text{tie}})=0.08$\hspace{0.5cm}\text{\large{$\ast$}}}] {}
+                    {$\overline{\text{tie}}$\hspace{1.2cm}$\text{P}(\overline{\text{late}}\cap\overline{\text{tie}})=\text{0.08}$\hspace{0.5cm}\text{\large{$\ast$}}}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$0.1$}
+                node[below]  {0.1}
             }
             child {
                 node[end, label=right:
                     {tie}] {}
                 edge from parent
-                node[above] {$0.9$}
+                node[above] {0.9}
                 node[below]  {}
             }
             edge from parent 
             node[above] {}
-            node[below]  {$0.8$}
+            node[below]  {0.8}
     }
     child {
         node[bag] {late}        
         child {
                 node[end, label=right:
-                    {$\overline{\text{tie}}$\hspace{1.2cm}$\text{P}(\text{late }\cap \overline{\text{tie}})=0.06$\hspace{0.5cm}\text{\large{$\ast$}}}] {}
+                    {$\overline{\text{tie}}$\hspace{1.2cm}$\text{P}(\text{late }\cap \overline{\text{tie}})=\text{0.06}$\hspace{0.5cm}\text{\large{$\ast$}}}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$0.3$}
+                node[below]  {0.3}
             }
             child {
                 node[end, label=right:
                     {tie}] {}
                 edge from parent
-                node[above] {$0.7$}
+                node[above] {0.7}
                 node[below]  {}
             }
         edge from parent         
-            node[above] {$0.2$}
+            node[above] {0.2}
             node[below]  {}
     };
 \end{tikzpicture}
 \vskip 0.5cm
-\qquad \qquad $\text{P}(\overline{\text{tie}})=0.06+0.08=0.14$
+\qquad \qquad $\text{P}(\overline{\text{tie}})=\text{0.06}+\text{0.08}=\text{0.14}$
 
 \end{tcolorbox}
 
@@ -5696,7 +5758,7 @@ The advantage of the use of tree diagrams, for questions where they are suitable
         \item The probability of failure for an alder tree is 0.234.
     \end{itemize}
     Calculate the probability that a tree randomly selected for observation survives.
-    \item The star striker for a football team has a probability of 0.7 of scoring in any given game. When they do, the probability that the team goes on to win is 0.8, whilst when they don't the probability of a win drops to 0.45. Calculate the probability that the team win a randomly chosen game.
+    \item The star striker for a football team has a probability of 0.7 of scoring in any given game. When they do, the probability that the team goes on to win is 0.8, whilst when they don't the probability of a win drops to 0.45. Calculate the probability that the team wins a randomly chosen game.
     \item When Betty hears a song on the radio:
     \begin{itemize}
         \item The probability that it is a song she knows is 0.8.
@@ -5706,7 +5768,7 @@ The advantage of the use of tree diagrams, for questions where they are suitable
     Determine the proportion of songs Betty hears on the radio that she likes.
     \item An obstacle course consists of three parts, with each part needed to be completed successfully for a competitor to be allowed to move on to the next. 30\% of competitors fail to complete the first part, and of those who make it onto the second part only 40\% manage to make it onto the third part. Of those that do make it on to the third part, however, 65\% successfully complete it. Calculate the probability that a competitor reaches the third part.
     \item As part of a study examining the survival rates of hedgehogs over winter hibernation periods, a number of hedgehogs are captured, weighed, tagged and then released. Depending on their weight they are classed as having a "good weight", an "average weight" or being "underweight", with 18\%, 76\% and 6\% observed respectively in each category. From the study it is found that the probability of survival for each category is 91\%, 72\% and 35\% respectively. Assuming that the distribution of hedgehog weights and probabilities of survival can be taken as representative of hedgehog populations in general, find the proportion of hedgehogs that do not survive winter hibernation. 
-    \item The probability of being dealt a pair (such as two fives) in an opening hand in a game of poker is 0.06. If this happens, a particular player knows that based on their game history they have a probability of 0.83 of winning the hand, whilst otherwise they have a probability of 0.36. Calculate the probability they win a hand.
+    \item The probability of being dealt a pair (such as two fives) in an opening hand in a game of poker is 0.06. If this happens, a particular player knows that based on their game history they have a probability of 0.83 of winning the hand, whilst otherwise they have a probability of 0.36. Calculate the probability that they win a hand.
 \end{enumerate}
 
 \pagebreak
@@ -5720,7 +5782,7 @@ In this chapter, Bayes' Theorem has already been used to calculate the \emph{rev
 A key misunderstanding often made is that a high value for \(\text{P}(B|A)\) must lead to a similarly high value for \(\text{P}(A|B)\). The following example demonstrates that this is not always the case, and gives an insight into a common problem that must be considered whenever medical testing is being undertaken, especially for rare conditions or diseases:
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A medical test for a condition has a \textit{sensitivity} of 98\%, meaning that when the patient \textit{has the condition}, the test will correctly return a \textit{positive} result with a probability of 0.98. This means there is a \textit{false negative} rate of 2\%. The test has \textit{specificity} of 97\%, meaning that when the patient \textit{does not} have the condition, the test will correctly return a \textit{negative} result with a probability of 0.97. This means there is a \textit{false positive} rate of 3\%. The \textit{prevalence} in the general population is 4\%, meaning only 4\% of people have the condition. 
+\textbf{Problem:} A medical test for a condition has a \textit{sensitivity} of 98\%, meaning that when the patient \textit{has the condition}, the test will correctly return a \textit{positive} result with a probability of 0.98. This means there is a \textit{false negative} rate of 2\%. The test has a \textit{specificity} of 97\%, meaning that when the patient \textit{does not} have the condition, the test will correctly return a \textit{negative} result with a probability of 0.97. This means there is a \textit{false positive} rate of 3\%. The \textit{prevalence} in the general population is 4\%, meaning only 4\% of people have the condition. 
 
 \vspace{0.3cm}
 
@@ -5747,18 +5809,18 @@ If a person is selected at random from the general population to be tested for t
                     {$\text{negative}$}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$0.97$}
+                node[below]  {0.97}
             }
             child {
                 node[end, label=right:
-                    {$\text{positive}$\hspace{0.85cm}$\text{P}(\overline{\text{condition}}\cap \text{positive})=0.0288$}] {}
+                    {$\text{positive}$\hspace{0.85cm}$\text{P}(\overline{\text{condition}}\cap \text{positive})=\text{0.0288}$}] {}
                 edge from parent
-                node[above] {$0.03$}
+                node[above] {0.03}
                 node[below]  {}
             }
             edge from parent 
             node[above] {}
-            node[below]  {$0.96$}
+            node[below]  {0.96}
     }
     child {
         node[bag] {$\text{condition}$}        
@@ -5767,25 +5829,25 @@ If a person is selected at random from the general population to be tested for t
                     {$\text{negative}$}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$0.02$}
+                node[below]  {0.02}
             }
             child {
                 node[end, label=right:
-                    {$\text{positive}$\hspace{0.75cm}$\text{P}(\text{condition}\cap \text{positive})=0.0392$}] {}
+                    {$\text{positive}$\hspace{0.75cm}$\text{P}(\text{condition}\cap \text{positive})=\text{0.0392}$}] {}
                 edge from parent
-                node[above] {$0.98$}
+                node[above] {0.98}
                 node[below]  {}
             }
         edge from parent         
-            node[above] {$0.04$}
+            node[above] {0.04}
             node[below]  {}
     };
 \end{tikzpicture}
 \vskip 1cm
 
 \begin{enumerate}
-    \item[(a) ] $\text{P}(\text{positive})=0.0392+0.0288=0.068$
-    \item[(b) ] $\text{P}(\text{condition | positive})=\dfrac{\text{P}(\text{condition }\cap \text{  positive})}{\text{P}(\text{positive})}=\dfrac{0.0392}{0.068}=0.5765$
+    \item[(a) ] $\text{P}(\text{positive})=\text{0.0392}+\text{0.0288}=\text{0.068}$
+    \item[(b) ] $\text{P}(\text{condition | positive})=\dfrac{\text{P}(\text{condition }\cap \text{  positive})}{\text{P}(\text{positive})}=\dfrac{\text{0.0392}}{\text{0.068}}=\text{0.5765}$
 \end{enumerate}
 
 \end{tcolorbox}
@@ -5807,7 +5869,7 @@ It may be surprising that a test which appears so effective can lead to such a h
     \item A company sends customers' orders by either regular or express delivery.
     \begin{itemize}
         \item 35\% of orders are sent by express delivery.
-        \item Of those sent by express delivery, 98\% arrive undamaged,
+        \item Of those sent by express delivery, 98\% arrive undamaged.
         \item 91\% of the orders sent by regular deliveries arrive undamaged.
     \end{itemize}
    Customers are requested to submit a form online to confirm whether their order arrived damaged or undamaged.
@@ -5820,7 +5882,7 @@ It may be surprising that a test which appears so effective can lead to such a h
         \item Determine the proportion of attachments that are flagged as malicious.
         \item Given that an attachment is flagged, calculate the probability that it is malicious.
     \end{enumerate}
-    \item A pupil sitting a multiple choice test is able to answer $\frac{3}{4}$ of the questions and guesses the rest. They know from trying practice tests that the probability that they are correct in the questions they are able to answer is 0.9, whilst they have a one-in-five chance of getting a correct answer by guessing. Determine the probability that a question which they get wrong was one that they guessed.
+    \item A pupil sitting a multiple choice test is able to answer $\frac{\text{3}}{\text{4}}$ of the questions and guesses the rest. They know from trying practice tests that the probability that they are correct in the questions they are able to answer is 0.9, whilst they have a one-in-five chance of getting a correct answer by guessing. Determine the probability that a question which they get wrong was one that they guessed.
     \item A marketing campaign for a new product is estimated to have been seen by three times as many people through its social media advert as by its promotional email. The probability that seeing the social media advert leads to a person visiting their website is 0.037, whilst for the promotional email that figure drops to 0.021. 
     \begin{enumerate}
         \item Determine the probability that someone who sees the marketing campaign in either form visits the website.
@@ -5846,8 +5908,8 @@ It may be surprising that a test which appears so effective can lead to such a h
     \itemsep2em
     \item Events $E$ and $F$ are such that:
     \begin{itemize}
-        \item $\text{P}(F\cap E)=0.7$
-        \item $\text{P}(\overline{E})=0.2$
+        \item $\text{P}(F\cap E)=\text{0.7}$
+        \item $\text{P}(\overline{E})=\text{0.2}$
         \item $E$ and $F$ are exhaustive.
     \end{itemize}
     Calculate $\text{P}(E | F)$.
@@ -5878,13 +5940,13 @@ It may be surprising that a test which appears so effective can lead to such a h
         \item Calculate the probability that a randomly selected laptop comes with its original power supply.
         \item Determine the probability that a randomly selected laptop is a Mac laptop, given that it does not come with its original power supply.
     \end{enumerate}
-    \item At the start of each round of a board game played by four players, a random process determines who gets to go $1^{\text{st}}$, who goes $2^{\text{nd}}$, who goes $3^{\text{rd}}$ and who goes $4^{\text{th}}$. Sam knows that when she plays against her two friends, she wins the round two-thirds of the time when she goes $1^{\text{st}}$, half of the time when she goes $2^{\text{nd}}$ and only a fifth of the time when she goes either $3^{\text{rd}}$ or $4^{\text{th}}$.
+    \item At the start of each round of a board game played by four players, a random process determines who gets to go 1st, who goes 2nd who goes 3rd and who goes 4th. Sam knows that when she plays against her two friends, she wins the round two-thirds of the time when she goes 1st, half of the time when she goes 2nd and only a fifth of the time when she goes either 3rd or 4th.
     \begin{enumerate}
         \item Assuming that each round is independent of the result of previous rounds, calculate the proportion of rounds that Sam wins.
-        \item Given that Sam lost the last round, calculate the probability that she went $1^{\text{st}}$.
+        \item Given that Sam lost the last round, calculate the probability that she went 1st.
     \end{enumerate}
     \item For the events $M$ and $B$:
-$\text{P}(M\cap B)=\frac{3}{25}$, $\text{P}(M)=\frac{1}{5}$ and $\text{P}(\overline{B})=\frac{2}{5}$. Show that events $M$ and $B$ are independent.
+$\text{P}(M\cap B)=\frac{\text{3}}{\text{25}}$, $\text{P}(M)=\frac{\text{1}}{\text{5}}$ and $\text{P}(\overline{B})=\frac{\text{2}}{\text{5}}$. Show that events $M$ and $B$ are independent.
     \item As part of a machine learning project, a program is created that tries to correctly identify whether it is being shown a picture of a dog, a cat or a human. It has been tested and found to correctly identify a human with the probability 0.8, correctly identify a dog with the probability 0.6 and correctly identify a cat with the probability 0.55. When subsequently put to use by the public, the program is shown a picture of a human 60\% of the time, a dog 25\% of the time and a cat 15\% of the time. Assuming the probabilities of successful detection are the same when used by the public as when under testing, calculate:
     \begin{enumerate}
         \item the proportion of times that the program is incorrect 
@@ -5896,7 +5958,7 @@ $\text{P}(M\cap B)=\frac{3}{25}$, $\text{P}(M)=\frac{1}{5}$ and $\text{P}(\overl
 
 \chapter{An Introduction to Linear Regression}\label{an-introduction-to-linear-regression}
 
-A common interest when working with data is a possible relationship between two numerical variables. For example, suppose a sports scientist wishes to explore the relationship between runners' \(\text{VO}_{\text{2}}\) Max, which is a measure of aerobic fitness, and their 5km running times. From a sample of eight runners, they may record the values of the two \emph{variables} for each individual, presenting the results in a table as follows:
+A common aim when working with data is to investigate possible relationships between two numerical variables. For example, suppose a sports scientist wishes to explore the relationship between runners' \(\text{VO}_{\text{2}}\) Max, which is a measure of aerobic fitness, and their 5km running times. From a sample of eight runners, they may record the values of the two \emph{variables} for each individual, presenting the results in a table as follows:
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
@@ -5910,7 +5972,7 @@ A common interest when working with data is a possible relationship between two 
 \end{tabular}
 \end{center}
 
-Before applying any statistical analysis techniques to this \emph{bivariate data}, the sports scientist constructs a \emph{scatterplot} to visualise it, looking for any apparent patterns or problems. In this example, \(\text{VO}_{\text{2}}\) Max is treated as the \textbf{predictor} variable (plotted on the \(x\)-axis) and 5km running time is treated as the \textbf{response} variable (plotted along the \(y\)-axis).
+Before applying any statistical analysis techniques to this \textbf{bivariate data}, the sports scientist constructs a \textbf{scatterplot} to visualise the relationship between them, looking for any apparent patterns or problems. In this example, \(\text{VO}_{\text{2}}\) Max is treated as the \textbf{predictor} variable (plotted on the \(x\)-axis) and 5km running time is treated as the \textbf{response} variable (plotted along the \(y\)-axis).
 
 \begin{multicols}{2}
 
@@ -5950,7 +6012,7 @@ In general, the predictor variable is chosen as the one which may help explain o
 
 \end{multicols}
 
-Whilst the sample size is very small, the scatterplot seems to suggest that there is a \emph{negative linear relationship} between a runner's \(\text{VO}_{\text{2}}\) Max and their 5km running time, as higher \(\text{VO}_{\text{2}}\) Max values are associated with lower running times. To illustrate this, a \emph{trend line} (or \emph{line of best fit}) has been added to the scatterplot.
+Although the sample size is very small, the scatterplot seems to suggest that there is a \emph{negative linear relationship} between a runner's \(\text{VO}_{\text{2}}\) Max and their 5km running time, as higher \(\text{VO}_{\text{2}}\) Max values are associated with lower running times. To illustrate this, a \textbf{line of best fit} (or \emph{trend line}) has been added to the scatterplot.
 
 This chapter will introduce the use of a \emph{correlation coefficient} to evaluate the strength of any linear relationship between numerical variables and the construction of a \emph{linear regression model} to describe this relationship and make predictions.
 
@@ -5958,15 +6020,15 @@ This chapter will introduce the use of a \emph{correlation coefficient} to evalu
 
 \section{Scatterplots and Linear Correlation}\label{scatterplots-and-linear-correlation}
 
-When deciding whether a linear relationship exists between two numerical variables, a scatterplot should always be drawn before any analysis is undertaken using the bivariate data collected. This is the first step in determining the level of linear relationship, or \emph{linear correlation}, between the variables. Whilst other kinds of relationship may exist between two numerical variables, in this course the focus is on the existence and strength of \emph{linear} relationships. Consider the following:
+When deciding whether a linear relationship exists between two numerical variables, a scatterplot should always be drawn before any analysis is undertaken using the bivariate data collected. This is the first step in determining the level of \emph{\textbf{linear relationship} (or }linear correlation\emph{) between the variables. Whilst other kinds of relationship may exist between two numerical variables, in this course the focus is on the existence and strength of }linear* relationships. Consider the following:
 
 \begin{figure}[H]
   \centering
-\captionsetup[figure]{labelformat=empty}%
-\begin{minipage}[t]{.25\textwidth}
-  \centering
+\begin{minipage}[t]{.48\textwidth}
 
+\begin{center}  
 \begin{tikzpicture}[scale=0.8]
+\node at (-2,1.5) {\textbf{Figure 1}};
 \draw[semithick,-stealth] (0,0) -- (0,0.6*5);
 \draw[semithick,-stealth] (0,0) -- (0.6*5,0);
 \node at (0.6*5.4,0) {$x$};
@@ -5985,15 +6047,21 @@ When deciding whether a linear relationship exists between two numerical variabl
 \draw[fill=black] (0.6*4.9,0.6*3.9) circle (0.04);
 \draw[fill=black] (0.6*5,0.6*4.4) circle (0.04);
 \end{tikzpicture}
- 
-\captionof{figure}{\textbf{Figure 1}}
-  \label{fig:test1}
+\end{center}
+
+\textbf{Figure 1} shows a \textbf{strong positive linear correlation} between $x$ and $y$, where both variables tend to increase together.
+
 \end{minipage}%
   \centering
-\begin{minipage}[t]{.25\textwidth}
+\begin{minipage}[t]{.04\textwidth}
   \centering
-  
+  \phantom{squirrel}
+\end{minipage}%
+\begin{minipage}[t]{.48\textwidth}
+
+\begin{center} 
 \begin{tikzpicture}[scale=0.8]
+\node at (-2,1.5) {\textbf{Figure 2}};
 \draw[semithick,-stealth] (0,0) -- (0,0.6*5);
 \draw[semithick,-stealth] (0,0) -- (0.6*5,0);
 \node at (0.6*5.4,0) {$x$};
@@ -6012,15 +6080,20 @@ When deciding whether a linear relationship exists between two numerical variabl
 \draw[fill=black] (0.6*4.4,0.6*0.5) circle (0.04);
 \draw[fill=black] (0.6*4.8,0.6*1.3) circle (0.04);
 \end{tikzpicture}
-  
-\captionof{figure}{\textbf{Figure 2}}
-  \label{fig:test1}
-\end{minipage}%
-  \centering
-\begin{minipage}[t]{.25\textwidth}
-  \centering
+\end{center}
 
+\textbf{Figure 2} shows a \textbf{weak negative linear correlation} between $x$ and $y$, where, as one variable increases, the other tends to decrease. 
+
+\end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+\begin{minipage}[t]{.48\textwidth}
+
+\begin{center}  
 \begin{tikzpicture}[scale=0.8]
+\node at (-2,1.5) {\textbf{Figure 3}};
 \draw[semithick,-stealth] (0,0) -- (0,0.6*5);
 \draw[semithick,-stealth] (0,0) -- (0.6*5,0);
 \node at (0.6*5.4,0) {$x$};
@@ -6039,15 +6112,21 @@ When deciding whether a linear relationship exists between two numerical variabl
 \draw[fill=black] (0.6*4.4,0.6*4.2) circle (0.04);
 \draw[fill=black] (0.6*4.8,0.6*0.7) circle (0.04);
 \end{tikzpicture}
+\end{center}
 
-\captionof{figure}{\textbf{Figure 3}}
-  \label{fig:test1}
+In \textbf{Figure 3}, as one variable increases, there appears to be no clear pattern as to how the other variable behaves. There appears to be \textbf{no linear relationship} between $x$ and $y$.
+
 \end{minipage}%
   \centering
-\begin{minipage}[t]{.25\textwidth}
+\begin{minipage}[t]{.04\textwidth}
   \centering
+  \phantom{squirrel}
+\end{minipage}%
+\begin{minipage}[t]{.48\textwidth}
 
+\begin{center} 
 \begin{tikzpicture}[scale=0.8]
+\node at (-2,1.5) {\textbf{Figure 4}};
 \draw[semithick,-stealth] (0,0) -- (0,0.6*5);
 \draw[semithick,-stealth] (0,0) -- (0.6*5,0);
 \node at (0.6*5.4,0) {$x$};
@@ -6063,26 +6142,17 @@ When deciding whether a linear relationship exists between two numerical variabl
 \draw[fill=black] (0.6*4.4,0.6*3.61) circle (0.04);
 \draw[fill=black] (0.6*4.7,0.6*4.84) circle (0.04);
 \end{tikzpicture}
+\end{center}
 
-\captionof{figure}{\textbf{Figure 4}}
-  \label{fig:test1}
+\textbf{Figure 4} is also an example of \textbf{no linear relationship} between $x$ and $y$, although there appears to be some non-linear (possibly quadratic) association between the variables.
+
 \end{minipage}
 \end{figure}
-
-\vspace{-0.3cm}
-
-\textbf{Figure 1} illustrates a \emph{strong positive linear correlation} between \(x\) and \(y\), where both variables tend to increase together.
-
-\textbf{Figure 2} shows a \emph{weak negative linear correlation} between \(x\) and \(y\), where, as one variable increases, the other tends to decrease.
-
-In \textbf{Figure 3}, as one variable increases, there appears to be no clear pattern as to how the other variable behaves. There appears to be \emph{no linear relationship} between \(x\) and \(y\).
-
-\textbf{Figure 4} is also an example of \emph{no linear relationship} between \(x\) and \(y\), although there appears to be some non-linear (possibly quadratic) association between the variables.
 
 Note that \textbf{correlation does not imply causation}. A linear relationship can exist between variables without meaning that one causes the other; there may be other variables influencing both. Seemingly linear relationships can also appear by chance - this is referred to as \emph{spurious correlation}.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A French class takes two tests, one \textit{listening} and one \textit{reading}. The results of the 10 pupils are shown in the table and scatterplot below, along with some summary statistics. Comment on the scatterplot.
+\textbf{Problem:} A French class takes two tests; \textit{listening} and \textit{reading}. The results of the 10 pupils are shown in the table and scatterplot below, along with some summary statistics. Comment on the scatterplot.
 
 \begin{multicols}{2}
 
@@ -6104,29 +6174,29 @@ Note that \textbf{correlation does not imply causation}. A linear relationship c
 
 \vspace{-1cm}
 \begin{center}
-\begin{tikzpicture}[scale=0.8]
+\begin{tikzpicture}[scale=0.7]
 \draw[semithick] (-0.15,0) -- (-0.15,3.65);
 \draw[semithick] (0,-0.1) -- (4.15,-0.1);
 \node[rotate=90] at (-1.1,1.75) {Reading};
-\node at (2,-1) {Listening};
-\foreach \y in {6,8,...,20}
+\node at (2,-1.2) {Listening};
+\foreach \y in {8,12,...,20}
 \node at (-0.45,0.25*\y-1.5) {\y};
 \foreach \y in {6,8,...,20}
 \draw[semithick] (-0.15,0.25*\y-1.5) -- (-0.25,0.25*\y-1.5);
-\foreach \x in {4,6,...,20}
+\foreach \x in {4,8,...,20}
 \node at (0.25*\x-1,-0.45) {\x};
 \foreach \x in {4,6,...,20}
 \draw[semithick] (0.25*\x-1,-0.1) -- (0.25*\x-1,-0.2);
-\draw[fill=black] (9*0.25-1,8*0.25-1.5) circle (0.04);
-\draw[fill=black] (7*0.25-1,9*0.25-1.5) circle (0.04);
-\draw[fill=black] (11*0.25-1,13*0.25-1.5) circle (0.04);
-\draw[fill=black] (20*0.25-1,20*0.25-1.5) circle (0.04);
-\draw[fill=black] (4*0.25-1,9*0.25-1.5) circle (0.04);
-\draw[fill=black] (6*0.25-1,8*0.25-1.5) circle (0.04);
-\draw[fill=black] (17*0.25-1,17*0.25-1.5) circle (0.04);
-\draw[fill=black] (12*0.25-1,14*0.25-1.5) circle (0.04);
-\draw[fill=black] (10*0.25-1,8*0.25-1.5) circle (0.04);
-\draw[fill=black] (15*0.25-1,17*0.25-1.5) circle (0.04);
+\draw[fill=black] (9*0.25-1,8*0.25-1.5) circle (0.06);
+\draw[fill=black] (7*0.25-1,9*0.25-1.5) circle (0.06);
+\draw[fill=black] (11*0.25-1,13*0.25-1.5) circle (0.06);
+\draw[fill=black] (20*0.25-1,20*0.25-1.5) circle (0.06);
+\draw[fill=black] (4*0.25-1,9*0.25-1.5) circle (0.06);
+\draw[fill=black] (6*0.25-1,8*0.25-1.5) circle (0.06);
+\draw[fill=black] (17*0.25-1,17*0.25-1.5) circle (0.06);
+\draw[fill=black] (12*0.25-1,14*0.25-1.5) circle (0.06);
+\draw[fill=black] (10*0.25-1,8*0.25-1.5) circle (0.06);
+\draw[fill=black] (15*0.25-1,17*0.25-1.5) circle (0.06);
 \end{tikzpicture}
 \end{center} 
 
@@ -6137,9 +6207,7 @@ Note that \textbf{correlation does not imply causation}. A linear relationship c
 
 \end{tcolorbox}
 
-Note that there is no universally agreed definition of a `strong', `moderate' or `weak' linear relationship. However, it is still recommended for comments to include some description of the strength of a linear relationship.
-
-Scatterplots should always be constructed and closely scrutinised before any analysis of bivariate data is undertaken. Through this visualisation, it may become apparent, for instance, that the dataset is separated into \emph{distinct groups}, or that possible \emph{outliers} are present which should be carefully considered.
+Note that there is no universally agreed scale for describing correlations as `strong', `moderate' or `weak'. However, it is still recommended for comments to include some description of the strength of a linear relationship.
 
 \pagebreak
 
@@ -6350,10 +6418,10 @@ Scatterplots should always be constructed and closely scrutinised before any ana
 \foreach \x in {0,100,...,400}{
 \node[below] at (0.01*\x,0) {\x};
 }
-\node[left] at (0,0) {$2$};
-\node[left] at (0,1) {$3$};
-\node[left] at (0,2) {$4$};
-\node[left] at (0,3) {$5$};
+\node[left] at (0,0) {2};
+\node[left] at (0,1) {3};
+\node[left] at (0,2) {4};
+\node[left] at (0,3) {5};
 \draw[black!80,fill=black!80] (2.05,0.93) circle (0.03);
 \draw[black!80,fill=black!80] (2.15,1) circle (0.03);
 \draw[black!80,fill=black!80] (2.45,1.73) circle (0.03);
@@ -6429,12 +6497,12 @@ Scatterplots should always be constructed and closely scrutinised before any ana
 \node[text width = 6cm] at (10,3.5) {
 \begin{minipage}{\textwidth}
 \begin{align*}
-\Sigma x&=75.13\\
-\Sigma y&=2919\\
-\Sigma x^2&=272.1\\
-\Sigma y^2&=416279\\
-\Sigma xy&=9583.94\\
-n&=22
+\Sigma x&=\text{75.13}\\
+\Sigma y&=\text{2919}\\
+\Sigma x^\text{2}&=\text{272.1}\\
+\Sigma y^\text{2}&=\text{416279}\\
+\Sigma xy&=\text{9583.94}\\
+n&=\text{22}
 \end{align*}
 \end{minipage}
 };
@@ -6452,7 +6520,7 @@ n&=22
 
 \section{Pearson's Product Moment Correlation Coefficient}\label{pearsons-product-moment-correlation-coefficient}
 
-Instead of relying on vague terms such as `strong', `moderate' and `weak', the strength of the \emph{linear relationship} between two variables can be measured and better communicated using a \emph{correlation coefficient}. Whilst there are a number of different correlation coefficients used in statistics, the only one used in this course is \emph{Pearson's Product Moment Correlation Coefficient (PMCC)}, which can now simply be referred to as the \textbf{correlation coefficient}. Given a sample of bivariate data, the \emph{sample correlation coefficient}, \(r\), can be calculated as:
+Instead of relying on vague terms such as `strong', `moderate' and `weak', the strength of the \emph{linear relationship} between two variables can be measured and better communicated using a \textbf{correlation coefficient}. Whilst there are a number of different correlation coefficients used in statistics, the only one used in this course is \emph{Pearson's Product Moment Correlation Coefficient (PMCC)}, which can now simply be referred to as the \emph{correlation coefficient}. Given a sample of bivariate data, the \emph{sample correlation coefficient}, \(r\), can be calculated as:
 
 \begin{center}
 \tcbset{width=8cm}
@@ -6475,8 +6543,8 @@ The formulae for the \emph{``Three Ss''} and the \emph{``Five Sigmas''} are give
 \vspace{-1cm}
 
 \begin{align*}
-S_{xx}&=\Sigma(x-\bar{x})^2=\Sigma x^2-\frac{(\Sigma x)^2}{n}\\
-S_{yy}&=\Sigma(y-\bar{y})^2=\Sigma y^2-\frac{(\Sigma y)^2}{n}\\
+S_{xx}&=\Sigma(x-\bar{x})^\text{2}=\Sigma x^\text{2}-\frac{(\Sigma x)^\text{2}}{n}\\
+S_{yy}&=\Sigma(y-\bar{y})^\text{2}=\Sigma y^\text{2}-\frac{(\Sigma y)^\text{2}}{n}\\
 S_{xy}&=\Sigma(x-\bar{x})(y-\bar{y})=\Sigma xy-\frac{\Sigma x\Sigma y}{n}
 \end{align*}
 
@@ -6494,15 +6562,15 @@ S_{xy}&=\Sigma(x-\bar{x})(y-\bar{y})=\Sigma xy-\frac{\Sigma x\Sigma y}{n}
 \begin{align*}
 &\Sigma x\\
 &\Sigma y\\
-&\Sigma x^2\\
-&\Sigma y^2\\
+&\Sigma x^\text{2}\\
+&\Sigma y^\text{2}\\
 &\Sigma xy
 \end{align*}
 
 \end{minipage}
 \end{figure}
 
-For all sets of data, \(-1\leqslant r\leqslant 1\). A correlation coefficient of zero suggests there is \emph{no linear relationship} between the two variables, whilst any non-zero correlation coefficient suggests the possibility of a linear relationship. Each figure below shows a scatterplot of sample data along with its sample correlation coefficient, \(r\), and an interpretation.
+For all sets of data, \(-\text{1}\leqslant r\leqslant \text{1}\). A correlation coefficient of \textbf{zero} suggests there is \textbf{no linear relationship} between the two variables, whilst any non-zero correlation coefficient suggests the presence of a possible linear relationship. The figures below show scatterplots of sample data along with their sample correlation coefficients, \(r\), and an interpretation.
 
 \begin{multicols}{5}
 
@@ -6530,7 +6598,7 @@ For all sets of data, \(-1\leqslant r\leqslant 1\). A correlation coefficient of
 \draw[black!80,fill=black!80] (1.9991359976154,0.943719566438048) circle (0.03);
 \draw[black!80,fill=black!80] (0.799084955276089,1.4732341217342) circle (0.03);
 \draw[black!80,fill=black!80] (1.10366422828614,1.21809494936998) circle (0.03);
-\node at (1.25,2.5) {$r=-0.98$};
+\node at (1.25,2.5) {$r=-\text{0.98}$};
 \node[below,align=center,text width = 3.2cm] at (1.25,0) {\textit{very strong\\negative\\linear relationship}};
 \end{tikzpicture}
 \end{center}
@@ -6559,7 +6627,7 @@ For all sets of data, \(-1\leqslant r\leqslant 1\). A correlation coefficient of
 \draw[black!80,fill=black!80] (1.55778663763025,1.54014967759233) circle (0.03);
 \draw[black!80,fill=black!80] (1.1401507489033,0.666650362988476) circle (0.03);
 \draw[black!80,fill=black!80] (1.43568707986603,0.828293976053046) circle (0.03);
-\node at (1.25,2.5) {$r=-0.32$};
+\node at (1.25,2.5) {$r=-\text{0.32}$};
 \node[below,align=center,text width = 3.2cm] at (1.25,0) {\textit{weak\\negative\\linear relationship}};
 \end{tikzpicture}
 \end{center}
@@ -6588,7 +6656,7 @@ For all sets of data, \(-1\leqslant r\leqslant 1\). A correlation coefficient of
 \draw[black!80,fill=black!80] (0.801318508363015,0.101244794060686) circle (0.03);
 \draw[black!80,fill=black!80] (0.624282727909172,1.68068411847719) circle (0.03);
 \draw[black!80,fill=black!80] (0.352176980459586,0.39934395881673) circle (0.03);
-\node at (1.25,2.5) {$r=0.00$};
+\node at (1.25,2.5) {$r=\text{0.00}$};
 \node[below,align=center,text width = 3.2cm] at (1.25,0) {\textit{no\\linear\\relationship}};
 \end{tikzpicture}
 \end{center}
@@ -6617,7 +6685,7 @@ For all sets of data, \(-1\leqslant r\leqslant 1\). A correlation coefficient of
 \draw[black!80,fill=black!80] (1.65581739286222,1.30093484216487) circle (0.03);
 \draw[black!80,fill=black!80] (1.22631362223259,1.02108271888735) circle (0.03);
 \draw[black!80,fill=black!80] (1.37331528203759,1.46538877890905) circle (0.03);
-\node at (1.25,2.5) {$r=0.73$};
+\node at (1.25,2.5) {$r=\text{0.73}$};
 \node[below,align=center,text width = 3.2cm] at (1.25,0) {\textit{strong\\positive\\linear relationship}};
 \end{tikzpicture}
 \end{center}
@@ -6630,7 +6698,7 @@ For all sets of data, \(-1\leqslant r\leqslant 1\). A correlation coefficient of
 \draw[black!80,fill=black!80] (1.4,1.4) circle (0.03);
 \draw[black!80,fill=black!80] (2.4,1.9) circle (0.03);
 \draw[black!80,fill=black!80] (0.8,1.1) circle (0.03);
-\node at (1.25,2.5) {$r=1$};
+\node at (1.25,2.5) {$r=\text{1}$};
 \node[below,align=center,text width = 3.2cm] at (1.25,0) {\textit{perfect\\positive\\linear relationship}};
 \end{tikzpicture}
 \end{center}
@@ -6721,15 +6789,15 @@ As the correlation coefficient, r, is calculated for a \emph{sample}, it is a \t
 \node[text width=5cm] at (5,1.6) {
 \begin{minipage}{\textwidth}
 \begin{align*}
-\rho&=0.66\\
-r&=0.71\\
-n&=20
+\rho&=\text{0.66}\\
+r&=\text{0.71}\\
+n&=\text{20}
 \end{align*}
 \end{minipage}
 };
 \end{tikzpicture}
 \end{center}
-This \textbf{sample} has resulted in a value for $r$ which approximates well the \textcolor{black!50}{\textbf{population}} correlation coefficient, $\rho$.
+This \textbf{sample} has resulted in a value for $r$ which approximates well the true \textcolor{black!70}{\textbf{population}} correlation coefficient, $\rho$.
 
 \end{minipage}%
   \centering
@@ -6804,15 +6872,15 @@ This \textbf{sample} has resulted in a value for $r$ which approximates well the
 \node[text width=4cm] at (5,1.6) {
 \begin{minipage}{\textwidth}
 \begin{align*}
-\rho&=0.66\\
-r&=-0.18\\
-n&=7
+\rho&=\text{0.66}\\
+r&=-\text{0.18}\\
+n&=\text{7}
 \end{align*}
 \end{minipage}
 };
 \end{tikzpicture}
 \end{center}
-This \textbf{sample} has resulted in a value for $r$ which is far from the true \textcolor{black!50}{\textbf{population}} correlation coefficient, $\rho$.
+This \textbf{sample} has resulted in a value for $r$ which is far from the true \textcolor{black!70}{\textbf{population}} correlation coefficient, $\rho$.
 
 \end{minipage}
 \end{figure}
@@ -6837,8 +6905,8 @@ This \textbf{sample} has resulted in a value for $r$ which is far from the true 
 \node[text width = 6cm] at (-6,5.8) {
 \begin{minipage}{\textwidth}
 \begin{align*}
-\Sigma x&=143.4 \quad &\Sigma y&=163.3 \quad &\Sigma xy&=2978.5\\[0.3em]
-\Sigma x^2&=2618.3 &\Sigma y^2&=3391.8 &n&=8
+\Sigma x&=\text{143.4} \quad &\Sigma y&=\text{163.3} \quad &\Sigma xy&=\text{2978.5}\\[0.3em]
+\Sigma x^\text{2}&=\text{2618.3} &\Sigma y^\text{2}&=\text{3391.8} &n&=\text{8}
 \end{align*}
 \end{minipage}
 };
@@ -6861,25 +6929,25 @@ This \textbf{sample} has resulted in a value for $r$ which is far from the true 
 \begin{multicols}{3}
 
 \begin{flalign*}
-S_{xx}&=\Sigma x^2-\frac{(\Sigma x)^2}{n}\\
-&=2618.3-\frac{143.4^2}{8}\\
-&=47.82
+S_{xx}&=\Sigma x^\text{2}-\frac{(\Sigma x)^\text{2}}{n}\\
+&=\text{2618.3}-\frac{\text{143.4}^\text{2}}{\text{8}}\\
+&=\text{47.82}
 \end{flalign*}
 \vfill
 \null
 \columnbreak
 \begin{flalign*}
-S_{yy}&=\Sigma y^2-\frac{(\Sigma y)^2}{n}\\
-&=3391.8-\frac{163.3^2}{8}\\
-&=58.43
+S_{yy}&=\Sigma y^\text{2}-\frac{(\Sigma y)^\text{2}}{n}\\
+&=\text{3391.8}-\frac{\text{163.3}^\text{2}}{\text{8}}\\
+&=\text{58.43}
 \end{flalign*}
 \vfill
 \null
 \columnbreak
 \begin{flalign*}
 S_{xy}&=\Sigma xy-\frac{\Sigma x\Sigma y}{n}\\
-&=2978.5-\frac{143.4\times163.3}{8}\\
-&=51.39
+&=\text{2978.5}-\frac{\text{143.4}\times\text{163.3}}{\text{8}}\\
+&=\text{51.39}
 \end{flalign*}
 \vfill
 \null
@@ -6887,9 +6955,9 @@ S_{xy}&=\Sigma xy-\frac{\Sigma x\Sigma y}{n}\\
 
 \vspace{-0.8cm}
 
-$r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}=\dfrac{51.39}{\sqrt{47.82\times58.43}}=0.9354$\\[0.5em]
+$r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}=\dfrac{\text{51.39}}{\sqrt{\text{47.82}\times\text{58.43}}}=\text{0.9354}$\\[0.5em]
 
-This suggests a strong, positive linear correlation between the length of squirrels' tails and their heights.
+This suggests a strong positive linear correlation between the length of squirrels' tails and their heights.
 
 \end{tcolorbox}
 
@@ -6959,12 +7027,12 @@ This suggests a strong, positive linear correlation between the length of squirr
 \node[text width = 6cm] at (5.5,5) {
 \begin{minipage}{\textwidth}
 \begin{align*}
-\Sigma x&=785.9\\
-\Sigma y&=96\\
-\Sigma x^2&=34481\\
-\Sigma y^2&=472.6\\
-\Sigma xy&=3888.7\\
-n&=20
+\Sigma x&=\text{785.9}\\
+\Sigma y&=\text{96}\\
+\Sigma x^\text{2}&=\text{34481}\\
+\Sigma y^\text{2}&=\text{472.6}\\
+\Sigma xy&=\text{3888.7}\\
+n&=\text{20}
 \end{align*}
 \end{minipage}
 };
@@ -7000,12 +7068,12 @@ n&=20
 \node[text width = 6cm] at (5.5,2.5) {
 \begin{minipage}{\textwidth}
 \begin{align*}
-\Sigma x&=49.63\\
-\Sigma y&=94.48\\
-\Sigma x^2&=333.1\\
-\Sigma y^2&=1208.0\\
-\Sigma xy&=538.87\\
-n&=8
+\Sigma x&=\text{49.63}\\
+\Sigma y&=\text{94.48}\\
+\Sigma x^\text{2}&=\text{333.1}\\
+\Sigma y^\text{2}&=\text{1208.0}\\
+\Sigma xy&=\text{538.87}\\
+n&=\text{8}
 \end{align*}
 \end{minipage}
 };
@@ -7014,7 +7082,7 @@ n&=8
 \end{multicols}
 \end{enumerate}
 \vspace{-0.5cm}
-\item A \textit{sepal} is part of a flower. The lengths ($x$, in cm) and widths ($y$, in cm) are measured for a random sample of 100 \textit{iris} flowers, of two different varieties. A scatterplot is plotted, and a correlation coefficient of $-0.206$ is obtained. The researcher concludes that this proves that there is a weak negative linear relationship.
+\item A \textit{sepal} is part of a flower. The lengths ($x$, in cm) and widths ($y$, in cm) are measured for a random sample of 100 \textit{iris} flowers, of two different varieties. A scatterplot is plotted, and a correlation coefficient of $-\text{0.206}$ is obtained. The researcher concludes that this proves that there is a weak negative linear relationship.
 \begin{center}
 \vspace{-0.2cm}
 \begin{tikzpicture}[scale=0.8]
@@ -7139,17 +7207,17 @@ n&=8
 
 \section{Least Squares Linear Regression}\label{least-squares-linear-regression}
 
-A \(y\) \emph{on} \(x\) regression model is one constructed with the aim of producing a trend line which can be used to predict unknown values of \(Y_i\) based on known values of \(x_i\). For a sample of bivariate data \((x_1,y_1), (x_2,y_2), ...  ,(x_n,y_n)\), this \emph{regression line} has an equation of the form \(\hat{Y}_i=a + b x_i\), where:
+A \(y\) \emph{on} \(x\) regression model is one constructed with the aim of producing a trend line which can be used to predict unknown values of \(y\) based on known values of \(x\). For a sample of bivariate data \((x_\text{1},y_\text{1}), (x_\text{2},y_\text{2}), ...  ,(x_n,y_n)\), this \emph{regression line} has an equation of the form \(\hat{y}_i=a + b x_i\), where:
 
 \begin{figure}[H]
   \centering
 \begin{minipage}[c]{.54\textwidth}
 
-$\hat{Y}_i$ (\textit{`Y hat'}) is the \textit{best estimate} of $y_i$ given $x_i$.\\
+$\hat{y}_i$ (\textit{`y hat'}) is the \textit{best estimate} of $y_i$ given $x_i$.\\
 
 Sample statistic $a$ represents the line's \textbf{intercept}, and is an estimate for the true \textit{intercept parameter} $\alpha$ (\textit{``alpha''}).\\
 
-Sample statistic $b$ represents the line's \textbf{slope}, and is an estimate for the true \textit{slope parameter} $\beta$ (\textit{``beta'')}. Each 
+Sample statistic $b$ represents the line's \textbf{slope}, and is an estimate for the true \textit{slope parameter} $\beta$ (\textit{``beta'')}. 
 
 \end{minipage}%
   \centering
@@ -7166,19 +7234,19 @@ Sample statistic $b$ represents the line's \textbf{slope}, and is an estimate fo
         \draw[semithick,-stealth] (0,0) -- (0,3) node[above] {$y$};
         \node[below] at (3,0) {\textit{predictor}};
         \node[above,rotate=90] at (0,1.5) {\textit{response}};
-        \draw[fill] (1,1.105) circle (0.04) node[below] {$(x_1,y_1)$};
-        \draw[fill] (2,2.17) circle (0.04) node[above] {$(x_2,y_2)$};
-        \draw[fill] (3,1.10) circle (0.04) node[below] {$(x_3,y_3)$};
-        \draw[fill] (4,1.43) circle (0.04) node[right] {$(x_4,y_4)$};
-        \draw[fill] (5,2.47) circle (0.04) node[above] {$(x_5,y_5)$};
-        \draw[thick] (0.7,0.7*0.21+1.016) -- (5.1,5.1*0.21+1.016) node[right] {$\hat{Y}_i=a + b x_i$};
+        \draw[fill] (1,1.105) circle (0.04) node[below] {$(x_\text{1},y_\text{1})$};
+        \draw[fill] (2,2.17) circle (0.04) node[above] {$(x_\text{2},y_\text{2})$};
+        \draw[fill] (3,1.10) circle (0.04) node[below] {$(x_\text{3},y_\text{3})$};
+        \draw[fill] (4,1.43) circle (0.04) node[right] {$(x_\text{4},y_\text{4})$};
+        \draw[fill] (5,2.47) circle (0.04) node[above] {$(x_\text{5},y_\text{5})$};
+        \draw[thick] (0.7,0.7*0.21+1.016) -- (5.1,5.1*0.21+1.016) node[right] {$\hat{y}_i=a + b x_i$};
     \end{tikzpicture}
 \end{center}
 
 \end{minipage}
 \end{figure}
 
-To determine the equation of this regression line, the method of \emph{least squares regression} is used. Since the goal is to produce the \emph{best estimates} for \(Y_i\), vertical distances between observed values and the line are considered. The \emph{least squares} regression line is that which minimises the sum of the squares of these vertical distances.
+To determine the equation of this regression line, the method of \emph{least squares regression} is used. Since the goal is to produce the \emph{best estimates} for \(y_i\), vertical distances between observed values and the line are considered. The \emph{least squares} regression line is that which minimises the sum of the squares of these vertical distances.
 
 \begin{multicols}{2}
 
@@ -7242,7 +7310,7 @@ $$\hat{\beta}=b=\dfrac{S_{xy}}{S_{xx}} \qquad \text{and} \qquad \hat{\alpha}=a=\
 
 Note that the calculation for \(a\) implies that the regression line always passes through the point \(\left(\bar{x},\bar{y}\right)\).
 
-Once values for \(a\) and \(b\) have been calculated, and so the least squares regression line of \(y\) on \(x\) obtained as \(\hat{Y}_i=a+bx_i\), unknown values of \(Y_i\) may be estimated for given values of \(x_i\). This equation (and the line it defines) is \emph{not} suitable for predicting \(x\) from \(y\); this process will be covered in a later chapter.
+Once values for \(a\) and \(b\) have been calculated, and so the least squares regression line of \(y\) on \(x\) obtained as \(\hat{y}_i=a+bx_i\), unknown values of \(y_i\) may be estimated for given values of \(x_i\). This equation (and the line it defines) is \emph{not} suitable for predicting \(x\) from \(y\); this process will be covered in a later chapter.
 
 \begin{vwcol}[widths={0.65,0.35},
  sep=.8cm,rule=0pt]
@@ -7315,8 +7383,8 @@ Whether a linear relationship will continue to hold for $x$ values lower or high
 \draw[fill=black] (10*0.25-1,8*0.25-1.5) circle (0.04);
 \draw[fill=black] (15*0.25-1,17*0.25-1.5) circle (0.04);
 \draw[fill=black] (16*0.25-1,18*0.25-1.5) circle (0.04);
-\node at (9.5,3.5) {$\Sigma x=132,$\quad$\Sigma y=147,$};
-\node at (9.5,2.9) {$\Sigma x^2 =1742,$\quad$\Sigma y^2 =2057,$\quad$\Sigma xy=1872$};
+\node at (9.5,3.5) {$\Sigma x=\text{132},$\quad$\Sigma y=\text{147},$};
+\node at (9.5,2.9) {$\Sigma x^\text{2} =\text{1742},$\quad$\Sigma y^\text{2} =\text{2057},$\quad$\Sigma xy=\text{1872}$};
 \node[anchor=west] at (5.5,2) {(a) Calculate the equation of the least squares};
 \node[anchor=west] at (6.1,1.5) {regression line of $y$ on $x$.};
 \node[anchor=west] at (5.5,0.7) {(b) Calculate a predicted mark for the practical test};
@@ -7331,19 +7399,27 @@ Whether a linear relationship will continue to hold for $x$ values lower or high
 
 \begin{enumerate}
     \item[(a)] \begin{flalign*}
-S_{xx}&=\Sigma x^2-\frac{(\Sigma x)^2}{n}=1742-\frac{132^2}{12}=290&&\\[1em]
-S_{xy}&=\Sigma xy-\frac{\Sigma x\Sigma y}{n}=1872-\frac{132\times 147}{12}=255\\[1em]
-b&=\dfrac{S_{xy}}{S_{xx}}=\dfrac{255}{290}=0.879\\[1em]
-a&=\bar{y}-b \bar{x}=\dfrac{147}{12}-0.879\times \dfrac{132}{12}=2.578\\[1em]
-\hat{Y}_i&=2.578+0.879x_i
+S_{xx}&=\Sigma x^\text{2}-\frac{(\Sigma x)^\text{2}}{n}=\text{1742}-\frac{\text{132}^\text{2}}{\text{12}}=\text{290}&&\\[1em]
+S_{xy}&=\Sigma xy-\frac{\Sigma x\Sigma y}{n}=\text{1872}-\frac{\text{132}\times \text{147}}{\text{12}}=\text{255}\\[1em]
+b&=\dfrac{S_{xy}}{S_{xx}}=\dfrac{\text{255}}{\text{290}}=\text{0.879}\\[1em]
+a&=\bar{y}-b \bar{x}=\dfrac{\text{147}}{\text{12}}-\text{0.879}\times \dfrac{\text{132}}{\text{12}}=\text{2.578}\\[1em]
+\hat{y}_i&=\text{2.578}+\text{0.879}x_i
 \end{flalign*}
-    \item[(b)] $\hat{Y}=2.578 + 0.879\times 8=9.61$
+    \item[(b)] $\hat{y}=\text{2.578} + \text{0.879}\times \text{8}=\text{9.61}$
     \item[(c)] This is an example of interpolation as the value of $x$ used is within the range of values of the other students, and consequently it can be considered a robust prediction, especially given the strong linear relationship suggested by the scatterplot.  
 \end{enumerate}
 
 \end{tcolorbox}
 
-Another way of writing the equation found above is: \(\text{practical}=2.578+0.879\times\text{ theoretical}\). This suggests that each increase of \(1\) mark in the theory test is associated with an increase of \(0.879\) marks in the practical test.
+Another way of writing the equation found above is: \(\text{practical}=\text{2.578}+\text{0.879}\times\text{ theoretical}\). This suggests that each increase of 1 mark in the theory test is associated with an increase of 0.879 marks in the practical.
+
+Scatterplots should always be constructed and closely scrutinised before further analysing bivariate data.
+
+By inspecting a scatterplot, it may become apparent, for instance, that the data set is separated into \emph{distinct groups}, which ought to be considered separately, including calculating a correlation coefficient and constructing a regression line for each group.
+
+\emph{Outliers} can have a large influence on both the correlation coefficient and the regression line, so they should always be (visually) identified and considered, removing them only if doing so can be justified.
+
+\pagebreak
 
 \protect\phantomsection\label{ex53q}{}
 
@@ -7351,7 +7427,7 @@ Another way of writing the equation found above is: \(\text{practical}=2.578+0.8
 \addcontentsline{toc}{subsubsection}{{Exercise 5.3}}
 
 \begin{enumerate}
-    \item A sample of bivariate data is collected, shown in the table and scatterplot below.
+    \item A sample of bivariate data collected by a researcher is shown in the table below.
     \begin{center}
         \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
             \hline
@@ -7361,28 +7437,24 @@ Another way of writing the equation found above is: \(\text{practical}=2.578+0.8
             \hline
         \end{tabular}
     \end{center}
-    The researcher who collected the data constructed a scatterplot, and from that they determined that it would not be appropriate to obtain a least squares regression line. State what feature they are likely to have observed on the scatterplot.
-\end{enumerate}
-
-\pagebreak
-
-\begin{enumerate}[resume]
+    The researcher constructed a scatterplot, from which they determined that a least squares regression line would not be appropriate. State what feature they are likely to have observed on the scatterplot.
     \item A bivariate sample has summary statistics:
 \begin{center}
   \begin{tabular}{ccccccccccc}
-      $\sum x=117$ & \quad & $\sum x^2=1869$ & \quad & $\sum y=660$ & \quad & $\sum y^2=54638$ & \quad & $\sum xy=9519$ & \quad & $n=8$
+      $\sum x=\text{117}$ & \quad & $\sum x^\text{2}=\text{1869}$ & \quad & $\sum y=\text{660}$ & \quad & $\sum y^\text{2}=\text{54638}$ & \quad & $\sum xy=\text{9519}$ & \quad & $n=\text{8}$
   \end{tabular}
 \end{center}
 It is determined from inspecting a scatterplot that there appears to be a linear relationship between the variables. Obtain the equation of the least squares regression line of $y$ on $x$.
 \item 26 randomly selected trees in a forest have their diameter at a set distance from the ground measured, in inches, and the height of each tree also measured, in feet. The equation of the least squares regression line for $y$ on $x$ is obtained, and shown on the scatterplot below.
+\vspace{-0.6cm}
     \begin{center}
     \begin{tikzpicture}
         \draw (0,0) -- (6.2,0);
         \foreach \x in {0,1,...,6}{
         \draw (\x,-0.1) -- (\x,0) node[below] {\x};
         }
-        \node at (3.1,-1) {Tree diameter (inches)};
-        \draw (0,0) -- (0,3.5);
+        \node at (3.1,-0.8) {Tree diameter (inches)};
+        \draw (0,0) -- (0,3.2);
         \foreach \y in {40,50,...,70}{
         \draw (-0.1,0.1*\y-4) -- (0,0.1*\y-4) node[left] {\y};
         }
@@ -7415,26 +7487,30 @@ It is determined from inspecting a scatterplot that there appears to be a linear
 \draw[fill] (0.9111540,0.914811) circle (0.04);
 \draw[thick] (0.5,0.1*40.57-4+0.473*0.5) -- (5.5,0.1*40.57-4+0.473*5.5);
 \node[right] at (9,3.5) {Summary statistics:};
-\node[right] at (9,2.9) {$\sum x=74.76$};
-\node[right] at (9,2.3) {$\sum x^2=253.76$};
-\node[right] at (9,1.7) {$\sum y=1408.3$};
-\node[right] at (9,1.1) {$\sum y^2=77277$};
-\node[right] at (9,0.5) {$\sum xy=4233.1$};
-\node[right] at (9,-0.1) {$n=26$};
+\node[right] at (9,2.9) {$\sum x=\text{74.76}$};
+\node[right] at (9,2.3) {$\sum x^\text{2}=\text{253.76}$};
+\node[right] at (9,1.7) {$\sum y=\text{1408.3}$};
+\node[right] at (9,1.1) {$\sum y^\text{2}=\text{77277}$};
+\node[right] at (9,0.5) {$\sum xy=\text{4233.1}$};
+\node[right] at (9,-0.1) {$n=\text{26}$};
     \end{tikzpicture}
 \end{center}
+    \vspace{-0.3cm}
     \begin{enumerate}
         \item Determine the equation of the least squares regression line of $y$ on $x$.
         \item Calculate an estimate for the height of a tree with a diameter of 3.9 inches.
     \end{enumerate}
 \item A running website randomly selected eleven amateur runners who recently completed a marathon and asked them to complete a survey which included their finishing time in the marathon and information about their training routine. The scatterplot below shows, for each runner, their finishing time ($x$, in hours) and the total distance they ran in the final four weeks of their training ($y$, in miles).
+
+\vspace{-3.5cm}
+
 \begin{center}
 \begin{tikzpicture}
 \foreach \x in {0,1,...,7}{
-\draw (\x,0) -- (\x,-0.1);
-\node[below] at (\x,0) {\x};
+\draw (\x,0.5 -- (\x,0.4);
+\node[below] at (\x,0.5) {\x};
 }
-\foreach \y in {0,25,...,175}{
+\foreach \y in {25,50,...,175}{
 \draw (0,0.02*\y) -- (-0.1,0.02*\y);
 \node[left] at (0,0.02*\y) {\y};
 }
@@ -7450,18 +7526,18 @@ It is determined from inspecting a scatterplot that there appears to be a linear
 \draw[black!70,fill=black!70] (5,1.18) circle (0.03);
 \draw[black!70,fill=black!70] (6.2,1.3) circle (0.03);
 \draw[thick] (2,2.96) -- (6.5,0.84);
-\draw[-stealth] (0,0) -- (7,0) node[right] {$x$};
-\draw[-stealth] (0,0) -- (0,3.6) node[above] {$y$};
-\node at (3.5,-0.8) {Time (hours)};
+\draw[-stealth] (0,0.5) -- (7.3,0.5);
+\draw[-stealth] (0,0.5) -- (0,3.7);
+\node at (3.5,-0.3) {Time (hours)};
 \node at (-1.8  ,2.5) {Distance};
 \node at (-2,2) {(miles)};
-\node[right] at (9,4) {Summary statistics:};
-\node[right] at (9,3.4) {$\sum x=44.5$};
-\node[right] at (9,2.8) {$\sum x^2=191.21$};
-\node[right] at (9,2.2) {$\sum y=1098$};
-\node[right] at (9,1.6) {$\sum y^2=116768$};
-\node[right] at (9,1) {$\sum xy=4179.2$};
-\node[right] at (9,0.4) {$n=11$};
+\node[right] at (9,3.6) {Summary statistics:};
+\node[right] at (9,3) {$\sum x=\text{44.5}$};
+\node[right] at (9,2.4) {$\sum x^\text{2}=\text{191.21}$};
+\node[right] at (9,1.8) {$\sum y=\text{1098}$};
+\node[right] at (9,1.2) {$\sum y^\text{2}=\text{116768}$};
+\node[right] at (9,0.6) {$\sum xy=\text{4179.2}$};
+\node[right] at (9,0) {$n=\text{11}$};
 \end{tikzpicture}
 \end{center}  
 
@@ -7475,13 +7551,16 @@ A least squares regression line for $y$ on $x$ is shown on the graph.
     \item[(b)] Calculate the correlation coefficient, and comment on its value.
 \end{enumerate}
 
-The website wishes to allow users the ability to input the number of miles in their training plan for the four weeks leading up to the rate, and receive in response an estimate for their finishing time.
+The website wishes to allow users the ability to input the number of miles in their training plan for the four weeks leading up to the race, and receive in response an estimate for their finishing time.
 
 \begin{enumerate}
     \item[(c)] Explain why the equation provided above is unsuitable for this purpose.
 \end{enumerate}
+\end{enumerate}
 
-\pagebreak
+\newpage
+
+\begin{enumerate}[resume]
     \item A researcher laid a transect line from the base of a tree and placed a quadrat at one metre intervals along the transect line. The number of seeds dropped by the tree contained in each quadrat was recorded. 
     \vspace{-0.6cm}
     \begin{center}
@@ -7628,12 +7707,12 @@ The website wishes to allow users the ability to input the number of miles in th
 \begin{center}
 \begin{tabular}{c}
   \phantom{-}\\[0.2em]
-  $\Sigma x=4673$\\[0.6em]
-  $\Sigma x^2=763101$\\[0.6em]
-  $\Sigma xy=308020$\\[0.6em]
-  $\Sigma y=1889$\\[0.6em]
-  $\Sigma y^2=124945$\\[0.6em]
-  $n=29$
+  $\Sigma x=\text{4673}$\\[0.6em]
+  $\Sigma x^\text{2}=\text{763101}$\\[0.6em]
+  $\Sigma xy=\text{308020}$\\[0.6em]
+  $\Sigma y=\text{1889}$\\[0.6em]
+  $\Sigma y^\text{2}=\text{124945}$\\[0.6em]
+  $n=\text{29}$
 \end{tabular}
 \end{center}
 
@@ -7666,7 +7745,7 @@ The website wishes to allow users the ability to input the number of miles in th
 \addcontentsline{toc}{section}{{Review Exercise}}
 
 \begin{enumerate}
-    \item As part of a study on intensive exercise, a sports scientist recorded the peak heart rates ($y$) of a random selection of sixteen volunteers of different ages ($x$) who took regular exercise. The linear regression equation was calculated for the data shown in the scatter diagram and found to be $y=203.9−0.67x$.
+    \item As part of a study on intensive exercise, a sports scientist recorded the peak heart rates ($y$) of a random selection of sixteen volunteers of different ages ($x$) who took regular exercise. The linear regression equation was calculated for the data shown in the scatter diagram and found to be $y=\text{203.9}−\text{0.67}x$.
 \end{enumerate}
 
 \begin{figure}[H]
@@ -7686,7 +7765,7 @@ The website wishes to allow users the ability to input the number of miles in th
 \node at (1.3,0.1*\y) {\y};
 \foreach \y in {160,165,...,200}
 \draw[semithick] (1.8,0.1*\y) -- (1.6,0.1*\y);
-\foreach \x in {20,25,...,50}
+\foreach \x in {20,30,...,50}
 \node at (0.1*\x,15.5) {\x};
 \foreach \x in {20,25,...,50}
 \draw[semithick] (0.1*\x,15.8) -- (0.1*\x,16);
@@ -7718,11 +7797,11 @@ The website wishes to allow users the ability to input the number of miles in th
 \vspace{0cm}
 
 \begin{enumerate}
-    \item[] However, after considering the scatter diagram for the data, it was realised that one piece of data has been misrecorded, and this volunteer’s data was removed from the data set. 
+    \item[] However, after considering the scatter diagram for the data, it was realised that one piece of data has been misrecorded, and this volunteer’s data (spotted as a possible outlier) was removed from the data set. 
     \begin{enumerate}
         \item[(a) ] State the approximate age of the volunteer whose data was removed.
         \item[(b) ] Calculate the new equation of the least squares regression line using the revised summary data:\\
-        $\Sigma x=518,  \Sigma y=2687,  \Sigma x^2=19196,  \Sigma y^2=482691,  \Sigma xy=91534$ 
+        $\Sigma x=\text{518},  \Sigma y=\text{2687},  \Sigma x^\text{2}=\text{19196},  \Sigma y^\text{2}=\text{482691},  \Sigma xy=\text{91534}$ 
         \item[(c) ] Comment on the difference this makes to the prediction for the average peak heart rate of a 45 year old volunteer. 
     \end{enumerate}
 \end{enumerate}
@@ -7736,10 +7815,10 @@ The website wishes to allow users the ability to input the number of miles in th
     \begin{center}
     \begin{tikzpicture}[scale=0.8]
         \node[right] at (7,2.9) {Summary data for sample:};
-        \node[right] at (7,1.9) {$S_{xx}=145.94$};
-        \node[right] at (7,1.2) {$S_{yy}=530.78$};
-        \node[right] at (7,0.5) {$S_{xy}=277.54$};
-        \node[right] at (7,-0.2) {$n=17$};
+        \node[right] at (7,1.9) {$S_{xx}=\text{145.94}$};
+        \node[right] at (7,1.2) {$S_{yy}=\text{530.78}$};
+        \node[right] at (7,0.5) {$S_{xy}=\text{277.54}$};
+        \node[right] at (7,-0.2) {$n=\text{17}$};
         \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
         \draw[-stealth] (0,0.1) -- (0,3.25) node[above] {$y$}; 
         \node at (2.5,-1) {Barometric pressure (inches of mercury)};
@@ -7780,7 +7859,7 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{tikzpicture}
 \end{center}
 \vspace{-0.5cm}
-The least squares regression line of $y=155.29+1.9018x$ was fitted. Show the calculations required to obtain the values of the sample intercept and sample slope parameter.
+The least squares regression line of $y=\text{155.29}+\text{1.9018}x$ was fitted. Show the calculations required to obtain the values of the sample intercept and sample slope parameter.
 \end{enumerate}
 
 \begin{enumerate}[resume]
@@ -7854,20 +7933,20 @@ The least squares regression line of $y=155.29+1.9018x$ was fitted. Show the cal
 
 \chapter{Random Variables}\label{random-variables}
 
-A random variable is a function that assigns a numerical value to each outcome of a random experiment, used to \emph{model} the behaviour of random processes. Random variables are notated using \emph{capital letters}, such as \(X\) and \(Y\), whilst the \emph{specific values} that they can take are notated with corresponding small letters such as \(x\) and \(y\). Random variables can be used to describe either \emph{discrete} or \emph{continuous} quantitative variables.
+A random variable is a function that assigns a numerical value to each outcome of a random experiment, used to \emph{model} the behaviour of random processes. Random variables are notated using \emph{capital letters}, such as \(X\) and \(Y\), whilst the \emph{specific values} that they can take are notated with corresponding small letters such as \(x\) and \(y\). Random variables can be used to model either \emph{discrete} or \emph{continuous} quantitative variables.
 
 \subsection*{Discrete Random Variables}\label{discrete-random-variables}
 \addcontentsline{toc}{subsection}{Discrete Random Variables}
 
-If a random variable takes \emph{discrete} numerical values, and a probability is assigned to each, then it is a \textbf{discrete random variable}. Discrete values are often described as those that can be listed (either finitely or countably infinitely). Some examples of discrete random variables are:
+If a random variable takes \emph{discrete} numerical values, and a probability is assigned to each, then it is a \textbf{discrete random variable}. Discrete values are those that can be listed (either finitely or countably infinitely). Some examples of discrete random variables are:
 
 \begin{center}
 \renewcommand{\arraystretch}{2}
 \begin{tabular}{ l  l } 
      \textbf{Random variable} (e.g. $X$) & \textbf{Discrete values} (e.g. $x$)     \\ 
-     The outcome of a roll of a cubical die & $1, 2, 3, 4, 5, 6$     \\ 
-     The number of goals scored in a game of football & $0,1,2,3,4,5,6,7...$     \\ 
-     The value of a randomly picked UK coin, in pounds & $0.01,0.02,0.05,0.1,0.2,0.5,1,2$     \\ 
+     The outcome of a roll of a cubical die & $\text{1}, \text{2}, \text{3}, \text{4}, \text{5}, \text{6}$     \\ 
+     The number of goals scored in a game of football & $\text{0},\text{1},\text{2},\text{3},\text{4},\text{5},\text{6},\text{7}...$     \\ 
+     The value of a randomly picked UK coin, in pounds & $\text{0.01},\text{0.02},\text{0.05},\text{0.1},\text{0.2},\text{0.5},\text{1},\text{2}$     \\ 
 \end{tabular}
 \end{center}
 
@@ -7877,13 +7956,13 @@ The probability that a discrete random variable \(X\) takes the value \(x\) is n
 
 For example, if random variable \(X\) is used to represent the outcome of the roll of a fair, six-sided die, then:
 
-\[\text{P}(X=5)=\frac{1}{6}\]
+\[\text{P}(X=\text{5})=\frac{\text{1}}{\text{6}}\]
 
 \pagebreak
 
 \section{Probability Distributions for Discrete Random Variables}\label{probability-distributions-for-discrete-random-variables}
 
-A \emph{probability function} assigns probabilities to each possible value of a discrete random variable, and completely describes its behaviour. There are a number of ways of presenting the \emph{probability distribution} created. For example, consider a discrete random variable \(X\) that takes the value \(3\) with probability \(0.2\), the value \(4\) with probability \(0.5\) and the value \(5\) with probability \(0.3\). Below, the probability distribution for \(X\) has been \emph{tabulated} and \emph{graphed}.
+A \emph{probability function} assigns probabilities to each possible value of a discrete random variable, and completely describes its behaviour. There are a number of ways of presenting the \emph{probability distribution} created. For example, consider a discrete random variable \(X\) that takes the value 3 with probability 0.2, the value 4 with probability 0.5 and the value 5 with probability 0.3. Below, the probability distribution for \(X\) has been \emph{tabulated} and \emph{graphed}.
 
 \begin{figure}[H]
   \centering
@@ -7892,7 +7971,7 @@ A \emph{probability function} assigns probabilities to each possible value of a 
 \textit{Tabulated:}
 \begin{center}
 \begin{tabular}{ c | c c c }
-      $x$ & $3$ & $4$ & $5$\\
+      $x$ & 3 & 4 & 5\\
   \hline
       $\text{P}(X=x)$ & 0.2 & 0.5 & 0.3
 \end{tabular}
@@ -7906,7 +7985,7 @@ A discrete probability distribution must define \textit{mutually exclusive} and 
 
 \begin{center}
 \begin{tabular}{c c c}
-      $0\leqslant \text{P}(X=x_i)\leqslant 1$ for all $i$ & and & $\sum \text{P}(X=x_i)=1$
+      $0\leqslant \text{P}(X=x_i)\leqslant \text{1}$ for all $i$ & and & $\sum \text{P}(X=x_i)=\text{1}$
 \end{tabular}
 \end{center}
 
@@ -7931,7 +8010,12 @@ A discrete probability distribution must define \textit{mutually exclusive} and 
     every axis y label/.style={at={(current axis.above origin)},anchor=south east}
     }
 }
-    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 4.5cm, width = 7cm, ybar,bar width=10pt, xmin=2.5,xmax=5.5,ymin=0,ymax=0.6, xtick={3,4,5},ytick={0,0.1,0.2,0.3,0.4,0.5},xlabel=$x$,ylabel=probability]
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 4.5cm, width = 7cm, ybar,bar width=10pt, xmin=2.5,xmax=5.5,ymin=0,ymax=0.6, 
+    xtick={3,4,5},
+    xticklabels={3,4,5},
+    ytick={0,0.1,0.2,0.3,0.4,0.5},
+    yticklabels={0,0.1,0.2,0.3,0.4,0.5},
+    xlabel=$x$,ylabel=probability]
         \addplot[fill=black!25, draw=black] coordinates {
     (3,0.2) 
     (4,0.5) 
@@ -7944,13 +8028,13 @@ A discrete probability distribution must define \textit{mutually exclusive} and 
 
 \vspace{-0.3cm}
 
-From both the table and the graph, it can be seen that, for example, \(\text{P}(X=3)=0.2\).
+From both the table and the graph, it can be seen that, for example, \(\text{P}(X=\text{3})=\text{0.2}\).
 
-Probabilities such as \(\text{P}(X\leqslant4)\) can be calculated by adding the probability of each outcome (since they are mutually exclusive), or by subtracting from \(1\) (since they are exhaustive).
+Probabilities such as \(\text{P}(X\leqslant\text{4})\) can be calculated by adding the probability of each outcome (since they are mutually exclusive), or by subtracting from 1 (since they are exhaustive).
 
 \vspace{-0.3cm}
 
-\[\text{P}(X\leqslant 4)=\text{P}(X = 3)+\text{P}(X= 4)=0.2+0.5=0.7\]
+\[\text{P}(X\leqslant \text{4})=\text{P}(X = \text{3})+\text{P}(X= \text{4})=\text{0.2}+\text{0.5}=\text{0.7}\]
 
 \vspace{-0.7cm}
 
@@ -7958,7 +8042,7 @@ Probabilities such as \(\text{P}(X\leqslant4)\) can be calculated by adding the 
 
 \vspace{-0.7cm}
 
-\[\text{P}(X\leqslant 4)=1-\text{P}(X=5)=1-0.3=0.7\]
+\[\text{P}(X\leqslant \text{4})=\text{1}-\text{P}(X=\text{5})=\text{1}-\text{0.3}=\text{0.7}\]
 
 \vspace{-0.2cm}
 
@@ -7967,9 +8051,9 @@ Probabilities such as \(\text{P}(X\leqslant4)\) can be calculated by adding the 
 
 \begin{center}
 \begin{tabular}{ c | c c c c c }
-      $d$ & $6$ & $7$ & $8$ & $9$ & $10$\\
+      $d$ & 6 & 7 & 8 & 9 & 10\\
   \hline
-      $\text{P}(D=d)$ & $0.35$ & $0.3$ & $c$ & $0.2$ & $0.1$ 
+      $\text{P}(D=d)$ & 0.35 & 0.3 & $c$ & 0.2 & 0.1 
 \end{tabular}
 \end{center}
 
@@ -7977,29 +8061,29 @@ Probabilities such as \(\text{P}(X\leqslant4)\) can be calculated by adding the 
 
 \text{(a)   }Calculate the value of $c$.\\
   \\[-0.3em]
-\text{(b)   }Calculate $\text{P}(D\leqslant7)$.\\
+\text{(b)   }Calculate $\text{P}(D\leqslant\text{7})$.\\
   \\[-0.3em]
-\text{(c)   }Calculate $\text{P}(D>7)$.
+\text{(c)   }Calculate $\text{P}(D>\text{7})$.
 
 \tcblower
 \textbf{Solution:}
 
-\text{(a)   }$c=1-(0.35+0.3+0.2+0.1)=0.05$
+\text{(a)   }$c=\text{1}-(\text{0.35}+\text{0.3}+\text{0.2}+\text{0.1})=\text{0.05}$
 
 \begin{center}
 \begin{tabular}{ c | c c c c c }
-      $d$ & $6$ & $7$ & $8$ & $9$ & $10$\\
+      $d$ & 6 & 7 & 8 & 9 & 10\\
   \hline
-      $\text{P}(D=d)$ & $0.35$ & $0.3$ & $0.05$ & $0.2$ & $0.1$ 
+      $\text{P}(D=d)$ & 0.35 & 0.3 & 0.05 & 0.2 & 0.1 
 \end{tabular}
 \end{center}
 
 \vspace{-0.5cm}
 
 \begin{flalign*}
-\text{(b)   }\text{P}(D\leqslant7)&=\text{P}(D=6)+\text{P}(D=7) &\\
-&=0.35+0.3\\
-&=0.65
+\text{(b)   }\text{P}(D\leqslant\text{7})&=\text{P}(D=\text{6})+\text{P}(D=\text{7}) &\\
+&=\text{0.35}+\text{0.3}\\
+&=\text{0.65}
 \end{flalign*}
 
 \hspace{9cm}
@@ -8015,8 +8099,12 @@ Probabilities such as \(\text{P}(X\leqslant4)\) can be calculated by adding the 
     every axis y label/.style={at={(current axis.above origin)},anchor=south east}
     }
 }
-    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3.5cm, width = 7cm, ybar,bar width=10pt, xmin=5,xmax=11,ymin=0,ymax=0.5, xtick={6,7,8,9,10},ytick={0,0.1,0.2,0.3,0.4},xlabel=$d$,ylabel=probability]
-
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3.5cm, width = 7cm, ybar,bar width=10pt, xmin=5,xmax=11,ymin=0,ymax=0.5, 
+    xtick={6,7,8,9,10},
+    ytick={0,0.1,0.2,0.3,0.4},
+    xticklabels={6,7,8,9,10},
+    yticklabels={0,0.1,0.2,0.3,0.4},
+    xlabel=$d$,ylabel=probability]
         \addplot[fill=black!40, draw=black] coordinates {
     (6,0.35) 
     (7,0.3) 
@@ -8030,9 +8118,9 @@ Probabilities such as \(\text{P}(X\leqslant4)\) can be calculated by adding the 
 \vspace{-1.2cm}
 
 \begin{flalign*}
-\text{(c)   }\text{P}(D>7)&=1-\text{P}(D\leqslant7) &\\
-&=1-0.65\\
-&=0.35
+\text{(c)   }\text{P}(D>\text{7})&=\text{1}-\text{P}(D\leqslant\text{7}) &\\
+&=\text{1}-\text{0.65}\\
+&=\text{0.35}
 \end{flalign*}
 \end{tcolorbox}
 
@@ -8051,9 +8139,9 @@ Probabilities such as \(\text{P}(X\leqslant4)\) can be calculated by adding the 
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c }
-            $a$ & $7$ & $8$ & $9$\\
+            $a$ & 7 & 8 & 9\\
           \hline
-            $\text{P}(A=a)$ & $0.6$ & $0.3$ & $0.2$ 
+            $\text{P}(A=a)$ & 0.6 & 0.3 & 0.2 
         \end{tabular}
         \egroup
         \item[(c)] 
@@ -8062,25 +8150,25 @@ Probabilities such as \(\text{P}(X\leqslant4)\) can be calculated by adding the 
         \begin{tabular}{ c | c c c }
             $c$ & red & blue & green\\
           \hline
-            $\text{P}(C=c)$ & $\frac{1}{3}$ & $\frac{1}{6}$ & $\frac{1}{2}$ 
+            $\text{P}(C=c)$ & $\frac{\text{1}}{\text{3}}$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{2}}$ 
         \end{tabular}
         \egroup
         \item[(b)] 
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c }
-            $b$ & $2$ & $5$ & $10$\\
+            $b$ & 2 & 5 & 10\\
           \hline
-            $\text{P}(B=b)$ & $\frac{1}{5}$ & $\frac{1}{5}$ & $\frac{2}{5}$
+            $\text{P}(B=b)$ & $\frac{\text{1}}{\text{5}}$ & $\frac{\text{1}}{\text{5}}$ & $\frac{\text{2}}{\text{5}}$
         \end{tabular}
         \egroup
         \item[(d)] 
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c }
-            $d$ & $2$ & $4$ & $6$\\
+            $d$ & 2 & 4 & 6\\
           \hline
-            $\text{P}(D=d)$ & $0.9$ & $-0.3$ & $0.4$ 
+            $\text{P}(D=d)$ & 0.9 & $-\text{0.3}$ & 0.4 
         \end{tabular}
         \egroup
         \end{multicols}
@@ -8092,36 +8180,36 @@ Probabilities such as \(\text{P}(X\leqslant4)\) can be calculated by adding the 
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c c }
-            $q$ & $1$ & $2$ & $3$ & $4$\\
+            $q$ & 1 & 2 & 3 & 4\\
           \hline
-            $\text{P}(Q=q)$ & $0.3$ & $0.2$ & $k$ & $0.1$ 
+            $\text{P}(Q=q)$ & 0.3 & 0.2 & $k$ & 0.1 
         \end{tabular}
         \egroup
         \item[(c)] 
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c }
-            $s$ & $5$ & $10$ & $15$\\
+            $s$ & 5 & 10 & 15\\
           \hline
-            $\text{P}(S=s)$ & $\frac{1}{10}$ & $\frac{7}{10}$ & $k$ 
+            $\text{P}(S=s)$ & $\frac{\text{1}}{\text{10}}$ & $\frac{\text{7}}{\text{10}}$ & $k$ 
         \end{tabular}
         \egroup
         \item[(b)] 
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c }
-            $r$ & $0$ & $1$ & $2$\\
+            $r$ & 0 & 1 & 2\\
           \hline
-            $\text{P}(R=r)$ & $0.4$ & $2k$ & $k$
+            $\text{P}(R=r)$ & 0.4 & $\text{2}k$ & $k$
         \end{tabular}
         \egroup
         \item[(d)] 
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c c }
-            $t$ & $1$ & $2$ & $3$ & $4$\\
+            $t$ & 1 & 2 & 3 & 4\\
           \hline
-            $\text{P}(T=t)$ & $2k$ & $4k$ & $6k$ & $8k$ 
+            $\text{P}(T=t)$ & $\text{2}k$ & $\text{4}k$ & $\text{6}k$ & $\text{8}k$ 
         \end{tabular}
         \egroup
         \end{multicols}
@@ -8131,9 +8219,9 @@ Probabilities such as \(\text{P}(X\leqslant4)\) can be calculated by adding the 
     \bgroup
     \def\arraystretch{1.5}
     \begin{tabular}{ c | c c c c c c c c }
-        $x$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$\\
+        $x$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
       \hline
-        $\text{P}(X=x)$ & $0.15$ & $0.2$ & $0.1$ & $0.05$ & $c$ & $0.1$ & $0.08$ & $0.02$ 
+        $\text{P}(X=x)$ & 0.15 & 0.2 & 0.1 & 0.05 & $c$ & 0.1 & 0.08 & 0.02 
     \end{tabular}
     \egroup
     \end{center}
@@ -8141,25 +8229,25 @@ Probabilities such as \(\text{P}(X\leqslant4)\) can be calculated by adding the 
     \begin{enumerate}
         \begin{multicols}{4}
         \item The value of $c$.
-        \item $\text{P}(X=4)$.
-        \item $\text{P}(X<4)$.
-        \item $\text{P}(X\leqslant4)$.
-        \item $\text{P}(X>4)$.
-        \item $\text{P}(X\geqslant4)$.
-        \item $\text{P}(2<X<5)$.
-        \item $\text{P}(2\leqslant X\leqslant 5)$.
+        \item $\text{P}(X=\text{4})$.
+        \item $\text{P}(X<\text{4})$.
+        \item $\text{P}(X\leqslant\text{4})$.
+        \item $\text{P}(X>\text{4})$.
+        \item $\text{P}(X\geqslant\text{4})$.
+        \item $\text{P}(\text{2}<X<\text{5})$.
+        \item $\text{P}(\text{2}\leqslant X\leqslant \text{5})$.
         \end{multicols}
     \end{enumerate}
     \item A bag contains nine counters numbered 1 to 9. Two are selected at random, without replacement. Tabulate the probability distribution for the random variable $E$, representing the number of even numbers selected.
-    \item The discrete random variable $X$ has probability distribution given by the function $\text{P}(X=x)=k(x+1)$, where $k$ is a constant and $X$ takes values $x=0,1,2,3$.
+    \item The discrete random variable $X$ has probability distribution given by the function $\text{P}(X=x)=k(x+\text{1})$, where $k$ is a constant and $X$ takes values $x=\text{0},\text{1},\text{2},\text{3}$.
     \begin{enumerate}
         \item Tabulate the probability distribution for $X$.
-        \item Find $\text{P}(X\geqslant2)$.
+        \item Find $\text{P}(X\geqslant\text{2})$.
     \end{enumerate}
-    \item The discrete random variable $X$ has probability distribution given by the function $\text{P}(X=x)=kx^2$, where $k$ is a constant and $X$ takes values $x=1,2,3,4$.
+    \item The discrete random variable $X$ has probability distribution given by the function $\text{P}(X=x)=kx^\text{2}$, where $k$ is a constant and $X$ takes values $x=\text{1},\text{2},\text{3},\text{4}$.
     \begin{enumerate}
         \item Tabulate the probability distribution for $X$.
-        \item Find $\text{P}(X<4)$.
+        \item Find $\text{P}(X<\text{4})$.
     \end{enumerate}
     \item Tabulate the probability distribution of each of the following discrete random variables:
     \begin{enumerate}
@@ -8182,7 +8270,7 @@ $\text{E}(X)=\sum{x_i\text{P}(X=x_i)}$
 \end{tcolorbox}
 \end{centering}
 
-The calculated mean of a finite number of observations of a random variable is likely to not be perfectly equal to the true \emph{expected value}. However, the mean of repeated observations will tend towards the expected value as the number of observations increases. This is known as the \emph{law of large numbers}.
+The calculated mean of a finite number of observations of a random variable is likely to not be perfectly equal to the true \emph{expected value}. However, the mean of repeated observations will tend towards the expected value as the number of observations increases. This is an illustration of the \emph{law of large numbers}.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given the probability distribution of random variable $X$ tabulated below, calculate $\text{E}(X)$.
@@ -8193,16 +8281,16 @@ The calculated mean of a finite number of observations of a random variable is l
 \bgroup
 \def\arraystretch{1.5}
 \begin{tabular}{ c | c c c c }
-      $x$ & $3$ & $4$ & $5$ & $6$\\
+      $x$ & 3 & 4 & 5 & 6\\
   \hline
-      $\text{P}(X=x)$ & $\tfrac{1}{8}$ & $\tfrac{1}{4}$ & $\tfrac{1}{2}$ & $\tfrac{1}{8}$ 
+      $\text{P}(X=x)$ & $\tfrac{\text{1}}{\text{8}}$ & $\tfrac{\text{1}}{\text{4}}$ & $\tfrac{\text{1}}{\text{2}}$ & $\tfrac{\text{1}}{\text{8}}$ 
 \end{tabular}
 \egroup
 \end{center}
 
 \tcblower
 \textbf{Solution:}
-$$\text{E}(X) = 3\times \dfrac{1}{8} + 4\times \dfrac{1}{4} + 5\times \dfrac{1}{2} + 6\times \dfrac{1}{8}= \dfrac{37}{8}=4.625$$
+$$\text{E}(X) = \text{3}\times \dfrac{\text{1}}{\text{8}} + \text{4}\times \dfrac{\text{1}}{\text{4}} + \text{5}\times \dfrac{\text{1}}{\text{2}} + \text{6}\times \dfrac{\text{1}}{\text{8}}= \dfrac{\text{37}}{\text{8}}=\text{4.625}$$
 
 \vspace{-0.3cm}
 
@@ -8228,40 +8316,40 @@ Problems may require a probability distribution to first be tabulated, such as b
         node[bag] {red}        
             child {
                 node[end, label=right:
-                    {red\hspace{1.2cm}$\implies\frac{30}{90}=\frac{1}{3}$}] {}
+                    {red\hspace{1.2cm}$\implies\frac{\text{30}}{\text{90}}=\frac{\text{1}}{\text{3}}$}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\frac{5}{9}$}
+                node[below]  {$\frac{\text{5}}{\text{9}}$}
             }
             child {
                 node[end, label=right:
-                    {blue\hspace{1cm}$\implies\frac{24}{90}=\frac{4}{15}$}] {}
+                    {blue\hspace{1cm}$\implies\frac{\text{24}}{\text{90}}=\frac{\text{4}}{\text{15}}$}] {}
                 edge from parent
-                node[above] {$\frac{4}{9}$}
+                node[above] {$\frac{\text{4}}{\text{9}}$}
                 node[below]  {}
             }
             edge from parent 
             node[above] {}
-            node[below]  {$\frac{6}{10}$}
+            node[below]  {$\frac{\text{6}}{\text{10}}$}
     }
     child {
         node[bag] {blue}        
         child {
                 node[end, label=right:
-                    {red\hspace{1.2cm}$\implies\frac{24}{90}=\frac{4}{15}$}] {}
+                    {red\hspace{1.2cm}$\implies\frac{\text{24}}{\text{90}}=\frac{\text{4}}{\text{15}}$}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\frac{6}{9}$}
+                node[below]  {$\frac{\text{6}}{\text{9}}$}
             }
             child {
                 node[end, label=right:
-                    {blue\hspace{1cm}$\implies\frac{12}{90}=\frac{2}{15}$}] {}
+                    {blue\hspace{1cm}$\implies\frac{\text{12}}{\text{90}}=\frac{\text{2}}{\text{15}}$}] {}
                 edge from parent
-                node[above] {$\frac{3}{9}$}
+                node[above] {$\frac{\text{3}}{\text{9}}$}
                 node[below]  {}
             }
         edge from parent         
-            node[above] {$\frac{4}{10}$}
+            node[above] {$\frac{\text{4}}{\text{10}}$}
             node[below]  {}
     };
 \end{tikzpicture}
@@ -8271,12 +8359,12 @@ Problems may require a probability distribution to first be tabulated, such as b
 \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c }
-            $x$ & $0$ & $1$ & $2$\\
+            $x$ & 0 & 1 & 2\\
           \hline
-            $\text{P}(X=x)$ & $\tfrac{2}{15}$ & $\tfrac{8}{15}$ & $\tfrac{1}{3}$ 
+            $\text{P}(X=x)$ & $\tfrac{\text{2}}{\text{15}}$ & $\tfrac{\text{8}}{\text{15}}$ & $\tfrac{\text{1}}{\text{3}}$ 
         \end{tabular}
         \egroup
-$$\text{E}(X)=0\times \frac{2}{15}+1\times \frac{8}{15}+2\times \frac{1}{3}=\frac{6}{5}=1.2$$
+$$\text{E}(X)=\text{0}\times \frac{\text{2}}{\text{15}}+\text{1}\times \frac{\text{8}}{\text{15}}+\text{2}\times \frac{\text{1}}{\text{3}}=\frac{\text{6}}{\text{5}}=\text{1.2}$$
 \end{tcolorbox}
 
 \pagebreak
@@ -8294,18 +8382,18 @@ $$\text{E}(X)=0\times \frac{2}{15}+1\times \frac{8}{15}+2\times \frac{1}{3}=\fra
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c c }
-            $x$ & $2$ & $4$ & $6$ & $8$\\
+            $x$ & 2 & 4 & 6 & 8\\
           \hline
-            $\text{P}(X=x)$ & $0.25$ & $0.4$ & $0.2$ & $0.15$ 
+            $\text{P}(X=x)$ & 0.25 & 0.4 & 0.2 & 0.15 
         \end{tabular}
         \egroup
         \item 
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c c c }
-            $y$ & $1$ & $2$ & $3$ & $4$ & $5$\\
+            $y$ & 1 & 2 & 3 & 4 & 5\\
           \hline
-            $\text{P}(Y=y)$ & $\frac{1}{20}$ & $\frac{7}{20}$ & $\frac{3}{20}$ & $k$ & $\frac{1}{20}$ 
+            $\text{P}(Y=y)$ & $\frac{\text{1}}{\text{20}}$ & $\frac{\text{7}}{\text{20}}$ & $\frac{\text{3}}{\text{20}}$ & $k$ & $\frac{\text{1}}{\text{20}}$ 
         \end{tabular}
         \egroup
         \end{multicols}
@@ -8313,10 +8401,10 @@ $$\text{E}(X)=0\times \frac{2}{15}+1\times \frac{8}{15}+2\times \frac{1}{3}=\fra
     \item The random variable $X$ represents the result of a roll of a fair, octahedral die with sides numbered 1 to 8.
     \begin{enumerate}
         \item Tabulate the probability distribution of $X$.
-        \item State $\text{P}(4\leqslant X\leqslant 6)$.
+        \item State $\text{P}(\text{4}\leqslant X\leqslant \text{6})$.
         \item Calculate $\text{E}(X)$.
     \end{enumerate}
-    \item A discrete random variable $X$ can assume values 10 and 20 only. Given $\text{E}(X)=16$, tabulate the probability distribution of $X$.
+    \item A discrete random variable $X$ can assume values 10 and 20 only. Given $\text{E}(X)=\text{16}$, tabulate the probability distribution of $X$.
     \item A box contains 3 red marbles and 5 green marbles. Two marbles are taken at random without replacement, and $X$ is the number of green marbles obtained. Find the expectation of $X$.
     \item A box contains 3 red marbles and 5 green marbles. Two marbles are taken at random with replacement, and $Y$ is the number of green marbles obtained. Find the expectation of $Y$.
     \item In the UKMT Senior Maths Challenge, 4 points are gained for a question answered correctly and 1 point is lost for a question answered incorrectly. A candidate guesses two questions, picking at random from the 5 choices for each question. Let random variable $Y$ represent the points gained from those two questions.
@@ -8344,19 +8432,19 @@ $$\text{E}(X)=0\times \frac{2}{15}+1\times \frac{8}{15}+2\times \frac{1}{3}=\fra
     \item The probability distribution of the discrete random variable $X$ is tabulated below.
     \begin{center}
     \begin{tabular}{ c | c c c c c }
-        $x$ & $1$ & $3$ & $5$ & $8$ & $10$\\
+        $x$ & 1 & 3 & 5 & 8 & 10\\
       \hline
-        $\text{P}(X=x)$ & $0.1$ & $a$ & $0.3$ & $b$ & $0.2$ 
+        $\text{P}(X=x)$ & 0.1 & $a$ & 0.3 & $b$ & 0.2 
     \end{tabular}
     \end{center}
-    Given that $\text{E}(X)=6.3$, find the values of $a$ and $b$.
+    Given that $\text{E}(X)=\text{6.3}$, find the values of $a$ and $b$.
 \end{enumerate}
 
 \pagebreak
 
 \section{The Law of Expectation}\label{the-law-of-expectation}
 
-If discrete random variable \(X\) takes values \({x_1,x_2,\dots ,x_n}\) with probabilities \(\text{P}(X=x_i)\), then random variable \mbox{$Y=2X$} takes values \({2x_1,2x_2,\dots,2x_n}\) with probabilities \(\text{P}(X=x_i)\). For example, let \(X\) represent the roll of a die:
+If discrete random variable \(X\) takes values \({x_\text{1},x_\text{2},\dots ,x_n}\) with probabilities \(\text{P}(X=x_i)\), then random variable \mbox{$Y=\text{2}X$} takes values \({\text{2}x_\text{1},\text{2}x_\text{2},\dots,\text{2}x_n}\) with probabilities \(\text{P}(X=x_i)\). For example, let \(X\) represent the roll of a die:
 
 \begin{figure}[H]
   \centering
@@ -8367,13 +8455,13 @@ If discrete random variable \(X\) takes values \({x_1,x_2,\dots ,x_n}\) with pro
 \bgroup
 \def\arraystretch{1.5}
 \begin{tabular}{ c | c c c c c c }
-      $x$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$\\
+      $x$ & 1 & 2 & 3 & 4 & 5 & 6\\
   \hline
-      $\text{P}(X=x)$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ 
+      $\text{P}(X=x)$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ 
 \end{tabular}
 \egroup
 \end{center}
-\captionof{figure}{$\text{E}(X)=1\times \frac{1}{6}+...+6\times \frac{1}{6}=3.5$}
+\captionof{figure}{$\text{E}(X)=\text{1}\times \frac{\text{1}}{\text{6}}+...+\text{6}\times \frac{\text{1}}{\text{6}}=\text{3.5}$}
   \label{fig:expx}
 \end{minipage}%
   \centering
@@ -8387,13 +8475,13 @@ If discrete random variable \(X\) takes values \({x_1,x_2,\dots ,x_n}\) with pro
 \bgroup
 \def\arraystretch{1.5}
 \begin{tabular}{ c | c c c c c c }
-      $y$ & $2$ & $4$ & $6$ & $8$ & $10$ & $12$\\
+      $y$ & 2 & 4 & 6 & 8 & 10 & 12\\
   \hline
-      $\text{P}(Y=y)$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ 
+      $\text{P}(Y=y)$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ 
 \end{tabular}
 \egroup
 \end{center}
-\captionof{figure}{$\text{E}(2X)=\text{E}(Y)=2\times \frac{1}{6}+...+12\times \frac{1}{6}=7$}
+\captionof{figure}{$\text{E}(\text{2}X)=\text{E}(Y)=\text{2}\times \frac{\text{1}}{\text{6}}+...+\text{12}\times \frac{\text{1}}{6}=7$}
   \label{fig:exp2x}
 \end{minipage}
 \end{figure}
@@ -8409,7 +8497,7 @@ $\text{E}(aX\pm b)=a\text{E}(X)\pm b$
 \end{tcolorbox}
 \end{centering}
 
-This means that expectation distributes over addition and multiplication by constants.
+This shows that expectation is \emph{linear}, distributing over addition and multiplication by constants.
 
 Proof:
 
@@ -8423,16 +8511,16 @@ Proof:
 \end{align*}
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Let $X$ be the random variable such that $\text{E}(X)=3$. Calculate $\text{E}(4X-1)$.
+\textbf{Problem:} Let $X$ be the random variable such that $\text{E}(X)=\text{3}$. Calculate $\text{E}(\text{4}X-\text{1})$.
 
 \tcblower
 \textbf{Solution:}
 
 \vspace{-0.8cm}
 \begin{align*}
-\text{E}(4X-1)&=4\text{E}(X)-1\\
-&=4\times 3-1\\
-&=11
+\text{E}(\text{4}X-\text{1})&=\text{4}\text{E}(X)-1\\
+&=\text{4}\times \text{3}-\text{1}\\
+&=\text{11}
 \end{align*}
 
 \end{tcolorbox}
@@ -8440,17 +8528,17 @@ Proof:
 Given the value \(\text{E}(aX\pm b)\), the expectation of \(X\) may be determined.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Given that $\text{E}(10-2Y)=50$, determine the value of $\text{E}(Y)$.
+\textbf{Problem:} Given that $\text{E}(\text{10}-\text{2}Y)=\text{50}$, determine the value of $\text{E}(Y)$.
 \tcblower
 \textbf{Solution:}
 
 \vspace{-0.8cm}
 \begin{align*}
-\text{E}(10-2Y)&=50\\
-\text{E}(-2Y+10)&=50\\
--2\text{E}(Y)+10&=50\\
--2\text{E}(Y)&=40\\
-\text{E}(Y)&=-20
+\text{E}(\text{10}-\text{2}Y)&=\text{50}\\
+\text{E}(-\text{2}Y+\text{10})&=\text{50}\\
+-\text{2}\text{E}(Y)+\text{10}&=\text{50}\\
+-\text{2}\text{E}(Y)&=\text{40}\\
+\text{E}(Y)&=-\text{20}
 \end{align*}
 
 \end{tcolorbox}
@@ -8466,33 +8554,33 @@ Given the value \(\text{E}(aX\pm b)\), the expectation of \(X\) may be determine
     \item Calculate:
     \begin{enumerate}
     \begin{multicols}{3}
-        \item $\text{E}(X+4)$ given $\text{E}(X)=3$
-        \item $\text{E}(Y-3)$ given $\text{E}(Y)=0.4$
-        \item $\text{E}(2+Z)$ given $\text{E}(Z)=-5$
+        \item $\text{E}(X+\text{4})$ given $\text{E}(X)=\text{3}$
+        \item $\text{E}(Y-\text{3})$ given $\text{E}(Y)=\text{0.4}$
+        \item $\text{E}(\text{2}+Z)$ given $\text{E}(Z)=-\text{5}$
     \end{multicols}
     \end{enumerate}
     \item Find:
     \begin{enumerate}
     \begin{multicols}{3}
-        \item $\text{E}(3X)$ given $\text{E}(X)=2.5$
-        \item $\text{E}(-\frac{1}{2}Y)$ given $\text{E}(Y)=8$
-        \item $\text{E}(-W)$ given $\text{E}(W)=-\frac{2}{3}$
+        \item $\text{E}(\text{3}X)$ given $\text{E}(X)=\text{2.5}$
+        \item $\text{E}(-\frac{\text{1}}{\text{2}}Y)$ given $\text{E}(Y)=\text{8}$
+        \item $\text{E}(-W)$ given $\text{E}(W)=-\frac{\text{2}}{\text{3}}$
     \end{multicols}
     \end{enumerate}
     \item Determine the value of:
     \begin{enumerate}
     \begin{multicols}{3}
-        \item $\text{E}(2X-3)$ given $\text{E}(X)=-4$
-        \item $\text{E}(-\dfrac{1}{3}Y+2)$ given $\text{E}(Y)=12$
-        \item $\text{E}(3-4C)$ given $\text{E}(C)=\dfrac{1}{2}$
+        \item $\text{E}(\text{2}X-\text{3})$ given $\text{E}(X)=-\text{4}$
+        \item $\text{E}(-\dfrac{\text{1}}{\text{3}}Y+\text{2})$ given $\text{E}(Y)=\text{12}$
+        \item $\text{E}(\text{3}-\text{4}C)$ given $\text{E}(C)=\dfrac{\text{1}}{\text{2}}$
     \end{multicols}
     \end{enumerate}
     \item Determine:
     \begin{enumerate}
     \begin{multicols}{3}
-        \item $\text{E}(X)$ given $\text{E}(4X+3)=15$
-        \item $\text{E}(Y)$ given $\text{E}(4-Y)=2.4$
-        \item $\text{E}(Q)$ given $\text{E}(5+\frac{2}{3}Q)=-1$
+        \item $\text{E}(X)$ given $\text{E}(\text{4}X+\text{3})=\text{15}$
+        \item $\text{E}(Y)$ given $\text{E}(\text{4}-Y)=\text{2.4}$
+        \item $\text{E}(Q)$ given $\text{E}(\text{5}+\frac{\text{2}}{\text{3}}Q)=-\text{1}$
     \end{multicols}
     \end{enumerate}
     \item The probability distribution of $X$ is tabulated as follows:
@@ -8500,9 +8588,9 @@ Given the value \(\text{E}(aX\pm b)\), the expectation of \(X\) may be determine
     \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c c }
-            $x$ & $4$ & $5$ & $6$ & $7$\\
+            $x$ & 4 & 5 & 6 & 7\\
           \hline
-            $\text{P}(X=x)$ & $0.3$ & $0.5$ & $k$ & $0.05$ 
+            $\text{P}(X=x)$ & 0.3 & 0.5 & $k$ & 0.05 
         \end{tabular}
     \egroup
     \end{center}
@@ -8510,13 +8598,13 @@ Given the value \(\text{E}(aX\pm b)\), the expectation of \(X\) may be determine
     \begin{enumerate}
     \begin{multicols}{4}
         \item $k$
-        \item $\text{P}(4<X\leqslant 6)$
+        \item $\text{P}(\text{4}<X\leqslant \text{6})$
         \item $\text{E}(X)$
-        \item $\text{E}(4X+1)$
+        \item $\text{E}(\text{4}X+\text{1})$
     \end{multicols}
     \end{enumerate}
     \item In a board game a fair, tetrahedral die with faces numbered from 1 to 4 is thrown, and the result is multiplied by 3 to give the number of places a player can move. Let random variable $M$ represent the number of places a player can move. Determine the mean, $\mu$, of $M$.
-    \item Random variables $X$ and $Y$ are defined such that the mean of $X$ is $\frac{1}{4}$ and $Y=6X+4$. Determine the mean of $Y$.
+    \item Random variables $X$ and $Y$ are defined such that the mean of $X$ is $\frac{\text{1}}{\text{4}}$ and $Y=\text{6}X+\text{4}$. Determine the mean of $Y$.
     \item A betting game involves a player rolling a fair, octagonal die with faces numbered from 1 to 8. Let $X$ represent the result of a roll of the die.
     \begin{enumerate}
     \item Determine $\text{E}(X)$.
@@ -8527,73 +8615,73 @@ Given the value \(\text{E}(aX\pm b)\), the expectation of \(X\) may be determine
         \item Determine the value of $\text{E}(Y)$.
         \item Explain what this suggests will happen if a player plays the game repeatedly.
     \end{enumerate}
-    \item Random variables $X$ and $Y$ are defined such that the mean of $Y$ is $-5$ and $Y=2X-10$. Determine the mean of $X$.
+    \item Random variables $X$ and $Y$ are defined such that the mean of $Y$ is $-\text{5}$ and $Y=\text{2}X-\text{10}$. Determine the mean of $X$.
 \end{enumerate}
 
 \pagebreak
 
 \section{The Variance of a Random Variable}\label{the-variance-of-a-random-variable}
 
-The \emph{variance} of the values observed from repeated rolls of a fair cubical die will tend towards a fixed value in the long-run. Letting the random variable \(X\) represent the result of a roll of a die, the \textbf{variance}, \(\sigma^2\), of \(X\) is \(\frac{35}{12}\), or \(\text{V}(X)=\frac{35}{12}\).
+The \emph{variance} of the values observed from repeated rolls of a fair cubical die will tend towards a fixed value in the long-run. Letting the random variable \(X\) represent the result of a roll of a die, the \textbf{variance}, \(\sigma^\text{2}\), of \(X\) is \(\frac{\text{35}}{\text{12}}\), or \(\text{V}(X)=\frac{\text{35}}{\text{12}}\).
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=The variance $\sigma^2$ of random variable $X$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-$\text{V}(X)=\text{E}(X^2)-\left(E(X)\right)^2$
+\begin{tcolorbox}[adjusted title=The variance $\sigma^\text{2}$ of random variable $X$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+$\text{V}(X)=\text{E}(X^\text{2})-\left(\text{E}(X)\right)^\text{2}$
 \end{tcolorbox}
 \end{centering}
 
 As a reminder, the variance measures how spread out the values of a random variable are about the mean.
 
-Note that \(\text{E}\left(X^2\right)\) is not equal to \(\left(\text{E}(X)\right)^2\).
+Note that \(\text{E}\left(X^\text{2}\right)\) is not equal to \(\left(\text{E}(X)\right)^\text{2}\).
 
 Proof:
 
 \vspace{-0.4cm}
 
 \begin{align*}
-    \text{V}(X)&=\text{E}[(X-\mu)^2]\\[0.3em]
+    \text{V}(X)&=\text{E}[(X-\mu)^\text{2}]\\[0.3em]
     &=\text{E}[(X-\mu)(X-\mu)]\\[0.3em]
-    &=\text{E}[X^2-2\mu X+\mu^2]\\[0.3em]
-    &=\text{E}(X^2)-2\mu \text{E}(X)+\mu^2\\[0.3em]
-    &=\text{E}(X^2)-2(\text{E}(X))^2 +(\text{E}(X))^2\\[0.3em]
-    &=\text{E}(X^2)-\left(\text{E}(X)\right)^2
+    &=\text{E}[X^\text{2}-\text{2}\mu X+\mu^\text{2}]\\[0.3em]
+    &=\text{E}(X^\text{2})-\text{2}\mu \text{E}(X)+\mu^\text{2}\\[0.3em]
+    &=\text{E}(X^\text{2})-\text{2}(\text{E}(X))^\text{2} +(\text{E}(X))^\text{2}\\[0.3em]
+    &=\text{E}(X^\text{2})-\left(\text{E}(X)\right)^\text{2}
 \end{align*}
 
 Knowing the \emph{expectation} and \emph{variance} of random variables help statisticians better understand the \emph{long-run} behaviour of repeated observations:
 
 \begin{itemize}
     \item $\text{E}(X)=\mu_X$, the \textit{long-run mean} of the distribution of $X$.
-    \item $\text{V}(X)=\sigma_X^2$, the \textit{variance} of the distribution of $X$.
+    \item $\text{V}(X)=\sigma_X^\text{2}$, the \textit{variance} of the distribution of $X$.
 \end{itemize}
 
 The standard deviation, \(\sigma\), of a random variable \(X\), notated \(\text{SD}(X)\), is the square root of the variance:
 
-\[\text{SD}(X)=\sqrt{\text{V}(X)}\qquad\text{and}\qquad \text{SD}(X),\text{V}(X)\geqslant0\]
+\[\text{SD}(X)=\sqrt{\text{V}(X)}\qquad\text{and}\qquad \text{SD}(X),\text{V}(X)\geqslant\text{0}\]
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The probability distribution of random variable $X$ is given below: 
 
 \begin{center}
 \begin{tabular}{ c | c c c c }
-      $x$ & $0$ & $1$ & $2$ & $3$\\
+      $x$ & 0 & 1 & 2 & 3\\
   \hline
-      $\text{P}(X=x)$ & $0.3$ & $0.4$ & $0.1$ & $0.2$ 
+      $\text{P}(X=x)$ & 0.3 & 0.4 & 0.1 & 0.2 
 \end{tabular}
 \end{center}
 
 Calculate $\text{E}(X)$ and $\text{V}(X)$
 
 \tcblower
-\textbf{Solution:}\textit{ (Remember that $\text{E}(X^2)$ is not the variance.)}
+\textbf{Solution:}\textit{ (Remember that $\text{E}(X^\text{2})$ is not the variance.)}
 
 \vspace{-0.3cm}
 \begin{align*}
-\text{E}(X) &= 0\times 0.3 + 1\times 0.4 + 2\times 0.1 + 3\times 0.2= 1.2\\[1em]
-\text{E}(X^2) &= 0^2\times 0.3 + 1^2\times 0.4 + 2^2\times 0.1 + 3^2\times 0.2= 2.6\\[1em]
-\text{V}(X) &= \text{E}(X^2)-E^2(X)\\
-&= 2.6 - 1.2^2\\
-&= 1.16
+\text{E}(X) &= \text{0}\times \text{0.3} + \text{1}\times \text{0.4} + \text{2}\times \text{0.1} + \text{3}\times \text{0.2}= \text{1.2}\\[1em]
+\text{E}(X^\text{2}) &= \text{0}^\text{2}\times \text{0.3} + \text{1}^\text{2}\times \text{0.4} + \text{2}^\text{2}\times \text{0.1} + \text{3}^\text{2}\times \text{0.2}= \text{2.6}\\[1em]
+\text{V}(X) &= \text{E}(X^\text{2})-\text{E}^\text{2}(X)\\
+&= \text{2.6} - \text{1.2}^\text{2}\\
+&= \text{1.16}
 \end{align*}
 
 \end{tcolorbox}
@@ -8613,18 +8701,18 @@ Calculate $\text{E}(X)$ and $\text{V}(X)$
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c c }
-            $x$ & $1$ & $2$ & $5$ & $10$\\
+            $x$ & 1 & 2 & 5 & 10\\
           \hline
-            $\text{P}(X=x)$ & $0.4$ & $0.3$ & $0.2$ & $0.1$ 
+            $\text{P}(X=x)$ & 0.4 & 0.3 & 0.2 & 0.1 
         \end{tabular}
         \egroup
         \item 
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c c c }
-            $y$ & $0$ & $1$ & $2$ & $3$ & $4$\\
+            $y$ & 0 & 1 & 2 & 3 & 4\\
           \hline
-            $\text{P}(Y=y)$ & $\frac{1}{10}$ & $\frac{1}{5}$ & $\frac{1}{4}$ & $k$ & $\frac{2}{5}$ 
+            $\text{P}(Y=y)$ & $\frac{\text{1}}{\text{10}}$ & $\frac{\text{1}}{\text{5}}$ & $\frac{\text{1}}{\text{4}}$ & $k$ & $\frac{\text{2}}{\text{5}}$ 
         \end{tabular}
         \egroup
         \end{multicols}
@@ -8637,7 +8725,7 @@ Calculate $\text{E}(X)$ and $\text{V}(X)$
     \end{enumerate}
     \item A box contains 6 pink marbles and 4 orange marbles. Two marbles are taken at random without replacement, and $X$ is the number of pink marbles obtained. Find the expectation and variance of $X$.
     \item A box contains 2 red marbles and 6 green marbles. Two marbles are selected at random with replacement, and $Y$ is the number of green marbles obtained. Find $\text{E}(Y)$ and $\text{V}(Y)$.
-    \item A discrete random variable $X$ can assume values 4 and 12 only. Given $\text{E}(X)=10$, determine the variance of $X$.
+    \item A discrete random variable $X$ can assume values 4 and 12 only. Given $\text{E}(X)=\text{10}$, determine the variance of $X$.
     \item A multiple-choice quiz gives four possible answers for each question, with 4 marks awarded for a correct answer and 1 mark taken away for an incorrect answer. Determine the expected gain in marks when the answer to a single question is guessed, and the variance in the number of marks gained.
     \item A game costs £10 to enter, and the player rolls two fair, cubical dice together. If both dice show a six the player wins £50, a single six means the player gets £10 back and no sixes means the player gets nothing. Determine the mean and variance in the amount of profit for playing the game once.
     \item A fair coin is tossed three times. Let random variable $X$ represent the number of tails shown.
@@ -8645,45 +8733,45 @@ Calculate $\text{E}(X)$ and $\text{V}(X)$
         \item Tabulate the probability distribution of $X$.
         \item Find $\text{E}(X)$ and $\text{V}(X)$.
     \end{enumerate}
-    \item The random variable $X$ takes values 7, 8 and 9. Given $\text{P}(X=8)=p$ and $\text{P}(X=7)=\text{P}(X=9)$:
+    \item The random variable $X$ takes values 7, 8 and 9. Given $\text{P}(X=\text{8})=p$ and $\text{P}(X=\text{7})=\text{P}(X=\text{9})$:
     \begin{enumerate}
         \item Determine $\text{E}(X)$.
-        \item Given $\text{V}(X)=0.8$, determine the value of $p$.
+        \item Given $\text{V}(X)=\text{0.8}$, determine the value of $p$.
     \end{enumerate}
-    \item Random variable $Y$ takes the value 1 with probability 0.9 and otherwise takes the value $k$. Determine the value of $k$ if $\text{V}(Y)=0$.
+    \item Random variable $Y$ takes the value 1 with probability 0.9 and otherwise takes the value $k$. Determine the value of $k$ if $\text{V}(Y)=\text{0}$.
 \end{enumerate}
 
 \pagebreak
 
 \section{The Law of Variance}\label{the-law-of-variance}
 
-Since variance is based on \emph{squared} differences from the mean, \(\text{V}(2X)\ne2\text{V}(X)\).
+Since variance is based on \emph{squared} differences from the mean, \(\text{V}(\text{2}X)\ne\text{2}\text{V}(X)\).
 
 \begin{centering}
 \tcbset{width=10cm}
 \begin{tcolorbox}[adjusted title=For random variable $X$ with constants $a$ and $b$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-$\text{V}(aX\pm b)=a^2\text{V}(X)$
+$\text{V}(aX\pm b)=a^\text{2}\text{V}(X)$
 \end{tcolorbox}
 \end{centering}
 
-This shows that multiplying a random variable by a constant changes its variance by the square of that constant, while adding a constant does not affect the variance.
+This shows that multiplying a random variable by a constant changes its variance by the square of that constant, while adding a constant does not affect the variance. In contrast to expectation, variance is \emph{not linear} and does not distribute over addition or multiplication by constants.
 
 Proof:
 
 \vspace{-0.4cm}
 
 \begin{align*}
-    \text{V}(aX + b) &= \text{E}\big[(aX + b - \text{E}(aX + b))^2\big]\\[0.5em]
-    &=\text{E}\big[(aX+b-a\text{E}(X)-b)^2\big]\\[0.5em]
-    &=\text{E}\big[(aX-a\text{E}(X))^2\big]\\[0.5em]
-    &=\text{E}\big[(a(X-\text{E}(X)))^2\big]\\[0.5em]
-    &=\text{E}[a^2(X-\text{E}(X))^2]\\[0.5em]
-    &=a^2 \text{E}[(X-\text{E}(X))^2]\\[0.5em]
-    &=a^2 \text{V}(X)
+    \text{V}(aX + b) &= \text{E}\big[(aX + b - \text{E}(aX + b))^\text{2}\big]\\[0.5em]
+    &=\text{E}\big[(aX+b-a\text{E}(X)-b)^\text{2}\big]\\[0.5em]
+    &=\text{E}\big[(aX-a\text{E}(X))^\text{2}\big]\\[0.5em]
+    &=\text{E}\big[(a(X-\text{E}(X)))^\text{2}\big]\\[0.5em]
+    &=\text{E}[a^\text{2}(X-\text{E}(X))^\text{2}]\\[0.5em]
+    &=a^\text{2} \text{E}[(X-\text{E}(X))^\text{2}]\\[0.5em]
+    &=a^\text{2} \text{V}(X)
 \end{align*}
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Let $X$ be the random variable such that $\text{E}(X)=-7$ and $\text{V}(X)=4$. Calculate $\text{V}(2-3X)$.
+\textbf{Problem:} Let $X$ be the random variable such that $\text{E}(X)=-\text{7}$ and $\text{V}(X)=\text{4}$. Calculate $\text{V}(\text{2}-\text{3}X)$.
 
 \tcblower
 \textbf{Solution:}\textit{ (It helps to rearrange into the form $aX\pm b$.)}
@@ -8691,10 +8779,10 @@ Proof:
 \vspace{-0.1cm}
 
 \begin{align*}
-\text{V}(2-3X)&=\text{V}(-3X+2)\\
-&=(-3)^2\text{V}(X)\\
-&=9\times 4\\
-&=36
+\text{V}(\text{2}-\text{3}X)&=\text{V}(-\text{3}X+\text{2})\\
+&=(-\text{3})^\text{2}\text{V}(X)\\
+&=\text{9}\times \text{4}\\
+&=\text{36}
 \end{align*}
 
 \vspace{-0.3cm}
@@ -8704,7 +8792,7 @@ Proof:
 Note that any laws relating to the \emph{standard deviation} of a linear transformation (\(\text{SD}(aX\pm b)\)) cannot be expressed as concisely, so such problems must be tackled by \emph{first finding the variance} (\(\text{V}(aX\pm b)\)).
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Random variable $Y$ has mean 1.5 and standard deviation 0.8.\\ Determine the standard deviation of $10Y+25$.
+\textbf{Problem:} Random variable $Y$ has mean 1.5 and standard deviation 0.8.\\ Determine the standard deviation of $\text{10}Y+\text{25}$.
 
 \tcblower
 \textbf{Solution:}
@@ -8712,10 +8800,10 @@ Note that any laws relating to the \emph{standard deviation} of a linear transfo
 \vspace{-0.3cm}
 
 \begin{align*}
-\text{V}(10Y+25)&=10^2\text{V}(Y)\\
-&=100\times 0.8^2\\
-&=64\\
-\text{SD}(10Y+25)&=8
+\text{V}(\text{10}Y+\text{25})&=\text{10}^\text{2}\text{V}(Y)\\
+&=\text{100}\times \text{0.8}^\text{2}\\
+&=\text{64}\\
+\text{SD}(\text{10}Y+\text{25})&=\text{8}
 \end{align*}
 
 \vspace{-0.3cm}
@@ -8730,36 +8818,36 @@ Note that any laws relating to the \emph{standard deviation} of a linear transfo
 \addcontentsline{toc}{subsubsection}{{Exercise 6.5}}
 
 \begin{enumerate}
-    \item Given $\text{E}(X)=6$ and $\text{V}(X)=8$, determine the values of:
+    \item Given $\text{E}(X)=\text{6}$ and $\text{V}(X)=\text{8}$, determine the values of:
     \begin{enumerate}
         \begin{multicols}{3}
-            \item $\text{E}(2X)$
-            \item $\text{V}(2X)$
-            \item $\text{SD}(2X)$
+            \item $\text{E}(\text{2}X)$
+            \item $\text{V}(\text{2}X)$
+            \item $\text{SD}(\text{2}X)$
         \end{multicols}
     \end{enumerate}
-    \item Given $\text{E}(X)=-2$ and $\text{V}(X)=3$, determine the values of:
+    \item Given $\text{E}(X)=-\text{2}$ and $\text{V}(X)=\text{3}$, determine the values of:
     \begin{enumerate}
         \begin{multicols}{3}
-            \item $\text{E}(X+5)$
-            \item $\text{V}(X+5)$
-            \item $\text{SD}(X+5)$
+            \item $\text{E}(X+\text{5})$
+            \item $\text{V}(X+\text{5})$
+            \item $\text{SD}(X+\text{5})$
         \end{multicols}
     \end{enumerate}
-    \item Given $\text{E}(X)=1.25$ and $\text{SD}(X)=0.64$, determine the values of:
+    \item Given $\text{E}(X)=\text{1.25}$ and $\text{SD}(X)=\text{0.64}$, determine the values of:
     \begin{enumerate}
         \begin{multicols}{3}
-            \item $\text{E}(3X-2)$
-            \item $\text{V}(3X-2)$
-            \item $\text{SD}(3X-2)$
+            \item $\text{E}(\text{3}X-\text{2})$
+            \item $\text{V}(\text{3}X-\text{2})$
+            \item $\text{SD}(\text{3}X-\text{2})$
         \end{multicols}
     \end{enumerate}
-    \item Given $\text{E}(X)=500$ and $\text{V}(X)=400$, determine the values of:
+    \item Given $\text{E}(X)=\text{500}$ and $\text{V}(X)=\text{400}$, determine the values of:
     \begin{enumerate}
         \begin{multicols}{3}
-            \item $\text{E}(0.1X+10)$
-            \item $\text{V}(0.1X+10)$
-            \item $\text{SD}(0.1X+10)$
+            \item $\text{E}(\text{0.1}X+\text{10})$
+            \item $\text{V}(\text{0.1}X+\text{10})$
+            \item $\text{SD}(\text{0.1}X+\text{10})$
         \end{multicols}
     \end{enumerate}
     \item The discrete random variable $X$ has the following probability distribution.
@@ -8767,38 +8855,38 @@ Note that any laws relating to the \emph{standard deviation} of a linear transfo
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c c }
-            $x$ & $1$ & $2$ & $4$ & $8$\\
+            $x$ & 1 & 2 & 4 & 8\\
           \hline
-            $\text{P}(X=x)$ & $0.1$ & $0.5$ & $0.3$ & $0.1$ 
+            $\text{P}(X=x)$ & 0.1 & 0.5 & 0.3 & 0.1 
         \end{tabular}
         \egroup
         \end{center}
         \begin{enumerate}
         \begin{multicols}{3}
             \item Calculate $\text{E}(X)$ and $\text{V}(X)$.
-            \item Find $\text{E}(2X+1)$.
-            \item Find $\text{V}(2X+1)$.
+            \item Find $\text{E}(\text{2}X+\text{1})$.
+            \item Find $\text{V}(\text{2}X+\text{1})$.
         \end{multicols}
         \end{enumerate}
-        \item Given $\text{E}(Y)=-5$ and $\text{V}(Y)=3$, determine the values of:
+        \item Given $\text{E}(Y)=-\text{5}$ and $\text{V}(Y)=\text{3}$, determine the values of:
         \begin{enumerate}
         \begin{multicols}{3}
-            \item $\text{E}(-3Y-2)$
-            \item $\text{V}(-3Y-2)$
-            \item $\text{SD}(-3Y-2)$
+            \item $\text{E}(-\text{3}Y-\text{2})$
+            \item $\text{V}(-\text{3}Y-\text{2})$
+            \item $\text{SD}(-\text{3}Y-\text{2})$
         \end{multicols}
         \end{enumerate}
         \item Random variable $X$ has a mean of 2.4 and a standard deviation of 0.8. Find:
         \begin{enumerate}
         \begin{multicols}{3}
-            \item $\text{E}(1-10X)$
-            \item $\text{V}(1-10X)$
-            \item $\text{SD}(1-10X)$
+            \item $\text{E}(\text{1}-\text{10}X)$
+            \item $\text{V}(\text{1}-\text{10}X)$
+            \item $\text{SD}(\text{1}-\text{10}X)$
         \end{multicols}
         \end{enumerate}
-        \item Given random variable $X$ such that $\text{E}(4X-1)=23$ and $\text{V}(4X-1)=80$, determine the values of $\text{E}(X)$ and $\text{V}(X)$.
-        \item Given random variable $Y$ such that $\text{E}(3Y+12)=0$ and $\text{V}(3Y+12)=81$, determine the mean and standard deviation of $Y$.
-        \item Given random variables $X$ and $Z$ such that $\text{E}(Z)=0$, $\text{V}(Z)=1$ and $X=a+bZ$:
+        \item Given random variable $X$ such that $\text{E}(\text{4}X-\text{1})=\text{23}$ and $\text{V}(\text{4}X-\text{1})=\text{80}$, determine the values of $\text{E}(X)$ and $\text{V}(X)$.
+        \item Given random variable $Y$ such that $\text{E}(\text{3}Y+\text{12})=\text{0}$ and $\text{V}(\text{3}Y+\text{12})=\text{81}$, determine the mean and standard deviation of $Y$.
+        \item Given random variables $X$ and $Z$ such that $\text{E}(Z)=\text{0}$, $\text{V}(Z)=\text{1}$ and $X=a+bZ$:
         \begin{enumerate}
             \item State $\text{SD}(Z)$.
             \item Find $\text{E}(X)$.
@@ -8810,7 +8898,7 @@ Note that any laws relating to the \emph{standard deviation} of a linear transfo
 
 \section{Combining Random Variables}\label{combining-random-variables}
 
-As well as linear transformations of a single random variable, new variables can be created by adding (or subtracting) random variables. Given random variables \(X\) and \(Y\), for example, \(W = X + Y\) is a new random variable formed from the two random variables \(X\) and \(Y\). When studying the long-run behaviour of combined random variables, by considering their expectation and variance, it is important to consider whether the variables are \emph{independent}, since this affects how their variances combine.
+As well as linear transformations of a single random variable, new variables can be created by adding (or subtracting) random variables. Given random variables \(X\) and \(Y\), for example, \(W = X + Y\) is a new random variable formed from them. When studying the long-run behaviour of combined random variables, by considering their expectation and variance, it is important to consider whether the variables are \emph{independent}. The laws relating to variance below \emph{only} apply when the variables are independent.
 
 \begin{centering}
 \begin{tcolorbox}[adjusted title=For random variables $X$ and $Y$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
@@ -8827,7 +8915,7 @@ As well as linear transformations of a single random variable, new variables can
     \text{For independent }&X\text{ and }Y\text{:}\\[7pt]
     \text{V}(X+Y) &= \text{V}(X)+\text{V}(Y)\\[7pt]
     \text{V}(X-Y) &= \text{V}(X)+\text{V}(Y)\\[7pt]
-    \text{V}(aX\pm bY) &= a^2\text{V}(X)+ b^2\text{V}(Y)
+    \text{V}(aX\pm bY) &= a^\text{2}\text{V}(X)+ b^\text{2}\text{V}(Y)
   \end{split}
 \end{equation*}
 
@@ -8837,29 +8925,29 @@ As well as linear transformations of a single random variable, new variables can
 If \(X\) and \(Y\) are not independent variables then determining \(\text{V}(X\pm Y)\) is beyond the scope of the course.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Two independent random variables $F$ and $G$ have means of 15 and 12 and standard deviations of 3 and 4 respectively. Calculate $\text{E}(3G-2F)$ and $\text{V}(F-G)$.
+\textbf{Problem:} Two independent random variables $F$ and $G$ have means of 15 and 12 and standard deviations of 3 and 4 respectively. Calculate $\text{E}(\text{3}G-\text{2}F)$ and $\text{V}(F-G)$.
 
 \tcblower
-\textbf{Solution:}\text{ ($\text{E}(F)=15,\text{E}(G)=12,\text{SD}(F)=3,\text{SD}(G)=4$)}
+\textbf{Solution:}\text{ ($\text{E}(F)=\text{15},\text{E}(G)=\text{12},\text{SD}(F)=\text{3},\text{SD}(G)=\text{4}$)}
 
 \vspace{-1.2cm}
 \begin{multicols}{2}
 \null\vfill
 \begin{align*}
-\text{E}(3G-2F)&=3\text{E}(G)-2\text{E}(F)\\
-&=3\times 12 - 2\times 15\\
-&=36-30\\
-&=6
+\text{E}(\text{3}G-\text{2}F)&=\text{3}\text{E}(G)-\text{2}\text{E}(F)\\
+&=\text{3}\times \text{12} - \text{2}\times \text{15}\\
+&=\text{36}-\text{30}\\
+&=\text{6}
 \end{align*}
 \vfill\null
 \columnbreak
 \null\vfill
 \begin{align*}
-\text{V}(F)&=3^2=9\\
-\text{V}(G)&=4^2=16\\
+\text{V}(F)&=\text{3}^\text{2}=\text{9}\\
+\text{V}(G)&=\text{4}^\text{2}=\text{16}\\
 \text{V}(F-G)&=\text{V}(F)+\text{V}(G)\\
-&=9+16\\
-&=25
+&=\text{9}+\text{16}\\
+&=\text{25}
 \end{align*}
 \vfill\null
 \end{multicols}
@@ -8868,21 +8956,21 @@ If \(X\) and \(Y\) are not independent variables then determining \(\text{V}(X\p
 
 \end{tcolorbox}
 
-Random variables \textbf{independently and identically distributed (i.i.d)} with the same distribution as \(X\) are denoted as \(X_1,X_2,X_3,\dots\)
+Random variables \textbf{independently and identically distributed (i.i.d)} with the same distribution as \(X\) are denoted as \(X_\text{1},X_\text{2},X_{3},\dots\)
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Books in the fiction section of a library have a mean thickness of 3.1cm with standard deviation 0.2cm. If three books are randomly selected from the fiction section and stacked together, determine the mean and standard deviation of the total thickness of the three books, stating one assumption required.
 
 \tcblower
-\textbf{Solution:} Let $X$ represent the thickness of a book, so $\text{E}(X)=3.1$ and $\text{V}(X)=0.2^2=0.04$\\\vskip 0.1cm
+\textbf{Solution:} Let $X$ represent the thickness of a book, so $\text{E}(X)=\text{3.1}$ and $\text{V}(X)=\text{0.2}^\text{2}=\text{0.04}$\\\vskip 0.1cm
 
-Total thickness $T=X_1+X_2+X_3$. Assuming that the thickness of each book is independent:\\\vskip 0.05cm
+Total thickness $T=X_\text{1}+X_\text{2}+X_\text{3}$. Assuming that the thickness of each book is independent:\\\vskip 0.05cm
 
-$\text{E}(T)=\text{E}(X_1+X_2+X_3)=\text{E}(X_1)+\text{E}(X_2)+\text{E}(X_3)=3.1+3.1+3.1=9.3$\\\vskip 0.05cm
+$\text{E}(T)=\text{E}(X_\text{1}+X_\text{2}+X_\text{3})=\text{E}(X_\text{1})+\text{E}(X_\text{2})+\text{E}(X_\text{3})=\text{3.1}+\text{3.1}+\text{3.1}=\text{9.3}$\\\vskip 0.05cm
 
-$\text{V}(T)=\text{V}(X_1+X_2+X_3)=\text{V}(X_1)+\text{V}(X_2)+\text{V}(X_3)=0.04+0.04+0.04=0.12$\\\vskip 0.05cm
+$\text{V}(T)=\text{V}(X_\text{1}+X_\text{2}+X_\text{3})=\text{V}(X_\text{1})+\text{V}(X_\text{2})+\text{V}(X_\text{3})=\text{0.04}+\text{0.04}+\text{0.04}=\text{0.12}$\\\vskip 0.05cm
 
-$\text{SD}(T)=\sqrt{\text{V}(T)}=\sqrt{0.12}=0.346$\\\vskip 0.1cm
+$\text{SD}(T)=\sqrt{\text{V}(T)}=\sqrt{\text{0.12}}=\text{0.346}$\\\vskip 0.1cm
 
 Hence the mean total thickness of the three books is 9.3cm, and the standard deviation is 0.346cm.
 
@@ -8896,7 +8984,7 @@ Hence the mean total thickness of the three books is 9.3cm, and the standard dev
 \addcontentsline{toc}{subsubsection}{{Exercise 6.6}}
 
 \begin{enumerate}
-    \item Random variables $J$ and $K$ are defined such that $\text{E}(J)=3$ and $\text{E}(K)=-2$.
+    \item Random variables $J$ and $K$ are defined such that $\text{E}(J)=\text{3}$ and $\text{E}(K)=-\text{2}$.
     \begin{enumerate}
         \item State the information required to be known about $J$ and $K$ in order to determine whether the laws introduced on the previous page may be applied.
         \item Assuming that $J$ and $K$ are such that those laws may be applied, find:
@@ -8904,7 +8992,7 @@ Hence the mean total thickness of the three books is 9.3cm, and the standard dev
         \begin{multicols}{3}
             \item $\text{E}(J+K)$
             \item $\text{E}(J-K)$
-            \item $\text{E}(2K-3J)$
+            \item $\text{E}(\text{2}K-\text{3}J)$
         \end{multicols}
     \end{enumerate}
     \item Assuming that $J$ and $K$ are such that those laws may be applied, find:
@@ -8912,24 +9000,24 @@ Hence the mean total thickness of the three books is 9.3cm, and the standard dev
         \begin{multicols}{3}
             \item $\text{V}(J+K)$
             \item $\text{V}(J-K)$
-            \item $\text{V}(2K-3J)$
+            \item $\text{V}(\text{2}K-\text{3}J)$
         \end{multicols}
     \end{enumerate}
     \end{enumerate}
-    \item Independent random variables $X$ and $Y$ are defined such that $\text{E}(X)=5$, $\text{V}(X)=6$, $\text{E}(Y)=3$ and $\text{V}(Y)=8$. Determine the values of:
+    \item Independent random variables $X$ and $Y$ are defined such that $\text{E}(X)=\text{5}$, $\text{V}(X)=\text{6}$, $\text{E}(Y)=\text{3}$ and $\text{V}(Y)=\text{8}$. Determine the values of:
     \begin{enumerate}
         \begin{multicols}{3}
-            \item $\text{E}(2X+6Y)$
-            \item $\text{V}(2X+6Y)$
-            \item $\text{E}(4X+5Y)$
-            \item $\text{V}(4X+5Y)$
-            \item $\text{E}(\frac{1}{2}Y-2X)$
-            \item $\text{V}(\frac{1}{2}Y-2X)$
+            \item $\text{E}(\text{2}X+\text{6}Y)$
+            \item $\text{V}(\text{2}X+\text{6}Y)$
+            \item $\text{E}(\text{4}X+\text{5}Y)$
+            \item $\text{V}(\text{4}X+\text{5}Y)$
+            \item $\text{E}(\frac{\text{1}}{\text{2}}Y-\text{2}X)$
+            \item $\text{V}(\frac{\text{1}}{\text{2}}Y-\text{2}X)$
         \end{multicols}
     \end{enumerate}
-    \item Random variables $F$ and $G$ have means of 3 and 2 respectively, and standard deviations of 5 and 6 respectively. State the information that is missing which means that it is not currently possible to determine the values of $\text{E}(2F+G)$ and $\text{V}(2F+G)$.
+    \item Random variables $F$ and $G$ have means of 3 and 2 respectively, and standard deviations of 5 and 6 respectively. State the information that is missing which means that it is not currently possible to determine the values of $\text{E}(\text{2}F+G)$ and $\text{V}(\text{2}F+G)$.
     \item Independent random variables $A$ and $B$ have means of 1.5 and 1.2 respectively, and standard deviations of 1 and 0.8 respectively. Determine the values of $\text{E}(A-B)$ and $\text{V}(A-B)$.
-    \item Random variable $X$ is defined such that $\text{E}(X)=10$ and $\text{V}(X)=3$. Random variables \{$X_1, X_2, X_3 \dots$\} represent independent observations of $X$. Determine the mean and variance of $X_1+X_2+X_3+X_4$, representing the sum of four such observations of $X$.
+    \item Random variable $X$ is defined such that $\text{E}(X)=\text{10}$ and $\text{V}(X)=\text{3}$. Random variables \{$X_\text{1}, X_\text{2}, X_\text{3} \dots$\} represent independent observations of $X$. Determine the mean and variance of $X_\text{1}+X_\text{2}+X_\text{3}+X_\text{4}$, representing the sum of four such observations of $X$.
     \item A spreadsheet contains a large amount of cells, each containing numbers such that the mean of the numbers is 12 and the standard deviation is 1.2. Five numbers from the spreadsheet are selected at random, with replacement. Determine the mean and standard deviation of the total of the five numbers.  
     \item It is known that the mean volume of coffee poured per cup in a staffroom for teachers is 250ml, with a standard deviation of 10ml. Determine the mean and standard deviation of the total volume of coffee used for six cups, stating an assumption required.
     \item Let random variable $X$ represent the number obtained when a fair, cubical die numbered 1 to 6 is thrown, and random variable $Y$ the number obtained when a fair, tetrahedral die numbered 1 to 4 is thrown.
@@ -8961,23 +9049,23 @@ Hence the mean total thickness of the three books is 9.3cm, and the standard dev
     \end{enumerate}
     \item Two independent random variables $P$ and $Q$ have means 5 and 10 and standard deviations 2 and 3 respectively. Find the mean and variance of each of the random variables:
     \begin{enumerate}
-        \item $4P-8$.
-        \item $3Q-P$.
+        \item $\text{4}P-\text{8}$.
+        \item $\text{3}Q-P$.
     \end{enumerate}
     \item A box contains 4 blue marbles and 5 red marbles. Three marbles are taken from the box without replacement. Let the random variable $X$ represent the number of red marbles taken.
     \begin{enumerate}
         \item Tabulate the probability distribution of $X$.
         \item Calculate the mean and variance of $X$.
     \end{enumerate}
-    \item Given that $\text{E}(2X+6)=16$ and $\text{V}(2X+6)=12$:
+    \item Given that $\text{E}(\text{2}X+\text{6})=\text{16}$ and $\text{V}(\text{2}X+\text{6})=\text{12}$:
     \begin{enumerate}
         \item Calculate $\text{E}(X)$.
         \item Calculate $\text{V}(X)$.
     \end{enumerate}
     \item Two independent random variables $A$ and $B$ have means 53 and 21 and standard deviations 6 and 5 respectively. Find the mean and standard deviations of each of the following random variables:
     \begin{enumerate}
-        \item $5B+6$.
-        \item $2A-3B$.
+        \item $\text{5}B+\text{6}$.
+        \item $\text{2}A-\text{3}B$.
     \end{enumerate}
     \item It is known that items of hand luggage carried by passengers on an airline have mean mass of 5.6kg and a standard deviation of 2.0kg, and that their hold luggage has a mean mass of 22.0kg and a standard deviation 5.0kg.
     \begin{enumerate}

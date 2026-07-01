@@ -1140,25 +1140,25 @@ The mean (*'add up all the values then divide by how many there are'*) is what m
 
 If data for an entire *population* of values $x_\text{1}, x_\text{2}, \dots, x_N$ were available, where $N$ is the population size, then the **population mean** ($\mu$) could be calculated. This can be expressed concisely using summation notation, $\sum$ ("Sigma"), where $\sum x_i$ denotes the sum of all values from $x_\text{1}$ to $x_N$.
 
-\[\mu=\frac{x_\text{1}+x_\text{2}+\dots +x_N}{N}= \frac{\sum x_i}{N} \quad \text{or, abbreviated} \quad \mu=\frac{\sum x_i}{N}\]
+\[\mu=\frac{x_\text{1}+x_\text{2}+\dots +x_N}{N}= \frac{\sum x_i}{N}\]
 
 Since in practice a population is rarely available, instead it is common to calculate the **sample mean** ($\bar{x}$), using a sample of data from a population. Given a sample of data $x_\text{1}, x_\text{2}, \dots, x_n$, where $n$ is the sample size, the sample mean can be calculated as, in its most commonly used form:
 
-\[\bar{x}=\frac{\sum x}{n}\]
+\[\bar{x}=\frac{\sum x_i}{n}\]
 
 The sample mean is an *unbiased estimator* of the population mean, meaning that, on average, it gives the correct value across repeated sampling.
 
 Similarly, if data for an entire *population* of values $x_\text{1}, x_\text{2}, \dots, x_N$ were available, then the **population variance** ($\sigma^\text{2}$) could be obtained. More useful for its mathematical properties than as a value to *interpret*, it is the *mean of the squared differences* between each value $x_i$ and the population mean, $\mu$. Its units are the *square* of the units of the original data, and so for data measured in grams, units of variance are (somewhat unintuitively) $\text{grams}^\text{2}$. It can be calculated, again using an abbreviated form of summation, as:
 
-\[\sigma^\text{2}=\frac{\sum \left(x - \mu\right)^\text{2}}{N}\]
+\[\sigma^\text{2}=\frac{\sum \left(x_i - \mu\right)^\text{2}}{N}\]
 
-Replicating the same formula using sample data gives a *biased* estimate for variance. This is because the formula requires the population mean $\mu$ be replaced with the *sample mean* $\bar{x}$ as its estimate, which will tend to minimize the sum of square deviations and so tend to lead to an *underestimate* of the true population variance. *Bessel's correction* is therefore used to produce a formula for the **sample variance** ($s^\text{2}$), which is an *unbiased* estimator for the population variance. The below two forms are equivalent.
+Replicating the same formula using sample data gives a *biased* estimate for variance. This is because the formula requires the population mean $\mu$ be replaced with the *sample mean* $\bar{x}$ as its estimate, which will tend to minimize the sum of square deviations and so tend to lead to an *underestimate* of the true population variance. *Bessel's correction* is used to produce a formula for the **sample variance** ($s^\text{2}$), which is an *unbiased* estimator for the population variance, taking a denominator of $n-\text{1}$. The below two forms are equivalent.
 
-\[s^\text{2}=\frac{\sum \left(x - \bar{x}\right)^\text{2}}{n-\text{1}} \quad \text{or} \quad s^\text{2}=\frac{\sum x^\text{2} - \frac{\left(\sum x\right)^\text{2}}{n}}{n-\text{1}}\]
+\[s^\text{2}=\frac{\sum \left(x_i - \bar{x}\right)^\text{2}}{n-\text{1}} \quad \text{or} \quad s^\text{2}=\frac{\sum x_i^\text{2} - \frac{\left(\sum x_i\right)^\text{2}}{n}}{n-\text{1}}\]
 
 The *standard deviation* is the *square root* of the variance, which brings the units it takes back to match those of the original data (e.g. grams). The formula for the **sample standard deviation** ($s$) appears on **page 4** of the Data Booklet. It is given in terms of the *sum of squares for* $x$, notated as $S_{xx}$, which is the numerator of the right-hand formula above. A formula for the sample standard deviation is therefore:
 
-\[s=\sqrt{\dfrac{S_{xx}}{n-1}}\quad\text{ where }\quad S_{xx}=\sum x^\text{2}-\dfrac{(\sum x)^\text{2}}{n}\]
+\[s=\sqrt{\dfrac{S_{xx}}{n-1}}\quad\text{ where }\quad S_{xx}=\sum x_i^\text{2}-\dfrac{(\sum x_i)^\text{2}}{n}\]
 
 In practice, only the *sample mean* and *sample standard deviation* (and sample variance) will need to be calculated in this course, and both can be performed by a graphical calculator directly from a sample of values with no need for manual calculation. However, an insight into their formulae is essential in particular for anyone who wishes to take statistics further beyond this course.
 
@@ -1166,7 +1166,7 @@ In practice, only the *sample mean* and *sample standard deviation* (and sample 
 
 For example, calculating the mean and standard deviation sample data set: 4, 6, 7, 9, 10
 
-\[\sum x^\text{2} = \text{282},\; \sum x = \text{36},\; n=\text{5} \qquad \bar{x}=\frac{36}{5}=\text{7.2} \qquad s=\sqrt{\frac{\text{282}-\frac{\text{36}^\text{2}}{\text{5}}}{\text{4}}}=\text{2.387}\text{ (to 3dp)}\]
+\[\sum x_i^\text{2} = \text{282},\; \sum x_i = \text{36},\; n=\text{5} \qquad \bar{x}=\frac{36}{5}=\text{7.2} \qquad s=\sqrt{\frac{\text{282}-\frac{\text{36}^\text{2}}{\text{5}}}{\text{4}}}=\text{2.387}\text{ (to 3dp)}\]
 
 
 []{#ex15q}
@@ -1174,7 +1174,7 @@ For example, calculating the mean and standard deviation sample data set: 4, 6, 
 #### [Exercise 1.5](#ex15a) {-}
 
 \begin{enumerate}
-    \item Summary statistics from sample data are given below. Use appropriate formulae to calculate the mean and standard deviation for each sample.
+    \item Summary statistics from sample data are given below. Use appropriate formulae to calculate the mean and standard deviation for each sample. Note that summations such as $\sum x_i$ are often simplified to $\sum x$.
     \begin{enumerate}
     \begin{multicols}{2}
         \item $\sum{x}=\text{359}$,\; $\sum{x^{\text{2}}}=\text{15119}$,\; $n=\text{10}$
@@ -1780,38 +1780,38 @@ As well as considering whether the **underlying population distribution** of dat
 
 \begin{figure}[H]
   \centering
-\begin{minipage}{.5\textwidth}
+\begin{minipage}{.33\textwidth}
   \centering
-\begin{tikzpicture}
+\begin{tikzpicture}[xscale=0.6]
 \node at (-0.5,2.5) {\text{1.}};
 \draw (-0.5,0) -- (6.5,0);
 \draw[fill=black!25] (0,0) rectangle (0.25,0);
 \draw[fill=black!25] (0.25,0) rectangle (0.5,0.1);
 \draw[fill=black!25] (0.5,0) rectangle (0.75,0.7);
 \draw[fill=black!25] (0.75,0) rectangle (1,1.6);
-\draw[fill=black!25] (1,0) rectangle (1.25,2);
-\draw[fill=black!25] (1.25,0) rectangle (1.5,2.1);
+\draw[fill=black!25] (1,0) rectangle (1.25,2.1);
+\draw[fill=black!25] (1.25,0) rectangle (1.5,2);
 \draw[fill=black!25] (1.5,0) rectangle (1.75,2.2);
 \draw[fill=black!25] (1.75,0) rectangle (2,2.4);
 \draw[fill=black!25] (2,0) rectangle (2.25,2.4);
 \draw[fill=black!25] (2.25,0) rectangle (2.5,2.3);
 \draw[fill=black!25] (2.5,0) rectangle (2.75,2.1);
 \draw[fill=black!25] (2.75,0) rectangle (3,1.6);
-\draw[fill=black!25] (3,0) rectangle (3.25,1.3);
-\draw[fill=black!25] (3.25,0) rectangle (3.5,1.1);
+\draw[fill=black!25] (3,0) rectangle (3.25,1.1);
+\draw[fill=black!25] (3.25,0) rectangle (3.5,1.2);
 \draw[fill=black!25] (3.5,0) rectangle (3.75,0.9);
 \draw[fill=black!25] (3.75,0) rectangle (4,0.8);
-\draw[fill=black!25] (4,0) rectangle (4.25,0.7);
+\draw[fill=black!25] (4,0) rectangle (4.25,0.8);
 \draw[fill=black!25] (4.25,0) rectangle (4.5,0.6);
-\draw[fill=black!25] (4.5,0) rectangle (4.75,0.4);
-\draw[fill=black!25] (4.75,0) rectangle (5,0.4);
+\draw[fill=black!25] (4.5,0) rectangle (4.75,0.2);
+\draw[fill=black!25] (4.75,0) rectangle (5,0.6);
 \draw[fill=black!25] (5,0) rectangle (5.25,0.3);
 \draw[fill=black!25] (5.25,0) rectangle (5.5,0.2);
-\draw[fill=black!25] (5.5,0) rectangle (5.75,0.2);
+\draw[fill=black!25] (5.5,0) rectangle (5.75,0.3);
 \draw[fill=black!25] (5.75,0) rectangle (6,0.1);
 \node at (3,-0.5) {Hazelnut mass (grams)};
 
-\node at (-0.5,-1.5) {\text{3.}};
+\node at (-0.5,-1.5) {\text{4.}};
 \draw (-0.5,-4) -- (6.5,0-4);
 \draw[fill=black!25] (0,0-4) rectangle (0.25,1.4-4);
 \draw[fill=black!25] (0.25,0-4) rectangle (0.5,1.5-4);
@@ -1823,7 +1823,7 @@ As well as considering whether the **underlying population distribution** of dat
 \draw[fill=black!25] (1.75,0-4) rectangle (2,1.6-4);
 \draw[fill=black!25] (2,0-4) rectangle (2.25,2-4);
 \draw[fill=black!25] (2.25,0-4) rectangle (2.5,1.5-4);
-\draw[fill=black!25] (2.5,0-4) rectangle (2.75,1-4);
+\draw[fill=black!25] (2.5,0-4) rectangle (2.75,1.4-4);
 \draw[fill=black!25] (2.75,0-4) rectangle (3,1.8-4);
 \draw[fill=black!25] (3,0-4) rectangle (3.25,1.7-4);
 \draw[fill=black!25] (3.25,0-4) rectangle (3.5,1.7-4);
@@ -1832,7 +1832,7 @@ As well as considering whether the **underlying population distribution** of dat
 \draw[fill=black!25] (4,0-4) rectangle (4.25,1.7-4);
 \draw[fill=black!25] (4.25,0-4) rectangle (4.5,1.1-4);
 \draw[fill=black!25] (4.5,0-4) rectangle (4.75,1.6-4);
-\draw[fill=black!25] (4.75,0-4) rectangle (5,1-4);
+\draw[fill=black!25] (4.75,0-4) rectangle (5,1.4-4);
 \draw[fill=black!25] (5,0-4) rectangle (5.25,1.7-4);
 \draw[fill=black!25] (5.25,0-4) rectangle (5.5,2-4);
 \draw[fill=black!25] (5.5,0-4) rectangle (5.75,1.6-4);
@@ -1842,18 +1842,18 @@ As well as considering whether the **underlying population distribution** of dat
 
 \end{minipage}%
   \centering
-\begin{minipage}{.5\textwidth}
+\begin{minipage}{.33\textwidth}
   \centering
 
-\begin{tikzpicture}
+\begin{tikzpicture}[xscale=0.6]
 \node at (-0.5,2.5) {\text{2.}};
 \draw (-0.5,0) -- (6.5,0);
 \draw[fill=black!25] (0,0) rectangle (0.25,0);
 \draw[fill=black!25] (0.25,0) rectangle (0.5,0.2);
-\draw[fill=black!25] (0.5,0) rectangle (0.75,0.6);
+\draw[fill=black!25] (0.5,0) rectangle (0.75,0.4);
 \draw[fill=black!25] (0.75,0) rectangle (1,0.2);
 \draw[fill=black!25] (1,0) rectangle (1.25,1);
-\draw[fill=black!25] (1.25,0) rectangle (1.5,1.1);
+\draw[fill=black!25] (1.25,0) rectangle (1.5,0.9);
 \draw[fill=black!25] (1.5,0) rectangle (1.75,0.8);
 \draw[fill=black!25] (1.75,0) rectangle (2,1.5);
 \draw[fill=black!25] (2,0) rectangle (2.25,1.9);
@@ -1861,20 +1861,83 @@ As well as considering whether the **underlying population distribution** of dat
 \draw[fill=black!25] (2.5,0) rectangle (2.75,2.3);
 \draw[fill=black!25] (2.75,0) rectangle (3,2.1);
 \draw[fill=black!25] (3,0) rectangle (3.25,2.2);
-\draw[fill=black!25] (3.25,0) rectangle (3.5,1.6);
+\draw[fill=black!25] (3.25,0) rectangle (3.5,1.8);
 \draw[fill=black!25] (3.5,0) rectangle (3.75,1);
 \draw[fill=black!25] (3.75,0) rectangle (4,1.4);
 \draw[fill=black!25] (4,0) rectangle (4.25,1.2);
 \draw[fill=black!25] (4.25,0) rectangle (4.5,0.8);
-\draw[fill=black!25] (4.5,0) rectangle (4.75,0.5);
-\draw[fill=black!25] (4.75,0) rectangle (5,0.7);
-\draw[fill=black!25] (5,0) rectangle (5.25,0.3);
-\draw[fill=black!25] (5.25,0) rectangle (5.5,0.1);
+\draw[fill=black!25] (4.5,0) rectangle (4.75,0.6);
+\draw[fill=black!25] (4.75,0) rectangle (5,0.5);
+\draw[fill=black!25] (5,0) rectangle (5.25,0.2);
+\draw[fill=black!25] (5.25,0) rectangle (5.5,0.3);
 \draw[fill=black!25] (5.5,0) rectangle (5.75,0);
 \draw[fill=black!25] (5.75,0) rectangle (6,0.1);
 \node at (3,-0.5) {Tree height (metres)};
 
-\node at (-0.5,-1.5) {\text{4.}};
+\node at (-0.5,-1.5) {\text{5.}};
+\draw (-0.5,-4) -- (6.5,0-4);
+\draw[fill=black!25] (0,0-4) rectangle (0.25,0.1-4);
+\draw[fill=black!25] (0.25,0-4) rectangle (0.5,0.4-4);
+\draw[fill=black!25] (0.5,0-4) rectangle (0.75,0.9-4);
+\draw[fill=black!25] (0.75,0-4) rectangle (1,1.6-4);
+\draw[fill=black!25] (1,0-4) rectangle (1.25,2.3-4);
+\draw[fill=black!25] (1.25,0-4) rectangle (1.5,2.1-4);
+\draw[fill=black!25] (1.5,0-4) rectangle (1.75,2.2-4);
+\draw[fill=black!25] (1.75,0-4) rectangle (2,1.8-4);
+\draw[fill=black!25] (2,0-4) rectangle (2.25,1.6-4);
+\draw[fill=black!25] (2.25,0-4) rectangle (2.5,1.8-4);
+\draw[fill=black!25] (2.5,0-4) rectangle (2.75,1.1-4);
+\draw[fill=black!25] (2.75,0-4) rectangle (3,0.7-4);
+\draw[fill=black!25] (3,0-4) rectangle (3.25,0.8-4);
+\draw[fill=black!25] (3.25,0-4) rectangle (3.5,0.6-4);
+\draw[fill=black!25] (3.5,0-4) rectangle (3.75,0.4-4);
+\draw[fill=black!25] (3.75,0-4) rectangle (4,0.1-4);
+\draw[fill=black!25] (4,0-4) rectangle (4.25,0.4-4);
+\draw[fill=black!25] (4.25,0-4) rectangle (4.5,0.3-4);
+\draw[fill=black!25] (4.5,0-4) rectangle (4.75,0.9-4);
+\draw[fill=black!25] (4.75,0-4) rectangle (5,1.7-4);
+\draw[fill=black!25] (5,0-4) rectangle (5.25,1.8-4);
+\draw[fill=black!25] (5.25,0-4) rectangle (5.5,1.2-4);
+\draw[fill=black!25] (5.5,0-4) rectangle (5.75,0.6-4);
+\draw[fill=black!25] (5.75,0-4) rectangle (6,0.1-4);
+\node at (3,-0.5-4) {Number of successful passes};
+\end{tikzpicture}
+
+\end{minipage}%
+  \centering
+\begin{minipage}{.33\textwidth}
+  \centering
+
+\begin{tikzpicture}[xscale=0.6]
+\node at (-0.5,2.5) {\text{3.}};
+\draw (-0.5,0) -- (6.5,0);
+\draw[fill=black!25] (0,0) rectangle (0.25,0.1);
+\draw[fill=black!25] (0.25,0) rectangle (0.5,0);
+\draw[fill=black!25] (0.5,0) rectangle (0.75,0.1);
+\draw[fill=black!25] (0.75,0) rectangle (1,0.3);
+\draw[fill=black!25] (1,0) rectangle (1.25,0.2);
+\draw[fill=black!25] (1.25,0) rectangle (1.5,0);
+\draw[fill=black!25] (1.5,0) rectangle (1.75,0.3);
+\draw[fill=black!25] (1.75,0) rectangle (2,0.3);
+\draw[fill=black!25] (2,0) rectangle (2.25,0.4);
+\draw[fill=black!25] (2.25,0) rectangle (2.5,0.4);
+\draw[fill=black!25] (2.5,0) rectangle (2.75,0.3);
+\draw[fill=black!25] (2.75,0) rectangle (3,0.6);
+\draw[fill=black!25] (3,0) rectangle (3.25,0.7);
+\draw[fill=black!25] (3.25,0) rectangle (3.5,1.1);
+\draw[fill=black!25] (3.5,0) rectangle (3.75,1.9);
+\draw[fill=black!25] (3.75,0) rectangle (4,1.7);
+\draw[fill=black!25] (4,0) rectangle (4.25,2);
+\draw[fill=black!25] (4.25,0) rectangle (4.5,2.3);
+\draw[fill=black!25] (4.5,0) rectangle (4.75,1.8);
+\draw[fill=black!25] (4.75,0) rectangle (5,1.5);
+\draw[fill=black!25] (5,0) rectangle (5.25,0.7);
+\draw[fill=black!25] (5.25,0) rectangle (5.5,0.9);
+\draw[fill=black!25] (5.5,0) rectangle (5.75,0.5);
+\draw[fill=black!25] (5.75,0) rectangle (6,0.1);
+\node at (3,-0.5) {Number of patients};
+
+\node at (-0.5,-1.5) {\text{6.}};
 \draw (-0.5,-4) -- (6.5,0-4);
 \draw[fill=black!25] (0,0-4) rectangle (0.25,0-4);
 \draw[fill=black!25] (0.25,0-4) rectangle (0.5,0.4-4);
@@ -1900,7 +1963,7 @@ As well as considering whether the **underlying population distribution** of dat
 \draw[fill=black!25] (5.25,0-4) rectangle (5.5,1.4-4);
 \draw[fill=black!25] (5.5,0-4) rectangle (5.75,0.6-4);
 \draw[fill=black!25] (5.75,0-4) rectangle (6,0.2-4);
-\node at (3,-0.5-4) {Number of successful passes};
+\node at (3,-0.5-4) {Distance to city centre (km)};
 \end{tikzpicture}
 
 \end{minipage}

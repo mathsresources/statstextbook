@@ -1,6 +1,6 @@
 # An Introduction to Linear Regression
 
-A common interest when working with data is a possible relationship between two numerical variables. For example, suppose a sports scientist wishes to explore the relationship between runners' $\text{VO}_{\text{2}}$ Max, which is a measure of aerobic fitness, and their 5km running times. From a sample of eight runners, they may record the values of the two *variables* for each individual, presenting the results in a table as follows:
+A common aim when working with data is to investigate possible relationships between two numerical variables. For example, suppose a sports scientist wishes to explore the relationship between runners' $\text{VO}_{\text{2}}$ Max, which is a measure of aerobic fitness, and their 5km running times. From a sample of eight runners, they may record the values of the two *variables* for each individual, presenting the results in a table as follows:
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
@@ -14,7 +14,7 @@ A common interest when working with data is a possible relationship between two 
 \end{tabular}
 \end{center}
 
-Before applying any statistical analysis techniques to this *bivariate data*, the sports scientist constructs a *scatterplot* to visualise it, looking for any apparent patterns or problems. In this example, $\text{VO}_{\text{2}}$ Max is treated as the **predictor** variable (plotted on the $x$-axis) and 5km running time is treated as the **response** variable (plotted along the $y$-axis). 
+Before applying any statistical analysis techniques to this **bivariate data**, the sports scientist constructs a **scatterplot** to visualise the relationship between them, looking for any apparent patterns or problems. In this example, $\text{VO}_{\text{2}}$ Max is treated as the **predictor** variable (plotted on the $x$-axis) and 5km running time is treated as the **response** variable (plotted along the $y$-axis). 
  
 \begin{multicols}{2}
 
@@ -54,7 +54,7 @@ In general, the predictor variable is chosen as the one which may help explain o
 
 \end{multicols}
 
-Whilst the sample size is very small, the scatterplot seems to suggest that there is a *negative linear relationship* between a runner's $\text{VO}_{\text{2}}$ Max and their 5km running time, as higher $\text{VO}_{\text{2}}$ Max values are associated with lower running times. To illustrate this, a *trend line* (or *line of best fit*) has been added to the scatterplot.
+Although the sample size is very small, the scatterplot seems to suggest that there is a *negative linear relationship* between a runner's $\text{VO}_{\text{2}}$ Max and their 5km running time, as higher $\text{VO}_{\text{2}}$ Max values are associated with lower running times. To illustrate this, a **line of best fit** (or *trend line*) has been added to the scatterplot.
 
 This chapter will introduce the use of a *correlation coefficient* to evaluate the strength of any linear relationship between numerical variables and the construction of a *linear regression model* to describe this relationship and make predictions.
 
@@ -62,15 +62,15 @@ This chapter will introduce the use of a *correlation coefficient* to evaluate t
 
 ## Scatterplots and Linear Correlation
 
-When deciding whether a linear relationship exists between two numerical variables, a scatterplot should always be drawn before any analysis is undertaken using the bivariate data collected.  This is the first step in determining the level of linear relationship, or *linear correlation*, between the variables. Whilst other kinds of relationship may exist between two numerical variables, in this course the focus is on the existence and strength of *linear* relationships. Consider the following:
+When deciding whether a linear relationship exists between two numerical variables, a scatterplot should always be drawn before any analysis is undertaken using the bivariate data collected.  This is the first step in determining the level of ***linear relationship** (or *linear correlation*) between the variables. Whilst other kinds of relationship may exist between two numerical variables, in this course the focus is on the existence and strength of *linear* relationships. Consider the following:
 
 \begin{figure}[H]
   \centering
-\captionsetup[figure]{labelformat=empty}%
-\begin{minipage}[t]{.25\textwidth}
-  \centering
+\begin{minipage}[t]{.48\textwidth}
 
+\begin{center}  
 \begin{tikzpicture}[scale=0.8]
+\node at (-2,1.5) {\textbf{Figure 1}};
 \draw[semithick,-stealth] (0,0) -- (0,0.6*5);
 \draw[semithick,-stealth] (0,0) -- (0.6*5,0);
 \node at (0.6*5.4,0) {$x$};
@@ -89,15 +89,21 @@ When deciding whether a linear relationship exists between two numerical variabl
 \draw[fill=black] (0.6*4.9,0.6*3.9) circle (0.04);
 \draw[fill=black] (0.6*5,0.6*4.4) circle (0.04);
 \end{tikzpicture}
- 
-\captionof{figure}{\textbf{Figure 1}}
-  \label{fig:test1}
+\end{center}
+
+\textbf{Figure 1} shows a \textbf{strong positive linear correlation} between $x$ and $y$, where both variables tend to increase together.
+
 \end{minipage}%
   \centering
-\begin{minipage}[t]{.25\textwidth}
+\begin{minipage}[t]{.04\textwidth}
   \centering
-  
+  \phantom{squirrel}
+\end{minipage}%
+\begin{minipage}[t]{.48\textwidth}
+
+\begin{center} 
 \begin{tikzpicture}[scale=0.8]
+\node at (-2,1.5) {\textbf{Figure 2}};
 \draw[semithick,-stealth] (0,0) -- (0,0.6*5);
 \draw[semithick,-stealth] (0,0) -- (0.6*5,0);
 \node at (0.6*5.4,0) {$x$};
@@ -116,15 +122,20 @@ When deciding whether a linear relationship exists between two numerical variabl
 \draw[fill=black] (0.6*4.4,0.6*0.5) circle (0.04);
 \draw[fill=black] (0.6*4.8,0.6*1.3) circle (0.04);
 \end{tikzpicture}
-  
-\captionof{figure}{\textbf{Figure 2}}
-  \label{fig:test1}
-\end{minipage}%
-  \centering
-\begin{minipage}[t]{.25\textwidth}
-  \centering
+\end{center}
 
+\textbf{Figure 2} shows a \textbf{weak negative linear correlation} between $x$ and $y$, where, as one variable increases, the other tends to decrease. 
+
+\end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+\begin{minipage}[t]{.48\textwidth}
+
+\begin{center}  
 \begin{tikzpicture}[scale=0.8]
+\node at (-2,1.5) {\textbf{Figure 3}};
 \draw[semithick,-stealth] (0,0) -- (0,0.6*5);
 \draw[semithick,-stealth] (0,0) -- (0.6*5,0);
 \node at (0.6*5.4,0) {$x$};
@@ -143,15 +154,21 @@ When deciding whether a linear relationship exists between two numerical variabl
 \draw[fill=black] (0.6*4.4,0.6*4.2) circle (0.04);
 \draw[fill=black] (0.6*4.8,0.6*0.7) circle (0.04);
 \end{tikzpicture}
+\end{center}
 
-\captionof{figure}{\textbf{Figure 3}}
-  \label{fig:test1}
+In \textbf{Figure 3}, as one variable increases, there appears to be no clear pattern as to how the other variable behaves. There appears to be \textbf{no linear relationship} between $x$ and $y$.
+
 \end{minipage}%
   \centering
-\begin{minipage}[t]{.25\textwidth}
+\begin{minipage}[t]{.04\textwidth}
   \centering
+  \phantom{squirrel}
+\end{minipage}%
+\begin{minipage}[t]{.48\textwidth}
 
+\begin{center} 
 \begin{tikzpicture}[scale=0.8]
+\node at (-2,1.5) {\textbf{Figure 4}};
 \draw[semithick,-stealth] (0,0) -- (0,0.6*5);
 \draw[semithick,-stealth] (0,0) -- (0.6*5,0);
 \node at (0.6*5.4,0) {$x$};
@@ -167,26 +184,17 @@ When deciding whether a linear relationship exists between two numerical variabl
 \draw[fill=black] (0.6*4.4,0.6*3.61) circle (0.04);
 \draw[fill=black] (0.6*4.7,0.6*4.84) circle (0.04);
 \end{tikzpicture}
+\end{center}
 
-\captionof{figure}{\textbf{Figure 4}}
-  \label{fig:test1}
+\textbf{Figure 4} is also an example of \textbf{no linear relationship} between $x$ and $y$, although there appears to be some non-linear (possibly quadratic) association between the variables.
+
 \end{minipage}
 \end{figure}
-
-\vspace{-0.3cm}
-
-\textbf{Figure 1} illustrates a *strong positive linear correlation* between $x$ and $y$, where both variables tend to increase together.
-
-\textbf{Figure 2} shows a *weak negative linear correlation* between $x$ and $y$, where, as one variable increases, the other tends to decrease. 
-
-In \textbf{Figure 3}, as one variable increases, there appears to be no clear pattern as to how the other variable behaves. There appears to be *no linear relationship* between $x$ and $y$.
-
-\textbf{Figure 4} is also an example of *no linear relationship* between $x$ and $y$, although there appears to be some non-linear (possibly quadratic) association between the variables.
 
 Note that **correlation does not imply causation**. A linear relationship can exist between variables without meaning that one causes the other; there may be other variables influencing both. Seemingly linear relationships can also appear by chance - this is referred to as *spurious correlation*.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A French class takes two tests, one \textit{listening} and one \textit{reading}. The results of the 10 pupils are shown in the table and scatterplot below, along with some summary statistics. Comment on the scatterplot.
+\textbf{Problem:} A French class takes two tests; \textit{listening} and \textit{reading}. The results of the 10 pupils are shown in the table and scatterplot below, along with some summary statistics. Comment on the scatterplot.
 
 \begin{multicols}{2}
 
@@ -208,29 +216,29 @@ Note that **correlation does not imply causation**. A linear relationship can ex
 
 \vspace{-1cm}
 \begin{center}
-\begin{tikzpicture}[scale=0.8]
+\begin{tikzpicture}[scale=0.7]
 \draw[semithick] (-0.15,0) -- (-0.15,3.65);
 \draw[semithick] (0,-0.1) -- (4.15,-0.1);
 \node[rotate=90] at (-1.1,1.75) {Reading};
-\node at (2,-1) {Listening};
-\foreach \y in {6,8,...,20}
+\node at (2,-1.2) {Listening};
+\foreach \y in {8,12,...,20}
 \node at (-0.45,0.25*\y-1.5) {\y};
 \foreach \y in {6,8,...,20}
 \draw[semithick] (-0.15,0.25*\y-1.5) -- (-0.25,0.25*\y-1.5);
-\foreach \x in {4,6,...,20}
+\foreach \x in {4,8,...,20}
 \node at (0.25*\x-1,-0.45) {\x};
 \foreach \x in {4,6,...,20}
 \draw[semithick] (0.25*\x-1,-0.1) -- (0.25*\x-1,-0.2);
-\draw[fill=black] (9*0.25-1,8*0.25-1.5) circle (0.04);
-\draw[fill=black] (7*0.25-1,9*0.25-1.5) circle (0.04);
-\draw[fill=black] (11*0.25-1,13*0.25-1.5) circle (0.04);
-\draw[fill=black] (20*0.25-1,20*0.25-1.5) circle (0.04);
-\draw[fill=black] (4*0.25-1,9*0.25-1.5) circle (0.04);
-\draw[fill=black] (6*0.25-1,8*0.25-1.5) circle (0.04);
-\draw[fill=black] (17*0.25-1,17*0.25-1.5) circle (0.04);
-\draw[fill=black] (12*0.25-1,14*0.25-1.5) circle (0.04);
-\draw[fill=black] (10*0.25-1,8*0.25-1.5) circle (0.04);
-\draw[fill=black] (15*0.25-1,17*0.25-1.5) circle (0.04);
+\draw[fill=black] (9*0.25-1,8*0.25-1.5) circle (0.06);
+\draw[fill=black] (7*0.25-1,9*0.25-1.5) circle (0.06);
+\draw[fill=black] (11*0.25-1,13*0.25-1.5) circle (0.06);
+\draw[fill=black] (20*0.25-1,20*0.25-1.5) circle (0.06);
+\draw[fill=black] (4*0.25-1,9*0.25-1.5) circle (0.06);
+\draw[fill=black] (6*0.25-1,8*0.25-1.5) circle (0.06);
+\draw[fill=black] (17*0.25-1,17*0.25-1.5) circle (0.06);
+\draw[fill=black] (12*0.25-1,14*0.25-1.5) circle (0.06);
+\draw[fill=black] (10*0.25-1,8*0.25-1.5) circle (0.06);
+\draw[fill=black] (15*0.25-1,17*0.25-1.5) circle (0.06);
 \end{tikzpicture}
 \end{center} 
 
@@ -241,9 +249,7 @@ Note that **correlation does not imply causation**. A linear relationship can ex
 
 \end{tcolorbox}
 
-Note that there is no universally agreed definition of a 'strong', 'moderate' or 'weak' linear relationship. However, it is still recommended for comments to include some description of the strength of a linear relationship.
-
-Scatterplots should always be constructed and closely scrutinised before any analysis of bivariate data is undertaken. Through this visualisation, it may become apparent, for instance, that the dataset is separated into *distinct groups*, or that possible *outliers* are present which should be carefully considered. 
+Note that there is no universally agreed scale for describing correlations as 'strong', 'moderate' or 'weak'. However, it is still recommended for comments to include some description of the strength of a linear relationship.
 
 \pagebreak
 
@@ -453,10 +459,10 @@ Scatterplots should always be constructed and closely scrutinised before any ana
 \foreach \x in {0,100,...,400}{
 \node[below] at (0.01*\x,0) {\x};
 }
-\node[left] at (0,0) {$2$};
-\node[left] at (0,1) {$3$};
-\node[left] at (0,2) {$4$};
-\node[left] at (0,3) {$5$};
+\node[left] at (0,0) {2};
+\node[left] at (0,1) {3};
+\node[left] at (0,2) {4};
+\node[left] at (0,3) {5};
 \draw[black!80,fill=black!80] (2.05,0.93) circle (0.03);
 \draw[black!80,fill=black!80] (2.15,1) circle (0.03);
 \draw[black!80,fill=black!80] (2.45,1.73) circle (0.03);
@@ -532,12 +538,12 @@ Scatterplots should always be constructed and closely scrutinised before any ana
 \node[text width = 6cm] at (10,3.5) {
 \begin{minipage}{\textwidth}
 \begin{align*}
-\Sigma x&=75.13\\
-\Sigma y&=2919\\
-\Sigma x^2&=272.1\\
-\Sigma y^2&=416279\\
-\Sigma xy&=9583.94\\
-n&=22
+\Sigma x&=\text{75.13}\\
+\Sigma y&=\text{2919}\\
+\Sigma x^\text{2}&=\text{272.1}\\
+\Sigma y^\text{2}&=\text{416279}\\
+\Sigma xy&=\text{9583.94}\\
+n&=\text{22}
 \end{align*}
 \end{minipage}
 };
@@ -555,7 +561,7 @@ n&=22
 
 ## Pearson's Product Moment Correlation Coefficient
 
-Instead of relying on vague terms such as 'strong', 'moderate' and 'weak', the strength of the *linear relationship* between two variables can be measured and better communicated using a *correlation coefficient*. Whilst there are a number of different correlation coefficients used in statistics, the only one used in this course is *Pearson's Product Moment Correlation Coefficient (PMCC)*, which can now simply be referred to as the **correlation coefficient**. Given a sample of bivariate data, the *sample correlation coefficient*, $r$, can be calculated as:
+Instead of relying on vague terms such as 'strong', 'moderate' and 'weak', the strength of the *linear relationship* between two variables can be measured and better communicated using a **correlation coefficient**. Whilst there are a number of different correlation coefficients used in statistics, the only one used in this course is *Pearson's Product Moment Correlation Coefficient (PMCC)*, which can now simply be referred to as the *correlation coefficient*. Given a sample of bivariate data, the *sample correlation coefficient*, $r$, can be calculated as:
 
 \begin{center}
 \tcbset{width=8cm}
@@ -578,8 +584,8 @@ The formulae for the *"Three Ss"* and the *"Five Sigmas"* are given on **page 4*
 \vspace{-1cm}
 
 \begin{align*}
-S_{xx}&=\Sigma(x-\bar{x})^2=\Sigma x^2-\frac{(\Sigma x)^2}{n}\\
-S_{yy}&=\Sigma(y-\bar{y})^2=\Sigma y^2-\frac{(\Sigma y)^2}{n}\\
+S_{xx}&=\Sigma(x-\bar{x})^\text{2}=\Sigma x^\text{2}-\frac{(\Sigma x)^\text{2}}{n}\\
+S_{yy}&=\Sigma(y-\bar{y})^\text{2}=\Sigma y^\text{2}-\frac{(\Sigma y)^\text{2}}{n}\\
 S_{xy}&=\Sigma(x-\bar{x})(y-\bar{y})=\Sigma xy-\frac{\Sigma x\Sigma y}{n}
 \end{align*}
 
@@ -597,15 +603,15 @@ S_{xy}&=\Sigma(x-\bar{x})(y-\bar{y})=\Sigma xy-\frac{\Sigma x\Sigma y}{n}
 \begin{align*}
 &\Sigma x\\
 &\Sigma y\\
-&\Sigma x^2\\
-&\Sigma y^2\\
+&\Sigma x^\text{2}\\
+&\Sigma y^\text{2}\\
 &\Sigma xy
 \end{align*}
 
 \end{minipage}
 \end{figure}
 
-For all sets of data, $-1\leqslant r\leqslant 1$. A correlation coefficient of zero suggests there is *no linear relationship* between the two variables, whilst any non-zero correlation coefficient suggests the possibility of a linear relationship. Each figure below shows a scatterplot of sample data along with its sample correlation coefficient, $r$, and an interpretation. 
+For all sets of data, $-\text{1}\leqslant r\leqslant \text{1}$. A correlation coefficient of **zero** suggests there is **no linear relationship** between the two variables, whilst any non-zero correlation coefficient suggests the presence of a possible linear relationship. The figures below show scatterplots of sample data along with their sample correlation coefficients, $r$, and an interpretation. 
 
 \begin{multicols}{5}
 
@@ -633,7 +639,7 @@ For all sets of data, $-1\leqslant r\leqslant 1$. A correlation coefficient of z
 \draw[black!80,fill=black!80] (1.9991359976154,0.943719566438048) circle (0.03);
 \draw[black!80,fill=black!80] (0.799084955276089,1.4732341217342) circle (0.03);
 \draw[black!80,fill=black!80] (1.10366422828614,1.21809494936998) circle (0.03);
-\node at (1.25,2.5) {$r=-0.98$};
+\node at (1.25,2.5) {$r=-\text{0.98}$};
 \node[below,align=center,text width = 3.2cm] at (1.25,0) {\textit{very strong\\negative\\linear relationship}};
 \end{tikzpicture}
 \end{center}
@@ -662,7 +668,7 @@ For all sets of data, $-1\leqslant r\leqslant 1$. A correlation coefficient of z
 \draw[black!80,fill=black!80] (1.55778663763025,1.54014967759233) circle (0.03);
 \draw[black!80,fill=black!80] (1.1401507489033,0.666650362988476) circle (0.03);
 \draw[black!80,fill=black!80] (1.43568707986603,0.828293976053046) circle (0.03);
-\node at (1.25,2.5) {$r=-0.32$};
+\node at (1.25,2.5) {$r=-\text{0.32}$};
 \node[below,align=center,text width = 3.2cm] at (1.25,0) {\textit{weak\\negative\\linear relationship}};
 \end{tikzpicture}
 \end{center}
@@ -691,7 +697,7 @@ For all sets of data, $-1\leqslant r\leqslant 1$. A correlation coefficient of z
 \draw[black!80,fill=black!80] (0.801318508363015,0.101244794060686) circle (0.03);
 \draw[black!80,fill=black!80] (0.624282727909172,1.68068411847719) circle (0.03);
 \draw[black!80,fill=black!80] (0.352176980459586,0.39934395881673) circle (0.03);
-\node at (1.25,2.5) {$r=0.00$};
+\node at (1.25,2.5) {$r=\text{0.00}$};
 \node[below,align=center,text width = 3.2cm] at (1.25,0) {\textit{no\\linear\\relationship}};
 \end{tikzpicture}
 \end{center}
@@ -720,7 +726,7 @@ For all sets of data, $-1\leqslant r\leqslant 1$. A correlation coefficient of z
 \draw[black!80,fill=black!80] (1.65581739286222,1.30093484216487) circle (0.03);
 \draw[black!80,fill=black!80] (1.22631362223259,1.02108271888735) circle (0.03);
 \draw[black!80,fill=black!80] (1.37331528203759,1.46538877890905) circle (0.03);
-\node at (1.25,2.5) {$r=0.73$};
+\node at (1.25,2.5) {$r=\text{0.73}$};
 \node[below,align=center,text width = 3.2cm] at (1.25,0) {\textit{strong\\positive\\linear relationship}};
 \end{tikzpicture}
 \end{center}
@@ -733,7 +739,7 @@ For all sets of data, $-1\leqslant r\leqslant 1$. A correlation coefficient of z
 \draw[black!80,fill=black!80] (1.4,1.4) circle (0.03);
 \draw[black!80,fill=black!80] (2.4,1.9) circle (0.03);
 \draw[black!80,fill=black!80] (0.8,1.1) circle (0.03);
-\node at (1.25,2.5) {$r=1$};
+\node at (1.25,2.5) {$r=\text{1}$};
 \node[below,align=center,text width = 3.2cm] at (1.25,0) {\textit{perfect\\positive\\linear relationship}};
 \end{tikzpicture}
 \end{center}
@@ -824,15 +830,15 @@ As the correlation coefficient, r, is calculated for a *sample*, it is a **sampl
 \node[text width=5cm] at (5,1.6) {
 \begin{minipage}{\textwidth}
 \begin{align*}
-\rho&=0.66\\
-r&=0.71\\
-n&=20
+\rho&=\text{0.66}\\
+r&=\text{0.71}\\
+n&=\text{20}
 \end{align*}
 \end{minipage}
 };
 \end{tikzpicture}
 \end{center}
-This \textbf{sample} has resulted in a value for $r$ which approximates well the \textcolor{black!50}{\textbf{population}} correlation coefficient, $\rho$.
+This \textbf{sample} has resulted in a value for $r$ which approximates well the true \textcolor{black!70}{\textbf{population}} correlation coefficient, $\rho$.
 
 \end{minipage}%
   \centering
@@ -907,15 +913,15 @@ This \textbf{sample} has resulted in a value for $r$ which approximates well the
 \node[text width=4cm] at (5,1.6) {
 \begin{minipage}{\textwidth}
 \begin{align*}
-\rho&=0.66\\
-r&=-0.18\\
-n&=7
+\rho&=\text{0.66}\\
+r&=-\text{0.18}\\
+n&=\text{7}
 \end{align*}
 \end{minipage}
 };
 \end{tikzpicture}
 \end{center}
-This \textbf{sample} has resulted in a value for $r$ which is far from the true \textcolor{black!50}{\textbf{population}} correlation coefficient, $\rho$.
+This \textbf{sample} has resulted in a value for $r$ which is far from the true \textcolor{black!70}{\textbf{population}} correlation coefficient, $\rho$.
 
 \end{minipage}
 \end{figure}
@@ -940,8 +946,8 @@ This \textbf{sample} has resulted in a value for $r$ which is far from the true 
 \node[text width = 6cm] at (-6,5.8) {
 \begin{minipage}{\textwidth}
 \begin{align*}
-\Sigma x&=143.4 \quad &\Sigma y&=163.3 \quad &\Sigma xy&=2978.5\\[0.3em]
-\Sigma x^2&=2618.3 &\Sigma y^2&=3391.8 &n&=8
+\Sigma x&=\text{143.4} \quad &\Sigma y&=\text{163.3} \quad &\Sigma xy&=\text{2978.5}\\[0.3em]
+\Sigma x^\text{2}&=\text{2618.3} &\Sigma y^\text{2}&=\text{3391.8} &n&=\text{8}
 \end{align*}
 \end{minipage}
 };
@@ -964,25 +970,25 @@ This \textbf{sample} has resulted in a value for $r$ which is far from the true 
 \begin{multicols}{3}
 
 \begin{flalign*}
-S_{xx}&=\Sigma x^2-\frac{(\Sigma x)^2}{n}\\
-&=2618.3-\frac{143.4^2}{8}\\
-&=47.82
+S_{xx}&=\Sigma x^\text{2}-\frac{(\Sigma x)^\text{2}}{n}\\
+&=\text{2618.3}-\frac{\text{143.4}^\text{2}}{\text{8}}\\
+&=\text{47.82}
 \end{flalign*}
 \vfill
 \null
 \columnbreak
 \begin{flalign*}
-S_{yy}&=\Sigma y^2-\frac{(\Sigma y)^2}{n}\\
-&=3391.8-\frac{163.3^2}{8}\\
-&=58.43
+S_{yy}&=\Sigma y^\text{2}-\frac{(\Sigma y)^\text{2}}{n}\\
+&=\text{3391.8}-\frac{\text{163.3}^\text{2}}{\text{8}}\\
+&=\text{58.43}
 \end{flalign*}
 \vfill
 \null
 \columnbreak
 \begin{flalign*}
 S_{xy}&=\Sigma xy-\frac{\Sigma x\Sigma y}{n}\\
-&=2978.5-\frac{143.4\times163.3}{8}\\
-&=51.39
+&=\text{2978.5}-\frac{\text{143.4}\times\text{163.3}}{\text{8}}\\
+&=\text{51.39}
 \end{flalign*}
 \vfill
 \null
@@ -990,9 +996,9 @@ S_{xy}&=\Sigma xy-\frac{\Sigma x\Sigma y}{n}\\
 
 \vspace{-0.8cm}
 
-$r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}=\dfrac{51.39}{\sqrt{47.82\times58.43}}=0.9354$\\[0.5em]
+$r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}=\dfrac{\text{51.39}}{\sqrt{\text{47.82}\times\text{58.43}}}=\text{0.9354}$\\[0.5em]
 
-This suggests a strong, positive linear correlation between the length of squirrels' tails and their heights.
+This suggests a strong positive linear correlation between the length of squirrels' tails and their heights.
 
 \end{tcolorbox}
 
@@ -1062,12 +1068,12 @@ This suggests a strong, positive linear correlation between the length of squirr
 \node[text width = 6cm] at (5.5,5) {
 \begin{minipage}{\textwidth}
 \begin{align*}
-\Sigma x&=785.9\\
-\Sigma y&=96\\
-\Sigma x^2&=34481\\
-\Sigma y^2&=472.6\\
-\Sigma xy&=3888.7\\
-n&=20
+\Sigma x&=\text{785.9}\\
+\Sigma y&=\text{96}\\
+\Sigma x^\text{2}&=\text{34481}\\
+\Sigma y^\text{2}&=\text{472.6}\\
+\Sigma xy&=\text{3888.7}\\
+n&=\text{20}
 \end{align*}
 \end{minipage}
 };
@@ -1103,12 +1109,12 @@ n&=20
 \node[text width = 6cm] at (5.5,2.5) {
 \begin{minipage}{\textwidth}
 \begin{align*}
-\Sigma x&=49.63\\
-\Sigma y&=94.48\\
-\Sigma x^2&=333.1\\
-\Sigma y^2&=1208.0\\
-\Sigma xy&=538.87\\
-n&=8
+\Sigma x&=\text{49.63}\\
+\Sigma y&=\text{94.48}\\
+\Sigma x^\text{2}&=\text{333.1}\\
+\Sigma y^\text{2}&=\text{1208.0}\\
+\Sigma xy&=\text{538.87}\\
+n&=\text{8}
 \end{align*}
 \end{minipage}
 };
@@ -1117,7 +1123,7 @@ n&=8
 \end{multicols}
 \end{enumerate}
 \vspace{-0.5cm}
-\item A \textit{sepal} is part of a flower. The lengths ($x$, in cm) and widths ($y$, in cm) are measured for a random sample of 100 \textit{iris} flowers, of two different varieties. A scatterplot is plotted, and a correlation coefficient of $-0.206$ is obtained. The researcher concludes that this proves that there is a weak negative linear relationship.
+\item A \textit{sepal} is part of a flower. The lengths ($x$, in cm) and widths ($y$, in cm) are measured for a random sample of 100 \textit{iris} flowers, of two different varieties. A scatterplot is plotted, and a correlation coefficient of $-\text{0.206}$ is obtained. The researcher concludes that this proves that there is a weak negative linear relationship.
 \begin{center}
 \vspace{-0.2cm}
 \begin{tikzpicture}[scale=0.8]
@@ -1242,17 +1248,17 @@ n&=8
 
 ## Least Squares Linear Regression 
 
-A $y$ *on* $x$ regression model is one constructed with the aim of producing a trend line which can be used to predict unknown values of $Y_i$ based on known values of $x_i$. For a sample of bivariate data $(x_1,y_1), (x_2,y_2), ...  ,(x_n,y_n)$, this *regression line* has an equation of the form $\hat{Y}_i=a + b x_i$, where: 
+A $y$ *on* $x$ regression model is one constructed with the aim of producing a trend line which can be used to predict unknown values of $y$ based on known values of $x$. For a sample of bivariate data $(x_\text{1},y_\text{1}), (x_\text{2},y_\text{2}), ...  ,(x_n,y_n)$, this *regression line* has an equation of the form $\hat{y}_i=a + b x_i$, where: 
 
 \begin{figure}[H]
   \centering
 \begin{minipage}[c]{.54\textwidth}
 
-$\hat{Y}_i$ (\textit{`Y hat'}) is the \textit{best estimate} of $y_i$ given $x_i$.\\
+$\hat{y}_i$ (\textit{`y hat'}) is the \textit{best estimate} of $y_i$ given $x_i$.\\
 
 Sample statistic $a$ represents the line's \textbf{intercept}, and is an estimate for the true \textit{intercept parameter} $\alpha$ (\textit{``alpha''}).\\
 
-Sample statistic $b$ represents the line's \textbf{slope}, and is an estimate for the true \textit{slope parameter} $\beta$ (\textit{``beta'')}. Each 
+Sample statistic $b$ represents the line's \textbf{slope}, and is an estimate for the true \textit{slope parameter} $\beta$ (\textit{``beta'')}. 
 
 \end{minipage}%
   \centering
@@ -1269,12 +1275,12 @@ Sample statistic $b$ represents the line's \textbf{slope}, and is an estimate fo
         \draw[semithick,-stealth] (0,0) -- (0,3) node[above] {$y$};
         \node[below] at (3,0) {\textit{predictor}};
         \node[above,rotate=90] at (0,1.5) {\textit{response}};
-        \draw[fill] (1,1.105) circle (0.04) node[below] {$(x_1,y_1)$};
-        \draw[fill] (2,2.17) circle (0.04) node[above] {$(x_2,y_2)$};
-        \draw[fill] (3,1.10) circle (0.04) node[below] {$(x_3,y_3)$};
-        \draw[fill] (4,1.43) circle (0.04) node[right] {$(x_4,y_4)$};
-        \draw[fill] (5,2.47) circle (0.04) node[above] {$(x_5,y_5)$};
-        \draw[thick] (0.7,0.7*0.21+1.016) -- (5.1,5.1*0.21+1.016) node[right] {$\hat{Y}_i=a + b x_i$};
+        \draw[fill] (1,1.105) circle (0.04) node[below] {$(x_\text{1},y_\text{1})$};
+        \draw[fill] (2,2.17) circle (0.04) node[above] {$(x_\text{2},y_\text{2})$};
+        \draw[fill] (3,1.10) circle (0.04) node[below] {$(x_\text{3},y_\text{3})$};
+        \draw[fill] (4,1.43) circle (0.04) node[right] {$(x_\text{4},y_\text{4})$};
+        \draw[fill] (5,2.47) circle (0.04) node[above] {$(x_\text{5},y_\text{5})$};
+        \draw[thick] (0.7,0.7*0.21+1.016) -- (5.1,5.1*0.21+1.016) node[right] {$\hat{y}_i=a + b x_i$};
     \end{tikzpicture}
 \end{center}
 
@@ -1282,7 +1288,7 @@ Sample statistic $b$ represents the line's \textbf{slope}, and is an estimate fo
 \end{figure}
 
 
-To determine the equation of this regression line, the method of *least squares regression* is used. Since the goal is to produce the *best estimates* for $Y_i$, vertical distances between observed values and the line are considered. The *least squares* regression line is that which minimises the sum of the squares of these vertical distances.
+To determine the equation of this regression line, the method of *least squares regression* is used. Since the goal is to produce the *best estimates* for $y_i$, vertical distances between observed values and the line are considered. The *least squares* regression line is that which minimises the sum of the squares of these vertical distances.
 
 \begin{multicols}{2}
 
@@ -1346,7 +1352,7 @@ $$\hat{\beta}=b=\dfrac{S_{xy}}{S_{xx}} \qquad \text{and} \qquad \hat{\alpha}=a=\
 
 Note that the calculation for $a$ implies that the regression line always passes through the point $\left(\bar{x},\bar{y}\right)$.
 
-Once values for $a$ and $b$ have been calculated, and so the least squares regression line of $y$ on $x$ obtained as $\hat{Y}_i=a+bx_i$, unknown values of $Y_i$ may be estimated for given values of $x_i$. This equation (and the line it defines) is *not* suitable for predicting $x$ from $y$; this process will be covered in a later chapter.
+Once values for $a$ and $b$ have been calculated, and so the least squares regression line of $y$ on $x$ obtained as $\hat{y}_i=a+bx_i$, unknown values of $y_i$ may be estimated for given values of $x_i$. This equation (and the line it defines) is *not* suitable for predicting $x$ from $y$; this process will be covered in a later chapter.
 
 \begin{vwcol}[widths={0.65,0.35},
  sep=.8cm,rule=0pt]
@@ -1421,8 +1427,8 @@ Whether a linear relationship will continue to hold for $x$ values lower or high
 \draw[fill=black] (10*0.25-1,8*0.25-1.5) circle (0.04);
 \draw[fill=black] (15*0.25-1,17*0.25-1.5) circle (0.04);
 \draw[fill=black] (16*0.25-1,18*0.25-1.5) circle (0.04);
-\node at (9.5,3.5) {$\Sigma x=132,$\quad$\Sigma y=147,$};
-\node at (9.5,2.9) {$\Sigma x^2 =1742,$\quad$\Sigma y^2 =2057,$\quad$\Sigma xy=1872$};
+\node at (9.5,3.5) {$\Sigma x=\text{132},$\quad$\Sigma y=\text{147},$};
+\node at (9.5,2.9) {$\Sigma x^\text{2} =\text{1742},$\quad$\Sigma y^\text{2} =\text{2057},$\quad$\Sigma xy=\text{1872}$};
 \node[anchor=west] at (5.5,2) {(a) Calculate the equation of the least squares};
 \node[anchor=west] at (6.1,1.5) {regression line of $y$ on $x$.};
 \node[anchor=west] at (5.5,0.7) {(b) Calculate a predicted mark for the practical test};
@@ -1437,26 +1443,34 @@ Whether a linear relationship will continue to hold for $x$ values lower or high
 
 \begin{enumerate}
     \item[(a)] \begin{flalign*}
-S_{xx}&=\Sigma x^2-\frac{(\Sigma x)^2}{n}=1742-\frac{132^2}{12}=290&&\\[1em]
-S_{xy}&=\Sigma xy-\frac{\Sigma x\Sigma y}{n}=1872-\frac{132\times 147}{12}=255\\[1em]
-b&=\dfrac{S_{xy}}{S_{xx}}=\dfrac{255}{290}=0.879\\[1em]
-a&=\bar{y}-b \bar{x}=\dfrac{147}{12}-0.879\times \dfrac{132}{12}=2.578\\[1em]
-\hat{Y}_i&=2.578+0.879x_i
+S_{xx}&=\Sigma x^\text{2}-\frac{(\Sigma x)^\text{2}}{n}=\text{1742}-\frac{\text{132}^\text{2}}{\text{12}}=\text{290}&&\\[1em]
+S_{xy}&=\Sigma xy-\frac{\Sigma x\Sigma y}{n}=\text{1872}-\frac{\text{132}\times \text{147}}{\text{12}}=\text{255}\\[1em]
+b&=\dfrac{S_{xy}}{S_{xx}}=\dfrac{\text{255}}{\text{290}}=\text{0.879}\\[1em]
+a&=\bar{y}-b \bar{x}=\dfrac{\text{147}}{\text{12}}-\text{0.879}\times \dfrac{\text{132}}{\text{12}}=\text{2.578}\\[1em]
+\hat{y}_i&=\text{2.578}+\text{0.879}x_i
 \end{flalign*}
-    \item[(b)] $\hat{Y}=2.578 + 0.879\times 8=9.61$
+    \item[(b)] $\hat{y}=\text{2.578} + \text{0.879}\times \text{8}=\text{9.61}$
     \item[(c)] This is an example of interpolation as the value of $x$ used is within the range of values of the other students, and consequently it can be considered a robust prediction, especially given the strong linear relationship suggested by the scatterplot.  
 \end{enumerate}
 
 \end{tcolorbox}
 
-Another way of writing the equation found above is: $\text{practical}=2.578+0.879\times\text{ theoretical}$. This suggests that each increase of $1$ mark in the theory test is associated with an increase of $0.879$ marks in the practical test.
+Another way of writing the equation found above is: $\text{practical}=\text{2.578}+\text{0.879}\times\text{ theoretical}$. This suggests that each increase of 1 mark in the theory test is associated with an increase of 0.879 marks in the practical.
+
+Scatterplots should always be constructed and closely scrutinised before further analysing bivariate data. 
+
+By inspecting a scatterplot, it may become apparent, for instance, that the data set is separated into *distinct groups*, which ought to be considered separately, including calculating a correlation coefficient and constructing a regression line for each group.
+
+*Outliers* can have a large influence on both the correlation coefficient and the regression line, so they should always be (visually) identified and considered, removing them only if doing so can be justified.
+
+\pagebreak
 
 []{#ex53q}
 
 #### [Exercise 5.3](#ex53a) {-}
 
 \begin{enumerate}
-    \item A sample of bivariate data is collected, shown in the table and scatterplot below.
+    \item A sample of bivariate data collected by a researcher is shown in the table below.
     \begin{center}
         \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
             \hline
@@ -1466,28 +1480,24 @@ Another way of writing the equation found above is: $\text{practical}=2.578+0.87
             \hline
         \end{tabular}
     \end{center}
-    The researcher who collected the data constructed a scatterplot, and from that they determined that it would not be appropriate to obtain a least squares regression line. State what feature they are likely to have observed on the scatterplot.
-\end{enumerate}
-
-\pagebreak
-
-\begin{enumerate}[resume]
+    The researcher constructed a scatterplot, from which they determined that a least squares regression line would not be appropriate. State what feature they are likely to have observed on the scatterplot.
     \item A bivariate sample has summary statistics:
 \begin{center}
   \begin{tabular}{ccccccccccc}
-      $\sum x=117$ & \quad & $\sum x^2=1869$ & \quad & $\sum y=660$ & \quad & $\sum y^2=54638$ & \quad & $\sum xy=9519$ & \quad & $n=8$
+      $\sum x=\text{117}$ & \quad & $\sum x^\text{2}=\text{1869}$ & \quad & $\sum y=\text{660}$ & \quad & $\sum y^\text{2}=\text{54638}$ & \quad & $\sum xy=\text{9519}$ & \quad & $n=\text{8}$
   \end{tabular}
 \end{center}
 It is determined from inspecting a scatterplot that there appears to be a linear relationship between the variables. Obtain the equation of the least squares regression line of $y$ on $x$.
 \item 26 randomly selected trees in a forest have their diameter at a set distance from the ground measured, in inches, and the height of each tree also measured, in feet. The equation of the least squares regression line for $y$ on $x$ is obtained, and shown on the scatterplot below.
+\vspace{-0.6cm}
     \begin{center}
     \begin{tikzpicture}
         \draw (0,0) -- (6.2,0);
         \foreach \x in {0,1,...,6}{
         \draw (\x,-0.1) -- (\x,0) node[below] {\x};
         }
-        \node at (3.1,-1) {Tree diameter (inches)};
-        \draw (0,0) -- (0,3.5);
+        \node at (3.1,-0.8) {Tree diameter (inches)};
+        \draw (0,0) -- (0,3.2);
         \foreach \y in {40,50,...,70}{
         \draw (-0.1,0.1*\y-4) -- (0,0.1*\y-4) node[left] {\y};
         }
@@ -1520,26 +1530,30 @@ It is determined from inspecting a scatterplot that there appears to be a linear
 \draw[fill] (0.9111540,0.914811) circle (0.04);
 \draw[thick] (0.5,0.1*40.57-4+0.473*0.5) -- (5.5,0.1*40.57-4+0.473*5.5);
 \node[right] at (9,3.5) {Summary statistics:};
-\node[right] at (9,2.9) {$\sum x=74.76$};
-\node[right] at (9,2.3) {$\sum x^2=253.76$};
-\node[right] at (9,1.7) {$\sum y=1408.3$};
-\node[right] at (9,1.1) {$\sum y^2=77277$};
-\node[right] at (9,0.5) {$\sum xy=4233.1$};
-\node[right] at (9,-0.1) {$n=26$};
+\node[right] at (9,2.9) {$\sum x=\text{74.76}$};
+\node[right] at (9,2.3) {$\sum x^\text{2}=\text{253.76}$};
+\node[right] at (9,1.7) {$\sum y=\text{1408.3}$};
+\node[right] at (9,1.1) {$\sum y^\text{2}=\text{77277}$};
+\node[right] at (9,0.5) {$\sum xy=\text{4233.1}$};
+\node[right] at (9,-0.1) {$n=\text{26}$};
     \end{tikzpicture}
 \end{center}
+    \vspace{-0.3cm}
     \begin{enumerate}
         \item Determine the equation of the least squares regression line of $y$ on $x$.
         \item Calculate an estimate for the height of a tree with a diameter of 3.9 inches.
     \end{enumerate}
 \item A running website randomly selected eleven amateur runners who recently completed a marathon and asked them to complete a survey which included their finishing time in the marathon and information about their training routine. The scatterplot below shows, for each runner, their finishing time ($x$, in hours) and the total distance they ran in the final four weeks of their training ($y$, in miles).
+
+\vspace{-3.5cm}
+
 \begin{center}
 \begin{tikzpicture}
 \foreach \x in {0,1,...,7}{
-\draw (\x,0) -- (\x,-0.1);
-\node[below] at (\x,0) {\x};
+\draw (\x,0.5 -- (\x,0.4);
+\node[below] at (\x,0.5) {\x};
 }
-\foreach \y in {0,25,...,175}{
+\foreach \y in {25,50,...,175}{
 \draw (0,0.02*\y) -- (-0.1,0.02*\y);
 \node[left] at (0,0.02*\y) {\y};
 }
@@ -1555,18 +1569,18 @@ It is determined from inspecting a scatterplot that there appears to be a linear
 \draw[black!70,fill=black!70] (5,1.18) circle (0.03);
 \draw[black!70,fill=black!70] (6.2,1.3) circle (0.03);
 \draw[thick] (2,2.96) -- (6.5,0.84);
-\draw[-stealth] (0,0) -- (7,0) node[right] {$x$};
-\draw[-stealth] (0,0) -- (0,3.6) node[above] {$y$};
-\node at (3.5,-0.8) {Time (hours)};
+\draw[-stealth] (0,0.5) -- (7.3,0.5);
+\draw[-stealth] (0,0.5) -- (0,3.7);
+\node at (3.5,-0.3) {Time (hours)};
 \node at (-1.8  ,2.5) {Distance};
 \node at (-2,2) {(miles)};
-\node[right] at (9,4) {Summary statistics:};
-\node[right] at (9,3.4) {$\sum x=44.5$};
-\node[right] at (9,2.8) {$\sum x^2=191.21$};
-\node[right] at (9,2.2) {$\sum y=1098$};
-\node[right] at (9,1.6) {$\sum y^2=116768$};
-\node[right] at (9,1) {$\sum xy=4179.2$};
-\node[right] at (9,0.4) {$n=11$};
+\node[right] at (9,3.6) {Summary statistics:};
+\node[right] at (9,3) {$\sum x=\text{44.5}$};
+\node[right] at (9,2.4) {$\sum x^\text{2}=\text{191.21}$};
+\node[right] at (9,1.8) {$\sum y=\text{1098}$};
+\node[right] at (9,1.2) {$\sum y^\text{2}=\text{116768}$};
+\node[right] at (9,0.6) {$\sum xy=\text{4179.2}$};
+\node[right] at (9,0) {$n=\text{11}$};
 \end{tikzpicture}
 \end{center}  
 
@@ -1580,13 +1594,16 @@ A least squares regression line for $y$ on $x$ is shown on the graph.
     \item[(b)] Calculate the correlation coefficient, and comment on its value.
 \end{enumerate}
 
-The website wishes to allow users the ability to input the number of miles in their training plan for the four weeks leading up to the rate, and receive in response an estimate for their finishing time.
+The website wishes to allow users the ability to input the number of miles in their training plan for the four weeks leading up to the race, and receive in response an estimate for their finishing time.
 
 \begin{enumerate}
     \item[(c)] Explain why the equation provided above is unsuitable for this purpose.
 \end{enumerate}
+\end{enumerate}
 
-\pagebreak
+\newpage
+
+\begin{enumerate}[resume]
     \item A researcher laid a transect line from the base of a tree and placed a quadrat at one metre intervals along the transect line. The number of seeds dropped by the tree contained in each quadrat was recorded. 
     \vspace{-0.6cm}
     \begin{center}
@@ -1733,12 +1750,12 @@ The website wishes to allow users the ability to input the number of miles in th
 \begin{center}
 \begin{tabular}{c}
   \phantom{-}\\[0.2em]
-  $\Sigma x=4673$\\[0.6em]
-  $\Sigma x^2=763101$\\[0.6em]
-  $\Sigma xy=308020$\\[0.6em]
-  $\Sigma y=1889$\\[0.6em]
-  $\Sigma y^2=124945$\\[0.6em]
-  $n=29$
+  $\Sigma x=\text{4673}$\\[0.6em]
+  $\Sigma x^\text{2}=\text{763101}$\\[0.6em]
+  $\Sigma xy=\text{308020}$\\[0.6em]
+  $\Sigma y=\text{1889}$\\[0.6em]
+  $\Sigma y^\text{2}=\text{124945}$\\[0.6em]
+  $n=\text{29}$
 \end{tabular}
 \end{center}
 
@@ -1770,7 +1787,7 @@ The website wishes to allow users the ability to input the number of miles in th
 ## [Review Exercise](#re5a) {-}
 
 \begin{enumerate}
-    \item As part of a study on intensive exercise, a sports scientist recorded the peak heart rates ($y$) of a random selection of sixteen volunteers of different ages ($x$) who took regular exercise. The linear regression equation was calculated for the data shown in the scatter diagram and found to be $y=203.9−0.67x$.
+    \item As part of a study on intensive exercise, a sports scientist recorded the peak heart rates ($y$) of a random selection of sixteen volunteers of different ages ($x$) who took regular exercise. The linear regression equation was calculated for the data shown in the scatter diagram and found to be $y=\text{203.9}−\text{0.67}x$.
 \end{enumerate}
 
 
@@ -1791,7 +1808,7 @@ The website wishes to allow users the ability to input the number of miles in th
 \node at (1.3,0.1*\y) {\y};
 \foreach \y in {160,165,...,200}
 \draw[semithick] (1.8,0.1*\y) -- (1.6,0.1*\y);
-\foreach \x in {20,25,...,50}
+\foreach \x in {20,30,...,50}
 \node at (0.1*\x,15.5) {\x};
 \foreach \x in {20,25,...,50}
 \draw[semithick] (0.1*\x,15.8) -- (0.1*\x,16);
@@ -1823,11 +1840,11 @@ The website wishes to allow users the ability to input the number of miles in th
 \vspace{0cm}
 
 \begin{enumerate}
-    \item[] However, after considering the scatter diagram for the data, it was realised that one piece of data has been misrecorded, and this volunteer’s data was removed from the data set. 
+    \item[] However, after considering the scatter diagram for the data, it was realised that one piece of data has been misrecorded, and this volunteer’s data (spotted as a possible outlier) was removed from the data set. 
     \begin{enumerate}
         \item[(a) ] State the approximate age of the volunteer whose data was removed.
         \item[(b) ] Calculate the new equation of the least squares regression line using the revised summary data:\\
-        $\Sigma x=518,  \Sigma y=2687,  \Sigma x^2=19196,  \Sigma y^2=482691,  \Sigma xy=91534$ 
+        $\Sigma x=\text{518},  \Sigma y=\text{2687},  \Sigma x^\text{2}=\text{19196},  \Sigma y^\text{2}=\text{482691},  \Sigma xy=\text{91534}$ 
         \item[(c) ] Comment on the difference this makes to the prediction for the average peak heart rate of a 45 year old volunteer. 
     \end{enumerate}
 \end{enumerate}
@@ -1841,10 +1858,10 @@ The website wishes to allow users the ability to input the number of miles in th
     \begin{center}
     \begin{tikzpicture}[scale=0.8]
         \node[right] at (7,2.9) {Summary data for sample:};
-        \node[right] at (7,1.9) {$S_{xx}=145.94$};
-        \node[right] at (7,1.2) {$S_{yy}=530.78$};
-        \node[right] at (7,0.5) {$S_{xy}=277.54$};
-        \node[right] at (7,-0.2) {$n=17$};
+        \node[right] at (7,1.9) {$S_{xx}=\text{145.94}$};
+        \node[right] at (7,1.2) {$S_{yy}=\text{530.78}$};
+        \node[right] at (7,0.5) {$S_{xy}=\text{277.54}$};
+        \node[right] at (7,-0.2) {$n=\text{17}$};
         \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
         \draw[-stealth] (0,0.1) -- (0,3.25) node[above] {$y$}; 
         \node at (2.5,-1) {Barometric pressure (inches of mercury)};
@@ -1885,7 +1902,7 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{tikzpicture}
 \end{center}
 \vspace{-0.5cm}
-The least squares regression line of $y=155.29+1.9018x$ was fitted. Show the calculations required to obtain the values of the sample intercept and sample slope parameter.
+The least squares regression line of $y=\text{155.29}+\text{1.9018}x$ was fitted. Show the calculations required to obtain the values of the sample intercept and sample slope parameter.
 \end{enumerate}
 
 \begin{enumerate}[resume]

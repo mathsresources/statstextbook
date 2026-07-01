@@ -1,18 +1,18 @@
 # Random Variables
 
-A random variable is a function that assigns a numerical value to each outcome of a random experiment, used to *model* the behaviour of random processes. Random variables are notated using *capital letters*, such as $X$ and $Y$, whilst the *specific values* that they can take are notated with corresponding small letters such as $x$ and $y$. Random variables can be used to describe either *discrete* or *continuous* quantitative variables.
+A random variable is a function that assigns a numerical value to each outcome of a random experiment, used to *model* the behaviour of random processes. Random variables are notated using *capital letters*, such as $X$ and $Y$, whilst the *specific values* that they can take are notated with corresponding small letters such as $x$ and $y$. Random variables can be used to model either *discrete* or *continuous* quantitative variables.
 
 ### Discrete Random Variables {-}
 
-If a random variable takes *discrete* numerical values, and a probability is assigned to each, then it is a **discrete random variable**. Discrete values are often described as those that can be listed (either finitely or countably infinitely). Some examples of discrete random variables are:
+If a random variable takes *discrete* numerical values, and a probability is assigned to each, then it is a **discrete random variable**. Discrete values are those that can be listed (either finitely or countably infinitely). Some examples of discrete random variables are:
 
 \begin{center}
 \renewcommand{\arraystretch}{2}
 \begin{tabular}{ l  l } 
      \textbf{Random variable} (e.g. $X$) & \textbf{Discrete values} (e.g. $x$)     \\ 
-     The outcome of a roll of a cubical die & $1, 2, 3, 4, 5, 6$     \\ 
-     The number of goals scored in a game of football & $0,1,2,3,4,5,6,7...$     \\ 
-     The value of a randomly picked UK coin, in pounds & $0.01,0.02,0.05,0.1,0.2,0.5,1,2$     \\ 
+     The outcome of a roll of a cubical die & $\text{1}, \text{2}, \text{3}, \text{4}, \text{5}, \text{6}$     \\ 
+     The number of goals scored in a game of football & $\text{0},\text{1},\text{2},\text{3},\text{4},\text{5},\text{6},\text{7}...$     \\ 
+     The value of a randomly picked UK coin, in pounds & $\text{0.01},\text{0.02},\text{0.05},\text{0.1},\text{0.2},\text{0.5},\text{1},\text{2}$     \\ 
 \end{tabular}
 \end{center}
 
@@ -22,13 +22,13 @@ The probability that a discrete random variable $X$ takes the value $x$ is notat
 
 For example, if random variable $X$ is used to represent the outcome of the roll of a fair, six-sided die, then: 
 
-\[\text{P}(X=5)=\frac{1}{6}\]
+\[\text{P}(X=\text{5})=\frac{\text{1}}{\text{6}}\]
 
 \pagebreak
 
 ## Probability Distributions for Discrete Random Variables
 
-A *probability function* assigns probabilities to each possible value of a discrete random variable, and completely describes its behaviour. There are a number of ways of presenting the *probability distribution* created. For example, consider a discrete random variable $X$ that takes the value $3$ with probability $0.2$, the value $4$ with probability $0.5$ and the value $5$ with probability $0.3$. Below, the probability distribution for $X$ has been *tabulated* and *graphed*.
+A *probability function* assigns probabilities to each possible value of a discrete random variable, and completely describes its behaviour. There are a number of ways of presenting the *probability distribution* created. For example, consider a discrete random variable $X$ that takes the value 3 with probability 0.2, the value 4 with probability 0.5 and the value 5 with probability 0.3. Below, the probability distribution for $X$ has been *tabulated* and *graphed*.
 
 \begin{figure}[H]
   \centering
@@ -37,7 +37,7 @@ A *probability function* assigns probabilities to each possible value of a discr
 \textit{Tabulated:}
 \begin{center}
 \begin{tabular}{ c | c c c }
-      $x$ & $3$ & $4$ & $5$\\
+      $x$ & 3 & 4 & 5\\
   \hline
       $\text{P}(X=x)$ & 0.2 & 0.5 & 0.3
 \end{tabular}
@@ -51,7 +51,7 @@ A discrete probability distribution must define \textit{mutually exclusive} and 
 
 \begin{center}
 \begin{tabular}{c c c}
-      $0\leqslant \text{P}(X=x_i)\leqslant 1$ for all $i$ & and & $\sum \text{P}(X=x_i)=1$
+      $0\leqslant \text{P}(X=x_i)\leqslant \text{1}$ for all $i$ & and & $\sum \text{P}(X=x_i)=\text{1}$
 \end{tabular}
 \end{center}
 
@@ -76,7 +76,12 @@ A discrete probability distribution must define \textit{mutually exclusive} and 
     every axis y label/.style={at={(current axis.above origin)},anchor=south east}
     }
 }
-    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 4.5cm, width = 7cm, ybar,bar width=10pt, xmin=2.5,xmax=5.5,ymin=0,ymax=0.6, xtick={3,4,5},ytick={0,0.1,0.2,0.3,0.4,0.5},xlabel=$x$,ylabel=probability]
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 4.5cm, width = 7cm, ybar,bar width=10pt, xmin=2.5,xmax=5.5,ymin=0,ymax=0.6, 
+    xtick={3,4,5},
+    xticklabels={3,4,5},
+    ytick={0,0.1,0.2,0.3,0.4,0.5},
+    yticklabels={0,0.1,0.2,0.3,0.4,0.5},
+    xlabel=$x$,ylabel=probability]
         \addplot[fill=black!25, draw=black] coordinates {
     (3,0.2) 
     (4,0.5) 
@@ -90,13 +95,13 @@ A discrete probability distribution must define \textit{mutually exclusive} and 
 
 \vspace{-0.3cm}
 
-From both the table and the graph, it can be seen that, for example, $\text{P}(X=3)=0.2$.
+From both the table and the graph, it can be seen that, for example, $\text{P}(X=\text{3})=\text{0.2}$.
 
-Probabilities such as $\text{P}(X\leqslant4)$ can be calculated by adding the probability of each outcome (since they are mutually exclusive), or by subtracting from $1$ (since they are exhaustive).
+Probabilities such as $\text{P}(X\leqslant\text{4})$ can be calculated by adding the probability of each outcome (since they are mutually exclusive), or by subtracting from 1 (since they are exhaustive).
 
 \vspace{-0.3cm}
 
-\[\text{P}(X\leqslant 4)=\text{P}(X = 3)+\text{P}(X= 4)=0.2+0.5=0.7\]
+\[\text{P}(X\leqslant \text{4})=\text{P}(X = \text{3})+\text{P}(X= \text{4})=\text{0.2}+\text{0.5}=\text{0.7}\]
 
 \vspace{-0.7cm}
 
@@ -104,7 +109,7 @@ Probabilities such as $\text{P}(X\leqslant4)$ can be calculated by adding the pr
 
 \vspace{-0.7cm}
 
-\[\text{P}(X\leqslant 4)=1-\text{P}(X=5)=1-0.3=0.7\]
+\[\text{P}(X\leqslant \text{4})=\text{1}-\text{P}(X=\text{5})=\text{1}-\text{0.3}=\text{0.7}\]
 
 \vspace{-0.2cm}
 
@@ -113,9 +118,9 @@ Probabilities such as $\text{P}(X\leqslant4)$ can be calculated by adding the pr
 
 \begin{center}
 \begin{tabular}{ c | c c c c c }
-      $d$ & $6$ & $7$ & $8$ & $9$ & $10$\\
+      $d$ & 6 & 7 & 8 & 9 & 10\\
   \hline
-      $\text{P}(D=d)$ & $0.35$ & $0.3$ & $c$ & $0.2$ & $0.1$ 
+      $\text{P}(D=d)$ & 0.35 & 0.3 & $c$ & 0.2 & 0.1 
 \end{tabular}
 \end{center}
 
@@ -123,29 +128,29 @@ Probabilities such as $\text{P}(X\leqslant4)$ can be calculated by adding the pr
 
 \text{(a)   }Calculate the value of $c$.\\
   \\[-0.3em]
-\text{(b)   }Calculate $\text{P}(D\leqslant7)$.\\
+\text{(b)   }Calculate $\text{P}(D\leqslant\text{7})$.\\
   \\[-0.3em]
-\text{(c)   }Calculate $\text{P}(D>7)$.
+\text{(c)   }Calculate $\text{P}(D>\text{7})$.
 
 \tcblower
 \textbf{Solution:}
 
-\text{(a)   }$c=1-(0.35+0.3+0.2+0.1)=0.05$
+\text{(a)   }$c=\text{1}-(\text{0.35}+\text{0.3}+\text{0.2}+\text{0.1})=\text{0.05}$
 
 \begin{center}
 \begin{tabular}{ c | c c c c c }
-      $d$ & $6$ & $7$ & $8$ & $9$ & $10$\\
+      $d$ & 6 & 7 & 8 & 9 & 10\\
   \hline
-      $\text{P}(D=d)$ & $0.35$ & $0.3$ & $0.05$ & $0.2$ & $0.1$ 
+      $\text{P}(D=d)$ & 0.35 & 0.3 & 0.05 & 0.2 & 0.1 
 \end{tabular}
 \end{center}
 
 \vspace{-0.5cm}
 
 \begin{flalign*}
-\text{(b)   }\text{P}(D\leqslant7)&=\text{P}(D=6)+\text{P}(D=7) &\\
-&=0.35+0.3\\
-&=0.65
+\text{(b)   }\text{P}(D\leqslant\text{7})&=\text{P}(D=\text{6})+\text{P}(D=\text{7}) &\\
+&=\text{0.35}+\text{0.3}\\
+&=\text{0.65}
 \end{flalign*}
 
 \hspace{9cm}
@@ -161,8 +166,12 @@ Probabilities such as $\text{P}(X\leqslant4)$ can be calculated by adding the pr
     every axis y label/.style={at={(current axis.above origin)},anchor=south east}
     }
 }
-    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3.5cm, width = 7cm, ybar,bar width=10pt, xmin=5,xmax=11,ymin=0,ymax=0.5, xtick={6,7,8,9,10},ytick={0,0.1,0.2,0.3,0.4},xlabel=$d$,ylabel=probability]
-
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 3.5cm, width = 7cm, ybar,bar width=10pt, xmin=5,xmax=11,ymin=0,ymax=0.5, 
+    xtick={6,7,8,9,10},
+    ytick={0,0.1,0.2,0.3,0.4},
+    xticklabels={6,7,8,9,10},
+    yticklabels={0,0.1,0.2,0.3,0.4},
+    xlabel=$d$,ylabel=probability]
         \addplot[fill=black!40, draw=black] coordinates {
     (6,0.35) 
     (7,0.3) 
@@ -176,9 +185,9 @@ Probabilities such as $\text{P}(X\leqslant4)$ can be calculated by adding the pr
 \vspace{-1.2cm}
 
 \begin{flalign*}
-\text{(c)   }\text{P}(D>7)&=1-\text{P}(D\leqslant7) &\\
-&=1-0.65\\
-&=0.35
+\text{(c)   }\text{P}(D>\text{7})&=\text{1}-\text{P}(D\leqslant\text{7}) &\\
+&=\text{1}-\text{0.65}\\
+&=\text{0.35}
 \end{flalign*}
 \end{tcolorbox}
 
@@ -196,9 +205,9 @@ Probabilities such as $\text{P}(X\leqslant4)$ can be calculated by adding the pr
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c }
-            $a$ & $7$ & $8$ & $9$\\
+            $a$ & 7 & 8 & 9\\
           \hline
-            $\text{P}(A=a)$ & $0.6$ & $0.3$ & $0.2$ 
+            $\text{P}(A=a)$ & 0.6 & 0.3 & 0.2 
         \end{tabular}
         \egroup
         \item[(c)] 
@@ -207,25 +216,25 @@ Probabilities such as $\text{P}(X\leqslant4)$ can be calculated by adding the pr
         \begin{tabular}{ c | c c c }
             $c$ & red & blue & green\\
           \hline
-            $\text{P}(C=c)$ & $\frac{1}{3}$ & $\frac{1}{6}$ & $\frac{1}{2}$ 
+            $\text{P}(C=c)$ & $\frac{\text{1}}{\text{3}}$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{2}}$ 
         \end{tabular}
         \egroup
         \item[(b)] 
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c }
-            $b$ & $2$ & $5$ & $10$\\
+            $b$ & 2 & 5 & 10\\
           \hline
-            $\text{P}(B=b)$ & $\frac{1}{5}$ & $\frac{1}{5}$ & $\frac{2}{5}$
+            $\text{P}(B=b)$ & $\frac{\text{1}}{\text{5}}$ & $\frac{\text{1}}{\text{5}}$ & $\frac{\text{2}}{\text{5}}$
         \end{tabular}
         \egroup
         \item[(d)] 
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c }
-            $d$ & $2$ & $4$ & $6$\\
+            $d$ & 2 & 4 & 6\\
           \hline
-            $\text{P}(D=d)$ & $0.9$ & $-0.3$ & $0.4$ 
+            $\text{P}(D=d)$ & 0.9 & $-\text{0.3}$ & 0.4 
         \end{tabular}
         \egroup
         \end{multicols}
@@ -237,36 +246,36 @@ Probabilities such as $\text{P}(X\leqslant4)$ can be calculated by adding the pr
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c c }
-            $q$ & $1$ & $2$ & $3$ & $4$\\
+            $q$ & 1 & 2 & 3 & 4\\
           \hline
-            $\text{P}(Q=q)$ & $0.3$ & $0.2$ & $k$ & $0.1$ 
+            $\text{P}(Q=q)$ & 0.3 & 0.2 & $k$ & 0.1 
         \end{tabular}
         \egroup
         \item[(c)] 
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c }
-            $s$ & $5$ & $10$ & $15$\\
+            $s$ & 5 & 10 & 15\\
           \hline
-            $\text{P}(S=s)$ & $\frac{1}{10}$ & $\frac{7}{10}$ & $k$ 
+            $\text{P}(S=s)$ & $\frac{\text{1}}{\text{10}}$ & $\frac{\text{7}}{\text{10}}$ & $k$ 
         \end{tabular}
         \egroup
         \item[(b)] 
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c }
-            $r$ & $0$ & $1$ & $2$\\
+            $r$ & 0 & 1 & 2\\
           \hline
-            $\text{P}(R=r)$ & $0.4$ & $2k$ & $k$
+            $\text{P}(R=r)$ & 0.4 & $\text{2}k$ & $k$
         \end{tabular}
         \egroup
         \item[(d)] 
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c c }
-            $t$ & $1$ & $2$ & $3$ & $4$\\
+            $t$ & 1 & 2 & 3 & 4\\
           \hline
-            $\text{P}(T=t)$ & $2k$ & $4k$ & $6k$ & $8k$ 
+            $\text{P}(T=t)$ & $\text{2}k$ & $\text{4}k$ & $\text{6}k$ & $\text{8}k$ 
         \end{tabular}
         \egroup
         \end{multicols}
@@ -276,9 +285,9 @@ Probabilities such as $\text{P}(X\leqslant4)$ can be calculated by adding the pr
     \bgroup
     \def\arraystretch{1.5}
     \begin{tabular}{ c | c c c c c c c c }
-        $x$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$\\
+        $x$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
       \hline
-        $\text{P}(X=x)$ & $0.15$ & $0.2$ & $0.1$ & $0.05$ & $c$ & $0.1$ & $0.08$ & $0.02$ 
+        $\text{P}(X=x)$ & 0.15 & 0.2 & 0.1 & 0.05 & $c$ & 0.1 & 0.08 & 0.02 
     \end{tabular}
     \egroup
     \end{center}
@@ -286,25 +295,25 @@ Probabilities such as $\text{P}(X\leqslant4)$ can be calculated by adding the pr
     \begin{enumerate}
         \begin{multicols}{4}
         \item The value of $c$.
-        \item $\text{P}(X=4)$.
-        \item $\text{P}(X<4)$.
-        \item $\text{P}(X\leqslant4)$.
-        \item $\text{P}(X>4)$.
-        \item $\text{P}(X\geqslant4)$.
-        \item $\text{P}(2<X<5)$.
-        \item $\text{P}(2\leqslant X\leqslant 5)$.
+        \item $\text{P}(X=\text{4})$.
+        \item $\text{P}(X<\text{4})$.
+        \item $\text{P}(X\leqslant\text{4})$.
+        \item $\text{P}(X>\text{4})$.
+        \item $\text{P}(X\geqslant\text{4})$.
+        \item $\text{P}(\text{2}<X<\text{5})$.
+        \item $\text{P}(\text{2}\leqslant X\leqslant \text{5})$.
         \end{multicols}
     \end{enumerate}
     \item A bag contains nine counters numbered 1 to 9. Two are selected at random, without replacement. Tabulate the probability distribution for the random variable $E$, representing the number of even numbers selected.
-    \item The discrete random variable $X$ has probability distribution given by the function $\text{P}(X=x)=k(x+1)$, where $k$ is a constant and $X$ takes values $x=0,1,2,3$.
+    \item The discrete random variable $X$ has probability distribution given by the function $\text{P}(X=x)=k(x+\text{1})$, where $k$ is a constant and $X$ takes values $x=\text{0},\text{1},\text{2},\text{3}$.
     \begin{enumerate}
         \item Tabulate the probability distribution for $X$.
-        \item Find $\text{P}(X\geqslant2)$.
+        \item Find $\text{P}(X\geqslant\text{2})$.
     \end{enumerate}
-    \item The discrete random variable $X$ has probability distribution given by the function $\text{P}(X=x)=kx^2$, where $k$ is a constant and $X$ takes values $x=1,2,3,4$.
+    \item The discrete random variable $X$ has probability distribution given by the function $\text{P}(X=x)=kx^\text{2}$, where $k$ is a constant and $X$ takes values $x=\text{1},\text{2},\text{3},\text{4}$.
     \begin{enumerate}
         \item Tabulate the probability distribution for $X$.
-        \item Find $\text{P}(X<4)$.
+        \item Find $\text{P}(X<\text{4})$.
     \end{enumerate}
     \item Tabulate the probability distribution of each of the following discrete random variables:
     \begin{enumerate}
@@ -327,7 +336,7 @@ $\text{E}(X)=\sum{x_i\text{P}(X=x_i)}$
 \end{tcolorbox}
 \end{centering}
 
-The calculated mean of a finite number of observations of a random variable is likely to not be perfectly equal to the true *expected value*. However, the mean of repeated observations will tend towards the expected value as the number of observations increases. This is known as the *law of large numbers*.
+The calculated mean of a finite number of observations of a random variable is likely to not be perfectly equal to the true *expected value*. However, the mean of repeated observations will tend towards the expected value as the number of observations increases. This is an illustration of the *law of large numbers*.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Given the probability distribution of random variable $X$ tabulated below, calculate $\text{E}(X)$.
@@ -338,16 +347,16 @@ The calculated mean of a finite number of observations of a random variable is l
 \bgroup
 \def\arraystretch{1.5}
 \begin{tabular}{ c | c c c c }
-      $x$ & $3$ & $4$ & $5$ & $6$\\
+      $x$ & 3 & 4 & 5 & 6\\
   \hline
-      $\text{P}(X=x)$ & $\tfrac{1}{8}$ & $\tfrac{1}{4}$ & $\tfrac{1}{2}$ & $\tfrac{1}{8}$ 
+      $\text{P}(X=x)$ & $\tfrac{\text{1}}{\text{8}}$ & $\tfrac{\text{1}}{\text{4}}$ & $\tfrac{\text{1}}{\text{2}}$ & $\tfrac{\text{1}}{\text{8}}$ 
 \end{tabular}
 \egroup
 \end{center}
 
 \tcblower
 \textbf{Solution:}
-$$\text{E}(X) = 3\times \dfrac{1}{8} + 4\times \dfrac{1}{4} + 5\times \dfrac{1}{2} + 6\times \dfrac{1}{8}= \dfrac{37}{8}=4.625$$
+$$\text{E}(X) = \text{3}\times \dfrac{\text{1}}{\text{8}} + \text{4}\times \dfrac{\text{1}}{\text{4}} + \text{5}\times \dfrac{\text{1}}{\text{2}} + \text{6}\times \dfrac{\text{1}}{\text{8}}= \dfrac{\text{37}}{\text{8}}=\text{4.625}$$
 
 \vspace{-0.3cm}
 
@@ -373,40 +382,40 @@ Problems may require a probability distribution to first be tabulated, such as b
         node[bag] {red}        
             child {
                 node[end, label=right:
-                    {red\hspace{1.2cm}$\implies\frac{30}{90}=\frac{1}{3}$}] {}
+                    {red\hspace{1.2cm}$\implies\frac{\text{30}}{\text{90}}=\frac{\text{1}}{\text{3}}$}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\frac{5}{9}$}
+                node[below]  {$\frac{\text{5}}{\text{9}}$}
             }
             child {
                 node[end, label=right:
-                    {blue\hspace{1cm}$\implies\frac{24}{90}=\frac{4}{15}$}] {}
+                    {blue\hspace{1cm}$\implies\frac{\text{24}}{\text{90}}=\frac{\text{4}}{\text{15}}$}] {}
                 edge from parent
-                node[above] {$\frac{4}{9}$}
+                node[above] {$\frac{\text{4}}{\text{9}}$}
                 node[below]  {}
             }
             edge from parent 
             node[above] {}
-            node[below]  {$\frac{6}{10}$}
+            node[below]  {$\frac{\text{6}}{\text{10}}$}
     }
     child {
         node[bag] {blue}        
         child {
                 node[end, label=right:
-                    {red\hspace{1.2cm}$\implies\frac{24}{90}=\frac{4}{15}$}] {}
+                    {red\hspace{1.2cm}$\implies\frac{\text{24}}{\text{90}}=\frac{\text{4}}{\text{15}}$}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\frac{6}{9}$}
+                node[below]  {$\frac{\text{6}}{\text{9}}$}
             }
             child {
                 node[end, label=right:
-                    {blue\hspace{1cm}$\implies\frac{12}{90}=\frac{2}{15}$}] {}
+                    {blue\hspace{1cm}$\implies\frac{\text{12}}{\text{90}}=\frac{\text{2}}{\text{15}}$}] {}
                 edge from parent
-                node[above] {$\frac{3}{9}$}
+                node[above] {$\frac{\text{3}}{\text{9}}$}
                 node[below]  {}
             }
         edge from parent         
-            node[above] {$\frac{4}{10}$}
+            node[above] {$\frac{\text{4}}{\text{10}}$}
             node[below]  {}
     };
 \end{tikzpicture}
@@ -416,12 +425,12 @@ Problems may require a probability distribution to first be tabulated, such as b
 \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c }
-            $x$ & $0$ & $1$ & $2$\\
+            $x$ & 0 & 1 & 2\\
           \hline
-            $\text{P}(X=x)$ & $\tfrac{2}{15}$ & $\tfrac{8}{15}$ & $\tfrac{1}{3}$ 
+            $\text{P}(X=x)$ & $\tfrac{\text{2}}{\text{15}}$ & $\tfrac{\text{8}}{\text{15}}$ & $\tfrac{\text{1}}{\text{3}}$ 
         \end{tabular}
         \egroup
-$$\text{E}(X)=0\times \frac{2}{15}+1\times \frac{8}{15}+2\times \frac{1}{3}=\frac{6}{5}=1.2$$
+$$\text{E}(X)=\text{0}\times \frac{\text{2}}{\text{15}}+\text{1}\times \frac{\text{8}}{\text{15}}+\text{2}\times \frac{\text{1}}{\text{3}}=\frac{\text{6}}{\text{5}}=\text{1.2}$$
 \end{tcolorbox}
 
 \pagebreak
@@ -438,18 +447,18 @@ $$\text{E}(X)=0\times \frac{2}{15}+1\times \frac{8}{15}+2\times \frac{1}{3}=\fra
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c c }
-            $x$ & $2$ & $4$ & $6$ & $8$\\
+            $x$ & 2 & 4 & 6 & 8\\
           \hline
-            $\text{P}(X=x)$ & $0.25$ & $0.4$ & $0.2$ & $0.15$ 
+            $\text{P}(X=x)$ & 0.25 & 0.4 & 0.2 & 0.15 
         \end{tabular}
         \egroup
         \item 
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c c c }
-            $y$ & $1$ & $2$ & $3$ & $4$ & $5$\\
+            $y$ & 1 & 2 & 3 & 4 & 5\\
           \hline
-            $\text{P}(Y=y)$ & $\frac{1}{20}$ & $\frac{7}{20}$ & $\frac{3}{20}$ & $k$ & $\frac{1}{20}$ 
+            $\text{P}(Y=y)$ & $\frac{\text{1}}{\text{20}}$ & $\frac{\text{7}}{\text{20}}$ & $\frac{\text{3}}{\text{20}}$ & $k$ & $\frac{\text{1}}{\text{20}}$ 
         \end{tabular}
         \egroup
         \end{multicols}
@@ -457,10 +466,10 @@ $$\text{E}(X)=0\times \frac{2}{15}+1\times \frac{8}{15}+2\times \frac{1}{3}=\fra
     \item The random variable $X$ represents the result of a roll of a fair, octahedral die with sides numbered 1 to 8.
     \begin{enumerate}
         \item Tabulate the probability distribution of $X$.
-        \item State $\text{P}(4\leqslant X\leqslant 6)$.
+        \item State $\text{P}(\text{4}\leqslant X\leqslant \text{6})$.
         \item Calculate $\text{E}(X)$.
     \end{enumerate}
-    \item A discrete random variable $X$ can assume values 10 and 20 only. Given $\text{E}(X)=16$, tabulate the probability distribution of $X$.
+    \item A discrete random variable $X$ can assume values 10 and 20 only. Given $\text{E}(X)=\text{16}$, tabulate the probability distribution of $X$.
     \item A box contains 3 red marbles and 5 green marbles. Two marbles are taken at random without replacement, and $X$ is the number of green marbles obtained. Find the expectation of $X$.
     \item A box contains 3 red marbles and 5 green marbles. Two marbles are taken at random with replacement, and $Y$ is the number of green marbles obtained. Find the expectation of $Y$.
     \item In the UKMT Senior Maths Challenge, 4 points are gained for a question answered correctly and 1 point is lost for a question answered incorrectly. A candidate guesses two questions, picking at random from the 5 choices for each question. Let random variable $Y$ represent the points gained from those two questions.
@@ -488,19 +497,19 @@ $$\text{E}(X)=0\times \frac{2}{15}+1\times \frac{8}{15}+2\times \frac{1}{3}=\fra
     \item The probability distribution of the discrete random variable $X$ is tabulated below.
     \begin{center}
     \begin{tabular}{ c | c c c c c }
-        $x$ & $1$ & $3$ & $5$ & $8$ & $10$\\
+        $x$ & 1 & 3 & 5 & 8 & 10\\
       \hline
-        $\text{P}(X=x)$ & $0.1$ & $a$ & $0.3$ & $b$ & $0.2$ 
+        $\text{P}(X=x)$ & 0.1 & $a$ & 0.3 & $b$ & 0.2 
     \end{tabular}
     \end{center}
-    Given that $\text{E}(X)=6.3$, find the values of $a$ and $b$.
+    Given that $\text{E}(X)=\text{6.3}$, find the values of $a$ and $b$.
 \end{enumerate}
 
 \pagebreak
 
 ## The Law of Expectation
 
-If discrete random variable $X$ takes values ${x_1,x_2,\dots ,x_n}$ with probabilities $\text{P}(X=x_i)$, then random variable \mbox{$Y=2X$} takes values ${2x_1,2x_2,\dots,2x_n}$ with probabilities $\text{P}(X=x_i)$. For example, let $X$ represent the roll of a die:
+If discrete random variable $X$ takes values ${x_\text{1},x_\text{2},\dots ,x_n}$ with probabilities $\text{P}(X=x_i)$, then random variable \mbox{$Y=\text{2}X$} takes values ${\text{2}x_\text{1},\text{2}x_\text{2},\dots,\text{2}x_n}$ with probabilities $\text{P}(X=x_i)$. For example, let $X$ represent the roll of a die:
 
 \begin{figure}[H]
   \centering
@@ -511,13 +520,13 @@ If discrete random variable $X$ takes values ${x_1,x_2,\dots ,x_n}$ with probabi
 \bgroup
 \def\arraystretch{1.5}
 \begin{tabular}{ c | c c c c c c }
-      $x$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$\\
+      $x$ & 1 & 2 & 3 & 4 & 5 & 6\\
   \hline
-      $\text{P}(X=x)$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ 
+      $\text{P}(X=x)$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ 
 \end{tabular}
 \egroup
 \end{center}
-\captionof{figure}{$\text{E}(X)=1\times \frac{1}{6}+...+6\times \frac{1}{6}=3.5$}
+\captionof{figure}{$\text{E}(X)=\text{1}\times \frac{\text{1}}{\text{6}}+...+\text{6}\times \frac{\text{1}}{\text{6}}=\text{3.5}$}
   \label{fig:expx}
 \end{minipage}%
   \centering
@@ -531,13 +540,13 @@ If discrete random variable $X$ takes values ${x_1,x_2,\dots ,x_n}$ with probabi
 \bgroup
 \def\arraystretch{1.5}
 \begin{tabular}{ c | c c c c c c }
-      $y$ & $2$ & $4$ & $6$ & $8$ & $10$ & $12$\\
+      $y$ & 2 & 4 & 6 & 8 & 10 & 12\\
   \hline
-      $\text{P}(Y=y)$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ 
+      $\text{P}(Y=y)$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ 
 \end{tabular}
 \egroup
 \end{center}
-\captionof{figure}{$\text{E}(2X)=\text{E}(Y)=2\times \frac{1}{6}+...+12\times \frac{1}{6}=7$}
+\captionof{figure}{$\text{E}(\text{2}X)=\text{E}(Y)=\text{2}\times \frac{\text{1}}{\text{6}}+...+\text{12}\times \frac{\text{1}}{6}=7$}
   \label{fig:exp2x}
 \end{minipage}
 \end{figure}
@@ -553,7 +562,7 @@ $\text{E}(aX\pm b)=a\text{E}(X)\pm b$
 \end{tcolorbox}
 \end{centering}
 
-This means that expectation distributes over addition and multiplication by constants.
+This shows that expectation is *linear*, distributing over addition and multiplication by constants.
 
 Proof:
 
@@ -567,16 +576,16 @@ Proof:
 \end{align*}
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Let $X$ be the random variable such that $\text{E}(X)=3$. Calculate $\text{E}(4X-1)$.
+\textbf{Problem:} Let $X$ be the random variable such that $\text{E}(X)=\text{3}$. Calculate $\text{E}(\text{4}X-\text{1})$.
 
 \tcblower
 \textbf{Solution:}
 
 \vspace{-0.8cm}
 \begin{align*}
-\text{E}(4X-1)&=4\text{E}(X)-1\\
-&=4\times 3-1\\
-&=11
+\text{E}(\text{4}X-\text{1})&=\text{4}\text{E}(X)-1\\
+&=\text{4}\times \text{3}-\text{1}\\
+&=\text{11}
 \end{align*}
 
 \end{tcolorbox}
@@ -584,17 +593,17 @@ Proof:
 Given the value $\text{E}(aX\pm b)$, the expectation of $X$ may be determined.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Given that $\text{E}(10-2Y)=50$, determine the value of $\text{E}(Y)$.
+\textbf{Problem:} Given that $\text{E}(\text{10}-\text{2}Y)=\text{50}$, determine the value of $\text{E}(Y)$.
 \tcblower
 \textbf{Solution:}
 
 \vspace{-0.8cm}
 \begin{align*}
-\text{E}(10-2Y)&=50\\
-\text{E}(-2Y+10)&=50\\
--2\text{E}(Y)+10&=50\\
--2\text{E}(Y)&=40\\
-\text{E}(Y)&=-20
+\text{E}(\text{10}-\text{2}Y)&=\text{50}\\
+\text{E}(-\text{2}Y+\text{10})&=\text{50}\\
+-\text{2}\text{E}(Y)+\text{10}&=\text{50}\\
+-\text{2}\text{E}(Y)&=\text{40}\\
+\text{E}(Y)&=-\text{20}
 \end{align*}
 
 \end{tcolorbox}
@@ -609,33 +618,33 @@ Given the value $\text{E}(aX\pm b)$, the expectation of $X$ may be determined.
     \item Calculate:
     \begin{enumerate}
     \begin{multicols}{3}
-        \item $\text{E}(X+4)$ given $\text{E}(X)=3$
-        \item $\text{E}(Y-3)$ given $\text{E}(Y)=0.4$
-        \item $\text{E}(2+Z)$ given $\text{E}(Z)=-5$
+        \item $\text{E}(X+\text{4})$ given $\text{E}(X)=\text{3}$
+        \item $\text{E}(Y-\text{3})$ given $\text{E}(Y)=\text{0.4}$
+        \item $\text{E}(\text{2}+Z)$ given $\text{E}(Z)=-\text{5}$
     \end{multicols}
     \end{enumerate}
     \item Find:
     \begin{enumerate}
     \begin{multicols}{3}
-        \item $\text{E}(3X)$ given $\text{E}(X)=2.5$
-        \item $\text{E}(-\frac{1}{2}Y)$ given $\text{E}(Y)=8$
-        \item $\text{E}(-W)$ given $\text{E}(W)=-\frac{2}{3}$
+        \item $\text{E}(\text{3}X)$ given $\text{E}(X)=\text{2.5}$
+        \item $\text{E}(-\frac{\text{1}}{\text{2}}Y)$ given $\text{E}(Y)=\text{8}$
+        \item $\text{E}(-W)$ given $\text{E}(W)=-\frac{\text{2}}{\text{3}}$
     \end{multicols}
     \end{enumerate}
     \item Determine the value of:
     \begin{enumerate}
     \begin{multicols}{3}
-        \item $\text{E}(2X-3)$ given $\text{E}(X)=-4$
-        \item $\text{E}(-\dfrac{1}{3}Y+2)$ given $\text{E}(Y)=12$
-        \item $\text{E}(3-4C)$ given $\text{E}(C)=\dfrac{1}{2}$
+        \item $\text{E}(\text{2}X-\text{3})$ given $\text{E}(X)=-\text{4}$
+        \item $\text{E}(-\frac{\text{1}}{\text{3}}Y+\text{2})$ given $\text{E}(Y)=\text{12}$
+        \item $\text{E}(\text{3}-\text{4}C)$ given $\text{E}(C)=\frac{\text{1}}{\text{2}}$
     \end{multicols}
     \end{enumerate}
     \item Determine:
     \begin{enumerate}
     \begin{multicols}{3}
-        \item $\text{E}(X)$ given $\text{E}(4X+3)=15$
-        \item $\text{E}(Y)$ given $\text{E}(4-Y)=2.4$
-        \item $\text{E}(Q)$ given $\text{E}(5+\frac{2}{3}Q)=-1$
+        \item $\text{E}(X)$ given $\text{E}(\text{4}X+\text{3})=\text{15}$
+        \item $\text{E}(Y)$ given $\text{E}(\text{4}-Y)=\text{2.4}$
+        \item $\text{E}(Q)$ given $\text{E}(\text{5}+\frac{\text{2}}{\text{3}}Q)=-\text{1}$
     \end{multicols}
     \end{enumerate}
     \item The probability distribution of $X$ is tabulated as follows:
@@ -643,9 +652,9 @@ Given the value $\text{E}(aX\pm b)$, the expectation of $X$ may be determined.
     \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c c }
-            $x$ & $4$ & $5$ & $6$ & $7$\\
+            $x$ & 4 & 5 & 6 & 7\\
           \hline
-            $\text{P}(X=x)$ & $0.3$ & $0.5$ & $k$ & $0.05$ 
+            $\text{P}(X=x)$ & 0.3 & 0.5 & $k$ & 0.05 
         \end{tabular}
     \egroup
     \end{center}
@@ -653,13 +662,13 @@ Given the value $\text{E}(aX\pm b)$, the expectation of $X$ may be determined.
     \begin{enumerate}
     \begin{multicols}{4}
         \item $k$
-        \item $\text{P}(4<X\leqslant 6)$
+        \item $\text{P}(\text{4}<X\leqslant \text{6})$
         \item $\text{E}(X)$
-        \item $\text{E}(4X+1)$
+        \item $\text{E}(\text{4}X+\text{1})$
     \end{multicols}
     \end{enumerate}
     \item In a board game a fair, tetrahedral die with faces numbered from 1 to 4 is thrown, and the result is multiplied by 3 to give the number of places a player can move. Let random variable $M$ represent the number of places a player can move. Determine the mean, $\mu$, of $M$.
-    \item Random variables $X$ and $Y$ are defined such that the mean of $X$ is $\frac{1}{4}$ and $Y=6X+4$. Determine the mean of $Y$.
+    \item Random variables $X$ and $Y$ are defined such that the mean of $X$ is $\frac{\text{1}}{\text{4}}$ and $Y=\text{6}X+\text{4}$. Determine the mean of $Y$.
     \item A betting game involves a player rolling a fair, octagonal die with faces numbered from 1 to 8. Let $X$ represent the result of a roll of the die.
     \begin{enumerate}
     \item Determine $\text{E}(X)$.
@@ -670,73 +679,73 @@ Given the value $\text{E}(aX\pm b)$, the expectation of $X$ may be determined.
         \item Determine the value of $\text{E}(Y)$.
         \item Explain what this suggests will happen if a player plays the game repeatedly.
     \end{enumerate}
-    \item Random variables $X$ and $Y$ are defined such that the mean of $Y$ is $-5$ and $Y=2X-10$. Determine the mean of $X$.
+    \item Random variables $X$ and $Y$ are defined such that the mean of $Y$ is $-\text{5}$ and $Y=\text{2}X-\text{10}$. Determine the mean of $X$.
 \end{enumerate}
 
 \pagebreak
 
 ## The Variance of a Random Variable
 
-The *variance* of the values observed from repeated rolls of a fair cubical die will tend towards a fixed value in the long-run. Letting the random variable $X$ represent the result of a roll of a die, the **variance**, $\sigma^2$, of $X$ is $\frac{35}{12}$, or $\text{V}(X)=\frac{35}{12}$.
+The *variance* of the values observed from repeated rolls of a fair cubical die will tend towards a fixed value in the long-run. Letting the random variable $X$ represent the result of a roll of a die, the **variance**, $\sigma^\text{2}$, of $X$ is $\frac{\text{35}}{\text{12}}$, or $\text{V}(X)=\frac{\text{35}}{\text{12}}$.
 
 \begin{centering}
 \tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=The variance $\sigma^2$ of random variable $X$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-$\text{V}(X)=\text{E}(X^2)-\left(E(X)\right)^2$
+\begin{tcolorbox}[adjusted title=The variance $\sigma^\text{2}$ of random variable $X$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+$\text{V}(X)=\text{E}(X^\text{2})-\left(\text{E}(X)\right)^\text{2}$
 \end{tcolorbox}
 \end{centering}
 
 As a reminder, the variance measures how spread out the values of a random variable are about the mean.
 
-Note that $\text{E}\left(X^2\right)$ is not equal to $\left(\text{E}(X)\right)^2$.
+Note that $\text{E}\left(X^\text{2}\right)$ is not equal to $\left(\text{E}(X)\right)^\text{2}$.
 
 Proof:
 
 \vspace{-0.4cm}
 
 \begin{align*}
-    \text{V}(X)&=\text{E}[(X-\mu)^2]\\[0.3em]
+    \text{V}(X)&=\text{E}[(X-\mu)^\text{2}]\\[0.3em]
     &=\text{E}[(X-\mu)(X-\mu)]\\[0.3em]
-    &=\text{E}[X^2-2\mu X+\mu^2]\\[0.3em]
-    &=\text{E}(X^2)-2\mu \text{E}(X)+\mu^2\\[0.3em]
-    &=\text{E}(X^2)-2(\text{E}(X))^2 +(\text{E}(X))^2\\[0.3em]
-    &=\text{E}(X^2)-\left(\text{E}(X)\right)^2
+    &=\text{E}[X^\text{2}-\text{2}\mu X+\mu^\text{2}]\\[0.3em]
+    &=\text{E}(X^\text{2})-\text{2}\mu \text{E}(X)+\mu^\text{2}\\[0.3em]
+    &=\text{E}(X^\text{2})-\text{2}(\text{E}(X))^\text{2} +(\text{E}(X))^\text{2}\\[0.3em]
+    &=\text{E}(X^\text{2})-\left(\text{E}(X)\right)^\text{2}
 \end{align*}
 
 Knowing the *expectation* and *variance* of random variables help statisticians better understand the *long-run* behaviour of repeated observations:
 
 \begin{itemize}
     \item $\text{E}(X)=\mu_X$, the \textit{long-run mean} of the distribution of $X$.
-    \item $\text{V}(X)=\sigma_X^2$, the \textit{variance} of the distribution of $X$.
+    \item $\text{V}(X)=\sigma_X^\text{2}$, the \textit{variance} of the distribution of $X$.
 \end{itemize}
 
 The standard deviation, $\sigma$, of a random variable $X$, notated $\text{SD}(X)$, is the square root of the variance:
 
-$$\text{SD}(X)=\sqrt{\text{V}(X)}\qquad\text{and}\qquad \text{SD}(X),\text{V}(X)\geqslant0$$
+$$\text{SD}(X)=\sqrt{\text{V}(X)}\qquad\text{and}\qquad \text{SD}(X),\text{V}(X)\geqslant\text{0}$$
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} The probability distribution of random variable $X$ is given below: 
 
 \begin{center}
 \begin{tabular}{ c | c c c c }
-      $x$ & $0$ & $1$ & $2$ & $3$\\
+      $x$ & 0 & 1 & 2 & 3\\
   \hline
-      $\text{P}(X=x)$ & $0.3$ & $0.4$ & $0.1$ & $0.2$ 
+      $\text{P}(X=x)$ & 0.3 & 0.4 & 0.1 & 0.2 
 \end{tabular}
 \end{center}
 
 Calculate $\text{E}(X)$ and $\text{V}(X)$
 
 \tcblower
-\textbf{Solution:}\textit{ (Remember that $\text{E}(X^2)$ is not the variance.)}
+\textbf{Solution:}\textit{ (Remember that $\text{E}(X^\text{2})$ is not the variance.)}
 
 \vspace{-0.3cm}
 \begin{align*}
-\text{E}(X) &= 0\times 0.3 + 1\times 0.4 + 2\times 0.1 + 3\times 0.2= 1.2\\[1em]
-\text{E}(X^2) &= 0^2\times 0.3 + 1^2\times 0.4 + 2^2\times 0.1 + 3^2\times 0.2= 2.6\\[1em]
-\text{V}(X) &= \text{E}(X^2)-E^2(X)\\
-&= 2.6 - 1.2^2\\
-&= 1.16
+\text{E}(X) &= \text{0}\times \text{0.3} + \text{1}\times \text{0.4} + \text{2}\times \text{0.1} + \text{3}\times \text{0.2}= \text{1.2}\\[1em]
+\text{E}(X^\text{2}) &= \text{0}^\text{2}\times \text{0.3} + \text{1}^\text{2}\times \text{0.4} + \text{2}^\text{2}\times \text{0.1} + \text{3}^\text{2}\times \text{0.2}= \text{2.6}\\[1em]
+\text{V}(X) &= \text{E}(X^\text{2})-\text{E}^\text{2}(X)\\
+&= \text{2.6} - \text{1.2}^\text{2}\\
+&= \text{1.16}
 \end{align*}
 
 \end{tcolorbox}
@@ -755,18 +764,18 @@ Calculate $\text{E}(X)$ and $\text{V}(X)$
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c c }
-            $x$ & $1$ & $2$ & $5$ & $10$\\
+            $x$ & 1 & 2 & 5 & 10\\
           \hline
-            $\text{P}(X=x)$ & $0.4$ & $0.3$ & $0.2$ & $0.1$ 
+            $\text{P}(X=x)$ & 0.4 & 0.3 & 0.2 & 0.1 
         \end{tabular}
         \egroup
         \item 
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c c c }
-            $y$ & $0$ & $1$ & $2$ & $3$ & $4$\\
+            $y$ & 0 & 1 & 2 & 3 & 4\\
           \hline
-            $\text{P}(Y=y)$ & $\frac{1}{10}$ & $\frac{1}{5}$ & $\frac{1}{4}$ & $k$ & $\frac{2}{5}$ 
+            $\text{P}(Y=y)$ & $\frac{\text{1}}{\text{10}}$ & $\frac{\text{1}}{\text{5}}$ & $\frac{\text{1}}{\text{4}}$ & $k$ & $\frac{\text{2}}{\text{5}}$ 
         \end{tabular}
         \egroup
         \end{multicols}
@@ -779,7 +788,7 @@ Calculate $\text{E}(X)$ and $\text{V}(X)$
     \end{enumerate}
     \item A box contains 6 pink marbles and 4 orange marbles. Two marbles are taken at random without replacement, and $X$ is the number of pink marbles obtained. Find the expectation and variance of $X$.
     \item A box contains 2 red marbles and 6 green marbles. Two marbles are selected at random with replacement, and $Y$ is the number of green marbles obtained. Find $\text{E}(Y)$ and $\text{V}(Y)$.
-    \item A discrete random variable $X$ can assume values 4 and 12 only. Given $\text{E}(X)=10$, determine the variance of $X$.
+    \item A discrete random variable $X$ can assume values 4 and 12 only. Given $\text{E}(X)=\text{10}$, determine the variance of $X$.
     \item A multiple-choice quiz gives four possible answers for each question, with 4 marks awarded for a correct answer and 1 mark taken away for an incorrect answer. Determine the expected gain in marks when the answer to a single question is guessed, and the variance in the number of marks gained.
     \item A game costs £10 to enter, and the player rolls two fair, cubical dice together. If both dice show a six the player wins £50, a single six means the player gets £10 back and no sixes means the player gets nothing. Determine the mean and variance in the amount of profit for playing the game once.
     \item A fair coin is tossed three times. Let random variable $X$ represent the number of tails shown.
@@ -787,45 +796,45 @@ Calculate $\text{E}(X)$ and $\text{V}(X)$
         \item Tabulate the probability distribution of $X$.
         \item Find $\text{E}(X)$ and $\text{V}(X)$.
     \end{enumerate}
-    \item The random variable $X$ takes values 7, 8 and 9. Given $\text{P}(X=8)=p$ and $\text{P}(X=7)=\text{P}(X=9)$:
+    \item The random variable $X$ takes values 7, 8 and 9. Given $\text{P}(X=\text{8})=p$ and $\text{P}(X=\text{7})=\text{P}(X=\text{9})$:
     \begin{enumerate}
         \item Determine $\text{E}(X)$.
-        \item Given $\text{V}(X)=0.8$, determine the value of $p$.
+        \item Given $\text{V}(X)=\text{0.8}$, determine the value of $p$.
     \end{enumerate}
-    \item Random variable $Y$ takes the value 1 with probability 0.9 and otherwise takes the value $k$. Determine the value of $k$ if $\text{V}(Y)=0$.
+    \item Random variable $Y$ takes the value 1 with probability 0.9 and otherwise takes the value $k$. Determine the value of $k$ if $\text{V}(Y)=\text{0}$.
 \end{enumerate}
 
 \pagebreak
 
 ## The Law of Variance
 
-Since variance is based on *squared* differences from the mean, $\text{V}(2X)\ne2\text{V}(X)$.
+Since variance is based on *squared* differences from the mean, $\text{V}(\text{2}X)\ne\text{2}\text{V}(X)$.
 
 \begin{centering}
 \tcbset{width=10cm}
 \begin{tcolorbox}[adjusted title=For random variable $X$ with constants $a$ and $b$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-$\text{V}(aX\pm b)=a^2\text{V}(X)$
+$\text{V}(aX\pm b)=a^\text{2}\text{V}(X)$
 \end{tcolorbox}
 \end{centering}
 
-This shows that multiplying a random variable by a constant changes its variance by the square of that constant, while adding a constant does not affect the variance.
+This shows that multiplying a random variable by a constant changes its variance by the square of that constant, while adding a constant does not affect the variance. In contrast to expectation, variance is *not linear* and does not distribute over addition or multiplication by constants.
 
 Proof:
 
 \vspace{-0.4cm}
 
 \begin{align*}
-    \text{V}(aX + b) &= \text{E}\big[(aX + b - \text{E}(aX + b))^2\big]\\[0.5em]
-    &=\text{E}\big[(aX+b-a\text{E}(X)-b)^2\big]\\[0.5em]
-    &=\text{E}\big[(aX-a\text{E}(X))^2\big]\\[0.5em]
-    &=\text{E}\big[(a(X-\text{E}(X)))^2\big]\\[0.5em]
-    &=\text{E}[a^2(X-\text{E}(X))^2]\\[0.5em]
-    &=a^2 \text{E}[(X-\text{E}(X))^2]\\[0.5em]
-    &=a^2 \text{V}(X)
+    \text{V}(aX + b) &= \text{E}\big[(aX + b - \text{E}(aX + b))^\text{2}\big]\\[0.5em]
+    &=\text{E}\big[(aX+b-a\text{E}(X)-b)^\text{2}\big]\\[0.5em]
+    &=\text{E}\big[(aX-a\text{E}(X))^\text{2}\big]\\[0.5em]
+    &=\text{E}\big[(a(X-\text{E}(X)))^\text{2}\big]\\[0.5em]
+    &=\text{E}[a^\text{2}(X-\text{E}(X))^\text{2}]\\[0.5em]
+    &=a^\text{2} \text{E}[(X-\text{E}(X))^\text{2}]\\[0.5em]
+    &=a^\text{2} \text{V}(X)
 \end{align*}
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Let $X$ be the random variable such that $\text{E}(X)=-7$ and $\text{V}(X)=4$. Calculate $\text{V}(2-3X)$.
+\textbf{Problem:} Let $X$ be the random variable such that $\text{E}(X)=-\text{7}$ and $\text{V}(X)=\text{4}$. Calculate $\text{V}(\text{2}-\text{3}X)$.
 
 \tcblower
 \textbf{Solution:}\textit{ (It helps to rearrange into the form $aX\pm b$.)}
@@ -833,10 +842,10 @@ Proof:
 \vspace{-0.1cm}
 
 \begin{align*}
-\text{V}(2-3X)&=\text{V}(-3X+2)\\
-&=(-3)^2\text{V}(X)\\
-&=9\times 4\\
-&=36
+\text{V}(\text{2}-\text{3}X)&=\text{V}(-\text{3}X+\text{2})\\
+&=(-\text{3})^\text{2}\text{V}(X)\\
+&=\text{9}\times \text{4}\\
+&=\text{36}
 \end{align*}
 
 \vspace{-0.3cm}
@@ -846,7 +855,7 @@ Proof:
 Note that any laws relating to the *standard deviation* of a linear transformation ($\text{SD}(aX\pm b)$) cannot be expressed as concisely, so such problems must be tackled by *first finding the variance* ($\text{V}(aX\pm b)$).
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Random variable $Y$ has mean 1.5 and standard deviation 0.8.\\ Determine the standard deviation of $10Y+25$.
+\textbf{Problem:} Random variable $Y$ has mean 1.5 and standard deviation 0.8.\\ Determine the standard deviation of $\text{10}Y+\text{25}$.
 
 \tcblower
 \textbf{Solution:}
@@ -854,10 +863,10 @@ Note that any laws relating to the *standard deviation* of a linear transformati
 \vspace{-0.3cm}
 
 \begin{align*}
-\text{V}(10Y+25)&=10^2\text{V}(Y)\\
-&=100\times 0.8^2\\
-&=64\\
-\text{SD}(10Y+25)&=8
+\text{V}(\text{10}Y+\text{25})&=\text{10}^\text{2}\text{V}(Y)\\
+&=\text{100}\times \text{0.8}^\text{2}\\
+&=\text{64}\\
+\text{SD}(\text{10}Y+\text{25})&=\text{8}
 \end{align*}
 
 \vspace{-0.3cm}
@@ -871,36 +880,36 @@ Note that any laws relating to the *standard deviation* of a linear transformati
 #### [Exercise 6.5](#ex65a) {-}
 
 \begin{enumerate}
-    \item Given $\text{E}(X)=6$ and $\text{V}(X)=8$, determine the values of:
+    \item Given $\text{E}(X)=\text{6}$ and $\text{V}(X)=\text{8}$, determine the values of:
     \begin{enumerate}
         \begin{multicols}{3}
-            \item $\text{E}(2X)$
-            \item $\text{V}(2X)$
-            \item $\text{SD}(2X)$
+            \item $\text{E}(\text{2}X)$
+            \item $\text{V}(\text{2}X)$
+            \item $\text{SD}(\text{2}X)$
         \end{multicols}
     \end{enumerate}
-    \item Given $\text{E}(X)=-2$ and $\text{V}(X)=3$, determine the values of:
+    \item Given $\text{E}(X)=-\text{2}$ and $\text{V}(X)=\text{3}$, determine the values of:
     \begin{enumerate}
         \begin{multicols}{3}
-            \item $\text{E}(X+5)$
-            \item $\text{V}(X+5)$
-            \item $\text{SD}(X+5)$
+            \item $\text{E}(X+\text{5})$
+            \item $\text{V}(X+\text{5})$
+            \item $\text{SD}(X+\text{5})$
         \end{multicols}
     \end{enumerate}
-    \item Given $\text{E}(X)=1.25$ and $\text{SD}(X)=0.64$, determine the values of:
+    \item Given $\text{E}(X)=\text{1.25}$ and $\text{SD}(X)=\text{0.64}$, determine the values of:
     \begin{enumerate}
         \begin{multicols}{3}
-            \item $\text{E}(3X-2)$
-            \item $\text{V}(3X-2)$
-            \item $\text{SD}(3X-2)$
+            \item $\text{E}(\text{3}X-\text{2})$
+            \item $\text{V}(\text{3}X-\text{2})$
+            \item $\text{SD}(\text{3}X-\text{2})$
         \end{multicols}
     \end{enumerate}
-    \item Given $\text{E}(X)=500$ and $\text{V}(X)=400$, determine the values of:
+    \item Given $\text{E}(X)=\text{500}$ and $\text{V}(X)=\text{400}$, determine the values of:
     \begin{enumerate}
         \begin{multicols}{3}
-            \item $\text{E}(0.1X+10)$
-            \item $\text{V}(0.1X+10)$
-            \item $\text{SD}(0.1X+10)$
+            \item $\text{E}(\text{0.1}X+\text{10})$
+            \item $\text{V}(\text{0.1}X+\text{10})$
+            \item $\text{SD}(\text{0.1}X+\text{10})$
         \end{multicols}
     \end{enumerate}
     \item The discrete random variable $X$ has the following probability distribution.
@@ -908,38 +917,38 @@ Note that any laws relating to the *standard deviation* of a linear transformati
         \bgroup
         \def\arraystretch{1.5}
         \begin{tabular}{ c | c c c c }
-            $x$ & $1$ & $2$ & $4$ & $8$\\
+            $x$ & 1 & 2 & 4 & 8\\
           \hline
-            $\text{P}(X=x)$ & $0.1$ & $0.5$ & $0.3$ & $0.1$ 
+            $\text{P}(X=x)$ & 0.1 & 0.5 & 0.3 & 0.1 
         \end{tabular}
         \egroup
         \end{center}
         \begin{enumerate}
         \begin{multicols}{3}
             \item Calculate $\text{E}(X)$ and $\text{V}(X)$.
-            \item Find $\text{E}(2X+1)$.
-            \item Find $\text{V}(2X+1)$.
+            \item Find $\text{E}(\text{2}X+\text{1})$.
+            \item Find $\text{V}(\text{2}X+\text{1})$.
         \end{multicols}
         \end{enumerate}
-        \item Given $\text{E}(Y)=-5$ and $\text{V}(Y)=3$, determine the values of:
+        \item Given $\text{E}(Y)=-\text{5}$ and $\text{V}(Y)=\text{3}$, determine the values of:
         \begin{enumerate}
         \begin{multicols}{3}
-            \item $\text{E}(-3Y-2)$
-            \item $\text{V}(-3Y-2)$
-            \item $\text{SD}(-3Y-2)$
+            \item $\text{E}(-\text{3}Y-\text{2})$
+            \item $\text{V}(-\text{3}Y-\text{2})$
+            \item $\text{SD}(-\text{3}Y-\text{2})$
         \end{multicols}
         \end{enumerate}
         \item Random variable $X$ has a mean of 2.4 and a standard deviation of 0.8. Find:
         \begin{enumerate}
         \begin{multicols}{3}
-            \item $\text{E}(1-10X)$
-            \item $\text{V}(1-10X)$
-            \item $\text{SD}(1-10X)$
+            \item $\text{E}(\text{1}-\text{10}X)$
+            \item $\text{V}(\text{1}-\text{10}X)$
+            \item $\text{SD}(\text{1}-\text{10}X)$
         \end{multicols}
         \end{enumerate}
-        \item Given random variable $X$ such that $\text{E}(4X-1)=23$ and $\text{V}(4X-1)=80$, determine the values of $\text{E}(X)$ and $\text{V}(X)$.
-        \item Given random variable $Y$ such that $\text{E}(3Y+12)=0$ and $\text{V}(3Y+12)=81$, determine the mean and standard deviation of $Y$.
-        \item Given random variables $X$ and $Z$ such that $\text{E}(Z)=0$, $\text{V}(Z)=1$ and $X=a+bZ$:
+        \item Given random variable $X$ such that $\text{E}(\text{4}X-\text{1})=\text{23}$ and $\text{V}(\text{4}X-\text{1})=\text{80}$, determine the values of $\text{E}(X)$ and $\text{V}(X)$.
+        \item Given random variable $Y$ such that $\text{E}(\text{3}Y+\text{12})=\text{0}$ and $\text{V}(\text{3}Y+\text{12})=\text{81}$, determine the mean and standard deviation of $Y$.
+        \item Given random variables $X$ and $Z$ such that $\text{E}(Z)=\text{0}$, $\text{V}(Z)=\text{1}$ and $X=a+bZ$:
         \begin{enumerate}
             \item State $\text{SD}(Z)$.
             \item Find $\text{E}(X)$.
@@ -951,7 +960,7 @@ Note that any laws relating to the *standard deviation* of a linear transformati
 
 ## Combining Random Variables
 
-As well as linear transformations of a single random variable, new variables can be created by adding (or subtracting) random variables. Given random variables $X$ and $Y$, for example, $W = X + Y$ is a new random variable formed from the two random variables $X$ and $Y$. When studying the long-run behaviour of combined random variables, by considering their expectation and variance, it is important to consider whether the variables are *independent*, since this affects how their variances combine.
+As well as linear transformations of a single random variable, new variables can be created by adding (or subtracting) random variables. Given random variables $X$ and $Y$, for example, $W = X + Y$ is a new random variable formed from them. When studying the long-run behaviour of combined random variables, by considering their expectation and variance, it is important to consider whether the variables are *independent*. The laws relating to variance below *only* apply when the variables are independent.
 
 \begin{centering}
 \begin{tcolorbox}[adjusted title=For random variables $X$ and $Y$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
@@ -968,7 +977,7 @@ As well as linear transformations of a single random variable, new variables can
     \text{For independent }&X\text{ and }Y\text{:}\\[7pt]
     \text{V}(X+Y) &= \text{V}(X)+\text{V}(Y)\\[7pt]
     \text{V}(X-Y) &= \text{V}(X)+\text{V}(Y)\\[7pt]
-    \text{V}(aX\pm bY) &= a^2\text{V}(X)+ b^2\text{V}(Y)
+    \text{V}(aX\pm bY) &= a^\text{2}\text{V}(X)+ b^\text{2}\text{V}(Y)
   \end{split}
 \end{equation*}
 
@@ -978,29 +987,29 @@ As well as linear transformations of a single random variable, new variables can
 If $X$ and $Y$ are not independent variables then determining $\text{V}(X\pm Y)$ is beyond the scope of the course.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Two independent random variables $F$ and $G$ have means of 15 and 12 and standard deviations of 3 and 4 respectively. Calculate $\text{E}(3G-2F)$ and $\text{V}(F-G)$.
+\textbf{Problem:} Two independent random variables $F$ and $G$ have means of 15 and 12 and standard deviations of 3 and 4 respectively. Calculate $\text{E}(\text{3}G-\text{2}F)$ and $\text{V}(F-G)$.
 
 \tcblower
-\textbf{Solution:}\text{ ($\text{E}(F)=15,\text{E}(G)=12,\text{SD}(F)=3,\text{SD}(G)=4$)}
+\textbf{Solution:}\text{ ($\text{E}(F)=\text{15},\text{E}(G)=\text{12},\text{SD}(F)=\text{3},\text{SD}(G)=\text{4}$)}
 
 \vspace{-1.2cm}
 \begin{multicols}{2}
 \null\vfill
 \begin{align*}
-\text{E}(3G-2F)&=3\text{E}(G)-2\text{E}(F)\\
-&=3\times 12 - 2\times 15\\
-&=36-30\\
-&=6
+\text{E}(\text{3}G-\text{2}F)&=\text{3}\text{E}(G)-\text{2}\text{E}(F)\\
+&=\text{3}\times \text{12} - \text{2}\times \text{15}\\
+&=\text{36}-\text{30}\\
+&=\text{6}
 \end{align*}
 \vfill\null
 \columnbreak
 \null\vfill
 \begin{align*}
-\text{V}(F)&=3^2=9\\
-\text{V}(G)&=4^2=16\\
+\text{V}(F)&=\text{3}^\text{2}=\text{9}\\
+\text{V}(G)&=\text{4}^\text{2}=\text{16}\\
 \text{V}(F-G)&=\text{V}(F)+\text{V}(G)\\
-&=9+16\\
-&=25
+&=\text{9}+\text{16}\\
+&=\text{25}
 \end{align*}
 \vfill\null
 \end{multicols}
@@ -1009,21 +1018,21 @@ If $X$ and $Y$ are not independent variables then determining $\text{V}(X\pm Y)$
 
 \end{tcolorbox}
 
-Random variables **independently and identically distributed (i.i.d)** with the same distribution as $X$ are denoted as $X_1,X_2,X_3,\dots$
+Random variables **independently and identically distributed (i.i.d)** with the same distribution as $X$ are denoted as $X_\text{1},X_\text{2},X_{3},\dots$
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Books in the fiction section of a library have a mean thickness of 3.1cm with standard deviation 0.2cm. If three books are randomly selected from the fiction section and stacked together, determine the mean and standard deviation of the total thickness of the three books, stating one assumption required.
 
 \tcblower
-\textbf{Solution:} Let $X$ represent the thickness of a book, so $\text{E}(X)=3.1$ and $\text{V}(X)=0.2^2=0.04$\\\vskip 0.1cm
+\textbf{Solution:} Let $X$ represent the thickness of a book, so $\text{E}(X)=\text{3.1}$ and $\text{V}(X)=\text{0.2}^\text{2}=\text{0.04}$\\\vskip 0.1cm
 
-Total thickness $T=X_1+X_2+X_3$. Assuming that the thickness of each book is independent:\\\vskip 0.05cm
+Total thickness $T=X_\text{1}+X_\text{2}+X_\text{3}$. Assuming that the thickness of each book is independent:\\\vskip 0.05cm
 
-$\text{E}(T)=\text{E}(X_1+X_2+X_3)=\text{E}(X_1)+\text{E}(X_2)+\text{E}(X_3)=3.1+3.1+3.1=9.3$\\\vskip 0.05cm
+$\text{E}(T)=\text{E}(X_\text{1}+X_\text{2}+X_\text{3})=\text{E}(X_\text{1})+\text{E}(X_\text{2})+\text{E}(X_\text{3})=\text{3.1}+\text{3.1}+\text{3.1}=\text{9.3}$\\\vskip 0.05cm
 
-$\text{V}(T)=\text{V}(X_1+X_2+X_3)=\text{V}(X_1)+\text{V}(X_2)+\text{V}(X_3)=0.04+0.04+0.04=0.12$\\\vskip 0.05cm
+$\text{V}(T)=\text{V}(X_\text{1}+X_\text{2}+X_\text{3})=\text{V}(X_\text{1})+\text{V}(X_\text{2})+\text{V}(X_\text{3})=\text{0.04}+\text{0.04}+\text{0.04}=\text{0.12}$\\\vskip 0.05cm
 
-$\text{SD}(T)=\sqrt{\text{V}(T)}=\sqrt{0.12}=0.346$\\\vskip 0.1cm
+$\text{SD}(T)=\sqrt{\text{V}(T)}=\sqrt{\text{0.12}}=\text{0.346}$\\\vskip 0.1cm
 
 Hence the mean total thickness of the three books is 9.3cm, and the standard deviation is 0.346cm.
 
@@ -1036,7 +1045,7 @@ Hence the mean total thickness of the three books is 9.3cm, and the standard dev
 #### [Exercise 6.6](#ex66a) {-}
 
 \begin{enumerate}
-    \item Random variables $J$ and $K$ are defined such that $\text{E}(J)=3$ and $\text{E}(K)=-2$.
+    \item Random variables $J$ and $K$ are defined such that $\text{E}(J)=\text{3}$ and $\text{E}(K)=-\text{2}$.
     \begin{enumerate}
         \item State the information required to be known about $J$ and $K$ in order to determine whether the laws introduced on the previous page may be applied.
         \item Assuming that $J$ and $K$ are such that those laws may be applied, find:
@@ -1044,7 +1053,7 @@ Hence the mean total thickness of the three books is 9.3cm, and the standard dev
         \begin{multicols}{3}
             \item $\text{E}(J+K)$
             \item $\text{E}(J-K)$
-            \item $\text{E}(2K-3J)$
+            \item $\text{E}(\text{2}K-\text{3}J)$
         \end{multicols}
     \end{enumerate}
     \item Assuming that $J$ and $K$ are such that those laws may be applied, find:
@@ -1052,24 +1061,24 @@ Hence the mean total thickness of the three books is 9.3cm, and the standard dev
         \begin{multicols}{3}
             \item $\text{V}(J+K)$
             \item $\text{V}(J-K)$
-            \item $\text{V}(2K-3J)$
+            \item $\text{V}(\text{2}K-\text{3}J)$
         \end{multicols}
     \end{enumerate}
     \end{enumerate}
-    \item Independent random variables $X$ and $Y$ are defined such that $\text{E}(X)=5$, $\text{V}(X)=6$, $\text{E}(Y)=3$ and $\text{V}(Y)=8$. Determine the values of:
+    \item Independent random variables $X$ and $Y$ are defined such that $\text{E}(X)=\text{5}$, $\text{V}(X)=\text{6}$, $\text{E}(Y)=\text{3}$ and $\text{V}(Y)=\text{8}$. Determine the values of:
     \begin{enumerate}
         \begin{multicols}{3}
-            \item $\text{E}(2X+6Y)$
-            \item $\text{V}(2X+6Y)$
-            \item $\text{E}(4X+5Y)$
-            \item $\text{V}(4X+5Y)$
-            \item $\text{E}(\frac{1}{2}Y-2X)$
-            \item $\text{V}(\frac{1}{2}Y-2X)$
+            \item $\text{E}(\text{2}X+\text{6}Y)$
+            \item $\text{V}(\text{2}X+\text{6}Y)$
+            \item $\text{E}(\text{4}X+\text{5}Y)$
+            \item $\text{V}(\text{4}X+\text{5}Y)$
+            \item $\text{E}(\frac{\text{1}}{\text{2}}Y-\text{2}X)$
+            \item $\text{V}(\frac{\text{1}}{\text{2}}Y-\text{2}X)$
         \end{multicols}
     \end{enumerate}
-    \item Random variables $F$ and $G$ have means of 3 and 2 respectively, and standard deviations of 5 and 6 respectively. State the information that is missing which means that it is not currently possible to determine the values of $\text{E}(2F+G)$ and $\text{V}(2F+G)$.
+    \item Random variables $F$ and $G$ have means of 3 and 2 respectively, and standard deviations of 5 and 6 respectively. State the information that is missing which means that it is not currently possible to determine the values of $\text{E}(\text{2}F+G)$ and $\text{V}(\text{2}F+G)$.
     \item Independent random variables $A$ and $B$ have means of 1.5 and 1.2 respectively, and standard deviations of 1 and 0.8 respectively. Determine the values of $\text{E}(A-B)$ and $\text{V}(A-B)$.
-    \item Random variable $X$ is defined such that $\text{E}(X)=10$ and $\text{V}(X)=3$. Random variables \{$X_1, X_2, X_3 \dots$\} represent independent observations of $X$. Determine the mean and variance of $X_1+X_2+X_3+X_4$, representing the sum of four such observations of $X$.
+    \item Random variable $X$ is defined such that $\text{E}(X)=\text{10}$ and $\text{V}(X)=\text{3}$. Random variables \{$X_\text{1}, X_\text{2}, X_\text{3} \dots$\} represent independent observations of $X$. Determine the mean and variance of $X_\text{1}+X_\text{2}+X_\text{3}+X_\text{4}$, representing the sum of four such observations of $X$.
     \item A spreadsheet contains a large amount of cells, each containing numbers such that the mean of the numbers is 12 and the standard deviation is 1.2. Five numbers from the spreadsheet are selected at random, with replacement. Determine the mean and standard deviation of the total of the five numbers.  
     \item It is known that the mean volume of coffee poured per cup in a staffroom for teachers is 250ml, with a standard deviation of 10ml. Determine the mean and standard deviation of the total volume of coffee used for six cups, stating an assumption required.
     \item Let random variable $X$ represent the number obtained when a fair, cubical die numbered 1 to 6 is thrown, and random variable $Y$ the number obtained when a fair, tetrahedral die numbered 1 to 4 is thrown.
@@ -1100,23 +1109,23 @@ Hence the mean total thickness of the three books is 9.3cm, and the standard dev
     \end{enumerate}
     \item Two independent random variables $P$ and $Q$ have means 5 and 10 and standard deviations 2 and 3 respectively. Find the mean and variance of each of the random variables:
     \begin{enumerate}
-        \item $4P-8$.
-        \item $3Q-P$.
+        \item $\text{4}P-\text{8}$.
+        \item $\text{3}Q-P$.
     \end{enumerate}
     \item A box contains 4 blue marbles and 5 red marbles. Three marbles are taken from the box without replacement. Let the random variable $X$ represent the number of red marbles taken.
     \begin{enumerate}
         \item Tabulate the probability distribution of $X$.
         \item Calculate the mean and variance of $X$.
     \end{enumerate}
-    \item Given that $\text{E}(2X+6)=16$ and $\text{V}(2X+6)=12$:
+    \item Given that $\text{E}(\text{2}X+\text{6})=\text{16}$ and $\text{V}(\text{2}X+\text{6})=\text{12}$:
     \begin{enumerate}
         \item Calculate $\text{E}(X)$.
         \item Calculate $\text{V}(X)$.
     \end{enumerate}
     \item Two independent random variables $A$ and $B$ have means 53 and 21 and standard deviations 6 and 5 respectively. Find the mean and standard deviations of each of the following random variables:
     \begin{enumerate}
-        \item $5B+6$.
-        \item $2A-3B$.
+        \item $\text{5}B+\text{6}$.
+        \item $\text{2}A-\text{3}B$.
     \end{enumerate}
     \item It is known that items of hand luggage carried by passengers on an airline have mean mass of 5.6kg and a standard deviation of 2.0kg, and that their hold luggage has a mean mass of 22.0kg and a standard deviation 5.0kg.
     \begin{enumerate}
