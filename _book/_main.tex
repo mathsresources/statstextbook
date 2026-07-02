@@ -8609,7 +8609,7 @@ Given the value \(\text{E}(aX\pm b)\), the expectation of \(X\) may be determine
     \begin{enumerate}
     \item Determine $\text{E}(X)$.
     \end{enumerate}
-    Each game costs £10 to enter, with the number obtained of a single roll of the die being multiplied by 2 to give an amount in pounds that the player receives. Let $Y$ represent the \textit{profit} a player makes from playing the game a single time.
+    Each game costs £10 to enter, with the number obtained on a single roll of the die being multiplied by 2 to give an amount in pounds that the player receives. Let $Y$ represent the \textit{profit} a player makes from playing the game a single time.
     \begin{enumerate}[resume]
         \item State an equation linking $Y$ and $X$.
         \item Determine the value of $\text{E}(Y)$.
@@ -8679,7 +8679,7 @@ Calculate $\text{E}(X)$ and $\text{V}(X)$
 \begin{align*}
 \text{E}(X) &= \text{0}\times \text{0.3} + \text{1}\times \text{0.4} + \text{2}\times \text{0.1} + \text{3}\times \text{0.2}= \text{1.2}\\[1em]
 \text{E}(X^\text{2}) &= \text{0}^\text{2}\times \text{0.3} + \text{1}^\text{2}\times \text{0.4} + \text{2}^\text{2}\times \text{0.1} + \text{3}^\text{2}\times \text{0.2}= \text{2.6}\\[1em]
-\text{V}(X) &= \text{E}(X^\text{2})-\text{E}^\text{2}(X)\\
+\text{V}(X) &= \text{E}(X^\text{2})-\left(\text{E}(X)\right)^\text{2}\\
 &= \text{2.6} - \text{1.2}^\text{2}\\
 &= \text{1.16}
 \end{align*}
@@ -9106,7 +9106,7 @@ Sometimes it will be clear that a particular condition has been met, but there w
 
 \section{The Discrete Uniform Distribution}\label{the-discrete-uniform-distribution}
 
-Consider the discrete random variables \(X\) and \(Y\), representing the scores obtained from a cubical die numbered \(\{1,2,3,4,5,6\}\) and a tetrahedral die numbered \(\{1,2,3,4\}\) respectively. Their probability distributions have been tabulated and graphed below, and the expectation and variance calculated for each:
+Consider the discrete random variables \(X\) and \(Y\), representing the scores obtained from a cubical die numbered \(\{\text{1},\text{2},\text{3},\text{4},\text{5},\text{6}\}\) and a tetrahedral die numbered \(\{\text{1},\text{2},\text{3},\text{4}\}\) respectively. Their probability distributions have been tabulated and graphed below, and the expectation and variance calculated for each:
 
 \begin{figure}[H]
   \centering
@@ -9116,9 +9116,9 @@ Consider the discrete random variables \(X\) and \(Y\), representing the scores 
 \bgroup
 \def\arraystretch{1.5}
 \begin{tabular}{ c | c c c c c c }
-      $x$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$\\
+      $x$ & 1 & 2 & 3 & 4 & 5 & 6\\
   \hline
-      $\text{P}(X=x)$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{6}$
+      $\text{P}(X=x)$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$ & $\frac{\text{1}}{\text{6}}$
 \end{tabular}
 \egroup
 \end{center}
@@ -9135,7 +9135,9 @@ Consider the discrete random variables \(X\) and \(Y\), representing the scores 
     every axis y label/.style={at={(current axis.above origin)},anchor=south east}
     }
 }
-    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 4cm, width = 8cm, ybar,bar width=10pt, xmin=0.5,xmax=6.5,ymin=0,ymax=0.4, xtick={1,2,3,4,5,6},ytick={0,0.1666},yticklabels={0,$\frac{1}{6}$},xlabel=$x$,ylabel=probability]
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 4cm, width = 8cm, ybar,bar width=10pt, xmin=0.5,xmax=6.5,ymin=0,ymax=0.4, xtick={1,2,3,4,5,6},ytick={0,0.1666},yticklabels={0,$\frac{\text{1}}{\text{6}}$},
+    xticklabels={$\text{1}$,$\text{2}$,$\text{3}$,$\text{4}$,$\text{5}$,$\text{6}$},
+    xlabel=$x$,ylabel=probability]
         \addplot[fill=black!25, draw=black] coordinates {
     (1,0.1666) 
     (2,0.1666) 
@@ -9147,7 +9149,7 @@ Consider the discrete random variables \(X\) and \(Y\), representing the scores 
     \end{axis}
 \end{tikzpicture}
 
-\captionof{figure}{$\text{E}(X)=3.5\text{ and }\text{V}(X)=\frac{35}{12}$}
+\captionof{figure}{$\text{E}(X)=\text{3.5}\text{ and }\text{V}(X)=\frac{\text{35}}{\text{12}}$}
   \label{fig:discunif}
 
 \end{minipage}%
@@ -9163,9 +9165,9 @@ Consider the discrete random variables \(X\) and \(Y\), representing the scores 
 \bgroup
 \def\arraystretch{1.5}
 \begin{tabular}{ c | c c c c }
-      $y$ & $1$ & $2$ & $3$ & $4$\\
+      $y$ & 1 & 2 & 3 & 4\\
   \hline
-      $\text{P}(Y=y)$ & $\frac{1}{4}$ & $\frac{1}{4}$ & $\frac{1}{4}$ & $\frac{1}{4}$
+      $\text{P}(Y=y)$ & $\frac{\text{1}}{\text{4}}$ & $\frac{\text{1}}{\text{4}}$ & $\frac{\text{1}}{\text{4}}$ & $\frac{\text{1}}{\text{4}}$
 \end{tabular}
 \egroup
 \end{center}
@@ -9182,7 +9184,7 @@ Consider the discrete random variables \(X\) and \(Y\), representing the scores 
     every axis y label/.style={at={(current axis.above origin)},anchor=south east}
     }
 }
-    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 4cm, width = 8cm, ybar,bar width=10pt, xmin=4.5,xmax=8.5,ymin=0,ymax=0.4, xtick={5,6,7,8},xticklabels={1,2,3,4},ytick={0,0.25},yticklabels={0,$\frac{1}{4}$},xlabel=$x$,ylabel=probability]
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 4cm, width = 8cm, ybar,bar width=10pt, xmin=4.5,xmax=8.5,ymin=0,ymax=0.4, xtick={5,6,7,8},xticklabels={$\text{1}$,$\text{2}$,$\text{3}$,$\text{4}$},ytick={0,0.25},yticklabels={0,$\frac{\text{1}}{\text{4}}$},xlabel=$x$,ylabel=probability]
         \addplot[fill=black!25, draw=black] coordinates {
     (5,0.25)
     (6,0.25) 
@@ -9192,13 +9194,13 @@ Consider the discrete random variables \(X\) and \(Y\), representing the scores 
     \end{axis}
 \end{tikzpicture}
 
-\captionof{figure}{$\text{E}(Y)=2.5\text{ and }\text{V}(Y)=\frac{5}{4}$}
+\captionof{figure}{$\text{E}(Y)=\text{2.5}\text{ and }\text{V}(Y)=\frac{\text{5}}{\text{4}}$}
   \label{fig:discunif21}
 
 \end{minipage}
 \end{figure}
 
-Whilst \(X\) and \(Y\) do not follow the same distribution, they share key characteristics, namely that they both take a \emph{finite number of integer values}, \(\{1,2,3,\dots,k\}\), and that \emph{each of these values is equally likely}. It is these \emph{shared characteristics} that define the \emph{discrete uniform distribution}.
+Whilst \(X\) and \(Y\) do not follow the same distribution, they share key characteristics, namely that they both take a \emph{finite number of integer values}, \(\{\text{1},\text{2},\text{3},\dots,k\}\), and that \emph{each of these values is equally likely}. It is these \emph{shared characteristics} that define the \emph{discrete uniform distribution}.
 
 \vspace{0.5cm}
 
@@ -9206,30 +9208,29 @@ Whilst \(X\) and \(Y\) do not follow the same distribution, they share key chara
 \tcbset{width=11cm}
 \begin{tcolorbox}[adjusted title=The Discrete Uniform Distribution:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
-    \item Notated $X\sim \text{U}(k)$.
-    \item Defined by one parameter, $k$.
-    \item Takes $k$ integer values from $1$ to $k$: $\{1,2,3,\dots,k\}$. 
-    \item Each value is \textit{equally likely}, with probability $\dfrac{1}{k}$.
+    \item Notated $X\sim \text{U}(k)$, defined by the single parameter $k$.
+    \item $X$ takes integer values from 1 to $k$: $\{\text{1},\text{2},\text{3},\dots,k\}$. 
+    \item Each outcome is \textit{equally likely}, with probability $\dfrac{\text{1}}{k}$.
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
 
 \vspace{0.5cm}
 
-Parameters define the precise form of a distribution within a \emph{family of distributions}. Here, we can say that \(X\) \emph{``is distributed uniformly\emph{'' with parameter \(k=6\) (with values from \(1\) to \(6\)). Using \(\sim\), or }''tilde''}, to mean \emph{``is distributed\ldots{}''}, such statements can be written more efficiently:
+Parameters define the precise form of a distribution within a \emph{family of distributions}. Here, we can say that \(X\) \emph{``is distributed uniformly\emph{'' with parameter \(k=\text{6}\) (with values from 1 to 6). Using \(\sim\), or }''tilde''}, to mean \emph{``is distributed\ldots{}''}, such statements can be written more efficiently:
 
-\[X\sim \text{U}(6)\quad\text{ and }\quad Y\sim \text{U}(4)\]
+\[X\sim \text{U}(\text{6})\quad\text{ and }\quad Y\sim \text{U}(\text{4})\]
 
 The Data Booklet (\textbf{page 4}) gives the formulae to calculate \emph{expectation} and \emph{variance} for the discrete uniform distribution. For \(X\sim \text{U}(k)\):
 
-\[\text{E}(X)=\frac{k+1}{2}\quad \text{ and }\quad \text{V}(X)=\frac{k^2-1}{12}\]
+\[\text{E}(X)=\frac{k+\text{1}}{\text{2}}\quad \text{ and }\quad \text{V}(X)=\frac{k^\text{2}-\text{1}}{\text{12}}\]
 
-The previously stated values for the expectation and variance of \(X\) and \(Y\) can be quickly obtained using these formulae.
+The previously stated values for the expectation and variance of \(X\) and \(Y\) can be quickly obtained using these formulae. It also provides the \emph{probability function} (\textbf{pf}) for the distribution \(\text{U}(k)\) as \(\frac{\text{1}}{k}\). Probability functions show how to calculate the probability of any given outcome for a discrete random variable. Here, the probability depends \emph{only on the parameter} \(k\).
 
 \pagebreak
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Given $T\sim \text{U}(10)$ and $W=3T+1$, calculate $\text{E}(W)$ and $\text{V}(W)$.
+\textbf{Problem:} Given $T\sim \text{U}(\text{10})$ and $W=\text{3}T+\text{1}$, calculate $\text{E}(W)$ and $\text{V}(W)$.
 
 \tcblower
 \textbf{Solution:}
@@ -9237,19 +9238,19 @@ The previously stated values for the expectation and variance of \(X\) and \(Y\)
 \vspace{-0.5cm}
 \begin{multicols}{2}
 \begin{align*}
-\text{(a)}\quad \text{E}(T)&=\frac{10+1}{2}=5.5 &\\
-\text{E}(W)&=\text{E}(3T+1)\\
-&=3\text{E}(T)+1\\
-&=3\times 5.5 + 1\\
-&=17.5
+\text{(a)}\quad \text{E}(T)&=\frac{\text{10}+\text{1}}{\text{2}}=\text{5.5} &\\
+\text{E}(W)&=\text{E}(\text{3}T+\text{1})\\
+&=\text{3}\text{E}(T)+\text{1}\\
+&=\text{3}\times \text{5.5} + \text{1}\\
+&=\text{17.5}
 \end{align*}
 
 \begin{align*}
-\text{(b)}\quad \text{V}(T)&=\frac{10^2-1}{12}=8.25 &\\
-\text{V}(W)&=\text{V}(3T+1)\\
-&=3^2\text{V}(T)\\
-&=9\times 8.25\\
-&=74.25
+\text{(b)}\quad \text{V}(T)&=\frac{\text{10}^\text{2}-\text{1}}{\text{12}}=\text{8.25} &\\
+\text{V}(W)&=\text{V}(\text{3}T+\text{1})\\
+&=\text{3}^\text{2}\text{V}(T)\\
+&=\text{9}\times \text{8.25}\\
+&=\text{74.25}
 \end{align*}
 \end{multicols}
 
@@ -9261,39 +9262,39 @@ The previously stated values for the expectation and variance of \(X\) and \(Y\)
 \addcontentsline{toc}{subsubsection}{{Exercise 7.1}}
 
 \begin{enumerate}
-    \item Let $X\sim \text{U}(5)$. Calculate the mean and variance of $X$.
-    \item Let $X\sim \text{U}(15)$. Calculate the mean and variance of $X$.
-    \item A discrete random variable is uniformly distributed such that $\text{P}(X=x)=\frac{1}{k}$, with $k=8$.
+    \item Let $X\sim \text{U}(\text{5})$. Calculate the mean and variance of $X$.
+    \item Let $X\sim \text{U}(\text{15})$. Calculate the mean and variance of $X$.
+    \item A discrete random variable is uniformly distributed such that $\text{P}(X=x)=\frac{\text{1}}{k}$, with $k=\text{8}$.
     \begin{enumerate}
         \item Calculate $\text{E}(X)$ and $\text{V}(X)$.
-        \item Evaluate $\text{E}(2X+5)$ and $\text{V}(2X+5)$.
+        \item Evaluate $\text{E}(\text{2}X+\text{5})$ and $\text{V}(\text{2}X+\text{5})$.
     \end{enumerate}
     \item A regular, unbiased icosahedral die is rolled. Let the random variable $X$ be the score on the topmost face.
     \begin{enumerate}
         \item State the distribution of $X$.
         \item Determine the values of $\text{E}(X)$ and $\text{V}(X)$.
-        \item Evaluate $\text{E}(1-3X)$ and $\text{V}(1-3X)$.
+        \item Evaluate $\text{E}(\text{1}-\text{3}X)$ and $\text{V}(\text{1}-\text{3}X)$.
     \end{enumerate}
-    \item Two independent random variables $X$ and $Y$ are defined such that $X\sim \text{U}(3)$ and $Y \sim \text{U}(5)$.
+    \item Two independent random variables $X$ and $Y$ are defined such that $X\sim \text{U}(\text{3})$ and $Y \sim \text{U}(\text{5})$.
     \begin{enumerate}
         \item Calculate $\text{E}(X-Y)$.
         \item Calculate $\text{V}(X-Y)$.
     \end{enumerate}
-    \item Given $X\sim \text{U}(k)$ such that $\text{E}(X)=5.5$:
+    \item Given $X\sim \text{U}(k)$ such that $\text{E}(X)=\text{5.5}$:
     \begin{enumerate}
         \item Determine the value of $k$.
-        \item State $\text{P}(2\leqslant X<6)$.
+        \item State $\text{P}(\text{2}\leqslant X<\text{6})$.
         \item Find the standard deviation of $X$.
     \end{enumerate}
-    \item Given $Y \sim \text{U}(k)$ such that the standard deviation of $Y$ is $\frac{\sqrt{21}}{2}$:
+    \item Given $Y \sim \text{U}(k)$ such that the standard deviation of $Y$ is $\frac{\sqrt{\text{21}}}{\text{2}}$:
     \begin{enumerate}
         \item Determine the value of $k$.
-        \item Find $\text{E}(1-2Y)$.
+        \item Find $\text{E}(\text{1}-\text{2}Y)$.
     \end{enumerate}
     \item Discrete, independent random variables $X$ and $Y$ are uniformly distributed such that:
     \begin{itemize}
-        \item $\text{P}(X=1)<\text{P}(Y=1)$
-        \item $\text{E}(X-Y)=2$ and $\text{V}(X-Y)=14$
+        \item $\text{P}(X=\text{1})<\text{P}(Y=\text{1})$
+        \item $\text{E}(X-Y)=\text{2}$ and $\text{V}(X-Y)=\text{14}$
     \end{itemize}
     Determine the distributions of $X$ and $Y$.
 \end{enumerate}
@@ -9302,21 +9303,74 @@ The previously stated values for the expectation and variance of \(X\) and \(Y\)
 
 \section{The Binomial Distribution}\label{the-binomial-distribution}
 
-A \emph{Bernoulli trial} is an experiment in which each trial has only two possible outcomes, such as a coin landing on either \emph{heads} or \emph{tails}, or asking a \emph{yes or no} question in a survey. These responses can be more generally referred to as \emph{successes} or \emph{failures}. If random variable \(X\) represents the \textbf{number of successes} in \textbf{\emph{n}} \textbf{trials}, each trial having a \textbf{probability of success} \textbf{\emph{p}}, then \(X\) is \textbf{binomially distributed}.
+A \emph{Bernoulli trial} is an experiment in which each trial has only two possible outcomes, such as a coin landing on either \emph{heads} or \emph{tails}, or asking a \emph{yes or no} question in a survey. These responses can be more generally referred to as \emph{successes} or \emph{failures}. The \emph{binomial distribution} models the \textbf{number of successes} obtained from a \emph{fixed number} of \emph{independent} Bernoulli trials.
+
+A simple example is tossing a coin three times and counting the number of \emph{heads} obtained:
+
+\begin{center}
+    \begin{tikzpicture}
+        \def\r{0.5cm}
+        \foreach \y in {0,1.2,2.4}{
+        \draw[shift={(\y,0)},thick, rounded corners=2pt] 
+        (0:\r) \foreach \x in {51.43, 102.86, ..., 359} {
+        -- (\x:\r)
+        } -- cycle;
+        }
+        \node at (0,0) {\textbf{H}};
+        \node at (1.2,0) {T};
+        \node at (2.4,0) {\textbf{H}};
+        \node at (7,0) {\textbf{two} successes (two heads showing)};
+    \end{tikzpicture}
+\end{center}
+
+If \(X\) represents the number of heads shown then it is a \emph{discrete random variable} with outcomes \(\{\text{0},\text{1},\text{2},\text{3}\}\).
 
 \begin{centering}
-\tcbset{width=14cm}
+\tcbset{width=13.5cm}
 \begin{tcolorbox}[adjusted title=The Binomial Distribution:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
-    \item Notated $X\sim \text{B}(n,p)$.
-    \item Defined by two parameters, $n$ and $p$.
-    \item $X$ represents the number of successes in a \textbf{fixed} number of trials, $n$.
-    \item Each trial is independent, with the \textbf{same} probability of success, $p$.
+    \item Notated $X\sim \text{B}(n,p)$, defined by the two parameters $n$ and $p$.
+    \item $X$ represents the \textbf{number of successes} in a \textbf{fixed number of trials}, $n$, and takes integer values $\{\text{0},\text{1},\text{2},\dots,n\}$.
+    \item Each trial has only \textbf{two possible outcomes}: success or failure.
+    \item Each trial is independent, with a \textbf{constant probability of success}, $p$.
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
 
-Consider a spinning wheel that lands on a shaded sector with probability \(\frac{2}{5}\), or \(0.4\). Let random variable \(X\) represent the number of times the wheel will land on the shaded sector in 6 trials, with possible values from \(0\) to \(6\). Here \(X\) is \emph{binomially distributed}, with \(n=6\) (number of trials) and \(p=0.4\) (probability of success), or: \(X\sim \text{B}(6,0.4)\)
+For the coin tosses above (assuming the coin is fair):
+
+\begin{itemize}[itemsep=0.5pt]
+    \item There are a fixed number of trials ($n=\text{3}$).
+    \item Each trial results in one of two outcomes: success (heads) or failure (tails).
+    \item The outcome of each trial is independent (since one coin toss does not affect another).
+    \item The probability of success (heads) for each trial is constant ($p=\text{0.5}$).
+    \item The number of successes (heads) is being counted.
+\end{itemize}
+
+If \(X\) is the number of heads obtained from three coin tosses, then \(X\) is \emph{binomially distributed} with \(X\sim \text{B}(\text{3},\text{0.5})\).
+
+\protect\phantomsection\label{ex72q}{}
+
+\subsubsection*{\texorpdfstring{\hyperref[ex72a]{Exercise 7.2}}{Exercise 7.2}}\label{exercise-7.2}
+\addcontentsline{toc}{subsubsection}{{Exercise 7.2}}
+
+For each, if \(X\) is a binomially distributed random variable then state its distribution, such as \(X\sim \text{B}\left(\text{8},\frac{\text{2}}{\text{3}}\right)\). Otherwise, explain clearly which condition(s) for a binomial distribution are not satisfied.
+
+\begin{enumerate}
+    \item A student spends one minute rolling a die. Let $X$ represent the number of times the die showed a six.
+    \item A student rolls a die 20 times. Let $X$ represent the number of times the die showed a six.
+    \item A bag contains 30 red counters and 30 blue counters. A student selects a counter from the bag at random, notes the colour, then \textbf{replaces it} into the bag. In total, they do this 12 times. Let random variable $X$ represent the number of times that the counter selected is red.
+    \item A bag contains 30 red counters and 30 blue counters. A student selects a counter from the bag at random, notes the colour, then \textbf{does not replace it} into the bag. In total, they do this 12 times. Let random variable $X$ represent the number of times that the counter selected is red.
+    \item Bob takes twelve observations from a $\text{U}(\text{10})$ distribution. Each time the outcome is at least 8, he writes down the value observed. Let $X$ represent the values he writes down.
+\end{enumerate}
+
+\pagebreak
+
+\section{The Binomial Probability Function}\label{the-binomial-probability-function}
+
+Unlike the discrete uniform distribution, the binomial distribution has a probability function that is less obvious. It is therefore useful to understand where the formula comes from.
+
+Consider a spinning wheel that lands on a shaded sector with probability \(\frac{\text{2}}{\text{5}}\), or 0.4. Let random variable \(X\) represent the number of times the wheel will land on the shaded sector in 6 trials, with possible values from 0 to 6. Here \(X\) is \emph{binomially distributed}, with \(n=\text{6}\) (number of trials) and \(p=\text{0.4}\) (probability of success), or: \(X\sim \text{B}(\text{6},\text{0.4})\)
 
 \vspace{-0.5cm}
 \begin{figure}[H]
@@ -9345,7 +9399,7 @@ Consider a spinning wheel that lands on a shaded sector with probability \(\frac
   \centering
 \begin{minipage}{.5\textwidth}
   \centering
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=1]
 \pgfplotsset{
     standard/.style={
     axis line style = thick,
@@ -9357,7 +9411,9 @@ Consider a spinning wheel that lands on a shaded sector with probability \(\frac
     every axis y label/.style={at={(current axis.above origin)},anchor=south east}
     }
 }
-    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 5cm, width = 7.5cm, ybar,bar width=10pt, xmin=1,xmax=9,ymin=0,ymax=0.4, xtick={2,3,4,5,6,7,8},xticklabels={0,1,2,3,4,5,6},ytick={0,0.1,0.2,0.3},xlabel=$x$,ylabel=probability]
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 5cm, width = 7.5cm, ybar,bar width=10pt, xmin=1,xmax=9,ymin=0,ymax=0.4, xtick={2,3,4,5,6,7,8},xticklabels={$\text{0}$,$\text{1}$,$\text{2}$,$\text{3}$,$\text{4}$,$\text{5}$,$\text{6}$},
+    ytick={0,0.1,0.2,0.3},
+    yticklabels={$\text{0}$,$\text{0.1}$,$\text{0.2}$,$\text{0.3}$},xlabel=$x$,ylabel=probability]
         \addplot[fill=black!25, draw=black] coordinates {
     (2,0.047)
     (3,0.187) 
@@ -9368,98 +9424,55 @@ Consider a spinning wheel that lands on a shaded sector with probability \(\frac
     (8,0.004)
 };
     \end{axis}
+    \node at (3,-1) {Number of successes ($X$)};
 \end{tikzpicture}
 \end{minipage}
 \end{figure}
 
 \vspace{-0.5cm}
 
-To calculate the probability of \emph{exactly two successes}, consider the probability that the first two spins result in success followed by four failures. Since each trial is independent:
+One way of obtaining \emph{exactly two successes} is for the first two spins to be successes and the remaining four to be failures. Since each trial is independent:
 
-\[\text{P}(\text{success, success, fail, fail, fail, fail})=0.4\times0.4\times0.6\times0.6\times0.6\times0.6=0.4^2\times0.6^4=0.0207\]
+\[\text{P}(\text{success, success, fail, fail, fail, fail})=\text{0.4}\times\text{0.4}\times\text{0.6}\times\text{0.6}\times\text{0.6}\times\text{0.6}=\text{0.4}^\text{2}\times\text{0.6}^\text{4}=\text{0.0207}\]
 
-However there are a number of other possible \emph{combinations} of successes and failures that \emph{also} give exactly two successes, \emph{each} with probability \(0.0207\). The number of possible combinations from \(n\) trials resulting in \(x\) successes can be calculated using the \emph{binomial coefficient}, \({}^{n}C_{x}\). For \(6\) trials of which \(2\) are successes, a calculator will provide the value of \({}^{6}C_{2}\).
+However, this is only one of many possible arrangements that contain exactly two successes. For example, the successes could occur on spins 1 and 3, spins 2 and 5, and so on. Since each arrangement contains two successes and four failures, each has probability 0.0207. The number of ways of choosing the \(x\) trials on which success occurs from the \(n\) trials is given by the binomial coefficient, \({}^{n}\text{C}_{x}\). For 6 trials with exactly 2 successes, the number of possible arrangements is \({}^{\text{6}}\text{C}_{\text{2}}\).
 
-\[\text{P}(X=2)={}^{6}C_{2}\times0.4^2\times0.6^4=0.3110\]
+\[\text{P}(X=\text{2})={}^{\text{6}}\text{C}_{\text{2}}\times\text{0.4}^\text{2}\times\text{0.6}^\text{4}=\text{0.3110}\]
 
-The Data Booklet (\textbf{page 4}) gives the \textbf{formula} to calculate \emph{individual} probabilities for the binomial distribution, where \(q\) is the probability of \emph{failure}, and hence \(q=1-p\):
+The same reasoning applies generally. To obtain exactly \(x\) successes from \(n\) independent trials, there are \({}^{n}\text{C}_{x}\) possible arrangements of the successes, each with probability \(p^x\times (\text{1}-p)^{n-x}\). The probability function for the binomial distribution \(X\sim\text{B}(n,p)\) is given on \textbf{page 4} of the Data Booklet as:
 
-\[\text{Given }X\sim \text{B}(n,p)\text{: }\qquad \text{P}(X=x)={}^{n}C_{x}\times p^x\times q^{n-x}\]
-\pagebreak
+\[\text{P}(X=x)={}^{n}\text{C}_{x}\times p^x\times (\text{1}-p)^{n-x}\]
 
-\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Given $X\sim \text{B}(7,\frac{1}{3})$, calculate $\text{P}(X=1)$.
+\protect\phantomsection\label{ex73q}{}
 
-\tcblower
-\textbf{Solution:} 
-
-\vspace{-1cm}
-
-\begin{center}
-\begin{equation*}
-\text{P}(X=1)={}^{7}C_{1}\times \left(\tfrac{1}{3}\right)^1\times \left(\tfrac{2}{3}\right)^6=0.2048
-\end{equation*}
-\end{center}
-
-\end{tcolorbox}
-
-\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} 12 students take turns to select a playing card at random, replacing the card each time. Calculate the probability that the card drawn is a Spade for fewer than 2 of the students. 
-
-\tcblower
-\textbf{Solution:} 
-
-Let random variable $X$ represent the number of times that the card drawn is a spade from the 12 draws.
-
-\vspace{-0.5cm}
-
-\begin{center}
-\begin{align*}
-X&\sim \text{B}\left(12,\tfrac{1}{4}\right)\\[1em]
-\text{P}(X<2)&=\text{P}(X=0)+\text{P}(X=1)\\[1em]
-&={}^{12}C_{0}\times \left(\tfrac{1}{4}\right)^0\times \left(\tfrac{3}{4}\right)^{12}+{}^{12}C_{1}\times \left(\tfrac{1}{4}\right)^1\times \left(\tfrac{3}{4}\right)^{11}\\[1em]
-&=0.0317+0.1267\\[1em]
-&=0.1584
-\end{align*}
-\end{center}
-
-\end{tcolorbox}
-
-\protect\phantomsection\label{ex72q}{}
-
-\subsubsection*{\texorpdfstring{\hyperref[ex72a]{Exercise 7.2}}{Exercise 7.2}}\label{exercise-7.2}
-\addcontentsline{toc}{subsubsection}{{Exercise 7.2}}
+\subsubsection*{\texorpdfstring{\hyperref[ex73a]{Exercise 7.3}}{Exercise 7.3}}\label{exercise-7.3}
+\addcontentsline{toc}{subsubsection}{{Exercise 7.3}}
 
 \begin{enumerate}
-    \item Given that $X\sim \text{B}(10,0.25)$, calculate $\text{P}(X=3)$.
-    \item Given that $X\sim \text{B}(8,0.6)$, calculate $\text{P}(X=5)$.
-    \item Given that $Y\sim \text{B}(13,0.4)$, calculate $\text{P}(Y\leqslant2)$.
-    \item 5\% of bluebells have white flowers. The remainder have blue flowers. Determine the probability that a random sample of twelve bluebell plants includes exactly one with white flowers.
-    \item Among a group of four friends, let random variable $X$ represent the number of them that were born on a Tuesday.
-    \begin{enumerate}
-        \item State the distribution of $X$.
-        \item Calculate the probability that only one of the four was born on a Tuesday.
-    \end{enumerate}
-    \item In Bob's form class of 20 pupils, their form teacher assigns each pupil a number from 1 to 20 using the order listed on the register and, each morning, uses a random number generator to select which pupil should be responsible for read out notices. Calculate the probability that Bob is picked exactly twice in one school week.
+    \item Given that $X\sim \text{B}(\text{10},\text{0.25})$, calculate $\text{P}(X=\text{3})$.
+    \item Given that $X\sim \text{B}(\text{8},\text{0.6})$, calculate $\text{P}(X=\text{5})$.
+    \item Given that $Y\sim \text{B}(\text{13},\text{0.4})$, calculate $\text{P}(Y\leqslant\text{2})$. (\textit{Hint: use} $\text{P}(Y=\text{0})$, $\text{P}(Y=\text{1})$ \textit{and} $\text{P}(Y=\text{2})$).
+    \item 5\% of bluebells have white flowers. The remainder have blue flowers. Determine the probability that a random sample of twelve bluebell plants includes \textbf{none} with white flowers.
+    \item In Bob's form class of 20 pupils, their form teacher assigns each pupil a number from 1 to 20 using the order listed on the register and, each morning, uses a random number generator to select which pupil should be responsible for read out notices. Calculate the probability that Bob is selected \textbf{at least once} in one school week.
 \end{enumerate}
 
 \pagebreak
 
-\section{Binomial Calculations using Cumulative Probabilities}\label{binomial-calculations-using-cumulative-probabilities}
+\section{The Binomial Distribution using Cumulative Probability Tables}\label{the-binomial-distribution-using-cumulative-probability-tables}
 
 In practice, it will seldom be necessary to calculate binomial probabilities using the formula. Graphical calculators can be used to calculate both \emph{individual} (\(\text{P}(X=x)\)) and \emph{cumulative} (\(\text{P}(X\leqslant x)\)) probabilities. On \textbf{page 7}, the Data Booklet provides \textbf{cumulative probability tables}, giving \textbf{``less than or equal to''} probabilities.
 
 It is therefore important to be able to write any given probability that uses an inequality in terms of a \emph{less than or equal to} probability.
 
-Consider discrete random variable \(X\) taking values \(x=\{0,1,2,3,4,5,6\}\):
+Consider discrete random variable \(X\) taking values \(x=\{\text{0},\text{1},\text{2},\text{3},\text{4},\text{5},\text{6}\}\):
 
 \vspace{-1cm}
 \begin{center}
 \begin{align*}
-\text{P}(X<5)=&\text{P}(X\leqslant 4) & & \color{black!25}\{\color{black}0,1,2,3,4\color{black!25},5,6\}\\
-\text{P}(X>5)=&1-\text{P}(X\leqslant 5) & & \color{black!25}\{0,1,2,3,4,5,\color{black}6\color{black!25}\}\\
-\text{P}(X=5)=&\text{P}(X\leqslant 5)-\text{P}(X\leqslant 4) & & \color{black!25}\{0,1,2,3,4,\color{black}5\color{black!25}\color{black!25},6\}\\
-\text{P}(1<X<5)=&\text{P}(X\leqslant 4) - \text{P}(X\leqslant 1) & & \color{black!25}\{0,1,\color{black}2,3,4\color{black!25},5,6\}
+\text{P}(X<\text{5})=&\text{P}(X\leqslant \text{4}) & & \color{black!25}\{\color{black}\text{0},\text{1},\text{2},\text{3},\text{4}\color{black!25},\text{5},\text{6}\}\\
+\text{P}(X>\text{5})=&\text{1}-\text{P}(X\leqslant \text{5}) & & \color{black!25}\{\text{0},\text{1},\text{2},\text{3},\text{4},\text{5},\color{black}\text{6}\color{black!25}\}\\
+\text{P}(X=\text{5})=&\text{P}(X\leqslant \text{5})-\text{P}(X\leqslant \text{4}) & & \color{black!25}\{\text{0},\text{1},\text{2},\text{3},\text{4},\color{black}\text{5}\color{black!25}\color{black!25},\text{6}\}\\
+\text{P}(\text{1}<X<\text{5})=&\text{P}(X\leqslant \text{4}) - \text{P}(X\leqslant \text{1}) & & \color{black!25}\{\text{0},\text{1},\color{black}\text{2},\text{3},\text{4}\color{black!25},\text{5},\text{6}\}
 \end{align*}
 \end{center}
 
@@ -9470,50 +9483,50 @@ Consider discrete random variable \(X\) taking values \(x=\{0,1,2,3,4,5,6\}\):
 \textbf{Solution:} \textit{(Define a random variable, in context, and define the problem in probability terms.)}\\
 
 Let random variable $X$ represent the number of left-handed people out of the sample of 12.\\[1em]
-$p=0.1$ and $n=12$\\[1em]
-$X\sim \text{B}(12,0.1)$\\[1em]
-$\text{P}(X\geqslant 2)=1-\text{P}(X\leqslant 1)=1-0.6590=0.3410$
+$p=\text{0.1}$ and $n=\text{12}$\\[1em]
+$X\sim \text{B}(\text{12},\text{0.1})$\\[1em]
+$\text{P}(X\geqslant \text{2})=\text{1}-\text{P}(X\leqslant \text{1})=\text{1}-\text{0.6590}=\text{0.3410}$
 
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex73q}{}
+\protect\phantomsection\label{ex74q}{}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex73a]{Exercise 7.3}}{Exercise 7.3}}\label{exercise-7.3}
-\addcontentsline{toc}{subsubsection}{{Exercise 7.3}}
+\subsubsection*{\texorpdfstring{\hyperref[ex74a]{Exercise 7.4}}{Exercise 7.4}}\label{exercise-7.4}
+\addcontentsline{toc}{subsubsection}{{Exercise 7.4}}
 
 \begin{enumerate}
-    \item Given that $X\sim \text{B}(10,0.3)$, calculate:
+    \item Given that $X\sim \text{B}(\text{10},\text{0.3})$, calculate:
     \begin{enumerate}
         \begin{multicols}{5}
-        \item $\text{P}(X\leqslant6)$
-        \item $\text{P}(X=6)$
-        \item $\text{P}(X<6)$
-        \item $\text{P}(X>6)$
-        \item $\text{P}(X\geqslant6)$
+        \item $\text{P}(X\leqslant\text{6})$
+        \item $\text{P}(X=\text{6})$
+        \item $\text{P}(X<\text{6})$
+        \item $\text{P}(X>\text{6})$
+        \item $\text{P}(X\geqslant\text{6})$
         \end{multicols}
     \end{enumerate}
-    \item Given that $X\sim \text{B}(6,0.15)$, calculate:
+    \item Given that $X\sim \text{B}(\text{6},\text{0.15})$, calculate:
     \begin{enumerate}
         \begin{multicols}{3}
-        \item $\text{P}(X\leqslant2)$
-        \item $\text{P}(X\geqslant2)$
-        \item $\text{P}(1\leqslant X<3)$
+        \item $\text{P}(X\leqslant\text{2})$
+        \item $\text{P}(X\geqslant\text{2})$
+        \item $\text{P}(1\leqslant X<\text{3})$
         \end{multicols}
     \end{enumerate}
-    \item Given that $X\sim \text{B}(14,0.45)$, calculate:
+    \item Given that $X\sim \text{B}(\text{14},\text{0.45})$, calculate:
     \begin{enumerate}
         \begin{multicols}{3}
-        \item $\text{P}(X<8)$
-        \item $\text{P}(X>12)$
-        \item $\text{P}(3<X\leqslant6)$
+        \item $\text{P}(X<\text{8})$
+        \item $\text{P}(X>\text{12})$
+        \item $\text{P}(\text{3}<X\leqslant\text{6})$
         \end{multicols}
     \end{enumerate}
-    \item Given that $X\sim \text{B}(8,0.8)$, calculate:
+    \item Given that $X\sim \text{B}(\text{8},\text{0.8})$, calculate:
     \begin{enumerate}
         \begin{multicols}{3}
-        \item $\text{P}(X=5)$
-        \item $\text{P}(X\geqslant7)$
-        \item $\text{P}(3<X<6)$
+        \item $\text{P}(X=\text{5})$
+        \item $\text{P}(X\geqslant\text{7})$
+        \item $\text{P}(\text{3}<X<\text{6})$
         \end{multicols}
     \end{enumerate}
 \end{enumerate}
@@ -9528,7 +9541,7 @@ Given random variable \(X\sim \text{B}(n,p)\):
 
 \[\text{E}(X)=np \qquad \text{and} \qquad \text{V}(X)=npq\]
 
-Where \(q=1-p\), representing the \emph{probability of failure}.
+Where \(q=\text{1}-p\), representing the \emph{probability of failure}.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A multiple choice quiz is comprised of eight questions, each with four possible choices. Let random variable $X$ represent the number of correct answers obtained out of eight from a student guessing completely at random. Calculate the mean and variance of $X$.
@@ -9536,41 +9549,41 @@ Where \(q=1-p\), representing the \emph{probability of failure}.
 \tcblower
 \textbf{Solution:}
 
-Since the student is guessing randomly, the probability of a correct answer is $p=\tfrac{1}{4}$.
+Since the student is guessing randomly, the probability of a correct answer is $p=\tfrac{\text{1}}{\text{4}}$.
 
-$X\sim \text{B}(8,0.25)$\\[1em]
-$\text{E}(X)=np=8\times 0.25=2$\\[1em]
-$\text{V}(X)=npq=8\times 0.25 \times 0.75=1.5$
+$X\sim \text{B}(\text{8},\text{0.25})$\\[1em]
+$\text{E}(X)=np=\text{8}\times \text{0.25}=\text{2}$\\[1em]
+$\text{V}(X)=npq=\text{8}\times \text{0.25} \times \text{0.75}=\text{1.5}$
 
 \end{tcolorbox}
 
-\protect\phantomsection\label{ex74q}{}
+\protect\phantomsection\label{ex75q}{}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex74a]{Exercise 7.4}}{Exercise 7.4}}\label{exercise-7.4}
-\addcontentsline{toc}{subsubsection}{{Exercise 7.4}}
+\subsubsection*{\texorpdfstring{\hyperref[ex75a]{Exercise 7.5}}{Exercise 7.5}}\label{exercise-7.5}
+\addcontentsline{toc}{subsubsection}{{Exercise 7.5}}
 
 \begin{enumerate}
     \item Calculate the mean and variance for each random variable:
     \begin{enumerate}
     \begin{multicols}{4}
-        \item $X\sim \text{B}(4,0.2)$
-        \item $Y\sim \text{B}(6,\frac{1}{3})$
-        \item $X\sim \text{B}(4,0.1)$
-        \item $Y\sim \text{B}(30,0.4)$
+        \item $X\sim \text{B}(\text{4},\text{0.2})$
+        \item $Y\sim \text{B}(\text{6},\frac{\text{1}}{\text{3}})$
+        \item $X\sim \text{B}(\text{4},\text{0.1})$
+        \item $Y\sim \text{B}(\text{30},\text{0.4})$
     \end{multicols}
     \end{enumerate}
     \item An octahedral die numbered 1 to 8 is rolled ten times. Let the random variable $S$ represent the number of times the die shows a square number from the ten rolls.
     \begin{enumerate}
         \item State the distribution of $S$.
         \item Calculate $\text{E}(S)$ and $\text{V}(S)$.
-        \item Determine $\text{P}(S>5)$.
+        \item Determine $\text{P}(S>\text{5})$.
     \end{enumerate}
-    \item Given that $X\sim \text{B}(6,p)$ such that $\text{E}(X)=1.2$:
+    \item Given that $X\sim \text{B}(\text{6},p)$ such that $\text{E}(X)=\text{1.2}$:
     \begin{enumerate}
         \item Determine the value of $p$.
         \item Calculate $\text{SD}(X)$.
     \end{enumerate}
-    \item Given that $Y\sim \text{B}(12,p)$ such that $\text{V}(Y)=\frac{8}{3}$ and $p>0.5$:
+    \item Given that $Y\sim \text{B}(\text{12},p)$ such that $\text{V}(Y)=\frac{\text{8}}{\text{3}}$ and $p>\text{0.5}$:
     \begin{enumerate}
         \item Determine the value of $p$.
         \item Calculate $\text{E}(Y)$.
@@ -9578,7 +9591,7 @@ $\text{V}(X)=npq=8\times 0.25 \times 0.75=1.5$
     \item Given that $X\sim \text{B}(n,p)$ such that $X$ has mean and variance of 16 and 3.2 respectively:
     \begin{enumerate}
         \item Determine the values of $n$ and $p$.
-        \item Calculate $\text{P}(5<X<10)$.
+        \item Calculate $\text{P}(\text{5}<X<\text{10})$.
     \end{enumerate}
 \end{enumerate}
 
@@ -9586,7 +9599,7 @@ $\text{V}(X)=npq=8\times 0.25 \times 0.75=1.5$
 
 \section{The Poisson Distribution}\label{the-poisson-distribution}
 
-Consider a mobile network's customer support department looking at how many call agents to have on duty at any one time. The mean rate of calls may be well known, such as 2.5 per hour. However, in any one hour there may be 4 calls, 10 calls, no calls at all, and so on. Let the random variable \(X\) represent the number of calls in any particular hour. If the conditions for a Poisson model are satisfied then \(X\) follows a \textbf{Poisson distribution} with mean rate \(\lambda=2.5\).
+Consider a mobile network's customer support department looking at how many call agents to have on duty at any one time. The mean rate of calls may be well known, such as 2.5 per hour. However, in any one hour there may be 4 calls, 10 calls, no calls at all, and so on. Let the random variable \(X\) represent the number of calls in any particular hour. If the conditions for a Poisson model are satisfied then \(X\) follows a \textbf{Poisson distribution} with mean rate \(\lambda=\text{2.5}\).
 
 \begin{centering}
 \tcbset{width=15.5cm}
@@ -9594,14 +9607,14 @@ Consider a mobile network's customer support department looking at how many call
 \begin{itemize}
     \item Notated $X\sim \text{Po}(\lambda)$.
     \item Defined by one parameter $\lambda$ \textit{("lambda")}.
-    \item $X$ represents the number of events occurring in a set amount of time or space.
-    \item $\lambda$ represents the \textbf{constant mean rate of events per unit of time or space}.
+    \item $X$ represents the \textbf{number of events occurring} in a set amount of time or space.
+    \item $\lambda$ represents the \textbf{constant mean rate} of events per unit of time or space.
     \item Each event must be \textbf{independent} and \textbf{occur singly}.
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
 
-Assume that the mean rate of 2.5 phone calls per hour is \emph{constant} across the opening hours of the customer support department, and that there isn't a major network-wide event causing the calls to no longer be \emph{independent}. The Poisson distribution can then be used to calculate, for example, the probability that there are exactly 4 calls in any one hour. Note that the graph below is truncated, and the Poisson distribution has non-zero probabilities for any non-negative integer \(\{0,1,2,3,\dots\}\).
+Assume that the mean rate of 2.5 phone calls per hour is \emph{constant} across the opening hours of the customer support department, and that there is no major network-wide event causing calls to become \emph{not independent} of each other. The Poisson distribution can then be used to calculate, for example, the probability that there are exactly 4 calls in any one hour. Note that the graph below is truncated, and the Poisson distribution has non-zero probabilities for any non-negative integer \(\{\text{0},\text{1},\text{2},\text{3},\dots\}\).
 
 \begin{center}
 \begin{tikzpicture}
@@ -9616,7 +9629,9 @@ Assume that the mean rate of 2.5 phone calls per hour is \emph{constant} across 
     every axis y label/.style={at={(current axis.above origin)},anchor=south east}
     }
 }
-    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 5cm, width = 7cm, ybar,bar width=10pt, xmin=1,xmax=12,ymin=0,ymax=0.35, xtick={2,3,4,5,6,7,8,9,10,11},xticklabels={0,1,2,3,4,5,6,7,8,9},ytick={0,0.1,0.2,0.3},xlabel=$x$,ylabel=probability]
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 5cm, width = 7cm, ybar,bar width=10pt, xmin=1,xmax=12,ymin=0,ymax=0.35, xtick={2,3,4,5,6,7,8,9,10,11},xticklabels={0,1,2,3,4,5,6,7,8,9},ytick={0,0.1,0.2,0.3},
+    yticklabels={0,0.1,0.2,0.3},
+    xlabel=$x$,ylabel=probability]
         \addplot[fill=black!25, draw=black] coordinates {
     (2,0.0821)
     (3,0.2502)
@@ -9631,7 +9646,7 @@ Assume that the mean rate of 2.5 phone calls per hour is \emph{constant} across 
 };
     \end{axis}
     \draw[stealth-stealth] (7,3.5) -- (11,3.5);
-    \node[fill=white] at (9,3.5) {one hour, $\lambda=2.5$};
+    \node[fill=white] at (9,3.5) {one hour, $\lambda=\text{2.5}$};
     \draw (7,2) rectangle (11,2.8);
     \node[right] at (11,2.4) {3 calls in one hour};
     \draw (7,1) rectangle (11,1.8);
@@ -9657,9 +9672,9 @@ Given random variable \(X\sim \text{Po}(\lambda)\):
 
 \[\text{P}(X=x)=\frac{e^{-\lambda} \times \lambda^x}{x!}\]
 
-For example \(\text{P}(X=4)\) in the probability distribution above can be calculated as:
+For example \(\text{P}(X=\text{4})\) in the probability distribution above can be calculated as:
 
-\[\text{P}(X=4)=\frac{e^{-2.5} \times 2.5^4}{4!}=0.1336\]
+\[\text{P}(X=\text{4})=\frac{e^{-\text{2.5}} \times \text{2.5}^\text{4}}{\text{4}!}=\text{0.1336}\]
 
 \pagebreak
 
@@ -9671,29 +9686,29 @@ For example \(\text{P}(X=4)\) in the probability distribution above can be calcu
 
 Let random variable $X$ represent the number of drops of rain.\\[1em]
 
-$X\sim \text{Po}(6)$
+$X\sim \text{Po}(\text{6})$
 
 \vspace{-0.5cm}
 
-$$\text{P}(X=10)=\frac{e^{-6} \times 6^{10}}{10!}=0.0413$$
+$$\text{P}(X=\text{10})=\frac{e^{-\text{6}} \times \text{6}^{\text{10}}}{\text{10}!}=\text{0.0413}$$
 
 \end{tcolorbox}
 
 As with the binomial distribution, in general it is much faster to use the cumulative probability tables from \textbf{page 10} of the Data Booklet, or a graphical calculator, to calculate Poisson probabilities.
 
-\protect\phantomsection\label{ex75q}{}
+\protect\phantomsection\label{ex76q}{}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex75a]{Exercise 7.5}}{Exercise 7.5}}\label{exercise-7.5}
-\addcontentsline{toc}{subsubsection}{{Exercise 7.5}}
+\subsubsection*{\texorpdfstring{\hyperref[ex76a]{Exercise 7.6}}{Exercise 7.6}}\label{exercise-7.6}
+\addcontentsline{toc}{subsubsection}{{Exercise 7.6}}
 
 \begin{enumerate}
-    \item Given random variable $X$ such that $X\sim \text{Po}(2.5)$, use the formula to calculate:
+    \item Given random variable $X$ such that $X\sim \text{Po}(\text{2.5})$, use the formula to calculate:
     \begin{multicols}{4}
     \begin{enumerate}
-        \item $\text{P}(X=4)$.
-        \item $\text{P}(X=0)$.
-        \item $\text{P}(X<2)$.
-        \item $\text{P}(X\geqslant2)$.
+        \item $\text{P}(X=\text{4})$.
+        \item $\text{P}(X=\text{0})$.
+        \item $\text{P}(X<\text{2})$.
+        \item $\text{P}(X\geqslant\text{2})$.
     \end{enumerate}
     \end{multicols}
     \item Let random variable $X$ represent the number of goals in a game of Sunday League football, known to follow a Poisson distribution with a mean of 4 goals.
@@ -9704,19 +9719,19 @@ As with the binomial distribution, in general it is much faster to use the cumul
     \item The random variable $X$ follows a Poisson distribution with mean 6. Use the tables to calculate:
     \begin{enumerate}
     \begin{multicols}{4}
-        \item $\text{P}(X<4)$.
-        \item $\text{P}(X>5)$.
-        \item $\text{P}(X\leqslant2)$.
-        \item $\text{P}(X\geqslant7)$.
+        \item $\text{P}(X<\text{4})$.
+        \item $\text{P}(X>\text{5})$.
+        \item $\text{P}(X\leqslant\text{2})$.
+        \item $\text{P}(X\geqslant\text{7})$.
     \end{multicols}
     \end{enumerate}
     \item The random variable $Y$ follows a Poisson distribution with mean 1.5. Use the tables to calculate:
     \begin{enumerate}
     \begin{multicols}{4}
-        \item $\text{P}(Y<1)$.
-        \item $\text{P}(3<Y<6)$.
-        \item $\text{P}(1\leqslant Y\leqslant 6)$.
-        \item $\text{P}(Y\geqslant3)$.
+        \item $\text{P}(Y<\text{1})$.
+        \item $\text{P}(\text{3}<Y<\text{6})$.
+        \item $\text{P}(\text{1}\leqslant Y\leqslant \text{6})$.
+        \item $\text{P}(Y\geqslant\text{3})$.
     \end{multicols}
     \end{enumerate}
     \item Whilst watching a section of the night sky, the number of visible shooting stars is known to follow a Poisson distribution with a mean rate of one per hour. Let random variable $X$ represent the number of shooting stars seen in an hour.
@@ -9761,22 +9776,22 @@ Given two \textbf{independent} random variables \(X\) and \(Y\) such that \(X\si
 \end{tikzpicture}
 \end{center}
 
-The same result can be used to extend, or shorten, the time period of interest for a Poisson distribution, provided there is a \emph{constant mean rate} throughout the entire time period. For example, consider a call centre for which the number of calls per hour, \(X\), can be modelled using \(X\sim \text{Po}(3)\).
+The same result can be used to extend, or shorten, the time period of interest for a Poisson distribution, provided there is a \emph{constant mean rate} throughout the entire time period. For example, consider a call centre for which the number of calls per hour, \(X\), can be modelled using \(X\sim \text{Po}(\text{3})\).
 
-For a five-hour shift at the call centre, the number of calls may be modelled as \(Y\sim \text{Po}(15)\) since \(\lambda = 3 \times 5=15\).
+For a five-hour shift at the call centre, the number of calls may be modelled as \(Y\sim \text{Po}(\text{15})\) since \(\lambda = \text{3} \times \text{5}=\text{15}\).
 
 \begin{center}
 \begin{tikzpicture}
     \foreach \x in {1,2,3,4,5}{
     \draw [decorate,decoration={brace,amplitude=5pt,raise=1ex}]
-  (3*\x-3+0.1,0.8) -- (3*\x-3+2.8,0.8) node[midway,above,yshift=0.3cm]{$X_\x \sim \text{Po}\left(3\right)$};
+  (3*\x-3+0.1,0.8) -- (3*\x-3+2.8,0.8) node[midway,above,yshift=0.3cm]{$X_\x \sim \text{Po}\left(\text{3}\right)$};
     }
     \draw (0,0) rectangle (15,0.8);
     \foreach \x in {1,2,...,5}{
     \draw (3*\x,0) -- (3*\x,0.8);
     }
     \draw [decorate,decoration={brace,mirror,amplitude=5pt,raise=1ex}]
-  (0.1,0) -- (14.9,0) node[midway,below,yshift=-0.3cm]{$Y\sim \text{Po} \left(15\right)$};
+  (0.1,0) -- (14.9,0) node[midway,below,yshift=-0.3cm]{$Y\sim \text{Po} \left(\text{15}\right)$};
   \fill (1.3,0.4) circle (0.05);
   \fill (1.7,0.4) circle (0.05);
   \fill (3.3,0.4) circle (0.05);
@@ -9803,15 +9818,15 @@ This assumes that the number of calls received in each time period is independen
 
 Let random variable $X$ represent the number of work emails, and $Y$ the number of personal emails.\\
 
-$\lambda_X=7$ and $X\sim \text{Po}(7)$\\
+$\lambda_X=\text{7}$ and $X\sim \text{Po}(\text{7}$\\
 
-$\lambda_Y=3$ and $Y\sim \text{Po}(3)$\\
+$\lambda_Y=\text{3}$ and $Y\sim \text{Po}(\text{3})$\\
 
 Let random variable $T$ represent the total number of emails in an hour:\\
 
-$\lambda_X+\lambda_Y=7+3=10$, so $T\sim \text{Po}(10)$\\
+$\lambda_X+\lambda_Y=\text{7}+\text{3}=\text{10}$, so $T\sim \text{Po}(\text{10})$\\
 
-$\text{P}(T<8)=\text{P}(T\leqslant 7)=0.2202$
+$\text{P}(T<\text{8})=\text{P}(T\leqslant \text{7})=\text{0.2202}$
 
 \end{tcolorbox}
 
@@ -9825,8 +9840,8 @@ So there is a roughly 22\% probability that Betty receives fewer than 8 emails i
 \addcontentsline{toc}{subsubsection}{{Exercise 7.7}}
 
 \begin{enumerate}
-    \item Given independent random variables $X\sim \text{Po}(1.6)$ and $Y\sim \text{Po}(0.4)$, calculate $\text{P}(X+Y\leqslant4)$.
-    \item Given $F\sim \text{Po}(3.3)$ and $G\sim \text{Po}(1.2)$, with $F$ and $G$ independent, calculate $\text{P}(F+G\geqslant2)$.
+    \item Given independent random variables $X\sim \text{Po}(\text{1.6})$ and $Y\sim \text{Po}(\text{0.4})$, calculate $\text{P}(X+Y\leqslant\text{4})$.
+    \item Given $F\sim \text{Po}(\text{3.3})$ and $G\sim \text{Po}(\text{1.2})$, with $F$ and $G$ independent, calculate $\text{P}(F+G\geqslant\text{2})$.
     \item The number of wickets taken in a morning session of country cricket in a league in Scotland follows a Poisson distribution with a mean of 3.5. In an afternoon session, the mean is 2.5. 
     \begin{enumerate}
         \item Calculate the probability that fewer than 4 wickets are taken in a \textbf{morning} session.
@@ -9883,22 +9898,22 @@ So there is a roughly 22\% probability that Betty receives fewer than 8 emails i
 \addcontentsline{toc}{section}{{Review Exercise}}
 
 \begin {enumerate}
-    \item Given that $X\sim \text{U}(8)$, calculate:
+    \item Given that $X\sim \text{U}(\text{8})$, calculate:
     \begin{enumerate}
-        \item $\text{P}(X<6)$.
+        \item $\text{P}(X<\text{6})$.
         \item The mean and variance of $X$.
     \end{enumerate}
-    \item Given that $X\sim \text{B}(12,0.35)$:
+    \item Given that $X\sim \text{B}(\text{12},\text{0.35})$:
     \begin{enumerate}
-        \item Find $\text{P}(X=3)$.
-        \item Find $\text{P}(5<X<9)$.
+        \item Find $\text{P}(X=\text{3})$.
+        \item Find $\text{P}(\text{5}<X<\text{9})$.
     \end{enumerate}
-    \item $X$ and $Y$ are independent random variables such that $X\sim \text{Po}(1.7)$ and $Y\sim \text{Po}(6.8)$, find:
+    \item $X$ and $Y$ are independent random variables such that $X\sim \text{Po}(\text{1.7})$ and $Y\sim \text{Po}(\text{6.8})$, find:
     \begin{enumerate}
-        \item $\text{P}(X+Y=7)$.
-        \item $\text{P}(X+Y\geqslant9)$.
+        \item $\text{P}(X+Y=\text{7})$.
+        \item $\text{P}(X+Y\geqslant\text{9})$.
     \end{enumerate}
-    \item The random variable $X$ follows a Poisson distribution with standard deviation 2. Find $\text{P}(X\leqslant3)$.
+    \item The random variable $X$ follows a Poisson distribution with standard deviation 2. Find $\text{P}(X\leqslant\text{3})$.
     \item A gardener plants seeds in batches of 20 and knows that only 85\% of seeds actually germinate.
     \begin{enumerate}
         \item Find the chance of more than 15 seeds in the batch germinating.
@@ -9931,9 +9946,9 @@ So there is a roughly 22\% probability that Betty receives fewer than 8 emails i
     \end{enumerate}
     \item For each random variable, calculate the probability of the value of an observation being greater than one standard deviation above the mean.
     \begin{enumerate}
-        \item $X\sim \text{U}(20)$.
-        \item $Y\sim \text{Po}(6)$.
-        \item $Q\sim \text{B}(16,0.2)$.
+        \item $X\sim \text{U}(\text{20})$.
+        \item $Y\sim \text{Po}(\text{6})$.
+        \item $Q\sim \text{B}(\text{16},\text{0.2})$.
     \end{enumerate}
 \end{enumerate}
 
@@ -28111,7 +28126,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 
 \protect\phantomsection\label{ex76a}{}
 
-\subsubsection*{\texorpdfstring{\hyperref[ex76q]{Exercise 7.6}}{Exercise 7.6}}\label{exercise-7.6}
+\subsubsection*{\texorpdfstring{\hyperref[ex76q]{Exercise 7.6}}{Exercise 7.6}}\label{exercise-7.6-1}
 \addcontentsline{toc}{subsubsection}{{Exercise 7.6}}
 
 \begin{multicols}{3}
