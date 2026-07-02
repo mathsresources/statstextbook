@@ -227,8 +227,9 @@ A *Bernoulli trial* is an experiment in which each trial has only two possible o
 \begin{itemize}
     \item Notated $X\sim \text{B}(n,p)$.
     \item Defined by two parameters, $n$ and $p$.
-    \item $X$ represents the number of successes in a \textbf{fixed} number of trials, $n$.
-    \item Each trial is independent, with the \textbf{same} probability of success, $p$.
+    \item $X$ represents the \textbf{number of successes} in a \textit{fixed} number of trials, $n$.
+    \item Each trial has only \textbf{two possible outcomes}: success or failure.
+    \item Each trial is independent, with the \textbf{same probability of success}, $p$.
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
@@ -355,7 +356,7 @@ X&\sim \text{B}\left(12,\tfrac{1}{4}\right)\\[1em]
         \item State the distribution of $X$.
         \item Calculate the probability that only one of the four was born on a Tuesday.
     \end{enumerate}
-    \item In Bob's form class of 20 pupils, their form teacher assigns each pupil a number from 1 to 20 using the order listed on the register and, each morning, uses a random number generator to select which pupil should be responsible for read out notices. Calculate the probability that Bob is picked exactly twice in one school week.
+    \item In Bob's form class of 20 pupils, their form teacher assigns each pupil a number from 1 to 20 using the order listed on the register and, each morning, uses a random number generator to select which pupil should be responsible for read out notices. Calculate the probability that Bob is selected exactly twice in one school week.
 \end{enumerate}
 
 \pagebreak
@@ -507,14 +508,14 @@ Consider a mobile network's customer support department looking at how many call
 \begin{itemize}
     \item Notated $X\sim \text{Po}(\lambda)$.
     \item Defined by one parameter $\lambda$ \textit{("lambda")}.
-    \item $X$ represents the number of events occurring in a set amount of time or space.
-    \item $\lambda$ represents the \textbf{constant mean rate of events per unit of time or space}.
+    \item $X$ represents the \textbf{number of events occurring} in a set amount of time or space.
+    \item $\lambda$ represents the \textbf{constant mean rate} of events per unit of time or space.
     \item Each event must be \textbf{independent} and \textbf{occur singly}.
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
 
-Assume that the mean rate of 2.5 phone calls per hour is *constant* across the opening hours of the customer support department, and that there isn't a major network-wide event causing the calls to no longer be *independent*. The Poisson distribution can then be used to calculate, for example, the probability that there are exactly 4 calls in any one hour. Note that the graph below is truncated, and the Poisson distribution has non-zero probabilities for any non-negative integer $\{0,1,2,3,\dots\}$.
+Assume that the mean rate of 2.5 phone calls per hour is *constant* across the opening hours of the customer support department, and that there is no major network-wide event causing calls to become *not independent* of each other. The Poisson distribution can then be used to calculate, for example, the probability that there are exactly 4 calls in any one hour. Note that the graph below is truncated, and the Poisson distribution has non-zero probabilities for any non-negative integer $\{0,1,2,3,\dots\}$.
 
 \begin{center}
 \begin{tikzpicture}

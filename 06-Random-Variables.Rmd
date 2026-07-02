@@ -673,7 +673,7 @@ Given the value $\text{E}(aX\pm b)$, the expectation of $X$ may be determined.
     \begin{enumerate}
     \item Determine $\text{E}(X)$.
     \end{enumerate}
-    Each game costs £10 to enter, with the number obtained of a single roll of the die being multiplied by 2 to give an amount in pounds that the player receives. Let $Y$ represent the \textit{profit} a player makes from playing the game a single time.
+    Each game costs £10 to enter, with the number obtained on a single roll of the die being multiplied by 2 to give an amount in pounds that the player receives. Let $Y$ represent the \textit{profit} a player makes from playing the game a single time.
     \begin{enumerate}[resume]
         \item State an equation linking $Y$ and $X$.
         \item Determine the value of $\text{E}(Y)$.
@@ -743,7 +743,7 @@ Calculate $\text{E}(X)$ and $\text{V}(X)$
 \begin{align*}
 \text{E}(X) &= \text{0}\times \text{0.3} + \text{1}\times \text{0.4} + \text{2}\times \text{0.1} + \text{3}\times \text{0.2}= \text{1.2}\\[1em]
 \text{E}(X^\text{2}) &= \text{0}^\text{2}\times \text{0.3} + \text{1}^\text{2}\times \text{0.4} + \text{2}^\text{2}\times \text{0.1} + \text{3}^\text{2}\times \text{0.2}= \text{2.6}\\[1em]
-\text{V}(X) &= \text{E}(X^\text{2})-\text{E}^\text{2}(X)\\
+\text{V}(X) &= \text{E}(X^\text{2})-\left(\text{E}(X)\right)^\text{2}\\
 &= \text{2.6} - \text{1.2}^\text{2}\\
 &= \text{1.16}
 \end{align*}
