@@ -143,7 +143,9 @@ The  Data Booklet (**page 4**) gives the formulae to calculate *expectation* and
 
 $$\text{E}(X)=\frac{k+\text{1}}{\text{2}}\quad \text{ and }\quad \text{V}(X)=\frac{k^\text{2}-\text{1}}{\text{12}}$$
 
-The previously stated values for the expectation and variance of $X$ and $Y$ can be quickly obtained using these formulae. It also provides the *probability function* (**pf**) for the distribution $\text{U}(k)$ as $\frac{\text{1}}{k}$. Probability functions show how to calculate the probability of any given outcome for a discrete random variable. Here, the probability depends *only on the parameter* $k$.
+The previously stated values for the expectation and variance of $X$ and $Y$ can be quickly obtained using these formulae. It also provides the *probability function* (**pf**) for the distribution $\text{U}(k)$ as $\frac{\text{1}}{k}$. Probability functions show how to calculate the probability of any given outcome for a discrete random variable. Here, the probability depends *only on the parameter* $k$. For example, given $X\sim \text{U}(\text{5})$:
+
+\[\text{P}(X=\text{1})=\frac{\text{1}}{\text{5}}, \quad \text{P}(X=\text{2})=\frac{\text{1}}{\text{5}}, \quad \text{P}(X=\text{3})=\frac{\text{1}}{\text{5}}, \quad \text{and so on...}\]
 
 \pagebreak
 
@@ -153,7 +155,7 @@ The previously stated values for the expectation and variance of $X$ and $Y$ can
 \tcblower
 \textbf{Solution:}
 
-\vspace{-0.5cm}
+\vspace{-0.9cm}
 \begin{multicols}{2}
 \begin{align*}
 \text{(a)}\quad \text{E}(T)&=\frac{\text{10}+\text{1}}{\text{2}}=\text{5.5} &\\
@@ -179,6 +181,13 @@ The previously stated values for the expectation and variance of $X$ and $Y$ can
 #### [Exercise 7.1](#ex71a) {-}
 
 \begin{enumerate}
+    \item Explain why, for each, $X$ does not take a $\text{U}(k)$ distribution.
+    \begin{enumerate}
+        \item Let $X$ represent the the number of an exercise picked at random from this textbook.
+        \item Let $X$ represent a single-digit prime number picked at random.
+        \item Let $X$ represent the 
+        \item Let $X$ represent the number of 6s obtained when a die is rolled ten times.
+    \end{enumerate}
     \item Let $X\sim \text{U}(\text{5})$. Calculate the mean and variance of $X$.
     \item Let $X\sim \text{U}(\text{15})$. Calculate the mean and variance of $X$.
     \item A discrete random variable is uniformly distributed such that $\text{P}(X=x)=\frac{\text{1}}{k}$, with $k=\text{8}$.

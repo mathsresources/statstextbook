@@ -9083,6 +9083,7 @@ Hence the mean total thickness of the three books is 9.3cm, and the standard dev
 
 \begin{center}
 \say{\textit{All models are wrong, but some models are useful.}}
+George Box
 \end{center}
 
 \subsection*{Models, Conditions and Assumptions}\label{models-conditions-and-assumptions}
@@ -9225,7 +9226,9 @@ The Data Booklet (\textbf{page 4}) gives the formulae to calculate \emph{expecta
 
 \[\text{E}(X)=\frac{k+\text{1}}{\text{2}}\quad \text{ and }\quad \text{V}(X)=\frac{k^\text{2}-\text{1}}{\text{12}}\]
 
-The previously stated values for the expectation and variance of \(X\) and \(Y\) can be quickly obtained using these formulae. It also provides the \emph{probability function} (\textbf{pf}) for the distribution \(\text{U}(k)\) as \(\frac{\text{1}}{k}\). Probability functions show how to calculate the probability of any given outcome for a discrete random variable. Here, the probability depends \emph{only on the parameter} \(k\).
+The previously stated values for the expectation and variance of \(X\) and \(Y\) can be quickly obtained using these formulae. It also provides the \emph{probability function} (\textbf{pf}) for the distribution \(\text{U}(k)\) as \(\frac{\text{1}}{k}\). Probability functions show how to calculate the probability of any given outcome for a discrete random variable. Here, the probability depends \emph{only on the parameter} \(k\). For example, given \(X\sim \text{U}(\text{5})\):
+
+\[\text{P}(X=\text{2})=\frac{\text{1}}{\text{5}}, \quad \text{P}(X=\text{2})=\frac{\text{1}}{\text{5}}, \quad \text{and so on...}\]
 
 \pagebreak
 
@@ -9599,15 +9602,14 @@ $\text{V}(X)=npq=\text{8}\times \text{0.25} \times \text{0.75}=\text{1.5}$
 
 \section{The Poisson Distribution}\label{the-poisson-distribution}
 
-Consider a mobile network's customer support department looking at how many call agents to have on duty at any one time. The mean rate of calls may be well known, such as 2.5 per hour. However, in any one hour there may be 4 calls, 10 calls, no calls at all, and so on. Let the random variable \(X\) represent the number of calls in any particular hour. If the conditions for a Poisson model are satisfied then \(X\) follows a \textbf{Poisson distribution} with mean rate \(\lambda=\text{2.5}\).
+Consider a mobile network's customer support department looking at how many call agents to have on duty at any one time. The mean rate of calls may be well known, such as 2.5 per hour. However, in any one hour there may be 4 calls, 10 calls, no calls at all, and so on. Let the random variable \(X\) represent the number of calls in any particular hour. If the conditions for a Poisson model are satisfied, then \(X\) follows a \textbf{Poisson distribution} with mean rate \(\lambda=\text{2.5}\).
 
 \begin{centering}
 \tcbset{width=15.5cm}
 \begin{tcolorbox}[adjusted title=The Poisson Distribution:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
-    \item Notated $X\sim \text{Po}(\lambda)$.
-    \item Defined by one parameter $\lambda$ \textit{("lambda")}.
-    \item $X$ represents the \textbf{number of events occurring} in a set amount of time or space.
+    \item Notated $X\sim \text{Po}(\lambda)$, defined by one parameter $\lambda$ \textit{("lambda")}.
+    \item $X$ represents the \textbf{number of events occurring} in a set amount of time or space, with events occuring randomly throughout the interval.
     \item $\lambda$ represents the \textbf{constant mean rate} of events per unit of time or space.
     \item Each event must be \textbf{independent} and \textbf{occur singly}.
 \end{itemize}
@@ -9664,7 +9666,7 @@ Assume that the mean rate of 2.5 phone calls per hour is \emph{constant} across 
 \end{tikzpicture}
 \end{center}
 
-As with the binomial distribution, individual Poisson probabilities can be calculated using a formula, provided on \textbf{page 4} of the Data Booklet.
+As with the binomial distribution, individual Poisson probabilities can be calculated using its its \emph{probability function} (\textbf{pf}), provided on \textbf{page 4} of the Data Booklet. The derivation of this formula relies on mathematics beyond the scope of this course.
 
 Given random variable \(X\sim \text{Po}(\lambda)\):
 
@@ -9672,7 +9674,7 @@ Given random variable \(X\sim \text{Po}(\lambda)\):
 
 \[\text{P}(X=x)=\frac{e^{-\lambda} \times \lambda^x}{x!}\]
 
-For example \(\text{P}(X=\text{4})\) in the probability distribution above can be calculated as:
+For example \(\text{P}(X=\text{4})\) in the probability distribution above (where \(\lambda=\text{2.5}\)) can be calculated as:
 
 \[\text{P}(X=\text{4})=\frac{e^{-\text{2.5}} \times \text{2.5}^\text{4}}{\text{4}!}=\text{0.1336}\]
 
