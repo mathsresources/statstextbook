@@ -181,7 +181,7 @@ The previously stated values for the expectation and variance of $X$ and $Y$ can
 #### [Exercise 7.1](#ex71a) {-}
 
 \begin{enumerate}
-    \item Explain why, for each, random variable $X$ does not follow a $\text{U}(k)$ distribution.
+    \item Explain why, for each, random variable $X$ does \textbf{not} follow a $\text{U}(k)$ distribution.
     \begin{enumerate}
         \item Let $X$ represent the total score obtained from rolling two fair six-sided dice.
         \item Let $X$ represent the day of the month on which a person was born.
@@ -279,7 +279,7 @@ If $X$ is the number of heads obtained from three coin tosses, then $X$ is *bino
 
 #### [Exercise 7.2](#ex72a) {-}
 
-For each, if $X$ is a binomially distributed random variable then state its distribution, such as $X\sim \text{B}\left(\text{8},\frac{\text{2}}{\text{3}}\right)$. Otherwise, explain clearly which condition(s) for a binomial distribution are not satisfied.
+For each, if $X$ is a binomially distributed random variable then state its distribution, such as $X\sim \text{B}\left(\text{8},\frac{\text{2}}{\text{3}}\right)$. Otherwise, explain clearly which condition(s) for a binomial distribution are \textbf{not} satisfied.
 
 \begin{enumerate}
     \item A student spends one minute rolling a die. Let $X$ represent the number of times the die showed a six.
@@ -360,7 +360,7 @@ One way of obtaining *exactly two successes* is for the first two spins to be su
 
 $$\text{P}(\text{success, success, fail, fail, fail, fail})=\text{0.4}\times\text{0.4}\times\text{0.6}\times\text{0.6}\times\text{0.6}\times\text{0.6}=\text{0.4}^\text{2}\times\text{0.6}^\text{4}=\text{0.0207}$$
 
-However, this is only one of many possible arrangements that contain exactly two successes. For example, the successes could occur on spins 1 and 3, spins 2 and 5, and so on. Since each arrangement contains two successes and four failures, each has probability 0.0207. The number of ways of choosing the $x$ trials on which success occurs from the $n$ trials is given by the binomial coefficient, ${}^{n}\text{C}_{x}$. For 6 trials with exactly 2 successes, the number of possible arrangements is ${}^{\text{6}}\text{C}_{\text{2}}$.
+However, this is only one of many possible arrangements that contain exactly two successes. For example, the successes could occur on spins 1 and 3, spins 2 and 5, and so on. Since each arrangement contains two successes and four failures, each has probability 0.0207. The number of ways of choosing the $x$ trials on which success occurs from the $n$ trials is given by the binomial coefficient, ${}^{n}\text{C}_{x}$. For 6 trials with exactly 2 successes, the number of possible arrangements is ${}^{\text{6}}\text{C}_{\text{2}}=\text{15}$.
 
 $$\text{P}(X=\text{2})={}^{\text{6}}\text{C}_{\text{2}}\times\text{0.4}^\text{2}\times\text{0.6}^\text{4}=\text{0.3110}$$
 
@@ -445,7 +445,7 @@ $\text{P}(X\geqslant \text{2})=\text{1}-\text{P}(X\leqslant \text{1})=\text{1}-\
     \begin{enumerate}
         \item The distribution of $X$.
         \item The distribution of $Y$, where $Y$ represents the number of \textit{failures}.
-        \item The probability $\text{P}(Y<y)$ equivalent to $\text{P}(X>\text{7})$.
+        \item Express $\text{P}(X>\text{7})$ in terms of $Y$.
         \item The value of $\text{P}(X>7)$, using the Data Booklet.
     \end{enumerate}
     \item Given that $X\sim \text{B}(\text{8},\text{0.8})$, calculate:
@@ -519,7 +519,22 @@ $\text{V}(X)=npq=\text{8}\times \text{0.25} \times \text{0.75}=\text{1.5}$
 
 ## The Poisson Distribution
 
-Consider a mobile network's customer support department looking at how many call agents to have on duty at any one time. The mean rate of calls may be well known, such as 2.5 per hour. However, in any one hour there may be 4 calls, 10 calls, no calls at all, and so on. Let the random variable $X$ represent the number of calls in any particular hour. If the conditions for a Poisson model are satisfied, then $X$ follows a **Poisson distribution** with mean rate $\lambda=\text{2.5}$.
+Consider a mobile network's customer support department looking at how many call agents to have on duty at any one time during an evening shift. The \textit{mean rate} of calls may be well known, such as 2.5 per hour. However, in any one hour there may be 4 calls, 10 calls, no calls at all, or any other non-negative integer number of calls.
+
+\begin{center}
+    \begin{tikzpicture}
+        \draw (0,-0.4) rectangle (14,0.4);
+        \foreach \x in {3,4,...,10}{
+        \draw (2*\x-6,-0.4) -- (2*\x-6,0.4) node[above] {\x\text{pm}};
+        }
+        \node[left] at (0,0) {calls};
+        \foreach \x in {5.3,1.0,4.1,7.2,6.6,6.3,4.6,8.5,9.6,5.1,13.2,0.2,6.5,1.9,12.6,6.9,3.25}{
+        \draw[fill] (\x,0) circle (0.05);
+        }
+    \end{tikzpicture}
+\end{center}
+
+Producing a model for the number of calls in any given hour is clearly of interest to the department, as it allows appropriate staffing levels to be determined. Let the random variable $X$ represent the number of calls in any particular hour. If the conditions for a Poisson model are satisfied, then $X$ follows a **Poisson distribution** with parameter $\lambda=\text{2.5}$.
 
 \begin{centering}
 \tcbset{width=15.5cm}
@@ -563,27 +578,28 @@ Assume that the mean rate of 2.5 phone calls per hour is *constant* across the o
     (10,0.0031)
     (11,0.0009)
 };
+    
     \end{axis}
-    \draw[stealth-stealth] (7,3.5) -- (11,3.5);
-    \node[fill=white] at (9,3.5) {one hour, $\lambda=\text{2.5}$};
-    \draw (7,2) rectangle (11,2.8);
-    \node[right] at (11,2.4) {3 calls in one hour};
-    \draw (7,1) rectangle (11,1.8);
-    \node[right] at (11,1.4) {5 calls in one hour};
-    \draw (7,0) rectangle (11,0.8);
-    \node[right] at (11,0.4) {0 calls in one hour};
-    \draw[fill] (7.9,2.4) circle (0.05);
-    \draw[fill] (8.4,2.4) circle (0.05);
-    \draw[fill] (10.3,2.4) circle (0.05);
-    \draw[fill] (7.5,1.4) circle (0.05);
-    \draw[fill] (8.8,1.4) circle (0.05);
-    \draw[fill] (9,1.4) circle (0.05);
-    \draw[fill] (9.6,1.4) circle (0.05);
-    \draw[fill] (10.7,1.4) circle (0.05);
+    \draw[stealth-stealth] (7,3) -- (11,3);
+    \node[fill=white] at (9,3.5-0.5) {one hour, $\lambda=\text{2.5}$};
+    \draw (7,2-0.5) rectangle (11,2.8-0.5);
+    \node[right] at (11,2.4-0.5) {3 calls in one hour};
+    \draw (7,1-0.8) rectangle (11,1.8-0.8);
+    \node[right] at (11,1.4-0.8) {5 calls in one hour};
+    \draw[-stealth,very thin,dashed] (6.8,1.9) -- (2.2,1.9);
+    \draw[fill] (7.9,2.4-0.5) circle (0.05);
+    \draw[fill] (8.4,2.4-0.5) circle (0.05);
+    \draw[fill] (10.3,2.4-0.5) circle (0.05);
+    \draw[fill] (7.5,1.4-0.8) circle (0.05);
+    \draw[fill] (8.8,1.4-0.8) circle (0.05);
+    \draw[fill] (9,1.4-0.8) circle (0.05);
+    \draw[fill] (9.6,1.4-0.8) circle (0.05);
+    \draw[fill] (10.7,1.4-0.8) circle (0.05);
+    \draw[-stealth,very thin,dashed] (6.8,0.6) -- (3.2,0.6);
 \end{tikzpicture}
 \end{center}
 
-As with the binomial distribution, individual Poisson probabilities can be calculated using its its *probability function* (**pf**), provided on **page 4** of the Data Booklet. The derivation of this formula relies on mathematics beyond the scope of this course.
+As with the binomial distribution, individual Poisson probabilities can be calculated using its *probability function* (**pf**), provided on **page 4** of the Data Booklet. The derivation of this formula relies on mathematics beyond the scope of this course.
 
 Given random variable $X\sim \text{Po}(\lambda)$:
 
@@ -601,9 +617,9 @@ $$\text{P}(X=\text{4})=\frac{e^{-\text{2.5}} \times \text{2.5}^\text{4}}{\text{4
 \textbf{Problem:} During a spell of rain, drops of rain fall on a lawn at a constant mean rate of 6 drops per square metre per second. Calculate the probability that exactly 10 drops fall in one square metre of the lawn in a second.
 
 \tcblower
-\textbf{Solution:} \textit{(Define a random variable, in context, and define the problem in probability terms.)}\\
+\textbf{Solution:}
 
-Let random variable $X$ represent the number of drops of rain.\\[1em]
+Let random variable $X$ represent the number of drops of rain. Assuming a Poisson process applies:\\[-0.5em]
 
 $X\sim \text{Po}(\text{6})$
 
@@ -613,14 +629,22 @@ $$\text{P}(X=\text{10})=\frac{e^{-\text{6}} \times \text{6}^{\text{10}}}{\text{1
 
 \end{tcolorbox}
 
-As with the binomial distribution, in general it is much faster to use the cumulative probability tables from **page 10** of the Data Booklet, or a graphical calculator, to calculate Poisson probabilities.
+As with the binomial distribution, in general it is much faster to use the **cumulative probability tables** from **page 10** of the Data Booklet, or a graphical calculator, to calculate Poisson probabilities. Unlike the binomial distribution, there is no fixed upper limit to the number of events that can occur, and so (for example) $\text{P}(X\geqslant \text{5})$ must be calculated as $\text{1}-\text{P}(X\leqslant \text{4})$.
 
 []{#ex76q}
 
 #### [Exercise 7.6](#ex76a) {-}
 
 \begin{enumerate}
-    \item Given random variable $X$ such that $X\sim \text{Po}(\text{2.5})$, use the formula to calculate:
+    \item For each, explain why random variable $X$ may \textbf{not} follow a Poisson distribution, with reference to the conditions required for a Poisson model.
+    \begin{enumerate}
+        \item Let $X$ represent the number of people arriving at a restaurant each hour.
+        \item Let $X$ represent the amount of rain falling in one hour.
+        \item Let $X$ represent the number of vehicles passing set of traffic lights each minute.
+        \item Let $X$ represent the number of buses arriving at a bus station in an hour.
+        \item Let $X$ represent the number of times a football fan checks their phone during a match.
+    \end{enumerate}
+    \item Given random variable $X$ such that $X\sim \text{Po}(\text{2.5})$, use the \textbf{probability function} to calculate:
     \begin{multicols}{4}
     \begin{enumerate}
         \item $\text{P}(X=\text{4})$.
@@ -632,9 +656,9 @@ As with the binomial distribution, in general it is much faster to use the cumul
     \item Let random variable $X$ represent the number of goals in a game of Sunday League football, known to follow a Poisson distribution with a mean of 4 goals.
     \begin{enumerate}
         \item State the distribution of $X$.
-        \item Use the formula to calculate the probability that a game finishes without any goals being scored.
+        \item Use the probability function to calculate the probability that a game finishes goalless.
     \end{enumerate}
-    \item The random variable $X$ follows a Poisson distribution with mean 6. Use the tables to calculate:
+    \item The random variable $X$ follows a Poisson distribution with mean 6. Use the \textbf{cumulative probability tables} to calculate:
     \begin{enumerate}
     \begin{multicols}{4}
         \item $\text{P}(X<\text{4})$.
@@ -667,7 +691,7 @@ The mean and variance of a Poisson distribution are stated on **page 4** of the 
 
 $$\text{E}(X)=\text{V}(X)=\lambda \qquad \text{and} \qquad \text{SD}(X)=\sqrt{\lambda}$$
 
-A key feature of the Poisson distribution is that the mean and variance are equal. 
+A key feature of the Poisson distribution is that \textbf{the mean and variance are equal} 
 This can help to identify whether a Poisson model is appropriate when analysing data.
 
 Given two **independent** random variables $X$ and $Y$ such that $X\sim \text{Po}(\lambda_X)$ and $Y\sim \text{Po}(\lambda_Y)$, the *sum* of $X$ and $Y$ is also a Poisson random variable, for which $\lambda=\lambda_X+\lambda_Y$.
@@ -855,7 +879,7 @@ So there is a roughly 22\% probability that Betty receives fewer than 8 emails i
     \begin{enumerate}
         \item[(a) ] Given that a dish selected to be checked is vegetarian, state the probability that it is a main course.
     \end{enumerate}
-    Let random variable $X$ represent the number of the dishes checked over an 8 week period that are desserts.
+    Let random variable $X$ represent the number of dishes checked over an 8 week period that are desserts.
     \begin{enumerate}
         \item[(b) ] State the distribution of $X$.
         \item[(c) ] Calculate the probability that more than half of the dishes checked in the 8 week period are dessert dishes.

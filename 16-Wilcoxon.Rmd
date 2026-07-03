@@ -604,7 +604,7 @@ The discrete distribution of $W$ under the null hypothesis is symmetrical and, a
 \end{minipage}
 \end{figure}
 
-The Data Booklet only provides Wilcoxon critical values for $n\leqslant20$. When dealing a larger sample, a Wilcoxon Signed Rank Test may still be performed using a **normal approximation** to the distribution of $W$. **Page 15** of the Data Booklet provides the required properties of this distribution:
+The Data Booklet only provides Wilcoxon critical values for $n\leqslant20$. When dealing with a larger sample, a Wilcoxon Signed Rank Test may still be performed using a **normal approximation** to the distribution of $W$. **Page 15** of the Data Booklet provides the required properties of this distribution:
 
 $$\text{E}(W)=\frac{1}{4}n(n+1) \quad \text{and} \quad \text{V}(W)=\frac{1}{24}n(n+1)(2n+1)$$
 
