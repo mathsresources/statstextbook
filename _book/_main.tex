@@ -397,7 +397,7 @@ By the end of the course, students should have the knowledge and confidence to c
 
 Data that has been collected but not yet processed is referred to as \emph{raw data}. Before conducting any statistical analysis, a statistician will typically want to get a quick sense of the data, checking for potential issues and identifying key features. Common first steps are therefore often to: \emph{organise} the data into suitable lists or tables; \emph{visualise} the data using plots and graphs; and \emph{measure} key properties of the data.
 
-This process is called \emph{exploratory data analysis}. It helps us understand the data before applying more formal statistical methods.
+This process is called \emph{exploratory data analysis}. Also sometimes referred to as \emph{descriptive statistics}, it helps us understand the data before applying more formal \emph{inferential statistics} methods.
 
 \begin{center}
 \begin{tikzpicture}
@@ -3869,7 +3869,7 @@ It is usually very difficult to carry out a census as it is time consuming, expe
 
 \pagebreak
 
-\section{Sampling Considerations}\label{sampling-considerations}
+\section{Sampling and Bias}\label{sampling-and-bias}
 
 Samples are used to infer information about the populations from which they are taken, and sample data collected using higher quality sampling techniques should tend to lead to more reliable inferences. There are several key considerations and pitfalls to be aware of whenever the collection of sample data is being planned.
 
@@ -9083,7 +9083,6 @@ Hence the mean total thickness of the three books is 9.3cm, and the standard dev
 
 \begin{center}
 \say{\textit{All models are wrong, but some models are useful.}}
-George Box
 \end{center}
 
 \subsection*{Models, Conditions and Assumptions}\label{models-conditions-and-assumptions}
@@ -9228,7 +9227,7 @@ The Data Booklet (\textbf{page 4}) gives the formulae to calculate \emph{expecta
 
 The previously stated values for the expectation and variance of \(X\) and \(Y\) can be quickly obtained using these formulae. It also provides the \emph{probability function} (\textbf{pf}) for the distribution \(\text{U}(k)\) as \(\frac{\text{1}}{k}\). Probability functions show how to calculate the probability of any given outcome for a discrete random variable. Here, the probability depends \emph{only on the parameter} \(k\). For example, given \(X\sim \text{U}(\text{5})\):
 
-\[\text{P}(X=\text{2})=\frac{\text{1}}{\text{5}}, \quad \text{P}(X=\text{2})=\frac{\text{1}}{\text{5}}, \quad \text{and so on...}\]
+\[\text{P}(X=\text{1})=\frac{\text{1}}{\text{5}}, \quad \text{P}(X=\text{2})=\frac{\text{1}}{\text{5}}, \quad \text{P}(X=\text{3})=\frac{\text{1}}{\text{5}}, \quad \text{and so on...}\]
 
 \pagebreak
 
@@ -9238,7 +9237,7 @@ The previously stated values for the expectation and variance of \(X\) and \(Y\)
 \tcblower
 \textbf{Solution:}
 
-\vspace{-0.5cm}
+\vspace{-0.9cm}
 \begin{multicols}{2}
 \begin{align*}
 \text{(a)}\quad \text{E}(T)&=\frac{\text{10}+\text{1}}{\text{2}}=\text{5.5} &\\
@@ -9265,6 +9264,13 @@ The previously stated values for the expectation and variance of \(X\) and \(Y\)
 \addcontentsline{toc}{subsubsection}{{Exercise 7.1}}
 
 \begin{enumerate}
+    \item Explain why, for each, random variable $X$ does not follow a $\text{U}(k)$ distribution.
+    \begin{enumerate}
+        \item Let $X$ represent the total score obtained from rolling two fair six-sided dice.
+        \item Let $X$ represent the day of the month on which a person was born.
+        \item Let $X$ represent a single-digit prime number picked at random.
+        \item Let $X$ represent the number of 6s obtained when a die is rolled ten times.
+    \end{enumerate}
     \item Let $X\sim \text{U}(\text{5})$. Calculate the mean and variance of $X$.
     \item Let $X\sim \text{U}(\text{15})$. Calculate the mean and variance of $X$.
     \item A discrete random variable is uniformly distributed such that $\text{P}(X=x)=\frac{\text{1}}{k}$, with $k=\text{8}$.
@@ -9454,40 +9460,36 @@ The same reasoning applies generally. To obtain exactly \(x\) successes from \(n
 \begin{enumerate}
     \item Given that $X\sim \text{B}(\text{10},\text{0.25})$, calculate $\text{P}(X=\text{3})$.
     \item Given that $X\sim \text{B}(\text{8},\text{0.6})$, calculate $\text{P}(X=\text{5})$.
-    \item Given that $Y\sim \text{B}(\text{13},\text{0.4})$, calculate $\text{P}(Y\leqslant\text{2})$. (\textit{Hint: use} $\text{P}(Y=\text{0})$, $\text{P}(Y=\text{1})$ \textit{and} $\text{P}(Y=\text{2})$).
+    \item Given that $Y\sim \text{B}(\text{13},\text{0.4})$, calculate $\text{P}(Y\leqslant\text{2})$. (\textit{Hint:} use $\text{P}(Y=\text{0})$, $\text{P}(Y=\text{1})$ and $\text{P}(Y=\text{2})$).
     \item 5\% of bluebells have white flowers. The remainder have blue flowers. Determine the probability that a random sample of twelve bluebell plants includes \textbf{none} with white flowers.
-    \item In Bob's form class of 20 pupils, their form teacher assigns each pupil a number from 1 to 20 using the order listed on the register and, each morning, uses a random number generator to select which pupil should be responsible for read out notices. Calculate the probability that Bob is selected \textbf{at least once} in one school week.
+    \item In Bob's class of 20 pupils, their teacher assigns each pupil a number from 1 to 20 and, each day, uses a random number generator to select which pupil should be responsible for handing out rulers. Calculate the probability that Bob is selected \textbf{at least once} in one school week.
 \end{enumerate}
 
 \pagebreak
 
 \section{The Binomial Distribution using Cumulative Probability Tables}\label{the-binomial-distribution-using-cumulative-probability-tables}
 
-In practice, it will seldom be necessary to calculate binomial probabilities using the formula. Graphical calculators can be used to calculate both \emph{individual} (\(\text{P}(X=x)\)) and \emph{cumulative} (\(\text{P}(X\leqslant x)\)) probabilities. On \textbf{page 7}, the Data Booklet provides \textbf{cumulative probability tables}, giving \textbf{``less than or equal to''} probabilities.
+In practice, it will seldom be needed to calculate binomial probabilities directly using its probability function. Graphical calculators can provide both \emph{individual} (\(\text{P}(X=x)\)) and \emph{cumulative} (\(\text{P}(X\leqslant x)\)) probabilities. On \textbf{page 7}, the Data Booklet provides \textbf{cumulative probability tables}, giving \textbf{``less than or equal to''} probabilities.
 
-It is therefore important to be able to write any given probability that uses an inequality in terms of a \emph{less than or equal to} probability.
-
-Consider discrete random variable \(X\) taking values \(x=\{\text{0},\text{1},\text{2},\text{3},\text{4},\text{5},\text{6}\}\):
+It is therefore important to be able to write any given probability that uses an inequality in terms of a \emph{less than or equal to} probability. Consider discrete random variable \(X\) taking values \(x=\{\text{0},\text{1},\text{2},\text{3},\text{4},\text{5},\text{6}\}\):
 
 \vspace{-1cm}
 \begin{center}
 \begin{align*}
-\text{P}(X<\text{5})=&\text{P}(X\leqslant \text{4}) & & \color{black!25}\{\color{black}\text{0},\text{1},\text{2},\text{3},\text{4}\color{black!25},\text{5},\text{6}\}\\
-\text{P}(X>\text{5})=&\text{1}-\text{P}(X\leqslant \text{5}) & & \color{black!25}\{\text{0},\text{1},\text{2},\text{3},\text{4},\text{5},\color{black}\text{6}\color{black!25}\}\\
-\text{P}(X=\text{5})=&\text{P}(X\leqslant \text{5})-\text{P}(X\leqslant \text{4}) & & \color{black!25}\{\text{0},\text{1},\text{2},\text{3},\text{4},\color{black}\text{5}\color{black!25}\color{black!25},\text{6}\}\\
-\text{P}(\text{1}<X<\text{5})=&\text{P}(X\leqslant \text{4}) - \text{P}(X\leqslant \text{1}) & & \color{black!25}\{\text{0},\text{1},\color{black}\text{2},\text{3},\text{4}\color{black!25},\text{5},\text{6}\}
+\text{P}(X<\text{5})=&\,\text{P}(X\leqslant \text{4}) & & \color{black!25}\{\color{black}\text{0},\text{1},\text{2},\text{3},\text{4}\color{black!25},\text{5},\text{6}\}\\[0.5em]
+\text{P}(X>\text{5})=&\,\text{1}-\text{P}(X\leqslant \text{5}) & & \color{black!25}\{\text{0},\text{1},\text{2},\text{3},\text{4},\text{5},\color{black}\text{6}\color{black!25}\}\\[0.5em]
+\text{P}(X=\text{5})=&\,\text{P}(X\leqslant \text{5})-\text{P}(X\leqslant \text{4}) & & \color{black!25}\{\text{0},\text{1},\text{2},\text{3},\text{4},\color{black}\text{5}\color{black!25}\color{black!25},\text{6}\}\\[0.5em]
+\text{P}(\text{1}\leqslant X \leqslant \text{5})=&\,\text{P}(X\leqslant \text{5}) - \text{P}(X\leqslant \text{0}) & & \color{black!25}\{\text{0},\color{black}\text{1},\text{2},\text{3},\text{4},\text{5}\color{black!25},\text{6}\}\\[0.5em]
+\text{P}(\text{1}<X<\text{5})=&\,\text{P}(X\leqslant \text{4}) - \text{P}(X\leqslant \text{1}) & & \color{black!25}\{\text{0},\text{1},\color{black}\text{2},\text{3},\text{4}\color{black!25},\text{5},\text{6}\}
 \end{align*}
 \end{center}
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} It is estimated that around 10\% of people are left-handed. Taking this percentage to be accurate, calculate the probability that, in a random sample of 12 people, at least two of them will be left-handed.
+\textbf{Problem:} It is estimated that around 10\% of people are left-handed. Taking this to be accurate, calculate the probability that, in a random sample of 12 people, at least two will be left-handed.
 
 \tcblower
-\textbf{Solution:} \textit{(Define a random variable, in context, and define the problem in probability terms.)}\\
-
-Let random variable $X$ represent the number of left-handed people out of the sample of 12.\\[1em]
-$p=\text{0.1}$ and $n=\text{12}$\\[1em]
-$X\sim \text{B}(\text{12},\text{0.1})$\\[1em]
+\textbf{Solution:} Let random variable $X$ represent the number of left-handed people out of the sample of 12.\\[0.7em]
+$X\sim \text{B}(\text{12},\text{0.1})$\\[0.7em]
 $\text{P}(X\geqslant \text{2})=\text{1}-\text{P}(X\leqslant \text{1})=\text{1}-\text{0.6590}=\text{0.3410}$
 
 \end{tcolorbox}
@@ -9524,6 +9526,14 @@ $\text{P}(X\geqslant \text{2})=\text{1}-\text{P}(X\leqslant \text{1})=\text{1}-\
         \item $\text{P}(\text{3}<X\leqslant\text{6})$
         \end{multicols}
     \end{enumerate}
+    \item A \textit{biased} coin shows heads with probability 0.35. Calculate the probability that it shows heads fewer than twice in twelve tosses.
+    \item If random variable $X$ represents the number of \textit{successes} in ten independent trials, each with probability of success 0.75, state:
+    \begin{enumerate}
+        \item The distribution of $X$.
+        \item The distribution of $Y$, where $Y$ represents the number of \textit{failures}.
+        \item The probability $\text{P}(Y<y)$ equivalent to $\text{P}(X>\text{7})$.
+        \item The value of $\text{P}(X>7)$, using the Data Booklet.
+    \end{enumerate}
     \item Given that $X\sim \text{B}(\text{8},\text{0.8})$, calculate:
     \begin{enumerate}
         \begin{multicols}{3}
@@ -9538,24 +9548,18 @@ $\text{P}(X\geqslant \text{2})=\text{1}-\text{P}(X\leqslant \text{1})=\text{1}-\
 
 \section{The Mean and Variance of the Binomial Distribution}\label{the-mean-and-variance-of-the-binomial-distribution}
 
-The Data Booklet gives the formulae for the \emph{mean} and \emph{variance} of the binomial distribution on \textbf{page 4}.
+The \emph{expectation} of a binomial distribution is fairly intuitive (the number of trials multiplied by the probability of success on each trial), whilst the \emph{variance} is less so. The Data Booklet gives the formulae for the \emph{mean} and \emph{variance} of the binomial distribution on \textbf{page 4}. Given random variable \(X\sim \text{B}(n,p)\):
 
-Given random variable \(X\sim \text{B}(n,p)\):
-
-\[\text{E}(X)=np \qquad \text{and} \qquad \text{V}(X)=npq\]
-
-Where \(q=\text{1}-p\), representing the \emph{probability of failure}.
+\[\text{E}(X)=np \qquad \text{and} \qquad \text{V}(X)=npq \qquad (\text{where }q=\text{1}-p)\]
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A multiple choice quiz is comprised of eight questions, each with four possible choices. Let random variable $X$ represent the number of correct answers obtained out of eight from a student guessing completely at random. Calculate the mean and variance of $X$.
 
 \tcblower
-\textbf{Solution:}
+\textbf{Solution:} Since the student is guessing randomly, the probability of a correct answer is $p=\tfrac{\text{1}}{\text{4}}$.\\
 
-Since the student is guessing randomly, the probability of a correct answer is $p=\tfrac{\text{1}}{\text{4}}$.
-
-$X\sim \text{B}(\text{8},\text{0.25})$\\[1em]
-$\text{E}(X)=np=\text{8}\times \text{0.25}=\text{2}$\\[1em]
+$X\sim \text{B}(\text{8},\text{0.25})$\\[0.7em]
+$\text{E}(X)=np=\text{8}\times \text{0.25}=\text{2}$\\[0.7em]
 $\text{V}(X)=npq=\text{8}\times \text{0.25} \times \text{0.75}=\text{1.5}$
 
 \end{tcolorbox}
@@ -9609,14 +9613,14 @@ Consider a mobile network's customer support department looking at how many call
 \begin{tcolorbox}[adjusted title=The Poisson Distribution:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item Notated $X\sim \text{Po}(\lambda)$, defined by one parameter $\lambda$ \textit{("lambda")}.
-    \item $X$ represents the \textbf{number of events occurring} in a set amount of time or space, with events occuring randomly throughout the interval.
+    \item $X$ represents the \textbf{number of events occurring} in a set amount of time or space, with events occurring randomly throughout the interval.
     \item $\lambda$ represents the \textbf{constant mean rate} of events per unit of time or space.
     \item Each event must be \textbf{independent} and \textbf{occur singly}.
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
 
-Assume that the mean rate of 2.5 phone calls per hour is \emph{constant} across the opening hours of the customer support department, and that there is no major network-wide event causing calls to become \emph{not independent} of each other. The Poisson distribution can then be used to calculate, for example, the probability that there are exactly 4 calls in any one hour. Note that the graph below is truncated, and the Poisson distribution has non-zero probabilities for any non-negative integer \(\{\text{0},\text{1},\text{2},\text{3},\dots\}\).
+Assume that the mean rate of 2.5 phone calls per hour is \emph{constant} across the opening hours of the customer support department, and that there is no major network-wide event causing calls to become \emph{dependent} on one another. The Poisson distribution can then be used to calculate, for example, the probability that there are exactly 4 calls in any one hour. Note that the graph below is truncated, and the Poisson distribution has non-zero probabilities for any non-negative integer \(\{\text{0},\text{1},\text{2},\text{3},\dots\}\).
 
 \begin{center}
 \begin{tikzpicture}
@@ -9820,7 +9824,7 @@ This assumes that the number of calls received in each time period is independen
 
 Let random variable $X$ represent the number of work emails, and $Y$ the number of personal emails.\\
 
-$\lambda_X=\text{7}$ and $X\sim \text{Po}(\text{7}$\\
+$\lambda_X=\text{7}$ and $X\sim \text{Po}(\text{7})$\\
 
 $\lambda_Y=\text{3}$ and $Y\sim \text{Po}(\text{3})$\\
 

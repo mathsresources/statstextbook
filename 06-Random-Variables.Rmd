@@ -960,7 +960,7 @@ Note that any laws relating to the *standard deviation* of a linear transformati
 
 ## Combining Random Variables
 
-As well as linear transformations of a single random variable, new variables can be created by adding (or subtracting) random variables. Given random variables $X$ and $Y$, for example, $W = X + Y$ is a new random variable formed from them. When studying the long-run behaviour of combined random variables, by considering their expectation and variance, it is important to consider whether the variables are *independent*. The laws relating to variance below *only* apply when the variables are independent.
+As well as linear transformations of a single random variable, new variables can be created by adding (or subtracting) random variables. Given random variables $X$ and $Y$, for example, $W = X + Y$ is a new random variable formed from them. When studying the long-run behaviour of combined random variables, by considering their expectation and variance, it is important to consider whether the variables are *independent*. The laws relating to **variance** below *only* apply when the variables are **independent**.
 
 \begin{centering}
 \begin{tcolorbox}[adjusted title=For random variables $X$ and $Y$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
