@@ -55,7 +55,7 @@ As a reminder, the quantity $\dfrac{\sigma}{\sqrt{n}}$ is called the *standard e
 
 \begin{centering}
 \tcbset{width=15cm}
-\begin{tcolorbox}[adjusted title=Conditions for a one-sample $z$-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,center]
+\begin{tcolorbox}[adjusted title=Conditions for a $z$-confidence interval for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,center]
 \begin{itemize}
     \item The population is \textbf{normally distributed}, or the sample size is sufficiently large ($n>20$) such that the Central Limit Theorem applies.
     \item The \textbf{population standard deviation}, $\sigma$, is known (and has not changed).
@@ -66,7 +66,7 @@ As a reminder, the quantity $\dfrac{\sigma}{\sqrt{n}}$ is called the *standard e
 
 For large sample sizes, where the population standard deviation $\sigma$ is not known, it may be decided that the sample standard deviation is a reasonable estimate ($\sigma \approx s$). In practice, the $t$-distribution is generally preferred when only the sample standard deviation is known, and hence $t$-confidence intervals for the population mean, introduced in the next section, are far more commonly encountered.
 
-Whilst the notation contained in the formula for a confidence interval can look complicated, it should be noted that the $z$-value for a two-tailed 95\% confidence interval corresponds with that for the critical value of a two-tailed $z$ test at the 5\% level of significance. A sketch can be used to help find the required $z$-value, just as in the previous chapter. 
+Whilst the notation contained in the formula for a confidence interval can look complicated, it should be noted that the $z$-value for a two-tailed 95\% confidence interval corresponds with that for the critical value of a two-tailed $z$-test at the 5\% level of significance. A sketch can be used to help find the required $z$-value, just as in the previous chapter. 
 Although *one-tailed* confidence intervals exist, in this course only *two-tailed* confidence intervals will be calculated.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
@@ -126,7 +126,7 @@ Therefore a 95\% confidence interval for the population mean dish mass, in grams
 
 It should be observed that the $z$-confidence interval is symmetrical with the **sample mean at its centre**. 
 
-The width of the interval is determined by the standard error and the confidence level required. For the same standard deviation and confidence level, a larger sample size will produce a narrower interval; this is intuitive, as more data collected should lead to a more precise estimate of the population mean.
+The *width* of the interval is determined by the standard error and the confidence level required. For the same standard deviation and confidence level, *a larger sample size will produce a narrower interval*; this is intuitive, as more data collected should lead to a more precise estimate of the population mean.
 
 
 \pagebreak
@@ -265,7 +265,7 @@ Since any confidence intervals encountered in this course will be two-tailed, it
     \item The lengths of metal bars produced by a particular machine are normally distributed with standard deviation 12cm. The machine is serviced, after which a random sample of 80 bars gives a mean length of 423cm.
     \begin{enumerate}
         \item Obtain a 99\% confidence interval for the mean length of the bars now produced, assuming the standard deviation remains the same.
-        \item Comment on the concern that that the mean bar length produced by the machine is no longer the 420cm that it was prior to it being serviced.
+        \item Comment on the concern that the mean bar length produced by the machine is no longer the 420cm that it was prior to it being serviced.
     \end{enumerate}
     \item A large school is studying the amount of money its teachers spend on photocopying as it prepares its budget for the next academic year. A random sample of 23 teachers gives a mean spend of £10.90 per year and a standard deviation of £2.30. Assuming that the sample standard deviation is a reasonable estimate of the population standard deviation, construct a 90\% $z$-confidence interval for the mean spend per teacher each year, and comment on the suggestion that the figure of £12 used previously is still accurate.
     \item A sports statistician is analysing the number of goals scored in games of football. A random sample of 35 games gives a sample mean of 2.7 goals and a sample standard deviation of 0.6 goals. Stating an assumption required, obtain a 99\% $z$-confidence interval for the mean number of goals scored in a game, and comment on their claim that the number of goals scored has changed from the historically observed mean of 2.5 goals per game.
@@ -274,7 +274,7 @@ Since any confidence intervals encountered in this course will be two-tailed, it
         \item Stating one assumption required, obtain a 90\% confidence interval for the mean height of mature oak trees in the woodland now.
         \item Comment on the suggestion that the mean height of mature oak trees in the woodland has changed.
     \end{enumerate}
-    \item A researcher is examining a statistical report on the salaries of delivery drivers in a city. She sees that a random sample of full-time delivery drivers in the city were asked their annual salaries. The report includes computer output related to a $z$-test on the hypothesis that the mean salaries for the delivery drivers is different to the national mean of £30 000. The report concludes that there is not sufficient evidence to suggest that the mean salary of delivery drivers in the city is different to the that seen nationally.\vspace{0.5cm}\\
+    \item A researcher is examining a statistical report on the salaries of delivery drivers in a city. She sees that a random sample of full-time delivery drivers in the city were asked their annual salaries. The report includes computer output related to a $z$-test on the hypothesis that the mean salaries for the delivery drivers is different to the national mean of £30 000. The report concludes that there is not sufficient evidence to suggest that the mean salary of delivery drivers in the city is different from that seen nationally.\vspace{0.5cm}\\
     \texttt{z-test for the population mean}\\
     \texttt{n = 22}\qquad \texttt{sample mean = 29300}\qquad \texttt{sample SD = 1720}\\
     \texttt{alternative hypothesis: true mean is not equal to 30000}\\
@@ -304,7 +304,7 @@ A $t$-confidence interval is used when the population standard deviation is unkn
 
 \begin{centering}
 \tcbset{width=15cm}
-\begin{tcolorbox}[adjusted title=Conditions for a one-sample $t$-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,center]
+\begin{tcolorbox}[adjusted title=Conditions for a $t$-confidence interval for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,center]
 \begin{itemize}
     \item The population is \textbf{normally distributed}.
     \item The observed data are \textbf{independent} (obtained through a random sample).
@@ -434,7 +434,7 @@ Since 9.7 kWh is within the confidence interval, there is insufficient evidence 
 
 ## A \textit{z}-Confidence Interval for the Population Proportion
 
-The sampling distribution of the sample proportion, $\hat{P}$, has the standard error: $\sqrt{\dfrac{pq}{n}}$.
+As introduced in chapter 10, the sample proportion, $\hat{P}$, has standard error: $\sqrt{\dfrac{pq}{n}}$.
 
 When calculating a $z$-confidence interval for the population proportion, it is necessary to instead use the \textit{sample proportion}, $\hat{p}$, as an \textit{estimate} for $p$, leading to an **estimated standard error**.
 
@@ -451,7 +451,7 @@ This is only an *approximate confidence interval*, both because the sampling dis
 
 \begin{centering}
 \tcbset{width=15cm}
-\begin{tcolorbox}[adjusted title=Conditions for a one-sample $z$-test for the population proportion:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,center]
+\begin{tcolorbox}[adjusted title=Conditions for a $z$-confidence interval for the population proportion:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,center]
 \begin{itemize}
     \item Both $n\hat{p}>5$ and $n\hat{q}>5$.
     \item The observed data are \textbf{independent} (obtained through a random sample).

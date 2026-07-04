@@ -238,7 +238,7 @@ Perform a goodness-of-fit test at the 5\% level of significance to assess whethe
   \hline
 \end{tabular}
 \end{center}
-Perform a non-parametric test at the 10\% significance level to assess whether the data supports the textbook's statement.
+Perform a non-parametric test at the 10\% significance level to assess whether there is evidence against the textbook's statement.
     \item A local council has previously monitored the numbers of cars entering a city, classifying each as either internal combustion engine (ICE), hybrid or fully electric. The ratio of cars in each category was found to be 5:2:1 respectively. Interested in whether this has since changed, a random sample is taken of 80 cars entering the city, with the results: 43 ICE, 16 hybrid and the remaining cars fully electric. Perform a hypothesis test at the 1\% level of significance to test the claim that the ratio has changed from what it was previously.
 \end{enumerate}
     
@@ -255,7 +255,7 @@ For each goodness-of-fit test encountered so far, the conditions for the **expec
 If the expected categories do not meet the conditions for a chi-squared test then two or more categories should be *combined* until the conditions are satisfied. The degrees of freedom for the test should be calculated based on the *final combined frequency table* rather than the original table. Whilst it is recommended to combine those categories with the smallest expected values, it may at times be more intuitive to instead combine categories that can be grouped more naturally. 
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A video game allows players to buy in-game ``loot boxes'' with real money, each containing one in-game item. The game's publisher states that 60\% of loot boxes contain a ``Regular'' item, 25\% contain a ``Premium'' item, 10\% contain a ``Rare' item and the remaining 5\% contain an ``Ultra Rare'' item. A player records the types of item contained in each of a series of loot boxes and records the results in the frequency table below.
+\textbf{Problem:} A video game allows players to buy in-game ``loot boxes'' with real money, each containing one in-game item. The game's publisher states that 60\% of loot boxes contain a ``Regular'' item, 25\% contain a ``Premium'' item, 10\% contain a ``Rare'' item and the remaining 5\% contain an ``Ultra Rare'' item. A player records the types of item contained in each of a series of loot boxes and records the results in the frequency table below.
 
 \vspace{0.3cm}
 
@@ -407,7 +407,7 @@ Since $6.913<9.210$, do not reject $\text{H}_0$ at the 1\% level of significance
     \end{tabular}
     \end{center}
     Perform a chi-squared goodness-of-fit test to assess at the 1\% significance level whether there is evidence of a difference in distribution of eye colours in San Francisco.
-    \item A coffee shop sells five of types of coffee. Historically, the five types of coffee have been sold in the following proportions:
+    \item A coffee shop sells five types of coffee. Historically, the five types of coffee have been sold in the following proportions:
     \begin{center}
         \begin{itemize}
         \item 34\% cappuccinos
@@ -606,7 +606,7 @@ This could be used to check if the number of broken eggs per box fits *any* poss
     \begin{enumerate}
         \item State the distribution of $X$, the number of correct answers out of 5, assuming that a student is guessing at random for every question.
     \end{enumerate}
-    To investigate these, the number of correct answers out of five for each of the 80 students is first set out in a table:
+    To investigate this, the number of correct answers out of five for each of the 80 students is first set out in a table:
     \begin{center}
     \begin{tabular}{| c | c | c | c | c|c|c| } 
     \hline
@@ -647,7 +647,7 @@ Should the only parameter for a Poisson distribution, $\lambda$, be required to 
 In the following example, a value for the model parameter $\lambda$ is not provided, and is instead estimated from the data, so here $m=1$.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} It is generally said that the number of goals scored in a game of football follows a Poisson distribution. A football fan decides to see whether this statement is still reasonable, and records the number of goals scored in every game across a weekend in each of the top four tiers of English football:
+\textbf{Problem:} It is generally said that the number of goals scored in a game of football follows a Poisson distribution. A football fan decides to see whether the model still seems reasonable, and records the number of goals scored in every game across a weekend in each of the top four tiers of English football:
 
 \begin{center}
 \begin{tabular}{| c | c c c c c c c c |} 
