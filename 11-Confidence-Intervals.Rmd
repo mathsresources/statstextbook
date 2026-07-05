@@ -42,12 +42,12 @@ A common misconception is that such a confidence interval can be interpreted as 
 
 ## A \textit{z}-Confidence Interval for the Population Mean
 
-Given a *random sample* from a distribution that is *normally distributed* with *known population standard deviation* $\sigma$, a $100(1-\alpha)\%$ $z$-*confidence interval* for the population mean, $\mu$, can be calculated:
+Given a *random sample* from a distribution that is *normally distributed* with *known population standard deviation* $\sigma$, a $\text{100}(\text{1}-\alpha)\%$ $z$-*confidence interval* for the population mean, $\mu$, can be calculated:
 
 \begin{centering}
 \tcbset{width=10cm}
 \begin{tcolorbox}[adjusted title=A $z$-confidence interval for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-A $100(1-\alpha)\%$ CI for $\mu$ is: $\bar{x}\pm z_{1-\alpha/2} \times \cfrac{\sigma}{\sqrt{n}}$
+A $\text{100}(\text{1}-\alpha)\%$ CI for $\mu$ is: $\bar{x}\pm z_{\text{1}-\alpha/\text{2}} \times \cfrac{\sigma}{\sqrt{n}}$
 \end{tcolorbox}
 \end{centering}
 
@@ -57,7 +57,7 @@ As a reminder, the quantity $\dfrac{\sigma}{\sqrt{n}}$ is called the *standard e
 \tcbset{width=15cm}
 \begin{tcolorbox}[adjusted title=Conditions for a $z$-confidence interval for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,center]
 \begin{itemize}
-    \item The population is \textbf{normally distributed}, or the sample size is sufficiently large ($n>20$) such that the Central Limit Theorem applies.
+    \item The population is \textbf{normally distributed}, or the sample size is sufficiently large ($n>\text{20}$) such that the Central Limit Theorem applies.
     \item The \textbf{population standard deviation}, $\sigma$, is known (and has not changed).
     \item The observed data are \textbf{independent} (obtained through a random sample).
 \end{itemize}
@@ -74,7 +74,7 @@ Although *one-tailed* confidence intervals exist, in this course only *two-taile
 
 \tcblower
 \textbf{Solution:}
-$\bar{x}=430$, $n=15$, $\sigma=12$\\
+$\bar{x}=\text{430}$, $n=\text{15}$, $\sigma=\text{12}$\\
 
 \vspace{-0.8cm}
 
@@ -106,11 +106,11 @@ $\bar{x}=430$, $n=15$, $\sigma=12$\\
 \pgfmathsetmacro\valueC{gauss(1.96,0,1)}
 \draw [semithick, black]  (axis cs:-1.96,0) -- (axis cs:-1.96,\valueA);
 \draw [semithick, black]  (axis cs:1.96,0) -- (axis cs:1.96,\valueC);
-\node[below] at (axis cs: 0,0)  {$0$};
+\node[below] at (axis cs: 0,0)  {0};
 \node[above] at (axis cs: 0,\valueB)  {$z$};
-\node[below] at (axis cs: -1.96, 0) {$-1.96$};
+\node[below] at (axis cs: -1.96, 0) {$-\text{1.96}$};
 \node[above] at (axis cs: -2.3,\valueA) {2.5\%};
-\node[below] at (axis cs: 1.96, 0) {$1.96$};
+\node[below] at (axis cs: 1.96, 0) {1.96};
 \node[above] at (axis cs: 2.3,\valueC) {2.5\%};
 \node[above] at (axis cs: 0,\valueC) {95\%};
 \end{axis}
@@ -118,9 +118,9 @@ $\bar{x}=430$, $n=15$, $\sigma=12$\\
 
 \vspace{0.2cm}
 
-A $95\%$ CI for $\mu$ is: \hspace{0.5cm}$430 \pm 1.96 \times \cfrac{12}{\sqrt{15}}$\hspace{0.5cm}=\hspace{0.5cm}$430 \pm 6.07$\\
+A 95\% CI for $\mu$ is: \hspace{0.5cm}$\text{430} \pm \text{1.96} \times \cfrac{\text{12}}{\sqrt{\text{15}}}$\hspace{0.5cm}=\hspace{0.5cm}$\text{430} \pm \text{6.07}$\\
 
-Therefore a 95\% confidence interval for the population mean dish mass, in grams, is $(423.93 , 436.07)$.\\
+Therefore a 95\% confidence interval for the population mean dish mass, in grams, is $(\text{423.93} , \text{436.07})$.\\
 
 \end{tcolorbox}
 
@@ -143,7 +143,7 @@ The *width* of the interval is determined by the standard error and the confiden
     \item The masses of the eggs laid by the chickens on a farm are normally distributed. The farmer weighs 25 randomly chosen eggs, in grams, obtaining the following summary statistics:
     \begin{center}
     \begin{tabular}{c c c} 
-      $n=25$ & $\Sigma x=1254$ & $\Sigma x^2=63186$\\ 
+      $n=\text{25}$ & $\Sigma x=\text{1254}$ & $\Sigma x^\text{2}=\text{63186}$\\ 
     \end{tabular}
     \end{center}
     It is assumed that the sample standard deviation is a reasonable estimate for the population standard deviation. Obtain a 90\% confidence interval for the mean mass of the chicken eggs laid by the chickens at the farm.
@@ -164,13 +164,13 @@ The *width* of the interval is determined by the standard error and the confiden
 
 ## Confidence Intervals and Hypothesis Testing
 
-Consider the following hypotheses, where $\mu_0$ is a possible value for a population mean of interest:
+Consider the following hypotheses, where $\mu_\text{0}$ is a possible value for a population mean of interest:
 
 \begin{center}
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \mu = \mu_0\\[0.5em]
-      \text{H}_1: & \mu \ne \mu_0 
+      \text{H}_\text{0}: & \mu = \mu_\text{0}\\[0.5em]
+      \text{H}_\text{1}: & \mu \ne \mu_\text{0} 
     \end{array}
 \end{math}
 \end{center}
@@ -180,9 +180,9 @@ The calculations involved in constructing a *two-tailed* $z$-confidence interval
 \begin{centering}
 \tcbset{width=16cm}
 \begin{tcolorbox}[adjusted title=Inference using confidence intervals:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-If $\mu_0$ is \textbf{outwith a calculated 95\% confidence interval} then there is evidence at the 5\% significance level to suggest that $\mu \ne \mu_0$.\\
+If $\mu_\text{0}$ is \textbf{outwith a calculated 95\% confidence interval} then there is evidence at the 5\% significance level to suggest that $\mu \ne \mu_\text{0}$.\\
 \vspace{0.5cm}
-If $\mu_0$ is \textbf{within a calculated 95\% confidence interval} then there is insufficient evidence at the 5\% significance level to suggest that $\mu \ne \mu_0$.\\
+If $\mu_\text{0}$ is \textbf{within a calculated 95\% confidence interval} then there is insufficient evidence at the 5\% significance level to suggest that $\mu \ne \mu_\text{0}$.\\
 \end{tcolorbox}
 \end{centering}
 
@@ -193,7 +193,7 @@ It should be noted that, in this course, an instruction to perform a \textit{tes
 
 \tcblower
 \textbf{Solution:}
-$\bar{x}=273$, $n=14$, $\sigma=13$\\
+$\bar{x}=\text{273}$, $n=\text{14}$, $\sigma=\text{13}$\\
 
 \vspace{0.1cm}
 
@@ -229,22 +229,22 @@ $\bar{x}=273$, $n=14$, $\sigma=13$\\
 \pgfmathsetmacro\valueC{gauss(1.96,0,1)}
 \draw [semithick, black]  (axis cs:-1.96,0) -- (axis cs:-1.96,\valueA);
 \draw [semithick, black]  (axis cs:1.96,0) -- (axis cs:1.96,\valueC);
-\node[below] at (axis cs: 0,0)  {$0$};
+\node[below] at (axis cs: 0,0)  {0};
 \node[above] at (axis cs: 0,\valueB)  {$z$};
-\node[below] at (axis cs: -1.96, 0) {$-1.96$};
+\node[below] at (axis cs: -1.96, 0) {$-\text{1.96}$};
 \node[above] at (axis cs: -2.4,\valueA) {2.5\%};
-\node[below] at (axis cs: 1.96, 0) {$1.96$};
+\node[below] at (axis cs: 1.96, 0) {1.96};
 \node[above] at (axis cs: 2.4,\valueC) {2.5\%};
 \node[above] at (axis cs: 0,\valueC) {95\%};
 \end{axis}
 \end{tikzpicture}
 
 \vspace{0.5cm}
-A $95\%$ CI for $\mu$ is: \hspace{0.5cm}$273 \pm 1.96 \times \cfrac{13}{\sqrt{14}}$\hspace{0.5cm}=\hspace{0.5cm}$273 \pm 6.81$\\
+A 95\% CI for $\mu$ is: \hspace{0.5cm}$\text{273} \pm \text{1.96} \times \cfrac{\text{13}}{\sqrt{\text{14}}}$\hspace{0.5cm}=\hspace{0.5cm}$\text{273} \pm \text{6.81}$\\
 
 \vspace{0.1cm}
 
-Therefore a 95\% confidence interval for the mean mass of food now being eaten daily by their cat, in grams, is $(266.19 , 279.81)$.\\
+Therefore a 95\% confidence interval for the mean mass of food now being eaten daily by their cat, in grams, is $(\text{266.19} , \text{279.81})$.\\
 
 \vspace{0.1cm}
 
@@ -296,11 +296,11 @@ Given a random sample of data from an underlying population that is *normally di
 \begin{centering}
 \tcbset{width=10cm}
 \begin{tcolorbox}[adjusted title=A $t$-confidence interval for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-A $100(1-\alpha)\%$ CI for $\mu$ is: $\bar{x}\pm t_{n-1,1-\alpha/2} \times \cfrac{s}{\sqrt{n}}$
+A $\text{100}(\text{1}-\alpha)\%$ CI for $\mu$ is: $\bar{x}\pm t_{n-\text{1},\text{1}-\alpha/\text{2}} \times \cfrac{s}{\sqrt{n}}$
 \end{tcolorbox}
 \end{centering}
 
-A $t$-confidence interval is used when the population standard deviation is unknown and must be estimated using the sample standard deviation. The conditions for valid use of a $t$-confidence interval match those for a one-sample $t$-test, with the degrees of freedom calculated as $\nu=n-1$.
+A $t$-confidence interval is used when the population standard deviation is unknown and must be estimated using the sample standard deviation. The conditions for valid use of a $t$-confidence interval match those for a one-sample $t$-test, with the degrees of freedom calculated as $\nu=n-\text{1}$.
 
 \begin{centering}
 \tcbset{width=15cm}
@@ -327,7 +327,7 @@ Stating any assumption required, determine a 99\% confidence interval for the me
 
 \tcblower
 \textbf{Solution:}
-$\bar{x}=8.729$, $n=7$, $s=1.055$\\
+$\bar{x}=\text{8.729}$, $n=\text{7}$, $s=\text{1.055}$\\
 
 \textit{Assume the underlying population of daily energy usage is normally distributed.}\\
 
@@ -359,22 +359,22 @@ $\bar{x}=8.729$, $n=7$, $s=1.055$\\
 \pgfmathsetmacro\valueC{gauss(2.5,0,1)}
 \draw [semithick, black]  (axis cs:-2.5,0) -- (axis cs:-2.5,\valueA);
 \draw [semithick, black]  (axis cs:2.5,0) -- (axis cs:2.5,\valueC);
-\node[below] at (axis cs: 0,0)  {$0$};
-\node[above] at (axis cs: 0,\valueB)  {$t_6$};
-\node[below] at (axis cs: -2.5, 0) {$-3.707$};
+\node[below] at (axis cs: 0,0)  {0};
+\node[above] at (axis cs: 0,\valueB)  {$t_\text{6}$};
+\node[below] at (axis cs: -2.5, 0) {$-\text{3.707}$};
 \node[above] at (axis cs: -2.8,\valueA) {0.5\%};
-\node[below] at (axis cs: 2.5, 0) {$3.707$};
+\node[below] at (axis cs: 2.5, 0) {3.707};
 \node[above] at (axis cs: 2.8,\valueC) {0.5\%};
 \node[above] at (axis cs: 0,\valueC) {99\%};
 \end{axis}
 \end{tikzpicture}
 
 \vspace{0.5cm}
-A $99\%$ CI for $\mu$ is: \hspace{0.5cm}$8.729 \pm 3.707 \times \cfrac{1.055}{\sqrt{7}}$\hspace{0.5cm}=\hspace{0.5cm}$8.729 \pm 1.478$\\
+A 99\% CI for $\mu$ is: \hspace{0.5cm}$\text{8.729} \pm \text{3.707} \times \cfrac{\text{1.055}}{\sqrt{\text{7}}}$\hspace{0.5cm}=\hspace{0.5cm}$\text{8.729} \pm \text{1.478}$\\
 
 \vspace{0.1cm}
 
-Therefore a 99\% CI for the mean daily electricity usage of mid-terrace houses in Fife, in kWh, is $(7.251 , 10.207)$.\\
+Therefore a 99\% CI for the mean daily electricity usage of mid-terrace houses in Fife, in kWh, is $(\text{7.251} , \text{10.207})$.\\
 
 \vspace{0.1cm}
 
@@ -406,7 +406,7 @@ Since 9.7 kWh is within the confidence interval, there is insufficient evidence 
     \item The lifespan of a type of light bulb made by a brand is normally distributed. A consumer watchdog records the lifespan of a random sample of ten such bulbs and obtains the following summary statistics, in hours:
     \begin{center}
     \begin{tabular}{c c c} 
-      $n=10$ & $\Sigma x=9920$ & $\Sigma x^2=9868100$\\ 
+      $n=\text{10}$ & $\Sigma x=\text{9920}$ & $\Sigma x^\text{2}=\text{9868100}$\\ 
     \end{tabular}
     \end{center}
     Obtain a 90\% confidence interval for the mean lifespan of the bulbs.
@@ -443,7 +443,7 @@ $\text{Estimated standard error of the sample proportion: }\quad\sqrt{\dfrac{\ha
 \begin{centering}
 \tcbset{width=10cm}
 \begin{tcolorbox}[adjusted title=A $z$-confidence interval for the population proportion:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-A $100(1-\alpha)\%$ CI for $p$ is: $\hat{p}\pm z_{1-\alpha/2} \times \sqrt{\cfrac{\hat{p}\hat{q}}{n}}$
+A $\text{100}(\text{1}-\alpha)\%$ CI for $p$ is: $\hat{p}\pm z_{\text{1}-\alpha/\text{2}} \times \sqrt{\cfrac{\hat{p}\hat{q}}{n}}$
 \end{tcolorbox}
 \end{centering}
 
@@ -453,7 +453,7 @@ This is only an *approximate confidence interval*, both because the sampling dis
 \tcbset{width=15cm}
 \begin{tcolorbox}[adjusted title=Conditions for a $z$-confidence interval for the population proportion:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,center]
 \begin{itemize}
-    \item Both $n\hat{p}>5$ and $n\hat{q}>5$.
+    \item Both $n\hat{p}>\text{5}$ and $n\hat{q}>\text{5}$.
     \item The observed data are \textbf{independent} (obtained through a random sample).
 \end{itemize}
 \end{tcolorbox}
@@ -464,7 +464,7 @@ This is only an *approximate confidence interval*, both because the sampling dis
 
 \tcblower
 \textbf{Solution:}
-$\hat{p}=\frac{41}{50}=0.82$, $\hat{q}=0.18$, $n=50$\\
+$\hat{p}=\frac{\text{41}}{\text{50}}=\text{0.82}$, $\hat{q}=\text{0.18}$, $n=\text{50}$\\
 
 \hspace{5cm}
 \begin{tikzpicture}
@@ -494,11 +494,11 @@ $\hat{p}=\frac{41}{50}=0.82$, $\hat{q}=0.18$, $n=50$\\
 \pgfmathsetmacro\valueC{gauss(1.96,0,1)}
 \draw [semithick, black]  (axis cs:-1.96,0) -- (axis cs:-1.96,\valueA);
 \draw [semithick, black]  (axis cs:1.96,0) -- (axis cs:1.96,\valueC);
-\node[below] at (axis cs: 0,0)  {$0$};
+\node[below] at (axis cs: 0,0)  {0};
 \node[above] at (axis cs: 0,\valueB)  {$z$};
-\node[below] at (axis cs: -1.96, 0) {$-1.96$};
+\node[below] at (axis cs: -1.96, 0) {$-\text{1.96}$};
 \node[above] at (axis cs: -2.4,\valueA) {2.5\%};
-\node[below] at (axis cs: 1.96, 0) {$1.96$};
+\node[below] at (axis cs: 1.96, 0) {1.96};
 \node[above] at (axis cs: 2.4,\valueC) {2.5\%};
 \node[above] at (axis cs: 0,\valueC) {95\%};
 \end{axis}
@@ -506,11 +506,11 @@ $\hat{p}=\frac{41}{50}=0.82$, $\hat{q}=0.18$, $n=50$\\
 
 \vspace{0.5cm}
 
-A $95\%$ CI for $p$ is: \hspace{0.5cm} $0.82 \pm 1.96 \times \sqrt{\cfrac{0.82\times0.18}{50}}$\hspace{0.5cm}=\hspace{0.5cm}$0.82 \pm 0.060$\\
+A 95\% CI for $p$ is: \hspace{0.5cm} $\text{0.82} \pm \text{1.96} \times \sqrt{\cfrac{\text{0.82}\times\text{0.18}}{\text{50}}}$\hspace{0.5cm}=\hspace{0.5cm}$\text{0.82} \pm \text{0.060}$\\
 
 \vspace{0.1cm}
 
-Therefore an approximate 95\% confidence interval for the proportion of the website's readers that have changed their router's password is $(0.760 , 0.880)$\\
+Therefore an approximate 95\% confidence interval for the proportion of the website's readers that have changed their router's password is $(\text{0.760} , \text{0.880})$\\
 
 \end{tcolorbox}
 

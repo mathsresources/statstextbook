@@ -1,8 +1,8 @@
 # Chi-Squared Goodness-Of-Fit Test
 
-The **chi-squared distribution**, $\chi^2_\nu$, describes the distribution of *sums* of *independent squared and scaled random variables*. \mbox{$\chi^2$ hypothesis tests} offer a way to analyse categorical data, and are a type of **non-parametric** test.
+The **chi-squared distribution**, $\chi^{\text{2}}_\nu$, describes the distribution of *sums* of *independent squared and scaled random variables*. \mbox{$\chi^{\text{2}}$ hypothesis tests} offer a way to analyse categorical data, and are a type of **non-parametric** test.
 
-## $\chi^2$ Goodness-of-Fit Test
+## $\chi^{\text{2}}$ Goodness-of-Fit Test
 
 A *goodness-of-fit* test assesses how well observed data fits a hypothesised distribution by comparing observed and expected frequencies. It is applied to **categorical** data (which may arise from numerical variables grouped into categories for counting). Suppose a statistics teacher's cubic die is suspected of being *biased* and their students roll the die 48 times to check for any bias. The number of times each outcome occurs, or the **observed frequencies**, are recorded in a frequency table as follows:
 
@@ -30,12 +30,12 @@ With the null hypothesis being that the die *is* fair, a third row of **expected
 \end{tabular}
 \end{center}
 
-The $\chi^2$ goodness-of-fit test asks whether the observed frequencies are so *significantly different* from the expected frequencies, under the model described in the null hypothesis, that there is evidence to suggest *the model is in fact incorrect*.
+The $\chi^{\text{2}}$ goodness-of-fit test asks whether the observed frequencies are so *significantly different* from the expected frequencies, under the model described in the null hypothesis, that there is evidence to suggest *the model is in fact incorrect*.
 
 \begin{center}
 \begin{tabular}{r c l}
-    $\text{H}_0:$ & \quad & The score on the die follows a uniform distribution (the die is fair).\\
-    $\text{H}_1:$ & \quad & The score on the die follows some other distribution (the die is not fair).
+    $\text{H}_\text{0}:$ & \quad & The score on the die follows a uniform distribution (the die is fair).\\
+    $\text{H}_\text{1}:$ & \quad & The score on the die follows some other distribution (the die is not fair).
 \end{tabular}
 \end{center}
 
@@ -45,12 +45,12 @@ The theory underpinning the test statistic is beyond the scope of the Advanced H
 
 \begin{centering}
 \tcbset{width=15cm}
-\begin{tcolorbox}[adjusted title=For a $\chi^2$ goodness-of-fit test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-Test statistic: $\chi^2=\cfrac{(O_1-E_1)^2}{E_1}+\cfrac{(O_2-E_2)^2}{E_2}+...+\cfrac{(O_n-E_n)^2}{E_n}=\sum{\cfrac{(O_i-E_i)^2}{E_i}}$
+\begin{tcolorbox}[adjusted title=For a $\chi^{\text{2}}$ goodness-of-fit test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+Test statistic: $\chi^{\text{2}}=\cfrac{(O_\text{1}-E_\text{1})^\text{2}}{E_\text{1}}+\cfrac{(O_\text{2}-E_\text{2})^\text{2}}{E_\text{2}}+...+\cfrac{(O_n-E_n)^\text{2}}{E_n}=\sum{\cfrac{(O_i-E_i)^\text{2}}{E_i}}$
 \end{tcolorbox}
 \end{centering}
 
-The test statistic follows a $\chi^2_\nu$ distribution with degrees of freedom $\nu=c-1-m$, where:
+The test statistic follows a $\chi^{\text{2}}_\nu$ distribution with degrees of freedom $\nu=c-\text{1}-m$, where:
 
 \vspace{-0.5cm}
 
@@ -71,14 +71,14 @@ The test statistic follows a $\chi^2_\nu$ distribution with degrees of freedom $
     ytick=\empty,
     enlargelimits=upper,
     samples=50,
-    legend entries={$\nu=3$,$\nu=5$,$\nu=7$}
+    legend entries={$\nu=\text{3}$,$\nu=\text{5}$,$\nu=\text{7}$}
 ]
 \addplot [smooth, domain=0:20, black!25, dashed, line width=1 ] {gammapdf(x,1.5,2)};
 \addplot [smooth, domain=0:20, line width=2] {gammapdf(x,2.5,2)};
 \addplot [smooth, domain=0:20, black!25, dash dot, line width=1] {gammapdf(x,3.5,2)};
 \end{axis}
 \end{tikzpicture}
-\captionof{figure}{$\chi^2_\nu$ distributions with $\nu$ degrees of freedom}
+\captionof{figure}{$\chi^{\text{2}}_\nu$ distributions with $\nu$ degrees of freedom}
   \label{fig:test1}
 \end{minipage}%
 \begin{minipage}[c]{.01\textwidth}
@@ -95,10 +95,10 @@ The test statistic follows a $\chi^2_\nu$ distribution with degrees of freedom $
 \vspace{0.3cm}
 
 \begin{centering}
-\begin{tcolorbox}[adjusted title=The decision rule for $\chi^2$ tests:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-If \textbf{test statistic} $>$ \textbf{critical value}, \textit{reject }$\text{H}_0$.\\
+\begin{tcolorbox}[adjusted title=The decision rule for $\chi^{\text{2}}$ tests:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+If \textbf{test statistic} $>$ \textbf{critical value}, \textit{reject }$\text{H}_\text{0}$.\\
 \vspace{0.5cm}
-If \textbf{test statistic} $\leqslant$ \textbf{critical value}, \textit{do not reject }$\text{H}_0$.\\
+If \textbf{test statistic} $\leqslant$ \textbf{critical value}, \textit{do not reject }$\text{H}_\text{0}$.\\
 \end{tcolorbox}
 \end{centering}
 \end{minipage}
@@ -110,17 +110,17 @@ For the *"fair"* die, the test statistic can now be calculated:
 
 \vspace{-0.5cm}
 
-$$\chi^2=\frac{(7-8)^2}{8}+\frac{(8-8)^2}{8}+\frac{(5-8)^2}{8}+\frac{(10-8)^2}{8}+\frac{(7-8)^2}{8}+\frac{(11-8)^2}{8}=3$$
+$$\chi^{\text{2}}=\frac{(\text{7}-\text{8})^\text{2}}{\text{8}}+\frac{(\text{8}-\text{8})^\text{2}}{\text{8}}+\frac{(\text{5}-\text{8})^\text{2}}{\text{8}}+\frac{(\text{10}-\text{8})^\text{2}}{\text{8}}+\frac{(\text{7}-\text{8})^\text{2}}{\text{8}}+\frac{(\text{11}-\text{8})^\text{2}}{\text{8}}=\text{3}$$
 
 \vspace{-0.5cm}
 
-There are six categories, so $c=6$, and no parameters of the model were calculated using the data, so $m=0$, leading to $\nu=6-1-0=5$ degrees of freedom. This corresponds to the number of observed frequencies that can *vary independently* once the total and expected distribution are fixed, since the final observed frequency is determined once all others are known.
+There are six categories, so $c=\text{6}$, and no parameters of the model were calculated using the data, so $m=\text{0}$, leading to $\nu=\text{6}-\text{1}-\text{0}=\text{5}$ degrees of freedom. This corresponds to the number of observed frequencies that can *vary independently* once the total and expected distribution are fixed, since the final observed frequency is determined once all others are known.
 
-The test statistic can be compared against the $\chi^2$ critical values from **page 14** of the data booklet. With $\nu=5$ and taking $\alpha=0.05$, the critical value of $\chi^2_{5,0.95}=11.070$ can be found. The smallest possible observed test statistic is 0, representing data that perfectly matches the model, and for $\nu=5$ approximately 5\% of test statistics would exceed 11.070 by chance alone. Note that since the test statistic cannot be negative, and can only move further from $0$ in the positive direction, the chi-squared tests covered in this course are always *one-tailed*.
+The test statistic can be compared against the $\chi^{\text{2}}$ critical values from **page 14** of the data booklet. With $\nu=5$ and taking $\alpha=\text{0.05}$, the critical value of $\chi^{\text{2}}_{\text{5},\text{0.95}}=\text{11.070}$ can be found. The smallest possible observed test statistic is 0, representing data that perfectly matches the model, and for $\nu=\text{5}$ approximately 5\% of test statistics would exceed 11.070 by chance alone. Note that since the test statistic cannot be negative, and can only move further from 0 in the positive direction, the chi-squared tests covered in this course are always *one-tailed*.
 
-Since $3<11.070$ the students should *not* reject the null hypothesis at the 5\% level of significance.\newline There is *insufficient evidence* to suggest that the die is not fair.
+Since $\text{3}<\text{11.070}$ the students should *not* reject the null hypothesis at the 5\% level of significance.\newline There is *insufficient evidence* to suggest that the die is not fair.
 
-Note that whilst the $\chi^2$ test statistic is a measure of how well data fits a model, the goodness-of-fit test does not show evidence *for* the model - it only assesses whether the data provides evidence *against* it.
+Note that whilst the $\chi^{\text{2}}$ test statistic is a measure of how well data fits a model, the goodness-of-fit test does not show evidence *for* the model - it only assesses whether the data provides evidence *against* it.
 
 \begin{centering}
 \tcbset{width=16cm}
@@ -138,15 +138,15 @@ The data for the teacher's die met the criteria for the use of a chi-squared tes
 \pagebreak
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A chocolatier says that their boxes are randomly filled with caramel, coffee and strawberry flavoured chocolates in the ratio $2:2:1$. Suspecting that this is not true, a chocolate fan counts the number of chocolates of each flavour in a box and finds 8 are caramel, 13 are coffee and 11 are strawberry. Perform a non-parametric hypothesis test to assess the evidence at the 10\% significance level that the flavours are not distributed as claimed by the chocolatier. 
+\textbf{Problem:} A chocolatier says that their boxes are randomly filled with caramel, coffee and strawberry flavoured chocolates in the ratio $\text{2}:\text{2}:\text{1}$. Suspecting that this is not true, a chocolate fan counts the number of chocolates of each flavour in a box and finds 8 are caramel, 13 are coffee and 11 are strawberry. Perform a non-parametric hypothesis test to assess the evidence at the 10\% significance level that the flavours are not distributed as claimed by the chocolatier. 
 \tcblower
 \textbf{Solution:}
 
 \vspace{0.1cm}
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \text{the chocolates' flavours are distributed in the ratio 2:2:1}\\
-      \text{H}_1: & \text{the chocolates' flavours  are distributed differently}
+      \text{H}_\text{0}: & \text{the chocolates' flavours are distributed in the ratio 2:2:1}\\
+      \text{H}_\text{1}: & \text{the chocolates' flavours  are distributed differently}
     \end{array}
 \end{math}
 
@@ -166,11 +166,11 @@ The data for the teacher's die met the criteria for the use of a chi-squared tes
 
 \vspace{0.1cm}
 
-$\nu=3-1-0=2$\\
+$\nu=\text{3}-\text{1}-\text{0}=\text{2}$\\
 
-Test statistic: $\chi^2=\frac{(8-12.8)^2}{12.8}+\frac{(13-12.8)^2}{12.8}+\frac{(11-6.4)^2}{6.4}=5.109$\\
+Test statistic: $\chi^{\text{2}}=\frac{(\text{8}-\text{12.8})^\text{2}}{\text{12.8}}+\frac{(\text{13}-\text{12.8})^\text{2}}{\text{12.8}}+\frac{(\text{11}-\text{6.4})^\text{2}}{\text{6.4}}=\text{5.109}$\\
 
-Critical value: $\chi^2=4.605$
+Critical value: $\chi^{\text{2}}=\text{4.605}$
 \hspace{6.5cm}
 \begin{tikzpicture}[overlay, 
     declare function={gamma(\z)=
@@ -198,19 +198,19 @@ Critical value: $\chi^2=4.605$
 \addplot [smooth, domain=0:10] {gammapdf(x,1.5,2)};
 \addplot [draw=none, fill=black!50, domain=4.6:10] {gammapdf(x,1.5,2)} \closedcycle;
 \draw [semithick, black]  (axis cs:4.6,0) -- (axis cs: 4.6,0.0865);
-\node[below] at (axis cs: 0,0)  {$0$};
-\node[above] at (axis cs: 4,0.13)  {$\chi^2_2$};
-\node[below] at (axis cs: 4.6, 0) {$4.605$};
+\node[below] at (axis cs: 0,0)  {0};
+\node[above] at (axis cs: 4,0.13)  {$\chi^{\text{2}}_\text{2}$};
+\node[below] at (axis cs: 4.6, 0) {4.605};
 \node[above] at (axis cs: 7,0.06) {10\%};
-\draw[very thick] (axis cs: 5.109,0) -- (axis cs: 5.109,0.25) node[above] {$5.109$};
+\draw[very thick] (axis cs: 5.109,0) -- (axis cs: 5.109,0.25) node[above] {5.109};
 \end{axis}
 \end{tikzpicture}\\
 
-Since $5.109>4.605$, reject $\text{H}_0$ at the 10\% level of significance. There is sufficient evidence to suggest that the flavours are not distributed in the ratio stated by the chocolatier.
+Since $\text{5.109}>\text{4.605}$, reject $\text{H}_\text{0}$ at the 10\% level of significance. There is sufficient evidence to suggest that the flavours are not distributed in the ratio stated by the chocolatier.
 
 \end{tcolorbox}
 
-Note that the $\chi^2$ distributions displayed in the example solutions are illustrative of their typical characteristic shape, rather than precise graphs of each distribution matching the degrees of freedom.
+Note that the $\chi^{\text{2}}$ distributions displayed in the example solutions are illustrative of their typical characteristic shape, rather than precise graphs of each distribution matching the degrees of freedom.
 
 []{#ex121q}
 
@@ -271,7 +271,7 @@ If the expected categories do not meet the conditions for a chi-squared test the
 
 \vspace{0.3cm}
 
-Perform a $\chi^2$ goodness-of-fit test to determine whether there is evidence at the 1\% significance level to suggest the publisher's claim is not correct. 
+Perform a $\chi^{\text{2}}$ goodness-of-fit test to determine whether there is evidence at the 1\% significance level to suggest the publisher's claim is not correct. 
 
 \tcblower
 \textbf{Solution:}
@@ -279,8 +279,8 @@ Perform a $\chi^2$ goodness-of-fit test to determine whether there is evidence a
 \vspace{0.3cm}
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \text{the item types are distributed as claimed}\\
-      \text{H}_1: & \text{they are distributed differently}
+      \text{H}_\text{0}: & \text{the item types are distributed as claimed}\\
+      \text{H}_\text{1}: & \text{they are distributed differently}
     \end{array}
 \end{math}
 
@@ -318,15 +318,15 @@ Perform a $\chi^2$ goodness-of-fit test to determine whether there is evidence a
 
 \vspace{0.3cm}
 
-$\nu=3-1-0=2$\\
+$\nu=\text{3}-\text{1}-\text{0}=\text{2}$\\
 
 \vspace{0.3cm}
 
-Test statistic: $\chi^2=\frac{(33-30)^2}{30}+\frac{(16-12.5)^2}{12.5}+\frac{(1-7.5)^2}{7.5}=6.913$\\
+Test statistic: $\chi^{\text{2}}=\frac{(\text{33}-\text{30})^\text{2}}{\text{30}}+\frac{(\text{16}-\text{12.5})^\text{2}}{\text{12.5}}+\frac{(\text{1}-\text{7.5})^\text{2}}{\text{7.5}}=\text{6.913}$\\
 
 \vspace{0.3cm}
 
-Critical value: $\chi^2=9.210$
+Critical value: $\chi^{\text{2}}=\text{9.210}$
 \hspace{6.5cm}
 \begin{tikzpicture}[overlay, 
     declare function={gamma(\z)=
@@ -354,17 +354,17 @@ Critical value: $\chi^2=9.210$
 \addplot [smooth, domain=0:10] {gammapdf(x,1.5,2)};
 \addplot [draw=none, fill=black!50, domain=9.2:10] {gammapdf(x,1.5,2)} \closedcycle;
 \draw [semithick, black]  (axis cs:9.2,0) -- (axis cs: 9.2,0.0121);
-\node[below] at (axis cs: 0,0)  {$0$};
-\node[above] at (axis cs: 4,0.13)  {$\chi^2$};
-\node[below] at (axis cs: 9.2, 0) {$9.210$};
+\node[below] at (axis cs: 0,0)  {0};
+\node[above] at (axis cs: 4,0.13)  {$\chi^{\text{2}}$};
+\node[below] at (axis cs: 9.2, 0) {9.210};
 \node[above] at (axis cs: 9.5,0.01) {1\%};
-\draw[very thick] (axis cs: 6.913,0) -- (axis cs: 6.913,0.25) node[above] {$6.913$};
+\draw[very thick] (axis cs: 6.913,0) -- (axis cs: 6.913,0.25) node[above] {6.913};
 \end{axis}
 \end{tikzpicture}\\
 
 \vspace{0.3cm}
 
-Since $6.913<9.210$, do not reject $\text{H}_0$ at the 1\% level of significance. There is insufficient evidence to suggest that the item types are not distributed as stated by the game's publisher.
+Since $\text{6.913}<\text{9.210}$, do not reject $\text{H}_\text{0}$ at the 1\% level of significance. There is insufficient evidence to suggest that the item types are not distributed as stated by the game's publisher.
 
 \end{tcolorbox}
 
@@ -375,7 +375,7 @@ Since $6.913<9.210$, do not reject $\text{H}_0$ at the 1\% level of significance
 #### [Exercise 12.2](#ex122a) {-}
 
 \begin{enumerate}
-    \item Historically, grades attained (\textit{A}, \textit{B}, \textit{C}, \textit{D} and \textit{No Award})  by pupils in a school course's end of year exam have been distributed following the ratio $4:5:3:2:1$. Following a change in the teaching resources used, the results of 40 students are recorded as follows:
+    \item Historically, grades attained (\textit{A}, \textit{B}, \textit{C}, \textit{D} and \textit{No Award})  by pupils in a school course's end of year exam have been distributed following the ratio 4:5:3:2:1. Following a change in the teaching resources used, the results of 40 students are recorded as follows:
     \begin{center}
 \begin{tabular}{| c | c | c | c | c|c| } 
     \hline
@@ -428,7 +428,7 @@ Since $6.913<9.210$, do not reject $\text{H}_0$ at the 1\% level of significance
 \end{tabular}
 \end{center}
 Perform a non-parametric test to assess at the 5\% level of significance the claim that the historical proportions of each type of coffee sold are no longer accurate.
-  \item A sample of categorical data is to be collected to assess whether there is evidence to suggest the population is no longer distributed in the $4:3:2:1$ ratio for the four categories as previously was recorded. Determine a range of values for the sample size $n$ such that:
+  \item A sample of categorical data is to be collected to assess whether there is evidence to suggest the population is no longer distributed in the 4:3:2:1 ratio for the four categories as previously was recorded. Determine a range of values for the sample size $n$ such that:
   \begin{enumerate}
       \item A chi-squared goodness-of-fit test can be performed with exactly 3 degrees of freedom.
       \item A chi-squared goodness-of-fit test can be performed with exactly 2 degrees of freedom.
@@ -458,28 +458,28 @@ A goodness-of-fit test can also be performed to assess whether observed data fit
 
 \vspace{0.05cm}
 
-The supermarket decides that the number of eggs broken in each box of four follows a binomial distribution, with $p=0.1$. Perform a hypothesis test to assess this claim and comment on the findings with reference to the assumptions required for a binomial model.
+The supermarket decides that the number of eggs broken in each box of four follows a binomial distribution, with $p=\text{0.1}$. Perform a hypothesis test to assess this claim and comment on the findings with reference to the assumptions required for a binomial model.
 
 \tcblower
 \textbf{Solution:}\\
 
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \text{No. of eggs broken per box follows a } \text{B}(4,0.1) \text{ distribution.}\\
-      \text{H}_1: & \text{No. of eggs broken per box follows a different distribution.}
+      \text{H}_\text{0}: & \text{No. of eggs broken per box follows a } \text{B}(\text{4},\text{0.1}) \text{ distribution.}\\
+      \text{H}_\text{1}: & \text{No. of eggs broken per box follows a different distribution.}
     \end{array}
 \end{math}\\
 
 \vspace{0.1cm}
 
-Total observations $=\mathbf{144}$. Letting random variable $X$ represent the number of eggs broken in a box:\\
+Total observations \textbf{144}. Letting random variable $X$ represent the number of eggs broken in a box:\\
 
 \vspace{-0.3cm}
 
 \begin{center}
 \begin{tabular}{c c c c}
-    $\text{P}(X=0)=0.6561$ & $\text{P}(X=1)=0.2916$ & $\text{P}(X=2)=0.0486$ & $\cdots$\\[1em]
-    $0.6561\times\mathbf{144}=94.48$ & $0.2916\times\mathbf{144}=41.99$ & $0.0486\times\mathbf{144}=7.00$ & $\cdots$
+    $\text{P}(X=\text{0})=\text{0.6561}$ & $\text{P}(X=\text{1})=\text{0.2916}$ & $\text{P}(X=\text{2})=\text{0.0486}$ & $\cdots$\\[1em]
+    $\text{0.6561}\times\textbf{144}=\text{94.48}$ & $\text{0.2916}\times\textbf{144}=\text{41.99}$ & $\text{0.0486}\times\textbf{144}=\text{7.00}$ & $\cdots$
 \end{tabular}
 \end{center}
 
@@ -509,15 +509,15 @@ Total observations $=\mathbf{144}$. Letting random variable $X$ represent the nu
 \end{tabular}
 \end{center}
 
-$\nu=3-1-0=2$\\
+$\nu=\text{3}-\text{1}-\text{0}=\text{2}$\\
 
 \vspace{0.1cm}
 
-Test statistic: $\chi^2=\frac{(122-94.48)^2}{94.48}+\frac{(10-41.99)^2}{41.99}+\frac{(12-7.53)^2}{7.53}=35.041$\\
+Test statistic: $\chi^{\text{2}}=\frac{(\text{122}-\text{94.48})^\text{2}}{\text{94.48}}+\frac{(\text{10}-\text{41.99})^\text{2}}{\text{41.99}}+\frac{(\text{12}-\text{7.53})^\text{2}}{\text{7.53}}=\text{35.041}$\\
 
 \vspace{0.1cm}
 
-Critical value: $\chi^2_{2,0.95}=5.991$
+Critical value: $\chi^{\text{2}}=\text{5.991}$
 \hspace{6.8cm}
 \begin{tikzpicture}[overlay, 
     declare function={gamma(\z)=
@@ -545,15 +545,15 @@ Critical value: $\chi^2_{2,0.95}=5.991$
 \addplot [smooth, domain=0:10] {gammapdf(x,1.5,2)};
 \addplot [draw=none, fill=black!50, domain=6:10] {gammapdf(x,1.5,2)} \closedcycle;
 \draw [semithick, black]  (axis cs:6,0) -- (axis cs: 6,0.04865);
-\node[below] at (axis cs: 0,0)  {$0$};
-\node[above] at (axis cs: 4,0.13)  {$\chi^2_2$};
-\node[below] at (axis cs: 6, 0) {$5.991$};
+\node[below] at (axis cs: 0,0)  {0};
+\node[above] at (axis cs: 4,0.13)  {$\chi^{\text{2}}_\text{2}$};
+\node[below] at (axis cs: 6, 0) {5.991};
 \node[above] at (axis cs: 8,0.05) {5\%};
-\draw[thick,stealth-] (axis cs: 10,0.1) -- (axis cs: 7,0.2) node[above] {$\chi^2=35.041$}; 
+\draw[thick,stealth-] (axis cs: 10,0.1) -- (axis cs: 7,0.2) node[above] {35.041}; 
 \end{axis}
 \end{tikzpicture}\\
 
-Since $35.041>5.991$, reject $\text{H}_0$ at the 5\% level of significance. There is sufficient evidence to suggest that the number of eggs broken per box does not follow a $\text{B}(4,0.1)$ distribution.
+Since $\text{35.041}>\text{5.991}$, reject $\text{H}_\text{0}$ at the 5\% level of significance. There is sufficient evidence to suggest that the number of eggs broken per box does not follow a $\text{B}(\text{4},\text{0.1})$ distribution.
 
 \vspace{0.1cm}
 
@@ -561,11 +561,11 @@ A condition for a binomial model is that each trial is independent. Since broken
 
 \end{tcolorbox}
 
-Note that estimating the parameter $p$ from *the data itself* would require an additional degree of freedom to be subtracted (since $m=1$). For a binomial distribution, that is *estimating* the probability of success for each trial, $p$, by dividing the total number of successes (broken eggs) by the total number of trials (total eggs). Here:
+Note that estimating the parameter $p$ from *the data itself* would require an additional degree of freedom to be subtracted (since $m=\text{1}$). For a binomial distribution, that is *estimating* the probability of success for each trial, $p$, by dividing the total number of successes (broken eggs) by the total number of trials (total eggs). Here:
 
-\[\hat{p}=\dfrac{\text{broken eggs}}{\text{total eggs}}=\dfrac{1\times 10 + 3\times 4 + 4 \times 8}{4\times(122+10+4+8)}=\dfrac{54}{576}=0.09375\]
+\[\hat{p}=\dfrac{\text{broken eggs}}{\text{total eggs}}=\dfrac{\text{1}\times \text{10} + \text{3}\times \text{4} + \text{4} \times \text{8}}{\text{4}\times(\text{122}+\text{10}+\text{4}+\text{8})}=\dfrac{\text{54}}{\text{576}}=\text{0.09375}\]
 
-This could be used to check if the number of broken eggs per box fits *any* possible $\text{B}(4,p)$ distribution.
+This could be used to check if the number of broken eggs per box fits *any* possible $\text{B}(\text{4},p)$ distribution.
 
 \pagebreak
 
@@ -580,11 +580,11 @@ This could be used to check if the number of broken eggs per box fits *any* poss
         \item Calculate:
         \begin{enumerate}
             \begin{multicols}{5}
-            \item $\text{P}(X=0)$
-            \item $\text{P}(X=1)$
-            \item $\text{P}(X=2)$
-            \item $\text{P}(X=3)$
-            \item $\text{P}(X=4)$
+            \item $\text{P}(X=\text{0})$
+            \item $\text{P}(X=\text{1})$
+            \item $\text{P}(X=\text{2})$
+            \item $\text{P}(X=\text{3})$
+            \item $\text{P}(X=\text{4})$
             \end{multicols}
         \end{enumerate}
     \end{enumerate}
@@ -619,7 +619,7 @@ This could be used to check if the number of broken eggs per box fits *any* poss
     \begin{enumerate}[resume]
         \item Perform a chi-squared test to determine if the teachers' suspicions are backed by the data.
     \end{enumerate}
-    \item A car mechanic has established that the proportion of tyres with tread that is below the legal minimum, for cars coming in for a service, is 15\%. They are interested in whether the number of the four tyres on a car brought in for a service that have less than the legal minimum tread, and thus need to be replaced, may be modelled using a binomial distribution: $X\sim\text{B}(4,0.15)$.\\[1em]
+    \item A car mechanic has established that the proportion of tyres with tread that is below the legal minimum, for cars coming in for a service, is 15\%. They are interested in whether the number of the four tyres on a car brought in for a service that have less than the legal minimum tread, and thus need to be replaced, may be modelled using a binomial distribution: $X\sim\text{B}(\text{4},\text{0.15})$.\\[1em]
     The number of tyres needing replaced for low tread for a random sample of cars brought in for a service are recorded:
     \begin{center}
     \begin{tabular}{| c | c | c | c | c|c| } 
@@ -640,11 +640,11 @@ This could be used to check if the number of broken eggs per box fits *any* poss
 
 ## Goodness-of-fit and Poisson Distributions
 
-Just as with a binomial distribution, using a Poisson distribution as a model for a goodness-of-fit test requires the total observations to be split according to calculated probabilities. If sample data is to be tested against a fully specified Poisson distribution (e.g. $\text{Po}(4.5)$) then no model parameter has been estimated using the data ($m=0$).
+Just as with a binomial distribution, using a Poisson distribution as a model for a goodness-of-fit test requires the total observations to be split according to calculated probabilities. If sample data is to be tested against a fully specified Poisson distribution (e.g. $\text{Po}(\text{4.5})$) then no model parameter has been estimated using the data ($m=\text{0}$).
 
-Should the only parameter for a Poisson distribution, $\lambda$, be required to be *estimated from the data*, an additional degree of freedom will be *subtracted*, since $m=1$. This would arise when looking to compare the observed data against *any* Poisson distribution $\text{Po}(\lambda)$.
+Should the only parameter for a Poisson distribution, $\lambda$, be required to be *estimated from the data*, an additional degree of freedom will be *subtracted*, since $m=\text{1}$. This would arise when looking to compare the observed data against *any* Poisson distribution $\text{Po}(\lambda)$.
 
-In the following example, a value for the model parameter $\lambda$ is not provided, and is instead estimated from the data, so here $m=1$.
+In the following example, a value for the model parameter $\lambda$ is not provided, and is instead estimated from the data, so here $m=\text{1}$.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} It is generally said that the number of goals scored in a game of football follows a Poisson distribution. A football fan decides to see whether the model still seems reasonable, and records the number of goals scored in every game across a weekend in each of the top four tiers of English football:
@@ -662,18 +662,18 @@ In the following example, a value for the model parameter $\lambda$ is not provi
 Perform a non-parametric test at the 1\% level of significance to assess whether there is evidence to suggest the model is no longer valid.
 
 \tcblower
-\textbf{Solution:} $\lambda=\frac{\text{total no. of goals}}{\text{total no. of games}}=\frac{115}{46}=2.5$\\
+\textbf{Solution:} $\lambda=\frac{\text{total no. of goals}}{\text{total no. of games}}=\frac{\text{115}}{\text{46}}=\text{2.5}$\\
 
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \text{No. of goals per game follows a Poisson distribution (with }\lambda=2.5)\\
-      \text{H}_1: & \text{No. of goals per game follows a different distribution.}
+      \text{H}_\text{0}: & \text{No. of goals per game follows a Poisson distribution (with }\lambda=\text{2.5})\\
+      \text{H}_\text{1}: & \text{No. of goals per game follows a different distribution.}
     \end{array}
 \end{math}\\
 
-Total observations$ =46$.\\
-$\text{P}(X=0)=0.0821$\\
-Expected frequency for 0 goals $=0.0821\times46=3.777$
+Total observations$ =\text{46}$.\\
+$\text{P}(X=\text{0})=\text{0.0821}$\\
+Expected frequency for 0 goals $=\text{0.0821}\times\text{46}=\text{3.777}$
 
 \begin{center}
 \begin{tabular}{| c | c c c c c c c c |} 
@@ -703,11 +703,11 @@ Expected frequency for 0 goals $=0.0821\times46=3.777$
 
 \textit{(Since } $\lambda$ \textit{ was calculated using the data, subtract an additional degree of freedom.)}\\
 
-$\nu=6-1-1=4$\\
+$\nu=\text{6}-\text{1}-\text{1}=\text{4}$\\
 
-Test statistic: $\chi^2=\frac{(4-3.777)^2}{3.777}+...+\frac{(4-5.004)^2}{5.004}=1.186$\\
+Test statistic: $\chi^{\text{2}}=\frac{(\text{4}-\text{3.777})^\text{2}}{\text{3.777}}+...+\frac{(\text{4}-\text{5.004})^\text{2}}{\text{5.004}}=\text{1.186}$\\
 
-Critical value: $\chi^2=13.277$
+Critical value: $\chi^{\text{2}}=\text{13.277}$
 \hspace{6cm}
 \begin{tikzpicture}[overlay, 
     declare function={gamma(\z)=
@@ -735,15 +735,15 @@ Critical value: $\chi^2=13.277$
 \addplot [smooth, domain=0:15] {gammapdf(x,2,2)};
 \addplot [draw=none, fill=black!50, domain=9.5:15] {gammapdf(x,2,2)} \closedcycle;
 \draw [semithick, black]  (axis cs: 9.5,0) -- (axis cs: 9.5,0.0205);
-\node[below] at (axis cs: 0,0)  {$0$};
-\node[above] at (axis cs: 6,0.1)  {$\chi^2_4$};
-\node[below] at (axis cs: 9.5,0) {$13.277$};
+\node[below] at (axis cs: 0,0)  {0};
+\node[above] at (axis cs: 6,0.1)  {$\chi^{\text{2}}_\text{4}$};
+\node[below] at (axis cs: 9.5,0) {13.277};
 \node[above] at (axis cs: 12,0.03) {1\%};
-\draw[very thick] (axis cs: 1.186,0) -- (axis cs: 1.186,0.25) node[above] {$1.186$};
+\draw[very thick] (axis cs: 1.186,0) -- (axis cs: 1.186,0.25) node[above] {1.186};
 \end{axis}
 \end{tikzpicture}\\
 
-Since $1.186<13.277$, do not reject $\text{H}_0$ at the 1\% level of significance.\\
+Since $\text{1.186}<\text{13.277}$, do not reject $\text{H}_\text{0}$ at the 1\% level of significance.\\
 There is insufficient evidence to suggest that the number of goals scored per football game does not follow a Poisson distribution, so the model still seems reasonable.\\
 
 \end{tcolorbox}
@@ -815,7 +815,7 @@ There is insufficient evidence to suggest that the number of goals scored per fo
 ## [Review Exercise](#re12a) {-}
 
 \begin{enumerate}
-    \item The population of the United Kingdom can be approximately split between those living in England, Scotland, Wales and Northern Ireland in the ratio $30:3:2:1$. Out of a random sample of 117 people who applied to take part in a UK-wide television show, 102 lived in England, 4 lived in Scotland, and 1 lived in Northern Ireland.\\[1em]
+    \item The population of the United Kingdom can be approximately split between those living in England, Scotland, Wales and Northern Ireland in the ratio 30:3:2:1. Out of a random sample of 117 people who applied to take part in a UK-wide television show, 102 lived in England, 4 lived in Scotland, and 1 lived in Northern Ireland.\\[1em]
     Perform a non-parametric test to assess whether there is evidence to suggest the distribution of people applying for the TV show differs from that of the wider UK population, at the 5\% level of significance.
     \item A football team practises for the possibility of a penalty shootout each training session by having their five chosen penalty takers take one penalty each. They know that 15\% of all penalties taken as part of this training will result in a failure to score. Over the course of a season, the number of \textit{failed attempts} for each of the 60 sets of five penalties is recorded:
     \begin{center}
@@ -828,7 +828,7 @@ There is insufficient evidence to suggest that the number of goals scored per fo
     \end{tabular}
     \end{center}
     \begin{enumerate}
-        \item Perform a test at the 10\% significance level to assess the evidence that the data fits a binomial distribution where $p=0.15$.
+        \item Perform a test at the 10\% significance level to assess the evidence that the data fits a binomial distribution where $p=\text{0.15}$.
         \item A coach comments that some of the five penalty takers are clearly better at taking penalties than others. Explain why this would mean that a binomial would be inappropriate.
     \end{enumerate}
     \item A supermarket chain is monitoring concerns regarding shoplifting in one of its stores. It is proposed that a Poisson distribution may be used to model the number of incidents of shoplifting recorded in any given day.\\[1em] 

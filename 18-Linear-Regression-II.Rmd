@@ -2,7 +2,7 @@
 
 \vspace{-1cm}
 
-Given bivariate data, one variable is selected as the \textbf{predictor} $x_i$, whilst the other variable is selected as the \textbf{response} $Y_i$ (modelled as a random variable). It is common to seek to estimate an unknown $Y_i$ value given a known $x_i$ value.
+Given bivariate data, one variable is selected as the \textbf{predictor} $x$, whilst the other variable is selected as the \textbf{response} $Y$ (modelled as a random variable). Using a sample of independent observations $(x_\text{1},y_\text{1}), (x_\text{2},y_\text{2}), ...  ,(x_n,y_n)$, it is common to seek to estimate an unknown response value $y_i$ given a known predictor value $x_i$.
 
 \vspace{-0.3cm}
 
@@ -45,16 +45,16 @@ Given bivariate data, one variable is selected as the \textbf{predictor} $x_i$, 
 \end{tcolorbox}
  
  
-The \textbf{errors} $\varepsilon_i$ (\textit{"epsilon"}) represent the random deviation of the response variable from the true regression line.
+The \textbf{errors} $\varepsilon_i$ (\textit{"epsilon"}) are random variables representing the deviation of $Y_i$ from the true regression line.
 
 \end{minipage}
 \end{figure}
 
 The true values of the \textbf{intercept parameter} $\alpha$ and the \textbf{slope parameter} $\beta$ are unknown, as they relate to the full \textit{population} of bivariate data. However, the sample observations $(x_i,y_i)$ can be used to give estimates, $a$ and $b$, of $\alpha$ and $\beta$. 
 
-Since *errors* are the vertical distances between observations $(x_i,y_i)$ and the *true* regression line defined by $\alpha$ and $\beta$, they cannot be known precisely. Instead, vertical distances to the *estimated* regression line (using $a$ and $b$) are considered, called **residuals** ($e_i$). Residuals provide observable estimates of the underlying errors.
+Since *errors* are the vertical distances between observations $(x_i,y_i)$ and the *true* regression line defined by $\alpha$ and $\beta$, they cannot be known precisely. Instead, vertical distances to the *estimated* regression line (using $a$ and $b$) are considered, called **residuals** ($e_i$). Residuals $e_i$ provide observable estimates of the underlying errors $\varepsilon_i$.
 
-The method of least squares produces formulae for $a$ and $b$ derived by minimising the sum of squared residuals, $\sum e_i^2$. These rely on several assumptions about the population of errors given on **page 5** of the Data Booklet, along with the formulae:
+The method of least squares produces formulae for $a$ and $b$ derived by minimising the sum of squared residuals, $\sum e_i^\text{2}$. These rely on several assumptions about the population of errors given on **page 5** of the Data Booklet, along with the formulae:
 
 \vspace{-0.4cm}
 
@@ -64,14 +64,14 @@ $$b=\dfrac{S_{xy}}{S_{xx}} \qquad \text{and} \qquad a=\bar{y}-b\bar{x}$$
 
 \vspace{-0.2cm}
 
-This leads to the regression line $\hat{Y}_i=a+bx_i$.
+This leads to the regression line $\hat{y}_i=a+bx_i$.
 
 \begin{tcolorbox}[halign title=center,title=Assumptions for the Errors,center,colback=red!5,colframe=red!70!black,width=5.7cm,center]
 \begin{center}
     \begin{itemize}
         \item $\varepsilon_i$ are independent.
-        \item $\text{E}(\varepsilon_i)=0$
-        \item $\text{V}(\varepsilon_i)=\sigma^2$
+        \item $\text{E}(\varepsilon_i)=\text{0}$
+        \item $\text{V}(\varepsilon_i)=\sigma^\text{2}$
     \end{itemize}
 \end{center}
 \end{tcolorbox}
@@ -84,23 +84,23 @@ Whilst the terms 'errors' and 'residuals' are often casually used interchangeabl
 
 ## Calculating the Value of a Residual
 
-For any given $x_i$, the equation of the least squares regression line $\hat{Y}_i=a+bx_i$ gives a \textit{predicted} value $\hat{Y}_i$, also referred to as a \textbf{fitted} value. For any data point $(x_i,y_i)$, the value of $y_i$ is called the \textbf{observed} value.
+For any given $x_i$, the equation of the least squares regression line $\hat{y}=a+bx$ gives a \textit{predicted} value $\hat{y}_i$, also referred to as a \textbf{fitted} value. For any data point $(x_i,y_i)$, the value of $y_i$ is called the \textbf{observed} value.
 
-The difference between an observed value $y_i$ and a corresponding fitted value $\hat{Y}_i$ is called a \textbf{residual}:
+The difference between an observed value $y_i$ and a corresponding fitted value $\hat{y}_i$ is called a \textbf{residual}:
 
 \begin{center}
     \begin{tikzpicture}
         \draw[fill=black!10] (8.2,0.8) rectangle (13,2.3);
         \draw[very thick,dashed] (3,1) -- (3,2);
-        \draw[semithick] (6,0) -- (0,2) node[left] {$\hat{Y}_i=a+bx_i$};
+        \draw[semithick] (6,0) -- (0,2) node[left] {$\hat{y}=a+bx$};
         \draw[fill=black] (3,2) circle (2pt) node[above] {$(x_i,y_i)$};
-        \node[below] at (3,0.9) {$(x_i,\hat{Y}_i)$};
+        \node[below] at (3,0.9) {$(x_i,\hat{y}_i)$};
         \draw[dashed] (3,1) -- (3,2);
         \draw[fill] (3,1) circle (1pt);
         \draw[-stealth] (4.5,2) -- (3.2,2);
         \node[right] at (4.5,2) {Observed, $y_i$};
         \draw[-stealth] (4.5,1) -- (3.2,1);
-        \node[right] at (4.5,1) {Fitted, $\hat{Y}_i$};
+        \node[right] at (4.5,1) {Fitted, $\hat{y}_i$};
         \draw[stealth-,dashed,thin] (3.2,1.5) -- (8,1.5);
         \node at (9.2,1.9) {Residual};
         \node at (10.25,1.85) {$=$};
@@ -110,13 +110,13 @@ The difference between an observed value $y_i$ and a corresponding fitted value 
         \node at (10.25,1.15) {$=$};
         \node at (10.95,1.2) {$y_i$};
         \node at (11.67,1.15) {$-$};
-        \node at (12.25,1.2) {$\hat{Y}_i$};
+        \node at (12.25,1.2) {$\hat{y}_i$};
         \node at (10.7,1.55) {\begin{minipage}{6cm}
             \begin{tcolorbox}[halign title=center,title=Calculating a Residual,center,colback=red!5,colframe=red!70!black]
             \vspace{-0.5cm}
 \begin{align*}
     \text{Residual}&=\text{Observed}-\text{Fitted}\\
-    e_i&=\hspace{0.7cm}y_i\hspace{0.5cm}-\hspace{0.3cm}\hat{Y}_i
+    e_i&=\hspace{0.7cm}y_i\hspace{0.5cm}-\hspace{0.3cm}\hat{y}_i
 \end{align*}
 \end{tcolorbox}
         \end{minipage}};
@@ -126,7 +126,7 @@ The difference between an observed value $y_i$ and a corresponding fitted value 
 \begin{multicols}{2}
     \begin{center}
     \begin{tikzpicture}[scale=0.7]
-        \draw[very thick] (0,0) -- (8,0.8) node[right] {$\hat{Y}=a+bx$};
+        \draw[very thick] (0,0) -- (8,0.8) node[right] {$\hat{y}=a+bx$};
         \draw[dashed] (1,1) -- (1,0.1);
         \draw[dashed] (2,-0.5) -- (2,0.2);
         \draw[thin,dashed] (3,0.7) -- (3,0.3);
@@ -152,12 +152,12 @@ Data points  \textit{below} the regression line have a \textit{negative} residua
 
 \end{multicols}
 
-To calculate a residual the fitted value, $\hat{Y}_i$, needs to first be found using the equation of the regression line.
+To calculate a residual the fitted value, $\hat{y}_i$, needs to first be found using the equation of the regression line.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 \textbf{Problem:}
 
-Students sitting a French exam are given a mark for each of the two components: speaking ($x$) and listening ($y$). From a random sample of 12 students, the $y$ on $x$ regression line is calculated as $\hat{Y}=4.854+0.578x$. Calculate the residual for a student who gains:\\
+Students sitting a French exam are given a mark for each of the two components: speaking ($x$) and listening ($y$). From a random sample of 12 students, the $y$ on $x$ regression line is calculated as $\hat{y}=\text{4.854}+\text{0.578}x$. Calculate the residual for a student who gains:\\
 
 \text{(a)   } 20 in the speaking test and 13 in the listening test.\\[0.5em]
 \text{(b)   } 16 in the speaking test and 15 in the listening test.
@@ -171,11 +171,11 @@ Students sitting a French exam are given a mark for each of the two components: 
 \begin{center}
     \begin{tikzpicture}
         \node[right] at (6.2,3.1) {(a)};
-        \node[right] at (7,3.3) { $\hat{Y}=4.854+0.578\times 20=16.414$};
-        \node[right] at (7,2.7) {Residual $=13-16.414=-3.414$};
+        \node[right] at (7,3.3) { $\hat{y}=\text{4.854}+\text{0.578}\times \text{20}=\text{16.414}$};
+        \node[right] at (7,2.7) {Residual $=\text{13}-\text{16.414}=-\text{3.414}$};
         \node[right] at (6.2,1.0) {(b)};
-        \node[right] at (7,1.2) { $\hat{Y}=4.854+0.578\times 16=14.102$};
-        \node[right] at (7,0.6) {Residual $=15-14.102=0.898$};
+        \node[right] at (7,1.2) { $\hat{y}=\text{4.854}+\text{0.578}\times \text{16}=\text{14.102}$};
+        \node[right] at (7,0.6) {Residual $=\text{15}-\text{14.102}=\text{0.898}$};
         \draw[-stealth] (0,0) -- (5.2,0) node[right] {$x$};
         \draw[-stealth] (0,0) -- (0,5.25) node[above] {$y$}; 
         \node at (2.5,-1) {speaking};
@@ -202,9 +202,9 @@ Students sitting a French exam are given a mark for each of the two components: 
 \draw[fill] (4,3.75) circle (0.05);
 \draw[fill] (2.25,2.25) circle (0.03);
 \draw[thin,stealth-] (20.5*0.25,0.25*14.7) -- (5.75,4.15);
-\node at (6,4.4) {$-3.414$};
+\node at (6,4.4) {$-\text{3.414}$};
 \draw[thin,stealth-] (3.8,3.7) -- (3.2,4.1);
-\node at (3.1,4.4) {$0.898$};
+\node at (3.1,4.4) {0.898};
     \end{tikzpicture}
 \end{center}
 
@@ -222,23 +222,23 @@ Students sitting a French exam are given a mark for each of the two components: 
     \renewcommand{\arraystretch}{1.2}
         \begin{tabular}{|c|c|c|c|c|}
              \hline
-             Regression Line $\hat{Y}=a+bx$ & Observed $x$ & Observed $y$ & Fitted $\hat{Y}$ & Residual $\varepsilon$\\
+             Regression Line $\hat{y}=a+bx$ & Observed $x_i$ & Observed $y_i$ & Fitted $\hat{y}_i$ & Residual $e_i$\\
              \hline
-             $\hat{Y}=5.3+0.1x$ & 7 & 8 & &  \\
+             $\hat{y}=\text{5.3}+\text{0.1}x$ & 7 & 8 & &  \\
              \hline
-             $\hat{Y}=-0.7+0.3x$ & 6.1 & 1.04 & &  \\
+             $\hat{y}=-\text{0.7}+\text{0.3}x$ & 6.1 & 1.04 & &  \\
              \hline
-             $\hat{Y}=180-2.5x$ & 40 & 178 &  & \\
+             $\hat{y}=\text{180}-\text{2.5}x$ & 40 & 178 &  & \\
              \hline
-             $\hat{Y}=-45+3.5x$ & 200 & & & $-$30 \\
+             $\hat{y}=-\text{45}+\text{3.5}x$ & 200 & & & $-$30 \\
              \hline
-             $\hat{Y}=100+20x$ & -15 & & & 50 \\
+             $\hat{y}=\text{100}+\text{20}x$ & -15 & & & 50 \\
              \hline
         \end{tabular}
     \renewcommand{\arraystretch}{1}
     \end{center}
     \item The relationship between the number of calories ($x$) and the carbohydrate content ($y$ grams) of different types of drinks available in a city's coffee shops can be described using the least squares regression line:
-        \[\hat{Y}=5.5572+0.6361x\]
+        \[\hat{y}=\text{5.5572}+\text{0.6361}x\]
     \begin{enumerate}
         \item Calculate the expected carbohydrate content for a small cappuccino, which contains 50 calories.
         \item Determine the value of the residuals for each of the following:
@@ -253,7 +253,7 @@ Students sitting a French exam are given a mark for each of the two components: 
         \begin{tikzpicture}[scale=0.8]
         \draw[-stealth] (0,0) -- (10,0) node[below] {$x$};
         \draw[-stealth] (0,0) -- (0,5.5) node[left] {$y$};
-        \draw[thick] (0.2*160-32,0.1*58.6-5) -- (0.2*205-32,0.1*93-5) node[right] {$\hat{Y}=-63.77+0.7649x$};
+        \draw[thick] (0.2*160-32,0.1*58.6-5) -- (0.2*205-32,0.1*93-5) node[right] {$\hat{y}=-\text{63.77}+\text{0.7649}x$};
         \foreach \x in {160,170,...,200}{
         \draw (0.2*\x-32,0) -- (0.2*\x-32,-0.1) node[below] {\x};
         }
@@ -361,9 +361,9 @@ Students sitting a French exam are given a mark for each of the two components: 
 
 The least squares regression model assumes that the variance of the errors is a constant for all $x_i$ (and $Y_i$):
 
-$$\text{V}(\varepsilon_i)=\sigma^2$$
+$$\text{V}(\varepsilon_i)=\sigma^\text{2}$$
 
-The error variance represents the variability of the response variable around the regression line, loosely indicated below by the series of arrows below.
+The error variance represents the variability of the response variable around the true regression line. Since this true regression line (with $\alpha$ and $\beta$) is never known, the error variance can only be *estimated* by observing the variability of the *residuals* around the estimated regression line. The series of arrows in the diagram loosely indicates this residual variability.
 
 \begin{center}
     \begin{tikzpicture}[scale=0.9]
@@ -372,7 +372,7 @@ The error variance represents the variability of the response variable around th
     \draw[ultra thick,stealth-stealth,black!30] (5,5*0.39+2.13+1.4) -- (5,5*0.39+2.13-1.4);
     \draw[ultra thick,stealth-stealth,black!30] (7,7*0.39+2.13+1.4) -- (7,7*0.39+2.13-1.4);
     \draw[ultra thick,stealth-stealth,black!30] (9,9*0.39+2.13+1.4) -- (9,9*0.39+2.13-1.4);
-        \draw[thick] (0,2.13) -- (10,6.02) node[right] {$\hat{Y}=\alpha+\beta x$};
+        \draw[thick] (0,2.13) -- (10,6.02) node[right] {$\hat{y}_i=a+b x_i$};
         \draw[fill] (6.955968,6.2978298) circle (0.05);
 \draw[fill] (7.912889,5.8402953) circle (0.05);
 \draw[fill] (1.868432,1.6709538) circle (0.05);
@@ -424,23 +424,24 @@ The error variance represents the variability of the response variable around th
 \draw[fill] (3.983993,2.6769287) circle (0.05);
 \draw[fill] (8.486224,3.7495115) circle (0.05);
     \node at (6,1) {constant variance of the errors $\varepsilon_i$};
+    \node at (6,0.2) {suggested by the approximately constant variance of the residuals $e_i$};
     \end{tikzpicture}
 \end{center}
 
-The error variance $\sigma^2$ is estimated using the sample of \textit{residuals} as:
+The error variance $\sigma^\text{2}$ is estimated using the sample of \textit{residuals} as:
 
 \begin{tcolorbox}[halign title=center,title=Estimating the Error Variance,center,colback=red!5,colframe=red!70!black,width=6cm]
-\[s^2=\dfrac{\text{SSR}}{n-2}\]
+\[s^\text{2}=\dfrac{\text{SSR}}{n-\text{2}}\]
 \end{tcolorbox}
 
-Where the (always non-negative) \textit{sum of squared residuals}, $\text{SSR}$, is calculated as:\hspace{0.5cm} $\text{SSR}=S_{yy}-\dfrac{S^2_{\phantom{..}xy}}{S_{xx}}$
+Where the (always non-negative) \textit{sum of squared residuals}, $\text{SSR}$, is calculated as:\hspace{0.5cm} $\text{SSR}=S_{yy}-\dfrac{S^\text{2}_{\phantom{..}xy}}{S_{xx}}$
 
-Both the formula for estimating the error variance $\sigma^2$ and the more convenient second formula for the sum of squared residuals $\text{SSR}$ are given on page 5 of the Data Booklet.
+Both the formula for estimating the error variance $\sigma^\text{2}$ and the more convenient second formula for the sum of squared residuals $\text{SSR}$ are given on page 5 of the Data Booklet.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} 
 
-Students sitting a French exam are given a mark for each of the two components: speaking ($x$) and listening ($y$). From a random sample of 12 students: $S_{xx}=344.9,\,S_{yy}=132.9,\,S_{xy}=193.6$.\\
+Students sitting a French exam are given a mark for each of the two components: speaking ($x$) and listening ($y$). From a random sample of 12 students: $S_{xx}=\text{344.9},\,S_{yy}=\text{132.9},\,S_{xy}=\text{193.6}$.\\
 
 \text{(a)   } Calculate the sum of squared residuals for this data set.\\[0.3em]
 \text{(b)   } Obtain an estimate of the error variance.
@@ -448,8 +449,8 @@ Students sitting a French exam are given a mark for each of the two components: 
 \tcblower
 \textbf{Solution:}
 
-\text{(a)   } $\text{SSR}=S_{yy}-\dfrac{S^2_{\phantom{..}xy}}{S_{xx}}=132.9-\dfrac{193.6^2}{344.9}=24.23$\\[0.7em]
-\text{(b)   } $s^2=\dfrac{\text{SSR}}{n-2}=\dfrac{24.23}{12-2}=2.423$
+\text{(a)   } $\text{SSR}=S_{yy}-\dfrac{S^\text{2}_{\phantom{..}xy}}{S_{xx}}=\text{132.9}-\dfrac{\text{193.6}^\text{2}}{\text{344.9}}=\text{24.23}$\\[0.7em]
+\text{(b)   } $s^\text{2}=\dfrac{\text{SSR}}{n-\text{2}}=\dfrac{\text{24.23}}{\text{12}-\text{2}}=\text{2.423}$
 \end{tcolorbox}
 
 \pagebreak
@@ -462,12 +463,12 @@ Students sitting a French exam are given a mark for each of the two components: 
     \item A bivariate random sample has summary statistics:
 \begin{center}
   \begin{tabular}{ccccccc}
-      $S_{xx}=28.92$ & \quad & $S_{yy}=495.0$ & \quad & $S_{xy}=105.3$ & \quad & $n=14$
+      $S_{xx}=\text{28.92}$ & \quad & $S_{yy}=\text{495.0}$ & \quad & $S_{xy}=\text{105.3}$ & \quad & $n=\text{14}$
   \end{tabular}
 \end{center}
 It is determined that a linear relationship appears to exist between the variables. 
 \begin{enumerate}
-        \item Obtain an estimate $s^2$ for the error variance, $\sigma^2$.
+        \item Obtain an estimate $s^\text{2}$ for the error variance, $\sigma^\text{2}$.
         \item Hence determine the value of $s$ for this bivariate data.
     \end{enumerate}
 \item 26 randomly selected trees in a forest have their diameter ($x$) at a set distance from the ground measured, in inches, and the height ($y$) of each tree also measured, in feet. The equation of the least squares regression line for $y$ on $x$ is obtained, and shown on the scatterplot below.
@@ -511,16 +512,16 @@ It is determined that a linear relationship appears to exist between the variabl
 \draw[fill] (0.9111540,0.914811) circle (0.03);
 \draw[thick] (0.5,0.1*40.57-4+0.473*0.5) -- (5.5,0.1*40.57-4+0.473*5.5);
 \node[right] at (8,3.5) {Summary statistics:};
-\node[right] at (8,2.9) {$\sum x=74.76$};
-\node[right] at (8,2.3) {$\sum x^2=253.76$};
-\node[right] at (8,1.7) {$\sum y=1408.3$};
-\node[right] at (8,1.1) {$\sum y^2=77277$};
-\node[right] at (8,0.5) {$\sum xy=4233.1$};
-\node[right] at (8,-0.1) {$n=26$};
+\node[right] at (8,2.9) {$\sum x=\text{74.76}$};
+\node[right] at (8,2.3) {$\sum x^\text{2}=\text{253.76}$};
+\node[right] at (8,1.7) {$\sum y=\text{1408.3}$};
+\node[right] at (8,1.1) {$\sum y^\text{2}=\text{77277}$};
+\node[right] at (8,0.5) {$\sum xy=\text{4233.1}$};
+\node[right] at (8,-0.1) {$n=\text{26}$};
     \end{tikzpicture}
 \end{center}
     \begin{enumerate}
-        \item Obtain an estimate $s^2$ for the error variance, $\sigma^2$.
+        \item Obtain an estimate $s^\text{2}$ for the error variance, $\sigma^\text{2}$.
         \item Hence determine the value of $s$ for this bivariate data.
     \end{enumerate}
 \item A running website randomly selected eleven amateur runners who recently completed a marathon and asked them to complete a survey which included their finishing time in the marathon and information about their training routine. The scatterplot below shows, for each runner, their finishing time ($x$, in hours) and the total distance they ran in the final four weeks of their training ($y$, in miles).
@@ -552,18 +553,18 @@ It is determined that a linear relationship appears to exist between the variabl
 \node at (-0.7,2.5) {Distance};
 \node at (-0.7,2) {(miles)};
 \node[right] at (-4.5,4) {Summary statistics:};
-\node[right] at (-4.5,3.4) {$\sum x=44.5$};
-\node[right] at (-4.5,2.8) {$\sum x^2=191.21$};
-\node[right] at (-4.5,2.2) {$\sum y=1098$};
-\node[right] at (-4.5,1.6) {$\sum y^2=116768$};
-\node[right] at (-4.5,1) {$\sum xy=4179.2$};
-\node[right] at (-4.5,0.4) {$n=11$};
+\node[right] at (-4.5,3.4) {$\sum x=\text{44.5}$};
+\node[right] at (-4.5,2.8) {$\sum x^\text{2}=\text{191.21}$};
+\node[right] at (-4.5,2.2) {$\sum y=\text{1098}$};
+\node[right] at (-4.5,1.6) {$\sum y^\text{2}=\text{116768}$};
+\node[right] at (-4.5,1) {$\sum xy=\text{4179.2}$};
+\node[right] at (-4.5,0.4) {$n=\text{11}$};
 \end{tikzpicture}
 \end{center}  
 \vspace{-1cm}
 \begin{enumerate}
         \item Make a comment on the scatterplot.
-        \item Obtain an estimate $s^2$ for the error variance, $\sigma^2$.
+        \item Obtain an estimate $s^\text{2}$ for the error variance, $\sigma^\text{2}$.
         \item Determine the equation of the least squares regression line.
         \item Calculate the correlation coefficient for the data and comment on its value.
         \item A runner, not shown, completed the marathon in 3 hours and 30 minutes, after running a total of 110 miles in the four weeks before the race. Calculate the residual for this runner.
@@ -574,7 +575,7 @@ It is determined that a linear relationship appears to exist between the variabl
 
 ## The Coefficient of Determination
 
-The *coefficient of determination*, $R^2$, is the proportion of the total variation in the response variable, $Y_i$, that is explained by the linear regression model. The higher the value of $R^2$, the less unexplained variation remains in the response variable $Y_i$. This means that the coefficient of determination is a very useful measure of how well a model explains variation in the data. (However, it guarantee that a linear model is appropriate, nor does it imply *causation*).
+The *coefficient of determination*, $R^\text{2}$, is the proportion of the total variation in the response variable, $Y_i$, that is explained by the linear regression model. The higher the value of $R^\text{2}$, the less unexplained variation remains in the response variable $Y_i$. This means that the coefficient of determination is a very useful measure of how well a model explains variation in the data. (However, it does not guarantee that a linear model is appropriate, nor does it imply *causation*).
 
 \vspace{-0.3cm}
 
@@ -582,7 +583,7 @@ The *coefficient of determination*, $R^2$, is the proportion of the total variat
         \begin{tikzpicture}
             \draw[-stealth] (0,0) -- (5,0) node[right] {$x$};
             \draw[-stealth] (0,0) -- (0,3) node[above] {$y$};
-            \node at (2.5,0.7) {$R^2=0.1246$};
+            \node at (2.5,0.7) {$R^\text{2}=\text{0.1246}$};
             \draw[thick] (0.2,1.87+0.13*0.2) -- (4.8,1.87+0.13*4.8);
             \draw[fill=black] (0.2,1.53373841023011) circle (0.03);
 \draw[fill=black] (0.4,1.20717964535332) circle (0.03);
@@ -610,7 +611,7 @@ The *coefficient of determination*, $R^2$, is the proportion of the total variat
 \draw[fill=black] (4.8,1.98816925972809) circle (0.03);
             \draw[-stealth] (12,0) -- (17,0) node[right] {$x$};
             \draw[-stealth] (12,0) -- (12,3) node[above] {$y$};
-            \node at (16,2.5) {$R^2=0.9604$};
+            \node at (16,2.5) {$R^\text{2}=\text{0.9604}$};
             \draw[fill=black] (12.2,2.85798900535176) circle (0.03);
             \draw[thick] (12.2,3-0.54*0.2) -- (16.8,3-0.54*4.8);
 \draw[fill=black] (12.4,2.60537287961341) circle (0.03);
@@ -641,7 +642,7 @@ The *coefficient of determination*, $R^2$, is the proportion of the total variat
 \node at (8.5,1.7) {
 \begin{minipage}{5.9cm}
 \begin{tcolorbox}[halign title=center,title=Coefficient of Determination,center,colback=red!5,colframe=red!70!black]
-$R^2=\dfrac{\text{explained variation}}{\text{total variation}}$
+$R^\text{2}=\dfrac{\text{explained variation}}{\text{total variation}}$
 \end{tcolorbox}
 \end{minipage}
 };
@@ -658,14 +659,14 @@ For the linear regression models covered in this course, the coefficient of dete
         \begin{minipage}{2.5cm}
         \begin{tcolorbox}[halign title=center,center,colback=red!5,colframe=red!70!black]
 \vspace{-0.5cm}
-\[R^2=r^2\]
+\[R^\text{2}=r^\text{2}\]
 \end{tcolorbox}
         \end{minipage}
 };
         \end{tikzpicture}    
 \end{center}
 
-Both the formula above and the interpretation of the coefficient of determination, as a proportion, implies that $0\leqslant R^2 \leqslant 1$. Note that $R^2$ does not indicate the direction of the relationship; the sign of $r$ must be used for this.
+Both the formula above and the interpretation of the coefficient of determination, as a proportion, implies that $\text{0}\leqslant R^\text{2} \leqslant \text{1}$. Note that $R^\text{2}$ does not indicate the direction of the relationship; the sign of $r$ must be used for this.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 \textbf{Problem:} 
@@ -674,7 +675,7 @@ Students sitting a French exam are given a mark for each of the two components: 
 
 \begin{center}
     \begin{tabular}{ccccc}
-        $S_{xx}=334.9$ & $S_{yy}=132.9$ & $S_{xy}=193.6$ & $n=12$
+        $S_{xx}=\text{334.9}$ & $S_{yy}=\text{132.9}$ & $S_{xy}=\text{193.6}$ & $n=\text{12}$
     \end{tabular}
 \end{center}
 
@@ -682,7 +683,7 @@ A linear regression model is proposed, and an equation for the regression line o
 
 \begin{center}
     \begin{tabular}{c}
-        $\hat{Y}=4.854+0.578x$
+        $\hat{y}=\text{4.854}+\text{0.578}x$
     \end{tabular}
 \end{center}
 
@@ -694,8 +695,8 @@ Calculate the coefficient of determination and interpret this value in context.
 \vspace{-0.5cm}
 
 \begin{align*}
-r&=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}=\dfrac{193.6}{\sqrt{334.9\times 132.9}}=0.9177\\[1em]
-R^2&=r^2=0.9177^2=0.842
+r&=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}=\dfrac{\text{193.6}}{\sqrt{\text{334.9}\times \text{132.9}}}=\text{0.9177}\\[1em]
+R^\text{2}&=r^\text{2}=\text{0.9177}^\text{2}=\text{0.842}
 \end{align*}
 
 This indicates that 84.2\% of the variation in listening marks can be explained by the linear model.
@@ -716,7 +717,7 @@ The conclusion from the example above could also be phrased as:
     \item A bivariate random sample has summary statistics:
 \begin{center}
   \begin{tabular}{ccccccc}
-      $S_{xx}=28.92$ & \quad & $S_{yy}=495.0$ & \quad & $S_{xy}=105.3$ & \quad & $n=14$
+      $S_{xx}=\text{28.92}$ & \quad & $S_{yy}=\text{495.0}$ & \quad & $S_{xy}=\text{105.3}$ & \quad & $n=\text{14}$
   \end{tabular}
 \end{center}
 Determine the value of the coefficient of determination and interpret it.
@@ -843,7 +844,7 @@ Determine the value of the coefficient of determination and interpret it.
         \texttt{top\_speed = 269.2 - 1.72 $\times$ lap\_time} && \texttt{34} && \texttt{-0.670}&& \texttt{8.49}
     \end{tabular}
 \end{enumerate} 
-\item A seller on an online auction site has a stock of used digital cameras, all aged somewhere between 2 and 12 years. For each camera, the total number of photos taken (the \textit{shutter count}) is determined using special software. A $y$ on $x$ regression line is shown on the scatterplot of the data below. A correlation coefficient is calculated for the data of $0.718$.
+\item A seller on an online auction site has a stock of used digital cameras, all aged somewhere between 2 and 12 years. For each camera, the total number of photos taken (the \textit{shutter count}) is determined using special software. A $y$ on $x$ regression line is shown on the scatterplot of the data below. A correlation coefficient is calculated for the data of 0.718.
     \begin{multicols}{2}
     \begin{enumerate}
         \item Make one comment on the scatterplot.
@@ -991,9 +992,9 @@ The true value of the \textit{slope parameter}, $\beta$, cannot be known without
         \draw[very thin,dashed] (0,1) -- (4.5,4.5*0.5+1);
         \draw[very thick] (0,0.44) -- (4,4*0.84+0.44);
         \node at (6.4,2.5) {Population:};
-            \node at (6.4,2) {$\beta=0.5$};
+            \node at (6.4,2) {$\beta=\text{0.5}$};
             \node at (6.4,1.2) {\textbf{Sample}:};
-            \node at (6.4,0.7) {$b=0.84$};
+            \node at (6.4,0.7) {$b=\text{0.84}$};
         \end{tikzpicture}
     \end{center}
     \begin{center}
@@ -1002,9 +1003,9 @@ The true value of the \textit{slope parameter}, $\beta$, cannot be known without
             \draw[-stealth] (-0.3,0) -- (4.5,0) node[right] {$x$};
             \draw[-stealth] (-0.3,0) -- (-0.3,4) node[left] {$y$};
             \node at (6.4,2.5) {Population:};
-            \node at (6.4,2) {$\beta=0$};
+            \node at (6.4,2) {$\beta=\text{0}$};
             \node at (6.4,1.2) {\textbf{Sample}:};
-            \node at (6.4,0.7) {$b=-0.66$};
+            \node at (6.4,0.7) {$b=-\text{0.66}$};
             \draw[fill] (1.8773691,2.03036688) circle (0.02);
 \draw[fill] (0.5063114,1.78542006) circle (0.02);
 \draw[fill] (2.1449772,2.47325384) circle (0.02);
@@ -1068,7 +1069,7 @@ The true value of the \textit{slope parameter}, $\beta$, cannot be known without
     \end{center}
 \end{multicols}
 
-The slope parameter $\beta$ can be *positive*, *negative* or *zero*. Where $\beta=0$ it can be said that knowing $x_i$ has no value in predicting $y_i$. In other words, a linear regression model is only \textbf{useful for prediction} in cases where the slope parameter is \textit{non-zero}, or $\beta \ne 0$. The \textit{parametric} \textbf{Test for Beta} assesses whether data from a sample provide evidence to suggest that this is the case. The test statistic below follows a $t$-distribution with $n-2$ degrees of freedom, and in this course the test will always be \textit{two-tailed} with hypotheses $\text{H}_0: \beta=0$ and $\text{H}_1: \beta\ne 0$.
+The slope parameter $\beta$ can be *positive*, *negative* or *zero*. Where $\beta=0$ it can be said that knowing $x_i$ has no value in predicting $y_i$. In other words, a linear regression model is only \textbf{useful for prediction} in cases where the slope parameter is \textit{non-zero}, or $\beta \ne \text{0}$. The \textit{parametric} \textbf{Test for Beta} assesses whether data from a sample provide evidence to suggest that this is the case. The test statistic below follows a $t$-distribution with $n-\text{2}$ degrees of freedom, and in this course the test will always be \textit{two-tailed} with hypotheses $\text{H}_\text{0}: \beta=\text{0}$ and $\text{H}_\text{1}: \beta\ne \text{0}$.
 
 \begin{figure}[H]
   \centering
@@ -1086,7 +1087,7 @@ The slope parameter $\beta$ can be *positive*, *negative* or *zero*. Where $\bet
   \centering
 \begin{tcolorbox}[halign title=center,title=Conditions,center,colback=red!5,colframe=red!70!black,width=12cm,height=2.4cm]
 \begin{itemize}
-    \item $\varepsilon_i$ are independent and identically distributed as $\text{N}(0,\sigma^2)$.
+    \item $\varepsilon_i$ are independent and identically distributed as $\text{N}(\text{0},\sigma^\text{2})$.
     \item The data was obtained through random sampling.
 \end{itemize}
 \end{tcolorbox}
@@ -1101,7 +1102,7 @@ The slope parameter $\beta$ can be *positive*, *negative* or *zero*. Where $\bet
 
 \begin{center}
   \begin{tabular}{ccccccc}
-      $S_{xx}=157.875$ & \qquad & $S_{yy}=188$ & \qquad & $S_{xy}=-133.5$ & \qquad & $n=8$
+      $S_{xx}=\text{157.875}$ & \qquad & $S_{yy}=\text{188}$ & \qquad & $S_{xy}=-\text{133.5}$ & \qquad & $n=\text{8}$
   \end{tabular}
 \end{center}
 
@@ -1116,18 +1117,18 @@ Test at the 5\% significance level whether a linear regression model would be us
 
 \begin{math}
 \begin{array}{ll}
-      H_0: & \beta=0\\
-      H_1: & \beta \ne 0
+      H_\text{0}: & \beta=\text{0}\\
+      H_\text{1}: & \beta \ne \text{0}
     \end{array}
 \end{math}
 
 \vspace{0.3cm}
 
-$b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{-133.5}{157.875}=-0.8456$\\[0.5em]
+$b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{-\text{133.5}}{\text{157.875}}=-\text{0.8456}$\\[0.5em]
 
-$\text{SSR}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=188-\dfrac{(-133.5)^2}{157.875}=75.11, \quad s=\sqrt{\dfrac{\text{SSR}}{n-2}}=\sqrt{\dfrac{75.11}{8-2}}=3.538$\\[1.4em]
+$\text{SSR}=S_{yy}-\dfrac{(S_{xy})^\text{2}}{S_{xx}}=\text{188}-\dfrac{(-\text{133.5})^\text{2}}{\text{157.875}}=\text{75.11}, \quad s=\sqrt{\dfrac{\text{SSR}}{n-\text{2}}}=\sqrt{\dfrac{\text{75.11}}{\text{8}-\text{2}}}=\text{3.538}$\\[1.4em]
 
-Test statistic: $t=\dfrac{b\sqrt{S_{xx}}}{s}=\dfrac{-0.8456\times \sqrt{157.875}}{3.538}=-3.003$
+Test statistic: $t=\dfrac{b\sqrt{S_{xx}}}{s}=\dfrac{-\text{0.8456}\times \sqrt{\text{157.875}}}{\text{3.538}}=-\text{3.003}$
 
 \hspace{11.5cm}
 \begin{tikzpicture}[remember picture,overlay]
@@ -1156,18 +1157,18 @@ Test statistic: $t=\dfrac{b\sqrt{S_{xx}}}{s}=\dfrac{-0.8456\times \sqrt{157.875}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
 \draw [semithick, black]  (axis cs:-1.96,0) -- (axis cs:-1.96,\valueA);
 \draw [semithick, black]  (axis cs:1.96,0) -- (axis cs:1.96,\valueA);
-\node[below] at (axis cs: 0,0)  {$0$};
-\node[above] at (axis cs: 0,\valueB)  {$t_6$};
-\node[below] at (axis cs: -1.9, 0) {$-2.447$};
+\node[below] at (axis cs: 0,0)  {0};
+\node[above] at (axis cs: 0,\valueB)  {$t_\text{6}$};
+\node[below] at (axis cs: -1.9, 0) {$-\text{2.447}$};
 \node[above] at (axis cs: -2.4,\valueA) {2.5\%};
-\node[below] at (axis cs: 1.9, 0) {$2.447$};
+\node[below] at (axis cs: 1.9, 0) {2.447};
 \node[above] at (axis cs: 2.4,\valueA) {2.5\%};
 \end{axis}
 \end{tikzpicture}\\
 
-Critical value: $t=-2.447$\quad($\alpha=0.05$, two-tailed and $\nu=6$ degrees of freedom)\\
+Critical value: $t=-\text{2.447}$\quad($\alpha=\text{0.05}$, two-tailed and $\nu=\text{6}$ degrees of freedom)\\
 
-Since $-3.003<-2.447$, reject $\text{H}_0$ at the 5\% level of significance. There is  evidence to suggest that the slope parameter is not zero, so evidence that a linear model would be useful for prediction.
+Since $-\text{3.003}<-\text{2.447}$, reject $\text{H}_\text{0}$ at the 5\% level of significance. There is  evidence to suggest that the slope parameter is not zero, so evidence that a linear model would be useful for prediction.
 
 \end{tcolorbox}
 
@@ -1181,7 +1182,7 @@ Since $-3.003<-2.447$, reject $\text{H}_0$ at the 5\% level of significance. The
         \item A random sample of bivariate data, sample size 27, yields the following summary statistics:
         \begin{center}
             \begin{tabular}{ccccccc}
-                $S_{xx}=87.8$ & \qquad & $S_{yy}=415.5$ & \qquad & $S_{xy}=-129.6$ & \qquad & $\text{SSR}=224.2$ 
+                $S_{xx}=\text{87.8}$ & \qquad & $S_{yy}=\text{415.5}$ & \qquad & $S_{xy}=-\text{129.6}$ & \qquad & $\text{SSR}=\text{224.2}$ 
             \end{tabular}
         \end{center}
         A test for $\beta$  is to be performed on the data.
@@ -1197,7 +1198,7 @@ Since $-3.003<-2.447$, reject $\text{H}_0$ at the 5\% level of significance. The
         \texttt{top\_speed = 269.2 - 1.72 $\times$ lap\_time} && \texttt{34} && \texttt{8.49} && \texttt{638.6}
     \end{tabular}\\[0.5em]
     Perform a test for the slope parameter at the 10\% level of significance to assess whether there is evidence that a linear model is useful for prediction for this data.
-    \item A nutritionist purchases a sample of drinks sold from vending machines inside a selection of gyms and health centres in his area. The protein content in grams and the sugar content in grams is recorded for each drink. \textbf{Figure 1} shows a scatterplot of the data and \textbf{Output 1} shows results of a hypothesis test conducted (where $\alpha=0.05$) to assess whether a linear model would be useful for prediction. 
+    \item A nutritionist purchases a sample of drinks sold from vending machines inside a selection of gyms and health centres in his area. The protein content in grams and the sugar content in grams is recorded for each drink. \textbf{Figure 1} shows a scatterplot of the data and \textbf{Output 1} shows results of a hypothesis test conducted (where $\alpha=\text{0.05}$) to assess whether a linear model would be useful for prediction. 
     \begin{multicols}{2}
         \begin{center}
         \textbf{Figure 1}\\
@@ -1272,7 +1273,7 @@ Since $-3.003<-2.447$, reject $\text{H}_0$ at the 5\% level of significance. The
     \item A sample of bivariate data with summary statistics below is proposed to be used for a linear model:
         \begin{center}
             \begin{tabular}{ccccccc}
-                $S_{xx}=75.6$ & \qquad & $S_{xy}=-235.2$ & \qquad & $s^2=4.04$ & \qquad & $n=70$
+                $S_{xx}=\text{75.6}$ & \qquad & $S_{xy}=-\text{235.2}$ & \qquad & $s^\text{2}=\text{4.04}$ & \qquad & $n=\text{70}$
             \end{tabular}
         \end{center}
         Conduct a parametric test at the 1\% level of significance to assess whether there is evidence that the slope parameter is non-zero.
@@ -1292,7 +1293,7 @@ Since $-3.003<-2.447$, reject $\text{H}_0$ at the 5\% level of significance. The
 
 ## Test for the Correlation Coefficient $\rho$
 
-The previously introduced correlation coefficient, $r$, is a sample statistic which measures the strength of the linear association between two variables. It is an estimate of the population parameter $\rho$ (\textit{``rho''}), where $-1\leqslant \rho \leqslant 1$. If $\rho=0$ then there is no \textit{linear} relationship between the variables. Given a sample of bivariate data for which there exists \textit{no} linear relationship, it is common for the sample to give a \textit{non-zero} value for $r$:
+The previously introduced correlation coefficient, $r$, is a sample statistic which measures the strength of the linear association between two variables. It is an estimate of the population parameter $\rho$ (\textit{``rho''}), where $-\text{1}\leqslant \rho \leqslant \text{1}$. If $\rho=\text{0}$ then there is no \textit{linear} relationship between the variables. Given a sample of bivariate data for which there exists \textit{no} linear relationship, it is common for the sample to give a \textit{non-zero} value for $r$:
 
 \vspace{-0.3cm}
 \begin{center}
@@ -1300,15 +1301,15 @@ The previously introduced correlation coefficient, $r$, is a sample statistic wh
             \draw[-stealth] (0,0) -- (5,0) node[right] {$x$};
             \draw[-stealth] (0,0) -- (0,3) node[above] {$y$};
             \node at (6.4,2.5) {Population:};
-            \node at (6.4,2) {$\rho=0$};
+            \node at (6.4,2) {$\rho=\text{0}$};
             \node at (6.4,1.2) {\textbf{Sample}:};
-            \node at (6.4,0.7) {$r=0.639$};
+            \node at (6.4,0.7) {$r=\text{0.639}$};
             \draw[-stealth] (10,0) -- (15,0) node[right] {$x$};
             \draw[-stealth] (10,0) -- (10,3) node[above] {$y$};
             \node at (16.4,2.5) {Population:};
-            \node at (16.4,2) {$\rho=0.791$};
+            \node at (16.4,2) {$\rho=\text{0.791}$};
             \node at (16.4,1.2) {\textbf{Sample}:};
-            \node at (16.4,0.7) {$r=0.634$};
+            \node at (16.4,0.7) {$r=\text{0.634}$};
             \draw[fill=black] (0.1,2.34770818082416) circle (0.02);
 \draw[fill=black] (0.22,2.79368786956234) circle (0.02);
 \draw[fill=black] (0.34,1.37527333327185) circle (0.02);
@@ -1409,7 +1410,7 @@ The previously introduced correlation coefficient, $r$, is a sample statistic wh
 \end{center}
 
 \vspace{-0.3cm}
-The \textit{parametric} \textbf{Test for Rho} assesses a sample of bivariate data for evidence of a \textbf{linear association} between the variables, or $\rho\ne 0$. The test statistic below follows a $t_{n-2}$ distribution, and in this course the test will always be \textit{two-tailed} with hypotheses $\text{H}_0:\rho=0$ and $\text{H}_1:\rho\ne 0$.
+The \textit{parametric} \textbf{Test for Rho} assesses a sample of bivariate data for evidence of a \textbf{linear association} between the variables, or $\rho\ne \text{0}$. The test statistic below follows a $t_{n-\text{2}}$ distribution, and in this course the test will always be \textit{two-tailed} with hypotheses $\text{H}_\text{0}:\rho=\text{0}$ and $\text{H}_\text{1}:\rho\ne \text{0}$.
 
 \begin{figure}[H]
   \centering
@@ -1418,7 +1419,7 @@ The \textit{parametric} \textbf{Test for Rho} assesses a sample of bivariate dat
 \begin{centering}
 \begin{tcolorbox}[halign title=center,title=Test Statistic,center,colback=red!5,colframe=red!70!black,height=2.8cm]
 \vspace{-0.3cm}
-\[t_{n-2}=\dfrac{r\sqrt{n-2}}{\sqrt{1-r^2}}\]
+\[t_{n-\text{2}}=\dfrac{r\sqrt{n-\text{2}}}{\sqrt{\text{1}-r^\text{2}}}\]
 \end{tcolorbox}
 \end{centering}
 \end{minipage}%
@@ -1449,7 +1450,7 @@ Any conclusion should state whether there is sufficient evidence to suggest a li
 
 \begin{center}
   \begin{tabular}{ccccccc}
-      $S_{xx}=157.875$ & \qquad & $S_{yy}=188$ & \qquad & $S_{xy}=-133.5$ & \qquad & $n=8$
+      $S_{xx}=\text{157.875}$ & \qquad & $S_{yy}=\text{188}$ & \qquad & $S_{xy}=-\text{133.5}$ & \qquad & $n=\text{8}$
   \end{tabular}
 \end{center}
 
@@ -1469,9 +1470,9 @@ Test at the 5\% significance level for evidence of a linear association between 
 
 \vspace{0.5cm}
 
-$r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}=\dfrac{-133.5}{\sqrt{157.875\times 188}}=-0.7749$\\[1em]
+$r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}=\dfrac{-\text{133.5}}{\sqrt{\text{157.875}\times \text{188}}}=-\text{0.7749}$\\[1em]
 
-Test statistic: $t=\dfrac{r\sqrt{n-2}}{\sqrt{1-r^2}}=\dfrac{-0.7749\sqrt{8-2}}{\sqrt{1-(-0.7749)^2}}=-3.003$
+Test statistic: $t=\dfrac{r\sqrt{n-\text{2}}}{\sqrt{\text{1}-r^\text{2}}}=\dfrac{-\text{0.7749}\sqrt{\text{8}-\text{2}}}{\sqrt{\text{1}-(-\text{0.7749})^\text{2}}}=-\text{3.003}$
 \hspace{1cm}
 \begin{tikzpicture}[overlay]
 \begin{axis}[
@@ -1499,18 +1500,18 @@ Test statistic: $t=\dfrac{r\sqrt{n-2}}{\sqrt{1-r^2}}=\dfrac{-0.7749\sqrt{8-2}}{\
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
 \draw [semithick, black]  (axis cs:-1.96,0) -- (axis cs:-1.96,\valueA);
 \draw [semithick, black]  (axis cs:1.96,0) -- (axis cs:1.96,\valueA);
-\node[below] at (axis cs: 0,0)  {$0$};
-\node[above] at (axis cs: 0,\valueB)  {$t_6$};
-\node[below] at (axis cs: -1.9, 0) {$-2.447$};
+\node[below] at (axis cs: 0,0)  {0};
+\node[above] at (axis cs: 0,\valueB)  {$t_\text{6}$};
+\node[below] at (axis cs: -1.9, 0) {$-\text{2.447}$};
 \node[above] at (axis cs: -2.4,\valueA) {2.5\%};
-\node[below] at (axis cs: 1.9, 0) {$2.447$};
+\node[below] at (axis cs: 1.9, 0) {$\text{2.447}$};
 \node[above] at (axis cs: 2.4,\valueA) {2.5\%};
 \end{axis}
 \end{tikzpicture}\\[0.8em]
 
-Critical value: $t=-2.447$\quad ($\alpha=0.05$, two-tailed with $\nu=6$ degrees of freedom)\\
+Critical value: $t=-\text{2.447}$\quad ($\alpha=\text{0.05}$, two-tailed with $\nu=\text{6}$ degrees of freedom)\\
 
-Since $-3.003<-2.447$, reject $\text{H}_0$ at the 5\% level of significance.\newline There is sufficient evidence to suggest that there is a linear association between the two variables.
+Since $-\text{3.003}<-\text{2.447}$, reject $\text{H}_\text{0}$ at the 5\% level of significance.\newline There is sufficient evidence to suggest that there is a linear association between the two variables.
 
 \end{tcolorbox}
 
@@ -1531,7 +1532,7 @@ Since $-3.003<-2.447$, reject $\text{H}_0$ at the 5\% level of significance.\new
     \item A bivariate random sample has summary statistics:
     \begin{center}
         \begin{tabular}{ccccccc}
-            $S_{xx}=28.92$ & \quad & $S_{yy}=495.0$ & \quad & $S_{xy}=105.3$ & \quad & $n=14$
+            $S_{xx}=\text{28.92}$ & \quad & $S_{yy}=\text{495.0}$ & \quad & $S_{xy}=\text{105.3}$ & \quad & $n=\text{14}$
         \end{tabular}
     \end{center}
     Perform a parametric test to assess at the 10\% level of significance whether there is sufficient evidence to suggest a linear association exists between $x$ and $y$.
@@ -1651,7 +1652,7 @@ All least squares regression lines covered so far have been $y$ *on* $x$ regress
 If the prediction of $x$ values based on $y$ values is of interest, it is necessary to obtain the equation of an $x$ *on* $y$ regression line. This takes a different form and uses different values of $a$ and $b$ as shown below:
 
 \begin{tcolorbox}[halign title=center,title=Calculating an $x$ on $y$ Regression Line,center,colback=red!5,colframe=red!70!black,width=11cm]
-$\hat{X}=a+by \qquad \text{where} \qquad b=\dfrac{S_{xy}}{S_{yy}} \qquad \text{and} \qquad a=\bar{x}-b\bar{y}$
+$\hat{x}=a+by \qquad \text{where} \qquad b=\dfrac{S_{xy}}{S_{yy}} \qquad \text{and} \qquad a=\bar{x}-b\bar{y}$
 \end{tcolorbox}
 
 \vspace{-0.1cm}
@@ -1732,8 +1733,8 @@ Students sitting a French exam are given a mark for each of the two components: 
 
 \begin{center}
     \begin{tabular}{ccccc}
-        $\Sigma x=157$ & $\Sigma x^2 =2389$ & $\Sigma y=149$ & $\Sigma y^2=1983$ & $\Sigma xy=2143$\\[1em]
-        $S_{xx}=334.9$ & $S_{yy}=132.9$ & $S_{xy}=193.6$ & $n=12$ & $r=0.9177$
+        $\Sigma x=\text{157}$ & $\Sigma x^\text{2} =\text{2389}$ & $\Sigma y=\text{149}$ & $\Sigma y^\text{2}=\text{1983}$ & $\Sigma xy=\text{2143}$\\[1em]
+        $S_{xx}=\text{334.9}$ & $S_{yy}=\text{132.9}$ & $S_{xy}=\text{193.6}$ & $n=\text{12}$ & $r=\text{0.9177}$
     \end{tabular}
 \end{center}
 
@@ -1742,15 +1743,15 @@ Determine the equation for the least squares regression line of $x$ on $y$, and 
 \tcblower
 \textbf{Solution:}\\
 
-$b=\dfrac{S_{xy}}{S_{yy}}=\dfrac{193.6}{132.9}=1.457$\\[0.1em]
+$b=\dfrac{S_{xy}}{S_{yy}}=\dfrac{\text{193.6}}{\text{132.9}}=\text{1.457}$\\[0.1em]
 
-$a=\bar{x}-b\bar{y}=\dfrac{157}{12}-1.457\times \dfrac{149}{12}=-5.008$\\[0.1em]
+$a=\bar{x}-b\bar{y}=\dfrac{\text{157}}{\text{12}}-\text{1.457}\times \dfrac{\text{149}}{\text{12}}=-\text{5.008}$\\[0.1em]
 
-$\hat{X}_i=-5.008+1.457y_i$\\[0.5em]
+$\hat{x}=-\text{5.008}+\text{1.457}y$\\[0.5em]
 
 For a student with a listening mark ($y$) of 17:\\[0.1em]
 
-$\hat{X}=-5.008+1.457\times 17=19.76$
+$\hat{x}=-\text{5.008}+\text{1.457}\times \text{17}=\text{19.76}$
 
 \end{tcolorbox}
 
@@ -1764,7 +1765,7 @@ $\hat{X}=-5.008+1.457\times 17=19.76$
     \item A bivariate sample has summary statistics:
 \begin{center}
   \begin{tabular}{ccccccccccc}
-      $\sum x=117$ & \quad & $\sum x^2=1869$ & \quad & $\sum y=660$ & \quad & $\sum y^2=54638$ & \quad & $\sum xy=9519$ & \quad & $n=8$
+      $\sum x=\text{117}$ & \quad & $\sum x^\text{2}=\text{1869}$ & \quad & $\sum y=\text{660}$ & \quad & $\sum y^\text{2}=\text{54638}$ & \quad & $\sum xy=\text{9519}$ & \quad & $n=\text{8}$
   \end{tabular}
 \end{center}
 It is determined from inspecting a scatterplot that there appears to be a linear relationship between the variables. Obtain the equation of the least squares regression line of $x$ on $y$.
@@ -1810,12 +1811,12 @@ It is determined from inspecting a scatterplot that there appears to be a linear
 \draw[fill] (0.9111540,0.914811) circle (0.04);
 \draw[thick] (0.33,0.1*40.5-4) -- (5.42,0.1*68-4);
 \node[right] at (9,3.3) {Summary statistics:};
-\node[right] at (9,2.7) {$\sum x=74.76$};
-\node[right] at (9,2.1) {$\sum x^2=253.76$};
-\node[right] at (9,1.5) {$\sum y=1408.3$};
-\node[right] at (9,0.9) {$\sum y^2=77277$};
-\node[right] at (9,0.3) {$\sum xy=4233.1$};
-\node[right] at (9,-0.3) {$n=26$};
+\node[right] at (9,2.7) {$\sum x=\text{74.76}$};
+\node[right] at (9,2.1) {$\sum x^\text{2}=\text{253.76}$};
+\node[right] at (9,1.5) {$\sum y=\text{1408.3}$};
+\node[right] at (9,0.9) {$\sum y^\text{2}=\text{77277}$};
+\node[right] at (9,0.3) {$\sum xy=\text{4233.1}$};
+\node[right] at (9,-0.3) {$n=\text{26}$};
     \end{tikzpicture}
 \end{center}
 \vspace{-0.3cm}
@@ -1853,18 +1854,18 @@ It is determined from inspecting a scatterplot that there appears to be a linear
 \node at (-2,2.5) {Distance};
 \node at (-2,2) {(miles)};
 \node[right] at (9,3.8) {Summary statistics:};
-\node[right] at (9,3.2) {$\sum x=44.5$};
-\node[right] at (9,2.6) {$\sum x^2=191.21$};
-\node[right] at (9,2.0) {$\sum y=1098$};
-\node[right] at (9,1.4) {$\sum y^2=116768$};
-\node[right] at (9,0.8) {$\sum xy=4179.2$};
-\node[right] at (9,0.2) {$n=11$};
+\node[right] at (9,3.2) {$\sum x=\text{44.5}$};
+\node[right] at (9,2.6) {$\sum x^\text{2}=\text{191.21}$};
+\node[right] at (9,2.0) {$\sum y=\text{1098}$};
+\node[right] at (9,1.4) {$\sum y^\text{2}=\text{116768}$};
+\node[right] at (9,0.8) {$\sum xy=\text{4179.2}$};
+\node[right] at (9,0.2) {$n=\text{11}$};
 \end{tikzpicture}
 \end{center}  
 
 \vspace{-0.4cm}
 
-A least squares regression line for $y$ on $x$ is shown on the graph, with equation $\hat{Y}=40.6+4.73x$.
+A least squares regression line for $y$ on $x$ is shown on the graph, with equation $\hat{y}=\text{194.1}-\text{23.5}x$.
 
 The website wishes to allow users the ability to input the number of miles in their training plan for the four weeks leading up to the race, and receive in response an estimate for their finishing time.
 
@@ -1890,17 +1891,17 @@ The website wishes to allow users the ability to input the number of miles in th
 
 ## Residual Plots
 
-As a reminder, a residual is the difference between an observed value $y_i$ and its predicted value $\hat{Y}_i$:
+As a reminder, a residual is the difference between an observed value $y_i$ and its predicted value $\hat{y}_i$:
 
 \[
-e_i = y_i - \hat{Y}_i
+e_i = y_i - \hat{y}_i
 \]
 
-When considering the use of a linear regression model for bivariate data, it is standard practice to produce a plot of *residuals* ($e_i$) against *fitted values* ($\hat{Y}_i$), which have been calculated using the sample regression line. The purpose of this is both to ascertain whether a linear regression model is *the most appropriate* model, as well as to use the observed **residuals** to assess whether key assumptions about the **errors** are reasonable, including those required to obtain the estimates for $\alpha$ and $\beta$:
+When considering the use of a linear regression model for bivariate data, it is standard practice to produce a plot of *residuals* ($e_i$) against *fitted values* ($\hat{y}_i$), which have been calculated using the sample regression line. The purpose of this is both to ascertain whether a linear regression model is *the most appropriate* model, as well as to use the observed **residuals** to assess whether key assumptions about the **errors** are reasonable, including those required to obtain the estimates for $\alpha$ and $\beta$:
 
 \begin{center}
     \begin{tabular}{ccc}
-        $\text{E}(\varepsilon_i)=0$ & $\quad$ \text{and} $\quad$ & $\text{V}(\varepsilon_i)=\sigma^2$
+        $\text{E}(\varepsilon_i)=\text{0}$ & $\quad$ \text{and} $\quad$ & $\text{V}(\varepsilon_i)=\sigma^\text{2}$
     \end{tabular}
 \end{center}
 
@@ -1993,7 +1994,7 @@ Below is an illustration of a standard scatterplot showing a sample of bivariate
 \draw[black!70,fill=black!70] (7.69999999999999,0.532005292091219) circle (0.03);
 \draw[black!70,fill=black!70] (7.79999999999999,2.57028258591851) circle (0.03);
 \draw[black!70,fill=black!70] (7.89999999999999,1.97901943239127) circle (0.03);
-    \draw[thick] (0.1,4.23-0.3*0.1) -- (7.9,4.23-0.3*7.9) node[right] {$\hat{Y}$};
+    \draw[thick] (0.1,4.23-0.3*0.1) -- (7.9,4.23-0.3*7.9) node[right] {$\hat{y}$};
     \node at (4,6.05) {\textbf{Scatterplot of $y$ against $x$}};
     \end{tikzpicture}
 \end{center}
@@ -2084,7 +2085,7 @@ Below is an illustration of a standard scatterplot showing a sample of bivariate
     \node at (6,-3) {Fitted values};
     \node at (6,3.05) {\textbf{Residual plot}};
     \node[rotate=90] at (2.2,0) {Residuals};
-    \node[left] at (3,0) {$0$};
+    \node[left] at (3,0) {0};
     \end{tikzpicture}
 \end{center}
 
@@ -2097,8 +2098,8 @@ From the residual plot, the following can be observed:
 \begin{center}
     \begin{tabular}{ccc}
         A random scatter of points... & $\qquad$ & \\
-        ...centred on zero... & & $\text{E}(\varepsilon_i)=0$\\
-        ...with a constant variance. & & $\text{V}(\varepsilon_i)=\sigma^2$
+        ...centred on zero... & & $\text{E}(\varepsilon_i)=\text{0}$\\
+        ...with a constant variance. & & $\text{V}(\varepsilon_i)=\sigma^\text{2}$
     \end{tabular}
 \end{center}
 \end{tcolorbox}
@@ -2215,7 +2216,7 @@ Any clear pattern in the residual plot suggests that the assumptions of the line
 \draw[fill] (6.368337,-0.55032886) circle (0.02);
     \node at (6,-2) {Fitted value};
     \node[rotate=90] at (2.2,0) {Residuals};
-    \node[left] at (3,0) {$0$};
+    \node[left] at (3,0) {0};
     \end{tikzpicture}
 \end{minipage}%
   \centering
@@ -2225,8 +2226,8 @@ The residual plot appears to show a random scatter of points centred on zero, wi
 \vspace{-1cm}
 \begin{center}
     \begin{align*}
-        \text{E}(\varepsilon_i)&=0\\
-        \text{V}(\varepsilon_i)&=\sigma^2
+        \text{E}(\varepsilon_i)&=\text{0}\\
+        \text{V}(\varepsilon_i)&=\sigma^\text{2}
     \end{align*}
 \end{center}
 
@@ -2363,7 +2364,7 @@ This suggests that the linear model may be \textbf{appropriate}.
 
     \node at (6,-2) {Fitted value};
     \node[rotate=90] at (2.2,0) {Residuals};
-    \node[left] at (3,0) {$0$};
+    \node[left] at (3,0) {0};
     \end{tikzpicture}
 \end{minipage}%
   \centering
@@ -2373,8 +2374,8 @@ The residual plot appears to show a `funnel' shaped pattern of points centred on
 \vspace{-1cm}
 \begin{center}
     \begin{align*}
-        \text{E}(\varepsilon_i)&=0\\
-        \text{V}(\varepsilon_i)&\ne\sigma^2
+        \text{E}(\varepsilon_i)&=\text{0}\\
+        \text{V}(\varepsilon_i)&\ne\sigma^\text{2}
     \end{align*}
 \end{center}
 
@@ -2510,7 +2511,7 @@ This suggests that the linear model may be \textbf{not appropriate}.
 
     \node at (6,-2) {Fitted value};
     \node[rotate=90] at (2.2,0) {Residuals};
-    \node[left] at (3,0) {$0$};
+    \node[left] at (3,0) {0};
     \end{tikzpicture}
 \end{minipage}%
   \centering
@@ -2520,8 +2521,8 @@ The residual plot appears to show a pattern of points following a curve, with co
 \vspace{-1cm}
 \begin{center}
     \begin{align*}
-        \text{E}(\varepsilon_i)&\ne0\\
-        \text{V}(\varepsilon_i)&=\sigma^2
+        \text{E}(\varepsilon_i)&\ne\text{0}\\
+        \text{V}(\varepsilon_i)&=\sigma^\text{2}
     \end{align*}
 \end{center}
 
@@ -2658,7 +2659,7 @@ This suggests that the linear model may be \textbf{not appropriate}.
 
     \node at (6,-2) {Fitted value};
     \node[rotate=90] at (2.2,0) {Residuals};
-    \node[left] at (3,0) {$0$};
+    \node[left] at (3,0) {0};
     \end{tikzpicture}
 \end{minipage}%
   \centering
@@ -2668,8 +2669,8 @@ The residual plot appears to show a pattern of points following a curve, with va
 \vspace{-1cm}
 \begin{center}
     \begin{align*}
-        \text{E}(\varepsilon_i)&\ne0\\
-        \text{V}(\varepsilon_i)&\ne \sigma^2
+        \text{E}(\varepsilon_i)&\ne\text{0}\\
+        \text{V}(\varepsilon_i)&\ne \sigma^\text{2}
     \end{align*}
 \end{center}
 
@@ -2755,7 +2756,7 @@ This suggests that the linear model may be \textbf{not appropriate}.
         \draw[dashed] (-2,0) -- (5,0);
         \node at (1.5,2.55) {Residual plot};
         \node[rotate=90] at (-2.75,0) {Residuals};
-        \node[left] at (-2,0) {$0$};
+        \node[left] at (-2,0) {0};
         \node at (1.5,-2.05) {Fitted values};
 \draw[black!70,fill=black!70] (-0.0921582481751823,0.192158248175182) circle (0.03);
 \draw[black!70,fill=black!70] (-0.0921582481751823,0.592158248175182) circle (0.03);
@@ -2839,7 +2840,7 @@ Use the residual plot to comment on the suitability of the linear model.
         \draw[dashed] (0,0) -- (5,0);
         \node at (2.5,2.25) {Residual plot};
         \node[rotate=90] at (-0.75,0) {Residuals};
-        \node[left] at (0,0) {$0$};
+        \node[left] at (0,0) {0};
         \node at (2.5,-2.25) {Fitted values};
         \draw[black!70,fill=black!70] (0.05,-0.906121041891409) circle (0.03);
 \draw[black!70,fill=black!70] (0.15,0.592482546999063) circle (0.03);
@@ -2902,7 +2903,7 @@ Use the residual plot to comment on the suitability of the linear model.
         \draw[dashed] (0,0) -- (5,0);
         \node at (2.5,2.25) {Residual plot};
         \node[rotate=90] at (-0.75,0) {Residuals};
-        \node[left] at (0,0) {$0$};
+        \node[left] at (0,0) {0};
         \node at (2.5,-2.25) {Fitted values};
     \draw[fill] (3.13944,-1.13489771) circle (0.025);
 \draw[fill] (4.863588,-1.38224968) circle (0.025);
@@ -2945,7 +2946,7 @@ Use the residual plot to comment on the suitability of the linear model.
         \draw[dashed] (0,0) -- (5,0);
         \node at (2.5,2.25) {Residual plot};
         \node[rotate=90] at (-0.75,0) {Residuals};
-        \node[left] at (0,0) {$0$};
+        \node[left] at (0,0) {0};
         \node at (2.5,-2.25) {Fitted values};
     \draw[fill] (0.6552498,1.207917215) circle (0.025);
 \draw[fill] (1.3393627,0.120473891) circle (0.025);
@@ -3028,7 +3029,7 @@ Use the residual plot to comment on the suitability of the linear model.
         \draw[dashed] (0,0) -- (5,0);
         \node at (2.5,2.25) {Residual plot};
         \node[rotate=90] at (-0.75,0) {Residuals};
-        \node[left] at (0,0) {$0$};
+        \node[left] at (0,0) {0};
         \node at (2.5,-2.25) {Fitted values};
     \draw[fill] (4.257605,0.48354589) circle (0.025);
 \draw[fill] (1.691025,0.66052027) circle (0.025);
@@ -3061,7 +3062,7 @@ Use the residual plot to comment on the suitability of the linear model.
         \draw[dashed] (0,0) -- (5,0);
         \node at (2.5,2.25) {Residual plot};
         \node[rotate=90] at (-0.75,0) {Residuals};
-        \node[left] at (0,0) {$0$};
+        \node[left] at (0,0) {0};
         \node at (2.5,-2.25) {Fitted values};
         \draw[black!70,fill=black!70] (0.05,-0.651925125109626) circle (0.03);
 \draw[black!70,fill=black!70] (0.15,-0.320069239812023) circle (0.03);
@@ -3124,7 +3125,7 @@ Use the residual plot to comment on the suitability of the linear model.
         \draw[dashed] (0,0) -- (5,0);
         \node at (2.5,2.25) {Residual plot};
         \node[rotate=90] at (-0.75,0) {Residuals};
-        \node[left] at (0,0) {$0$};
+        \node[left] at (0,0) {0};
         \node at (2.5,-2.25) {Fitted values};
 \draw[fill] (2.926235,0.494709943) circle (0.025);
 \draw[fill] (2.8066853,-0.512870357) circle (0.025);
@@ -3177,7 +3178,7 @@ Use the residual plot to comment on the suitability of the linear model.
         \draw[dashed] (0,0) -- (5,0);
         \node at (2.5,2.25) {Residual plot};
         \node[rotate=90] at (-0.75,0) {Residuals};
-        \node[left] at (0,0) {$0$};
+        \node[left] at (0,0) {0};
         \node at (2.5,-2.25) {Fitted values};
    \draw[fill] (1.8308568,-0.2292661614) circle (0.025);
 \draw[fill] (2.2691825,0.2470628044) circle (0.025);
@@ -3260,7 +3261,7 @@ Use the residual plot to comment on the suitability of the linear model.
         \draw[dashed] (0,0) -- (5,0);
         \node at (2.5,2.25) {Residual plot};
         \node[rotate=90] at (-0.75,0) {Residuals};
-        \node[left] at (0,0) {$0$};
+        \node[left] at (0,0) {0};
         \node at (2.5,-2.25) {Fitted values};
     \draw[fill] (3.3735383,0.254777683) circle (0.025);
 \draw[fill] (3.1648413,-0.266330554) circle (0.025);
@@ -3394,7 +3395,7 @@ Use the residual plot to comment on the suitability of the linear model.
         \draw[dashed] (0,0) -- (5,0);
         \node at (2.5,2.25) {Residual plot};
         \node[rotate=90] at (-0.75,0) {Residuals};
-        \node[left] at (0,0) {$0$};
+        \node[left] at (0,0) {0};
         \node at (2.5,-2.25) {Fitted values};
         \draw[black!70,fill=black!70] (0.05,0.178133558574358) circle (0.03);
 \draw[black!70,fill=black!70] (0.15,0.898792716980769) circle (0.03);
@@ -3456,7 +3457,7 @@ Use the residual plot to comment on the suitability of the linear model.
         \draw[dashed] (0,0) -- (5,0);
         \node at (2.5,2.25) {Residual plot};
         \node[rotate=90] at (-0.75,0) {Residuals};
-        \node[left] at (0,0) {$0$};
+        \node[left] at (0,0) {0};
         \node at (2.5,-2.25) {Fitted values};
 \draw[black!70,fill=black!70] (0.45,-0.439256015731652-0.2) circle (0.03);
 \draw[black!70,fill=black!70] (1.05,0.278066393800596-0.2) circle (0.03);
@@ -3481,7 +3482,7 @@ Use the residual plot to comment on the suitability of the linear model.
         \draw[dashed] (0,0) -- (5,0);
         \node at (2.5,2.25) {Residual plot};
         \node[rotate=90] at (-0.75,0) {Residuals};
-        \node[left] at (0,0) {$0$};
+        \node[left] at (0,0) {0};
         \node at (2.5,-2.25) {Fitted values};
         \draw[fill] (2.5243576,0.52327089) circle (0.025);
 \draw[fill] (0.5594064,0.15981371) circle (0.025);
@@ -3564,7 +3565,7 @@ Use the residual plot to comment on the suitability of the linear model.
         \draw[dashed] (0,0) -- (5,0);
         \node at (2.5,2.25) {Residual plot};
         \node[rotate=90] at (-0.75,0) {Residuals};
-        \node[left] at (0,0) {$0$};
+        \node[left] at (0,0) {0};
         \node at (2.5,-2.25) {Fitted values};
     \draw[fill] (0.5323127,1.8380993) circle (0.025);
 \draw[fill] (2.2574949,-0.7967719) circle (0.025);
@@ -3667,7 +3668,7 @@ Use the residual plot to comment on the suitability of the linear model.
         \draw (3.4,-2) rectangle (10,2);
         \draw[thin,dashed] (3.4,0) -- (10,0);
         \node[rotate=90,above] at (2.9,0) {Residuals};
-        \node[left] at (3.4,0) {$0$};
+        \node[left] at (3.4,0) {0};
         \node at (6.7,-2.35) {Fitted force at failure};
         \node at (6.7,2.5) {Residual plot};
        \draw[fill] (6.043799,0.06957013) circle (0.02);
@@ -3788,7 +3789,7 @@ Use the residual plot to comment on the suitability of the linear model.
         \draw (0,-2) rectangle (7,2);
         \draw[dashed] (0,0) -- (7,0);
         \node[rotate=90] at (-0.9,0) {Residuals};
-        \node[left] at (0,0) {$0$};
+        \node[left] at (0,0) {0};
         \node at (3.5,-2.35) {Fitted battery cycles};
         \draw[black!70,fill=black!70] (0.393730557642215,-0.118119167292664) circle (0.03);
 \draw[black!70,fill=black!70] (0.551885879002775,-0.915565763700832) circle (0.03);
@@ -3861,7 +3862,7 @@ Use the residual plot to comment on the suitability of the linear model.
         \draw (0,-2) rectangle (6,2);
         \draw[dashed] (0,0) -- (6,0);
         \node[rotate=90] at (-0.75,0) {Residuals};
-        \node[left] at (0,0) {$0$};
+        \node[left] at (0,0) {0};
         \node at (3,-2.35) {Fitted time (seconds)};
         \draw[black!80,fill=black!80] (0.490870774468948,-1.43623591489649) circle (0.03);
 \draw[black!80,fill=black!80] (1.11423900294745,-0.114130009824835) circle (0.03);
@@ -3893,7 +3894,7 @@ Where a \textit{non-linear} relationship seems to exist between two variables th
 \begin{minipage}[c]{.4\textwidth}
 \vspace{-0.5cm}
 
-A linear model might initially seem to describe the relationship between $x$ and $y$, as might the result of $R^2=0.9228$.\\
+A linear model might initially seem to describe the relationship between $x$ and $y$, as might the result of $R^\text{2}=\text{0.9228}$.\\
 
 However, the residual plot suggests that a\newline linear model between $x$ and $y$ is \textit{not} appropriate, since the residuals follow a curved pattern.
 
@@ -3993,7 +3994,7 @@ However, the residual plot suggests that a\newline linear model between $x$ and 
             \draw[dashed] (-0.5,0) -- (3.5,0);
             \node[below] at (1.5,-2) {fitted values};
             \node[above,rotate=90] at (-1,0) {residuals};
-            \node[left] at (-0.5,0) {$0$};
+            \node[left] at (-0.5,0) {0};
             \draw[fill] (2.28946709,-0.393538368) circle (0.02);
 \draw[fill] (2.56533836,-0.181681984) circle (0.02);
 \draw[fill] (0.11591265,0.336574486) circle (0.02);
@@ -4091,7 +4092,7 @@ The simulated data above was actually generated using a \textit{quadratic} relat
 
 Both the scatterplot and the residual plot for this new model of $\sqrt{y}$ on $x$ suggest that it is appropriate for the data.\\
 
-This new, better-fitting model also produces a higher value for the coefficient of determination, of $R^2=0.9402$.
+This new, better-fitting model also produces a higher value for the coefficient of determination, of $R^\text{2}=\text{0.9402}$.
 
 \end{minipage}%
 \begin{minipage}[c]{.6\textwidth}
@@ -4189,7 +4190,7 @@ This new, better-fitting model also produces a higher value for the coefficient 
             \draw[dashed] (0.75,0) -- (4.75,0);
             \node[below] at (2.5,-2) {fitted values};
             \node[above,rotate=90] at (0.25,0) {residuals};
-            \node[left] at (0.75,0) {$0$};
+            \node[left] at (0.75,0) {0};
             \draw[fill] (2.1952565,-0.470406068) circle (0.02);
 \draw[fill] (4.58780525,0.168677504) circle (0.02);
 \draw[fill] (2.40827675,-0.103477828) circle (0.02);
@@ -4290,7 +4291,7 @@ Familiar statistics may still be calculated using transformed variables:
         Statistic & For a $y$ on $x$ model & New model & New formula\\
     \hline
     &&&\\[-0.8em]
-        Sum of Squares for $x$ & $S_{xx}=\Sigma x^2 - \dfrac{\left(\Sigma x \right)^2}{n}$ & $y$ on $\sqrt{x}$ & $S_{\sqrt{x}\sqrt{x}}=\Sigma (\sqrt{x})^2 - \dfrac{\left(\Sigma \sqrt{x} \right)^2}{n}$\\
+        Sum of Squares for $x$ & $S_{xx}=\Sigma x^\text{2} - \dfrac{\left(\Sigma x \right)^\text{2}}{n}$ & $y$ on $\sqrt{x}$ & $S_{\sqrt{x}\sqrt{x}}=\Sigma (\sqrt{x})^\text{2} - \dfrac{\left(\Sigma \sqrt{x} \right)^2}{n}$\\
         &&&\\[-0.8em]
     \hline
     &&&\\[-0.8em]
@@ -4298,7 +4299,7 @@ Familiar statistics may still be calculated using transformed variables:
     &&&\\[-0.8em]
     \hline
     &&&\\[-0.8em]
-        Correlation coefficient & $r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$ & $y^3$ on $x$ & $r=\dfrac{S_{xy^3}}{\sqrt{S_{xx}S_{y^3y^3}}}$\\[4ex]
+        Correlation coefficient & $r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$ & $y^\text{3}$ on $x$ & $r=\dfrac{S_{xy^\text{3}}}{\sqrt{S_{xx}S_{y\text{3}y^\text{3}}}}$\\[4ex]
     \hline
     \end{tabular}
     \renewcommand{\arraystretch}{1}
@@ -4322,7 +4323,7 @@ Care should be taken when interpreting these statistics and when calculating usi
     \end{tabular}
 \end{center}
 
-The line $\hat{Y}=-32.3+1.75x$ was fitted, and a scatterplot and a residual plot drawn.
+The line $\hat{y}=-\text{32.3}+\text{1.75}x$ was fitted, and a scatterplot and a residual plot drawn.
 
 \vspace{-0.2cm}
 
@@ -4337,11 +4338,11 @@ The line $\hat{Y}=-32.3+1.75x$ was fitted, and a scatterplot and a residual plot
         \node at (3.4,-0.8) {speed};
         \node[rotate=90] at (-1,1.3) {distance};
         \foreach \x in {10,20,...,80}{
-        \draw (0.08*\x,0) -- (0.08*\x,-0.1) node[below] {$\scriptstyle{\x}$};
-        };
+        \draw (0.08*\x,0) -- (0.08*\x,-0.1) node[below] {\x};
+        }
         \foreach \y in {20,40,...,120}{
-        \draw (0,0.025*\y) -- (-0.1,0.025*\y) node[left] {$\scriptstyle{\y}$};
-        };
+        \draw (0,0.025*\y) -- (-0.1,0.025*\y) node[left] {\y};
+        }
         \draw[fill] (1.336,0.15) circle (0.04);
 \draw[fill] (1.68,0.2) circle (0.04);
 \draw[fill] (2.144,0.325) circle (0.04);
@@ -4366,12 +4367,12 @@ The line $\hat{Y}=-32.3+1.75x$ was fitted, and a scatterplot and a residual plot
         \node[rotate=90] at (-1,0) {residuals};
         \foreach \x in {0,20,...,120}{
         \draw (0.03*\x,-1.6) -- (0.03*\x,-1.5);
-        \node[below] at (0.03*\x,-1.5) {$\scriptstyle{\x}$};
-        };
+        \node[below] at (0.03*\x,-1.5) {\x};
+        }
         \foreach \y in {-12,-8,...,12}{
         \draw (-0.1,0.1*\y) -- (0,0.1*\y);
-        \node[left] at (0,0.1*\y) {$\scriptstyle{\y}$};
-        };
+        \node[left] at (0,0.1*\y) {\y};
+        }
         \draw[fill] (0.18,0.90633953) circle (0.04);
 \draw[fill] (0.24,0.35365384) circle (0.04);
 \draw[fill] (0.39,-0.16159663) circle (0.04);
@@ -4402,11 +4403,11 @@ A new linear model was created between speed ($x$) and the square root of the st
         \node at (3.4,-0.8) {speed};
         \node[rotate=90] at (-1,1.3) {$\sqrt{\text{distance}}$};
         \foreach \x in {10,20,...,80}{
-        \draw (0.08*\x,0) -- (0.08*\x,-0.1) node[below] {$\scriptstyle{\x}$};
-        };
+        \draw (0.08*\x,0) -- (0.08*\x,-0.1) node[below] {\x};
+        }
         \foreach \y in {0,2,...,10}{
-        \draw (0,0.25*\y) -- (-0.1,0.25*\y) node[left] {$\scriptstyle{\y}$};
-        };
+        \draw (0,0.25*\y) -- (-0.1,0.25*\y) node[left] {\y};
+        }
     \draw[fill] (1.336,0.6123725) circle (0.04);
 \draw[fill] (1.68,0.70710675) circle (0.04);
 \draw[fill] (2.144,0.90138775) circle (0.04);
@@ -4431,12 +4432,12 @@ A new linear model was created between speed ($x$) and the square root of the st
         \node[rotate=90] at (-1,0) {residuals};
         \foreach \x in {0,2,...,12}{
         \draw (0.3*\x,-1.6) -- (0.3*\x,-1.5);
-        \node[below] at (0.3*\x,-1.5) {$\scriptstyle{\x}$};
-        };
+        \node[below] at (0.3*\x,-1.5) {\x};
+        }
         \foreach \y in {-0.2,-0.1,0,0.1,0.2}{
         \draw (-0.1,5*\y) -- (0,5*\y);
-        \node[left] at (0,5*\y) {$\scriptstyle{\y}$};
-        };
+        \node[left] at (0,5*\y) {\y};
+        }
         \draw[fill] (0.734847,0.618051685) circle (0.04);
 \draw[fill] (0.8485281,-0.502807) circle (0.04);
 \draw[fill] (1.0816653,-0.684666355) circle (0.04);
@@ -4467,9 +4468,9 @@ A new linear model was created between speed ($x$) and the square root of the st
 \begin{enumerate}
     \item[(a)] The residual plot appears to show a curved pattern, so this linear model is not appropriate.
     \item[(b)] The residual plot for the new model appears to show a random scatter of points centered on zero, with a constant variance as fitted values increase, so the new model seems appropriate.
-    \item[(c)] $r=\dfrac{S_{x\sqrt{y}}}{\sqrt{S_{xx}S_{\sqrt{y}\sqrt{y}}}}=\dfrac{3400.0}{\sqrt{10758.9\times 5951.5}}=0.9987$ and $R^2=0.9987^2=0.997$.\\[0.5em]
+    \item[(c)] $r=\dfrac{S_{x\sqrt{y}}}{\sqrt{S_{xx}S_{\sqrt{y}\sqrt{y}}}}=\dfrac{\text{3400.0}}{\sqrt{\text{10758.9}\times \text{5951.5}}}=\text{0.9987}$ and $R^\text{2}=\text{0.9987}^\text{2}=\text{0.997}$.\\[0.5em]
     99.7\% of the variation of $\sqrt{\text{distance}}$ is explained by speed.
-    \item[(d)] $\sqrt{\text{distance}}=-0.016+0.14\times 50=6.984\text{, so distance}=6.984^2=48.8\text{ metres}$
+    \item[(d)] $\sqrt{\text{distance}}=-\text{0.016}+\text{0.14}\times \text{50}=\text{6.984}\text{, so distance}=\text{6.984}^\text{2}=\text{48.8}\text{ metres}$
 \end{enumerate}
 
 \end{tcolorbox}
@@ -4516,17 +4517,17 @@ A new linear model was created between speed ($x$) and the square root of the st
 \draw[fill] (1.6447863,2.0932187) circle (0.04);
 \draw[fill] (0.3458931,2.0746691) circle (0.04);
 \draw[dashed] (0.2,2.65-0.636*0.2) -- (3.9,-3.9*0.636+2.65);
-\node at (2.1,3.5) {$R^2=0.805$};
+\node at (2.1,3.5) {$R^\text{2}=\text{0.805}$};
             \end{tikzpicture}
         \item Data before transformation:\\[0.1em] $x=$ rating\\[0.1em]$y=$ energy\\
             \begin{tikzpicture}
                 \draw[white] (-1.3,-1) rectangle (5,4.5);
                 \draw[-stealth] (0,0) -- (4.4,0) node[right] {$x$};
-                \draw[-stealth] (0,0) -- (0,3.4) node[above] {$\log_{10}{y}$};
-                \node[above,rotate=90] at (-0.1,1.75) {$\log_{10}{\text{energy}}$};
+                \draw[-stealth] (0,0) -- (0,3.4) node[above] {$\log_{\text{10}}{y}$};
+                \node[above,rotate=90] at (-0.1,1.75) {$\log_{\text{10}}{\text{energy}}$};
                 \node[below] at (2.25,-0.1) {rating};
                \draw[fill] (1.6953703,1.8024727) circle (0.04);
-               \node at (2.1,3.5) {$R^2=0.382$};
+               \node at (2.1,3.5) {$R^\text{2}=\text{0.382}$};
 \draw[fill] (0.7515029,1.4576628) circle (0.04);
 \draw[fill] (1.7200280,1.5028064) circle (0.04);
 \draw[fill] (0.8200360,0.2665884) circle (0.04);
@@ -4614,11 +4615,11 @@ A new linear model was created between speed ($x$) and the square root of the st
         \item Data before transformation:\\[0.1em] $x=$ time\\[0.1em]$y=$ population size\\
             \begin{tikzpicture}
                 \draw[white] (-1.3,-1) rectangle (5,4.5);
-                \draw[-stealth] (0,0) -- (4.4,0) node[right] {$\log_{2} x$};
-                \draw[-stealth] (0,0) -- (0,3.4) node[above] {$\log_{2} y$};
-                \node[above,rotate=90] at (-0.1,1.75) {$\log_{2}{\text{population}}$};
-                \node[below] at (2.25,-0.1) {$\log_2{\text{time}}$};
-                \node at (2.1,3.5) {$R^2=0.974$};
+                \draw[-stealth] (0,0) -- (4.4,0) node[right] {$\log_{\text{2}} x$};
+                \draw[-stealth] (0,0) -- (0,3.4) node[above] {$\log_{\text{2}} y$};
+                \node[above,rotate=90] at (-0.1,1.75) {$\log_{\text{2}}{\text{population}}$};
+                \node[below] at (2.25,-0.1) {$\log_\text{2}{\text{time}}$};
+                \node at (2.1,3.5) {$R^\text{2}=\text{0.974}$};
                 \draw[dashed] (0.2,0.2*0.205+1.5) -- (4,4*0.205+1.5);
                 \draw[fill] (3.1873467,2.166073) circle (0.05);
 \draw[fill] (2.6680954,2.031357) circle (0.05);
@@ -4637,10 +4638,10 @@ A new linear model was created between speed ($x$) and the square root of the st
             \begin{tikzpicture}
                 \draw[white] (-1.3,-1) rectangle (5,4.5);
                 \draw[-stealth] (0,0) -- (4.4,0) node[right] {$x$};
-                \draw[-stealth] (0,0) -- (0,3.4) node[above] {$\dfrac{1}{y}$};
-                \node[left] at (-0.1,1.75) {$\dfrac{1}{\text{cost}}$};
+                \draw[-stealth] (0,0) -- (0,3.4) node[above] {$\dfrac{\text{1}}{y}$};
+                \node[left] at (-0.1,1.75) {$\dfrac{\text{1}}{\text{cost}}$};
                 \node[below] at (2.25,-0.1) {quality};
-                \node at (2.1,3.5) {$R^2=0.001$};
+                \node at (2.1,3.5) {$R^\text{2}=\text{0.001}$};
                 \draw[dashed] (0.2,1.7) -- (4.2,1.6);
                 \draw[fill] (2.6633322,2.1078449) circle (0.04);
 \draw[fill] (2.7987867,1.5743967) circle (0.04);
@@ -4696,21 +4697,21 @@ A new linear model was created between speed ($x$) and the square root of the st
         \end{multicols}
     \end{enumerate}
     \vspace{-0.8cm}
-    \item It is determined that a linear relationship exists between $x$ and $\dfrac{1}{y}$.\newline Summary statistics for this model are as follows:
+    \item It is determined that a linear relationship exists between $x$ and $\dfrac{\text{1}}{y}$.\newline Summary statistics for this model are as follows:
     \begin{center}
         \begin{tabular}{ccccccccccc}
-            $\Sigma x=35.9$ & \quad & $\Sigma \dfrac{1}{y}=133.4$ & \quad & $\Sigma x^2=142.3$ & \quad & $\Sigma \dfrac{1}{y^2}=1922.4$ & \quad & $\Sigma x\dfrac{1}{y}=517.8$ & \quad & $n=10$
+            $\Sigma x=\text{35.9}$ & \quad & $\Sigma \dfrac{\text{1}}{y}=\text{133.4}$ & \quad & $\Sigma x^\text{2}=\text{142.3}$ & \quad & $\Sigma \dfrac{\text{1}}{y^\text{2}}=\text{1922.4}$ & \quad & $\Sigma x\dfrac{\text{1}}{y}=\text{517.8}$ & \quad & $n=\text{10}$
         \end{tabular}
     \end{center}
     \begin{enumerate}
-        \item Determine the equation of the least squares regression line for the model of $\dfrac{1}{y}$ on $x$.
-        \item Calculate an estimate for the value of $y$ when $x=5$.
+        \item Determine the equation of the least squares regression line for the model of $\dfrac{\text{1}}{y}$ on $x$.
+        \item Calculate an estimate for the value of $y$ when $x=\text{5}$.
     \end{enumerate}
     \item It is determined that a linear relationship exists between $\log x$ and $\log y$.\newline Summary statistics for this model are as follows:
     \begin{center}
         \begin{tabular}{lllll}
-            $\Sigma \log x=46.3$ & \quad & $\Sigma \log y=1870.4$ & \quad & $\Sigma (\log x)^2=308.4$\\[0.5em]
-            $\Sigma (\log y)^2=350761.2$ & \quad & $\Sigma (\log x)(\log y)=8370.3$ & \quad & $n=10$
+            $\Sigma \log x=\text{46.3}$ & \quad & $\Sigma \log y=\text{1870.4}$ & \quad & $\Sigma (\log x)^\text{2}=\text{308.4}$\\[0.5em]
+            $\Sigma (\log y)^\text{2}=\text{350761.2}$ & \quad & $\Sigma (\log x)(\log y)=\text{8370.3}$ & \quad & $n=\text{10}$
         \end{tabular}
     \end{center}
     Calculate the correlation coefficient for the linear model and interpret it.
@@ -4719,7 +4720,7 @@ A new linear model was created between speed ($x$) and the square root of the st
 \pagebreak
     
 \begin{enumerate}[resume]
-    \item A linear model created by a statistician for variables $x$ and $y$ is used to produce a residual plot. After studying the residual plot, the statistician concludes that the assumption for the population of errors that $\text{V}(\varepsilon_i)=0$ is not supported.
+    \item A linear model created by a statistician for variables $x$ and $y$ is used to produce a residual plot. After studying the residual plot, the statistician concludes that the assumption for the population of errors that $\text{V}(\varepsilon_i)=\sigma^\text{2}$ is not supported.
     \begin{enumerate}
         \item Suggest a feature of the residual plot which could have led to their conclusion.
     \end{enumerate}
@@ -4912,7 +4913,7 @@ A new linear model was created between speed ($x$) and the square root of the st
     \begin{enumerate}[resume]
         \item State which model the statistician should use, with justification.
     \end{enumerate}
-    \item Data was collected on each weekday across four weeks of a university computer's peak processing speed ($p$ GHz) and the amount of power consumed ($x$ kWh). The regression line $\hat{U}=2.245+0.106x$ is fitted to the data.
+    \item Data was collected on each weekday across four weeks of a university computer's peak processing speed ($p$ GHz) and the amount of power consumed ($x$ kWh). The regression line $\hat{u}=\text{2.245}+\text{0.106}x$ is fitted to the data.
     \vspace{-0.4cm}
     \begin{figure}[H]
   \centering
@@ -4922,11 +4923,11 @@ A new linear model was created between speed ($x$) and the square root of the st
         \draw[-stealth] (1,0) -- (7.2,0) node[below] {$x$};
         \draw[-stealth] (1,0) -- (1,3.3) node[left] {$p$};
         \foreach \x in {4,6,...,16}{
-        \draw (0.4*\x,0) -- (0.4*\x,-0.1) node[below] {$\scriptstyle{\x}$};
-        };
+        \draw (0.4*\x,0) -- (0.4*\x,-0.1) node[below] {\x};
+        }
         \foreach \y in {2.5,3.0,3.5,4.0}{a
-        \draw (1,2*\y-5) -- (0.9,2*\y-5) node[left] {$\scriptstyle{\y}$};
-        };
+        \draw (1,2*\y-5) -- (0.9,2*\y-5) node[left] {\y};
+        }
         \draw[fill] (2.8737916,0.982320) circle (0.04);
 \draw[fill] (3.6507364,1.457880) circle (0.04);
 \draw[fill] (6.174554,2.623164) circle (0.04);
@@ -4954,7 +4955,7 @@ A new linear model was created between speed ($x$) and the square root of the st
 \begin{minipage}[c]{.5\textwidth}
   \centering
     \begin{tikzpicture}
-        \draw[dashed] (13,0) node[left] {$0$} -- (20,0); 
+        \draw[dashed] (13,0) node[left] {0} -- (20,0); 
         \draw (13,-1.5) rectangle (20,1.5);
         \node[above,rotate=90] at (12.5,0) {residuals};
         \node[below] at (16.5,-1.5) {fitted value};
@@ -4984,7 +4985,7 @@ A new linear model was created between speed ($x$) and the square root of the st
 \begin{enumerate}
     \item Comment on the suitability of the linear model of $p$ on $x$.
 \end{enumerate}
-A transformation using $y=2^p$ was applied, and a new least squares regression line of $y$ on $x$ found, with the following scatterplot and residual plot.
+A transformation using $y=\text{2}^p$ was applied, and a new least squares regression line of $y$ on $x$ found, with the following scatterplot and residual plot.
 \vspace{-0.2cm}
 \begin{figure}[H]
   \centering
@@ -4994,11 +4995,11 @@ A transformation using $y=2^p$ was applied, and a new least squares regression l
         \draw[-stealth] (1,1.5) -- (7.2,1.5) node[below] {$x$};
         \draw[-stealth] (1,1.5) -- (1,4.6) node[left] {$y$};
         \foreach \x in {4,6,...,16}{
-        \draw (0.4*\x,0+1.5) -- (0.4*\x,-0.1+1.5) node[below] {$\scriptstyle{\x}$};
-        };
+        \draw (0.4*\x,0+1.5) -- (0.4*\x,-0.1+1.5) node[below] {\x};
+        }
         \foreach \y in {6,8,...,14}{a
-        \draw (1,0.3*\y) -- (0.9,0.3*\y) node[left] {$\scriptstyle{\y}$};
-        };
+        \draw (1,0.3*\y) -- (0.9,0.3*\y) node[left] {\y};
+        }
         \draw[fill] (2.8737916,2.3853393) circle (0.04);
 \draw[fill] (3.6507364,2.812737) circle (0.04);
 \draw[fill] (6.174554,4.2123225) circle (0.04);
@@ -5026,7 +5027,7 @@ A transformation using $y=2^p$ was applied, and a new least squares regression l
 \begin{minipage}[c]{.5\textwidth}
   \centering
     \begin{tikzpicture}
-        \draw[dashed] (3,0) node[left] {$0$} -- (10,0); 
+        \draw[dashed] (3,0) node[left] {0} -- (10,0); 
         \draw (3,-1.5) rectangle (10,1.5);
         \node[above,rotate=90] at (2.5,0) {residuals};
         \node[below] at (6.5,-1.5) {fitted value};
@@ -5059,7 +5060,7 @@ A transformation using $y=2^p$ was applied, and a new least squares regression l
 The new model has summary statistics: 
 \begin{center}
     \begin{tabular}{ccccccccc}
-        $\Sigma x=180.4$ & \quad & $\Sigma y = 187.8$ & \quad & $\Sigma x^2=1779$ & \quad & $S_{xy}=105.9$ & \quad & $n=20$
+        $\Sigma x=\text{180.4}$ & \quad & $\Sigma y = \text{187.8}$ & \quad & $\Sigma x^\text{2}=\text{1779}$ & \quad & $S_{xy}=\text{105.9}$ & \quad & $n=\text{20}$
     \end{tabular}
 \end{center}
 \begin{enumerate}[resume]
@@ -5072,9 +5073,9 @@ The new model has summary statistics:
 
 ## Confidence Intervals and Prediction Intervals
 
-One purpose of adopting a regression approach to examine the relationship between two variables is the wish to make predictions related to the response variable ($Y$) for a particular value for the predictor variable ($x$). 
+One purpose of adopting a regression approach to examine the relationship between two variables is the wish to make predictions related to the response variable ($Y_i$) for a particular value for the predictor variable ($x_i$). 
 
-The least squares regression line equation of $\hat{Y}_i=a+bx_i$ gives an *estimate* for the **mean** value of the response variable for any given $x_i$, whilst the *true* mean response value for a given $x_i$, denoted $\text{E}(Y_i\,|\,x_i)$, is unknown. 
+The regression line equation of $\hat{y}_i=a+bx_i$ gives an *estimate* $\hat{y}_i$for the **mean** value of the response variable $Y_i$ for any given $x_i$, whilst the *true* mean response value for a given $x_i$, denoted $\text{E}(Y_i\,|\,x_i)$, is unknown. 
 
 It can be desirable to obtain a **confidence interval** for $\text{E}(Y_i\,|\,x_i)$.
 
@@ -5086,7 +5087,7 @@ It can be desirable to obtain a **confidence interval** for $\text{E}(Y_i\,|\,x_
             \draw[-stealth] (0,0.6) -- (5,0.6) node[right] {$x$};
             \draw[-stealth] (0,0.6) -- (0,3.7) node[left] {$y$};
             \fill[black!20] plot[smooth] coordinates {(0.1,1.78) (1,2) (2,2.25) (3,2.57) (4,2.95) (4.8,3.27)} -- (4.8,2.836) plot[smooth] coordinates { (4.8,2.836) (4,2.64) (3,2.38) (2,2.055) (1,1.67) (0.1,1.31) } -- (0.1,1.78);
-             \node at (5,3.1) {$\hat{Y}$};
+             \node at (5,3.1) {$\hat{y}$};
              \node[below] at (0.9,0.6) {$x_i$};
              \draw[ultra thin,dashed] (0.9,0.6) -- (0.9,1.63);
              \draw[fill=black!60,black!60] (0.87,1.965) -- (0.93,1.980) -- (0.93,1.643) -- (0.87,1.619) -- cycle;
@@ -5199,18 +5200,18 @@ It can be desirable to obtain a **confidence interval** for $\text{E}(Y_i\,|\,x_
 \begin{minipage}[c]{.55\textwidth}
 It can be shown that the \textit{point estimate} for the mean response, $\text{E}\left(Y_i\,|\,x_i\right)$, has a sample standard error of:
 
-$$s\sqrt{\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}$$
+$$s\sqrt{\dfrac{\text{1}}{n}+\dfrac{(x_i-\bar{x})^\text{2}}{S_{xx}}}$$
 
-If the errors, $\varepsilon_i$, are identically and independently distributed as $\text{N}\left(0,\sigma^2\right)$ then the formula below, given on Page 5 of the Data Booklet, can be derived.
+If the errors, $\varepsilon_i$, are identically and independently distributed as $\text{N}\left(\text{0},\sigma^\text{2}\right)$ then the formula below, given on Page 5 of the Data Booklet, can be derived.
 \end{minipage}
 \end{figure}
 
 
 \begin{tcolorbox}[halign title=center,title=A Confidence Interval for the Mean Response,center,colback=red!5,colframe=red!70!black,width=15.5cm]
-A $100(1-\alpha)\%$ \text{CI} for $\text{E}(Y_i\,|\,x_i)$ is given by: $\hat{Y}_i\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}$
+A $\text{100}(\text{1}-\alpha)\%$ \text{CI} for $\text{E}(Y_i\,|\,x_i)$ is given by: $\hat{Y}_i\,\pm\,t_{n-\text{2},\text{1}-\alpha/\text{2}}\times s\sqrt{\dfrac{\text{1}}{n}+\dfrac{(x_i-\bar{x})^\text{2}}{S_{xx}}}$
 \end{tcolorbox}
 
-This interval estimates the mean value of $Y$ for all observations with predictor value $x_i$, not the value for a single observation. As with all confidence intervals, the level of confidence relates to the success rate of the *procedure used to generate the interval*, rather than referring to the probability of a calculated interval containing the mean response value $\text{E}(Y_i\,|\,x_i)$.
+This interval estimates the mean value of $Y_i$ for all observations with predictor value $x_i$, not the value for a single observation. As with all confidence intervals, the level of confidence relates to the success rate of the *procedure used to generate the interval*, rather than referring to the probability of a calculated interval containing the mean response value $\text{E}(Y_i\,|\,x_i)$.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 \textbf{Problem:} 
@@ -5219,7 +5220,7 @@ The lengths in centimetres ($x$) and masses in kilograms ($y$) of 12 salmon were
 
 \begin{center}
     \begin{tabular}{ccccc}
-        $\Sigma x=30$ & $\Sigma y=540$ & $S_{xx}=12$ & $S_{yy}=4800$ & $S_{xy}=150$
+        $\Sigma x=\text{30}$ & $\Sigma y=\text{540}$ & $S_{xx}=\text{12}$ & $S_{yy}=\text{4800}$ & $S_{xy}=150$
     \end{tabular}
 \end{center}
 
@@ -5228,9 +5229,9 @@ Construct a 95\% confidence interval for the mean length of salmon with mass 3kg
 \tcblower
 \textbf{Solution:}\\
 
-$b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{150}{12}=12.5, \quad a=\bar{y}-b\bar{x}=\dfrac{540}{12}-12.5\times \dfrac{30}{12}=13.75 \quad \implies \quad \hat{Y}_i=13.75+12.5x_i$\\[0.3em]
+$b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{150}{12}=12.5, \quad a=\bar{y}-b\bar{x}=\dfrac{540}{12}-12.5\times \dfrac{30}{12}=13.75 \quad \implies \quad \hat{y}_i=13.75+12.5x_i$\\[0.3em]
 
-$\hat{Y}=13.75+12.5\times 3=51.75$\\[0.3em]
+$\hat{y}=13.75+12.5\times 3=51.75$\\[0.3em]
 
 $\text{SSR}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=4800-\dfrac{150^2}{12}=2925, \quad s^2=\dfrac{\text{SSR}}{n-2}=\dfrac{2925}{10}=292.5, \quad s=\sqrt{292.5}=17.1$\\[0.3em]
 
@@ -5242,7 +5243,7 @@ So a 95\% confidence interval for the mean length of a 3kg salmon is $(39.45\tex
 
 \pagebreak
 
-Instead of an interval for the value of \textit{mean} response, it may be desired to obtain an interval for **individual** response values for a given $x_i$, denoted as $Y_i\,|\,x_i$. 
+Instead of an interval for the value of \textit{mean} response, it may be desired to obtain an interval for an **individual** response value $Y_i$ for a given $x_i$, denoted as $Y_i\,|\,x_i$. 
 
 The desired interval is called a **prediction interval**, and it reflects both the variability of the regression line and the additional variability of individual observations about the line.
 
@@ -5255,7 +5256,7 @@ The desired interval is called a **prediction interval**, and it reflects both t
             \draw[-stealth] (0,0.6) -- (0,3.7) node[left] {$y$};
             \fill[black!10] plot[smooth] coordinates {(0.1,2.437) (1,2.709) (2,3.02) (3,3.34) (4,3.67) (4.8,3.94)} -- (4.8,2.17) plot[smooth] coordinates { (4.8,2.17) (4,1.93) (3,1.61) (2,1.29) (1,0.96) (0.1,0.65) } -- (0.1,2.437);
             \fill[black!20] plot[smooth] coordinates {(0.1,1.78) (1,2) (2,2.25) (3,2.57) (4,2.95) (4.8,3.27)} -- (4.8,2.836) plot[smooth] coordinates { (4.8,2.836) (4,2.64) (3,2.38) (2,2.055) (1,1.67) (0.1,1.31) } -- (0.1,1.78);
-             \node at (5,3.1) {$\hat{Y}$};
+             \node at (5,3.1) {$\hat{y}$};
              \node[below] at (0.9,0.6) {$x_i$};
              \draw[ultra thin,dashed] (0.9,0.6) -- (0.9,0.9252);
              \fill[black!60] (0.87,2.669) -- (0.93,2.688) -- (0.93,0.935) -- (0.87,0.915) -- cycle;
@@ -5367,7 +5368,7 @@ The desired interval is called a **prediction interval**, and it reflects both t
   \centering
 \begin{minipage}[c]{.4\textwidth}
 
-Prediction intervals are always wider than confidence intervals at the same confidence level, because they account for both uncertainty in the regression line *and* variability of individual observations.\\[0.5em]
+Prediction intervals are always wider than confidence intervals at the same confidence level, because they account for both uncertainty in the regression line \textit{and} variability of individual observations.\\[0.5em]
 
 Note the more darkly shaded region lying closer to the regression line, showing the narrower confidence interval for the same data.\\[0.5em]
 
@@ -5377,10 +5378,10 @@ A 95\% prediction interval for $Y_i\,|\,x_i$, such as indicated in the diagram, 
 \end{figure}
 
 \begin{tcolorbox}[halign title=center,title=A Prediction Interval for an Individual Response,center,colback=red!5,colframe=red!70!black,width=15cm]
-A $100(1-\alpha)\%$ \text{PI} for $Y_i\,|\,x_i$ is given by: $\hat{Y}_i\,\pm\,t_{n-2,1-\alpha/2}\times s\sqrt{1+\dfrac{1}{n}+\dfrac{(x_i-\bar{x})^2}{S_{xx}}}$
+A $\text{100}(\text{1}-\alpha)\%$ \text{PI} for $Y_i\,|\,x_i$ is given by: $\hat{Y}_i\,\pm\,t_{n-\text{2},\text{1}-\alpha/\text{2}}\times s\sqrt{\text{1}+\dfrac{\text{1}}{n}+\dfrac{(x_i-\bar{x})^\text{2}}{S_{xx}}}$
 \end{tcolorbox}
 
-This formula, also given on Page 5 of the Data Booklet, relies also on the errors, $\varepsilon_i$, being identically and independently distributed as $\text{N}\left(0,\sigma^2\right)$
+This formula, also given on Page 5 of the Data Booklet, relies also on the errors, $\varepsilon_i$, being identically and independently distributed as $\text{N}\left(\text{0},\sigma^\text{2}\right)$
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!, colframe=RoyalBlue]
 \textbf{Problem:} 
@@ -5389,7 +5390,7 @@ The lengths in centimetres ($x$) and masses in kilograms ($y$) of 12 salmon were
 
 \begin{center}
     \begin{tabular}{ccccc}
-        $\Sigma x=30$ & $\Sigma y=540$ & $S_{xx}=12$ & $S_{yy}=4800$ & $S_{xy}=150$
+        $\Sigma x=\text{30}$ & $\Sigma y=\text{540}$ & $S_{xx}=\text{12}$ & $S_{yy}=\text{4800}$ & $S_{xy}=\text{150}$
     \end{tabular}
 \end{center}
 
@@ -5398,15 +5399,15 @@ Construct a 95\% prediction interval for the length of salmon with mass 3kg.
 \tcblower
 \textbf{Solution:}\\
 
-$b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{150}{12}=12.5, \quad a=\bar{y}-b\bar{x}=\dfrac{540}{12}-12.5\times \dfrac{30}{12}=13.75 \quad \implies \quad \hat{Y}_i=13.75+12.5x_i$\\[0.5em]
+$b=\dfrac{S_{xy}}{S_{xx}}=\dfrac{\text{150}}{\text{12}}=\text{12.5}, \quad a=\bar{y}-b\bar{x}=\dfrac{\text{540}}{\text{12}}-\text{12.5}\times \dfrac{\text{30}}{\text{12}}=\text{13.75} \quad \implies \quad \hat{y}_i=\text{13.75}+\text{12.5}x_i$\\[0.5em]
 
-$\hat{Y}=13.75+12.5\times 3=51.75$\\[0.5em]
+$\hat{y}=\text{13.75}+\text{12.5}\times \text{3}=\text{51.75}$\\[0.5em]
 
-$\text{SSR}=S_{yy}-\dfrac{(S_{xy})^2}{S_{xx}}=4800-\dfrac{150^2}{12}=2925, \quad s^2=\dfrac{\text{SSR}}{n-2}=\dfrac{2925}{10}=292.5, \quad s=\sqrt{292.5}=17.1$\\[0.5em]
+$\text{SSR}=S_{yy}-\dfrac{(S_{xy})^\text{2}}{S_{xx}}=\text{4800}-\dfrac{\text{150}^\text{2}}{\text{12}}=\text{2925}, \quad s^\text{2}=\dfrac{\text{SSR}}{n-\text{2}}=\dfrac{\text{2925}}{\text{10}}=\text{292.5}, \quad s=\sqrt{\text{292.5}}=\text{17.1}$\\[0.5em]
 
-A 95\% PI for $Y\,|\,x=3$ is $51.75\,\pm\,2.228 \times 17.1\times \sqrt{1+\dfrac{1}{12}+\dfrac{(3-2.5)^2}{12}}=51.75\,\pm\,40.03$\\[0.5em]
+A 95\% PI for $Y\,|\,x=\text{3}$ is $\text{51.75}\,\pm\,\text{2.228} \times \text{17.1}\times \sqrt{\text{1}+\dfrac{\text{1}}{\text{12}}+\dfrac{(\text{3}-\text{2.5})^\text{2}}{\text{12}}}=\text{51.75}\,\pm\,\text{40.03}$\\[0.5em]
 
-So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72\text{cm}\,,\,91.78\text{cm})$.
+So a 95\% prediction interval for the observed length of a 3kg salmon is $(\text{11.72}\text{cm}\,,\,\text{91.78}\text{cm})$.
 
 \end{tcolorbox}
 
@@ -5421,10 +5422,10 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     \begin{multicols}{2}
     Summary statistics are calculated as:
     \begin{align*}
-        \Sigma x &= 157\\[0.5em]
-        S_{xx} &= 334.9\\[0.5em]
-        s &= 1.45\\[0.5em]
-        n&=12
+        \Sigma x &= \text{157}\\[0.5em]
+        S_{xx} &= \text{334.9}\\[0.5em]
+        s &= \text{1.45}\\[0.5em]
+        n&=\text{12}
     \end{align*}
     \vfill\null 
 \begin{center}
@@ -5439,7 +5440,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
         \foreach \y in {5,10,...,20}{
         \draw (0,0.25*\y) -- (-0.1,0.25*\y) node[left] {\y};
         }
-        \draw[thick] (0.25*3,0.25*3*0.578+0.25*04.854) -- (0.25*20,0.25*20*0.578+0.25*4.854) node[right] {$\hat{Y}=4.854+0.578x$};
+        \draw[thick] (0.25*3,0.25*3*0.578+0.25*04.854) -- (0.25*20,0.25*20*0.578+0.25*4.854) node[right] {$\hat{y}=\text{4.854}+\text{0.578}x$};
 \draw[fill] (1.75,2.25) circle (0.06);
 \draw[fill] (5,3.25) circle (0.06);
 \draw[fill] (3,3.25) circle (0.06);
@@ -5501,12 +5502,12 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 \draw[fill] (4.3065294,1.907684) circle (0.04);
 \draw[fill] (3.4964072,1.882385) circle (0.04);
 \draw[fill] (0.9111540,0.914811) circle (0.04);
-\draw[thick] (0.33,0.1*40.5-4) -- (5.42,0.1*68-4) node[right] {$\hat{Y}=40.6+4.73x$};
+\draw[thick] (0.33,0.1*40.5-4) -- (5.42,0.1*68-4) node[right] {$\hat{y}=\text{40.6}+\text{4.73}x$};
 \node[right] at (11,3) {Summary statistics:};
-\node[right] at (11,2.2) {$\sum x = 74.76$};
-\node[right] at (11,1.4) {$S_{xx} = 38.8$};
-\node[right] at (11,0.6) {$s^2 = 5.09$};
-\node[right] at (11,-0.2) {$n=26$};
+\node[right] at (11,2.2) {$\sum x = \text{74.76}$};
+\node[right] at (11,1.4) {$S_{xx} = \text{38.8}$};
+\node[right] at (11,0.6) {$s^\text{2} = \text{5.09}$};
+\node[right] at (11,-0.2) {$n=\text{26}$};
     \end{tikzpicture}
 \end{center}
 \vspace{-0.6cm}
@@ -5581,8 +5582,8 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     Summary statistics for the data are as follows:
     \begin{center}
         \begin{tabular}{ccc}
-            $\Sigma x =337.7$ & \quad & $S_{xx}=221.8$\\[0.5em]
-            $S_{yy}=44085.2$ & \quad & $S_{xy}=2192.8$
+            $\Sigma x =\text{337.7}$ & \quad & $S_{xx}=\text{221.8}$\\[0.5em]
+            $S_{yy}=\text{44085.2}$ & \quad & $S_{xy}=\text{2192.8}$
         \end{tabular}
     \end{center}
     The equation for regression line was found:
@@ -5608,7 +5609,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
         \begin{tikzpicture}
         \draw[-stealth] (0,0) -- (10,0) node[below] {$x$};
         \draw[-stealth] (0,0) -- (0,5.5) node[left] {$y$};
-        \draw[thick] (0.2*160-32,0.1*58.6-5) -- (0.2*205-32,0.1*93-5) node[right] {$\hat{Y}=-63.77+0.7649x$};
+        \draw[thick] (0.2*160-32,0.1*58.6-5) -- (0.2*205-32,0.1*93-5) node[right] {$\hat{y}=-\text{63.77}+\text{0.7649}x$};
         \foreach \x in {160,170,...,200}{
         \draw (0.2*\x-32,0) -- (0.2*\x-32,-0.1) node[below] {\x};
         }
@@ -5710,7 +5711,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     Summary statistics are obtained for the data, as shown below:
     \begin{center}
         \begin{tabular}{ccccccc}
-            $S_{xx}=4319.0$ & \qquad & $S_{yy}=4122.4$ & \qquad & $S_{xy}=3303.6$ & \qquad & $n=69$
+            $S_{xx}=\text{4319.0}$ & \qquad & $S_{yy}=\text{4122.4}$ & \qquad & $S_{xy}=\text{3303.6}$ & \qquad & $n=\text{69}$
         \end{tabular}
     \end{center}
     \begin{enumerate}[resume]
@@ -5727,7 +5728,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 
 
 \begin{enumerate}
-    \item Biologists studying populations of European hamsters record the tail length ($x$ centimetres) and body mass ($y$ grams) of a random sample of 12 wild hamsters found living in central Vienna. The linear regression equation was calculated for the data shown in the scatterplot as $\hat{Y}=-15.24+71.88x$.
+    \item Biologists studying populations of European hamsters record the tail length ($x$ centimetres) and body mass ($y$ grams) of a random sample of 12 wild hamsters found living in central Vienna. The linear regression equation was calculated for the data shown in the scatterplot as $\hat{y}=-\text{15.24}+\text{71.88}x$.
     \begin{figure}[H]
   \centering
 \begin{minipage}[c]{.22\textwidth}
@@ -5757,7 +5758,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     \vspace{-0.3cm}
     \begin{center}
         \begin{tabular}{ccccc}
-            $\Sigma x=62.25$, & $\Sigma y=4291.5$, & $\Sigma x^2=325.9$, & $\Sigma y^2=1558042$, & $\Sigma xy=22475$
+            $\Sigma x=\text{62.25}$, & $\Sigma y=\text{4291.5}$, & $\Sigma x^\text{2}=\text{325.9}$, & $\Sigma y^\text{2}=\text{1558042}$, & $\Sigma xy=\text{22475}$
         \end{tabular}
     \end{center}
     \vspace{0.2cm}
@@ -5767,7 +5768,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     \end{enumerate}
 \end{minipage}
 \end{figure}
-    \item Data is collected on the tempo ($T$ beats per minute) and duration ($d$ minutes) of a random sample of pop-punk songs. The regression line $\hat{T}=256.65-20.65d$ is obtained for the data.
+    \item Data is collected on the tempo ($T$ beats per minute) and duration ($d$ minutes) of a random sample of pop-punk songs. The regression line $\hat{T}=\text{256.65}-\text{20.65}d$ is obtained for the data.
     \begin{figure}[H]
   \centering
 \begin{minipage}[c]{.22\textwidth}
@@ -5802,8 +5803,8 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 \begin{minipage}[c]{.78\textwidth}
     \begin{center}
         \begin{tabular}{lllll}
-            $\Sigma d=43.6$ & \qquad & $\Sigma T=3719.5$ & \qquad & $\Sigma dT=8947.2$\\
-            $\Sigma d^2=108.5$ & \qquad & $\Sigma T^2=772792$ & \qquad & $n=18$
+            $\Sigma d=\text{43.6}$ & \qquad & $\Sigma T=\text{3719.5}$ & \qquad & $\Sigma dT=\text{8947.2}$\\
+            $\Sigma d^\text{2}=\text{108.5}$ & \qquad & $\Sigma T^\text{2}=\text{772792}$ & \qquad & $n=\text{18}$
         \end{tabular}
     \end{center}
     \vspace{0.2cm}
@@ -5813,7 +5814,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     \end{enumerate}
 \end{minipage}
 \end{figure}
-\item The creators of a brand new sports website collect data on the annual social media marketing spend (£$x$ thousand) and new daily visitors ($y$) of similar sites, to plan their own budget. The results are shown below, including a least squares regression line of equation $\hat{Y}=29.5+5.6x$.
+\item The creators of a brand new sports website collect data on the annual social media marketing spend (£$x$ thousand) and new daily visitors ($y$) of similar sites, to plan their own budget. The results are shown below, including a least squares regression line of equation $\hat{y}=\text{29.5}+\text{5.6}x$.
     \begin{figure}[H]
   \centering
 \begin{minipage}[c]{.22\textwidth}
@@ -5856,7 +5857,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
 \begin{minipage}[c]{.78\textwidth}
     \begin{center}
         \begin{tabular}{lllllllll}
-            $\Sigma x=230.6$ & \quad & $\Sigma x^2=2244.6$ & \quad & $S_{xy}=1118.6$ & \quad & $S_{yy}=20640.9$ & \quad & $n=26$
+            $\Sigma x=\text{230.6}$ & \quad & $\Sigma x^\text{2}=\text{2244.6}$ & \quad & $S_{xy}=\text{1118.6}$ & \quad & $S_{yy}=\text{20640.9}$ & \quad & $n=\text{26}$
         \end{tabular}
     \end{center}
     \vspace{0.2cm}
@@ -5867,7 +5868,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     \end{enumerate}
 \end{minipage}
 \end{figure}
-    \item The Scottish physicist James Forbes was interested in finding a way to estimate altitude from measurements of the boiling temperature of water. Some of his observations on boiling point ($y$, in $F^{\circ}$) and barometric pressure ($x$, in inches of mercury) are summarised below. After plotting a scatterplot for this data, a least squares regression line was obtained with the equation $\hat{Y}=155.29+1.9018x$, from which a residual plot was also created. 
+    \item The Scottish physicist James Forbes was interested in finding a way to estimate altitude from measurements of the boiling temperature of water. Some of his observations on boiling point ($y$, in $F^{\circ}$) and barometric pressure ($x$, in inches of mercury) are summarised below. After plotting a scatterplot for this data, a least squares regression line was obtained with the equation $\hat{y}=\text{155.29}+\text{1.9018}x$, from which a residual plot was also created. 
 \vspace{-0.3cm}
 \begin{multicols}{2}
     \begin{center}
@@ -5934,7 +5935,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
     \draw (0,-2.3) rectangle (6,1.5);
     \draw[dashed] (0,0) -- (6,0);
     \node at (3,1.8) {Residual plot};
-    \node[left] at (0,0) {$0$};
+    \node[left] at (0,0) {0};
     \node[rotate=90] at (-1,-0.5) {Residuals};
     \node at (3,-3) {Fitted values};
     \end{tikzpicture}
@@ -5974,7 +5975,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
             \hline
         \end{tabular}
     \end{center}
-    The data is displayed below in a scatterplot below (\textbf{figure 1}), with the equation of a $y$ on $x$ least squares regression line calculated as $\hat{Y}=304.08+35.25x$.
+    The data is displayed below in a scatterplot below (\textbf{figure 1}), with the equation of a $y$ on $x$ least squares regression line calculated as $\hat{y}=\text{304.08}+\text{35.25}x$.
     \begin{center}
         \textbf{Figure 1}\\[0.3em]
         \begin{tikzpicture}
@@ -5999,7 +6000,7 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(11.72
             \draw[fill] (3.2,3) circle (0.08);
             \draw[fill] (8,5.5) circle (0.08);
             \draw[fill] (5,3.65) circle (0.08);
-            \draw (2.5,3.92205) -- (9,6.2133) node[right] {$\hat{Y}=304.08+35.25x$};
+            \draw (2.5,3.92205) -- (9,6.2133) node[right] {$\hat{y}=\text{304.08}+\text{35.25}x$};
         \end{tikzpicture}
     \end{center}
     \begin{enumerate}

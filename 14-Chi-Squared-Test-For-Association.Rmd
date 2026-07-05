@@ -23,16 +23,16 @@ The hypotheses for this test will be as follows:
 
 \begin{center}
 \begin{tabular}{r c l}
-    $\text{H}_0:$ & \quad & There is \textbf{no association} between \textit{handedness} and \textit{colour-blindness}.\\[0.5em]
-    $\text{H}_1:$ & \quad & There is an \textbf{association} between \textit{handedness} and \textit{colour-blindness}.
+    $\text{H}_\text{0}:$ & \quad & There is \textbf{no association} between \textit{handedness} and \textit{colour-blindness}.\\[0.5em]
+    $\text{H}_\text{1}:$ & \quad & There is \textbf{an association} between \textit{handedness} and \textit{colour-blindness}.
 \end{tabular}
 \end{center}
 
 \pagebreak
 
-## $\chi^2$ Test for Association
+## $\chi^\text{2}$ Test for Association
 
-The $\chi^2$ test for association is used to explore a possible *association* between *two categorical variables*, the data for which are typically displayed in a **contingency table**. 
+The $\chi^\text{2}$ test for association is used to explore a possible *association* between *two categorical variables*, the data for which are typically displayed in a **contingency table**. 
 
 The hypotheses for this **non-parametric** test should be stated *in context* with reference to the *categorical variables*.
 
@@ -40,11 +40,11 @@ The hypotheses for this **non-parametric** test should be stated *in context* wi
 
 \begin{centering}
 \tcbset{width=15cm}
-\begin{tcolorbox}[adjusted title=$\chi^2$ Test for Association hypotheses:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+\begin{tcolorbox}[adjusted title=$\chi^\text{2}$ Test for Association hypotheses:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{center}
 \begin{tabular}{r l}
-    $\text{H}_0:$ & There is \textbf{no association} between the variables...\\[0.5em]
-    $\text{H}_1:$ & There is an \textbf{association} between the variables...
+    $\text{H}_\text{0}:$ & There is \textbf{no association} between the variables...\\[0.5em]
+    $\text{H}_\text{1}:$ & There is \textbf{an association} between the variables...
 \end{tabular}
 \end{center}
 \end{tcolorbox}
@@ -52,9 +52,9 @@ The hypotheses for this **non-parametric** test should be stated *in context* wi
 
 \vspace{0.3cm}
 
-The test uses the *same test statistic and conditions for validity* as the $\chi^2$ goodness-of-fit test, given on **page 6** of the Data Booklet. The decision rule also matches that for the goodness-of-fit test (stated in chapter 12). The calculation for degrees of freedom, however, is different.
+The test uses the *same test statistic and conditions for validity* as the $\chi^\text{2}$ goodness-of-fit test, given on **page 6** of the Data Booklet. The decision rule also matches that for the goodness-of-fit test (stated in chapter 12). The calculation for degrees of freedom, however, is different.
 
-Returning to the data on handedness and colour-blindness, a $\chi^2$ test for association can now be performed. The first step is to include *marginal totals* for each row and column of the contingency table, as well as the total number of observations. The expected value for each cell can then be calculated by multiplying marginal totals and dividing by the total frequency, as shown below:
+Returning to the data on handedness and colour-blindness, a $\chi^\text{2}$ test for association can now be performed. The first step is to include *marginal totals* for each row and column of the contingency table, as well as the total number of observations. The expected frequency for each cell can then be calculated by multiplying the corresponding row total and column total, and dividing by the grand total, as shown below:
 
 \vspace{0.5cm}
 \begin{figure}[H]
@@ -92,17 +92,17 @@ Returning to the data on handedness and colour-blindness, a $\chi^2$ test for as
 \end{minipage}
 \end{figure}
 \begin{tikzpicture}[overlay]
-    \draw[stealth-] (15.0,2.8) -- (16.2,3.7) node[right] {$\dfrac{80\times 738}{800}$};
+    \draw[stealth-] (14.9,2.4) -- (16.1,3.3) node[right] {$\dfrac{\text{80}\times \text{738}}{\text{800}}$};
     \node at (0,0) {};
 \end{tikzpicture}
 
-\vspace{-0.5cm}The expected values produced meet the required conditions, in that all are at least 1, and at least 80\% are at least 5. Note that these expected values can also be produced quickly using some graphical calculators, as can the $\chi^2$ test statistic. However, such tools will rarely first check that the expected frequencies meet the required conditions.
+\vspace{-0.5cm}The expected values produced meet the required conditions, in that all are at least 1, and at least 80\% are at least 5. Note that these expected values can also be produced quickly using some graphical calculators, as can the $\chi^\text{2}$ test statistic. However, such tools will rarely first check that the expected frequencies meet the required conditions.
 
-$$\chi^2=\frac{(4-6.2)^2}{6.2}+\frac{(76-73.8)^2}{73.8}+\frac{(58-55.8)^2}{55.8}+\frac{(662-664.2)^2}{664.2}=0.940$$
+$$\chi^\text{2}=\frac{(\text{4}-\text{6.2})^\text{2}}{\text{6.2}}+\frac{(\text{76}-\text{73.8})^\text{2}}{\text{73.8}}+\frac{(\text{58}-\text{55.8})^\text{2}}{\text{55.8}}+\frac{(\text{662}-\text{664.2})^\text{2}}{\text{664.2}}=\text{0.940}$$
 
-The number of *degrees of freedom* for the test statistic is calculated as $\nu=(r-1)(c-1)$, where $r$ is the number of rows and $c$ is the number of columns of data in the contingency table, *not including marginal rows and columns*.
+The number of *degrees of freedom* for the test statistic is calculated as $\nu=(r-\text{1})(c-\text{1})$, where $r$ is the number of rows and $c$ is the number of columns of data in the contingency table, *not including marginal rows and columns*.
 
-Here there are *two rows* ($r=2$) and *two columns* ($c=2$), so $\nu=(2-1)(2-1)=1$. The $\chi^2_1$ critical value, taking a 5\% level of significance, can be obtained from **page 14** of the Data Booklet:  
+Here there are *two rows* ($r=\text{2}$) and *two columns* ($c=\text{2}$), so $\nu=(\text{2}-\text{1})(\text{2}-\text{1})=\text{1}$. The $\chi^\text{2}_\text{1}$ critical value, taking a 5\% level of significance, can be obtained from **page 14** of the Data Booklet:  
 
 \begin{figure}[H]
   \centering
@@ -110,7 +110,7 @@ Here there are *two rows* ($r=2$) and *two columns* ($c=2$), so $\nu=(2-1)(2-1)=
 \begin{minipage}[c]{.45\textwidth}
   \centering
 \begin{center}
-Critical value: $\chi^2=3.841$
+Critical value: $\chi^\text{2}=\text{3.841}$
 \end{center}
 \end{minipage}%
 \begin{minipage}[c]{.1\textwidth}
@@ -146,20 +146,20 @@ Critical value: $\chi^2=3.841$
 \addplot [smooth, domain=0:15] {gammapdf(x,2,2)};
 \addplot [draw=none, fill=black!50, domain=9.5:15] {gammapdf(x,2,2)} \closedcycle;
 \draw [semithick, black]  (axis cs: 9.5,0) -- (axis cs: 9.5,0.0205);
-\node[below] at (axis cs: 0,0)  {$0$};
-\node[above] at (axis cs: 6,0.1)  {$\chi^2_1$};
-\node[below] at (axis cs: 9.5,0) {$3.841$};
+\node[below] at (axis cs: 0,0)  {0};
+\node[above] at (axis cs: 6,0.1)  {$\chi^\text{2}_\text{1}$};
+\node[below] at (axis cs: 9.5,0) {3.841};
 \node[above] at (axis cs: 12,0.03) {5\%};
-\draw[very thick] (axis cs: 0.940,0) -- (axis cs: 0.940,0.25) node[above] {$0.940$};
+\draw[very thick] (axis cs: 0.940,0) -- (axis cs: 0.940,0.25) node[above] {0.940};
 \end{axis}
 \end{tikzpicture}
 \end{center}
 \end{minipage}
 \end{figure}
 
-Since $0.940<3.841$, $\text{H}_0$ is not rejected at the 5\% level of significance.\newline There is insufficient evidence to suggest that there is an association between handedness and colour-blindness. 
+Since $\text{0.940}<\text{3.841}$, $\text{H}_\text{0}$ is not rejected at the 5\% level of significance.\newline There is insufficient evidence to suggest that there is an association between handedness and colour-blindness. 
 
-Note that whilst the $\chi^2$ test statistic is a measure of how well data fits a model of *no association* between the variables, the test for association does not show *evidence* of no association - it only assesses whether the data provides evidence *for* an association.
+Note that whilst the $\chi^\text{2}$ test statistic is a measure of how well data fits a model of *no association* between the variables, the test for association does not show *evidence* of no association - it only assesses whether the data provides evidence of an association.
 
 \pagebreak
 
@@ -180,7 +180,7 @@ During the interview, each pupil is asked whether or not they play at least one 
 
 \vspace{0.3cm}
 
-Perform a $\chi^2$ test at the 1\% level of significance to assess whether there is evidence to suggest that there is an association between playing a musical instrument and learning a language.
+Perform a $\chi^\text{2}$ test at the 1\% level of significance to assess whether there is evidence to suggest that there is an association between playing a musical instrument and learning a language.
 
 \tcblower
 \textbf{Solution:}
@@ -189,8 +189,8 @@ Perform a $\chi^2$ test at the 1\% level of significance to assess whether there
 
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \text{There is no association between playing a musical instrument and learning a language.}\\[0.5em]
-      \text{H}_1: & \text{There is an association between playing a musical instrument and learning a language.}
+      \text{H}_\text{0}: & \text{There is no association between playing a musical instrument and learning a language.}\\[0.5em]
+      \text{H}_\text{1}: & \text{There is an association between playing a musical instrument and learning a language.}
     \end{array}
 \end{math}\\
 
@@ -211,15 +211,15 @@ Perform a $\chi^2$ test at the 1\% level of significance to assess whether there
 
 \vspace{0.8cm}
 
-$\nu=(r-1)(c-1)=(2-1)(2-1)=1$\\
+$\nu=(r-\text{1})(c-\text{1})=(\text{2}-\text{1})(\text{2}-\text{1})=\text{1}$\\
 
 \vspace{0.8cm}
 
-Test statistic: $\chi^2=\dfrac{(32-26.25)^2}{26.25}+...+\dfrac{(20-14.25)^2}{14.25}=7.071$\\
+Test statistic: $\chi^\text{2}=\dfrac{(\text{32}-\text{26.25})^\text{2}}{\text{26.25}}+...+\dfrac{(\text{20}-\text{14.25})^\text{2}}{\text{14.25}}=\text{7.071}$\\
 
 \vspace{0.8cm}
 
-Critical value: $\chi^2=6.635$
+Critical value: $\chi^\text{2}=\text{6.635}$
 \hspace{7cm}
 \begin{tikzpicture}[overlay, 
     declare function={gamma(\z)=
@@ -247,17 +247,17 @@ Critical value: $\chi^2=6.635$
 \addplot [smooth, domain=0:10] {gammapdf(x,1.5,2)};
 \addplot [draw=none, fill=black!50, domain=6:10] {gammapdf(x,1.5,2)} \closedcycle;
 \draw [semithick, black]  (axis cs:6,0) -- (axis cs: 6,0.04865);
-\node[below] at (axis cs: 0,0)  {$0$};
-\node[above] at (axis cs: 4,0.13)  {$\chi^2_1$};
-\node[below] at (axis cs: 6, 0) {$6.635$};
+\node[below] at (axis cs: 0,0)  {0};
+\node[above] at (axis cs: 4,0.13)  {$\chi^\text{2}_\text{1}$};
+\node[below] at (axis cs: 6, 0) {6.635};
 \node[above] at (axis cs: 8,0.05) {1\%};
-\draw[very thick] (axis cs: 7.071,0) -- (axis cs: 7.071,0.25) node[above] {$7.071$};
+\draw[very thick] (axis cs: 7.071,0) -- (axis cs: 7.071,0.25) node[above] {7.071};
 \end{axis}
 \end{tikzpicture}\\
 
 \vspace{0.8cm}
 
-Since $7.071>6.635$, reject $\text{H}_0$ at the 1\% level of significance. There is evidence to suggest that there is an association between playing a musical instrument and learning a language.
+Since $\text{7.071}>\text{6.635}$, reject $\text{H}_\text{0}$ at the 1\% level of significance. There is evidence to suggest that there is an association between playing a musical instrument and learning a language.
 
 \end{tcolorbox}
 
@@ -267,16 +267,16 @@ A vital check carried out before calculating degrees of freedom and the test sta
 ``At least 80\% of the $E_i$ should be at least 5 and none should be less than 1.''
 \end{center}
 
-Here, none of the expected values were less than 1 and at least 80\% ($\frac{4}{4}=100\%$) were at least 5.
+Here, none of the expected values were less than 1 and at least 80\% ($\frac{\text{4}}{\text{4}}=\text{100}\%$) were at least 5.
 
 \pagebreak
 
-It should be noted that since the test's purpose of looking for evidence for an *association* is the same thing as looking for a *lack of independence*. The following hypotheses are statistically equivalent to those used in the example below:
+It should be noted that looking for evidence of an *association* is equivalent to looking for evidence that the variables are *not independent*. The following hypotheses are statistically equivalent to those used in the example below:
 
 \begin{center}
 \begin{tabular}{r c l}
-    $\text{H}_0:$ & \quad & There is \textbf{no association} between \textit{test centre used} and \textit{test outcome}.\\[0.5em]
-    $\text{H}_1:$ & \quad & There is an \textbf{association} between \textit{test centre used} and \textit{test outcome}.
+    $\text{H}_\text{0}:$ & \quad & There is \textbf{no association} between \textit{test centre used} and \textit{test outcome}.\\[0.5em]
+    $\text{H}_\text{1}:$ & \quad & There is an \textbf{association} between \textit{test centre used} and \textit{test outcome}.
 \end{tabular}
 \end{center}
 
@@ -311,8 +311,8 @@ Use a suitable non-parametric test to assess the data in the contingency table a
 
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \text{The test outcome and test centre used are independent.}\\[0.5em]
-      \text{H}_1: & \text{The test outcome and test centre used are not independent.}
+      \text{H}_\text{0}: & \text{The test outcome and test centre used are independent.}\\[0.5em]
+      \text{H}_\text{1}: & \text{The test outcome and test centre used are not independent.}
     \end{array}
 \end{math}\\
 
@@ -330,15 +330,15 @@ Use a suitable non-parametric test to assess the data in the contingency table a
 
 \vspace{0.5cm}
 
-$\nu=(r-1)(c-1)=(2-1)(3-1)=2$\\
+$\nu=(r-\text{1})(c-\text{1})=(\text{2}-\text{1})(\text{3}-\text{1})=\text{2}$\\
 
 \vspace{0.5cm}
 
-Test statistic: $\chi^2=\dfrac{(19-14.4)^2}{14.4}+...+\dfrac{(10-6.6)^2}{6.6}=6.726$\\
+Test statistic: $\chi^\text{2}=\dfrac{(\text{19}-\text{14.4})^\text{2}}{\text{14.4}}+...+\dfrac{(\text{10}-\text{6.6})^\text{2}}{\text{6.6}}=\text{6.726}$\\
 
 \vspace{0.5cm}
 
-Critical value: $\chi^2=4.605$
+Critical value: $\chi^\text{2}=\text{4.605}$
 \hspace{6.5cm}
 \begin{tikzpicture}[overlay, 
     declare function={gamma(\z)=
@@ -366,16 +366,17 @@ Critical value: $\chi^2=4.605$
 \addplot [smooth, domain=0:10] {gammapdf(x,1.5,2)};
 \addplot [draw=none, fill=black!50, domain=4.6:10] {gammapdf(x,1.5,2)} \closedcycle;
 \draw [semithick, black]  (axis cs:4.6,0) -- (axis cs: 4.6,0.0865);
-\node[below] at (axis cs: 0,0)  {$0$};
-\node[above] at (axis cs: 4,0.13)  {$\chi^2_2$};
-\node[below] at (axis cs: 4.6, 0) {$4.605$};
-\node[above] at (axis cs: 7,0.06) {10\%};
+\node[below] at (axis cs: 0,0)  {0};
+\node[above] at (axis cs: 4,0.13)  {$\chi^\text{2}_\text{2}$};
+\node[below] at (axis cs: 4.6, 0) {4.605};
+\node[above] at (axis cs: 8.5,0.06) {10\%};
+\draw[very thick] (axis cs: 6.726,0) -- (axis cs: 6.726,0.25) node[above] {6.726};
 \end{axis}
 \end{tikzpicture}\\
 
 \vspace{0.5cm}
 
-Since $6.726>4.605$, reject $\text{H}_0$ at the 10\% level of significance.\\
+Since $\text{6.726}>\text{4.605}$, reject $\text{H}_\text{0}$ at the 10\% level of significance.\\
 There is evidence to suggest the driving centre used and the outcome of the test are not independent. This suggests the claim may be true (although there could be other reasons apart from a difference in standards applied by the centres).\\
 
 \end{tcolorbox}
@@ -397,7 +398,7 @@ Note that an equivalent conclusion would be that there is evidence to suggest th
         Weekday & 7 & 14
       \end{tabularx}
     \end{center}
-  Perform a $\chi^2$ test, at the 10\% level of significance, to assess whether there is evidence of an association between when a game is played and the result for the team.
+  Perform a $\chi^\text{2}$ test, at the 10\% level of significance, to assess whether there is evidence of an association between when a game is played and the result for the team.
     \item A police service gives motorists caught speeding a choice between attending a speed awareness course and a fine together with points added to their licence. A random sample of such motorists has their records checked to see whether they committed a further offence in the following 12 months. The data is recorded in a contingency table:
     \begin{center}
       \begin{tabularx}{10.5cm}{>{\centering\arraybackslash}X|  >{\centering\arraybackslash}X >{\centering\arraybackslash}X } 
@@ -417,7 +418,7 @@ Note that an equivalent conclusion would be that there is evidence to suggest th
         Miss & 17 & 11
       \end{tabularx}
     \end{center}
-    The sports scientist claims that this shows that caffeine has an effect on the performance of darts players. Perform a $\chi^2$ test of association to determine whether the data supports the claim, at the 10\% level of significance.
+    The sports scientist claims that this shows that caffeine has an effect on the performance of darts players. Perform a $\chi^\text{2}$ test of association to determine whether the data supports the claim, at the 10\% level of significance.
     \item Some modern cameras allow greater control over the sound the shutter makes when taking a photograph; however, some photographers claim that for one particular model there is an association between the shutter mode used and autofocus performance. 90 photos are taken with this model using the three different shutter modes, and each photograph is carefully checked to see whether it was in focus or not.
     \begin{center}
       \begin{tabularx}{9cm}{>{\centering\arraybackslash}X|  >{\centering\arraybackslash}X >{\centering\arraybackslash}X } 
@@ -445,7 +446,7 @@ Note that an equivalent conclusion would be that there is evidence to suggest th
 
 ## Combining Columns or Rows
 
-Where the conditions for validity for a $\chi^2$ test of association are not met, it may be still possible to carry out a test by *combining rows and/or columns*. It is generally advised to combine either:
+Where the conditions for validity for a $\chi^\text{2}$ test of association are not met, it may be still possible to carry out a test by *combining rows and/or columns*. It is generally advised to combine either:
 
 \begin{itemize}
     \item Those rows or columns with the lowest expected frequencies.
@@ -476,8 +477,8 @@ Assess at the 5\% level of significance whether there is evidence of an associat
 
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \text{There is no association between the treatment given and pain reported.}\\[0.5em]
-      \text{H}_1: & \text{There is an association between the treatment given and pain reported.}
+      \text{H}_\text{0}: & \text{There is no association between the treatment given and pain reported.}\\[0.5em]
+      \text{H}_\text{1}: & \text{There is an association between the treatment given and pain reported.}
     \end{array}
 \end{math}\\
 
@@ -503,15 +504,15 @@ Assess at the 5\% level of significance whether there is evidence of an associat
 \end{tabular}
 \end{center}
 
-$\nu=(r-1)(c-1)=(2-1)(2-1)=1$\\
+$\nu=(r-\text{1})(c-\text{1})=(\text{2}-\text{1})(\text{2}-\text{1})=\text{1}$\\
 
 \vspace{0.5cm}
 
-Test statistic: $\chi^2=\dfrac{(45-40.15)^2}{40.15}+...+\dfrac{(26-21.15)^2}{21.15}=3.324$\\
+Test statistic: $\chi^\text{2}=\dfrac{(\text{45}-\text{40.15})^\text{2}}{\text{40.15}}+...+\dfrac{(\text{26}-\text{21.15})^\text{2}}{\text{21.15}}=\text{3.324}$\\
 
 \vspace{0.5cm}
 
-Critical value: $\chi^2=3.841$
+Critical value: $\chi^\text{2}=\text{3.841}$
 \hspace{6.5cm}
 \begin{tikzpicture}[overlay, 
     declare function={gamma(\z)=
@@ -539,16 +540,17 @@ Critical value: $\chi^2=3.841$
 \addplot [smooth, domain=0:10] {gammapdf(x,1.5,2)};
 \addplot [draw=none, fill=black!50, domain=4.6:10] {gammapdf(x,1.5,2)} \closedcycle;
 \draw [semithick, black]  (axis cs:4.6,0) -- (axis cs: 4.6,0.0865);
-\node[below] at (axis cs: 0,0)  {$0$};
-\node[above] at (axis cs: 4,0.13)  {$\chi^2_1$};
-\node[below] at (axis cs: 4.6, 0) {$3.841$};
+\node[below] at (axis cs: 0,0)  {0};
+\node[above] at (axis cs: 4,0.13)  {$\chi^\text{2}_\text{1}$};
+\node[below] at (axis cs: 4.6, 0) {3.841};
 \node[above] at (axis cs: 7,0.06) {5\%};
+\draw[very thick] (axis cs: 3.324,0) -- (axis cs: 3.324,0.25) node[above] {3.324};
 \end{axis}
 \end{tikzpicture}\\
 
 \vspace{0.5cm}
 
-Since $3.324<3.841$, do not reject $\text{H}_0$ at the 5\% level of significance.\\
+Since $\text{3.324}<\text{3.841}$, do not reject $\text{H}_\text{0}$ at the 5\% level of significance.\\
 There is insufficient evidence to suggest that there is an association between the treatment given and the pain reported by patients.
 
 \end{tcolorbox}

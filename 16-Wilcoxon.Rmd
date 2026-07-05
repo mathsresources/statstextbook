@@ -1,12 +1,12 @@
 # Wilcoxon Signed Rank Test
 
-The $z$-tests and $t$-tests from chapters 10 and 15 which explore the *locations* of distributions have all focused on the *population mean*, $\mu$. Those *parametric* tests each rely on either normally distributed populations or sample sizes greater than $20$ such that the sample mean is approximately normally distributed (through the Central Limit Theorem).
+The $z$-tests and $t$-tests from chapters 10 and 15 which explore the *locations* of distributions have all focused on the *population mean*, $\mu$. Those *parametric* tests each rely on either normally distributed populations or sample sizes greater than 20 such that the sample mean is approximately normally distributed (through the Central Limit Theorem).
 
-Given small samples ($n<20$) from populations whose distributions may not be assumed to be normally distributed, a number of **non-parametric** tests may be used which explore the locations of distributions by considering the **population median**, $\eta$ (*'eta'*).
+Given small samples ($n<\text{20}$) from populations whose distributions may not be assumed to be normally distributed, a number of **non-parametric** tests may be used which explore the locations of distributions by considering the **population median**, $\eta$ (*'eta'*).
 
 ### Sign Test {-}
 
-The Sign Test is a simple non-parametric test that, whilst *not required for the Advanced Higher Statistics course*, helps to lay the groundwork for the tests covered in this chapter. It uses a useful property of the population median, $\eta$, namely that $50\%$ of observations sampled from a population can be expected to lie above $\eta$ and $50\%$ can be expected to lie below $\eta$ (assuming no values are equal to the median). This means that the number of observations on either side of the population median in a sample of size $n$ should follow a $\text{B}(n,0.5)$ distribution. For example, consider the following random sample of values ($n=12$) and a claim that the population median is less than $9$:
+The Sign Test is a simple non-parametric test that, whilst *not required for the Advanced Higher Statistics course*, helps to lay the groundwork for the tests covered in this chapter. It uses a useful property of the population median, $\eta$, namely that 50\% of observations sampled from a population can be expected to lie above $\eta$ and 50\% can be expected to lie below $\eta$ (assuming no values are equal to the median). This means that the number of observations on either side of the population median in a sample of size $n$ should follow a $\text{B}(n,\text{0.5})$ distribution. For example, consider the following random sample of values ($n=\text{12}$) and a claim that the population median is greater than 9:
 
 \begin{figure}[H]
   \centering
@@ -17,8 +17,8 @@ The Sign Test is a simple non-parametric test that, whilst *not required for the
 \begin{center}
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \eta=9\\[0.5em]
-      \text{H}_1: & \eta<9
+      \text{H}_\text{0}: & \eta=\text{9}\\[0.5em]
+      \text{H}_\text{1}: & \eta>\text{9}
     \end{array}
 \end{math}
 \end{center}
@@ -41,7 +41,7 @@ The Sign Test is a simple non-parametric test that, whilst *not required for the
 \foreach \x in {5,10,...,20}
 \node at (0.5*\x,-0.3) {\x};
 \draw[semithick,dashed] (4.5,0) -- (4.5,1);
-\node at (4.5,1.4) {$\eta=9$};
+\node at (4.5,1.4) {$\eta=\text{9}$};
 
 \draw[fill=black!25] (7,0.5) circle (3pt);
 \draw[fill=black!25] (8,0.5) circle (3pt);
@@ -62,49 +62,61 @@ The Sign Test is a simple non-parametric test that, whilst *not required for the
 \end{minipage}
 \end{figure}
 
-With $4$ out of the $12$ observed values being less than $9$, the $p$-value for this test can be calculated as the probability of observing $4$ or fewer values less than $\eta=9$. Letting random variable $X$ represent the number of such values, which follows a $\text{B}(12,0.5)$ distribution under the null hypothesis:
+Under $\text{H}_\text{0}$, we would expect the number below 9 to be centred around 6, although random variation means it need not be exactly 6. With only 4 out of the 12 observed values being less than 9, it may be suspected that the true median is higher, supporting the alternative hypothesis. A $p$-value for this test can be calculated as the probability of observing 4 or fewer values less than $\eta=\text{9}$. Letting random variable $X$ represent the number of such values, which follows a $\text{B}(\text{12},\text{0.5})$ distribution under the null hypothesis:
 
 \vspace{-0.3cm}
 
-$$p\text{-value}=\text{P}(X\leqslant4)=0.1938$$
+$$p\text{-value}=\text{P}(X\leqslant\text{4})=\text{0.1938}$$
 
 \vspace{0.1cm}
 
-Since $0.1938>0.05$, do not reject $\text{H}_0$ at the $5\%$ level of significance. 
+Since $\text{0.1938}>\text{0.05}$, do not reject $\text{H}_\text{0}$ at the 5\% level of significance. 
 
-There is insufficient evidence to suggest that the population median is less than $9$.
+There is insufficient evidence to suggest that the population median is greater than 9.
 
 \pagebreak
 
 ## Wilcoxon Signed Rank Test
 
-Whilst the Sign Test is only concerned with the *number* of values that fall on either side of the hypothesised population median, $\eta$, the Wilcoxon Signed Rank test also considers how *far* from the median these values lie. More specifically, it applies weighting to the values by assigning *rank* $1$ to the value closest to $\eta$, *rank* $2$ to the second closest, and so on.
+Whilst the Sign Test is only concerned with the *number* of values that fall on either side of the hypothesised population median, $\eta$, the Wilcoxon Signed Rank test also considers how *far* from the median these values lie. More specifically, it applies weighting to the values by assigning *rank* 1 to the value closest to $\eta$, *rank* 2 to the second closest, and so on.
 
 \textbf{Zeros:} Any values that are exactly equal to the median, $\eta$, are ignored and not given a rank, with the sample size $n$ reduced to reflect the number of *remaining values to be ranked*.
 
-\textbf{Tied ranks:} Values that are equally distant from the median, $\eta$, share ranks. For example, if two values are equally far from $\eta$ when looking to assign rank $4$, then they are each ranked $4.5$, since $\frac{4+5}{2}=4.5$. If three values are equally distant from $\eta$ when assigning rank $7$, then they are each ranked $8$ since $\frac{7+8+9}{3}=8$.
+\textbf{Tied ranks:} Values that are equally distant from the median, $\eta$, share ranks. For example, if two values are equally far from $\eta$ when looking to assign rank 4, then they are each ranked 4.5, since $\frac{\text{4}+\text{5}}{\text{2}}=\text{4.5}$. If three values are equally distant from $\eta$ when assigning rank 7, then they are each ranked 8 since $\frac{\text{7}+\text{8}+\text{9}}{\text{3}}=\text{8}$.
 
-\begin{itemize}
+\begin{itemize}[itemsep=0pt]
     \item Ranks of values greater than the median are denoted as \textit{positive ranks}, and their total as $W_{+}$.
     \item Ranks of values less than the median are denoted as \textit{negative ranks}, and their total as $W_{-}$. 
 \end{itemize}
 
-Consider a random sample of nine values from a distribution with claimed median $\eta=10$:
+Consider a random sample of nine values from a distribution with claimed median $\eta=\text{10}$:
 
-\begin{center}
-  \begin{tabular}{ccccccccc}
-      2 & 4 & 5 & 6 & 10 & 11 & 12 & 13 & 16
-  \end{tabular}
-\end{center}
+\begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.3\textwidth}
 
 \begin{center}
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \eta=10\\[0.5em]
-      \text{H}_1: & \eta\ne 10
+      \text{H}_\text{0}: & \eta=\text{10}\\[0.5em]
+      \text{H}_\text{1}: & \eta\ne \text{10}
     \end{array}
 \end{math}
 \end{center}
+
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.7\textwidth}
+\centering 
+
+  \begin{tabular}{cccccccccc}
+      Sample: & 2 & 4 & 5 & 6 & 10 & 11 & 12 & 13 & 16
+  \end{tabular}
+ 
+\end{minipage}
+\end{figure}
+
+\vspace{-0.5cm}
 
 \begin{center}
 \begin{tikzpicture}
@@ -115,73 +127,172 @@ Consider a random sample of nine values from a distribution with claimed median 
 \draw[semithick,dashed] (10,-0.4) -- (10,0.5);
 \node at (10,0.8) {$\eta$};
 
-\draw[fill=black!35] (11,0) circle (2.8pt) node[anchor=south] {${\scriptstyle 1_{+}}$};
-\draw[fill=black!35] (13,0) circle (2.8pt) node[anchor=south] {${\scriptstyle 3_{+}}$};
-\draw[fill=black!35] (6,0) circle (2.8pt) node[anchor=south] {${\scriptstyle 4_{-}}$};
-\draw[fill=black!35] (16,0) circle (2.8pt) node[anchor=south] {${\scriptstyle 6.5_{+}}$};
-\draw[fill=black!35] (2,0) circle (2.8pt) node[anchor=south] {${\scriptstyle 8_{-}}$};
-\draw[fill=black!35] (5,0) circle (2.8pt) node[anchor=south] {${\scriptstyle 5_{-}}$};
-\draw[fill=black!35] (12,0) circle (2.8pt) node[anchor=south] {${\scriptstyle 2_{+}}$};
-\draw[fill=black!35] (4,0) circle (2.8pt) node[anchor=south] {${\scriptstyle 6.5_{-}}$};
+\draw[fill=black!35] (11,0) circle (2.8pt) node[anchor=south] {${\scriptstyle \text{1}_{+}}$};
+\draw[fill=black!35] (13,0) circle (2.8pt) node[anchor=south] {${\scriptstyle \text{3}_{+}}$};
+\draw[fill=black!35] (6,0) circle (2.8pt) node[anchor=south] {${\scriptstyle \text{4}_{-}}$};
+\draw[fill=black!35] (16,0) circle (2.8pt) node[anchor=south] {${\scriptstyle \text{6.5}_{+}}$};
+\draw[fill=black!35] (2,0) circle (2.8pt) node[anchor=south] {${\scriptstyle \text{8}_{-}}$};
+\draw[fill=black!35] (5,0) circle (2.8pt) node[anchor=south] {${\scriptstyle \text{5}_{-}}$};
+\draw[fill=black!35] (12,0) circle (2.8pt) node[anchor=south] {${\scriptstyle \text{2}_{+}}$};
+\draw[fill=black!35] (4,0) circle (2.8pt) node[anchor=south] {${\scriptstyle \text{6.5}_{-}}$};
 \draw[fill=black!75] (10,0) circle (2.8pt);
 
-\node at (14,-1.6) {$W_+=12.5$};
-\node at (6,-1.6) {$W_-=23.5$};
+\node at (14,-1.6) {$W_+=\text{12.5}$};
+\node at (6,-1.6) {$W_-=\text{23.5}$};
 
 \end{tikzpicture}
 \end{center}
 
-Note that the sum of $W_+$ and $W_-$ is $12.5+23.5=36$, which will always be the total when ranks are assigned to $n=8$ values, since $1+2+\dots+8=36$. It is recommended to check that the sum of $W_+$ and $W_-$ does give the appropriate total for the sample size, which for a sample of size $n$ is given by $\frac{1}{2}n(n+1)$.
+Note that the sum of $W_+$ and $W_-$ is $\text{12.5}+\text{23.5}=\text{36}$, which will always be the total when ranks are assigned to $n=\text{8}$ values, since $\text{1}+\text{2}+\dots+\text{8}=\text{36}$. It is recommended to check that the sum of $W_+$ and $W_-$ does give the appropriate total for the sample size, which for a sample of size $n$ is given by $\frac{\text{1}}{\text{2}}n(n+\text{1})$.
 
-\begin{centering}
-\tcbset{width=15.5cm}
+\begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.45\textwidth}
+
+Under $\text{H}_\text{0}$, the discrete distribution of $W_+$ and $W_-$ from a sample of $n=\text{8}$ ranked values can be found by considering all equally likely permutations of signed ranks (assuming none are tied).\\[0.5em] Values of either which would lead to $\text{H}_\text{0}$ being rejected at the 5\% significance level for a two-tailed test are shaded.
+
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.02\textwidth}
+
+\phantom{squirrel}
+
+
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.53\textwidth}
+
+\begin{center}
+    \begin{tikzpicture}[scale=0.8]
+        \node at (18*0.3,-1.2) {Discrete distribution of $W$ for $n=\text{8}$};
+        \draw (0,0) -- (0.3*36,0);
+        \foreach \x in {0,6,...,36}{
+        \draw (0.3*\x,-0.1) -- (0.3*\x,0) node[below] {\x};
+        }
+        \foreach \x in {0,1,2,3,33,34,35,36}{
+        \draw[thin,fill=black!50] (\x*0.3,0.2) circle (0.08);
+        }
+        \foreach \x in {3,33}{
+        \draw[thin,fill=black!50] (\x*0.3,0.4) circle (0.08);
+        }
+        \foreach \x in {4,5,...,32}{
+        \draw[thin] (\x*0.3,0.2) circle (0.08);
+        }
+        \foreach \x in {4,5,...,32}{
+        \draw[thin] (\x*0.3,0.4) circle (0.08);
+        }
+        \foreach \x in {5,6,...,31}{
+        \draw[thin] (\x*0.3,0.6) circle (0.08);
+        }
+        \foreach \x in {6,7,...,30}{
+        \draw[thin] (\x*0.3,0.8) circle (0.08);
+        }
+        \foreach \x in {7,8,...,29}{
+        \draw[thin] (\x*0.3,1.0) circle (0.08);
+        }
+        \foreach \x in {8,9,...,28}{
+        \draw[thin] (\x*0.3,1.2) circle (0.08);
+        }
+        \foreach \x in {9,10,...,27}{
+        \draw[thin] (\x*0.3,1.4) circle (0.08);
+        }
+        \foreach \x in {10,11,...,26}{
+        \draw[thin] (\x*0.3,1.6) circle (0.08);
+        }
+        \foreach \x in {11,12,...,25}{
+        \draw[thin] (\x*0.3,1.8) circle (0.08);
+        }
+        \foreach \x in {12,13,...,24}{
+        \draw[thin] (\x*0.3,2.0) circle (0.08);
+        }
+        \foreach \x in {13,14,...,23}{
+        \draw[thin] (\x*0.3,2.2) circle (0.08);
+        }
+        \foreach \x in {14,15,...,22}{
+        \draw[thin] (\x*0.3,2.4) circle (0.08);
+        }
+        \foreach \x in {15,16,...,21}{
+        \draw[thin] (\x*0.3,2.6) circle (0.08);
+        }
+        \draw[thin] (18*0.3,2.8) circle (0.08);
+    \end{tikzpicture}
+    \end{center}
+ 
+\end{minipage}
+\end{figure}
+
+The presence of tied ranks for this sample means that the critical value used will only be *approximate*, rather than exact. The Data Booklet (**page 15**) provides these, based on the *smaller* of $W_+$ and $W_-$, and $\text{H}_\text{0}$ is rejected when $\min(W_+,W_-)$ is **less than or equal to** the critical value.
+
+Test statistic: $W=\min(\text{12.5},\text{23.5})=\text{12.5}$
+
+Critical value: $W=\text{3}$ \; ($\alpha=\text{0.05}$, $n=\text{8}$ \text{ and two-tailed.})
+
+Since $\text{12.5}>\text{3}$, do not reject $\text{H}_\text{0}$ at the 5\% level of significance.  
+There is insufficient evidence to suggest that the population **median** is not 10.
+
+\pagebreak
+
+The Wilcoxon Signed Rank test is often used for small samples for which the Central Limit Theorem cannot be invoked, from populations which cannot be reasonably assumed to be normally distributed. 
+
+\begin{center}
+\tcbset{width=16cm}
 \begin{tcolorbox}[adjusted title=For a Wilcoxon Signed Rank test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The \textbf{test statistic}, denoted $W$, is the \textit{lower} of $W_+$ and $W_-$, or $\mathsf{min}(W_+,W_-)$. 
     \item The \textbf{critical value} can be obtained from page 15 of the Data Booklet.
-    \item $\text{H}_0$ is \textbf{rejected} if the test statistic $W$ is \textbf{less than or equal to} the critical value.
+    \item $\text{H}_\text{0}$ is \textbf{rejected} if the test statistic $W$ is \textbf{less than or equal to} the critical value.
 \end{itemize}
 \end{tcolorbox}
-\end{centering}
+\end{center}
 
-Test statistic: $W=\min(12.5,23.5)=12.5$\\
+\begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.42\textwidth}
 
-Critical value: $W=3$ \; ($\alpha=0.05$, $n=8$ \text{ and two-tailed.})\\
+A suggested approach to obtaining $W_+$ and $W_-$ without a diagram is:
 
-Since $12.5>3$, do not reject $\text{H}_0$ at the $5\%$ level of significance.  
-There is insufficient evidence to suggest that the population **median** is not $10$.
+\begin{itemize}[itemsep=0pt]
+    \item \textbf{Subtract} $\eta$ from each value.
+    \item Ignoring any \textbf{zeros}, assign ranks in ascending order by \textbf{absolute} value.
+\end{itemize}
 
-\pagebreak
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.03\textwidth}
+\centering 
 
-The Wilcoxon Signed Rank test is often used for small samples for which the Central Limit Theorem cannot be invoked, from populations which cannot be reasonably assumed to be normally distributed in order to use a $t$-test. The table of critical values only extends to samples up to size $n=20$, once zeros have been discarded. 
+\phantom{Hi}
 
-\begin{centering}
-\tcbset{width=15cm}
+
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.55\textwidth}
+\centering 
+
+\begin{center}
 \begin{tcolorbox}[adjusted title=Conditions for valid use:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The underlying distribution is \textbf{symmetrical}.
     \item The observations are \textbf{independent} (typically assured through \textit{random sampling}).
 \end{itemize}
 \end{tcolorbox}
-\end{centering}
+\end{center}
+ 
+\end{minipage}
+\end{figure}
 
-A suggested methodical approach to obtaining the signed ranks required without a diagram is:
-
-\begin{itemize}
-    \item \textbf{Subtract} $\eta$ from every value in the sample.
-    \item Ignoring any \textbf{zeros}, assign ranks to the remaining $n$ values in ascending order by \textbf{absolute} value.
-\end{itemize}
-
-The following example should be compared to Example from Section 10.7, Chapter 10, in which a $t$-test was used.
+The following example should be compared to the example in Section 10.7, in which a $t$-test was used.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A supermarket sells sharing-sized bags of a particular brand of crisps. A consumer watchdog is asked to investigate a claim that the median mass of crisps contained in a bag is less than the stated contents of 150 grams. A random sample of bags gives the following results, in grams:
+\textbf{Problem:} A supermarket sells sharing-sized bags of a particular brand of crisps. A consumer watchdog is asked to investigate a claim that the median mass of crisps contained in a bag is less than the stated contents of 150 grams. A random sample of bags gives the following results:
 
   \begin{center}
   \begin{tabular}{c c c c c c c c} 
       148.3 & 151.2 & 149.7 & 152.5 & 145.4 & 151.0 & 146.5 & 151.6\\ 
   \end{tabular}
   \end{center}
+
+\vspace{-0.3cm}
   
   \begin{center}
   \begin{tikzpicture}
@@ -192,7 +303,7 @@ The following example should be compared to Example from Section 10.7, Chapter 1
 \foreach \x in {144,146,...,154}
 \node at (\x,-0.3) {\x};
 \node[below] at (149,-0.7) {Mass of crisps (grams)};
-\draw[dashed] (150,0) -- (150,0.8) node[above] {$\eta=150$};
+\draw[dashed] (150,0) -- (150,0.8) node[above] {$\eta=\text{150}$};
 
 \draw[fill=black!25] (148.3,0.5) circle (2pt);
 \draw[fill=black!25] (151.2,0.5) circle (2pt);
@@ -206,40 +317,40 @@ The following example should be compared to Example from Section 10.7, Chapter 1
 \end{tikzpicture}
 \end{center}
 
-Stating a necessary assumption, perform a non-parametric test to assess the claim at the 1\% level of significance.
+\vspace{-0.3cm}
+
+Stating one assumption required, perform a Wilcoxon test to assess the claim (with $\alpha=\text{0.01}$).
 
 \tcblower
-\textbf{Solution:}
-
-Assume that the mass of crisps in a bag is symmetrically distributed.\\
+\textbf{Solution:} Assume that the mass of crisps in a bag is symmetrically distributed.\\
 
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \eta=150\\[0.5em]
-      \text{H}_1: & \eta<150
+      \text{H}_\text{0}: & \eta=\text{150}\\[0.5em]
+      \text{H}_\text{1}: & \eta<\text{150}
     \end{array}
 \end{math}
 
 \begin{center}
 \begin{tabular}{c c c c c c c c | c} 
     148.3 & 151.2 & 149.7 & 152.5 & 145.4 & 151.0 & 146.5 & 151.6 & \\
-    -1.7 & 1.2 & -0.3 & 2.5 & -4.6 & 1.0 & -3.5 & 1.6 & ($\textit{subtract }\eta=150$)\\
-    $5_-$ & $3_+$ & $1_-$ & $6_+$ & $8_-$ & $2_+$ & $7_-$  & $4_+$  & (\textit{assign signed ranks})
+    -1.7 & 1.2 & -0.3 & 2.5 & -4.6 & 1.0 & -3.5 & 1.6 & ($\textit{subtract }\eta=\text{150}$)\\
+    $\text{5}_-$ & $\text{3}_+$ & $\text{1}_-$ & $\text{6}_+$ & $\text{8}_-$ & $\text{2}_+$ & $\text{7}_-$  & $\text{4}_+$  & (\textit{assign signed ranks})
 \end{tabular}
 \end{center}
 
 \begin{center}
 \begin{tabular}{l c r}
-    $W_+=15$ & \qquad & $\frac{1}{2}\times 8 \times 9=36$\\[0.5em]
-    $W_-=21$ & & \textit{Check: }$15+21=36$\\
+    $W_+=\text{15}$ & \qquad & $\frac{\text{1}}{\text{2}}\times \text{8} \times \text{9}=\text{36}$\\[0.5em]
+    $W_-=\text{21}$ & & \textit{Check: }$\text{15}+\text{21}=\text{36}$\\
 \end{tabular}
 \end{center}
 
-Test statistic: $W=\min(15,21)=15$\\
+Test statistic: $W=\min(\text{15},\text{21})=\text{15}$\\[-0.5em]
 
-Critical value: $W=1$ \; ($\alpha=0.01$, $n=8$ \text{and one-tailed.})\\
+Critical value: $W=\text{1}$ \; ($\alpha=\text{0.0}1$, $n=\text{8}$ \text{and one-tailed.})\\[-0.5em]
 
-Since $15>1$, do not reject $\text{H}_0$ at the 1\% level of significance. 
+Since $\text{15}>\text{1}$, do not reject $\text{H}_\text{0}$ at the 1\% level of significance. 
 There is insufficient evidence to suggest that the median mass of crisps in the bags is less than the stated value of 150g.
 
 \end{tcolorbox}
@@ -264,7 +375,7 @@ There is insufficient evidence to suggest that the median mass of crisps in the 
 \foreach \x in {35,40,...,70}
 \node at (0.2*\x,-0.3) {\x};
 \node[below] at (11,-0.7) {Hazard perception test scores};
-\draw[dashed] (0.2*44,0) -- (0.2*44,0.8) node[above] {$\eta=44$};
+\draw[dashed] (0.2*44,0) -- (0.2*44,0.8) node[above] {$\eta=\text{44}$};
 
 \draw[fill=black!25] (0.2*63,0.5) circle (2pt);
 \draw[fill=black!25] (0.2*38,0.5) circle (2pt);
@@ -287,33 +398,33 @@ Test whether there is sufficient evidence, at the 10\% level of significance, th
 
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \eta=44\\[0.5em]
-      \text{H}_1: & \eta\ne 44
+      \text{H}_\text{0}: & \eta=\text{44}\\[0.5em]
+      \text{H}_\text{1}: & \eta\ne \text{44}
     \end{array}
 \end{math}
 
 \begin{center}
 \begin{tabular}{c c c c c c c c c c | c} 
     63 & 38 & 48 & 44 & 50 & 70 & 68 & 39 & 64 & 66 & \\
-    19 & -6 & 4 & 0 & 6 & 26 & 24 & -5 & 20 & 22 & ($\textit{subtract }\eta=44$)\\
-    $5_+$ & $3.5_-$ & $1_+$ &  & $3.5_+$ & $9_+$ & $8_+$ & $2_-$ & $6_+$ & $7_+$ & (\textit{assign signed ranks})
+    19 & -6 & 4 & 0 & 6 & 26 & 24 & -5 & 20 & 22 & ($\textit{subtract }\eta=\text{44}$)\\
+    $\text{5}_+$ & $\text{3.5}_-$ & $\text{1}_+$ &  & $\text{3.5}_+$ & $\text{9}_+$ & $\text{8}_+$ & $\text{2}_-$ & $\text{6}_+$ & $\text{7}_+$ & (\textit{assign signed ranks})
 \end{tabular}
 \end{center}
 
 \begin{center}
 \begin{tabular}{l c r}
-    $W_+=39.5$ & \qquad & $\frac{1}{2}\times 9 \times 10=45$\\[0.5em]
-    $W_-=5.5$ & & \textit{Check: }$39.5+5.5=45$\\
+    $W_+=\text{39.5}$ & \qquad & $\frac{\text{1}}{\text{2}}\times \text{9} \times \text{10}=\text{45}$\\[0.5em]
+    $W_-=\text{5.5}$ & & \textit{Check: }$\text{39.5}+\text{5.5}=\text{45}$\\
 \end{tabular}
 \end{center}
 
 
-Test statistic: $W=\min(39.5,5.5)=5.5$ \\
+Test statistic: $W=\min(\text{39.5},\text{5.5})=\text{5.5}$ \\
 
-Critical value: $W=8$ \; ($\alpha=0.1$, $n=9$ \text{and two-tailed.})\\
+Critical value: $W=\text{8}$ \; ($\alpha=\text{0.1}$, $n=\text{9}$ \text{and two-tailed.})\\
 
 
-Since $5.5<8$, reject $\text{H}_0$ at the 10\% level of significance. 
+Since $\text{5.5}<\text{8}$, reject $\text{H}_\text{0}$ at the 10\% level of significance. 
 There is sufficient evidence to suggest that the median score achieved in the hazard perception tests has changed from 44 points.
 
 \end{tcolorbox}
@@ -382,9 +493,9 @@ Assess at the 5\% level whether the data suggests the median appointment duratio
 
 ## Wilcoxon Signed Rank Test for Paired Data
 
-In Chapter 15, the *paired* $t$-*test* was introduced. It is used for assessing the *mean of the differences between paired values* from small samples, and a key assumption for the test is that the *population of differences is normally distributed*. Where this assumption cannot reasonably be made, a **Wilcoxon Signed Rank Test for Paired Data** can instead be used to assesses the **median of the differences**, $\eta_d$.
+In Chapter 15, the *paired* $t$-*test* was introduced. It is used for assessing the *mean of the differences between paired values* from small samples, and a key assumption for the test is that the *population of differences is normally distributed*. Where this assumption cannot reasonably be made, a **Wilcoxon Signed Rank Test for Paired Data** can instead be used to assess the **median of the differences**, $\eta_d$.
 
-\begin{centering}
+\begin{center}
 \tcbset{width=16cm}
 \begin{tcolorbox}[adjusted title=Conditions for valid use of the Wilcoxon Signed Rank Test for Paired Data:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
@@ -392,11 +503,11 @@ In Chapter 15, the *paired* $t$-*test* was introduced. It is used for assessing 
     \item The observed differences are \textbf{independent} (typically assured through \textit{random sampling}).
 \end{itemize}
 \end{tcolorbox}
-\end{centering}
+\end{center}
 
 Just as with the paired $t$-test, the paired samples are used to produce a *single sample of differences*, allowing a similar process to the one-sample Wilcoxon Signed Rank Test.
 
-With a null hypothesis of $\eta_{\text{difference}}=0$, the step of subtracting the median from each value can be omitted for a paired Wilcoxon test, as subtracting zero will have no effect.
+With a null hypothesis of $\eta_{\text{difference}}=\text{0}$, the step of subtracting the median from each value can be omitted for a paired Wilcoxon test, as subtracting zero will have no effect.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} An athletics coach wishes to assess the value to athletes of an intensive period of weight training. Twelve 400-metre runners are selected at random and their times to complete this distance, in seconds, are recorded. Following a programme of weight training they run the distance again, with their times in seconds again recorded. The table below summarises the results.
@@ -413,36 +524,36 @@ With a null hypothesis of $\eta_{\text{difference}}=0$, the step of subtracting 
 Stating an assumption required, perform a non-parametric test to assess whether there is sufficient evidence that the training programme improves athletes’ times for the 400 metre distance.
 
 \tcblower
-\textbf{Solution:}
+\textbf{Solution:} Assume that the population of differences in times is symmetrically distributed.
 
 (Note that $d=\textit{Before}-\textit{After}$ will give differences such that a positive number represents an improvement in running time, and $\eta_d$ represents the population median of differences).\\
 
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \eta_d=0\\
-      \text{H}_1: & \eta_d>0
+      \text{H}_\text{0}: & \eta_d=\text{0}\\
+      \text{H}_\text{1}: & \eta_d>\text{0}
     \end{array}
 \end{math}
 
 \begin{center}
 \begin{tabular}{c c c c c c c c c c c c | c} 
     0.4 & -0.6 & 0.6 & 1.0 & 0.0 & 1.3 & -1.1 & 0.7 & 2.1 & 0.1 & 2.3 & 1.7 & \\
-    $2_+$ & $3.5_-$ & $3.5_+$ & $6_+$ &  & $8_+$ & $7_-$ & $5_+$ & $10_+$ & $1_+$ & $11_+$ & $9_+$ & (\textit{assign signed ranks})
+    $\text{2}_+$ & $\text{3.5}_-$ & $\text{3.5}_+$ & $\text{6}_+$ &  & $\text{8}_+$ & $\text{7}_-$ & $\text{5}_+$ & $\text{10}_+$ & $\text{1}_+$ & $\text{11}_+$ & $\text{9}_+$ & (\textit{assign signed ranks})
 \end{tabular}
 \end{center}
 
 \begin{center}
 \begin{tabular}{l c r}
-    $W_+=55.5$ & \qquad & $\frac{1}{2}\times 11 \times 12=66$\\
-    $W_-=10.5$ & & \textit{Check: }$55.5+10.5=66$\\
+    $W_+=\text{55.5}$ & \qquad & $\frac{\text{1}}{\text{2}}\times \text{11} \times \text{12}=\text{66}$\\
+    $W_-=\text{10.5}$ & & \textit{Check: }$\text{55.5}+\text{10.5}=\text{66}$\\
 \end{tabular}
 \end{center}
 
-Test statistic: $W=\min(55.5,10.5)=10.5$\\
+Test statistic: $W=\min(\text{55.5},\text{10.5})=\text{10.5}$\\
 
-Critical value: $W=13$ \; ($\alpha=0.05$, $n=11$ \text{and one-tailed.})\\
+Critical value: $W=\text{13}$ \; ($\alpha=\text{0.05}$, $n=\text{11}$ \text{and one-tailed.})\\
 
-Since $10.5<13$, reject $\text{H}_0$ at the 5\% level of significance. 
+Since $\text{10.5}<\text{13}$, reject $\text{H}_\text{0}$ at the 5\% level of significance. 
 There is sufficient evidence to suggest that the median difference in 400 metres times is greater than zero, meaning times have improved after the weight training programme.
 
 \end{tcolorbox}
@@ -520,7 +631,7 @@ Although large samples may allow data from *not normally-distributed* population
 \begin{minipage}[t]{.6\textwidth}
     \begin{center}
     \begin{tikzpicture}[scale=0.5]
-        \node at (22.5*0.3,-1.5) {Discrete distribution of $W$ for $n=9$};
+        \node at (22.5*0.3,-1.5) {Discrete distribution of $W$ for $n=\text{9}$};
         \draw (0,0) -- (0.3*45,0);
         \foreach \x in {0,5,...,45}{
         \draw (0.3*\x,-0.1) -- (0.3*\x,0) node[below] {\x};
@@ -600,15 +711,15 @@ Although large samples may allow data from *not normally-distributed* population
   \centering
 \begin{minipage}[t]{.4\textwidth}
 \vspace{-3cm}
-The discrete distribution of $W$ under the null hypothesis is symmetrical and, as the sample size $n$ increases, can be increasingly accurately \textit{approximated} by the continuous normal distribution. 
+The discrete distribution of $W_+$ and $W_-$ under the null hypothesis is symmetrical and, as the sample size $n$ increases, can be increasingly accurately \textit{approximated} by the continuous normal distribution. 
 \end{minipage}
 \end{figure}
 
-The Data Booklet only provides Wilcoxon critical values for $n\leqslant20$. When dealing with a larger sample, a Wilcoxon Signed Rank Test may still be performed using a **normal approximation** to the distribution of $W$. **Page 15** of the Data Booklet provides the required properties of this distribution:
+The Data Booklet only provides Wilcoxon critical values for $n\leqslant\text{20}$. When dealing with a larger sample, a Wilcoxon Signed Rank Test may still be performed using a **normal approximation** to the distribution of a signed-rank sum, such as $W_+$ or $W_-$. **Page 15** of the Data Booklet provides the required properties of this distribution:
 
-$$\text{E}(W)=\frac{1}{4}n(n+1) \quad \text{and} \quad \text{V}(W)=\frac{1}{24}n(n+1)(2n+1)$$
+$$\text{E}(W)=\frac{\text{1}}{\text{4}}n(n+\text{1}) \quad \text{and} \quad \text{V}(W)=\frac{\text{1}}{\text{24}}n(n+\text{1})(\text{2}n+\text{1})$$
 
-Since here a *discrete* distribution is being approximated by the *continuous* normal distribution, a **continuity correction** is required. When using the smaller rank sum $\min(W_+,W_-)$, a continuity correction of $+0.5$ should be applied.
+Since here a *discrete* distribution is being approximated by the *continuous* normal distribution, a **continuity correction** is required. When using the smaller rank sum $\min(W_+,W_-)$, a continuity correction of $\text{0.5}$ should be applied.
 
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
@@ -623,7 +734,7 @@ Since here a *discrete* distribution is being approximated by the *continuous* n
 \end{tabular}
 \end{center}
 
-Sums of signed ranks for this data were calculated as: \quad $W_+=223 \quad \text{and} \quad W_-=30$.\\
+Sums of signed ranks for this data were calculated as: \quad $W_+=\text{223} \quad \text{and} \quad W_-=\text{30}$.\\[-0.5em]
 
 Use a non-parametric test to investigate the resident’s claim.
 
@@ -634,20 +745,20 @@ Use a non-parametric test to investigate the resident’s claim.
 
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \eta=30\\
-      \text{H}_1: & \eta>30
+      \text{H}_\text{0}: & \eta=\text{30}\\
+      \text{H}_\text{1}: & \eta>\text{30}
     \end{array}
 \end{math}
 
 \vspace{0.3cm}
 
-$W=\min(223,30)=30$\\
+$W=\min(\text{223},\text{30})=\text{30}$\\[-0.5em]
 
-$$\text{E}(W)=\frac{1}{4}\times 22\times23=126.5 \quad \text{and} \quad \text{V}(W)=\frac{1}{24}\times 22\times 23\times 45=948.75$$\\
+$$\text{E}(W)=\frac{\text{1}}{\text{4}}\times \text{22}\times\text{23}=\text{126.5} \quad \text{and} \quad \text{V}(W)=\frac{\text{1}}{\text{24}}\times \text{22}\times \text{23}\times \text{45}=\text{948.75}$$\\[-0.5em]
 
-Test statistic: $z=\cfrac{30.5-126.5}{\sqrt{948.75}}=-3.12$\\
+Test statistic: $z=\cfrac{\text{30.5}-\text{126.5}}{\sqrt{\text{948.75}}}=-\text{3.12}$\\
 
-Critical value: $z=-1.64$
+Critical value: $z=-\text{1.64}$
 \hspace{6cm}
 \begin{tikzpicture}[overlay]
 \begin{axis}[
@@ -673,20 +784,20 @@ Critical value: $z=-1.64$
 \pgfmathsetmacro\valueA{gauss(1.64,0,1)}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
 \draw [semithick, black]  (axis cs:-1.64,0) -- (axis cs:-1.64,\valueA);
-\node[below] at (axis cs: 0,0)  {$0$};
+\node[below] at (axis cs: 0,0)  {0};
 \node[above] at (axis cs: 0,\valueB)  {$z$};
-\node[below] at (axis cs: -1.64, 0) {$-1.64$};
+\node[below] at (axis cs: -1.64, 0) {$-\text{1.64}$};
 \node[above] at (axis cs: -1.9,\valueA) {5\%};
-\draw[very thick] (axis cs: -2.9,0) -- (axis cs: -2.9,0.44) node[above] {$-3.12$};
+\draw[very thick] (axis cs: -2.9,0) -- (axis cs: -2.9,0.44) node[above] {$-\text{3.12}$};
 \end{axis}
 \end{tikzpicture}\\
 
 
-Since $-3.12<-1.64$, reject $\text{H}_0$ at the 5\% level of significance. There is sufficient evidence to suggest that the median speed of the vehicles on the road is greater than 30 mph, and so more than 50\% of the vehicles are speeding.
+Since $-\text{3.12}<-\text{1.64}$, reject $\text{H}_\text{0}$ at the 5\% level of significance. There is sufficient evidence to suggest that the median speed of the vehicles on the road is greater than 30 mph, and so more than 50\% of the vehicles are speeding.
 
 \end{tcolorbox}
 
-\newpage
+\pagebreak
 
 []{#ex163q}
 
@@ -705,7 +816,7 @@ Since $-3.12<-1.64$, reject $\text{H}_0$ at the 5\% level of significance. There
 
 \begin{center}
 \begin{tabular}{c c c}
-    $W_+=149.5$ & \qquad & $W_-=175.5$
+    $W_+=\text{149.5}$ & \qquad & $W_-=\text{175.5}$
 \end{tabular}
 \end{center}
 
@@ -720,7 +831,7 @@ Use a Wilcoxon Signed Rank test, at the 5\% significance level, to test whether 
 
 \begin{center}
 \begin{tabular}{c c c}
-    $W_+=91$ & \qquad & $W_-=209$
+    $W_+=\text{91}$ & \qquad & $W_-=\text{209}$
 \end{tabular}
 \end{center}
 
@@ -735,7 +846,7 @@ The manufacturer claims that the average lifetime is at least 6 hours. Use a non
 
 \begin{center}
 \begin{tabular}{c c c}
-    $W_+=152$ & \qquad & $W_-=173$
+    $W_+=\text{149}$ & \qquad & $W_-=\text{229}$
 \end{tabular}
 \end{center}
 
@@ -788,7 +899,7 @@ Use a non-parametric test to assess whether this suggests displaying the driving
 \end{center}
 \begin{center}
 \begin{tabular}{c c c}
-    $W_+=106$ & \qquad & $W_-=329$
+    $W_+=\text{327}$ & \qquad & $W_-=\text{108}$
 \end{tabular}
 \end{center}
 Perform a non-parametric test to assess whether there is evidence to suggest that the figure claimed by the national newspaper is incorrect, at the 5\% level of significance. 

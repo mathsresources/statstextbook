@@ -588,7 +588,7 @@ The tree diagram below shows the appropriate notation for each stage. The first 
             }
             child {
                 node[end, label=right:
-                    {$B$\hspace{2cm}$\text{P}(\overline{A})\times \text{P}(B|\overline{A})=\text{P}(\overline{A}\cap B)$\hspace{0.5cm}\text{\large{$\ast$}}}] {}
+                    {$B$\hspace{2cm}$\text{P}(\overline{A})\times \text{P}(B|\overline{A})=\text{P}(\overline{A}\cap B)$}] {}
                 edge from parent
                 node[above] {$\text{P}(B|\overline{A})\hspace{0.5cm}$}
                 node[below]  {}
@@ -608,7 +608,7 @@ The tree diagram below shows the appropriate notation for each stage. The first 
             }
             child {
                 node[end, label=right:
-                    {$B$\hspace{2cm}$\text{P}(A)\times \text{P}(B|A)=\text{P}(A\cap B)$\hspace{0.5cm}\text{\large{$\ast$}}}] {}
+                    {$B$\hspace{2cm}$\text{P}(A)\times \text{P}(B|A)=\text{P}(A\cap B)$\hspace{0.5cm}}] {}
                 edge from parent
                 node[above] {$\text{P}(B|A)\hspace{0.5cm}$}
                 node[below]  {}
@@ -648,7 +648,7 @@ The advantage of the use of tree diagrams, for questions where they are suitable
         node[bag] {$\overline{\text{late}}$}        
             child {
                 node[end, label=right:
-                    {$\overline{\text{tie}}$\hspace{1.2cm}$\text{P}(\overline{\text{late}}\cap\overline{\text{tie}})=\text{0.08}$\hspace{0.5cm}\text{\large{$\ast$}}}] {}
+                    {$\overline{\text{tie}}$\hspace{1.2cm}$\text{P}(\overline{\text{late}}\cap\overline{\text{tie}})=\text{0.08}$}] {}
                 edge from parent
                 node[above] {}
                 node[below]  {0.1}
@@ -668,7 +668,7 @@ The advantage of the use of tree diagrams, for questions where they are suitable
         node[bag] {late}        
         child {
                 node[end, label=right:
-                    {$\overline{\text{tie}}$\hspace{1.2cm}$\text{P}(\text{late }\cap \overline{\text{tie}})=\text{0.06}$\hspace{0.5cm}\text{\large{$\ast$}}}] {}
+                    {$\overline{\text{tie}}$\hspace{1.2cm}$\text{P}(\text{late }\cap \overline{\text{tie}})=\text{0.06}$}] {}
                 edge from parent
                 node[above] {}
                 node[below]  {0.3}

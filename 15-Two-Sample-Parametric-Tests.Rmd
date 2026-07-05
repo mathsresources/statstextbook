@@ -13,8 +13,8 @@ Chapter 10 introduced three hypothesis tests which use a single sample of data t
 \begin{center}
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \mu=1000\\[0.5em]
-      \text{H}_1: & \mu>1000
+      \text{H}_\text{0}: & \mu=\text{1000}\\[0.5em]
+      \text{H}_\text{1}: & \mu>\text{1000}
     \end{array}
 \end{math}
 \end{center}
@@ -54,7 +54,7 @@ Chapter 10 introduced three hypothesis tests which use a single sample of data t
 \end{minipage}
 \end{figure}
 
-This use of a *one* sample of data, investigating *one* population's parameter, requires a **one-sample test**.
+This use of *one* sample of data, investigating *one* population's parameter, requires a **one-sample test**.
 
 Should a study instead wish to compare the longevity of *two different brands' light bulbs* they would instead take *two samples* of data: one sample from *Brand A* and one sample from *Brand B*. In such a case, a typical set of hypotheses might instead ask whether there is sufficient evidence to suggest that there is a difference between the population mean lifespan for Brand A, $\mu_\text{A}$, and the population mean lifespan for Brand B, $\mu_\text{B}$. The data from the samples are shown below, with the sample means $\bar{x}_\text{A}$ and $\bar{x}_\text{B}$ indicated:
 
@@ -69,8 +69,8 @@ Should a study instead wish to compare the longevity of *two different brands' l
 \begin{center}
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \mu_\text{A}=\mu_\text{B}\\[0.5em]
-      \text{H}_1: & \mu_\text{A}\ne\mu_\text{B}
+      \text{H}_\text{0}: & \mu_\text{A}=\mu_\text{B}\\[0.5em]
+      \text{H}_\text{1}: & \mu_\text{A}\ne\mu_\text{B}
     \end{array}
 \end{math}
 \end{center}
@@ -132,35 +132,35 @@ Such a test, comparing the parameters of *two* populations by using *two samples
 
 \begin{center}
     \begin{tabular}{ccccc}
-        $\text{H}_0:\mu_\text{A}=\mu_\text{B}$ & \qquad \qquad & $\text{H}_0:\mu_\text{A} = \mu_\text{B}$ & \qquad \qquad & $\text{H}_0:\mu_\text{A}=\mu_\text{B}$\\
-        $\text{H}_1:\mu_\text{A} \ne \mu_\text{B}$ & & $\text{H}_1:\mu_\text{A}>\mu_\text{B}$ & & $\text{H}_1:\mu_\text{A}<\mu_\text{B}$ 
+        $\text{H}_\text{0}:\mu_\text{A}=\mu_\text{B}$ & \qquad \qquad & $\text{H}_\text{0}:\mu_\text{A} = \mu_\text{B}$ & \qquad \qquad & $\text{H}_\text{0}:\mu_\text{A}=\mu_\text{B}$\\
+        $\text{H}_\text{1}:\mu_\text{A} \ne \mu_\text{B}$ & & $\text{H}_\text{1}:\mu_\text{A}>\mu_\text{B}$ & & $\text{H}_\text{1}:\mu_\text{A}<\mu_\text{B}$ 
     \end{tabular}
 \end{center}
 
-Within calculations and hypotheses, populations can be numbered (e.g. $\mu_1$ and $\mu_2$), given letters (e.g. $\mu_\text{A}$ and $\mu_\text{B}$), or named with words to aid readability (e.g. $\mu_\text{cat}$ and $\mu_\text{dog}$).
+Within calculations and hypotheses, populations can be numbered (e.g. $\mu_\text{1}$ and $\mu_\text{2}$), given letters (e.g. $\mu_\text{A}$ and $\mu_\text{B}$), or named with words to aid readability (e.g. $\mu_\text{cat}$ and $\mu_\text{dog}$).
 
 \pagebreak
 
 ## Two-Sample \textit{z}-test for Population Means
 
-If **independent** random samples of sizes $n_1$ and $n_2$ are obtained from each of two normally distributed populations which have population means $\mu_1$ and $\mu_2$ respectively, and population standard deviations $\sigma_1$ and $\sigma_2$ respectively, then the difference in sample means $\bar{X}_1$ and $\bar{X}_2$ is also normally distributed, as below:
+If **independent** random samples of sizes $n_\text{1}$ and $n_\text{2}$ are obtained from each of two normally distributed populations which have population means $\mu_\text{1}$ and $\mu_\text{2}$ respectively, and population standard deviations $\sigma_\text{1}$ and $\sigma_\text{2}$ respectively, then the difference in sample means $\bar{X}_\text{1}$ and $\bar{X}_\text{2}$ is also normally distributed, as below:
 
-\[\overline{X}_1\sim \text{N}\left(\mu_1,\frac{\sigma_1^2}{n_1}\right) \quad \text{and} \quad \overline{X}_2\sim \text{N}\left(\mu_2,\frac{\sigma_2^2}{n_2}\right)\quad\implies\quad\overline{X}_1-\overline{X}_2\sim \text{N}\left(\mu_1-\mu_2,\frac{\sigma_1^2}{n_1}+\frac{\sigma_2^2}{n_2}\right)\]
+\[\overline{X}_\text{1}\sim \text{N}\left(\mu_\text{1},\frac{\sigma_\text{1}^\text{2}}{n_\text{1}}\right) \quad \text{and} \quad \overline{X}_\text{2}\sim \text{N}\left(\mu_\text{2},\frac{\sigma_\text{2}^\text{2}}{n_\text{2}}\right)\quad\implies\quad\overline{X}_\text{1}-\overline{X}_\text{2}\sim \text{N}\left(\mu_\text{1}-\mu_\text{2},\frac{\sigma_\text{1}^\text{2}}{n_\text{1}}+\frac{\sigma_\text{2}^\text{2}}{n_\text{2}}\right)\]
 
-This leads to the test statistic for the *two-sample* $z$*-test for population means* given in the data booklet. Under the typical null hypothesis of no difference between the population means, or $\mu_1-\mu_2=0$, the test statistic in the box may be used. From the Data Booklet:
+This leads to the test statistic for the *two-sample* $z$*-test for population means* given in the data booklet. Under the typical null hypothesis of no difference between the population means, or $\mu_\text{1}-\mu_\text{2}=\text{0}$, the test statistic in the box may be used. From the Data Booklet:
 
 \vspace{-0.2cm}
 
 \begin{multicols}{2}
 
-\[Z\sim\dfrac{(\overline{X}_1-\overline{X}_2)-(\mu_1-\mu_2)}{\sqrt{\dfrac{\sigma_1^2}{n_1}+\dfrac{\sigma_2^2}{n_2}}}\]
+$Z\sim\dfrac{(\overline{X}_\text{1}-\overline{X}_\text{2})-(\mu_\text{1}-\mu_\text{2})}{\sqrt{\dfrac{\sigma_\text{1}^\text{2}}{n_\text{1}}+\dfrac{\sigma_\text{2}^\text{2}}{n_\text{2}}}}$
 
 \vfill\null
 \columnbreak
 
 \begin{centering}
 \begin{tcolorbox}[adjusted title=For a two-sample $z$-test for means:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-Test statistic: $z=\dfrac{\overline{x}_1-\overline{x}_2}{\sqrt{\dfrac{\sigma_1^2}{n_1}+\dfrac{\sigma_2^2}{n_2}}}$
+Test statistic: $z=\dfrac{\overline{x}_\text{1}-\overline{x}_\text{2}}{\sqrt{\dfrac{\sigma_\text{1}^\text{2}}{n_\text{1}}+\dfrac{\sigma_\text{2}^\text{2}}{n_\text{2}}}}$
 \end{tcolorbox}
 \end{centering}
 
@@ -173,31 +173,31 @@ Test statistic: $z=\dfrac{\overline{x}_1-\overline{x}_2}{\sqrt{\dfrac{\sigma_1^2
 \begin{tcolorbox}[adjusted title=Conditions for valid use of the two-sample $z$-test for population means:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The \textit{populations} are \textbf{normally distributed}.
-    \item The \textit{population standard deviations}, $\sigma_1$ and $\sigma_2$, are \textbf{known}.
+    \item The \textit{population standard deviations}, $\sigma_\text{1}$ and $\sigma_\text{2}$, are \textbf{known}.
     \item The data was obtained through \textbf{random} and \textbf{independent samples}.
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
 
-Note that when sample sizes $n_1$ and $n_2$ are greater than 20 the *Central Limit Theorem*, can be invoked. For large sample sizes, the sample standard deviations $s_1$ and $s_2$ may be used as estimates of $\sigma_1$ and $\sigma_2$, allowing an approximate $z$-test to be performed.
+Note that when sample sizes $n_\text{1}$ and $n_\text{2}$ are greater than 20 the *Central Limit Theorem* can be invoked. For large sample sizes, the sample standard deviations $s_\text{1}$ and $s_\text{2}$ may be used as estimates of $\sigma_\text{1}$ and $\sigma_\text{2}$, allowing an approximate $z$-test to be performed, although a two-sample t-test (section 15.3) is generally preferred when population standard deviations are unknown.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} To compare the battery life of two brands' mobile phones, a random sample of nine phones from \textit{Apfel} and seven phones from \textit{Ubhal} are tested. The sample of Apfel phones had a mean battery life of 34 hours, with a mean battery life of 36 hours for Ubhal. Assuming that the battery life for both populations of phones is known to be normally distributed, with a standard deviation of 3.5 hours, use a parametric test to determine whether there is evidence for a difference in battery life between the brands.
 
 \tcblower
 \textbf{Solution:}
-$\bar{x}_\text{apfel}=34$, $\bar{x}_\text{ubhal}=36$, $\sigma_\text{apfel}=3.5$, $\sigma_{\text{ubhal}}=3.5$, $n_\text{apfel}=9$, $n_{\text{ubhal}}=7$\\[0.1em]
+$\bar{x}_\text{apfel}=\text{34}$, $\bar{x}_\text{ubhal}=\text{36}$, $\sigma_\text{apfel}=\text{3.5}$, $\sigma_{\text{ubhal}}=\text{3.5}$, $n_\text{apfel}=\text{9}$, $n_{\text{ubhal}}=\text{7}$\\[0.1em]
 
 \begin{math}
 \begin{array}{ll}
-      H_0: & \mu_\text{apfel}=\mu_\text{ubhal}\\
-      H_1: & \mu_\text{apfel}\ne \mu_\text{ubhal}
+      \text{H}_\text{0}: & \mu_\text{apfel}=\mu_\text{ubhal}\\
+      \text{H}_\text{1}: & \mu_\text{apfel}\ne \mu_\text{ubhal}
     \end{array}
 \end{math}
 
 \vspace{0.5cm}
 
-Test statistic: $z=\dfrac{34-36}{\sqrt{\dfrac{3.5^2}{9}+\dfrac{3.5^2}{7}}}=-1.13$
+Test statistic: $z=\dfrac{\text{34}-\text{36}}{\sqrt{\dfrac{\text{3.5}^\text{2}}{\text{9}}+\dfrac{\text{3.5}^\text{2}}{\text{7}}}}=-\text{1.13}$
 \hspace{4cm}
 \begin{tikzpicture}[overlay]
 \begin{axis}[
@@ -226,19 +226,19 @@ Test statistic: $z=\dfrac{34-36}{\sqrt{\dfrac{3.5^2}{9}+\dfrac{3.5^2}{7}}}=-1.13
 \pgfmathsetmacro\valueC{gauss(1.96,0,1)}
 \draw [semithick, black]  (axis cs:-1.96,0) -- (axis cs:-1.96,\valueA);
 \draw [semithick, black]  (axis cs:1.96,0) -- (axis cs:1.96,\valueC);
-\node[below] at (axis cs: 0,0)  {$0$}; 
-\node[below] at (axis cs: -1.96, 0) {$-1.96$};
+\node[below] at (axis cs: 0,0)  {0}; 
+\node[below] at (axis cs: -1.96, 0) {$-\text{1.96}$};
 \node[above] at (axis cs: -2.4,\valueA) {2.5\%};
-\node[below] at (axis cs: 1.96, 0) {$1.96$};
+\node[below] at (axis cs: 1.96, 0) {1.96};
 \node[above] at (axis cs: 2.4,\valueC) {2.5\%};
 \node[above] at (axis cs: 0,\valueB)  {$z$};
-\draw[very thick] (axis cs: -1.13,0) -- (axis cs: -1.13,0.44) node[above] {$-1.13$};
+\draw[very thick] (axis cs: -1.13,0) -- (axis cs: -1.13,0.44) node[above] {$-\text{1.13}$};
 \end{axis}
 \end{tikzpicture}\\[0.1em]
 
-Critical value: $z=-1.96$\\
+Critical value: $z=-\text{1.96}$\\
 
-Since $-1.13>-1.96$, do not reject $\text{H}_0$ at the 5\% level of significance. There is insufficient evidence to suggest a difference in the mean battery life of the two brands' mobile phones.
+Since $-\text{1.13}>-\text{1.96}$, do not reject $\text{H}_\text{0}$ at the 5\% level of significance. There is insufficient evidence to suggest a difference in the mean battery life of the two brands' mobile phones.
 
 \end{tcolorbox}
 
@@ -252,7 +252,7 @@ Since $-1.13>-1.96$, do not reject $\text{H}_0$ at the 5\% level of significance
     \item A two-sample $z$-test for a difference in population means is to be carried out based on two independent random samples of data taken from normally distributed populations (A and B). The sample mean for A is 87 based on a sample size of 11, whilst the sample mean for B is 92 based on a sample size of 13. Populations A and B have standard deviations 7 and 5 respectively.
     \begin{enumerate}
         \item State suitable null and alternative hypotheses.
-        \item Show the calculation required to obtain a test statistic of $z=-1.98$.
+        \item Show the calculation required to obtain a test statistic of $z=-\text{1.98}$.
         \item Conclude the test at the 5\% level of significance.
     \end{enumerate}
     \item The population standard deviations of customer spend between two supermarkets, \textit{The Food Maze} and \textit{Thyme to Shop}, have been previously recorded as £9.50 and £13 respectively. Recent random samples of 21 The Food Maze customers and 7 Thyme to Shop customers produced sample mean customer spends of £34.80 and £42.13 respectively. Stating an assumption required, perform a parametric test to assess whether the data supports a claim that customers at Thyme to Shop spend more on average than those at The Food Maze.
@@ -300,14 +300,14 @@ Since $-1.13>-1.96$, do not reject $\text{H}_0$ at the 5\% level of significance
 
 ## Two-Sample \textit{z}-test for Population Proportions
 
-If random, independent samples of data are obtained from each of two populations, and the two \textbf{sample proportions} $\hat{p}_1$ and $\hat{p}_2$ are obtained, then a *two-sample* $z$*-test for population proportions* may be used to explore evidence for a difference in the \textbf{population proportions}, $p_1$ and $p_2$.  
+If random, independent samples of data are obtained from each of two populations, and the two \textbf{sample proportions} $\hat{p}_\text{1}$ and $\hat{p}_\text{2}$ are obtained, then a *two-sample* $z$*-test for population proportions* may be used to explore evidence for a difference in the \textbf{population proportions}, $p_\text{1}$ and $p_\text{2}$.  
 
 The test statistic, provided in the Data Booklet, uses an *estimate of the pooled population proportion*, $\hat{p}$:
 
 \begin{centering}
 \tcbset{width=13cm}
 \begin{tcolorbox}[adjusted title=For a two-sample $z$-test for population proportions:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-Test statistic: $z=\dfrac{\hat{p}_1-\hat{p}_2}{\sqrt{\hat{p} \hat{q} \left( \dfrac{1}{n_1}+ \dfrac{1}{n_2}\right)}}$ \qquad where \qquad $\hat{p}=\dfrac{n_1\hat{p}_1+n_2\hat{p}_2}{n_1+n_2}$
+Test statistic: $z=\dfrac{\hat{p}_\text{1}-\hat{p}_\text{2}}{\sqrt{\hat{p} \hat{q} \left( \dfrac{\text{1}}{n_\text{1}}+ \dfrac{\text{1}}{n_\text{2}}\right)}}$ \qquad where \qquad $\hat{p}=\dfrac{n_\text{1}\hat{p}_\text{1}+n_\text{2}\hat{p}_\text{2}}{n_\text{1}+n_\text{2}}$
 \end{tcolorbox}
 \end{centering}
 
@@ -317,20 +317,20 @@ The test statistic may be derived from the use of the normal approximation to a 
 \tcbset{width=14cm}
 \begin{tcolorbox}[adjusted title=Conditions for valid use of the two-sample $z$-test for population proportions:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
-    \item Each of $n_1 \hat{p}_1,n_1 \hat{q}_1,n_2 \hat{p}_2$ and $n_2 \hat{q}_2$ must be \textbf{greater than 5}.
+    \item Each of $n_\text{1} \hat{p}_\text{1},n_\text{1} \hat{q}_\text{1},n_\text{2} \hat{p}_\text{2}$ and $n_\text{2} \hat{q}_\text{2}$ must be \textbf{greater than 5}.
     \item The data was obtained through \textbf{random} and \textbf{independent samples}.
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
 
-This parametric test can take one-tailed or two-tailed hypotheses which relate to the population proportions, $p_1$ and $p_2$:
+This parametric test can take one-tailed or two-tailed hypotheses which relate to the population proportions, $p_\text{1}$ and $p_\text{2}$:
 
 \vspace{-0.5cm}
 
 \begin{center}
     \begin{tabular}{ccccc}
-        $\text{H}_0:p_1=p_2$ & \qquad \qquad & $\text{H}_0:p_1 = p_2$ & \qquad \qquad & $\text{H}_0:p_1=p_2$\\
-        $\text{H}_1:p_1 \ne p_2$ & & $\text{H}_1:p_1>p_2$ & & $\text{H}_1:p_1<p_2$ 
+        $\text{H}_\text{0}:p_\text{1}=p_\text{2}$ & \qquad \qquad & $\text{H}_\text{0}:p_\text{1} = p_\text{2}$ & \qquad \qquad & $\text{H}_\text{0}:p_\text{1}=p_\text{2}$\\
+        $\text{H}_\text{1}:p_\text{1} \ne p_\text{2}$ & & $\text{H}_\text{1}:p_\text{1}>p_\text{2}$ & & $\text{H}_\text{1}:p_\text{1}<p_\text{2}$ 
     \end{tabular}
 \end{center}
 
@@ -341,24 +341,24 @@ This parametric test can take one-tailed or two-tailed hypotheses which relate t
 
 \tcblower
 \textbf{Solution:}
-$\hat{p}_\text{car}=0.15$, $\hat{p}_\text{van}=0.08$, $n_\text{car}=80$, $n_\text{van}=75$\\[0.1em]
+$\hat{p}_\text{car}=\text{0.15}$, $\hat{p}_\text{van}=\text{0.08}$, $n_\text{car}=\text{80}$, $n_\text{van}=\text{75}$\\[0.1em]
 
 \begin{math}
 \begin{array}{ll}
-      H_0: & p_\text{car}=p_\text{van}\\
-      H_1: & p_\text{car} \ne p_\text{van}
+      \text{H}_\text{0}: & p_\text{car}=p_\text{van}\\
+      \text{H}_\text{1}: & p_\text{car} \ne p_\text{van}
     \end{array}
 \end{math}
 
 \vspace{0.1cm}
 
-Estimate of pooled population proportion: $\hat{p}=\dfrac{80\times 0.15+75\times 0.08}{80+75}=0.116$ (to 3dp)
+Estimate of pooled population proportion: $\hat{p}=\dfrac{\text{80}\times \text{0.15}+\text{75}\times \text{0.08}}{\text{80}+\text{75}}=\text{0.116}$ (to 3dp)
 
 \vspace{0.5cm}
 
-Test statistic: $z=\dfrac{0.15-0.08}{\sqrt{0.116 \times 0.884 \left( \dfrac{1}{80}+ \dfrac{1}{75}\right)}}=1.36$\\
+Test statistic: $z=\dfrac{\text{0.15}-\text{0.08}}{\sqrt{\text{0.116} \times \text{0.884} \left( \dfrac{\text{1}}{\text{80}}+ \dfrac{\text{1}}{\text{75}}\right)}}=\text{1.36}$\\
 
-Critical value: $z=2.58$\hspace{6cm}
+Critical value: $z=\text{2.58}$\hspace{6cm}
 \begin{tikzpicture}[overlay]
 \begin{axis}[
   no markers, 
@@ -385,17 +385,17 @@ Critical value: $z=2.58$\hspace{6cm}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
 \draw [semithick, black]  (axis cs:2.58,0) -- (axis cs:2.58,\valueA);
 \draw [semithick, black]  (axis cs:-2.58,0) -- (axis cs:-2.58,\valueA);
-\node[below] at (axis cs: 0,0)  {$0$};
+\node[below] at (axis cs: 0,0)  {0};
 \node[above] at (axis cs: 0,\valueB)  {$z$};
-\node[below] at (axis cs: 2.58, 0) {$2.58$};
+\node[below] at (axis cs: 2.58, 0) {2.58};
 \node[above] at (axis cs: 2.9,\valueA) {0.5\%};
-\node[below] at (axis cs: -2.58, 0) {$-2.58$};
+\node[below] at (axis cs: -2.58, 0) {$-\text{2.58}$};
 \node[above] at (axis cs: -2.9,\valueA) {0.5\%};
-\draw[very thick] (axis cs: 1.36,0) -- (axis cs: 1.36,0.44) node[above] {$1.36$};
+\draw[very thick] (axis cs: 1.36,0) -- (axis cs: 1.36,0.44) node[above] {1.36};
 \end{axis}
 \end{tikzpicture}\\
 
-Since $1.36<2.58$, do not reject $\text{H}_0$ at the 1\% level of significance. There is insufficient evidence to suggest that the proportions of vans and cars with at least one tyre with low pressure parked in the town centre are different.
+Since $\text{1.36}<\text{2.58}$, do not reject $\text{H}_\text{0}$ at the 1\% level of significance. There is insufficient evidence to suggest that the proportions of vans and cars with at least one tyre with low pressure parked in the town centre are different.
 
 \end{tcolorbox}
 
@@ -454,7 +454,7 @@ Since $1.36<2.58$, do not reject $\text{H}_0$ at the 1\% level of significance. 
 
 ## Two-Sample \textit{t}-test for Population Means
 
-If random, independent samples of data are obtained from each of two *normally distributed* populations with **unknown population standard deviations**, then a *two-sample* $t$*-test for population means* may be used to explore evidence for a difference in the \textbf{population means}, $\mu_1$ and $\mu_2$, using the **sample standard deviations**.
+If random, independent samples of data are obtained from each of two *normally distributed* populations with **unknown population standard deviations**, then a *two-sample* $t$*-test for population means* may be used to explore evidence for a difference in the \textbf{population means}, $\mu_\text{1}$ and $\mu_\text{2}$, using the **sample standard deviations**.
 
 \begin{centering}
 \tcbset{width=13cm}
@@ -467,16 +467,16 @@ If random, independent samples of data are obtained from each of two *normally d
 \end{tcolorbox}
 \end{centering}
 
-The test statistic is provided in the Data Booklet, and follows a $t$-distribution with $\nu=n_1+n_2-2$ degrees of freedom. It requires calculation of a *pooled estimate of the variance*, $s^2$, and as with the two-sample $z$-test, a more streamlined version of the test statistic under a null hypothesis of $\mu_1=\mu_2$ is as follows:
+The test statistic is provided in the Data Booklet, and follows a $t$-distribution with $\nu=n_\text{1}+n_\text{2}-\text{2}$ degrees of freedom. It requires calculation of a *pooled estimate of the variance*, $s^\text{2}$, and as with the two-sample $z$-test, a more streamlined version of the test statistic under a null hypothesis of $\mu_\text{1}=\mu_\text{2}$ is as follows:
 
 \begin{centering}
 \tcbset{width=15.5cm}
 \begin{tcolorbox}[adjusted title=For a two-sample $t$-test for population means:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-Test statistic: $t=\dfrac{\bar{x}_1-\bar{x}_2}{s\sqrt{\dfrac{1}{n_1}+ \dfrac{1}{n_2}}}$ \qquad where \qquad $s^2=\dfrac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}$
+Test statistic: $t=\dfrac{\bar{x}_\text{1}-\bar{x}_\text{2}}{s\sqrt{\dfrac{\text{1}}{n_\text{1}}+ \dfrac{\text{1}}{n_\text{2}}}}$ \qquad where \qquad $s^\text{2}=\dfrac{(n_\text{1}-\text{1})s_\text{1}^\text{2}+(n_\text{2}-\text{1})s_\text{2}^\text{2}}{n_\text{1}+n_\text{2}-\text{2}}$
 
 \vspace{-0.2cm}
 \hspace{6.5cm}
-with $\nu=n_1+n_2-2$ degrees of freedom
+with $\nu=n_\text{1}+n_\text{2}-\text{2}$ degrees of freedom
 \vspace{0.1cm}
 \end{tcolorbox}
 \end{centering}
@@ -488,26 +488,26 @@ While $t$-tests are especially valuable when dealing with small sample sizes, th
 
 \tcblower
 \textbf{Solution:}
-$\bar{x}_\text{Dundee}=30.1$, $\bar{x}_\text{Perth}=28.6$, $s_\text{Dundee}=3$, $s_\text{Perth}=2$, $n_{\text{Dundee}}=8$, $n_{\text{Perth}}=7$\\[0.1em]
+$\bar{x}_\text{Dundee}=\text{30.1}$, $\bar{x}_\text{Perth}=\text{28.6}$, $s_\text{Dundee}=\text{3}$, $s_\text{Perth}=\text{2}$, $n_{\text{Dundee}}=\text{8}$, $n_{\text{Perth}}=\text{7}$\\[0.1em]
 
 \begin{math}
 \begin{array}{ll}
-      H_0: & \mu_\text{Dundee}=\mu_\text{Perth}\\
-      H_1: & \mu_\text{Dundee} \ne \mu_\text{Perth}
+      \text{H}_\text{0}: & \mu_\text{Dundee}=\mu_\text{Perth}\\
+      \text{H}_\text{1}: & \mu_\text{Dundee} \ne \mu_\text{Perth}
     \end{array}
 \end{math}
 
 \vspace{0.5cm}
 
-Estimate of pooled variance: $s^2=\dfrac{(8-1)\times 3^2+(7-1)\times 2^2}{8+7-2}=6.692$\\[0.1em]
+Estimate of pooled variance: $s^\text{2}=\dfrac{(\text{8}-\text{1})\times \text{3}^\text{2}+(\text{7}-\text{1})\times \text{2}^\text{2}}{\text{8}+\text{7}-\text{2}}=\text{6.692}$\\[0.1em]
 
-$s=\sqrt{6.692}=2.587$
+$s=\sqrt{6.692}=\text{2.587}$
 
 \vspace{0.5cm}
 
-Test statistic: $t=\dfrac{30.1-28.6}{2.587 \times \sqrt{\dfrac{1}{8}+ \dfrac{1}{7}}}=1.120$\\
+Test statistic: $t=\dfrac{\text{30.1}-\text{28.6}}{\text{2.587} \times \sqrt{\dfrac{\text{1}}{\text{8}}+ \dfrac{\text{1}}{\text{7}}}}=\text{1.120}$\\
 
-Critical value: $t=1.771$\hspace{6cm}
+Critical value: $t=\text{1.771}$\hspace{6cm}
 \begin{tikzpicture}[overlay]
 \begin{axis}[
   no markers, 
@@ -537,18 +537,18 @@ Critical value: $t=1.771$\hspace{6cm}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
 \draw [semithick, black]  (axis cs:-1.771,-0.02) -- (axis cs:-1.771,\valueA);
 \draw [semithick, black]  (axis cs:1.771,-0.02) -- (axis cs:1.771,\valueA);
-\node[below] at (axis cs: 0,-0.02)  {$0$};
-\node[above] at (axis cs: 0,\valueB)  {$t_{13}$};
-\node[below] at (axis cs: -1.771, -0.02) {$-1.771$};
+\node[below] at (axis cs: 0,-0.02)  {0};
+\node[above] at (axis cs: 0,\valueB)  {$t_{\text{13}}$};
+\node[below] at (axis cs: -1.771, -0.02) {$-\text{1.771}$};
 \node[above] at (axis cs: -2.2,\valueA) {5\%};
-\node[below] at (axis cs: 1.771, -0.02) {$1.771$};
+\node[below] at (axis cs: 1.771, -0.02) {1.771};
 \node[above] at (axis cs: 2.2,\valueA) {5\%};
-\draw[very thick] (axis cs: 1.120,-0.02) -- (axis cs: 1.120,0.44) node[above] {$1.120$};
+\draw[very thick] (axis cs: 1.120,-0.02) -- (axis cs: 1.120,0.44) node[above] {1.120};
 \draw (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
 \end{axis}
 \end{tikzpicture}\\[0.5em]
 
-Since $1.120<1.771$, do not reject $\text{H}_0$ at the 10\% level of significance. There is insufficient evidence to suggest a difference in the mean 5km running times between the two locations.
+Since $\text{1.120}<\text{1.771}$, do not reject $\text{H}_\text{0}$ at the 10\% level of significance. There is insufficient evidence to suggest a difference in the mean 5km running times between the two locations.
 
 \end{tcolorbox}
 
@@ -563,7 +563,7 @@ Since $1.120<1.771$, do not reject $\text{H}_0$ at the 10\% level of significanc
     \item A two-sample $t$-test for a difference in population means is to be carried out based on two independent random samples of data taken from normally distributed populations (A and B), which are assumed to have equal variances. A sample of 11 observations from A produces a mean of 87 and a standard deviation of 8, whilst a sample of 13 observations from B produces a mean of 92 and a standard deviation of 5.
     \begin{enumerate}
         \item State suitable null and alternative hypotheses.
-        \item Show the calculation required to obtain a test statistic of $t=-1.072$.
+        \item Show the calculation required to obtain a test statistic of $t=-\text{1.072}$.
         \item Conclude the test at the 5\% level of significance.
     \end{enumerate}
     \item A motorist and keen statistician tosses a coin before each of a series of drives to determine whether to use her car's air conditioning or not. The fuel efficiency (in miles per gallon) for those drives are:
@@ -651,14 +651,14 @@ Instead, a sample of *differences*, $d_i$, for each pair should be calculated an
 \vspace{-0.4cm}
 \begin{center}
     \begin{tabular}{ccccc}
-        $\text{H}_0:\mu_d=0$ & \qquad \qquad & $\text{H}_0:\mu_d=0$ & \qquad \qquad & $\text{H}_0:\mu_d=0$\\
-        $\text{H}_1:\mu_d \ne 0$ & & $\text{H}_1:\mu_d>0$ & & $\text{H}_1:\mu_d<0$ 
+        $\text{H}_\text{0}:\mu_d=\text{0}$ & \qquad \qquad & $\text{H}_\text{0}:\mu_d=\text{0}$ & \qquad \qquad & $\text{H}_\text{0}:\mu_d=0$\\
+        $\text{H}_\text{1}:\mu_d \ne \text{0}$ & & $\text{H}_\text{1}:\mu_d>\text{0}$ & & $\text{H}_\text{1}:\mu_d<\text{0}$ 
     \end{tabular}
 \end{center}
 
 \vspace{-0.2cm}
 
-The test statistic derives from the one-sample $t$-test covered in Chapter 10, with $\bar{d}$ (or $\bar{x}_d$) representing the sample mean difference and  $s_d$ the sample standard deviation in differences. The degrees of freedom are calculated based on the single sample of differences, as $\nu=n-1$.
+The test statistic derives from the one-sample $t$-test covered in Chapter 10, with $\bar{d}$ (or $\bar{x}_d$) representing the sample mean difference and  $s_d$ the sample standard deviation in differences. The degrees of freedom are calculated based on the single sample of differences, as $\nu=n-\text{1}$.
 
 \begin{figure}[H]
   \centering
@@ -667,7 +667,7 @@ The test statistic derives from the one-sample $t$-test covered in Chapter 10, w
 \begin{centering}
 \tcbset{width=6cm,height=2.7cm}
 \begin{tcolorbox}[adjusted title=For a paired $t$-test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-Test statistic: $t=\dfrac{\bar{x}_d-\mu_d}{\dfrac{s_d}{\sqrt{n}}}$\\[-0.8em] with $\nu=n-1$ \phantom{blahblahbl}
+Test statistic: $t=\dfrac{\bar{x}_d-\mu_d}{\dfrac{s_d}{\sqrt{n}}}$\\[-0.8em] with $\nu=n-\text{1}$ \phantom{blahblahbl}
 \end{tcolorbox}
 \end{centering}
 \end{minipage}%
@@ -709,22 +709,22 @@ Assuming that the sample of differences in pulse rate were independent, and that
 
 \vspace{-0.3cm}
 
-$\bar{d}=4.5$, $s_d=6.775$, $n=6$\\[0.1em]
+$\bar{d}=\text{4.5}$, $s_d=\text{6.775}$, $n=\text{6}$\\[0.1em]
 
 \begin{math}
 \begin{array}{ll}
-      H_0: & \mu_d=0\\
-      H_1: & \mu_d > 0
+      \text{H}_\text{0}: & \mu_d=\text{0}\\
+      \text{H}_\text{1}: & \mu_d > \text{0}
     \end{array}
 \end{math}
 
 \vspace{0.3cm}
 
-$\nu=6-1=5$
+$\nu=\text{6}-\text{1}=\text{5}$
 
 \vspace{0.3cm}
 
-Test statistic: $t=\dfrac{4.5-0}{\dfrac{6.775}{\sqrt{6}}}=1.627$
+Test statistic: $t=\dfrac{\text{4.5}-\text{0}}{\dfrac{\text{6.775}}{\sqrt{\text{6}}}}=\text{1.627}$
 \hspace{3cm}
 \begin{tikzpicture}[overlay]
 \begin{axis}[
@@ -752,18 +752,18 @@ Test statistic: $t=\dfrac{4.5-0}{\dfrac{6.775}{\sqrt{6}}}=1.627$
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
 \draw [semithick, black]  (axis cs:2.015,-0.02) -- (axis cs:2.015,\valueA);
 \fill[black!50] (axis cs: 2.015,-0.02) rectangle (axis cs: 3,0);
-\node[below] at (axis cs: 0,-0.02)  {$0$};
-\node[above] at (axis cs: 0,\valueB)  {$t_5$};
-\node[below] at (axis cs: 2.015, -0.02) {$2.015$};
+\node[below] at (axis cs: 0,-0.02)  {0};
+\node[above] at (axis cs: 0,\valueB)  {$t_\text{5}$};
+\node[below] at (axis cs: 2.015, -0.02) {2.015};
 \node[above] at (axis cs: 2.9,\valueA) {5\%};
-\draw[very thick] (axis cs: 1.627,-0.02) -- (axis cs: 1.627,0.44) node[above] {$1.627$};
+\draw[very thick] (axis cs: 1.627,-0.02) -- (axis cs: 1.627,0.44) node[above] {1.627};
 \draw (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
 \end{axis}
 \end{tikzpicture}\\[0.1em]
 
-Critical value: $t=2.015$\\
+Critical value: $t=\text{2.015}$\\
 
-Since $1.627<2.015$, do not reject $\text{H}_0$ at the 5\% level of significance. There is insufficient evidence to suggest that teachers' pulse rates are higher at 2pm than 10am.
+Since $\text{1.627}<\text{2.015}$, do not reject $\text{H}_\text{0}$ at the 5\% level of significance. There is insufficient evidence to suggest that teachers' pulse rates are higher at 2pm than 10am.
 
 \end{tcolorbox}
 
@@ -788,7 +788,7 @@ Since $1.627<2.015$, do not reject $\text{H}_0$ at the 5\% level of significance
     \end{center}
     \begin{enumerate}
         \item State suitable null and alternative hypotheses.
-        \item Show the calculation required to obtain a test statistic of $t=0.251$.
+        \item Show the calculation required to obtain a test statistic of $t=\text{0.251}$.
         \item Conclude the test at the 5\% level of significance.
     \end{enumerate}
     \item A school is studying whether a digital homework platform is helping pupils improve their times tables knowledge. Seven pupils are randomly selected to answer as many times tables questions correctly as they can in one minute. Six months later, after regular use of the homework platform, the same seven pupils try again to answer as many times tables questions correctly as they can in one minute. The results are:
@@ -839,7 +839,7 @@ Since $1.627<2.015$, do not reject $\text{H}_0$ at the 5\% level of significance
 ## [Review Exercise](#re15a) {-}
 
 \begin{enumerate}
-    \item A commercial timber-selling company is concerned that the pine fence posts they are receiving from their new supplier have a lower density than those received from their old supplier. They measure the density (in kg/$\text{m}^3$) of a random sample of eight of the old fence posts and seven of the new fence posts. The results are:
+    \item A commercial timber-selling company is concerned that the pine fence posts they are receiving from their new supplier have a lower density than those received from their old supplier. They measure the density (in kg/$\text{m}^\text{3}$) of a random sample of eight of the old fence posts and seven of the new fence posts. The results are:
     \begin{center}
         \begin{tabular}{lcccccccc}
             old & 563 & 576 & 534 & 580 & 556 & 519 & 540 & 548\\
@@ -882,11 +882,11 @@ Since $1.627<2.015$, do not reject $\text{H}_0$ at the 5\% level of significance
       \hline
         Last year & This year\\
       \hline
-        $\bar{x}_1=32.4$ & $\bar{x}_2=29.7$\\
+        $\bar{x}_\text{1}=\text{32.4}$ & $\bar{x}_\text{2}=\text{29.7}$\\
       \hline
-        $s_1=4.3$ & $s_2=1.3$\\
+        $s_\text{1}=\text{4.3}$ & $s_\text{2}=\text{1.3}$\\
       \hline
-        $n_1=29$ & $n_2=34$\\
+        $n_\text{1}=\text{29}$ & $n_\text{2}=\text{34}$\\
       \hline
     \end{tabular}
     \end{center}

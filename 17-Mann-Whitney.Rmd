@@ -9,11 +9,11 @@ Consider a random sample consisting of two mice from species A and four from spe
     \hline
     Arrangement & Rank Sum & Arrangement & Rank Sum & Arrangement & Rank Sum\\
     \hline
-    AABBBB & $1+2=3$ & ABBBAB & $1+5=6$ & BBABAB & $3+5=8$\\
-    ABABBB & $1+3=4$ & ABBBBA & $1+6=7$ & BBABBA & $3+6=9$\\
-    ABBABB & $1+4=5$ & BABBAB & $2+5=7$ & BBBAAB & $4+5=9$\\
-    BAABBB & $2+3=5$ & BBAABB & $3+4=7$ & BBBABA & $4+6=10$\\
-    BABABB & $2+4=6$ & BABBBA & $2+6=8$ & BBBBAA & $5+6=11$\\
+    AABBBB & $\text{1}+\text{2}=\text{3}$ & ABBBAB & $\text{1}+\text{5}=\text{6}$ & BBABAB & $\text{3}+\text{5}=\text{8}$\\
+    ABABBB & $\text{1}+\text{3}=\text{4}$ & ABBBBA & $\text{1}+\text{6}=\text{7}$ & BBABBA & $\text{3}+\text{6}=\text{9}$\\
+    ABBABB & $\text{1}+\text{4}=\text{5}$ & BABBAB & $\text{2}+\text{5}=\text{7}$ & BBBAAB & $\text{4}+\text{5}=\text{9}$\\
+    BAABBB & $\text{2}+\text{3}=\text{5}$ & BBAABB & $\text{3}+\text{4}=\text{7}$ & BBBABA & $\text{4}+\text{6}=\text{10}$\\
+    BABABB & $\text{2}+\text{4}=\text{6}$ & BABBBA & $\text{2}+\text{6}=\text{8}$ & BBBBAA & $\text{5}+\text{6}=\text{11}$\\
     \hline
     \end{tabular}
 \end{center}
@@ -50,7 +50,7 @@ Let $W$ denote the rank sum for species A. The possible values of $W$ and their 
 
 For example, the probability, *under the null hypothesis*, of obtaining a rank sum less than or equal to 4 is:
 
-$$\text{P}(W \leqslant 4)=\dfrac{2}{15}=0.1333$$
+$$\text{P}(W \leqslant \text{4})=\dfrac{\text{2}}{\text{15}}=\text{0.1333}$$
 
 since only two arrangements (with rank sums 3 and 4) produce such values.
 
@@ -59,13 +59,13 @@ If it is assumed that the population distributions of mass for the two species o
 \begin{center}
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \eta_\text{A} = \eta_\text{B}\\[0.5em]
-      \text{H}_1: & \eta_\text{A} < \eta_\text{B}
+      \text{H}_\text{0}: & \eta_\text{A} = \eta_\text{B}\\[0.5em]
+      \text{H}_\text{1}: & \eta_\text{A} < \eta_\text{B}
     \end{array}
 \end{math}
 \end{center}
 
-Returning to the example rank sum of $W=4$, a $p$\text{-value} of $0.1333$ would mean there is insufficient evidence, at the 5\% level of significance, to suggest that the median mass of a mouse of species A is less than the median mass of a mouse of species B (since $0.1333>0.05$).
+Returning to the example rank sum of $W=\text{4}$, a $p$\text{-value} of 0.1333 would mean there is insufficient evidence, at the 5\% level of significance, to suggest that the median mass of a mouse of species A is less than the median mass of a mouse of species B (since $\text{0.1333}>\text{0.05}$).
 
 Since listing all possible arrangements quickly becomes impractical for larger samples, in practice Mann-Whitney tests are typically carried out using a rank sum test statistic $W$ and \textit{critical values} (from the Data Booklet). 
 
@@ -105,16 +105,16 @@ Given two independent samples, the *non-parametric* Mann-Whitney Rank Sum test c
   ]
 \addplot [smooth, domain=0:15] {gammapdf(x,2,2)};
 \draw [semithick, black,dashed]  (axis cs: 3.3,0) -- (axis cs: 3.3,0.158);
-\node[below] at (axis cs: 3.3,0)  {$\eta_1$};
+\node[below] at (axis cs: 3.3,0)  {$\eta_\text{1}$};
 \draw[semithick] (axis cs: -0.5,0) -- (axis cs: 18,0);
 \draw[semithick] (axis cs: -0.5,-0.3) -- (axis cs: 18,-0.3);
 \addplot [smooth, domain=0:15] {gammapdf(x,2,2)-0.3};
 \draw [semithick, black,dashed]  (axis cs: 3.3,-0.3) -- (axis cs: 3.3,-0.142);
-\node[below] at (axis cs: 3.3,-0.3)  {$\eta_2$};
+\node[below] at (axis cs: 3.3,-0.3)  {$\eta_\text{2}$};
 \end{axis}
 \end{tikzpicture}
 \end{center}
-\captionof{figure}{\textit{Same locations:} $\eta_1=\eta_2$}
+\captionof{figure}{\textit{Same locations:} $\eta_\text{1}=\eta_\text{2}$}
   \label{fig:same-locations}
 \end{minipage}%
   \centering
@@ -145,16 +145,16 @@ Given two independent samples, the *non-parametric* Mann-Whitney Rank Sum test c
   ]
 \addplot [smooth, domain=4:18] {gammapdf({x-4},2,2)};
 \draw [semithick, black,dashed]  (axis cs: 7.3,0) -- (axis cs: 7.3,0.158);
-\node[below] at (axis cs: 7.3,0)  {$\eta_1$};
+\node[below] at (axis cs: 7.3,0)  {$\eta_\text{1}$};
 \draw[semithick] (axis cs: -0.5,0) -- (axis cs: 18,0);
 \draw[semithick] (axis cs: -0.5,-0.3) -- (axis cs: 18,-0.3);
 \addplot [smooth, domain=0:15] {gammapdf(x,2,2)-0.3};
 \draw [semithick, black,dashed]  (axis cs: 3.3,-0.3) -- (axis cs: 3.3,-0.142);
-\node[below] at (axis cs: 3.3,-0.3)  {$\eta_2$};
+\node[below] at (axis cs: 3.3,-0.3)  {$\eta_\text{2}$};
 \end{axis}
 \end{tikzpicture}
 \end{center}
-\captionof{figure}{\textit{Different locations:} $\eta_1\ne\eta_2$}
+\captionof{figure}{\textit{Different locations:} $\eta_\text{1}\ne\eta_\text{2}$}
   \label{fig:different-locations}
 \end{minipage}
 \end{figure}
@@ -173,11 +173,11 @@ Consider two independent samples taken from populations A and B with the followi
 
 \begin{center}
     \begin{tikzpicture}
-        \node[left] at (-0.20,0.3) {$\text{H}_0:\eta_\text{A}=\eta_\text{B}$};
-        \node[left] at (-0.2,-0.3) {$\text{H}_1:\eta_\text{A}\ne\eta_\text{B}$};
+        \node[left] at (-0.20,0.3) {$\text{H}_\text{0}:\eta_\text{A}=\eta_\text{B}$};
+        \node[left] at (-0.2,-0.3) {$\text{H}_\text{1}:\eta_\text{A}\ne\eta_\text{B}$};
         \draw [decorate,
 	decoration = {brace}] (0,0.5) --  (0,-0.5);
-        \node[right] at (0.2,0.3) {$\alpha=0.05$};
+        \node[right] at (0.2,0.3) {$\alpha=\text{0.05}$};
         \node[right] at (0.2,-0.3) {Two-tailed};
         \draw (3.2,0) -- (9.3,0);
         \draw (4,-0.5) -- (4,0.5);
@@ -239,15 +239,16 @@ To perform the test using a test statistic and critical value approach, first th
 
 \begin{center}
 \begin{tabular}{l}
-    $W_\text{A}=35$\\
-    $W_\text{B}=31$
+    $W_\text{A}=\text{35}$\\
+    $W_\text{B}=\text{31}$
 \end{tabular}
 \end{center}
 
 \end{minipage}
 \end{figure}
 
-In this course, the test statistic $W$ is defined as the *smallest possible rank sum that can be obtained for the smaller sample*, here B.\newline One option would be to reorder the values and rerank them to see if this produces a smaller rank sum $W_\text{B}$.
+In this course, the test statistic $W$ is defined as the \textit{smaller of the two possible rank sums} for the smaller sample, which is sample B here: one obtained by ranking low-to-high, and the other by ranking high-to-low. \newline
+One option would be to reorder the values from high to low and rerank them, to see whether this produces a smaller rank sum $W_\text{B}$.
 
 \begin{figure}[H]
   \centering
@@ -274,8 +275,8 @@ In this course, the test statistic $W$ is defined as the *smallest possible rank
 
 \begin{center}
 \begin{tabular}{l}
-    $W_\text{A}=37$\\
-    $W_\text{B}=29$
+    $W_\text{A}=\text{37}$\\
+    $W_\text{B}=\text{29}$
 \end{tabular}
 \end{center}
 
@@ -284,9 +285,9 @@ In this course, the test statistic $W$ is defined as the *smallest possible rank
 
 However this value can be obtained without reordering using the formula $m(m+n+1)-W_m$, where $m$ and $n$ represent the sizes of the smaller and larger samples respectively, and $W_m$ is a rank sum for the smaller sample:
 
-$$m(m+n+1)-W_m= 5(5+6+1)-31=29$$
+$$m(m+n+\text{1})-W_m= \text{5}(\text{5}+\text{6}+\text{1})-\text{31}=\text{29}$$
 
-The test statistic can now be confirmed as $W=\text{min}(31,29)=29$. 
+The test statistic can now be confirmed as $W=\text{min}(\text{31},\text{29})=\text{29}$. 
 
 \pagebreak
 
@@ -294,21 +295,21 @@ The test statistic can now be confirmed as $W=\text{min}(31,29)=29$.
 \tcbset{width=16cm}
 \begin{tcolorbox}[adjusted title=For a Mann-Whitney Rank Sum test:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
-    \item The \textbf{test statistic}, denoted $W$, is the \textit{smaller} of $W_m$ and $m(m+n+1)-W_m$, or:\newline
+    \item The \textbf{test statistic}, denoted $W$, is the \textit{smaller} of $W_m$ and $m(m+n+\text{1})-W_m$, or:\newline
     \vspace{-0.6cm}
     \begin{center}
-        $W=\text{min}\left(W_m,\;m(m+n+1)-W_m\right)$
+        $W=\text{min}\left(W_m,\;m(m+n+\text{1})-W_m\right)$
     \end{center}
     \vspace{-0.2cm}
     \item The \textbf{critical value} can be obtained from the Data Booklet.
-    \item $\text{H}_0$ is rejected if the test statistic $W$ is \textbf{less than or equal to} the critical value.
+    \item $\text{H}_\text{0}$ is rejected if the test statistic $W$ is \textbf{less than or equal to} the critical value.
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
 
-Taking as the test statistic the value $W=29$, the test can now be concluded. **Page 16** of the Data Booklet contains critical values for the Mann-Whitney Rank Sum test, which are based on the smallest possible rank sum for the smaller sample. Using this approach, *small values* for the test statistic $W$ offer support towards rejecting $\text{H}_0$ in favour of $\text{H}_1$.
+Taking as the test statistic the value $W=\text{29}$, the test can now be concluded. **Page 16** of the Data Booklet contains critical values for the Mann-Whitney Rank Sum test, which are based on the smallest possible rank sum for the smaller sample. Using this approach, *small values* for the test statistic $W$ offer support towards rejecting $\text{H}_\text{0}$ in favour of $\text{H}_\text{1}$.
 
-The critical value of $W=18$ can be obtained, using $m=5$, $n=6$ and a two-tailed test at the 5\% significance level. Since $29>18$, $\text{H}_0$ cannot be rejected at the 5\% level of significance. There is insufficient evidence to suggest that the two distributions have different population medians.
+The critical value of $W=\text{18}$ can be obtained, using $m=\text{5}$, $n=\text{6}$ and a two-tailed test at the 5\% significance level. Since $\text{29}>\text{18}$, $\text{H}_\text{0}$ cannot be rejected at the 5\% level of significance. There is insufficient evidence to suggest that the two distributions have different population medians.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Times taken to run 5km for a random sample of 7 hockey players and a random sample of 5 rugby players are recorded. The table below gives the results, to the nearest minute:
@@ -360,8 +361,8 @@ Stating an assumption required, perform a non-parametric test to assess the data
 
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \eta_{\text{hockey}}=\eta_{\text{rugby}}\\[0.5em]
-      \text{H}_1: & \eta_{\text{hockey}}\ne \eta_{\text{rugby}}
+      \text{H}_{0}: & \eta_{\text{hockey}}=\eta_{\text{rugby}}\\[0.5em]
+      \text{H}_{1}: & \eta_{\text{hockey}}\ne \eta_{\text{rugby}}
     \end{array}
 \end{math}
 
@@ -375,21 +376,21 @@ Stating an assumption required, perform a non-parametric test to assess the data
 \end{tabular}
 \end{center}
 
-(Tied values are assigned the average of the ranks they occupy: $\frac{5+6}{2}=5.5$)\\
+(Tied values are assigned the average of the ranks they occupy: $\frac{\text{5}+\text{6}}{\text{2}}=\text{5.5}$)\\
 
-$n=7$, $W_\text{hockey}=30.5$ \\
+$n=\text{7}$, $W_\text{hockey}=\text{30.5}$ \\
 
-$m=5$, $W_\text{rugby}=47.5$\\
+$m=\text{5}$, $W_\text{rugby}=\text{47.5}$\\
 
-Check for a smaller possible rank sum for $W_{\text{rugby}}$:\; $5\times (1+5+7)-47.5=17.5$\\
+Check for a smaller possible rank sum for $W_{\text{rugby}}$:\; $5\times (\text{1}+\text{5}+\text{7})-\text{47.5}=\text{17.5}$\\
 
-Test statistic: $W=\text{min}\left(47.5,17.5\right)=17.5$\\
+Test statistic: $W=\text{min}\left(\text{47.5},\text{17.5}\right)=\text{17.5}$\\
 
-Critical value: $W=20$\; ($\alpha=0.05$, $m=5,n=7$ \text{and two-tailed})
+Critical value: $W=\text{20}$\; ($\alpha=\text{0.05}$, $m=\text{5},n=\text{7}$ \text{and two-tailed})
 
 \vspace{0.3cm}
 
-Since $17.5<20$, reject $\text{H}_0$ at the 5\% level of significance. 
+Since $\text{17.5}<\text{20}$, reject $\text{H}_{0}$ at the 5\% level of significance. 
 There is evidence to suggest that the median time taken for rugby players to run 5km is different than the median time taken for hockey players.
 
 \end{tcolorbox}
@@ -451,7 +452,7 @@ There is evidence to suggest that the median time taken for rugby players to run
             Painkiller B & 2.2 & 1.6 & 2.0 & 2.3 & 3.7 & 3.4 & 2.8 & 3.0 & 2.7 & 3.8
         \end{tabular}
     \end{center}
-    Perform a Mann-Whitney test at the 2\% level, using the test statistic of $W=18.5$, to assess whether there is a difference between the effectiveness of the two painkillers. 
+    Perform a Mann-Whitney test at the 2\% level, using the test statistic of $W=\text{18.5}$, to assess whether there is a difference between the effectiveness of the two painkillers. 
       \item The contents of a random sample of six bags of coffee beans sold by \textit{Brewhemian Rhapsody} were measured.\newline The results, in grams, were:
       \begin{center}
       \begin{tabular}{cccccc}
@@ -563,17 +564,67 @@ There is evidence to suggest that the median time taken for rugby players to run
 
 Although large samples may allow data from *not normally-distributed* populations to be assessed using a parametric test due to the Central Limit Theorem, non-parametric tests are typically more robust when handling data from *strongly non-normal* populations. This means the Mann-Whitney test is not only used for small samples.
 
-The Data Booklet only provides Mann-Whitney critical values for sample sizes where $n\leqslant 20$ and $m\leqslant 20$. When dealing with larger samples, where $m,n>20$, a Mann-Whitney Rank Sum test can still be performed using a **normal approximation** to the distribution of $W$ (under $\text{H}_0$). **Page 16** of the Data Booklet provides the required properties of the this distribution:
+The Data Booklet only provides Mann-Whitney critical values for sample sizes where $n\leqslant \text{20}$ and $m\leqslant \text{20}$. When dealing with larger samples, where $m,n>\text{20}$, a Mann-Whitney Rank Sum test can still be performed using a **normal approximation** to the distribution of $W_m$ (under $\text{H}_{0}$). **Page 16** of the Data Booklet provides the required properties of this distribution:
 
-$$\text{E}(W)=\frac{1}{2}m(m+n+1) \quad \text{and} \quad \text{V}(W)=\frac{1}{12}mn(m+n+1)$$
+\vspace{-0.5cm}
 
-Since here a *discrete* distribution is being approximated by the *continuous* normal distribution, a **continuity correction** is required. When using the smaller rank sum $W_m$, a continuity correction of $+0.5$ should be applied.
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+        \node at (-8,0) {$\text{E}(W)=\frac{\text{1}}{\text{2}}m(m+n+\text{1})\quad \text{and} \quad\text{V}(W)=\frac{\text{1}}{\text{12}}mn(m+n+\text{1})$};
+        \node at (20*0.5,-1.6) {Discrete distribution of $W_m$};
+        \node at (20*0.5,-2.4) {for $m=\text{4}$ and $n=\text{5}$};
+        \draw (0.5*10,0) -- (0.5*30,0);
+        \foreach \x in {10,15,...,30}{
+        \draw (0.5*\x,-0.1) -- (0.5*\x,0) node[below] {\x};
+        }
+        \foreach \x in {10,11,...,30}{
+        \draw[fill=black!30] (\x*0.5,0.2) circle (0.08);
+        }
+        \foreach \x in {12,13,...,28}{
+        \draw[fill=black!30] (\x*0.5,0.4) circle (0.08);
+        }
+        \foreach \x in {13,14,...,27}{
+        \draw[fill=black!30] (\x*0.5,0.6) circle (0.08);
+        }
+        \foreach \x in {14,15,...,26}{
+        \draw[fill=black!30] (\x*0.5,0.8) circle (0.08);
+        }
+        \foreach \x in {14,15,...,26}{
+        \draw[fill=black!30] (\x*0.5,1.0) circle (0.08);
+        }
+        \foreach \x in {15,16,...,25}{
+        \draw[fill=black!30] (\x*0.5,1.2) circle (0.08);
+        }
+        \foreach \x in {16,17,...,24}{
+        \draw[fill=black!30] (\x*0.5,1.4) circle (0.08);
+        }
+        \foreach \x in {16,17,...,24}{
+        \draw[fill=black!30] (\x*0.5,1.6) circle (0.08);
+        }
+        \foreach \x in {17,18,...,23}{
+        \draw[fill=black!30] (\x*0.5,1.8) circle (0.08);
+        }
+        \foreach \x in {18,19,...,22}{
+        \draw[fill=black!30] (\x*0.5,2.0) circle (0.08);
+        }
+        \foreach \x in {18,19,...,22}{
+        \draw[fill=black!30] (\x*0.5,2.2) circle (0.08);
+        }
+        \foreach \x in {20}{
+        \draw[fill=black!30] (\x*0.5,2.4) circle (0.08);
+        }
+    \end{tikzpicture}
+\end{center}
+
+\vspace{-0.3cm}
+
+Since here a *discrete* distribution is being approximated by the *continuous* normal distribution, a **continuity correction** is required. For $W=\text{min}\left(W_m,\;m(m+n+\text{1})-W_m\right)$, a continuity correction of $+\text{0.5}$ should be applied.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} 26 Atlantic herrings and 24 North Sea herrings were caught and their lengths measured in cm. The 50 lengths were ordered from smallest to largest and the ranks summed: 
 	 \begin{center}
 	 \begin{tabular}{ccc}
-   $W_{\text{Atlantic}}=503$ & \qquad & $W_{\text{North Sea}}=772$
+   $W_{\text{Atlantic}}=\text{503}$ & \qquad & $W_{\text{North Sea}}=\text{772}$
    \end{tabular}
    \end{center}
 	Assess at the 5\% significance level whether Atlantic and North Sea herrings differ in median length.
@@ -585,8 +636,8 @@ Since here a *discrete* distribution is being approximated by the *continuous* n
 
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \eta_{\text{Atlantic}}=\eta_{\text{North Sea}}\\
-      \text{H}_1: & \eta_{\text{Atlantic}}\ne \eta_{\text{North Sea}}
+      \text{H}_{0}: & \eta_{\text{Atlantic}}=\eta_{\text{North Sea}}\\
+      \text{H}_{1}: & \eta_{\text{Atlantic}}\ne \eta_{\text{North Sea}}
     \end{array}
 \end{math}
 
@@ -594,21 +645,21 @@ Since here a *discrete* distribution is being approximated by the *continuous* n
 
 Find the smallest possible rank sum for the smaller sample (to obtain the required value of $W$):\\
 
-$m=24,n=26,W_{\text{North Sea}}=772$\\
+$m=\text{24},n=\text{26},W_{\text{North Sea}}=\text{772}$\\
 
-Check for a smaller possible rank sum for $W_\text{North Sea}$:\;$24\times(24+26+1)-772=452$\\
+Check for a smaller possible rank sum for $W_\text{North Sea}$:\;$\text{24}\times(\text{24}+\text{26}+\text{1})-\text{772}=\text{452}$\\
 
-$W=\text{min}(772,452)=452$\\
+$W=\text{min}(\text{772},\text{452})=\text{452}$\\
 
-$\text{E}(W)=\dfrac{1}{2}\times 24\times (24+26+1)=612$\\
+$\text{E}(W)=\dfrac{\text{1}}{\text{2}}\times \text{24}\times (\text{24}+\text{26}+\text{1})=\text{612}$\\
 
-$\text{V}(W)=\dfrac{1}{12}\times 24\times 26 \times (24+26+1)=2652$\\[0.1em]
+$\text{V}(W)=\dfrac{\text{1}}{\text{12}}\times \text{24}\times \text{26} \times (\text{24}+\text{26}+\text{1})=\text{2652}$\\[0.1em]
 
-$W\approx \text{N}(612,2652)$
+$W\approx \text{N}(\text{612},\text{2652})$
 
 \vspace{0.3cm}
 
-Test statistic: $z=\dfrac{452+0.5-612}{\sqrt{2652}}=-3.10$
+Test statistic: $z=\dfrac{\text{452}+\text{0.5}-\text{612}}{\sqrt{\text{2652}}}=-\text{3.10}$
 \hspace{2.5cm}
 \begin{tikzpicture}[overlay]
 \begin{axis}[
@@ -637,23 +688,23 @@ Test statistic: $z=\dfrac{452+0.5-612}{\sqrt{2652}}=-3.10$
 \pgfmathsetmacro\valueC{gauss(1.96,0,1)}
 \draw [semithick, black]  (axis cs:-1.96,0) -- (axis cs:-1.96,\valueA);
 \draw [semithick, black]  (axis cs:1.96,0) -- (axis cs:1.96,\valueC);
-\node[below] at (axis cs: 0,0)  {$0$}; 
-\node[below] at (axis cs: -1.96, 0) {$-1.96$};
+\node[below] at (axis cs: 0,0)  {0}; 
+\node[below] at (axis cs: -1.96, 0) {$-\text{1.96}$};
 \node[above] at (axis cs: -2.3,\valueA) {2.5\%};
-\node[below] at (axis cs: 1.96, 0) {$1.96$};
+\node[below] at (axis cs: 1.96, 0) {$\text{1.96}$};
 \node[above] at (axis cs: 2.3,\valueC) {2.5\%};
 \node[above] at (axis cs: 0,\valueB)  {$z$};
-\draw[very thick] (axis cs: -2.9,0) -- (axis cs: -2.9,0.44) node[above] {$-3.10$};
+\draw[very thick] (axis cs: -2.9,0) -- (axis cs: -2.9,0.44) node[above] {$-\text{3.10}$};
 \end{axis}
 \end{tikzpicture}\\
 
 \vspace{0.2cm}
 
-Critical value: $z=-1.96$
+Critical value: $z=-\text{1.96}$
 
 \vspace{0.3cm}
 
-Since $-3.10<-1.96$, reject $\text{H}_0$ at the 5\% level of significance. 
+Since $-\text{3.10}<-\text{1.96}$, reject $\text{H}_{0}$ at the 5\% level of significance. 
 There is evidence to suggest that the median length of an Atlantic herring differs from the median length of a North Sea herring.
 
 \end{tcolorbox}
@@ -678,18 +729,18 @@ There is evidence to suggest that the median length of an Atlantic herring diffe
     Dry&30&\qquad&Dry&35&\qquad&Rainy&38&\qquad&Dry&41&\qquad&Rainy&50&\qquad&Rainy&66 
     \end{tabular}
     \end{center}
-    The data was ranked from smallest to largest, and the rank sum for the 21 \textit{dry} days was 396.5. Perform a Mann-Whitney test using $\alpha=0.05$ to determine whether or not her belief is supported.
+    The data was ranked from smallest to largest, and the rank sum for the 21 \textit{dry} days was 396.5. Perform a Mann-Whitney test using $\alpha=\text{0.05}$ to determine whether or not her belief is supported.
     \item An agricultural scientist measures the soil pH level of thirty randomly selected fields in the North West of England and thirty in the South East. The data was ranked and rank sums were obtained:
     \begin{center}
         \begin{tabular}{ccc}
-        North West rank sum $=1015$ \qquad \qquad & South East rank sum $=815$
+        North West rank sum $=\text{1015}$ \qquad \qquad & South East rank sum $=\text{815}$
         \end{tabular}
     \end{center}
     Carry out a hypothesis test to assess the evidence for a difference in median soil pH levels for fields in the two regions, at the 1\% level.
     \item A technology magazine tested the cooling power of random samples of 21 fans from brand A and 25 from brand B. When ranked from lowest cooling power to highest, the brand A fans had the higher rank sum. The results were ranked and rank sums were:
     \begin{center}
     \begin{tabular}{ccc}
-        $W_\text{A} = 583$ & \qquad \qquad & $W_\text{B} = 498$
+        $W_\text{A} = \text{583}$ & \qquad \qquad & $W_\text{B} = \text{498}$
     \end{tabular}
     \end{center}
     Perform a non-parametric hypothesis test to assess whether the data provides evidence that brand A fans have more cooling power.
@@ -711,9 +762,9 @@ There is evidence to suggest that the median length of an Atlantic herring diffe
             \node[below] at (\x,-2) {\x};
             }
         \node[left] at (14,1) {\textit{Brake My Day}};
-        \node[left] at (14,0.5) {$n=27$};
+        \node[left] at (14,0.5) {$n=\text{27}$};
         \node[left] at (14,-1) {\textit{Clutch Academy}};
-        \node[left] at (14,-1.5) {$n=26$};
+        \node[left] at (14,-1.5) {$n=\text{26}$};
         \draw[fill=black] (0,0.2) circle (2pt);
         \draw[fill=black] (1,0.2) circle (2pt);
         \draw[fill=black] (1,0.4) circle (2pt);
@@ -788,7 +839,7 @@ In Chapter 10, hypothesis tests were initially introduced using $p$-values, whic
 The standard steps involved in performing a one-tailed test in this manner are, for samples of size $m$ and $n$ (where $m\leqslant n$):
 
 \begin{itemize}
-    \item Use $ ^{m+n}C_m$ to calculate the number of possible arrangements of the $m+n$ values.
+    \item Use $ ^{m+n}\text{C}_m$ to calculate the number of possible arrangements of the $m+n$ values.
     \item Use the observed data to obtain the rank sum for the smaller sample (of size $m$) as usual.
     \item Typically by listing all relevant \textit{subsets} of ranks for the smaller sample, determine the number of possible such subsets that result in a rank sum equal to or less than the rank sum obtained from the data.
     \item The $p$-value for the test can be calculated using the values from the previous steps as $\dfrac{\text{relevant arrangements}}{\text{possible arrangements}}$.
@@ -810,16 +861,16 @@ Assume that the population distributions of number of actuations for each brand'
 
 \begin{math}
 \begin{array}{ll}
-      \text{H}_0: & \eta_{\text{A}}=\eta_{\text{B}}\\
-      \text{H}_1: & \eta_{\text{A}}< \eta_{\text{B}}
+      \text{H}_{0}: & \eta_{\text{A}}=\eta_{\text{B}}\\
+      \text{H}_{1}: & \eta_{\text{A}}< \eta_{\text{B}}
     \end{array}
 \end{math}
 
 \vspace{0.3cm}
 
-$\text{Number of possible arrangements}={}^{10}C_3=120.$\\
+$\text{Number of possible arrangements}={}^{\text{10}}\text{C}_\text{3}=\text{120}.$\\
 
-Subsets of relevant arrangements of ranks with a rank sum for A$\leqslant9$:
+Subsets of relevant arrangements of ranks with a rank sum for A$\leqslant\text{9}$:
 
 \begin{center}
     \begin{tabular}{|c|c|}
@@ -837,9 +888,9 @@ Subsets of relevant arrangements of ranks with a rank sum for A$\leqslant9$:
     \end{tabular}
 \end{center}
 
-$p\text{-value}=\text{P}(\text{rank sum}\leqslant9)=\dfrac{7}{120}=0.0583$\\
+$p\text{-value}=\text{P}(\text{rank sum}\leqslant9)=\dfrac{\text{7}}{\text{120}}=\text{0.0583}$\\
 
-Since $0.0583<0.1$, reject $\text{H}_0$ at the 10\% level of significance. 
+Since $\text{0.0583}<\text{0.1}$, reject $\text{H}_{0}$ at the 10\% level of significance. 
 There is evidence to suggest that the median number of shutter actuations before failure for Brand A is less than that for Brand B, and so Brand A's cameras are less reliable.
 
 \end{tcolorbox}
@@ -855,13 +906,13 @@ There is evidence to suggest that the median number of shutter actuations before
     \begin{enumerate}
         \item Determine the number of possible arrangements of the 8 values.
         \item List all the possible subsets of ranks for the smaller sample which would result in a rank sum of 8 or lower.
-        \item Hence determine $\text{P}(\text{rank sum}\leqslant 8)$.
+        \item Hence determine $\text{P}(\text{rank sum}\leqslant \text{8})$.
     \end{enumerate}
     \item A Mann-Whitney test is to be performed using two independent samples of sizes 4 and 5. Once data for the samples have been collected and ordered, a rank sum will be obtained for the smaller sample.
     \begin{enumerate}
         \item Determine the number of possible arrangements of the 9 values.
         \item List all the possible subsets of ranks for the smaller sample which would result in a rank sum of 12 or lower.
-        \item Hence determine $\text{P}(\text{rank sum}\leqslant 12)$.
+        \item Hence determine $\text{P}(\text{rank sum}\leqslant \text{12})$.
     \end{enumerate}
     \item To investigate the effects of caffeine on reaction times, four students from a group of eleven are randomly chosen to be given a soft drink containing caffeine, whilst the remaining seven are given the caffeine-free version of the soft drink. The students will be unaware which they have consumed.\\[0.5em]
     The reaction time of each student is then tested using an online test, with the results shown on the dot plot below.
@@ -898,14 +949,14 @@ There is evidence to suggest that the median number of shutter actuations before
     A non-parametric hypothesis test is to be conducted under the following hypotheses:
     \begin{center}
         \begin{tabular}{c}
-            $\text{H}_0:\eta_{\text{caffeine}}=\eta_{\text{caffeine-free}}$\\[0.5em]
-            $\text{H}_1:\eta_{\text{caffeine}}<\eta_{\text{caffeine-free}}$
+            $\text{H}_{0}:\eta_{\text{caffeine}}=\eta_{\text{caffeine-free}}$\\[0.5em]
+            $\text{H}_{1}:\eta_{\text{caffeine}}<\eta_{\text{caffeine-free}}$
         \end{tabular}
     \end{center}
     \begin{enumerate}[resume]
         \item State an assumption required for the test.
         \item Under the null hypothesis, calculate the probability of the rank sum for the caffeine group being equal to or less than 15.
-        \item Use your answer to part (b) to conclude the test at the 5\% level of significance. 
+        \item Use this $p$-value to conclude the test at the 5\% level of significance. 
     \end{enumerate}
     \item A 800m race between four hockey players and eight rugby players results in the hockey players finishing first, second, fourth and sixth. Assume that the population distributions of times for each group have the same shape and are equal in variance.
     \begin{enumerate}
@@ -990,7 +1041,7 @@ There is evidence to suggest that the median number of shutter actuations before
             \node at (-0.8,12.5) {2};
             \node at (-1.3,12.5) {5};
             \node at (-1.8,12.5) {5};
-            \node at (6,12.5) {$12\text{ }|\text{ }8\text{ }\text{represents }12.8\%$};
+            \node at (6,12.5) {$\text{12}\text{ }|\text{ }\text{8}\text{ }\text{represents }\text{12.8}\%$};
         \end{tikzpicture}
     \end{center}
     \begin{enumerate}
