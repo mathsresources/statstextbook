@@ -1459,7 +1459,7 @@ Another way of writing the equation found above is: $\text{practical}=\text{2.57
 
 In some contexts, the regression line may be written informally as $y=a+bx$, but using $\hat{y}=a+bx$ makes clear that the line gives predicted values rather than observed values.
 
-Scatterplots should always be constructed and closely scrutinised before further analysing bivariate data. By inspecting a scatterplot, it may become apparent, for instance, that the data set is separated into *distinct groups*, which ought to be considered separately, including calculating a correlation coefficient and constructing a regression line for each group. *Outliers* can have a large influence on both the correlation coefficient and the regression line, so they should always be (visually) identified and considered, removing them only if doing so can be justified.
+Scatterplots should always be constructed and closely scrutinised before further analysing bivariate data. By inspecting a scatterplot, it may become apparent, for instance, that the dataset is separated into *distinct groups*, which ought to be considered separately, including calculating a correlation coefficient and constructing a regression line for each group. *Outliers* can have a large influence on both the correlation coefficient and the regression line, so they should always be (visually) identified and considered, removing them only if doing so can be justified.
 
 \pagebreak
 
@@ -1763,7 +1763,7 @@ The website wishes to allow users the ability to input the number of miles in th
     \item[] \text{}
     \begin{enumerate}
         \item[(a) ] Use the scatterplot to comment on the relationship between vertical jump height and back squat weight achieved by the trainees.
-        \item[(b) ] Calculate the product moment correlation coefficient for this data set.
+        \item[(b) ] Calculate the product moment correlation coefficient for this dataset.
         \item[(c)] The coach wishes to use the data to predict vertical jump height.
         \begin{enumerate}
             \item Find the equation of the least squares regression line of vertical jump height on back squat weight.
@@ -1836,7 +1836,7 @@ The website wishes to allow users the ability to input the number of miles in th
 \vspace{0cm}
 
 \begin{enumerate}
-    \item[] However, after considering the scatter diagram for the data, it was realised that one piece of data has been misrecorded, and this volunteer’s data (spotted as a possible outlier) was removed from the data set. 
+    \item[] However, after considering the scatter diagram for the data, it was realised that one piece of data has been misrecorded, and this volunteer’s data (spotted as a possible outlier) was removed from the dataset. 
     \begin{enumerate}
         \item[(a) ] State the approximate age of the volunteer whose data was removed.
         \item[(b) ] Calculate the new equation of the least squares regression line using the revised summary data:\\
@@ -1926,7 +1926,7 @@ The least squares regression line of $\hat{y}=\text{155.29}+\text{1.9018}x$ was 
     \item[] \text{}
     \begin{enumerate}
         \item[(a) ] Comment on what the scatterplot shows. 
-        \item[(b) ] Calculate the product moment correlation coefficient for this data set. 
+        \item[(b) ] Calculate the product moment correlation coefficient for this dataset. 
         \item[(c) ] Find the equation of the least squares regression line of $y$ on $x$.
         \item[(d) ] Comment on the appropriateness of using the regression line found to \\estimate the rainfall in a year if the yield for the year is known.
     \end{enumerate}

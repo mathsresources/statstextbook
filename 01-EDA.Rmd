@@ -167,9 +167,9 @@ This process is called *exploratory data analysis*. Also sometimes referred to a
 
 ## Types of Data
 
-Knowing what *type* of data has been collected helps determine what kind of graphs and statistics may be appropriate.
+Knowing what *type* of data has been collected helps determine what can be done with it.
 
-Data that is numerical is called *quantitative*, of which there are two types. **Discrete** data consists of values that can be counted, such as the number of siblings someone has. **Continuous** data can take *any* value within a given range, though in practice values are often rounded due to measurement precision, such as the mass of a mouse.
+Data that is *numerical* is called *quantitative*, of which there are two types. **Discrete** data consists of values that can be counted or listed, such as the number of siblings someone has. **Continuous** data can take *any* value within a given range, though in practice values are often rounded due to measurement precision, such as the mass of a mouse.
 
 *Qualitative* data (also called **categorical**) is *non-numerical*, such as whether a squirrel is red or grey. 
 
@@ -254,7 +254,7 @@ For example, the table below shows data relating to some football players:
     \begin{enumerate}
     \begin{multicols}{2}
         \item How many pets each pupil owns.
-        \item What kind of animal the pets are.
+        \item What kind of species the pet is.
     \end{multicols}
     \end{enumerate}
     \begin{enumerate}[resume]
@@ -279,7 +279,7 @@ For example, the table below shows data relating to some football players:
     \begin{enumerate}[resume]
     \begin{multicols}{2}
         \item The number of pages in a book.
-        \item The number of songs in an album.
+        \item The number of songs on an album.
     \end{multicols}
     \end{enumerate}
     \begin{enumerate}[resume]
@@ -292,23 +292,23 @@ For example, the table below shows data relating to some football players:
     \begin{center}
     \begin{tabular}{|c|c|c|c|c|}
       \hline
-        Activity level & Smoker & Height (inches) & Mass (pounds) & Pulse (bpm)\\
+        Activity level & Smoker & Height (inches) & Mass (pounds) & Resting pulse (bpm) & Visits this year\\
       \hline
-        Moderate & No & 66 & 140 & 64\\
-        Moderate & No & 72 & 145 & 58\\
-        A lot & Yes & 73.5 & 160 & 62\\
-        Slight & Yes & 73 & 190 & 66\\
+        Moderate & No & 66 & 143 & 55 & 47\\
+        Slight & Yes & 72 & 179 & 68 & 3\\
+        A lot & No & 73.5 & 161 & 47 & 97\\
+        Moderate & Yes & 73 & 192 & 66 & 26\\
       \hline
     \end{tabular}
     \end{center}
-    State the type of data that was collected for each variable.
+    State whether each variable records \textbf{categorical}, \textbf{discrete} or \textbf{continuous} data.
 \end{enumerate}
 
 \pagebreak
 
 ## Displaying Data
 
-Before analysing a data set, it is common practice to *display* the data in a simple form so that an initial impression can be formed. Some key \textit{figures} for the course are shown below, using a sample of 10 sunflower heights measured by a gardener 8 weeks after germination, measured to the nearest centimetre:
+As part of any analysis of a dataset, it is common practice to *display* the data in a visual form so that an initial impression can be formed. Four key \textit{figures} for the course are shown below, using a sample of 10 sunflower heights measured by a gardener 8 weeks after germination, measured to the nearest centimetre:
 
 \begin{center}
 \begin{tabular}{cccccccccccc}
@@ -445,7 +445,7 @@ Before analysing a data set, it is common practice to *display* the data in a si
 \draw[fill=black!25] (0.08*70+3.8,0) rectangle (0.08*80+3.8,0.2*1.2);
 \node at (0.08*53+3.8,-0.8) {\text{height (cm)}};
 \node at (8,3.9) {\textbf{Figure 4: Histogram}};
-\node[text width = 8cm,below] at (8,3.6) {Histograms display continuous data grouped into intervals. Unlike bar charts, the bars are adjacent (no gaps). When interval widths are equal, the height of each bar represents frequency.};
+\node[text width = 8cm,below] at (8,3.6) {Histograms display \textit{continuous} data grouped into intervals. Unlike bar charts, the bars are adjacent (no gaps). When interval widths are equal, the height of each bar represents frequency.};
 \draw[white] (3.5,-2) rectangle (12.5,5);
 \end{tikzpicture}
 
@@ -495,7 +495,7 @@ Before analysing a data set, it is common practice to *display* the data in a si
 
 ## Tables, Figures and Output
 
-There are many ways in which data can be presented, extending beyond those covered on the previous page. In statistical reports they are often clearly labelled as **tables** or **figures**, and numbered so they can be more easily referred to. 
+There are *many* ways in which data can be presented, extending beyond those covered on the previous page. In statistical reports they are often clearly labelled as **tables** or **figures**, and numbered so they can be more easily referred to. 
 
 \begin{multicols}{3}
 
@@ -930,7 +930,7 @@ The purpose of discussing sampling at this point is to caution against making *d
 
 ## Measures of Location and Spread
 
-*Summary statistics* are numerical measures calculated from sample data, such as the mean or standard deviation. These provide a concise way to describe key features of the data. For example, for the *raw data set* of 0, 2, 2, 6, 12, 14, 16, 18, 18, 18, 20, the table below shows a selection of summary statistics. 
+*Summary statistics* are numerical measures calculated from sample data, such as the mean or standard deviation. These provide a concise way to describe key features of the data. For example, for the *raw dataset* of 0, 2, 2, 6, 12, 14, 16, 18, 18, 18, 20, the table below shows a selection of summary statistics. 
 
 \begin{center}
 \begin{tabular}{ccccccccccccc}
@@ -940,7 +940,7 @@ n & mean & sd & sum & sum of squares & min & LQ & median & UQ & max & range & IQ
 \end{tabular}
 \end{center}
 
-There are two main types of summary statistic: those that describe the \textit{central tendency} of data (or its \textbf{location}); and those that describe the \textit{variability} of data (or its \textbf{spread}). It is common to measure both the location *and* spread, since two data sets can have the same average but very different variability.
+There are two main types of summary statistic: those that describe the \textit{central tendency} of data (or its \textbf{location}); and those that describe the \textit{variability} of data (or its \textbf{spread}). It is common to measure both the location *and* spread, since two datasets can have the same average but very different variability.
 
 ### Measures of Location {-}
 
@@ -1007,7 +1007,7 @@ The measure of spread which is usually encountered first in a maths classroom is
 
 ### The Sample Median and the Sample Interquartile Range {-}
 
-A lay person's interpretation of what an 'average' seeks to describe is the *typical* value for a data set. However, consider the hourly rate of pay of six people working in a store, with one manager and five shop workers:
+A lay person's interpretation of what an 'average' seeks to describe is the *typical* value for a dataset. However, consider the hourly rate of pay of six people working in a store, with one manager and five shop workers:
 
 \vspace{-0.2cm}
 \begin{center}
@@ -1018,16 +1018,16 @@ A lay person's interpretation of what an 'average' seeks to describe is the *typ
 
 \vspace{-0.2cm}
 
-The mean of these values is £17.50, yet this figure does not seem to represent a *typical* hourly rate of pay of people working in the store. This example may seem contrived, yet this exact issue is why countries' average salaries are not measured using the mean. This is because the *mean* takes into account *all values* in any data set, and so is influenced by *extreme* values. 
+The mean of these values is £17.50, yet this figure does not seem to represent a *typical* hourly rate of pay of people working in the store. This example may seem contrived, yet this exact issue is why countries' average salaries are not measured using the mean. This is because the *mean* takes into account *all values* in any dataset, and so is influenced by *extreme* values. 
 
-The median ($\text{Q}_\text{2}$) and interquartile range ($\text{IQR}$) are often chosen to measure location and spread when the data is particularly *skewed* (see page 15), as they are less influenced by *extreme values* than the mean and standard deviation. The *median* represents the *middle* of a data set: a value which approximately 50\% of the data lies below, and approximately 50\% of the data lies above. Where a data set has an *odd* number of values, the median is simply the middle value. Where a data set has an *even* number of values, the median is the mean of the *two* middle values. The median is used to describe the *location* of a population.
+The median ($\text{Q}_\text{2}$) and interquartile range ($\text{IQR}$) are often chosen to measure location and spread when the data is particularly *skewed* (see page 15), as they are less influenced by *extreme values* than the mean and standard deviation. The *median* represents the *middle* of a dataset: a value which approximately 50\% of the data lies below, and approximately 50\% of the data lies above. Where a dataset has an *odd* number of values, the median is simply the middle value. Where a dataset has an *even* number of values, the median is the mean of the *two* middle values. The median is used to describe the *location* of a population.
 
 
 \vspace{-0.4cm}
 \begin{center}
 \begin{tikzpicture}
 \draw[white] (-5.5,-2.5) rectangle (12,1.3);
-\node[right] at (-5,-0.3) {Data set A ($n=\text{11}$):};
+\node[right] at (-5,-0.3) {Dataset A ($n=\text{11}$):};
 \node at (1,-0.3) {4};
 \node at (2,-0.3) {6};
 \node at (3,-0.3) {6};
@@ -1041,7 +1041,7 @@ The median ($\text{Q}_\text{2}$) and interquartile range ($\text{IQR}$) are ofte
 \node at (11,-0.3) {18};
 \draw (6,-0.3) circle (0.4cm);
 \node[above] at (6,0.1) {$\text{median}=\text{9}$};
-\node[right] at (-5,-2) {Data set B ($n=\text{10}$):};
+\node[right] at (-5,-2) {Dataset B ($n=\text{10}$):};
 \node at (1,-2) {5};
 \node at (2,-2) {7};
 \node at (3,-2) {7};
@@ -1056,14 +1056,14 @@ The median ($\text{Q}_\text{2}$) and interquartile range ($\text{IQR}$) are ofte
 \end{tikzpicture}
 \end{center}
 
-The *lower quartile* (LQ or $\text{Q}_\text{1}$) and the *upper quartile* (UQ or $\text{Q}_\text{3}$) split an ordered data set into four approximately equal parts, along with the median. From the lowest value to LQ contains approximately 25\% of the data, from LQ to the median contains approximately the next 25\%, and so on.
+The *lower quartile* (LQ or $\text{Q}_\text{1}$) and the *upper quartile* (UQ or $\text{Q}_\text{3}$) split an ordered dataset into four approximately equal parts, along with the median. From the lowest value to LQ contains approximately 25\% of the data, from LQ to the median contains approximately the next 25\%, and so on.
 
 
 \begin{center}
 \begin{tikzpicture}
 \draw[white] (-5.5,-2.5) rectangle (12,1.3);
 \draw[pattern = north east lines] (6,0) circle (0.4cm);
-\node[right] at (-5,0) {Data set A ($n=\text{11}$):};
+\node[right] at (-5,0) {Dataset A ($n=\text{11}$):};
 \node at (1,0) {4};
 \node at (2,0) {6};
 \node at (3,0) {6};
@@ -1079,7 +1079,7 @@ The *lower quartile* (LQ or $\text{Q}_\text{1}$) and the *upper quartile* (UQ or
 \draw (9,0) circle (0.4cm);
 \node[above] at (3,0.4) {$\text{LQ}=\text{6}$};
 \node[above] at (9,0.4) {$\text{UQ}=\text{13}$};
-\node[right] at (-5,-2) {Data set B ($n=\text{10}$):};
+\node[right] at (-5,-2) {Dataset B ($n=\text{10}$):};
 \draw[stealth-] (6,0.5) -- (6,0.8) node[above] {\scriptsize{ignore middle value}};
 \node at (1,-2) {5};
 \node at (2,-2) {7};
@@ -1099,13 +1099,13 @@ The *lower quartile* (LQ or $\text{Q}_\text{1}$) and the *upper quartile* (UQ or
 \end{tikzpicture}
 \end{center}
 
-The *interquartile range*, calculated as $\text{IQR}=\text{UQ}-\text{LQ}$, measures the range of the approximate 'middle 50\%' of a data set, ignoring the remaining lowest and highest quarters. On a box plot (sometimes called a *box-and-whisker* plot), the interquartile range defines the *width of the box*, ignoring the 'whiskers' at either side. The larger a data set's interquartile range is, the more spread it suggests the data may be.
+The *interquartile range*, calculated as $\text{IQR}=\text{UQ}-\text{LQ}$, measures the range of the approximate 'middle 50\%' of a dataset, ignoring the remaining lowest and highest quarters. On a box plot (sometimes called a *box-and-whisker* plot), the interquartile range defines the *width of the box*, ignoring the 'whiskers' at either side. The larger a dataset's interquartile range is, the more spread it suggests the data may be.
 
 \begin{center}
 \begin{tikzpicture}
 \draw[white] (-5.5,-0.5) rectangle (12,3.4);
 \draw (0,0.1) -- (10,0.1);
-\node[right] at (-5,2.5) {Data set A:};
+\node[right] at (-5,2.5) {Dataset A:};
 \node[right] at (-5,1.9) {$\text{IQR}=\text{13}-\text{6}=\text{7}$};
 \draw (0.5*4,2.2) -- (0.5*18,2.2);
 \draw (0.5*4,1.9) -- (0.5*4,2.5) node[above left] {\scriptsize{$\min=\text{4}$}};
@@ -1114,7 +1114,7 @@ The *interquartile range*, calculated as $\text{IQR}=\text{UQ}-\text{LQ}$, measu
 \draw (0.5*9,1.9) -- (0.5*9,2.5) node[above] {\scriptsize{$\text{median}=\text{9}$}};
 \draw[stealth-] (0.5*6,2.6) -- ++ (0,0.3) node[above] {\scriptsize{$\text{LQ}=\text{6}$}};
 \draw[stealth-] (0.5*13,2.6) -- ++ (0,0.3) node[above] {\scriptsize{$\text{UQ}=\text{13}$}};
-\node[right] at (-5,0.9) {Data set B:};
+\node[right] at (-5,0.9) {Dataset B:};
 \node[right] at (-5,0.3) {$\text{IQR}=\text{15}-\text{7}=\text{8}$};
 \draw (0.5*5,0.6) -- (0.5*17,0.6);
 \draw (0.5*5,0.3) -- (0.5*5,0.9) node[above left] {\scriptsize{$\min=\text{5}$}};;
@@ -1136,7 +1136,7 @@ The box plots above suggest that population B may have a higher median value tha
 
 ### The Sample Mean and the Sample Standard Deviation {-}
 
-The mean (*'add up all the values then divide by how many there are'*) is what most people are typically thinking of when they talk about *the average*. It has the property of taking into account *every value* in a data set, which is often desirable except when *extreme values* are present, as discussed on the previous page.
+The mean (*'add up all the values then divide by how many there are'*) is what most people are typically thinking of when they talk about *the average*. It has the property of taking into account *every value* in a dataset, which is often desirable except when *extreme values* are present, as discussed on the previous page.
 
 If data for an entire *population* of values $x_\text{1}, x_\text{2}, \dots, x_N$ were available, where $N$ is the population size, then the **population mean** ($\mu$) could be calculated. This can be expressed concisely using summation notation, $\sum$ ("Sigma"), where $\sum x_i$ denotes the sum of all values from $x_\text{1}$ to $x_N$.
 
@@ -1164,7 +1164,7 @@ In practice, only the *sample mean* and *sample standard deviation* (and sample 
 
 \pagebreak
 
-For example, calculating the mean and standard deviation sample data set: 4, 6, 7, 9, 10
+For example, calculating the mean and standard deviation sample dataset: 4, 6, 7, 9, 10
 
 \[\sum x_i^\text{2} = \text{282},\; \sum x_i = \text{36},\; n=\text{5} \qquad \bar{x}=\frac{36}{5}=\text{7.2} \qquad s=\sqrt{\frac{\text{282}-\frac{\text{36}^\text{2}}{\text{5}}}{\text{4}}}=\text{2.387}\text{ (to 3dp)}\]
 
@@ -1195,7 +1195,7 @@ For example, calculating the mean and standard deviation sample data set: 4, 6, 
     \end{tabular}
     \end{multicols}
     \end{enumerate}
-    \item The frequency tables below represent sample data. Calculate the mean for each data set.
+    \item The frequency tables below represent sample data. Calculate the mean for each dataset.
     \begin{enumerate}
     \begin{multicols}{2}
     \item 
@@ -1216,7 +1216,7 @@ For example, calculating the mean and standard deviation sample data set: 4, 6, 
     \end{tabular}
     \end{multicols}
     \end{enumerate}
-    \item Sets of sample data are shown below. Using a graphical calculator, or by first putting the data set in order, find the median and interquartile range for each data set.
+    \item Sets of sample data are shown below. Using a graphical calculator, or by first putting the dataset in order, find the median and interquartile range for each dataset.
     \begin{enumerate}
     \begin{multicols}{2}
     \item 
@@ -1269,7 +1269,7 @@ For example, calculating the mean and standard deviation sample data set: 4, 6, 
 
 ## Outliers and Fences
 
-Sometimes a data set may contain values that seem *extremely high or low* in comparison to the rest of the values. It is important to be wary of such values and the potentially significant impact they could have on any statistical analysis performed. There is a range of objective approaches that can be used to determine whether one or more points are extreme enough to be classified as **outliers**. In this course, *fences* will be used.
+Sometimes a dataset may contain values that seem *extremely high or low* in comparison to the rest of the values. It is important to be wary of such values and the potentially significant impact they could have on any statistical analysis performed. There is a range of objective approaches that can be used to determine whether one or more points are extreme enough to be classified as **outliers**. In this course, *fences* will be used.
 
 \begin{tcolorbox}[center,title=Identifying Outliers,colback=red!5,colframe=red!70!black,width=15cm,halign = center,halign title = center]
 \begin{center}
@@ -1279,7 +1279,7 @@ Any values \textit{below the lower fence} or \textit{above the upper fence} are 
 \end{center}
 \end{tcolorbox}
 
-If an outlier is identified in a data set, an investigation should be conducted to determine the cause. If it is concluded that the outlier is a rogue point, such as an error in measurement, it can be removed from the data set and summary statistics re-calculated. However, if an outlier is a valid point in the data set then it should not be removed.
+If an outlier is identified in a dataset, an investigation should be conducted to determine the cause. If it is concluded that the outlier is a rogue point, such as an error in measurement, it can be removed from the dataset and summary statistics re-calculated. However, if an outlier is a valid point in the dataset then it should not be removed.
 
 Returning to the sunflower heights from page 5, the data can now be checked for possible outliers:
 
@@ -1348,7 +1348,7 @@ On a box plot, outliers are indicated separately as shown below, with the "whisk
 \end{tikzpicture}
 \end{center}
 
-The outlier in this data set could be valid if, for instance, the sunflower plant is in a particular sunny spot in the garden. However, if the height was measured incorrectly then it can be removed from the data set.
+The outlier in this dataset could be valid if, for instance, the sunflower plant is in a particular sunny spot in the garden. However, if the height was measured incorrectly then it can be removed from the dataset.
 
 \pagebreak
 
@@ -1361,7 +1361,7 @@ The outlier in this data set could be valid if, for instance, the sunflower plan
 \end{center}
 
 \begin{enumerate}
-    \item[(a)] Show that the data set contains an outlier.
+    \item[(a)] Show that the dataset contains an outlier.
     \item[(b)] Suggest a possible cause for this outlier which would mean it should be removed.
 \end{enumerate}
 
@@ -1389,7 +1389,7 @@ The outlier in this data set could be valid if, for instance, the sunflower plan
         23 & 31 & 45 & 32 & 35 & 19 & 24 & 25 & 30 & 38
     \end{tabular}
     \end{center}
-    Calculate the upper and lower fences for this data set and identify any possible outliers.
+    Calculate the upper and lower fences for this dataset and identify any possible outliers.
     \item The number of hours spent studying each week by a randomly selected group of 24 students is given below.
     \begin{center}
     \begin{tabular}{cccccccccccc}
@@ -1407,7 +1407,7 @@ The outlier in this data set could be valid if, for instance, the sunflower plan
     55 & 20 & 31 & 12 & 18 & 32 & 28 & 16 & 14 & 33
 \end{tabular}
 \end{center}
-    Show that the data set contains at least one outlier.
+    Show that the dataset contains at least one outlier.
     \item A hospital trust compiled data relating to the length of stay of patients in a particular hospital. A random sample of 18 patients gave the following summary data, measured in days.
     \begin{center}
     \begin{tabular}{cccccccc}
@@ -2334,7 +2334,7 @@ The larger interquartile range suggests that the population of sprinters' height
     \end{tabular}
     \end{center}
     \begin{enumerate}
-        \item For the species \textit{iris setosa}, determine whether the data set contains any outliers.
+        \item For the species \textit{iris setosa}, determine whether the dataset contains any outliers.
         \item Make two comments comparing the petal lengths of the two species of iris.
     \end{enumerate}
 \end{enumerate}
