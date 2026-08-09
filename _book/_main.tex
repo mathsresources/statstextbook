@@ -349,7 +349,7 @@ Statistics is the science of collecting, organising, presenting, and analysing d
 \end{tikzpicture}
 \end{center}
 
-The \emph{Advanced Higher Statistics} course aims to equip learners with a sound foundation in statistical knowledge. This textbook has been designed to provide key facts, examples, and exercises to support progression through the course. It covers all major stages of statistical investigations, including:
+The \emph{Advanced Higher Statistics} course aims to provide learners with a sound foundation in statistical knowledge and methods. This textbook has been designed to provide key facts, examples, and exercises to support progression through the course. It covers all major stages of statistical investigations, including:
 
 \begin{itemize}
 \item
@@ -362,7 +362,7 @@ The \emph{Advanced Higher Statistics} course aims to equip learners with a sound
   \item
     Visualising data with charts and graphs\\
   \item
-    Calculating sample statistics
+    Calculating and interpreting sample statistics
   \end{itemize}
 \item
   Applying \emph{statistical inference} to evaluate claims about population parameters, including:
@@ -382,22 +382,71 @@ By the end of the course, students should have the knowledge and confidence to c
 
 \pagebreak
 
-\section*{Suggested Use Of The Book}\label{suggested-use-of-the-book}
-\addcontentsline{toc}{section}{Suggested Use Of The Book}
+\section*{Motivation and Structure}\label{motivation-and-structure}
+\addcontentsline{toc}{section}{Motivation and Structure}
 
-\section*{Other Resources}\label{other-resources}
-\addcontentsline{toc}{section}{Other Resources}
+This book is primarily a \emph{course textbook}, with a focus on providing clear notes, selected worked examples and thorough exercises for students working through the Advanced Higher Statistics course.
+
+One motivation for writing this textbook was to minimise the time spent copying detailed notes in class, freeing up more time to spend exploring and investigating ideas to build a better understanding of each concept introduced. For that reason, it does not aim to provide all the interesting practical activities and discussions which are needed to give students the best possible introduction to statistics. Any delivery of the course using this textbook should therefore be supplemented with such activities and discussions.
+
+The book is designed to be worked through in a linear manner, with many chapters building on the knowledge gained from previous chapters. However, with care it will be possible to change the order of chapters covered.
+
+Most sections are designed to correspond roughly to one lesson's learning, although some can be tackled in far less time. A typical section contains:
+
+\begin{itemize}
+\item
+  An introduction to the section's content.
+\item
+  Key facts to remember, often in bold or set within a note box.
+\item
+  A worked example demonstrating an appropriate level of detail in its solution.
+\item
+  A selection of questions designed to test understanding and skills, with increasing levels of challenge.
+\end{itemize}
+
+Each chapter concludes with a review exercise, with questions written in a style matching that of typical exam questions. These may be useful to set as homework, and suggested marking schemes can be found on the textbook's website.
+
+\section*{Useful Links}\label{useful-links}
+\addcontentsline{toc}{section}{Useful Links}
+
+The textbook's website, \href{https://advancedhigherstatistics.github.io}{advancedhigherstatistics.github.io}, contains fully worked solutions to all the exercises, additional proofs, examples, revision material and a selection of practical activities. Should any errors be found in any edition of the textbook, they will be listed there with corrections.
+
+The websites below are all also strongly recommended:
+
+\begin{itemize}
+\item
+  \href{https://www.qualifications.gov.scot}{Advanced Higher Statistics course information (Qualifications Scotland): www.qualifications.gov.scot}
+\item
+  \href{https://statistics.nhost.uk}{An extensive collection of AH Statistics resources: statistics.nhost.uk}
+\item
+  \href{https://www.dynamicmaths.co.uk/QuestionBank/index.php?levelQ=17}{Dynamic Maths Exam Question Bank: www.dynamicmaths.co.uk}
+\end{itemize}
+
+At the time of printing, each link is active and each site is still being maintained. Should that change, updates and any new recommended links can be found on the textbook website.
 
 \section*{Acknowledgements}\label{acknowledgements}
 \addcontentsline{toc}{section}{Acknowledgements}
+
+As well as the many teachers and statisticians who have shared their knowledge over the years, the authors would like to acknowledge a number of excellent books which have helped provide the understanding needed both to teach this course and to write this textbook:
+
+\begin{itemize}
+\item
+  Riddiough, R. \& McColl, J. (2001) \emph{Maths in Action: Advanced Higher Statistics}. Oxford University Press.
+\item
+  Crawshaw, J. (1994) \emph{A Concise Course in Advanced Level Statistics}. Oxford University Press.
+\item
+  Upton, G. (1997) \emph{Understanding Statistics}. Oxford University Press.
+\end{itemize}
+
+\pagebreak
 
 \chapter{Exploratory Data Analysis}\label{exploratory-data-analysis}
 
 \vspace{-1cm}
 
-Data that has been collected but not yet processed is referred to as \emph{raw data}. Before conducting any statistical analysis, a statistician will typically want to get a quick sense of the data, checking for potential issues and identifying key features. Common first steps are therefore often to: \emph{organise} the data into suitable lists or tables; \emph{visualise} the data using plots and graphs; and \emph{measure} key properties of the data.
+Data that has been collected but not yet processed is referred to as \emph{raw data}. Before conducting any statistical analysis, a statistician will typically want to get a quick sense of the data, checking for potential issues and identifying key features. Common first steps therefore include: \emph{organising} the data into suitable lists or tables; \emph{visualising} the data using plots and graphs; and \emph{measuring} key properties of the data.
 
-This process is called \emph{exploratory data analysis}. Also sometimes referred to as \emph{descriptive statistics}, it helps us understand the data before applying more formal \emph{inferential statistics} methods.
+This process is called \emph{exploratory data analysis}. It makes use of \emph{descriptive statistics} to help us understand the data before applying more formal methods of \emph{statistical inference}.
 
 \begin{center}
 \begin{tikzpicture}
@@ -560,11 +609,11 @@ This process is called \emph{exploratory data analysis}. Also sometimes referred
 
 \section{Types of Data}\label{types-of-data}
 
-Knowing what \emph{type} of data has been collected helps determine what can be done with it.
+Knowing what \emph{type} of data has been collected helps determine which statistical methods and diagrams are appropriate. In this course, it is necessary to be able to recognise three distinct types.
 
-Data that is \emph{numerical} is called \emph{quantitative}, of which there are two types. \textbf{Discrete} data consists of values that can be counted or listed, such as the number of siblings someone has. \textbf{Continuous} data can take \emph{any} value within a given range, though in practice values are often rounded due to measurement precision, such as the mass of a mouse.
+\emph{Qualitative} data, also called \textbf{categorical} data, is \emph{non-numerical}, such as the colour of a squirrel.
 
-\emph{Qualitative} data (also called \textbf{categorical}) is \emph{non-numerical}, such as whether a squirrel is red or grey.
+Data that is \emph{numerical} and represents a count or measurement, such as a person's age, is called \emph{quantitative}. Quantitative data can be further classified into one of two types. \textbf{Discrete} data consists of values that can be counted or listed, such as the number of siblings someone has. \textbf{Continuous} data can take \emph{any} value within a given range, though in practice measured values are often rounded. Examples include the mass of a mouse.
 
 \begin{center}
 \begin{tikzpicture}

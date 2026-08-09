@@ -2,9 +2,9 @@
 
 \vspace{-1cm}
 
-Data that has been collected but not yet processed is referred to as *raw data*. Before conducting any statistical analysis, a statistician will typically want to get a quick sense of the data, checking for potential issues and identifying key features. Common first steps are therefore often to: *organise* the data into suitable lists or tables; *visualise* the data using plots and graphs; and *measure* key properties of the data.
+Data that has been collected but not yet processed is referred to as *raw data*. Before conducting any statistical analysis, a statistician will typically want to get a quick sense of the data, checking for potential issues and identifying key features. Common first steps therefore include: *organising* the data into suitable lists or tables; *visualising* the data using plots and graphs; and *measuring* key properties of the data.
 
-This process is called *exploratory data analysis*. Also sometimes referred to as *descriptive statistics*, it helps us understand the data before applying more formal *inferential statistics* methods.
+This process is called *exploratory data analysis*. It makes use of *descriptive statistics* to help us understand the data before applying more formal methods of *statistical inference*.
 
 \begin{center}
 \begin{tikzpicture}
@@ -167,11 +167,11 @@ This process is called *exploratory data analysis*. Also sometimes referred to a
 
 ## Types of Data
 
-Knowing what *type* of data has been collected helps determine what can be done with it.
+Knowing what *type* of data has been collected helps determine which statistical methods and diagrams are appropriate. In this course, it is necessary to be able to recognise three distinct types.
 
-Data that is *numerical* is called *quantitative*, of which there are two types. **Discrete** data consists of values that can be counted or listed, such as the number of siblings someone has. **Continuous** data can take *any* value within a given range, though in practice values are often rounded due to measurement precision, such as the mass of a mouse.
+*Qualitative* data, also called **categorical** data, is *non-numerical*, such as the colour of a squirrel.
 
-*Qualitative* data (also called **categorical**) is *non-numerical*, such as whether a squirrel is red or grey. 
+Data that is *numerical* and represents a count or measurement, such as a person's age, is called *quantitative*. Quantitative data can be further classified into one of two types. **Discrete** data consists of values that can be counted or listed, such as the number of siblings someone has. **Continuous** data can take *any* value within a given range, though in practice measured values are often rounded. Examples include the mass of a mouse.
 
 \begin{center}
 \begin{tikzpicture}
@@ -292,12 +292,12 @@ For example, the table below shows data relating to some football players:
     \begin{center}
     \begin{tabular}{|c|c|c|c|c|c|}
       \hline
-        Activity level & Smoker & Height (inches) & Mass (pounds) & Resting pulse (bpm) & Visits this year\\
+        Activity level & Height (inches) & Mass (pounds) & Resting pulse (bpm) & Visits this year & Smoker\\
       \hline
-        Moderate & No & 66 & 143 & 55 & 47\\
-        Slight & Yes & 72 & 179 & 68 & 3\\
-        A lot & No & 73.5 & 161 & 47 & 97\\
-        Moderate & Yes & 73 & 192 & 66 & 26\\
+        Moderate & 66 & 143 & 55 & 47 & No\\
+        Slight & 72 & 179 & 68 & 3 & Yes\\
+        A lot & 73.5 & 161 & 47 & 97 & No\\
+        Moderate & 73 & 192 & 66 & 26 & Yes\\
       \hline
     \end{tabular}
     \end{center}
@@ -308,7 +308,7 @@ For example, the table below shows data relating to some football players:
 
 ## Displaying Data
 
-As part of any analysis of a dataset, it is common practice to *display* the data in a visual form so that an initial impression can be formed. Four key \textit{figures} for the course are shown below, using a sample of 10 sunflower heights measured by a gardener 8 weeks after germination, measured to the nearest centimetre:
+As part of any analysis of a dataset, it is common practice to *display* the data in a visual form so that an initial impression can be formed. Typically labelled as \textit{figures}, four key types of plot for the course are shown below, using a sample of 10 sunflower heights recorded by a gardener 8 weeks after germination, measured to the nearest centimetre:
 
 \begin{center}
 \begin{tabular}{cccccccccccc}
@@ -345,7 +345,7 @@ As part of any analysis of a dataset, it is common practice to *display* the dat
 \fill[black] (0.15*73,0.4) circle (0.05);
 \node at (0.15*53,-0.8) {\text{Height (cm)}};
 \node at (8,3.5) {\textbf{Figure 1: Dot Plot}};
-\node[text width = 8cm,below] at (8,3.2) {Dot plots display individual data values, stacking repeated values vertically for clarity. They are best suited to \textit{discrete} data};
+\node[text width = 8cm,below] at (8,3.2) {Dot plots display individual data values, stacking repeated values vertically for clarity.};
 \draw[white] (3.5,-2) rectangle (12.5,4);
 \end{tikzpicture}
 
@@ -413,7 +413,7 @@ As part of any analysis of a dataset, it is common practice to *display* the dat
 \draw (0.15*51,0.6) -- (0.15*73,0.6);
 \node at (0.15*53,-0.8) {\text{Height (cm)}};
 \node at (8,3.9) {\textbf{Figure 3: Box Plot}};
-\node[text width = 8cm,below] at (8,3.6) {Box plots offer a visual representation of a \textit{five-number summary}, consisting of the minimum value, lower quartile LQ, median, upper quartile UQ, and maximum value.};
+\node[text width = 8cm,below] at (8,3.6) {Box plots offer a visual representation of a \textit{five-number summary}, consisting of the minimum value, lower quartile (LQ), median, upper quartile (UQ), and maximum value.};
 \draw[white] (3.5,-2) rectangle (12.5,5);
 \end{tikzpicture}
 

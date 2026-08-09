@@ -5,7 +5,7 @@ bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 mainfont: Times New Roman
 fontsize: 11pt
-url: https://bookdown.org/mathsresources/stats/
+url: https://advancedhigherstatistics.github.io/
 cover-image: cover.png
 description: |
   This textbook is designed to support the Advanced Higher Statistics course.
@@ -186,13 +186,13 @@ Statistics is the science of collecting, organising, presenting, and analysing d
 \end{tikzpicture}
 \end{center}
 
-The *Advanced Higher Statistics* course aims to equip learners with a sound foundation in statistical knowledge. This textbook has been designed to provide key facts, examples, and exercises to support progression through the course. It covers all major stages of statistical investigations, including:
+The *Advanced Higher Statistics* course aims to provide learners with a sound foundation in statistical knowledge and methods. This textbook has been designed to provide key facts, examples, and exercises to support progression through the course. It covers all major stages of statistical investigations, including:
 
 - Collecting data using appropriate *sampling techniques*.
 
 - Exploring data using *descriptive statistics*, such as:
     - Visualising data with charts and graphs  
-    - Calculating sample statistics  
+    - Calculating and interpreting sample statistics  
 
 - Applying *statistical inference* to evaluate claims about population parameters, including:
     - An introduction to \textit{probability theory}, which underpins statistical inference  
@@ -203,16 +203,50 @@ By the end of the course, students should have the knowledge and confidence to c
 
 \pagebreak
 
-## Suggested Use Of The Book {-}
+## Motivation and Structure {-}
 
+This book is primarily a *course textbook*, with a focus on providing clear notes, selected worked examples and thorough exercises for students working through the Advanced Higher Statistics course. 
 
+One motivation for writing this textbook was to minimise the time spent copying detailed notes in class, freeing up more time to spend exploring and investigating ideas to build a better understanding of each concept introduced. For that reason, it does not aim to provide all the interesting practical activities and discussions which are needed to give students the best possible introduction to statistics. Any delivery of the course using this textbook should therefore be supplemented with such activities and discussions.
 
-## Other Resources {-}
+The book is designed to be worked through in a linear manner, with many chapters building on the knowledge gained from previous chapters. However, with care it will be possible to change the order of chapters covered. 
+
+Most sections are designed to correspond roughly to one lesson's learning, although some can be tackled in far less time. A typical section contains:
+
+- An introduction to the section's content.
+
+- Key facts to remember, often in bold or set within a note box.
+
+- A worked example demonstrating an appropriate level of detail in its solution.
+
+- A selection of questions designed to test understanding and skills, with increasing levels of challenge.
+
+Each chapter concludes with a review exercise, with questions written in a style matching that of typical exam questions. These may be useful to set as homework, and suggested marking schemes can be found on the textbook's website.
+
+## Useful Links {-}
+
+The textbook's website, [advancedhigherstatistics.github.io](https://advancedhigherstatistics.github.io), contains fully worked solutions to all the exercises, additional proofs, examples, revision material and a selection of practical activities. Should any errors be found in any edition of the textbook, they will be listed there with corrections.
+
+The websites below are all also strongly recommended:
+
+- [Advanced Higher Statistics course information (Qualifications Scotland): www.qualifications.gov.scot](https://www.qualifications.gov.scot)
+
+- [An extensive collection of AH Statistics resources: statistics.nhost.uk](https://statistics.nhost.uk)
+
+- [Dynamic Maths Exam Question Bank: www.dynamicmaths.co.uk](https://www.dynamicmaths.co.uk/QuestionBank/index.php?levelQ=17)
+
+At the time of printing, each link is active and each site is still being maintained. Should that change, updates and any new recommended links can be found on the textbook website.
 
 ## Acknowledgements {-}
 
+As well as the many teachers and statisticians who have shared their knowledge over the years, the authors would like to acknowledge a number of excellent books which have helped provide the understanding needed both to teach this course and to write this textbook:
 
+- Riddiough, R. & McColl, J. (2001) *Maths in Action: Advanced Higher Statistics*. Oxford University Press.
 
+- Crawshaw, J. (1994) *A Concise Course in Advanced Level Statistics*. Oxford University Press.
 
+- Upton, G. (1997) *Understanding Statistics*. Oxford University Press.
+
+\pagebreak
 
 
