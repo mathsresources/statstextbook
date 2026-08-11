@@ -39,15 +39,15 @@
         \item Continuous
         \end{multicols}
     \end{enumerate}
-    \item Categorical: \textit{activity level}, \textit{smoker}. Continuous: \textit{height}, \textit{mass}. Discrete: \textit{visits}. \textit{Pulse} could be argued to be discrete or continuous.
+    \item Categorical: \textit{activity level}, \textit{smoker}.\newline Continuous: \textit{height}, \textit{mass}.\newline Discrete: \textit{visits}.\newline \textit{Pulse} could be argued to be discrete or continuous.
 \end{enumerate}
 
 []{#ex12a}
 
 #### [Exercise 1.2](#ex12q) {-}
 \begin{enumerate}
-    \item 
-    \begin{multicols}{3}
+    \begin{multicols}{2}
+    \item
     \begin{tikzpicture}[baseline=(current bounding box.north)]
         \draw (0.6*12,0) -- (0.6*20,0);
         \foreach \x in {12,14,...,20}{
@@ -97,6 +97,8 @@
         \node[left] at (5,1) {$2|5$ represents £2.50};
         \node[left] at (5,1.5) {$n=12$};
     \end{tikzpicture}
+    \end{multicols}
+    \begin{multicols}{2}
     \item 
     \begin{tikzpicture}[baseline=(current bounding box.north)]
         \draw (0.7*10,0) -- (0.7*16,0);
@@ -114,6 +116,26 @@
         \draw[fill=black!20] (0.7*12,0.7) rectangle (0.7*14.5,1.3);
         \draw (0.7*13.25,0.7) -- (0.7*13.25,1.3);
     \end{tikzpicture}
+    \item 
+    \begin{tikzpicture}[baseline=(current bounding box.north)]
+        \draw (0.35*52,0) -- (0.35*64,0);
+        \foreach \x in {52,54,...,64}{
+        \draw (0.35*\x,-0.1) -- (0.35*\x,0) node[below] {\x};
+        }
+        \draw (0.35*52,0) -- (0.35*52,2);
+        \foreach \y in {0,5,10,15,20}{
+        \draw (0.35*52-0.1,0.1*\y) -- (0.35*52,0.1*\y) node[left] {\y};
+}
+        \draw[fill=black!20] (0.35*52,0) rectangle (0.35*54,0.2);
+        \draw[fill=black!20] (0.35*54,0) rectangle (0.35*56,0.4);
+        \draw[fill=black!20] (0.35*56,0) rectangle (0.35*58,1.1);
+        \draw[fill=black!20] (0.35*58,0) rectangle (0.35*60,1.7);
+        \draw[fill=black!20] (0.35*60,0) rectangle (0.35*62,0.5);
+        \draw[fill=black!20] (0.35*62,0) rectangle (0.35*64,0.1);
+        \node [above] at (0.35*58,2.3) {histogram of egg masses};
+        \node[below] at (0.35*58,-0.6) {mass (g)};
+        \node[rotate=90,above] at (0.35*50,1) {frequency};
+    \end{tikzpicture}
     \end{multicols}
 \end{enumerate}
 
@@ -122,10 +144,17 @@
 #### [Exercise 1.3](#ex13q) {-}
 
 \begin{enumerate}
-    \item $\tfrac{23}{94}$ or $0.2447$
-    \item A clear key/legend linked to the plot, numbers/scale on the $y$ axis.
+    \item 
+    \begin{enumerate}
+        \begin{multicols}{3}
+        \item $\tfrac{23}{94}$
+        \item $0.2447$
+        \item $24.47\%$
+        \end{multicols}
+    \end{enumerate}
+    \item A clear key/legend linked to the plot showing what each shade/pattern means, and a scale/numbers on the $y$ axis (frequency).
     \item The proportions of pupils in year group taking the bus seem to be broadly similar.
-    \item Approximately 15 minutes.
+    \item For 3rd years the longest is around 36 minutes and the shortest is around 6 minutes.\newline For 2nd years the longest is around 26 minutes and the shortest is around 3 minutes.
     \item 7
 \end{enumerate}
 
@@ -134,22 +163,11 @@
 #### [Exercise 1.4](#ex14q) {-}
 
 \begin{enumerate}
-    \begin{multicols}{5}
-    \item Population mean\newline $\mu$
-    \item Sample mean\newline  $\bar{x}$
-    \item Sample standard deviation\newline  $s$
-    \item Population standard deviation\newline  $\sigma$
-    \item Sample mean\newline  $\bar{x}$
-    \end{multicols}
-\end{enumerate}
-
-\begin{enumerate}
-    \begin{multicols}{4}
-    \item $\bar{x}=35.9,s=15.74$
-    \item $\bar{x}=5.8,s=2.145$
-    \item $\bar{x}=29.125,s=7.586$
-    \item $\text{median}=40.5,\text{IQR}=28$
-    \end{multicols}
+    \item Population mean, $\mu$
+    \item Sample mean, $\bar{x}$
+    \item Sample standard deviation, $s$
+    \item Population standard deviation, $\sigma$
+    \item Sample mean, $\bar{x}$ (assuming the actual population of interest is \textit{all} Scottish schools)
 \end{enumerate}
 
 []{#ex15a}
@@ -157,11 +175,46 @@
 #### [Exercise 1.5](#ex15q) {-}
 
 \begin{enumerate}
-    \begin{multicols}{4}
-    \item $\bar{x}=35.9,s=15.74$
-    \item $\bar{x}=5.8,s=2.145$
-    \item $\bar{x}=29.125,s=7.586$
-    \item $\text{median}=40.5,\text{IQR}=28$
+    \begin{multicols}{2}
+    \item 
+    \begin{enumerate}
+        \item $\bar{x}=35.9,s=15.744$
+        \item $\bar{x}=62.125,s=8.318$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\bar{x}=29.125,s=7.586$
+        \item $\bar{x}=42.056,s=17.864$
+    \end{enumerate}
+    \end{multicols}
+    \begin{multicols}{2}
+    \item 
+    \begin{enumerate}
+        \item $\bar{x}=8$
+        \item $\bar{x}=2.273$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\text{median}=30.5,\text{IQR}=10.5$
+        \item $\text{median}=40.5,\text{IQR}=28$
+    \end{enumerate}
+    \end{multicols}
+    \begin{multicols}{2}
+    \item 
+    \begin{enumerate}
+        \item $\bar{x}=11.125,s=5.027$
+        \item $s^2=25.27$
+        \item $\text{median}=11,\text{IQR}=2$
+        \item The mean and sd of B \textbf{or} the median and IQR for A.
+    \end{enumerate}
+    \end{multicols}
+    \begin{multicols}{2}
+    \item 
+    \begin{enumerate}
+        \item $1,-2,0,-1$
+        \item An improvement in their mark from Sept to Nov.
+        \item $\bar{x}_d=0.125,s_d=1.458$
+    \end{enumerate}
     \end{multicols}
 \end{enumerate}
 
@@ -195,28 +248,26 @@
         \draw (0.2*15,0.7) -- (0.2*15,1.3);
         \end{tikzpicture}
     \end{enumerate}
+    \item Lower fence $=-8$ and upper fence $=56$. Since $59>56$, the value of $59$ is an outlier.
     \item 
     \begin{enumerate}
         \item Upper fence $=26.5$. Since both circled points shown on the box plot (47 and what appears to be 28) are greater than 26.25, they are outliers.\\[1em]
-        \item If the lengths of their stays were incorrectly recorded in the hospital's records, it would be valid to remove them from the dataset before conducting any further analysis. \textit{Other valid reasons are possible.}
+        \item If the lengths of their stays were found to be incorrectly recorded in the hospital's records (a data entry error), it would be valid to remove them from the dataset before conducting any further analysis. \textit{Other valid reasons are possible.}
     \end{enumerate}
         \end{multicols}
 \end{enumerate}
-
-\endgroup
-\newpage
-\begingroup
-\footnotesize
 
 []{#ex17a}
 
 #### [Exercise 1.7](#ex17q) {-}
 
 \begin{enumerate}
-    \item The population of hazelnuts masses appear to possibly follow a positively skewed distribution.
-    \item The population of tree heights appear to possibly follow a symmetrical distributed (such as a normally distribution).
-    \item The population of waiting times appear to be possibly uniformly distributed.
-    \item The population of number of successful passes appears to possibly follow a bimodal distribution.
+    \item The population of hazelnuts masses appears to follow a positively (right) skewed distribution.
+    \item The population of tree heights appears to be symmetrical distributed, and could be normally distributed.
+    \item The population of number of patients appears to be negatively (left) skewed.
+    \item The population of waiting times appears to be uniformly distributed.
+    \item The population of number of successful passes appears to follow a bimodal distribution which is not symmetrical.
+    \item The population of distances to the city centre appears to follow a bimodal distributed and is symmetrical.
 \end{enumerate}
 
 []{#ex18a}
@@ -238,9 +289,9 @@
     The higher interquartile range for judge A shows that their scores were more varied.
     \item 
     \begin{enumerate}
-        \item The daily 2pm temperature was more varied in January than in June, as shown by the slightly higher standard deviation.\\
+        \item The daily 2pm temperature appears to be more varied in January than in June, as shown by the slightly higher standard deviation.\\
         The median 2pm temperature in June was higher.
-        \item Consistent scales have not been used for the box plots, making the location and spread of each less easily comparable.
+        \item The same scales have not been used for the box plots, making the location and spread of each less easily comparable.
     \end{enumerate}
     \item 
     \begin{enumerate}
@@ -281,8 +332,8 @@
     \end{tikzpicture}
     \item $\bar{x}_{\text{new}}=82.4,s_{\text{new}}=3.13$\\
     $\bar{x}_{\text{old}}=78,s_{\text{old}}=4.76$
-    \item The mean number of crates completed per hours was higher for the new production line.\\
-    The number of crates completed per hour was more consistent for the new production line.
+    \item It appears that the mean number of crates completed per hours was higher for the new production line.\\
+    It appears that the number of crates completed per hour was more consistent for the new production line.
     \end{enumerate}
 \end{enumerate}
 
@@ -305,7 +356,6 @@
     \end{enumerate}
     \item 
     \begin{enumerate}
-    \begin{multicols}{2}
     \item 
     \begin{tikzpicture}[baseline=(current bounding box.north)]
     \draw (4,0) -- (11,0);
@@ -330,12 +380,11 @@
     \item $\text{median}=7.5$ and $\text{interquartile range}=3.5$
     \item $\text{mean}=7.33$ and $\text{sd}=2.35$
     \item Shoe sizes are discrete data.
-    \end{multicols}
     \end{enumerate}
     \item 
     \begin{enumerate}
         \item A legend should be provided for the diagram, such as $3|2=3.2\text{ metres}$.
-        \item The stem-and-leaf diagram shows that trees in Woodland A were taller, on average.
+        \item The stem-and-leaf diagram suggests that trees in Woodland A were taller, on average.
     \end{enumerate}
     \item 
     \begin{enumerate}
@@ -345,9 +394,6 @@
 \end{enumerate}
 
 \endgroup
-\pagebreak
-
-
 
 ### Chapter 2 Answers - An Introduction to Probability Theory {-}
 
@@ -359,7 +405,7 @@
 #### [Exercise 2.1](#ex21q) {-}
 
 
-\begin{multicols}{3}
+\begin{multicols}{2}
 \begin{enumerate}
     \item
     \begin{enumerate}
@@ -379,7 +425,6 @@
         \item $\text{P}(\text{orange and strawberry})=0$
         \item $\text{P}(\text{not caramel})=\tfrac{7}{12}$
     \end{enumerate}
-    \newcolumn
     \item
     \begin{enumerate}
         \item $\text{P}(\text{Scotland})=\tfrac{2}{19}$
@@ -392,7 +437,6 @@
         \item $\text{P}(\text{5})=\tfrac{1}{9}$
         \item $\text{P}(\text{blue or 5})=\tfrac{7}{18}$
     \end{enumerate}
-    \newcolumn
     \item
     \begin{enumerate}
         \item $\text{P}(G)=\tfrac{9}{10}$
@@ -412,7 +456,7 @@
 
 #### [Exercise 2.2](#ex22q) {-}
 
-\begin{multicols}{3}
+\begin{multicols}{2}
 \begin{enumerate}
     \item
     \begin{enumerate}
@@ -431,7 +475,6 @@
         \item $\text{P}(\text{tails twice in a row})=\tfrac{3}{8}$
         \item $\text{P}(\text{tails at least twice})=\tfrac{1}{2}$
     \end{enumerate}
-    \newcolumn
     \item $\text{P}(\text{sum}=3)=\tfrac{1}{20}$
     \item $\text{P}(\text{product}<5)=\tfrac{2}{9}$
     \item $\text{P}(\text{at least one number}\leqslant 2)=\tfrac{2}{3}$
@@ -442,7 +485,6 @@
         \item $\text{P}(\text{total}\geqslant15\text{p})=\tfrac{1}{2}$
         \item $\text{P}(\text{total}<12\text{p})=\tfrac{2}{5}$
     \end{enumerate}
-    \newcolumn
     \item 
     \begin{enumerate}
         \item $56$ 
@@ -456,11 +498,6 @@
 \end{enumerate}
 \end{multicols}
 
-\endgroup
-\newpage
-\begingroup
-\footnotesize
-
 []{#ex23a}
 
 #### [Exercise 2.3](#ex23q) {-}
@@ -472,8 +509,8 @@
         \item 
         \hspace{-1.8cm}
         \begin{tikzpicture}[grow=right,baseline=(current bounding box.north)]
-\tikzstyle{level 1}=[level distance=2cm, sibling distance=2.5cm]
-\tikzstyle{level 2}=[level distance=2cm, sibling distance=1.2cm]
+\tikzstyle{level 1}=[level distance=2cm, sibling distance=2.8cm]
+\tikzstyle{level 2}=[level distance=2cm, sibling distance=1.4cm]
 \tikzstyle{bag} = [text width=4em, text centered]
 \tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
 \node[bag] {}
@@ -529,8 +566,8 @@
         \item 
         \hspace{-1.8cm}
         \begin{tikzpicture}[grow=right,baseline=(current bounding box.north)]
-\tikzstyle{level 1}=[level distance=2cm, sibling distance=2.5cm]
-\tikzstyle{level 2}=[level distance=2cm, sibling distance=1.2cm]
+\tikzstyle{level 1}=[level distance=2cm, sibling distance=2.8cm]
+\tikzstyle{level 2}=[level distance=2cm, sibling distance=1.4cm]
 \tikzstyle{bag} = [text width=4em, text centered]
 \tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
 \node[bag] {}
@@ -583,8 +620,8 @@
         \item 
         \hspace{-1.8cm}
         \begin{tikzpicture}[grow=right,baseline=(current bounding box.north)]
-\tikzstyle{level 1}=[level distance=2cm, sibling distance=2.5cm]
-\tikzstyle{level 2}=[level distance=2cm, sibling distance=1.2cm]
+\tikzstyle{level 1}=[level distance=2cm, sibling distance=2.8cm]
+\tikzstyle{level 2}=[level distance=2cm, sibling distance=1.4cm]
 \tikzstyle{bag} = [text width=4em, text centered]
 \tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
 \node[bag] {}
@@ -592,7 +629,7 @@
         node[bag] {cancelled}        
             edge from parent 
             node[above] {}
-            node[below]  {$0.03$}
+            node[below left]  {$0.03$}
     }
     child {
         node[bag] {running}        
@@ -611,7 +648,7 @@
                 node[below]  {}
             }
         edge from parent         
-            node[above] {$0.97$}
+            node[above left] {$0.97$}
             node[below]  {}
     };
 \end{tikzpicture}
@@ -620,15 +657,15 @@
 \end{enumerate}
 \end{multicols}
 
-\begin{multicols}{3}
+\begin{multicols}{2}
 \begin{enumerate}[resume]
     \item 
     \begin{enumerate}
         \item 
         \hspace{-1.8cm}
         \begin{tikzpicture}[grow=right,baseline=(current bounding box.north)]
-\tikzstyle{level 1}=[level distance=2.5cm, sibling distance=2.5cm]
-\tikzstyle{level 2}=[level distance=2.5cm, sibling distance=0.9cm]
+\tikzstyle{level 1}=[level distance=2.5cm, sibling distance=2.8cm]
+\tikzstyle{level 2}=[level distance=2.5cm, sibling distance=1cm]
 \tikzstyle{bag} = [text width=4em, text centered]
 \tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
 \node[bag] {}
@@ -707,11 +744,11 @@
             node[below]  {}
     };
 \end{tikzpicture}
+    \newcolumn
         \item $\text{P}(\text{both same})=\tfrac{1}{3}$ 
         \item $\text{P}(\text{different})=\tfrac{2}{3}$
         \item $\text{P}(\text{neither HB})=\tfrac{1}{7}$
     \end{enumerate}
-    \newcolumn
     \item 
     \begin{enumerate}
         \item $\text{P}(\text{no stops})=0.224$
@@ -776,11 +813,6 @@
     \item $\text{P}(\text{PM}\cap \text{NO}_2)=\tfrac{1}{10}$
 \end{enumerate}
 \end{multicols}
-
-\endgroup
-\newpage
-\begingroup
-\footnotesize
 
 []{#ex25a}
 
@@ -847,20 +879,17 @@
 
 \endgroup
 
-
-
 ### Chapter 3 Answers - Sampling Theory {-}
 
 \begingroup
 \footnotesize
-
-\textbf{Note:} Whilst the answers included here are intended to include an appropriate level of detail, variations in the amount and type of information given in exam questions will require a flexible and common-sense approach to be used in any exam. Past exam questions and marking schemes should be used as a guide, as well as course reports and relevant CPD events.
 
 []{#ex31a}
 
 #### [Exercise 3.1](#ex31q) {-}
 
 \begin{enumerate}
+    \item The sampling frame selected (pupils who have maths first period and are present) does not contain the full population of interest, and is unlikely to be representative of it, missing out pupils who are absent, late, or do not take maths. The sampling method is not random. Both of these issues could lead to bias in the sample collected.
     \item
     \begin{enumerate}
         \item
@@ -868,7 +897,7 @@
             \item People who use his local supermarket.
             \item All shoppers who use the self-checkout tills on that Sunday morning.
         \end{enumerate}
-        \item The sampling frame excludes people who prefer to shop at other times, such as during the evening or midweek. It also only includes those using self-checkout tills, likely excluding those who have a large trolly of shopping. Both of these issues are likely to make the sample unrepresentative of the target population, and may introduce bias.
+        \item The sampling frame excludes people who prefer to shop at other times, such as during the evening or midweek. It also only includes those using self-checkout tills, likely excluding those who have a large trolley of shopping. Both of these issues are likely to make the sample unrepresentative of the target population, and may introduce bias.
         \item The sampling methods is non-random and so will likely introduce bias to the data, making it unsuitable.
     \end{enumerate}
     \item
@@ -885,6 +914,7 @@
 
 \begin{enumerate}
     \item
+    \begin{multicols}{3}
     \begin{enumerate}
         \item One-stage cluster sampling.
         \item Stratified sampling.
@@ -893,6 +923,7 @@
         \item Quota sampling.
         \item Convenience Sampling.
     \end{enumerate}
+    \end{multicols}
     \item
     \begin{enumerate}
         \item Each of the different types of room may have their own distinct characteristics in terms of ageing or the quality of maintenance. Stratified sampling will ensure that a proportionate number from each type of room will be included in the sample.
@@ -919,8 +950,6 @@
         \item This is a non-random sampling method which is liable to produce a sample not representative of the target population, and may introduce bias into the data gathered. 
     \end{enumerate}
 \end{enumerate}
-
-
 
 []{#re3a}
 
@@ -956,7 +985,6 @@
 \end{enumerate}
 
 \endgroup
-\newpage
 
 ### Chapter 4 Answers - Further Probability Theory {-}
 
@@ -1113,8 +1141,6 @@
     \item $\text{P}(\overline{E}|F)=0.1946$
 \end{enumerate}
 \end{multicols}
-
-
 
 []{#ex46a}
 
@@ -2156,9 +2182,12 @@
 
 ### Chapter 12 - Chi-Squared Goodness-of-Fit Test {-}
 
-\begin{multicols}{2}
+\begingroup
+\footnotesize
 
-\textbf{Exercise 12.1}
+[]{#ex121a}
+
+#### [Exercise 12.1](#ex121q) {-}
 
 \begin{enumerate}
     \item $6.333<7.815$, do not reject $\text{H}_0$
@@ -2166,7 +2195,9 @@
     \item $13.88>9.210$, reject $\text{H}_0$
 \end{enumerate}
 
-\textbf{Exercise 12.2}
+[]{#ex122a}
+
+#### [Exercise 12.2](#ex122q) {-}
 
 \begin{enumerate}
     \item $7.779<9.488$, do not reject $\text{H}_0$
@@ -2174,7 +2205,9 @@
     \item $14.906>7.815$, reject $\text{H}_0$
 \end{enumerate}
 
-\textbf{Exercise 12.3}
+[]{#ex123a}
+
+#### [Exercise 12.3](#ex123q) {-}
 
 \begin{enumerate}
     \item 
@@ -2202,7 +2235,9 @@
     \end{enumerate}
 \end{enumerate}
 
-\textbf{Exercise 12.4}
+[]{#ex124a}
+
+#### [Exercise 12.4](#ex124q) {-}
 
 \begin{enumerate}
     \item
@@ -2228,7 +2263,9 @@
     \end{enumerate}
 \end{enumerate}
 
-\textbf{Review Exercise}
+[]{#re12a}
+
+#### [Chapter 12 Review Exercise](#re12q) {-}
 
 \begin{enumerate}
     \item $3.759<5.991$, do not reject $\text{H}_0$
@@ -2246,38 +2283,7 @@
     \end{enumerate}
 \end{enumerate}
 
-\end{multicols}
-
-\begingroup
-\footnotesize
-
-[]{#ex121a}
-
-#### [Exercise 12.1](#ex121q) {-}
-
-
-[]{#ex122a}
-
-#### [Exercise 12.2](#ex122q) {-}
-
-
-[]{#ex123a}
-
-#### [Exercise 12.3](#ex123q) {-}
-
-
-[]{#ex124a}
-
-#### [Exercise 12.4](#ex124q) {-}
-
-
-[]{#re12a}
-
-#### [Chapter 12 Review Exercise](#re12q) {-}
-
 \endgroup
-
-\newpage
 
 ### Chapter 13 - Control Charts {-}
 
@@ -2397,13 +2403,6 @@
     \end{multicols}
 \end{enumerate}
 
-\endgroup
-
-\newpage
-
-\begingroup
-\footnotesize
-
 []{#ex133a}
 
 #### [Exercise 13.3](#ex133q) {-}
@@ -2511,12 +2510,15 @@
 
 \endgroup
 
-\newpage
 
 ### Chapter 14 - Chi-Squared Test for Association {-}
 
+\begingroup
+\footnotesize
 
-\textbf{Exercise 14A}
+[]{#ex141a}
+
+#### [Exercise 14.1](#ex141q) {-}
 
 \begin{enumerate}
     \item $3.436>2.706$, reject $\text{H}_0$
@@ -2526,7 +2528,9 @@
     \item $0.282<11.345$, do not reject $\text{H}_0$
 \end{enumerate}
 
-\textbf{Exercise 14B}
+[]{#ex142a}
+
+#### [Exercise 14.2](#ex142q) {-}
 
 \begin{enumerate}
     \item $3.328>7.815$, do not reject $\text{H}_0$
@@ -2534,7 +2538,9 @@
     \item $25.106>4.605$, reject $\text{H}_0$
 \end{enumerate}
 
-\textbf{Review Exercise}
+[]{#re14a}
+
+#### [Chapter 14 Review Exercise](#re14q) {-}
 
 \begin{enumerate}
     \item $6.254>2.706$, reject $\text{H}_0$
@@ -2548,25 +2554,7 @@
     \end{enumerate}
 \end{enumerate}
 
-\begingroup
-\footnotesize
-
-[]{#ex141a}
-
-#### [Exercise 14.1](#ex141q) {-}
-
-
-[]{#ex142a}
-
-#### [Exercise 14.2](#ex142q) {-}
-
-
-[]{#re14a}
-
-#### [Chapter 14 Review Exercise](#re14q) {-}
-
 \endgroup
-
 
 ### Chapter 15 - Two-Sample Parametric Tests {-}
 
@@ -2768,7 +2756,7 @@
 
 \endgroup
 
-\newpage
+
 
 ### Chapter 18 - Further Linear Regression {-}
 
@@ -2882,12 +2870,6 @@
     \end{enumerate}
 \end{enumerate}
 
-\endgroup
-
-\newpage
-
-\begingroup
-\footnotesize
 
 []{#ex184a}
 
@@ -2955,12 +2937,6 @@
     \item $\hat{X}=25.46+0.0051y$
 \end{enumerate}
 
-\endgroup
-
-\newpage
-
-\begingroup
-\footnotesize
 
 []{#ex187a}
 

@@ -495,7 +495,7 @@ As part of any analysis of a dataset, it is common practice to *display* the dat
 
 ## Tables, Figures and Output
 
-There are *many* ways in which data can be presented, extending beyond those covered on the previous page. In statistical reports they are often clearly labelled as **tables** or **figures**, and numbered so they can be more easily referred to. 
+There are *many* ways in which data can be presented, including displays beyond those covered on the previous page. In statistical reports, these are often clearly labelled as **tables** or **figures**, and numbered so they can be more easily referred to. 
 
 \begin{multicols}{3}
 
@@ -603,9 +603,9 @@ There are *many* ways in which data can be presented, extending beyond those cov
 
 \end{multicols}
 
-Not all graphs encountered in real life will be up to scratch; some graphs may be unclear, accidentally misleading or even intentionally misleading. Being alert to potential flaws in tables and figures and identifying possible improvements is an important skill.
+Not all graphs encountered in real life will be well designed; some graphs may be unclear, accidentally misleading or even intentionally misleading. Being alert to potential flaws in tables and figures and identifying possible improvements is an important skill.
 
-The widespread availability of computing power means that specialist software is often used by statisticians to avoid the need for time-consuming calculations where possible. Whilst this course requires no use of statistical software, examples of \texttt{computer output} will be displayed from which the required information must be extracted.
+The widespread availability of computing power means that specialist software is often used by statisticians to avoid the need for time-consuming calculations where possible. While this course requires no use of statistical software, examples of \texttt{computer output} will be displayed from which the required information must be extracted.
 
 \begin{multicols}{2}
 
@@ -677,14 +677,14 @@ The widespread availability of computing power means that specialist software is
 
 \end{multicols}
 
-Whilst this textbook aims to enable familiarity with common figures, tables and computer output, the best way to practise obtaining information from them is to *read a wide range of relevant statistical articles and reports*. 
+While this textbook aims to enable familiarity with common figures, tables and computer output, the best way to practise obtaining information from them is to *read a wide range of relevant statistical articles and reports*. 
 
 []{#ex13q}
 
 #### [Exercise 1.3](#ex13a) {-}
 
 \begin{enumerate}
-    \item Use \textbf{Table 1} to calculate the proportion of pupils in the sample that walk to school, as a:
+    \item Use \textbf{Table 1} to calculate the proportion of pupils in the sample who walk to school, as a:
     \begin{enumerate}
     \begin{multicols}{3}
         \item Fraction.
@@ -693,8 +693,8 @@ Whilst this textbook aims to enable familiarity with common figures, tables and 
     \end{multicols}
     \end{enumerate}
     \item Suggest two possible improvements to \textbf{Figure 1}.
-    \item Using \textbf{Figure 2 only}, compare the proportions of pupils who take the bus between each year group.
-    \item From \textbf{Figure 3}, state the approximate \textit{shortest} and \textit{longest} walking times amongst 2nd and 3rd year pupils.
+    \item Using \textbf{Figure 2 only}, compare the proportions of pupils who take the bus in each year group.
+    \item From \textbf{Figure 3}, state the approximate \textit{shortest} and \textit{longest} walking times for each of the 2nd and 3rd year groups.
     \item One piece of information from \textbf{Output 1} has been replaced by \texttt{****}. State the missing value.
 \end{enumerate}
 
@@ -702,7 +702,7 @@ Whilst this textbook aims to enable familiarity with common figures, tables and 
 
 ## Population Parameters and Sample Statistics
 
-In a statistical study, the term **population** refers to the entire set of objects of interest, whilst a **sample** is a subset chosen from the population. Understanding the difference is fundamental to statistics. 
+In a statistical study, the term **population** refers to the entire set of objects of interest, while a **sample** is a subset chosen from the population. Understanding the difference is fundamental to statistics. 
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -871,7 +871,7 @@ In a statistical study, the term **population** refers to the entire set of obje
 \end{tikzpicture}
 \end{center}
 
-If data were available for an entire *population*, then various **population parameters** could be calculated *exactly*, such as the *population mean*. Since this is rarely possible in practice, instead *samples* are taken from populations. Measures calculated from a sample are called **sample statistics**, such as the *sample mean*. 
+If data were available for an entire *population*, then various **population parameters** could be calculated *exactly*, such as the *population mean*. Since this is rarely possible in practice, *samples* are usually taken from populations instead. Measures calculated from a sample are called **sample statistics**, such as the *sample mean*. 
 
 The distinction between population parameters and sample statistics is often reflected in the notation used. Letters from the Greek alphabet are commonly used to represent population parameters. For example:
 
@@ -883,11 +883,11 @@ The distinction between population parameters and sample statistics is often ref
 \end{tabular}
 \end{center}
 
-Sample statistics vary depending on the sample chosen and can be viewed as *estimates* of the true values of their corresponding population parameters, which are treated as fixed (but usually unknown).
+Sample statistics vary depending on the sample chosen and can be viewed as *estimates* of the true values of their corresponding population parameters. The population parameters themselves are treated as fixed, but are usually unknown.
 
 \begin{multicols}{2}
 
-\textit{Statistical inference} is the process of using \textit{sample statistics} to assess claims about \textit{population parameters}. This requires learning about the inherent \textit{random variation} that arises when selecting samples from a population. Statistical inference, and \textit{sampling techniques}, will be introduced in later chapters.
+\textit{Statistical inference} is the process of using \textit{sample statistics} to assess claims about \textit{population parameters}. This requires an understanding of the inherent \textit{random variation} that arises when samples are selected from a population. Statistical inference, and \textit{sampling techniques}, will be introduced in later chapters.
 
 \columnbreak
 
@@ -910,19 +910,19 @@ Sample statistics vary depending on the sample chosen and can be viewed as *esti
 
 \end{multicols}
 
-The purpose of discussing sampling at this point is to caution against making *definitive* statements based solely on *sample statistics*, when it is the (usually unknown) *population parameters* that are of primary interest.
+The purpose of discussing sampling at this point is to caution against making *definitive* statements based solely on *sample statistics*, when the (usually unknown) *population parameters* are of primary interest.
 
 []{#ex14q}
 
 #### [Exercise 1.4](#ex14a) {-}
 
-\textit{For each, state using words and notation which sample statistic or population parameter has been obtained.}\newline \textit{For example: ``Sample mean (}$\bar{x}$\textit{).'' or ``Population standard deviation (}$\sigma$\textit{).''}
+\textit{For each, state, using words and notation, which sample statistic or population parameter has been obtained.}\newline \textit{For example: ``Sample mean (}$\bar{x}$\textit{).'' or ``Population standard deviation (}$\sigma$\textit{).''}
 
 \begin{enumerate}
-    \item Whilst studying house price valuations on a street, the valuations are found of every house on the street, and the mean valuation is calculated.
+    \item While studying house price valuations on a street, the valuation of every house on the street is found, and the mean valuation is calculated.
     \item A bus company in Scotland checks the mileage for some of its buses when they come in for a service, and the mean mileage of these buses is calculated.
-    \item The iron levels are checked for a sample of patients at a hospital, and the standard deviation of these is calculated.
-    \item Whilst researching the capacities of football stadiums in the Scottish Football League, the standard deviation is calculated using a full list of all the stadiums used in the Scottish Football League.
+    \item The iron levels are checked for a sample of patients at a hospital, and the standard deviation of these iron levels is calculated.
+    \item While researching the capacities of football stadiums in the Scottish Football League, the standard deviation is calculated using a full list of all the stadiums used in the Scottish Football League.
     \item For a study on lunchtime spending in Scottish schools, the mean lunchtime spend is calculated from surveying every pupil studying at a large secondary school in Edinburgh.
 \end{enumerate}
 
@@ -1260,7 +1260,7 @@ For example, calculating the mean and standard deviation sample dataset: 4, 6, 7
     \end{center}
     \begin{enumerate}
         \item Calculate the remaining four differences.
-        \item Find the \textit{median of the differences} and the \textit{interquartile range of the differences}.
+        \item State what a positive difference represents for a student.
         \item Find the \textit{mean of the differences} and the \textit{standard deviation of the differences} (writing the answers as $\bar{x}_d$ and $s_d$, instead of $\bar{x}$ and $s$ respectively, for clarity).
     \end{enumerate}
 \end{enumerate}
@@ -1404,7 +1404,7 @@ The outlier in this dataset could be valid if, for instance, the sunflower plant
     \item A call centre records the times (in minutes) a sample of customers have to wait before being connected to an agent.
     \begin{center}
 \begin{tabular}{cccccccccc}
-    55 & 20 & 31 & 12 & 18 & 32 & 28 & 16 & 14 & 33
+    59 & 20 & 31 & 12 & 18 & 32 & 28 & 16 & 14 & 33
 \end{tabular}
 \end{center}
     Show that the dataset contains at least one outlier.
@@ -1453,7 +1453,7 @@ The outlier in this dataset could be valid if, for instance, the sunflower plant
 
 ## Describing the Shapes of Distributions
 
-Summary statistics alone are not sufficient to describe the full complexity of the way data is distributed. It is also important to consider and be able to describe the **shape** of the distribution, visualised most easily using a graph. Whilst real-life data rarely follows a precise mathematical model *exactly*, a number of shapes are commonly observed. The following data was generated by *simulating random sampling* from populations with the described distributions. 
+Summary statistics alone are not sufficient to describe the full complexity of the way data is distributed. It is also important to consider and be able to describe the **shape** of the distribution, visualised most easily using a graph. While real-life data rarely follows a precise mathematical model *exactly*, a number of shapes are commonly observed. The following data was generated by *simulating random sampling* from populations with the described distributions. 
 
 \begin{figure}[H]
   \centering
@@ -1709,7 +1709,7 @@ Note that the histograms above were made by selecting some of the most *well-beh
 
 \pagebreak
 
-As well as considering whether the **underlying population distribution** of data appears to be *normal*, *skewed*, *uniform* or *bimodal*, the appropriateness of some statistical inference techniques will depend on whether the distribution is *symmetrical*, or whether two sets of data follow the *same distribution*, with matching shapes and spread. Whilst the following example references techniques that will be introduced later in the course, it is intended to give an idea of the importance of studying distributions in selecting appropriate methods for statistical inference.
+As well as considering whether the **underlying population distribution** of data appears to be *normal*, *skewed*, *uniform* or *bimodal*, the appropriateness of some statistical inference techniques will depend on whether the distribution is *symmetrical*, or whether two sets of data follow the *same distribution*, with matching shapes and spread. While the following example references techniques that will be introduced later in the course, it is intended to give an idea of the importance of studying distributions in selecting appropriate methods for statistical inference.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=NavyBlue]
 \textbf{Problem:} An environmental scientist collected water samples from a number of rivers in a region to explore whether the concentration of a harmful chemical in the water has changed since farming practices used locally have changed. They are considering the following choices of hypothesis test:
@@ -1767,7 +1767,7 @@ As well as considering whether the **underlying population distribution** of dat
 
 \begin{enumerate}
     \item[(a)] Figure 1 suggests that the population distribution of concentrations of the chemical in river sites may be bimodal.
-    \item[(b)] Since the histogram suggests the population distribution of chemical concentration may be symmetrical but not normal, a Wilcoxon Signed Rank test would be appropriate whilst a \textit{t}-test would not.
+    \item[(b)] Since the histogram suggests the population distribution of chemical concentration may be symmetrical but not normal, a Wilcoxon Signed Rank test would be appropriate while a \textit{t}-test would not.
 \end{enumerate}
 
 \end{tcolorbox}
@@ -1984,7 +1984,7 @@ When comparing two or more samples of data, a good starting point is to create s
 At this *exploratory* stage, it is again important to avoid making any *conclusions* relating to the populations from which the sample data was drawn.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=NavyBlue]
-\textbf{Problem:} Within the sport of professional cycling, it is common for riders to specialise in certain types of cycling. \textit{Sprinters} aim to win races that finish on flat roads at high speed, whilst \textit{climbers} aim to win races with an uphill finish. A researcher studying the characteristics of elite-level cyclists randomly selects samples of 30 \textit{sprinters} and 30 \textit{climbers}, recording the heights of each. The results are shown summarised in \textbf{Table 1}.
+\textbf{Problem:} Within the sport of professional cycling, it is common for riders to specialise in certain types of cycling. \textit{Sprinters} aim to win races that finish on flat roads at high speed, while \textit{climbers} aim to win races with an uphill finish. A researcher studying the characteristics of elite-level cyclists randomly selects samples of 30 \textit{sprinters} and 30 \textit{climbers}, recording the heights of each. The results are shown summarised in \textbf{Table 1}.
 
 \vspace{-0.3cm}
 
