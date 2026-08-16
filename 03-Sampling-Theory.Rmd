@@ -173,9 +173,9 @@ To recap from chapter 1, the term **population** refers to the entire set of obj
 \end{tikzpicture}
 \end{center}
 
-A **census** is used to collect information from the entire population and a **sample survey** is used to collect data on a sample. 
+When information is collected from an *entire population*, a **census** of the population has been taken. It is usually very difficult to carry out a census as it is time consuming, expensive, and requires an accurate and complete list of every member of the population. Collecting data can also be destructive (such as testing the burn time of candles) or involve risk (such as trialling an experimental drug).
 
-It is usually very difficult to carry out a census as it is time consuming, expensive, and requires an accurate and complete list of every member of the population.  In some cases, investigating an entire population could destroy the entire population, such as the burn time of candles. It is therefore usually preferable that a sample survey is carried out and, if representative of the population, it should give an accurate indication of the characteristics of the population.
+It is therefore almost always the case that statisticians work with a **sample**, collecting information from just *part* of a population. Where appropriate processes are used with the aim of producing a sample which is *representative* of the population, it should give an accurate indication of the characteristics of the population and allow statistical inference techniques to be used.
 
 \pagebreak
 
@@ -185,7 +185,7 @@ Samples are used to infer information about the populations from which they are 
 
 ### Sample Size {-}
 
-Parameters, such as the population mean, are fixed but usually unknown. If samples are repeatedly taken from a population and their means are obtained, the values of those sample means will sometimes be higher than that of the true population mean and sometimes lower. This comes from *random sampling error* which, despite its name, is a natural effect due to chance variation.
+Parameters, such as the population mean, are fixed but usually unknown, while sample statistics, such as the sample mean, vary from sample to sample. In other words, if samples are repeatedly taken from a population and their means are obtained, the values of those sample means will sometimes be higher than that of the true population mean and sometimes lower. This comes from *random sampling error* which, despite its name, is a natural effect due to chance variation.
 
 The figure below shows two sets of sample means for random samples taken from the same distribution with a population mean of $\mu=\text{50}$. For one set a sample size of $n=\text{5}$ was used, with $n=\text{20}$ for the other.
 
@@ -289,7 +289,7 @@ The \textbf{target population} is the \textit{group being studied}.
 
 \vspace{0.2cm}
 
-The \textbf{sampling frame} is the subset of the target population of size $N$ from which a sample is actually drawn, typically in the form of a list (often ordered). 
+The \textbf{sampling frame} is the list or collection of sampling units from which the sample is actually drawn, of size $N$. Ideally, the sampling frame should closely match the target population.
 
 \textit{e.g. a numbered list of the school roll}
 
@@ -311,14 +311,14 @@ The \textbf{sampling method} is the way in which sampling units are selected fro
 
 Care must be taken to ensure that sampling frames are representative of the target population. If the sampling frame does not fully represent the target population, some individuals will have no chance of being selected. For example, if walking habits are being studied, a sampling frame containing only residents of Glasgow city centre is unlikely to be *representative* of an intended target population of people living in Scotland.
 
-The impact on a study of an ill-defined target population, an unrepresentative sampling frame or a poor sampling technique is likely to lead to data which is *biased* and *not representative* of the population, and to *unreliable conclusions*.
+An ill-defined target population, an unrepresentative sampling frame or a poor sampling technique is likely to produce data which is *biased* and *not representative of the population*, leading to *unreliable conclusions*.
 
 []{#ex31q}
 
 #### [Exercise 3.1](#ex31a) {-}
 
 \begin{enumerate}
-    \item A maths teacher conducts a survey of pupils' confidence in the subject by asking the first twenty pupils who enter the maths corridor at the start of first period. Suggest one issue with the \textbf{sampling frame} and one issue with the \textbf{sampling method}.
+    \item A maths teacher conducts a survey of pupils' confidence in the subject by asking the first twenty pupils who enter the maths corridor at the start of first period. Suggest one issue with the \textbf{sampling frame} and one issue with the \textbf{sampling method}, explaining their potential impact.
     \item A researcher wants to study the shopping habits of those who use his local supermarket. To collect data, he plans to stand at the exit of the self-checkout area one Sunday morning and ask shoppers if he can take a photo of their receipt. To save time, he will pick only those he feels are most likely to agree to this.
     \begin{enumerate}
         \item Identify: \qquad (i) The target population. \qquad (ii) The sampling frame.
@@ -335,7 +335,7 @@ The impact on a study of an ill-defined target population, an unrepresentative s
 
 \pagebreak
 
-## Six Sampling Methods
+## Sampling Methods
 
 In this course, knowledge is required of *four random sampling methods* and *two non-random sampling methods*.
 
@@ -544,9 +544,9 @@ For example, a simple random sample of 15 pupils from a year group of 120 can be
 
 ### Systematic Sampling (Random) {-}
 
-*Systematic sampling* involves using an orderly *pattern* to select units, starting from a randomly selected point. In general, for a numbered sampling frame of size $N$, a random number generator may select a number from 1 to $N$, with the corresponding sampling unit selected. After that initial selection, *every subsequent* $\left(\frac{N}{n}\right)\text{th}$ *unit is selected*, looping back to the start of the sampling frame as necessary to complete the sample of size $n$.
+*Systematic sampling* involves using an orderly *pattern* to select units, starting from a randomly selected point. In general, for a sample of size $n$ from a numbered sampling frame of size $N$, firstly a random number generator may select a number from 1 to $k$, where $k=\frac{N}{n}$, with the corresponding sampling unit selected. After that initial selection, *every subsequent* $k\text{th}$ *unit is selected* to complete the sample of size $n$.
 
-For example, a systematic sample of 15 pupils from a year group of 120 can be made by first selecting a random starting point, such as the  83rd pupil, in an alphabetised list of pupils in the year group. From there, every $\frac{\text{120}}{\text{15}}=\text{8}$th pupil from the list is chosen, looping back round at the end of the list until 15 pupils have been chosen.
+For example, a systematic sample of 15 pupils from a year group of 120 can be made by first selecting a random starting point from 1 to $\frac{\text{120}}{\text{15}}=8$, such as the  3rd pupil, in an alphabetised list of pupils in the year group. From there, every $\text{8}$th pupil from the list is chosen until 15 pupils have been chosen.
 
 \begin{center}
 \begin{tikzpicture}
@@ -1131,7 +1131,7 @@ Taking a sample of a target population from an easily obtainable group, without 
 
 ### Quota Sampling (Non-random) {-}
 
-Like stratified sampling, *quota sampling* considers subgroups within the population. However, it does not use a random process, and number sampled from each stratum often comes from a set *quota* rather than being proportional to their size. 
+Like stratified sampling, *quota sampling* considers subgroups within the population. However, it *does not use a random process*, and the number sampled from each stratum often comes from a set *quota* rather than being proportional to their size. 
 
 \vspace{-0.5cm}
 
@@ -1220,7 +1220,7 @@ Like stratified sampling, *quota sampling* considers subgroups within the popula
 
 \vspace{-0.3cm}
 
-For example, interviewers for a marketing company at a mall speak to people who pass, choosing for themselves who to interview from their allocated strata, with no random process used to avoid potential bias.
+For example, interviewers for a marketing company at a shopping centre speak to people who pass, choosing for themselves who to interview from their allocated strata, with no random process used to avoid potential bias.
 
 ### Advantages and Disadvantages {-}
 
