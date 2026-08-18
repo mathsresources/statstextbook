@@ -151,12 +151,12 @@ $\text{P}(\text{fully recovered }|\text{ placebo})=\dfrac{\text{18}}{\text{30}}=
     \begin{enumerate}
     \itemsep0.5em
         \begin{multicols}{3}
-        \item P(rainy)
-        \item P(not rainy)
-        \item P(leaves | rainy)
-        \item P(does not leave | rainy)
-        \item P(leaves | not rainy)
-        \item P(does not leave | not rainy)
+        \item $\text{P}(\text{rainy})$
+        \item $\text{P}(\text{not rainy})$
+        \item $\text{P}(\text{leaves }|\text{ rainy})$
+        \item $\text{P}(\text{does not leave }|\text{ rainy})$
+        \item $\text{P}(\text{leaves }|\text{ not rainy})$
+        \item $\text{P}(\text{does not leave }|\text{ not rainy})$
         \end{multicols}
     \end{enumerate}
     \item The Venn diagram below shows equally likely outcomes in a sample space and events $A$, $B$ and $C$. Determine:
@@ -421,7 +421,7 @@ $\text{P}(\text{mutation}\cap \text{yellow}) = \text{P}(\text{mutation}) \times 
         \end{itemize}
         \item $\text{P}(\text{blue}\cap \text{yellow})$ given:
         \begin{itemize}
-            \item $\text{P}(\overline{\text{blue}})=\frac{\text{2}}{\text{3}}$
+            \item $\text{P}(\text{blue})=\frac{\text{2}}{\text{3}}$
             \item $\text{P}(\text{yellow})=\frac{\text{1}}{\text{2}}$
             \item $\text{P}(\text{blue }|\text{ yellow})=\frac{\text{3}}{\text{4}}$
         \end{itemize}

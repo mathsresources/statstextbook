@@ -345,13 +345,13 @@
     \item 
     \begin{enumerate}
         \item 
+        \begin{multicols}{3}
         \begin{enumerate}
-            \begin{multicols}{3}
             \item Track; artist.
             \item Release year; no. of streams.
             \item Length.
-            \end{multicols}
         \end{enumerate}
+        \end{multicols}
         \item The upper fence could be calculated to determine whether it is an outlier.
     \end{enumerate}
     \item 
@@ -1073,27 +1073,29 @@
 
 #### [Exercise 4.3](#ex43q) {-}
 
-\begin{multicols}{3}
-    \begin{enumerate}
+\begin{enumerate}
         \item
         \begin{enumerate}
+          \begin{multicols}{3}
             \item Independent.
             \item Not independent.
+            \end{multicols}
         \end{enumerate}
         \item
         \begin{enumerate}
+        \begin{multicols}{3}
             \item Not independent.
             \item Independent.
             \item Independent.
+            \end{multicols}
         \end{enumerate}
         \item
         \begin{enumerate}
-            \item Show e.g. $\text{P}(V)=\text{P}(V|W)$
-            \item Show e.g. $\text{P}(T)\ne\text{P}(T|W)$
+            \item $\text{P}(V)=\frac{15}{40}=\frac{3}{8}$ and $\text{P}(V\mid W)=\frac{3}{8}$, so $V$ and $W$ are independent. 
+            \item $\text{P}(T)=\frac{15}{40}=\frac{3}{8}$ but $\text{P}(T\mid W)=\frac{4}{8}=\frac{1}{2}$, so $T$ and $W$ are not independent.
         \end{enumerate}
-    \end{enumerate}
-\end{multicols}
-
+\end{enumerate}
+    
 []{#ex44a}
 
 #### [Exercise 4.4](#ex44q) {-}
@@ -1110,11 +1112,12 @@
         \begin{enumerate}
             \item $\text{P}(A \cap B)=0.392$
         \item $\text{P}(A \cup B)=0.708$
+        \item $\text{P}(B\mid A)=0.98$
         \end{enumerate}
         \item $\text{P}(X\cup Y)=0.88$
         \item $\text{P}(\text{working }\cap\text{ Calculo})=0.12$
         \item $\text{P}(\text{out-of-date }\cap\text{ weak})=0.096$
-        \item $\text{P}(\text{blue }\cap\text{ pink})=0.38$
+        \item $\text{P}(\text{blue }\cap\text{ pink})=0.02$
     \end{enumerate}
 \end{multicols}
 
@@ -1152,7 +1155,7 @@
         \item $\text{P}(\text{survives})=0.6745$
         \item $\text{P}(\text{win})=0.695$
         \item $\text{P}(\text{likes})=0.54$
-        \item $\text{P}(\text{not make second part})=0.28$
+        \item $\text{P}(\text{reaches third part})=0.28$
         \item $\text{P}(\text{do not survive})=0.268$
         \item $\text{P}(\text{win})=0.3882$
     \end{enumerate}
@@ -1181,11 +1184,11 @@
             \item $\text{P}(\text{social media }|\text{ visits})=0.8409$
         \end{enumerate}
         \item $\text{P}(\text{lost }|\text{ rest day})=0.0559$
-        \item $\text{P}(\text{flaw }|\text{ doesn't leave})=0.8048$
+        \item $\text{P}(\text{flaw }|\text{ does not leave})=0.8048$
         \item
         \begin{enumerate}
-            \item $\text{P}(\text{has condition }|\text{ positive})=0.4580$
-            \item $\text{P}(\text{has condition }|\text{ positive test})=0.4975$
+            \item $\text{P}(\text{condition }|\text{ positive})=0.4580$
+            \item $\text{P}(\text{condition }|\text{ positive test})=0.4975$
         \end{enumerate}
     \end{enumerate}
 \end{multicols}
@@ -1212,7 +1215,7 @@
             \item $\text{P}(\text{wins})=0.3917$
             \item $\text{P}(\text{1st }|\text{ lost})=0.1370$
         \end{enumerate}
-        \item $\text{P}(M|B)=\tfrac{1}{5}=\text{P}(M)$\\hence $P,M$ are independent
+        \item $\text{P}(M|B)=\tfrac{1}{5}=\text{P}(M)$\\hence $M,B$ are independent
         \item 
         \begin{enumerate}
             \item $\text{P}(\text{incorrect})=0.2875$

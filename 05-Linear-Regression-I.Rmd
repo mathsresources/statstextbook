@@ -62,7 +62,7 @@ This chapter will introduce the use of a *correlation coefficient* to evaluate t
 
 ## Scatterplots and Linear Correlation
 
-When deciding whether a linear relationship exists between two numerical variables, a scatterplot should always be drawn before any analysis is undertaken using the bivariate data collected.  This is the first step in determining the level of ***linear relationship** (or *linear correlation*) between the variables. Whilst other kinds of relationship may exist between two numerical variables, in this course the focus is on the existence and strength of *linear* relationships. Consider the following:
+When deciding whether a linear relationship exists between two numerical variables, a scatterplot should always be drawn before any analysis is undertaken using the bivariate data collected.  This is the first step in determining the level of **linear relationship** (or *linear correlation*) between the variables. Whilst other kinds of relationship may exist between two numerical variables, in this course the focus is on the existence and strength of *linear* relationships. Consider the following:
 
 \begin{figure}[H]
   \centering
@@ -263,7 +263,7 @@ Note that there is no universally agreed scale for describing correlations as 's
     \item For each, describe the relationship shown in the scatterplot.
     \begin{enumerate}[rightmargin=20pt]
     \begin{multicols}{2}
-        \item Data is collected by a diner in the USA on the \textit{bill amount} and \textit{tip left} by its guests.
+        \item A diner in the USA collects data on the \textit{bill amount} and \textit{tip left} by its guests.
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
 \draw[black!15,step=0.2cm] (0,0) grid (5,4);
@@ -1356,7 +1356,7 @@ Once values for $a$ and $b$ have been calculated, and so the least squares regre
 
 \begin{vwcol}[widths={0.65,0.35},
  sep=.8cm,rule=0pt]
-Whether a linear relationship will continue to hold for $x$ values lower or higher than any observed within the range of the data can be unpredictable, and should not be assumed.\\[0.3em]\textbf{Interpolation}, prediction within the range of the control data, is generally reliable if the correlation is high.\\[0.3em]However, \textbf{extrapolation}, prediction outwith the range of the data, should be avoided as unreliable and unsupported.
+Whether a linear relationship will continue to hold for $x$ values lower or higher than any observed within the range of the data can be unpredictable, and should not be assumed.\\[0.3em]\textbf{Interpolation}, prediction within the range of the observed data, is generally reliable if the correlation is high.\\[0.3em]However, \textbf{extrapolation}, prediction outwith the range of the data, should be avoided as unreliable and unsupported.
 
 \begin{tikzpicture}
     \draw[fill=black!10,black!10] (0,0) rectangle (4.9,2.6);
@@ -1390,13 +1390,13 @@ Whether a linear relationship will continue to hold for $x$ values lower or high
 
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A biology class takes two tests, one theoretical and one practical. The results of the 12 pupils are shown in the table and scatterplot below, along with some summary statistics.
+\textbf{Problem:} A French class takes two tests; \textit{listening} and \textit{reading}. The results of the 10 pupils are shown in the table and scatterplot below, along with some summary statistics.
 
 \begin{center}
-\begin{tabular}{c|cccccccccccc}
-    Theoretical test result ($x$) & 5 & 9 & 7 & 11 & 20 & 4 & 6 & 17 & 12 & 10 & 15 & 16\\
+\begin{tabular}{c|cccccccccc}
+    Listening ($x$) & 9 & 7 & 11 & 20 & 4 & 6 & 17 & 12 & 10 & 15\\
   \hline
-    Practical test result ($y$) & 6 & 8 & 9 & 13 & 20 & 9 & 8 & 17 & 14 & 8 & 17 & 18
+    Reading ($y$) & 8 & 9 & 13 & 20 & 9 & 8 & 17 & 14 & 8 & 17
 \end{tabular}
 \end{center}
 
@@ -1404,8 +1404,8 @@ Whether a linear relationship will continue to hold for $x$ values lower or high
 \begin{tikzpicture}
 \draw[semithick] (-0.55,-0.5) -- (-0.55,3.65);
 \draw[semithick] (-0.5,-0.6) -- (4.6,-0.6);
-\node[rotate=90] at (-1.7,1.75) {Practical};
-\node at (2,-1.7) {Theoretical};
+\node[rotate=90] at (-1.7,1.75) {Reading};
+\node at (2,-1.7) {Listening};
 \foreach \y in {6,8,...,20}
 \node at (-0.95,0.25*\y-1.5) {\y};
 \foreach \y in {6,8,...,20}
@@ -1414,8 +1414,7 @@ Whether a linear relationship will continue to hold for $x$ values lower or high
 \node at (0.25*\x-1,-0.95) {\x};
 \foreach \x in {2,4,...,22}
 \draw[semithick] (0.25*\x-1,-0.6) -- (0.25*\x-1,-0.7);
-\draw[semithick] (4*0.25-1,6.097*0.25-1.5) -- (20*0.25-1,20.161*0.25-1.5);
-\draw[fill=black] (5*0.25-1,6*0.25-1.5) circle (0.04);
+\draw[semithick] (4*0.25-1,6.45*0.25-1.5) -- (20*0.25-1,19.634*0.25-1.5);
 \draw[fill=black] (9*0.25-1,8*0.25-1.5) circle (0.04);
 \draw[fill=black] (7*0.25-1,9*0.25-1.5) circle (0.04);
 \draw[fill=black] (11*0.25-1,13*0.25-1.5) circle (0.04);
@@ -1426,14 +1425,13 @@ Whether a linear relationship will continue to hold for $x$ values lower or high
 \draw[fill=black] (12*0.25-1,14*0.25-1.5) circle (0.04);
 \draw[fill=black] (10*0.25-1,8*0.25-1.5) circle (0.04);
 \draw[fill=black] (15*0.25-1,17*0.25-1.5) circle (0.04);
-\draw[fill=black] (16*0.25-1,18*0.25-1.5) circle (0.04);
-\node at (9.5,3.5) {$\Sigma x=\text{132},$\quad$\Sigma y=\text{147},$};
-\node at (9.5,2.9) {$\Sigma x^\text{2} =\text{1742},$\quad$\Sigma y^\text{2} =\text{2057},$\quad$\Sigma xy=\text{1872}$};
+\node at (9.5,3.5) {$\Sigma x=\text{111},$\quad$\Sigma y=\text{123},$};
+\node at (9.5,2.9) {$\Sigma x^\text{2} =\text{1461},$\quad$\Sigma y^\text{2} =\text{1697},$\quad$\Sigma xy=\text{1554}$};
 \node[anchor=west] at (5.5,2) {(a) Calculate the equation of the least squares};
 \node[anchor=west] at (6.1,1.5) {regression line of $y$ on $x$.};
-\node[anchor=west] at (5.5,0.7) {(b) Calculate a predicted mark for the practical test};
+\node[anchor=west] at (5.5,0.7) {(b) Calculate a predicted mark for the reading test};
 \node[anchor=west] at (6.1,0.2) {for a pupil who missed it, having scored 8 in the};
-\node[anchor=west] at (6.1,-0.3) {theoretical test.};
+\node[anchor=west] at (6.1,-0.3) {listening test.};
 \node[anchor=west] at (5.5,-1.2) {(c) Comment on the reliability of this prediction.};
 \end{tikzpicture}
 \end{center}
@@ -1443,21 +1441,21 @@ Whether a linear relationship will continue to hold for $x$ values lower or high
 
 \begin{enumerate}
     \item[(a)] \begin{flalign*}
-S_{xx}&=\Sigma x^\text{2}-\frac{(\Sigma x)^\text{2}}{n}=\text{1742}-\frac{\text{132}^\text{2}}{\text{12}}=\text{290}&&\\[1em]
-S_{xy}&=\Sigma xy-\frac{\Sigma x\Sigma y}{n}=\text{1872}-\frac{\text{132}\times \text{147}}{\text{12}}=\text{255}\\[1em]
-b&=\dfrac{S_{xy}}{S_{xx}}=\dfrac{\text{255}}{\text{290}}=\text{0.879}\\[1em]
-a&=\bar{y}-b \bar{x}=\dfrac{\text{147}}{\text{12}}-\text{0.879}\times \dfrac{\text{132}}{\text{12}}=\text{2.578}\\[1em]
-\hat{y}&=\text{2.578}+\text{0.879}x
+S_{xx}&=\Sigma x^\text{2}-\frac{(\Sigma x)^\text{2}}{n}=\text{1461}-\frac{\text{111}^\text{2}}{\text{10}}=\text{228.9}&&\\[1em]
+S_{xy}&=\Sigma xy-\frac{\Sigma x\Sigma y}{n}=\text{1554}-\frac{\text{111}\times \text{123}}{\text{10}}=\text{188.7}\\[1em]
+b&=\dfrac{S_{xy}}{S_{xx}}=\dfrac{\text{188.7}}{\text{228.9}}=\text{0.824}\\[1em]
+a&=\bar{y}-b \bar{x}=\dfrac{\text{123}}{\text{10}}-\text{0.824}\times \dfrac{\text{111}}{\text{10}}=\text{3.154}\\[1em]
+\hat{y}&=\text{3.154}+\text{0.824}x
 \end{flalign*}
-    \item[(b)] $\hat{y}=\text{2.578} + \text{0.879}\times \text{8}=\text{9.61}$
+    \item[(b)] $\hat{y}=\text{3.154} + \text{0.824}\times \text{8}=\text{9.746}$
     \item[(c)] This is an example of interpolation as the value of $x$ used is within the range of values of the other students, and consequently it can be considered a reliable prediction, especially given the strong linear relationship suggested by the scatterplot.  
 \end{enumerate}
 
 \end{tcolorbox}
 
-Another way of writing the equation found above is: $\text{practical}=\text{2.578}+\text{0.879}\times\text{ theoretical}$. This suggests that each increase of 1 mark in the theory test is associated with an increase of 0.879 marks in the practical.
+Another way of writing the equation found above is: $\text{reading}=\text{3.154}+\text{0.824}\times\text{ listening}$. 
 
-In some contexts, the regression line may be written informally as $y=a+bx$, but using $\hat{y}=a+bx$ makes clear that the line gives predicted values rather than observed values.
+The estimated slope of $b=\text{0.824}$ suggests that each increase of 1 mark in the listening test is associated with an increase of 0.824 marks in the reading test. The estimated intercept of $a=\text{3.154}$ suggests that for a *listening score of zero*, a predicted reading score should be 3.154. Whilst an interpretation of the slope may often be useful, for many contexts an interpretation for the intercept may be less useful, since an $x$ value of zero will not always be realistic or even possible.
 
 Scatterplots should always be constructed and closely scrutinised before further analysing bivariate data. By inspecting a scatterplot, it may become apparent, for instance, that the dataset is separated into *distinct groups*, which ought to be considered separately, including calculating a correlation coefficient and constructing a regression line for each group. *Outliers* can have a large influence on both the correlation coefficient and the regression line, so they should always be (visually) identified and considered, removing them only if doing so can be justified.
 
@@ -1853,11 +1851,13 @@ The website wishes to allow users the ability to input the number of miles in th
     \vspace{-0.5cm}
     \begin{center}
     \begin{tikzpicture}[scale=0.8]
-        \node[right] at (7,2.9) {Summary data for sample:};
-        \node[right] at (7,1.9) {$S_{xx}=\text{145.94}$};
-        \node[right] at (7,1.2) {$S_{yy}=\text{530.78}$};
-        \node[right] at (7,0.5) {$S_{xy}=\text{277.54}$};
-        \node[right] at (7,-0.2) {$n=\text{17}$};
+        \node[right] at (8,3.4) {Summary data for sample:};
+        \node[right] at (8,2.4) {$S_{xx}=\text{145.94}$};
+        \node[right] at (8,1.7) {$S_{yy}=\text{530.78}$};
+        \node[right] at (8,1) {$S_{xy}=\text{277.54}$};
+        \node[right] at (8,0.3) {$\sum x=\text{426}$};
+        \node[right] at (8,-0.4) {$\sum y = \text{3450.2}$};
+        \node[right] at (9,-1.1) {$n=\text{17}$};
         \draw[-stealth] (0,0) -- (5.25,0) node[right] {$x$};
         \draw[-stealth] (0,0.1) -- (0,3.25) node[above] {$y$}; 
         \node at (2.5,-1) {Barometric pressure (inches of mercury)};
