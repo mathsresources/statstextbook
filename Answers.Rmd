@@ -1235,14 +1235,80 @@
 
 #### [Exercise 5.1](#ex51q) {-}
 
+\begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item There appears to be a strong positive linear relationship between the bill amount and the tip left.
+        \item There appears to be a moderate positive linear relationship between the floor area and the sale price.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item There appears to be a strong negative linear relationship between miles per gallon and mass.
+        \item There appears to be a moderate negative linear relationship between horsepower and quarter mile time.
+        \item There appears to be no linear relationship between horsepower and rear axle ratio. It looks like there may instead be some curved non-linear relationship.
+    \end{enumerate}
+    \item 
+    \begin{enumerate}
+        \item There appears to be no linear relationship between song length and tempo.
+        \item Mean length $=\text{3.415}$ minutes and mean tempo $=\text{132.68}$ bpm.
+    \end{enumerate}
+\end{enumerate}
+
 []{#ex52a}
 
 #### [Exercise 5.2](#ex52q) {-}
+
+\begin{enumerate}
+    \item $r=\text{0.857}$ suggests a strong positive linear correlation between homework marks and test scores.
+    \item
+    \begin{enumerate}
+        \item $r=\text{0.565}$ suggests a moderate positive linear correlation between age and finishing time.
+        \item $r=-\text{0.980}$ suggests a very strong negative linear correlation between age and selling price.
+    \end{enumerate}
+    \item
+    \begin{enumerate} 
+        \item The word "proves" is inappropriate because the value $r=-\text{0.206}$ is based on a sample, and not the full population.
+        \item The data appears to be made up of two distinct groups. The researcher should consider each group separately, calculating a sample correlation coefficient for each.
+        \item The scatterplot should show labels for each axis, and scales for each axis.
+    \end{enumerate}
+\end{enumerate}
 
 []{#ex53a}
 
 #### [Exercise 5.3](#ex53q) {-}
 
+\begin{enumerate}
+    \item They may have observed that the scatterplot did not seem to show any linear relationship between the variables, and so obtaining the equation of a least squares regression line would not have been appropriate.
+    \item $\hat{y}=94.867-0.846x$
+    \item
+    \begin{enumerate}
+        \item $\hat{y}=40.551+4.735x$
+        \item approximately 59.0 feet
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\hat{y}=194.817-23.483x$
+        \item $r=-0.928$, suggesting a very strong negative linear relationship between finishing times and training miles.
+        \item The equation is unsuitable because it is a regression line of distance on time ($y$ on $x$). The website wishes to predict time from distance, which requires a regression line of time on distance ($x$ on $y$).
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $r=0.113$, suggesting little to no linear relationship between amount of distance from the tree and number of seeds. 
+        \item A regression line may be inappropriate as there may be no linear relationship between the variables (and very little data is available).
+    \end{enumerate}
+    \item $\hat{y}=63.119-0.521x$ and $\hat{y}=60.5$ minutes
+    \item 
+    \begin{enumerate}
+        \item The scatterplot suggests a strong positive linear relationship between back squat weight and vertical jump height.
+        \item $r=0.829$, suggesting a strong positive linear correlation between back squat weight and vertical jump height.
+        \item 
+        \begin{enumerate}
+            \item $\hat{y}=7.237+0.3593x$
+            \item $\hat{y}=66.5$cm. This estimate may be considered reasonably reliable since it is interpolation and the correlation is strong.
+        \end{enumerate}
+        \item This advice may not be correct since correlation does not imply causation; a correlation between squat weight and jump height does not necessarily mean increasing squat weight will lead to an increase in jump height. There mey be other factors influence both of them.
+    \end{enumerate}
+\end{enumerate}
 
 []{#re5a}
 
