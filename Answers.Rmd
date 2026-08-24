@@ -1314,6 +1314,22 @@
 
 #### [Chapter 5 Review Exercise](#re5q) {-}
 
+\begin{enumerate} 
+    \item 
+    \begin{enumerate} 
+        \item[(a)] The possible outlier occurs at approximately \textbf{49 years old}. 
+        \item[(b)] $\hat y = 212.33-0.961x$
+        \item[(c)] 4.68\text{ bpm}
+    \end{enumerate} 
+    \item $\hat y = 155.29 + 1.9018x$ 
+    \item 
+    \begin{enumerate} 
+        \item[(a)] The scatterplot shows a \textbf{strong positive linear relationship} between rainfall and crop yield.
+        \item[(b)] $r =0.981$, so this further suggests there may be a very strong positive linear correlation between rainfall and crop yield. 
+        \item[(c)] $\hat y=-7.42+1.115x$ 
+        \item[(d)] It is not appropriate to use this regression line to estimate rainfall from a known yield, since it is the regression line of \textbf{$y$ on $x$}, constructed to predict yield from rainfall. Predicting rainfall from yield would require the regression line of \textbf{$x$ on $y$}. 
+    \end{enumerate} 
+\end{enumerate}
 
 \endgroup
 
@@ -1326,31 +1342,44 @@
 
 #### [Exercise 6.1](#ex61q) {-}
 
+\begin{enumerate} \item \begin{enumerate} \item[(a)] Probabilities sum to $1.1>1$. \item[(b)] Probabilities sum to $\frac45\neq1$. \item[(c)] Outcomes are not numerical values, so $C$ is not a discrete random variable. \item[(d)] Contains a negative probability. \end{enumerate} \item \begin{enumerate} \item[(a)] $k=0.4$ \item[(b)] $k=0.2$ \item[(c)] $k=0.2$ \item[(d)] $k=0.05$ \end{enumerate} \item \begin{enumerate} \item[(a)] $c=0.3$ \item[(b)] $0.05$ \item[(c)] $0.45$ \item[(d)] $0.50$ \item[(e)] $0.50$ \item[(f)] $0.55$ \item[(g)] $0.10$ \item[(h)] $0.65$ \end{enumerate} \item \[ \begin{array}{c|ccc} e & 0 & 1 & 2\\ \hline P(E=e) & \frac{5}{18} & \frac{5}{9} & \frac16 \end{array} \] \item \begin{enumerate} \item[(a)] \[ \begin{array}{c|cccc} x & 0 & 1 & 2 & 3\\ \hline P(X=x) & \frac1{10} & \frac15 & \frac3{10} & \frac25 \end{array} \] \item[(b)] $\displaystyle \frac{7}{10}$ \end{enumerate} \item \begin{enumerate} \item[(a)] \[ \begin{array}{c|cccc} x & 1 & 2 & 3 & 4\\ \hline P(X=x) & \frac1{30} & \frac2{15} & \frac3{10} & \frac8{15} \end{array} \] \item[(b)] $\displaystyle \frac7{15}$ \end{enumerate} \item \begin{enumerate} \item[(a)] \[ \begin{array}{c|ccc} f & 0 & 1 & 2\\ \hline P(F=f) & \frac{25}{36} & \frac{10}{36} & \frac1{36} \end{array} \] \item[(b)] \[ \begin{array}{c|cccc} t & 0 & 1 & 2 & 3\\ \hline P(T=t) & \frac18 & \frac38 & \frac38 & \frac18 \end{array} \] \item[(c)] \[ \begin{array}{c|ccccccccccc} s & 2&3&4&5&6&7&8&9&10&11&12\\ \hline P(S=s) &\frac1{36} &\frac2{36} &\frac3{36} &\frac4{36} &\frac5{36} &\frac6{36} &\frac5{36} &\frac4{36} &\frac3{36} &\frac2{36} &\frac1{36} \end{array} \] \end{enumerate} \end{enumerate}
+
 []{#ex62a}
 
 #### [Exercise 6.2](#ex62q) {-}
+
+\begin{enumerate} \item \begin{enumerate} \item[(a)] \[ E(X)=4.5 \] \item[(b)] \[ k=\frac{2}{5} \] \[ E(Y)=3.1 \] \end{enumerate} \item \begin{enumerate} \item[(a)] \[ \begin{array}{c|cccccccc} x & 1&2&3&4&5&6&7&8\\ \hline P(X=x) &\frac18&\frac18&\frac18&\frac18 &\frac18&\frac18&\frac18&\frac18 \end{array} \] \item[(b)] \[ P(4\le X\le 6)=\frac38 \] \item[(c)] \[ E(X)=4.5 \] \end{enumerate} \item \[ \begin{array}{c|cc} x & 10 & 20\\ \hline P(X=x) & 0.4 & 0.6 \end{array} \] \item \[ E(X)=\frac54=1.25 \] \item \[ E(Y)=\frac54=1.25 \] \item \begin{enumerate} \item[(a)] \[ \begin{array}{c|ccc} y & -2 & 3 & 8\\ \hline P(Y=y) & \frac{16}{25} & \frac{8}{25} & \frac1{25} \end{array} \] \item[(b)] \[ E(Y)=-1 \] \end{enumerate} \item \begin{enumerate} \item[(a)] \[ \begin{array}{c|ccc} m & 2 & 3 & 4\\ \hline P(M=m) & \frac{3}{10} & \frac{6}{10} & \frac{1}{10} \end{array} \] \item[(b)] \[ \mu=2.8 \] \end{enumerate} \item \begin{enumerate} \item[(a)] \[ \begin{array}{c|cccc} w & -4 & -2 & 1 & 4\\ \hline P(W=w) & \frac18 & \frac38 & \frac38 & \frac18 \end{array} \] \item[(b)] \[ E(W)=0 \] \end{enumerate} \item \[ a+b=0.4 \] \[ 3a+8b=3.2 \] \[ a=0,\qquad b=0.4 \] \end{enumerate}
 
 []{#ex63a}
 
 #### [Exercise 6.3](#ex63q) {-}
 
+\begin{enumerate} \item \begin{enumerate} \item[(a)] $7$ \item[(b)] $-2.6$ \item[(c)] $-3$ \end{enumerate} \item \begin{enumerate} \item[(a)] $7.5$ \item[(b)] $-4$ \item[(c)] $\frac{2}{3}$ \end{enumerate} \item \begin{enumerate} \item[(a)] $-11$ \item[(b)] $-2$ \item[(c)] $1$ \end{enumerate} \item \begin{enumerate} \item[(a)] $3$ \item[(b)] $1.6$ \item[(c)] $-9$ \end{enumerate} \item \begin{enumerate} \item[(a)] \[ k=0.15 \] \item[(b)] \[ P(4<X\le 6)=0.65 \] \item[(c)] \[ E(X)=4.95 \] \item[(d)] \[ E(4X+1)=20.8 \] \end{enumerate} \item \[ \mu=7.5 \] \item \[ E(Y)=5.5 \] \item \begin{enumerate} \item[(a)] \[ E(X)=4.5 \] \item[(b)] \[ Y=2X-10 \] \item[(c)] \[ E(Y)=-1 \] \item[(d)] On average, a player loses £1 per game, so repeated play will tend to result in an overall loss. \end{enumerate} \item \[ E(X)=2.5 \] \end{enumerate}
 
 []{#ex64a}
 
 #### [Exercise 6.4](#ex64q) {-}
 
+\begin{enumerate} \item \begin{enumerate} \item[(a)] \[ E(X)=2.9, \qquad V(X)=7.89 \] \item[(b)] \[ k=\frac{1}{20} \] \[ E(Y)=2.45, \qquad V(Y)=1.4475 \] \end{enumerate} \item \begin{enumerate} \item[(a)] \[ \begin{array}{c|cccc} x&1&2&3&4\\ \hline P(X=x)&\frac14&\frac14&\frac14&\frac14 \end{array} \] \item[(b)] \[ E(X)=2.5 \] \item[(c)] \[ V(X)=1.25 \] \end{enumerate} \item \[ \begin{array}{c|ccc} x&0&1&2\\ \hline P(X=x)&\frac{2}{15}&\frac{8}{15}&\frac13 \end{array} \] \[ E(X)=1.2, \qquad V(X)=0.426\overline{6} =\frac{32}{75} \] \item \[ \begin{array}{c|ccc} y&0&1&2\\ \hline P(Y=y)&\frac1{16}&\frac6{16}&\frac9{16} \end{array} \] \[ E(Y)=1.5, \qquad V(Y)=0.375 =\frac38 \] \item \[ \begin{array}{c|cc} x&4&12\\ \hline P(X=x)&\frac14&\frac34 \end{array} \] \[ V(X)=12 \] \item \[ E(X)=0.25 \] \[ V(X)=4.6875 =\frac{75}{16} \] \item Profit distribution: \[ \begin{array}{c|ccc} x&-10&0&40\\ \hline P(X=x)&\frac{25}{36}&\frac{10}{36}&\frac1{36} \end{array} \] \[ E(X)=-\frac{25}{9} \] \[ V(X)=120.987654\ldots =\frac{9800}{81} \] \item \begin{enumerate} \item[(a)] \[ \begin{array}{c|cccc} x&0&1&2&3\\ \hline P(X=x)&\frac18&\frac38&\frac38&\frac18 \end{array} \] \item[(b)] \[ E(X)=1.5 \] \[ V(X)=0.75 \] \end{enumerate} \item \begin{enumerate} \item[(a)] \[ E(X)=8 \] \item[(b)] \[ p=0.2 \] \end{enumerate} \item \[ k=1 \] \end{enumerate}
+
 []{#ex65a}
 
 #### [Exercise 6.5](#ex65q) {-}
+
+\begin{enumerate} \item \begin{enumerate} \item $12$ \item $32$ \item $4\sqrt{2}$ \end{enumerate} \item \begin{enumerate} \item $3$ \item $3$ \item $\sqrt{3}$ \end{enumerate} \item \begin{enumerate} \item $1.75$ \item $3.6864$ \item $1.92$ \end{enumerate} \item \begin{enumerate} \item $60$ \item $4$ \item $2$ \end{enumerate} \item \begin{enumerate} \item $E(X)=3.1,\;V(X)=3.69$ \item $7.2$ \item $14.76$ \end{enumerate} \item \begin{enumerate} \item $13$ \item $27$ \item $3\sqrt{3}$ \end{enumerate} \item \begin{enumerate} \item $-23$ \item $64$ \item $8$ \end{enumerate} \item \begin{enumerate} \item $E(X)=6$ \item $V(X)=5$ \end{enumerate} \item \begin{enumerate} \item Mean $=-4$ \item Standard deviation $=3$ \end{enumerate} \item \begin{enumerate} \item $1$ \item $a$ \item $V(X)=b^2,\;SD(X)=|b|$ \end{enumerate} \end{enumerate}
 
 []{#ex66a}
 
 #### [Exercise 6.6](#ex66q) {-}
 
+\begin{enumerate} \item \begin{enumerate} \item[(a)] Independence of $J$ and $K$. \item[(b)] \begin{enumerate} \item[(i)] $1$ \item[(ii)] $5$ \item[(iii)] $-13$ \end{enumerate} \item[(c)] \begin{enumerate} \item[(i)] $9$ \item[(ii)] $9$ \item[(iii)] $61$ \end{enumerate} \end{enumerate} \item \begin{enumerate} \item[(a)] $28$ \item[(b)] $312$ \item[(c)] $35$ \item[(d)] $496$ \item[(e)] $-8.5$ \item[(f)] $26$ \end{enumerate} \item \begin{enumerate} \item[(a)] \[ E(2F+G)=8 \] \item[(b)] It must be known whether $F$ and $G$ are independent. \end{enumerate} \item \[ E(A-B)=0.3 \] \[ V(A-B)=1.64 \] \item \[ E(X_1+X_2+X_3+X_4)=40 \] \[ V(X_1+X_2+X_3+X_4)=12 \] \item \[ E(T)=60 \] \[ SD(T)=\sqrt{7.2}\approx2.683 \] \item Assuming the six cup volumes are independent, \[ E(T)=1500\text{ ml} \] \[ SD(T)=10\sqrt6\approx24.5\text{ ml} \] \item \begin{enumerate} \item[(a)] \[ E(X)=3.5, \qquad E(Y)=2.5 \] \item[(b)] \[ V(X)=\frac{35}{12}, \qquad V(Y)=1.25 \] \item[(c)] \[ E(X+Y)=6 \] \[ V(X+Y)=\frac{25}{6} \] \end{enumerate} \item Assuming: \begin{itemize} \item car lengths are independent, \item gap lengths are independent and independent of car lengths. \end{itemize} \[ E(T)=8(4.5)+7(0.4)=38.8\text{ m} \] \[ V(T)=8(0.3)^2+7(0.1)^2=0.79 \] \[ SD(T)=\sqrt{0.79}\approx0.889\text{ m} \] \end{enumerate}
+
 
 []{#re6a}
 
 #### [Chapter 6 Review Exercise](#re6q) {-}
+
+\begin{enumerate} \item \begin{enumerate} \item \begin{center} \begin{tabular}{c|c c c} $x$ & 0 & 1 & 2\\ \hline $\mathrm{P}(X=x)$ & $\frac14$ & $\frac12$ & $\frac14$ \end{tabular} \end{center} \item \begin{enumerate} \item $\mathrm{E}(X)=1$ \item $\mathrm{V}(X)=0.5$ \item $\mathrm{SD}(X)=\sqrt{0.5}=\dfrac{1}{\sqrt2}$ \end{enumerate} \end{enumerate} \item \begin{enumerate} \item Mean $=12$, Variance $=64$ \item Mean $=25$, Variance $=85$ \end{enumerate} \item \begin{enumerate} \item \begin{center} \begin{tabular}{c|c c c c} $x$ & 0 & 1 & 2 & 3\\ \hline $\mathrm{P}(X=x)$ & $\frac{1}{21}$ & $\frac{5}{14}$ & $\frac{10}{21}$ & $\frac{5}{42}$ \end{tabular} \end{center} \item \[ \mathrm{E}(X)=\frac53, \qquad \mathrm{V}(X)=\frac59. \] \end{enumerate} \item \begin{enumerate} \item $\mathrm{E}(X)=5$ \item $\mathrm{V}(X)=3$ \end{enumerate} \item \begin{enumerate} \item Mean $=111$, Standard deviation $=25$ \item Mean $=43$, Standard deviation $=\sqrt{369}\approx 19.21$ \end{enumerate} \item \begin{enumerate} \item Mean $=102.6\text{ kg}$, Standard deviation $=\sqrt{29}\approx 5.39\text{ kg}$ \item Mean $=1776\text{ kg}$, Standard deviation $=\sqrt{1730}\approx 41.59\text{ kg}$ \end{enumerate} \end{enumerate}
 
 \endgroup
 

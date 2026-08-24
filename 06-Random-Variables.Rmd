@@ -1,10 +1,10 @@
 # Random Variables
 
-A random variable is a function that assigns a numerical value to each outcome of a random experiment, used to *model* the behaviour of random processes. Random variables are notated using *capital letters*, such as $X$ and $Y$, whilst the *specific values* that they can take are notated with corresponding small letters such as $x$ and $y$. Random variables can be used to model either *discrete* or *continuous* quantitative variables.
+A random variable is a function that assigns a numerical value to each outcome in the sample space of a random experiment and is used to *model* the behaviour of random processes. Random variables are denoted using *capital letters*, such as $X$ and $Y$, whilst the *specific values* that they can take are denoted with corresponding small letters such as $x$ and $y$. Random variables can be used to model either *discrete* or *continuous* quantitative variables.
 
 ### Discrete Random Variables {-}
 
-If a random variable takes *discrete* numerical values, and a probability is assigned to each, then it is a **discrete random variable**. Discrete values are those that can be listed (either finitely or countably infinitely). Some examples of discrete random variables are:
+If a random variable takes *discrete* numerical values, and a probability is assigned to each, then it is a **discrete random variable**. Discrete values, in principle, are those that can be listed (either finitely or countably infinitely). Some examples of discrete random variables are:
 
 \begin{center}
 \renewcommand{\arraystretch}{2}
@@ -16,7 +16,7 @@ If a random variable takes *discrete* numerical values, and a probability is ass
 \end{tabular}
 \end{center}
 
-The probability that a discrete random variable $X$ takes the value $x$ is notated as:
+The probability that a discrete random variable $X$ takes the value $x$ is denoted as:
 
 \[\text{P}(X=x)\]
 
@@ -367,11 +367,11 @@ Note that the expected value is not necessarily a value that the random variable
 Problems may require a probability distribution to first be tabulated, such as by using a tree diagram.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A bag contains 4 blue and 6 red cubes. One is drawn at random, followed by another without replacing the first. Let discrete random variable $X$ represent the number of red cubes drawn. Find $\text{E}(X)$.
+\textbf{Problem:} A bag contains 4 blue and 6 red cubes. One is drawn at random, followed by another without replacing the first. Let random variable $X$ represent the number of red cubes drawn. Find $\text{E}(X)$.
 
 \tcblower
 \textbf{Solution: }
-\vskip 0.5cm
+
 \begin{tikzpicture}[grow=right]
 \tikzstyle{level 1}=[level distance=3.5cm, sibling distance=3.5cm]
 \tikzstyle{level 2}=[level distance=3.5cm, sibling distance=2cm]
@@ -432,6 +432,8 @@ Problems may require a probability distribution to first be tabulated, such as b
         \egroup
 $$\text{E}(X)=\text{0}\times \frac{\text{2}}{\text{15}}+\text{1}\times \frac{\text{8}}{\text{15}}+\text{2}\times \frac{\text{1}}{\text{3}}=\frac{\text{6}}{\text{5}}=\text{1.2}$$
 \end{tcolorbox}
+
+This is reasonable, since two cubes are drawn and 60\% of the cubes are red, giving an expected number of red cubes of $\text{2}\times \text{0.6}=\text{1.22}\times\text{0.6}=\text{1.22}\times\text{0.6}=\text{1.2}$.
 
 \pagebreak
 
@@ -553,7 +555,7 @@ If discrete random variable $X$ takes values ${x_\text{1},x_\text{2},\dots ,x_n}
 
 (Note that the distribution of $2X$ is *not* that of the sum of two *independent* dice rolls.)
 
-It can be seen here that $\text{E}(2X)=2\text{E}(X)$. The expectation of a random variable that is a *linear transformation* of another random variable can be calculated using following law:
+It can be seen here that $\text{E}(2X)=2\text{E}(X)$. The expectation of a random variable that is a *linear transformation* of another random variable can be calculated using the following law:
 
 \begin{centering}
 \tcbset{width=10cm}
@@ -712,14 +714,14 @@ Proof:
     &=\text{E}(X^\text{2})-\left(\text{E}(X)\right)^\text{2}
 \end{align*}
 
-Knowing the *expectation* and *variance* of random variables help statisticians better understand the *long-run* behaviour of repeated observations:
+Knowing the *expectation* and *variance* of random variables helps statisticians better understand the *long-run* behaviour of repeated observations:
 
 \begin{itemize}
     \item $\text{E}(X)=\mu_X$, the \textit{long-run mean} of the distribution of $X$.
     \item $\text{V}(X)=\sigma_X^\text{2}$, the \textit{variance} of the distribution of $X$.
 \end{itemize}
 
-The standard deviation, $\sigma$, of a random variable $X$, notated $\text{SD}(X)$, is the square root of the variance:
+The standard deviation, $\sigma$, of a random variable $X$, denoted $\text{SD}(X)$, is the square root of the variance:
 
 $$\text{SD}(X)=\sqrt{\text{V}(X)}\qquad\text{and}\qquad \text{SD}(X),\text{V}(X)\geqslant\text{0}$$
 
@@ -808,7 +810,7 @@ Calculate $\text{E}(X)$ and $\text{V}(X)$
 
 ## The Law of Variance
 
-Since variance is based on *squared* differences from the mean, $\text{V}(\text{2}X)\ne\text{2}\text{V}(X)$.
+Since variance is based on *squared* deviations from the mean, $\text{V}(\text{2}X)\ne\text{2}\text{V}(X)$.
 
 \begin{centering}
 \tcbset{width=10cm}
@@ -817,7 +819,7 @@ $\text{V}(aX\pm b)=a^\text{2}\text{V}(X)$
 \end{tcolorbox}
 \end{centering}
 
-This shows that multiplying a random variable by a constant changes its variance by the square of that constant, while adding a constant does not affect the variance. In contrast to expectation, variance is *not linear* and does not distribute over addition or multiplication by constants.
+This shows that multiplying a random variable by a constant changes its variance by the square of that constant, while adding a constant does not affect the variance. In contrast to expectation, variance is *not a linear operator*, since in general $\text{V}(aX\pm b)\ne a\text{V}(X)$.
 
 Proof:
 
@@ -1018,7 +1020,7 @@ If $X$ and $Y$ are not independent variables then determining $\text{V}(X\pm Y)$
 
 \end{tcolorbox}
 
-Random variables **independently and identically distributed (i.i.d)** with the same distribution as $X$ are denoted as $X_\text{1},X_\text{2},X_{3},\dots$
+Random variables **independently and identically distributed (i.i.d)** with the same distribution as $X$ are denoted as $X_\text{1},X_\text{2},X_\text{3},\dots$
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Books in the fiction section of a library have a mean thickness of 3.1cm with standard deviation 0.2cm. If three books are randomly selected from the fiction section and stacked together, determine the mean and standard deviation of the total thickness of the three books, stating one assumption required.
@@ -1045,10 +1047,9 @@ Hence the mean total thickness of the three books is 9.3cm, and the standard dev
 #### [Exercise 6.6](#ex66a) {-}
 
 \begin{enumerate}
-    \item Random variables $J$ and $K$ are defined such that $\text{E}(J)=\text{3}$ and $\text{E}(K)=-\text{2}$.
+    \item Random variables $J$ and $K$ are defined such that $\text{E}(J)=\text{3}$, $\text{E}(K)=-\text{2}$, $\text{V}(J)=\text{4}$ and $\text{V}(K)=\text{5}$.
     \begin{enumerate}
-        \item State the information required to be known about $J$ and $K$ in order to determine whether the laws introduced on the previous page may be applied.
-        \item Assuming that $J$ and $K$ are such that those laws may be applied, find:
+        \item Find:
     \begin{enumerate}
         \begin{multicols}{3}
             \item $\text{E}(J+K)$
@@ -1056,7 +1057,8 @@ Hence the mean total thickness of the three books is 9.3cm, and the standard dev
             \item $\text{E}(\text{2}K-\text{3}J)$
         \end{multicols}
     \end{enumerate}
-    \item Assuming that $J$ and $K$ are such that those laws may be applied, find:
+        \item State the information required to be known about $J$ and $K$ in order to determine whether the laws relating to variance introduced on the previous page may be applied.
+    \item Assuming that $J$ and $K$ are such that those laws relating to variance may be applied, find:
     \begin{enumerate}
         \begin{multicols}{3}
             \item $\text{V}(J+K)$
@@ -1076,7 +1078,11 @@ Hence the mean total thickness of the three books is 9.3cm, and the standard dev
             \item $\text{V}(\frac{\text{1}}{\text{2}}Y-\text{2}X)$
         \end{multicols}
     \end{enumerate}
-    \item Random variables $F$ and $G$ have means of 3 and 2 respectively, and standard deviations of 5 and 6 respectively. State the information that is missing which means that it is not currently possible to determine the values of $\text{E}(\text{2}F+G)$ and $\text{V}(\text{2}F+G)$.
+    \item Random variables $F$ and $G$ have means of 3 and 2 respectively, and standard deviations of 5 and 6 respectively. 
+    \begin{enumerate}
+        \item Determine the value of $\text{E}(\text{2}F+G)$.
+        \item State the information that is missing which means that it is not possible to determine the value of $\text{V}(\text{2}F+G)$.
+    \end{enumerate}
     \item Independent random variables $A$ and $B$ have means of 1.5 and 1.2 respectively, and standard deviations of 1 and 0.8 respectively. Determine the values of $\text{E}(A-B)$ and $\text{V}(A-B)$.
     \item Random variable $X$ is defined such that $\text{E}(X)=\text{10}$ and $\text{V}(X)=\text{3}$. Random variables \{$X_\text{1}, X_\text{2}, X_\text{3} \dots$\} represent independent observations of $X$. Determine the mean and variance of $X_\text{1}+X_\text{2}+X_\text{3}+X_\text{4}$, representing the sum of four such observations of $X$.
     \item A spreadsheet contains a large amount of cells, each containing numbers such that the mean of the numbers is 12 and the standard deviation is 1.2. Five numbers from the spreadsheet are selected at random, with replacement. Determine the mean and standard deviation of the total of the five numbers.  
