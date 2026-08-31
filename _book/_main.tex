@@ -1724,17 +1724,18 @@ For example, calculating the mean and standard deviation sample dataset: 4, 6, 7
 
 \section{Outliers and Fences}\label{outliers-and-fences}
 
-Sometimes a dataset may contain values that seem \emph{extremely high or low} in comparison to the rest of the values. It is important to be wary of such values and the potentially significant impact they could have on any statistical analysis performed. There is a range of objective approaches that can be used to determine whether one or more points are extreme enough to be classified as \textbf{outliers}. In this course, \emph{fences} will be used.
+Sometimes a dataset may contain values that seem \emph{extremely high or low} in comparison to the rest of the values. It is important to be wary of such values and the potentially significant impact they could have on any statistical analysis performed. There are several objective rules that can be used to identify values that are unusually far from the rest of a dataset. In this course, values will be classified as \textbf{outliers} if they lie outside a pair of boundaries called \emph{fences}.
 
 \begin{tcolorbox}[center,title=Identifying Outliers,colback=red!5,colframe=red!70!black,width=15cm,halign = center,halign title = center]
 \begin{center}
+$\operatorname{IQR}=\text{Q}_\text{3}-\text{Q}_\text{1}$\\[1em]
 Lower Fence $=\text{Q}_\text{1}-\text{1}.\text{5}\times \text{IQR}$.\\[1em]
 Upper Fence $=\text{Q}_\text{3}+\text{1}.\text{5}\times \text{IQR}$.\\[1em]
-Any values \textit{below the lower fence} or \textit{above the upper fence} are \textbf{outliers}.
+Any values lying \textit{below the lower fence} or \textit{above the upper fence} are classified as \textbf{outliers}.
 \end{center}
 \end{tcolorbox}
 
-If an outlier is identified in a dataset, an investigation should be conducted to determine the cause. If it is concluded that the outlier is a rogue point, such as an error in measurement, it can be removed from the dataset and summary statistics re-calculated. However, if an outlier is a valid point in the dataset then it should not be removed.
+If an outlier is identified in a dataset, an investigation should be conducted to determine the cause. If it is concluded that the outlier is an erroneous value, such as an error in measurement, it can be corrected or removed from the dataset and summary statistics recalculated. However, if an outlier is a valid point in the dataset then it should not be removed.
 
 Returning to the sunflower heights from page 5, the data can now be checked for possible outliers:
 
@@ -1771,11 +1772,11 @@ n & min & Q1 & median & Q3 & max\\
 
 Since \(\text{73}>\text{70}.\text{5}\), it is an outlier.
 
-On a box plot, outliers are indicated separately as shown below, with the ``whiskers'' extend only as far as the largest and smallest values that are \emph{not} outliers. However the quartiles remain as those calculated using the \emph{full} set of values, including any outliers. \emph{Plotting outliers separately in this way is to highlight their presence, and is not a judgement on whether those values are rogue or valid.}
+On a box plot, outliers are indicated separately as shown below. The ``whiskers'' extend only as far as the largest and smallest values that are \emph{not} outliers. However, the quartiles are calculated using the full dataset, including the outliers. \emph{Plotting outliers separately in this way is to highlight their presence, and is not a judgement on whether those values are rogue or valid.}
 
 \begin{center}
 \begin{tikzpicture}
-\node at (0.25*53,2.3) {\text{Height of sunflower plants}};
+\node at (0.25*53,2.3) {\text{Heights of sunflower plants}};
 \node at (0.25*53,-0.2) {\text{Height (cm)}};
 \draw[semithick] (33.5*0.25,0.8) -- (73.5*0.25,0.8);
 \foreach \x in {34,...,73}
@@ -1839,13 +1840,13 @@ The outlier in this dataset could be valid if, for instance, the sunflower plant
 \addcontentsline{toc}{subsubsection}{{Exercise 1.6}}
 
 \begin{enumerate}
-    \item Strawberry tarts are sold every day in a bakery over the summer months. The shop manager monitors the sales and takes a sample of the number of strawberry tarts sold on 10 randomly selected days over one month.
+    \item A bakery sells strawberry tarts throughout the summer. The manager records the number sold on 10 randomly selected days during one month.
     \begin{center}
     \begin{tabular}{cccccccccc}
         23 & 31 & 45 & 32 & 35 & 19 & 24 & 25 & 30 & 38
     \end{tabular}
     \end{center}
-    Calculate the upper and lower fences for this dataset and identify any possible outliers.
+    Calculate the upper and lower fences for this dataset and identify any outliers.
     \item The number of hours spent studying each week by a randomly selected group of 24 students is given below.
     \begin{center}
     \begin{tabular}{cccccccccccc}
@@ -1854,7 +1855,7 @@ The outlier in this dataset could be valid if, for instance, the sunflower plant
     \end{tabular}
     \end{center}
     \begin{enumerate}
-        \item Identify any possible outliers.
+        \item Identify any outliers.
         \item Draw a box plot to display this data.
     \end{enumerate}
     \item A call centre records the times (in minutes) a sample of customers have to wait before being connected to an agent.
