@@ -1,6 +1,6 @@
 # An Introduction to Probability Theory
 
-The purpose of statistics is to make sense of the world by analysing data. In practice, however, it is only possible to obtain data from a random sample of the full population of interest, introducing uncertainty that must be accounted for. For this reason, developing an understanding of statistical analysis begins with learning about probability theory.
+The purpose of statistics is to make sense of the world by analysing data. In practice, however, it is only possible to obtain data from a random sample of the full population of interest, introducing uncertainty that must be accounted for. Probability theory provides the mathematical framework used to describe this uncertainty.
 
 People commonly talk about *chance* in everyday language. For example, 'St Mirren are unlikely to win this weekend', or 'It is probably going to rain today'. However, neither comment assigns a numerical value to quantify those chances. In this chapter, probability as a *numerical measure* will be studied.
 
@@ -21,7 +21,7 @@ For example, in the context of rolling a fair, six-sided die:
 
 - the **sample space** consists of a list of all of the possible **outcomes**: $\{\text{1},\text{2},\text{3},\text{4},\text{5},\text{6}\}$
 
-- the **probability** of a $5$ is $\frac{\text{1}}{\text{6}}$ since *in the long-run* it can be expected to occur $\frac{\text{1}}{\text{6}}$ of the time.
+- the **probability** of a $5$ is $\frac{\text{1}}{\text{6}}$ since *in the long run* it can be expected to occur $\frac{\text{1}}{\text{6}}$ of the time.
 
 - a possible **event** of interest may be that the outcome is *prime*: $\{\text{2},\text{3},\text{5}\}$ 
 
@@ -37,7 +37,7 @@ $$\text{P}(\text{rolling a }\text{5})=\dfrac{\text{1}}{\text{6}}$$
 
 #### Experimental Probability {-}
 
-The probability of an event can be estimated through repeated trials - this is referred to as the \mbox{\textit{experimental probability}} of the event. For example, if a motorist passes a set of traffic lights every morning and wishes to know the probability of having to wait at a red light on any given morning, they could record the *proportion* of mornings on which they had to wait at a red light over a period of time. If, over the course of 200 mornings, they have to wait at a red light 114 times:
+The probability of an event can be estimated by carrying out repeated trials and calculating the relative frequency with which the event occurs. This estimate is often called the *experimental probability* of the event. For example, if a motorist passes a set of traffic lights every morning and wishes to know the probability of having to wait at a red light on any given morning, they could record the proportion of mornings on which they had to wait at a red light over a period of time. If, over the course of 200 mornings, they have to wait at a red light 114 times:
 
 \vspace{-0.1cm}
 
@@ -301,7 +301,7 @@ For most of the following questions, it is recommended to write out a full list 
         \item A list of all outcomes.
         \item $\text{P}(\text{even and tails})$
     \end{enumerate}
-    \item Each morning, a teacher picks at random whether to start the day with tea, coffee or apple juice, and also picks at random which one of muesli, granola, toast or porridge to eat for breakfast. By first listing all the possible ways the teacher may start their day, determine the probability that on any particular morning the teacher has:
+    \item Each morning, a teacher picks at random whether to start the day with tea, coffee or apple juice, and also picks at random which one of muesli, granola, toast or porridge to eat for breakfast. For each of these random choices, each selection is equally likely, and the choice of drink is independent from the choice of food. By first listing all the possible ways the teacher may start their day, determine the probability that on any particular morning the teacher has:
         \begin{enumerate}
             \item Tea and toast.
             \item Muesli but not coffee.
@@ -762,7 +762,7 @@ $\text{P}(G\cap V)=\dfrac{\text{2}}{\text{12}}=\dfrac{\text{1}}{\text{6}}$
 
 ## The Addition Rule
 
-If two events $A$ and $B$ have *no outcomes in common* they are said to be **mutually exclusive**. This is sometimes visualised on a diagram by two *disjoint* circles that do not intersect. In terms of probability theory, this means that the probability of the event `$A$ *and* $B$' is 0 (impossible).
+If two events $A$ and $B$ have *no outcomes in common*, they are said to be **mutually exclusive**. This is sometimes visualised on a diagram by two *disjoint* circles that do not intersect. In terms of probability theory, this means that the probability of the event `$A$ *and* $B$' is 0 (impossible).
 
 \begin{figure}[H]
   \centering
@@ -777,7 +777,7 @@ If two events $A$ and $B$ have *no outcomes in common* they are said to be **mut
   \centering
 \begin{minipage}[c]{.5\textwidth}
   \centering
-\begin{tcolorbox}[title=For Mutually Exclusive events {$A$} and {$B$}:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8cm,height=1.8cm]
+\begin{tcolorbox}[title=For mutually exclusive events {$A$} and {$B$}:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8cm,height=1.8cm]
 $\text{P}(A\cap B)=0$
 \end{tcolorbox}
 \end{minipage}
@@ -801,7 +801,7 @@ If two events $A$ and $B$ are such that *every outcome in the sample space* lies
   \centering
 \begin{minipage}[c]{.5\textwidth}
   \centering
-\begin{tcolorbox}[title=For Exhaustive events {$A$} and {$B$}:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8cm,height=1.8cm]
+\begin{tcolorbox}[title=For exhaustive events {$A$} and {$B$}:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8cm,height=1.8cm]
 $\text{P}(A\cup B)=1$
 \end{tcolorbox}
 \end{minipage}
@@ -906,7 +906,7 @@ It should be noted that there are generally numerous different ways to approach 
     \end{enumerate}
     \item For the exhaustive events $E$ and $F$, such that $\text{P}(F\cap E)=\text{0.7}$ and $\text{P}(\overline{E})=\text{0.2}$, determine $\text{P}(F)$.
     \item A parking ticket machine in a remote location in the Cairngorms National Park takes payment by contactless card reader, which connects to the banking network via a 3G phone signal. On some days, the connection fails and the machine cannot take payment. When the humidity is high, the connection will fail on 18\% of days. When the humidity is not high, the connection will fail on 7\% of days. Humidity is high in the area on 34\% of days. Determine the probability on a randomly selected day of the year that the parking machine can take payment.
-    \item A board game begins with an \textit{defending} player rolling a tetrahedral die with sides numbered from 1 to 4, and a \textit{attacking} player rolling a cubical die with sides numbered from 1 to 6. The player who obtains the highest number earns a point, with a tie leading to the dice being rolled again.
+    \item A board game begins with a \textit{defending} player rolling a tetrahedral die with sides numbered from 1 to 4, and a \textit{attacking} player rolling a cubical die with sides numbered from 1 to 6. The player who obtains the highest number earns a point, with a tie leading to the dice being rolled again.
     \begin{enumerate}
         \item Find the probability that the first point is earned, by either player, without the dice having to be rolled again following a tie.
         \item Find the probability that the attacking player earns the first point.

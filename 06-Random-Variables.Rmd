@@ -172,7 +172,7 @@ Probabilities such as $\text{P}(X\leqslant\text{4})$ can be calculated by adding
     xticklabels={6,7,8,9,10},
     yticklabels={0,0.1,0.2,0.3,0.4},
     xlabel=$d$,ylabel=probability]
-        \addplot[fill=black!40, draw=black] coordinates {
+        \addplot[fill=black!25, draw=black] coordinates {
     (6,0.35) 
     (7,0.3) 
     (8,0.05) 

@@ -1958,7 +1958,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
 
 \begin{tikzpicture}
 \draw[white] (-1,-1) rectangle (7,4.7);
-\node[text width = 6cm,align=center] at (3,4) {\textit{normally distributed (bell-shaped distribution)} ($n=\text{215}$)};
+\node[text width = 6cm,align=center] at (3,4) {\textit{normally distributed} ($n=\text{215}$)};
 \draw (-0.5,0) -- (6.5,0);    
 \draw[fill=black!25] (0,0) rectangle (0.25,0);
 \draw[fill=black!25] (0.25,0) rectangle (0.5,0);
@@ -2040,7 +2040,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
 
 \begin{tikzpicture}
 \draw[white] (-1,-1) rectangle (7,4.7);
-\node[text width = 6cm,align=center] at (3,4) {\textit{positively skewed (and so not symmetrical)} ($n=\text{134}$)};
+\node[text width = 6cm,align=center] at (3,4) {\textit{positively skewed} ($n=\text{134}$)};
 \draw (-0.5,0) -- (6.5,0);
 \draw[fill=black!25] (0,0) rectangle (0.25,0);
 \draw[fill=black!25] (0.25,0) rectangle (0.5,0);
@@ -2124,7 +2124,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
 
 \begin{tikzpicture}
 \draw[white] (-1,-1) rectangle (7,4.7);
-\node[text width = 6cm,align=center] at (3,4) {\textit{negatively skewed (and so not symmetrical)} ($n=\text{97}$)};
+\node[text width = 6cm,align=center] at (3,4) {\textit{negatively skewed} ($n=\text{97}$)};
 \draw (-0.5,0) -- (6.5,0);
 \draw[fill=black!25] (-0.5,0) rectangle (-0.25,0.1);
 \draw[fill=black!25] (-0.25,0) rectangle (0,0.1);
@@ -2162,7 +2162,7 @@ Summary statistics alone are not sufficient to describe the full complexity of t
 \end{minipage}
 \end{figure}
 
-Note that the histograms above were made by selecting some of the most \emph{well-behaved} random samples. Even when data is drawn from a particular distribution, histograms of this sample data may not appear perfectly shaped, especially for smaller sample sizes. Graphs of sample data do not \textbf{show} what the shape, location or spread of distribution of the underlying population is; instead, they merely suggest what may or may not be plausible. Any overly definitive conclusion from a visual representation of sample data should be avoided.
+Note that when a random sample data is drawn from a population, there is no guarantee that the histogram of this sample data will closely resemble that of the full population, especially for smaller sample sizes. Graphs of sample data do not \textbf{show} what the shape, location or spread of distribution of the underlying population is; instead, they merely suggest what may or may not be plausible. Any overly definitive conclusion from a visual representation of sample data should be avoided.
 
 \pagebreak
 
@@ -6147,6 +6147,8 @@ When deciding whether a linear relationship exists between two numerical variabl
 \end{minipage}
 \end{figure}
 
+\vspace{-0.2cm}
+
 \begin{figure}[H]
   \centering
 \begin{minipage}[t]{.48\textwidth}
@@ -6209,58 +6211,71 @@ In \textbf{Figure 3}, as one variable increases, there appears to be no clear pa
 \end{minipage}
 \end{figure}
 
+\vspace{-0.2cm}
+
 Note that \textbf{correlation does not imply causation}. A linear relationship can exist between variables without implying that one variable causes the other; there may be other variables influencing both. Seemingly linear relationships can also appear by chance - this is referred to as \emph{spurious correlation}.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A French class takes two tests; \textit{listening} and \textit{reading}. The results of the 10 pupils are shown in the table and scatterplot below, along with some summary statistics. Comment on the scatterplot.
+\textbf{Problem:} A French class takes two tests; \textit{listening} and \textit{reading}. The results of the 9 pupils are shown in the table and scatterplot below. Comment on the scatterplot.
+
+\vspace{-0.2cm}
 
 \begin{multicols}{2}
 
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\null
+
+\vspace{0.6cm}
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
     \hline
-    Listening & 9 & 7 & 11 & 20 & 4 & 6 & 17 & 12 & 10 & 15\\
+    Listening & 4 & 6 & 9 & 8 & 12 & 13 & 13 & 16 & 18 \\
     \hline
-    Reading & 8 & 9 & 13 & 20 & 9 & 8 & 17 & 14 & 8 & 17\\
+    Reading & 7 & 5 & 12 & 10 & 14 & 13 & 16 & 15 & 19 \\
     \hline
 \end{tabular}
-\end{center}
-
-\vfill\null
 
 \columnbreak
 
-\null\vfill
-
 \vspace{-1cm}
 \begin{center}
-\begin{tikzpicture}[scale=0.7]
-\draw[semithick] (-0.15,0) -- (-0.15,3.65);
-\draw[semithick] (0,-0.1) -- (4.15,-0.1);
-\node[rotate=90] at (-1.1,1.75) {Reading};
-\node at (2,-1.2) {Listening};
-\foreach \y in {8,12,...,20}
-\node at (-0.45,0.25*\y-1.5) {\y};
-\foreach \y in {6,8,...,20}
-\draw[semithick] (-0.15,0.25*\y-1.5) -- (-0.25,0.25*\y-1.5);
-\foreach \x in {4,8,...,20}
-\node at (0.25*\x-1,-0.45) {\x};
-\foreach \x in {4,6,...,20}
-\draw[semithick] (0.25*\x-1,-0.1) -- (0.25*\x-1,-0.2);
-\draw[fill=black] (9*0.25-1,8*0.25-1.5) circle (0.06);
-\draw[fill=black] (7*0.25-1,9*0.25-1.5) circle (0.06);
-\draw[fill=black] (11*0.25-1,13*0.25-1.5) circle (0.06);
-\draw[fill=black] (20*0.25-1,20*0.25-1.5) circle (0.06);
-\draw[fill=black] (4*0.25-1,9*0.25-1.5) circle (0.06);
-\draw[fill=black] (6*0.25-1,8*0.25-1.5) circle (0.06);
-\draw[fill=black] (17*0.25-1,17*0.25-1.5) circle (0.06);
-\draw[fill=black] (12*0.25-1,14*0.25-1.5) circle (0.06);
-\draw[fill=black] (10*0.25-1,8*0.25-1.5) circle (0.06);
-\draw[fill=black] (15*0.25-1,17*0.25-1.5) circle (0.06);
+\begin{tikzpicture}[scale=0.15]
+\draw[thin,black!20,step=2] (0,0) grid (20,20);
+\draw (0,0) rectangle (20,20);
+\foreach \x in {0,1,...,20}{
+\draw (\x,0) -- (\x,-0.1);
+}
+\foreach \x in {0,2,...,20}{
+\draw (\x,0) -- (\x,-0.2);
+}
+\foreach \x in {0,4,...,20}{
+\node[below] at (\x,0) {\x};
+}
+\foreach \y in {0,1,...,20}{
+\draw (0,\y) -- (-0.1,\y);
+}
+\foreach \y in {0,2,...,20}{
+\draw (0,\y) -- (-0.2,\y);
+}
+\foreach \y in {0,4,...,20}{
+\node[left] at (0,\y) {\y};
+}
+\node at (10,-6) {listening};
+\node[rotate=90] at (-6,10) {reading};
+\draw[fill=black] (4,7) circle (0.2);
+\draw[fill=black] (6,5) circle (0.2);
+\draw[fill=black] (9,12) circle (0.2);
+\draw[fill=black] (8,10) circle (0.2);
+\draw[fill=black] (12,14) circle (0.2);
+\draw[fill=black] (13,13) circle (0.2);
+\draw[fill=black] (13,16) circle (0.2);
+\draw[fill=black] (16,15) circle (0.2);
+\draw[fill=black] (18,19) circle (0.2);
 \end{tikzpicture}
 \end{center} 
 
 \end{multicols}
+
+\vspace{-0.3cm}
 
 \tcblower
 \textbf{Solution:} The scatterplot appears to show a strong positive linear relationship between pupils' listening and reading scores.
@@ -7406,64 +7421,84 @@ Whether a linear relationship will continue to hold for $x$ values lower or high
 \pagebreak
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A French class takes two tests; \textit{listening} and \textit{reading}. The results of the 10 pupils are shown in the table and scatterplot below, along with some summary statistics.
+\textbf{Problem:} A French class takes two tests; \textit{listening} and \textit{reading}. The results of the 9 pupils are shown in the scatterplot below, along with some summary statistics. Comment on the scatterplot.
+
+\begin{multicols}{2}
+
 
 \begin{center}
-\begin{tabular}{c|cccccccccc}
-    Listening ($x$) & 9 & 7 & 11 & 20 & 4 & 6 & 17 & 12 & 10 & 15\\
-  \hline
-    Reading ($y$) & 8 & 9 & 13 & 20 & 9 & 8 & 17 & 14 & 8 & 17
-\end{tabular}
+    \begin{tabular}{lll}
+        $\sum x=99$ & $\sum x^2=1259$ & $\sum y=111$\\[0.5em]
+        $\sum y^2=1525$ & $\sum xy=1373$ & $n=9$
+    \end{tabular}
 \end{center}
 
+\vspace{0.3cm}
+
+
+\begin{enumerate}
+        \item[(a)] Calculate the equation of the least squares regression line of $y$ on $x$.
+        \item[(b)] Calculate a predicted mark for the reading test for a pupil who missed it, having scored 7 in the listening test.
+        \item[(c)] Comment on the reliability of this prediction.
+\end{enumerate}
+
+\columnbreak
+
+\vspace{-1cm}
 \begin{center}
-\begin{tikzpicture}
-\draw[semithick] (-0.55,-0.5) -- (-0.55,3.65);
-\draw[semithick] (-0.5,-0.6) -- (4.6,-0.6);
-\node[rotate=90] at (-1.7,1.75) {Reading};
-\node at (2,-1.7) {Listening};
-\foreach \y in {6,8,...,20}
-\node at (-0.95,0.25*\y-1.5) {\y};
-\foreach \y in {6,8,...,20}
-\draw[semithick] (-0.55,0.25*\y-1.5) -- (-0.65,0.25*\y-1.5);
-\foreach \x in {2,4,...,22}
-\node at (0.25*\x-1,-0.95) {\x};
-\foreach \x in {2,4,...,22}
-\draw[semithick] (0.25*\x-1,-0.6) -- (0.25*\x-1,-0.7);
-\draw[semithick] (4*0.25-1,6.45*0.25-1.5) -- (20*0.25-1,19.634*0.25-1.5);
-\draw[fill=black] (9*0.25-1,8*0.25-1.5) circle (0.04);
-\draw[fill=black] (7*0.25-1,9*0.25-1.5) circle (0.04);
-\draw[fill=black] (11*0.25-1,13*0.25-1.5) circle (0.04);
-\draw[fill=black] (20*0.25-1,20*0.25-1.5) circle (0.04);
-\draw[fill=black] (4*0.25-1,9*0.25-1.5) circle (0.04);
-\draw[fill=black] (6*0.25-1,8*0.25-1.5) circle (0.04);
-\draw[fill=black] (17*0.25-1,17*0.25-1.5) circle (0.04);
-\draw[fill=black] (12*0.25-1,14*0.25-1.5) circle (0.04);
-\draw[fill=black] (10*0.25-1,8*0.25-1.5) circle (0.04);
-\draw[fill=black] (15*0.25-1,17*0.25-1.5) circle (0.04);
-\node at (9.5,3.5) {$\Sigma x=\text{111},$\quad$\Sigma y=\text{123},$};
-\node at (9.5,2.9) {$\Sigma x^\text{2} =\text{1461},$\quad$\Sigma y^\text{2} =\text{1697},$\quad$\Sigma xy=\text{1554}$};
-\node[anchor=west] at (5.5,2) {(a) Calculate the equation of the least squares};
-\node[anchor=west] at (6.1,1.5) {regression line of $y$ on $x$.};
-\node[anchor=west] at (5.5,0.7) {(b) Calculate a predicted mark for the reading test};
-\node[anchor=west] at (6.1,0.2) {for a pupil who missed it, having scored 8 in the};
-\node[anchor=west] at (6.1,-0.3) {listening test.};
-\node[anchor=west] at (5.5,-1.2) {(c) Comment on the reliability of this prediction.};
+\begin{tikzpicture}[scale=0.2]
+\draw[thin,black!20,step=2] (0,0) grid (20,20);
+\draw (0,0) rectangle (20,20);
+\foreach \x in {0,1,...,20}{
+\draw (\x,0) -- (\x,-0.1);
+}
+\foreach \x in {0,2,...,20}{
+\draw (\x,0) -- (\x,-0.2);
+}
+\foreach \x in {0,4,...,20}{
+\node[below] at (\x,0) {\x};
+}
+\foreach \y in {0,1,...,20}{
+\draw (0,\y) -- (-0.1,\y);
+}
+\foreach \y in {0,2,...,20}{
+\draw (0,\y) -- (-0.2,\y);
+}
+\foreach \y in {0,4,...,20}{
+\node[left] at (0,\y) {\y};
+}
+\node at (10,-4) {listening};
+\node[rotate=90] at (-4,10) {reading};
+\draw[fill=black] (4,7) circle (0.2);
+\draw[fill=black] (6,5) circle (0.2);
+\draw[fill=black] (9,12) circle (0.2);
+\draw[fill=black] (8,10) circle (0.2);
+\draw[fill=black] (12,14) circle (0.2);
+\draw[fill=black] (13,13) circle (0.2);
+\draw[fill=black] (13,16) circle (0.2);
+\draw[fill=black] (16,15) circle (0.2);
+\draw[fill=black] (18,19) circle (0.2);
 \end{tikzpicture}
-\end{center}
+\end{center} 
+
+\end{multicols}
+
+\vspace{0.1cm}
 
 \tcblower
 \textbf{Solution:}
 
+\vspace{0.4cm}
+
 \begin{enumerate}
-    \item[(a)] \begin{flalign*}
-S_{xx}&=\Sigma x^\text{2}-\frac{(\Sigma x)^\text{2}}{n}=\text{1461}-\frac{\text{111}^\text{2}}{\text{10}}=\text{228.9}&&\\[1em]
-S_{xy}&=\Sigma xy-\frac{\Sigma x\Sigma y}{n}=\text{1554}-\frac{\text{111}\times \text{123}}{\text{10}}=\text{188.7}\\[1em]
-b&=\dfrac{S_{xy}}{S_{xx}}=\dfrac{\text{188.7}}{\text{228.9}}=\text{0.824}\\[1em]
-a&=\bar{y}-b \bar{x}=\dfrac{\text{123}}{\text{10}}-\text{0.824}\times \dfrac{\text{111}}{\text{10}}=\text{3.154}\\[1em]
-\hat{y}&=\text{3.154}+\text{0.824}x
+    \item[(a)]\vspace{-0.3cm} \begin{flalign*}
+S_{xx}&=\Sigma x^\text{2}-\frac{(\Sigma x)^\text{2}}{n}=\text{1259}-\frac{\text{99}^\text{2}}{\text{9}}=\text{170}&&\\[1em]
+S_{xy}&=\Sigma xy-\frac{\Sigma x\Sigma y}{n}=\text{1373}-\frac{\text{99}\times \text{111}}{\text{9}}=\text{152}\\[1em]
+b&=\dfrac{S_{xy}}{S_{xx}}=\dfrac{\text{152}}{\text{170}}=\text{0.894}\\[1em]
+a&=\bar{y}-b \bar{x}=\dfrac{\text{111}}{\text{9}}-\text{0.894}\times \dfrac{\text{99}}{\text{9}}=\text{2.499}\\[1em]
+\hat{y}&=\text{2.499}+\text{0.894}x
 \end{flalign*}
-    \item[(b)] $\hat{y}=\text{3.154} + \text{0.824}\times \text{8}=\text{9.746}$
+    \item[(b)] $\hat{y}=\text{2.499} + \text{0.894}\times \text{7}=\text{8.757}$
     \item[(c)] This is an example of interpolation as the value of $x$ used is within the range of values of the other students, and consequently it can be considered a reliable prediction, especially given the strong linear relationship suggested by the scatterplot.  
 \end{enumerate}
 
@@ -8161,7 +8196,7 @@ Probabilities such as \(\text{P}(X\leqslant\text{4})\) can be calculated by addi
     xticklabels={6,7,8,9,10},
     yticklabels={0,0.1,0.2,0.3,0.4},
     xlabel=$d$,ylabel=probability]
-        \addplot[fill=black!40, draw=black] coordinates {
+        \addplot[fill=black!25, draw=black] coordinates {
     (6,0.35) 
     (7,0.3) 
     (8,0.05) 
