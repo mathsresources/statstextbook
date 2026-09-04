@@ -608,7 +608,11 @@ Not all graphs encountered in real life are well designed. Some may be unclear, 
 
 The widespread availability of computing power means that statisticians often use specialist software to organise, analyse and visualise data, and to carry out time-consuming calculations efficiently. Although this course does not require students to use statistical software, examples of \texttt{computer output} will be provided, and students will be expected to extract and interpret relevant information from them.
 
-\begin{multicols}{2}
+\begin{figure}[H]
+\centering
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{0pt}
+\centering
 
 \begin{center}
     \begin{tikzpicture}
@@ -659,7 +663,11 @@ The widespread availability of computing power means that statisticians often us
     \end{tikzpicture}
 \end{center}
 
-\columnbreak
+\end{minipage}%
+\centering
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{0pt}
+\centering
 
 \begin{center}
     \begin{tikzpicture}
@@ -676,7 +684,8 @@ The widespread availability of computing power means that statisticians often us
     \end{tikzpicture}
 \end{center}
 
-\end{multicols}
+\end{minipage}
+\end{figure}
 
 While this textbook aims to develop familiarity with common figures, tables and computer output, the best way to practise extracting and interpreting information from them is to *read a wide range of relevant statistical articles and reports*. 
 
