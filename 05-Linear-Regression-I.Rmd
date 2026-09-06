@@ -1,20 +1,20 @@
 # An Introduction to Linear Regression
 
-A common aim when working with data is to investigate possible relationships between two numerical variables. For example, suppose a sports scientist wishes to explore the relationship between runners' $\text{VO}_{\text{2}}$ Max, which is a measure of aerobic fitness, and their 5km running times. From a sample of eight runners, they may record the values of the two *variables* for each individual, presenting the results in a table as follows:
+A common aim when working with data is to investigate possible relationships between two numerical variables. For example, suppose a sports scientist wishes to explore the relationship between runners' $\text{VO}_{\text{2}}$ max, which is a measure of aerobic fitness, and their 5km running times. From a sample of eight runners, they may record the values of the *two variables for each individual*, presenting the **bivariate data** obtained in a table as follows:
 
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
     \hline
       Runner & A & B & C & D & E & F & G & H\\
     \hline
-      $\text{VO}_{\text{2}}$ Max (ml/kg/min) & 50 & 41 & 54 & 42 & 44 & 48 & 40 & 51\\
+      $\text{VO}_{\text{2}}$ max (ml/kg/min) & 50 & 41 & 54 & 42 & 44 & 48 & 40 & 51\\
       \hline
       5km time (mins) & 26 & 34 & 20 & 31 & 28 & 27 & 31 & 22\\
     \hline
 \end{tabular}
 \end{center}
 
-Before applying any statistical analysis techniques to this **bivariate data**, the sports scientist constructs a **scatterplot** to visualise the relationship between them, looking for any apparent patterns or problems. In this example, $\text{VO}_{\text{2}}$ Max is treated as the **predictor** variable (plotted on the $x$-axis) and 5km running time is treated as the **response** variable (plotted along the $y$-axis). 
+The sports scientist constructs a **scatterplot** to visualise the relationship between them, looking for any apparent patterns or problems. In this example, $\text{VO}_{\text{2}}$ max is treated as the **predictor** variable (plotted on the $x$-axis) and 5km running time is treated as the **response** variable (plotted along the $y$-axis). 
  
 \begin{multicols}{2}
 
@@ -22,7 +22,7 @@ Before applying any statistical analysis techniques to this **bivariate data**, 
     \begin{tikzpicture}[scale=0.7]
         \draw[-stealth] (0.5*38,0.25*19) -- (0.5*55.5,0.25*19);
         \draw[-stealth] (0.5*38,0.25*19) -- (0.5*38,0.25*36.5); 
-        \node at (0.5*46,0.25*13.5) {$\text{VO}_{\text{2}}$ Max (ml/kg/min)};
+        \node at (0.5*46,0.25*13.5) {$\text{VO}_{\text{2}}$ max (ml/kg/min)};
         \node at (0.5*34,0.25*27.5) {Time};
         \node at (0.5*34,0.25*25) {(mins)};
         \foreach \x in {40,42,...,54}{
@@ -49,11 +49,11 @@ Before applying any statistical analysis techniques to this **bivariate data**, 
     \end{tikzpicture}
 \end{center}
 
-In general, the predictor variable is chosen as the one which may help explain or predict changes in the response variable, and is typically used to calculate \textit{estimates} of the response variable. Here, this suggests that $\text{VO}_{\text{2}}$ Max may be used to estimate 5km running time for other runners whose times are not yet known.
+In general, the predictor variable is chosen as the one which may help explain or predict changes in the response variable, and is typically used to calculate \textit{estimates} of the response variable. Here, this suggests that $\text{VO}_{\text{2}}$ max may be used to estimate 5km running time for other runners whose times are not yet known.
 
 \end{multicols}
 
-Although the sample size is very small, the scatterplot seems to suggest that there is a *negative linear relationship* between a runner's $\text{VO}_{\text{2}}$ Max and their 5km running time, as higher $\text{VO}_{\text{2}}$ Max values are associated with lower running times. To illustrate this, a **line of best fit** (or *regression line*) has been added to the scatterplot.
+Although the sample size is very small, the scatterplot seems to suggest that there is a *negative linear relationship* between a runner's $\text{VO}_{\text{2}}$ max and their 5km running time; an increase in $\text{VO}_{\text{2}}$ max value seems to be associated with a decrease in running time. To illustrate this, a **line of best fit** (or *regression line*) has been added to the scatterplot.
 
 This chapter will introduce the use of a *correlation coefficient* to evaluate the strength of any linear relationship between numerical variables and the construction of a *linear regression model* to describe this relationship and make predictions.
 
@@ -194,10 +194,10 @@ In \textbf{Figure 3}, as one variable increases, there appears to be no clear pa
 
 \vspace{-0.2cm}
 
-Note that **correlation does not imply causation**. A linear relationship can exist between variables without implying that one variable causes the other; there may be other variables influencing both. Seemingly linear relationships can also appear by chance - this is referred to as *spurious correlation*.
+Note that **correlation does not imply causation**. A linear relationship can exist between variables without implying that one variable causes the other; there may be other variables influencing both. An apparent relationship may also arise by chance. Such a relationship may be described as a *spurious correlation*.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A French class takes two tests; \textit{listening} and \textit{reading}. The results of the 9 pupils are shown in the table and scatterplot below. Comment on the scatterplot.
+\textbf{Problem:} A French class takes two tests: \textit{listening} and \textit{reading}. The results for the nine pupils are shown in the table and scatterplot below. Comment on the scatterplot.
 
 \vspace{-0.2cm}
 
@@ -311,7 +311,7 @@ Note that there is no universally agreed scale for describing correlations as 's
 \begin{tikzpicture}[scale=0.8]
 \draw (-0.1,0) -- (-0.1,4);
 \draw (0,-0.1) -- (5,-0.1);
-\node[rotate=90,above] at (-1,2) {Sale price (£1000s)};
+\node[rotate=90,above] at (-1,2) {Sale price (£000s)};
 \node[below] at (2.5,-0.8) {Floor area (square metres)};
 \foreach \y in {50,100,...,200}
 \node[left] at (-0.1,0.02*\y-0.5) {\y};
@@ -514,7 +514,7 @@ Note that there is no universally agreed scale for describing correlations as 's
 \vfill\null
     \end{multicols}
     \vspace{-1cm}
-    Comment on each scatterplot.
+    Comment on any relationship shown in each scatterplot.
         \item A statistician is keen to learn what can be learned by studying data on songs provided by a music streaming platform. For a random sample of pop songs on the platform, their \textit{length} ($x$, in minutes) and \textit{tempo} ($y$, in bpm) are recorded, and a scatterplot is constructed. Some summary statistics were also calculated.
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -564,7 +564,8 @@ n&=\text{22}
 \end{tikzpicture}
 \end{center} 
 \begin{enumerate}
-    \item Comment on the scatterplot.
+    \item Using the scatterplot, describe the relationship between song length and tempo.
+    \item Explain why this study may not support a conclusion that longer rock songs tend to have a higher tempo than slower rock songs.
     \item Use the summary statistics to calculate the mean song length and the mean tempo for the sample.
 \end{enumerate}
 \end{enumerate}
@@ -625,7 +626,7 @@ S_{xy}&=\Sigma(x-\bar{x})(y-\bar{y})=\Sigma xy-\frac{\Sigma x\Sigma y}{n}
 \end{minipage}
 \end{figure}
 
-For all sets of data, $-\text{1}\leqslant r\leqslant \text{1}$. A correlation coefficient of **zero** indicates there is **no linear relationship** between the two variables, whilst any non-zero correlation coefficient suggests the presence of a possible linear relationship. The figures below show scatterplots of sample data along with their sample correlation coefficients, $r$, and an interpretation. 
+For all sets of data, $-\text{1}\leqslant r\leqslant \text{1}$. A correlation coefficient of **zero** indicates there is **no linear relationship** between the two variables, whilst any non-zero correlation coefficient suggests the presence of a possible linear relationship. The figures below show scatterplots of sample data along with their sample correlation coefficients $r$ and an interpretation. 
 
 \begin{multicols}{5}
 
@@ -943,66 +944,49 @@ This \textbf{sample} has resulted in a value for $r$ which is far from the true 
 \pagebreak
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A biologist records the tail length ($x$) and total height ($y$) (in cm) for a random sample of 8 red squirrels. A scatterplot and summary statistics for the data are produced and shown below.
-\vspace{-0.5cm}
-\begin{center}
-\begin{tikzpicture}[scale=0.9]
-\draw[semithick] (3,3.75) -- (3,6) node[left] {$y$};
-\draw[semithick] (3,3.65) -- (6.1,3.65) node[right] {$x$};
-\foreach \y in {16,18,...,22}
-\node[left] at (3,0.25*\y) {\y};
-\foreach \y in {16,18,...,24}
-\draw[semithick] (3,0.25*\y) -- (2.9,0.25*\y);
-\foreach \x in {12,14,...,24}
-\node[below] at (0.25*\x,3.65) {\x};
-\foreach \x in {12,14,...,24}
-\draw[semithick] (0.25*\x,3.65) -- (0.25*\x,3.55);
-\node[text width = 6cm] at (-6,5.8) {
-\begin{minipage}{\textwidth}
-\begin{align*}
-\Sigma x&=\text{143.4} \quad &\Sigma y&=\text{163.3} \quad &\Sigma xy&=\text{2978.5}\\[0.3em]
-\Sigma x^\text{2}&=\text{2618.3} &\Sigma y^\text{2}&=\text{3391.8} &n&=\text{8}
-\end{align*}
-\end{minipage}
-};
-\node at (-4,3.5) {Calculate the correlation coefficient and interpret its value.};
-\draw[black!80,fill=black!80] (4.3,5.1) circle (0.04);
-\draw[black!80,fill=black!80] (4.4,4.875) circle (0.04);
-\draw[black!80,fill=black!80] (5,5.8) circle (0.04);
-\draw[black!80,fill=black!80] (4.025,4.725) circle (0.04);
-\draw[black!80,fill=black!80] (4.85,5.45) circle (0.04);
-\draw[black!80,fill=black!80] (5.45,6) circle (0.04);
-\draw[black!80,fill=black!80] (4.525,4.825) circle (0.04);
-\draw[black!80,fill=black!80] (3.3,3.85) circle (0.04);
-\end{tikzpicture}
-\end{center}
-\tcblower
-\textbf{Solution:}
+\textbf{Problem:} A French class takes two tests: \textit{listening} and \textit{reading}. The results for the nine pupils are shown in the table below. Calculate the correlation coefficient and interpret its value.
 
-\vspace{-1.1cm}
+\vspace{-0.3cm}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+    \hline
+    Listening & 4 & 6 & 9 & 8 & 12 & 13 & 13 & 16 & 18 \\
+    \hline
+    Reading & 7 & 5 & 12 & 10 & 14 & 13 & 16 & 15 & 19 \\
+    \hline
+\end{tabular}
+\end{center}
+
+\vspace{-0.4cm}
+
+\tcblower
+\textbf{Solution:} $\sum x^2=1259$, $\sum x=99$, $\sum y^2 = 1525$, $\sum y=111$, $\sum xy =1373$, $n=9$
+
+\vspace{-0.7cm}
 
 \begin{multicols}{3}
 
 \begin{flalign*}
 S_{xx}&=\Sigma x^\text{2}-\frac{(\Sigma x)^\text{2}}{n}\\
-&=\text{2618.3}-\frac{\text{143.4}^\text{2}}{\text{8}}\\
-&=\text{47.86}
+&=\text{1259}-\frac{\text{99}^\text{2}}{\text{9}}\\
+&=\text{170}
 \end{flalign*}
 \vfill
 \null
 \columnbreak
 \begin{flalign*}
 S_{yy}&=\Sigma y^\text{2}-\frac{(\Sigma y)^\text{2}}{n}\\
-&=\text{3391.8}-\frac{\text{163.3}^\text{2}}{\text{8}}\\
-&=\text{58.44}
+&=\text{1525}-\frac{\text{111}^\text{2}}{\text{9}}\\
+&=\text{156}
 \end{flalign*}
 \vfill
 \null
 \columnbreak
 \begin{flalign*}
 S_{xy}&=\Sigma xy-\frac{\Sigma x\Sigma y}{n}\\
-&=\text{2978.5}-\frac{\text{143.4}\times\text{163.3}}{\text{8}}\\
-&=\text{51.35}
+&=\text{1373}-\frac{\text{99}\times\text{111}}{\text{9}}\\
+&=\text{152}
 \end{flalign*}
 \vfill
 \null
@@ -1010,9 +994,9 @@ S_{xy}&=\Sigma xy-\frac{\Sigma x\Sigma y}{n}\\
 
 \vspace{-0.8cm}
 
-$r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}=\dfrac{\text{51.35}}{\sqrt{\text{47.86}\times\text{58.44}}}=\text{0.971}$\\[0.5em]
+$r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}=\dfrac{\text{152}}{\sqrt{\text{170}\times\text{156}}}=\text{0.933}$\\[0.5em]
 
-This suggests a strong positive linear correlation between the length of squirrels' tails and their heights.
+This suggests a strong positive linear correlation between listening test scores and reading test scores.
 
 \end{tcolorbox}
 
@@ -1024,21 +1008,16 @@ This suggests a strong positive linear correlation between the length of squirre
 \setlength{\columnsep}{40pt}
 
 \begin{enumerate}
-    \item Students' average homework mark and their test score are recorded. Calculate the correlation coefficient.
-    \vspace{-0.1cm}
-    \begin{center}
-        \begin{tabular}{|c|c|c|c|c|c|c|}
-            \hline
-            Homework (average, out of 20) & 17.1 & 11.2 & 19.6 & 15.4 & 19.8 & 8.1\\
-            \hline
-            Test (\%) & 81 & 46 & 94 & 83 & 94 & 64\\
-            \hline
-        \end{tabular}
-    \end{center}
-    \item For each, calculate the correlation coefficient and interpret its value.
-    \begin{enumerate}[rightmargin=10pt,leftmargin=10pt]
+    \item A biologist records the tail length ($x$) and height ($y$) for a sample of 8 red squirrels. Summary statistics are shown below. Calculate the correlation coefficient and interpret its value.
+\begin{align*}
+\Sigma x&=\text{143.4} \quad &\Sigma y&=\text{163.3} \quad &\Sigma xy&=\text{2978.5}\\[0.3em]
+\Sigma x^\text{2}&=\text{2618.3} &\Sigma y^\text{2}&=\text{3391.8} &n&=\text{8}
+\end{align*}
+    \item For each dataset, calculate the correlation coefficient and interpret its value.
+    \vspace{-0.3cm}
+    \begin{enumerate}
     \begin{multicols}{2}
-        \item For 20 first-time marathon runners, their age ($x$, in years) and finishing time ($y$, in hours) is recorded.
+        \item For 20 marathon runners, their age ($x$, in years) and finish time ($y$, in hours) is recorded.
 \begin{center}
 \vspace{-1cm}
 \begin{tikzpicture}[scale=0.8]
@@ -1086,14 +1065,13 @@ This suggests a strong positive linear correlation between the length of squirre
 \Sigma y&=\text{96}\\
 \Sigma x^\text{2}&=\text{34481}\\
 \Sigma y^\text{2}&=\text{472.6}\\
-\Sigma xy&=\text{3888.7}\\
-n&=\text{20}
+\Sigma xy&=\text{3888.7}
 \end{align*}
 \end{minipage}
 };
 \end{tikzpicture}
 \end{center}
-    \item The age ($x$, in years) and selling\\ price ($y$, £1000s) of 8 used cars is recorded.
+    \item The age ($x$ years) and selling\\ price ($y$ £000s) of 8 used cars is recorded.
 \begin{center}
 \vspace{-1cm}
 \begin{tikzpicture}[scale=0.8]
@@ -1119,7 +1097,7 @@ n&=\text{20}
 \node[below] at (0.33*\x,1) {\x};
 }
 \node[below] at (2,0.6) {Age (years)};
-\node[above,rotate=90] at (-0.1,2.5) {Price (£1000s)};
+\node[above,rotate=90] at (-0.1,2.5) {Price (£000s)};
 \node[text width = 6cm] at (5.5,2.5) {
 \begin{minipage}{\textwidth}
 \begin{align*}
@@ -1127,8 +1105,7 @@ n&=\text{20}
 \Sigma y&=\text{94.48}\\
 \Sigma x^\text{2}&=\text{333.1}\\
 \Sigma y^\text{2}&=\text{1208.0}\\
-\Sigma xy&=\text{538.87}\\
-n&=\text{8}
+\Sigma xy&=\text{538.87}
 \end{align*}
 \end{minipage}
 };
@@ -1137,9 +1114,20 @@ n&=\text{8}
 \end{multicols}
 \end{enumerate}
 \vspace{-0.5cm}
-\item A \textit{sepal} is part of a flower. The lengths ($x$, in cm) and widths ($y$, in cm) are measured for a random sample of 100 \textit{iris} flowers, of two different varieties. A scatterplot is plotted, and a correlation coefficient of $-\text{0.206}$ is obtained. The researcher concludes that this proves that there is a weak negative linear relationship.
+\item Students' average homework mark and their test score are recorded. Calculate the correlation coefficient.
+    \vspace{-0.1cm}
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+            \hline
+            Homework (average, out of 20) & 17.1 & 11.2 & 19.6 & 15.4 & 19.8 & 8.1\\
+            \hline
+            Test (\%) & 81 & 46 & 94 & 83 & 94 & 64\\
+            \hline
+        \end{tabular}
+    \end{center}
+    \item A \textit{sepal} is part of a flower. The lengths ($x$, in cm) and widths ($y$, in cm) are measured for a random sample of 100 \textit{iris} flowers, of two different varieties. A scatterplot is plotted, and a correlation coefficient of $-\text{0.206}$ is obtained. The researcher concludes that this proves that there is a weak negative linear relationship.
+    \vspace{-0.3cm}
 \begin{center}
-\vspace{-0.2cm}
 \begin{tikzpicture}[scale=0.8]
 \draw[black,fill=black] (5.1,3.5) circle (0.04);
 \draw[black,fill=black] (4.9,3) circle (0.04);
@@ -1272,7 +1260,7 @@ $\hat{y}$ (``y hat'') is the \textit{predicted value} of $y$ for a given $x$.\\
 
 Sample statistic $a$ represents the line's \textbf{intercept}, and is an estimate for the true \textit{intercept parameter} $\alpha$ (\textit{``alpha''}).\\
 
-Sample statistic $b$ represents the line's \textbf{slope}, and is an estimate for the true \textit{slope parameter} $\beta$ (\textit{``beta'')}. 
+Sample statistic $b$ represents the line's \textbf{slope}, and is an estimate for the true \textit{slope parameter} $\beta$ (\textit{``beta''}). 
 
 \end{minipage}%
   \centering
@@ -1404,7 +1392,7 @@ Whether a linear relationship will continue to hold for $x$ values lower or high
 
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A French class takes two tests; \textit{listening} and \textit{reading}. The results of the 9 pupils are shown in the scatterplot below, along with some summary statistics. Comment on the scatterplot.
+\textbf{Problem:} A French class takes two tests: \textit{listening} and \textit{reading}. The results for the nine pupils are shown in the scatterplot below, along with some summary statistics. Comment on the scatterplot.
 
 \begin{multicols}{2}
 
@@ -1487,9 +1475,9 @@ a&=\bar{y}-b \bar{x}=\dfrac{\text{111}}{\text{9}}-\text{0.894}\times \dfrac{\tex
 
 \end{tcolorbox}
 
-Another way of writing the equation found above is: $\text{reading}=\text{3.154}+\text{0.824}\times\text{ listening}$. 
+Another way of writing the equation found above is: $\text{reading}=\text{2.499}+\text{0.894}\times\text{ listening}$. 
 
-The estimated slope of $b=\text{0.824}$ suggests that each increase of 1 mark in the listening test is associated with an increase of 0.824 marks in the reading test. The estimated intercept of $a=\text{3.154}$ suggests that for a *listening score of zero*, a predicted reading score should be 3.154. Whilst an interpretation of the slope may often be useful, for many contexts an interpretation for the intercept may be less useful, since an $x$ value of zero will not always be realistic or even possible.
+The estimated slope of $b=\text{0.894}$ suggests that each increase of 1 mark in the listening test is associated with an increase of 0.894 marks in the reading test. The estimated intercept of $a=\text{2.499}$ suggests that for a *listening score of zero*, a predicted reading score should be 2.499. Whilst an interpretation of the slope may often be useful, for many contexts an interpretation for the intercept may be less useful, since an $x$ value of zero will not always be realistic or even possible.
 
 Scatterplots should always be constructed and closely scrutinised before further analysing bivariate data. By inspecting a scatterplot, it may become apparent, for instance, that the dataset is separated into *distinct groups*, which ought to be considered separately. *Outliers* can have a large influence on both the correlation coefficient and the regression line, so they should always be (visually) identified and considered, removing them only if doing so can be justified.
 
@@ -1500,17 +1488,6 @@ Scatterplots should always be constructed and closely scrutinised before further
 #### [Exercise 5.3](#ex53a) {-}
 
 \begin{enumerate}
-    \item A sample of bivariate data collected by a researcher is shown in the table below.
-    \begin{center}
-        \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
-            \hline
-            $x$ & 38 & 27 & 19 & 45 & 8 & 23 & 11 & 34\\
-            \hline
-            $y$ & 34 & 53 & 42 & 13 & 19 & 30 & 29 & 45\\
-            \hline
-        \end{tabular}
-    \end{center}
-    The researcher constructed a scatterplot, from which they determined that a least squares regression line would not be appropriate. State what feature they are likely to have observed on the scatterplot.
     \item A bivariate sample has summary statistics:
 \begin{center}
   \begin{tabular}{ccccccccccc}
@@ -1519,7 +1496,7 @@ Scatterplots should always be constructed and closely scrutinised before further
 \end{center}
 It is determined from inspecting a scatterplot that there appears to be a linear relationship between the variables. Obtain the equation of the least squares regression line of $y$ on $x$.
 \item 26 randomly selected trees in a forest have their diameter at a set distance from the ground measured, in inches, and the height of each tree also measured, in feet. The equation of the least squares regression line for $y$ on $x$ is obtained, and shown on the scatterplot below.
-\vspace{-0.6cm}
+\vspace{-0.2cm}
     \begin{center}
     \begin{tikzpicture}
         \draw (0,0) -- (6.2,0);
@@ -1568,7 +1545,7 @@ It is determined from inspecting a scatterplot that there appears to be a linear
 \node[right] at (9,-0.1) {$n=\text{26}$};
     \end{tikzpicture}
 \end{center}
-    \vspace{-0.3cm}
+    \vspace{-0.2cm}
     \begin{enumerate}
         \item Determine the equation of the least squares regression line of $y$ on $x$.
         \item Calculate an estimate for the height of a tree with a diameter of 3.9 inches.
@@ -1632,57 +1609,12 @@ The website wishes to allow users the ability to input the number of miles in th
 \pagebreak
 
 \begin{enumerate}[resume]
-    \item A researcher laid a transect line from the base of a tree and placed a quadrat at one metre intervals along the transect line. The number of seeds dropped by the tree contained in each quadrat was recorded. 
-    \vspace{-0.6cm}
-    \begin{center}
-    \begin{multicols}{2}
-    \null\vfill
-    \begin{tabular}{|l|cccccc|}
-      \hline
-        Distance from base of tree ($x$) & 1 & 2 & 3 & 4 & 5 & 6\\ 
-      \hline
-        No. of seeds found ($y$) & 0 & 9 & 4 & 2 & 7 & 3\\
-      \hline
-    \end{tabular}\\
-    \begin{enumerate}
-        \item Calculate the correlation coefficient.
-        \item Explain why the researcher may have decided not to obtain a regression line.
-    \end{enumerate}
-    \vfill\null
-    \columnbreak
-    \null\vfill
-    \centering
-\begin{tikzpicture}[scale=0.7]
-\draw[white] (0,0.7*6*0.75) -- (1,0.7*6*0.75);
-\draw[semithick] (0,0) -- (0,0.7*5*0.75);
-\draw[semithick] (0,0) -- (6,0);
-\node at (0,0.7*5.5*0.75) {$y$};
-\node at (6.5,0) {$x$};
-\foreach \y in {0,2,...,10}
-\node at (-0.5,0.7*0.75*0.5*\y) {\y};
-\foreach \y in {0,2,...,10}
-\draw[semithick] (0,0.7*0.75*0.5*\y) -- (-0.1,0.7*0.75*0.5*\y);
-\foreach \x in {0,1,...,6}
-\node at (\x,-0.5) {\x};
-\foreach \x in {0,1,...,6}
-\draw[semithick] (\x,0) -- (\x,-0.1);
-\draw[fill=black] (1,0) circle (0.07);
-\draw[fill=black] (2,0.7*4.5*0.75) circle (0.07);
-\draw[fill=black] (3,0.7*2*0.75) circle (0.07);
-\draw[fill=black] (4,0.7*1*0.75) circle (0.07);
-\draw[fill=black] (5,0.7*3.5*0.75) circle (0.07);
-\draw[fill=black] (6,0.7*1.5*0.75) circle (0.07);
-\end{tikzpicture}
-\vfill\null
-\end{multicols}
-\end{center}
-\vspace{-0.6cm}
 \item \textit{Electrolyte powders} are often used to help improve hydration during exercise. A keen cyclist records the time ($y$ minutes) it takes them to complete a familiar route during a series of rides over the summer, randomly choosing the mass ($x$ grams) of electrolyte powder to add to their water bottle each time. 
     \begin{multicols}{2}
     Summary statistics for the rides are below:
     \begin{center}
         \begin{tabular}{cccccc}
-            $S_{xx}$ & $S_{yy}$ & $S_{xy}$ & $n$ $\bar{x}$ & $\bar{y}$\\[0.4em]
+            $S_{xx}$ & $S_{yy}$ & $S_{xy}$ & $n$ & $\bar{x}$ & $\bar{y}$\\[0.4em]
             665 &  567.2 & -346.4 & 20 & 10.5 & 57.65
         \end{tabular}
     \end{center}
@@ -1690,7 +1622,7 @@ The website wishes to allow users the ability to input the number of miles in th
     \vfill\null
     \columnbreak
     \begin{center}
-        \begin{tikzpicture}[scale=0.7]
+        \begin{tikzpicture}[scale=0.8]
         \draw (0,-0.5) rectangle (5.5,4.3);
         \foreach \x in {0,5,...,20}{
         \draw (0.25*\x,-0.1-0.5) -- (0.25*\x,0-0.5) node[below] {\x};
@@ -1724,7 +1656,6 @@ The website wishes to allow users the ability to input the number of miles in th
     \end{center}
     \end{multicols}
 \item A strength and conditioning coach wants to increase the vertical jump height performance in their trainees and considers whether back squat weight has an impact on vertical jump height performance. The summary statistics below are taken from the back squat weight ($x$ in kg) and vertical jump height ($y$ in cm) achieved by a random sample of 29 of the coach’s trainees.
-\end{enumerate}
 
 \begin{multicols}{2}
 
@@ -1791,21 +1722,27 @@ The website wishes to allow users the ability to input the number of miles in th
 
 \vspace{-0.8cm}
 
-\begin{enumerate}
-    \item[] \text{}
     \begin{enumerate}
-        \item[(a) ] Use the scatterplot to comment on the relationship between vertical jump height and back squat weight achieved by the trainees.
-        \item[(b) ] Calculate the product moment correlation coefficient for this dataset.
-        \item[(c)] The coach wishes to use the data to predict vertical jump height.
+        \item[(a)] Use the scatterplot to comment on the relationship between vertical jump height and back squat weight.
+        \item[(b)] The coach wishes to use the data to predict vertical jump height.
         \begin{enumerate}
             \item Find the equation of the least squares regression line of vertical jump height on back squat weight.
             \item Estimate the vertical jump height of a trainee who back squats 165kg and comment on the reliability of this estimate.
         \end{enumerate}
-      \end{enumerate}
-      \item[] Based on the correlation coefficient the coach advises that increasing their back squat weight will increase their vertical jump height.
-      \begin{enumerate}
-        \item[(d) ] Give a reason why this advice is not necessarily correct.
+        \item[(c) ] Based on the correlation coefficient the coach advises that increasing their back squat weight will increase their vertical jump height. Give a reason why this advice is not necessarily correct.
     \end{enumerate}
+    \item A sample of bivariate data collected by a researcher is shown in the table below.
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+            \hline
+            $x$ & 38 & 27 & 19 & 45 & 8 & 23 & 11 & 34\\
+            \hline
+            $y$ & 34 & 53 & 42 & 13 & 19 & 30 & 29 & 45\\
+            \hline
+        \end{tabular}
+    \end{center}
+    The researcher constructed a scatterplot, from which they determined that a least squares regression line would not be appropriate. State what feature they are likely to have observed on the scatterplot.
+    \item A linear relationship is observed on a scatterplot showing, for a sample of pupils in a statistics class, the amount of time spent reviewing notes and the mark in an assessment. A least squares regression line is obtained with equation.
 \end{enumerate}
 
 \pagebreak
@@ -1815,14 +1752,14 @@ The website wishes to allow users the ability to input the number of miles in th
 ## [Review Exercise](#re5a) {-}
 
 \begin{enumerate}
-    \item As part of a study on intensive exercise, a sports scientist recorded the peak heart rates ($y$) of a random selection of sixteen volunteers of different ages ($x$) who took regular exercise. The linear regression equation was calculated for the data shown in the scatter diagram and found to be $\hat{y}=\text{203.9}−\text{0.67}x$.
+    \item As part of a study on intensive exercise, a sports scientist recorded the peak heart rates ($y$) of a random selection of sixteen volunteers of different ages ($x$) who took regular exercise. The linear regression equation was calculated for the data shown in the scatterplot and found to be $\hat{y}=\text{203.9}−\text{0.67}x$.
 \end{enumerate}
 
 
 \begin{figure}[H]
 \centering
 \captionsetup[figure]{labelformat=empty}%
-\begin{minipage}[t]{.30\textwidth}
+\begin{minipage}[t]{.25\textwidth}
 
 \vspace{0cm}
 
@@ -1830,8 +1767,8 @@ The website wishes to allow users the ability to input the number of miles in th
 \begin{tikzpicture}[scale=0.8]
 \draw[semithick] (1.8,0.1*160) -- (1.8,0.1*200);
 \draw[semithick] (2.0,15.9) -- (5.2,15.9);
-\node[rotate=90] at (0.3,0.1*180) {Heart rate (bpm)};
-\node at (4,14.6) {Age (years)};
+\node[rotate=90] at (0.0,0.1*180) {Heart rate (bpm)};
+\node at (4,14.9) {Age (years)};
 \foreach \y in {160,170,...,200}
 \node at (1.3,0.1*\y) {\y};
 \foreach \y in {160,165,...,200}
@@ -1862,18 +1799,18 @@ The website wishes to allow users the ability to input the number of miles in th
 
 \end{minipage}%
   \centering
-\begin{minipage}[t]{.7\textwidth}
+\begin{minipage}[t]{.75\textwidth}
   \centering
 
 \vspace{0cm}
 
 \begin{enumerate}
-    \item[] However, after considering the scatter diagram for the data, it was realised that one piece of data has been misrecorded, and this volunteer’s data (spotted as a possible outlier) was removed from the dataset. 
+    \item[] However, after considering the scatterplot for the data, it was realised that one piece of data has been misrecorded, and this volunteer’s data (spotted as a possible outlier) was removed from the dataset. 
     \begin{enumerate}
         \item[(a) ] State the approximate age of the volunteer whose data was removed.
-        \item[(b) ] Calculate the new equation of the least squares regression line using the revised summary data:\\
-        $\Sigma x=\text{518},  \Sigma y=\text{2687},  \Sigma x^\text{2}=\text{19196},  \Sigma y^\text{2}=\text{482691},  \Sigma xy=\text{91534}$ 
-        \item[(c) ] Calculate the difference this results in for a prediction of the average peak heart rate of a 45 year old volunteer. 
+        \item[(b) ] Calculate the new equation of the least squares regression line using the revised summary data:
+        \[\Sigma x=\text{518},  \Sigma y=\text{2687},  \Sigma x^\text{2}=\text{19196},  \Sigma y^\text{2}=\text{482691},  \Sigma xy=\text{91534}\]
+        \item[(c) ] Use this new equation to obtain a prediction for the peak heart rate of a 42 year old volunteer. 
     \end{enumerate}
 \end{enumerate}
 
@@ -1881,8 +1818,8 @@ The website wishes to allow users the ability to input the number of miles in th
 \end{figure}
 
 \begin{enumerate}[resume]
-    \item James Forbes was a Scottish physicist who, amongst other things, was interested in finding a way to estimate altitude from measurements of the boiling temperature of water. Some of his observations on boiling point ($y$, in $F^{\circ}$) and barometric pressure ($x$, in inches of mercury) are summarised below and shown in the scatterplot.
-    \vspace{-0.5cm}
+    \item James Forbes was a Scottish physicist who, amongst other things, was interested in finding a way to estimate altitude from measurements of the boiling temperature of water. Some of his observations on boiling point ($y$, in $^\circ\mathrm{F}$) and barometric pressure ($x$, in inches of mercury) are summarised below and shown in the scatterplot.
+    \vspace{-0.9cm}
     \begin{center}
     \begin{tikzpicture}[scale=0.8]
         \node[right] at (8,3.4) {Summary data for sample:};
@@ -1896,7 +1833,7 @@ The website wishes to allow users the ability to input the number of miles in th
         \draw[-stealth] (0,0.1) -- (0,3.25) node[above] {$y$}; 
         \node at (2.5,-1) {Barometric pressure (inches of mercury)};
         \node at (-2.5,1.75) {Boiling point};
-        \node at (-2.5,1.25) {($F^{\circ}$)};
+        \node at (-2.5,1.25) {($^\circ\mathrm{F}$)};
         \foreach \x in {0.25,0.75,...,4.75}{
         \draw (\x,0) -- (\x,-0.1);
         }
@@ -1931,7 +1868,7 @@ The website wishes to allow users the ability to input the number of miles in th
 \draw[semithick] (20.8*0.5-10.25,194.82*0.1-19) -- (30.5*0.5-10.25,213.25*0.1-19);
     \end{tikzpicture}
 \end{center}
-\vspace{-0.5cm}
+\vspace{-0.9cm}
 The least squares regression line of $\hat{y}=\text{155.29}+\text{1.9018}x$ was fitted. Show the calculations required to obtain the values of the sample intercept and sample slope parameter.
 \end{enumerate}
 
