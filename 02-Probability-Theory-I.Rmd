@@ -37,17 +37,17 @@ $$\text{P}(\text{rolling a }\text{5})=\dfrac{\text{1}}{\text{6}}$$
 
 #### Experimental Probability {-}
 
-The probability of an event can be estimated by carrying out repeated trials and calculating the relative frequency with which the event occurs. This estimate is often called the *experimental probability* of the event. For example, if a motorist passes a set of traffic lights every morning and wishes to know the probability of having to wait at a red light on any given morning, they could record the proportion of mornings on which they had to wait at a red light over a period of time. If, over the course of 200 mornings, they have to wait at a red light 114 times:
+The probability of an event can be estimated by carrying out repeated trials and calculating the relative frequency with which the event occurs. This estimate is often called the *experimental probability* of the event. For example, if a football fan attends 200 games of football and observes that 114 of them end with the home team winning they may *estimate* the probability of a home win by calculating a proportion:
 
-\vspace{-0.1cm}
+\vspace{-0.4cm}
 
-$$\text{P}(\text{red light})\approx\frac{\text{114}}{\text{200}}=\text{0.57}$$
+$$\text{P}(\text{home win})\approx\frac{\text{114}}{\text{200}}=\text{0.57}$$
 
 \vspace{-0.2cm}
 
 #### Theoretical Probability {-}
 
-When each outcome in the sample space can reasonably be assumed to be \mbox{\textbf{equally likely}}, then the probability of outcomes or events can be determined theoretically, without need to use experimental probability to form an estimate. This is called *theoretical probability*.
+When each outcome in the sample space can reasonably be assumed to be \mbox{\textbf{equally likely}}, then the probability of outcomes or events can be determined theoretically, without need to use experimental probability to form an estimate. This is called the *theoretical probability* of an event.
 
 Equally likely outcomes typically arise from the symmetry of a physical object (such as a coin or die) or a reasonable assumption. The probability of any *individual outcome* in a sample space containing $N$ equally likely outcomes is $\frac{\text{1}}{N}$. For example, if a playing card is picked at random from a standard pack of 52 cards, containing no jokers, then the probability of picking the Queen of Hearts is $\frac{\text{1}}{\text{52}}$.
 
@@ -92,7 +92,7 @@ A car is selected at random. Determine the probability that the car selected is 
 $$\text{P}(\text{second-hand and hybrid})=\dfrac{\text{7}}{\text{80}}=\text{0.0875}$$
 \end{tcolorbox}
 
-In this textbook, probabilities will be given as fractions or *rounded to four decimal places* for consistency.
+In this textbook, probabilities will be given as fractions or decimals *rounded to four decimal places* for consistency.
 
 \pagebreak
 
@@ -141,7 +141,7 @@ In this textbook, probabilities will be given as fractions or *rounded to four d
         \item Blue or numbered 5.
     \end{enumerate}
     \end{multicols}
-    \item A restaurant grades the fruit contained in a delivery as good or bad. The contents of the previous delivery are shown in the table below.
+    \item A restaurant grades the fruit contained in a delivery as good or bad. The contents of the previous delivery are shown in the table below. A piece of fruit is selected at random from the delivery.
     \begin{center}
     \begin{tabular}{| c|c c c|} 
       \hline
@@ -192,19 +192,19 @@ If two coins are tossed, it may be tempting to suggest that the probability of b
 
 *Not equally likely outcomes:* $\{\text{no tails},\text{one tail},\textbf{two tails}\}$
 
-These three outcomes are *not* equally likely, so the probability is *not one-in-three*, or: $\text{P}(\text{both tails})\ne\frac{\text{1}}{\text{3}}$.
+These three outcomes are *not* equally likely, so $\text{P}(\text{both tails})\ne\frac{\text{1}}{\text{3}}$.
 
 This is because there are *two ways* to obtain one tail.
 
 *Equally likely outcomes:* $\{\text{HH},\text{HT},\text{TH},\textbf{TT}\}$
 
-These four outcomes *are* equally likely, so the probability is *one-in-four*, or: $\text{P}(\text{both tails})=\frac{\text{1}}{\text{4}}$.
+These four outcomes *are* equally likely, so $\text{P}(\text{both tails})=\frac{\text{1}}{\text{4}}$.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Three coins are tossed at the same time. Find the probability that exactly two of the coins land showing tails.
 
 \tcblower
-\textbf{Solution: }\textit{A list of equally likely outcomes will help here. Note there are $\text{2}\times \text{2}\times \text{2}=\text{8}$ outcomes.}
+\textbf{Solution: }\textit{The following eight outcomes are equally likely.}
 
 $$HHH \quad HHT \quad HTH \quad \underbrace{HTT} \quad THH \quad \underbrace{THT} \quad \underbrace{TTH} \quad TTT$$
 
@@ -313,12 +313,12 @@ For most of the following questions, it is recommended to write out a full list 
         \includegraphics[width=0.3\textwidth]{threecoins.png}};
         \end{tikzpicture}
     \begin{enumerate}
-        \item Tails on at least two consecutive tosses.
-        \item Tails at least twice.
+        \item Heads on at least two consecutive tosses.
+        \item Heads at least twice.
     \end{enumerate}   
     \item A random number is chosen from 1 to 140, inclusive. By first listing all relevant results, determine the probability of the number chosen having digits that sum to 3.
     \item Two six-sided dice are rolled. Find the probability that the product of the numbers obtained is less than 5.
-    \item A tetrahedral (four-sided) die numbered 1 to 4 and a cubical die numbered 1 to 6 are rolled. Find the probability that at least one of the numbers obtained is 2 or less.
+    \item A tetrahedral (four-sided) die numbered 1 to 4 and a cubical die numbered 1 to 6 are rolled. Assuming that both dice are fair, find the probability that at least one of the numbers obtained is 2 or less.
     \item Five coins are placed in a bag, with values of 1p, 2p, 5p, 10p and 20p. Two coins are chosen at random, one after another, with the second chosen without replacement. Calculate:
     \begin{tikzpicture}[remember picture,overlay]
     \node[xshift=0cm,yshift=0cm,anchor=north west] {%
@@ -348,7 +348,7 @@ For most of the following questions, it is recommended to write out a full list 
 
 Tree diagrams can be created to map out the possible outcomes of a random experiment, and they are especially useful when considering two or more events. For example, consider a game involving rolling a cubical die and picking a playing card at random from a standard deck of 52 cards, with an interest in the chance of the die landing on a *six* and the card picked being a *diamond*:
 
-\vspace{-0.3cm}
+\vspace{-0.2cm}
 
 \begin{figure}[H]
 \centering
@@ -401,7 +401,9 @@ Tree diagrams can be created to map out the possible outcomes of a random experi
 \end{tikzpicture}
 \end{figure}
 
-Tree diagrams should be complete with each *branch* labelled with a *probability*, and each *node* labelled with an *event*, as above. Since each split into *sibling branches* should show all the possible things that can happen next, the probabilities on sibling branches should add to 1.
+\vspace{-0.1cm}
+
+Tree diagrams should be completed with each *branch* labelled with a *probability*, and each *node* labelled with an *event*, as above. Since each split into *sibling branches* should show all the possible things that can happen next, the probabilities on sibling branches should add to 1.
 
 \[\text{i.e.}\;\frac{\text{1}}{\text{6}}+\frac{\text{5}}{\text{6}}=\text{1}\;\text{ and }\;\frac{\text{3}}{\text{4}}+\frac{\text{1}}{\text{4}}=\text{1}\]
 
@@ -478,25 +480,14 @@ Note that in the tree diagram above the probability of the card being a diamond 
 \begin{enumerate}
     \item A counter is selected at random from a bag containing four green counters and five yellow counters, and then a second counter is selected from the bag without replacing the first counter that was taken.
     \begin{enumerate}
-        \item Construct a tree diagram to represent the possible results.
         \item Find the probability that both counters selected are green.
         \item Find the probability that at least one of the counters selected is green.
     \end{enumerate}
     \item A game involves a player randomly selecting one card then a second card from a set of six blue cards and four red cards, without replacement. Find the probability of a player selecting two cards of the same colour.
-    \item Suppose that 41\% of the population of Scotland have the blood type \textit{O positive (O+)}. A doctor in Scotland randomly selects two of their patients and asks for them to take part in a blood screening trial, as part of which their blood type will be checked. Calculate the probability that neither of the two patients has blood type \textit{O+}.
-    \item A component used in wind turbines is tested at two points in the production process, and marked as either \textit{sufficient quality} or \textit{insufficient quality} on the first testing point and then \textit{pass} or \textit{fail} at the second testing point. A component that is not of sufficient quality at the first testing point will continue to be developed and may still pass at the second testing point. Three-quarters of the components are marked as \textit{sufficient quality} initially, of which nine-tenths go on to pass. Of those initially marked as \textit{insufficient quality}, only three-fifths go on to pass.
-    \begin{enumerate}
-        \item Construct a tree diagram to represent this information.
-        \item Determine the probability that a component selected at random passes at the second testing point.
-    \end{enumerate}
-    \item A bus for a particular route that is scheduled to run once per day is cancelled on 3\% of days. On the days when it is running, it is running late 12\% of the time.
-    \begin{enumerate}
-        \item Construct a tree diagram to represent this information.
-        \item Calculate the probability that the bus is running on time on any given day (i.e. not cancelled and not late).
-    \end{enumerate}
+    \item Suppose that 41\% of the population of Scotland have the blood type \textit{O positive (O+)}. A doctor in Scotland randomly selects two of their patients and asks for them to take part in a blood screening trial, as part of which their blood type will be checked.\\[0.1em]  Calculate the probability that neither of the two patients has blood type \textit{O+}.
+    \item A component used in wind turbines is tested at two points in the production process, and marked as either \textit{sufficient quality} or \textit{insufficient quality} on the first testing point and then \textit{pass} or \textit{fail} at the second testing point. A component that is marked as insufficient quality at the first testing point will continue to be developed and may still pass at the second testing point. Three-quarters of the components are marked as \textit{sufficient quality} initially, of which nine-tenths go on to pass. Of those initially marked as \textit{insufficient quality}, only three-fifths go on to pass.\\[0.1em] Determine the probability that a component selected at random passes at the second testing point.
     \item A pencil case contains pencils of three different types: four HB pencils, two 2B pencils and one 2H pencil. Two pencils are selected at random, without replacement.
     \begin{enumerate}
-        \item Construct a tree diagram to represent the types of the two pencils selected.
         \item Find the probability that both pencils selected are of the same type.
         \item Determine the probability that the two pencils selected are of different types.
         \item Find the probability that neither pencil selected is an HB pencil.
@@ -532,7 +523,7 @@ Venn diagrams are used to show which elements of a set belong to one or more sub
 \captionof{figure}{\textit{Contingency table}}
   \label{fig:testTable}
   \end{center}
-  In statistics, a table used to show frequencies for combinations of categorical variables is often referred to as a \textbf{contingency table}.  
+  A table showing frequencies for combinations of categorical variables is called a \textbf{contingency table}.  
 \end{minipage}%
   \centering
 \begin{minipage}{.5\textwidth}
@@ -575,7 +566,7 @@ So far, *descriptive* words have been used to refer to different sets of outcome
     \end{tabular}
 \end{center}
 
-Venn diagrams help illustrate these. Note that *capital letters* are commonly used to represent events.
+Venn diagrams help illustrate these. Note that *capital letters* are commonly used to represent events. \newline The letter $S$ often denotes the full *sample space*, contained within a Venn diagram's rectangle.
 
 \begin{figure}[H]
   \centering
@@ -905,8 +896,8 @@ It should be noted that there are generally numerous different ways to approach 
         \item \text{P}(\text{History} $\cup$ \text{Higher})
     \end{enumerate}
     \item For the exhaustive events $E$ and $F$, such that $\text{P}(F\cap E)=\text{0.7}$ and $\text{P}(\overline{E})=\text{0.2}$, determine $\text{P}(F)$.
-    \item A parking ticket machine in a remote location in the Cairngorms National Park takes payment by contactless card reader, which connects to the banking network via a 3G phone signal. On some days, the connection fails and the machine cannot take payment. When the humidity is high, the connection will fail on 18\% of days. When the humidity is not high, the connection will fail on 7\% of days. Humidity is high in the area on 34\% of days. Determine the probability on a randomly selected day of the year that the parking machine can take payment.
-    \item A board game begins with a \textit{defending} player rolling a tetrahedral die with sides numbered from 1 to 4, and a \textit{attacking} player rolling a cubical die with sides numbered from 1 to 6. The player who obtains the highest number earns a point, with a tie leading to the dice being rolled again.
+    \item A parking ticket machine in a remote location in the Cairngorms National Park takes payment by a contactless card reader, which connects to the banking network via a 3G phone signal. On some days, the connection fails and the machine cannot take payment. When the humidity is high, the connection will fail on 18\% of days. When the humidity is not high, the connection will fail on 7\% of days. Humidity is high in the area on 34\% of days. Determine the probability on a randomly selected day of the year that the parking machine can take payment.
+    \item A board game begins with a \textit{defending} player rolling a tetrahedral die with sides numbered from 1 to 4, and a \textit{attacking} player rolling a cubical die with sides numbered from 1 to 6. The player who obtains the highest number earns a point, with a tie leading to the dice being rolled again. Both dice are fair.
     \begin{enumerate}
         \item Find the probability that the first point is earned, by either player, without the dice having to be rolled again following a tie.
         \item Find the probability that the attacking player earns the first point.
@@ -926,7 +917,7 @@ It should be noted that there are generally numerous different ways to approach 
         \hline
     \end{tabular}
     \end{center}
-    A member of the orchestra is selected at random. Let $B$ be the event the member selected is in the \textit{brass} section and $A$ that they can \textit{attend} the upcoming concert. State $\text{P}(B\cup \overline{A})$.
+    A member of the orchestra is selected at random. Let $B$ be the event the member selected is in the \textit{Brass} section and $A$ that they can attend the upcoming concert. State $\text{P}(B\cup \overline{A})$.
     \item Exhaustive events $A$, $B$ and $C$ are such that $\text{P}(A)=\text{0.25}$, $\text{P}(A\cap B)=\text{0.1}$, $\text{P}(\overline{B})=\text{0.3}$ and $\text{P}(A\cup C)=\text{0.6}$. Events $A$ and $C$ are mutually exclusive. Determine the value of $\text{P}(B\cap C)$.
 \end{enumerate}
 

@@ -170,6 +170,13 @@
     \item Sample mean, $\bar{x}$ (assuming the actual population of interest is \textit{all} Scottish schools)
 \end{enumerate}
 
+\endgroup
+
+\pagebreak
+
+\begingroup
+\footnotesize
+
 []{#ex15a}
 
 #### [Exercise 1.5](#ex15q) {-}
@@ -186,8 +193,6 @@
         \item $\bar{x}=29.125,s=7.586$
         \item $\bar{x}=42.056,s=17.864$
     \end{enumerate}
-    \end{multicols}
-    \begin{multicols}{2}
     \item 
     \begin{enumerate}
         \item $\bar{x}=8$
@@ -198,8 +203,6 @@
         \item $\text{median}=30.5,\text{IQR}=10.5$
         \item $\text{median}=40.5,\text{IQR}=28$
     \end{enumerate}
-    \end{multicols}
-    \begin{multicols}{2}
     \item 
     \begin{enumerate}
         \item $\bar{x}=11.125,s=5.027$
@@ -207,8 +210,6 @@
         \item $\text{median}=11,\text{IQR}=2$
         \item The mean and sd of B \textbf{or} the median and IQR for A.
     \end{enumerate}
-    \end{multicols}
-    \begin{multicols}{2}
     \item 
     \begin{enumerate}
         \item $1,-2,0,-1$
@@ -237,8 +238,8 @@
         \foreach \x in {0,5,...,30}{
         \node[below] at (0.2*\x,0) {\x};
         }
-        \node at (3,2) {box plot of studying time};
-        \node at (3,-1) {time (hours)};
+        \node at (3,1.7) {box plot of studying time};
+        \node at (3,-0.6) {time (hours)};
         \draw (0.2*4,1) circle (2pt);
         \draw (0.2*27,1) circle (2pt);
         \draw (0.2*9,1) -- (0.2*18,1);
@@ -336,6 +337,13 @@
     It appears that the number of crates completed per hour was more consistent for the new production line.
     \end{enumerate}
 \end{enumerate}
+
+\endgroup
+
+\pagebreak
+
+\begingroup
+\footnotesize
 
 []{#re1a}
 
@@ -472,8 +480,8 @@
     \end{enumerate}
     \item
     \begin{enumerate}
-        \item $\text{P}(\text{tails twice in a row})=\tfrac{3}{8}$
-        \item $\text{P}(\text{tails at least twice})=\tfrac{1}{2}$
+        \item $\text{P}(\text{heads twice in a row})=\tfrac{3}{8}$
+        \item $\text{P}(\text{heads at least twice})=\tfrac{1}{2}$
     \end{enumerate}
     \item $\text{P}(\text{sum}=3)=\tfrac{1}{20}$
     \item $\text{P}(\text{product}<5)=\tfrac{2}{9}$
@@ -615,45 +623,6 @@
         \item $\text{P}(\text{both pass})=0.825$
     \end{enumerate}
     \newcolumn
-    \item
-    \begin{enumerate}
-        \item 
-        \hspace{-1.8cm}
-        \begin{tikzpicture}[grow=right,baseline=(current bounding box.north)]
-\tikzstyle{level 1}=[level distance=2cm, sibling distance=2.8cm]
-\tikzstyle{level 2}=[level distance=2cm, sibling distance=1.4cm]
-\tikzstyle{bag} = [text width=4em, text centered]
-\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
-\node[bag] {}
-    child {
-        node[bag] {cancelled}        
-            edge from parent 
-            node[above] {}
-            node[below left]  {$0.03$}
-    }
-    child {
-        node[bag] {running}        
-        child {
-                node[end, label=right:
-                    {late}] {}
-                edge from parent
-                node[above] {}
-                node[below]  {$0.12$}
-            }
-            child {
-                node[end, label=right:
-                    {on time}] {}
-                edge from parent
-                node[above] {$0.88$}
-                node[below]  {}
-            }
-        edge from parent         
-            node[above left] {$0.97$}
-            node[below]  {}
-    };
-\end{tikzpicture}
-        \item $\text{P}(\text{on time})=0.8536$
-    \end{enumerate}
 \end{enumerate}
 \end{multicols}
 
