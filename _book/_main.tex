@@ -7329,9 +7329,11 @@ Sample statistic $b$ represents the line's \textbf{slope}, and is an estimate fo
 \end{minipage}
 \end{figure}
 
-To determine the equation of this regression line, the method of \emph{least squares regression} is used. Since the goal is to produce the \emph{best estimates} for \(y\), vertical distances between observed values and the line are considered. The \emph{least squares} regression line is that which minimises the sum of the squares of these vertical distances.
+\vspace{-0.5cm}
 
-\begin{multicols}{2}
+\begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.47\textwidth}
 
 \begin{center}
     \begin{tikzpicture}
@@ -7353,35 +7355,26 @@ To determine the equation of this regression line, the method of \emph{least squ
     \end{tikzpicture}
 \end{center}
 
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.06\textwidth}
+  \centering
+  \phantom{I}
+  \end{minipage}%
+  \centering
+\begin{minipage}[c]{.47\textwidth}
 
-\begin{center}
-    \begin{tikzpicture}
-        \draw[semithick,-stealth] (0,0) -- (6,0) node[right] {$x$};
-        \draw[semithick,-stealth] (0,0) -- (0,3) node[above] {$y$};
-        \node[below] at (3,0) {\textit{predictor}};
-        \node[above,rotate=90] at (0,1.5) {\textit{response}};
-        \fill[black!20] (1,1.105) rectangle (1.121,1.226);
-        \draw[dashed] (1,1.105) -- (1,1.226);
-        \draw[fill] (1,1.105) circle (0.04);
-        \fill[black!20] (2,2.17) rectangle (2.734,1.436);
-        \draw[dashed] (2,2.17) -- (2,1.436);
-        \draw[fill] (2,2.17) circle (0.04);
-        \fill[black!20] (3,1.105) rectangle (3.546,1.646);
-        \draw[dashed] (3,1.10) -- (3,1.646);
-        \draw[fill] (3,1.10) circle (0.04);
-        \fill[black!20] (4,1.43) rectangle (4.426,1.856);
-        \draw[dashed] (4,1.43) -- (4,1.856);
-        \draw[fill] (4,1.43) circle (0.04);
-        \fill[black!20] (5,2.47) rectangle (5.404,2.066);
-        \draw[dashed] (5,2.47) -- (5,2.066);
-        \draw[fill] (5,2.47) circle (0.04);
-        \draw[thick] (0.7,0.7*0.21+1.016) -- (5.6,5.6*0.21+1.016);
-    \end{tikzpicture}
-\end{center}
+
+To determine the equation of this regression line, the method of \textit{least squares regression} is used. Since the goal is to produce the \textit{best estimates} for $y$, vertical distances between observed values and the line are considered. The \textit{least squares} regression line is that which minimises the sum of the squares of these vertical distances.
     
-\end{multicols}
+\end{minipage}
+\end{figure}
+
+\vspace{-0.3cm}
 
 Since regression lines are generally calculated from a random \emph{sample} of bivariate data points, the values for the population parameters \(\alpha\) and \(\beta\) have to be estimated, with the sample statistics \(a\) and \(b\) respectively calculated as \emph{estimators}:
+
+\vspace{-0.3cm}
 
 \begin{center}
 \tcbset{width=10cm}
