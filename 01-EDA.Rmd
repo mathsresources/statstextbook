@@ -2,9 +2,9 @@
 
 \vspace{-1cm}
 
-Data that have been collected but not yet organised or summarised are referred to as *raw data*. Before carrying out a formal statistical analysis, a statistician will typically begin by developing an understanding of the data, checking for potential issues and identifying key features. Common first steps therefore include **organising** the data into suitable lists or tables; **visualising** the data using plots and graphs; and **summarising key properties** of the data numerically.
+Data in their original, unprocessed form are referred to as *raw data*. Before carrying out formal statistical inference, a statistician will typically begin by developing an understanding of the data, checking for potential issues and identifying key features. Common first steps therefore include **organising** the data into suitable lists or tables, **visualising** the data using statistical diagrams, and **summarising key properties** of the data numerically.
 
-This process is called *exploratory data analysis*. It uses *descriptive statistics* to reveal patterns, identify unusual observations and help us understand the data before applying more formal methods of *statistical inference*.
+This process is called *exploratory data analysis*. It involves using tables, diagrams and *descriptive statistics* to reveal patterns, identify unusual observations and develop an understanding of the data.
 
 \begin{center}
 \begin{tikzpicture}
@@ -167,11 +167,11 @@ This process is called *exploratory data analysis*. It uses *descriptive statist
 
 ## Types of Data
 
-Knowing what *type* of data have been collected helps determine which statistical methods and diagrams are appropriate. In this course, it is necessary to distinguish between categorical and quantitative data, and to classify quantitative data as either discrete or continuous.
+Knowing what *type* of data have been collected helps determine which statistical methods and diagrams are appropriate. In this course, it is typical to classify data as either *categorical*, *discrete*, or *continuous*.
 
-*Qualitative* data, also called **categorical** data, record qualities or categories, such as the colour of a squirrel. Categories are usually described using words, although numerical codes may sometimes be used as labels.
+**Categorical data**, sometimes also called **qualitative** data, record qualities or categories, such as the colour of a squirrel. Categories are usually described using words, although numbers may sometimes be used to form labels.
 
-Data that are *numerical* and represent counts or measurements, such as a person's height, are called \mbox{\textit{quantitative}}. Quantitative data can be further classified into two types. **Discrete** data can only take particular, separate values and are often obtained through counting. For example, the number of siblings someone has is discrete. **Continuous** data can, in principle, take *any* value within a given interval and are usually obtained through measurement. In practice, continuous measurements are recorded to a limited degree of accuracy. For example, the mass of a mouse is continuous.
+Data that are *numerical* and represent counts or measurements, such as a person's height, are called \mbox{\textit{quantitative}} data. Quantitative data can be further classified into two types. **Discrete data** can only take particular, separate values and are often obtained through counting. For example, the number of siblings someone has is discrete. **Continuous data** can, in principle, take *any* value within a given interval and are usually obtained through measurement. In practice, continuous measurements are recorded to a limited degree of accuracy. For example, the mass of a mouse is continuous.
 
 \begin{center}
 \begin{tikzpicture}
@@ -406,9 +406,9 @@ Visual displays are often used at the beginning of an analysis to reveal pattern
   \draw (0.15*\x,0) -- (0.15*\x,-0.1);
 \draw[fill=black!25] (0.15*38,0.4) rectangle (0.15*51,0.8);
 \draw (0.15*34,0.4) -- (0.15*34,0.8) node[above] {\scriptsize{min}};
-\draw (0.15*38,0.4) -- (0.15*38,0.8) node[above] {\scriptsize{Q1}};
+\draw (0.15*38,0.4) -- (0.15*38,0.8) node[above] {\scriptsize{$\text{Q}_{\text{1}}$}};
 \draw (0.15*46.5,0.4) -- (0.15*46.5,0.8) node[above] {\scriptsize{med}};
-\draw (0.15*51,0.4) -- (0.15*51,0.8) node[above] {\scriptsize{Q3}};
+\draw (0.15*51,0.4) -- (0.15*51,0.8) node[above] {\scriptsize{$\text{Q}_{\text{3}}$}};
 \draw (0.15*73,0.4) -- (0.15*73,0.8) node[above] {\scriptsize{max}};
 \draw (0.15*34,0.6) -- (0.15*38,0.6);
 \draw (0.15*51,0.6) -- (0.15*73,0.6);
@@ -446,7 +446,7 @@ Visual displays are often used at the beginning of an analysis to reveal pattern
 \draw[fill=black!25] (0.08*70+3.8,0) rectangle (0.08*80+3.8,0.2*1.2);
 \node at (0.08*53+3.8,-0.8) {\text{Height (cm)}};
 \node at (8,3.9) {\textbf{Figure 4: Histogram}};
-\node[text width = 8cm,below] at (8,3.6) {Histograms display \textit{continuous} data grouped into intervals. Unlike bar charts, the bars are adjacent. When interval widths are equal, the height of each bar represents frequency.};
+\node[text width = 8cm,below] at (8,3.6) {Histograms display \textit{continuous} data grouped into intervals. The area of each bar represents frequency. When the bars have equal widths, their heights can represent frequency.};
 \draw[white] (3.5,-2) rectangle (12.5,5);
 \end{tikzpicture}
 
@@ -484,7 +484,7 @@ Visual displays are often used at the beginning of an analysis to reveal pattern
     \begin{center}
         \begin{tabular}{|c|c|c|c|c|c|c|}
         \hline
-            Interval & 52-53.99 & 54-55.99 & 56-57.99 & 58-59.99 & 60-61.99 & 62-63.99\\
+            Interval & $\text{52}\leqslant x < \text{54}$ & $\text{54}\leqslant x < \text{56}$ & $\text{56}\leqslant x < \text{58}$ & $\text{58}\leqslant x < \text{60}$ & $\text{60}\leqslant x < \text{62}$ & $\text{62}\leqslant x < \text{64}$\\
         \hline
             Frequency & 2 & 4 & 11 & 17 & 5 & 1\\
         \hline
@@ -717,7 +717,7 @@ In a statistical study, the term **population** refers to the entire set of indi
 \vspace{-0.5cm}
 
 \begin{center}
-\begin{tikzpicture}[scale=0.9]
+\begin{tikzpicture}[scale=0.8]
 \draw[semithick,fill=black!10] (0,0) rectangle (8,5);
 \node at (4,5.3) {Population};
 \draw[semithick,fill=black!10] (12,2.5) circle (1.5);
@@ -883,7 +883,7 @@ In a statistical study, the term **population** refers to the entire set of indi
 \end{tikzpicture}
 \end{center}
 
-If data were available for an entire *population*, then various **population parameters** could be calculated *directly*, such as the *population mean*. Since collecting data from an entire population is often impractical or impossible, *samples* are usually taken from populations instead. Numerical measures calculated from a sample are called **sample statistics**. One example is the *sample mean*. 
+A **population parameter** is a numerical property of a population, such as the *population mean*. If data were available for the *entire population*, its parameters could be calculated directly. Since collecting data from an entire population is often impractical or impossible, a *sample* is usually obtained from a population instead. Numerical measures calculated from a sample are called **sample statistics**. One example is the *sample mean*. 
 
 The distinction between population parameters and sample statistics is often reflected in the notation used. Letters from the Greek alphabet are commonly used to represent population parameters. For example:
 
@@ -897,20 +897,22 @@ The distinction between population parameters and sample statistics is often ref
 
 Sample statistics vary from sample to sample and can be used to *estimate* the corresponding population parameters. The population parameters themselves are treated as fixed, but are usually unknown.
 
-\begin{multicols}{2}
-
-Statistical inference is the process of using sample data to draw conclusions about a population. For example, a \textit{sample statistic} may be used to estimate a \textit{population parameter} or assess a claim about it.
-
-\columnbreak
-
+\begin{figure}[H]
+    \centering
+\begin{minipage}[t]{0.55\textwidth}
+\vspace{0pt}
+Statistical inference is the process of using sample data to draw conclusions about a population. For example, a \textit{sample statistic} may be calculated from a sample and used to assess a claim about its corresponding \textit{population parameter}.
+\end{minipage}%
+    \centering
+\begin{minipage}[t]{0.45\textwidth}
+\vspace{0pt}
+    \raggedleft
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
 \draw[semithick,fill=black!10] (-0.3,2) rectangle (2.7,4);
-\node[align=center] at (1.2,4.4) {Population};
 \draw[semithick,fill=black!10] (7.8,3) circle (1.1cm);
-\node[align=center] at (7.8,4.4) {Sample};
-\node[text width=2cm,align=center] at (1.2,3) {Population parameter};
-\node[text width = 2cm,align=center] at (7.8,3.1) {Sample statistic};
+\node[text width=2cm,align=center] at (1.2,3) {Population};
+\node[text width = 2cm,align=center] at (7.8,3.1) {Sample};
 \draw[very thick,-stealth] (3,3.4)
       arc[start angle=100,end angle=80,radius=10];
 \node[black] at (4.8,3.9) {\textit{Sampling}};
@@ -919,10 +921,10 @@ Statistical inference is the process of using sample data to draw conclusions ab
 \node at (4.8,2.3) {\textit{Inference}};
 \end{tikzpicture}
 \end{center}
+\end{minipage}
+\end{figure}
 
-\end{multicols}
-
-Sampling is discussed at this point to caution against making \textit{definitive} statements about a population based solely on sample statistics. In most statistical studies, the corresponding population parameters are of primary interest but are unknown.
+Because sample statistics vary from sample to sample, they do not generally reveal the exact values of the corresponding population parameters. Any conclusion about a population based on a sample must therefore acknowledge *uncertainty*.
 
 []{#ex14q}
 
@@ -950,7 +952,7 @@ Sampling is discussed at this point to caution against making \textit{definitive
     \end{tabular}
 \end{center}
 
-The table below shows a selection of summary statistics for this data:
+The table below shows a selection of summary statistics for these data:
 
 \begin{center}
 \begin{tabular}{ccccccccccccc}
@@ -1040,7 +1042,7 @@ In everyday language, an average is often expected to represent a *typical* valu
 
 The mean of these values is £17.50, yet this figure does not seem to represent a *typical* hourly rate of pay of people working in the store. Although this example is simplified, it illustrates why the *median* is often used to report a typical salary or income. A small number of very high values can increase the mean substantially, whereas the median is less affected by such values.
 
-The median and interquartile range ($\text{IQR}$) are often chosen to measure location and spread when the data is particularly *skewed* (see page 15), as they are less influenced by *extreme values* than the mean and standard deviation. The *median* represents the *middle* of a dataset: a value which approximately 50\% of the data lie below, and approximately 50\% of the data lie above. Where a dataset has an *odd* number of values, the median is simply the middle value. Where a dataset has an *even* number of values, the median is the mean of the *two* middle values. The median is used to measure the *location* of a sample of data.
+The median and interquartile range ($\text{IQR}$) are often chosen to measure location and spread when the distribution is particularly *skewed* (see page 15), as they are less influenced by *extreme values* than the mean and standard deviation. The *median* represents the *middle* of a dataset: a value which approximately 50\% of the data lie below, and approximately 50\% of the data lie above. Where a dataset has an *odd* number of values, the median is simply the middle value. Where a dataset has an *even* number of values, the median is the mean of the *two* middle values. The median is used to measure the *location* of a sample of data.
 
 
 \vspace{-0.4cm}
@@ -1119,7 +1121,7 @@ Together with the median, the *lower quartile* (LQ or $\text{Q}_\text{1}$) and t
 \end{tikzpicture}
 \end{center}
 
-The *interquartile range*, calculated as $\text{IQR}=\text{Q}_\text{3}-\text{Q}_\text{1}$, measures the spread of the middle 50\% of a dataset, and is less affected by extreme values than the range. On a box plot (sometimes called a *box-and-whisker* plot), the interquartile range defines the *width of the box*, ignoring the 'whiskers' at either side. A larger interquartile range indicates greater spread among the middle 50\% of the observations.
+The *interquartile range*, calculated as $\text{IQR}=\text{Q}_\text{3}-\text{Q}_\text{1}$, measures the spread of the middle 50\% of a dataset, and is less affected by extreme values than the range. On a box plot (sometimes called a *box-and-whisker* plot), the interquartile range defines the *length of the box*, ignoring the 'whiskers' at either side. A larger interquartile range indicates greater spread among the middle 50\% of the observations.
 
 \begin{center}
 \begin{tikzpicture}
@@ -1149,10 +1151,9 @@ The *interquartile range*, calculated as $\text{IQR}=\text{Q}_\text{3}-\text{Q}_
 \end{tikzpicture}
 \end{center}
 
-The box plots above suggest that B may have a higher median value than A, and B's higher interquartile range suggests that its distribution may be slightly more varied.
+The box plots above suggest that B may have a greater median value than A, and B's larger interquartile range suggests that its distribution may be slightly more varied.
 
-
-\newpage
+\pagebreak
 
 ### The Sample Mean and the Sample Standard Deviation {-}
 
@@ -1180,7 +1181,7 @@ Bessel’s correction addresses this bias by dividing by $n-1$ rather than $n$. 
 
 The *standard deviation* is the *square root* of the variance, which brings the units it takes back to match those of the original data (e.g. grams). The formula for the **sample standard deviation** ($s$) appears on **page 4** of the Data Booklet. It is given in terms of the *sum of squares for* $x$, notated as $S_{xx}$, which is the numerator of the right-hand formula above. A formula for the sample standard deviation is therefore:
 
-\[s=\sqrt{\dfrac{S_{xx}}{n-1}}\quad\text{ where }\quad S_{xx}=\sum x_i^\text{2}-\dfrac{(\sum x_i)^\text{2}}{n}\]
+\[s=\sqrt{\dfrac{S_{xx}}{n-\text{1}}}\quad\text{ where }\quad S_{xx}=\sum x_i^\text{2}-\dfrac{(\sum x_i)^\text{2}}{n}\]
 
 In practice, only the *sample mean* and *sample standard deviation* (and sample variance) will need to be calculated in this course. Whilst both can be calculated directly from a list of sample values using a graphical calculator, it is necessary to be able to calculate a sample mean and sample standard deviation using the formulae above.
 
@@ -1188,7 +1189,7 @@ In practice, only the *sample mean* and *sample standard deviation* (and sample 
 
 For example, calculating the mean and standard deviation for the sample dataset: 4, 6, 7, 9, 10
 
-\[\sum x_i^\text{2} = \text{282},\; \sum x_i = \text{36},\; n=\text{5} \qquad \bar{x}=\frac{36}{5}=\text{7.2} \qquad s=\sqrt{\frac{\text{282}-\frac{\text{36}^\text{2}}{\text{5}}}{\text{4}}}=\text{2.387}\text{ (to 3dp)}\]
+\[\sum x^\text{2} = \text{282},\; \sum x = \text{36},\; n=\text{5} \qquad \bar{x}=\frac{\text{36}}{\text{5}}=\text{7.2} \qquad s=\sqrt{\frac{\text{282}-\frac{\text{36}^\text{2}}{\text{5}}}{\text{4}}}=\text{2.387}\text{ (to 3 d.p.)}\]
 
 
 []{#ex15q}
@@ -1339,7 +1340,7 @@ n & min & Q1 & median & Q3 & max\\
 
 Since $\text{73}>\text{70}.\text{5}$, it is an outlier.
 
-On a box plot, outliers are indicated separately as shown below. The "whiskers" extend only as far as the largest and smallest values that are *not* outliers. However, the quartiles are calculated using the full dataset, including the outliers. *Plotting outliers separately in this way is to highlight their presence, and is not a judgement on whether those values are rogue or valid.*
+On a box plot, outliers are indicated separately as shown below. The "whiskers" extend only as far as the largest and smallest values that are *not* outliers. However, the quartiles are calculated using the full dataset, including the outliers. *Plotting outliers separately in this way is to highlight their presence, and is not a judgement on whether those values are erroneous or valid.*
 
 \begin{center}
 \begin{tikzpicture}
@@ -1422,7 +1423,7 @@ The outlier in this dataset could be valid if, for instance, the sunflower plant
     \end{center}
     \begin{enumerate}
         \item Identify any outliers.
-        \item Draw a box plot to display this data.
+        \item Draw a box plot to display these data.
     \end{enumerate}
     \item A call centre records the times (in minutes) a sample of customers have to wait before being connected to an agent.
     \begin{center}
@@ -1468,7 +1469,7 @@ The outlier in this dataset could be valid if, for instance, the sunflower plant
 \end{center}
     \begin{enumerate}
         \item[(a) ] Show that the two values indicated by circles on the box plot are outliers.
-        \item[(b) ] Suggest a cause for these outliers that would make it valid to remove them from further analysis.
+        \item[(b) ] Suggest a cause for these outliers that, if verified, would justify correcting or removing them from the dataset.
     \end{enumerate}
 \end{enumerate}
 
@@ -1476,7 +1477,7 @@ The outlier in this dataset could be valid if, for instance, the sunflower plant
 
 ## Shapes of Distributions
 
-Summary statistics alone are not sufficient to describe the full complexity of the way data is distributed. It is also important to consider and be able to describe the **shape** of the distribution, visualised most easily using a graph. While real-life data rarely follows a precise mathematical model *exactly*, a number of shapes are commonly observed. The following data were generated by *simulating random sampling* from populations with the described distributions. 
+Summary statistics alone are not sufficient to describe the full complexity of the way data are distributed. It is also important to consider and be able to describe the **shape** of the distribution, visualised most easily using a graph. While real-life data rarely follow a precise mathematical model *exactly*, a number of shapes are commonly observed. The following data were generated by *simulating random sampling* from populations with the described distributions. 
 
 \begin{figure}[H]
   \centering
@@ -1744,8 +1745,8 @@ As well as considering whether the underlying population distribution of data ap
 \textbf{Problem:} An environmental scientist collected water samples from a number of rivers in a region to explore whether the concentration of a harmful chemical in the water has changed since farming practices used locally have changed. They are considering the following choices of hypothesis test:
 
 \begin{itemize}
-    \item A \textit{t-test}, the most appropriate choice if the data follows a normal distribution.
-    \item A \textit{Wilcoxon Signed Rank test}, appropriate if the data is distributed symmetrically.
+    \item A \textit{t-test}, the most appropriate choice if the data follow a normal distribution.
+    \item A \textit{Wilcoxon signed-rank test}, appropriate if the data are distributed symmetrically.
 \end{itemize}
 
 \begin{center}
@@ -1796,7 +1797,7 @@ As well as considering whether the underlying population distribution of data ap
 
 \begin{enumerate}
     \item[(a)] Figure 1 suggests that the population distribution of concentrations of the chemical in river sites may be bimodal and symmetrical.
-    \item[(b)] Since the histogram suggests that the population distribution of chemical concentration may be symmetrical but not normal, a Wilcoxon Signed Rank test would be appropriate while a \textit{t}-test would not.
+    \item[(b)] Since the histogram suggests that the population distribution of chemical concentration may be symmetrical but not normal, a Wilcoxon signed-rank test would be appropriate while a \textit{t}-test would not.
 \end{enumerate}
 
 \end{tcolorbox}
@@ -2005,12 +2006,12 @@ As well as considering whether the underlying population distribution of data ap
 When comparing two or more samples of data, a good starting point is to create suitable plots and obtain summary statistics. Differences and similarities should be noted, considering:
 
 \begin{itemize}
-    \item \textbf{Location} (i.e. means, medians, or clear visual differences in locations)
-    \item \textbf{Spread} (i.e. standard deviations, interquartile ranges, or clear visual differences in spread)
-    \item \textbf{Shape} (i.e. symmetrical, skewed, bimodal, bell-shaped curve)
+    \item \textbf{Location} (for example, means, medians, or clear visual differences in centre)
+    \item \textbf{Spread} (for eaxmple, standard deviations, interquartile ranges, or clear visual differences in spread)
+    \item \textbf{Shape} (for example, symmetric, skewed, bimodal, bell-shaped)
 \end{itemize}
 
-At this *exploratory* stage, it is again important to avoid making any *conclusions* relating to the populations from which the sample data were drawn.
+At this *exploratory* stage, it is again important to avoid drawing firm conclusions about the populations from which the sample data were drawn.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=NavyBlue]
 \textbf{Problem:} Within the sport of professional cycling, it is common for riders to specialise in certain types of cycling. \textit{Sprinters} aim to win races that finish on flat roads at high speed, while \textit{climbers} aim to win races with an uphill finish. A researcher studying the characteristics of elite-level cyclists randomly selects samples of 30 \textit{sprinters} and 30 \textit{climbers}, recording the heights of each. The results are shown summarised in \textbf{Table 1}.
@@ -2041,24 +2042,22 @@ Box plots for the two groups of cyclists are shown below in \textbf{Figure 1}, a
 \node at (0.25*175,0.3) {180};
 \node at (0.25*185,0.3) {190};
 \node at (0.25*195,0.3) {200};
-\draw[semithick,fill=black!40] (163*0.25,1.2) rectangle (170*0.25,1.8);
+\draw[semithick,fill=black!40] (163*0.25,1.2) rectangle (172*0.25,1.8);
 \node at (145*0.25,2.5) {sprinters};
 \node at (145*0.25,1.5) {climbers};
 \draw[semithick] (153*0.25,1.3) -- (153*0.25,1.7);
 \draw[semithick] (163*0.25,1.2) -- (163*0.25,1.8);
 \draw[semithick] (169*0.25,1.2) -- (169*0.25,1.8);
-\draw[semithick] (170*0.25,1.2) -- (170*0.25,1.8);
+\draw[semithick] (172*0.25,1.2) -- (172*0.25,1.8);
 \draw[semithick] (175*0.25,1.3) -- (175*0.25,1.7);
 \draw[semithick] (153*0.25,1.5) -- (163*0.25,1.5);
-\draw[semithick] (163*0.25,1.2) -- (170*0.25,1.2);
-\draw[semithick] (163*0.25,1.8) -- (170*0.25,1.8);
-\draw[semithick] (170*0.25,1.5) -- (175*0.25,1.5);
+\draw[semithick] (172*0.25,1.5) -- (175*0.25,1.5);
 \draw[semithick] (190*0.25,1.5) circle (0.06);
 
 \draw[semithick, fill = black!10] (169*0.25,2.2) rectangle (179*0.25,2.8);
 \draw[semithick] (160*0.25,2.3) -- (160*0.25,2.7);
 \draw[semithick] (169*0.25,2.2) -- (169*0.25,2.8);
-\draw[semithick] (173*0.25,2.2) -- (173*0.25,2.8);
+\draw[semithick] (174*0.25,2.2) -- (174*0.25,2.8);
 \draw[semithick] (179*0.25,2.2) -- (179*0.25,2.8);
 \draw[semithick] (190*0.25,2.3) -- (190*0.25,2.7);
 \draw[semithick] (160*0.25,2.5) -- (169*0.25,2.5);
@@ -2154,9 +2153,8 @@ Box plots for the two groups of cyclists are shown below in \textbf{Figure 1}, a
 \textbf{Solution:}
 
 \begin{enumerate}[itemsep=5pt]
-    \item[(a) ] The sample median height of the sprinters was greater than that of the climbers.\\[0.5em]
-The larger interquartile range suggests that the population of sprinters' heights is more varied.
-    \item[(b) ] The dot plot suggests the underlying distribution of climbers' heights is negatively skewed.
+    \item[(a) ] The sprinters have a greater sample median height. Sprinters' heights may be slightly more variable than climbers' heights, as suggested by the sprinters' larger interquartile range.
+    \item[(b) ] The dot plot suggests the underlying distribution of climbers' heights may be negatively skewed.
 \end{enumerate}
 
 \end{tcolorbox}
@@ -2180,7 +2178,7 @@ The larger interquartile range suggests that the population of sprinters' height
         \item Determine the sample mean and standard deviation for each model.
         \item Make two comments comparing the amount of coffee dispensed by the two models.
     \end{enumerate}
-    \item The scores awarded by two judges in a diving competition are recorded and displayed in box plots, shown below.
+    \item Random samples of the scores awarded by two judges in a diving competition are recorded and displayed in box plots, shown below.
     \begin{center}
 \begin{tikzpicture}
 \draw[semithick] (88,1) -- (100,1);
@@ -2221,7 +2219,7 @@ The larger interquartile range suggests that the population of sprinters' height
 \end{tikzpicture}
 \end{center}
     Using the box plots, make two comments comparing the location and spread of the judges' scoring.
-    \item The temperature at 2pm was noted for 14 randomly selected days in January and June at a local tourist spot and box plots drawn to display the results.
+    \item The temperature at 2pm was noted for 14 randomly selected days in January and 14 randomly selected days in June at a local tourist spot and box plots drawn to display the results.
 \begin{center}
 \begin{tikzpicture}
 \node at (26.5,0.75) {\text{June}};
@@ -2273,13 +2271,13 @@ The larger interquartile range suggests that the population of sprinters' height
 \end{center}
     \begin{enumerate}
         \item Using the box plots, make two comments comparing temperatures in January and June.
-        \item Explain why the box plots may be misleading.
+        \item Suggest one improvement to the box plots, and the desired effect this should have.
     \end{enumerate}
-    \item The manager of a lemonade bottling plant is interested in comparing the performances of two production lines, one of which has only recently been installed. For each line she selects 10 one-hour periods at random and records the number of crates completed in each hour. The table below gives the results:
+    \item The manager of a cereal factory is interested in comparing the performances of two packaging lines, one of which has only recently been installed. For each line she selects 10 one-hour periods at random and records the number of crates completed in each hour. The table below gives the results:
     \begin{center}
     \begin{tabular}{|l|cccccccccc|}
       \hline
-        Production Line & \multicolumn{10}{c|}{Number of crates completed per hour}\\
+        Packaging line & \multicolumn{10}{c|}{Number of crates completed per hour}\\
       \hline
         New & 78 & 87 & 79 & 82 & 87 & 81 & 85 & 80 & 82 & 83\\
       \hline
@@ -2290,7 +2288,7 @@ The larger interquartile range suggests that the population of sprinters' height
     \begin{enumerate}
         \item Draw dot plots to represent the data.
         \item Find the mean and standard deviation for each sample.
-        \item Make two comments comparing location and spread for the two lemonade production lines.
+        \item Make two comments comparing location and spread for the two cereal packaging lines.
     \end{enumerate}
 \end{enumerate}
 
@@ -2305,11 +2303,11 @@ The larger interquartile range suggests that the population of sprinters' height
     \begin{center}
         \begin{tabular}{|c|c|c|c|c|}
             \hline
-            Track & Artist & Released & Length (m:s) & No. of Streams\\
+            Track & Artist & Year released & Length (m:s) & No. of Streams\\
             \hline
             Creep & Radiohead & 1992 & 3:59 & 1271293243\\
             Blank Space & Taylor Swift & 2014 & 3:52 & 1355959075\\
-            Something In The Way & Nirvana & 1991 & 20:37 & 368646862\\
+            Something in the Way & Nirvana & 1991 & 20:37 & 368646862\\
             Nonsense & Sabrina Carpenter & 2022 & 2:43 & 342897938\\
             Drivers License & Olivia Rodrigo & 2021 & 4:02 & 1858144199\\
             Iris & The Goo Goo Dolls & 1998 & 4:50 & 1284942608\\
@@ -2317,7 +2315,7 @@ The larger interquartile range suggests that the population of sprinters' height
         \end{tabular}
     \end{center}
     \begin{enumerate}
-        \item State which of the five variables contain:
+        \item State which of the five variables record:
         \begin{enumerate}
             \begin{multicols}{3}
             \item Categorical data.
@@ -2325,7 +2323,7 @@ The larger interquartile range suggests that the population of sprinters' height
             \item Continuous data.
             \end{multicols}
         \end{enumerate}
-        \item If it was suspected that \textit{Something In The Way} is an outlier in terms of length, state what could be calculated in order to determine whether it is in fact an outlier.
+        \item State what should be calculated to determine whether \textit{Something in the Way} is an outlier in terms of length.
     \end{enumerate}
     \item A sports clothing store is seeking to better understand its sales of running shoes. For a random sample of twelve sales of pairs of running shoes, the sizes are recorded as follows:
     \begin{center}
@@ -2353,7 +2351,7 @@ The larger interquartile range suggests that the population of sprinters' height
         \item Suggest one improvement needed for the diagram.
         \item Without performing any calculations, make one comment comparing the heights of trees in the two areas.
     \end{enumerate}
-    \item The petal lengths (in centimetres) for samples of flowers from two species of iris flowers is recorded: \textit{iris setosa} and \textit{iris versicolor}. The data is summarised in the table below using statistical software:
+    \item The petal lengths, in centimetres, are recorded for samples from two species of iris: \textit{Iris setosa} and \textit{Iris versicolor}. The data are summarised in the table below using statistical software.
     \begin{center}
     \begin{tabular}{ccccccc}
         \texttt{species} & \texttt{n} & \texttt{min} & \texttt{Q1} & \texttt{Q2} & \texttt{Q3} & \texttt{max}\\
@@ -2363,7 +2361,7 @@ The larger interquartile range suggests that the population of sprinters' height
     \end{tabular}
     \end{center}
     \begin{enumerate}
-        \item For the species \textit{iris setosa}, determine whether the dataset contains any outliers.
+        \item For the species \textit{Iris setosa}, determine whether the dataset contains any outliers.
         \item Make two comments comparing the petal lengths of the two species of iris.
     \end{enumerate}
 \end{enumerate}

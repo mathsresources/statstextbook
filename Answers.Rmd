@@ -7,48 +7,75 @@
 \raggedright
 \setlist[enumerate]{nosep}
 
-### Chapter 1 Answers - Exploratory Data Analysis {-}
+\titlespacing*{\subsubsubsection}{0pt}{0cm}{0cm}
 
-\begingroup
-\footnotesize
+\titlespacing*{\subsubsubsection}{0pt}{0cm}{0cm}
+
+#### Chapter 1 Answers - Exploratory Data Analysis {-}
+
 
 []{#ex11a}
 
 #### [Exercise 1.1](#ex11q) {-}
 
+\vspace{-0.1cm}
+
+\begin{figure}[H]
+    \centering
+\begin{minipage}[t]{0.3\textwidth}
+\vspace{0pt}
 \begin{enumerate}
-    \item
-    \begin{enumerate}
-        \begin{multicols}{6}
+    \item[1.]
+    \begin{enumerate}[itemsep=0em]
         \item Quantitative
         \item Qualitative
         \item Quantitative
         \item Qualitative
         \item Quantitative
         \item Qualitative
-        \end{multicols}
     \end{enumerate}
-    \item 
-    \begin{enumerate}
-        \begin{multicols}{6}
-        \item Discrete
-        \item Continuous
-        \item Discrete
-        \item Discrete
-        \item Continuous
-        \item Continuous
-        \end{multicols}
-    \end{enumerate}
-    \item Categorical: \textit{activity level}, \textit{smoker}.\newline Continuous: \textit{height}, \textit{mass}.\newline Discrete: \textit{visits}.\newline \textit{Pulse} could be argued to be discrete or continuous.
 \end{enumerate}
+\end{minipage}%
+\centering
+\begin{minipage}[t]{0.3\textwidth}
+\vspace{0pt}
+\begin{enumerate}
+    \item[2.] 
+    \begin{enumerate}[itemsep=0em]
+        \item Discrete
+        \item Continuous
+        \item Discrete
+        \item Discrete
+        \item Continuous
+        \item Continuous
+    \end{enumerate}
+\end{enumerate}
+\end{minipage}%
+\centering
+\begin{minipage}[t]{0.4\textwidth}
+\vspace{0pt}
+\begin{enumerate}
+    \item[3.] Categorical: \textit{activity level}, \textit{smoker}.\newline Continuous: \textit{height}, \textit{mass}.\newline Discrete: \textit{number of visits, resting pulse}.
+
+    \textit{Resting pulse} could be argued to be discrete or continuous, but is typically considered to be discrete when counted as beats in one minute.
+\end{enumerate}
+\end{minipage}
+\end{figure}
+
+\vspace{-0.3cm}
 
 []{#ex12a}
 
 #### [Exercise 1.2](#ex12q) {-}
-\begin{enumerate}
-    \begin{multicols}{2}
-    \item
-    \begin{tikzpicture}[baseline=(current bounding box.north)]
+
+\vspace{-0.1cm}
+
+\begin{figure}[H]
+    \centering
+\begin{minipage}[t]{0.25\textwidth}
+\vspace{0pt}
+    \begin{tikzpicture}[baseline=(current bounding box.north),xscale=0.6,yscale=0.8]
+        \draw[white] (0.6*16-3.4,3.4) node[black,below right] {1.} rectangle (0.6*16+3.4,-1.6);
         \draw (0.6*12,0) -- (0.6*20,0);
         \foreach \x in {12,14,...,20}{
         \node[below] at (0.6*\x,0) {\x};
@@ -70,37 +97,44 @@
         \draw[fill] (0.6*16,1.6) circle (2pt);
         \draw[fill] (0.6*14,1.2) circle (2pt);
         \draw[fill] (0.6*19,1.2) circle (2pt);
-        \node at (0.6*16,-0.8) {age (years)};
-        \node at (0.6*16,2.2) {dot plot of golfer ages};
+        \node at (0.6*16,-1.0) {age (years)};
+        \node at (0.6*16,2.9) {dot plot};
+        \node at (0.6*16,2.4) {of golfer ages};
     \end{tikzpicture}
-    \item 
-    \begin{tikzpicture}[baseline=(current bounding box.north)]
+\end{minipage}%
+\centering
+\begin{minipage}[t]{0.25\textwidth}
+\vspace{0pt}
+    \begin{tikzpicture}[baseline=(current bounding box.north),xscale=0.55,yscale=0.8]
+    \draw[white] (2.5-3.9,5.5) node[black,below right] {2.} rectangle (2.5+3.5,0.5);
         \draw (0.5,3.7) -- (0.5,1.8);
-        \node at (0,3.5) {$0$};
-        \node at (0,3) {$1$};
-        \node at (0,2.5) {$2$};
-        \node at (0,2) {$3$};
-        \node at (1,3.5) {$9$};
-        \node at (1,3) {$4$};
-        \node at (1.7,3) {$5$};
-        \node at (2.4,3) {$5$};
-        \node at (3.1,3) {$7$};
-        \node at (3.8,3) {$8$};
-        \node at (4.5,3) {$9$};
-        \node at (1,2.5) {$0$};
-        \node at (1.7,2.5) {$1$};
-        \node at (2.4,2.5) {$2$};
-        \node at (3.1,2.5) {$5$};
-        \node at (1,2) {$6$};
-        \node at (2.5,4.6) {stem-and-leaf diagram};
-        \node at (2.5,4.1) {(ice cream cost)};
-        \node[left] at (5,1) {$2|5$ represents £2.50};
-        \node[left] at (5,1.5) {$n=12$};
+        \node at (0,3.5) {0};
+        \node at (0,3) {1};
+        \node at (0,2.5) {2};
+        \node at (0,2) {3};
+        \node at (1,3.5) {9};
+        \node at (1,3) {4};
+        \node at (1.7,3) {5};
+        \node at (2.4,3) {5};
+        \node at (3.1,3) {7};
+        \node at (3.8,3) {8};
+        \node at (4.5,3) {9};
+        \node at (1,2.5) {0};
+        \node at (1.7,2.5) {1};
+        \node at (2.4,2.5) {2};
+        \node at (3.1,2.5) {5};
+        \node at (1,2) {6};
+        \node at (2.5,5) {stem-and-leaf};
+        \node at (2.5,4.4) {for ice cream cost};
+        \node[left] at (5.7,1) {2$|$5 represents £2.50};
+        \node[left] at (5,1.7) {$n=\text{12}$};
     \end{tikzpicture}
-    \end{multicols}
-    \begin{multicols}{2}
-    \item 
-    \begin{tikzpicture}[baseline=(current bounding box.north)]
+\end{minipage}%
+\centering
+\begin{minipage}[t]{0.25\textwidth}
+\vspace{0pt}
+    \begin{tikzpicture}[baseline=(current bounding box.north),xscale=0.7,yscale=0.8]
+        \draw[white] (0.7*13-3.0,3.3) node[black,below right] {3.} rectangle (0.7*13+3.0,-1.7);
         \draw (0.7*10,0) -- (0.7*16,0);
         \foreach \x in {10,11,...,22}{
         \draw (0.7*0.5*\x+0.7*5,-0.1) -- (0.7*0.5*\x+0.7*5,0);
@@ -108,18 +142,28 @@
         \foreach \x in {10,12,...,22}{
         \node[below] at (0.7*0.5*\x+0.7*5,0) {\x};
         }
-        \node at (0.7*13,2) {box plot of luggage masses};
-        \node at (0.7*13,-1) {mass (kg)};
+        \node at (0.7*13,2.8) {box plot of};
+        \node at (0.7*13,2.3) {luggage masses};
+        \node at (0.7*13,-1.1) {mass (kg)};
         \draw (0.7*10,1) -- (0.7*16,1);
         \draw (0.7*10,0.7) -- (0.7*10,1.3);
         \draw (0.7*16,0.7) -- (0.7*16,1.3);
+        \node[above] at (0.7*10,1.3) {\scriptsize{10}};
+        \node[above] at (0.7*12,1.3) {\scriptsize{14}};
+        \node[above] at (0.7*13.25,1.3) {\scriptsize{16.5}};
+        \node[above] at (0.7*14.5,1.3) {\scriptsize{19}};
+        \node[above] at (0.7*16,1.3) {\scriptsize{22}};
         \draw[fill=black!20] (0.7*12,0.7) rectangle (0.7*14.5,1.3);
         \draw (0.7*13.25,0.7) -- (0.7*13.25,1.3);
     \end{tikzpicture}
-    \item 
-    \begin{tikzpicture}[baseline=(current bounding box.north)]
+\end{minipage}%
+\centering
+\begin{minipage}[t]{0.25\textwidth}
+\vspace{0pt}
+    \begin{tikzpicture}[baseline=(current bounding box.north),xscale=0.6,yscale=0.8]
+    \draw[white] (0.35*58-4.1,3.5) node[black,below right] {4.} rectangle (0.35*58+2.8,-1.5);
         \draw (0.35*52,0) -- (0.35*64,0);
-        \foreach \x in {52,54,...,64}{
+        \foreach \x in {52,56,...,64}{
         \draw (0.35*\x,-0.1) -- (0.35*\x,0) node[below] {\x};
         }
         \draw (0.35*52,0) -- (0.35*52,2);
@@ -132,29 +176,25 @@
         \draw[fill=black!20] (0.35*58,0) rectangle (0.35*60,1.7);
         \draw[fill=black!20] (0.35*60,0) rectangle (0.35*62,0.5);
         \draw[fill=black!20] (0.35*62,0) rectangle (0.35*64,0.1);
-        \node [above] at (0.35*58,2.3) {histogram of egg masses};
+        \node [above] at (0.35*58,2.5) {histogram of};
+        \node [above] at (0.35*58,2.0) {egg masses};
         \node[below] at (0.35*58,-0.6) {mass (g)};
-        \node[rotate=90,above] at (0.35*50,1) {frequency};
+        \node[rotate=90,above] at (0.35*49.2,1) {frequency};
     \end{tikzpicture}
-    \end{multicols}
-\end{enumerate}
+\end{minipage}
+\end{figure}
+
+\vspace{-0.3cm}
 
 []{#ex13a}
 
 #### [Exercise 1.3](#ex13q) {-}
 
 \begin{enumerate}
-    \item 
-    \begin{enumerate}
-        \begin{multicols}{3}
-        \item $\tfrac{23}{94}$
-        \item $0.2447$
-        \item $24.47\%$
-        \end{multicols}
-    \end{enumerate}
-    \item A clear key/legend linked to the plot showing what each shade/pattern means, and a scale/numbers on the $y$ axis (frequency).
-    \item The proportions of pupils in year group taking the bus seem to be broadly similar.
-    \item For 3rd years the longest is around 36 minutes and the shortest is around 6 minutes.\newline For 2nd years the longest is around 26 minutes and the shortest is around 3 minutes.
+    \item (a) $\tfrac{\text{23}}{\text{94}}$ \qquad (b) 0.2447 \qquad (c) 24.47\%
+    \item The graph should include a clear key indicating what each shade or pattern represents.\newline  Also, a numerical scale is needed on the frequency (vertical) axis.
+    \item The proportion of pupils taking the bus seems to be broadly similar across the year groups.
+    \item For 3rd years the longest is approximately 36 minutes and the shortest is approximately 6 minutes.\newline For 2nd years the longest is approximately 26 minutes and the shortest is approximately 3 minutes.
     \item 7
 \end{enumerate}
 
@@ -170,12 +210,6 @@
     \item Sample mean, $\bar{x}$ (assuming the actual population of interest is \textit{all} Scottish schools)
 \end{enumerate}
 
-\endgroup
-
-\pagebreak
-
-\begingroup
-\footnotesize
 
 []{#ex15a}
 
@@ -208,67 +242,96 @@
         \item $\bar{x}=11.125,s=5.027$
         \item $s^2=25.27$
         \item $\text{median}=11,\text{IQR}=2$
-        \item The mean and sd of B \textbf{or} the median and IQR for A.
+        \item The mean and standard deviation of B\newline \textbf{or} the median and interquartile range of A.
     \end{enumerate}
     \item 
     \begin{enumerate}
         \item $1,-2,0,-1$
-        \item An improvement in their mark from Sept to Nov.
+        \item An improvement in their mark (Sept to Nov).
         \item $\bar{x}_d=0.125,s_d=1.458$
     \end{enumerate}
     \end{multicols}
 \end{enumerate}
 
+\newpage
+
 []{#ex16a}
 
 #### [Exercise 1.6](#ex16q) {-}
 
-\begin{enumerate}
-    \begin{multicols}{2}
-    \item Lower fence $=7.5$ and upper fence $=51.5$. Since all values lie within the interval $(7.5,51.5)$ there are no outliers.\\[0.5em]
+\begin{figure}[H]
+    \centering
+\begin{minipage}[t]{0.48\textwidth}
+\vspace{0pt}
+ \begin{enumerate}
+    \item Lower fence $=7.5$ and upper fence $=51.5$. Since no value is less than 7.5 or greater than 51.5, there are no outliers.\\[0.1em]
     \item 
     \begin{enumerate}
-        \item Lower fence $=6.5$ and upper fence $=22.5$. Since $4<6.5$ and $27>22.5$ they are both outliers.
+        \item Lower fence $=6.5$ and upper fence $=22.5$. Since $4<6.5$ and $27>22.5$, both values are outliers.\\[0.1em]
         \item 
-        \begin{tikzpicture}[baseline=(current bounding box.north)]
-        \draw (0,0) -- (0.2*30,0);
-        \foreach \x in {0,1,...,30}{
-        \draw (0.2*\x,-0.1) -- (0.2*\x,0);
+        \vspace{-0.2cm}
+        \begin{tikzpicture}[baseline=(current bounding box.north),scale=1.2]
+        \draw (0.2*3,0.4) -- (0.2*27,0.4);
+        \foreach \x in {3,4,...,27}{
+        \draw (0.2*\x,0.3) -- (0.2*\x,0.4);
         }
-        \foreach \x in {0,5,...,30}{
-        \node[below] at (0.2*\x,0) {\x};
+        \foreach \x in {5,10,...,25}{
+        \node[below] at (0.2*\x,0.4) {\x};
         }
-        \node at (3,1.7) {box plot of studying time};
-        \node at (3,-0.6) {time (hours)};
+        \node at (3,2.5) {box plot of studying time};
+        \node at (3,-0.2) {time (hours)};
         \draw (0.2*4,1) circle (2pt);
         \draw (0.2*27,1) circle (2pt);
         \draw (0.2*9,1) -- (0.2*18,1);
         \draw (0.2*9,0.7) -- (0.2*9,1.3);
         \draw (0.2*18,0.7) -- (0.2*18,1.3);
-        \draw[fill=black!20] (0.2*12.75,0.7) rectangle (0.2*16.25,1.3);
+        \draw[fill=black!20] (0.2*12.5,0.7) rectangle (0.2*16.5,1.3);
         \draw (0.2*15,0.7) -- (0.2*15,1.3);
+        \node[above] at (0.2*9,1.3) {9};
+        \node[above] at (0.2*12.5,1.8) {12.5};
+        \node[above] at (0.2*15,1.3) {15};
+        \node[above] at (0.2*16.5,1.8) {16.5};
+        \draw[dashed] (0.2*12.5,1.4) -- (0.2*12.5,1.8);
+        \draw[dashed] (0.2*16.5,1.4) -- (0.2*16.5,1.8);
+        \node[above] at (0.2*18,1.3) {18};
         \end{tikzpicture}
     \end{enumerate}
-    \item Lower fence $=-8$ and upper fence $=56$. Since $59>56$, the value of $59$ is an outlier.
-    \item 
-    \begin{enumerate}
-        \item Upper fence $=26.5$. Since both circled points shown on the box plot (47 and what appears to be 28) are greater than 26.25, they are outliers.\\[1em]
-        \item If the lengths of their stays were found to be incorrectly recorded in the hospital's records (a data entry error), it would be valid to remove them from the dataset before conducting any further analysis. \textit{Other valid reasons are possible.}
-    \end{enumerate}
-        \end{multicols}
 \end{enumerate}
+\end{minipage}%
+\centering
+\begin{minipage}[t]{0.04\textwidth}
+\centering
+\vspace{0pt}
+\phantom{squirrel}
+\end{minipage}%
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\vspace{0pt}
+\begin{enumerate}
+    \item[3.] Lower fence $=-8$ and upper fence $=56$. Since $59>56$, the value of $59$ is an outlier.\\[0.7em]
+    \item[4.] 
+    \begin{enumerate}
+        \item Upper fence $=26.5$. Since both circled points shown on the box plot (28 and 47) are greater than 26.5, they are outliers.\\[0.7em]
+        \item If the lengths of their stays were found to be incorrectly recorded in the hospital's records (a data entry error), it would be valid to correct them if possible, or remove them from the dataset before. \textit{Other valid reasons are possible.}
+    \end{enumerate}
+\end{enumerate}
+\end{minipage}
+\end{figure}
+
+\vspace{-0.5cm}
 
 []{#ex17a}
 
 #### [Exercise 1.7](#ex17q) {-}
 
 \begin{enumerate}
-    \item The population of hazelnuts masses appears to follow a positively (right) skewed distribution.
-    \item The population of tree heights appears to be symmetrical distributed, and could be normally distributed.
-    \item The population of number of patients appears to be negatively (left) skewed.
-    \item The population of waiting times appears to be uniformly distributed.
-    \item The population of number of successful passes appears to follow a bimodal distribution which is not symmetrical.
-    \item The population of distances to the city centre appears to follow a bimodal distributed and is symmetrical.
+    \item The distribution of hazelnut masses appears to be positively (right) skewed.
+    \item The distribution of tree heights appears to be symmetrical, and may be approximately normal.
+    \item The distribution of the number of patients appears to be negatively (left) skewed.
+    \item The distribution of waiting times appears to be approximately uniform.
+    \item The distribution of the number of successful passes appears to be bimodal but not symmetrical.
+    \item The distribution of distances to the city centre appears to be bimodal and symmetrical.
 \end{enumerate}
 
 []{#ex18a}
@@ -278,26 +341,22 @@
 \begin{enumerate}
     \item 
     \begin{enumerate}
-    \begin{multicols}{2}
         \item $\bar{x}_A=301.3,s_A=4.57$\\
         $\bar{x}_B=302.3,s_B=12.3$
-        \columnbreak
-        \item The mean volume of coffee dispensed by Model B is appears to be greater (larger sample mean).\\
-        The amount of coffee dispensed by Model B is more varied (larger sample standard deviation).
-    \end{multicols}
+        \item The sample mean volume of coffee dispensed by Model B was greater.\newline
+        The amount of coffee dispensed by Model B appears to be more variable, indicated by its larger sample standard deviation.
     \end{enumerate}
-    \item The median score awarded by judge A was higher.\\
-    The higher interquartile range for judge A shows that their scores were more varied.
+    \item The sample median score awarded by Judge A was higher than that of Judge B. The larger interquartile range for Judge A suggests that their scores are more variable than those of Judge B.
     \item 
     \begin{enumerate}
-        \item The daily 2pm temperature appears to be more varied in January than in June, as shown by the slightly higher standard deviation.\\
-        The median 2pm temperature in June was higher.
-        \item The same scales have not been used for the box plots, making the location and spread of each less easily comparable.
+        \item The daily 2pm temperature appears to be more varied in January than in June, as shown by the slightly larger interquartile range. The median 2pm temperature in June was higher.
+        \item The box plots should be draw on the same horizontal scale, to make the location and spread of each more easily comparable.
     \end{enumerate}
     \item 
     \begin{enumerate}
     \item 
-    \begin{tikzpicture}[baseline=(current bounding box.north)]
+    \vspace{-0.3cm}
+    \begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
         \draw (0.8*70,0) -- (0.8*87,0);
         \foreach \x in {70,71,...,87}{
         \draw (0.8*\x,-0.1) -- (0.8*\x,0) node[below] {\x};
@@ -306,10 +365,10 @@
         \foreach \x in {70,71,...,87}{
         \draw (0.8*\x,1.9) -- (0.8*\x,2) node[below] {\x};
         }
-        \node at (0.8*78.5,3.2) {Production line data};
+        \node at (0.8*78.5,3.1) {Packaging line data};
         \node at (0.8*68.5,2.3) {New};
         \node at (0.8*68.5,0.3) {Old};
-        \node at (0.8*78.5,-0.8) {Crates completed (per hour)};
+        \node at (0.8*78.5,-0.9) {Crates completed (per hour)};
         \draw[fill] (0.8*74,0.3) circle (2pt);
         \draw[fill] (0.8*77,0.3) circle (2pt);
         \draw[fill] (0.8*78,0.3) circle (2pt);
@@ -331,19 +390,12 @@
         \draw[fill] (0.8*82,2.6) circle (2pt);
         \draw[fill] (0.8*83,2.3) circle (2pt);
     \end{tikzpicture}
-    \item $\bar{x}_{\text{new}}=82.4,s_{\text{new}}=3.13$\\
-    $\bar{x}_{\text{old}}=78,s_{\text{old}}=4.76$
-    \item It appears that the mean number of crates completed per hours was higher for the new production line.\\
-    It appears that the number of crates completed per hour was more consistent for the new production line.
+    \item $\bar{x}_{\text{new}}=82.4,s_{\text{new}}=3.13$ \quad and \quad $\bar{x}_{\text{old}}=78,s_{\text{old}}=4.76$
+    \item The new packaging line has a greater sample mean output, producing 82.4 crates per hour compared with 78.0 crates per hour for the old line. The new packaging line also appears to be more consistent, since its sample standard deviation is smaller: 3.13 crates compared with 4.76 crates.
     \end{enumerate}
 \end{enumerate}
 
-\endgroup
-
-\pagebreak
-
-\begingroup
-\footnotesize
+\newpage
 
 []{#re1a}
 
@@ -353,14 +405,12 @@
     \item 
     \begin{enumerate}
         \item 
-        \begin{multicols}{3}
         \begin{enumerate}
             \item Track; artist.
             \item Release year; no. of streams.
             \item Length.
         \end{enumerate}
-        \end{multicols}
-        \item The upper fence could be calculated to determine whether it is an outlier.
+        \item The upper fence for the track length data could be calculated to determine whether it is an outlier.
     \end{enumerate}
     \item 
     \begin{enumerate}
@@ -386,27 +436,30 @@
     \draw[fill] (5,0.3) circle (2pt);
     \end{tikzpicture}
     \item $\text{median}=7.5$ and $\text{interquartile range}=3.5$
-    \item $\text{mean}=7.33$ and $\text{sd}=2.35$
+    \item $\text{mean}=7.33$ and $\text{s}=2.35$
     \item Shoe sizes are discrete data.
     \end{enumerate}
     \item 
     \begin{enumerate}
-        \item A legend should be provided for the diagram, such as $3|2=3.2\text{ metres}$.
-        \item The stem-and-leaf diagram suggests that trees in Woodland A were taller, on average.
+        \item A key should be provided for the diagram, such as $3|2=32\text{ feet}$.
+        \item The stem-and-leaf diagram suggests trees in Woodland A are generally taller than trees in Woodland B.
     \end{enumerate}
     \item 
     \begin{enumerate}
-        \item The fences are $1.13$ and $1.85$. Since both the minimum value of $1.00$ and the maximum of $1.90$ lie outwith the interval ($1.00<1.13$ and ($1.90>1.85$) the \textit{iris setosa} data contains at least two outliers.
-        \item The median length of \textit{iris versicolor} petals appears to be greater than the length of \textit{iris setosa} petals. The length of \textit{iris versicolor} petals appears to be more varied than those of the \textit{iris setosa} species, as seen by their interquartile ranges of $0.18$ and $0.60$ centimetres respectively.
+        \item The lower fence is $1.13$ and the upper fence is $1.85$. Since both the minimum value of $1.00$ and the maximum of $1.90$ lie outwith the interval ($1.00<1.13$) and $1.90>1.85$) the \textit{Iris setosa} data contain at least two outliers.
+        \item The median petal length for \textit{Iris versicolor} is greater than that for \textit{Iris setosa}: 4.35 cm compared with 1.50 cm.
+ The petal lengths for \textit{Iris versicolor} are also more variable, since the interquartile range is 0.60 cm, compared with 0.18 cm for \textit{Iris setosa}.
     \end{enumerate}
 \end{enumerate}
 
-\endgroup
 
-### Chapter 2 Answers - An Introduction to Probability Theory {-}
 
-\begingroup
-\footnotesize
+\rule{\textwidth}{0.5pt}
+
+#### Chapter 2 Answers - An Introduction to Probability Theory {-}
+
+
+
 
 []{#ex21a}
 
@@ -475,7 +528,7 @@
     \item
     \begin{enumerate}
         \item $\text{P}(\text{tea and toast})=\tfrac{1}{12}$
-        \item $\text{P}(\text{museli and not coffee})=\tfrac{1}{6}$
+        \item $\text{P}(\text{muesli and not coffee})=\tfrac{1}{6}$
         \item $\text{P}(\text{not porridge and not tea})=\tfrac{1}{2}$
     \end{enumerate}
     \item
@@ -483,7 +536,7 @@
         \item $\text{P}(\text{heads twice in a row})=\tfrac{3}{8}$
         \item $\text{P}(\text{heads at least twice})=\tfrac{1}{2}$
     \end{enumerate}
-    \item $\text{P}(\text{sum}=3)=\tfrac{1}{20}$
+    \item $\text{P}(\text{digit sum}=3)=\tfrac{1}{20}$
     \item $\text{P}(\text{product}<5)=\tfrac{2}{9}$
     \item $\text{P}(\text{at least one number}\leqslant 2)=\tfrac{2}{3}$
     \item
@@ -506,19 +559,27 @@
 \end{enumerate}
 \end{multicols}
 
+\newpage
+
 []{#ex23a}
 
 #### [Exercise 2.3](#ex23q) {-}
 
-\begin{multicols}{3}
+
+\begin{figure}[H]
+    \centering
+\begin{minipage}[t]{0.48\textwidth}
+\vspace{0pt}
+
 \begin{enumerate}
-    \item 
-    \begin{enumerate}
-        \item 
-        \hspace{-1.8cm}
-        \begin{tikzpicture}[grow=right,baseline=(current bounding box.north)]
-\tikzstyle{level 1}=[level distance=2cm, sibling distance=2.8cm]
-\tikzstyle{level 2}=[level distance=2cm, sibling distance=1.4cm]
+    \item[1.] 
+\end{enumerate}
+
+\vspace{-0.3cm}
+
+\begin{tikzpicture}[grow=right,baseline=(current bounding box.north)]
+\tikzstyle{level 1}=[level distance=2.6cm, sibling distance=2.8cm]
+\tikzstyle{level 2}=[level distance=2.6cm, sibling distance=1.4cm]
 \tikzstyle{bag} = [text width=4em, text centered]
 \tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
 \node[bag] {}
@@ -563,78 +624,239 @@
             node[below]  {}
     };
 \end{tikzpicture}
-        \item $\text{P}(\text{both green})=\tfrac{1}{6}$
-        \item $\text{P}(\text{at least one green})=\tfrac{13}{18}$
-    \end{enumerate}
-    \item $\text{P}(\text{both same colour})=\tfrac{7}{15}$
-    \newcolumn
-    \item $\text{P}(\text{neither O}_+)=0.3481$
-    \item
+
+\vspace{0.2cm}
+
+\begin{enumerate}
+    \item[] 
     \begin{enumerate}
-        \item 
-        \hspace{-1.8cm}
-        \begin{tikzpicture}[grow=right,baseline=(current bounding box.north)]
-\tikzstyle{level 1}=[level distance=2cm, sibling distance=2.8cm]
-\tikzstyle{level 2}=[level distance=2cm, sibling distance=1.4cm]
+        \item $\text{P}(\text{both green})=\tfrac{1}{6}\text{ or 0.1667}$
+        \item $\text{P}(\text{at least one green})=\tfrac{13}{18}\text{ or 0.7222}$
+    \end{enumerate}
+\end{enumerate}
+
+\end{minipage}%
+\centering
+\begin{minipage}[t]{0.03\textwidth}
+\centering
+\vspace{0pt}
+\phantom{squirrel}
+\end{minipage}%
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\vspace{0pt}
+
+\begin{enumerate}
+    \item[2.] 
+\end{enumerate}
+
+\vspace{-0.3cm}
+
+\begin{tikzpicture}[grow=right,baseline=(current bounding box.north)]
+\tikzstyle{level 1}=[level distance=2.6cm, sibling distance=2.8cm]
+\tikzstyle{level 2}=[level distance=2.6cm, sibling distance=1.4cm]
 \tikzstyle{bag} = [text width=4em, text centered]
 \tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
 \node[bag] {}
     child {
-        node[bag] {insufficient quality}        
+        node[bag] {blue}        
             child {
                 node[end, label=right:
-                    {fail}] {}
+                    {blue}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\tfrac{2}{5}$}
+                node[below]  {$\tfrac{5}{9}$}
             }
             child {
                 node[end, label=right:
-                    {pass}] {}
+                    {red}] {}
                 edge from parent
-                node[above] {$\tfrac{3}{5}$}
+                node[above] {$\tfrac{4}{9}$}
                 node[below]  {}
             }
             edge from parent 
             node[above] {}
-            node[below]  {$\tfrac{1}{4}$}
+            node[below]  {$\tfrac{6}{10}$}
     }
     child {
-        node[bag] {sufficient quality}        
+        node[bag] {red}        
         child {
                 node[end, label=right:
-                    {fail}] {}
+                    {blue}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\tfrac{1}{10}$}
+                node[below]  {$\tfrac{6}{9}$}
             }
             child {
                 node[end, label=right:
-                    {pass}] {}
+                    {red}] {}
                 edge from parent
-                node[above] {$\tfrac{9}{10}$}
+                node[above] {$\tfrac{3}{9}$}
                 node[below]  {}
             }
         edge from parent         
-            node[above] {$\tfrac{3}{4}$}
+            node[above] {$\tfrac{4}{10}$}
             node[below]  {}
     };
 \end{tikzpicture}
-        \item $\text{P}(\text{both pass})=0.825$
-    \end{enumerate}
-    \newcolumn
-\end{enumerate}
-\end{multicols}
 
-\begin{multicols}{2}
-\begin{enumerate}[resume]
-    \item 
-    \begin{enumerate}
-        \item 
-        \hspace{-1.8cm}
-        \begin{tikzpicture}[grow=right,baseline=(current bounding box.north)]
-\tikzstyle{level 1}=[level distance=2.5cm, sibling distance=2.8cm]
-\tikzstyle{level 2}=[level distance=2.5cm, sibling distance=1cm]
+\vspace{0.2cm}
+
+$\text{P}(\text{both same colour})=\tfrac{7}{15}\text{ or 0.4667}$
+
+
+\end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+\begin{minipage}[t]{0.48\textwidth}
+\vspace{0pt}
+
+\begin{enumerate}
+    \item[3.] 
+\end{enumerate}
+
+\vspace{0.0cm}
+
+\begin{tikzpicture}[grow=right,baseline=(current bounding box.north)]
+\tikzstyle{level 1}=[level distance=2.6cm, sibling distance=2.6cm]
+\tikzstyle{level 2}=[level distance=2.6cm, sibling distance=1.3cm]
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
+\node[bag] {}
+    child {
+        node[bag] {not $\text{O}^+$}        
+            child {
+                node[end, label=right:
+                    {not $\text{O}^+$}] {}
+                edge from parent
+                node[above] {}
+                node[below]  {0.59}
+            }
+            child {
+                node[end, label=right:
+                    {$\text{O}^+$}] {}
+                edge from parent
+                node[above] {0.41}
+                node[below]  {}
+            }
+            edge from parent 
+            node[above] {}
+            node[below left]  {0.59}
+    }
+    child {
+        node[bag] {$\text{O}^+$}        
+        child {
+                node[end, label=right:
+                    {not $\text{O}^+$}] {}
+                edge from parent
+                node[above] {}
+                node[below]  {0.59}
+            }
+            child {
+                node[end, label=right:
+                    {$\text{O}^+$}] {}
+                edge from parent
+                node[above] {0.41}
+                node[below]  {}
+            }
+        edge from parent         
+            node[above left] {0.41}
+            node[below]  {}
+    };
+\end{tikzpicture}
+
+\vspace{0.4cm}
+
+$\text{P}(\text{neither O}^+)=0.3481$
+
+\end{minipage}%
+\centering
+\begin{minipage}[t]{0.03\textwidth}
+\centering
+\vspace{0pt}
+\phantom{squirrel}
+\end{minipage}%
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\vspace{0pt}
+
+\begin{enumerate}
+    \item[4.] 
+\end{enumerate}
+
+\vspace{-0.6cm}
+
+\begin{tikzpicture}[grow=right,baseline=(current bounding box.north)]
+\tikzstyle{level 1}=[level distance=2.4cm, sibling distance=2.8cm]
+\tikzstyle{level 2}=[level distance=3.0cm, sibling distance=1.3cm]
+\tikzstyle{bag} = [text width=8em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt, fill, inner sep=0pt]
+
+\node[bag] {}
+    child {
+        node[bag] {insufficient\\quality}
+            child {
+                node[end, label=right:{fail}] {}
+                edge from parent
+                node[above] {}
+                node[below] {$\tfrac{2}{5}$}
+            }
+            child {
+                node[end, label=right:{pass}] {}
+                edge from parent
+                node[above] {$\tfrac{3}{5}$}
+                node[below] {}
+            }
+            edge from parent
+            node[above] {}
+            node[below] {$\tfrac{1}{4}$}
+    }
+    child {
+        node[bag] {sufficient\\quality}
+            child {
+                node[end, label=right:{fail}] {}
+                edge from parent
+                node[above] {}
+                node[below] {$\tfrac{1}{10}$}
+            }
+            child {
+                node[end, label=right:{pass}] {}
+                edge from parent
+                node[above] {$\tfrac{9}{10}$}
+                node[below] {}
+            }
+            edge from parent
+            node[above] {$\tfrac{3}{4}$}
+            node[below] {}
+    };
+\end{tikzpicture}
+
+\vspace{0.2cm}
+
+$\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
+
+
+\end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+\begin{minipage}[t]{0.7\textwidth}
+\vspace{0pt}
+
+\begin{enumerate}
+    \item[5.] 
+\end{enumerate}
+
+\vspace{-0.6cm}
+
+\begin{tikzpicture}[grow=right,baseline=(current bounding box.north)]
+\tikzstyle{level 1}=[level distance=4.5cm, sibling distance=3.4cm]
+\tikzstyle{level 2}=[level distance=4.5cm, sibling distance=1.2cm]
 \tikzstyle{bag} = [text width=4em, text centered]
 \tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
 \node[bag] {}
@@ -713,19 +935,167 @@
             node[below]  {}
     };
 \end{tikzpicture}
-    \newcolumn
+
+\vspace{0.2cm}
+
+
+\end{minipage}%
+\centering
+\begin{minipage}[t]{0.02\textwidth}
+\centering
+\vspace{0pt}
+\phantom{squirrel}
+\end{minipage}%
+\centering
+\begin{minipage}[t]{0.28\textwidth}
+\centering
+\vspace{4cm}
+\begin{enumerate}
+    \item[] 
+    \begin{enumerate}
         \item $\text{P}(\text{both same})=\tfrac{1}{3}$ 
         \item $\text{P}(\text{different})=\tfrac{2}{3}$
         \item $\text{P}(\text{neither HB})=\tfrac{1}{7}$
     \end{enumerate}
-    \item 
+\end{enumerate}
+
+\end{minipage}
+\end{figure}
+
+\newpage
+
+\begin{figure}[H]
+    \centering
+\begin{minipage}[t]{0.6\textwidth}
+\vspace{0pt}
+
+\begin{enumerate}
+    \item[6.] 
+\end{enumerate}
+
+\vspace{-0.6cm}
+
+\begin{tikzpicture}[grow=right,baseline=(current bounding box.north)]
+\tikzstyle{level 1}=[level distance=2.3cm, sibling distance=5.6cm]
+\tikzstyle{level 2}=[level distance=2.8cm, sibling distance=2.8cm]
+\tikzstyle{level 3}=[level distance=2.8cm, sibling distance=1.4cm]
+\tikzstyle{bag} = [text width=5em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt, fill, inner sep=0pt]
+
+\node[bag] {}
+    child {
+        node[bag] {stop}
+        child {
+            node[bag] {stop}
+            child {
+                node[end, label=right:{stop}] {}
+                edge from parent
+                node[above] {}
+                node[below] {$0.3$}
+            }
+            child {
+                node[end, label=right:{no stop}] {}
+                edge from parent
+                node[above] {$0.7$}
+                node[below] {}
+            }
+            edge from parent
+            node[above] {}
+            node[below] {$0.2$}
+        }
+        child {
+            node[bag] {no stop}
+            child {
+                node[end, label=right:{stop}] {}
+                edge from parent
+                node[above] {}
+                node[below] {$0.3$}
+            }
+            child {
+                node[end, label=right:{no stop}] {}
+                edge from parent
+                node[above] {$0.7$}
+                node[below] {}
+            }
+            edge from parent
+            node[above] {$0.8$}
+            node[below] {}
+        }
+        edge from parent
+        node[above] {}
+        node[below left] {$0.6$}
+    }
+    child {
+        node[bag] {no stop}
+        child {
+            node[bag] {stop}
+            child {
+                node[end, label=right:{stop}] {}
+                edge from parent
+                node[above] {}
+                node[below] {$0.3$}
+            }
+            child {
+                node[end, label=right:{no stop}] {}
+                edge from parent
+                node[above] {$0.7$}
+                node[below] {}
+            }
+            edge from parent
+            node[above] {}
+            node[below] {$0.2$}
+        }
+        child {
+            node[bag] {no stop}
+            child {
+                node[end, label=right:{stop}] {}
+                edge from parent
+                node[above] {}
+                node[below] {$0.3$}
+            }
+            child {
+                node[end, label=right:{no stop}] {}
+                edge from parent
+                node[above] {$0.7$}
+                node[below] {}
+            }
+            edge from parent
+            node[above] {$0.8$}
+            node[below] {}
+        }
+        edge from parent
+        node[above left] {$0.4$}
+        node[below] {}
+    };
+\end{tikzpicture}
+
+
+\vspace{0.2cm}
+
+
+\end{minipage}%
+\centering
+\begin{minipage}[t]{0.02\textwidth}
+\centering
+\vspace{0pt}
+\phantom{squirrel}
+\end{minipage}%
+\centering
+\begin{minipage}[t]{0.38\textwidth}
+\centering
+\vspace{4cm}
+\begin{enumerate}
+    \item[] 
     \begin{enumerate}
         \item $\text{P}(\text{no stops})=0.224$
         \item $\text{P}(\text{at least one stop})=0.776$
         \item $\text{P}(\text{exactly two stops})=0.252$
     \end{enumerate}
 \end{enumerate}
-\end{multicols}
+
+\end{minipage}
+\end{figure}
+
 
 []{#ex24a}
 
@@ -799,6 +1169,7 @@
         \item $\text{P}(\bar{J})=\tfrac{25}{72}$
         \item $\text{P}(X \cup Y)=0.9$
         \item $\text{P}(\bar{B})=\tfrac{1}{6}$
+        \columnbreak
         \item $\text{P}(\text{fish})=0.85$
         \item $\text{P}(\bar{N})=\tfrac{3}{8}$
         \item $\text{P}(\bar{R})=0.19$
@@ -808,20 +1179,23 @@
             \item $\text{P}(R \cup T)=1$\\$\therefore R,T\text{ exhaustive}$
             \item $\text{P}(E \cup F)=0.85\ne 1$\\$\therefore E,F\text{ not exhaustive}$
         \end{enumerate}
+        \columnbreak
         \item
         \begin{enumerate}
-            \item $\text{P}(W \cup V)=0.3\ne0$\\$\therefore W,V\text{ not mutually exclusive}$
+            \item $\text{P}(W \cap V)=0.3\ne0$\\$\therefore W,V\text{ not mutually exclusive}$
             \item $\text{P}(X \cap Y)=0$\\$\therefore X,Y\text{ mutually exclusive}$
             \item $\text{P}(A \cap B)=0$\\$\therefore A,B\text{ mutually exclusive}$
         \end{enumerate}
     \end{enumerate}
 \end{multicols}
 
+\newpage
+
 []{#re2a}
 
 #### [Chapter 2 Review Exercise](#re2q) {-}
 
-\begin{multicols}{3}
+\begin{multicols}{2}
     \begin{enumerate}
         \item 
         \begin{enumerate}
@@ -835,30 +1209,27 @@
         \end{enumerate}
         \item $\text{P}(\text{}F)=0.9$
         \item $\text{P}(\text{takes payment})=0.8926$
+        \item $\text{P}(\text{}N \cup \bar{A})=\tfrac{7}{25}$
         \item 
         \begin{enumerate}
             \item $\text{P}(\text{not a tie})=\tfrac{5}{6}$
             \item $\text{P}(\text{attacker wins})=\tfrac{7}{12}$
             \item $\text{P}(\text{bonus point})=\tfrac{1}{8}$
         \end{enumerate}
-        \item $\text{P}(\text{}N \cup \bar{A})=\tfrac{7}{25}$
         \item $\text{P}(\text{}B \cap C)=0.2$
     \end{enumerate}
 \end{multicols}
 
-\endgroup
+\rule{\textwidth}{0.5pt}
 
-### Chapter 3 Answers - Sampling Theory {-}
-
-\begingroup
-\footnotesize
+#### Chapter 3 Answers - Sampling Theory {-}
 
 []{#ex31a}
 
 #### [Exercise 3.1](#ex31q) {-}
 
 \begin{enumerate}
-    \item The sampling frame selected (pupils who have maths first period and are present) does not contain the full population of interest, and is unlikely to be representative of it, missing out pupils who are absent, late, or do not take maths. The sampling method is not random. Both of these issues could lead to bias in the sample collected.
+    \item \textbf{Sampling-frame issue:} The accessible group consists only of pupils entering the mathematics corridor at that time. Pupils elsewhere in the school, absent pupils and late pupils have no opportunity to be selected. The selected sample of pupils may therefore \textbf{not be representative} of the target population.\\[0.5em] \textbf{Sampling-method issue:} Selecting the first 20 pupils is \textbf{not random}. Early arrivals may differ from later arrivals, and groups arriving together may not be independent in their responses, so the sample may be \textbf{biased}.
     \item
     \begin{enumerate}
         \item
@@ -873,7 +1244,7 @@
     \begin{enumerate}
         \item There may be so many flowers that it is too time-consuming and impractical to make a sampling frame made up of individual flowers.
         \item A better choice of sampling unit may be areas of the field, such as one-square-metre quadrats, forming a numbered grid from which quadrats may be randomly selected.
-        \item A random number generator will help avoid possible bias in the selection of quadrats to include in the sample, by ensuring it is random and not influenced by the botanist. It should help produce a sample that is more representative of the population of wildflowers.
+        \item A random number generator will help minimise a source of possible bias in the selection of quadrats to include in the sample, by ensuring it is random and not influenced by the botanist. It should help produce a sample that is may be more representative of the population of wildflowers.
     \end{enumerate}
 \end{enumerate}
 
@@ -896,7 +1267,7 @@
     \item
     \begin{enumerate}
         \item Each of the different types of room may have its own distinct characteristics in terms of ageing or the quality of maintenance. Stratified sampling will ensure that a proportionate number from each type of room will be included in the sample.
-        \item 30 out of 360 cabins means 1 in every 12 cabins should be sampled, so the sample should contain: 2 Deluxe cabins; 6 Premium cabins and 22 Standard cabins. To sample the Deluxe cabins, a numbered list of those cabins should be obtained as a suitable sampling frame, and then a random number generator used to produce 2 different random numbers. Those cabins corresponding to the numbers selected should be included in the sample. This process should then be repeated for the Premium cabins and the Standard cabins, using a numbered sampling frame for each and randomly selecting the appropriate number of cabins of each type. Combining all of the selected cabins will make a stratified sample.
+        \item 30 out of 360 cabins means 1 in every 12 cabins should be sampled, so the sample should contain: 2 Deluxe cabins; 6 Premium cabins and 22 Standard cabins. To sample the Deluxe cabins, a numbered list of those cabins should be obtained as a suitable sampling frame, and then a random number generator used to produce 2 different random numbers. Those cabins corresponding to the numbers selected should be included in the sample. This process should then be repeated for the Premium cabins and the Standard cabins, using a numbered sampling frame for each and randomly selecting the appropriate number of cabins of each type. The selected cabins are then combined to form the stratified sample.
     \end{enumerate}
     \item
     \begin{enumerate}
@@ -935,30 +1306,27 @@
         \item
         \begin{enumerate}
             \item Simple random sampling.
-            \item With the 150 employees in an ordered list, selecting 30 employees requires one out of every five ($\frac{\text{30}}{\text{150}}$) to be selected. A random cell selection tool could be used to select the first employee to be included in the sample at random from the first 5. From there, every 5th employee on the list could be selected until the sample of size 30 has been obtained.
+            \item With the 150 employees in an ordered list, selecting 30 employees requires every fifth employee ($\frac{\text{150}}{\text{30}}$) to be selected. A random cell selection tool could be used to select the first employee to be included in the sample at random from the first 5. From there, every 5th employee on the list could be selected until the sample of size 30 has been obtained.
         \end{enumerate}
         \item
         \begin{enumerate}
             \item A numbered list of the restaurants in the chain could be obtained. A random number generator could be used to pick several numbers, and those restaurants corresponding to the numbers could be selected to be sampled. For a one-stage cluster sample, all employees at those restaurants should be sampled.
-            \item One advantage of this method is that it will require less restaurants to be visited for an equivalent sample size, reducing travel costs. One disadvantage is that visiting less restaurants may make it more likely than any restaurants in the chain experiencing problems have none of their employees included in the sample.
+            \item One advantage of this method is that it will require less restaurants to be visited for an equivalent sample size, reducing travel costs. One disadvantage is that visiting employees at the same restaurant may have similar experiences. Selecting only a few restaurants may therefore give less precise results and may miss important differences among restaurants.
         \end{enumerate}
     \end{enumerate}
-    \item For an overall sample size of 150 out of 5000 (3\%), the sample needs to include 3 people from Management, 12 from Sales and 135 from the Shop Floor. For each stratum, an ordered sampling frame should be obtained, and numbers assigned. For the Management sample, a random number generator should be used to choose 3 numbers, and those staff corresponding to those numbers should be selected to be in the sample. The same process should be repeated to choose 12 from the Sales sampling frame, and 135 from the Shop Floor sampling frame. Put together, this will make a sample of size 150 with proportions from each strata matching those of the target population.
-    \item The pizzas sampled will only be those from takeaway restaurants, and may not be representative of pizzas sold in the UK as a whole. Additionally, only those takeaways with a presence on social media will be included.
+    \item For an overall sample size of 150 out of 5000 (3\%), the sample needs to include 3 people from Management, 12 from Sales and 135 from the Shop Floor. For each stratum, an ordered sampling frame should be obtained, and numbers assigned. For the Management sample, a random number generator should be used to choose 3 numbers, and those staff corresponding to those numbers should be selected to be in the sample. The same process should be repeated to choose 12 from the Sales sampling frame, and 135 from the Shop Floor sampling frame. Put together, this will make a sample of size 150 with proportions from each stratum matching those of the target population.
+    \item The pizzas sampled will only be those from takeaway restaurants, and may not be representative of pizzas sold in the UK as a whole. Additionally, only those takeaways in the nutritionist's local area will be included, rather than the UK as a whole. (Or, only those takeaways with a presence on social media will be included).
     \item
     \begin{enumerate}
         \item It is unlikely to be possible for the researcher to obtain a list of all pupils in Scotland studying Higher Mathematics.
-        \item From an ordered list of all centres in Scotland which  present pupils for Higher Maths, simple random sampling could be used to select a number of schools. For each of those schools selected, an ordered list of all pupils taking Higher Maths should be obtained, and used to selected a random number of pupils from each selected school. Each of those pupils selected should be included in the overall sample.
+        \item Obtain a sampling frame of centres presenting pupils for Higher Mathematics and randomly select a number of centres using simple random sampling. For each selected centre, obtain a list of its Higher Mathematics pupils and use simple random sampling to select a specified number of pupils. Combine the selected pupils to form the sample.
     \end{enumerate}
-    \item A random letter selector and a random number generator could be used together to select a letter and a number, to correspond to grids, such as 'C' and '5' to select grid C5. This process could be repeated to create a list of grids for the botanist to visit and study the health of flowers in those grids.
+    \item A random letter selector and a random number generator could be used together to select a letter and a number, to correspond to the grid references, such as 'C' and '5' to select grid C5. This process could be repeated to create a list of boxes for the botanist to visit and study the health of flowers in those boxes.
 \end{enumerate}
 
-\endgroup
+\newpage
 
-### Chapter 4 Answers - Further Probability Theory {-}
-
-\begingroup
-\footnotesize
+#### Chapter 4 Answers - Further Probability Theory {-}
 
 []{#ex41a}
 
@@ -977,6 +1345,7 @@
         \item $\text{P}(Y\cap X)=\tfrac{1}{3}$
         \item $\text{P}(Y\cup X)=\tfrac{2}{3}$
     \end{enumerate}
+    \columnbreak
     \item
     \begin{enumerate}
         \item $\text{P}(\text{scored})=\tfrac{73}{135}$
@@ -993,6 +1362,7 @@
         \item P(leaves | not rainy)$=0.9$
         \item P(does not leave | not rainy)$=0.1$
     \end{enumerate}
+    \columnbreak
     \item
     \begin{enumerate}
         \item $\text{P}(A)=\tfrac{2}{5}$
@@ -1022,6 +1392,7 @@
         \item $\text{P}(\text{red }|\text{ blue})=0.4849$
         \item $\text{P}(X|Y)=\tfrac{2}{3}$
         \item $\text{P}(M|N)=0.3233$
+        \columnbreak
         \item
         \begin{enumerate}
             \item $\text{P}(\overline{A}|B)=0.8$
@@ -1029,6 +1400,7 @@
             \item $\text{P}(\overline{X}|Y)=\tfrac{1}{3}$
             \item $\text{P}(\overline{M}|N)=0.6767$
         \end{enumerate}
+    \columnbreak
     \end{enumerate}
     \item $\text{P}(\overline{V}|W)=0.3$
     \item $\text{P}(\text{5 }|\text{ yellow})=0.2$
@@ -1050,6 +1422,7 @@
             \item Not independent.
             \end{multicols}
         \end{enumerate}
+        \vspace{-0.3cm}
         \item
         \begin{enumerate}
         \begin{multicols}{3}
@@ -1058,6 +1431,7 @@
             \item Independent.
             \end{multicols}
         \end{enumerate}
+        \vspace{-0.3cm}
         \item
         \begin{enumerate}
             \item $\text{P}(V)=\frac{15}{40}=\frac{3}{8}$ and $\text{P}(V\mid W)=\frac{3}{8}$, so $V$ and $W$ are independent. 
@@ -1077,12 +1451,14 @@
             \item $\text{P}(\text{blue}\cap \text{yellow})=\tfrac{3}{8}$
             \item $\text{P}(E\cap F)=0.246$
         \end{enumerate}
+        \columnbreak
         \item
         \begin{enumerate}
             \item $\text{P}(A \cap B)=0.392$
         \item $\text{P}(A \cup B)=0.708$
         \item $\text{P}(B\mid A)=0.98$
         \end{enumerate}
+        \columnbreak
         \item $\text{P}(X\cup Y)=0.88$
         \item $\text{P}(\text{working }\cap\text{ Calculo})=0.12$
         \item $\text{P}(\text{out-of-date }\cap\text{ weak})=0.096$
@@ -1124,11 +1500,13 @@
         \item $\text{P}(\text{survives})=0.6745$
         \item $\text{P}(\text{win})=0.695$
         \item $\text{P}(\text{likes})=0.54$
-        \item $\text{P}(\text{reaches third part})=0.28$
+        \item $\text{P}(\text{does not finish})=0.818$
         \item $\text{P}(\text{do not survive})=0.268$
         \item $\text{P}(\text{win})=0.3882$
     \end{enumerate}
 \end{multicols}
+
+\newpage
 
 []{#ex47a}
 
@@ -1153,11 +1531,11 @@
             \item $\text{P}(\text{social media }|\text{ visits})=0.8409$
         \end{enumerate}
         \item $\text{P}(\text{lost }|\text{ rest day})=0.0559$
-        \item $\text{P}(\text{flaw }|\text{ does not leave})=0.8048$
+        \item $\text{P}(\text{flaw }|\text{ doesn't leave})=0.8048$
         \item
         \begin{enumerate}
             \item $\text{P}(\text{condition }|\text{ positive})=0.4580$
-            \item $\text{P}(\text{condition }|\text{ positive test})=0.4975$
+            \item $\text{P}(\text{condition }|\text{ positive})=0.4975$
         \end{enumerate}
     \end{enumerate}
 \end{multicols}
@@ -1179,12 +1557,14 @@
             \item $\text{P}(\text{power})=0.825$
             \item $\text{P}(\text{Mac }|\text{ }\overline{\text{power}})=\tfrac{1}{7}$
         \end{enumerate}
+        \columnbreak
         \item 
         \begin{enumerate}
             \item $\text{P}(\text{wins})=0.3917$
             \item $\text{P}(\text{1st }|\text{ lost})=0.1370$
         \end{enumerate}
         \item $\text{P}(M|B)=\tfrac{1}{5}=\text{P}(M)$\\hence $M,B$ are independent
+        \columnbreak
         \item 
         \begin{enumerate}
             \item $\text{P}(\text{incorrect})=0.2875$
@@ -1193,12 +1573,10 @@
     \end{enumerate}
 \end{multicols}
 
-\endgroup
+\rule{\textwidth}{0.5pt}
 
-### Chapter 5 - An Introduction to Linear Regression {-}
+#### Chapter 5 - An Introduction to Linear Regression {-}
 
-\begingroup
-\footnotesize
 
 []{#ex51a}
 
@@ -1213,12 +1591,13 @@
     \item
     \begin{enumerate}
         \item There appears to be a strong negative linear relationship between miles per gallon and mass.
-        \item There appears to be a moderate negative linear relationship between horsepower and quarter mile time.
-        \item There appears to be no linear relationship between horsepower and rear axle ratio. It looks like there may instead be some curved non-linear relationship.
+        \item There appears to be a moderate negative linear relationship between horsepower and $\frac{1}{4}$-mile time.
+        \item There appears to be a moderate negative linear relationship between horsepower and rear axle ratio. The 5 cars observed with the highest horsepower however may suggest that this relationship may not hold for cars with higher horsepower, implying some curved non-linear relationship instead. More data relating to higher-horsepower cars may help to give a clearer picture.
     \end{enumerate}
     \item 
     \begin{enumerate}
-        \item There appears to be no linear relationship between song length and tempo.
+        \item There appears to be a weak negative linear relationship between song length and tempo.
+        \item The sample consists of pop songs rather than rock songs, so it cannot support a conclusion specifically about rock songs.
         \item Mean length $=\text{3.415}$ minutes and mean tempo $=\text{132.68}$ bpm.
     \end{enumerate}
 \end{enumerate}
@@ -1228,17 +1607,18 @@
 #### [Exercise 5.2](#ex52q) {-}
 
 \begin{enumerate}
-    \item $r=\text{0.857}$ suggests a strong positive linear correlation between homework marks and test scores.
+    \item $r=\text{0.971}$ suggests a strong positive linear correlation between red squirrel tail length and height.
     \item
     \begin{enumerate}
         \item $r=\text{0.565}$ suggests a moderate positive linear correlation between age and finishing time.
         \item $r=-\text{0.980}$ suggests a very strong negative linear correlation between age and selling price.
     \end{enumerate}
+    \item $r=\text{0.857}$ suggests a strong positive linear correlation between homework marks and test scores.
     \item
     \begin{enumerate} 
-        \item The word "proves" is inappropriate because the value $r=-\text{0.206}$ is based on a sample, and not the full population.
+        \item The word "proves" is inappropriate because $r=-\text{0.206}$ comes from a sample, not a full population.
         \item The data appears to be made up of two distinct groups. The researcher should consider each group separately, calculating a sample correlation coefficient for each.
-        \item The scatterplot should show labels for each axis, and scales for each axis.
+        \item The scatterplot should show labels for each axis, and scales for each axis. (Also the different types of iris could be represented with different colours or symbols).
     \end{enumerate}
 \end{enumerate}
 
@@ -1247,7 +1627,6 @@
 #### [Exercise 5.3](#ex53q) {-}
 
 \begin{enumerate}
-    \item They may have observed that the scatterplot did not seem to show any linear relationship between the variables, and so obtaining the equation of a least squares regression line would not have been appropriate.
     \item $\hat{y}=94.867-0.846x$
     \item
     \begin{enumerate}
@@ -1260,12 +1639,12 @@
         \item $r=-0.928$, suggesting a very strong negative linear relationship between finishing times and training miles.
         \item The equation is unsuitable because it is a regression line of distance on time ($y$ on $x$). The website wishes to predict time from distance, which requires a regression line of time on distance ($x$ on $y$).
     \end{enumerate}
-    \item
+    \pagebreak
+    \item 
     \begin{enumerate}
-        \item $r=0.113$, suggesting little to no linear relationship between amount of distance from the tree and number of seeds. 
-        \item A regression line may be inappropriate as there may be no linear relationship between the variables (and very little data is available).
+        \item $\hat{y}=63.119-0.521x$
+        \item $\hat{y}=60.5$ minutes
     \end{enumerate}
-    \item $\hat{y}=63.119-0.521x$ and $\hat{y}=60.5$ minutes
     \item 
     \begin{enumerate}
         \item The scatterplot suggests a strong positive linear relationship between back squat weight and vertical jump height.
@@ -1275,7 +1654,12 @@
             \item $\hat{y}=7.237+0.3593x$
             \item $\hat{y}=66.5$cm. This estimate may be considered reasonably reliable since it is interpolation and the correlation is strong.
         \end{enumerate}
-        \item This advice may not be correct since correlation does not imply causation; a correlation between squat weight and jump height does not necessarily mean increasing squat weight will lead to an increase in jump height. There mey be other factors influence both of them.
+        \item This advice may not be correct since correlation does not imply causation; a correlation between squat weight and jump height does not necessarily mean increasing squat weight will lead to an increase in jump height. There may be other factors influencing both variables.
+    \end{enumerate}
+    \item
+    \begin{enumerate}
+        \item $\hat{y}=36.63-0.0392x$
+        \item They may have observed that the scatterplot did not seem to show any linear relationship between the variables, and so obtaining the equation of a least squares regression line would not have been appropriate.
     \end{enumerate}
 \end{enumerate}
 
@@ -1288,7 +1672,7 @@
     \begin{enumerate} 
         \item[(a)] The possible outlier occurs at approximately \textbf{49 years old}. 
         \item[(b)] $\hat y = 212.33-0.961x$
-        \item[(c)] 4.68\text{ bpm}
+        \item[(c)] 172\text{ bpm}
     \end{enumerate} 
     \item $\hat y = 155.29 + 1.9018x$ 
     \item 
@@ -1300,62 +1684,93 @@
     \end{enumerate} 
 \end{enumerate}
 
-\endgroup
+\rule{\textwidth}{0.5pt}
 
-### Chapter 6 - Random Variables {-}
-
-\begingroup
-\footnotesize
+#### Chapter 6 - Random Variables {-}
 
 []{#ex61a}
 
 #### [Exercise 6.1](#ex61q) {-}
 
-\begin{enumerate} \item \begin{enumerate} \item[(a)] Probabilities sum to $1.1>1$. \item[(b)] Probabilities sum to $\frac45\neq1$. \item[(c)] Outcomes are not numerical values, so $C$ is not a discrete random variable. \item[(d)] Contains a negative probability. \end{enumerate} \item \begin{enumerate} \item[(a)] $k=0.4$ \item[(b)] $k=0.2$ \item[(c)] $k=0.2$ \item[(d)] $k=0.05$ \end{enumerate} \item \begin{enumerate} \item[(a)] $c=0.3$ \item[(b)] $0.05$ \item[(c)] $0.45$ \item[(d)] $0.50$ \item[(e)] $0.50$ \item[(f)] $0.55$ \item[(g)] $0.10$ \item[(h)] $0.65$ \end{enumerate} \item \[ \begin{array}{c|ccc} e & 0 & 1 & 2\\ \hline P(E=e) & \frac{5}{18} & \frac{5}{9} & \frac16 \end{array} \] \item \begin{enumerate} \item[(a)] \[ \begin{array}{c|cccc} x & 0 & 1 & 2 & 3\\ \hline P(X=x) & \frac1{10} & \frac15 & \frac3{10} & \frac25 \end{array} \] \item[(b)] $\displaystyle \frac{7}{10}$ \end{enumerate} \item \begin{enumerate} \item[(a)] \[ \begin{array}{c|cccc} x & 1 & 2 & 3 & 4\\ \hline P(X=x) & \frac1{30} & \frac2{15} & \frac3{10} & \frac8{15} \end{array} \] \item[(b)] $\displaystyle \frac7{15}$ \end{enumerate} \item \begin{enumerate} \item[(a)] \[ \begin{array}{c|ccc} f & 0 & 1 & 2\\ \hline P(F=f) & \frac{25}{36} & \frac{10}{36} & \frac1{36} \end{array} \] \item[(b)] \[ \begin{array}{c|cccc} t & 0 & 1 & 2 & 3\\ \hline P(T=t) & \frac18 & \frac38 & \frac38 & \frac18 \end{array} \] \item[(c)] \[ \begin{array}{c|ccccccccccc} s & 2&3&4&5&6&7&8&9&10&11&12\\ \hline P(S=s) &\frac1{36} &\frac2{36} &\frac3{36} &\frac4{36} &\frac5{36} &\frac6{36} &\frac5{36} &\frac4{36} &\frac3{36} &\frac2{36} &\frac1{36} \end{array} \] \end{enumerate} \end{enumerate}
+\begin{multicols}{2}
+
+\begin{enumerate} \item \begin{enumerate} \item[(a)] Probabilities sum to $1.1>1$. \item[(b)] Probabilities sum to $\frac45\neq1$. \item[(c)] Outcomes are not numerical values,\newline so $C$ is not a random variable. \item[(d)] Contains a negative probability. \end{enumerate} \item \begin{enumerate} \item[(a)] $k=0.4$ \item[(b)] $k=0.2$ \item[(c)] $k=0.2$ \item[(d)] $k=0.05$ \end{enumerate} \item \begin{enumerate} \item[(a)] $c=0.3$ \item[(b)] $0.05$ \item[(c)] $0.45$ \item[(d)] $0.50$ \item[(e)] $0.50$ \item[(f)] $0.55$ \item[(g)] $0.10$ \item[(h)] $0.65$ \end{enumerate}
+\columnbreak
+\item \( \begin{array}{c|ccc} e & 0 & 1 & 2\\ \hline P(E=e) & \frac{5}{18} & \frac{5}{9} & \frac16 \end{array} \) \item \begin{enumerate} \item[(a)] \( \begin{array}{c|cccc} x & 0 & 1 & 2 & 3\\ \hline P(X=x) & \frac1{10} & \frac15 & \frac3{10} & \frac25 \end{array} \) \item[(b)] $\displaystyle \frac{7}{10}$ \end{enumerate} \item \begin{enumerate} \item[(a)] \( \begin{array}{c|cccc} x & 1 & 2 & 3 & 4\\ \hline P(X=x) & \frac1{30} & \frac2{15} & \frac3{10} & \frac8{15} \end{array} \) \item[(b)] $\displaystyle \frac7{15}$ \end{enumerate} \item \begin{enumerate} \item[(a)] \( \begin{array}{c|ccc} f & 0 & 1 & 2\\ \hline P(F=f) & \frac{25}{36} & \frac{10}{36} & \frac1{36} \end{array} \) \item[(b)] \( \begin{array}{c|cccc} t & 0 & 1 & 2 & 3\\ \hline P(T=t) & \frac18 & \frac38 & \frac38 & \frac18 \end{array} \)  \end{enumerate} \end{enumerate}
+
+\end{multicols}
+
+\newpage
 
 []{#ex62a}
 
 #### [Exercise 6.2](#ex62q) {-}
 
-\begin{enumerate} \item \begin{enumerate} \item[(a)] \[ E(X)=4.5 \] \item[(b)] \[ k=\frac{2}{5} \] \[ E(Y)=3.1 \] \end{enumerate} \item \begin{enumerate} \item[(a)] \[ \begin{array}{c|cccccccc} x & 1&2&3&4&5&6&7&8\\ \hline P(X=x) &\frac18&\frac18&\frac18&\frac18 &\frac18&\frac18&\frac18&\frac18 \end{array} \] \item[(b)] \[ P(4\le X\le 6)=\frac38 \] \item[(c)] \[ E(X)=4.5 \] \end{enumerate} \item \[ \begin{array}{c|cc} x & 10 & 20\\ \hline P(X=x) & 0.4 & 0.6 \end{array} \] \item \[ E(X)=\frac54=1.25 \] \item \[ E(Y)=\frac54=1.25 \] \item \begin{enumerate} \item[(a)] \[ \begin{array}{c|ccc} y & -2 & 3 & 8\\ \hline P(Y=y) & \frac{16}{25} & \frac{8}{25} & \frac1{25} \end{array} \] \item[(b)] \[ E(Y)=-1 \] \end{enumerate} \item \begin{enumerate} \item[(a)] \[ \begin{array}{c|ccc} m & 2 & 3 & 4\\ \hline P(M=m) & \frac{3}{10} & \frac{6}{10} & \frac{1}{10} \end{array} \] \item[(b)] \[ \mu=2.8 \] \end{enumerate} \item \begin{enumerate} \item[(a)] \[ \begin{array}{c|cccc} w & -4 & -2 & 1 & 4\\ \hline P(W=w) & \frac18 & \frac38 & \frac38 & \frac18 \end{array} \] \item[(b)] \[ E(W)=0 \] \end{enumerate} \item \[ a+b=0.4 \] \[ 3a+8b=3.2 \] \[ a=0,\qquad b=0.4 \] \end{enumerate}
+\begin{multicols}{2}
+
+\begin{enumerate} \item \begin{enumerate} \item[(a)] \( E(X)=4.5 \) \item[(b)] \( k=\frac{2}{5} \) \( E(Y)=3.1 \) \end{enumerate} \item \begin{enumerate} \item[(a)] \( \begin{array}{c|cccccccc} x & 1&2&3&4&5&6&7&8\\ \hline P(X=x) &\frac18&\frac18&\frac18&\frac18 &\frac18&\frac18&\frac18&\frac18 \end{array} \) \item[(b)] \( P(4\le X\le 6)=\frac38 \) \item[(c)] \( E(X)=4.5 \) \end{enumerate} \item \( \begin{array}{c|cc} x & 10 & 20\\ \hline P(X=x) & 0.4 & 0.6 \end{array} \) \item \( E(X)=\frac54=1.25 \)  \item \( E(Y)=\frac54=1.25 \) \columnbreak \item \begin{enumerate} \item[(a)] \( \begin{array}{c|ccc} y & -2 & 3 & 8\\ \hline P(Y=y) & \frac{16}{25} & \frac{8}{25} & \frac1{25} \end{array} \) \item[(b)] \( E(Y)=-1 \) \end{enumerate} \item \begin{enumerate} \item[(a)] \( \begin{array}{c|ccc} m & 2 & 3 & 4\\ \hline P(M=m) & \frac{3}{10} & \frac{6}{10} & \frac{1}{10} \end{array} \) \item[(b)] \( \mu=2.8 \) \end{enumerate} \item \begin{enumerate} \item[(a)] \( \begin{array}{c|cccc} w & -4 & -2 & 1 & 4\\ \hline P(W=w) & \frac18 & \frac38 & \frac38 & \frac18 \end{array} \) \item[(b)] \( E(W)=0 \) \end{enumerate} \item \(a=0,\qquad b=0.4 \) \end{enumerate}
+
+\end{multicols}
 
 []{#ex63a}
 
 #### [Exercise 6.3](#ex63q) {-}
 
-\begin{enumerate} \item \begin{enumerate} \item[(a)] $7$ \item[(b)] $-2.6$ \item[(c)] $-3$ \end{enumerate} \item \begin{enumerate} \item[(a)] $7.5$ \item[(b)] $-4$ \item[(c)] $\frac{2}{3}$ \end{enumerate} \item \begin{enumerate} \item[(a)] $-11$ \item[(b)] $-2$ \item[(c)] $1$ \end{enumerate} \item \begin{enumerate} \item[(a)] $3$ \item[(b)] $1.6$ \item[(c)] $-9$ \end{enumerate} \item \begin{enumerate} \item[(a)] \[ k=0.15 \] \item[(b)] \[ P(4<X\le 6)=0.65 \] \item[(c)] \[ E(X)=4.95 \] \item[(d)] \[ E(4X+1)=20.8 \] \end{enumerate} \item \[ \mu=7.5 \] \item \[ E(Y)=5.5 \] \item \begin{enumerate} \item[(a)] \[ E(X)=4.5 \] \item[(b)] \[ Y=2X-10 \] \item[(c)] \[ E(Y)=-1 \] \item[(d)] On average, a player loses £1 per game, so repeated play will tend to result in an overall loss. \end{enumerate} \item \[ E(X)=2.5 \] \end{enumerate}
+\begin{multicols}{2}
+
+\begin{enumerate} \item \begin{enumerate} \item[(a)] $7$ \item[(b)] $-2.6$ \item[(c)] $-3$ \end{enumerate} \item \begin{enumerate} \item[(a)] $7.5$ \item[(b)] $-4$ \item[(c)] $\frac{2}{3}$ \end{enumerate} \item \begin{enumerate} \item[(a)] $-11$ \item[(b)] $-2$ \item[(c)] $1$ \end{enumerate} \item \begin{enumerate} \item[(a)] $3$ \item[(b)] $1.6$ \item[(c)] $-9$ \end{enumerate} \columnbreak \item \begin{enumerate} \item[(a)] \( k=0.15 \) \item[(b)] \( P(4<X\le 6)=0.65 \) \item[(c)] \( E(X)=4.95 \) \item[(d)] \( E(4X+1)=20.8 \) \end{enumerate} \item \( \mu=7.5 \) \item \( E(Y)=5.5 \) \item \begin{enumerate} \item[(a)] \( E(X)=4.5 \) \item[(b)] \( Y=2X-10 \) \item[(c)] \( E(Y)=-1 \) \item[(d)] On average, a player loses £1 per game, so repeated play will tend to result in an overall loss. \end{enumerate} \item \( E(X)=2.5 \) \end{enumerate}
+
+\end{multicols}
 
 []{#ex64a}
 
 #### [Exercise 6.4](#ex64q) {-}
 
-\begin{enumerate} \item \begin{enumerate} \item[(a)] \[ E(X)=2.9, \qquad V(X)=7.89 \] \item[(b)] \[ k=\frac{1}{20} \] \[ E(Y)=2.45, \qquad V(Y)=1.4475 \] \end{enumerate} \item \begin{enumerate} \item[(a)] \[ \begin{array}{c|cccc} x&1&2&3&4\\ \hline P(X=x)&\frac14&\frac14&\frac14&\frac14 \end{array} \] \item[(b)] \[ E(X)=2.5 \] \item[(c)] \[ V(X)=1.25 \] \end{enumerate} \item \[ \begin{array}{c|ccc} x&0&1&2\\ \hline P(X=x)&\frac{2}{15}&\frac{8}{15}&\frac13 \end{array} \] \[ E(X)=1.2, \qquad V(X)=0.426\overline{6} =\frac{32}{75} \] \item \[ \begin{array}{c|ccc} y&0&1&2\\ \hline P(Y=y)&\frac1{16}&\frac6{16}&\frac9{16} \end{array} \] \[ E(Y)=1.5, \qquad V(Y)=0.375 =\frac38 \] \item \[ \begin{array}{c|cc} x&4&12\\ \hline P(X=x)&\frac14&\frac34 \end{array} \] \[ V(X)=12 \] \item \[ E(X)=0.25 \] \[ V(X)=4.6875 =\frac{75}{16} \] \item Profit distribution: \[ \begin{array}{c|ccc} x&-10&0&40\\ \hline P(X=x)&\frac{25}{36}&\frac{10}{36}&\frac1{36} \end{array} \] \[ E(X)=-\frac{25}{9} \] \[ V(X)=120.987654\ldots =\frac{9800}{81} \] \item \begin{enumerate} \item[(a)] \[ \begin{array}{c|cccc} x&0&1&2&3\\ \hline P(X=x)&\frac18&\frac38&\frac38&\frac18 \end{array} \] \item[(b)] \[ E(X)=1.5 \] \[ V(X)=0.75 \] \end{enumerate} \item \begin{enumerate} \item[(a)] \[ E(X)=8 \] \item[(b)] \[ p=0.2 \] \end{enumerate} \item \[ k=1 \] \end{enumerate}
+\begin{multicols}{2}
+
+\begin{enumerate} \item \begin{enumerate} \item[(a)] \( E(X)=2.9\)\\[0.2em]\(V(X)=7.89 \) \item[(b)] \( k=\frac{1}{20} \)\\[0.2em] \( E(Y)=2.45\) \\[0.2em] \(V(Y)=1.4475 \) \end{enumerate} \item \begin{enumerate} \item[(a)] \( \begin{array}{c|cccc} x&1&2&3&4\\[0.2em] \hline P(X=x)&\frac14&\frac14&\frac14&\frac14 \end{array} \) \item[(b)] \( E(X)=2.5 \) \item[(c)] \( V(X)=1.25 \) \end{enumerate} \item \( \begin{array}{c|ccc} x&0&1&2\\[0.2em] \hline P(X=x)&\frac{2}{15}&\frac{8}{15}&\frac13 \end{array} \) \\[0.2em]\( E(X)=1.2\) \\[0.2em] \(V(X)=0.426\overline{6} =\frac{32}{75} \) \item \( \begin{array}{c|ccc} y&0&1&2\\[0.2em] \hline P(Y=y)&\frac1{16}&\frac6{16}&\frac9{16} \end{array} \)\\[0.2em] \( E(Y)=1.5, \qquad V(Y)=0.375 =\frac38 \) \columnbreak \item \( \begin{array}{c|cc} x&4&12\\[0.2em] \hline P(X=x)&\frac14&\frac34 \end{array} \)\\[0.2em] \( V(X)=12 \) \item \( E(X)=0.25 \), \( V(X)=4.6875 =\frac{75}{16} \) \item Profit distribution: \( \begin{array}{c|ccc} x&-10&0&40\\[0.2em] \hline P(X=x)&\frac{25}{36}&\frac{10}{36}&\frac1{36} \end{array} \) \( E(X)=-\frac{25}{9} \)\\[0.2em] \( V(X)=120.987654\ldots =\frac{9800}{81} \) \item \begin{enumerate} \item[(a)] \( \begin{array}{c|cccc} x&0&1&2&3\\[0.2em] \hline P(X=x)&\frac18&\frac38&\frac38&\frac18 \end{array} \) \item[(b)] \( E(X)=1.5 \) \( V(X)=0.75 \) \end{enumerate} \item \begin{enumerate} \item[(a)] \( E(X)=8 \) \item[(b)] \( p=0.2 \) \end{enumerate} \item \( k=1 \) \end{enumerate}
+
+\end{multicols}
+
+\pagebreak
 
 []{#ex65a}
 
 #### [Exercise 6.5](#ex65q) {-}
 
-\begin{enumerate} \item \begin{enumerate} \item $12$ \item $32$ \item $4\sqrt{2}$ \end{enumerate} \item \begin{enumerate} \item $3$ \item $3$ \item $\sqrt{3}$ \end{enumerate} \item \begin{enumerate} \item $1.75$ \item $3.6864$ \item $1.92$ \end{enumerate} \item \begin{enumerate} \item $60$ \item $4$ \item $2$ \end{enumerate} \item \begin{enumerate} \item $E(X)=3.1,\;V(X)=3.69$ \item $7.2$ \item $14.76$ \end{enumerate} \item \begin{enumerate} \item $13$ \item $27$ \item $3\sqrt{3}$ \end{enumerate} \item \begin{enumerate} \item $-23$ \item $64$ \item $8$ \end{enumerate} \item \begin{enumerate} \item $E(X)=6$ \item $V(X)=5$ \end{enumerate} \item \begin{enumerate} \item Mean $=-4$ \item Standard deviation $=3$ \end{enumerate} \item \begin{enumerate} \item $1$ \item $a$ \item $V(X)=b^2,\;SD(X)=|b|$ \end{enumerate} \end{enumerate}
+\begin{multicols}{2}
+
+\begin{enumerate} \item \begin{enumerate} \item $12$ \item $32$ \item $4\sqrt{2}$ \end{enumerate} \item \begin{enumerate} \item $3$ \item $3$ \item $\sqrt{3}$ \end{enumerate} \item \begin{enumerate} \item $1.75$ \item $3.6864$ \item $1.92$ \end{enumerate} \item \begin{enumerate} \item $60$ \item $4$ \item $2$ \end{enumerate} \item \begin{enumerate} \item $E(X)=3.1,\;V(X)=3.69$ \item $7.2$ \item $14.76$ \end{enumerate} \columnbreak \item \begin{enumerate} \item $13$ \item $27$ \item $3\sqrt{3}$ \end{enumerate} \item \begin{enumerate} \item $-23$ \item $64$ \item $8$ \end{enumerate} \item \begin{enumerate} \item $E(X)=6$ \item $V(X)=5$ \end{enumerate} \item \begin{enumerate} \item Mean $=-4$ \item Standard deviation $=3$ \end{enumerate} \item \begin{enumerate} \item $1$ \item $a$ \item $V(X)=b^2,\;SD(X)=b$ \end{enumerate} \end{enumerate}
+
+\end{multicols}
 
 []{#ex66a}
 
 #### [Exercise 6.6](#ex66q) {-}
 
-\begin{enumerate} \item \begin{enumerate} \item[(a)] Independence of $J$ and $K$. \item[(b)] \begin{enumerate} \item[(i)] $1$ \item[(ii)] $5$ \item[(iii)] $-13$ \end{enumerate} \item[(c)] \begin{enumerate} \item[(i)] $9$ \item[(ii)] $9$ \item[(iii)] $61$ \end{enumerate} \end{enumerate} \item \begin{enumerate} \item[(a)] $28$ \item[(b)] $312$ \item[(c)] $35$ \item[(d)] $496$ \item[(e)] $-8.5$ \item[(f)] $26$ \end{enumerate} \item \begin{enumerate} \item[(a)] \[ E(2F+G)=8 \] \item[(b)] It must be known whether $F$ and $G$ are independent. \end{enumerate} \item \[ E(A-B)=0.3 \] \[ V(A-B)=1.64 \] \item \[ E(X_1+X_2+X_3+X_4)=40 \] \[ V(X_1+X_2+X_3+X_4)=12 \] \item \[ E(T)=60 \] \[ SD(T)=\sqrt{7.2}\approx2.683 \] \item Assuming the six cup volumes are independent, \[ E(T)=1500\text{ ml} \] \[ SD(T)=10\sqrt6\approx24.5\text{ ml} \] \item \begin{enumerate} \item[(a)] \[ E(X)=3.5, \qquad E(Y)=2.5 \] \item[(b)] \[ V(X)=\frac{35}{12}, \qquad V(Y)=1.25 \] \item[(c)] \[ E(X+Y)=6 \] \[ V(X+Y)=\frac{25}{6} \] \end{enumerate} \item Assuming: \begin{itemize} \item car lengths are independent, \item gap lengths are independent and independent of car lengths. \end{itemize} \[ E(T)=8(4.5)+7(0.4)=38.8\text{ m} \] \[ V(T)=8(0.3)^2+7(0.1)^2=0.79 \] \[ SD(T)=\sqrt{0.79}\approx0.889\text{ m} \] \end{enumerate}
+\begin{multicols}{2}
+
+\begin{enumerate} \item \begin{enumerate} \item[(a)] Independence of $J$ and $K$. \item[(b)] \begin{enumerate} \item[(i)] $1$ \item[(ii)] $5$ \item[(iii)] $-13$ \end{enumerate} \item[(c)] \begin{enumerate} \item[(i)] $9$ \item[(ii)] $9$ \item[(iii)] $61$ \end{enumerate} \end{enumerate} \item \begin{enumerate} \item[(a)] $28$ \item[(b)] $312$ \item[(c)] $35$ \item[(d)] $496$ \item[(e)] $-8.5$ \item[(f)] $26$ \end{enumerate} \item \begin{enumerate} \item[(a)] \( E(2F+G)=8 \) \item[(b)] It must be known whether $F$ and $G$ are independent. \end{enumerate} \item \( E(A-B)=0.3 \)\\[0.3em] \( V(A-B)=1.64 \)\columnbreak \item \( E(X_1+X_2+X_3+X_4)=40 \)\\[0.3em] \( V(X_1+X_2+X_3+X_4)=12 \) \item \( E(T)=60 \) \\[0.3em]\( SD(T)=\sqrt{7.2}\approx2.683 \) \item Assuming the six cup volumes are independent, \\[0.3em]\( E(T)=1500\text{ ml} \)\\[0.3em] \( SD(T)=10\sqrt6\approx24.5\text{ ml} \) \item \begin{enumerate} \item[(a)] \( E(X)=3.5, \qquad E(Y)=2.5 \) \item[(b)] \( V(X)=\frac{35}{12}, \qquad V(Y)=1.25 \) \item[(c)] \( E(X+Y)=6 \), \( V(X+Y)=\frac{25}{6} \) \end{enumerate} \item Assuming: \begin{itemize} \item car lengths are independent, \item gap lengths are independent and independent of car lengths. \end{itemize} \( E(T)=8(4.5)+7(0.4)=38.8\text{ m} \)\\[0.3em] \( V(T)=8(0.3)^2+7(0.1)^2=0.79 \)\\[0.3em] \( SD(T)=\sqrt{0.79}\approx0.889\text{ m} \) \end{enumerate}
+
+\end{multicols}
 
 
 []{#re6a}
 
 #### [Chapter 6 Review Exercise](#re6q) {-}
 
-\begin{enumerate} \item \begin{enumerate} \item \begin{center} \begin{tabular}{c|c c c} $x$ & 0 & 1 & 2\\ \hline $\mathrm{P}(X=x)$ & $\frac14$ & $\frac12$ & $\frac14$ \end{tabular} \end{center} \item \begin{enumerate} \item $\mathrm{E}(X)=1$ \item $\mathrm{V}(X)=0.5$ \item $\mathrm{SD}(X)=\sqrt{0.5}=\dfrac{1}{\sqrt2}$ \end{enumerate} \end{enumerate} \item \begin{enumerate} \item Mean $=12$, Variance $=64$ \item Mean $=25$, Variance $=85$ \end{enumerate} \item \begin{enumerate} \item \begin{center} \begin{tabular}{c|c c c c} $x$ & 0 & 1 & 2 & 3\\ \hline $\mathrm{P}(X=x)$ & $\frac{1}{21}$ & $\frac{5}{14}$ & $\frac{10}{21}$ & $\frac{5}{42}$ \end{tabular} \end{center} \item \[ \mathrm{E}(X)=\frac53, \qquad \mathrm{V}(X)=\frac59. \] \end{enumerate} \item \begin{enumerate} \item $\mathrm{E}(X)=5$ \item $\mathrm{V}(X)=3$ \end{enumerate} \item \begin{enumerate} \item Mean $=111$, Standard deviation $=25$ \item Mean $=43$, Standard deviation $=\sqrt{369}\approx 19.21$ \end{enumerate} \item \begin{enumerate} \item Mean $=102.6\text{ kg}$, Standard deviation $=\sqrt{29}\approx 5.39\text{ kg}$ \item Mean $=1776\text{ kg}$, Standard deviation $=\sqrt{1730}\approx 41.59\text{ kg}$ \end{enumerate} \end{enumerate}
+\begin{multicols}{2}
 
-\endgroup
+\begin{enumerate} \item \begin{enumerate} \item  \begin{tabular}{c|c c c} $x$ & 0 & 1 & 2\\ \hline $\mathrm{P}(X=x)$ & $\frac14$ & $\frac12$ & $\frac14$ \end{tabular}  \item \begin{enumerate} \item $\mathrm{E}(X)=1$ \item $\mathrm{V}(X)=0.5$ \item $\mathrm{SD}(X)=\sqrt{0.5}=\dfrac{1}{\sqrt2}$ \end{enumerate} \end{enumerate} \item \begin{enumerate} \item Mean $=12$, Variance $=64$ \item Mean $=25$, Variance $=85$ \end{enumerate} \item \begin{enumerate} \item \begin{center} \begin{tabular}{c|c c c c} $x$ & 0 & 1 & 2 & 3\\ \hline $\mathrm{P}(X=x)$ & $\frac{1}{21}$ & $\frac{5}{14}$ & $\frac{10}{21}$ & $\frac{5}{42}$ \end{tabular} \end{center} \item \( \mathrm{E}(X)=\frac53, \qquad \mathrm{V}(X)=\frac59. \) \end{enumerate} \columnbreak \item \begin{enumerate} \item $\mathrm{E}(X)=5$ \item $\mathrm{V}(X)=3$ \end{enumerate} \item \begin{enumerate} \item Mean $=111$,\\[0.2em] Standard deviation $=25$ \item Mean $=43$,\\[0.2em] Standard deviation $=\sqrt{369}\approx 19.21$ \end{enumerate} \item \begin{enumerate} \item Mean $=102.6\text{ kg}$,\\[0.2em] Standard deviation $=\sqrt{29}\approx 5.39\text{ kg}$ \item Mean $=1776\text{ kg}$,\\[0.2em] Standard deviation $=\sqrt{1730}\approx 41.59\text{ kg}$ \end{enumerate} \end{enumerate}
 
-### Chapter 7 - Discrete Distributions {-}
+\end{multicols}
 
-\begingroup
-\footnotesize
+\pagebreak
+
+#### Chapter 7 - Discrete Distributions {-}
+
+
+
 
 []{#ex71a}
 
@@ -1597,12 +2012,12 @@
 \end{enumerate}
 \end{multicols}
 
-\endgroup
 
-### Chapter 8 Answers - Continuous Distributions {-}
 
-\begingroup
-\footnotesize
+#### Chapter 8 Answers - Continuous Distributions {-}
+
+
+
 
 []{#ex81a}
 
@@ -1943,12 +2358,12 @@
 \end{enumerate}
 \end{multicols}
 
-\endgroup
 
-### Chapter 9 - Distribution of the Sample Mean {-}
 
-\begingroup
-\footnotesize
+#### Chapter 9 - Distribution of the Sample Mean {-}
+
+
+
 
 []{#ex91a}
 
@@ -2052,12 +2467,12 @@
 \end{enumerate}
 \end{multicols}
 
-\endgroup
 
-### Chapter 10 - An Introduction to Hypothesis Testing {-}
 
-\begingroup
-\footnotesize
+#### Chapter 10 - An Introduction to Hypothesis Testing {-}
+
+
+
 
 []{#ex101a}
 
@@ -2154,12 +2569,12 @@
     \item $-2.170<-1.895\implies \textit{reject }H_0$
 \end{enumerate}
 
-\endgroup
 
-### Chapter 11 - Confidence Intervals {-}
 
-\begingroup
-\footnotesize
+#### Chapter 11 - Confidence Intervals {-}
+
+
+
 
 []{#ex111a}
 
@@ -2245,12 +2660,12 @@
     \item $(0.679,0.888)\implies \text{outwith, comment}$
 \end{enumerate}
 
-\endgroup
 
-### Chapter 12 - Chi-Squared Goodness-of-Fit Test {-}
 
-\begingroup
-\footnotesize
+#### Chapter 12 - Chi-Squared Goodness-of-Fit Test {-}
+
+
+
 
 []{#ex121a}
 
@@ -2350,12 +2765,12 @@
     \end{enumerate}
 \end{enumerate}
 
-\endgroup
 
-### Chapter 13 - Control Charts {-}
 
-\begingroup
-\footnotesize
+#### Chapter 13 - Control Charts {-}
+
+
+
 
 []{#ex131a}
 
@@ -2411,7 +2826,7 @@
     \begin{multicols}{2}
         \begin{enumerate}
             \item \phantom{ }\\
-                \begingroup
+                
                 \renewcommand{\arraystretch}{1.5}
                 \begin{tabular}{|r|l|}
                 \hline
@@ -2437,9 +2852,9 @@
                     Lower Control Limit & 63\\
                     \hline
                 \end{tabular}
-                \endgroup
+                
             \item \phantom{ }\\
-                \begingroup
+                
                 \renewcommand{\arraystretch}{1.5}
                 \begin{tabular}{|r|l|}
                 \hline
@@ -2465,7 +2880,7 @@
                     Lower Control Limit & 2740\\
                     \hline
                 \end{tabular}
-                \endgroup
+                
         \end{enumerate}
     \end{multicols}
 \end{enumerate}
@@ -2480,7 +2895,7 @@
         \begin{enumerate}
             \item Population proportion $=0.6$\\
             Sample size $=24$\\[0.2em]
-                \begingroup
+                
                 \renewcommand{\arraystretch}{1.5}
                 \begin{tabular}{|r|l|}
                 \hline
@@ -2499,10 +2914,10 @@
                     Lower Control Limit & 0.3\\
                     \hline
                 \end{tabular}
-                \endgroup
+                
             \item Population proportion $=0.16$\\
             Sample size $=50$\\[0.2em]
-                \begingroup
+                
                 \renewcommand{\arraystretch}{1.5}
                 \begin{tabular}{|r|l|}
                 \hline
@@ -2521,7 +2936,7 @@
                     Lower Control Limit & 0.004\\
                     \hline
                 \end{tabular}
-                \endgroup
+                
         \end{enumerate}
     \end{multicols}
     \item 
@@ -2575,13 +2990,13 @@
     \end{enumerate}
 \end{enumerate}
 
-\endgroup
 
 
-### Chapter 14 - Chi-Squared Test for Association {-}
 
-\begingroup
-\footnotesize
+#### Chapter 14 - Chi-Squared Test for Association {-}
+
+
+
 
 []{#ex141a}
 
@@ -2621,12 +3036,12 @@
     \end{enumerate}
 \end{enumerate}
 
-\endgroup
 
-### Chapter 15 - Two-Sample Parametric Tests {-}
 
-\begingroup
-\footnotesize
+#### Chapter 15 - Two-Sample Parametric Tests {-}
+
+
+
 
 []{#ex151a}
 
@@ -2653,12 +3068,12 @@
 #### [Chapter 15 Review Exercise](#re15q) {-}
 
 
-\endgroup
 
-### Chapter 16 - Wilcoxon Signed Rank Test {-}
 
-\begingroup
-\footnotesize
+#### Chapter 16 - Wilcoxon Signed Rank Test {-}
+
+
+
 
 []{#ex161a}
 
@@ -2714,12 +3129,12 @@
     \item $3>2\implies\text{do not reject }H_0$
 \end{enumerate}
 
-\endgroup
 
-### Chapter 17 - Mann Whitney Rank Sum Test {-}
 
-\begingroup
-\footnotesize
+#### Chapter 17 - Mann Whitney Rank Sum Test {-}
+
+
+
 
 []{#ex171a}
 
@@ -2821,14 +3236,14 @@
     \end{enumerate}
 \end{enumerate}
 
-\endgroup
 
 
 
-### Chapter 18 - Further Linear Regression {-}
 
-\begingroup
-\footnotesize
+#### Chapter 18 - Further Linear Regression {-}
+
+
+
 
 []{#ex181a}
 
@@ -3128,7 +3543,7 @@
     \end{enumerate}
 \end{enumerate}
 
-\endgroup
+
 
 
 

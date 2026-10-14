@@ -49,11 +49,11 @@ The sports scientist constructs a **scatterplot** to visualise the relationship 
     \end{tikzpicture}
 \end{center}
 
-In general, the predictor variable is chosen as the one which may help explain or predict changes in the response variable, and is typically used to calculate \textit{estimates} of the response variable. Here, this suggests that $\text{VO}_{\text{2}}$ max may be used to estimate 5km running time for other runners whose times are not yet known.
+The predictor variable is the variable used to explain variation in, or estimate, the response variable. Here, this suggests that $\text{VO}_{\text{2}}$ max may be used to estimate 5km running time for other runners whose times are not yet known.
 
 \end{multicols}
 
-Although the sample size is very small, the scatterplot seems to suggest that there is a *negative linear relationship* between a runner's $\text{VO}_{\text{2}}$ max and their 5km running time; an increase in $\text{VO}_{\text{2}}$ max value seems to be associated with a decrease in running time. To illustrate this, a **line of best fit** (or *regression line*) has been added to the scatterplot.
+Although the sample size is very small, the scatterplot seems to suggest that there is a *negative linear relationship* between a runner's $\text{VO}_{\text{2}}$ max and their 5km running time; an increase in $\text{VO}_{\text{2}}$ max value seems to be associated with a decrease in running time. To illustrate this, a possible *line of best fit* has been added. Later, a precise *least squares regression line* will be calculated.
 
 This chapter will introduce the use of a *correlation coefficient* to evaluate the strength of any linear relationship between numerical variables and the construction of a *linear regression model* to describe this relationship and make predictions.
 
@@ -61,7 +61,7 @@ This chapter will introduce the use of a *correlation coefficient* to evaluate t
 
 ## Scatterplots and Linear Relationships
 
-When deciding whether a linear relationship exists between two numerical variables, a scatterplot should always be drawn before any analysis is undertaken using the bivariate data collected.  This is the first step in determining the existence and strength of any  **linear relationship** (also called **linear correlation**) between the variables. Whilst other kinds of relationship may exist between two numerical variables, in this course the focus is on the existence and strength of *linear* relationships. Consider the following:
+When deciding whether a linear relationship exists between two numerical variables, a scatterplot should always be drawn before any analysis is undertaken using the bivariate data collected.  This is the first step in determining the existence and strength of any  **linear relationship** between the variables. Whilst other kinds of relationship may exist between two numerical variables, in this course the focus is on the existence and strength of *linear* relationships. Consider the following:
 
 \begin{figure}[H]
   \centering
@@ -89,6 +89,8 @@ When deciding whether a linear relationship exists between two numerical variabl
 \draw[fill=black] (0.6*5,0.6*4.4) circle (0.04);
 \end{tikzpicture}
 \end{center}
+
+\vspace{-0.2cm}
 
 \textbf{Figure 1} shows a \textbf{strong positive linear relationship} between $x$ and $y$, where both variables tend to increase together.
 
@@ -123,12 +125,14 @@ When deciding whether a linear relationship exists between two numerical variabl
 \end{tikzpicture}
 \end{center}
 
+\vspace{-0.2cm}
+
 \textbf{Figure 2} shows a \textbf{weak negative linear relationship} between $x$ and $y$, where, as one variable increases, the other tends to decrease. 
 
 \end{minipage}
 \end{figure}
 
-\vspace{-0.2cm}
+\vspace{-0.3cm}
 
 \begin{figure}[H]
   \centering
@@ -156,6 +160,8 @@ When deciding whether a linear relationship exists between two numerical variabl
 \draw[fill=black] (0.6*4.8,0.6*0.7) circle (0.04);
 \end{tikzpicture}
 \end{center}
+
+\vspace{-0.2cm}
 
 In \textbf{Figure 3}, as one variable increases, there appears to be no clear pattern as to how the other variable behaves. There appears to be \textbf{no linear relationship} between $x$ and $y$.
 
@@ -187,6 +193,8 @@ In \textbf{Figure 3}, as one variable increases, there appears to be no clear pa
 \end{tikzpicture}
 \end{center}
 
+\vspace{-0.2cm}
+
 \textbf{Figure 4} is also an example of \textbf{no linear relationship} between $x$ and $y$, although there appears to be some non-linear (possibly quadratic) relationship between the variables.
 
 \end{minipage}
@@ -194,7 +202,7 @@ In \textbf{Figure 3}, as one variable increases, there appears to be no clear pa
 
 \vspace{-0.2cm}
 
-Note that **correlation does not imply causation**. A linear relationship can exist between variables without implying that one variable causes the other; there may be other variables influencing both. An apparent relationship may also arise by chance. Such a relationship may be described as a *spurious correlation*.
+**Correlation does not imply causation**. A linear relationship (also called linear *correlation*) can exist between variables without implying that a change in one variable *causes* a change in the other; there may be other variables influencing both. An apparent relationship produced by coincidence, a confounding variable or some other misleading feature may be described as a *spurious correlation*.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A French class takes two tests: \textit{listening} and \textit{reading}. The results for the nine pupils are shown in the table and scatterplot below. Comment on the scatterplot.
@@ -240,7 +248,7 @@ Note that **correlation does not imply causation**. A linear relationship can ex
 \foreach \y in {0,4,...,20}{
 \node[left] at (0,\y) {\y};
 }
-\node at (10,-6) {listening};
+\node at (10,-5.7) {listening};
 \node[rotate=90] at (-6,10) {reading};
 \draw[fill=black] (4,7) circle (0.2);
 \draw[fill=black] (6,5) circle (0.2);
@@ -256,14 +264,14 @@ Note that **correlation does not imply causation**. A linear relationship can ex
 
 \end{multicols}
 
-\vspace{-0.3cm}
+\vspace{-0.5cm}
 
 \tcblower
 \textbf{Solution:} The scatterplot appears to show a strong positive linear relationship between pupils' listening and reading scores.
 
 \end{tcolorbox}
 
-Note that there is no universally agreed scale for describing correlations as 'strong', 'moderate' or 'weak'. However, it is still recommended for comments to include some description of the strength of a linear relationship.
+There is no *universally agreed* scale for classifying linear relationships as 'strong', 'moderate' or 'weak'. However, it is still recommended for comments to include some description of the strength of a linear relationship.
 
 \pagebreak
 
@@ -306,7 +314,7 @@ Note that there is no universally agreed scale for describing correlations as 's
 \draw[black,fill=black] (0.05*22,0) circle (0.03);
 \end{tikzpicture}
 \end{center} 
-    \item The \textit{sale price} and \textit{floor area} are recorded for a number of 1-bedroom city centre apartments.
+    \item The \textit{floor area} and \textit{sale price} are recorded for a number of 1-bedroom city centre apartments.
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
 \draw (-0.1,0) -- (-0.1,4);
@@ -576,11 +584,11 @@ n&=\text{22}
 
 ## Pearson's Product Moment Correlation Coefficient
 
-Instead of relying on vague terms such as 'strong', 'moderate' and 'weak', the strength of the *linear relationship* between two variables can be measured and better communicated using a **correlation coefficient**. Whilst there are a number of different correlation coefficients used in statistics, the only one used in this course is *Pearson's Product Moment Correlation Coefficient (PMCC)*, which can now simply be referred to as the *correlation coefficient*. Given a sample of bivariate data, the *sample correlation coefficient*, $r$, can be calculated as:
+Instead of relying on vague terms such as 'strong', 'moderate' and 'weak', the strength of the *linear relationship* between two variables can be measured and better communicated using a **correlation coefficient**. Whilst there are a number of different correlation coefficients used in statistics, the only one used in this course is *Pearson's product moment correlation coefficient (PMCC)*, which can now simply be referred to as the *correlation coefficient*. Given a sample of bivariate data, the *sample correlation coefficient*, $r$, can be calculated as:
 
 \begin{center}
 \tcbset{width=8cm}
-\begin{tcolorbox}[adjusted title=Pearson's Correlation Coefficient, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+\begin{tcolorbox}[adjusted title=Pearson's correlation coefficient, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 $r=\dfrac{S_{xy}}{\sqrt{S_{xx}S_{yy}}}$ 
 \end{tcolorbox}
 \end{center}
@@ -626,7 +634,7 @@ S_{xy}&=\Sigma(x-\bar{x})(y-\bar{y})=\Sigma xy-\frac{\Sigma x\Sigma y}{n}
 \end{minipage}
 \end{figure}
 
-For all sets of data, $-\text{1}\leqslant r\leqslant \text{1}$. A correlation coefficient of **zero** indicates there is **no linear relationship** between the two variables, whilst any non-zero correlation coefficient suggests the presence of a possible linear relationship. The figures below show scatterplots of sample data along with their sample correlation coefficients $r$ and an interpretation. 
+For all sets of data, $-\text{1}\leqslant r\leqslant \text{1}$. A correlation coefficient of **zero** suggests there is **no linear relationship** between the two variables. The sign of $r$ indicates the direction of the observed linear association, while the magnitude of $r$ indicates its strength in the sample. The figures below show scatterplots of sample data along with their sample correlation coefficients $r$ and an interpretation. 
 
 \begin{multicols}{5}
 
@@ -853,7 +861,7 @@ n&=\text{20}
 };
 \end{tikzpicture}
 \end{center}
-This \textbf{sample} has resulted in a value for $r$ which approximates well the true \textcolor{black!70}{\textbf{population}} correlation coefficient, $\rho$.
+This \textbf{sample} gives a value for $r$ which provides a close estimate of the true \textcolor{black!70}{\textbf{population}} correlation coefficient, $\rho$.
 
 \end{minipage}%
   \centering
@@ -936,7 +944,7 @@ n&=\text{7}
 };
 \end{tikzpicture}
 \end{center}
-This \textbf{sample} has resulted in a value for $r$ which is far from the true \textcolor{black!70}{\textbf{population}} correlation coefficient, $\rho$.
+This \textbf{sample} gives a value for $r$ which is far from the true \textcolor{black!70}{\textbf{population}} correlation coefficient, $\rho$.
 
 \end{minipage}
 \end{figure}
@@ -1125,7 +1133,7 @@ This suggests a strong positive linear correlation between listening test scores
             \hline
         \end{tabular}
     \end{center}
-    \item A \textit{sepal} is part of a flower. The lengths ($x$, in cm) and widths ($y$, in cm) are measured for a random sample of 100 \textit{iris} flowers, of two different varieties. A scatterplot is plotted, and a correlation coefficient of $-\text{0.206}$ is obtained. The researcher concludes that this proves that there is a weak negative linear relationship.
+    \item A \textit{sepal} is part of a flower. The lengths ($x$ cm) and widths ($y$ cm) are measured of the sepals of a random sample of 100 \textit{iris} flowers, of two different varieties. A scatterplot is made, and the correlation coefficient of $-\text{0.206}$ is obtained. The researcher concludes that this proves that there is a negative linear relationship.
     \vspace{-0.3cm}
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
@@ -1250,7 +1258,7 @@ This suggests a strong positive linear correlation between listening test scores
 
 ## Least Squares Linear Regression 
 
-A $y$ *on* $x$ regression model is one constructed with the aim of producing a regression line which can be used to predict unknown values of $y$ based on known values of $x$. For a sample of bivariate data $(x_\text{1},y_\text{1}), (x_\text{2},y_\text{2}), ...  ,(x_n,y_n)$, this *regression line* has an equation of the form $\hat{y}=a + b x$, where: 
+A $y$ *on* $x$ linear regression model is one constructed with the aim of producing a regression line which can be used to predict unknown values of $y$ based on known values of $x$. For a sample of bivariate data $(x_\text{1},y_\text{1}), (x_\text{2},y_\text{2}), ...  ,(x_n,y_n)$, this *regression line* has an equation of the form $\hat{y}=a + b x$, where: 
 
 \begin{figure}[H]
   \centering
@@ -1290,30 +1298,21 @@ Sample statistic $b$ represents the line's \textbf{slope}, and is an estimate fo
 \end{figure}
 
 
-To determine the equation of this regression line, the method of *least squares regression* is used. Since the goal is to produce the *best estimates* for $y$, vertical distances between observed values and the line are considered. The *least squares* regression line is that which minimises the sum of the squares of these vertical distances.
+To find the equation of this regression line, the method of *least squares regression* is used.
 
-\begin{multicols}{2}
+\begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.54\textwidth}
+Since the goal is to produce the \textit{best estimates} for $y$, vertical distances between observed values and the line are considered (and called \textit{residuals}). The \textit{least squares} regression line is that which minimises the sum of the squares of these vertical distances, shown on the plot to the right as dashed lines.
 
-\begin{center}
-    \begin{tikzpicture}
-        \draw[semithick,-stealth] (0,0) -- (6,0) node[right] {$x$};
-        \draw[semithick,-stealth] (0,0) -- (0,3) node[above] {$y$};
-        \node[below] at (3,0) {\textit{predictor}};
-        \node[above,rotate=90] at (0,1.5) {\textit{response}};
-        \draw[dashed] (1,1.105) -- (1,1.226);
-        \draw[fill] (1,1.105) circle (0.04);
-        \draw[dashed] (2,2.17) -- (2,1.436);
-        \draw[fill] (2,2.17) circle (0.04);
-        \draw[dashed] (3,1.10) -- (3,1.646);
-        \draw[fill] (3,1.10) circle (0.04);
-        \draw[dashed] (4,1.43) -- (4,1.856);
-        \draw[fill] (4,1.43) circle (0.04);
-        \draw[dashed] (5,2.47) -- (5,2.066);
-        \draw[fill] (5,2.47) circle (0.04);
-        \draw[thick] (0.7,0.7*0.21+1.016) -- (5.6,5.6*0.21+1.016);
-    \end{tikzpicture}
-\end{center}
-
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.03\textwidth}
+  \centering
+  \phantom{I}
+  \end{minipage}%
+  \centering
+\begin{minipage}[c]{.43\textwidth}
 
 \begin{center}
     \begin{tikzpicture}
@@ -1321,44 +1320,57 @@ To determine the equation of this regression line, the method of *least squares 
         \draw[semithick,-stealth] (0,0) -- (0,3) node[above] {$y$};
         \node[below] at (3,0) {\textit{predictor}};
         \node[above,rotate=90] at (0,1.5) {\textit{response}};
-        \fill[black!20] (1,1.105) rectangle (1.121,1.226);
-        \draw[dashed] (1,1.105) -- (1,1.226);
+        \draw[densely dashed] (1,1.105) -- (1,1.226);
         \draw[fill] (1,1.105) circle (0.04);
-        \fill[black!20] (2,2.17) rectangle (2.734,1.436);
-        \draw[dashed] (2,2.17) -- (2,1.436);
+        \draw[densely dashed] (2,2.17) -- (2,1.436);
         \draw[fill] (2,2.17) circle (0.04);
-        \fill[black!20] (3,1.105) rectangle (3.546,1.646);
-        \draw[dashed] (3,1.10) -- (3,1.646);
+        \draw[densely dashed] (3,1.10) -- (3,1.646);
         \draw[fill] (3,1.10) circle (0.04);
-        \fill[black!20] (4,1.43) rectangle (4.426,1.856);
-        \draw[dashed] (4,1.43) -- (4,1.856);
+        \draw[densely dashed] (4,1.43) -- (4,1.856);
         \draw[fill] (4,1.43) circle (0.04);
-        \fill[black!20] (5,2.47) rectangle (5.404,2.066);
-        \draw[dashed] (5,2.47) -- (5,2.066);
+        \draw[densely dashed] (5,2.47) -- (5,2.066);
         \draw[fill] (5,2.47) circle (0.04);
-        \draw[thick] (0.7,0.7*0.21+1.016) -- (5.6,5.6*0.21+1.016);
+        \draw[thick] (0.7,0.7*0.21+1.016) -- (5.6,5.6*0.21+1.016) node[right,white] {$\hat{y}=a + b x$};
     \end{tikzpicture}
 \end{center}
-    
-\end{multicols}
+
+\end{minipage}
+\end{figure}
 
 Since regression lines are generally calculated from a random *sample* of bivariate data points, the values for the population parameters $\alpha$ and $\beta$ have to be estimated, with the sample statistics $a$ and $b$ respectively calculated as *estimators*:   
 
-\begin{center}
-\tcbset{width=10cm}
-\begin{tcolorbox}[adjusted title=Estimation of Slope and Intercept Parameters, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+\begin{multicols}{2}
+
+\tcbset{width=8.5cm}
+\begin{tcolorbox}[adjusted title=Estimating the slope and intercept, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \vspace{-0.4cm}
-$$\hat{\beta}=b=\dfrac{S_{xy}}{S_{xx}} \qquad \text{and} \qquad \hat{\alpha}=a=\bar{y}-b\bar{x}$$
+$$b=\dfrac{S_{xy}}{S_{xx}} \qquad \text{and} \qquad a=\bar{y}-b\bar{x}$$
 \end{tcolorbox}
-\end{center}
 
-Note that the calculation for $a$ implies that the regression line always passes through the point $\left(\bar{x},\bar{y}\right)$.
+Note that the calculation for $a$ implies that the least squares regression line always passes through the point $\left(\bar{x},\bar{y}\right)$.
 
-Once values for $a$ and $b$ have been calculated, and so the least squares regression line of $y$ on $x$ obtained as $\hat{y}=a+bx$, unknown values of $y$ may be estimated for given values of $x$. This equation (and the line it defines) is *not* suitable for predicting $x$ from $y$, because the least-squares regression line of $y$ on $x$ minimises vertical deviations, not horizontal deviations.
+\end{multicols}
 
-\begin{vwcol}[widths={0.65,0.35},
- sep=.8cm,rule=0pt]
-Whether a linear relationship will continue to hold for $x$ values lower or higher than any observed within the range of the data can be unpredictable, and should not be assumed.\\[0.3em]\textbf{Extrapolation}, prediction outwith the range of the data, should be seen as potentially unreliable.\\[0.3em]\textbf{Interpolation}, prediction within the range of the observed data, is generally more reliable, particularly when a strong linear relationship is present.
+Once values for $a$ and $b$ have been calculated, and so the least squares regression line of $y$ on $x$ obtained as $\hat{y}=a+bx$, unknown values of $y$ may be estimated for given values of $x$. This equation is *not* suitable for predicting $x$ from $y$, because the least-squares regression line of $y$ on $x$ minimises vertical deviations, not horizontal deviations.
+
+\begin{figure}[H]
+  \centering
+\begin{minipage}[c]{.65\textwidth}
+ 
+Any linear relationship may not continue to hold for $x$ values lower or higher than any observed within the range of the data.\\[1em]
+
+\textbf{Extrapolation}, prediction outwith the range of the data, should be seen as potentially unreliable.\\[1em]
+
+\textbf{Interpolation}, prediction within the range of the observed data, is generally more reliable, particularly when a strong linear relationship is present.
+
+\end{minipage}%
+  \centering
+\begin{minipage}[c]{.04\textwidth}
+  \centering
+  \phantom{I}
+  \end{minipage}%
+  \centering
+\begin{minipage}[c]{.31\textwidth}
 
 \begin{tikzpicture}
     \draw[fill=black!10,black!10] (0,0) rectangle (4.9,2.6);
@@ -1385,7 +1397,9 @@ Whether a linear relationship will continue to hold for $x$ values lower or high
     \node at (1,1.25) {?};
     \node at (4.5,1.25) {?};
 \end{tikzpicture}
-\end{vwcol} 
+
+\end{minipage}
+\end{figure}
  
 \pagebreak
 
@@ -1470,14 +1484,14 @@ a&=\bar{y}-b \bar{x}=\dfrac{\text{111}}{\text{9}}-\text{0.894}\times \dfrac{\tex
 \hat{y}&=\text{2.499}+\text{0.894}x
 \end{flalign*}
     \item[(b)] $\hat{y}=\text{2.499} + \text{0.894}\times \text{7}=\text{8.757}$
-    \item[(c)] This is an example of interpolation as the value of $x$ used is within the range of values of the other students, and consequently it can be considered a reliable prediction, especially given the strong linear relationship suggested by the scatterplot.  
+    \item[(c)] This is an example of interpolation as the value of $x=7$ is within the range of values of the other students, and consequently it may give reliable prediction.\\[0.5em] This is further supported by the the strong linear relationship suggested by the scatterplot; however, the sample size is very small.  
 \end{enumerate}
 
 \end{tcolorbox}
 
 Another way of writing the equation found above is: $\text{reading}=\text{2.499}+\text{0.894}\times\text{ listening}$. 
 
-The estimated slope of $b=\text{0.894}$ suggests that each increase of 1 mark in the listening test is associated with an increase of 0.894 marks in the reading test. The estimated intercept of $a=\text{2.499}$ suggests that for a *listening score of zero*, a predicted reading score should be 2.499. Whilst an interpretation of the slope may often be useful, for many contexts an interpretation for the intercept may be less useful, since an $x$ value of zero will not always be realistic or even possible.
+The estimated slope of $b=\text{0.894}$ suggests that for pupils represented by this model, an increase of one listening mark is associated with an estimated increase of about 0.894 reading marks, on average. The estimated intercept of $a=\text{2.499}$ suggests that for a *listening score of zero*, a predicted reading score should be 2.499. Whilst an interpretation of the slope may often be useful, for many contexts an interpretation for the intercept may be less useful, since an $x$ value of zero will not always be realistic or even possible.
 
 Scatterplots should always be constructed and closely scrutinised before further analysing bivariate data. By inspecting a scatterplot, it may become apparent, for instance, that the dataset is separated into *distinct groups*, which ought to be considered separately. *Outliers* can have a large influence on both the correlation coefficient and the regression line, so they should always be (visually) identified and considered, removing them only if doing so can be justified.
 
@@ -1495,7 +1509,7 @@ Scatterplots should always be constructed and closely scrutinised before further
   \end{tabular}
 \end{center}
 It is determined from inspecting a scatterplot that there appears to be a linear relationship between the variables. Obtain the equation of the least squares regression line of $y$ on $x$.
-\item 26 randomly selected trees in a forest have their diameter at a set distance from the ground measured, in inches, and the height of each tree also measured, in feet. The equation of the least squares regression line for $y$ on $x$ is obtained, and shown on the scatterplot below.
+\item 26 randomly selected trees in a forest have their diameter at a set distance from the ground measured, in inches, and the height of each tree is also measured, in feet. The equation of the least squares regression line for $y$ on $x$ is obtained, and shown on the scatterplot below.
 \vspace{-0.2cm}
     \begin{center}
     \begin{tikzpicture}
@@ -1618,7 +1632,10 @@ The website wishes to allow users the ability to input the number of miles in th
             665 &  567.2 & -346.4 & 20 & 10.5 & 57.65
         \end{tabular}
     \end{center}
-    Determine the equation of the $y$ on $x$ regression line, and hence estimate the route time for a ride for which 5g of electrolyte powder was used.
+    \begin{enumerate}
+        \item Determine the equation of the $y$ on $x$ regression line.
+        \item Hence estimate the route time for a ride for which 5g of electrolyte powder was used.
+    \end{enumerate}
     \vfill\null
     \columnbreak
     \begin{center}
@@ -1737,12 +1754,14 @@ The website wishes to allow users the ability to input the number of miles in th
             \hline
             $x$ & 38 & 27 & 19 & 45 & 8 & 23 & 11 & 34\\
             \hline
-            $y$ & 34 & 53 & 42 & 13 & 19 & 30 & 29 & 45\\
+            $y$ & 34 & 53 & 42 & 13 & 19 & 50 & 29 & 45\\
             \hline
         \end{tabular}
     \end{center}
-    The researcher constructed a scatterplot, from which they determined that a least squares regression line would not be appropriate. State what feature they are likely to have observed on the scatterplot.
-    \item A linear relationship is observed on a scatterplot showing, for a sample of pupils in a statistics class, the amount of time spent reviewing notes and the mark in an assessment. A least squares regression line is obtained with equation.
+    \begin{enumerate}
+        \item Determine the equation of the least squares regression line of $y$ on $x$.
+        \item The researcher constructed a scatterplot, from which they determined that a linear regression model would not be appropriate. State what feature they are likely to have observed on the scatterplot.
+    \end{enumerate}
 \end{enumerate}
 
 \pagebreak
@@ -1899,7 +1918,7 @@ The least squares regression line of $\hat{y}=\text{155.29}+\text{1.9018}x$ was 
         \item[(a) ] Comment on what the scatterplot shows. 
         \item[(b) ] Calculate the product moment correlation coefficient for this dataset. 
         \item[(c) ] Find the equation of the least squares regression line of $y$ on $x$.
-        \item[(d) ] Comment on the appropriateness of using the regression line found to \\estimate the rainfall in a year if the yield for the year is known.
+        \item[(d) ] Comment on the appropriateness of using the regression line found to estimate the rainfall in a year if the yield for the year is known.
     \end{enumerate}
 \end{enumerate}
 

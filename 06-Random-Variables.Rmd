@@ -97,7 +97,7 @@ A discrete probability distribution must define \textit{mutually exclusive} and 
 
 From both the table and the graph, it can be seen that, for example, $\text{P}(X=\text{3})=\text{0.2}$.
 
-Probabilities such as $\text{P}(X\leqslant\text{4})$ can be calculated by adding the probability of each outcome (since they are mutually exclusive), or by subtracting from 1 (since they are exhaustive).
+$\text{P}(X\leqslant\text{4})$, for example, can be calculated by adding the probability for each individual outcome less that or equal to 4 (since they are mutually exclusive), or by subtracting from 1 (since they are exhaustive).
 
 \vspace{-0.3cm}
 
@@ -280,7 +280,7 @@ Probabilities such as $\text{P}(X\leqslant\text{4})$ can be calculated by adding
         \egroup
         \end{multicols}
     \end{enumerate}
-    \item The discrete random variable $X$ has probability distribution:
+    \item The discrete random variable $X$ has the probability distribution:
     \begin{center}
     \bgroup
     \def\arraystretch{1.5}
@@ -317,9 +317,8 @@ Probabilities such as $\text{P}(X\leqslant\text{4})$ can be calculated by adding
     \end{enumerate}
     \item Tabulate the probability distribution of each of the following discrete random variables:
     \begin{enumerate}
-        \item $F$, the number of fives obtained when two cubical dice are rolled.
-        \item $T$, the number of tails obtained when three coins are tossed.
-        \item $S$, the sum obtained when two cubical dice are rolled.
+        \item $F$, the number of fives obtained when two fair cubical dice are rolled.
+        \item $T$, the number of tails obtained when three fair coins are tossed.
     \end{enumerate}
 \end{enumerate}
 
@@ -637,7 +636,7 @@ Given the value $\text{E}(aX\pm b)$, the expectation of $X$ may be determined.
     \begin{enumerate}
     \begin{multicols}{3}
         \item $\text{E}(\text{2}X-\text{3})$ given $\text{E}(X)=-\text{4}$
-        \item $\text{E}(-\frac{\text{1}}{\text{3}}Y+\text{2})$ given $\text{E}(Y)=\text{12}$
+        \item $\text{E}(-\frac{\text{1}}{\text{3}}Y+\text{2})$ given $\text{E}(Y)=\text{0}$
         \item $\text{E}(\text{3}-\text{4}C)$ given $\text{E}(C)=\frac{\text{1}}{\text{2}}$
     \end{multicols}
     \end{enumerate}
@@ -688,7 +687,7 @@ Given the value $\text{E}(aX\pm b)$, the expectation of $X$ may be determined.
 
 ## The Variance of a Random Variable
 
-The *variance* of the values observed from repeated rolls of a fair cubical die will tend towards a fixed value in the long-run. Letting the random variable $X$ represent the result of a roll of a die, the **variance**, $\sigma^\text{2}$, of $X$ is $\frac{\text{35}}{\text{12}}$, or $\text{V}(X)=\frac{\text{35}}{\text{12}}$.
+The *variance* of the values observed from repeated rolls of a fair cubical die will tend towards a fixed value in the long-run. Letting the random variable $X$ represent the result of a roll of such adie, the **variance**, $\sigma^\text{2}$, of $X$ is $\frac{\text{35}}{\text{12}}$, or $\text{V}(X)=\frac{\text{35}}{\text{12}}$.
 
 \begin{centering}
 \tcbset{width=10cm}
@@ -714,7 +713,7 @@ Proof:
     &=\text{E}(X^\text{2})-\left(\text{E}(X)\right)^\text{2}
 \end{align*}
 
-Knowing the *expectation* and *variance* of random variables helps statisticians better understand the *long-run* behaviour of repeated observations:
+Knowing the *expectation* and *variance* of random variables help statisticians better understand the *long-run* behaviour of repeated observations:
 
 \begin{itemize}
     \item $\text{E}(X)=\mu_X$, the \textit{long-run mean} of the distribution of $X$.

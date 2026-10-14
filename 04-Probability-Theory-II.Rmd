@@ -43,7 +43,9 @@ From both the table and the Venn diagram, it can be seen that, of the ten pupils
 
 $$\text{P}(\text{Art})=\dfrac{\text{5}}{\text{10}}=\dfrac{\text{1}}{\text{2}}$$
 
-Now suppose a pupil is chosen at random and they reveal that they are taking Biology. The probability that the pupil is also taking Art is no longer $\frac{1}{2}$, since only three of the seven pupils taking Biology are taking Art. The probability now being sought is the probability that a pupil is taking Art *given that they are taking Biology*. This is called a *conditional probability* and is written as:
+Now suppose a pupil is chosen at random and they reveal that they are taking Biology. The probability that the pupil is also taking Art is no longer $\frac{1}{2}$, since only three of the seven pupils taking Biology are taking Art. 
+
+The probability now being sought is the probability that a pupil is taking Art *given that they are taking Biology*. This is called a *conditional probability* and is written as:
 
 $$\text{P}(\text{Art | Biology})=\dfrac{\text{3}}{\text{7}}$$
 
@@ -109,11 +111,11 @@ $\text{P}(\text{fully recovered }|\text{ placebo})=\dfrac{\text{18}}{\text{30}}=
     \itemsep0.5em
             \begin{multicols}{2}
             \item $\text{P}(X)$
-            \item $\text{P}(X|Y)$
+            \item $\text{P}(X\mid Y)$
             \item $\text{P}(X\cap Y)$
             \item $\text{P}(X\cup Y)$
             \item $\text{P}(Y)$
-            \item $\text{P}(Y|X)$
+            \item $\text{P}(Y\mid X)$
             \item $\text{P}(Y\cap X)$
             \item $\text{P}(Y\cup X)$
             \end{multicols}
@@ -127,9 +129,9 @@ $\text{P}(\text{fully recovered }|\text{ placebo})=\dfrac{\text{18}}{\text{30}}=
         \begin{multicols}{2}
         \itemsep0.5em
         \item $\text{P}(\text{scored})$
-        \item $\text{P}(\text{scored }|\text{ 3-pointer})$
+        \item $\text{P}(\text{scored}|\text{3-pointer})$
         \item $\text{P}(\text{3-pointer})$
-        \item $\text{P}(\text{3-pointer }|\text{ scored})$
+        \item $\text{P}(\text{3-pointer}|\text{scored})$
         \end{multicols}
     \end{enumerate}
     \vfill
@@ -203,11 +205,11 @@ $\text{P}(\text{fully recovered }|\text{ placebo})=\dfrac{\text{18}}{\text{30}}=
             \vfill
             \columnbreak
             \vfill
-            \item $\text{P}(A | C)$
-            \item $\text{P}(C | B)$
-            \item $\text{P}(\overline{B} | C)$
-            \item $\text{P}(C | \overline{A})$
-            \item $\text{P}((A \cap B) | C)$
+            \item $\text{P}(A \mid  C)$
+            \item $\text{P}(C \mid  B)$
+            \item $\text{P}(\overline{B} \mid  C)$
+            \item $\text{P}(C \mid  \overline{A})$
+            \item $\text{P}((A \cap B) \mid  C)$
             \vfill
             \end{multicols}
     \end{enumerate}
@@ -219,23 +221,23 @@ $\text{P}(\text{fully recovered }|\text{ placebo})=\dfrac{\text{18}}{\text{30}}=
 
 ## The Conditional Probability Formula
 
-Where a conditional probability cannot be intuitively stated, the formula for conditional probability may be used, shown below. It can be obtained by rearranging the *multiplication rule*.
+Where a conditional probability cannot be intuitively stated, the formula for conditional probability may be used, shown below:
 
 \begin{centering}
 \tcbset{width=9cm}
 \begin{tcolorbox}[title=Conditional Probability:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-$\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(A \cap B)$}}}{\text{\normalsize{$\text{P}(B)$}}}$
+$\text{P}(A \mid  B)=\frac{\text{\normalsize{$\text{P}(A \cap B)$}}}{\text{\normalsize{$\text{P}(B)$}}}$
 \end{tcolorbox}
 \end{centering}
 
-Similarly, the complement rule applies under conditioning: $\text{P}(\overline{A}|B)=\text{1}-\text{P}(A|B)$.
+Similarly, the complement rule applies under conditioning: $\text{P}(\overline{A}\mid B)=\text{1}-\text{P}(A\mid B)$.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Given events $V$ and $W$ such that $\text{P}(V)=\text{0.7236}$ and $\text{P}(V\cap W)=\text{0.1046}$, find $\text{P}(W | V)$. 
+\textbf{Problem:} Given events $V$ and $W$ such that $\text{P}(V)=\text{0.7236}$ and $\text{P}(V\cap W)=\text{0.1046}$, find $\text{P}(W \mid  V)$. 
 
 \tcblower
 \textbf{Solution:}
-$\text{P}(W | V) = \dfrac{\text{P}(W\cap V)}{\text{P}(V)}=\dfrac{\text{0.1046}}{\text{0.7236}}=\text{0.1446}$
+$\text{P}(W \mid  V) = \dfrac{\text{P}(W\cap V)}{\text{P}(V)}=\dfrac{\text{0.1046}}{\text{0.7236}}=\text{0.1446}$
 \end{tcolorbox}
 
 []{#ex42q}
@@ -245,25 +247,25 @@ $\text{P}(W | V) = \dfrac{\text{P}(W\cap V)}{\text{P}(V)}=\dfrac{\text{0.1046}}{
 \begin{enumerate}
     \item Find, by first writing out the conditional probability formula for these events:
     \begin{enumerate}
-        \item $\text{P}(A|B)$ given $\text{P}(B)=\text{0.8}$ and $\text{P}(A\cap B)=\text{0.16}$.
+        \item $\text{P}(A\mid B)$ given $\text{P}(B)=\text{0.8}$ and $\text{P}(A\cap B)=\text{0.16}$.
         \item $\text{P}(\text{red }|\text{ blue})$ given $\text{P}(\text{red}\cap \text{blue})=\text{0.1526}$, $\text{P}(\text{blue})=\text{0.3147}$ and $\text{P}(\text{red})=\text{0.2142}$.
-        \item $\text{P}(X|Y)$ given $\text{P}(Y)=\frac{\text{1}}{\text{2}}$ and $\text{P}(Y\cap X)=\frac{\text{1}}{\text{3}}$.
-        \item $\text{P}(M|N)$ given $\text{P}(\overline{N})=\text{0.6137}$, $\text{P}(N\cap M)=\text{0.1249}$ and $\text{P}(M\cup N)=\text{0.4511}$.
+        \item $\text{P}(X\mid Y)$ given $\text{P}(Y)=\frac{\text{1}}{\text{2}}$ and $\text{P}(Y\cap X)=\frac{\text{1}}{\text{3}}$.
+        \item $\text{P}(M\mid N)$ given $\text{P}(\overline{N})=\text{0.6137}$, $\text{P}(N\cap M)=\text{0.1249}$ and $\text{P}(M\cup N)=\text{0.4511}$.
         \item Using (a) to (d), state:
         \begin{enumerate}
             \begin{multicols}{4}
-            \item $\text{P}(\overline{A}|B)$
+            \item $\text{P}(\overline{A}\mid B)$
             \item $\text{P}(\overline{\text{red}\text{ }}|\text{ blue})$
-            \item $\text{P}(\overline{X}|Y)$
-            \item $\text{P}(\overline{M}|N)$
+            \item $\text{P}(\overline{X}\mid Y)$
+            \item $\text{P}(\overline{M}\mid N)$
             \end{multicols}
         \end{enumerate}
     \end{enumerate}
-    \item Given events $V$ and $W$ such that $\text{P}(V\cap W)=\text{0.28}$ and $\text{P}(W)=\text{0.4}$, find $\text{P}(\overline{V}|W)$.
+    \item Given events $V$ and $W$ such that $\text{P}(V\cap W)=\text{0.28}$ and $\text{P}(W)=\text{0.4}$, find $\text{P}(\overline{V}\mid W)$.
     \item Numbered cards of different colours are selected at random from a pack during a game such that the probability of a selected card being \textit{yellow} is 20\%, and the probability of it being \textit{yellow and a five} is 4\%. Find the probability that a selected card is a five \textit{given that it is a yellow}.
     \item A football team knows from looking at their past results that they concede at least two goals in $\frac{\text{2}}{\text{5}}$ of all games. In $\frac{\text{1}}{\text{4}}$ of all of their games they concede at least two goals and lose the game. Find the probability that, given that they concede at least two goals in a game, they lose.
-    \item Given events $M$ and $N$ such that $\text{P}(M)=\text{0.6}$, $\text{P}(N)=\text{0.4}$ and $\text{P}(M\cup N)=\text{0.9}$, find $\text{P}(M|N)$.
-    \item For events $V$ and $W$, $\text{P}(V)=\text{0.6}$, $\text{P}(V|W)=\text{0.8}$ and $\text{P}(V\cap W)=\text{0.5}$. Calculate $\text{P}(V \cup W)$.
+    \item Given events $M$ and $N$ such that $\text{P}(M)=\text{0.6}$, $\text{P}(N)=\text{0.4}$ and $\text{P}(M\cup N)=\text{0.9}$, find $\text{P}(M\mid N)$.
+    \item For events $V$ and $W$, $\text{P}(V)=\text{0.6}$, $\text{P}(V\mid W)=\text{0.8}$ and $\text{P}(V\cap W)=\text{0.5}$. Calculate $\text{P}(V \cup W)$.
 \end{enumerate}
 
 \pagebreak
@@ -275,19 +277,19 @@ The probability of tossing a coin and it landing tails is $\frac{\text{1}}{\text
 
 \begin{center}
 \begin{tcolorbox}[title={$A$} and {$B$} are independent if:, halign = center,halign title = center,colback=red!5,colframe=red!70!black,width=8.5cm]
-$\text{P}(A | B)= \text{P}(A)$
+$\text{P}(A \mid  B)= \text{P}(A)$
 \end{tcolorbox}
 \end{center}
 
 \vspace{-0.1cm}
 
-The probability of a randomly selected card from a standard pack of playing cards being a Diamond is $\frac{\text{1}}{\text{4}}$. The probability the card is a Diamond *given that we discover the card picked is red*, notated as $\text{P}(\text{Diamond }|\text{ red})$, is $\frac{\text{1}}{\text{2}}$. Since knowing that the card is red changes the probability of it being a Diamond, the events are *not independent*.
+The probability of a randomly selected card from a standard pack of playing cards being a diamond is $\frac{\text{1}}{\text{4}}$. The probability the card is a diamond *given that we discover the card picked is red*, notated as $\text{P}(\text{diamond }|\text{ red})$, is $\frac{\text{1}}{\text{2}}$. Since knowing that the card is red changes the probability of it being a diamond, the events are *not independent*.
 
 \vspace{-0.1cm}
 
 \begin{center}
 \begin{tcolorbox}[title={$A$} and {$B$} are not independent if:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=8.5cm]
-$\text{P}(A | B)\ne \text{P}(A)$
+$\text{P}(A \mid  B)\ne \text{P}(A)$
 \end{tcolorbox}
 \end{center}
 
@@ -299,9 +301,9 @@ $\text{P}(A | B)\ne \text{P}(A)$
 \tcblower
 \textbf{Solution:}
 
-$\text{P}(D|E) = \dfrac{\text{P}(D \cap E)}{\text{P}(E)} = \dfrac{\text{0.15}}{\text{0.6}} = \text{0.25}$\\
+$\text{P}(D\mid E) = \dfrac{\text{P}(D \cap E)}{\text{P}(E)} = \dfrac{\text{0.15}}{\text{0.6}} = \text{0.25}$\\
 
-Since $\text{P}(D|E) = \text{P}(D)$, events $D$ and $E$ are independent.
+Since $\text{P}(D\mid E) = \text{P}(D)$, events $D$ and $E$ are independent.
 
 \end{tcolorbox}
 
@@ -375,18 +377,18 @@ Since $\text{P}(D|E) = \text{P}(D)$, events $D$ and $E$ are independent.
 
 ## The Multiplication Rule for the Intersection 
 
-The conditional probability rule can be rearranged to allow the **intersection** of two events to be calculated using a conditional probability. For independent events, since $\text{P}(B|A)=\text{P}(B)$, this simplifies further.
+The conditional probability rule can be rearranged to allow the **intersection** of two events to be calculated using a conditional probability. For independent events, since $\text{P}(B\mid A)=\text{P}(B)$, this simplifies further.
 
 \begin{multicols}{2}
 
 \begin{center}
 \begin{tcolorbox}[title=Multiplication rule for any $A$ and $B$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,width=8.5cm]
-$\text{P}(A \cap B)=\text{P}(A)\times \text{P}(B|A)$
+$\text{P}(A \cap B)=\text{P}(A)\times \text{P}(B\mid A)$
 \end{tcolorbox}
 \end{center}
 
 \begin{center}
-\begin{tcolorbox}[title=Multiplication rule for Independent {$A$} and {$B$}:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,width=8.5cm]
+\begin{tcolorbox}[title=Multiplication rule for independent {$A$} and {$B$}:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,width=8.5cm]
 $\text{P}(A \cap B)=\text{P}(A)\times \text{P}(B)$
 \end{tcolorbox}
 \end{center}
@@ -417,7 +419,7 @@ $\text{P}(\text{mutation}\cap \text{yellow}) = \text{P}(\text{mutation}) \times 
         \begin{itemize}
             \item $\text{P}(X)=\text{0.4}$
             \item $\text{P}(Y)=\text{0.26}$
-            \item $\text{P}(Y|X)=\text{0.18}$
+            \item $\text{P}(Y\mid X)=\text{0.18}$
         \end{itemize}
         \item $\text{P}(\text{blue}\cap \text{yellow})$ given:
         \begin{itemize}
@@ -433,17 +435,17 @@ $\text{P}(\text{mutation}\cap \text{yellow}) = \text{P}(\text{mutation}) \times 
         \end{itemize}
     \end{multicols}
     \end{enumerate}
-    \item Events $A$ and $B$ are such that $\text{P}(A)=\text{0.4}$, $\text{P}(B)=\text{0.7}$ and $\text{P}(A|B)=\text{0.56}$. Determine the value of:
+    \item Events $A$ and $B$ are such that $\text{P}(A)=\text{0.4}$, $\text{P}(B)=\text{0.7}$ and $\text{P}(A\mid B)=\text{0.56}$. Determine the value of:
     \begin{enumerate}
         \begin{multicols}{3}
         \item $\text{P}(A \cap B)$
         \item $\text{P}(A \cup B)$
-        \item $\text{P}(B|A)$
+        \item $\text{P}(B\mid A)$
         \end{multicols}
     \end{enumerate}
     \item Independent events $X$ and $Y$ are such that $\text{P}(X)=\text{0.4}$ and $\text{P}(Y)=\text{0.8}$. Determine the value of $\text{P}(X\cup Y)$.
     \item A large box in a maths classroom contains a number of calculators, with 85\% of them made by Arizona Instruments and the rest made by Calculo. 70\% of the calculators overall are working, whilst 80\% of those made by Calculo are working. Determine the probability that a calculator selected at random from the box is a working Calculo calculator.
-    \item As part of an analysis of a large company's vulnerability to a cyber attack, it is found that 16\% of company-issued employee laptops have out-of-date antivirus protection, whilst 24\% are only protected by a weak password. Of those with out-of-date antivirus protection, 60\% are only protected by a weak password. If a laptop is selected at random, determine the probability that it both has out-of-date antivirus protection and is only protected by a weak password.
+    \item As part of an analysis of a large company's vulnerability to a cyber attack, it is found that 16\% of company-issued employee laptops have out-of-date antivirus protection, whilst 24\% are only protected by a weak password. Of those with out-of-date antivirus protection, 60\% are only protected by a weak password.\\[1em] If a laptop is selected at random, determine the probability that it both has out-of-date antivirus protection and is only protected by a weak password.
     \item Given:
     \begin{itemize}
         \item $\text{P}(\overline{\text{pink}})=\text{0.5}$
@@ -457,16 +459,16 @@ $\text{P}(\text{mutation}\cap \text{yellow}) = \text{P}(\text{mutation}) \times 
 
 ## Bayes Theorem and Reversing the Condition
 
-In 1763, the work of Reverend Thomas Bayes, a mathematician and minister, was published as *"An Essay towards solving a Problem in the Doctrine of Chances"*. In it was stated a formula that has come to be known as *Bayes' Theorem*, which can be applied in a particular, specialised way to enable existing knowledge to be updated as new information is collected. In turn, this has resulted in an approach towards statistical inference that has been growing since the mid-20th century called *Bayesian statistics*, substantially made more feasible by modern computing power.
+In 1763, the work of Reverend Thomas Bayes, a mathematician and minister, was published as *"An Essay towards solving a Problem in the Doctrine of Chances"*. The essay contained results that led to the formula now known as Bayes’ theorem, which can be applied in a particular, specialised way to enable existing knowledge to be updated as new information is collected. In turn, this has resulted in an approach towards statistical inference that became increasingly practical with the development of modern computing, called *Bayesian statistics*.
 
-Although knowledge of Bayes' Theorem is required in the Advanced Higher Statistics course, Bayesian *statistics* is *not* part of this course, and so will not be covered here. If you would like to find out more about Bayesian statistics, and whether it may be relevant to you in the future, it is recommended that you discuss this with your teacher at a later point in the course. University modules introducing Bayesian statistics are typically available as part of an undergraduate degree in Mathematics or Statistics.
+Although knowledge of Bayes' theorem is required in the Advanced Higher Statistics course, Bayesian *statistics* is *not* part of this course, and so will not be covered here. If you would like to find out more about Bayesian statistics, and whether it may be relevant to you in the future, it is recommended that you discuss this with your teacher at a later point in the course. University modules introducing Bayesian statistics are typically available as part of an undergraduate degree in Mathematics or Statistics.
 
-Bayes' Theorem can be derived directly from the formulae already introduced in this chapter. Note that:
+Bayes' theorem can be derived directly from the formulae already introduced in this chapter. Note that:
 
 \vspace{-0.3cm}
 \begin{center}
-$\text{P}(A\cap B)=\text{P}(A|B)\times \text{P}(B)$\\
-$\text{P}(B\cap A)=\text{P}(B|A)\times \text{P}(A)$
+$\text{P}(A\cap B)=\text{P}(A\mid B)\times \text{P}(B)$\\
+$\text{P}(B\cap A)=\text{P}(B\mid A)\times \text{P}(A)$
 \end{center}
 
 \vspace{-0.4cm}
@@ -474,25 +476,25 @@ Since $\text{P}(A\cap B)=\text{P}(B\cap A)$:
 
 \vspace{-0.4cm}
 
-\[\text{P}(A|B)\times \text{P}(B)=\text{P}(B|A)\times \text{P}(A)\]
+\[\text{P}(A\mid B)\times \text{P}(B)=\text{P}(B\mid A)\times \text{P}(A)\]
 
 Dividing both sides by $\text{P}(B)$ gives:
 
 \begin{centering}
 \tcbset{width=9cm}
-\begin{tcolorbox}[title=Bayes' Theorem:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-$\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(B|A)\times \text{P}(A)$}}}{\text{\normalsize{$\text{P}(B)$}}}$
+\begin{tcolorbox}[title=Bayes' theorem:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
+$\text{P}(A \mid B)=\frac{\text{\normalsize{$\text{P}(B\mid A)\times \text{P}(A)$}}}{\text{\normalsize{$\text{P}(B)$}}}$
 \end{tcolorbox}
 \end{centering}
 
 Bayes' Theorem provides a link between a conditional probability and its *reverse*. Using it to find a conditional probability from its reverse is sometimes referred to as *reversing the condition*. 
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Given events $V$ and $W$ such that $\text{P}(V|W)=\text{0.3}$, $\text{P}(W)=\text{0.8}$ and $\text{P}(\overline{V})=\text{0.1}$, find $\text{P}(W|V)$.
+\textbf{Problem:} Given events $V$ and $W$ such that $\text{P}(V\mid W)=\text{0.3}$, $\text{P}(W)=\text{0.8}$ and $\text{P}(\overline{V})=\text{0.1}$, find $\text{P}(W\mid V)$.
 
 \tcblower
 \textbf{Solution:}
-$\text{P}(W|V) = \dfrac{\text{P}(V|W)\times \text{P}(W)}{\text{P}(V)} = \dfrac{\text{0.3}\times \text{0.8}}{\text{0.9}} = \dfrac{\text{4}}{\text{15}}$
+$\text{P}(W\mid V) = \dfrac{\text{P}(V\mid W)\times \text{P}(W)}{\text{P}(V)} = \dfrac{\text{0.3}\times \text{0.8}}{\text{0.9}} = \dfrac{\text{4}}{\text{15}}$
 \end{tcolorbox}
 
 Careful reading of text may be required to identify when a probability provided is a *conditional* probability.
@@ -516,29 +518,29 @@ $\text{P}(\text{garage }|\text{ garden}) = \dfrac{\text{P}(\text{garden }|\text{
     \vspace{-0.3cm}
     \begin{enumerate}
     \begin{multicols}{2}
-    \item Events $X$ and $Y$ are such that:
+    \item Events $X$ and $Y$ are such that:\\[0.5em]
     \begin{itemize}
         \item $\text{P}(X)=\text{0.7}$
         \item $\text{P}(Y)=\text{0.6}$
-        \item $\text{P}(Y|X)=\text{0.5}$
+        \item $\text{P}(Y\mid )=\text{0.5}$\\[0.5em]
     \end{itemize}
-    Calculate $\text{P}(X|Y)$.
-    \item For events $V$ and $W$:
+    Calculate $\text{P}(X\mid Y)$.
+    \item For events $V$ and $W$:\\[0.5em]
     \begin{itemize}
         \item $\text{P}(W)=\frac{\text{4}}{\text{5}}$
         \item $\text{P}(\overline{V})=\frac{\text{1}}{\text{3}}$
-        \item $\text{P}(W|V)=\frac{\text{3}}{\text{4}}$
+        \item $\text{P}(W\mid V)=\frac{\text{3}}{\text{4}}$\\[0.5em]
     \end{itemize}
-    Determine $\text{P}(V|W)$.
+    Determine $\text{P}(V\mid W)$.
     \end{multicols}
     \end{enumerate}
     \vspace{-0.3cm}
     \item A bag contains numbered counters of various colours, a quarter of which are red. Three-eighths of the counters are numbered 1, of which two-fifths are red. If a counter is selected at random and it is red, determine the probability that it is numbered 1.
-    \item Research has shown that 1.7\% of people possess a specific gene. A prototype test for the presence of the gene in a person is being developed, and it shows as \textit{positive} for the gene for 7\% of all people tested. It is later established that the probability a test shows as positive for a person known to possess the gene is 0.9. If a person is selected at random to take the test, and it shows positive, determine the probability that they actually do possess the gene.
-    \item Given that $\text{P}(M)=\frac{\text{2}}{\text{3}}$, $\text{P}(N)=\frac{\text{3}}{\text{4}}$ and $\text{P}(N|M)=\frac{\text{3}}{\text{5}}$:
+    \item Research has shown that 1.7\% of people possess a specific gene. A prototype test for the presence of the gene in a person is being developed, and it shows as \textit{positive} for the gene for 7\% of all people tested.\\[1em] It is later established that the probability a test shows as positive for a person known to possess the gene is 0.9. If a person is selected at random to take the test, and it shows positive, determine the probability that they actually do possess the gene.
+    \item Given that $\text{P}(M)=\frac{\text{2}}{\text{3}}$, $\text{P}(N)=\frac{\text{3}}{\text{4}}$ and $\text{P}(N\mid M)=\frac{\text{3}}{\text{5}}$:
     \begin{enumerate}
-        \item Calculate $\text{P}(M|N)$.
-        \item Calculate $\text{P}(\overline{M}|N)$.
+        \item Calculate $\text{P}(M\mid N)$.
+        \item Calculate $\text{P}(\overline{M}\mid N)$.
     \end{enumerate}
     \item An MOT test is an annual examination of cars and other vehicles required to check they are roadworthy. 83\% of the vehicles a local garage performs MOT tests on are cars, whilst the rest are vans. Considering only the first MOT test performed on each vehicle, before any repairs are carried out:
     \begin{itemize}
@@ -546,14 +548,14 @@ $\text{P}(\text{garage }|\text{ garden}) = \dfrac{\text{P}(\text{garden }|\text{
         \item Cars account for 86\% of all failed tests.
     \end{itemize}
     Determine the proportion of cars that \textit{pass} their first MOT.
-    \item A region has access to local radio stations, \textit{Pacific 525}, as well as a number of national stations. When a resident of the region directs their car radio to automatically find a station, the probability that it will connect to \textit{Pacific 525} is 0.64, otherwise it will instead connect to a national station. 72\% of the time, when their car automatically connects there will be music playing. When their car radio connects to \textit{Pacific 525} the probability music will be playing is 0.84. If the car radio connects to a station and music is playing, determine the probability that the station is \textit{Pacific 525}.
+    \item A region has access to a local radio station, \textit{Pacific 525}, as well as a number of national stations. When a resident of the region directs their car radio to automatically find a station, the probability that it will connect to \textit{Pacific 525} is 0.64, otherwise it will instead connect to a national station. 72\% of the time, when their car automatically connects there will be music playing.\\[1em] When their car radio connects to \textit{Pacific 525} the probability music will be playing is 0.84. If the car radio connects to a station and music is playing, determine the probability that the station is \textit{Pacific 525}.
     \item Events $E$ and $F$ are such that:
     \begin{itemize}
-        \item $\text{P}(\overline{F}|E)=\text{0.23}$.
+        \item $\text{P}(\overline{F}\mid E)=\text{0.23}$.
         \item $\text{P}(F)=\text{0.87}$.
         \item $\text{P}(\overline{E})=\text{0.09}$.
     \end{itemize}
-    Calculate $\text{P}(\overline{E}|F)$.
+    Calculate $\text{P}(\overline{E}\mid F)$.
 \end{enumerate}
 
 \pagebreak
@@ -562,7 +564,7 @@ $\text{P}(\text{garage }|\text{ garden}) = \dfrac{\text{P}(\text{garden }|\text{
 
 The *law of total probability* for $X$ is:
 
-$$\text{P}(X)=\sum_{i=1}^{n}\text{P}(Y_i)\times \text{P}(X|Y_i)\qquad\text{(provided }Y_i\text{ are mutually exclusive and exhaustive)}$$
+$$\text{P}(X)=\sum_{i=1}^{n}\text{P}(Y_i)\times \text{P}(X\mid Y_i)\qquad\text{(provided }Y_i\text{ are mutually exclusive and exhaustive)}$$
 
 It may help to recognise the right hand side of the equation as containing the *multiplication rule for the intersection*: the total probability of $X$ is obtained by adding together the probabilities of all (disjoint) intersections in which $X$ occurs. In other words, the total probability of an event can be found by considering all the different ways in which it can occur, and adding their probabilities.  
 
@@ -581,16 +583,16 @@ The tree diagram below shows the appropriate notation for each stage. The first 
         node[bag] {$\overline{A}$}        
             child {
                 node[end, label=right:
-                    {$\overline{B}$\hspace{2cm}$\text{P}(\overline{A})\times \text{P}(\overline{B}|\overline{A})=\text{P}(\overline{A}\cap \overline{B})$}] {}
+                    {$\overline{B}$\hspace{2cm}$\text{P}(\overline{A})\times \text{P}(\overline{B}\mid \overline{A})=\text{P}(\overline{A}\cap \overline{B})$}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\text{P}(\overline{B}|\overline{A})\hspace{0.5cm}$}
+                node[below]  {$\text{P}(\overline{B}\mid \overline{A})\hspace{0.5cm}$}
             }
             child {
                 node[end, label=right:
-                    {$B$\hspace{2cm}$\text{P}(\overline{A})\times \text{P}(B|\overline{A})=\text{P}(\overline{A}\cap B)$}] {}
+                    {$B$\hspace{2cm}$\text{P}(\overline{A})\times \text{P}(B\mid \overline{A})=\text{P}(\overline{A}\cap B)$}] {}
                 edge from parent
-                node[above] {$\text{P}(B|\overline{A})\hspace{0.5cm}$}
+                node[above] {$\text{P}(B\mid \overline{A})\hspace{0.5cm}$}
                 node[below]  {}
             }
             edge from parent 
@@ -601,16 +603,16 @@ The tree diagram below shows the appropriate notation for each stage. The first 
         node[bag] {A}        
         child {
                 node[end, label=right:
-                    {$\overline{B}$\hspace{2cm}$\text{P}(A)\times \text{P}(\overline{B}|A)=\text{P}(A\cap \overline{B})$}] {}
+                    {$\overline{B}$\hspace{2cm}$\text{P}(A)\times \text{P}(\overline{B}\mid A)=\text{P}(A\cap \overline{B})$}] {}
                 edge from parent
                 node[above] {}
-                node[below]  {$\text{P}(\overline{B}|A)\hspace{0.5cm}$}
+                node[below]  {$\text{P}(\overline{B}\mid A)\hspace{0.5cm}$}
             }
             child {
                 node[end, label=right:
-                    {$B$\hspace{2cm}$\text{P}(A)\times \text{P}(B|A)=\text{P}(A\cap B)$\hspace{0.5cm}}] {}
+                    {$B$\hspace{2cm}$\text{P}(A)\times \text{P}(B\mid A)=\text{P}(A\cap B)$\hspace{0.5cm}}] {}
                 edge from parent
-                node[above] {$\text{P}(B|A)\hspace{0.5cm}$}
+                node[above] {$\text{P}(B\mid A)\hspace{0.5cm}$}
                 node[below]  {}
             }
         edge from parent         
@@ -626,11 +628,11 @@ The *total probability* of $B$, $\text{P}(B)$, can be calculated as:
 \begin{center}
 \begin{alignat*}{4}
 \text{P}(B)\hspace{0.3cm}&=\hspace{0.3cm}&&\text{P}(A\cap B)&&+\hspace{0.5cm}&&\text{P}(\overline{A}\cap B)\\
-&=\hspace{0.2cm}&&\text{P}(A)\times \text{P}(B|A)\hspace{0.3cm}&&+&&\text{P}(\overline{A})\times \text{P}(B|\overline{A})
+&=\hspace{0.2cm}&&\text{P}(A)\times \text{P}(B\mid A)\hspace{0.3cm}&&+&&\text{P}(\overline{A})\times \text{P}(B\mid \overline{A})
 \end{alignat*}
 \end{center}
 
-The advantage of the use of tree diagrams, for questions where they are suitable, is that they can offer a more intuitive and visual approach to tackling problems than solely using formulae. If they are used, they must be annotated carefully with events and probabilities, and accurate probability notation must still be used when giving answers. 
+The advantage of tree diagrams, for questions where they are suitable, is that they can offer a more intuitive and visual approach to tackling problems than solely using formulae. If they are used, they must be annotated carefully with events and probabilities, and accurate probability notation must still be used when giving answers. 
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A teacher observes that one of their pupils is late to school 20\% of the time, and when this happens they have their tie with them 70\% of the time. When they are on time they have their tie 90\% of the time. Construct a tree diagram and calculate the probability that, on a randomly chosen day, they have no tie.
@@ -710,11 +712,11 @@ The advantage of the use of tree diagrams, for questions where they are suitable
     \begin{itemize}
         \item Three-quarters of trees are oak.
         \item The rest are alder trees.
-        \item The probability an oak tree failing is 0.356.
+        \item The probability of an oak tree failing is 0.356.
         \item The probability of failure for an alder tree is 0.234.
     \end{itemize}
     Calculate the probability that a tree randomly selected for observation survives.
-    \item The star striker for a football team has a probability of 0.7 of scoring in any given game. When they do, the probability that the team goes on to win is 0.8, whilst when they don't the probability of a win drops to 0.45. Calculate the probability that the team wins a randomly chosen game.
+    \item The star striker for a football team has a probability of 0.7 of scoring in any given game. When they score, the probability that the team goes on to win is 0.8, whilst when they don't score, the probability of a win drops to 0.45. Calculate the probability that the team wins a randomly chosen game.
     \item When Betty hears a song on the radio:
     \begin{itemize}
         \item The probability that it is a song she knows is 0.8.
@@ -722,8 +724,8 @@ The advantage of the use of tree diagrams, for questions where they are suitable
         \item When she doesn't know it, the probability she will like it is 0.3.
     \end{itemize}
     Determine the proportion of songs Betty hears on the radio that she likes.
-    \item An obstacle course consists of three parts, with each part needed to be completed successfully for a competitor to be allowed to move on to the next. 30\% of competitors fail to complete the first part, and of those who make it onto the second part only 40\% manage to make it onto the third part. Of those that do make it on to the third part, however, 65\% successfully complete it. Calculate the probability that a competitor reaches the third part.
-    \item As part of a study examining the survival rates of hedgehogs over winter hibernation periods, a number of hedgehogs are captured, weighed, tagged and then released. Depending on their weight they are classed as having a "good weight", an "average weight" or being "underweight", with 18\%, 76\% and 6\% observed respectively in each category. From the study it is found that the probability of survival for each category is 91\%, 72\% and 35\% respectively. Assuming that the distribution of hedgehog weights and probabilities of survival can be taken as representative of hedgehog populations in general, find the proportion of hedgehogs that do not survive winter hibernation. 
+    \item An obstacle course consists of three parts, with each part needed to be completed successfully for a competitor to be allowed to move on to the next. 30\% of competitors fail to complete the first part, and of those who make it onto the second part only 40\% manage to make it onto the third part. Of those that do make it on to the third part, however, 65\% successfully complete it. Calculate the probability that a competitor does not successfully finish the obstacle course.
+    \item As part of a study examining the survival rates of hedgehogs over winter hibernation periods, a number of hedgehogs are captured, have their mass recorded,  are tagged and then are released. Depending on their recorded mass they are classed as having a "good weight", an "average weight" or being "underweight", with 18\%, 76\% and 6\% observed respectively in each category. From the study it is found that the probability of survival for each category is 91\%, 72\% and 35\% respectively. Assuming that the distribution of hedgehog masses and probabilities of survival can be taken as representative of hedgehog populations in general, find the proportion of hedgehogs that do not survive winter hibernation. 
     \item The probability of being dealt a pair (such as two fives) in an opening hand in a game of poker is 0.06. If this happens, a particular player knows that based on their game history they have a probability of 0.83 of winning the hand, whilst otherwise they have a probability of 0.36. Calculate the probability that they win a hand.
 \end{enumerate}
 
@@ -731,11 +733,11 @@ The advantage of the use of tree diagrams, for questions where they are suitable
 
 ## Bayes Theorem and Tree Diagrams
 
-In this chapter, Bayes' Theorem has already been used to calculate the *reverse* of a conditional probability, for example calculating $\text{P}(B|A)$ when $\text{P}(A|B)$ is known. However, this process can be made more intuitive and more readily extended to more complex problems by using tree diagrams combined with the formula for conditional probability:
+In this chapter, Bayes' Theorem has already been used to calculate the *reverse* of a conditional probability, for example calculating $\text{P}(B\mid A)$ when $\text{P}(A\mid B)$ is known. However, this process can be made more intuitive and more readily extended to more complex problems by using tree diagrams combined with the formula for conditional probability:
 
-$$\text{P}(A | B)=\frac{\text{\normalsize{$\text{P}(A \cap B)$}}}{\text{\normalsize{$\text{P}(B)$}}}$$
+$$\text{P}(A \mid  B)=\frac{\text{\normalsize{$\text{P}(A \cap B)$}}}{\text{\normalsize{$\text{P}(B)$}}}$$
 
-A key misunderstanding often made is that a high value for $\text{P}(B|A)$ must lead to a similarly high value for $\text{P}(A|B)$. The following example demonstrates that this is not always the case, and gives an insight into a common problem that must be considered whenever medical testing is being undertaken, especially for rare conditions or diseases:
+A key misunderstanding often made is that a high value for $\text{P}(B\mid A)$ must lead to a similarly high value for $\text{P}(A\mid B)$. The following example demonstrates that this is not always the case, and gives an insight into a common problem that must be considered whenever medical testing is being undertaken, especially for rare conditions or diseases:
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} A medical test for a condition has a \textit{sensitivity} of 98\%, meaning that when the patient \textit{has the condition}, the test will correctly return a \textit{positive} result with a probability of 0.98. This means there is a \textit{false negative} rate of 2\%. The test has a \textit{specificity} of 97\%, meaning that when the patient \textit{does not} have the condition, the test will correctly return a \textit{negative} result with a probability of 0.97. This means there is a \textit{false positive} rate of 3\%. The \textit{prevalence} in the general population is 4\%, meaning only 4\% of people have the condition. 
@@ -808,9 +810,9 @@ If a person is selected at random from the general population to be tested for t
 
 \end{tcolorbox}
 
-So even though the test is highly accurate, only about 57.65% of people who test positive actually have the condition.
+So even though the test's sensitivity and specificity are both high, only about 57.65% of people who test positive actually have the condition. This occurs because the condition is uncommon.
 
-It may be surprising that a test which appears so effective can lead to such a high proportion of false positives, and calculations such as this should be considered when healthcare professionals establish testing procedures.
+It may be surprising that such a high proportion of positives are false positives, and calculations such as this should be considered when healthcare professionals establish testing procedures.
 
 \pagebreak
 
@@ -845,7 +847,7 @@ It may be surprising that a test which appears so effective can lead to such a h
     \end{enumerate}
     \item A sports team is given an extra rest day half of the time after winning a game, a quarter of the time after drawing a game and only a tenth of the time when they lose a game. They win 55\% of their games, draw 25\% of their games and lose the rest. Given that they are given an extra rest day, find the probability that they lost the last game.
     \item All precision-engineered parts at a small factory undergo two inspections as part of quality control. During Inspection A, 8\% of parts are flagged for a more thorough inspection during Inspection B. Of those that are more thoroughly inspected during Inspection B, 15\% are scrapped due to flaws in the manufacturing process. 3\% of those that had not been flagged initially are also then scrapped during Inspection B as flaws are spotted that were initially missed. Finally, of those parts that have not been scrapped, 1\% are set aside for stress-testing of the final products and never leave the factory. Given that a part doesn't leave the factory, find the probability that it was due to a flaw.
-    \item For medical tests for conditions that are known to have the given specificity and sensitivity, as well as the prevalence of the condition, calculate the probability that a randomly tested person has the condition, given that they test positive:
+    \item (Use the example on page 48). For medical tests for conditions that are known to have the given specificity and sensitivity, as well as the prevalence of the condition, calculate the probability that a randomly tested person has the condition, given that they test positive:
     \begin{enumerate}
         \item Sensitivity = 94\%, Specificity = 89\%, Prevalence = 9\%  
         \item Sensitivity = 98\%, Specificity = 99\%, Prevalence = 1\% 
@@ -866,7 +868,7 @@ It may be surprising that a test which appears so effective can lead to such a h
         \item $\text{P}(\overline{E})=\text{0.2}$
         \item $E$ and $F$ are exhaustive.
     \end{itemize}
-    Calculate $\text{P}(E | F)$.
+    Calculate $\text{P}(E \mid  F)$.
     \item A second-hand online computing retailer has 40 laptops in stock, broken down by whether they use Windows or Mac, and the grades $A$, $B$ and $C$ depending on the condition they are in:
     \begin{center}
     \begin{tabular}{ | c | c c c |}
@@ -886,7 +888,7 @@ It may be surprising that a test which appears so effective can lead to such a h
         \item Find:
         \begin{enumerate}
             \item $\text{P}(W\cup A)$.
-            \item $\text{P}(\overline{W} \cap B)$.
+            \item $\text{P}(\overline{W} \cap B)$. 
         \end{enumerate}
     \end{enumerate}
     80\% of the Windows laptops and 90\% of the Mac laptops come with the original power supply.
@@ -894,14 +896,14 @@ It may be surprising that a test which appears so effective can lead to such a h
         \item Calculate the probability that a randomly selected laptop comes with its original power supply.
         \item Determine the probability that a randomly selected laptop is a Mac laptop, given that it does not come with its original power supply.
     \end{enumerate}
-    \item At the start of each round of a board game played by four players, a random process determines who gets to go 1st, who goes 2nd who goes 3rd and who goes 4th. Sam knows that when she plays against her two friends, she wins the round two-thirds of the time when she goes 1st, half of the time when she goes 2nd and only a fifth of the time when she goes either 3rd or 4th.
+    \item At the start of each round of a board game played by four players, a random process determines who gets to go 1st, who goes 2nd who goes 3rd and who goes 4th. Sam knows that when she plays against her three friends, she wins the round two-thirds of the time when she goes 1st, half of the time when she goes 2nd and only a fifth of the time when she goes either 3rd or 4th.
     \begin{enumerate}
         \item Assuming that each round is independent of the result of previous rounds, calculate the proportion of rounds that Sam wins.
         \item Given that Sam lost the last round, calculate the probability that she went 1st.
     \end{enumerate}
     \item For the events $M$ and $B$:
 $\text{P}(M\cap B)=\frac{\text{3}}{\text{25}}$, $\text{P}(M)=\frac{\text{1}}{\text{5}}$ and $\text{P}(\overline{B})=\frac{\text{2}}{\text{5}}$. Show that events $M$ and $B$ are independent.
-    \item As part of a machine learning project, a program is created that tries to correctly identify whether it is being shown a picture of a dog, a cat or a human. It has been tested and found to correctly identify a human with the probability 0.8, correctly identify a dog with the probability 0.6 and correctly identify a cat with the probability 0.55. When subsequently put to use by the public, the program is shown a picture of a human 60\% of the time, a dog 25\% of the time and a cat 15\% of the time. Assuming the probabilities of successful detection are the same when used by the public as when under testing, calculate:
+    \item As part of a machine learning project, a program is created that tries to correctly identify whether it is being shown a picture of a dog, a cat or a human. It has been tested and found to correctly identify a human with the probability 0.8, correctly identify a dog with the probability 0.6 and correctly identify a cat with the probability 0.55. When subsequently put to use by the public, the program is shown a picture of a human 60\% of the time, a dog 25\% of the time and a cat 15\% of the time\\[1em] Assuming the probabilities of successful detection are the same when used by the public as when under testing, calculate:
     \begin{enumerate}
         \item the proportion of times that the program is incorrect 
         \item the probability that the program was shown a cat, given that it is incorrect.

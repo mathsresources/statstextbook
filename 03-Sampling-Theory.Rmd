@@ -1,10 +1,10 @@
 # Sampling Theory
 
-*"Garbage In, Garbage Out"* is a phrase used in computer science that applies equally well to statistics. It is important not to assume that the task of a statistician begins with raw data; the manner in which data is collected is of fundamental importance. Statistical inferences based on data that has not been collected with an appropriate *sampling method* should not be trusted.
+*"Garbage In, Garbage Out"* is a phrase used in computer science that applies equally well to statistics. It is important not to assume that the task of a statistician begins with raw data: the manner in which data are collected is of fundamental importance. Statistical inferences based on data that have not been collected with an appropriate *sampling method* may not be reliable.
 
 ### Populations and Samples {-}
 
-To recap from chapter 1, the term **population** refers to the entire set of objects in which we are interested. A **sample** is a subset of the population. 
+The term \textbf{population} refers to the entire set of individuals, objects, events or measurements about which information is sought. A \textbf{sample} is a subset of the population from which data are collected.
 
 \begin{center}
 \begin{tikzpicture}
@@ -173,9 +173,9 @@ To recap from chapter 1, the term **population** refers to the entire set of obj
 \end{tikzpicture}
 \end{center}
 
-When information is collected from an *entire population*, a **census** of the population has been taken. It is usually very difficult to carry out a census as it is time consuming, expensive, and requires an accurate and complete list of every member of the population. Collecting data can also be destructive (such as testing the burn time of candles) or involve risk (such as trialling an experimental drug).
+When information is collected from an *entire population*, a **census** of the population has been taken. It is usually very difficult to carry out a census as it is time-consuming, expensive, and requires every member of the population to be identified and included. Collecting data can also be destructive (such as testing the burn time of candles) or involve risk (such as trialling an experimental drug).
 
-It is therefore almost always the case that statisticians work with a **sample**, collecting information from just *part* of a population. Where appropriate processes are used with the aim of producing a sample which is *representative* of the population, it should give an accurate indication of the characteristics of the population and allow statistical inference techniques to be used.
+It is therefore usually the case that statisticians work with a \textbf{sample}, collecting information from only *part* of a population. When an appropriate sampling method is used to obtain a *representative* sample, the resulting data are more likely to provide reliable information about the population and support valid statistical inference.
 
 \pagebreak
 
@@ -185,7 +185,7 @@ Samples are used to infer information about the populations from which they are 
 
 ### Sample Size {-}
 
-Parameters, such as the population mean, are fixed but usually unknown, while sample statistics, such as the sample mean, vary from sample to sample. In other words, if samples are repeatedly taken from a population and their means are obtained, the values of those sample means will sometimes be higher than that of the true population mean and sometimes lower. This comes from *random sampling error* which, despite its name, is a natural effect due to chance variation.
+Parameters, such as the population mean, are fixed but usually unknown, while sample statistics, such as the sample mean, vary from sample to sample due to *random sampling error*. In other words, if samples are repeatedly taken from a population and their means are obtained, some sample means will be greater than the population mean and others will be smaller. Random sampling error is not a mistake in the sampling process. It is the natural difference between a sample statistic and the corresponding population parameter caused by chance variation in which units are selected.
 
 The figure below shows two sets of sample means for random samples taken from the same distribution with a population mean of $\mu=\text{50}$. For one set a sample size of $n=\text{5}$ was used, with $n=\text{20}$ for the other.
 
@@ -225,7 +225,7 @@ The figure below shows two sets of sample means for random samples taken from th
         \draw[stealth-] (7.5,2) -- (8.5,2) node[right] {ten sample means $\bar{x}_i$ with $n=\text{20}$};
 \end{tikzpicture}
 
-It can be seen that larger sample sizes tend to produce sample statistics that better represent the population parameters they are used to estimate. In other words, as sample size increases, the variability of sample statistics decreases. Larger samples are therefore generally preferred, and statistical studies conducted using only small samples of data should typically be treated with more caution than those based on larger samples. When small samples are used, the reasons are usually one or more of cost, time, and availability of data.
+It can be seen that larger sample sizes tend to produce less variable sample statistics. Consequently, estimates from larger random samples are generally more precise, although any particular sample statistic may still differ from the population parameter. However, while larger samples are therefore generally preferred, increasing the sample size does not correct *bias* caused by a poor sampling frame or sampling method.
 
 ### Bias {-}
 
@@ -248,7 +248,7 @@ Poor sampling technique may lead to samples that are not *representative* of the
         \draw[dashed] (8,0) -- (8,1) node[above] at (8,1) {${\scriptstyle \bar{x}_\text{4}}$};
         \draw[dashed] (9.2,0) -- (9.2,1) node[above] at (9.2,1) {${\scriptstyle \bar{x}_\text{5}}$};
         \draw[thick] (8.5,-0.2) -- (8.5,1.5) node[above] at (8.5,1.5) {$\mu$};
-        \node at (8.5,-0.5) {\textit{unbiased} (accurate estimation)};
+        \node at (8.5,-0.5) {\textit{unbiased} (centred around $\mu$)};
         \draw (12,0) -- (17,0);
         \draw[dashed] (16.8,0) -- (16.8,1) node[above] at (16.8,1) {${\scriptstyle \bar{x}_\text{1}}$};
         \draw[dashed] (15,0) -- (15,1) node[above] at (15,1) {${\scriptstyle \bar{x}_\text{2}}$};
@@ -260,7 +260,7 @@ Poor sampling technique may lead to samples that are not *representative* of the
     \end{tikzpicture}
 \end{center}
 
-It can be very difficult to identify that bias has been introduced, and equally difficult to correct it in practice. A key strategy for minimising the introduction of bias is through the application of *appropriate random sampling techniques*.
+It can be very difficult to identify that bias has been introduced, and equally difficult to correct it in practice. A key strategy for minimising the introduction of bias is by using *appropriate random sampling techniques*.
 
 \pagebreak
 
@@ -318,7 +318,7 @@ An ill-defined target population, an unrepresentative sampling frame or a poor s
 #### [Exercise 3.1](#ex31a) {-}
 
 \begin{enumerate}
-    \item A maths teacher conducts a survey of pupils' confidence in the subject by asking the first twenty pupils who enter the maths corridor at the start of first period. Suggest one issue with the \textbf{sampling frame} and one issue with the \textbf{sampling method}, explaining their potential impact.
+    \item A mathematics teacher wishes to investigate confidence in mathematics among all pupils in the school. They ask the first twenty pupils who enter the maths corridor at the start of first period to complete a questionnaire. Suggest one issue with the \textbf{sampling frame} and one issue with the \textbf{sampling method}, explaining their potential impact.
     \item A researcher wants to study the shopping habits of those who use his local supermarket. To collect data, he plans to stand at the exit of the self-checkout area one Sunday morning and ask shoppers if he can take a photo of their receipt. To save time, he will pick only those he feels are most likely to agree to this.
     \begin{enumerate}
         \item Identify: \qquad (i) The target population. \qquad (ii) The sampling frame.
@@ -343,7 +343,7 @@ In this course, knowledge is required of *four random sampling methods* and *two
 
 With *simple random sampling* each unit of the sampling frame is *equally likely* to be selected, such as by drawing names out of a hat. In general, a simple random sample of size $n$ can be selected from a population of size $N$ by numbering the units in the sampling frame from 1 to $N$, then selecting $n$ unique random numbers using a random number generator. Those units in the sampling frame corresponding to those numbers generated are then selected to form the sample.
 
-For example, a simple random sample of 15 pupils from a year group of 120 can be made by numbering a list of pupils from the year group from 1 to 120, then selecting 15 random numbers using a random number generator. 
+For example, a simple random sample of 15 pupils from a year group of 120 can be made by numbering a list of pupils from the year group from 1 to 120, then selecting 15 random numbers using a random number generator. The 15 pupils allocated these numbers then form the sample.
 
 \begin{center}
 \begin{tikzpicture}
@@ -546,7 +546,7 @@ For example, a simple random sample of 15 pupils from a year group of 120 can be
 
 *Systematic sampling* involves using an orderly *pattern* to select units, starting from a randomly selected point. In general, for a sample of size $n$ from a numbered sampling frame of size $N$, firstly a random number generator may select a number from 1 to $k$, where $k=\frac{N}{n}$, with the corresponding sampling unit selected. After that initial selection, *every subsequent* $k\text{th}$ *unit is selected* to complete the sample of size $n$.
 
-For example, a systematic sample of 15 pupils from a year group of 120 can be made by first selecting a random starting point from 1 to $\frac{\text{120}}{\text{15}}=8$, such as the  3rd pupil, in an alphabetised list of pupils in the year group. From there, every $\text{8}$th pupil from the list is chosen until 15 pupils have been chosen.
+For example, a systematic sample of 15 pupils from a year group of 120 can be made by first numbering each pupil from 1 to 120. A random number can be generated from 1 to $\frac{\text{120}}{\text{15}}=8$ and the corresponding pupil selected as the starting point. From there, every $\text{8}$th pupil from the list is chosen until 15 pupils have been chosen to form the sample.
 
 \begin{center}
 \begin{tikzpicture}
@@ -755,9 +755,9 @@ For example, a systematic sample of 15 pupils from a year group of 120 can be ma
 
 ### Stratified Sampling (Random) {-}
 
-If a target population contains distinct *strata*, where each stratum may have its own distinct characteristics, *stratified sampling* ensures that each stratum is *proportionally represented*. In general, this involves obtaining an ordered sampling frame for *each stratum* and using the proportion of each stratum in the population to determine how many to sample from each, using simple random sampling. Finally, these samples from the strata are combined.
+If a target population contains distinct *strata*, where each stratum has its own distinct characteristics, *stratified sampling* ensures that each stratum is *proportionally represented*. In general, this involves obtaining a numbered sampling frame for *each stratum* and using the proportion of each stratum in the population to determine how many to sample from each, using simple random sampling. Finally, these samples from the strata are combined.
 
-For example, a hospital wishing to survey its staff about the food in the staff canteen may split the $N=\text{120}$ staff into management, doctors/nurses and support staff. For a sample of size $n=\text{12}$, covering $\frac{\text{1}}{\text{10}}$th of the sampling frame, simple random sampling is used to select $\frac{\text{1}}{\text{10}}$ of the staff *from each group*. These are then collected to form the stratified sample. 
+For example, a hospital wishing to survey its staff about the food in the staff canteen may split the $N=\text{120}$ staff into management, clinical staff and support staff. For a sample of size $n=\text{12}$, covering $\frac{\text{1}}{\text{10}}$th of the sampling frame, simple random sampling is used to select $\frac{\text{1}}{\text{10}}$ of the staff *from each group*. These are then collected to form the stratified sample. 
 
 \begin{center}
 \begin{tikzpicture}
@@ -841,7 +841,7 @@ For example, a hospital wishing to survey its staff about the food in the staff 
 
 ### Cluster Sampling (Random) {-}
 
-If a target population is split into clusters, and each cluster can be considered a small representation of the population, containing a similar mix of characteristics, *cluster sampling* may be useful. For a *one-stage* cluster sample, one or more clusters are randomly selected, from a sampling frame of clusters, and then *all individuals* within those clusters form the sample. For a *two-stage* cluster sample, an additional level of sampling takes place to only sample *some* of the individuals within each cluster.
+If a target population is split into clusters, and each cluster can be considered a small representation of the population, containing a similar mix of characteristics, *cluster sampling* may be useful. For a *one-stage* cluster sample, one or more clusters are randomly selected from a sampling frame of clusters, usually using simple random sampling, and then *all individuals* within those clusters form the sample. For a *two-stage* cluster sample, an additional level of random sampling takes place to only sample *some* of the individuals within each cluster.
 
 For example, a hospital wishing to survey its staff about the food in the staff canteen may recognise that staff are split into hospital wards $A$ to $H$. Several wards are randomly selected ($A$, $C$ and $D$) and each member of staff working there surveyed. For a two-stage sampling method, simple random sampling could be used to select only *some* of the ward staff from the selected clusters to sample rather than everyone.
 
@@ -1131,7 +1131,7 @@ Taking a sample of a target population from an easily obtainable group, without 
 
 ### Quota Sampling (Non-random) {-}
 
-Like stratified sampling, *quota sampling* considers subgroups within the population. However, it *does not use a random process*, and the number sampled from each stratum often comes from a set *quota* rather than being proportional to their size. 
+Like stratified sampling, *quota sampling* considers subgroups within the population. However, it *does not use a random process* in its selection. Also, the *quota* sampled from each subgroup may or may not be proportional to their size. 
 
 \vspace{-0.5cm}
 
@@ -1220,7 +1220,7 @@ Like stratified sampling, *quota sampling* considers subgroups within the popula
 
 \vspace{-0.3cm}
 
-For example, interviewers for a marketing company at a shopping centre speak to people who pass, choosing for themselves who to interview from their allocated strata, with no random process used to avoid potential bias.
+For example, interviewers for a marketing company at a shopping centre speak to people who pass, choosing for themselves who to interview from their allocated group(s) from the people available, with no random process used to minimise potential bias.
 
 ### Advantages and Disadvantages {-}
 
@@ -1232,7 +1232,7 @@ Advantages and disadvantages of a sampling method for most contexts will typical
     \item How reliably it may produce a sample which is representative of the population (such as stratified to minimise chances of a subsection of the population being overlooked in a sample).
 \end{itemize}
 
-The method of collecting data may also impact the quality of the data obtained. For example, *emailing* selected individuals a questionnaire may introduce bias by excluding those who don't use email and allowing *self-selection*. Allowing *self-selection*, such as inviting customers to give a rating out of five for a purchase, may also introduce bias which is challenging to account for, as individuals with strong opinions are more likely to respond.
+The method of collecting data may also impact the quality of the data obtained. For example, *emailing* selected individuals a questionnaire may introduce bias by excluding those who don't use email and allowing *non-response*. Allowing *self-selection*, such as inviting customers to give a rating out of five for a purchase, may also introduce bias which is challenging to account for, as individuals with strong opinions are more likely to respond.
 
 Above all, the greatest concern for the purposes of statistical inference is whether or not a sampling technique applied has used a *random process* to minimise the risk of bias.
 
@@ -1247,7 +1247,7 @@ Above all, the greatest concern for the purposes of statistical inference is whe
   \begin{enumerate}
   \item The population is made up of groups, each of which contains broadly similar characteristics to each other, and the population. One or more of these groups are randomly selected, and everyone in those selected groups is chosen to make up the sample.
   \item It is recognised that the population contains a number of subgroups, each of which may have their own distinct characteristics. Individuals are randomly selected from each subgroup, such that the proportions of each subgroup in the sample match those proportions of the population.
-  \item Once an initial random individual from the population has been selected, subsequent individuals are selected at regular intervals until a sample has been obtained.
+  \item Once an initial individual has been randomly selected from the population, subsequent individuals are selected at regular intervals until a sample has been obtained.
   \item Individuals are selected from the population at random, with each having an equal chance of being selected.
   \item It is recognised that the population contains a number of subgroups, each of which may have their own distinct characteristics. Ten individuals from each subgroup are selected, without the use of a random process.
   \item The individuals most readily available are selected.
@@ -1321,7 +1321,7 @@ Above all, the greatest concern for the purposes of statistical inference is whe
     \end{tabular}
     \end{center}
     Explain how a stratified sample of 150 employees could be obtained, ensuring that each type of employee is proportionally represented.
-    \item A nutritionist is studying the calorific contents of pizzas sold in the UK, having read that the salt content is much higher than it is in Italy. They obtain a list of the takeaways which sell pizza in their local area by searching on social media, and randomly select twelve for their study. Suggest two reasons why the sampling frame may not be sufficiently representative of the target population.
+    \item A nutritionist is studying the salt content of pizzas sold in the UK, having read that the salt content is much higher than it is in Italy. They obtain a list of the takeaways which sell pizza in their local area by searching on social media, and randomly select twelve for their study. Suggest two reasons why the sampling frame may not be sufficiently representative of the target population.
     \item A researcher wishes to interview a random sample of pupils taking Higher Mathematics to investigate the proportion of them that are interested in pursuing a career in a mathematical field.  
     \begin{enumerate}
         \item Suggest a reason why taking a simple random sample of all pupils taking Higher Mathematics in Scotland would not be feasible. 

@@ -1,19 +1,19 @@
 # An Introduction to Probability Theory
 
-The purpose of statistics is to make sense of the world by analysing data. In practice, however, it is only possible to obtain data from a random sample of the full population of interest, introducing uncertainty that must be accounted for. Probability theory provides the mathematical framework used to describe this uncertainty.
+The purpose of statistics is to make sense of the world by analysing data. In practice, it is often impractical to obtain data from an entire population, so conclusions must frequently be based on a random sample. This introduces uncertainty that must be accounted for. Probability theory provides the mathematical framework used to describe this uncertainty.
 
-People commonly talk about *chance* in everyday language. For example, 'St Mirren are unlikely to win this weekend', or 'It is probably going to rain today'. However, neither comment assigns a numerical value to quantify those chances. In this chapter, probability as a *numerical measure* will be studied.
+People commonly talk about *chance* in everyday language. For example, someone might say, 'St Mirren are unlikely to win this weekend' or 'It is probably going to rain today'. However, neither comment assigns a numerical value to quantify those chances. In this chapter, probability as a *numerical measure* will be studied.
 
 #### Key definitions {-}
 
-In probability theory, an experiment for which all possible *outcomes* can be defined, and yet the actual outcome of any given *trial* cannot be known in advance, is called a *random experiment*. The set of all possible outcomes is called the *sample space* of the random experiment. Probability is assigned to individual outcomes or to sets of outcomes, called *events* (subsets of the sample space). Probability can be interpreted as the **long-run relative frequency** of an outcome or event occurring, and values range from 0 (*impossible*) to 1 (*certain*).
+In probability theory, A *random experiment* is a repeatable process whose possible *outcomes* can be specified, but whose outcome on any particular *trial* is uncertain in advance.. The set of all possible outcomes is called the *sample space* of the random experiment. Probability is assigned to  *events*, which can be any specified subset of the sample space and may contain one outcome, several outcomes or all possible outcomes. Events (subsets of the sample space). Probability can be interpreted as the **long-run relative frequency** of an outcome or event occurring, and values range from 0 (*impossible*) to 1 (*certain*).
 
 \begin{wrapfigure}{r}{0.15\textwidth}
 \centering
 \includegraphics[width=0.15\textwidth]{dice}
 \end{wrapfigure}
 
-For example, in the context of rolling a fair, six-sided die:
+For example, in the context of rolling a fair six-sided die:
 
 - the procedure of rolling the die and observing the result is a **random experiment**.
 
@@ -21,7 +21,7 @@ For example, in the context of rolling a fair, six-sided die:
 
 - the **sample space** consists of a list of all of the possible **outcomes**: $\{\text{1},\text{2},\text{3},\text{4},\text{5},\text{6}\}$
 
-- the **probability** of a $5$ is $\frac{\text{1}}{\text{6}}$ since *in the long run* it can be expected to occur $\frac{\text{1}}{\text{6}}$ of the time.
+- the **probability** of rolling a $5$ is $\frac{\text{1}}{\text{6}}$ since *in the long run* it can be expected to occur $\frac{\text{1}}{\text{6}}$ of the time.
 
 - a possible **event** of interest may be that the outcome is *prime*: $\{\text{2},\text{3},\text{5}\}$ 
 
@@ -37,21 +37,21 @@ $$\text{P}(\text{rolling a }\text{5})=\dfrac{\text{1}}{\text{6}}$$
 
 #### Experimental Probability {-}
 
-The probability of an event can be estimated by carrying out repeated trials and calculating the relative frequency with which the event occurs. This estimate is often called the *experimental probability* of the event. For example, if a football fan attends 200 games of football and observes that 114 of them end with the home team winning they may *estimate* the probability of a home win by calculating a proportion:
+The probability of an event can be estimated by carrying out repeated trials and calculating the relative frequency with which the event occurs. This estimate is often called the *experimental probability* of the event. For example, if a football fan attends 200 games of football and observes that 114 of them end with the home team winning, they may *estimate* the probability of a home win by calculating a proportion:
 
 \vspace{-0.4cm}
 
-$$\text{P}(\text{home win})\approx\frac{\text{114}}{\text{200}}=\text{0.57}$$
+$$\text{P}(\text{home win})\approx\frac{\text{114}}{\text{200}}=\text{0.57}=\text{57}\%$$
 
 \vspace{-0.2cm}
 
 #### Theoretical Probability {-}
 
-When each outcome in the sample space can reasonably be assumed to be \mbox{\textbf{equally likely}}, then the probability of outcomes or events can be determined theoretically, without need to use experimental probability to form an estimate. This is called the *theoretical probability* of an event.
+When each outcome in the sample space can reasonably be assumed to be \mbox{\textbf{equally likely}}, then the probability of outcomes or events can be determined theoretically, without first estimating it experimentally. This is called the *theoretical probability* of an event.
 
 Equally likely outcomes typically arise from the symmetry of a physical object (such as a coin or die) or a reasonable assumption. The probability of any *individual outcome* in a sample space containing $N$ equally likely outcomes is $\frac{\text{1}}{N}$. For example, if a playing card is picked at random from a standard pack of 52 cards, containing no jokers, then the probability of picking the Queen of Hearts is $\frac{\text{1}}{\text{52}}$.
 
-An **event** is a set of one or more outcomes from the sample space. The probability of an event is given by:
+An **event** is a set of one or more outcomes from the sample space. When outcomes are **equally likely**:
 
 \begin{tcolorbox}[center,title=Probability of an Event,colback=red!5,colframe=red!70!black,width=13cm,halign = center,halign title = center]
 \vspace{-0.3cm}
@@ -92,7 +92,7 @@ A car is selected at random. Determine the probability that the car selected is 
 $$\text{P}(\text{second-hand and hybrid})=\dfrac{\text{7}}{\text{80}}=\text{0.0875}$$
 \end{tcolorbox}
 
-In this textbook, probabilities will be given as fractions or decimals *rounded to four decimal places* for consistency.
+In this textbook, probabilities will be given as fractions, or decimals to 4 decimal places, for consistency.
 
 \pagebreak
 
@@ -188,17 +188,17 @@ In this textbook, probabilities will be given as fractions or decimals *rounded 
 
 It can help to write out sample spaces. Some sample spaces can be described easily using a simple list, but more complicated sample spaces may require a more organised approach, such as listing outcomes systematically or using a grid. Sample spaces are particularly useful when each outcome is equally likely, as this allows probabilities to be calculated directly by counting outcomes.
 
-If two coins are tossed, it may be tempting to suggest that the probability of both landing tails is one-in-three, since the experiment can result in either no coins landing tails, only one coin landing tails or two coins landing tails. However, a list of the four possible *equally likely* outcomes in the sample space shows that this is not the case:
+If two coins are tossed, it may be tempting to suggest that the probability of both landing tails is $\frac{\text{1}}{\text{3}}$, since the experiment can result in either no coins landing tails, only one coin landing tails or two coins landing tails. However, a list of the 4 possible *equally likely* outcomes in the sample space shows this is not the case:
 
-*Not equally likely outcomes:* $\{\text{no tails},\text{one tail},\textbf{two tails}\}$
+Listing outcomes that are *not equally likely:* $\{\text{no tails},\text{one tail},\textbf{two tails}\}$
 
-These three outcomes are *not* equally likely, so $\text{P}(\text{both tails})\ne\frac{\text{1}}{\text{3}}$.
+These three outcomes are *not* equally likely, and $\text{P}(\text{both tails})\ne\dfrac{\text{1}}{\text{3}}$.
 
 This is because there are *two ways* to obtain one tail.
 
-*Equally likely outcomes:* $\{\text{HH},\text{HT},\text{TH},\textbf{TT}\}$
+Listing outcomes that are *equally likely:* $\{\text{HH},\text{HT},\text{TH},\textbf{TT}\}$
 
-These four outcomes *are* equally likely, so $\text{P}(\text{both tails})=\frac{\text{1}}{\text{4}}$.
+These four outcomes *are* equally likely, so $\text{P}(\text{both tails})=\dfrac{\text{1}}{\text{4}}$.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Three coins are tossed at the same time. Find the probability that exactly two of the coins land showing tails.
@@ -293,7 +293,7 @@ $$\text{P}(\text{exactly two tails})=\dfrac{\text{3}}{\text{8}}$$
 
 #### [Exercise 2.2](#ex22a) {-}
 
-For most of the following questions, it is recommended to write out a full list of all the possible equally likely outcomes. There may be times when a full list would be excessive in length, in which case careful multiplication can reveal the *number* of outcomes, and only the *relevant* ones may be needed to be listed.
+For most of the following questions, it is recommended to write out a full list of all the possible equally likely outcomes. In some questions, a complete list would be excessively long. In such cases, multiplication can be used to determine the total number of outcomes, and only the favourable outcomes need to be listed.
 
 \begin{enumerate}
     \item A coin is tossed and a cubical, fair die numbered 1 to 6 is rolled. Write down:
@@ -316,7 +316,7 @@ For most of the following questions, it is recommended to write out a full list 
         \item Heads on at least two consecutive tosses.
         \item Heads at least twice.
     \end{enumerate}   
-    \item A random number is chosen from 1 to 140, inclusive. By first listing all relevant results, determine the probability of the number chosen having digits that sum to 3.
+    \item A random integer is chosen from 1 to 140, inclusive. By first listing all relevant results, determine the probability of the integer chosen having digits that sum to 3.
     \item Two six-sided dice are rolled. Find the probability that the product of the numbers obtained is less than 5.
     \item A tetrahedral (four-sided) die numbered 1 to 4 and a cubical die numbered 1 to 6 are rolled. Assuming that both dice are fair, find the probability that at least one of the numbers obtained is 2 or less.
     \item Five coins are placed in a bag, with values of 1p, 2p, 5p, 10p and 20p. Two coins are chosen at random, one after another, with the second chosen without replacement. Calculate:
@@ -403,7 +403,7 @@ Tree diagrams can be created to map out the possible outcomes of a random experi
 
 \vspace{-0.1cm}
 
-Tree diagrams should be completed with each *branch* labelled with a *probability*, and each *node* labelled with an *event*, as above. Since each split into *sibling branches* should show all the possible things that can happen next, the probabilities on sibling branches should add to 1.
+Tree diagrams should be completed with each *branch* labelled with a probability, and each *node* labelled with an event or outcome, as above. Since each split into *sibling branches* should show all the possible things that can happen next, the probabilities on sibling branches should add to 1.
 
 \[\text{i.e.}\;\frac{\text{1}}{\text{6}}+\frac{\text{5}}{\text{6}}=\text{1}\;\text{ and }\;\frac{\text{3}}{\text{4}}+\frac{\text{1}}{\text{4}}=\text{1}\]
 
@@ -484,8 +484,8 @@ Note that in the tree diagram above the probability of the card being a diamond 
         \item Find the probability that at least one of the counters selected is green.
     \end{enumerate}
     \item A game involves a player randomly selecting one card then a second card from a set of six blue cards and four red cards, without replacement. Find the probability of a player selecting two cards of the same colour.
-    \item Suppose that 41\% of the population of Scotland have the blood type \textit{O positive (O+)}. A doctor in Scotland randomly selects two of their patients and asks for them to take part in a blood screening trial, as part of which their blood type will be checked.\\[0.1em]  Calculate the probability that neither of the two patients has blood type \textit{O+}.
-    \item A component used in wind turbines is tested at two points in the production process, and marked as either \textit{sufficient quality} or \textit{insufficient quality} on the first testing point and then \textit{pass} or \textit{fail} at the second testing point. A component that is marked as insufficient quality at the first testing point will continue to be developed and may still pass at the second testing point. Three-quarters of the components are marked as \textit{sufficient quality} initially, of which nine-tenths go on to pass. Of those initially marked as \textit{insufficient quality}, only three-fifths go on to pass.\\[0.1em] Determine the probability that a component selected at random passes at the second testing point.
+    \item Suppose that 41\% of the population of Scotland have the blood type \textit{O positive (O+)}. A doctor in Scotland randomly selects two of their patients and asks for them to take part in a blood screening trial, as part of which their blood type will be checked.\\[1em]  Assume that the patients’ blood types may be treated as independent. Calculate the probability that neither of the two patients has blood type \textit{O+}.
+    \item A component used in wind turbines is checked at two testing points in the production process. At the first testing point each component is checked and marked as either \textit{sufficient quality} or \textit{insufficient quality}.\\[1em] At the second testing point, further along the production process, each component is checked again and is marked as either \textit{pass} or \textit{fail}.\\[1em] A component that is marked as insufficient quality at the first testing point will continue to be developed and may still pass at the second testing point.\\[1em] Three-quarters of the components are marked as \textit{sufficient quality} initially, of which nine-tenths go on to pass. Of those initially marked as \textit{insufficient quality}, only three-fifths go on to pass.\\[0.1em] Determine the probability that a component selected at random passes at the second testing point.
     \item A pencil case contains pencils of three different types: four HB pencils, two 2B pencils and one 2H pencil. Two pencils are selected at random, without replacement.
     \begin{enumerate}
         \item Find the probability that both pencils selected are of the same type.
@@ -505,7 +505,7 @@ Note that in the tree diagram above the probability of the card being a diamond 
 
 ## Venn Diagrams and Set Notation
 
-Venn diagrams are used to show which elements of a set belong to one or more subsets. They can offer an alternative way of representing information about a sample space that might otherwise be shown in a table. For instance, the *contingency table* below shows the twelve dishes from a restaurant's main course menu, broken down by whether or not each is *gluten-free* ($G$) and whether or not each is *vegan* ($V$). Beside it is a Venn diagram representing the same information.
+Venn diagrams are used to show which elements of a set belong to one or more subsets. They can offer an alternative way of representing information about a sample space that might otherwise be shown in a table. For instance, the *contingency table* below shows the twelve dishes from a restaurant's main course menu, classified by whether each dish is *gluten-free* ($G$) and whether each dish is *vegan* ($V$). Beside it is a Venn diagram representing the same information.
 
 \begin{figure}[H]
   \centering
@@ -805,7 +805,7 @@ In addition to the special cases above (when events are mutually exclusive or ex
 \begin{minipage}[c]{.4\textwidth}
   \centering
 \begin{tcolorbox}[title=The Complement of {$A$}:,colback=red!5,colframe=red!70!black, halign = center,halign title = center,width=6cm,height=1.8cm]
-$\text{P}(A)+\text{P}(\overline{A})=\text{1}$
+$\text{P}(\overline{A})=\text{1}-\text{P}(A)$
 \end{tcolorbox}
 \end{minipage}%
   \centering
@@ -897,15 +897,6 @@ It should be noted that there are generally numerous different ways to approach 
     \end{enumerate}
     \item For the exhaustive events $E$ and $F$, such that $\text{P}(F\cap E)=\text{0.7}$ and $\text{P}(\overline{E})=\text{0.2}$, determine $\text{P}(F)$.
     \item A parking ticket machine in a remote location in the Cairngorms National Park takes payment by a contactless card reader, which connects to the banking network via a 3G phone signal. On some days, the connection fails and the machine cannot take payment. When the humidity is high, the connection will fail on 18\% of days. When the humidity is not high, the connection will fail on 7\% of days. Humidity is high in the area on 34\% of days. Determine the probability on a randomly selected day of the year that the parking machine can take payment.
-    \item A board game begins with a \textit{defending} player rolling a tetrahedral die with sides numbered from 1 to 4, and a \textit{attacking} player rolling a cubical die with sides numbered from 1 to 6. The player who obtains the highest number earns a point, with a tie leading to the dice being rolled again. Both dice are fair.
-    \begin{enumerate}
-        \item Find the probability that the first point is earned, by either player, without the dice having to be rolled again following a tie.
-        \item Find the probability that the attacking player earns the first point.
-    \end{enumerate}
-    If the attacking player wins three points in a row, they are then awarded a \textit{bonus roll} in which they roll \textit{both} dice and gain a bonus point if the product of the numbers obtained is greater than 16.
-    \begin{enumerate}[resume]
-        \item Determine the probability that a bonus roll results in a bonus point.
-    \end{enumerate}
     \item The 100 members of an orchestra are shown in the table below, broken down by the section they are in and whether they can attend the upcoming concert.
     \begin{center}
     \begin{tabular}{| c|c c c c|}
@@ -918,6 +909,15 @@ It should be noted that there are generally numerous different ways to approach 
     \end{tabular}
     \end{center}
     A member of the orchestra is selected at random. Let $B$ be the event the member selected is in the \textit{Brass} section and $A$ that they can attend the upcoming concert. State $\text{P}(B\cup \overline{A})$.
+    \item A board game begins with a \textit{defending} player rolling a tetrahedral die with sides numbered from 1 to 4, and a \textit{attacking} player rolling a cubical die with sides numbered from 1 to 6. The player who obtains the highest number earns a point, with a tie leading to the dice being rolled again. Both dice are fair.
+    \begin{enumerate}
+        \item Find the probability that the first point is earned, by either player, without the dice having to be rolled again following a tie.
+        \item Find the probability that the attacking player earns the first point.
+    \end{enumerate}
+    If the attacking player wins three points in a row, they are then awarded a \textit{bonus roll} in which they roll \textit{both} dice and gain a bonus point if the product of the numbers obtained is greater than 16.
+    \begin{enumerate}[resume]
+        \item Determine the probability that a bonus roll results in a bonus point.
+    \end{enumerate}
     \item Exhaustive events $A$, $B$ and $C$ are such that $\text{P}(A)=\text{0.25}$, $\text{P}(A\cap B)=\text{0.1}$, $\text{P}(\overline{B})=\text{0.3}$ and $\text{P}(A\cup C)=\text{0.6}$. Events $A$ and $C$ are mutually exclusive. Determine the value of $\text{P}(B\cap C)$.
 \end{enumerate}
 
