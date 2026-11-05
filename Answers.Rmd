@@ -1770,14 +1770,20 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 #### Chapter 7 - Discrete Distributions {-}
 
 
-
-
 []{#ex71a}
 
 #### [Exercise 7.1](#ex71q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
+    \item 
+    \begin{enumerate}
+        \item Possible values are \(\{2,3,\dots,12\}\), rather than \(\{1,2,\dots,12\}\), and they are not equally likely.
+        \item The possible values do not have equal probabilities, since months have different numbers of days.
+        \item The possible values are \(\{2,3,5,7\}\), rather than integers from \(1\) to \(k\).
+        \item Values are \(\{0,1,\ldots,10\}\), rather than \(\{1,2,\ldots,k\}\), and they are not equally likely.
+    \end{enumerate}
+    \columnbreak
     \item $E(X)=3$ and $V(X)=2$
     \item $E(X)=8$ and $V(X)=\tfrac{56}{3}$
     \item
@@ -1791,6 +1797,7 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
         \item $E(X)=10.5$ and $V(X)=33.25$
         \item $E(1-3X)=-30.5$ and $V(1-3X)=299.25$
     \end{enumerate}
+    \columnbreak
     \item
     \begin{enumerate}
         \item $E(X-Y)=-1$
@@ -1811,30 +1818,36 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{enumerate}
 \end{multicols}
 
-
 []{#ex72a}
 
 #### [Exercise 7.2](#ex72q) {-}
 
-\begin{multicols}{3}
 \begin{enumerate}
-    \item $0.2503$
-    \item $0.2787$
-    \item $0.0579$
-    \item $0.0988$
-    \item
-    \begin{enumerate}
-        \item $X\sim B(4,\tfrac{1}{7})$
-        \item $0.3599$
-    \end{enumerate}
-    \item 0.0214
+    \item This is not binomial because the number of trials completed in one minute is not fixed.
+    \item $X\sim\text{B}\left(20,\frac{1}{6}\right)$.
+    \item $X\sim\text{B}\left(12,\frac{1}{2}\right)$.
+    \item This is not binomial because the counters are not replaced. Consequently, the trials are not independent and the probability of selecting a red counter is not constant.
+    \item This is not binomial because \(X\) records the observed values, rather than the number of successes. In addition, each recorded value can be \(8\), \(9\) or \(10\), so the variable being recorded does not have only two possible outcomes.
 \end{enumerate}
-\end{multicols}
-
 
 []{#ex73a}
 
 #### [Exercise 7.3](#ex73q) {-}
+
+\begin{multicols}{5}
+\begin{enumerate}
+    \item $0.2503$
+    \item $0.2787$
+    \item $0.0579$
+    \item $0.5404$
+    \item $0.2262$
+\end{enumerate}
+\end{multicols}
+
+
+[]{#ex74a}
+
+#### [Exercise 7.4](#ex74q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -1852,12 +1865,22 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
         \item $0.2235$
         \item $0.5756$
     \end{enumerate}
+    \columnbreak
     \item
     \begin{enumerate}
         \item $0.7414$
         \item $0.0003$
         \item $0.4829$
     \end{enumerate}
+    \item $0.0424$
+    \item 
+    \begin{enumerate}
+        \item $X\sim\text{B}(10,0.75)$
+        \item $Y\sim\text{B}(10,0.25)$
+        \item $\text{P}(Y\leqslant 2)$
+        \item $0.5256$
+    \end{enumerate}
+    \columnbreak
     \item
     \begin{enumerate}
         \item $0.1468$
@@ -1867,9 +1890,9 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{enumerate}
 \end{multicols}
     
-[]{#ex74a}
+[]{#ex75a}
 
-#### [Exercise 7.4](#ex74q) {-}
+#### [Exercise 7.5](#ex75q) {-}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -1880,6 +1903,7 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
         \item $\mu=0.4,\sigma^2=0.36$
         \item $\mu=12,\sigma^2=7.2$
     \end{enumerate}
+    \columnbreak
     \item
     \begin{enumerate}
         \item $S\sim B(10,\tfrac{1}{4})$
@@ -1889,8 +1913,9 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item
     \begin{enumerate}
         \item $p=0.2$
-        \item $SD(X)=0.96$
+        \item $SD(X)=0.9798$
     \end{enumerate}
+    \columnbreak
     \item
     \begin{enumerate}
         \item $p=\tfrac{2}{3}$
@@ -1904,15 +1929,25 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{enumerate}
 \end{multicols}
 
+\pagebreak
 
-[]{#ex75a}
+[]{#ex76a}
 
-#### [Exercise 7.5](#ex75q) {-}
+#### [Exercise 7.6](#ex76q) {-}
 
 \begin{enumerate}
+    \item
+    \begin{enumerate}
+        \item Arrivals may occur in groups, so people may not arrive singly. The arrival rate may also vary throughout the day.
+        \item The amount of rain is a continuous measurement, whereas a Poisson random variable counts discrete events.
+        \item Vehicles may arrive in groups because their movements are affected by traffic flow and nearby traffic lights. The events may therefore not be independent, and the mean rate may not be constant.
+        \item Buses normally follow a timetable, so their arrivals are not random throughout the interval.
+        \item The checks may not be independent, and the mean rate may vary during the match, for example at half-time or following an important incident.
+    \end{enumerate}
+    \begin{multicols}{3}
     \item 
     \begin{enumerate}
-        \item $0.1336$
+        \item $0.2138$
         \item $0.0821$
         \item $0.2873$
         \item $0.7127$
@@ -1922,26 +1957,20 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
         \item $X\sim Po(4)$
         \item $0.0183$
     \end{enumerate}
-\end{enumerate}
-
-[]{#ex76a}
-
-#### [Exercise 7.6](#ex76q) {-}
-
-\begin{multicols}{3}
-\begin{enumerate}
+    \columnbreak
     \item 
     \begin{enumerate}
-        \item $0.01512$
+        \item $0.1512$
         \item $0.5543$
         \item $0.0620$
         \item $0.3937$
     \end{enumerate}
+    \columnbreak
     \item 
     \begin{enumerate}
-        \item $0.02231$
+        \item $0.2231$
         \item $0.0611$
-        \item $0.4412$
+        \item $0.7759$
         \item $0.1912$
     \end{enumerate}
     \item
@@ -1949,8 +1978,8 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
         \item $X\sim Po(1)$
         \item $0.0190$
     \end{enumerate}
+    \end{multicols}
 \end{enumerate}
-\end{multicols}
 
 []{#ex77a}
 
@@ -1959,8 +1988,20 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \begin{enumerate}
     \item $0.9473$
     \item $0.9389$
+    \item 
+    \begin{enumerate}
+        \item $0.1736$
+        \item $0.1396$
+        \item The numbers of fouls committed in the two halves are assumed to be independent.
+    \end{enumerate}
     \item $0.2661$
     \item $0.1353$
+    \item 
+    \begin{enumerate}
+        \item $X\sim\text{Po}(1.5)$
+        \item $0.7769$
+        \item $0.0618$
+    \end{enumerate}
     \item $0.0144$
 \end{enumerate}
 
@@ -1990,12 +2031,12 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \begin{enumerate}
         \item $0.8298$
         \item $\mu=17$ and $\sigma=1.597$
-        \item The germination of the seeds is independent.
+        \item It is assumed that the seeds germinate independently and that every seed has the same probability, \(0.85\), of germinating.
     \end{enumerate}
     \item
     \begin{enumerate}
-        \item $0.6703$
-        \item $0.1954$
+        \item $0.3012$
+        \item $0.2510$
     \end{enumerate}
     \item
     \begin{enumerate}
@@ -2007,12 +2048,12 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \begin{enumerate}
         \item $0.2$
         \item $0.1528$
-        \item $0.0267$
+        \item $0.2018$
     \end{enumerate}
 \end{enumerate}
 \end{multicols}
 
-
+\pagebreak
 
 #### Chapter 8 Answers - Continuous Distributions {-}
 

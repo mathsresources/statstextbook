@@ -24,7 +24,7 @@ Sometimes it will be clear that a particular condition has been met, but there w
 
 ## The Discrete Uniform Distribution
 
-Consider the discrete random variables $X$ and $Y$, representing the scores obtained from a cubical die numbered $\{\text{1},\text{2},\text{3},\text{4},\text{5},\text{6}\}$ and a tetrahedral die numbered $\{\text{1},\text{2},\text{3},\text{4}\}$ respectively. Their probability distributions have been tabulated and graphed below, and the expectation and variance calculated for each:
+Consider the discrete random variables $X$ and $Y$, representing the scores obtained from a fair six-sided die numbered $\{\text{1},\text{2},\text{3},\text{4},\text{5},\text{6}\}$ and a fair four-sided die numbered $\{\text{1},\text{2},\text{3},\text{4}\}$ respectively. Their probability distributions have been tabulated and graphed below, and the expectation and variance calculated for each:
 
 \begin{figure}[H]
   \centering
@@ -102,7 +102,7 @@ Consider the discrete random variables $X$ and $Y$, representing the scores obta
     every axis y label/.style={at={(current axis.above origin)},anchor=south east}
     }
 }
-    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 4cm, width = 8cm, ybar,bar width=10pt, xmin=4.5,xmax=8.5,ymin=0,ymax=0.4, xtick={5,6,7,8},xticklabels={$\text{1}$,$\text{2}$,$\text{3}$,$\text{4}$},ytick={0,0.25},yticklabels={0,$\frac{\text{1}}{\text{4}}$},xlabel=$x$,ylabel=probability]
+    \begin{axis}[standard,x label style={at={(current axis.right of origin)},anchor=west},y label style={at={(current axis.above origin)},anchor=south}, height = 4cm, width = 8cm, ybar,bar width=10pt, xmin=4.5,xmax=8.5,ymin=0,ymax=0.4, xtick={5,6,7,8},xticklabels={$\text{1}$,$\text{2}$,$\text{3}$,$\text{4}$},ytick={0,0.25},yticklabels={0,$\frac{\text{1}}{\text{4}}$},xlabel=$y$,ylabel=probability]
         \addplot[fill=black!25, draw=black] coordinates {
     (5,0.25)
     (6,0.25) 
@@ -118,7 +118,7 @@ Consider the discrete random variables $X$ and $Y$, representing the scores obta
 \end{minipage}
 \end{figure}
 
-Whilst $X$ and $Y$ do not follow the same distribution, they share key characteristics, namely that they both take a *finite number of integer values*, $\{\text{1},\text{2},\text{3},\dots,k\}$, and that *each of these values is equally likely*. It is these *shared characteristics* that define the *discrete uniform distribution*.
+Whilst $X$ and $Y$ do not follow the same distribution, they share key characteristics, namely that they both take a *finite number of integer values*, $\{\text{1},\text{2},\text{3},\dots,k\}$, and that *each of these values is equally likely*. It is these *shared characteristics* that define the *discrete uniform distribution* used in this course.
 
 \vspace{0.5cm}
 
@@ -143,7 +143,7 @@ The  Data Booklet (**page 4**) gives the formulae to calculate *expectation* and
 
 $$\text{E}(X)=\frac{k+\text{1}}{\text{2}}\quad \text{ and }\quad \text{V}(X)=\frac{k^\text{2}-\text{1}}{\text{12}}$$
 
-The previously stated values for the expectation and variance of $X$ and $Y$ can be quickly obtained using these formulae. It also provides the *probability function* (**pf**) for the distribution $\text{U}(k)$ as $\frac{\text{1}}{k}$. Probability functions show how to calculate the probability of any given outcome for a discrete random variable. Here, the probability depends *only on the parameter* $k$. For example, given $X\sim \text{U}(\text{5})$:
+The previously stated values for the expectation and variance of $X$ and $Y$ can be quickly obtained using these formulae. The Data Booklet also provides the *probability function* (**pf**) for the distribution $\text{U}(k)$ as $\frac{\text{1}}{k}$. Probability functions show how to calculate the probability of any given outcome for a discrete random variable. Here, the probability depends *only on the parameter* $k$. For example, given $X\sim \text{U}(\text{5})$:
 
 \[\text{P}(X=\text{1})=\frac{\text{1}}{\text{5}}, \quad \text{P}(X=\text{2})=\frac{\text{1}}{\text{5}}, \quad \text{P}(X=\text{3})=\frac{\text{1}}{\text{5}}, \quad \text{and so on...}\]
 
@@ -181,7 +181,7 @@ The previously stated values for the expectation and variance of $X$ and $Y$ can
 #### [Exercise 7.1](#ex71a) {-}
 
 \begin{enumerate}
-    \item Explain why, for each, random variable $X$ does \textbf{not} follow a $\text{U}(k)$ distribution.
+    \item Explain why, in each case, the random variable $X$ does \textbf{not} follow a $\text{U}(k)$ distribution.
     \begin{enumerate}
         \item Let $X$ represent the total score obtained from rolling two fair six-sided dice.
         \item Let $X$ represent the day of the month on which a person was born.
@@ -279,14 +279,14 @@ If $X$ is the number of heads obtained from three coin tosses, then $X$ is *bino
 
 #### [Exercise 7.2](#ex72a) {-}
 
-For each, if $X$ is a binomially distributed random variable then state its distribution, such as $X\sim \text{B}\left(\text{8},\frac{\text{2}}{\text{3}}\right)$. Otherwise, explain clearly which condition(s) for a binomial distribution are \textbf{not} satisfied.
+For each random variable, $X$, below, if it is a binomially distributed random variable then state its distribution, such as $X\sim \text{B}\left(\text{8},\frac{\text{2}}{\text{3}}\right)$. Otherwise, explain clearly which condition(s) for a binomial distribution are \textbf{not} satisfied.
 
 \begin{enumerate}
-    \item A student spends one minute rolling a die. Let $X$ represent the number of times the die showed a six.
-    \item A student rolls a die 20 times. Let $X$ represent the number of times the die showed a six.
-    \item A bag contains 30 red counters and 30 blue counters. A student selects a counter from the bag at random, notes the colour, then \textbf{replaces it} into the bag. In total, they do this 12 times. Let random variable $X$ represent the number of times that the counter selected is red.
-    \item A bag contains 30 red counters and 30 blue counters. A student selects a counter from the bag at random, notes the colour, then \textbf{does not replace it} into the bag. In total, they do this 12 times. Let random variable $X$ represent the number of times that the counter selected is red.
-    \item Bob takes twelve observations from a $\text{U}(\text{10})$ distribution. Each time the outcome is at least 8, he writes down the value observed. Let $X$ represent the values he writes down.
+    \item A student spends one minute rolling a fair die. Let $X$ represent the number of times the die showed a six.
+    \item A student rolls a fair die 20 times. Let $X$ represent the number of times the die showed a six.
+    \item A bag contains 30 red counters and 30 blue counters. A student selects a counter from the bag at random, notes the colour, then \textbf{replaces it} into the bag. In total, they do this 12 times. Let the random variable $X$ represent the number of times that the counter selected is red.
+    \item A bag contains 30 red counters and 30 blue counters. A student selects a counter from the bag at random, notes the colour, then \textbf{does not replace it} into the bag. In total, they do this 12 times. Let the random variable $X$ represent the number of times that the counter selected is red.
+    \item A student takes twelve observations from a $\text{U}(\text{10})$ distribution. Each time the outcome is at least 8, they write down the value observed. Let $X$ represent the values they write down.
 \end{enumerate}
 
 \pagebreak
@@ -295,7 +295,7 @@ For each, if $X$ is a binomially distributed random variable then state its dist
 
 Unlike the discrete uniform distribution, the binomial distribution has a probability function that is less obvious. It is therefore useful to understand where the formula comes from.
 
-Consider a spinning wheel that lands on a shaded sector with probability $\frac{\text{2}}{\text{5}}$, or 0.4. Let random variable $X$ represent the number of times the wheel will land on the shaded sector in 6 trials, with possible values from 0 to 6. Here $X$ is *binomially distributed*, with $n=\text{6}$ (number of trials) and $p=\text{0.4}$ (probability of success), or: $X\sim \text{B}(\text{6},\text{0.4})$
+Consider a spinning wheel that lands on a shaded sector with probability $\frac{\text{2}}{\text{5}}$, or 0.4. Let the random variable $X$ represent the number of times the wheel will land on the shaded sector in 6 trials, with possible values from 0 to 6. Here $X$ is *binomially distributed*, with $n=\text{6}$ (number of trials) and $p=\text{0.4}$ (probability of success), or: $X\sim \text{B}(\text{6},\text{0.4})$
 
 \vspace{-0.5cm}
 \begin{figure}[H]
@@ -403,7 +403,7 @@ It is therefore important to be able to write any given probability that uses an
 \textbf{Problem:} It is estimated that around 10\% of people are left-handed. Taking this to be accurate, calculate the probability that, in a random sample of 12 people, at least two will be left-handed.
 
 \tcblower
-\textbf{Solution:} Let random variable $X$ represent the number of left-handed people out of the sample of 12.\\[0.7em]
+\textbf{Solution:} Let the random variable $X$ represent the number of left-handed people in the sample.\\[0.7em]
 $X\sim \text{B}(\text{12},\text{0.1})$\\[0.7em]
 $\text{P}(X\geqslant \text{2})=\text{1}-\text{P}(X\leqslant \text{1})=\text{1}-\text{0.6590}=\text{0.3410}$
 
@@ -440,8 +440,8 @@ $\text{P}(X\geqslant \text{2})=\text{1}-\text{P}(X\leqslant \text{1})=\text{1}-\
         \item $\text{P}(\text{3}<X\leqslant\text{6})$
         \end{multicols}
     \end{enumerate}
-    \item A \textit{biased} coin shows heads with probability 0.35. Calculate the probability that it shows heads fewer than twice in twelve tosses.
-    \item If random variable $X$ represents the number of \textit{successes} in ten independent trials, each with probability of success 0.75, state:
+    \item A \textit{biased} coin lands showing heads with probability 0.35. Calculate the probability that it lands showing heads fewer than two times in twelve tosses.
+    \item If the random variable $X$ represents the number of \textit{successes} in ten independent trials, each with probability of success 0.75, state:
     \begin{enumerate}
         \item The distribution of $X$.
         \item The distribution of $Y$, where $Y$ represents the number of \textit{failures}.
@@ -467,7 +467,7 @@ The *expectation* of a binomial distribution is fairly intuitive (the number of 
 $$\text{E}(X)=np \qquad \text{and} \qquad \text{V}(X)=npq \qquad (\text{where }q=\text{1}-p)$$
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A multiple choice quiz is comprised of eight questions, each with four possible choices. Let random variable $X$ represent the number of correct answers obtained out of eight from a student guessing completely at random. Calculate the mean and variance of $X$.
+\textbf{Problem:} A multiple choice quiz is comprised of eight questions, each with four possible choices. Let the random variable $X$ represent the number of correct answers obtained out of eight from a student guessing completely at random. Calculate the mean and variance of $X$.
 
 \tcblower
 \textbf{Solution:} Since the student is guessing randomly, the probability of a correct answer is $p=\tfrac{\text{1}}{\text{4}}$.\\
@@ -568,7 +568,7 @@ Assume that the mean rate of 2.5 phone calls per hour is *constant* across the o
     xlabel=$x$,ylabel=probability]
         \addplot[fill=black!25, draw=black] coordinates {
     (2,0.0821)
-    (3,0.2502)
+    (3,0.2052)
     (4,0.2565) 
     (5,0.2138)
     (6,0.1336)
@@ -619,7 +619,7 @@ $$\text{P}(X=\text{4})=\frac{e^{-\text{2.5}} \times \text{2.5}^\text{4}}{\text{4
 \tcblower
 \textbf{Solution:}
 
-Let random variable $X$ represent the number of drops of rain. Assuming a Poisson process applies:\\[-0.5em]
+Let the random variable $X$ represent the number of drops of rain. Assuming a Poisson model applies:\\[-0.5em]
 
 $X\sim \text{Po}(\text{6})$
 
@@ -640,20 +640,20 @@ As with the binomial distribution, in general it is much faster to use the **cum
     \begin{enumerate}
         \item Let $X$ represent the number of people arriving at a restaurant each hour.
         \item Let $X$ represent the amount of rain falling in one hour.
-        \item Let $X$ represent the number of vehicles passing set of traffic lights each minute.
+        \item Let $X$ represent the number of vehicles passing a set of traffic lights each minute.
         \item Let $X$ represent the number of buses arriving at a bus station in an hour.
         \item Let $X$ represent the number of times a football fan checks their phone during a match.
     \end{enumerate}
     \item Given random variable $X$ such that $X\sim \text{Po}(\text{2.5})$, use the \textbf{probability function} to calculate:
     \begin{multicols}{4}
     \begin{enumerate}
-        \item $\text{P}(X=\text{4})$.
+        \item $\text{P}(X=\text{3})$.
         \item $\text{P}(X=\text{0})$.
         \item $\text{P}(X<\text{2})$.
         \item $\text{P}(X\geqslant\text{2})$.
     \end{enumerate}
     \end{multicols}
-    \item Let random variable $X$ represent the number of goals in a game of Sunday League football, known to follow a Poisson distribution with a mean of 4 goals.
+    \item Let the random variable $X$ represent the number of goals in a game of Sunday League football, known to follow a Poisson distribution with a mean of 4 goals.
     \begin{enumerate}
         \item State the distribution of $X$.
         \item Use the probability function to calculate the probability that a game finishes goalless.
@@ -676,7 +676,7 @@ As with the binomial distribution, in general it is much faster to use the **cum
         \item $\text{P}(Y\geqslant\text{3})$.
     \end{multicols}
     \end{enumerate}
-    \item Whilst watching a section of the night sky, the number of visible shooting stars is known to follow a Poisson distribution with a mean rate of one per hour. Let random variable $X$ represent the number of shooting stars seen in an hour.
+    \item Whilst watching a section of the night sky, the number of visible shooting stars is known to follow a Poisson distribution with a mean rate of one per hour. Let the random variable $X$ represent the number of shooting stars seen in an hour.
     \begin{enumerate}
         \item State the distribution of $X$.
         \item Calculate the probability of more than three shooting stars being seen in any given hour.
@@ -691,7 +691,7 @@ The mean and variance of a Poisson distribution are stated on **page 4** of the 
 
 $$\text{E}(X)=\text{V}(X)=\lambda \qquad \text{and} \qquad \text{SD}(X)=\sqrt{\lambda}$$
 
-A key feature of the Poisson distribution is that \textbf{the mean and variance are equal} 
+A key feature of the Poisson distribution is that \textbf{the mean and variance are equal}. 
 This can help to identify whether a Poisson model is appropriate when analysing data.
 
 Given two **independent** random variables $X$ and $Y$ such that $X\sim \text{Po}(\lambda_X)$ and $Y\sim \text{Po}(\lambda_Y)$, the *sum* of $X$ and $Y$ is also a Poisson random variable, for which $\lambda=\lambda_X+\lambda_Y$.
@@ -753,18 +753,18 @@ For a five-hour shift at the call centre, the number of calls may be modelled as
 This assumes that the number of calls received in each time period is independent.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} Betty has observed that the number of work emails she receives on weekdays between 10am and 11am follows a Poisson distribution with a mean rate of 7 emails. The number of personal emails she receives in this time is also Poisson distributed with a mean rate of 3 emails. Calculate the probability that she receives fewer than 8 emails in total on a weekday between 10am and 11am. 
+\textbf{Problem:} On weekdays from 10am to 11am, the number of work emails Betty receives can be modelled by a Poisson distribution with a mean rate of 7 emails per hour, and the number of personal emails follows a Poisson distribution with a mean rate of 3 emails per hour. Calculate the probability that she receives fewer than 8 emails in total on a weekday between 10am and 11am. 
 
 \tcblower
 \textbf{Solution:}
 
-Let random variable $X$ represent the number of work emails, and $Y$ the number of personal emails.\\
+Let the random variable $X$ represent the number of work emails, and $Y$ the number of personal emails.\\
 
 $\lambda_X=\text{7}$ and $X\sim \text{Po}(\text{7})$\\
 
 $\lambda_Y=\text{3}$ and $Y\sim \text{Po}(\text{3})$\\
 
-Let random variable $T$ represent the total number of emails in an hour:\\
+Let the random variable $T$ represent the total number of emails in an hour:\\
 
 $\lambda_X+\lambda_Y=\text{7}+\text{3}=\text{10}$, so $T\sim \text{Po}(\text{10})$\\
 
@@ -772,7 +772,7 @@ $\text{P}(T<\text{8})=\text{P}(T\leqslant \text{7})=\text{0.2202}$
 
 \end{tcolorbox}
 
-So there is a roughly 22\% probability that Betty receives fewer than 8 emails in total between 10am and 11am, assuming that each event (an email arriving) is independent. This would not be the case if some emails she receives are duplicated between her work and email accounts, such as subscriptions to services emailing all the addresses a customer has registered with them.
+So there is a roughly 22\% probability that Betty receives fewer than 8 emails in total between 10am and 11am, assuming that each event (an email arriving) is independent. This would not be the case if some emails she receives are duplicated between her work and personal email accounts, such as subscriptions to services emailing all the addresses a customer has registered with them.
 
 \pagebreak
 
@@ -783,13 +783,13 @@ So there is a roughly 22\% probability that Betty receives fewer than 8 emails i
 \begin{enumerate}
     \item Given independent random variables $X\sim \text{Po}(\text{1.6})$ and $Y\sim \text{Po}(\text{0.4})$, calculate $\text{P}(X+Y\leqslant\text{4})$.
     \item Given $F\sim \text{Po}(\text{3.3})$ and $G\sim \text{Po}(\text{1.2})$, with $F$ and $G$ independent, calculate $\text{P}(F+G\geqslant\text{2})$.
-    \item The number of wickets taken in a morning session of country cricket in a league in Scotland follows a Poisson distribution with a mean of 3.5. In an afternoon session, the mean is 2.5. 
+    \item The number of fouls committed during the first half of a hockey game in a league in Scotland follows a Poisson distribution with a mean of 4.5. In the second half, the mean is 3.5. 
     \begin{enumerate}
-        \item Calculate the probability that fewer than 4 wickets are taken in a \textbf{morning} session.
-        \item Find the probability that exactly 8 wickets are taken in a full day, comprising of a morning session and an afternoon session.
+        \item Calculate the probability that fewer than 3 fouls are committed in the first half of a game.
+        \item Find the probability that exactly 8 fouls are committed in a full game.
         \item State an assumption required for the calculation in part (b).
     \end{enumerate}
-    \item For a restaurant's Glasgow branch, the number of bottles of champagne sold on a Saturday night follows a Poisson distribution with a mean rate of 3 per night. The number sold for their Edinburgh branch is Poisson distributed with a mean of 5 per night. Stating an assumption required, calculate the probability at least 10 but fewer than 15 bottles of champagne are sold on a Saturday night between the two branches.
+    \item For a restaurant's Glasgow branch, the number of bottles of champagne sold on a Saturday night follows a Poisson distribution with a mean rate of 3 per night. The number sold for their Edinburgh branch is Poisson distributed with a mean of 5 per night. Stating an assumption required, calculate the probability that at least 10 but fewer than 15 bottles of champagne are sold on a Saturday night between the two branches.
     \item Shooting stars can be seen in a section of night sky at a mean rate of 1 per hour, and the number visible in an hour is Poisson distributed. Calculate the probability of watching the night sky for two hours and not seeing a single shooting star.
     \item A city is experiencing problems with the number of pieces of chewing gum stuck to pavements. A worker from the council's environmental health department notes that in the city's main pedestrian square, the mean number of pieces of chewing gum per square paving stone was 1.5.\\[0.5em]
     It may be assumed that the number of pieces on a paving stone, $X$, follows a Poisson distribution. 
@@ -797,7 +797,7 @@ So there is a roughly 22\% probability that Betty receives fewer than 8 emails i
         \item State the distribution of $X$.
         \item Use the Data Booklet to calculate the probability that a randomly selected paving stone contains at least one piece of chewing gum.
     \end{enumerate}
-    The worker counts the number of pieces of chewing gum on a grid of 18 paving stones. The diagram below is for illustration, and does not show what the actual number of pieces the worker observed.
+    The worker counts the number of pieces of chewing gum on a grid of 18 paving stones. The diagram below is for illustration, and does not show the actual number of pieces the worker observed.
     \begin{center}
         \begin{tikzpicture}[scale=0.8]
             \draw[step=2] (0,0) grid (12,6);
@@ -879,7 +879,7 @@ So there is a roughly 22\% probability that Betty receives fewer than 8 emails i
     \begin{enumerate}
         \item[(a) ] Given that a dish selected to be checked is vegetarian, state the probability that it is a main course.
     \end{enumerate}
-    Let random variable $X$ represent the number of dishes checked over an 8 week period that are desserts.
+    Let the random variable $X$ represent the number of dishes checked over an 8 week period that are desserts.
     \begin{enumerate}
         \item[(b) ] State the distribution of $X$.
         \item[(c) ] Calculate the probability that more than half of the dishes checked in the 8 week period are dessert dishes.
