@@ -13,7 +13,6 @@
 
 #### Chapter 1 Answers - Exploratory Data Analysis {-}
 
-
 []{#ex11a}
 
 #### [Exercise 1.1](#ex11q) {-}
@@ -2064,8 +2063,15 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 
 #### [Exercise 8.1](#ex81q) {-}
 
-\begin{multicols}{3}
 \begin{enumerate}
+    \item Heights are not equally likely across intervals of equal width.
+    \item The score is discrete, not continuous.
+    \item Lifetimes are not equally likely across intervals of equal width.
+    \item Arrival times are not necessarily equally likely across intervals of equal length.
+\end{enumerate}
+
+\begin{multicols}{3}
+\begin{enumerate}[resume]
     \item
     \begin{enumerate}
         \item $\tfrac{2}{3}$
@@ -2097,7 +2103,6 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
         \item $7.5$ mins
         \item $4.33$ mins
     \end{enumerate}
-    \item $\tfrac{4}{7}$
     \item
     \begin{enumerate}
         \item $0.4$
@@ -2133,13 +2138,13 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item
     \begin{enumerate}
         \item $52,60,68$ marked
+        \item $5.4,8,10.6$ markedd
         \item $237,243,249$ marked
-        \item $5.4,8,10.6$ marked
         \item $12.6,15,17.4$ marked
     \end{enumerate}
     \item $3,7,11$ marked
     \item $5,8,11$ marked
-    \item $26,32,38$ marked
+    \item $14,32,50$ marked
 \end{enumerate}
 \end{multicols}
 
@@ -2194,7 +2199,7 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{enumerate}
     \item
     \begin{enumerate}
-        \item $0.1587$
+        \item $0.2192$
         \item $0.4305$
         \item $0.9660$
         \item $0.3891$
@@ -2234,6 +2239,15 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \begin{enumerate}
     \item
     \begin{enumerate}
+        \item $2.33$
+        \item $1.64$
+        \item $0.67$
+        \item $-1.28$
+        \item $1.28$
+        \item $1.96$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
         \item $1.28$
         \item $1.64$
         \item $3.09$
@@ -2251,15 +2265,15 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \begin{enumerate}
         \item $X\sim N(2.4,0.2^2)$
         \item $0.0228$
-        \item $2.866$ litres
+        \item $2.87$ litres
     \end{enumerate}
     \item
     \begin{enumerate}
-        \item $8.692$ mins
-        \item $7.612$ to $8.788$ mins
+        \item $8.69$ mins
+        \item $7.61$ to $8.79$ mins
     \end{enumerate}
-    \item $\sigma=9.9$
-    \item $\mu=64.1,\sigma=14.8$
+    \item $\sigma=9.94$
+    \item $\mu=64.38,\sigma=14.36$
 \end{enumerate}
 \end{multicols}
 
@@ -2267,18 +2281,25 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 
 #### [Exercise 8.6](#ex86q) {-}
 
-\begin{multicols}{3}
 \begin{enumerate}
+    \item $0.2819$
+    \item 
+    \begin{enumerate}
+        \item $0.5$
+        \item The masses of the selected books are independent. This is reasonable if the books are selected randomly from a large collection.
+    \end{enumerate}
+    \item $0.7181$
+    \item Assume the masses of the five birds are independent. $1.0000$.
+    \item The distances run in different quarters may not be independent. For example, fatigue or a player's overall time on court may affect the distances run in later quarters.
     \item
     \begin{enumerate}
         \item $N(34,13.09)$
         \item $0.6103$
     \end{enumerate}
     \item $0.1867$
-    \item $0.1379$
+    \item $0.1371$
     \item $0.0192$
 \end{enumerate}
-\end{multicols}
 
 []{#ex87a}
 
@@ -2289,6 +2310,7 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item
     \begin{enumerate}
         \item $np=16,nq=24$ $np,nq>5$
+        \item $X\approx \text{N}\left(16,9.6\right)$
         \item
         \begin{enumerate}
             \item $0.9265$
@@ -2299,11 +2321,12 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item
     \begin{enumerate}
         \item $np=54,nq=27$ $np,nq>5$
+        \item $X\approx \text{N}\left(54,18\right)$
         \item
         \begin{enumerate}
             \item $0.3632$
             \item $0.0338$
-            \item $0.6971$
+            \item $0.7309$
         \end{enumerate}
     \end{enumerate}
     \item $X\sim B(600,0.85)$ $0.1151$
@@ -2318,17 +2341,25 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 
 \begin{multicols}{3}
 \begin{enumerate}
-    \item
+    \item 
+    \begin{enumerate}
+        \item $\lambda=24>10$
+        \item $X\approx \text{N}\left(24,24\right)$
     \begin{enumerate}
         \item $0.6217$
         \item $0.0661$
         \item $0.5398$
     \end{enumerate}
+    \end{enumerate}
     \item
     \begin{enumerate}
+        \item $\lambda=60>10$
+        \item $X\approx \text{N}\left(60,60\right)$
+    \begin{enumerate}
         \item $0.6736$
-        \item $0.5640$
+        \item $0.2157$
         \item $0.1357$
+    \end{enumerate}
     \end{enumerate}
     \item
     \begin{enumerate}
@@ -2399,7 +2430,7 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{enumerate}
 \end{multicols}
 
-
+\newpage
 
 #### Chapter 9 - Distribution of the Sample Mean {-}
 

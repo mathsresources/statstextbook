@@ -10059,7 +10059,7 @@ Data that results from measuring is often continuous, such as the height of a pe
 \subsection*{Probability and Continuous Distributions}\label{probability-and-continuous-distributions}
 \addcontentsline{toc}{subsection}{Probability and Continuous Distributions}
 
-Since a continuous random variable can take infinitely many values in any interval, probabilities are assigned to ranges of values rather than individual values. Consequently, for any specific value \(x\), \(\text{P}(X=x)=\text{0}\). For example, let random variable \(X\) represent the time taken to complete a task, measured in seconds. Then it is possible that:
+Since a continuous random variable can take infinitely many values in any interval, probabilities are assigned to ranges of values rather than individual values. Consequently, for any specific value \(x\), \(\text{P}(X=x)=\text{0}\). For example, let the random variable \(X\) represent the time taken to complete a task, measured in seconds. A non-zero probability could not be assigned for an \emph{exact} time, such as 26 seconds, yet it may be that a non-zero probability can be assigned for a time between 24 and 28.5 seconds:
 
 \vspace{-0.4cm}
 
@@ -10067,7 +10067,7 @@ Since a continuous random variable can take infinitely many values in any interv
 
 This also means that for continuous random variables: \(\text{P}(X\leqslant a)=\text{P}(X<a)\).
 
-Probabilities are calculated not from the \emph{height} of the graphed probability distributions as with discrete random variables, but instead from the \textbf{area under the curve} within the required interval. In this course, graphical calculators and tables of values mean that calculus will not be required to calculate these areas through integration.
+For a discrete random variable, the height of a probability bar represents the probability of an individual value. For a continuous random variable, probabilities are instead determined by the \textbf{area} under the probability-density curve over the required interval. In this course, graphical calculators and tables of values mean that calculus will not be required to calculate these areas through integration.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.9]
@@ -10117,7 +10117,7 @@ The height of the curve is defined by a continuous distribution's \emph{probabil
 
 \section{The Continuous Uniform Distribution}\label{the-continuous-uniform-distribution}
 
-If \(X\) can take \textbf{any real value} in the interval \([a,b]\) and intervals of equal length have \textbf{equal probability}, then \(X\) follows a \emph{continuous uniform distribution} with \emph{two} parameters: \(a\) and \(b\). This should not be confused with the \emph{discrete} uniform distribution, which takes a \emph{single} parameter only. Since graphing this distribution produces a rectangle, it is often also called a \emph{rectangular distribution}.
+If \(X\) can take \textbf{any real value} in the interval \([a,b]\) and intervals of equal length have \textbf{equal probability}, then \(X\) follows a \emph{continuous uniform distribution} with \emph{two} parameters: \(a\) and \(b\). This should not be confused with the \emph{discrete} uniform distribution, which has a \emph{single} parameter only. Since graphing this distribution produces a rectangle, it is often also called a \emph{rectangular distribution}.
 
 \begin{figure}[H]
   \centering
@@ -10168,7 +10168,7 @@ If \(X\) can take \textbf{any real value} in the interval \([a,b]\) and interval
 \end{minipage}
 \end{figure}
 
-The probability for any range of values can be calculated simply as the area of the rectangle enclosed. The value of its continuous probability density \(k\) can be calculated using the formula given on \textbf{page 4} of the Data Booklet, derived from the area under any ``curve'' for any continuous distribution being \textbf{equal to 1}. The formulae for the \textbf{expectation} and \textbf{variance} for the continuous uniform distribution are also given for \(X\sim \text{U}(a,b)\):
+The probability for any range of values can be calculated simply as the area of the rectangle enclosed. The value of its constant probability density \(k\) can be calculated using the formula given on \textbf{page 4} of the Data Booklet, derived from the area under any ``curve'' for any continuous distribution being \textbf{equal to 1}. The formulae for the \textbf{expectation} and \textbf{variance} for the continuous uniform distribution are also given for \(X\sim \text{U}(a,b)\):
 
 \[k=\frac{1}{b-a}\quad \qquad \quad \text{E}(X)=\frac{a+b}{\text{2}}\quad \qquad \quad \text{V}(X)=\frac{(b-a)^\text{2}}{\text{12}}\]
 
@@ -10218,7 +10218,7 @@ $\text{P}(\text{31}<T<\text{34})=\text{3}\times \frac{\text{1}}{\text{15}}=\frac
 \addcontentsline{toc}{subsubsection}{\hyperref[ex81a]{Exercise 8.1}}
 
 \begin{enumerate}[itemsep=12pt]
-    \item Explain why, for each, random variable $X$ does \textbf{not} follow a $\text{U}(a,b)$ distribution.
+    \item For each of the following, explain why the random variable $X$ does \textbf{not} follow a $\text{U}(a,b)$ distribution.
     \begin{enumerate}
         \item Let $X$ represent the height of an adult.
         \item Let $X$ represent the score from a fair six-sided die.
@@ -10269,7 +10269,7 @@ $\text{P}(\text{31}<T<\text{34})=\text{3}\times \frac{\text{1}}{\text{15}}=\frac
     \begin{enumerate}
         \item[(b) ] Find the probability that a randomly selected bag will contain at least eight sweets of length greater than 24 millimetres.
     \end{enumerate}
-    \item Given continuous random variable $X$ such that $X\sim \text{U}(\text{1},\text{15})$:
+    \item Given a continuous random variable $X$ such that $X\sim \text{U}(\text{1},\text{15})$:
     \begin{enumerate}
         \item Find $\mu$, the mean of $X$.
         \item Find $\sigma$, the standard deviation of $X$.
@@ -10354,10 +10354,10 @@ The \emph{normal distribution}, also sometimes called the \emph{Gaussian Distrib
 \begin{tcolorbox}[adjusted title=The Normal Distribution:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item Notated $X\sim \text{N}(\mu,\sigma^\text{2})$.
-    \item Defined by two parameters, $\mu$ and $\sigma$.
+    \item Defined by two parameters, $\mu$ and $\sigma^2$.
     \item Often described as a \textit{"bell-shaped curve"}.
     \item $\mu$ (the \textbf{mean}) determines the \textit{location} of the curve.
-    \item $\sigma$ (the \textbf{standard deviation}) determines the \textit{spread} of the curve.
+    \item $\sigma^2$ (the \textbf{variance}) determines the \textit{spread} of the curve.
     \item The curve is \textit{symmetrical about the mean}.
 \end{itemize}
 \end{tcolorbox}
@@ -10432,9 +10432,9 @@ The shape of the curve illustrates that values closer to the mean are more likel
 \begin{minipage}{.4\textwidth}
 
 \begin{itemize}
-    \item 68.27\% of observed values lie within \\\textbf{one} standard deviation of the mean.
-    \item 95.45\% of observed values lie within \\\textbf{two} standard deviations of the mean.
-    \item 99.73\% of observed values lie within \\\textbf{three} standard deviations of the mean.
+    \item 68.27\% of the distribution lies within \\\textbf{one} standard deviation of the mean.
+    \item 95.45\% of the distribution lies within \\\textbf{two} standard deviations of the mean.
+    \item 99.73\% of the distribution lies within \\\textbf{three} standard deviations of the mean.
 \end{itemize}
 
 \end{minipage}%
@@ -10538,7 +10538,7 @@ The shape of the curve illustrates that values closer to the mean are more likel
 
 \section{\texorpdfstring{The Standard Normal Distribution \textit{Z}}{The Standard Normal Distribution }}\label{the-standard-normal-distribution}
 
-Determining probabilities for the normal distribution by directly calculating an area under the curve requires integration, and is not required in this course (or generally by statisticians at all). Instead, a useful random variable \(Z\) is specifically defined as normally distributed, with \(\mu=\text{0}\) and \(\sigma^\text{2}=\text{1}\) (i.e.~mean 0 and variance 1):
+Determining probabilities for the normal distribution by directly calculating an area under the curve requires integration, and is not required in this course (or generally used for routine probability calculations). Instead, a useful random variable \(Z\) is specifically defined as normally distributed, with \(\mu=\text{0}\) and \(\sigma^\text{2}=\text{1}\) (i.e.~mean 0 and variance 1):
 
 \begin{center}
 \begin{tikzpicture}
@@ -10856,7 +10856,7 @@ Determining probabilities for the normal distribution by directly calculating an
 
 \section{\texorpdfstring{The \textit{Z}-Transformation}{The -Transformation}}\label{the--transformation}
 
-A linear transformation of a normally distributed random variable will result in \emph{another} normally distributed random variable, with the laws of expectation and variance applying as usual. In this way, any normally distributed variable can be related to the \emph{standard normal distribution}, \(Z\). Consider a random variable \(X\) with mean \(\mu\) and variance \(\sigma^\text{2}\):
+A linear transformation of a normally distributed random variable will result in \emph{another} normally distributed random variable, with the laws of expectation and variance applying as usual. In this way, any normally distributed random variable can be related to the \emph{standard normal distribution}, \(Z\). Consider a random variable \(X\) with mean \(\mu\) and variance \(\sigma^\text{2}\):
 
 \[X\sim \text{N}(\mu,\sigma^\text{2})\]
 
@@ -10887,7 +10887,7 @@ $Z=\dfrac{X-\mu}{\sigma}$
 
 A useful way of thinking about the result of a \(z\)-transformation is that it is a measure of \emph{how many standard deviations a value is from the mean}, which then can be used to calculate a probability.
 
-For example, consider normally distributed random variable \(X\) with a mean of 20 and standard deviation of 6. The probability that a random observation of \(X\) results in a value less than 29 can be sketched on the distribution of \(X\), and compared to the \emph{transformed value} of 1.5 on the distribution of \(Z\). Note that 29 is 1.5 standard deviations greater than the mean of 20.
+For example, consider a normally distributed random variable \(X\) with a mean of 20 and standard deviation of 6. The probability that a random observation of \(X\) results in a value of less than 29 can be sketched on the distribution of \(X\), and compared to the \emph{transformed value} of 1.5 on the distribution of \(Z\). Note that 29 is 1.5 standard deviations greater than the mean of 20.
 
 \[z=\frac{x-\mu}{\sigma}=\frac{\text{29}-\text{20}}{\text{6}}=\text{1.5}\]
 
@@ -11002,7 +11002,7 @@ $\text{P}(Z<\text{1.5})=\text{0.9332}$
 \tcblower
 \textbf{Solution:}\\
 
-Let random variable $X$ represent the mass of a squirrel.\\
+Let the random variable $X$ represent the mass of a squirrel.\\
 
 $X\sim \text{N}(\text{295},\text{15}^\text{2})$\\
 
@@ -11118,7 +11118,7 @@ $\text{P}(X>\text{312})=\text{P}\left(Z>\dfrac{\text{312}-\text{295}}{\text{15}}
         \item $\text{P}(\text{81}<X<\text{89})$
     \end{enumerate}
     \end{multicols}
-    \item Let random variable $X$ represent the tail length of a certain breed of mouse, which follows a normal distribution with a mean of 67.4mm and a standard deviation of 6mm.
+    \item Let the random variable $X$ represent the tail length of a certain breed of mouse, which follows a normal distribution with a mean of 67.4mm and a standard deviation of 6mm.
     \begin{enumerate}
         \item State the distribution of $X$.
         \item Find the probability that a mouse chosen at random will have a tail length:
@@ -11130,7 +11130,7 @@ $\text{P}(X>\text{312})=\text{P}\left(Z>\dfrac{\text{312}-\text{295}}{\text{15}}
         \end{enumerate}
         \end{multicols}
     \end{enumerate}
-    \item In a crop of 900 turnips harvested by a farmer, the mass of each is normally distributed with a mean of 150g and a standard deviation of 12g. 
+    \item In a crop of 900 turnips harvested by a farmer, the mass of each turnip is normally distributed with a mean of 150g and a standard deviation of 12g. 
     \begin{enumerate}
         \item Calculate the probability that a turnip chosen at random will have a mass:
         \begin{multicols}{2}
@@ -11139,7 +11139,7 @@ $\text{P}(X>\text{312})=\text{P}\left(Z>\dfrac{\text{312}-\text{295}}{\text{15}}
             \item Between 126.48g and 173.52g.
         \end{enumerate}
         \end{multicols}
-        \item Estimate the number of turnips of the 900 that have a mass:
+        \item Estimate the number of turnips out of the 900 that have a mass:
         \begin{multicols}{3}
         \begin{enumerate}
             \item Greater than 162g.
@@ -11219,12 +11219,12 @@ x&=\text{285.12}
 Hence, in the long run only 10\% of observations exceed 285.12.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} The time before failure of a model of TV is normally distributed with mean 31 months and standard deviation 4 months. Calculate the minimum warranty length, in months, such that fewer than 5\% of TVs will be expected to fail under warranty.
+\textbf{Problem:} The time before failure of a model of TV is normally distributed with mean 31 months and standard deviation 4 months. Calculate the maximum warranty length, in whole months, such that fewer than 5\% of TVs will be expected to fail under warranty.
 
 \tcblower
 \textbf{Solution:}
 
-Let random variable $X$ represent the time taken for a TV to fail.
+Let the random variable $X$ represent the time taken for a TV to fail.
 \begin{align*}
 X\sim &\text{N}(\text{31},\text{4}^\text{2})\\
 \text{P}(Z<z)=&\text{0.05} \rightarrow z=-\text{1.64} &\\
@@ -11267,7 +11267,7 @@ X\sim &\text{N}(\text{31},\text{4}^\text{2})\\
 x=&\text{24.44}
 \end{align*}
 
-Hence, a 25 month warranty should expect to see less than 5\% of TVs fail under warranty.
+Hence, the maximum warranty length satisfying the requirement is 24 months.
 
 \end{tcolorbox}
 
@@ -11277,7 +11277,7 @@ Hence, a 25 month warranty should expect to see less than 5\% of TVs fail under 
 \tcblower
 \textbf{Solution:}
 
-Let random variable $X$ represent the mass of a pumpkin.
+Let the random variable $X$ represent the mass of a pumpkin.
 \begin{align*}
 X\sim & \text{N}(\text{6.8},\sigma^\text{2})\\
 \text{P}(Z<z)=&\text{0.999} \rightarrow z=\text{3.09}\hspace{1cm}
@@ -11325,6 +11325,8 @@ X\sim & \text{N}(\text{6.8},\sigma^\text{2})\\
 Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
 
 \end{tcolorbox}
+
+Where more than one value is unknown, solving simultaneous equations may be required.
 
 \pagebreak
 
@@ -11502,14 +11504,14 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
   hide y axis,
   hide x axis
   ]
-\addplot [draw=none, fill=Black!20, domain=1.64:3] {gauss(x, 0, 1)} 
+\addplot [draw=none, fill=Black!20, domain=1.28:3] {gauss(x, 0, 1)} 
 \closedcycle;
  \addplot [semithick] {gauss(x, 0, 1)};
-\pgfmathsetmacro\valueA{gauss(1.64,0,1)}
+\pgfmathsetmacro\valueA{gauss(1.28,0,1)}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
-\fill[Black!20] (axis cs: 1.64,-0.02) rectangle (axis cs: 3,0);
-\draw [semithick, black]  (axis cs:1.64,-0.02) -- (axis cs:1.64,\valueA);
-\node[below] at (axis cs: 1.64,0)  {$z$};
+\fill[Black!20] (axis cs: 1.28,-0.02) rectangle (axis cs: 3,0);
+\draw [semithick, black]  (axis cs:1.28,-0.02) -- (axis cs:1.28,\valueA);
+\node[below] at (axis cs: 1.28,0)  {$z$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
 \node at (axis cs: 2.2,0.2)  {10\%};
 \node[below] at (axis cs: 0,0)  {0};
@@ -11573,7 +11575,7 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
         \item[(l)] $\text{P}(Z>z)=\text{0.003}$
     \end{enumerate}
     \end{multicols}
-    \item Let random variable $X$ represent the total volume of petrol used by a motorist on their daily commute to and from work. The amount of petrol used is normally distributed with a mean of 2.4 litres and standard deviation 0.2 litres.
+    \item Let the random variable $X$ represent the total volume of petrol used by a motorist on their daily commute to and from work. The amount of petrol used is normally distributed with a mean of 2.4 litres and standard deviation 0.2 litres.
     \begin{enumerate}
         \item State the distribution of $X$.
         \item Calculate the probability that less than 2 litres of petrol is used on a daily commute to and from work.
@@ -11585,7 +11587,7 @@ Hence, the standard deviation in the mass of a pumpkin is 1.04kg.
         \item Determine the range of times, symmetrical around the mean, between which 95\% of all such steaks will reach medium rare.
     \end{enumerate}
     \item In a Maths exam, the scores obtained by candidates are normally distributed with a mean of 57.3. Given that 5\% of pupils fail to gain a grade from A to D, and that a score of 41 is required to gain a D, calculate the standard deviation.
-    \item In a Physics exam, the scores obtained by candidates are normally distributed. Given that 25\% of pupils gain a grade A with a mark of 74 required, and 10\% of pupils didn't get the 46 marks required for a grade C, calculate the mean and standard deviation. 
+    \item In a Physics exam, the scores obtained by candidates are normally distributed. Given that 25\% of candidates gain a grade A, with a mark of 74 required, and 10\% of candidates scored fewer than the 46 marks required for a grade C, calculate the mean and standard deviation. 
 \end{enumerate}
 
 \pagebreak
@@ -11634,18 +11636,18 @@ The sum of \(n\) independent observations of \(X\) is \(X_\text{1}+X_\text{2}+\d
 When combining normal random variables, it can be helpful to define a new random variable, such as \(T\) for \emph{total}, \(D\) for \emph{difference} and so on.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} The actual volume of paint contained within tins marked as containing 25 litres is normally distributed with a mean of 25.2 litres and a standard deviation of 0.3 litres. Calculate the probability that the total volume in 8 tins is less than 200 litres, stating an assumption required
+\textbf{Problem:} The actual volume of paint contained within tins marked as containing 25 litres is normally distributed with a mean of 25.2 litres and a standard deviation of 0.3 litres. Calculate the probability that the total volume in 8 tins is less than 200 litres, stating an assumption required.
 
 \tcblower
 \textbf{Solution:}
 
 \vspace{0.1cm}
 
-Let random variable $X\sim \text{N}(\text{25.2},\text{0.3}^\text{2})$ represent the volume of paint in a tin.\\[0.1em]
+Let the random variable $X\sim \text{N}(\text{25.2},\text{0.3}^\text{2})$ represent the volume of paint in a tin.\\[0.1em]
 
 Let $T$ represent the total volume of paint in the eight tins.\\[0.1em]
 
-Assuming the volume of paint in each tin is independent.\\[0.1em]
+Assuming the volumes of paint in the tins are independent:\\[0.1em]
 
 $T=X_\text{1}+X_\text{2}+\dots+X_\text{8}$\\[0.1em]
 
@@ -11858,9 +11860,9 @@ The mean and variance of the \emph{approximate} normal distribution are, as usua
 
 \vspace{-0.3cm}
 
-Historically, the ability to approximate the binomial distribution using the normal distribution will have prevented the need for extensive tables of binomial probabilities. Additionally, binomial distribution calculations tend to be more computationally-intensive than normal distributions calculations. Whilst modern computing power may seem to render this argument null, it can still be desirable to speed up computation in return for a trivial loss in accuracy.
+Historically, the ability to approximate the binomial distribution using the normal distribution reduced the need for extensive tables of binomial probabilities. Additionally, calculations of binomial probabilities tend to be more computationally-intensive than those for normal distributions. Whilst modern computing power may seem to make this advantage less important, it can still be desirable to speed up computation in return for a trivial loss in accuracy.
 
-Approximating probabilities for a \emph{discrete} distribution using a \emph{continuous} distribution may lead to inaccuracy unless a \textbf{continuity correction} is applied. The continuity correction adjusts for the fact that a discrete distribution assigns probability to whole numbers, while a continuous distribution assigns probability over intervals. For example, consider random variable \(X\sim \text{B}(\text{11},\text{0.5})\), with its normal approximation \(X\approx \text{N}(\text{5.5},\text{2.75})\) overlaid and the \emph{discrete} probability \(\text{P}(X<\text{7})\) shaded:
+Approximating probabilities for a \emph{discrete} distribution using a \emph{continuous} distribution may lead to inaccuracy unless a \textbf{continuity correction} is applied. The continuity correction adjusts for the fact that a discrete distribution assigns probability to whole numbers, while a continuous distribution assigns probability over intervals. For example, consider random variable \(X\sim \text{B}(\text{11},\text{0.5})\), with its normal approximation \(X\approx \text{N}(\text{5.5},\text{2.75})\) overlaid and the \emph{discrete} probability \(\text{P}(X\leqslant \text{7})\) shaded:
 
 \begin{figure}[H]
   \centering
@@ -11875,16 +11877,16 @@ Approximating probabilities for a \emph{discrete} distribution using a \emph{con
     \draw[fill=black!10] (3.5,0) rectangle (4.5,10*0.16113);
     \draw[fill=black!10] (4.5,0) rectangle (5.5,10*0.22559);
     \draw[fill=black!10] (5.5,0) rectangle (6.5,10*0.22559);
-    \draw (6.5,0) rectangle (7.5,10*0.16113);
+    \draw[fill=black!10] (6.5,0) rectangle (7.5,10*0.16113);
     \draw (7.5,0) rectangle (8.5,10*0.08057);
     \draw (8.5,0) rectangle (9.5,10*0.02686);
     \draw (9.5,0) rectangle (10.5,10*0.00537);
-    \draw (10.5,0) rectangle (11.5,10*0.00049);    
+    \draw (10.5,0) rectangle (11.5,10*0.00049);
     \draw[very thick,domain=-3:3,smooth,samples=50,yscale=10/1.658,xshift=5.5cm,xscale=1.658] plot (\x,{1/((2*3.14)^0.5)) * 2.718^(-0.5*(\x)^2)}) -- (1.3,0);
     \foreach \x in {0,1,...,11}{
     \draw (\x,0) -- (\x,-0.1) node[below] {\x};
     }
-    \node at (5.5,-1.5) {$\text{P}(X<\text{7})=\text{P}\left(Z<\dfrac{\text{6}+\text{0.5}-\text{5.5}}{\sqrt{\text{2.75}}}\right)$};
+    \node at (5.5,-1.5) {$\text{P}(X\leqslant \text{7})=\text{P}\left(Z<\dfrac{\text{7}+\text{0.5}-\text{5.5}}{\sqrt{\text{2.75}}}\right)$};
 \end{tikzpicture}
 \end{center}
 
@@ -11920,7 +11922,7 @@ Approximating probabilities for a \emph{discrete} distribution using a \emph{con
 \end{minipage}
 \end{figure}
 
-When calculating the discrete probability \(\text{P}(X<\text{7})\), the bar representing the discrete integer 7 should not be included. The continuous probability \(\text{P}(X<\text{6.5})\), making a \textbf{continuity correction}, would provide a more accurate estimate of the desired probability. For the discrete probability \(\text{P}(X\leqslant \text{7})\), where the discrete integer value of 7 should be included, the continuous probability \(\text{P}(X<\text{7.5})\) would be more accurate.
+When calculating the discrete probability \(\text{P}(X\leqslant \text{7})\), the bar representing the discrete integer 7 should be included. The continuous probability \(\text{P}(X<\text{7.5})\), making a \textbf{continuity correction}, would provide a more accurate estimate of the desired probability. For the discrete probability \(\text{P}(X< \text{7})\), where the discrete integer value of 7 should not be included, the continuous probability \(\text{P}(X<\text{6.5})\) would be more accurate.
 
 \pagebreak
 
@@ -11928,9 +11930,9 @@ When calculating the discrete probability \(\text{P}(X<\text{7})\), the bar repr
 \textbf{Problem:} A quiz contains 40 multiple choice questions, with four answers for every question. If a pupil picks answers entirely at random, use a suitable approximation to calculate the probability that they get at least half correct, justifying the suitability of the approximation used.  
 
 \tcblower
-\textbf{Solution:} \textit{"Suitable approximation" highlights that the normal approximation should be used, even if a graphical calculator can obtain the precise probability.}\\
+\textbf{Solution:} \textit{"Suitable approximation" highlights that the normal approximation must be used.}\\
 
-Let random variable $X$ represent the number of questions answered correctly.\\
+Let the random variable $X$ represent the number of questions answered correctly.\\
 
 $X\sim \text{B}(\text{40},\text{0.25})$\\
 
@@ -11993,6 +11995,7 @@ $\text{P}(X\geqslant \text{20})=\text{P}\left(Z>\dfrac{\text{19.5}-\text{10}}{\s
     \item Given $X\sim \text{B}(\text{40},\text{0.4})$:
     \begin{enumerate}[itemsep=0pt]
         \item Show that a normal approximation is appropriate.
+        \item State the approximate distribution of $X$ suitable for a normal approximation.
         \item Find:
         \begin{multicols}{3}
         \begin{enumerate}
@@ -12005,18 +12008,19 @@ $\text{P}(X\geqslant \text{20})=\text{P}\left(Z>\dfrac{\text{19.5}-\text{10}}{\s
     \item Given $Y\sim \text{B}\left(\text{81},\frac{\text{2}}{\text{3}}\right)$:
     \begin{enumerate}[itemsep=0pt]
         \item Show that a normal approximation is appropriate.
+        \item State the approximate distribution of $Y$ suitable for a normal approximation.
         \item Find:
         \begin{multicols}{3}
         \begin{enumerate}
             \item $\text{P}(Y\geqslant\text{56})$
             \item $\text{P}(Y=\text{48})$
-            \item $\text{P}(\text{50}<Y<\text{60})$
+            \item $\text{P}(\text{50}<Y\leqslant\text{60})$
         \end{enumerate}
         \end{multicols}
     \end{enumerate}
     \item To complete the mandatory online training required by a large corporation, 600 employees in an office each try to log on to the corporation's online training portal. The probability of an employee managing to successfully log in on their first attempt is 85\%. Let the random variable $X$ represent the number of employees that manage to log in successfully on their first attempt. State the distribution of $X$ and use a suitable approximation to estimate the probability of over 100 of the 600 employees not managing to log in successfully on their first attempt, justifying its use.
     \item A farmer believes that 60\% of the apples that are brought into her grading shed are classified as Grade A. Assuming she is right, use a suitable approximation to estimate the probability that, in a random sample of 120 apples, there are more than 75 Grade A apples.
-    \item 200 people are randomly picked as part of a survey and asked whether or not they plan to vote for the party currently in power in an upcoming election. It is generally thought that 54\% of people will vote for this party. Using a suitable approximation, calculate the probability that less than 45\% of the people sampled indicate that they will vote for the party currently in power, and comment on what this might suggest should it happen.
+    \item 200 people are randomly picked as part of a survey and asked whether or not they plan to vote for the party currently in power in an upcoming election. It is thought that 54\% of people will vote for this party. Using a suitable approximation, calculate the probability that less than 45\% of the people sampled indicate that they will vote for the party currently in power.
 \end{enumerate}
 
 \pagebreak
@@ -12106,7 +12110,7 @@ $\text{P}(X\geqslant \text{20})=\text{P}\left(Z>\dfrac{\text{19.5}-\text{10}}{\s
 \end{minipage}
 \end{figure}
 
-As with the binomial distribution, the \emph{discrete} Poisson distribution can also begin to resemble a \emph{continuous} normal distribution; it will do so when it becomes closer to symmetrical as \(\lambda\) increases. Given the random variable \(X\sim \text{Po}(\lambda)\), a normal distribution can \emph{approximate} the Poisson distribution with sufficient accuracy when:
+As with the binomial distribution, the \emph{discrete} Poisson distribution can also begin to resemble a \emph{continuous} normal distribution, and it will do so when it becomes closer to being symmetrical as \(\lambda\) increases. Given the random variable \(X\sim \text{Po}(\lambda)\), a normal distribution can \emph{approximate} the Poisson distribution with sufficient accuracy when:
 
 \begin{centering}
 \tcbset{width=12cm}
@@ -12129,7 +12133,7 @@ Since again this is a \emph{continuous approximation} to a \emph{discrete distri
 \tcblower
 \textbf{Solution:}
 
-Let random variable $T$ represent the number of goals across the 10 games, with $\lambda=\text{2.5}\times \text{10}=\text{25}$.\\
+Let the random variable $T$ represent the number of goals across the 10 games, with $\lambda=\text{2.5}\times \text{10}=\text{25}$.\\
 
 $T\sim \text{Po}(\text{25})$\\
 
@@ -12197,23 +12201,33 @@ $T\approx \text{N}(\text{25},\text{25})$
 \addcontentsline{toc}{subsubsection}{\hyperref[ex88a]{Exercise 8.8}}
 
 \begin{enumerate}
-    \item Given $X\sim \text{Po}(\text{24})$, use the normal approximation to find:
-    \begin{multicols}{3}
-    \begin{enumerate}
-        \item $\text{P}(X\leqslant\text{25})$
-        \item $\text{P}(X=\text{21})$
-        \item $\text{P}(X>\text{23})$
+    \item Given $X\sim \text{Po}(\text{24})$:
+    \begin{enumerate}[itemsep=0pt]
+        \item Show that a normal approximation is appropriate.
+        \item State the approximate distribution of $X$ suitable for a normal approximation.
+        \item Find:
+        \begin{multicols}{3}
+        \begin{enumerate}
+            \item $\text{P}(X\leqslant\text{25})$
+            \item $\text{P}(X=\text{21})$
+            \item $\text{P}(X>\text{23})$
+        \end{enumerate}
+        \end{multicols}
     \end{enumerate}
-    \end{multicols}
-    \item Given $X\sim \text{Po}(\text{60})$, use the normal approximation to find:
-    \begin{multicols}{3}
-    \begin{enumerate}
-        \item $\text{P}(X\geqslant\text{57})$
-        \item $\text{P}(\text{50}< X \leqslant \text{56})$
-        \item $\text{P}(\text{62}<X<\text{66})$
+    \item Given $X\sim \text{Po}(\text{60})$:
+    \begin{enumerate}[itemsep=0pt]
+        \item Show that a normal approximation is appropriate.
+        \item State the approximate distribution of $X$ suitable for a normal approximation.
+        \item Find:
+        \begin{multicols}{3}
+        \begin{enumerate}
+            \item $\text{P}(X\geqslant\text{57})$
+            \item $\text{P}(\text{50}< X \leqslant \text{56})$
+            \item $\text{P}(\text{62}<X<\text{66})$
+        \end{enumerate}
+        \end{multicols}
     \end{enumerate}
-    \end{multicols}
-    \item The number of calls received by an office switchboard per hour follows a Poisson distribution with a parameter 30. Using the normal approximation to the Poisson distribution, find the probability that in one hour:
+    \item The number of calls received by an office switchboard per hour follows a Poisson distribution with mean 30. Using the normal approximation to the Poisson distribution, find the probability that in one hour:
     \begin{enumerate}
         \item There are more than 33 calls.
         \item There are between 25 and 28 calls, inclusive.
@@ -12258,7 +12272,7 @@ $T\approx \text{N}(\text{25},\text{25})$
         \item $\text{P}(X<\text{25})$
         \item $\text{P}(\text{14}<X<\text{20})$
     \end{enumerate}
-    \item The height of an adult giraffe is normally distributed with a mean of 18.1 feet and a standard deviation of 0.7 feet. Let random variable $H$ represent the height of an adult giraffe, in feet.
+    \item The height of an adult giraffe is normally distributed with a mean of 18.1 feet and a standard deviation of 0.7 feet. Let the random variable $H$ represent the height of an adult giraffe, in feet.
     \begin{enumerate}
         \item State the distribution of $H$.
         \item Find $\text{P}(H>\text{20})$.
@@ -12276,7 +12290,7 @@ $T\approx \text{N}(\text{25},\text{25})$
         \item If a random sample of size 10 is taken from the distribution, calculate the probability of at least 3 of the observations resulting in value not greater than 13.
         \item If a random sample of size 100 is taken from the distribution, use a suitable approximation to estimate the probability that over 30 of the observations result in a value not greater than 13.
     \end{enumerate}
-    \item A sports scientist is interested in the time taken for 800 metre runners to complete each of the two laps that make up the distance. They observe that the time it takes for an athlete they are studying to complete each lap is normally distributed, with a mean of 53.2 seconds with a standard deviation of 1.3 seconds.
+    \item In athletics an 800m race is made up of 2 laps of a 400m track. A sports scientist is interested in the time taken for 800m runners to complete each of the two laps of a race. They observe that the time it takes for an athlete they are studying to complete each lap is normally distributed, with a mean of 53.2 seconds and a standard deviation of 1.3 seconds.
     \begin{enumerate}
         \item Find the probability that the athlete completes the two laps in under 1 minute and 44 seconds.
         \item An important assumption is required to calculate the answer for part (a). State the assumption and explain whether or not it is likely to have been met.
@@ -29029,8 +29043,15 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \subsubsection*{\texorpdfstring{\hyperref[ex81q]{Exercise 8.1}}{Exercise 8.1}}\label{exercise-8.1-1}
 \addcontentsline{toc}{subsubsection}{\hyperref[ex81q]{Exercise 8.1}}
 
-\begin{multicols}{3}
 \begin{enumerate}
+    \item Heights are not equally likely across intervals of equal width.
+    \item The score is discrete, not continuous.
+    \item Lifetimes are not equally likely across intervals of equal width.
+    \item Arrival times are not necessarily equally likely across intervals of equal length.
+\end{enumerate}
+
+\begin{multicols}{3}
+\begin{enumerate}[resume]
     \item
     \begin{enumerate}
         \item $\tfrac{2}{3}$
@@ -29062,7 +29083,6 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
         \item $7.5$ mins
         \item $4.33$ mins
     \end{enumerate}
-    \item $\tfrac{4}{7}$
     \item
     \begin{enumerate}
         \item $0.4$
@@ -29099,13 +29119,13 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item
     \begin{enumerate}
         \item $52,60,68$ marked
+        \item $5.4,8,10.6$ markedd
         \item $237,243,249$ marked
-        \item $5.4,8,10.6$ marked
         \item $12.6,15,17.4$ marked
     \end{enumerate}
     \item $3,7,11$ marked
     \item $5,8,11$ marked
-    \item $26,32,38$ marked
+    \item $14,32,50$ marked
 \end{enumerate}
 \end{multicols}
 
@@ -29162,7 +29182,7 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{enumerate}
     \item
     \begin{enumerate}
-        \item $0.1587$
+        \item $0.2192$
         \item $0.4305$
         \item $0.9660$
         \item $0.3891$
@@ -29203,6 +29223,15 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \begin{enumerate}
     \item
     \begin{enumerate}
+        \item $2.33$
+        \item $1.64$
+        \item $0.67$
+        \item $-1.28$
+        \item $1.28$
+        \item $1.96$
+    \end{enumerate}
+    \item
+    \begin{enumerate}
         \item $1.28$
         \item $1.64$
         \item $3.09$
@@ -29220,15 +29249,15 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \begin{enumerate}
         \item $X\sim N(2.4,0.2^2)$
         \item $0.0228$
-        \item $2.866$ litres
+        \item $2.87$ litres
     \end{enumerate}
     \item
     \begin{enumerate}
-        \item $8.692$ mins
-        \item $7.612$ to $8.788$ mins
+        \item $8.69$ mins
+        \item $7.61$ to $8.79$ mins
     \end{enumerate}
-    \item $\sigma=9.9$
-    \item $\mu=64.1,\sigma=14.8$
+    \item $\sigma=9.94$
+    \item $\mu=64.38,\sigma=14.36$
 \end{enumerate}
 \end{multicols}
 
@@ -29237,18 +29266,25 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \subsubsection*{\texorpdfstring{\hyperref[ex86q]{Exercise 8.6}}{Exercise 8.6}}\label{exercise-8.6-1}
 \addcontentsline{toc}{subsubsection}{\hyperref[ex86q]{Exercise 8.6}}
 
-\begin{multicols}{3}
 \begin{enumerate}
+    \item $0.2819$
+    \item 
+    \begin{enumerate}
+        \item $0.5$
+        \item The masses of the selected books are independent. This is reasonable if the books are selected randomly from a large collection.
+    \end{enumerate}
+    \item $0.7181$
+    \item Assume the masses of the five birds are independent. $1.0000$.
+    \item The distances run in different quarters may not be independent. For example, fatigue or a player's overall time on court may affect the distances run in later quarters.
     \item
     \begin{enumerate}
         \item $N(34,13.09)$
         \item $0.6103$
     \end{enumerate}
     \item $0.1867$
-    \item $0.1379$
+    \item $0.1371$
     \item $0.0192$
 \end{enumerate}
-\end{multicols}
 
 \phantomsection\label{ex87a}{}
 
@@ -29260,6 +29296,7 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item
     \begin{enumerate}
         \item $np=16,nq=24$ $np,nq>5$
+        \item $X\approx \text{N}\left(16,9.6\right)$
         \item
         \begin{enumerate}
             \item $0.9265$
@@ -29270,11 +29307,12 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item
     \begin{enumerate}
         \item $np=54,nq=27$ $np,nq>5$
+        \item $X\approx \text{N}\left(54,18\right)$
         \item
         \begin{enumerate}
             \item $0.3632$
             \item $0.0338$
-            \item $0.6971$
+            \item $0.7309$
         \end{enumerate}
     \end{enumerate}
     \item $X\sim B(600,0.85)$ $0.1151$
@@ -29290,17 +29328,25 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 
 \begin{multicols}{3}
 \begin{enumerate}
-    \item
+    \item 
+    \begin{enumerate}
+        \item $\lambda=24>10$
+        \item $X\approx \text{N}\left(24,24\right)$
     \begin{enumerate}
         \item $0.6217$
         \item $0.0661$
         \item $0.5398$
     \end{enumerate}
+    \end{enumerate}
     \item
     \begin{enumerate}
+        \item $\lambda=60>10$
+        \item $X\approx \text{N}\left(60,60\right)$
+    \begin{enumerate}
         \item $0.6736$
-        \item $0.5640$
+        \item $0.2157$
         \item $0.1357$
+    \end{enumerate}
     \end{enumerate}
     \item
     \begin{enumerate}
@@ -29371,6 +29417,8 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{enumerate}
 \end{enumerate}
 \end{multicols}
+
+\newpage
 
 \subsubsection*{Chapter 9 - Distribution of the Sample Mean}\label{chapter-9---distribution-of-the-sample-mean}
 \addcontentsline{toc}{subsubsection}{Chapter 9 - Distribution of the Sample Mean}
