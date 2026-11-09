@@ -1,23 +1,30 @@
 # The Distribution of the Sample Mean
 
-Previous chapters have investigated probabilities related to *individual* observations from random variables with known distributions. However, statisticians are rarely in the business of making a single observation from a population - instead, they are far more likely to draw a *sample* of observations and, commonly, calculate the *sample mean*. Given a random variable $X$, the sample mean of observations from $X$ is also a random variable and is denoted $\overline{X}$. 
+Previous chapters have investigated probabilities related to *individual* observations from random variables with known distributions. In statistical investigations, however, it is common to take a *sample* of observations and calculate a statistic such as the sample mean. Since its value varies from sample to sample, the sample mean is itself a random variable and is denoted by $\overline{X}$.
 
-Letting $X_1,X_2,\dots,X_n$ represent a sample of $n$ *independent and identically distributed* (i.i.d.) observations, where independence may be assumed through the use of *random sampling* methods, the sample mean may be expressed as:
+Letting $X_1,X_2,\ldots,X_n$ represent a sample of $n$ *independent and identically distributed* (i.i.d.) observations, where independence may be assumed through the use of *random sampling* methods, the sample mean may be expressed as:
 
-$$\overline{X}=\frac{1}{n}\left(X_1+X_2+X_3+...+X_n\right)$$
+\vspace{-0.3cm}
+
+$$\overline{X}=\frac{1}{n}\left(X_1+X_2+X_3+\ldots+X_n\right)$$
 
 ### The Expectation and Variance of the Sample Mean {-}
 
-The expected value of the sample mean is equal to the true value of the population mean, meaning the sample mean is an *unbiased estimator* of the population mean. That is, if a series of samples are taken from a distribution with population mean $\mu$ and the mean is calculated for each sample, in the long-run, the mean of these sample means tends toward $\mu$.
+The expected value of the sample mean is equal to the population mean, and so the sample mean is an *unbiased estimator* of the population mean. For a population with mean $\mu$, for samples of any size:
 
-The *standard deviation of the sample mean* $\overline{X}$ is called the **standard error** (SE). For an underlying population with standard deviation $\sigma$, the standard error of the sample mean for a sample of size $n$ is $\dfrac{\sigma}{\sqrt{n}}$.
+$$E\left(\overline{X}\right)=\mu$$
 
-**Proof**: Given random variable $X$ such that $\text{E}(X)=\mu$ and $\text{V}(X)=\sigma^2$, from which a sample of $n$ independent observations ($X_1,X_2,\dots,X_n$) are drawn:
+
+The *standard deviation* the sampling distribution of $\overline{X}$ is called the **standard error of the sample mean** (SE). For a population with standard deviation $\sigma$, the standard error for samples of size $n$ is: 
+
+$$SE\left(\overline{X}\right)=\dfrac{\sigma}{\sqrt{n}}$$
+
+**Proof**: Given random variable $X$ such that $\text{E}(X)=\mu$ and $\text{V}(X)=\sigma^2$, from which a sample of $n$ independent observations ($X_1,X_2,\ldots,X_n$) are drawn:
 
 :::::: {.cols data-latex=""}
 ::: {.col data-latex="{0.475\textwidth}"}
 \begin{align*}
-\text{E}(\overline{X})&=\text{E}\left(\frac{1}{n}(X_1+X_2+...+X_n)\right)\\
+\text{E}\left(\overline{X}\right)&=\text{E}\left(\frac{1}{n}(X_1+X_2+...+X_n)\right)\\
 &=\frac{1}{n}(\text{E}(X_1)+\text{E}(X_2)+...+\text{E}(X_n))\\
 &=\frac{1}{n}(n\mu)\\
 &=\mu
@@ -32,15 +39,13 @@ a column separator -->
 
 ::: {.col data-latex="{0.475\textwidth}"}
 \begin{align*}
-\text{V}(\overline{X})&=\text{V}\left(\frac{1}{n}(X_1+X_2+...+X_n)\right)\\
+\text{V}\left(\overline{X}\right)&=\text{V}\left(\frac{1}{n}(X_1+X_2+...+X_n)\right)\\
 &=\frac{1}{n^2}(\text{V}(X_1)+\text{V}(X_2)+...+\text{V}(X_n))\\
 &=\frac{1}{n^2}(n\sigma^2)\\
 &=\frac{\sigma^2}{n}
 \end{align*}
 :::
 ::::::
-
-This shows that, as the sample size $n$ increases, the variability of the sample mean decreases. The result for the variance relies on the observations being independent, which is typically ensured through the use of random sampling.
 
 \pagebreak
 
@@ -55,7 +60,7 @@ Since the sample mean $\overline{X}$ is a linear combination of independent obse
 \end{tcolorbox}
 \end{centering}
 
-Due to the lower variance of the sample mean, *extreme results are less likely* when taking the mean of a sample in comparison to a single observation. For example, suppose the mass of adult red squirrels in a location is known to be normally distributed, with mean 250 grams and standard deviation 12 grams. If a single squirrel is randomly selected and its mass measured, it would not be particularly unlikely to encounter a squirrel lighter than 240 grams or heavier than 260 grams. However, if a random sample of three squirrels is taken, each weighed and the mean of the sample calculated, then it would be very unlikely for the sample mean to be lower than 240 grams or heavier than 260 grams.
+Due to the lower variance of the sample mean, *extreme results are less likely* when taking the mean of a sample in comparison to a single observation. For example, suppose the mass of adult red squirrels in a location is known to be normally distributed, with mean 250 grams and standard deviation 12 grams. If a single squirrel is randomly selected and its mass measured, it would not be particularly unlikely to encounter a squirrel lighter than 240 grams or heavier than 260 grams. However, if a random sample of three squirrels is taken, each weighed and the mean of the sample calculated, then it would be considerably less likely for the sample mean to be below 240 grams or above 260 grams.
 
 The histograms below show 100 simulated individual observations of squirrel masses compared to the means of 100 simulated samples, each of size 3. Note that the sample means also show a distribution that looks normal with a mean of 250 grams, but that the spread of the sample means is much less than that of the individual observations. This reflects the fact that the standard deviation of the sample mean (the standard error) is $\dfrac{\sigma}{\sqrt{n}}$, which is smaller than $\sigma$.
 
@@ -130,7 +135,7 @@ The histograms below show 100 simulated individual observations of squirrel mass
         \node[left] at (-0.4+10,0.75*5) {$25$};
         \node[left,rotate=90] at (-1.5+10,0.75*4) {Frequency};
         \node at (3+10,0.80*6) {Normally distributed $\bar{X}$};
-        \node at (3+10,0.70*6) {(100 Sample Means)};
+        \node at (3+10,0.70*6) {(100 Sample Means, $n=\text{3}$)};
         \draw[fill=black!10] (2+10,0) rectangle (2.2+10,0.75*0.2);
         \draw[fill=black!10] (2.2+10,0) rectangle (2.4+10,0.75*0.6);
         \draw[fill=black!10] (2.4+10,0) rectangle (2.6+10,0.75*2);
@@ -165,7 +170,7 @@ This result holds exactly for normally distributed populations, regardless of sa
 \pagebreak
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} The length of a mass-produced brand of fence panels is normally distributed with a mean of 180cm and a standard deviation of 0.4cm. A random sample of nine panels is taken and each is measured. State the distribution of the mean of a random sample of nine panels, and calculate the probability of the sample mean being greater than 180.1cm.
+\textbf{Problem:} The lengths of a mass-produced brand of fence panels are normally distributed with a mean of 180cm and a standard deviation of 0.4cm. A random sample of nine panels is taken and each is measured. State the distribution of the mean of a random sample of nine panels, and calculate the probability of the sample mean being greater than 180.1cm.
 
 \tcblower
 \textbf{Solution:} Let r.v. $X$ represent the length of a fence panel.\\
@@ -227,7 +232,7 @@ $\overline{X}\sim \text{N}\left(180,\dfrac{0.4^2}{9}\right)$\hspace{6.5cm}
             \item Calculate $\text{P}(\overline{X}<23.4)$
         \end{enumerate}
     \end{enumerate}
-    \item The tail length of a breed of mouse is normally distributed with a mean of 5.2cm and a standard deviation of 0.8cm. A random sample of 12 mice are captured, their tail lengths measured and then released. Calculate the probability that the mean tail length of the sample of mice is less than 5cm.  
+    \item The tail length of a breed of mouse is normally distributed with a mean of 5.2cm and a standard deviation of 0.8cm. Twelve mice are captured at random, their tail lengths are measured, and they are then released. Calculate the probability that the mean tail length of the sample of mice is less than 5cm.  
     \item The time taken for a telecommunications company to interview candidates for a sales role is normally distributed with a mean of 28 minutes and a standard deviation of 4 minutes.
     \begin{enumerate}
         \item Determine the probability that an interview lasts over half an hour.
@@ -238,7 +243,7 @@ $\overline{X}\sim \text{N}\left(180,\dfrac{0.4^2}{9}\right)$\hspace{6.5cm}
     \begin{enumerate}
         \item Calculate the probability that, on any random day, less than 1kg is discarded.
         \item Calculate the probability that over the course of a week the mean amount of daily food waste discarded exceeds 2kg.
-        \item Suggest a reason why the calculation in part (b) may not be reliable.
+        \item Suggest a reason why the assumptions used in part (b) may not be valid.
     \end{enumerate}
     \item The distances recorded in long-jump attempts by a group of junior long-jump specialists at an athletics club are normally distributed with a mean of 6.5m and a standard deviation of 0.2m. The long-jump distances recorded by the junior heptathletes are also normally distributed, with mean 6.3m and standard deviation 0.4m. A coach randomly observes attempts by 4 long-jump specialists and 3 heptathletes. Calculate the probability that the heptathletes' mean distance is greater than that of the long-jump specialists. \textit{(Extension)}
 \end{enumerate}
@@ -252,7 +257,9 @@ The Central Limit Theorem (CLT) is one of the most important and useful concepts
 \begin{center}
 \begin{minipage}{0.75\textwidth}
 \begin{center}
-When the underlying population is \textit{not} normally distributed,\newline the distribution of the \textbf{sample mean} is \textbf{approximately normal}\newline for sufficiently large sample sizes.
+Even when the underlying population is \textit{not} normally distributed,\newline
+ the distribution of the \textbf{sample mean} becomes increasingly close to normal\newline
+ as the sample size increases.
 \end{center}
 \end{minipage}
 \end{center}
@@ -435,7 +442,7 @@ The **approximate** distribution of the sample mean can be stated provided the e
 \pagebreak
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} The mean mass of ceramic bowls produced by a potter is 400g and the standard deviation is 20g, and they can be ordered singly or in bulk. Bulk orders contain 36 bowls and, when such an order is placed, the potter selects the 36 bowls at random to be boxed up and shipped. Letting the random variable $X$ represent the weight of a bowl, and $\overline{X}$ the mean bowl mass in a bulk order:
+\textbf{Problem:} The mean mass of ceramic bowls produced by a potter is 400g and the standard deviation is 20g, and they can be ordered singly or in bulk. Bulk orders contain 36 bowls and, when such an order is placed, the potter selects the 36 bowls at random to be boxed up and shipped. Letting the random variable $X$ represent the mass of a bowl, and $\overline{X}$ the mean bowl mass in a bulk order:
 
 \begin{enumerate}
     \item[a. ] State the distribution of $\overline{X}$.
@@ -503,7 +510,7 @@ The **approximate** distribution of the sample mean can be stated provided the e
     \item Eggs classified as \textit{medium} by a farm have a mean mass of 78g and a standard deviation of 5g. Calculate the probability that, for a box of 24 randomly selected eggs, the mean egg mass is recorded as 78g when given to the nearest gram.  
     \item When \textit{"40 litres"} of petrol is dispensed by a fuel pump design used by a supermarket, the mean actual amount dispensed is 40.1 litres with a standard deviation of 0.35 litres.
     \begin{enumerate}
-        \item[(a)] Explain why the known information is not sufficient to calculate the probability that a single \textit{"40 litre"} fill actual gives less than 40 litres.
+        \item[(a)] Explain why the known information is not sufficient to calculate the probability that a single \textit{"40-litre"} fill actually gives less than 40 litres.
     \end{enumerate}
     As part of the supermarket's monitoring of the accuracy of its pumps, it takes 32 fills, each of size \textit{"40 litres"}, from randomly chosen pumps at its stores nationwide.
     \begin{enumerate}
@@ -544,7 +551,7 @@ The **approximate** distribution of the sample mean can be stated provided the e
             \item[(i)] State the distribution of $\overline{X}$.
             \item[(ii)] Find the probability that the sample mean is less than 59 grams.
         \end{enumerate}
-        \item[(c)] The bakery changes its process, and now when a customer orders a number of mince pies the bakery staff places them on a set of weighing scales, one by one. Explain why this change is likely to mean the distribution of $\overline{X}$ is no longer as it previously was.
+        \item[(c)] The bakery changes its process. As the mince pies are placed on the scales, staff can see the running total and may use it to decide which pie is selected next. Explain why this change is likely to mean the distribution of $\overline{X}$ may no longer be the one stated in part (b).
     \end{enumerate}
     \item Let discrete random variable $X$ represent the number of Video Assistant Referee (VAR) reviews during the course of a game of football, known to follow a Poisson distribution with a mean of 4.5 reviews per game.
     \begin{enumerate}[itemsep=8pt]

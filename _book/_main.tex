@@ -39,6 +39,7 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -162,6 +163,10 @@
 \usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
+% fallback for those not using the hyperref driver hyperxmp:
+\makeatletter
+\@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
+\makeatother
 \hypersetup{
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
@@ -694,10 +699,10 @@ For example, the table below shows data relating to some football players:
 
 \vspace{-0.5cm}
 
-\phantomsection\label{ex11q}{}
+\protect\phantomsection\label{ex11q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex11a]{Exercise 1.1}}{Exercise 1.1}}\label{exercise-1.1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex11a]{Exercise 1.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 1.1}}
 
 \begin{enumerate}
     \item State whether each question about students' pets would result in quantitative or qualitative data.
@@ -902,10 +907,10 @@ Visual displays are often used at the beginning of an analysis to reveal pattern
 
 \vspace{-1cm}
 
-\phantomsection\label{ex12q}{}
+\protect\phantomsection\label{ex12q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex12a]{Exercise 1.2}}{Exercise 1.2}}\label{exercise-1.2}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex12a]{Exercise 1.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 1.2}}
 
 \begin{enumerate}
     \item The ages (in years) of competitors in a junior golf tournament are below. Draw a dot plot to represent the data.
@@ -1137,10 +1142,10 @@ The widespread availability of computing power means that statisticians often us
 
 While this textbook aims to develop familiarity with common figures, tables and computer output, the best way to practise extracting and interpreting information from them is to read a wide range of relevant statistical articles and reports.
 
-\phantomsection\label{ex13q}{}
+\protect\phantomsection\label{ex13q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex13a]{Exercise 1.3}}{Exercise 1.3}}\label{exercise-1.3}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex13a]{Exercise 1.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 1.3}}
 
 \begin{enumerate}
     \item Use \textbf{Table 1} to calculate the proportion of pupils in the sample who walk to school, as a:
@@ -1375,10 +1380,10 @@ Statistical inference is the process of using sample data to draw conclusions ab
 
 Because sample statistics vary from sample to sample, they do not generally reveal the exact values of the corresponding population parameters. Any conclusion about a population based on a sample must therefore acknowledge \emph{uncertainty}.
 
-\phantomsection\label{ex14q}{}
+\protect\phantomsection\label{ex14q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex14a]{Exercise 1.4}}{Exercise 1.4}}\label{exercise-1.4}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex14a]{Exercise 1.4}}
+\addcontentsline{toc}{subsubsection}{{Exercise 1.4}}
 
 \textit{For each, state, using words and notation, which sample statistic or population parameter has been obtained.}\newline \textit{For example: ``Sample mean (}\(\bar{x}\)\textit{).'' or ``Population standard deviation (}\(\sigma\)\textit{).''}
 
@@ -1643,10 +1648,10 @@ For example, calculating the mean and standard deviation for the sample dataset:
 
 \[\sum x^\text{2} = \text{282},\; \sum x = \text{36},\; n=\text{5} \qquad \bar{x}=\frac{\text{36}}{\text{5}}=\text{7.2} \qquad s=\sqrt{\frac{\text{282}-\frac{\text{36}^\text{2}}{\text{5}}}{\text{4}}}=\text{2.387}\text{ (to 3 d.p.)}\]
 
-\phantomsection\label{ex15q}{}
+\protect\phantomsection\label{ex15q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex15a]{Exercise 1.5}}{Exercise 1.5}}\label{exercise-1.5}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex15a]{Exercise 1.5}}
+\addcontentsline{toc}{subsubsection}{{Exercise 1.5}}
 
 \begin{enumerate}
     \item Summary statistics from sample data are given below. Use appropriate formulae to calculate the mean and standard deviation for each sample. Note that summations such as $\sum x_i$ are often simplified to $\sum x$.
@@ -1854,10 +1859,10 @@ The outlier in this dataset could be valid if, for instance, the sunflower plant
 
 \end{tcolorbox}
 
-\phantomsection\label{ex16q}{}
+\protect\phantomsection\label{ex16q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex16a]{Exercise 1.6}}{Exercise 1.6}}\label{exercise-1.6}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex16a]{Exercise 1.6}}
+\addcontentsline{toc}{subsubsection}{{Exercise 1.6}}
 
 \begin{enumerate}
     \item A bakery sells strawberry tarts throughout the summer. The manager records the number sold on 10 randomly selected days during one month.
@@ -2255,10 +2260,10 @@ As well as considering whether the underlying population distribution of data ap
 
 \end{tcolorbox}
 
-\phantomsection\label{ex17q}{}
+\protect\phantomsection\label{ex17q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex17a]{Exercise 1.7}}{Exercise 1.7}}\label{exercise-1.7}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex17a]{Exercise 1.7}}
+\addcontentsline{toc}{subsubsection}{{Exercise 1.7}}
 
 \textit{Comment on each population distribution using the simplified histograms, which show data from samples.}
 
@@ -2615,10 +2620,10 @@ Box plots for the two groups of cyclists are shown below in \textbf{Figure 1}, a
 
 \pagebreak
 
-\phantomsection\label{ex18q}{}
+\protect\phantomsection\label{ex18q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex18a]{Exercise 1.8}}{Exercise 1.8}}\label{exercise-1.8}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex18a]{Exercise 1.8}}
+\addcontentsline{toc}{subsubsection}{{Exercise 1.8}}
 
 \begin{enumerate}
     \item Two models of coffee machines produced by the brand \textit{DOLCAFÉ} are supposed to produce a white coffee with the same volume of liquid each time, but natural variation means the actual amount dispensed is not quite the same every time. The volumes dispensed, in ml, are recorded for random samples from each model.
@@ -2749,10 +2754,10 @@ Box plots for the two groups of cyclists are shown below in \textbf{Figure 1}, a
 
 \pagebreak
 
-\phantomsection\label{re1q}{}
+\protect\phantomsection\label{re1q}{}
 
 \section*{\texorpdfstring{\hyperref[re1a]{Review Exercise}}{Review Exercise}}\label{review-exercise}
-\addcontentsline{toc}{section}{\hyperref[re1a]{Review Exercise}}
+\addcontentsline{toc}{section}{{Review Exercise}}
 
 \begin{enumerate}
     \item A music fan wishes to investigate the characteristics of songs that are popular on a well-known music streaming app. She is able to obtain data on the thousand most-streamed songs of all time, a small selection of which are displayed in the table below.
@@ -2928,10 +2933,10 @@ In this textbook, probabilities will be given as fractions, or decimals to 4 dec
 
 \pagebreak
 
-\phantomsection\label{ex21q}{}
+\protect\phantomsection\label{ex21q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex21a]{Exercise 2.1}}{Exercise 2.1}}\label{exercise-2.1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex21a]{Exercise 2.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 2.1}}
 
 \begin{enumerate}
     \item A letter of the English alphabet is chosen at random. State the probability that the letter chosen is:
@@ -3122,10 +3127,10 @@ $$\text{P}(\text{exactly two tails})=\dfrac{\text{3}}{\text{8}}$$
 
 \pagebreak
 
-\phantomsection\label{ex22q}{}
+\protect\phantomsection\label{ex22q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex22a]{Exercise 2.2}}{Exercise 2.2}}\label{exercise-2.2}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex22a]{Exercise 2.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 2.2}}
 
 For most of the following questions, it is recommended to write out a full list of all the possible equally likely outcomes. In some questions, a complete list would be excessively long. In such cases, multiplication can be used to determine the total number of outcomes, and only the favourable outcomes need to be listed.
 
@@ -3305,10 +3310,10 @@ Note that in the tree diagram above the probability of the card being a diamond 
 
 \pagebreak
 
-\phantomsection\label{ex23q}{}
+\protect\phantomsection\label{ex23q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex23a]{Exercise 2.3}}{Exercise 2.3}}\label{exercise-2.3}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex23a]{Exercise 2.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 2.3}}
 
 \emph{Construct a tree diagram for each question}.
 
@@ -3459,10 +3464,10 @@ $\text{P}(G\cap V)=\dfrac{\text{2}}{\text{12}}=\dfrac{\text{1}}{\text{6}}$
 
 \pagebreak
 
-\phantomsection\label{ex24q}{}
+\protect\phantomsection\label{ex24q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex24a]{Exercise 2.4}}{Exercise 2.4}}\label{exercise-2.4}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex24a]{Exercise 2.4}}
+\addcontentsline{toc}{subsubsection}{{Exercise 2.4}}
 
 \begin{enumerate}
     \item One of the nine elements shown on the Venn diagram below is selected at random. State:
@@ -3669,10 +3674,10 @@ It should be noted that there are generally numerous different ways to approach 
 
 \pagebreak
 
-\phantomsection\label{ex25q}{}
+\protect\phantomsection\label{ex25q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex25a]{Exercise 2.5}}{Exercise 2.5}}\label{exercise-2.5}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex25a]{Exercise 2.5}}
+\addcontentsline{toc}{subsubsection}{{Exercise 2.5}}
 
 \begin{enumerate}
     \item Given events $X$ and $Y$ such that $\text{P}(X\cap Y)=\text{0.3}$, $\text{P}(X)=\text{0.4}$ and $\text{P}(Y)=\text{0.5}$, find $\text{P}(X\cup Y)$.
@@ -3704,10 +3709,10 @@ It should be noted that there are generally numerous different ways to approach 
 
 \pagebreak
 
-\phantomsection\label{re2q}{}
+\protect\phantomsection\label{re2q}{}
 
 \section*{\texorpdfstring{\hyperref[re2a]{Review Exercise}}{Review Exercise}}\label{review-exercise-1}
-\addcontentsline{toc}{section}{\hyperref[re2a]{Review Exercise}}
+\addcontentsline{toc}{section}{{Review Exercise}}
 
 \begin{enumerate}
     \item A box contains five red balls numbered from 1 to 5, and four yellow balls numbered from 1 to 4. A ball is selected at random from the box. Let \textit{yellow} be the event "the ball selected is yellow".
@@ -4081,10 +4086,10 @@ Care must be taken to ensure that sampling frames are representative of the targ
 
 An ill-defined target population, an unrepresentative sampling frame or a poor sampling technique is likely to produce data which is \emph{biased} and \emph{not representative of the population}, leading to \emph{unreliable conclusions}.
 
-\phantomsection\label{ex31q}{}
+\protect\phantomsection\label{ex31q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex31a]{Exercise 3.1}}{Exercise 3.1}}\label{exercise-3.1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex31a]{Exercise 3.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 3.1}}
 
 \begin{enumerate}
     \item A mathematics teacher wishes to investigate confidence in mathematics among all pupils in the school. They ask the first twenty pupils who enter the maths corridor at the start of first period to complete a questionnaire. Suggest one issue with the \textbf{sampling frame} and one issue with the \textbf{sampling method}, explaining their potential impact.
@@ -5014,10 +5019,10 @@ Above all, the greatest concern for the purposes of statistical inference is whe
 
 \pagebreak
 
-\phantomsection\label{ex32q}{}
+\protect\phantomsection\label{ex32q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex32a]{Exercise 3.2}}{Exercise 3.2}}\label{exercise-3.2}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex32a]{Exercise 3.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 3.2}}
 
 \begin{enumerate}
   \item For each, state the sampling method that is being described.
@@ -5058,10 +5063,10 @@ Above all, the greatest concern for the purposes of statistical inference is whe
 
 \pagebreak
 
-\phantomsection\label{re3q}{}
+\protect\phantomsection\label{re3q}{}
 
 \section*{\texorpdfstring{\hyperref[re3a]{Review Exercise}}{Review Exercise}}\label{review-exercise-2}
-\addcontentsline{toc}{section}{\hyperref[re3a]{Review Exercise}}
+\addcontentsline{toc}{section}{{Review Exercise}}
 
 \begin{enumerate}
     \item The owners of a chain of nine restaurants, located in various cities around Scotland, wish to interview a sample of the employees working in those restaurants. 
@@ -5190,10 +5195,10 @@ A patient is selected at random to be interviewed. State $\text{P}(\text{fully r
 $\text{P}(\text{fully recovered }|\text{ placebo})=\dfrac{\text{18}}{\text{30}}=\dfrac{\text{3}}{\text{5}}$
 \end{tcolorbox}
 
-\phantomsection\label{ex41q}{}
+\protect\phantomsection\label{ex41q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex41a]{Exercise 4.1}}{Exercise 4.1}}\label{exercise-4.1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex41a]{Exercise 4.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 4.1}}
 
 \begin{enumerate}
     \item The Venn diagram below shows equally likely outcomes in a sample space and events $X$ and $Y$. State:
@@ -5353,10 +5358,10 @@ Similarly, the complement rule applies under conditioning: \(\text{P}(\overline{
 $\text{P}(W \mid  V) = \dfrac{\text{P}(W\cap V)}{\text{P}(V)}=\dfrac{\text{0.1046}}{\text{0.7236}}=\text{0.1446}$
 \end{tcolorbox}
 
-\phantomsection\label{ex42q}{}
+\protect\phantomsection\label{ex42q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex42a]{Exercise 4.2}}{Exercise 4.2}}\label{exercise-4.2}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex42a]{Exercise 4.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 4.2}}
 
 \begin{enumerate}
     \item Find, by first writing out the conditional probability formula for these events:
@@ -5421,10 +5426,10 @@ Since $\text{P}(D\mid E) = \text{P}(D)$, events $D$ and $E$ are independent.
 
 \end{tcolorbox}
 
-\phantomsection\label{ex43q}{}
+\protect\phantomsection\label{ex43q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex43a]{Exercise 4.3}}{Exercise 4.3}}\label{exercise-4.3}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex43a]{Exercise 4.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 4.3}}
 
 \begin{enumerate}
     \item For each pair of events $X$ and $Y$, state whether you would expect them to be independent or not.
@@ -5522,10 +5527,10 @@ $\text{P}(\text{mutation}\cap \text{yellow}) = \text{P}(\text{mutation}) \times 
 
 \end{tcolorbox}
 
-\phantomsection\label{ex44q}{}
+\protect\phantomsection\label{ex44q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex44a]{Exercise 4.4}}{Exercise 4.4}}\label{exercise-4.4}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex44a]{Exercise 4.4}}
+\addcontentsline{toc}{subsubsection}{{Exercise 4.4}}
 
 \begin{enumerate}
     \item Calculate each probability by first \textit{writing out the formula required}:
@@ -5626,10 +5631,10 @@ $\text{P}(\text{garage }|\text{ garden}) = \dfrac{\text{P}(\text{garden }|\text{
 
 \pagebreak
 
-\phantomsection\label{ex45q}{}
+\protect\phantomsection\label{ex45q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex45a]{Exercise 4.5}}{Exercise 4.5}}\label{exercise-4.5}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex45a]{Exercise 4.5}}
+\addcontentsline{toc}{subsubsection}{{Exercise 4.5}}
 
 \begin{enumerate}
     \item For each, first write out the formula for Bayes' Theorem explicitly:
@@ -5812,10 +5817,10 @@ The advantage of tree diagrams, for questions where they are suitable, is that t
 
 \pagebreak
 
-\phantomsection\label{ex46q}{}
+\protect\phantomsection\label{ex46q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex46a]{Exercise 4.6}}{Exercise 4.6}}\label{exercise-4.6}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex46a]{Exercise 4.6}}
+\addcontentsline{toc}{subsubsection}{{Exercise 4.6}}
 
 \emph{Construct a tree diagram for each question}.
 
@@ -5935,10 +5940,10 @@ It may be surprising that such a high proportion of positives are false positive
 
 \pagebreak
 
-\phantomsection\label{ex47q}{}
+\protect\phantomsection\label{ex47q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex47a]{Exercise 4.7}}{Exercise 4.7}}\label{exercise-4.7}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex47a]{Exercise 4.7}}
+\addcontentsline{toc}{subsubsection}{{Exercise 4.7}}
 
 \emph{Construct a tree diagram for each question}.
 
@@ -5976,10 +5981,10 @@ It may be surprising that such a high proportion of positives are false positive
 
 \pagebreak
 
-\phantomsection\label{re4q}{}
+\protect\phantomsection\label{re4q}{}
 
 \section*{\texorpdfstring{\hyperref[re4a]{Review Exercise}}{Review Exercise}}\label{review-exercise-3}
-\addcontentsline{toc}{section}{\hyperref[re4a]{Review Exercise}}
+\addcontentsline{toc}{section}{{Review Exercise}}
 
 \begin{enumerate}
     \itemsep2em
@@ -6310,10 +6315,10 @@ There is no \emph{universally agreed} scale for classifying linear relationships
 
 \pagebreak
 
-\phantomsection\label{ex51q}{}
+\protect\phantomsection\label{ex51q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex51a]{Exercise 5.1}}{Exercise 5.1}}\label{exercise-5.1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex51a]{Exercise 5.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 5.1}}
 
 \setlength{\columnsep}{30pt}
 
@@ -7044,10 +7049,10 @@ This suggests a strong positive linear correlation between listening test scores
 
 \end{tcolorbox}
 
-\phantomsection\label{ex52q}{}
+\protect\phantomsection\label{ex52q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex52a]{Exercise 5.2}}{Exercise 5.2}}\label{exercise-5.2}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex52a]{Exercise 5.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 5.2}}
 
 \setlength{\columnsep}{40pt}
 
@@ -7530,10 +7535,10 @@ Scatterplots should always be constructed and closely scrutinised before further
 
 \pagebreak
 
-\phantomsection\label{ex53q}{}
+\protect\phantomsection\label{ex53q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex53a]{Exercise 5.3}}{Exercise 5.3}}\label{exercise-5.3}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex53a]{Exercise 5.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 5.3}}
 
 \begin{enumerate}
     \item A bivariate sample has summary statistics:
@@ -7800,10 +7805,10 @@ The website wishes to allow users the ability to input the number of miles in th
 
 \pagebreak
 
-\phantomsection\label{re5q}{}
+\protect\phantomsection\label{re5q}{}
 
 \section*{\texorpdfstring{\hyperref[re5a]{Review Exercise}}{Review Exercise}}\label{review-exercise-4}
-\addcontentsline{toc}{section}{\hyperref[re5a]{Review Exercise}}
+\addcontentsline{toc}{section}{{Review Exercise}}
 
 \begin{enumerate}
     \item As part of a study on intensive exercise, a sports scientist recorded the peak heart rates ($y$) of a random selection of sixteen volunteers of different ages ($x$) who took regular exercise. The linear regression equation was calculated for the data shown in the scatterplot and found to be $\hat{y}=\text{203.9}−\text{0.67}x$.
@@ -8189,10 +8194,10 @@ From both the table and the graph, it can be seen that, for example, \(\text{P}(
 
 \pagebreak
 
-\phantomsection\label{ex61q}{}
+\protect\phantomsection\label{ex61q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex61a]{Exercise 6.1}}{Exercise 6.1}}\label{exercise-6.1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex61a]{Exercise 6.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 6.1}}
 
 \begin{enumerate}
     \item Explain why each of the following tables do not represent a tabulated probability distribution. 
@@ -8433,10 +8438,10 @@ This is reasonable, since two cubes are drawn and 60\% of the cubes are red, giv
 
 \pagebreak
 
-\phantomsection\label{ex62q}{}
+\protect\phantomsection\label{ex62q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex62a]{Exercise 6.2}}{Exercise 6.2}}\label{exercise-6.2}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex62a]{Exercise 6.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 6.2}}
 
 \begin{enumerate}
     \item Calculate the expected value for each of the probability distributions below.
@@ -8609,10 +8614,10 @@ Given the value \(\text{E}(aX\pm b)\), the expectation of \(X\) may be determine
 
 \pagebreak
 
-\phantomsection\label{ex63q}{}
+\protect\phantomsection\label{ex63q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex63a]{Exercise 6.3}}{Exercise 6.3}}\label{exercise-6.3}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex63a]{Exercise 6.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 6.3}}
 
 \begin{enumerate}
     \item Calculate:
@@ -8752,10 +8757,10 @@ Calculate $\text{E}(X)$ and $\text{V}(X)$
 
 \pagebreak
 
-\phantomsection\label{ex64q}{}
+\protect\phantomsection\label{ex64q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex64a]{Exercise 6.4}}{Exercise 6.4}}\label{exercise-6.4}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex64a]{Exercise 6.4}}
+\addcontentsline{toc}{subsubsection}{{Exercise 6.4}}
 
 \begin{enumerate}
     \item Calculate the mean and variance of each of the following probability distributions.
@@ -8876,10 +8881,10 @@ Note that any laws relating to the \emph{standard deviation} of a linear transfo
 
 \pagebreak
 
-\phantomsection\label{ex65q}{}
+\protect\phantomsection\label{ex65q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex65a]{Exercise 6.5}}{Exercise 6.5}}\label{exercise-6.5}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex65a]{Exercise 6.5}}
+\addcontentsline{toc}{subsubsection}{{Exercise 6.5}}
 
 \begin{enumerate}
     \item Given $\text{E}(X)=\text{6}$ and $\text{V}(X)=\text{8}$, determine the values of:
@@ -9042,10 +9047,10 @@ Hence the mean total thickness of the three books is 9.3cm, and the standard dev
 
 \pagebreak
 
-\phantomsection\label{ex66q}{}
+\protect\phantomsection\label{ex66q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex66a]{Exercise 6.6}}{Exercise 6.6}}\label{exercise-6.6}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex66a]{Exercise 6.6}}
+\addcontentsline{toc}{subsubsection}{{Exercise 6.6}}
 
 \begin{enumerate}
     \item Random variables $J$ and $K$ are defined such that $\text{E}(J)=\text{3}$, $\text{E}(K)=-\text{2}$, $\text{V}(J)=\text{4}$ and $\text{V}(K)=\text{5}$.
@@ -9099,10 +9104,10 @@ Hence the mean total thickness of the three books is 9.3cm, and the standard dev
 
 \pagebreak
 
-\phantomsection\label{re6q}{}
+\protect\phantomsection\label{re6q}{}
 
 \section*{\texorpdfstring{\hyperref[re6a]{Review Exercise}}{Review Exercise}}\label{review-exercise-5}
-\addcontentsline{toc}{section}{\hyperref[re6a]{Review Exercise}}
+\addcontentsline{toc}{section}{{Review Exercise}}
 
 \begin{enumerate}
     \item A trial consists of tossing two unbiased coins. Let the random variable $X$ represent the number of heads obtained.
@@ -9326,10 +9331,10 @@ The previously stated values for the expectation and variance of \(X\) and \(Y\)
 
 \end{tcolorbox}
 
-\phantomsection\label{ex71q}{}
+\protect\phantomsection\label{ex71q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex71a]{Exercise 7.1}}{Exercise 7.1}}\label{exercise-7.1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex71a]{Exercise 7.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 7.1}}
 
 \begin{enumerate}
     \item Explain why, in each case, the random variable $X$ does \textbf{not} follow a $\text{U}(k)$ distribution.
@@ -9426,10 +9431,10 @@ For the coin tosses above (assuming the coin is fair):
 
 If \(X\) is the number of heads obtained from three coin tosses, then \(X\) is \emph{binomially distributed} with \(X\sim \text{B}(\text{3},\text{0.5})\).
 
-\phantomsection\label{ex72q}{}
+\protect\phantomsection\label{ex72q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex72a]{Exercise 7.2}}{Exercise 7.2}}\label{exercise-7.2}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex72a]{Exercise 7.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 7.2}}
 
 For each random variable, \(X\), below, if it is a binomially distributed random variable then state its distribution, such as \(X\sim \text{B}\left(\text{8},\frac{\text{2}}{\text{3}}\right)\). Otherwise, explain clearly which condition(s) for a binomial distribution are \textbf{not} satisfied.
 
@@ -9520,10 +9525,10 @@ The same reasoning applies generally. To obtain exactly \(x\) successes from \(n
 
 \[\text{P}(X=x)={}^{n}\text{C}_{x}\times p^x\times (\text{1}-p)^{n-x}\]
 
-\phantomsection\label{ex73q}{}
+\protect\phantomsection\label{ex73q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex73a]{Exercise 7.3}}{Exercise 7.3}}\label{exercise-7.3}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex73a]{Exercise 7.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 7.3}}
 
 \begin{enumerate}
     \item Given that $X\sim \text{B}(\text{10},\text{0.25})$, calculate $\text{P}(X=\text{3})$.
@@ -9562,10 +9567,10 @@ $\text{P}(X\geqslant \text{2})=\text{1}-\text{P}(X\leqslant \text{1})=\text{1}-\
 
 \end{tcolorbox}
 
-\phantomsection\label{ex74q}{}
+\protect\phantomsection\label{ex74q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex74a]{Exercise 7.4}}{Exercise 7.4}}\label{exercise-7.4}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex74a]{Exercise 7.4}}
+\addcontentsline{toc}{subsubsection}{{Exercise 7.4}}
 
 \begin{enumerate}
     \item Given that $X\sim \text{B}(\text{10},\text{0.3})$, calculate:
@@ -9632,10 +9637,10 @@ $\text{V}(X)=npq=\text{8}\times \text{0.25} \times \text{0.75}=\text{1.5}$
 
 \end{tcolorbox}
 
-\phantomsection\label{ex75q}{}
+\protect\phantomsection\label{ex75q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex75a]{Exercise 7.5}}{Exercise 7.5}}\label{exercise-7.5}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex75a]{Exercise 7.5}}
+\addcontentsline{toc}{subsubsection}{{Exercise 7.5}}
 
 \begin{enumerate}
     \item Calculate the mean and variance for each random variable:
@@ -9786,10 +9791,10 @@ $$\text{P}(X=\text{10})=\frac{e^{-\text{6}} \times \text{6}^{\text{10}}}{\text{1
 
 As with the binomial distribution, in general it is much faster to use the \textbf{cumulative probability tables} from \textbf{page 10} of the Data Booklet, or a graphical calculator, to calculate Poisson probabilities. Unlike the binomial distribution, there is no fixed upper limit to the number of events that can occur, and so (for example) \(\text{P}(X\geqslant \text{5})\) must be calculated as \(\text{1}-\text{P}(X\leqslant \text{4})\).
 
-\phantomsection\label{ex76q}{}
+\protect\phantomsection\label{ex76q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex76a]{Exercise 7.6}}{Exercise 7.6}}\label{exercise-7.6}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex76a]{Exercise 7.6}}
+\addcontentsline{toc}{subsubsection}{{Exercise 7.6}}
 
 \begin{enumerate}
     \item For each, explain why random variable $X$ may \textbf{not} follow a Poisson distribution, with reference to the conditions required for a Poisson model.
@@ -9932,10 +9937,10 @@ So there is a roughly 22\% probability that Betty receives fewer than 8 emails i
 
 \pagebreak
 
-\phantomsection\label{ex77q}{}
+\protect\phantomsection\label{ex77q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex77a]{Exercise 7.7}}{Exercise 7.7}}\label{exercise-7.7}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex77a]{Exercise 7.7}}
+\addcontentsline{toc}{subsubsection}{{Exercise 7.7}}
 
 \begin{enumerate}
     \item Given independent random variables $X\sim \text{Po}(\text{1.6})$ and $Y\sim \text{Po}(\text{0.4})$, calculate $\text{P}(X+Y\leqslant\text{4})$.
@@ -9990,10 +9995,10 @@ So there is a roughly 22\% probability that Betty receives fewer than 8 emails i
 
 \pagebreak
 
-\phantomsection\label{re7q}{}
+\protect\phantomsection\label{re7q}{}
 
 \section*{\texorpdfstring{\hyperref[re7a]{Review Exercise}}{Review Exercise}}\label{review-exercise-6}
-\addcontentsline{toc}{section}{\hyperref[re7a]{Review Exercise}}
+\addcontentsline{toc}{section}{{Review Exercise}}
 
 \begin {enumerate}
     \item Given that $X\sim \text{U}(\text{8})$, calculate:
@@ -10212,10 +10217,10 @@ $\text{P}(\text{31}<T<\text{34})=\text{3}\times \frac{\text{1}}{\text{15}}=\frac
 
 \vspace{0.7cm}
 
-\phantomsection\label{ex81q}{}
+\protect\phantomsection\label{ex81q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex81a]{Exercise 8.1}}{Exercise 8.1}}\label{exercise-8.1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex81a]{Exercise 8.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 8.1}}
 
 \begin{enumerate}[itemsep=12pt]
     \item For each of the following, explain why the random variable $X$ does \textbf{not} follow a $\text{U}(a,b)$ distribution.
@@ -10511,10 +10516,10 @@ The shape of the curve illustrates that values closer to the mean are more likel
 \end{minipage}
 \end{figure}
 
-\phantomsection\label{ex82q}{}
+\protect\phantomsection\label{ex82q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex82a]{Exercise 8.2}}{Exercise 8.2}}\label{exercise-8.2}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex82a]{Exercise 8.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 8.2}}
 
 \emph{For each, sketch the distribution, labelling the mean and two standard deviations either side of the mean.}
 
@@ -10813,10 +10818,10 @@ Determining probabilities for the normal distribution by directly calculating an
 
 \vspace{-0.5cm}
 
-\phantomsection\label{ex83q}{}
+\protect\phantomsection\label{ex83q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex83a]{Exercise 8.3}}{Exercise 8.3}}\label{exercise-8.3}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex83a]{Exercise 8.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 8.3}}
 
 \begin{enumerate}
     \item Find:
@@ -11094,10 +11099,10 @@ $\text{P}(X>\text{312})=\text{P}\left(Z>\dfrac{\text{312}-\text{295}}{\text{15}}
 
 \end{tcolorbox}
 
-\phantomsection\label{ex84q}{}
+\protect\phantomsection\label{ex84q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex84a]{Exercise 8.4}}{Exercise 8.4}}\label{exercise-8.4}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex84a]{Exercise 8.4}}
+\addcontentsline{toc}{subsubsection}{{Exercise 8.4}}
 
 \begin{enumerate}
     \item Given $X\sim \text{N}(\text{24},\text{9})$, find:
@@ -11330,10 +11335,10 @@ Where more than one value is unknown, solving simultaneous equations may be requ
 
 \pagebreak
 
-\phantomsection\label{ex85q}{}
+\protect\phantomsection\label{ex85q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex85a]{Exercise 8.5}}{Exercise 8.5}}\label{exercise-8.5}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex85a]{Exercise 8.5}}
+\addcontentsline{toc}{subsubsection}{{Exercise 8.5}}
 
 \begin{enumerate}
     \item Given each sketch of $Z\sim \text{N}(\text{0},\text{1})$ below, use page 12 of the Data Booklet to state the value of $z$:
@@ -11696,10 +11701,10 @@ $\text{P}(T<\text{200})=\text{P}\left(Z<\dfrac{\text{200}-\text{201.6}}{\sqrt{\t
 
 \pagebreak
 
-\phantomsection\label{ex86q}{}
+\protect\phantomsection\label{ex86q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex86a]{Exercise 8.6}}{Exercise 8.6}}\label{exercise-8.6}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex86a]{Exercise 8.6}}
+\addcontentsline{toc}{subsubsection}{{Exercise 8.6}}
 
 \begin{enumerate}
     \item The time taken for a chef to chop an onion is normally distributed with mean 19 seconds and standard deviation 3 seconds. Assuming the time taken to chop each onion is independent, calculate the probability that it takes over \textbf{one minute} in total for the chef to chop three onions.
@@ -11986,10 +11991,10 @@ $\text{P}(X\geqslant \text{20})=\text{P}\left(Z>\dfrac{\text{19.5}-\text{10}}{\s
 
 \end{tcolorbox}
 
-\phantomsection\label{ex87q}{}
+\protect\phantomsection\label{ex87q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex87a]{Exercise 8.7}}{Exercise 8.7}}\label{exercise-8.7}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex87a]{Exercise 8.7}}
+\addcontentsline{toc}{subsubsection}{{Exercise 8.7}}
 
 \begin{enumerate}[itemsep=0pt]
     \item Given $X\sim \text{B}(\text{40},\text{0.4})$:
@@ -12195,10 +12200,10 @@ $T\approx \text{N}(\text{25},\text{25})$
 
 \pagebreak
 
-\phantomsection\label{ex88q}{}
+\protect\phantomsection\label{ex88q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex88a]{Exercise 8.8}}{Exercise 8.8}}\label{exercise-8.8}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex88a]{Exercise 8.8}}
+\addcontentsline{toc}{subsubsection}{{Exercise 8.8}}
 
 \begin{enumerate}
     \item Given $X\sim \text{Po}(\text{24})$:
@@ -12255,10 +12260,10 @@ $T\approx \text{N}(\text{25},\text{25})$
 
 \pagebreak
 
-\phantomsection\label{re8q}{}
+\protect\phantomsection\label{re8q}{}
 
 \section*{\texorpdfstring{\hyperref[re8a]{Review Exercise}}{Review Exercise}}\label{review-exercise-7}
-\addcontentsline{toc}{section}{\hyperref[re8a]{Review Exercise}}
+\addcontentsline{toc}{section}{{Review Exercise}}
 
 \begin{enumerate}[itemsep=10pt]
     \item Given $X\sim \text{U}(\text{1,7})$, find:
@@ -12301,26 +12306,32 @@ $T\approx \text{N}(\text{25},\text{25})$
 
 \chapter{The Distribution of the Sample Mean}\label{the-distribution-of-the-sample-mean}
 
-Previous chapters have investigated probabilities related to \emph{individual} observations from random variables with known distributions. However, statisticians are rarely in the business of making a single observation from a population - instead, they are far more likely to draw a \emph{sample} of observations and, commonly, calculate the \emph{sample mean}. Given a random variable \(X\), the sample mean of observations from \(X\) is also a random variable and is denoted \(\overline{X}\).
+Previous chapters have investigated probabilities related to \emph{individual} observations from random variables with known distributions. In statistical investigations, however, it is common to take a \emph{sample} of observations and calculate a statistic such as the sample mean. Since its value varies from sample to sample, the sample mean is itself a random variable and is denoted by \(\overline{X}\).
 
-Letting \(X_1,X_2,\dots,X_n\) represent a sample of \(n\) \emph{independent and identically distributed} (i.i.d.) observations, where independence may be assumed through the use of \emph{random sampling} methods, the sample mean may be expressed as:
+Letting \(X_1,X_2,\ldots,X_n\) represent a sample of \(n\) \emph{independent and identically distributed} (i.i.d.) observations, where independence may be assumed through the use of \emph{random sampling} methods, the sample mean may be expressed as:
 
-\[\overline{X}=\frac{1}{n}\left(X_1+X_2+X_3+...+X_n\right)\]
+\vspace{-0.3cm}
+
+\[\overline{X}=\frac{1}{n}\left(X_1+X_2+X_3+\ldots+X_n\right)\]
 
 \subsection*{The Expectation and Variance of the Sample Mean}\label{the-expectation-and-variance-of-the-sample-mean}
 \addcontentsline{toc}{subsection}{The Expectation and Variance of the Sample Mean}
 
-The expected value of the sample mean is equal to the true value of the population mean, meaning the sample mean is an \emph{unbiased estimator} of the population mean. That is, if a series of samples are taken from a distribution with population mean \(\mu\) and the mean is calculated for each sample, in the long-run, the mean of these sample means tends toward \(\mu\).
+The expected value of the sample mean is equal to the population mean, and so the sample mean is an \emph{unbiased estimator} of the population mean. For a population with mean \(\mu\), for samples of any size:
 
-The \emph{standard deviation of the sample mean} \(\overline{X}\) is called the \textbf{standard error} (SE). For an underlying population with standard deviation \(\sigma\), the standard error of the sample mean for a sample of size \(n\) is \(\dfrac{\sigma}{\sqrt{n}}\).
+\[E\left(\overline{X}\right)=\mu\]
 
-\textbf{Proof}: Given random variable \(X\) such that \(\text{E}(X)=\mu\) and \(\text{V}(X)=\sigma^2\), from which a sample of \(n\) independent observations (\(X_1,X_2,\dots,X_n\)) are drawn:
+The \emph{standard deviation} the sampling distribution of \(\overline{X}\) is called the \textbf{standard error of the sample mean} (SE). For a population with standard deviation \(\sigma\), the standard error for samples of size \(n\) is:
+
+\[SE\left(\overline{X}\right)=\dfrac{\sigma}{\sqrt{n}}\]
+
+\textbf{Proof}: Given random variable \(X\) such that \(\text{E}(X)=\mu\) and \(\text{V}(X)=\sigma^2\), from which a sample of \(n\) independent observations (\(X_1,X_2,\ldots,X_n\)) are drawn:
 
 \begin{cols}
 
 \begin{col}{0.475\textwidth}
 \begin{align*}
-\text{E}(\overline{X})&=\text{E}\left(\frac{1}{n}(X_1+X_2+...+X_n)\right)\\
+\text{E}\left(\overline{X}\right)&=\text{E}\left(\frac{1}{n}(X_1+X_2+...+X_n)\right)\\
 &=\frac{1}{n}(\text{E}(X_1)+\text{E}(X_2)+...+\text{E}(X_n))\\
 &=\frac{1}{n}(n\mu)\\
 &=\mu
@@ -12336,7 +12347,7 @@ The \emph{standard deviation of the sample mean} \(\overline{X}\) is called the 
 
 \begin{col}{0.475\textwidth}
 \begin{align*}
-\text{V}(\overline{X})&=\text{V}\left(\frac{1}{n}(X_1+X_2+...+X_n)\right)\\
+\text{V}\left(\overline{X}\right)&=\text{V}\left(\frac{1}{n}(X_1+X_2+...+X_n)\right)\\
 &=\frac{1}{n^2}(\text{V}(X_1)+\text{V}(X_2)+...+\text{V}(X_n))\\
 &=\frac{1}{n^2}(n\sigma^2)\\
 &=\frac{\sigma^2}{n}
@@ -12345,8 +12356,6 @@ The \emph{standard deviation of the sample mean} \(\overline{X}\) is called the 
 \end{col}
 
 \end{cols}
-
-This shows that, as the sample size \(n\) increases, the variability of the sample mean decreases. The result for the variance relies on the observations being independent, which is typically ensured through the use of random sampling.
 
 \pagebreak
 
@@ -12361,7 +12370,7 @@ Since the sample mean \(\overline{X}\) is a linear combination of independent ob
 \end{tcolorbox}
 \end{centering}
 
-Due to the lower variance of the sample mean, \emph{extreme results are less likely} when taking the mean of a sample in comparison to a single observation. For example, suppose the mass of adult red squirrels in a location is known to be normally distributed, with mean 250 grams and standard deviation 12 grams. If a single squirrel is randomly selected and its mass measured, it would not be particularly unlikely to encounter a squirrel lighter than 240 grams or heavier than 260 grams. However, if a random sample of three squirrels is taken, each weighed and the mean of the sample calculated, then it would be very unlikely for the sample mean to be lower than 240 grams or heavier than 260 grams.
+Due to the lower variance of the sample mean, \emph{extreme results are less likely} when taking the mean of a sample in comparison to a single observation. For example, suppose the mass of adult red squirrels in a location is known to be normally distributed, with mean 250 grams and standard deviation 12 grams. If a single squirrel is randomly selected and its mass measured, it would not be particularly unlikely to encounter a squirrel lighter than 240 grams or heavier than 260 grams. However, if a random sample of three squirrels is taken, each weighed and the mean of the sample calculated, then it would be considerably less likely for the sample mean to be below 240 grams or above 260 grams.
 
 The histograms below show 100 simulated individual observations of squirrel masses compared to the means of 100 simulated samples, each of size 3. Note that the sample means also show a distribution that looks normal with a mean of 250 grams, but that the spread of the sample means is much less than that of the individual observations. This reflects the fact that the standard deviation of the sample mean (the standard error) is \(\dfrac{\sigma}{\sqrt{n}}\), which is smaller than \(\sigma\).
 
@@ -12436,7 +12445,7 @@ The histograms below show 100 simulated individual observations of squirrel mass
         \node[left] at (-0.4+10,0.75*5) {$25$};
         \node[left,rotate=90] at (-1.5+10,0.75*4) {Frequency};
         \node at (3+10,0.80*6) {Normally distributed $\bar{X}$};
-        \node at (3+10,0.70*6) {(100 Sample Means)};
+        \node at (3+10,0.70*6) {(100 Sample Means, $n=\text{3}$)};
         \draw[fill=black!10] (2+10,0) rectangle (2.2+10,0.75*0.2);
         \draw[fill=black!10] (2.2+10,0) rectangle (2.4+10,0.75*0.6);
         \draw[fill=black!10] (2.4+10,0) rectangle (2.6+10,0.75*2);
@@ -12470,7 +12479,7 @@ This result holds exactly for normally distributed populations, regardless of sa
 \pagebreak
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} The length of a mass-produced brand of fence panels is normally distributed with a mean of 180cm and a standard deviation of 0.4cm. A random sample of nine panels is taken and each is measured. State the distribution of the mean of a random sample of nine panels, and calculate the probability of the sample mean being greater than 180.1cm.
+\textbf{Problem:} The lengths of a mass-produced brand of fence panels are normally distributed with a mean of 180cm and a standard deviation of 0.4cm. A random sample of nine panels is taken and each is measured. State the distribution of the mean of a random sample of nine panels, and calculate the probability of the sample mean being greater than 180.1cm.
 
 \tcblower
 \textbf{Solution:} Let r.v. $X$ represent the length of a fence panel.\\
@@ -12513,10 +12522,10 @@ $\overline{X}\sim \text{N}\left(180,\dfrac{0.4^2}{9}\right)$\hspace{6.5cm}
 
 \end{tcolorbox}
 
-\phantomsection\label{ex91q}{}
+\protect\phantomsection\label{ex91q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex91a]{Exercise 9.1}}{Exercise 9.1}}\label{exercise-9.1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex91a]{Exercise 9.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 9.1}}
 
 \begin{enumerate}
     \item Given random variable $X \sim \text{N}(24,4^2)$:
@@ -12533,7 +12542,7 @@ $\overline{X}\sim \text{N}\left(180,\dfrac{0.4^2}{9}\right)$\hspace{6.5cm}
             \item Calculate $\text{P}(\overline{X}<23.4)$
         \end{enumerate}
     \end{enumerate}
-    \item The tail length of a breed of mouse is normally distributed with a mean of 5.2cm and a standard deviation of 0.8cm. A random sample of 12 mice are captured, their tail lengths measured and then released. Calculate the probability that the mean tail length of the sample of mice is less than 5cm.  
+    \item The tail length of a breed of mouse is normally distributed with a mean of 5.2cm and a standard deviation of 0.8cm. Twelve mice are captured at random, their tail lengths are measured, and they are then released. Calculate the probability that the mean tail length of the sample of mice is less than 5cm.  
     \item The time taken for a telecommunications company to interview candidates for a sales role is normally distributed with a mean of 28 minutes and a standard deviation of 4 minutes.
     \begin{enumerate}
         \item Determine the probability that an interview lasts over half an hour.
@@ -12544,7 +12553,7 @@ $\overline{X}\sim \text{N}\left(180,\dfrac{0.4^2}{9}\right)$\hspace{6.5cm}
     \begin{enumerate}
         \item Calculate the probability that, on any random day, less than 1kg is discarded.
         \item Calculate the probability that over the course of a week the mean amount of daily food waste discarded exceeds 2kg.
-        \item Suggest a reason why the calculation in part (b) may not be reliable.
+        \item Suggest a reason why the assumptions used in part (b) may not be valid.
     \end{enumerate}
     \item The distances recorded in long-jump attempts by a group of junior long-jump specialists at an athletics club are normally distributed with a mean of 6.5m and a standard deviation of 0.2m. The long-jump distances recorded by the junior heptathletes are also normally distributed, with mean 6.3m and standard deviation 0.4m. A coach randomly observes attempts by 4 long-jump specialists and 3 heptathletes. Calculate the probability that the heptathletes' mean distance is greater than that of the long-jump specialists. \textit{(Extension)}
 \end{enumerate}
@@ -12558,7 +12567,9 @@ The Central Limit Theorem (CLT) is one of the most important and useful concepts
 \begin{center}
 \begin{minipage}{0.75\textwidth}
 \begin{center}
-When the underlying population is \textit{not} normally distributed,\newline the distribution of the \textbf{sample mean} is \textbf{approximately normal}\newline for sufficiently large sample sizes.
+Even when the underlying population is \textit{not} normally distributed,\newline
+ the distribution of the \textbf{sample mean} becomes increasingly close to normal\newline
+ as the sample size increases.
 \end{center}
 \end{minipage}
 \end{center}
@@ -12741,7 +12752,7 @@ The \textbf{approximate} distribution of the sample mean can be stated provided 
 \pagebreak
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} The mean mass of ceramic bowls produced by a potter is 400g and the standard deviation is 20g, and they can be ordered singly or in bulk. Bulk orders contain 36 bowls and, when such an order is placed, the potter selects the 36 bowls at random to be boxed up and shipped. Letting the random variable $X$ represent the weight of a bowl, and $\overline{X}$ the mean bowl mass in a bulk order:
+\textbf{Problem:} The mean mass of ceramic bowls produced by a potter is 400g and the standard deviation is 20g, and they can be ordered singly or in bulk. Bulk orders contain 36 bowls and, when such an order is placed, the potter selects the 36 bowls at random to be boxed up and shipped. Letting the random variable $X$ represent the mass of a bowl, and $\overline{X}$ the mean bowl mass in a bulk order:
 
 \begin{enumerate}
     \item[a. ] State the distribution of $\overline{X}$.
@@ -12791,10 +12802,10 @@ The \textbf{approximate} distribution of the sample mean can be stated provided 
 
 \end{tcolorbox}
 
-\phantomsection\label{ex92q}{}
+\protect\phantomsection\label{ex92q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex92a]{Exercise 9.2}}{Exercise 9.2}}\label{exercise-9.2}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex92a]{Exercise 9.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 9.2}}
 
 \begin{enumerate}
     \item For each sample from the random variable given, state the distribution of the sample mean where possible:
@@ -12810,7 +12821,7 @@ The \textbf{approximate} distribution of the sample mean can be stated provided 
     \item Eggs classified as \textit{medium} by a farm have a mean mass of 78g and a standard deviation of 5g. Calculate the probability that, for a box of 24 randomly selected eggs, the mean egg mass is recorded as 78g when given to the nearest gram.  
     \item When \textit{"40 litres"} of petrol is dispensed by a fuel pump design used by a supermarket, the mean actual amount dispensed is 40.1 litres with a standard deviation of 0.35 litres.
     \begin{enumerate}
-        \item[(a)] Explain why the known information is not sufficient to calculate the probability that a single \textit{"40 litre"} fill actual gives less than 40 litres.
+        \item[(a)] Explain why the known information is not sufficient to calculate the probability that a single \textit{"40-litre"} fill actually gives less than 40 litres.
     \end{enumerate}
     As part of the supermarket's monitoring of the accuracy of its pumps, it takes 32 fills, each of size \textit{"40 litres"}, from randomly chosen pumps at its stores nationwide.
     \begin{enumerate}
@@ -12821,10 +12832,10 @@ The \textbf{approximate} distribution of the sample mean can be stated provided 
 
 \pagebreak
 
-\phantomsection\label{re9q}{}
+\protect\phantomsection\label{re9q}{}
 
 \section*{\texorpdfstring{\hyperref[re9a]{Review Exercise}}{Review Exercise}}\label{review-exercise-8}
-\addcontentsline{toc}{section}{\hyperref[re9a]{Review Exercise}}
+\addcontentsline{toc}{section}{{Review Exercise}}
 
 \begin{enumerate}[itemsep=18pt]
     \item Given a normally distributed random variable $X$, with a mean of 15 and a standard deviation of 3, from which a sample of eight independent observations are taken:
@@ -12851,7 +12862,7 @@ The \textbf{approximate} distribution of the sample mean can be stated provided 
             \item[(i)] State the distribution of $\overline{X}$.
             \item[(ii)] Find the probability that the sample mean is less than 59 grams.
         \end{enumerate}
-        \item[(c)] The bakery changes its process, and now when a customer orders a number of mince pies the bakery staff places them on a set of weighing scales, one by one. Explain why this change is likely to mean the distribution of $\overline{X}$ is no longer as it previously was.
+        \item[(c)] The bakery changes its process. As the mince pies are placed on the scales, staff can see the running total and may use it to decide which pie is selected next. Explain why this change is likely to mean the distribution of $\overline{X}$ may no longer be the one stated in part (b).
     \end{enumerate}
     \item Let discrete random variable $X$ represent the number of Video Assistant Referee (VAR) reviews during the course of a game of football, known to follow a Poisson distribution with a mean of 4.5 reviews per game.
     \begin{enumerate}[itemsep=8pt]
@@ -12930,10 +12941,10 @@ It is \emph{essential} that both hypotheses are formed \emph{before} observing t
 \end{enumerate}
 \end{tcolorbox}
 
-\phantomsection\label{ex101q}{}
+\protect\phantomsection\label{ex101q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex101a]{Exercise 10.1}}{Exercise 10.1}}\label{exercise-10.1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex101a]{Exercise 10.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 10.1}}
 
 For each proposed hypothesis test, state the \textbf{null hypothesis} and the \textbf{alternative hypothesis}.
 
@@ -13258,10 +13269,10 @@ Since $\text{0.0456}<\text{0.05}$, reject $\text{H}_\text{0}$ at the 5\% level o
 
 \pagebreak
 
-\phantomsection\label{ex102q}{}
+\protect\phantomsection\label{ex102q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex102a]{Exercise 10.2}}{Exercise 10.2}}\label{exercise-10.2}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex102a]{Exercise 10.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 10.2}}
 
 \begin{enumerate}
     \item A practice question is below, followed by a student's \textbf{flawed} solution, featuring a number of issues.
@@ -13751,10 +13762,10 @@ Since $\text{2}>\text{1.96}$, reject $\text{H}_\text{0}$ at the 5\% level of sig
 
 \pagebreak
 
-\phantomsection\label{ex103q}{}
+\protect\phantomsection\label{ex103q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex103a]{Exercise 10.3}}{Exercise 10.3}}\label{exercise-10.3}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex103a]{Exercise 10.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 10.3}}
 
 \begin{enumerate}
     \item A packing process packages ground coffee into bags. The mass of each bag is normally distributed, with standard deviation 15g. To comply with the technical standards stipulated for the process, the mean mass of coffee per bag should be 500g. After a recent adjustment of some of the machinery involved in the process, a random sample of 25 bags is taken and the sample mean is found to be 512g.\\[0.5em] Test the claim that there has been a change in the mean mass of coffee per bag at the 5\% level of significance.
@@ -14060,10 +14071,10 @@ Since $\text{3.749}>\text{2.447}$, reject $\text{H}_\text{0}$ at the 5\% level o
 
 \pagebreak
 
-\phantomsection\label{ex104q}{}
+\protect\phantomsection\label{ex104q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex104a]{Exercise 10.4}}{Exercise 10.4}}\label{exercise-10.4}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex104a]{Exercise 10.4}}
+\addcontentsline{toc}{subsubsection}{{Exercise 10.4}}
 
 \begin{enumerate}
     \item The amount of sugar contained in frozen pizzas, per 100g, is normally distributed. A random sample of 8 brands of frozen pizza gives the following sugar content per 100g, measuring in grams:
@@ -14327,10 +14338,10 @@ Since $-\text{2.82}<-\text{2.58}$, reject $\text{H}_\text{0}$ at the 1\% level o
 
 \pagebreak
 
-\phantomsection\label{ex105q}{}
+\protect\phantomsection\label{ex105q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex105a]{Exercise 10.5}}{Exercise 10.5}}\label{exercise-10.5}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex105a]{Exercise 10.5}}
+\addcontentsline{toc}{subsubsection}{{Exercise 10.5}}
 
 \emph{For each question, show clearly that the conditions for the use of a normal approximation are satisfied.}
 
@@ -14366,10 +14377,10 @@ Since $-\text{2.82}<-\text{2.58}$, reject $\text{H}_\text{0}$ at the 1\% level o
 
 Selecting the appropriate hypothesis test to use in any given context is an important skill for a statistician and warrants careful practice. The following questions contain a mix of \(z\)\textit{-tests for the population mean, }\(t\)\textit{-tests for the population mean and }\(z\)\textit{-tests for the population proportion.}
 
-\phantomsection\label{ex106q}{}
+\protect\phantomsection\label{ex106q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex106a]{Exercise 10.6}}{Exercise 10.6}}\label{exercise-10.6}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex106a]{Exercise 10.6}}
+\addcontentsline{toc}{subsubsection}{{Exercise 10.6}}
 
 \begin{enumerate}
     \item A keen cyclist often takes a route which consists of a circuit, travelling through a forest and around a hill before returning to her starting point, timing herself on each occasion. The time it takes her to complete a circuit is normally distributed, with mean 42.7 minutes and standard deviation 3.8 minutes. After buying a new bike, she records the time it takes her to complete a circuit on 7 randomly selected occasions, obtaining a sample mean of 41.3 minutes. Assuming the standard deviation in her time taken remains unchanged, perform a hypothesis test to assess her data for evidence that her mean time taken to complete the route has reduced.
@@ -14395,10 +14406,10 @@ Selecting the appropriate hypothesis test to use in any given context is an impo
 
 \pagebreak
 
-\phantomsection\label{re10q}{}
+\protect\phantomsection\label{re10q}{}
 
 \section*{\texorpdfstring{\hyperref[re10a]{Review Exercise}}{Review Exercise}}\label{review-exercise-9}
-\addcontentsline{toc}{section}{\hyperref[re10a]{Review Exercise}}
+\addcontentsline{toc}{section}{{Review Exercise}}
 
 \begin{enumerate}
     \item A pharmaceutical company has developed a drug designed to reduce the recovery time needed for a specific type of operation from the well-established mean time of 11 days. Following trials involving treating 24 randomly selected patients admitted to hospital for the operation with the drug, it is found that the mean recovery time for these patients is 9.6 days, with a standard deviation of 2.7 days.
@@ -14565,10 +14576,10 @@ The \emph{width} of the interval is determined by the standard error and the con
 
 \pagebreak
 
-\phantomsection\label{ex111q}{}
+\protect\phantomsection\label{ex111q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex111a]{Exercise 11.1}}{Exercise 11.1}}\label{exercise-11.1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex111a]{Exercise 11.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 11.1}}
 
 \begin{enumerate}
     \item The height of a red panda is known to be normally distributed with a standard deviation of 2cm. A random sample of 8 red pandas have their heights measured, with a sample mean of 57cm obtained. Obtain a 99\% confidence interval for the mean height of a red panda. 
@@ -14691,10 +14702,10 @@ Since any confidence intervals encountered in this course will be two-tailed, it
 
 \pagebreak
 
-\phantomsection\label{ex112q}{}
+\protect\phantomsection\label{ex112q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex112a]{Exercise 11.2}}{Exercise 11.2}}\label{exercise-11.2}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex112a]{Exercise 11.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 11.2}}
 
 \begin{enumerate}[itemsep=16pt]
     \item A packing process packages coffee beans into bags. The mass of each bag is normally distributed with standard deviation 15g. A random sample of 25 bags is taken and the sample mean is found to be 493g. Obtain a 95\% confidence interval for the mean mass of coffee beans in a bag, and comment on the claim that the mean mass being dispensed is not the 500g that it is supposed to be.
@@ -14820,10 +14831,10 @@ Since 9.7 kWh is within the confidence interval, there is insufficient evidence 
 
 \pagebreak
 
-\phantomsection\label{ex113q}{}
+\protect\phantomsection\label{ex113q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex113a]{Exercise 11.3}}{Exercise 11.3}}\label{exercise-11.3}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex113a]{Exercise 11.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 11.3}}
 
 \begin{enumerate}[itemsep=16pt]
     \item As part of a project to better understand acidity levels in lakes in England, a random sample of 8 lakes are selected and the pH level of each measured. The pH levels observed were:
@@ -14955,10 +14966,10 @@ Given the potential for confusion between the population proportion \(p\) and th
 
 \pagebreak
 
-\phantomsection\label{ex114q}{}
+\protect\phantomsection\label{ex114q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex114a]{Exercise 11.4}}{Exercise 11.4}}\label{exercise-11.4}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex114a]{Exercise 11.4}}
+\addcontentsline{toc}{subsubsection}{{Exercise 11.4}}
 
 \begin{enumerate}[itemsep=18pt]
     \item A newspaper conducts a survey to explore the proportion of its readers that are car owners. In a random sample of 312 readers there are 208 car owners. Obtain an approximate 99\% confidence interval for the proportion of car owners amongst the newspaper's readers.
@@ -14992,10 +15003,10 @@ Given the potential for confusion between the population proportion \(p\) and th
 
 \pagebreak
 
-\phantomsection\label{re11q}{}
+\protect\phantomsection\label{re11q}{}
 
 \section*{\texorpdfstring{\hyperref[re11a]{Review Exercise}}{Review Exercise}}\label{review-exercise-10}
-\addcontentsline{toc}{section}{\hyperref[re11a]{Review Exercise}}
+\addcontentsline{toc}{section}{{Review Exercise}}
 
 \begin{enumerate}
     \item A road safety researcher randomly selects eight cars passing by on a motorway and records their speed, in mph. The following results are obtained:
@@ -15253,10 +15264,10 @@ Since $\text{5.109}>\text{4.605}$, reject $\text{H}_\text{0}$ at the 10\% level 
 
 Note that the \(\chi^{\text{2}}\) distributions displayed in the example solutions are illustrative of their typical characteristic shape, rather than precise graphs of each distribution matching the degrees of freedom.
 
-\phantomsection\label{ex121q}{}
+\protect\phantomsection\label{ex121q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex121a]{Exercise 12.1}}{Exercise 12.1}}\label{exercise-12.1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex121a]{Exercise 12.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 12.1}}
 
 \begin{enumerate}
     \item A fair, tetrahedral die with faces numbered 1 to 4 is rolled 24 times. The results obtained are:
@@ -15412,10 +15423,10 @@ Since $\text{6.913}<\text{9.210}$, do not reject $\text{H}_\text{0}$ at the 1\% 
 
 \pagebreak
 
-\phantomsection\label{ex122q}{}
+\protect\phantomsection\label{ex122q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex122a]{Exercise 12.2}}{Exercise 12.2}}\label{exercise-12.2}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex122a]{Exercise 12.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 12.2}}
 
 \begin{enumerate}
     \item Historically, grades attained (\textit{A}, \textit{B}, \textit{C}, \textit{D} and \textit{No Award})  by pupils in a school course's end of year exam have been distributed following the ratio 4:5:3:2:1. Following a change in the teaching resources used, the results of 40 students are recorded as follows:
@@ -15612,10 +15623,10 @@ This could be used to check if the number of broken eggs per box fits \emph{any}
 
 \pagebreak
 
-\phantomsection\label{ex123q}{}
+\protect\phantomsection\label{ex123q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex123a]{Exercise 12.3}}{Exercise 12.3}}\label{exercise-12.3}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex123a]{Exercise 12.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 12.3}}
 
 \begin{enumerate}
     \item A manufacturer of festive products sells Christmas crackers, in boxes of four. Since 20\% of all crackers they produce are known to be faulty, failing to produce the required ``\text{crack}'' when pulled, they wish to test whether the number of faulty crackers in a box could be modelled using a binomial distribution. 
@@ -15794,10 +15805,10 @@ There is insufficient evidence to suggest that the number of goals scored per fo
 
 \pagebreak
 
-\phantomsection\label{ex124q}{}
+\protect\phantomsection\label{ex124q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex124a]{Exercise 12.4}}{Exercise 12.4}}\label{exercise-12.4}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex124a]{Exercise 12.4}}
+\addcontentsline{toc}{subsubsection}{{Exercise 12.4}}
 
 \begin{enumerate}
     \item A keen amateur astronomer recalls hearing during a statistics class that shooting stars can be seen in a local section of night sky at a mean rate of 1 per hour, and the number visible in an hour is Poisson distributed. Over the course of a year they carefully watch the night sky on clear nights, and record the number of shooting stars they see within each hour. The data they obtain for the total of 70 hours spent watching for shooting stars is shown in the table below:
@@ -15855,10 +15866,10 @@ There is insufficient evidence to suggest that the number of goals scored per fo
 
 \pagebreak
 
-\phantomsection\label{re12q}{}
+\protect\phantomsection\label{re12q}{}
 
 \section*{\texorpdfstring{\hyperref[re12a]{Review Exercise}}{Review Exercise}}\label{review-exercise-11}
-\addcontentsline{toc}{section}{\hyperref[re12a]{Review Exercise}}
+\addcontentsline{toc}{section}{{Review Exercise}}
 
 \begin{enumerate}
     \item The population of the United Kingdom can be approximately split between those living in England, Scotland, Wales and Northern Ireland in the ratio 30:3:2:1. Out of a random sample of 117 people who applied to take part in a UK-wide television show, 102 lived in England, 4 lived in Scotland, and 1 lived in Northern Ireland.\\[1em]
@@ -16106,10 +16117,10 @@ Each rule must be carefully checked for to determine whether a process is \emph{
 
 \end{tcolorbox}
 
-\phantomsection\label{ex131q}{}
+\protect\phantomsection\label{ex131q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex131a]{Exercise 13.1}}{Exercise 13.1}}\label{exercise-13.1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex131a]{Exercise 13.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 13.1}}
 
 \emph{For each control chart below, determine whether the process is in control, with justification.}
 
@@ -16418,10 +16429,10 @@ A control chart is created with horizontal lines indicating the population mean 
 
 \pagebreak
 
-\phantomsection\label{ex132q}{}
+\protect\phantomsection\label{ex132q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex132a]{Exercise 13.2}}{Exercise 13.2}}\label{exercise-13.2}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex132a]{Exercise 13.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 13.2}}
 
 \begin{enumerate}
     \item Control charts are to be produced for sample means taken to monitor the following processes. If the samples are random, and it can be assumed that the processes can be suitably described by the normal distribution, copy and complete the following tables showing limits for the $x$-bar charts:
@@ -16876,10 +16887,10 @@ If no historical value of the population proportion has been suggested, then it 
 
 \pagebreak
 
-\phantomsection\label{ex133q}{}
+\protect\phantomsection\label{ex133q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex133a]{Exercise 13.3}}{Exercise 13.3}}\label{exercise-13.3}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex133a]{Exercise 13.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 13.3}}
 
 \begin{enumerate}
     \item Control charts are to be produced for sample proportions taken to monitor the following processes. If the samples are random, copy and complete the following tables showing limits for the $p$-charts:
@@ -17193,10 +17204,10 @@ If no historical value of the population proportion has been suggested, then it 
 
 \pagebreak
 
-\phantomsection\label{re18q}{}
+\protect\phantomsection\label{re18q}{}
 
 \section*{\texorpdfstring{\hyperref[re18a]{Review Exercise}}{Review Exercise}}\label{review-exercise-12}
-\addcontentsline{toc}{section}{\hyperref[re18a]{Review Exercise}}
+\addcontentsline{toc}{section}{{Review Exercise}}
 
 \begin{enumerate}
     \item Eggs are grouped according to size by a machine, and the eggs sorted into the \textit{medium} category are known to have a mean mass of 58 grams with standard deviation 3 grams. To monitor the performance of the machine, eight eggs are randomly selected every fifteen minutes and the mean mass for each sample recorded on an $x$-bar chart, shown below.
@@ -17725,10 +17736,10 @@ There is evidence to suggest the driving centre used and the outcome of the test
 Note that an equivalent conclusion would be that there is evidence to suggest that there is an \emph{association} between driving centre used and the outcome of the test. However, it is generally preferable for a solution to mirror the language used in the question.
 \pagebreak
 
-\phantomsection\label{ex141q}{}
+\protect\phantomsection\label{ex141q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex141a]{Exercise 14.1}}{Exercise 14.1}}\label{exercise-14.1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex141a]{Exercise 14.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 14.1}}
 
 \begin{enumerate}
     \item For all the games in the last 12 months, an ice hockey team records whether they won or lost, as well as whether the game was played at the weekend or on a weekday. The results were collated using a contingency table:
@@ -17899,10 +17910,10 @@ There is insufficient evidence to suggest that there is an association between t
 
 \pagebreak
 
-\phantomsection\label{ex142q}{}
+\protect\phantomsection\label{ex142q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex142a]{Exercise 14.2}}{Exercise 14.2}}\label{exercise-14.2}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex142a]{Exercise 14.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 14.2}}
 
 \begin{enumerate}
     \item A website invited visitors via a pop-up survey to indicate whether their experience of using the site's new layout was \textit{positive} or \textit{negative}. The website logged the device type (\textit{desktop} or \textit{mobile}) used by each visitor, as well as the outcome of the survey. Some users ignored the survey, and this data was also captured as \textit{NR} (no response). The results are shown in the table below:
@@ -17958,10 +17969,10 @@ Perform a non-parametric test at the 10\% level of significance to assess whethe
 
 \pagebreak
 
-\phantomsection\label{re14q}{}
+\protect\phantomsection\label{re14q}{}
 
 \section*{\texorpdfstring{\hyperref[re14a]{Review Exercise}}{Review Exercise}}\label{review-exercise-13}
-\addcontentsline{toc}{section}{\hyperref[re14a]{Review Exercise}}
+\addcontentsline{toc}{section}{{Review Exercise}}
 
 \begin{enumerate}
     \item In statistician Ronald Fisher's 1935 book, `\textit{A Design of Experiments}', he details setting up a test to judge a claim made by the scientist Muriel Bristol: that she could tell whether milk was added to a cup \textit{before} tea, or \textit{after}. A statistics student, whose friend claims to only like tea when the milk is added first, decides to set up a similar experiment for herself, disbelieving that her friend can really tell the difference.\\[1em]
@@ -18260,10 +18271,10 @@ Since $-\text{1.13}>-\text{1.96}$, do not reject $\text{H}_\text{0}$ at the 5\% 
 
 \pagebreak
 
-\phantomsection\label{ex151q}{}
+\protect\phantomsection\label{ex151q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex151a]{Exercise 15.1}}{Exercise 15.1}}\label{exercise-15.1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex151a]{Exercise 15.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 15.1}}
 
 \begin{enumerate}
     \item A two-sample $z$-test for a difference in population means is to be carried out based on two independent random samples of data taken from normally distributed populations (A and B). The sample mean for A is 87 based on a sample size of 11, whilst the sample mean for B is 92 based on a sample size of 13. Populations A and B have standard deviations 7 and 5 respectively.
@@ -18418,10 +18429,10 @@ Since $\text{1.36}<\text{2.58}$, do not reject $\text{H}_\text{0}$ at the 1\% le
 
 \pagebreak
 
-\phantomsection\label{ex152q}{}
+\protect\phantomsection\label{ex152q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex152a]{Exercise 15.2}}{Exercise 15.2}}\label{exercise-15.2}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex152a]{Exercise 15.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 15.2}}
 
 \begin{enumerate}
     \item Two publishing companies' Maths textbooks are known to contain occasional errors in the printed answers. Students randomly select questions from Brand A's textbook and from Brand B's textbook, checking the numbers of correct and incorrect answers for each sample. The results are:
@@ -18572,10 +18583,10 @@ Since $\text{1.120}<\text{1.771}$, do not reject $\text{H}_\text{0}$ at the 10\%
 
 \pagebreak
 
-\phantomsection\label{ex153q}{}
+\protect\phantomsection\label{ex153q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex153a]{Exercise 15.3}}{Exercise 15.3}}\label{exercise-15.3}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex153a]{Exercise 15.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 15.3}}
 
 \begin{enumerate}
     \item A two-sample $t$-test for a difference in population means is to be carried out based on two independent random samples of data taken from normally distributed populations (A and B), which are assumed to have equal variances. A sample of 11 observations from A produces a mean of 87 and a standard deviation of 8, whilst a sample of 13 observations from B produces a mean of 92 and a standard deviation of 5.
@@ -18787,10 +18798,10 @@ Since $\text{1.627}<\text{2.015}$, do not reject $\text{H}_\text{0}$ at the 5\% 
 
 \pagebreak
 
-\phantomsection\label{ex154q}{}
+\protect\phantomsection\label{ex154q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex154a]{Exercise 15.4}}{Exercise 15.4}}\label{exercise-15.4}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex154a]{Exercise 15.4}}
+\addcontentsline{toc}{subsubsection}{{Exercise 15.4}}
 
 \begin{enumerate}
     \item A paired $t$-test for a population mean difference not equal to zero is to be carried out based on pairs of observations from a sample of six individuals. The population of differences is assumed to be normally distributed. The table below shows the results:
@@ -18853,10 +18864,10 @@ Since $\text{1.627}<\text{2.015}$, do not reject $\text{H}_\text{0}$ at the 5\% 
 
 \pagebreak
 
-\phantomsection\label{re15q}{}
+\protect\phantomsection\label{re15q}{}
 
 \section*{\texorpdfstring{\hyperref[re15a]{Review Exercise}}{Review Exercise}}\label{review-exercise-14}
-\addcontentsline{toc}{section}{\hyperref[re15a]{Review Exercise}}
+\addcontentsline{toc}{section}{{Review Exercise}}
 
 \begin{enumerate}
     \item A commercial timber-selling company is concerned that the pine fence posts they are receiving from their new supplier have a lower density than those received from their old supplier. They measure the density (in kg/$\text{m}^\text{3}$) of a random sample of eight of the old fence posts and seven of the new fence posts. The results are:
@@ -19351,10 +19362,10 @@ There is sufficient evidence to suggest that the median score achieved in the ha
 
 \end{tcolorbox}
 
-\phantomsection\label{ex161q}{}
+\protect\phantomsection\label{ex161q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex161a]{Exercise 16.1}}{Exercise 16.1}}\label{exercise-16.1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex161a]{Exercise 16.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 16.1}}
 
 \begin{enumerate}
     \item It is known that a certain tree produces apples with a median mass of 150g. Eight apples are chosen at random from a crate containing apples picked from the tree. The masses, in grams, are:
@@ -19483,10 +19494,10 @@ There is sufficient evidence to suggest that the median difference in 400 metres
 
 \pagebreak
 
-\phantomsection\label{ex162q}{}
+\protect\phantomsection\label{ex162q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex162a]{Exercise 16.2}}{Exercise 16.2}}\label{exercise-16.2}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex162a]{Exercise 16.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 16.2}}
 
 \begin{enumerate}
     \item To measure the effectiveness of a drug for asthmatic relief, twelve subjects, all susceptible to asthma, were each randomly administered either the drug or a placebo during two separate asthma attacks. After one hour an asthmatic index was obtained on each subject with the following results:
@@ -19722,10 +19733,10 @@ Since $-\text{3.12}<-\text{1.64}$, reject $\text{H}_\text{0}$ at the 5\% level o
 
 \pagebreak
 
-\phantomsection\label{ex163q}{}
+\protect\phantomsection\label{ex163q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex163a]{Exercise 16.3}}{Exercise 16.3}}\label{exercise-16.3}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex163a]{Exercise 16.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 16.3}}
 
 \emph{Note: sums of signed ranks are often provided in questions that require a normal approximation to the Wilcoxon test. The data must still be inspected to check whether any values have been discarded, to determine the effective sample size}
 
@@ -19791,10 +19802,10 @@ Use a non-parametric test to determine whether the sample supports the newspaper
 
 \pagebreak
 
-\phantomsection\label{re16q}{}
+\protect\phantomsection\label{re16q}{}
 
 \section*{\texorpdfstring{\hyperref[re16a]{Review Exercise}}{Review Exercise}}\label{review-exercise-15}
-\addcontentsline{toc}{section}{\hyperref[re16a]{Review Exercise}}
+\addcontentsline{toc}{section}{{Review Exercise}}
 
 \begin{enumerate}
     \item A random sample of nine primary school pupils are selected to test the number of times tables questions they can answer correctly in one minute. The results are as follows:
@@ -20238,10 +20249,10 @@ There is evidence to suggest that the median time taken for rugby players to run
 
 \pagebreak
 
-\phantomsection\label{ex171q}{}
+\protect\phantomsection\label{ex171q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex171a]{Exercise 17.1}}{Exercise 17.1}}\label{exercise-17.1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex171a]{Exercise 17.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 17.1}}
 
 \begin{enumerate}
     \item One year on World Maths Day (14th March) pupils across all the year groups in a school attempt a times tables speed challenge. A teacher checks the scores obtained by five randomly selected First Year pupils and seven randomly selected Third Year pupils. Their results are shown below.
@@ -20553,10 +20564,10 @@ There is evidence to suggest that the median length of an Atlantic herring diffe
 
 \pagebreak
 
-\phantomsection\label{ex172q}{}
+\protect\phantomsection\label{ex172q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex172a]{Exercise 17.2}}{Exercise 17.2}}\label{exercise-17.2}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex172a]{Exercise 17.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 17.2}}
 
 \begin{enumerate}
     \item A professional street photographer with an interest in dramatic scenes believes she takes more photographs which she wants to save, which she calls \textit{keepers}, on rainy days than on dry days. She randomly selects 48 of the days from the previous year during which she was out taking photographs and uses her dated database of photographs to note for each day whether it was dry or rainy, and the number of \textit{keepers} she took.
@@ -20740,10 +20751,10 @@ There is evidence to suggest that the median number of shutter actuations before
 
 \pagebreak
 
-\phantomsection\label{ex173q}{}
+\protect\phantomsection\label{ex173q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex173a]{Exercise 17.3}}{Exercise 17.3}}\label{exercise-17.3}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex173a]{Exercise 17.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 17.3}}
 
 \begin{enumerate}
     \item A Mann-Whitney test is to be performed using two independent samples of sizes 3 and 5. Once data for the samples have been collected and ordered, a rank sum will be obtained for the smaller sample.
@@ -20812,10 +20823,10 @@ There is evidence to suggest that the median number of shutter actuations before
 
 \pagebreak
 
-\phantomsection\label{re17q}{}
+\protect\phantomsection\label{re17q}{}
 
 \section*{\texorpdfstring{\hyperref[re17a]{Review Exercise}}{Review Exercise}}\label{review-exercise-16}
-\addcontentsline{toc}{section}{\hyperref[re17a]{Review Exercise}}
+\addcontentsline{toc}{section}{{Review Exercise}}
 
 \begin{enumerate}
     \item A wildlife enthusiast sets up a remote camera which is configured to take a photo when movement is detected. Sometimes it is placed in some local woods, whilst at other times it is positioned beside a pond. The photos are later reviewed and the number of animals spotted each day by the camera is recorded. The number of animal sightings at each location over the last two weeks is shown below.
@@ -21129,10 +21140,10 @@ Students sitting a French exam are given a mark for each of the two components: 
 
 \pagebreak
 
-\phantomsection\label{ex181q}{}
+\protect\phantomsection\label{ex181q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex181a]{Exercise 18.1}}{Exercise 18.1}}\label{exercise-18.1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex181a]{Exercise 18.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 18.1}}
 
 \begin{enumerate}
     \item Copy and complete the table below:
@@ -21373,10 +21384,10 @@ Students sitting a French exam are given a mark for each of the two components: 
 
 \pagebreak
 
-\phantomsection\label{ex182q}{}
+\protect\phantomsection\label{ex182q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex182a]{Exercise 18.2}}{Exercise 18.2}}\label{exercise-18.2}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex182a]{Exercise 18.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 18.2}}
 
 \begin{enumerate}
     \item A bivariate random sample has summary statistics:
@@ -21628,10 +21639,10 @@ The conclusion from the example above could also be phrased as:
 
 \pagebreak
 
-\phantomsection\label{ex183q}{}
+\protect\phantomsection\label{ex183q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex183a]{Exercise 18.3}}{Exercise 18.3}}\label{exercise-18.3}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex183a]{Exercise 18.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 18.3}}
 
 \begin{enumerate}
     \item A bivariate random sample has summary statistics:
@@ -22093,10 +22104,10 @@ Since $-\text{3.003}<-\text{2.447}$, reject $\text{H}_\text{0}$ at the 5\% level
 
 \pagebreak
 
-\phantomsection\label{ex184q}{}
+\protect\phantomsection\label{ex184q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex184a]{Exercise 18.4}}{Exercise 18.4}}\label{exercise-18.4}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex184a]{Exercise 18.4}}
+\addcontentsline{toc}{subsubsection}{{Exercise 18.4}}
 
 \begin{enumerate}
         \item A random sample of bivariate data, sample size 27, yields the following summary statistics:
@@ -22438,10 +22449,10 @@ Since $-\text{3.003}<-\text{2.447}$, reject $\text{H}_\text{0}$ at the 5\% level
 
 \pagebreak
 
-\phantomsection\label{ex185q}{}
+\protect\phantomsection\label{ex185q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex185a]{Exercise 18.5}}{Exercise 18.5}}\label{exercise-18.5}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex185a]{Exercise 18.5}}
+\addcontentsline{toc}{subsubsection}{{Exercise 18.5}}
 
 \begin{enumerate}
     \item A random sample of bivariate data, sample size 27, yields a sample correlation coefficient of $-$0.678. A test for linear association is to be performed on the data.
@@ -22679,10 +22690,10 @@ $\hat{x}=-\text{5.008}+\text{1.457}\times \text{17}=\text{19.76}$
 
 \pagebreak
 
-\phantomsection\label{ex186q}{}
+\protect\phantomsection\label{ex186q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex186a]{Exercise 18.6}}{Exercise 18.6}}\label{exercise-18.6}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex186a]{Exercise 18.6}}
+\addcontentsline{toc}{subsubsection}{{Exercise 18.6}}
 
 \begin{enumerate}
     \item A bivariate sample has summary statistics:
@@ -23745,10 +23756,10 @@ Use the residual plot to comment on the suitability of the linear model.
 
 \pagebreak
 
-\phantomsection\label{ex187q}{}
+\protect\phantomsection\label{ex187q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex187a]{Exercise 18.7}}{Exercise 18.7}}\label{exercise-18.7}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex187a]{Exercise 18.7}}
+\addcontentsline{toc}{subsubsection}{{Exercise 18.7}}
 
 \begin{enumerate}
     \item For each,  of the linear model from which they were produced.
@@ -25401,10 +25412,10 @@ A new linear model was created between speed ($x$) and the square root of the st
 
 \pagebreak
 
-\phantomsection\label{ex188q}{}
+\protect\phantomsection\label{ex188q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex188a]{Exercise 18.8}}{Exercise 18.8}}\label{exercise-18.8}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex188a]{Exercise 18.8}}
+\addcontentsline{toc}{subsubsection}{{Exercise 18.8}}
 
 \begin{enumerate}
     \item For each of the following scatterplots, showing transformed data, in context:
@@ -26337,10 +26348,10 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(\text
 
 \pagebreak
 
-\phantomsection\label{ex188q}{}
+\protect\phantomsection\label{ex188q}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex189a]{Exercise 18.9}}{Exercise 18.9}}\label{exercise-18.9}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex189a]{Exercise 18.9}}
+\addcontentsline{toc}{subsubsection}{{Exercise 18.9}}
 
 \begin{enumerate}
     \item Students sitting a French exam are given a mark for each of the two components: speaking ($x$) and listening ($y$). Data is gathered from a random sample of 12 students, and a regression line obtained.
@@ -26647,10 +26658,10 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(\text
 
 \pagebreak
 
-\phantomsection\label{re18q}{}
+\protect\phantomsection\label{re18q}{}
 
 \section*{\texorpdfstring{\hyperref[re18a]{Review Exercise}}{Review Exercise}}\label{review-exercise-17}
-\addcontentsline{toc}{section}{\hyperref[re18a]{Review Exercise}}
+\addcontentsline{toc}{section}{{Review Exercise}}
 
 \begin{enumerate}
     \item Biologists studying populations of European hamsters record the tail length ($x$ centimetres) and body mass ($y$ grams) of a random sample of 12 wild hamsters found living in central Vienna. The linear regression equation was calculated for the data shown in the scatterplot as $\hat{y}=-\text{15.24}+\text{71.88}x$.
@@ -26956,10 +26967,10 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(\text
 \subsubsection*{Chapter 1 Answers - Exploratory Data Analysis}\label{chapter-1-answers---exploratory-data-analysis}
 \addcontentsline{toc}{subsubsection}{Chapter 1 Answers - Exploratory Data Analysis}
 
-\phantomsection\label{ex11a}{}
+\protect\phantomsection\label{ex11a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex11q]{Exercise 1.1}}{Exercise 1.1}}\label{exercise-1.1-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex11q]{Exercise 1.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 1.1}}
 
 \vspace{-0.1cm}
 
@@ -27007,10 +27018,10 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(\text
 
 \vspace{-0.3cm}
 
-\phantomsection\label{ex12a}{}
+\protect\phantomsection\label{ex12a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex12q]{Exercise 1.2}}{Exercise 1.2}}\label{exercise-1.2-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex12q]{Exercise 1.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 1.2}}
 
 \vspace{-0.1cm}
 
@@ -27130,10 +27141,10 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(\text
 
 \vspace{-0.3cm}
 
-\phantomsection\label{ex13a}{}
+\protect\phantomsection\label{ex13a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex13q]{Exercise 1.3}}{Exercise 1.3}}\label{exercise-1.3-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex13q]{Exercise 1.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 1.3}}
 
 \begin{enumerate}
     \item (a) $\tfrac{\text{23}}{\text{94}}$ \qquad (b) 0.2447 \qquad (c) 24.47\%
@@ -27143,10 +27154,10 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(\text
     \item 7
 \end{enumerate}
 
-\phantomsection\label{ex14a}{}
+\protect\phantomsection\label{ex14a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex14q]{Exercise 1.4}}{Exercise 1.4}}\label{exercise-1.4-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex14q]{Exercise 1.4}}
+\addcontentsline{toc}{subsubsection}{{Exercise 1.4}}
 
 \begin{enumerate}
     \item Population mean, $\mu$
@@ -27156,10 +27167,10 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(\text
     \item Sample mean, $\bar{x}$ (assuming the actual population of interest is \textit{all} Scottish schools)
 \end{enumerate}
 
-\phantomsection\label{ex15a}{}
+\protect\phantomsection\label{ex15a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex15q]{Exercise 1.5}}{Exercise 1.5}}\label{exercise-1.5-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex15q]{Exercise 1.5}}
+\addcontentsline{toc}{subsubsection}{{Exercise 1.5}}
 
 \begin{enumerate}
     \begin{multicols}{2}
@@ -27201,10 +27212,10 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(\text
 
 \newpage
 
-\phantomsection\label{ex16a}{}
+\protect\phantomsection\label{ex16a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex16q]{Exercise 1.6}}{Exercise 1.6}}\label{exercise-1.6-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex16q]{Exercise 1.6}}
+\addcontentsline{toc}{subsubsection}{{Exercise 1.6}}
 
 \begin{figure}[H]
     \centering
@@ -27268,10 +27279,10 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(\text
 
 \vspace{-0.5cm}
 
-\phantomsection\label{ex17a}{}
+\protect\phantomsection\label{ex17a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex17q]{Exercise 1.7}}{Exercise 1.7}}\label{exercise-1.7-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex17q]{Exercise 1.7}}
+\addcontentsline{toc}{subsubsection}{{Exercise 1.7}}
 
 \begin{enumerate}
     \item The distribution of hazelnut masses appears to be positively (right) skewed.
@@ -27282,10 +27293,10 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(\text
     \item The distribution of distances to the city centre appears to be bimodal and symmetrical.
 \end{enumerate}
 
-\phantomsection\label{ex18a}{}
+\protect\phantomsection\label{ex18a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex18q]{Exercise 1.8}}{Exercise 1.8}}\label{exercise-1.8-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex18q]{Exercise 1.8}}
+\addcontentsline{toc}{subsubsection}{{Exercise 1.8}}
 
 \begin{enumerate}
     \item 
@@ -27346,10 +27357,10 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(\text
 
 \newpage
 
-\phantomsection\label{re1a}{}
+\protect\phantomsection\label{re1a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[re1q]{Chapter 1 Review Exercise}}{Chapter 1 Review Exercise}}\label{chapter-1-review-exercise}
-\addcontentsline{toc}{subsubsection}{\hyperref[re1q]{Chapter 1 Review Exercise}}
+\addcontentsline{toc}{subsubsection}{{Chapter 1 Review Exercise}}
 
 \begin{enumerate}
     \item 
@@ -27407,10 +27418,10 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(\text
 \subsubsection*{Chapter 2 Answers - An Introduction to Probability Theory}\label{chapter-2-answers---an-introduction-to-probability-theory}
 \addcontentsline{toc}{subsubsection}{Chapter 2 Answers - An Introduction to Probability Theory}
 
-\phantomsection\label{ex21a}{}
+\protect\phantomsection\label{ex21a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex21q]{Exercise 2.1}}{Exercise 2.1}}\label{exercise-2.1-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex21q]{Exercise 2.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 2.1}}
 
 \begin{multicols}{2}
 \begin{enumerate}
@@ -27459,10 +27470,10 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(\text
 \end{enumerate}
 \end{multicols}
 
-\phantomsection\label{ex22a}{}
+\protect\phantomsection\label{ex22a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex22q]{Exercise 2.2}}{Exercise 2.2}}\label{exercise-2.2-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex22q]{Exercise 2.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 2.2}}
 
 \begin{multicols}{2}
 \begin{enumerate}
@@ -27508,10 +27519,10 @@ So a 95\% prediction interval for the observed length of a 3kg salmon is $(\text
 
 \newpage
 
-\phantomsection\label{ex23a}{}
+\protect\phantomsection\label{ex23a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex23q]{Exercise 2.3}}{Exercise 2.3}}\label{exercise-2.3-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex23q]{Exercise 2.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 2.3}}
 
 \begin{figure}[H]
     \centering
@@ -28043,10 +28054,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{minipage}
 \end{figure}
 
-\phantomsection\label{ex24a}{}
+\protect\phantomsection\label{ex24a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex24q]{Exercise 2.4}}{Exercise 2.4}}\label{exercise-2.4-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex24q]{Exercise 2.4}}
+\addcontentsline{toc}{subsubsection}{{Exercise 2.4}}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -28100,10 +28111,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{enumerate}
 \end{multicols}
 
-\phantomsection\label{ex25a}{}
+\protect\phantomsection\label{ex25a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex25q]{Exercise 2.5}}{Exercise 2.5}}\label{exercise-2.5-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex25q]{Exercise 2.5}}
+\addcontentsline{toc}{subsubsection}{{Exercise 2.5}}
 
 \begin{multicols}{3}
     \begin{enumerate}
@@ -28139,10 +28150,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 
 \newpage
 
-\phantomsection\label{re2a}{}
+\protect\phantomsection\label{re2a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[re2q]{Chapter 2 Review Exercise}}{Chapter 2 Review Exercise}}\label{chapter-2-review-exercise}
-\addcontentsline{toc}{subsubsection}{\hyperref[re2q]{Chapter 2 Review Exercise}}
+\addcontentsline{toc}{subsubsection}{{Chapter 2 Review Exercise}}
 
 \begin{multicols}{2}
     \begin{enumerate}
@@ -28174,10 +28185,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \subsubsection*{Chapter 3 Answers - Sampling Theory}\label{chapter-3-answers---sampling-theory}
 \addcontentsline{toc}{subsubsection}{Chapter 3 Answers - Sampling Theory}
 
-\phantomsection\label{ex31a}{}
+\protect\phantomsection\label{ex31a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex31q]{Exercise 3.1}}{Exercise 3.1}}\label{exercise-3.1-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex31q]{Exercise 3.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 3.1}}
 
 \begin{enumerate}
     \item \textbf{Sampling-frame issue:} The accessible group consists only of pupils entering the mathematics corridor at that time. Pupils elsewhere in the school, absent pupils and late pupils have no opportunity to be selected. The selected sample of pupils may therefore \textbf{not be representative} of the target population.\\[0.5em] \textbf{Sampling-method issue:} Selecting the first 20 pupils is \textbf{not random}. Early arrivals may differ from later arrivals, and groups arriving together may not be independent in their responses, so the sample may be \textbf{biased}.
@@ -28199,10 +28210,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{enumerate}
 \end{enumerate}
 
-\phantomsection\label{ex32a}{}
+\protect\phantomsection\label{ex32a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex32q]{Exercise 3.2}}{Exercise 3.2}}\label{exercise-3.2-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex32q]{Exercise 3.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 3.2}}
 
 \begin{enumerate}
     \item
@@ -28243,10 +28254,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{enumerate}
 \end{enumerate}
 
-\phantomsection\label{re3a}{}
+\protect\phantomsection\label{re3a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[re3q]{Chapter 3 Review Exercise}}{Chapter 3 Review Exercise}}\label{chapter-3-review-exercise}
-\addcontentsline{toc}{subsubsection}{\hyperref[re3q]{Chapter 3 Review Exercise}}
+\addcontentsline{toc}{subsubsection}{{Chapter 3 Review Exercise}}
 
 \begin{enumerate}
     \item
@@ -28282,10 +28293,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \subsubsection*{Chapter 4 Answers - Further Probability Theory}\label{chapter-4-answers---further-probability-theory}
 \addcontentsline{toc}{subsubsection}{Chapter 4 Answers - Further Probability Theory}
 
-\phantomsection\label{ex41a}{}
+\protect\phantomsection\label{ex41a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex41q]{Exercise 4.1}}{Exercise 4.1}}\label{exercise-4.1-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex41q]{Exercise 4.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 4.1}}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -28335,10 +28346,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{enumerate}
 \end{multicols}
 
-\phantomsection\label{ex42a}{}
+\protect\phantomsection\label{ex42a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex42q]{Exercise 4.2}}{Exercise 4.2}}\label{exercise-4.2-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex42q]{Exercise 4.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 4.2}}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -28366,10 +28377,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{enumerate}
 \end{multicols}
 
-\phantomsection\label{ex43a}{}
+\protect\phantomsection\label{ex43a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex43q]{Exercise 4.3}}{Exercise 4.3}}\label{exercise-4.3-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex43q]{Exercise 4.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 4.3}}
 
 \begin{enumerate}
         \item
@@ -28396,10 +28407,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
         \end{enumerate}
 \end{enumerate}
 
-\phantomsection\label{ex44a}{}
+\protect\phantomsection\label{ex44a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex44q]{Exercise 4.4}}{Exercise 4.4}}\label{exercise-4.4-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex44q]{Exercise 4.4}}
+\addcontentsline{toc}{subsubsection}{{Exercise 4.4}}
 
 \begin{multicols}{3}
     \begin{enumerate}
@@ -28424,10 +28435,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{enumerate}
 \end{multicols}
 
-\phantomsection\label{ex45a}{}
+\protect\phantomsection\label{ex45a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex45q]{Exercise 4.5}}{Exercise 4.5}}\label{exercise-4.5-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex45q]{Exercise 4.5}}
+\addcontentsline{toc}{subsubsection}{{Exercise 4.5}}
 
 \begin{multicols}{3}
     \begin{enumerate}
@@ -28449,10 +28460,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{enumerate}
 \end{multicols}
 
-\phantomsection\label{ex46a}{}
+\protect\phantomsection\label{ex46a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex46q]{Exercise 4.6}}{Exercise 4.6}}\label{exercise-4.6-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex46q]{Exercise 4.6}}
+\addcontentsline{toc}{subsubsection}{{Exercise 4.6}}
 
 \begin{multicols}{3}
     \begin{enumerate}
@@ -28468,10 +28479,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 
 \newpage
 
-\phantomsection\label{ex47a}{}
+\protect\phantomsection\label{ex47a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex47q]{Exercise 4.7}}{Exercise 4.7}}\label{exercise-4.7-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex47q]{Exercise 4.7}}
+\addcontentsline{toc}{subsubsection}{{Exercise 4.7}}
 
 \begin{multicols}{3}
     \begin{enumerate}
@@ -28501,10 +28512,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{enumerate}
 \end{multicols}
 
-\phantomsection\label{re4a}{}
+\protect\phantomsection\label{re4a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[re4q]{Chapter 4 Review Exercise}}{Chapter 4 Review Exercise}}\label{chapter-4-review-exercise}
-\addcontentsline{toc}{subsubsection}{\hyperref[re4q]{Chapter 4 Review Exercise}}
+\addcontentsline{toc}{subsubsection}{{Chapter 4 Review Exercise}}
 
 \begin{multicols}{3}
     \begin{enumerate}
@@ -28540,10 +28551,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \subsubsection*{Chapter 5 - An Introduction to Linear Regression}\label{chapter-5---an-introduction-to-linear-regression}
 \addcontentsline{toc}{subsubsection}{Chapter 5 - An Introduction to Linear Regression}
 
-\phantomsection\label{ex51a}{}
+\protect\phantomsection\label{ex51a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex51q]{Exercise 5.1}}{Exercise 5.1}}\label{exercise-5.1-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex51q]{Exercise 5.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 5.1}}
 
 \begin{enumerate}
     \item
@@ -28565,10 +28576,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{enumerate}
 \end{enumerate}
 
-\phantomsection\label{ex52a}{}
+\protect\phantomsection\label{ex52a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex52q]{Exercise 5.2}}{Exercise 5.2}}\label{exercise-5.2-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex52q]{Exercise 5.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 5.2}}
 
 \begin{enumerate}
     \item $r=\text{0.971}$ suggests a strong positive linear correlation between red squirrel tail length and height.
@@ -28586,10 +28597,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{enumerate}
 \end{enumerate}
 
-\phantomsection\label{ex53a}{}
+\protect\phantomsection\label{ex53a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex53q]{Exercise 5.3}}{Exercise 5.3}}\label{exercise-5.3-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex53q]{Exercise 5.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 5.3}}
 
 \begin{enumerate}
     \item $\hat{y}=94.867-0.846x$
@@ -28628,10 +28639,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{enumerate}
 \end{enumerate}
 
-\phantomsection\label{re5a}{}
+\protect\phantomsection\label{re5a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[re5q]{Chapter 5 Review Exercise}}{Chapter 5 Review Exercise}}\label{chapter-5-review-exercise}
-\addcontentsline{toc}{subsubsection}{\hyperref[re5q]{Chapter 5 Review Exercise}}
+\addcontentsline{toc}{subsubsection}{{Chapter 5 Review Exercise}}
 
 \begin{enumerate} 
     \item 
@@ -28655,10 +28666,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \subsubsection*{Chapter 6 - Random Variables}\label{chapter-6---random-variables}
 \addcontentsline{toc}{subsubsection}{Chapter 6 - Random Variables}
 
-\phantomsection\label{ex61a}{}
+\protect\phantomsection\label{ex61a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex61q]{Exercise 6.1}}{Exercise 6.1}}\label{exercise-6.1-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex61q]{Exercise 6.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 6.1}}
 
 \begin{multicols}{2}
 
@@ -28670,10 +28681,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 
 \newpage
 
-\phantomsection\label{ex62a}{}
+\protect\phantomsection\label{ex62a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex62q]{Exercise 6.2}}{Exercise 6.2}}\label{exercise-6.2-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex62q]{Exercise 6.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 6.2}}
 
 \begin{multicols}{2}
 
@@ -28681,10 +28692,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 
 \end{multicols}
 
-\phantomsection\label{ex63a}{}
+\protect\phantomsection\label{ex63a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex63q]{Exercise 6.3}}{Exercise 6.3}}\label{exercise-6.3-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex63q]{Exercise 6.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 6.3}}
 
 \begin{multicols}{2}
 
@@ -28692,10 +28703,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 
 \end{multicols}
 
-\phantomsection\label{ex64a}{}
+\protect\phantomsection\label{ex64a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex64q]{Exercise 6.4}}{Exercise 6.4}}\label{exercise-6.4-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex64q]{Exercise 6.4}}
+\addcontentsline{toc}{subsubsection}{{Exercise 6.4}}
 
 \begin{multicols}{2}
 
@@ -28705,10 +28716,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 
 \pagebreak
 
-\phantomsection\label{ex65a}{}
+\protect\phantomsection\label{ex65a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex65q]{Exercise 6.5}}{Exercise 6.5}}\label{exercise-6.5-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex65q]{Exercise 6.5}}
+\addcontentsline{toc}{subsubsection}{{Exercise 6.5}}
 
 \begin{multicols}{2}
 
@@ -28716,10 +28727,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 
 \end{multicols}
 
-\phantomsection\label{ex66a}{}
+\protect\phantomsection\label{ex66a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex66q]{Exercise 6.6}}{Exercise 6.6}}\label{exercise-6.6-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex66q]{Exercise 6.6}}
+\addcontentsline{toc}{subsubsection}{{Exercise 6.6}}
 
 \begin{multicols}{2}
 
@@ -28727,10 +28738,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 
 \end{multicols}
 
-\phantomsection\label{re6a}{}
+\protect\phantomsection\label{re6a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[re6q]{Chapter 6 Review Exercise}}{Chapter 6 Review Exercise}}\label{chapter-6-review-exercise}
-\addcontentsline{toc}{subsubsection}{\hyperref[re6q]{Chapter 6 Review Exercise}}
+\addcontentsline{toc}{subsubsection}{{Chapter 6 Review Exercise}}
 
 \begin{multicols}{2}
 
@@ -28743,10 +28754,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \subsubsection*{Chapter 7 - Discrete Distributions}\label{chapter-7---discrete-distributions}
 \addcontentsline{toc}{subsubsection}{Chapter 7 - Discrete Distributions}
 
-\phantomsection\label{ex71a}{}
+\protect\phantomsection\label{ex71a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex71q]{Exercise 7.1}}{Exercise 7.1}}\label{exercise-7.1-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex71q]{Exercise 7.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 7.1}}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -28792,10 +28803,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{enumerate}
 \end{multicols}
 
-\phantomsection\label{ex72a}{}
+\protect\phantomsection\label{ex72a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex72q]{Exercise 7.2}}{Exercise 7.2}}\label{exercise-7.2-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex72q]{Exercise 7.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 7.2}}
 
 \begin{enumerate}
     \item This is not binomial because the number of trials completed in one minute is not fixed.
@@ -28805,10 +28816,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item This is not binomial because \(X\) records the observed values, rather than the number of successes. In addition, each recorded value can be \(8\), \(9\) or \(10\), so the variable being recorded does not have only two possible outcomes.
 \end{enumerate}
 
-\phantomsection\label{ex73a}{}
+\protect\phantomsection\label{ex73a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex73q]{Exercise 7.3}}{Exercise 7.3}}\label{exercise-7.3-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex73q]{Exercise 7.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 7.3}}
 
 \begin{multicols}{5}
 \begin{enumerate}
@@ -28820,10 +28831,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{enumerate}
 \end{multicols}
 
-\phantomsection\label{ex74a}{}
+\protect\phantomsection\label{ex74a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex74q]{Exercise 7.4}}{Exercise 7.4}}\label{exercise-7.4-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex74q]{Exercise 7.4}}
+\addcontentsline{toc}{subsubsection}{{Exercise 7.4}}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -28866,10 +28877,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{enumerate}
 \end{multicols}
 
-\phantomsection\label{ex75a}{}
+\protect\phantomsection\label{ex75a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex75q]{Exercise 7.5}}{Exercise 7.5}}\label{exercise-7.5-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex75q]{Exercise 7.5}}
+\addcontentsline{toc}{subsubsection}{{Exercise 7.5}}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -28908,10 +28919,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 
 \pagebreak
 
-\phantomsection\label{ex76a}{}
+\protect\phantomsection\label{ex76a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex76q]{Exercise 7.6}}{Exercise 7.6}}\label{exercise-7.6-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex76q]{Exercise 7.6}}
+\addcontentsline{toc}{subsubsection}{{Exercise 7.6}}
 
 \begin{enumerate}
     \item
@@ -28959,10 +28970,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{multicols}
 \end{enumerate}
 
-\phantomsection\label{ex77a}{}
+\protect\phantomsection\label{ex77a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex77q]{Exercise 7.7}}{Exercise 7.7}}\label{exercise-7.7-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex77q]{Exercise 7.7}}
+\addcontentsline{toc}{subsubsection}{{Exercise 7.7}}
 
 \begin{enumerate}
     \item $0.9473$
@@ -28984,10 +28995,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item $0.0144$
 \end{enumerate}
 
-\phantomsection\label{re7a}{}
+\protect\phantomsection\label{re7a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[re7q]{Chapter 7 Review Exercise}}{Chapter 7 Review Exercise}}\label{chapter-7-review-exercise}
-\addcontentsline{toc}{subsubsection}{\hyperref[re7q]{Chapter 7 Review Exercise}}
+\addcontentsline{toc}{subsubsection}{{Chapter 7 Review Exercise}}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -29038,16 +29049,19 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \subsubsection*{Chapter 8 Answers - Continuous Distributions}\label{chapter-8-answers---continuous-distributions}
 \addcontentsline{toc}{subsubsection}{Chapter 8 Answers - Continuous Distributions}
 
-\phantomsection\label{ex81a}{}
+\protect\phantomsection\label{ex81a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex81q]{Exercise 8.1}}{Exercise 8.1}}\label{exercise-8.1-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex81q]{Exercise 8.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 8.1}}
 
 \begin{enumerate}
+    \item
+    \begin{enumerate}
     \item Heights are not equally likely across intervals of equal width.
     \item The score is discrete, not continuous.
     \item Lifetimes are not equally likely across intervals of equal width.
     \item Arrival times are not necessarily equally likely across intervals of equal length.
+    \end{enumerate}
 \end{enumerate}
 
 \begin{multicols}{3}
@@ -29109,10 +29123,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{enumerate}
 \end{multicols}
 
-\phantomsection\label{ex82a}{}
+\protect\phantomsection\label{ex82a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex82q]{Exercise 8.2}}{Exercise 8.2}}\label{exercise-8.2-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex82q]{Exercise 8.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 8.2}}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -29129,10 +29143,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{enumerate}
 \end{multicols}
 
-\phantomsection\label{ex83a}{}
+\protect\phantomsection\label{ex83a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex83q]{Exercise 8.3}}{Exercise 8.3}}\label{exercise-8.3-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex83q]{Exercise 8.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 8.3}}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -29166,10 +29180,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{enumerate}
 \end{multicols}
 
-\phantomsection\label{ex84a}{}
+\protect\phantomsection\label{ex84a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex84q]{Exercise 8.4}}{Exercise 8.4}}\label{exercise-8.4-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex84q]{Exercise 8.4}}
+\addcontentsline{toc}{subsubsection}{{Exercise 8.4}}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -29214,10 +29228,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{enumerate}
 \end{multicols}
 
-\phantomsection\label{ex85a}{}
+\protect\phantomsection\label{ex85a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex85q]{Exercise 8.5}}{Exercise 8.5}}\label{exercise-8.5-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex85q]{Exercise 8.5}}
+\addcontentsline{toc}{subsubsection}{{Exercise 8.5}}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -29261,10 +29275,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{enumerate}
 \end{multicols}
 
-\phantomsection\label{ex86a}{}
+\protect\phantomsection\label{ex86a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex86q]{Exercise 8.6}}{Exercise 8.6}}\label{exercise-8.6-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex86q]{Exercise 8.6}}
+\addcontentsline{toc}{subsubsection}{{Exercise 8.6}}
 
 \begin{enumerate}
     \item $0.2819$
@@ -29286,10 +29300,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item $0.0192$
 \end{enumerate}
 
-\phantomsection\label{ex87a}{}
+\protect\phantomsection\label{ex87a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex87q]{Exercise 8.7}}{Exercise 8.7}}\label{exercise-8.7-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex87q]{Exercise 8.7}}
+\addcontentsline{toc}{subsubsection}{{Exercise 8.7}}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -29304,6 +29318,7 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
             \item $\approx0$
         \end{enumerate}
     \end{enumerate}
+    \columnbreak
     \item
     \begin{enumerate}
         \item $np=54,nq=27$ $np,nq>5$
@@ -29315,16 +29330,17 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
             \item $0.7309$
         \end{enumerate}
     \end{enumerate}
+    \columnbreak
     \item $X\sim B(600,0.85)$ $0.1151$
     \item $0.2578$
     \item $0.0044$
 \end{enumerate}
 \end{multicols}
 
-\phantomsection\label{ex88a}{}
+\protect\phantomsection\label{ex88a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex88q]{Exercise 8.8}}{Exercise 8.8}}\label{exercise-8.8-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex88q]{Exercise 8.8}}
+\addcontentsline{toc}{subsubsection}{{Exercise 8.8}}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -29348,6 +29364,7 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
         \item $0.1357$
     \end{enumerate}
     \end{enumerate}
+    \columnbreak
     \item
     \begin{enumerate}
         \item $0.2611$
@@ -29366,6 +29383,7 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
         \item $0.1718$
         \item $0.8315$
     \end{enumerate}
+    \columnbreak
     \item
     \begin{enumerate}
         \item $0.2389$
@@ -29375,10 +29393,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{enumerate}
 \end{multicols}
 
-\phantomsection\label{re8a}{}
+\protect\phantomsection\label{re8a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[re8q]{Chapter 8 Review Exercise}}{Chapter 8 Review Exercise}}\label{chapter-8-review-exercise}
-\addcontentsline{toc}{subsubsection}{\hyperref[re8q]{Chapter 8 Review Exercise}}
+\addcontentsline{toc}{subsubsection}{{Chapter 8 Review Exercise}}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -29418,15 +29436,13 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{enumerate}
 \end{multicols}
 
-\newpage
-
 \subsubsection*{Chapter 9 - Distribution of the Sample Mean}\label{chapter-9---distribution-of-the-sample-mean}
 \addcontentsline{toc}{subsubsection}{Chapter 9 - Distribution of the Sample Mean}
 
-\phantomsection\label{ex91a}{}
+\protect\phantomsection\label{ex91a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex91q]{Exercise 9.1}}{Exercise 9.1}}\label{exercise-9.1-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex91q]{Exercise 9.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 9.1}}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -29444,6 +29460,7 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
             \item $0.3974$
         \end{enumerate}
     \end{enumerate}
+    \columnbreak
     \item $0.1922$
     \item
     \begin{enumerate}
@@ -29451,6 +29468,7 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
         \item $0.1170$
     \end{enumerate}
     \item $0.0228$
+    \columnbreak
     \item
     \begin{enumerate}
         \item $0.0082$
@@ -29460,10 +29478,12 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{enumerate}
 \end{multicols}
 
-\phantomsection\label{ex92a}{}
+\newpage
+
+\protect\phantomsection\label{ex92a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex92q]{Exercise 9.2}}{Exercise 9.2}}\label{exercise-9.2-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex92q]{Exercise 9.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 9.2}}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -29474,9 +29494,11 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
         \item $D\sim N(126,\tfrac{10}{7})$
         \item Comment.
     \end{enumerate}
+    \columnbreak
     \item $0.9857$
     \item $0.0071$
     \item $0.1038$
+    \columnbreak
     \item $0.3758$
     \item
     \begin{enumerate}
@@ -29485,10 +29507,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{enumerate}
 \end{multicols}
 
-\phantomsection\label{re9a}{}
+\protect\phantomsection\label{re9a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[re9q]{Chapter 9 Review Exercise}}{Chapter 9 Review Exercise}}\label{chapter-9-review-exercise}
-\addcontentsline{toc}{subsubsection}{\hyperref[re9q]{Chapter 9 Review Exercise}}
+\addcontentsline{toc}{subsubsection}{{Chapter 9 Review Exercise}}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -29504,6 +29526,7 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
         \item $\bar{X}\approx N(600,\tfrac{70^2}{40})$
         \item $0.1489$
     \end{enumerate}
+    \columnbreak
     \item
     \begin{enumerate}
         \item
@@ -29518,6 +29541,7 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
         \end{enumerate}
         \item Comment.
     \end{enumerate}
+    \columnbreak
     \item
     \begin{enumerate}
         \item $X\sim Po(4.5)$
@@ -29531,10 +29555,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \subsubsection*{Chapter 10 - An Introduction to Hypothesis Testing}\label{chapter-10---an-introduction-to-hypothesis-testing}
 \addcontentsline{toc}{subsubsection}{Chapter 10 - An Introduction to Hypothesis Testing}
 
-\phantomsection\label{ex101a}{}
+\protect\phantomsection\label{ex101a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex101q]{Exercise 10.1}}{Exercise 10.1}}\label{exercise-10.1-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex101q]{Exercise 10.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 10.1}}
 
 \begin{multicols}{3}
 \begin{enumerate}
@@ -29553,10 +29577,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{enumerate}
 \end{multicols}
 
-\phantomsection\label{ex102a}{}
+\protect\phantomsection\label{ex102a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex102q]{Exercise 10.2}}{Exercise 10.2}}\label{exercise-10.2-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex102q]{Exercise 10.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 10.2}}
 
 \}
 
@@ -29567,10 +29591,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item $0.0764>0.05\implies \textit{do not reject }H_0$
 \end{enumerate}
 
-\phantomsection\label{ex103a}{}
+\protect\phantomsection\label{ex103a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex103q]{Exercise 10.3}}{Exercise 10.3}}\label{exercise-10.3-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex103q]{Exercise 10.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 10.3}}
 
 \begin{enumerate}
     \item $0.0286<0.1\implies \textit{reject }H_0$
@@ -29583,10 +29607,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item $0.0250>0.01\implies \textit{do not reject }H_0$
 \end{enumerate}
 
-\phantomsection\label{ex104a}{}
+\protect\phantomsection\label{ex104a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex104q]{Exercise 10.4}}{Exercise 10.4}}\label{exercise-10.4-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex104q]{Exercise 10.4}}
+\addcontentsline{toc}{subsubsection}{{Exercise 10.4}}
 
 \begin{enumerate}
     \item $1.67<1.96\implies \textit{do not reject }H_0$
@@ -29596,10 +29620,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item $2.00>1.96\implies \textit{reject }H_0$
 \end{enumerate}
 
-\phantomsection\label{ex105a}{}
+\protect\phantomsection\label{ex105a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex105q]{Exercise 10.5}}{Exercise 10.5}}\label{exercise-10.5-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex105q]{Exercise 10.5}}
+\addcontentsline{toc}{subsubsection}{{Exercise 10.5}}
 
 \begin{enumerate}
     \item $-2.985<-1.895\implies \textit{reject }H_0$
@@ -29608,10 +29632,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item $-3.531<-2.821\implies \textit{reject }H_0$
 \end{enumerate}
 
-\phantomsection\label{ex106a}{}
+\protect\phantomsection\label{ex106a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex106q]{Exercise 10.6}}{Exercise 10.6}}\label{exercise-10.6-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex106q]{Exercise 10.6}}
+\addcontentsline{toc}{subsubsection}{{Exercise 10.6}}
 
 \begin{enumerate}
     \item $1.52<1.64\implies \textit{do not reject }H_0$
@@ -29622,10 +29646,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item $-2.2<-1.64\implies \textit{reject }H_0$
 \end{enumerate}
 
-\phantomsection\label{re10a}{}
+\protect\phantomsection\label{re10a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[re10q]{Chapter 10 Review Exercise}}{Chapter 10 Review Exercise}}\label{chapter-10-review-exercise}
-\addcontentsline{toc}{subsubsection}{\hyperref[re10q]{Chapter 10 Review Exercise}}
+\addcontentsline{toc}{subsubsection}{{Chapter 10 Review Exercise}}
 
 \begin{enumerate}
     \item $-2.54<-2.33\implies \textit{reject }H_0$
@@ -29638,10 +29662,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \subsubsection*{Chapter 11 - Confidence Intervals}\label{chapter-11---confidence-intervals}
 \addcontentsline{toc}{subsubsection}{Chapter 11 - Confidence Intervals}
 
-\phantomsection\label{ex111a}{}
+\protect\phantomsection\label{ex111a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex111q]{Exercise 11.1}}{Exercise 11.1}}\label{exercise-11.1-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex111q]{Exercise 11.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 11.1}}
 
 \begin{enumerate}
     \item $(55.18 ,58.82)$
@@ -29659,10 +29683,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item $10.0$
 \end{enumerate}
 
-\phantomsection\label{ex112a}{}
+\protect\phantomsection\label{ex112a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex112q]{Exercise 11.2}}{Exercise 11.2}}\label{exercise-11.2-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex112q]{Exercise 11.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 11.2}}
 
 \begin{enumerate}
     \item $(499.1,510.9)\implies \text{within, comment}$
@@ -29673,10 +29697,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item $(28580,30020\implies \text{within, comment})$
 \end{enumerate}
 
-\phantomsection\label{ex113a}{}
+\protect\phantomsection\label{ex113a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex113q]{Exercise 11.3}}{Exercise 11.3}}\label{exercise-11.3-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex113q]{Exercise 11.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 11.3}}
 
 \begin{enumerate}
     \item $(6.88,7.87)$
@@ -29686,10 +29710,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item $(2.760,4.740)\implies \text{outwith, comment}$
 \end{enumerate}
 
-\phantomsection\label{ex114a}{}
+\protect\phantomsection\label{ex114a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex114q]{Exercise 11.4}}{Exercise 11.4}}\label{exercise-11.4-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex114q]{Exercise 11.4}}
+\addcontentsline{toc}{subsubsection}{{Exercise 11.4}}
 
 \begin{enumerate}
     \item $(0.598,0.736)$
@@ -29706,10 +29730,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{enumerate}
 \end{enumerate}
 
-\phantomsection\label{re11a}{}
+\protect\phantomsection\label{re11a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[re11q]{Chapter 11 Review Exercise}}{Chapter 11 Review Exercise}}\label{chapter-11-review-exercise}
-\addcontentsline{toc}{subsubsection}{\hyperref[re11q]{Chapter 11 Review Exercise}}
+\addcontentsline{toc}{subsubsection}{{Chapter 11 Review Exercise}}
 
 \begin{enumerate}
     \item $(63.98,82.77)$
@@ -29730,10 +29754,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \subsubsection*{Chapter 12 - Chi-Squared Goodness-of-Fit Test}\label{chapter-12---chi-squared-goodness-of-fit-test}
 \addcontentsline{toc}{subsubsection}{Chapter 12 - Chi-Squared Goodness-of-Fit Test}
 
-\phantomsection\label{ex121a}{}
+\protect\phantomsection\label{ex121a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex121q]{Exercise 12.1}}{Exercise 12.1}}\label{exercise-12.1-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex121q]{Exercise 12.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 12.1}}
 
 \begin{enumerate}
     \item $6.333<7.815$, do not reject $\text{H}_0$
@@ -29741,10 +29765,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item $13.88>9.210$, reject $\text{H}_0$
 \end{enumerate}
 
-\phantomsection\label{ex122a}{}
+\protect\phantomsection\label{ex122a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex122q]{Exercise 12.2}}{Exercise 12.2}}\label{exercise-12.2-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex122q]{Exercise 12.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 12.2}}
 
 \begin{enumerate}
     \item $7.779<9.488$, do not reject $\text{H}_0$
@@ -29752,10 +29776,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item $14.906>7.815$, reject $\text{H}_0$
 \end{enumerate}
 
-\phantomsection\label{ex123a}{}
+\protect\phantomsection\label{ex123a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex123q]{Exercise 12.3}}{Exercise 12.3}}\label{exercise-12.3-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex123q]{Exercise 12.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 12.3}}
 
 \begin{enumerate}
     \item 
@@ -29783,10 +29807,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{enumerate}
 \end{enumerate}
 
-\phantomsection\label{ex124a}{}
+\protect\phantomsection\label{ex124a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex124q]{Exercise 12.4}}{Exercise 12.4}}\label{exercise-12.4-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex124q]{Exercise 12.4}}
+\addcontentsline{toc}{subsubsection}{{Exercise 12.4}}
 
 \begin{enumerate}
     \item
@@ -29812,10 +29836,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{enumerate}
 \end{enumerate}
 
-\phantomsection\label{re12a}{}
+\protect\phantomsection\label{re12a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[re12q]{Chapter 12 Review Exercise}}{Chapter 12 Review Exercise}}\label{chapter-12-review-exercise}
-\addcontentsline{toc}{subsubsection}{\hyperref[re12q]{Chapter 12 Review Exercise}}
+\addcontentsline{toc}{subsubsection}{{Chapter 12 Review Exercise}}
 
 \begin{enumerate}
     \item $3.759<5.991$, do not reject $\text{H}_0$
@@ -29836,10 +29860,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \subsubsection*{Chapter 13 - Control Charts}\label{chapter-13---control-charts}
 \addcontentsline{toc}{subsubsection}{Chapter 13 - Control Charts}
 
-\phantomsection\label{ex131a}{}
+\protect\phantomsection\label{ex131a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex131q]{Exercise 13.1}}{Exercise 13.1}}\label{exercise-13.1-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex131q]{Exercise 13.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 13.1}}
 
 \begin{enumerate}
     \item The process is out of statistical control, since sample 6 falls below the lower control line. The process should have been stopped after sample 6.
@@ -29848,10 +29872,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item The process is out of statistical control, since from samples 2 to 9 eight consecutive samples lie above the centre line. The process should have been stopped after sample 9.
 \end{enumerate}
 
-\phantomsection\label{ex132a}{}
+\protect\phantomsection\label{ex132a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex132q]{Exercise 13.2}}{Exercise 13.2}}\label{exercise-13.2-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex132q]{Exercise 13.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 13.2}}
 
 \begin{enumerate}
     \item 
@@ -29951,10 +29975,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{multicols}
 \end{enumerate}
 
-\phantomsection\label{ex133a}{}
+\protect\phantomsection\label{ex133a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex133q]{Exercise 13.3}}{Exercise 13.3}}\label{exercise-13.3-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex133q]{Exercise 13.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 13.3}}
 
 \begin{enumerate}
     \item 
@@ -30040,10 +30064,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{enumerate}
 \end{enumerate}
 
-\phantomsection\label{re13a}{}
+\protect\phantomsection\label{re13a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[re13q]{Chapter 13 Review Exercise}}{Chapter 13 Review Exercise}}\label{chapter-13-review-exercise}
-\addcontentsline{toc}{subsubsection}{\hyperref[re13q]{Chapter 13 Review Exercise}}
+\addcontentsline{toc}{subsubsection}{{Chapter 13 Review Exercise}}
 
 \begin{enumerate}
     \item
@@ -30061,10 +30085,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \subsubsection*{Chapter 14 - Chi-Squared Test for Association}\label{chapter-14---chi-squared-test-for-association}
 \addcontentsline{toc}{subsubsection}{Chapter 14 - Chi-Squared Test for Association}
 
-\phantomsection\label{ex141a}{}
+\protect\phantomsection\label{ex141a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex141q]{Exercise 14.1}}{Exercise 14.1}}\label{exercise-14.1-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex141q]{Exercise 14.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 14.1}}
 
 \begin{enumerate}
     \item $3.436>2.706$, reject $\text{H}_0$
@@ -30074,10 +30098,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item $0.282<11.345$, do not reject $\text{H}_0$
 \end{enumerate}
 
-\phantomsection\label{ex142a}{}
+\protect\phantomsection\label{ex142a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex142q]{Exercise 14.2}}{Exercise 14.2}}\label{exercise-14.2-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex142q]{Exercise 14.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 14.2}}
 
 \begin{enumerate}
     \item $3.328>7.815$, do not reject $\text{H}_0$
@@ -30085,10 +30109,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item $25.106>4.605$, reject $\text{H}_0$
 \end{enumerate}
 
-\phantomsection\label{re14a}{}
+\protect\phantomsection\label{re14a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[re14q]{Chapter 14 Review Exercise}}{Chapter 14 Review Exercise}}\label{chapter-14-review-exercise}
-\addcontentsline{toc}{subsubsection}{\hyperref[re14q]{Chapter 14 Review Exercise}}
+\addcontentsline{toc}{subsubsection}{{Chapter 14 Review Exercise}}
 
 \begin{enumerate}
     \item $6.254>2.706$, reject $\text{H}_0$
@@ -30105,38 +30129,38 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \subsubsection*{Chapter 15 - Two-Sample Parametric Tests}\label{chapter-15---two-sample-parametric-tests}
 \addcontentsline{toc}{subsubsection}{Chapter 15 - Two-Sample Parametric Tests}
 
-\phantomsection\label{ex151a}{}
+\protect\phantomsection\label{ex151a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex151q]{Exercise 15.1}}{Exercise 15.1}}\label{exercise-15.1-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex151q]{Exercise 15.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 15.1}}
 
-\phantomsection\label{ex152a}{}
+\protect\phantomsection\label{ex152a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex152q]{Exercise 15.2}}{Exercise 15.2}}\label{exercise-15.2-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex152q]{Exercise 15.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 15.2}}
 
-\phantomsection\label{ex153a}{}
+\protect\phantomsection\label{ex153a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex153q]{Exercise 15.3}}{Exercise 15.3}}\label{exercise-15.3-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex153q]{Exercise 15.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 15.3}}
 
-\phantomsection\label{ex154a}{}
+\protect\phantomsection\label{ex154a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex154q]{Exercise 15.4}}{Exercise 15.4}}\label{exercise-15.4-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex154q]{Exercise 15.4}}
+\addcontentsline{toc}{subsubsection}{{Exercise 15.4}}
 
-\phantomsection\label{re15a}{}
+\protect\phantomsection\label{re15a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[re15q]{Chapter 15 Review Exercise}}{Chapter 15 Review Exercise}}\label{chapter-15-review-exercise}
-\addcontentsline{toc}{subsubsection}{\hyperref[re15q]{Chapter 15 Review Exercise}}
+\addcontentsline{toc}{subsubsection}{{Chapter 15 Review Exercise}}
 
 \subsubsection*{Chapter 16 - Wilcoxon Signed Rank Test}\label{chapter-16---wilcoxon-signed-rank-test}
 \addcontentsline{toc}{subsubsection}{Chapter 16 - Wilcoxon Signed Rank Test}
 
-\phantomsection\label{ex161a}{}
+\protect\phantomsection\label{ex161a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex161q]{Exercise 16.1}}{Exercise 16.1}}\label{exercise-16.1-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex161q]{Exercise 16.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 16.1}}
 
 \begin{enumerate}
     \item $9>3\implies\text{ do not reject }H_0$
@@ -30148,10 +30172,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item $6.5>5\implies\text{ do not reject }H_0$
 \end{enumerate}
 
-\phantomsection\label{ex162a}{}
+\protect\phantomsection\label{ex162a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex162q]{Exercise 16.2}}{Exercise 16.2}}\label{exercise-16.2-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex162q]{Exercise 16.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 16.2}}
 
 \begin{enumerate}
     \item $8.5<13\implies\text{ reject }H_0$
@@ -30161,10 +30185,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item $4<8\implies\text{ reject }H_0$
 \end{enumerate}
 
-\phantomsection\label{ex163a}{}
+\protect\phantomsection\label{ex163a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex163q]{Exercise 16.3}}{Exercise 16.3}}\label{exercise-16.3-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex163q]{Exercise 16.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 16.3}}
 
 \begin{enumerate}
     \item $-0.34>-1.96\implies\text{ do not reject }H_0$
@@ -30178,10 +30202,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{enumerate}
 \end{enumerate}
 
-\phantomsection\label{re16a}{}
+\protect\phantomsection\label{re16a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[re16q]{Chapter 16 Review Exercise}}{Chapter 16 Review Exercise}}\label{chapter-16-review-exercise}
-\addcontentsline{toc}{subsubsection}{\hyperref[re16q]{Chapter 16 Review Exercise}}
+\addcontentsline{toc}{subsubsection}{{Chapter 16 Review Exercise}}
 
 \begin{enumerate}
     \item $5\leqslant5\implies\text{ reject }H_0$
@@ -30193,10 +30217,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \subsubsection*{Chapter 17 - Mann Whitney Rank Sum Test}\label{chapter-17---mann-whitney-rank-sum-test}
 \addcontentsline{toc}{subsubsection}{Chapter 17 - Mann Whitney Rank Sum Test}
 
-\phantomsection\label{ex171a}{}
+\protect\phantomsection\label{ex171a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex171q]{Exercise 17.1}}{Exercise 17.1}}\label{exercise-17.1-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex171q]{Exercise 17.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 17.1}}
 
 \begin{enumerate}
     \item 
@@ -30218,10 +30242,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{enumerate}
 \end{enumerate}
 
-\phantomsection\label{ex172a}{}
+\protect\phantomsection\label{ex172a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex172q]{Exercise 17.2}}{Exercise 17.2}}\label{exercise-17.2-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex172q]{Exercise 17.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 17.2}}
 
 \begin{enumerate}
     \item 
@@ -30239,10 +30263,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{enumerate}
 \end{enumerate}
 
-\phantomsection\label{ex173a}{}
+\protect\phantomsection\label{ex173a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex173q]{Exercise 17.3}}{Exercise 17.3}}\label{exercise-17.3-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex173q]{Exercise 17.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 17.3}}
 
 \begin{enumerate}
     \item 
@@ -30275,10 +30299,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{enumerate}
 \end{enumerate}
 
-\phantomsection\label{re17a}{}
+\protect\phantomsection\label{re17a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[re17q]{Chapter 17 Review Exercise}}{Chapter 17 Review Exercise}}\label{chapter-17-review-exercise}
-\addcontentsline{toc}{subsubsection}{\hyperref[re17q]{Chapter 17 Review Exercise}}
+\addcontentsline{toc}{subsubsection}{{Chapter 17 Review Exercise}}
 
 \begin{enumerate}
     \item $34>29\implies\text{ do not reject }H_0$
@@ -30300,10 +30324,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \subsubsection*{Chapter 18 - Further Linear Regression}\label{chapter-18---further-linear-regression}
 \addcontentsline{toc}{subsubsection}{Chapter 18 - Further Linear Regression}
 
-\phantomsection\label{ex181a}{}
+\protect\phantomsection\label{ex181a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex181q]{Exercise 18.1}}{Exercise 18.1}}\label{exercise-18.1-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex181q]{Exercise 18.1}}
+\addcontentsline{toc}{subsubsection}{{Exercise 18.1}}
 
 \begin{enumerate}
     \item Completed table:
@@ -30356,10 +30380,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{multicols}
 \end{enumerate}
 
-\phantomsection\label{ex182a}{}
+\protect\phantomsection\label{ex182a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex182q]{Exercise 18.2}}{Exercise 18.2}}\label{exercise-18.2-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex182q]{Exercise 18.2}}
+\addcontentsline{toc}{subsubsection}{{Exercise 18.2}}
 
 \begin{enumerate}
     \begin{multicols}{2}
@@ -30388,10 +30412,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{enumerate}
 \end{enumerate}
 
-\phantomsection\label{ex183a}{}
+\protect\phantomsection\label{ex183a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex183q]{Exercise 18.3}}{Exercise 18.3}}\label{exercise-18.3-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex183q]{Exercise 18.3}}
+\addcontentsline{toc}{subsubsection}{{Exercise 18.3}}
 
 \begin{enumerate}
     \item $R^2=0.775$. This suggests that 77.5\% of the variation in $Y$ is explained by the linear model.
@@ -30410,10 +30434,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{enumerate}
 \end{enumerate}
 
-\phantomsection\label{ex184a}{}
+\protect\phantomsection\label{ex184a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex184q]{Exercise 18.4}}{Exercise 18.4}}\label{exercise-18.4-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex184q]{Exercise 18.4}}
+\addcontentsline{toc}{subsubsection}{{Exercise 18.4}}
 
 \begin{enumerate}
     \item 
@@ -30435,10 +30459,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item Test statistic $t=0.013$, critical value $t_{6,0.975}=2.447$, do not reject $H_0$ at the 5\% level since $0.013<2.447$.
 \end{enumerate}
 
-\phantomsection\label{ex185a}{}
+\protect\phantomsection\label{ex185a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex185q]{Exercise 18.5}}{Exercise 18.5}}\label{exercise-18.5-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex185q]{Exercise 18.5}}
+\addcontentsline{toc}{subsubsection}{{Exercise 18.5}}
 
 \begin{enumerate}
     \item 
@@ -30457,10 +30481,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item Test statistic $t=0.013$, critical value $t_{6,0.975}=2.447$, do not reject $H_0$ at the 5\% level since $0.013<2.447$.
 \end{enumerate}
 
-\phantomsection\label{ex186a}{}
+\protect\phantomsection\label{ex186a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex186q]{Exercise 18.6}}{Exercise 18.6}}\label{exercise-18.6-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex186q]{Exercise 18.6}}
+\addcontentsline{toc}{subsubsection}{{Exercise 18.6}}
 
 \begin{enumerate}
     \item $\hat{X}=73.2-0.719y$
@@ -30479,10 +30503,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item $\hat{X}=25.46+0.0051y$
 \end{enumerate}
 
-\phantomsection\label{ex187a}{}
+\protect\phantomsection\label{ex187a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex187q]{Exercise 18.7}}{Exercise 18.7}}\label{exercise-18.7-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex187q]{Exercise 18.7}}
+\addcontentsline{toc}{subsubsection}{{Exercise 18.7}}
 
 \begin{enumerate}
     \item
@@ -30505,10 +30529,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item The residual plot appears to show the points in the pattern of a curve ($\text{E}(\epsilon)\ne0$), which suggests that the linear regression model is not suitable.
 \end{enumerate}
 
-\phantomsection\label{ex188a}{}
+\protect\phantomsection\label{ex188a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex188q]{Exercise 18.8}}{Exercise 18.8}}\label{exercise-18.8-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex188q]{Exercise 18.8}}
+\addcontentsline{toc}{subsubsection}{{Exercise 18.8}}
 
 \begin{enumerate}
     \item
@@ -30537,10 +30561,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{enumerate}
 \end{enumerate}
 
-\phantomsection\label{ex189a}{}
+\protect\phantomsection\label{ex189a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[ex189q]{Exercise 18.9}}{Exercise 18.9}}\label{exercise-18.9-1}
-\addcontentsline{toc}{subsubsection}{\hyperref[ex189q]{Exercise 18.9}}
+\addcontentsline{toc}{subsubsection}{{Exercise 18.9}}
 
 \begin{enumerate}
     \item
@@ -30569,10 +30593,10 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \end{enumerate}
 \end{enumerate}
 
-\phantomsection\label{re18a}{}
+\protect\phantomsection\label{re18a}{}
 
 \subsubsection*{\texorpdfstring{\hyperref[re18q]{Chapter 18 Review Exercise}}{Chapter 18 Review Exercise}}\label{chapter-18-review-exercise}
-\addcontentsline{toc}{subsubsection}{\hyperref[re18q]{Chapter 18 Review Exercise}}
+\addcontentsline{toc}{subsubsection}{{Chapter 18 Review Exercise}}
 
 \begin{enumerate}
     \item
