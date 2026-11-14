@@ -1801,7 +1801,7 @@ The mean and variance of the *approximate* normal distribution are, as usual for
 
 \vspace{-0.3cm}
 
-Historically, the ability to approximate the binomial distribution using the normal distribution reduced the need for extensive tables of binomial probabilities. Additionally, calculations of binomial probabilities tend to be more computationally-intensive than those for normal distributions. Whilst modern computing power may seem to make this advantage less important, it can still be desirable to speed up computation in return for a trivial loss in accuracy. 
+Historically, the normal approximation to the binomial distribution reduced reliance on extensive probability tables and lengthy calculations. While modern computing power and numerical algorithms enable exact binomial probabilities to be calculated quickly using statistical software, studying the connection between the discrete binomial distribution and the continuous normal distribution remains valuable for developing a deeper understanding of statistical modelling and approximation.
 
 Approximating probabilities for a *discrete* distribution using a *continuous* distribution may lead to inaccuracy unless a **continuity correction** is applied. The continuity correction adjusts for the fact that a discrete distribution assigns probability to whole numbers, while a continuous distribution assigns probability over intervals. For example, consider random variable $X\sim \text{B}(\text{11},\text{0.5})$, with its normal approximation $X\approx \text{N}(\text{5.5},\text{2.75})$ overlaid and the *discrete* probability $\text{P}(X\leqslant \text{7})$ shaded:
 
