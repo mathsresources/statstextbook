@@ -1,6 +1,6 @@
 # An Introduction to Hypothesis Testing
 
-In brief, hypothesis testing is an approach to assessing the statistical evidence for a claim through the analysis of data from a random sample. The claim will typically relate to some aspect of the distribution of a population of interest, often a *parameter* such as the *population mean*, $\mu$, and the foundation of hypothesis testing lies in *probability*.
+Hypothesis testing is an approach to assessing the *statistical evidence for a claim* by analysing a sample of data. The claim will typically relate to some aspect of the distribution of a population of interest, often a *parameter* such as the *population mean*, $\mu$. The foundation of hypothesis testing lies in *probability*.
 
 ### The Logic of Hypothesis Testing {-}
 
@@ -9,10 +9,10 @@ Consider the following scenarios:
 \begin{itemize}
     \item A coin is tossed 50 times, and it lands showing tails 47 of those times.
     \item A cubical die is tossed 80 times, and a six is obtained only once.
-    \item A random number generator gives the same number eight times in a row.
+    \item A random number generator for integers from 1 to 10 gives the same number eight times in a row.
 \end{itemize}
 
-In each of these scenarios, there are two possible conclusions:
+In each of these scenarios, there are two possible explanations:
 
 \begin{center}
 \begin{tabular}{ccc}
@@ -25,13 +25,13 @@ In each of these scenarios, there are two possible conclusions:
 \end{tabular}
 \end{center}
 
-An *objective* process is required that allows a decision to be made between these two possibilities. This process, called **hypothesis testing**, will form a substantial part of the remainder of the course.
+A formal process is required that allows a decision to be made between these two possibilities. This process, called **hypothesis testing**, informs a substantial part of the remainder of the course.
 
 \pagebreak
 
 ## The Null Hypothesis and the Alternative Hypothesis
 
-Most statistical studies begin with a claim, which is called the **alternative hypothesis**, or $\text{H}_\text{1}$. Initially in this chapter, these will consist of a claim about the value of the *population mean*, $\mu$. A conservative stance in opposition to the alternative hypothesis will be used as the basis for all calculations, assuming that the claim is *not true*. This is called the **null hypothesis**, or $\text{H}_\text{0}$. These may be thought of *informally* as:
+Many studies collect data in order to test claims using statistical inference. A hypothesis test begins with two competing claims about a population parameter: the **null hypothesis** and the **alternative hypothesis**. Initially in this chapter, these will consist of claims about the value of the *population mean*, $\mu$. The null hypothesisA conservative stance in opposition to the alternative hypothesis will be used as the basis for all calculations, assuming that the claim is *not true*. This is called the **null hypothesis**, or $\text{H}_\text{0}$. These may be thought of *informally* as:
 
 \begin{center}
     \begin{tabular}{llll}
@@ -49,7 +49,7 @@ It is *essential* that both hypotheses are formed *before* observing the data. I
 
 \begin{enumerate}
     \item[(a)] The mean volume of liquid in espressos sold by a café is less than the 30ml stated on their menu. 
-    \item[(b)] The mean mass of red squirrels in a woodland population is different to the previously measured 240g.
+    \item[(b)] The mean mass of red squirrels in a woodland population is different from the previously measured 240g.
 \end{enumerate}
 
 \tcblower
@@ -70,13 +70,13 @@ For each proposed hypothesis test, state the **null hypothesis** and the **alter
 
 \begin{enumerate}
     \item A telecommunications provider wishes to test whether the mean amount of data used by its customers is more than 8.6 gigabytes per month.
-    \item A large school plans to test whether the mean amount its teachers spend on photocopying is different from the £12 per year they currently budget for.
+    \item A large school plans to test whether the mean amount of money its teachers spend on photocopying is different from the £12 per year they currently budget for.
     \item A farmer wants to test whether the mean mass of the newborn lambs from his flock is less than 4.2 kilograms.
     \item A sports statistician is planning a hypothesis test to assess the evidence that the mean actual playing time during a game of football has changed from 58 minutes.
     \item A kettle manufacturer wishes to test whether the mean time for its kettles to boil one litre of water is more than the 65 seconds stated on the packaging.
-    \item A teacher is monitoring the time a sample of teachers from across Scotland spend marking writing reports during a school year, to assess whether there is evidence that an education authority's claim that the mean is 10 hours is valid.
-    \item A music fan measures the tempo (in beats per minute) of a sample of songs on a streaming platform to test whether a suggested mean of 160 beats per minute is too low.
-    \item The mean volume of petrol a driver uses driving from Glasgow to Blackburn is 15.7 litres. The driver wishes to test whether the mean volume of petrol used has changed.
+    \item A teacher is monitoring the time a random sample of teachers from across Scotland spend writing reports during a school year, to assess whether there is evidence that an education authority's claim that the mean is 10 hours is valid.
+    \item A music fan measures the tempo (in beats per minute) of a sample of songs on a streaming platform to test whether the mean across all the platform's songs is faster than 160 beats per minute.
+    \item The mean volume of petrol a driver uses driving from Glasgow to Blackburn, for a randomly selected sample of such journeys, is 15.7 litres. The driver wishes to test whether the mean volume of petrol used has changed.
 \end{enumerate}
 
 \pagebreak
