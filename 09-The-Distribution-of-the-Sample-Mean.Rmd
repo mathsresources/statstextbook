@@ -25,7 +25,7 @@ $$SE\left(\overline{X}\right)=\dfrac{\sigma}{\sqrt{n}}$$
 ::: {.col data-latex="{0.475\textwidth}"}
 \begin{align*}
 \text{E}\left(\overline{X}\right)&=\text{E}\left(\frac{1}{n}(X_1+X_2+...+X_n)\right)\\
-&=\frac{1}{n}(\text{E}(X_1)+\text{E}(X_2)+...+\text{E}(X_n))\\
+&=\frac{1}{n}\left(\text{E}(X_1)+\text{E}(X_2)+...+\text{E}(X_n)\right)\\
 &=\frac{1}{n}(n\mu)\\
 &=\mu
 \end{align*}
@@ -40,9 +40,9 @@ a column separator -->
 ::: {.col data-latex="{0.475\textwidth}"}
 \begin{align*}
 \text{V}\left(\overline{X}\right)&=\text{V}\left(\frac{1}{n}(X_1+X_2+...+X_n)\right)\\
-&=\frac{1}{n^2}(\text{V}(X_1)+\text{V}(X_2)+...+\text{V}(X_n))\\
+&=\frac{1}{n^2}\left(\text{V}(X_1)+\text{V}(X_2)+...+\text{V}(X_n)\right)\\
 &=\frac{1}{n^2}(n\sigma^2)\\
-&=\frac{\sigma^2}{n}
+&=\frac{\sigma^2}{n}\quad\implies\quad\text{SE}(\overline{X})=\frac{\sigma}{\sqrt{n}}
 \end{align*}
 :::
 ::::::
@@ -56,7 +56,7 @@ Since the sample mean $\overline{X}$ is a linear combination of independent obse
 \begin{centering}
 \tcbset{width=9cm}
 \begin{tcolorbox}[adjusted title=Sample mean of normally distributed $X$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-\text{If   }$X\sim \text{N}(\mu,\sigma^2)$\text{   then   }$\overline{X}\sim \text{N}\left(\mu,\dfrac{\sigma^2}{n}\right)$
+\text{If   }$X\sim \text{N}\left(\mu,\sigma^2\right)$\text{   then   }$\overline{X}\sim \text{N}\left(\mu,\dfrac{\sigma^2}{n}\right)$
 \end{tcolorbox}
 \end{centering}
 
@@ -134,7 +134,7 @@ The histograms below show 100 simulated individual observations of squirrel mass
         \node[left] at (-0.4+10,0.75*4) {$20$};
         \node[left] at (-0.4+10,0.75*5) {$25$};
         \node[left,rotate=90] at (-1.5+10,0.75*4) {Frequency};
-        \node at (3+10,0.80*6) {Normally distributed $\bar{X}$};
+        \node at (3+10,0.80*6) {Normally distributed $\overline{X}$};
         \node at (3+10,0.70*6) {(100 Sample Means, $n=\text{3}$)};
         \draw[fill=black!10] (2+10,0) rectangle (2.2+10,0.75*0.2);
         \draw[fill=black!10] (2.2+10,0) rectangle (2.4+10,0.75*0.6);
@@ -322,7 +322,7 @@ Proof of the CLT is beyond the scope of this course (and this textbook), but sta
         \node[left] at (-0.4+10,0.75*4) {$20$};
         \node[left] at (-0.4+10,0.75*5) {$25$};
         \node[left,rotate=90] at (-1.5+10,0.75*4) {Frequency};
-        \node at (3+10,0.80*6) {Approximately normal $\bar{X}$};
+        \node at (3+10,0.80*6) {Approximately normal $\overline{X}$};
         \node at (3+10,0.70*6) {(100 Sample Means, $n=25$)};
         
         \draw[fill=black!10] (2.6+10,0) rectangle (2.8+10,0.15*3);
@@ -412,7 +412,7 @@ Proof of the CLT is beyond the scope of this course (and this textbook), but sta
         \node[left] at (-0.4+10,0.75*4) {$20$};
         \node[left] at (-0.4+10,0.75*5) {$25$};
         \node[left,rotate=90] at (-1.5+10,0.75*4) {Frequency};
-        \node at (3+10,0.80*6) {Approximately normal $\bar{X}$};
+        \node at (3+10,0.80*6) {Approximately normal $\overline{X}$};
         \node at (3+10,0.70*6) {(100 Sample Means, $n=25$)};
         
         \draw[fill=black!10] (0.5*2.8+10,0) rectangle (0.5*3.1+10,0.15*5);
@@ -442,7 +442,7 @@ The **approximate** distribution of the sample mean can be stated provided the e
 \pagebreak
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} The mean mass of ceramic bowls produced by a potter is 400g and the standard deviation is 20g, and they can be ordered singly or in bulk. Bulk orders contain 36 bowls and, when such an order is placed, the potter selects the 36 bowls at random to be boxed up and shipped. Letting the random variable $X$ represent the mass of a bowl, and $\overline{X}$ the mean bowl mass in a bulk order:
+\textbf{Problem:} The mean mass of ceramic bowls produced by a potter is 400g and the standard deviation is 20g. They can be ordered singly or in bulk. Bulk orders contain 36 bowls and, when such an order is placed, the potter selects the 36 bowls at random to be boxed up and shipped. Letting the random variable $X$ represent the mass of a bowl, and $\overline{X}$ the mean bowl mass in a bulk order:
 
 \begin{enumerate}
     \item[a. ] State the distribution of $\overline{X}$.
@@ -507,7 +507,7 @@ The **approximate** distribution of the sample mean can be stated provided the e
     \item The discrete random variable $A$ has a mean of 18 and a standard deviation of 5. Calculate the probability that a sample of size 30 taken from $A$ results in a mean less than 20.
     \item The continuous random variable $B$ has a mean of 248 and a variance of 16. Determine the probability of the mean of a sample of size 24 being greater than 250.
     \item The mean height of the sunflowers grown in a field is 1.05m, with a standard deviation of 0.25m. The grower measures the height of a random sample of 40 sunflowers. What is the probability that the mean height of the sample of sunflowers is less than a metre? 
-    \item Eggs classified as \textit{medium} by a farm have a mean mass of 78g and a standard deviation of 5g. Calculate the probability that, for a box of 24 randomly selected eggs, the mean egg mass is recorded as 78g when given to the nearest gram.  
+    \item Eggs classified as \textit{medium} by a farm have a mean mass of 78g and a standard deviation of 5g. Calculate the probability that, for a box of 24 randomly selected medium eggs, the mean egg mass is recorded as 78g when given to the nearest gram.  
     \item When \textit{"40 litres"} of petrol is dispensed by a fuel pump design used by a supermarket, the mean actual amount dispensed is 40.1 litres with a standard deviation of 0.35 litres.
     \begin{enumerate}
         \item[(a)] Explain why the known information is not sufficient to calculate the probability that a single \textit{"40-litre"} fill actually gives less than 40 litres.
@@ -533,7 +533,7 @@ The **approximate** distribution of the sample mean can be stated provided the e
         \item Calculate $\text{P}(\overline{X}<17)$.
     \end{enumerate}
     \item A fair, tetrahedral (four-sided) die numbered $1$ to $4$ is rolled 25 times, and the score obtained for each roll recorded. Find the probability that the mean score for the 25 rolls is greater than 3.
-    \item At the start of a marathon, each runner is given a bottle containing 1 litre of water. The mean volume of water consumed by a runner during the marathon is 600 millilitres, whilst the standard deviation is 70 millilitres. At the end of the marathon, 40 runners are selected at random, and the volume of water consumed by each is measured. The mean volume of water consumed by the sample of 40 runners is then calculated.
+    \item At the start of a running race, each runner is given a bottle containing 1 litre of water. The mean volume of water consumed by a runner during the race is 600 millilitres, whilst the standard deviation is 70 millilitres. At the end of the race, 40 runners are selected at random, and the volume of water consumed by each is measured. The mean volume of water consumed by the sample of 40 runners is then calculated.
     \begin{enumerate}[itemsep=8pt]
         \item[(a)] In context, explain what the Central Limit Theorem says about the sample mean calculated.
         \item[(b)] State the distribution of the sample mean.
@@ -541,7 +541,7 @@ The **approximate** distribution of the sample mean can be stated provided the e
     \end{enumerate}
     \item The mass of mince pies sold individually at the counter at a bakery is normally distributed, with a mean of 60 grams and a standard deviation of 2 grams. 
     \begin{enumerate}[itemsep=8pt]
-        \item[(a)] A customer asks for a mince pie, and it is selected at random by the bakery staff. Let random variable $X$ represent the mass of the mince pie chosen.
+        \item[(a)] A customer asks for a mince pie, and it is selected at random by the bakery staff. Let the random variable $X$ represent the mass of the mince pie chosen.
         \begin{enumerate}[itemsep=8pt]
             \item[(i)] State the distribution of $X$
             \item[(ii)] Find the probability that the mince pie chosen has a mass of less than 59 grams.
