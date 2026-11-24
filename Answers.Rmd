@@ -2550,6 +2550,8 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 \end{enumerate}
 \end{multicols}
 
+\newpage
+
 
 #### Chapter 10 - An Introduction to Hypothesis Testing {-}
 
@@ -2558,7 +2560,7 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 
 #### [Exercise 10.1](#ex101q) {-}
 
-\begin{multicols}{3}
+\begin{multicols}{4}
 \begin{enumerate}
     \item $H_0:\mu=8.6$\\
     $H_1: \mu>8.6$
@@ -2582,27 +2584,57 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 []{#ex102a}
 
 #### [Exercise 10.2](#ex102q) {-}
-}
+
 \begin{enumerate}
-    \item $0.0162<0.05\implies \textit{reject }H_0$
-    \item $0.1056>0.01\implies \textit{do not reject }H_0$
-    \item $0.0485<0.1\implies \textit{reject }H_0$
-    \item $0.0764>0.05\implies \textit{do not reject }H_0$
+    \item Since $\text{0.0084}<\text{0.05}$, reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is sufficient evidence to suggest that the population mean mass of a field mouse is less than 25 grams.
+    \item Since $\text{0.0236}>\text{0.01}$, do not reject $\text{H}_{\text{0}}$ at the 1\% level of significance. There is insufficient evidence to suggest that the population mean recovery time is different from 14 days.
+    \item Since $\text{0.3341}>\text{0.1}$, do not reject $\text{H}_{\text{0}}$ at the 10\% level of significance. There is insufficient evidence to suggest that the population mean charging time is greater than 11 hours.
+    \item Since $p\text{-value}<\text{0.0001}<\text{0.025}$, reject $\text{H}_{\text{0}}$ at the 2.5\% level of significance. There is sufficient evidence to suggest that the population mean daily temperature in Dollar in November has changed from 5.2$^{\circ}$ C.
 \end{enumerate}
+
 
 []{#ex103a}
 
 #### [Exercise 10.3](#ex103q) {-}
 
+
 \begin{enumerate}
-    \item $0.0286<0.1\implies \textit{reject }H_0$
-    \item $0.0702>0.001\implies \textit{do not reject }H_0$
-    \item $0.0485<0.05\implies \textit{reject }H_0$
-    \item $0.0220<0.1\implies \textit{reject }H_0$
-    \item $0.0294<0.05\implies \textit{reject }H_0$
-    \item $0.0488>0.01\implies \textit{do not reject }H_0$
-    \item $0.0023<0.05\implies \textit{reject }H_0$
-    \item $0.0250>0.01\implies \textit{do not reject }H_0$
+    \item
+    \begin{enumerate}
+        \item $H_0:\mu=2.5$ and $H_1: \mu<2.5$.
+        \item $\text{P}(\bar{X}<\text{2.3})=\text{P}\left(Z<\dfrac{\text{2.3}-\text{2.5}}{\frac{\text{0.4}}{\sqrt{\text{10}}}}\right)=\text{P}(Z<\text{-1.58})=\text{0.0571}$
+        \item Since $\text{0.0571}>\text{0.05}$, do not reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is insufficient evidence to suggest that the population mean mass of tea is less than 2.5 grams.
+    \end{enumerate}
+    
+    \item Since $\text{0.1131}>\text{0.05}$, do not reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is insufficient evidence to suggest that the population mean mass of coffee dispensed exceeds 240 grams.
+
+    \item Assume that the population standard deviation in the mass of cocoa dispensed remains unchanged at 11 grams. Since $\text{0.0048}<\text{0.05}$, reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is sufficient evidence to suggest that the population mean mass of cocoa dispensed differs from 180 grams.
+
+    \item Since $\text{0.0162}<\text{0.1}$, reject $\text{H}_{\text{0}}$ at the 10\% level of significance. There is sufficient evidence to suggest that the population mean length of a cookery video on the platform is less than 11.7 minutes.
+
+    \item Since $\text{0.1056}>\text{0.01}$, do not reject $\text{H}_{\text{0}}$ at the 1\% level of significance. There is insufficient evidence to suggest that the population mean marking time for an exam paper has increased from 6.3 minutes.
+
+    \item
+    \begin{enumerate}
+        \item Assume that the standard deviation of time is unchanged from 4 minutes.\newline Assume that the sample of games is random.
+        \item $H_0:\mu=58$ and $H_1: \mu\ne 58$
+        \item $p\text{-value}=0.0037$
+        \item Since $\text{0.0037}<\text{0.025}$, reject $\text{H}_{\text{0}}$ at the 2.5\% level of significance. There is sufficient evidence to suggest that the population mean time for which the ball is in play during a game differs from 58 minutes.
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item Assume that the population standard deviation of newborn lamb mass remains unchanged at 0.3 kilograms.
+        \item Since $\text{0.0588}<\text{0.1}$, reject $\text{H}_{\text{0}}$ at the 10\% level of significance. There is sufficient evidence to suggest that the population mean newborn lamb mass has changed from 4.2 kilograms.
+    \end{enumerate}
+
+    \item Since $\text{0.0485}<\text{0.05}$, reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is sufficient evidence to suggest that the population mean house value in the area has increased from £184,000.
+
+    \item
+    \begin{enumerate}
+        \item Since $\text{0.1443}>\text{0.1}$, do not reject $\text{H}_{\text{0}}$ at the 10\% level of significance. There is insufficient evidence to suggest that the population mean oak tree height in the woodland has changed from 21 metres.
+        \item The sample size of 30 is greater than 20, so, under the convention used in this course, the Central Limit Theorem can be invoked. The sampling distribution of the sample mean may therefore be treated as approximately normal even though the underlying distribution of tree heights is unknown, supporting the use of a $z$-test.
+    \end{enumerate}
 \end{enumerate}
 
 []{#ex104a}
@@ -2610,11 +2642,57 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 #### [Exercise 10.4](#ex104q) {-}
 
 \begin{enumerate}
-    \item $1.67<1.96\implies \textit{do not reject }H_0$
-    \item $-2.5<-1.64\implies \textit{reject }H_0$
-    \item $2.24<2.33\implies \textit{do not reject }H_0$
-    \item $-0.77>-2.33\implies \textit{do not reject }H_0$
-    \item $2.00>1.96\implies \textit{reject }H_0$
+    \item Since $\text{4.00}>\text{1.96}$, reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is sufficient evidence to suggest that the population mean mass of coffee packaged per bag has changed from 500 grams.
+    
+    \item Since $\text{2.24}<\text{2.33}$, do not reject $\text{H}_{\text{0}}$ at the 1\% level of significance. There is insufficient evidence to suggest that the population mean length of the metal bars produced by the machine has increased from 420 centimetres.
+    
+    \item Since $-\text{0.77}>-\text{2.33}$, do not reject $\text{H}_{\text{0}}$ at the 1\% level of significance. There is insufficient evidence to suggest that the population mean mass of a North Sea herring has decreased from 160 grams since 1980.
+    
+    \item Assume that the population standard deviation of the mass of a pack of salt remains unchanged at 12 grams.\newline
+    Assume that the sample of packs is random.\newline
+    Since $\text{2.00}>\text{1.96}$, reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is sufficient evidence to suggest that the population mean mass of salt dispensed per pack is no longer 200 grams.
+    
+    \item
+    \begin{enumerate}
+        \item Since $\text{1.46}<\text{1.96}$, do not reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is insufficient evidence to suggest that the population mean distance covered by the players in a game this season has changed from 7.1 kilometres.
+        
+        \item The sample size of 26 is greater than 20, so the Central Limit Theorem can be invoked. The sampling distribution of the sample mean may therefore be treated as approximately normal. The sample size also helps justify the sample standard deviation being used as an estimate of the population standard deviation, supporting the use of an approximate $z$-test.
+    \end{enumerate}
+    
+    \item
+    \begin{enumerate}
+        \item In this course, the sample size must be greater than 20.
+        
+        \item Assume that the population standard deviation of loaf mass remains unchanged at 20 grams.
+        
+        \item Since $-\text{4.25}<-\text{1.64}$, reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is sufficient evidence to suggest that the population mean mass of a loaf has decreased from 500 grams.
+    \end{enumerate}
+    
+    \item Assume that the sample of pine martens is random.\newline
+    Assume that the population standard deviation of pine marten mass remains unchanged at 0.23 kilograms.\newline
+    Since $\text{1.43}<\text{1.64}$, do not reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is insufficient evidence to suggest that the population mean mass of a pine marten in Scotland has increased from 1.31 kilograms.
+    
+    \item Assume that the population standard deviation of run times remains unchanged at 1.4 minutes.\newline
+    Since $-\text{1.81}>-\text{3.29}$, do not reject $\text{H}_{\text{0}}$ at the 0.1\% level of significance. There is insufficient evidence to suggest that the population mean time taken to complete the run is no longer 26.3 minutes.
+    
+    \item Since $\text{1.66}>\text{1.64}$, reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is sufficient evidence to suggest that the population mean amount of data used per customer is greater than 8.6 gigabytes per month.
+    
+    \item
+    \begin{enumerate}
+        \item Assume that the sample of teachers is random.
+        
+        \item Since $-\text{2.29}<-\text{1.64}$, reject $\text{H}_{\text{0}}$ at the 10\% level of significance. There is sufficient evidence to suggest that the population mean annual amount spent on photocopying per teacher differs from £12.
+    \end{enumerate}
+    
+    \item Since $\text{2.83}>\text{1.64}$, reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is sufficient evidence to suggest that the population mean time taken for a kettle to boil one litre of water is greater than the stated 65 seconds.
+    
+    \item
+    \begin{enumerate}
+        \item Assume that the population standard deviation of petrol consumption remains unchanged at 0.3 litres.\newline
+        Assume that the five journeys form a random sample of journeys and that their petrol consumptions are independent.
+        
+        \item Since $-\text{2.24}>-\text{2.58}$, do not reject $\text{H}_{\text{0}}$ at the 1\% level of significance. There is insufficient evidence to suggest that the population mean volume of petrol used on a journey from Glasgow to Blackburn has changed from 15.7 litres.
+    \end{enumerate}
 \end{enumerate}
 
 []{#ex105a}
@@ -2622,42 +2700,139 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 #### [Exercise 10.5](#ex105q) {-}
 
 \begin{enumerate}
-    \item $-2.985<-1.895\implies \textit{reject }H_0$
-    \item $0.636<1.476\implies \textit{do not reject }H_0$
-    \item $2.317<2.447\implies \textit{do not reject }H_0$
-    \item $-3.531<-2.821\implies \textit{reject }H_0$
+    \item Since $-\text{2.985}<-\text{1.895}$, reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is sufficient evidence to suggest that the population mean sugar content per 100 grams of frozen pizza is less than 5 grams.
+    
+    \item Since $\text{0.636}<\text{1.476}$, do not reject $\text{H}_{\text{0}}$ at the 10\% level of significance. There is insufficient evidence to suggest that the population mean time taken for a game to resume after a goal is greater than 30 seconds.
+    
+    \item Assume that the mass a tripod can withstand before failure is normally distributed.\newline
+    Since $-\text{3.527}<-\text{2.821}$, reject $\text{H}_{\text{0}}$ at the 1\% level of significance. There is sufficient evidence to suggest that the population mean mass the tripods can withstand before failure is less than 4.5 kilograms.
+    \pagebreak
+    \item Assume that the acidity levels of white \textit{Vinho Verde} wines made using the \textit{alvarinho} grape are normally distributed.\newline
+    Since $-\text{6.279}<-\text{2.228}$, reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is sufficient evidence to suggest that the population mean acidity level of white \textit{Vinho Verde} wines made using the \textit{alvarinho} grape differs from the worldwide mean of 3.4 pH.
+    
+    \item Since $\text{1.326}<\text{2.262}$, do not reject $\text{H}_{\text{0}}$ at the 2.5\% level of significance. There is insufficient evidence to suggest that the drug increases the population mean amount of sleep.
+    
+    \item Since $\text{3.606}>\text{2.650}$, reject $\text{H}_{\text{0}}$ at the 1\% level of significance. There is sufficient evidence to suggest that the population mean mass of the bass guitars now being produced is greater than 9.4 pounds.
+    
+    \item Assume that the masses reached by chicks given the soybean-based supplement after six weeks are normally distributed.\newline
+    Since $-\text{0.941}>-\text{2.160}$, do not reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is insufficient evidence to suggest that giving chicks a soybean-based supplement affects their population mean mass after six weeks.
+    
+    \item Assume that the sample of loblolly pine trees is random.\newline
+    Since $\text{2.169}<\text{2.624}$, do not reject $\text{H}_{\text{0}}$ at the 1\% level of significance. There is insufficient evidence to suggest that the population mean height of loblolly pine trees in the region is greater than 30 feet.
+    
+    \item
+    \begin{enumerate}
+        \item $\text{H}_{\text{0}}:\mu=\text{45}$ and $\text{H}_{\text{1}}:\mu\ne\text{45}$.
+        
+        \item $t=\text{2.277}$
+        
+        \item $t=\text{2.262}$
+        
+        \item Since $\text{0.0488}<\text{0.05}$, reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is sufficient evidence to suggest that the population mean time taken by pupils to complete the new course differs from 45 minutes.
+        
+        \item Volunteer sampling was used. This may not produce a representative sample because pupils who volunteered promptly may differ systematically from the wider population of pupils, for example in their fitness, enthusiasm or confidence.
+    \end{enumerate}
+    
+    \item Since $-\text{0.962}>-\text{1.943}$, do not reject $\text{H}_{\text{0}}$ at the 10\% level of significance. There is insufficient evidence to suggest that low temperature affects the population mean carbon dioxide uptake rate of the grass plant.
 \end{enumerate}
+
 
 []{#ex106a}
 
 #### [Exercise 10.6](#ex106q) {-}
 
 \begin{enumerate}
-    \item $1.52<1.64\implies \textit{do not reject }H_0$
-    \item $2.42>2.33\implies \textit{reject }H_0$
-    \item $-2.78<-1.64\implies \textit{reject }H_0$
-    \item $1.17<1.96\implies \textit{do not reject }H_0$
-    \item $-2.04>-2.58\implies \textit{do not reject }H_0$
-    \item $-2.2<-1.64\implies \textit{reject }H_0$
+    \item $np=\text{500}\times\text{0.5}=\text{250}>5$ and $nq=\text{500}\times\text{0.5}=\text{250}>5$, so a normal approximation is appropriate.\newline
+    Since $\text{1.52}<\text{1.64}$, do not reject $\text{H}_{\text{0}}$ at the 10\% level of significance. There is insufficient evidence to suggest that the coin is biased.
+    
+    \item $np=\text{312}\times\text{0.6}=\text{187.2}>5$ and $nq=\text{312}\times\text{0.4}=\text{124.8}>5$, so a normal approximation is appropriate.\newline
+    Since $\text{2.40}>\text{2.33}$, reject $\text{H}_{\text{0}}$ at the 1\% level of significance. There is sufficient evidence to support the newspaper's claim that more than 60\% of its readers are car owners.
+    
+    \item $np=\text{1000}\times\text{0.5}=\text{500}>5$ and $nq=\text{1000}\times\text{0.5}=\text{500}>5$, so a normal approximation is appropriate.\newline
+    Since $\text{6.13}>\text{1.64}$, reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is sufficient evidence to suggest that a majority of teenagers support a ban on mobile phones in schools.
+    
+    \item $np=\text{400}\times\text{0.1}=\text{40}>5$ and $nq=\text{400}\times\text{0.9}=\text{360}>5$, so a normal approximation is appropriate.\newline
+    Since $-\text{1.83}>-\text{1.96}$, do not reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is insufficient evidence to suggest that the proportion of surgeons who are left-handed differs from 10\%.
+    
+    \item $np=\text{82}\times\text{0.2}=\text{16.4}>5$ and $nq=\text{82}\times\text{0.8}=\text{65.6}>5$, so a normal approximation is appropriate.\newline
+    Since $-\text{2.04}>-\text{2.33}$, do not reject $\text{H}_{\text{0}}$ at the 1\% level of significance. There is insufficient evidence to suggest that fewer than 20\% of the plants grown from the company's seeds will have red flowers.
+    
+    \item
+    \begin{enumerate}
+        \item Under $\text{H}_{\text{0}}$, $np=\text{50}\times\text{0.018}=\text{0.9}<5$. The conditions for a normal approximation are therefore not satisfied, so a $z$-test would not be appropriate.
+        
+        \item The conditions require
+        \[
+        \text{0.018}n>5
+        \quad\text{and}\quad
+        \text{0.982}n>5.
+        \]
+        The first condition requires $n>\text{277.777}\ldots$, so the minimum sample size is $n=\text{278}$.
+        
+        \item $np=\text{500}\times\text{0.018}=\text{9}>5$ and $nq=\text{500}\times\text{0.982}=\text{491}>5$, so a normal approximation is appropriate.\newline
+        Since $\text{1.68}>\text{1.64}$, reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is sufficient evidence to suggest that the proportion of bags which are flavourless is greater than 1.8\%, so the manufacturers should be concerned with the process.
+    \end{enumerate}
+    \pagebreak
+    \item $np=\text{189}\times\text{0.07}=\text{13.23}>5$ and $nq=\text{189}\times\text{0.93}=\text{175.77}>5$, so a normal approximation is appropriate.\newline
+    Since $-\text{1.49}>-\text{1.64}$, do not reject $\text{H}_{\text{0}}$ at the 10\% level of significance. There is insufficient evidence to suggest that the proportion of employed adults in Scotland working in construction has changed from 7\%.
+    
+    \item $np=\text{60}\times\text{0.75}=\text{45}>5$ and $nq=\text{60}\times\text{0.25}=\text{15}>5$, so a normal approximation is appropriate.\newline
+    Since $-\text{2.09}>-\text{2.33}$, do not reject $\text{H}_{\text{0}}$ at the 1\% level of significance. There is insufficient evidence to suggest that the proportion of games in which the referee is instructed to watch a pitchside replay is less than three-quarters.
+    
+    \item $np=\text{25}\times\text{0.5}=\text{12.5}>5$ and $nq=\text{25}\times\text{0.5}=\text{12.5}>5$, so a normal approximation is appropriate.\newline
+    Assume that the pupils form a random sample from the school.\newline
+    Since $\text{1.80}>\text{1.64}$, reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is sufficient evidence to support the teacher's claim that the majority of pupils in the school prefer cats to dogs.
+    
+    \item $np=\text{60}\times\text{0.8}=\text{48}>5$ and $nq=\text{60}\times\text{0.2}=\text{12}>5$, so a normal approximation is appropriate.\newline
+    Since $-\text{1.94}<-\text{1.64}$, reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is sufficient evidence to suggest that the proportion of the chain's restaurants in which the vegan alternative is available is less than 80\%, and that the chain is exaggerating its availability.
+    
+    \item $np=\text{300}\times\text{0.95}=\text{285}>5$ and $nq=\text{300}\times\text{0.05}=\text{15}>5$, so a normal approximation is appropriate.\newline
+    Since $-\text{2.12}<-\text{1.64}$, reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is sufficient evidence to suggest that fewer than 95\% of the manufacturer's batteries remain operational after one year of normal use, so the manufacturer's claim is too optimistic.
+    
+    \item $np=\text{500}\times\text{0.55}=\text{275}>5$ and $nq=\text{500}\times\text{0.45}=\text{225}>5$, so a normal approximation is appropriate.\newline
+    Since $-\text{1.71}<\text{1.28}$, do not reject $\text{H}_{\text{0}}$ at the 10\% level of significance. There is insufficient evidence to support the candidate's claim that they received support from more than 55\% of students.
+    
+    \item $np=\text{150}\times\text{0.3}=\text{45}>5$ and $nq=\text{150}\times\text{0.7}=\text{105}>5$, so a normal approximation is appropriate.\newline
+    Since $\text{2.32}<\text{2.58}$, do not reject $\text{H}_{\text{0}}$ at the 1\% level of significance. There is insufficient evidence to suggest that the proportion of gardens containing a bird feeder differs from 30\%.
 \end{enumerate}
+
 
 []{#re10a}
 
 #### [Chapter 10 Review Exercise](#re10q) {-}
 
 \begin{enumerate}
-    \item $-2.54<-2.33\implies \textit{reject }H_0$
-    \item $2.158<2.365\implies \textit{do not reject }H_0$
-    \item $-1.94<-1.64\implies \textit{reject }H_0$
-    \item $-3.00<-2.33\implies \textit{reject }H_0$
-    \item $-2.170<-1.895\implies \textit{reject }H_0$
+    \item
+    \begin{enumerate}
+        \item The sample size of 24 is greater than 20, so the Central Limit Theorem can be invoked and the sampling distribution of the sample mean may be treated as approximately normal. The sample standard deviation may also be used as an estimate of the population standard deviation, allowing an approximate $z$-test to be performed.
+        
+        \item Since $-\text{2.54}<-\text{2.33}$, reject $\text{H}_{\text{0}}$ at the 1\% level of significance. There is sufficient evidence to suggest that the drug reduces the population mean recovery time from 11 days.
+    \end{enumerate}
+    
+    \item Assume that the mass of a front bumper produced by the new machine is normally distributed.\newline
+    Since $\text{2.154}<\text{2.365}$, do not reject $\text{H}_{\text{0}}$ at the 5\% level of significance. There is insufficient evidence to suggest that the population mean mass of a front bumper produced by the new machine has changed from 2.8 kilograms.
+    
+    \item
+    \begin{enumerate}
+        \item The test statistic is $-\text{0.48}$. A decision cannot be made without a specified significance level.
+        
+        \item Assume that the population standard deviation of car speeds remains unchanged at 16 miles per hour.
+    \end{enumerate}
+    
+    \item Since $-\text{3.01}<-\text{2.33}$, reject $\text{H}_{\text{0}}$ at the 1\% level of significance. There is sufficient evidence to suggest that the proportion of the instructor's students who pass their driving test first time is less than 90\%.
+    
+    \item
+    \begin{enumerate}
+        \item Assume that the reaction times of the sprinters are normally distributed.\newline
+        Since $-\text{2.170}<-\text{1.895}$, reject $\text{H}_{\text{0}}$ at the 10\% level of significance. There is sufficient evidence to suggest that the population mean reaction time of the sprinters at the club has changed from 185 milliseconds.
+        
+        \item The eight sprinters in the gold-medal race would not form a random or representative sample of the club's sprinters, since the fastest sprinters are likely to have qualified for the race. Their reaction times may also not be independent because they would be recorded under the same race conditions.
+    \end{enumerate}
 \end{enumerate}
 
-
+\newpage
 
 #### Chapter 11 - Confidence Intervals {-}
-
-
 
 
 []{#ex111a}

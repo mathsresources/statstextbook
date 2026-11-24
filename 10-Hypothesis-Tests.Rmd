@@ -1,23 +1,88 @@
 # An Introduction to Hypothesis Testing
 
-Hypothesis testing is an approach to assessing the *statistical evidence for a claim* by analysing a sample of data. The claim will typically relate to some aspect of the distribution of a population of interest, often a *parameter* such as the *population mean*, $\mu$. The foundation of hypothesis testing lies in *probability*.
+Hypothesis testing is an approach to *assessing a claim* about a population by analysing a sample of data. The claim will typically relate to some aspect of the distribution of a population of interest, often a *parameter* such as the *population mean*, $\mu$. The foundation of hypothesis testing lies in probability.
 
 ### The Logic of Hypothesis Testing {-}
 
 Consider the following scenarios:  
 
-\begin{itemize}
+\newcommand{\dicenum}[1]{%
+\pgfmathparse{#1==2 || #1==4 || #1==5 || #1==6}\ifnum\pgfmathresult>0\relax%
+\fill[black] (0.5,0.5) circle[radius=1/6];    % top left
+\fill[black] (-0.5,-0.5) circle[radius=1/6];\fi % bottom right
+\pgfmathparse{#1==3 || #1==4 || #1==5 || #1==6}\ifnum\pgfmathresult>0\relax%
+\fill[black] (-0.5,0.5) circle[radius=1/6];    % top right
+\fill[black] (0.5,-0.5) circle[radius=1/6];\fi % bottom left
+\pgfmathparse{#1==1 || #1==3 || #1==5}\ifnum\pgfmathresult>0\relax%
+\fill[black] (0,0) circle[radius=1/6]; \fi % center
+\ifnum#1=6\relax%
+\fill[black] (0.5,0) circle[radius=1/6];     % middle left
+\fill[black] (-0.5,0) circle[radius=1/6];\fi % middle right
+}
+\newcounter{currnum}
+\setcounter{currnum}{1}
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\newcommand{\dice}[5]{
+\tdplotsetmaincoords{#3}{#4}
+\begin{scope}[shift={(#1,#2)}, tdplot_main_coords, rounded corners=#5, fill=white]
+\begin{scope}[canvas is xy plane at z=-1]
+\filldraw (-1,-1) rectangle (1,1);
+\end{scope}
+\begin{scope}[canvas is xz plane at y=-1]
+\filldraw (-1,-1) rectangle (1,1);
+\end{scope}
+\begin{scope}[canvas is yz plane at x=-1]
+\filldraw (-1,-1) rectangle (1,1);
+\end{scope}
+\begin{scope}[canvas is xy plane at z=1]
+\filldraw (-1,-1) rectangle (1,1);
+\dicenum{\value{currnum}}
+\stepcounter{currnum}
+\ifnum\value{currnum}>6\relax\setcounter{currnum}{1}\fi
+\end{scope}
+\begin{scope}[canvas is xz plane at y=1]
+\filldraw (-1,-1) rectangle (1,1);
+\dicenum{\value{currnum}}
+\stepcounter{currnum}
+\ifnum\value{currnum}>6\relax\setcounter{currnum}{1}\fi
+\end{scope}
+\begin{scope}[canvas is yz plane at x=1]
+\filldraw (-1,-1) rectangle (1,1);
+\dicenum{\value{currnum}}
+\stepcounter{currnum}
+\ifnum\value{currnum}>6\relax\setcounter{currnum}{1}\fi
+\end{scope}
+\end{scope}
+}
+\dice{0}{0}{70}{110}{0.3cm};
+\def\r{1.4cm}
+        \foreach \y in {-6}{
+        \draw[shift={(\y,0)},thick, rounded corners=2pt] 
+        (0:\r) \foreach \x in {51.43, 102.86, ..., 359} {
+        -- (\x:\r)
+        } -- cycle;
+        }
+        \node at (-6,0) {\textbf{T}};
+        \draw[thick] (6,0) circle (1.4cm);
+    \node at (6,0) {\textbf{7}};
+\end{tikzpicture}
+\end{center}
+
+\begin{itemize}[itemsep=0.5pt]
     \item A coin is tossed 50 times, and it lands showing tails 47 of those times.
-    \item A cubical die is tossed 80 times, and a six is obtained only once.
-    \item A random number generator for integers from 1 to 10 gives the same number eight times in a row.
+    \item A six-sided die is rolled 80 times, and the average score across the 80 rolls is 5.4.
+    \item A random number generator for integers from 1 to 10 returns a 7 twelve times in a row.
 \end{itemize}
 
-In each of these scenarios, there are two possible explanations:
+
+
+In each of these scenarios, there are two broad possible explanations:
 
 \begin{center}
 \begin{tabular}{ccc}
-     & \textit{The coin, die and number generator are all fair,}& \\
-     & \textit{and a very unlikely event simply happened by random chance...} & \\
+     & \textit{The coin and die are fair, and the number generator is working correctly,}& \\
+     & \textit{but very unlikely results have occurred purely by chance...} & \\
      && \\
      & \textbf{or} & \\
      && \\
@@ -25,22 +90,31 @@ In each of these scenarios, there are two possible explanations:
 \end{tabular}
 \end{center}
 
-A formal process is required that allows a decision to be made between these two possibilities. This process, called **hypothesis testing**, informs a substantial part of the remainder of the course.
+A formal process is required to assess whether the observed result could reasonably be attributed to random chance, or whether there is sufficient evidence against this explanation. This process, called *hypothesis testing*, informs a substantial part of the remainder of the course.
 
 \pagebreak
 
 ## The Null Hypothesis and the Alternative Hypothesis
 
-Many studies collect data in order to test claims using statistical inference. A hypothesis test begins with two competing claims about a population parameter: the **null hypothesis** and the **alternative hypothesis**. Initially in this chapter, these will consist of claims about the value of the *population mean*, $\mu$. The null hypothesisA conservative stance in opposition to the alternative hypothesis will be used as the basis for all calculations, assuming that the claim is *not true*. This is called the **null hypothesis**, or $\text{H}_\text{0}$. These may be thought of *informally* as:
+A hypothesis test begins with two competing claims about a feature of one or more populations. Initially in this chapter, these claims will concern the population mean, $\mu$.
+
+A conservative position is adopted as the starting point for the analysis. This claim is called the **null hypothesis**, denoted by $\text{H}_0$, and it is treated as the starting assumption unless the sample data provide sufficient evidence against it. The competing claim is called the **alternative hypothesis**, denoted by $\text{H}_1$.
+
+These may be thought of *informally* as:
 
 \begin{center}
-    \begin{tabular}{llll}
-        The null hypothesis & $\text{H}_\text{0}$ & \textit{``Nothing meaningful is happening.''}\\
-        The alternative hypothesis & $\text{H}_\text{1}$ & \textit{``Something meaningful is happening.''}
+    \begin{tabular}{lll}
+        The null hypothesis & $\text{H}_0$ & \textit{``Nothing is happening.''}\\
+        The alternative hypothesis & $\text{H}_1$ & \textit{``Something is happening.''}
     \end{tabular}
 \end{center}
 
-It is *essential* that both hypotheses are formed *before* observing the data. It should also first be decided whether evidence is being sought for the true value of the population mean being *less than* a specified value, *greater than* a specified value, or simply *different from* a specified value. When the alternative hypothesis is only interested in a *single direction*, the test being performed is described as  **_one-tailed_**. When the alternative hypothesis is interested in a change in *either direction* from the specified value, it is referred to as a **_two-tailed_** test.
+Both hypotheses should be formulated *before* examining the data to be analysed. It should also be decided whether evidence is being sought that the population mean is *less than* a specified value, *greater than* a specified value, or simply *different from* a specified value.
+
+When the alternative hypothesis specifies a departure in only *one direction*, the test is described as **one-tailed**. When the alternative hypothesis allows for a departure in *either direction*, the test is described as **two-tailed**.
+
+
+
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} State the null and alternative hypotheses for each of the following claims.
@@ -48,16 +122,16 @@ It is *essential* that both hypotheses are formed *before* observing the data. I
 \vspace{0.2cm}
 
 \begin{enumerate}
-    \item[(a)] The mean volume of liquid in espressos sold by a café is less than the 30ml stated on their menu. 
-    \item[(b)] The mean mass of red squirrels in a woodland population is different from the previously measured 240g.
+    \item[(a)] The mean volume of liquid in espressos sold by a café is less than the 30ml stated on its menu. 
+    \item[(b)] The mean mass of stoats in a woodland population is different from the previously measured 240g.
 \end{enumerate}
 
 \tcblower
 \textbf{Solution:}
 \begin{enumerate}
     \begin{multicols}{2}
-    \item[(a)] $\text{H}_\text{0}:$  $\mu=\text{30}$ \quad \textnormal{  One-tailed.}\\ $\text{H}_\text{1}:$  $\mu<\text{30}$
-    \item[(b)] $\text{H}_\text{0}:$  $\mu=\text{240}$ \quad \textnormal{Two-tailed.}\\ $\text{H}_\text{1}:$  $\mu\ne\text{240}$
+    \item[(a)] $\text{H}_\text{0}:$  $\mu=\text{30}$\\ $\text{H}_\text{1}:$  $\mu<\text{30} \quad \textnormal{One-tailed test.}$
+    \item[(b)] $\text{H}_\text{0}:$  $\mu=\text{240}$\\ $\text{H}_\text{1}:$  $\mu\ne\text{240} \quad \textnormal{Two-tailed test.}$
     \end{multicols}
 \end{enumerate}
 \end{tcolorbox}
@@ -66,7 +140,7 @@ It is *essential* that both hypotheses are formed *before* observing the data. I
 
 #### [Exercise 10.1](#ex101a) {-}
 
-For each proposed hypothesis test, state the **null hypothesis** and the **alternative hypothesis**.
+For each proposed hypothesis test, state the null hypothesis and the alternative hypothesis.
 
 \begin{enumerate}
     \item A telecommunications provider wishes to test whether the mean amount of data used by its customers is more than 8.6 gigabytes per month.
@@ -74,107 +148,128 @@ For each proposed hypothesis test, state the **null hypothesis** and the **alter
     \item A farmer wants to test whether the mean mass of the newborn lambs from his flock is less than 4.2 kilograms.
     \item A sports statistician is planning a hypothesis test to assess the evidence that the mean actual playing time during a game of football has changed from 58 minutes.
     \item A kettle manufacturer wishes to test whether the mean time for its kettles to boil one litre of water is more than the 65 seconds stated on the packaging.
-    \item A teacher is monitoring the time a random sample of teachers from across Scotland spend writing reports during a school year, to assess whether there is evidence that an education authority's claim that the mean is 10 hours is valid.
-    \item A music fan measures the tempo (in beats per minute) of a sample of songs on a streaming platform to test whether the mean across all the platform's songs is faster than 160 beats per minute.
-    \item The mean volume of petrol a driver uses driving from Glasgow to Blackburn, for a randomly selected sample of such journeys, is 15.7 litres. The driver wishes to test whether the mean volume of petrol used has changed.
+    \item A teacher monitors the time spent writing reports during a school year by a random sample of teachers from across Scotland. The teacher wishes to test whether the population mean time differs from an education authority’s claimed value of 10 hours.
+    \item A music fan notes the tempo (in beats per minute) of a random sample of songs on a streaming platform to test whether the mean tempo across all the platform's songs exceeds 160 beats per minute.
+    \item The mean volume of petrol used by a driver when travelling from Glasgow to Blackburn has previously been found to be 15.7 litres. The driver records the volume used on a random sample of subsequent journeys and wishes to test whether the population mean has changed.
 \end{enumerate}
 
 \pagebreak
 
-### Evidence to Suggest {-}
+## The Significance Level and the \textit{p}-value
 
-The *true value* of a population parameter cannot be known by studying a sample. This means that, without a census of the entire population, a statistician will never say that they have *proved* or *disproved* a claim, and statistical conclusions are always expressed in terms of evidence, rather than certainty. A suitable conclusion should make a judgement on whether there is **sufficient evidence to suggest** or **insufficient evidence to suggest** a particular claim (represented by $\text{H}_\text{1}$) is true. 
+The *true value* of a population parameter cannot be known by studying a sample. This means that, without a census of the entire population, a statistician will never say that they have *proved* or *disproved* a claim. A suitable conclusion should state whether the data provide *sufficient evidence to suggest* that the claim represented by the alternative hypothesis is valid, or *insufficient evidence* to do so. 
 
-### The Significance Level and the \textit{p}-value {-}
+Once the null and alternative hypotheses have been stated, probability calculations are carried out using a starting assumption that *the null hypothesis is true*. The $\mathbf{\textit{p}}$\textbf{-value} is the probability, assuming the null hypothesis is true, of obtaining a result at least as extreme as the one observed, in the direction or directions specified by the alternative hypothesis.
 
-Once the null and alternative hypotheses have been stated, a conservative viewpoint is taken - it is *assumed that the null hypothesis is true*. Only an observed value that is then *very unlikely to have occurred by random chance* will lead to the decision to **reject the null hypothesis** in favour of the alternative hypothesis. The decision to *reject or not reject* is made with respect to the *null hypothesis*, whilst the *evidence (to suggest)*, or lack of, relates to the *alternative hypothesis*.
+The **significance level**, $\alpha$ (*"alpha"*), provides a threshold for deciding whether an observed result is sufficiently unlikely under the null hypothesis to justify rejecting it. The significance level should be decided before examining the data. A significance level of 5\% ($\alpha=\text{0.05}$) is commonly used when no other level has been specified.
 
-The probability of observing a result at least as extreme as the one obtained, assuming the null hypothesis is true and in the direction specified by the alternative hypothesis, is called the $\mathbf{p}$\textbf{-value}. A decision should be made in advance of collecting the data regarding the **significance level**, $\alpha$ (*"alpha"*). A significance level of 5\% ($\alpha=\text{0.05}$) is commonand is often used when no other significance level has been specified. It can be interpreted as the level of 'unlikeliness' that it would take in order to abandon $\text{H}_\text{0}$ in favour of $\text{H}_\text{1}$.
-
-When the $p$-value is less than $\alpha$ this is referred to as a *statistically-significant* result, and smaller $p$-values indicate stronger evidence against the null hypothesis.
+When the $p$-value is less than or equal to $\alpha$, the result is described as *statistically significant*. Smaller $p$-values indicate stronger evidence against the null hypothesis.
 
 \begin{centering}
 \tcbset{width=16cm}
 \begin{tcolorbox}[adjusted title=The decision rule for the $p$-value and the significance level $\alpha$:, halign title = center,colback=red!5,colframe=red!70!black, halign = center,center]
 \centering
-If $p\text{-value}\leqslant\alpha$ then \textbf{reject }$\mathbf{\text{H}_\text{0}}$ and conclude that\newline there is \textit{sufficient evidence to suggest} that the  alternative hypothesis is true.\\
-\vspace{0.5cm}
-If $p\text{-value}>\alpha$ then \textbf{do not reject }$\mathbf{\text{H}_\text{0}}$ and conclude that\newline there is \textit{insufficient evidence to suggest} that the alternative hypothesis is true.
+If $p\text{-value}\leqslant\alpha$ then \textbf{reject }$\mathbf{\text{H}_\text{0}}$ and conclude that there is\newline \textit{sufficient evidence to suggest} that the claim represented by $\text{H}_\text{1}$ is valid.\\
+\vspace{0.2cm}
+If $p\text{-value}>\alpha$ then \textbf{do not reject }$\mathbf{\text{H}_\text{0}}$ and conclude that there is\newline \textit{insufficient evidence to suggest} that the claim represented by $\text{H}_\text{1}$ is valid.
 \end{tcolorbox}
 \end{centering}
 
-Failing to reject the null hypothesis does not prove that it is true; it simply indicates that there is insufficient evidence against it. To avoid suggesting that evidence will ever be found for the null hypothesis, the phrase 'accept $\text{H}_\text{0}$' should **not be used**.
+Not rejecting the null hypothesis does not imply that it is true; it simply indicates that there is insufficient evidence against it. For this reason, the phrase 'accept $\text{H}_\text{0}$' should **not** be used.
 
-\begin{figure}[H]
-  \centering
-\begin{minipage}{.45\textwidth}
+\begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
+\textbf{Problem:} A random sample of physics textbooks is weighed to assess whether the mean mass exceeds 570g. The hypotheses, chosen significance level and the $p$-value calculated for the data are shown below.
 
-The level of significance influences the long-run risk of making a \textit{Type I Error} - incorrectly rejecting the null hypothesis when it is in fact true. Failing to reject the null hypothesis when it is in fact false is called a \textit{Type II Error}.
+\vspace{-0.2cm}
 
-\end{minipage}%
-  \centering
-\begin{minipage}{.0\textwidth}
-  \centering
-  
-  
-\end{minipage}%
-  \centering
-\begin{minipage}{.55\textwidth}
-  \centering
+\begin{center}
+    \begin{tabular}{lll}
+        $\text{H}_\text{0}:$  $\mu=\text{570}$ & \qquad\qquad & 10\% significance level \\
+        $\text{H}_\text{1}:$  $\mu>\text{570}$ && $p\text{-value}=\text{0.0461}$
+    \end{tabular}
+\end{center}
 
-\begin{flushright}
-  \begin{tabular}{| c|c c |} 
-  \hline
-      & Do Not Reject $\text{H}_\text{0}$ & Reject $\text{H}_\text{0}$\\ 
-  \hline
-     $\text{H}_\text{0}$ is true & \textit{Correct decision} & \textit{Type I error}\\ 
-     $\text{H}_\text{1}$ is true & \textit{Type II error} & \textit{Correct decision}\\ 
-  \hline
-\end{tabular}
-\end{flushright}
+\vspace{-0.2cm}
 
-\end{minipage}
-\end{figure}
+Write down a suitable conclusion to the hypothesis test.
 
-When performing *any* significance test the following procedure is generally performed:
+\tcblower
 
-\begin{itemize}[itemsep=0pt]
-    \item Determine \textbf{which hypothesis test} is appropriate for the data and the focus of the study.
-    \item Decide on a suitable \textbf{significance level} ($\alpha$).
-    \item State the \textbf{null hypothesis} ($\text{H}_\text{0}$) and the \textbf{alternative hypothesis} ($\text{H}_\text{1}$).
-    \item Calculate the \textbf{test statistic} under the assumption that \textit{the null hypothesis is true}.
-    \item Determine the \textbf{critical value}, or calculate the $p$-value.
-    \item Decide whether to \textbf{reject or not reject} $\text{H}_\text{0}$.
-    \item Write a suitable statistical \textbf{conclusion}.
-\end{itemize}
+Since $\text{0.0461}<\text{0.1}$, reject $\text{H}_\text{0}$ at the 10\% significance level.\newline There is sufficient evidence to suggest the population mean mass of a physics textbook exceeds 570g.
 
-A conclusion should always be written in context, referring to the original claim.
+\end{tcolorbox}
+
+[]{#ex102q}
+
+#### [Exercise 10.2](#ex102a) {-}
+
+For each summarised hypothesis test, write down a suitable conclusion to the study.
+
+\begin{enumerate}
+    \item Study aim: to determine whether the mean mass of a field mouse is less than 25 grams.
+    \vspace{-0.2cm}
+    \begin{center}
+    \begin{tabular}{lll}
+        $\text{H}_\text{0}:$  $\mu=\text{25}$ & \qquad\qquad & 5\% significance level \\
+        $\text{H}_\text{1}:$  $\mu<\text{25}$ && $p\text{-value}=\text{0.0084}$
+    \end{tabular}
+    \end{center}
+    \vspace{-0.2cm}
+    \item Study aim: to test whether the mean recovery time from a cold using a new drug is different from 14 days.
+    \vspace{-0.2cm}
+    \begin{center}
+    \begin{tabular}{lll}
+        $\text{H}_\text{0}:$  $\mu=\text{14}$ & \qquad\qquad & 1\% significance level \\
+        $\text{H}_\text{1}:$  $\mu\ne\text{14}$ && $p\text{-value}=\text{0.0236}$
+    \end{tabular}
+    \end{center}
+    \vspace{-0.2cm}
+    \item Study aim: to assess a claim that an electric car's mean charging time is greater than the stated 11 hours.
+    \vspace{-0.2cm}
+    \begin{center}
+    \begin{tabular}{lll}
+        $\text{H}_\text{0}:$  $\mu=\text{11}$ & \qquad\qquad & 10\% significance level \\
+        $\text{H}_\text{1}:$  $\mu>\text{11}$ && $p\text{-value}=\text{0.3341}$
+    \end{tabular}
+    \end{center}
+    \vspace{-0.2cm}
+    \item Study aim: to find out if the mean daily November temperature in Dollar has changed from $\text{5.2}^{\circ} $ C.
+    \vspace{-0.2cm}
+    \begin{center}
+    \begin{tabular}{lll}
+        $\text{H}_\text{0}:$  $\mu=\text{5.2}$ & \qquad\qquad & 2.5\% significance level \\
+        $\text{H}_\text{1}:$  $\mu\ne\text{5.2}$ && $p\text{-value}<\text{0.0001}$
+    \end{tabular}
+    \end{center}
+\end{enumerate}
 
 \pagebreak
 
 ## One-Sample \textit{z}-Test for the Population Mean using a \textit{p}-value
 
-The *one-sample *$z$*-test for the population mean* is a hypothesis test used when a sample of data is taken from a population so that a claim about the *true value of the population mean*, $\mu$, can be assessed. Since $z$-tests rely on assumptions about population parameters and the normal distribution, they are classed as **parametric tests**.
+The *one-sample *$z$*-test for the population mean* is a hypothesis test used when a sample of data is taken from a population so that a claim about the value of the *population mean*, $\mu$, can be assessed. Since $z$-tests rely on assumptions about population parameters and the normal distribution, they are classed as **parametric tests**.
 
 \begin{centering}
 \tcbset{width=16cm}
 \begin{tcolorbox}[adjusted title=Conditions for the one-sample $z$-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
-    \item The \textit{sampling distribution of the sample mean} is \textbf{normal} (or approximately normal)
+    \item The \textit{sampling distribution of the sample mean} is \textbf{normal}.
     \item The \textit{population standard deviation}, $\sigma$, is \textbf{known}.
-    \item The observations are \textbf{independent} (typically assured through \textit{random sampling}).
+    \item The observations are \textit{independent}, usually justified through \textbf{random sampling}.
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
 
-If one or more of these conditions is not known to be satisfied, then it is required to make an **assumption** that it *is* satisfied for the test to be valid. In any statistical study assumptions that have been made should be recognised and consideration should be given as to whether they could be justified.
+If a condition cannot be established from the information provided, it may be necessary to state an **assumption** under which the test would be valid. Any assumptions made should be identified, and their plausibility should be considered. For example, when a previously established value of $\sigma$ is used, it may be necessary to assume that the population standard deviation has remained \textit{unchanged}. 
  
-Note that when the sample size is greater than 20 **the CLT can be invoked**, so the sample mean is at least *approximately* normally distributed regardless of the distribution of the underlying population. Also, for large sample sizes, the sample standard deviation, $s$, may be used as a reliable estimate of the population standard deviation, $\sigma$.
+When the sample size is greater than 20, the Central Limit Theorem can generally be invoked, allowing the sampling distribution of the sample mean to be treated as *approximately normal*. For the purposes of this course, when the sample size is sufficiently large, the sample standard deviation, $s$, may be used as an estimate of the population standard deviation, $\sigma$, allowing an approximate $z$-test to be performed.
 
-Probabilities relating to observed sample means have already been covered in Chapter 9, and the following examples will demonstrate how this leads to a calculated $p$-value for a hypothesis test based on a sample mean. Note below that, with a sample mean of 257 observed, and an alternative hypothesis that the true population mean is *less than* 260, the $p$-value is the probability of observing a sample mean *as extreme or more extreme* than 257. In the context of a claim that $\mu<\text{260}$, the $p$-value is therefore $\text{P}\left(\bar{X}<\text{257}\right)$.
+Note in the example below that, with a sample mean of 257 observed, and an alternative hypothesis that the true population mean is *less than* 260, the $p$-value is the probability of observing a sample mean *as extreme or more extreme* than 257. In the context of a claim that $\mu<\text{260}$, the $p$-value is therefore $\text{P}\left(\bar{X}<\text{257}\right)$.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} The designers of an electric car state that the distance that can be covered on a full charge is normally distributed, with a mean of 260 miles and a standard deviation of 10 miles. A car magazine randomly selects 14 of them from showrooms to be tested, with a sample mean of 257 miles obtained. Stating one assumption required, perform a hypothesis test to assess, at the 1\% level of significance, the claim by the car magazine that the mean distance is actually less than the designers' claim.
+\textbf{Problem:} The designers of an electric car state that the distance that can be covered on a full charge is normally distributed, with a mean of 260 miles and a standard deviation of 10 miles. A car magazine randomly selects 14 of the cars from showrooms to be tested, with a sample mean of 257 miles obtained.\\[0.1em]
+
+Stating one assumption required, perform a hypothesis test to assess, at the 1\% level of significance, the claim by the car magazine that the mean distance is actually less than the designers' claim.
 
 \tcblower
 \textbf{Solution:}
@@ -237,14 +332,14 @@ $P(\bar{X}<\text{257})=P\left(Z<\dfrac{\text{257}-\text{260}}{\frac{\text{10}}{\
 
 \vspace{0.1cm}
 
-Since $\text{0.1314}>\text{0.01}$, do not reject $\text{H}_\text{0}$ at the 1\% level of significance. There is insufficient evidence to suggest that the mean distance the car can cover on a full charge is less than the stated 260 miles, and so no evidence to support the car magazine's claim.
+Since $\text{0.1314}>\text{0.01}$, do not reject $\text{H}_\text{0}$ at the 1\% level of significance. There is insufficient evidence to suggest that the mean distance the car can cover on a full charge is less than the stated 260 miles.
 
 \end{tcolorbox}
 
 \pagebreak
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} The mass of crisps dispensed into a sharing-sized bag by a machine is normally distributed with a mean of 150g and a standard deviation of 2g. After being serviced, a random sample of 30 bags gives a mean of 150.8g. Test at the 5\% level of significance the claim that the machine is now dispensing too much.
+\textbf{Problem:} The mass of crisps dispensed into a sharing-sized bag by a machine is normally distributed with a mean of 150g and a standard deviation of 2g. After being serviced, a random sample of 30 bags gives a mean of 150.8g. Test at the 5\% significance level the claim that the machine now dispenses too much.
 
 \tcblower
 \textbf{Solution:}
@@ -299,7 +394,7 @@ Under $\text{H}_\text{0}$:\hspace{7cm}
 
 \vspace{-0.1cm}
 
-$P(\bar{X}>\text{150.8})=P\left(Z>\dfrac{\text{150.8}-\text{150}}{\frac{\text{2}}{\sqrt{\text{30}}}}\right)=P(Z>\text{2.19})=\text{0.0143}$\\[0.2em]
+$\text{P}(\bar{X}>\text{150.8})=\text{P}\left(Z>\dfrac{\text{150.8}-\text{150}}{\frac{\text{2}}{\sqrt{\text{30}}}}\right)=\text{P}(Z>\text{2.19})=\text{0.0143}$\\[0.2em]
 
 Since $\text{0.0143}<\text{0.05}$, reject $\text{H}_\text{0}$ at the 5\% level of significance. There is sufficient evidence to suggest that the mean mass of crisps dispensed per bag is more than 150g.
 
@@ -307,10 +402,14 @@ Since $\text{0.0143}<\text{0.05}$, reject $\text{H}_\text{0}$ at the 5\% level o
 
 For a *two-tailed* test, the probability of such an extreme result *in either direction* must be considered.
 
-For the example below, this equates to the probability of observing a sample mean with a difference of 1 gram or more from 82. Given a symmetrical distribution of the test statistic, such as with a $z$-test, a $p$-value for a two-tailed test is *double* the initial probability obtained by only considering probability in *one* tail. 
+For the example below, this equates to the probability of observing a sample mean with a difference of 1 gram or more from 82. Given a symmetrical distribution of the test statistic, such as with a $z$-test, a $p$-value for a two-tailed test is *double* the initial probability obtained by only considering the probability in *one* direction. 
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A tomato grower has been monitoring the mass of the tomatoes he grows, with the mean mass of a tomato shown to be 82 grams. Following a change in the soil composition in which they are grown, the grower wants to see whether the mean mass of their tomatoes has been affected. A sample of 36 tomatoes gives a mean mass of 83 grams and a standard deviation of 3 grams. It is assumed that the sample standard deviation is a reliable estimate of the population standard deviation. Perform a hypothesis test to determine whether there is evidence to suggest that the mean mass of their tomatoes has changed, stating one further assumption required and justifying the validity of the test with reference to the sample size.
+\textbf{Problem:} A tomato grower has been monitoring the mass of the tomatoes they grow, with the mean mass of a tomato shown to be 82 grams. Following a change in the soil composition in which they are grown, the grower wants to see whether the mean mass of their tomatoes has been affected.\\[0.1em]
+
+A sample of 36 tomatoes gives a mean mass of 83 grams and a standard deviation of 3 grams. It is assumed that the sample standard deviation is a reliable estimate of the population standard deviation.\\[0.1em]
+
+Perform a hypothesis test to determine whether there is evidence to suggest that the mean mass of their tomatoes has changed, stating one further assumption required and justifying the validity of the test with reference to the sample size.
 
 \tcblower
 \textbf{Solution:}
@@ -318,9 +417,9 @@ $\mu=\text{82}$, $\bar{x}=\text{83}$, $n=\text{36}$, $\sigma\approx \text{3}$\\
 
 \vspace{0.01cm}
 
-Assume that the sample of tomatoes was random. Since $n>\text{20}$, the distribution of the sample mean is approximately normally distributed regardless of the underlying distribution of the mass of a tomato.\\
+Assume that the sample of tomatoes was random. Since $n=36>\text{20}$, the distribution of the sample mean is approximately normally distributed regardless of the underlying distribution of the mass of a tomato.\\
 
-\vspace{0.3cm}
+\vspace{0.2cm}
 \begin{math}
 \begin{array}{ll}
       \text{H}_\text{0}: & \mu=\text{82}\\
@@ -375,11 +474,11 @@ Under $\text{H}_\text{0}$:\hspace{7cm}
 
 \vspace{-0.05cm}
 
-$P(\bar{X}>\text{83})=P\left(Z>\dfrac{\text{83}-\text{82}}{\frac{\text{3}}{\sqrt{\text{36}}}}\right)=P(Z>\text{2})=\text{0.0228}$\\
+$\text{P}(\bar{X}>\text{83})=\text{P}\left(Z>\dfrac{\text{83}-\text{82}}{\frac{\text{3}}{\sqrt{\text{36}}}}\right)=\text{P}(Z>\text{2})=\text{0.0228}$\\
 
 \vspace{0.1cm}
 
-$p$-value $=\text{2} \times \text{0.0228} = \text{0.0456}$ and $\alpha=\text{0.05}$\\[0.2em]
+$p$-value $=\text{2} \times \text{0.0228} = \text{0.0456}$ and $\alpha=\text{0.05}$\\[0.1em]
 
 Since $\text{0.0456}<\text{0.05}$, reject $\text{H}_\text{0}$ at the 5\% level of significance. There is sufficient evidence to suggest that the mean mass of the grower's tomatoes has changed from 82 grams.
 
@@ -387,14 +486,14 @@ Since $\text{0.0456}<\text{0.05}$, reject $\text{H}_\text{0}$ at the 5\% level o
 
 \pagebreak
 
-[]{#ex102q}
+[]{#ex103q}
 
-#### [Exercise 10.2](#ex102a) {-}
+#### [Exercise 10.3](#ex103a) {-}
 
 \begin{enumerate}
     \item A practice question is below, followed by a student's \textbf{flawed} solution, featuring a number of issues.
     \begin{tcolorbox}[colback=white,colframe=black!50]
-\textbf{Practice question:} The mass of dried tea leaves contained in each bag sold by tea company \textit{Brewed Awakenings} is known to be normally distributed with a standard deviation of 0.4 grams, and the mean amount contained in each bag should be 2.5 grams. It is suspected that the company's new machine is putting too little dried tea into each bag. A random sample of 10 bags have their contents measured, and the mean mass obtained from this sample is 2.3 grams.\\[0.5em] Perform a $z$-test to assess whether the new machine is putting too little dried tea into the bags, at the 5\% level of significance.
+\textbf{Practice question:} The mass of dried tea leaves contained in each bag sold by tea company \textit{Brewed Awakenings} is known to be normally distributed with a standard deviation of 0.4 grams, and the mean amount contained in each bag should be 2.5 grams. It is suspected that the company's new machine is putting too little dried tea into each bag. The contents of a random sample of 10 bags are measured, and the mean mass obtained from this sample is 2.3 grams.\\[0.5em] Assume that the population standard deviation in mass of dried tea leaves per bag remains unchanged. Perform a $z$-test to assess whether the population mean mass of dried tea dispensed into each bag by the new machine is less than 2.5 grams, at the 5\% level of significance.
 
 \tcblower
 \textbf{Student's flawed solution:}\\
@@ -427,71 +526,84 @@ Under $\text{H}_\text{0}$:\hspace{7cm}
   hide y axis,
   hide x axis
   ]
-\addplot [draw=none, fill=Black!20, domain=-3:-0.5] {gauss(x, 0, 1)} 
+\addplot [draw=none, fill=Black!20, domain=-3:-1.58] {gauss(x, 0, 1)} 
 \closedcycle;
  \addplot [semithick] {gauss(x, 0, 1)};
-\pgfmathsetmacro\valueA{gauss(-0.5,0,1)}
+\pgfmathsetmacro\valueA{gauss(-1.58,0,1)}
 \pgfmathsetmacro\valueB{gauss(0,0,1)}
-\fill[Black!20] (axis cs: -3,-0.02) rectangle (axis cs: -0.5,0);
-\draw [semithick, black]  (axis cs:-0.5,-0.02) -- (axis cs:-0.5,\valueA);
-\node[below] at (axis cs:-0.5,0)  {$-\text{0.5}$};
+\fill[Black!20] (axis cs: -3,-0.02) rectangle (axis cs: -1.58,0);
+\draw [semithick, black]  (axis cs:-1.58,-0.02) -- (axis cs:-1.58,\valueA);
+\node[below] at (axis cs:-1.58,0)  {$-\text{1.58}$};
 \node[above] at (axis cs: 0,\valueB)  {$Z$};
-\node at (axis cs: -2.2,0.2)  {30.85\%};
+\node at (axis cs: -2.3,0.2)  {5.71\%};
 \draw[semithick] (axis cs: -3,-0.02) -- (axis cs: 3,-0.02);
 \end{axis}
 \end{tikzpicture}\\ 
 
 \vspace{-0.1cm}
 
-$\text{P}(\bar{X}<\text{2.3})=\text{0.3085}$\\
+$\text{P}(\bar{X}<\text{2.3})=\text{0.0571}$\\
 
-$p\text{-value}=\text{0.3085}$\\
+$p\text{-value}=\text{0.0571}$\\
 
-Since $\text{0.3085}>\text{0.05}$, accept $\text{H}_\text{0}$ at the 5\% level of significance. There is insufficient evidence to suggest that the mass of dried tea leaves in a bag is less than 2.5 grams.
+Since $\text{0.0571}>\text{0.05}$, accept $\text{H}_\text{0}$ at the 5\% level of significance. There is insufficient evidence to suggest that the mass of dried tea leaves in a bag is less than 2.5 grams.
 
 \end{tcolorbox}
 The hypotheses given by the student lack the required clarity.
 \begin{enumerate}
     \item State suitable hypotheses which should be used instead.
 \end{enumerate}
-The $p$-value of 0.3085 calculated by the student is correct, but the student has not shown sufficient working.
+The $p$-value of 0.0571 calculated by the student is correct, but the student has not shown sufficient working.
 \begin{enumerate}[resume]
-    \item Show a minimum of two additional steps of working, which lead to the value of 0.3085.
+    \item Show a minimum of two additional steps of working, which lead to the value of 0.0571.
 \end{enumerate}
-Modern statisticians (and Advanced Higher Statistics students) must avoid using the outdated phrase '\textit{accept} $\textit{H}_\text{0}$', since it suggests the sample provides evidence \textit{for} the null hypothesis.
+The conclusion to the hypothesis test contains two major flaws.
 \begin{enumerate}[resume]
-    \item State an appropriate phrase to use instead of '\textit{accept} $\textit{H}_\text{0}$'.
+    \item Write down an improved conclusion to the hypothesis test.
 \end{enumerate}
-The final sentence in the student's conclusion is missing an important word.
-\begin{enumerate}[resume]
-    \item State the essential word which is missing.
-\end{enumerate}
-    \item The mass of ground coffee contained in each bag sold by coffee company \textit{Déjà Brew} is known to be normally distributed with a standard deviation of 7 grams, and the mean amount contained in each bag should be 240 grams. It is suspected that the company's new machine is putting too much ground coffee into each bag. A random sample of 18 bags have their contents measured, and the mean mass obtained from this sample is 242 grams.\\[0.5em] Perform a $z$-test to assess whether the new machine is putting too much ground coffee into the bags, at the 10\% level of significance.
-    \item The mass of cocoa powder contained in each bag sold by cocoa company \textit{Froth It Like It's Hot} is known to be normally distributed with a standard deviation of 11 grams, and the mean amount contained in each bag should be 180 grams. It is suspected that the company's new machine is not putting the right amount of cocoa powder into each bag. A random sample of 15 bags have their contents measured, and the mean mass obtained from this sample is 188 grams.\\[0.5em] Perform a $z$-test to assess whether the new machine is not putting the right amount of cocoa powder into the bags, at the 1\% level of significance.
+    \item The mass of ground coffee contained in each bag sold by coffee company \textit{Déjà Brew} is known to be normally distributed with a standard deviation of 7 grams, and the mean amount contained in each bag should be 240 grams. It is suspected that the population mean mass dispensed by the new machine exceeds 240 grams. A random sample of 18 bags have their contents measured, and the mean mass obtained from this sample is 242 grams.\\[0.5em] Assume that the population standard deviation of the mass of coffee dispensed is unchanged from 7 grams. Perform a $z$-test to assess whether the population mean mass of coffee dispensed exceeds 240 grams, at the 5\% level of significance.
+    \item The mass of cocoa powder contained in each bag sold by cocoa company \textit{Froth It Like It's Hot} is known to be normally distributed with a standard deviation of 11 grams, and the mean amount contained in each bag should be 180 grams. It is suspected that the population mean mass dispensed by the new machine differs from 180 grams. A random sample of 15 bags have their contents measured, and the mean mass obtained from this sample is 188 grams.\\[0.5em] Stating one assumption required, perform a $z$-test to assess whether the population mean mass of cocoa powder dispensed differs from 180 grams, at the 5\% level of significance.
 \end{enumerate}
 
 \pagebreak
 
 \begin{enumerate}[resume]
-    \item The length of cookery videos uploaded to a video sharing platform has been historically found to be normally distributed, with a mean of 11.7 minutes and a standard deviation of 2.3 minutes. A random sample of 30 videos uploaded this year tagged as 'cookery' on the platform gives a mean of 10.8 minutes. Assuming that the standard deviation of video length remains unchanged, test at the 5\% level of significance the claim that the mean length of cookery videos on the platform is now less than 11.7 minutes.
-    \item The time taken for a teacher to mark an exam paper is normally distributed with a mean of 6.3 minutes and a standard deviation of 0.8 minutes. After more detailed marking instructions are issued, a random sample of 25 papers results in a mean marking time of 6.5 minutes per paper. Assuming that the standard deviation of time taken remains unchanged, assess at the 1\% significant level the claim that the mean marking time has increased since the new marking instructions were introduced, using a hypothesis test.
-    \item The figure often quoted as the mean time spent with the ball being in play during a game of football is 58 minutes, with the standard deviation being 4 minutes, and it is assumed that the time for which the ball is in play is normally distributed. A sports statistician is planning a hypothesis test to assess the evidence that the mean time during which the ball is in play has changed from 58 minutes. A random sample of 15 games gives a mean time in play of 61 minutes.\\[0.5em] A $z$-test is to be used to assess the data.
+    \item Historically, the lengths of cookery videos uploaded to a video-sharing platform have been normally distributed, with a mean of 11.7 minutes and a standard deviation of 2.3 minutes. A random sample of 30 videos uploaded this year tagged as 'cookery' on the platform gives a mean of 10.8 minutes. Assuming that the standard deviation of video length remains unchanged, test at the 10\% level of significance the claim that the mean length of cookery videos on the platform is now less than 11.7 minutes.
+    \item The time taken for a teacher to mark an exam paper is normally distributed with a mean of 6.3 minutes. After more detailed marking instructions are issued, marking times for a random sample of 25 papers are recorded.
+    \begin{center}
+    \begin{tabular}{|p{5.4cm}|p{3cm}|}
+        \hline
+            Sample size & 25\\
+        \hline
+            Sample mean & 6.5 minutes\\
+        \hline
+            Sample standard deviation & 0.8 minutes\\
+        \hline
+    \end{tabular}
+    \end{center}
+    Assume that the sample standard deviation for the time taken may be used as a sufficiently accurate estimate for the population standard deviation.\\[0.5em] Use a $z$-test to assess the evidence, at the 1\% significance level, for the claim that the mean marking time has increased since the new marking instructions were introduced.
+    \item The figure often quoted as the mean time spent with the ball being in play during a game of football is 58 minutes, with the standard deviation being 4 minutes, and it is assumed that the time for which the ball is in play is normally distributed. A sports statistician is planning a hypothesis test to assess the evidence that the mean time during which the ball is in play has changed from 58 minutes. A sample of 15 games gives a mean time in play of 61 minutes.\\[0.5em] A $z$-test is to be used to assess the data.
     \begin{enumerate}
-        \item State one assumption required for the valid use of a $z$-test.
+        \item State two assumptions required for the valid use of a $z$-test.
         \item State suitable hypotheses for the test.
         \item Calculate the $p$-value for the test.
-        \item Use the answer from part (c) to conclude the test at the 1\% level of significance.
+        \item Use the answer from part (c) to conclude the test at the 2.5\% level of significance.
     \end{enumerate}
-    \item A farmer wants to test whether the mean mass of the newborn lambs from his flock is less than 4.2 kilograms. The mass of his newborn lambs is normally distributed, and the standard deviation has been previously established to be 0.3 kilograms. A random sample of 8 newborn lambs are weighed, and the sample mean is found to be 4.0 kilograms.
+    \item A farmer wants to test whether the mean mass of the newborn lambs from his flock has changed from 4.2 kilograms. The mass of his newborn lambs is normally distributed, and the standard deviation has been previously established to be 0.3 kilograms. A random sample of 8 newborn lambs is weighed, in kilograms:
+    \begin{center}
+    \begin{tabular}{p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}}
+        4.1 & 3.5 & 4.0 & 4.4 & 3.8 & 4.2 & 3.9 & 4.1
+    \end{tabular}
+    \end{center}
     \begin{enumerate}
         \item State one assumption required for the valid use of a $z$-test.
-        \item Perform a hypothesis test to assess the evidence at the 1\% level of significance that the mean mass of his newborn lambs is less than 4.2 kilograms.
+        \item Perform a hypothesis test to assess the evidence at the 10\% level of significance that the mean mass of his newborn lambs has changed from 4.2 kilograms.
     \end{enumerate}
-    \item Last year, the value of houses in an area were normally distributed, with a mean of £184 000 and a standard deviation of £7000. A random sample of 15 of the houses this year gives a mean value of £187 000. Perform a hypothesis test at the 10\% level of significance to assess the claim that the mean house price in the area has increased.
-    \item The heights of mature oak trees in some woodland are normally distributed with a standard deviation of 1.5 metres, and two years ago the mean height of the trees was found to be 21 metres. A random sample of 30 of these trees taken this year yields a sample mean of 20.4 metres. 
+    \item Last year, house values in an area were normally distributed, with a mean of £184 000 and a standard deviation of £7000. A random sample of 15 of the houses this year gives a mean value of £187 000. Perform a hypothesis test at the 5\% level of significance to assess the claim that the mean house price in the area has increased.
+    \item Two years ago a comprehensive study found the heights of mature oak trees in a woodland had a mean of 21 metres and a population standard deviation of 1.5 metres. A random sample of 30 of these trees taken this year yields a sample mean of 21.4 metres. 
     \begin{enumerate}
         \item Test at the 10\% level of significance the claim that the mean height of the trees has changed.
-        \item Explain why the sample size meant that a parametric test could have been used in part (a) even if it were not known that the heights of the mature oak trees are normally distributed.
+        \item Explain how the sample size supports the use of a $z$-test.
     \end{enumerate}
 \end{enumerate}
 
@@ -508,9 +620,9 @@ Test statistic: $z=\dfrac{\bar{x}-\mu}{\dfrac{\sigma}{\sqrt{n}}}$
 \end{tcolorbox}
 \end{centering}
 
-A $z$*-test statistic* of 0 occurs when the sample mean of the observed data is equal to the value for $\mu$ claimed by the null hypothesis. The further the test statistic is from 0, the more extreme the observed data is.
+A $z$*-test statistic* of 0 occurs when the sample mean of the observed data is equal to the value for $\mu$ claimed by the null hypothesis. The further the test statistic is from 0, the more extreme the observed data are.
 
-*Critical values* can be found by first considering *critical regions*. These are the most extreme regions of the sampling distribution of the test statistic; if the calculated test statistic lies within these regions, the null hypothesis is rejected. Critical values are the *boundaries* of these critical regions. Below are examples of critical regions (shown shaded), and critical values (shown below the axis), for a $z$ test statistic with a 5\% level of significance.
+*Critical values* can be found by first considering *critical regions*. These are the most extreme regions of the sampling distribution of the test statistic; if the calculated test statistic lies within these regions, the null hypothesis is rejected. Critical values are the *boundaries* of these critical regions. Below are examples of critical regions (shaded), and critical values (shown below the axis), for a $z$ test statistic with a 5\% level of significance.
 
 \begin{figure}[H]
   \centering
@@ -625,9 +737,9 @@ A $z$*-test statistic* of 0 occurs when the sample mean of the observed data is 
 
 For a one-tailed test, the most extreme 5\% of the distribution in the tail of interest is considered.
 
-For a two-tailed test, the 5\% least-likely observed values for the test statistic *in either direction* are considered. The significance level is split between 2.5\% in the upper tail and 2.5\% in the lower tail. The symmetry of the distribution means that the values to the left of the mean are the *negative* of the equivalent values on the right.
+For a two-tailed test, the 5\% least likely observed values for the test statistic *in either direction* are considered. The significance level is split between 2.5\% in the upper tail and 2.5\% in the lower tail. The symmetry of the distribution means that the values to the left of the mean are the *negative* of the equivalent values on the right.
 
-If the test statistic lies \textbf{within the critical region} then $\mathbf{\text{H}_\text{0}}$ is \textbf{rejected}, and so there is \textit{sufficient} evidence to suggest that the  alternative hypothesis is true. If the test statistic lies \textbf{outwith the critical region} then $\mathbf{\text{H}_\text{0}}$ is \textbf{not rejected}, and so there is \textit{insufficient} evidence to suggest that the alternative hypothesis is true.
+If the test statistic lies \textbf{within the critical region} then $\mathbf{\text{H}_\text{0}}$ is \textbf{rejected}, and so there is \textit{sufficient} evidence to suggest that the  alternative hypothesis is valid. If the test statistic lies \textbf{outwith the critical region} then $\mathbf{\text{H}_\text{0}}$ is \textbf{not rejected}, and so there is \textit{insufficient} evidence to suggest that the alternative hypothesis is valid.
 
 \begin{figure}[H]
   \centering
@@ -752,7 +864,9 @@ This approach is equivalent to the $p$-value method and will always lead to the 
 Note that the following examples approach problems already covered in the examples for the previous section, which used a *p*-value approach, and lead to identical conclusions to the hypothesis tests conducted.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} The designers of an electric car state that the distance that can be covered on a full charge is normally distributed, with a mean of 260 miles and a standard deviation of 10 miles. A car magazine randomly selects 14 of them from showrooms to be tested, with a sample mean of 257 miles obtained. Perform a hypothesis test to assess, at the 1\% level of significance, the claim by the car magazine that the mean distance is actually less than the designers' claim.
+\textbf{Problem:} The designers of an electric car state that the distance that can be covered on a full charge is normally distributed, with a mean of 260 miles and a standard deviation of 10 miles. A car magazine randomly selects 14 of the cars from showrooms to be tested, with a sample mean of 257 miles obtained.\\[0.1em]
+
+Stating one assumption required, perform a hypothesis test to assess, at the 1\% level of significance, the claim by the car magazine that the mean distance is actually less than the designers' claim.
 
 \tcblower
 \textbf{Solution:}
@@ -807,14 +921,18 @@ Test statistic: $z=\dfrac{\text{257}-\text{260}}{\dfrac{\text{10}}{\sqrt{\text{1
 
 Critical value: $z=-\text{2.33}$\\
 
-Since $-\text{1.12}>-\text{2.33}$, do not reject $\text{H}_\text{0}$ at the 1\% level of significance. There is insufficient evidence to suggest that the mean distance the car can cover on a full charge is less than the stated 260 miles, and so no evidence to support the car magazine's claim.
+Since $-\text{1.12}>-\text{2.33}$, do not reject $\text{H}_\text{0}$ at the 1\% level of significance. There is insufficient evidence to suggest that the mean distance the car can cover on a full charge is less than the stated 260 miles.
 
 \end{tcolorbox}
 
 When choosing a critical value for a two-tailed test, in which there are two critical regions, the critical value with the same sign (positive or negative) as the observed test statistic should be used in the conclusion.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A tomato grower has been monitoring the mass of the tomatoes he grows, with the mean mass of a tomato shown to be 82 grams. Following a change in the soil composition in which they are grown, the grower wants to see whether the mean mass of their tomatoes has been affected. A sample of 36 tomatoes gives a mean mass of 83 grams and a standard deviation of 3 grams. It is assumed that the sample standard deviation is a reliable estimate of the population standard deviation. Perform a hypothesis test to determine whether there is evidence to suggest that the mean mass of their tomatoes has changed, stating one further assumption required and justifying the validity of the test with reference to the sample size.
+\textbf{Problem:} A tomato grower has been monitoring the mass of the tomatoes they grows, with the mean mass of a tomato shown to be 82 grams. Following a change in the soil composition in which they are grown, the grower wants to see whether the mean mass of their tomatoes has been affected.\\[0.1em]
+
+A sample of 36 tomatoes gives a mean mass of 83 grams and a standard deviation of 3 grams. It is assumed that the sample standard deviation is a reliable estimate of the population standard deviation.\\[0.1em]
+
+Perform a hypothesis test to determine whether there is evidence to suggest that the mean mass of their tomatoes has changed, stating one further assumption required and justifying the validity of the test with reference to the sample size.
 
 \tcblower
 \textbf{Solution:}
@@ -879,19 +997,31 @@ Since $\text{2}>\text{1.96}$, reject $\text{H}_\text{0}$ at the 5\% level of sig
 
 \pagebreak
 
-[]{#ex103q}
+[]{#ex104q}
 
-#### [Exercise 10.3](#ex103a) {-}
+#### [Exercise 10.4](#ex104a) {-}
 
 \begin{enumerate}
-    \item A packing process packages ground coffee into bags. The mass of each bag is normally distributed, with standard deviation 15g. To comply with the technical standards stipulated for the process, the mean mass of coffee per bag should be 500g. After a recent adjustment of some of the machinery involved in the process, a random sample of 25 bags is taken and the sample mean is found to be 512g.\\[0.5em] Test the claim that there has been a change in the mean mass of coffee per bag at the 5\% level of significance.
+    \item A packing process packages ground coffee into bags. The mass of each bag is normally distributed, with standard deviation 15g. To comply with the technical standards stipulated for the process, the mean mass of coffee per bag should be 500g. After a recent adjustment of some of the machinery involved in the process, a random sample of 25 bags is taken and the sample mean is found to be 512g.\\[0.5em] Assuming that the standard deviation is unchanged, test the claim that there has been a change in the mean mass of coffee per bag at the 5\% level of significance.
     \item The lengths of metal bars produced by a particular machine in a factory are normally distributed with mean length 420cm and standard deviation 12cm. The machine is serviced, after which a random sample of 80 bars gives a mean length of 423cm.\\[0.5em] Perform a parametric test to assess whether there is evidence at the 1\% level of significance of an increase in the mean length of the bars produced, assuming the standard deviation of bar length remains the same.
-    \item In 1980 the mass of a herring in the North Sea was found to be normally distributed with a mean of 160g and a standard deviation of 10g. In 2020 a sample of 15 herrings yielded a mean mass of 158g.\\[0.5em] Assuming that the standard deviation is unchanged, test at the 1\% level of significance the hypothesis that the mean mass has decreased since 1980.
+    \item In 1980 the mass of a herring in the North Sea was found to be normally distributed with a mean of 160g and a standard deviation of 10g. In 2020 a random sample of 15 herrings yielded a mean mass of 158g.\\[0.5em] Assuming that the standard deviation is unchanged, test at the 1\% level of significance the hypothesis that the mean mass has decreased since 1980.
     \item The mass of a pack of salt is normally distributed with a mean of 200g and a standard deviation of 12g. After servicing, it is suspected that the salt dispensing machine is not dispensing the same mean amount of salt. A sample of 23 bags yields a mean mass of 205g per pack.\\[0.5em] Stating two assumptions required, test the hypothesis that the mean amount of salt dispensed by the machine is no longer 200g.
-    \item Last season, the mean distance a player ran per game by the players of a football team was 7.1km. A random sample, of size 26, of distances run by players so far this season gave a sample mean distance covered of 7.3km and a standard deviation of 0.7km.\\[0.6em] It is assumed that the sample size is sufficiently large that the sample standard deviation is a reliable estimate of the population standard deviation.
+    \item Last season, the mean distance a player ran per game by the players of a football team was 7.1km. This season, a random selection of players are observed for a randomly chosen game each, and the distances they run are recorded.
+    \begin{center}
+    \begin{tabular}{|p{5.4cm}|p{3cm}|}
+        \hline
+            Sample size & 26\\
+        \hline
+            Sample mean & 7.3km\\
+        \hline
+            Sample standard deviation & 0.7km\\
+        \hline
+    \end{tabular}
+    \end{center}
+    It is assumed that the sample size is sufficiently large that the sample standard deviation is a reliable estimate of the population standard deviation.
     \begin{enumerate}
         \item Perform a $z$-test to assess the evidence, at the 5\% level of significance, that the mean distance players are covering in a game this season has changed.
-        \item Explain why the sample size helped enable the use of a $z$-test for this data.
+        \item Explain why the sample size may help support the use of a $z$-test for this data.
     \end{enumerate}
     \item A popular type of loaf sold by a regional chain of bakeries has been previously observed to have a mean mass of 500g, with a standard deviation of 20g. Following a change in the recipe used for the loaves, a random sample of 25 loaves yielded a mean mass of 483g. 
     \begin{enumerate}
@@ -904,16 +1034,21 @@ Since $\text{2}>\text{1.96}$, reject $\text{H}_\text{0}$ at the 5\% level of sig
 \pagebreak
 
 \begin{enumerate}[resume]
-    \item The mass of a pine marten in Scotland is historically known to be normally distributed, with a mean of 1.31kg and a standard deviation of 0.23kg. A sample of 22 pine martens captured, weighed and released in Scotland in 2023 gives a mean mass of 1.38kg. Stating two assumptions required, test at the 5\% level of significance the claim that the mean mass of a pine marten in Scotland has increased.
+    \item The mass of a pine marten in Scotland is historically known to be normally distributed, with a mean of 1.31kg and a standard deviation of 0.23kg. A sample of 22 pine martens captured, weighed and released in Scotland in 2023 gave a mean mass of 1.38kg. Stating two assumptions required, test at the 5\% level of significance the claim that the mean mass of a pine marten in Scotland has increased.
     \item The time taken by runners to complete a 5km run in a weekly race in a local park is normally distributed with a mean time of 26.3 minutes and a standard deviation of 1.4 minutes. Following some development works completed in the park, the route is unchanged but some of the running surfaces have changed. A random sample of 40 runners completing the course after the development work gives a mean of 25.9 minutes.\\[0.5em] Stating one assumption required, test the claim at the 0.1\% significance level that the mean run time is no longer 26.3 minutes.
-    \item A telecommunications provider wishes to test whether the mean amount of data used by its customer is more than 8.6 gigabytes per month. The amount of data used by a customer is known to be normally distributed with a standard deviation of 1.7 gigabytes. A random sample of 32 customers gives a mean of 9.1 gigabytes.\\[0.5em] Perform a hypothesis test at the 5\% level of significance to assess the evidence that the mean amount of data used by a customer is greater than 8.6 gigabytes.
-    \item A large school plans to test whether the mean amount its teachers spend on photocopying is different from the £12 per year they currently budget for. A sample of 23 teachers gives a mean of £10.90 and a standard deviation of £2.30.\\[0.5em] 
+    \item A telecommunications provider wishes to test whether the mean amount of data used per customer is more than 8.6 gigabytes per month. The amount of data used by a customer is known to be normally distributed with a standard deviation of 1.7 gigabytes. A random sample of 32 customers gives a mean of 9.1 gigabytes.\\[0.5em] Perform a hypothesis test at the 5\% level of significance to assess the evidence that the mean amount of data used by a customer is greater than 8.6 gigabytes.
+    \item An education authority wishes to test whether the mean amount its teachers spend on photocopying is different from the £12 per year they currently budget for. Annual spend is recorded for a sample of teachers from various schools across the education authority, and summary statistics are obtained:
+    \begin{center}
+        \begin{tabular}{p{3cm}p{3cm}p{3cm}}
+            $\bar{x}=\text{10.9}$ & $s=\text{2.3}$ & $n=\text{23}$
+        \end{tabular}
+    \end{center}
     Assume that the sample standard deviation of spend per teacher is a reliable estimate of the population standard deviation.
     \begin{enumerate}
         \item State a further assumption required for a $z$-test to be performed.
         \item Perform a hypothesis test at the 10\% level of significance to assess the evidence that the mean spend per teacher is different from £12.
     \end{enumerate}
-    \item A kettle manufacturer wishes to test whether the mean time for its kettles to boil one litre of water is more than the one minute and 5 seconds stated on the packaging. The standard deviation in the boiling time is 4 seconds, and the time taken to boil is normally distributed.\\[0.5em] A sample of 32 kettles gives a mean time of one minute and 7 seconds.\\[0.5em] Assuming that the standard deviation remains unchanged, perform a hypothesis test at the 5\% level of significance to assess the evidence that the mean time taken to boil one litre is more than the packaging states.
+    \item A kettle manufacturer wishes to test whether the mean time for its kettles to boil one litre of water is more than the one minute and 5 seconds stated on the packaging. The standard deviation in the boiling time is 4 seconds, and the time taken to boil is normally distributed.\\[0.5em] A random sample of 32 kettles gives a mean time of one minute and 7 seconds.\\[0.5em] Assuming that the standard deviation remains unchanged, perform a hypothesis test at the 5\% level of significance to assess the evidence that the mean time taken to boil one litre is more than the packaging states.
     \item The volume of petrol a driver uses driving from Glasgow to Blackburn is normally distributed, with previous studies showing the mean to be 15.7 litres and the standard deviation to be 0.3 litres. The driver believes their new driving style may have caused the mean volume of petrol used to change. Subsequently, recording the fuel consumption for 5 journeys gives a mean volume of petrol for a journey of 15.4 litres.
     \begin{enumerate}
         \item State two assumptions required for the valid use of a $z$-test.
@@ -925,7 +1060,7 @@ Since $\text{2}>\text{1.96}$, reject $\text{H}_\text{0}$ at the 5\% level of sig
 
 ## One-Sample \textit{t}-Test for the Population Mean
 
-In the early 20th century William Sealy Gosset, statistician and Head Experimental Brewer at the Guinness factory in Dublin, described the distribution of the sample mean when the **population standard deviation is unknown**. This was necessary since he was working with **small sample sizes**, for which the sample standard deviation could not be used as a reliable estimator for the population standard deviation. Since Guinness did not want rival companies to know that they were employing a statistician to improve their brewing, he published his work under the pen name *Student*, and the distribution he described became known as **Student's** **_t_** **-distribution**, or simply *the* $t$-*distribution*.
+In the early 20th century William Sealy Gosset, statistician and Head Experimental Brewer at the Guinness factory in Dublin, developed a method for analysing a sample mean when the population standard deviation is unknown and must be estimated using the sample standard deviation. This was necessary since he was working with **small sample sizes**, for which the sample standard deviation could not be used as a reliable estimator for the population standard deviation. Guinness restricted employees from publishing their work under their own names, so Gosset published under the pseudonym *Student*. The distribution that he described became known as **Student's** **_t_** **-distribution**, or simply *the* $t$-*distribution*.
 
 
 \begin{figure}[H]
@@ -1006,18 +1141,16 @@ In the early 20th century William Sealy Gosset, statistician and Head Experiment
 \end{minipage}
 \end{figure}
 
-Not knowing the population standard deviation, $\sigma$, introduces additional uncertainty about the distribution of the sample mean, with the **sample standard deviation**, $s$, used instead. This results in a $t$-distribution that resembles a normal distribution but with *fatter tails*. The $t$-distribution takes one parameter called **degrees of freedom**, denoted using the Greek letter $\nu$, which is the number of values that are free to vary once the sample mean has been fixed. For the one-sample $t$-test for population mean, the degrees of freedom can be calculated for a sample size $n$ as $\nu=n-\text{1}$.
+Not knowing the population standard deviation, $\sigma$, introduces additional uncertainty about the distribution of the sample mean, with the **sample standard deviation**, $s$, used instead. This results in a $t$-distribution that resembles a normal distribution but with *fatter tails*. The $t$-distribution takes one parameter called **degrees of freedom**, denoted using the Greek letter $\nu$. For the one-sample $t$-test for population mean, the degrees of freedom can be calculated for a sample size $n$ as $\nu=n-\text{1}$.
 
-As the sample size increases, and hence $\nu$ increases, the $t$-distribution approaches the normal distribution. This is why the Data Booklet provides a set of critical values for use when $\nu>\text{40}$, which match critical values for $z$-tests.
-
-The one-sample $t$-test for population mean is a **parametric test** that should be used in place of the equivalent $z$-test when the population standard deviation, $\sigma$, is not known, and the sample standard deviation, $s$, is to be used instead.
+The one-sample $t$-test for population mean is a **parametric test** that should be used in place of the equivalent $z$-test when the population standard deviation, $\sigma$, is unknown, and the sample standard deviation, $s$, is to be used instead. Whilst in this course $z$-tests are often asked for when sample sizes are large, when the underlying distribution is normal, the $t$-test remains the *exact* test when the $\sigma$ is unknown $s$ is used instead.
 
 \begin{centering}
-\tcbset{width=14.5cm}
+\tcbset{width=16cm}
 \begin{tcolorbox}[adjusted title=Conditions for the one-sample t-test for the population mean:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item The \textit{underlying population} is \textbf{normally distributed}.
-    \item The observations are \textbf{independent} (typically assured through \textit{random sampling}).
+    \item The observations are \textit{independent}, usually justified through \textbf{random sampling}.
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
@@ -1031,7 +1164,9 @@ Test statistic: $t=\dfrac{\bar{x}-\mu}{\dfrac{s}{\sqrt{n}}}$ \; with $\nu=n-\tex
 \end{tcolorbox}
 \end{centering}
 
-Critical values for the $t$-test can be found on *page 13* of the Data Booklet, referring to the significance level, whether the test is one-tailed or two-tailed and the degrees of freedom; constructing a sketch of the distribution is often useful.
+Whilst $t$-tests will typically be conducted using a *test statistic* approach, computer output for $t$-tests may instead return $p$-values. For all hypothesis tests, $p$-values can be interpreted through comparison against the chosen significance level, $\alpha$.
+
+Critical values for the $t$-test can be found on *page 13* of the Data Booklet, referring to the significance level, whether the test is one-tailed or two-tailed and the degrees of freedom; constructing a sketch of the distribution is often useful. As the sample size increases, and hence $\nu$ increases, the $t$-distribution approaches the normal distribution. This is why the Data Booklet provides a set of critical values for use when $\nu>\text{40}$, which match critical values for $z$-tests.
 
 \pagebreak
 
@@ -1110,9 +1245,12 @@ Since $-\text{1.127}>-\text{2.898}$, do not reject $\text{H}_\text{0}$ at the 1\
 
 \end{tcolorbox}
 
-As a reminder, assumptions and other comments should be written carefully and with reference to context wherever it is possible to. For example:
+Assumptions and other comments should be written carefully and with reference to context. For example:
 
-\textit{Missing context:} "Assume the data is normally distributed."\newline \textit{With context:} "Assume that the \textbf{mass of crisps in a bag} is normally distributed."
+\begin{tabular}{p{4cm}l}
+\textit{Missing context:} & "Assume the data is normally distributed."\\
+\textit{With context:} & "Assume that the \textbf{mass of crisps in a bag} is normally distributed."
+\end{tabular}
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
 \textbf{Problem:} Marks scored in an exam are known to be approximately normally distributed, and historically the mean mark achieved by students is 72. After some minor tweaks to the exam, marks gained by a random sample of 7 students generated the summary data below. Perform a hypothesis test at the 5\% level of significance to determine whether there is evidence that the difficulty of the exam has changed for students.\\
@@ -1188,9 +1326,9 @@ Since $\text{3.749}>\text{2.447}$, reject $\text{H}_\text{0}$ at the 5\% level o
 
 \pagebreak
 
-[]{#ex104q}
+[]{#ex105q}
 
-#### [Exercise 10.4](#ex104a) {-}
+#### [Exercise 10.5](#ex105a) {-}
 
 \begin{enumerate}
     \item The amount of sugar contained in frozen pizzas, per 100g, is normally distributed. A random sample of 8 brands of frozen pizza gives the following sugar content per 100g, measuring in grams:
@@ -1214,12 +1352,12 @@ Since $\text{3.749}>\text{2.447}$, reject $\text{H}_\text{0}$ at the 5\% level o
     \end{tabular}
     \end{center}
     Stating an assumption required, test at the 1\% level the claim that the mean mass the tripods can withstand before failure is actually less than 4.5kg.
-    \item \textit{Vinho Verde} is a type of Portuguese wine that originated in the Minho Province in the far north of the country. In 2009, the University of Minho supported a study which examined the extent to which wine quality can be judged through measuring its physiochemical properties. As part of the study, the acidity level of a random sample of 11 white \textit{Vinho Verde} wines all made using the \textit{alvarinho} grape were measured. The summary data obtained from this sample was as follows (measured in $pH$):
+    \item \textit{Vinho Verde} is a type of Portuguese wine that originated in the Minho Province in the far north of the country. In 2009, the University of Minho supported a study which examined the extent to which wine quality can be judged through measuring its physicochemical properties. As part of the study, the acidity level of a random sample of 11 white \textit{Vinho Verde} wines all made using the \textit{alvarinho} grape were measured. The summary data obtained from this sample was as follows (measured in $pH$):
     \begin{center}
     $\Sigma x=\text{34.89} \qquad \qquad \Sigma x^\text{2}=\text{110.81}$
     \end{center}
 Worldwide, the mean acidity level of white wines is 3.4 $pH$.\\[1em]
-Stating one assumption required, perform a parametric test at the 5\% level of significance to determine whether the white \textit{Vinho Verde} wines made from the \textit{alvarinho} grape differ in acidity level from those made worldwide.
+Stating one assumption required, perform a parametric test at the 5\% level of significance to determine whether the white \textit{Vinho Verde} wines made from the \textit{alvarinho} grape differ in acidity level from white wines made worldwide.
     \item A \textit{soporific drug} is one which has been shown to induce sleep, and increase drowsiness. An early 20th century study into possibly soporific drugs involved giving ten patients a dose of one such drug and recording whether they reported sleeping \textit{more} than usual that night (recorded as a positive number) or \textit{less} than usual (recorded as a negative number). The results recorded, in hours, were:
     \begin{center}
     \begin{tabular}{cccccccccc} 
@@ -1249,8 +1387,8 @@ weight (grams) & 14 & 158.0 & 329.0 & 246.4 & 54.1\\
 \end{tabular}
 \end{center}
 It has historically been observed that the mean mass of a chick after six weeks is 260 grams. Stating one assumption required, perform a hypothesis test to determine whether there is evidence at the 5\% level of significance that giving a soybean-based supplement affects the mass a chick will reach by six weeks.
-    \item The second-most common species of tree in the United States is the \textit{loblolly pine}, regarded as one of the most commercially important species of tree in the Southeastern US for its timber. A survey based on a sample of 15 of the loblolly trees in one region revealed a sample mean height of 32.4 feet and a standard deviation of 2.07 feet. The heights of the trees are known to be normally distributed. Stating one assumption required, test at the 1\% significance level whether the data provides evidence to suggest the mean height of loblolly trees in the region is greater than 30 feet.
-    \item A school is looking to figure out a course for the annual school cross-country, with the goal of choosing a course such that the mean time it takes a student at the school to finish is 45 minutes. The first ten students to respond to a request by the PE department for volunteers to test the course have their time taken to complete the course recorded. The results of the $t$-test used to assess whether the course meets their requirements is as follows:\vspace{0.5cm}\\
+    \item The second-most common species of tree in the United States is the \textit{loblolly pine}, regarded as one of the most commercially important species of tree in the Southeastern US for its timber. A survey based on a sample of 15 of the loblolly trees in one region revealed a sample mean height of 32.4 feet and a variance of 4.285 $\text{feet}^2$. The heights of the trees are known to be normally distributed. Stating one assumption required, test at the 1\% significance level whether the data provide evidence to suggest the mean height of loblolly trees in the region is greater than 30 feet.
+    \item A school is looking to figure out a new course for the annual school cross-country competition. The goal is that the new course will have a mean time of 45 minutes for the pupils to complete it. The first ten pupils to respond to a request by the PE department for volunteers to test the course have their time taken to complete the course recorded. The results of the $t$-test used to assess whether the course meets their requirements is as follows:\vspace{0.5cm}\\
     \texttt{t-test for the population mean}\\
     \texttt{n = 10}\qquad \texttt{sample mean = 53.1}\qquad \texttt{sample SD = 11.2492}\\
     \texttt{alternative hypothesis: true mean is not equal to 45}\\
@@ -1274,11 +1412,15 @@ If $X$ elements from a random sample of size $n$ from a population of interest s
 
 $$\hat{P}=\frac{X}{n}$$
 
-For example, if a survey of registered voters reveals 114 out of 250 intend to vote for the incumbent candidate, the *sample proportion*, $\hat{p}$, is $\frac{\text{114}}{\text{250}}=\text{0.456}$. The true value of the **population proportion**, **_p_**, may differ from this value. The **one-sample $z$-test for proportion** assesses whether an *observed sample proportion* provides statistically significant evidence against a *null-hypothesised population proportion*. The test statistic can be derived from the distributions of the random variables $X$ and hence $\hat{P}$:
+For example, if a survey of registered voters reveals 114 out of 250 intend to vote for the incumbent candidate, the *sample proportion*, $\hat{p}$, is $\frac{\text{114}}{\text{250}}=\text{0.456}$. The true value of the **population proportion**, **_p_**, may differ from this value. The **one-sample $z$-test for population proportion** assesses whether an *observed sample proportion* provides statistically significant evidence against a *null-hypothesised population proportion*. The test statistic can be derived from the distributions of the random variables $X$ and hence $\hat{P}$:
+
+\vspace{-0.3cm}
 
 $$X \sim \text{B}(n,p)$$ 
 
 When $np>\text{5}$ and $nq>\text{5}$, $X$ is *approximately* normally distributed:
+
+\vspace{-0.3cm}
 
 \begin{align*}
 \text{E}(X) & = np\\
@@ -1286,12 +1428,14 @@ When $np>\text{5}$ and $nq>\text{5}$, $X$ is *approximately* normally distribute
 X & \approx \mathsf{N}(np,npq)
 \end{align*}
 
-The distribution of $\hat{P}$ can now be obtained since $\hat{P}=\frac{X}{n}$:
+The distribution of $\hat{P}$ can now be obtained since $\hat{P}=\dfrac{X}{n}$:
 
 $$\mathsf{E}\left(\hat{P}\right)=\text{E}\left(\frac{X}{n}\right)=\frac{\text{1}}{n}\text{E}(X)=\frac{\text{1}}{n}\times np=p$$
 
 $$\text{V}\left(\hat{P}\right)=\text{V}\left(\frac{X}{n}\right)=\left(\frac{1}{n}\right)^\text{2} \text{V}(X)=\frac{\text{1}}{n^\text{2}}\times npq=\frac{pq}{n}$$
 Therefore:
+
+\vspace{-0.2cm}
 
 $$\hat{P} \approx N\left(p,\frac{pq}{n}\right)$$
 
@@ -1311,7 +1455,7 @@ Note that $\sqrt{\dfrac{pq}{n}}$ is called the **standard error of the sample pr
 \begin{tcolorbox}[adjusted title=Conditions for the one-sample z-test for the population proportion:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
 \begin{itemize}
     \item $\mathbf{\textbf{\emph{np}}>\text{5}}$ \textbf{ and } $\mathbf{\textbf{\emph{nq}}>\text{5}}$
-    \item The observations are \textbf{independent} (typically assured through \textit{random sampling}).
+    \item The observations are \textit{independent}, usually justified through \textbf{random sampling}.
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
@@ -1321,7 +1465,7 @@ Note that $\sqrt{\dfrac{pq}{n}}$ is called the **standard error of the sample pr
 Critical values for the $z$-test for population proportion are determined in the same way as for the $z$-test for the population mean.
 
 \begin{tcolorbox}[title=Example,colback=RoyalBlue!1!,colframe=RoyalBlue]
-\textbf{Problem:} A data storage company knows that 10\% of the hard drives they use will fail within the first year of their use. They have decided to trial the use of a cheaper model of hard drive, but are concerned that it may have a higher failure rate. During this trial, 60 of the new hard drives are randomly selected to be monitored for a year once installed. Of those 60, 11 fail.\\ 
+\textbf{Problem:} A data storage company knows that 10\% of the hard drives they use will fail within a year of being installed. They have decided to trial the use of a cheaper model of hard drive, but are concerned that it may have a higher failure rate. During this trial, 60 of the new hard drives are randomly selected to be monitored for a year once installed. Of those 60, 11 fail within a year.\\ 
 
 Use a parametric hypothesis test to assess the evidence, at the 5\% level of significance, that the new drives have a higher first-year failure rate than the previous model.
 
@@ -1454,14 +1598,14 @@ Since $-\text{2.82}<-\text{2.58}$, reject $\text{H}_\text{0}$ at the 1\% level o
 
 \pagebreak
 
-[]{#ex105q}
+[]{#ex106q}
 
-#### [Exercise 10.5](#ex105a) {-}
+#### [Exercise 10.6](#ex106a) {-}
 
 *For each question, show clearly that the conditions for the use of a normal approximation are satisfied.*
 
 \begin{enumerate}
-    \item A coin, suspected to be biased, is thrown 500 times and 267 heads are obtained. Perform a $z$-test to assess whether there is evidence to suggest that the coin is biased, using a 10\% significance level.
+    \item A coin, which a student suspects may be biased, is thrown 500 times and 267 heads are obtained.\\[0.1em] Perform a $z$-test to assess whether the data provides sufficient evidence to suggest that the coin is biased, using a 10\% significance level.
     \item A newspaper claims that over 60\% of its readers are car owners. In a random sample of 312 readers there are 208 car owners. Suitable hypotheses are proposed of:
     \begin{center}
         \begin{math}
@@ -1472,50 +1616,74 @@ Since $-\text{2.82}<-\text{2.58}$, reject $\text{H}_\text{0}$ at the 1\% level o
       \end{math}
     \end{center}
     Test whether there is evidence at the 1\% level of significance to support the newspaper's claim.
-    \item In a public opinion poll, 1000 randomly chosen teenagers were asked whether they would support a ban on mobile phones in schools, and 597 replied 'yes'. Test at the 5\% significance level whether the data supports an article's claim that 'a majority of teenagers support a ban on mobile phones in schools'.
+    \item In a public opinion poll, 1000 randomly chosen teenagers were asked whether they would support a ban on mobile phones in schools.
+    \begin{center}
+    \begin{tabular}{|p{3.5cm}|p{3.5cm}|p{3.5cm}|}
+    \hline
+    Response & Yes & No\\
+    \hline
+    Frequency & 597 & 403\\
+    \hline
+    \end{tabular}
+    \end{center}
+    Test at the 5\% significance level whether the data supports an article's claim that 'a majority of teenagers support a ban on mobile phones in schools'.
     \item The proportion of left-handed people in the population is 10\%. A random sample of 400 surgeons found that 29 were left-handed. Perform a hypothesis test at the 5\% level of significance to assess whether there is evidence to suggest that the proportion of left-handed surgeons does not match the 10\% seen in the wider population.
     \item A seed company sells seeds in mixed packets and states that over 20\% of the resulting plants will have red flowers. A packet of seeds is sown by a gardener who finds that only 9 out of 82 plants have red flowers.\\[0.5em] Perform a hypothesis test to assess the claim that fewer than 20\% of the plants will actually have red flowers, using a 1\% significance level.
-    \item A teacher says that the majority of pupils in a school prefer cats to dogs. A sample of 25 pupils is asked which they prefer, and 17 prefer cats. Perform a parametric test at the 5\% level of significance to assess whether the data provides evidence to support the teacher's claim, stating an assumption required.
-    \item Scotland's 2022 census revealed that of those in employment, 7\% were working in construction. Last year, a random sample of 200 adults living in Scotland revealed that, of the 189 who were in some form of employment, only 8 were working in construction. Perform a parametric test to assess whether the data gives evidence at the 10\% level of significance that the proportion of working adults employed in construction has changed since the census.
-    \item A football manager claims that the \textit{Video Assistant Referee} (VAR) system used in all games played in the top league leads to the on-field referee being instructed to watch a replay on a pitchside monitor in at least three-quarters of games. A journalist looks back at the 60 games played up to that point in the season and finds that the VAR instructed the referee to watch a replay in only 38 of the games.\\[0.5em] Assess at the 1\% significance level whether the data provides evidence to support the journalist's claim that the football manager was incorrect in their statement.
     \item In a factory, ready-sliced potatoes are cooked to make crisps, which are then placed into bags before flavouring is added and the bags sealed. Occasionally a packet of crisps is sealed without flavouring having been added. The crisp manufacturers have decided that they are content with this process provided no more than 1.8\% of bags are flavourless.
     \begin{enumerate}
         \item A random sample of 50 bags is taken. Explain why performing a $z$-test for the proportion of flavourless crisps obtained from this sample would not be appropriate.
         \item Determine the minimum sample size required such that a $z$-test would be appropriate.
         \item From a much larger sample of 500 bags of crisps, 14 are found to be flavourless. Test at the 5\% level of significance whether the manufacturers should be concerned with the process.
     \end{enumerate}
-\end{enumerate}
-
-\pagebreak
-
-## Choosing the Right Hypothesis Test
-
-Selecting the appropriate hypothesis test to use in any given context is an important skill for a statistician and warrants careful practice. The following questions contain a mix of $z$\textit{-tests for the population mean, }$t$\textit{-tests for the population mean and }$z$\textit{-tests for the population proportion.}
-
-[]{#ex106q}
-
-#### [Exercise 10.6](#ex106a) {-}
-
-\begin{enumerate}
-    \item A keen cyclist often takes a route which consists of a circuit, travelling through a forest and around a hill before returning to her starting point, timing herself on each occasion. The time it takes her to complete a circuit is normally distributed, with mean 42.7 minutes and standard deviation 3.8 minutes. After buying a new bike, she records the time it takes her to complete a circuit on 7 randomly selected occasions, obtaining a sample mean of 41.3 minutes. Assuming the standard deviation in her time taken remains unchanged, perform a hypothesis test to assess her data for evidence that her mean time taken to complete the route has reduced.
-    \item A popular chain of fast food restaurants states on its website that a vegan alternative to its most popular menu item is available in over 80\% of its restaurants. A researcher for a website that publishes articles on veganism and vegetarianism selects 60 of its restaurants at random and asks one reader from nearby each restaurant to visit and see whether the vegan alternative is available. Out of the 60 restaurants visited, the vegan alternative was only available in 42 of them. Perform a hypothesis test at the 5\% level of significance to assess whether the data suggests the chain is exaggerating the availability of the vegan alternative.
-    \item The mass of beef mince contained within packs that state they contain 1kg of mince is measured, for a random sample of 8 packs. The results obtained, in kg, are:
+    \item Scotland's 2022 census revealed that of those in employment, 7\% were working in construction. Last year, a random sample of 200 adults living in Scotland revealed that, of the 189 who were in some form of employment, only 8 were working in construction. Perform a parametric test to assess whether the data gives evidence at the 10\% level of significance that the proportion of working adults employed in construction has changed since the census.
+    \pagebreak
+    \item A football manager claims that the \textit{Video Assistant Referee} (VAR) system used in all games played in the top league leads to the on-field referee being instructed to watch a replay on a pitchside monitor in at least three-quarters of games. A journalist looks back every game played up to that point in the season.
     \begin{center}
-    \begin{tabular}{cccccccc}
-    0.97 & 1.01 & 0.99 & 0.97 & 1.00 & 0.98 & 0.99 & 0.96
+    \begin{tabular}{|l|l|}
+    \hline
+    VAR instructed the referee to watch a replay & 38\\
+    \hline
+    VAR did not instruct the referee to watch a replay & 22\\
+    \hline
     \end{tabular}
     \end{center}
-    Perform a parametric test to assess the data for evidence that the mean mass of mince in a pack is less than that stated on the packaging.
-    \item A report by the \textit{Energy Saving Trust} states that households in the UK use a mean of 349 litres of water each day. A family living in an area in which water usage is metered and billed for monitors its daily volume of water used on 8 randomly selected days. They find that the sample yields a mean volume of water used of 357 litres and a standard deviation of 12 litres. Stating one assumption required, perform a test at the 10\% level of significance to assess whether the family has a higher mean daily water consumption than the figure quoted by the report.
-    \item \textit{Screen time} refers to the amount of time a person spends in front of some kind of digital screen, such as a smartphone, tablet or computer monitor. Researchers exploring screen time in the UK reported that the mean daily screen time for an adult in the UK is 6 hours and 9 minutes, or 6.15 hours, with a standard deviation of 1 hour and 18 minutes, or 1.3 hours. Interested in regional variations, researchers located in Scotland contacted 20 randomly selected adults living in Scotland and asked them to report their screen time for the previous day. 16 of them responded, with a sample mean of 4 hours and 51 minutes, or 4.85 hours, obtained.
-    \begin{enumerate}
-        \item Assuming the standard deviation for adults in Scotland is the same as that for the UK as a whole, perform a hypothesis test at the 5\% level of significance to assess whether the data supports any suggestion that mean daily screen time differs between adults in Scotland and the UK as a whole.
-        \item Give one reason why the method of gathering data used may call into question the reliability of the hypothesis test.
-    \end{enumerate}
-    A separate report by another group of researchers wishes to test the claim made by a newspaper that "a majority of adults in Scotland are taking steps to reduce their screen time". A survey of 120 randomly selected adults are asked whether they are taking steps to reduce their screen time, with 71 stating that they are, and the remaining 49 that they are not.
-    \begin{enumerate}[resume]
-        \item Perform a parametric test to assess, at the 5\% significance level, whether there is evidence to support the newspaper's claim.
-    \end{enumerate}
+    Assess at the 1\% significance level whether the data provides evidence to support the journalist's claim that the football manager was incorrect in their statement.
+    \item A teacher says that the majority of pupils in a school prefer cats to dogs. A sample of pupils is asked which they prefer, with the results shown in the table below.
+    \begin{center}
+    \begin{tabular}{|p{3.5cm}|p{3.5cm}|}
+    \hline
+    Prefer cats & 17\\
+    \hline
+    Prefer dogs & 8\\
+    \hline
+    Total & 25\\
+    \hline
+    \end{tabular}
+    \end{center}
+    Perform a parametric test at the 5\% level of significance to assess whether the data provides evidence to support the teacher's claim, stating an assumption required.
+    \item A popular chain of fast food restaurants states on its website that a vegan alternative to its most popular menu item is available in over 80\% of its restaurants. A researcher for a website that publishes articles on veganism and vegetarianism selects 60 of the chain's restaurants at random and asks one reader who lives near each restaurant to visit and see whether the vegan alternative is available.
+    \begin{center}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    Vegan alternative available & Vegan alternative not available & Total \\
+    \hline
+    42 & 18 & 60\\
+    \hline
+    \end{tabular}
+    \end{center}
+    Perform a hypothesis test at the 5\% level of significance to assess whether the data suggests the chain is exaggerating the availability of the vegan alternative.
+
+\item A manufacturer of rechargeable batteries claims that at least 95\% of its batteries remain operational after one year of normal use. A consumer organisation tests a random sample of 300 batteries and finds that 277 are still operational after one year.\\[0.1em]
+
+Perform a hypothesis test at the 5\% level of significance to assess whether there is evidence that the manufacturer's claim is too optimistic.
+
+\item In a recent election for a student representative, a candidate claimed before the vote took place that they would receive support from more than 55\% of students. After the election, a random sample of 500 ballot papers is checked and 256 are found to have been cast for the candidate.\\[0.1em]
+
+Using a 10\% significance level, perform a hypothesis test to assess whether there is evidence that the candidate's claim was justified.
+
+\item A wildlife charity states that 30\% of gardens in a particular area contain a bird feeder. A researcher randomly selects 150 gardens and observes that 58 contain a bird feeder.\\[0.1em]
+
+Perform a hypothesis test at the 1\% significance level to determine whether the data provides evidence that the proportion of gardens containing a bird feeder differs from the value stated by the charity.
 \end{enumerate}
 
 \pagebreak
@@ -1530,20 +1698,20 @@ Selecting the appropriate hypothesis test to use in any given context is an impo
         \item Explain why a $z$-test can be used for this data despite the population standard deviation, $\sigma$, not being known.
         \item Perform a hypothesis test at the 1\% level of significance to assess the evidence that the drug may reduce the mean recovery time for the operation.
     \end{enumerate}
-    \item A car company wishes to check that a new machine at their factory producing front bumpers is still maintaining the mean mass of 2.8kg for the part as the old machine it replaced. Eight bumpers produced by the machine are randomly selected and weighed. The results, in kilograms, are:
+    \item A car company wishes to check that a new machine at their factory producing front bumpers is still maintaining the mean mass of 2.8kg for the part that the old machine produced. Eight bumpers produced by the new machine are randomly selected and weighed. The results, in kilograms, are:
     \begin{center}
     \begin{tabular}{c c c c c c c c} 
       2.9 & 2.6 & 3.3 & 3.1 & 3.0 & 2.9 & 3.1 & 2.8\\ 
     \end{tabular}
     \end{center}
-    Perform a parametric test at the 5\% level of significance to determine whether there is sufficient evidence to suggest that the mean mass of the part produced by the new machine has changed, stating an assumption required.
-    \item The speed of cars passing through a village is being studied in an effort to improve safety for pedestrians, and is known to be normally distributed. The mean speed has previously been monitored over a number of years and found to be consistently at 33 mph, with a standard deviation of 4 mph. Following the installation of speed bumps, the speed of 15 randomly selected cars is measured at the same point as before, with a sample mean of 31 mph observed. 
+    Perform a parametric test at the 5\% level of significance to determine whether there is sufficient evidence to suggest that the mean mass of the part produced by the new machine has changed from 2.8kg, stating an assumption required.
+    \item The speed of cars passing through a village is being studied in an effort to improve safety for pedestrians, and is known to be normally distributed. The mean speed has previously been monitored over a number of years and found to be consistently at 33 mph, with a variance of 16 $\text{mph}^2$. Following the installation of speed bumps, the speed of 15 randomly selected cars is measured at the same point as before, with a sample mean of 31 mph observed. 
     \begin{enumerate}
         \item Perform a parametric test to determine whether the data provides evidence to support the council's claim that the speed bumps have been successful in reducing the mean speed of cars passing through the village.
         \item State an assumption required for the test conducted in part (a).
     \end{enumerate}
-    \item A driving instructor posts an advert online stating nine out of ten of their students pass their driving test first time. A random sample of 60 students taught by the instructor reveals that only 47 of them passed their driving test first time. Perform a hypothesis test at the 1\% level of significance to assess the evidence for the claim that the proportion of students who pass first time is less than the instructor claims.
-    \item A coach working with a junior athletics club has observed that for many years the mean reaction time in 100m races for the sprinters at the club has been consistently stable at 185 milliseconds. Claiming that this figure may no longer be valid, she randomly selects 8 sprinters and records their reaction time in their next races. None of the athletes raced together in their next race. The summary data, where times were measured in milliseconds, is below:
+    \item A driving instructor posts an advert online stating nine out of ten of their students pass their driving test first time. A random sample of 60 students taught by the instructor reveals that only 47 of them passed their driving test first time. Perform a hypothesis test at the 1\% level of significance to assess the evidence for the claim that the proportion of students who pass first time is less than the instructor advertised.
+    \item A coach working with a junior athletics club has observed for many years that the mean reaction time at the start of 100m races for the sprinters at the club has been consistently stable at 185 milliseconds. Claiming that this figure may no longer be valid, she randomly selects 8 sprinters and records their reaction time in their next races. None of the selected sprinters raced together in their next race. The summary data, where times were measured in milliseconds, is below:
     \begin{center}
     \begin{tabular}{c c c} 
       $n=\text{8}$ & $\Sigma x=\text{1372}$ & $\Sigma x^\text{2}=\text{237466}$\\ 
@@ -1551,7 +1719,7 @@ Selecting the appropriate hypothesis test to use in any given context is an impo
     \end{center}
     \begin{enumerate}
         \item Stating an assumption required, perform a $t$-test to test the coach's claim at the 10\% level of significance.
-        \item The coach initially debated recording the reaction times of the eight athletes competing in the gold medal race of club's annual 100m championships. Suggest one reason why she was correct to reject this approach.
+        \item The coach initially debated recording the reaction times of the eight sprinters competing in the gold medal race of club's annual 100m championships. Suggest one reason why she was correct to reject this approach.
     \end{enumerate}
 \end{enumerate}
 

@@ -558,3 +558,25 @@ No. of seeds found ($y$) & 0 & 9 & 4 & 2 & 7 & 3\\
 \end{enumerate}
 
 \newpage
+
+\begin{enumerate}
+\item A keen cyclist often takes a route which consists of a circuit, travelling through a forest and around a hill before returning to her starting point, timing herself on each occasion. The time it takes her to complete a circuit is normally distributed, with mean 42.7 minutes and standard deviation 3.8 minutes. After buying a new bike, she records the time it takes her to complete a circuit on 7 randomly selected occasions, obtaining a sample mean of 41.3 minutes. Assuming the standard deviation in her time taken remains unchanged, perform a hypothesis test to assess her data for evidence that her mean time taken to complete the route has reduced.
+\item A popular chain of fast food restaurants states on its website that a vegan alternative to its most popular menu item is available in over 80\% of its restaurants. A researcher for a website that publishes articles on veganism and vegetarianism selects 60 of its restaurants at random and asks one reader from nearby each restaurant to visit and see whether the vegan alternative is available. Out of the 60 restaurants visited, the vegan alternative was only available in 42 of them. Perform a hypothesis test at the 5\% level of significance to assess whether the data suggests the chain is exaggerating the availability of the vegan alternative.
+\item The mass of beef mince contained within packs that state they contain 1kg of mince is measured, for a random sample of 8 packs. The results obtained, in kg, are:
+  \begin{center}
+\begin{tabular}{cccccccc}
+0.97 & 1.01 & 0.99 & 0.97 & 1.00 & 0.98 & 0.99 & 0.96
+\end{tabular}
+\end{center}
+Perform a parametric test to assess the data for evidence that the mean mass of mince in a pack is less than that stated on the packaging.
+\item A report by the \textit{Energy Saving Trust} states that households in the UK use a mean of 349 litres of water each day. A family living in an area in which water usage is metered and billed for monitors its daily volume of water used on 8 randomly selected days. They find that the sample yields a mean volume of water used of 357 litres and a standard deviation of 12 litres. Stating one assumption required, perform a test at the 10\% level of significance to assess whether the family has a higher mean daily water consumption than the figure quoted by the report.
+\item \textit{Screen time} refers to the amount of time a person spends in front of some kind of digital screen, such as a smartphone, tablet or computer monitor. Researchers exploring screen time in the UK reported that the mean daily screen time for an adult in the UK is 6 hours and 9 minutes, or 6.15 hours, with a standard deviation of 1 hour and 18 minutes, or 1.3 hours. Interested in regional variations, researchers located in Scotland contacted 20 randomly selected adults living in Scotland and asked them to report their screen time for the previous day. 16 of them responded, with a sample mean of 4 hours and 51 minutes, or 4.85 hours, obtained.
+\begin{enumerate}
+\item Assuming the standard deviation for adults in Scotland is the same as that for the UK as a whole, perform a hypothesis test at the 5\% level of significance to assess whether the data supports any suggestion that mean daily screen time differs between adults in Scotland and the UK as a whole.
+\item Give one reason why the method of gathering data used may call into question the reliability of the hypothesis test.
+\end{enumerate}
+A separate report by another group of researchers wishes to test the claim made by a newspaper that "a majority of adults in Scotland are taking steps to reduce their screen time". A survey of 120 randomly selected adults are asked whether they are taking steps to reduce their screen time, with 71 stating that they are, and the remaining 49 that they are not.
+\begin{enumerate}[resume]
+\item Perform a parametric test to assess, at the 5\% significance level, whether there is evidence to support the newspaper's claim.
+    \end{enumerate}
+\end{enumerate}
