@@ -2834,68 +2834,142 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 
 #### Chapter 11 - Confidence Intervals {-}
 
-
 []{#ex111a}
 
 #### [Exercise 11.1](#ex111q) {-}
 
 \begin{enumerate}
-    \item $(55.18 ,58.82)$
-    \item $(12.76 ,14.84)$
-    \item $(14.53 ,15.87)$
-    \item $(37.38 ,40.62)$
-    \item $(49.03 ,51.29)$
-    \item $(5.41 ,5.99)$
+    \item $(\text{55.18},\text{58.82})$ centimetres.
+
+    \item $(\text{12.76},\text{14.84})$ kilograms.
+
+    \item $(\text{14.53},\text{15.87})$ minutes.
+
+    \item Assume that the population standard deviation of HGV speeds remains unchanged at 2.6 mph.\newline
+    $(\text{37.37},\text{40.63})$ mph.
+
+    \item $(\text{49.03},\text{51.29})$ grams.
+
+    \item Assume that the sample standard deviation of 0.8 minutes is a reasonable estimate of the population standard deviation.\newline
+    $(\text{5.41},\text{5.99})$ minutes.
+
     \item
     \begin{enumerate}
-        \item $(37.64 ,38.76)$
-        \item $(37.46 ,38.94)$
-        \item $31$
+        \item $(\text{37.64},\text{38.76})$ hours.
+
+        \item The width of the 99\% confidence interval $(\text{37.46},\text{38.94})$ is 1.48 hours. The member's suggestion is incorrect, since a higher confidence level produces a wider confidence interval when the sample data remain unchanged.
+
+        \item A minimum total sample size of 31 is required, so at least 7 additional full-time employees must be included in the sample.
     \end{enumerate}
-    \item $10.0$
+
+    \item $\sigma=\text{10.0}$.
 \end{enumerate}
 
 []{#ex112a}
 
 #### [Exercise 11.2](#ex112q) {-}
 
+
 \begin{enumerate}
-    \item $(499.1,510.9)\implies \text{within, comment}$
-    \item $(419.5,426.5)\implies \text{within, comment}$
-    \item $(10.11,11.69)\implies \text{outwith, comment}$
-    \item $(2.439,2.961)\implies \text{within, comment}$
-    \item $(19.95,20.85)\implies \text{outwith, comment}$
-    \item $(28580,30020\implies \text{within, comment})$
+    \item $(\text{487.12},\text{498.88})$ grams.\newline
+    Since 500 grams lies outwith the confidence interval, there is sufficient evidence to suggest that the population mean mass of coffee beans dispensed per bag differs from 500 grams.
+
+    \item
+    \begin{enumerate}
+        \item $(\text{419.54},\text{426.46})$ centimetres.
+
+        \item Since 420 centimetres lies within the confidence interval, there is insufficient evidence to suggest that the population mean length of the bars has changed from 420 centimetres.
+    \end{enumerate}
+
+    \item $(\pounds\text{10.11},\pounds\text{11.69})$.\newline
+    Since £12 lies outwith the confidence interval, there is sufficient evidence to suggest that the population mean annual amount spent on photocopying per teacher differs from £12. The previously used figure of £12 may therefore no longer be accurate.
+
+    \item Assuming that the sample standard deviation of 0.6 goals is a reasonable estimate of the population standard deviation, the 99\% confidence interval is $(\text{2.438},\text{2.962})$ goals.\newline
+    Since 2.5 goals lies within the confidence interval, there is insufficient evidence to suggest that the population mean number of goals scored per game has changed from 2.5.
+
+    \item
+    \begin{enumerate}
+        \item Assume that the population standard deviation of mature oak-tree heights remains unchanged at 1.5 metres.\newline
+        $(\text{19.95},\text{20.85})$ metres.
+
+        \item Since 21 metres lies outwith the confidence interval, there is sufficient evidence to suggest that the population mean height of mature oak trees in the woodland has changed from 21 metres.
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item $(\pounds\text{28\,581},\pounds\text{30\,019})$.
+
+        \item Since £30\,000 lies within the confidence interval, there is insufficient evidence to suggest that the population mean annual salary of delivery drivers in the city differs from the national mean. This supports the conclusion made in the report.
+    \end{enumerate}
 \end{enumerate}
 
 []{#ex113a}
 
 #### [Exercise 11.3](#ex113q) {-}
 
+
 \begin{enumerate}
-    \item $(6.88,7.87)$
-    \item $(4048.5,4714.4)\implies \text{within, comment}$
-    \item $(960.0,1024.0)$
-    \item $(3.636,4.464)\implies \text{outwith, comment}$
-    \item $(2.760,4.740)\implies \text{outwith, comment}$
+    \item Assuming that the population of pH levels in lakes in England is normally distributed, the 95\% confidence interval is $(\text{6.88},\text{7.87})$.
+
+    \item $(\text{4048.5},\text{4714.3})$ mAh.\newline
+    Since 4500 mAh lies within the confidence interval, there is insufficient evidence to suggest that the population mean capacity differs from that stated for genuine EnergyPower batteries. The interval does not support the store's concern that the batteries are not genuine.
+
+    \item $(\text{960.0},\text{1024.0})$ hours.
+
+    \item
+    \begin{enumerate}
+        \item Assume that the population of masses the tripods can withstand before failure is normally distributed.
+
+        \item $(\text{3.635},\text{4.465})$ kilograms.\newline
+        Since 4.5 kilograms lies outwith the confidence interval, there is sufficient evidence to suggest that the population mean mass the tripods can withstand before failure differs from 4.5 kilograms.
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item $(\text{2.760},\text{4.740})$ grams per 100 grams.\newline
+        Since 5 grams lies outwith the confidence interval, there is sufficient evidence to suggest that the population mean sugar content per 100 grams of frozen pizza differs from 5 grams.
+
+        \item The required minimum sample size is $n=\text{89}$.
+    \end{enumerate}
 \end{enumerate}
 
 []{#ex114a}
 
 #### [Exercise 11.4](#ex114q) {-}
 
+
 \begin{enumerate}
-    \item $(0.598,0.736)$
-    \item $(0.133,0.427)$
-    \item $(0.327,0.387)$
-    \item $(0.086,0.149)\implies \text{within, comment}$
-    \item $(0.021,0.199)\implies \text{outwith, comment}$
-    \item $(0.026,0.083)\implies \text{within, comment}$
-    \item $n=147$
-    \item 
+    \item $(\text{0.598},\text{0.736})$.
+
+    \item
     \begin{enumerate}
-        \item Systematic sampling
-        \item $(0.264,0.446)\implies \text{within, comment}$
+        \item Assume that the pupils form a random sample from the school.
+
+        \item $(\text{0.133},\text{0.427})$.
+
+        \item $n\hat{p}=\text{7}>5$ and $n\hat{q}=\text{18}>5$, so a normal approximation is appropriate.
+    \end{enumerate}
+
+    \item $(\text{0.613},\text{0.673})$.
+
+    \item $(\text{0.086},\text{0.149})$.\newline
+    Since 0.10 lies within the confidence interval, there is insufficient evidence to suggest that the population proportion of professional artists who are left-handed differs from that of the general population.
+
+    \item $(\text{0.021},\text{0.199})$.\newline
+    Since 0.20 lies outwith the confidence interval, there is sufficient evidence to suggest that the population proportion of plants with red flowers differs from 20\%. This does not support the seed company's claim.
+
+    \item $(\text{0.026},\text{0.083})$.\newline
+    Since 0.04 lies within the confidence interval, there is insufficient evidence to suggest that the population proportion of people with the gene differs from 4\%.
+
+    \item $n=\text{147}$.
+
+    \item
+    \begin{enumerate}
+        \item Systematic sampling with a random starting point.
+
+        \item $(\text{0.264},\text{0.446})$.
+
+        \item Since $\dfrac{1}{3}$ lies within the confidence interval, there is insufficient evidence to suggest that the population proportion of guitars listed on the forum that are vintage differs from one-third. The confidence interval therefore supports the website's claim.
     \end{enumerate}
 \end{enumerate}
 
@@ -2903,20 +2977,29 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 
 #### [Chapter 11 Review Exercise](#re11q) {-}
 
+
 \begin{enumerate}
-    \item $(63.98,82.77)$
-    \item $(0.116,0.444)$
-    \item 
-    \begin{enumerate}
-        \item $(125.8,126.8)$
-        \item Outwith, comment
-    \end{enumerate}
+    \item Assume that the population of car speeds on the motorway is normally distributed.\newline
+    $(\text{63.98},\text{82.77})$ mph.
+
+    \item $(\text{0.116},\text{0.444})$.
+
     \item
     \begin{enumerate}
-        \item $12.5$
-        \item $s=25.77$
+        \item $(\text{125.81},\text{126.79})$ ml.
+
+        \item Since 125 ml lies outwith the confidence interval, there is sufficient evidence to suggest that the population mean volume served differs from 125 ml. The interval may suggest that the population mean volume served is greater than 125 ml.
     \end{enumerate}
-    \item $(0.679,0.888)\implies \text{outwith, comment}$
+
+    \item
+    \begin{enumerate}
+        \item $\text{12.5}$ days.
+
+        \item $s=\text{2.81}$ days.
+    \end{enumerate}
+
+    \item $(\text{0.679},\text{0.888})$.\newline
+    Since 0.9 lies outwith the confidence interval, there is sufficient evidence to suggest that the population proportion of the instructor's students who pass their driving test first time differs from 0.9. The interval may suggest that the population proportion is lower than the advertised value.
 \end{enumerate}
 
 

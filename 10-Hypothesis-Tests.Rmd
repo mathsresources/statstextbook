@@ -1037,16 +1037,16 @@ Since $\text{2}>\text{1.96}$, reject $\text{H}_\text{0}$ at the 5\% level of sig
     \item The mass of a pine marten in Scotland is historically known to be normally distributed, with a mean of 1.31kg and a standard deviation of 0.23kg. A sample of 22 pine martens captured, weighed and released in Scotland in 2023 gave a mean mass of 1.38kg. Stating two assumptions required, test at the 5\% level of significance the claim that the mean mass of a pine marten in Scotland has increased.
     \item The time taken by runners to complete a 5km run in a weekly race in a local park is normally distributed with a mean time of 26.3 minutes and a standard deviation of 1.4 minutes. Following some development works completed in the park, the route is unchanged but some of the running surfaces have changed. A random sample of 40 runners completing the course after the development work gives a mean of 25.9 minutes.\\[0.5em] Stating one assumption required, test the claim at the 0.1\% significance level that the mean run time is no longer 26.3 minutes.
     \item A telecommunications provider wishes to test whether the mean amount of data used per customer is more than 8.6 gigabytes per month. The amount of data used by a customer is known to be normally distributed with a standard deviation of 1.7 gigabytes. A random sample of 32 customers gives a mean of 9.1 gigabytes.\\[0.5em] Perform a hypothesis test at the 5\% level of significance to assess the evidence that the mean amount of data used by a customer is greater than 8.6 gigabytes.
-    \item An education authority wishes to test whether the mean amount its teachers spend on photocopying is different from the £12 per year they currently budget for. Annual spend is recorded for a sample of teachers from various schools across the education authority, and summary statistics are obtained:
-    \begin{center}
-        \begin{tabular}{p{3cm}p{3cm}p{3cm}}
-            $\bar{x}=\text{10.9}$ & $s=\text{2.3}$ & $n=\text{23}$
-        \end{tabular}
-    \end{center}
-    Assume that the sample standard deviation of spend per teacher is a reliable estimate of the population standard deviation.
+    \item An education authority wishes to test whether the mean amount its teachers spend on photocopying is different from the £12 per year they currently budget for. Annual spend is recorded for a sample of teachers from various schools across the education authority, and summary statistics are obtained .The results of the $z$-test used to assess whether the photocopying spend has per teacher has changed is as follows:\vspace{0.3cm}\\
+    \texttt{z-test for the population mean}\\
+    \texttt{n = 23}\qquad \texttt{sample mean = 10.9}\qquad \texttt{sample SD = 2.3}\\
+    \texttt{alternative hypothesis: true mean is not equal to 12}\\
+    \texttt{z = }\textbf{****}\qquad \texttt{p-value = 0.0110}\vspace{0.3cm}\\
+
+Assume that the sample standard deviation of spend per teacher is a reliable estimate of the population standard deviation.
     \begin{enumerate}
         \item State a further assumption required for a $z$-test to be performed.
-        \item Perform a hypothesis test at the 10\% level of significance to assess the evidence that the mean spend per teacher is different from £12.
+        \item Determine the value of the test statistic, indicated by \texttt{****} in the computer above, and hence conclude a hypothesis test at the 10\% level of significance to assess the evidence that the mean spend per teacher is different from £12.
     \end{enumerate}
     \item A kettle manufacturer wishes to test whether the mean time for its kettles to boil one litre of water is more than the one minute and 5 seconds stated on the packaging. The standard deviation in the boiling time is 4 seconds, and the time taken to boil is normally distributed.\\[0.5em] A random sample of 32 kettles gives a mean time of one minute and 7 seconds.\\[0.5em] Assuming that the standard deviation remains unchanged, perform a hypothesis test at the 5\% level of significance to assess the evidence that the mean time taken to boil one litre is more than the packaging states.
     \item The volume of petrol a driver uses driving from Glasgow to Blackburn is normally distributed, with previous studies showing the mean to be 15.7 litres and the standard deviation to be 0.3 litres. The driver believes their new driving style may have caused the mean volume of petrol used to change. Subsequently, recording the fuel consumption for 5 journeys gives a mean volume of petrol for a journey of 15.4 litres.
@@ -1202,46 +1202,78 @@ Assume that the mass of crisps in a bag is normally distributed.\\
 
 Test statistic: $t=\dfrac{\text{149}-\text{150}}{\dfrac{\text{2.51}}{\sqrt{\text{8}}}}=-\text{1.127}$
 \hspace{3cm}
-\begin{tikzpicture}[overlay]
+\begin{tikzpicture}[
+    overlay,
+    declare function={
+        student(\x)=0.384991*(1+(\x*\x)/7)^(-4);
+    }
+]
 \begin{axis}[
-  no markers, 
-  domain=-3:3, 
-  samples=100,
-  ymin=0,
-  axis lines*=left, 
-  every axis y label/.style={at=(current axis.above origin),anchor=south},
-  every axis x label/.style={at=(current axis.right of origin),anchor=west},
-  height=3cm, 
-  width=6.5cm,
-  xtick=\empty, 
-  ytick=\empty,
-  enlargelimits=false, 
-  clip=false, 
-  axis on top,
-  grid = major,
-  hide y axis,
-  hide x axis
-  ]
-  \fill[black!50] (axis cs: -3,-0.04) rectangle (axis cs: -2.8,0);
-\addplot [draw=none, fill=black!50, domain=-3:-2.8] {gauss(x, 0, 1)} \closedcycle;
- \addplot [semithick] {gauss(x, 0, 1)};
- \draw (axis cs: -3,-0.04) -- (axis cs: 3,-0.04);
-\pgfmathsetmacro\valueA{gauss(-2.8,0,1)}
-\pgfmathsetmacro\valueB{gauss(0,0,1)}
-\draw [semithick, black]  (axis cs:-2.8,-0.04) -- (axis cs:-2.8,\valueA);
-\node[below] at (axis cs: 0,-0.04)  {0};
-\node[above] at (axis cs: 0,\valueB)  {$t_\text{7}$};
-\node[below] at (axis cs: -2.8, -0.04) {$-\text{2.898}$};
-\node[above] at (axis cs: -3,\valueA) {1\%};
-\draw[very thick] (axis cs: -1.127,-0.04) -- (axis cs: -1.127,0.47) node[above] {$-\text{1.127}$};
+    no markers,
+    domain=-4:4,
+    samples=150,
+    ymin=0,
+    axis lines*=left,
+    height=3cm,
+    width=6.5cm,
+    xtick=\empty,
+    ytick=\empty,
+    enlargelimits=false,
+    clip=false,
+    axis on top,
+    hide y axis,
+    hide x axis
+]
+
+% Shaded rectangular strip below the curve
+\fill[black!50]
+    (axis cs:-4,-0.04)
+    rectangle
+    (axis cs:-2.998,0);
+
+% Shaded critical region below the t-density
+\addplot[
+    draw=none,
+    fill=black!50,
+    domain=-4:-2.998
+] {student(x)}
+\closedcycle;
+
+% t_7 density
+\addplot[semithick] {student(x)};
+
+% Horizontal axis
+\draw
+    (axis cs:-4,-0.04) --
+    (axis cs:4,-0.04);
+
+% Critical-value boundary
+\draw[semithick,black]
+    (axis cs:-2.998,-0.04) --
+    (axis cs:-2.998,0.0159);
+
+% Axis and distribution labels
+\node[below] at (axis cs:0,-0.04) {0};
+\node[above] at (axis cs:0,0.384991) {$t_7$};
+
+% Critical value and tail probability
+\node[below] at (axis cs:-2.998,-0.04) {$-\text{2.998}$};
+\node[above] at (axis cs:-3.3,0.0159) {1\%};
+
+% Test statistic
+\draw[very thick]
+    (axis cs:-1.127,-0.04) --
+    (axis cs:-1.127,0.47)
+    node[above] {$-\text{1.127}$};
+
 \end{axis}
 \end{tikzpicture}\\
 
 Degrees of freedom: $\nu=n-\text{1}=\text{8}-\text{1}=\text{7}$\\
 
-Critical value: $t=-\text{2.898}$\\
+Critical value: $t=-\text{2.998}$\\
 
-Since $-\text{1.127}>-\text{2.898}$, do not reject $\text{H}_\text{0}$ at the 1\% level of significance. There is insufficient evidence to suggest that the mean mass of crisps in a bag is less than the stated value of 150g.
+Since $-\text{1.127}>-\text{2.998}$, do not reject $\text{H}_\text{0}$ at the 1\% level of significance. There is insufficient evidence to suggest that the mean mass of crisps in a bag is less than the stated value of 150g.
 
 \end{tcolorbox}
 
@@ -1276,43 +1308,105 @@ $\mu=\text{72}$, $\bar{x}=\text{81.57}$, $n=\text{7}$, $s=\text{6.754}$\\
 
 Test statistic: $t=\dfrac{\text{81.57}-\text{72}}{\dfrac{\text{6.754}}{\sqrt{\text{7}}}}=\text{3.749}$
 \hspace{3cm}
-\begin{tikzpicture}[overlay]
+\begin{tikzpicture}[
+    overlay,
+    declare function={
+        student(\x)=0.382733*(1+(\x*\x)/6)^(-3.5);
+    }
+]
 \begin{axis}[
-  no markers, 
-  domain=-4:4, 
-  samples=100,
-  ymin=0,
-  axis lines*=left, 
-  every axis y label/.style={at=(current axis.above origin),anchor=south},
-  every axis x label/.style={at=(current axis.right of origin),anchor=west},
-  height=3cm, 
-  width=6.5cm,
-  xtick=\empty, 
-  ytick=\empty,
-  enlargelimits=false, 
-  clip=false, 
-  axis on top,
-  grid = major,
-  hide y axis,
-  hide x axis
-  ]
-  \fill[black!50] (axis cs: -4,-0.04) rectangle (axis cs: -2.9,0);
-  \fill[black!50] (axis cs: 2.9,-0.04) rectangle (axis cs: 4,0);
-\addplot [draw=none, fill=black!50, domain=-4:-2.9] {gauss(x, 0, 1)} \closedcycle;
-\addplot [draw=none, fill=black!50, domain=2.9:4] {gauss(x, 0, 1)} \closedcycle;
- \addplot [semithick] {gauss(x, 0, 1)};
-\pgfmathsetmacro\valueA{gauss(-2.9,0,1)}
-\pgfmathsetmacro\valueB{gauss(0,0,1)}
-\draw [semithick, black]  (axis cs:-2.9,-0.04) -- (axis cs:-2.9,\valueA);
-\draw [semithick, black]  (axis cs:2.9,-0.04) -- (axis cs:2.9,\valueA);
-\node[below] at (axis cs: 0,-0.04)  {0};
-\node[above] at (axis cs: 0,\valueB)  {$t_\text{6}$};
-\node[below] at (axis cs: -2.9, -0.04) {$-\text{2.447}$};
-\node[above] at (axis cs: -2.9,\valueA) {2.5\%};
-\node[below] at (axis cs: 2.9, -0.04) {$\text{2.447}$};
-\node[above] at (axis cs: 2.9,\valueA) {2.5\%};
-\draw[very thick] (axis cs: 3.749,-0.04) -- (axis cs: 3.749,0.47) node[above] {$\text{3.749}$};
-\draw (axis cs: -4,-0.04) -- (axis cs: 4,-0.04);
+    no markers,
+    domain=-4:4,
+    samples=150,
+    ymin=0,
+    axis lines*=left,
+    every axis y label/.style={
+        at=(current axis.above origin),
+        anchor=south
+    },
+    every axis x label/.style={
+        at=(current axis.right of origin),
+        anchor=west
+    },
+    height=3cm,
+    width=6.5cm,
+    xtick=\empty,
+    ytick=\empty,
+    enlargelimits=false,
+    clip=false,
+    axis on top,
+    grid=major,
+    hide y axis,
+    hide x axis
+]
+
+% Rectangular shading below y=0
+\fill[black!50]
+    (axis cs:-4,-0.04)
+    rectangle
+    (axis cs:-2.447,0);
+
+\fill[black!50]
+    (axis cs:2.447,-0.04)
+    rectangle
+    (axis cs:4,0);
+
+% Shaded critical regions below the t-density
+\addplot[
+    draw=none,
+    fill=black!50,
+    domain=-4:-2.447
+] {student(x)}
+\closedcycle;
+
+\addplot[
+    draw=none,
+    fill=black!50,
+    domain=2.447:4
+] {student(x)}
+\closedcycle;
+
+% t_6 density
+\addplot[semithick] {student(x)};
+
+% Horizontal axis
+\draw
+    (axis cs:-4,-0.04) --
+    (axis cs:4,-0.04);
+
+% Critical-value boundaries
+\draw[semithick,black]
+    (axis cs:-2.447,-0.04) --
+    (axis cs:-2.447,0.0339);
+
+\draw[semithick,black]
+    (axis cs:2.447,-0.04) --
+    (axis cs:2.447,0.0339);
+
+% Axis and distribution labels
+\node[below] at (axis cs:0,-0.04) {0};
+\node[above] at (axis cs:0,0.382733) {$t_6$};
+
+% Critical values
+\node[below] at (axis cs:-2.447,-0.04)
+    {$-\text{2.447}$};
+
+\node[below] at (axis cs:2.447,-0.04)
+    {$\text{2.447}$};
+
+% Tail probabilities
+\node[above] at (axis cs:-2.9,0.0339)
+    {2.5\%};
+
+\node[above] at (axis cs:2.9,0.0339)
+    {2.5\%};
+
+% Test statistic
+\draw[very thick]
+    (axis cs:3.749,-0.04) --
+    (axis cs:3.749,0.47)
+    node[above] {$\text{3.749}$};
+
 \end{axis}
 \end{tikzpicture}\\
 
@@ -1401,7 +1495,7 @@ It has historically been observed that the mean mass of a chick after six weeks 
         \item Use the $p$-value to write a conclusion to the hypothesis test.
         \item Name the sampling method used and comment on the appropriateness. 
     \end{enumerate}
-    \item An experiment into the cold tolerance of a species of grass plant looked at the effect of low temperature on its carbon dioxide (CO2) uptake. It is known that, under normal conditions, the CO2 uptake rate for the species is known to be 33 $\mu mol/m^\text{2}$, whilst the sample of 7 areas exposed to chilling resulted in a sample mean uptake of 29.97 $\mu mol/m^\text{2}$ and a standard deviation of 8.335 $\mu mol/m^\text{2}$. Perform a parametric test to assess the evidence for CO2 uptake being affected by low temperature for the grass plant, at the 10\% level of significance.
+    \item An experiment into the cold tolerance of a species of grass plant looked at the effect of low temperature on its carbon dioxide (CO2) uptake. It is known that, under normal conditions, the CO2 uptake rate for the species is known to be 33 $\mu \text{mol}/\text{m}^\text{2}$, whilst the sample of 7 areas exposed to chilling resulted in a sample mean uptake of 29.97 $\mu \text{mol}/\text{m}^\text{2}$ and a standard deviation of 8.335 $\mu \text{mol}/\text{m}^\text{2}$. Perform a parametric test to assess the evidence for CO2 uptake being affected by low temperature for the grass plant, at the 10\% level of significance.
 \end{enumerate}
 
 \pagebreak
