@@ -15355,7 +15355,7 @@ Given the potential for confusion between the population proportion \(p\) and th
 
 \chapter{Chi-Squared Goodness-Of-Fit Test}\label{chi-squared-goodness-of-fit-test}
 
-The \textbf{chi-squared distribution}, \(\chi^{\text{2}}_\nu\), describes the distribution of \emph{sums} of \emph{independent squared and scaled random variables}. \mbox{$\chi^{\text{2}}$ hypothesis tests} offer a way to analyse categorical data, and are a type of \textbf{non-parametric} test.
+The \textbf{chi-squared distribution}, \(\chi^{\text{2}}_\nu\), describes the distribution of a sum of squares of independent standard normal variables. Chi-squared hypothesis tests offer a way to analyse categorical frequency data and are a type of \textbf{non-parametric} test.
 
 \section{\texorpdfstring{\(\chi^{\text{2}}\) Goodness-of-Fit Test}{\textbackslash chi\^{}\{\textbackslash text\{2\}\} Goodness-of-Fit Test}}\label{chitext2-goodness-of-fit-test}
 
@@ -15385,7 +15385,7 @@ With the null hypothesis being that the die \emph{is} fair, a third row of \text
 \end{tabular}
 \end{center}
 
-The \(\chi^{\text{2}}\) goodness-of-fit test asks whether the observed frequencies are so \emph{significantly different} from the expected frequencies, under the model described in the null hypothesis, that there is evidence to suggest \emph{the model is in fact incorrect}.
+The \(\chi^{\text{2}}\) goodness-of-fit test asks whether the observed frequencies are so \emph{statistically significantly different} from the expected frequencies, under the model described by the null hypothesis, that there is evidence to suggest the model is not incorrect.
 
 \begin{center}
 \begin{tabular}{r c l}
@@ -15412,9 +15412,9 @@ The test statistic follows a \(\chi^{\text{2}}_\nu\) distribution with degrees o
 \begin{figure}[H]
   \centering
 \captionsetup[figure]{labelformat=empty}%
-\begin{minipage}[c]{.45\textwidth}
+\begin{minipage}[c]{.44\textwidth}
   \centering
-\begin{tikzpicture}[
+\begin{tikzpicture}[scale=1,
     declare function={gamma(\z)=
     (2.506628274631*sqrt(1/\z) + 0.20888568*(1/\z)^(1.5) + 0.00870357*(1/\z)^(2.5) - (174.2106599*(1/\z)^(3.5))/25920 - (715.6423511*(1/\z)^(4.5))/1244160)*exp((-ln(1/\z)-1)*\z);},
     declare function={gammapdf(\x,\k,\theta) = \x^(\k-1)*exp(-\x/\theta) / (\theta^\k*gamma(\k));}
@@ -15422,38 +15422,41 @@ The test statistic follows a \(\chi^{\text{2}}_\nu\) distribution with degrees o
 
 \begin{axis}[
     axis lines=left,
-    height=5cm,
+    height=5.5cm,
     ytick=\empty,
     enlargelimits=upper,
     samples=50,
-    legend entries={$\nu=\text{3}$,$\nu=\text{5}$,$\nu=\text{7}$}
+    legend entries={$\nu=\text{1}$,$\nu=\text{2}$,$\nu=\text{3}$,$\nu=\text{4}$,$\nu=\text{5}$,,$\nu=\text{6}$}
 ]
-\addplot [smooth, domain=0:20, black!25, dashed, line width=1 ] {gammapdf(x,1.5,2)};
-\addplot [smooth, domain=0:20, line width=2] {gammapdf(x,2.5,2)};
-\addplot [smooth, domain=0:20, black!25, dash dot, line width=1] {gammapdf(x,3.5,2)};
+\addplot [smooth, domain=0:20, black!12, line width=0.25] {gammapdf(x,0.5,2)};
+\addplot [smooth, domain=0:20, black!24,line width=0.5] {gammapdf(x,1,2)};
+\addplot [smooth, domain=0:20, black!36, line width=0.75] {gammapdf(x,1.5,2)};
+\addplot [smooth, domain=0:20, black!48,line width=1 ] {gammapdf(x,2,2)};
+\addplot [smooth, domain=0:20, black!60,line width=1.25] {gammapdf(x,2.5,2)};
+\addplot [smooth, domain=0:20, black!72,line width=1.5] {gammapdf(x,3,2)};
 \end{axis}
 \end{tikzpicture}
-\captionof{figure}{$\chi^{\text{2}}_\nu$ distributions with $\nu$ degrees of freedom}
+\captionof{figure}{$\chi^{\text{2}}_\nu$ distributions}
   \label{fig:test1}
 \end{minipage}%
 \begin{minipage}[c]{.01\textwidth}
   \centering
 \end{minipage}%
   \centering
-\begin{minipage}[c]{.54\textwidth}
+\begin{minipage}[c]{.55\textwidth}
   \centering
   \begin{itemize}
     \item $c$ is the number of \textit{categories}.
-    \item $m$ is the number of \textit{model parameters}\newline estimated using the observed data\newline (Such as estimating $\lambda$ for a $\text{Po}(\lambda)$ distribution).
+    \item $m$ is the number of \textit{model parameters}
 \end{itemize}
 
 \vspace{0.3cm}
 
 \begin{centering}
 \begin{tcolorbox}[adjusted title=The decision rule for $\chi^{\text{2}}$ tests:, halign title = center,colback=red!5,colframe=red!70!black, halign = center]
-If \textbf{test statistic} $>$ \textbf{critical value}, \textit{reject }$\text{H}_\text{0}$.\\
+\textbf{Reject }$\text{H}_\text{0}$ if test statistic $>$ critical value.\\
 \vspace{0.5cm}
-If \textbf{test statistic} $\leqslant$ \textbf{critical value}, \textit{do not reject }$\text{H}_\text{0}$.\\
+\textbf{Do not reject }$\text{H}_\text{0}$ if test statistic $\leqslant$ critical value.\\
 \end{tcolorbox}
 \end{centering}
 \end{minipage}
@@ -15471,7 +15474,7 @@ For the \emph{``fair''} die, the test statistic can now be calculated:
 
 There are six categories, so \(c=\text{6}\), and no parameters of the model were calculated using the data, so \(m=\text{0}\), leading to \(\nu=\text{6}-\text{1}-\text{0}=\text{5}\) degrees of freedom. This corresponds to the number of observed frequencies that can \emph{vary independently} once the total and expected distribution are fixed, since the final observed frequency is determined once all others are known.
 
-The test statistic can be compared against the \(\chi^{\text{2}}\) critical values from \textbf{page 14} of the data booklet. With \(\nu=5\) and taking \(\alpha=\text{0.05}\), the critical value of \(\chi^{\text{2}}_{\text{5},\text{0.95}}=\text{11.070}\) can be found. The smallest possible observed test statistic is 0, representing data that perfectly matches the model, and for \(\nu=\text{5}\) approximately 5\% of test statistics would exceed 11.070 by chance alone. Note that since the test statistic cannot be negative, and can only move further from 0 in the positive direction, the chi-squared tests covered in this course are always \emph{one-tailed}.
+The test statistic can be compared against the \(\chi^{\text{2}}\) critical values from \textbf{page 14} of the data booklet. With \(\nu=5\) and taking \(\alpha=\text{0.05}\), the critical value of \(\chi^{\text{2}}_{\text{5},\text{0.95}}=\text{11.070}\) can be found. The smallest possible observed test statistic is 0, representing data that perfectly matches the model, and for \(\nu=\text{5}\) approximately 5\% of test statistics would exceed 11.070 by chance alone. The chi-squared tests covered in this course are always \emph{one-tailed}.
 
 Since \(\text{3}<\text{11.070}\) the students should \emph{not} reject the null hypothesis at the 5\% level of significance.\newline There is \emph{insufficient evidence} to suggest that the die is not fair.
 
@@ -15483,12 +15486,12 @@ Note that whilst the \(\chi^{\text{2}}\) test statistic is a measure of how well
 \begin{itemize}
     \item No \textbf{expected} values should be \emph{less than 1}.
     \item At least 80\% of the \textbf{expected} values should be \emph{at least 5}.
-    \item The observations are \textbf{independent} (typically assured through \textit{random sampling}).
+    \item The observations are \textbf{independent}, usually justified through \textbf{random sampling}.
 \end{itemize}
 \end{tcolorbox}
 \end{centering}
 
-The data for the teacher's die met the criteria for the use of a chi-squared test, given on \textbf{page 6} of the Data Booklet. Both conditions need to be checked before test statistics, degrees of freedom and critical values can be calculated.
+The data for the teacher's die meet the criteria for the use of a chi-squared test, given on \textbf{page 6} of the Data Booklet. Both expected-frequency conditions must be checked before calculating the test statistics, degrees of freedom and critical values.
 
 \pagebreak
 
@@ -15527,14 +15530,14 @@ Test statistic: $\chi^{\text{2}}=\frac{(\text{8}-\text{12.8})^\text{2}}{\text{12
 
 Critical value: $\chi^{\text{2}}=\text{4.605}$
 \hspace{6.5cm}
-\begin{tikzpicture}[overlay, 
+\begin{tikzpicture}[overlay,
     declare function={gamma(\z)=
     (2.506628274631*sqrt(1/\z) + 0.20888568*(1/\z)^(1.5) + 0.00870357*(1/\z)^(2.5) - (174.2106599*(1/\z)^(3.5))/25920 - (715.6423511*(1/\z)^(4.5))/1244160)*exp((-ln(1/\z)-1)*\z);},
     declare function={gammapdf(\x,\k,\theta) = \x^(\k-1)*exp(-\x/\theta) / (\theta^\k*gamma(\k));}
 ]
 \begin{axis}[
   no markers, 
-  domain=0:10, 
+  domain=0:6, 
   samples=100,
   ymin=0,
   axis lines*=left, 
@@ -15547,17 +15550,16 @@ Critical value: $\chi^{\text{2}}=\text{4.605}$
   enlargelimits=false, 
   clip=false, 
   axis on top,
-  grid = major,
-  hide y axis
+  grid = major
   ]
-\addplot [smooth, domain=0:10] {gammapdf(x,1.5,2)};
-\addplot [draw=none, fill=black!50, domain=4.6:10] {gammapdf(x,1.5,2)} \closedcycle;
-\draw [semithick, black]  (axis cs:4.6,0) -- (axis cs: 4.6,0.0865);
+\addplot [smooth, domain=0:10] {gammapdf(x,1,2)};
+\addplot [draw=none, fill=black!50, domain=4.6:10] {gammapdf(x,1,2)} \closedcycle;
+\draw [semithick, black]  (axis cs:4.6,0) -- (axis cs: 4.6,0.05);
 \node[below] at (axis cs: 0,0)  {0};
-\node[above] at (axis cs: 4,0.13)  {$\chi^{\text{2}}_\text{2}$};
+\node[above] at (axis cs: 4,0.1)  {$\chi^{\text{2}}_\text{2}$};
 \node[below] at (axis cs: 4.6, 0) {4.605};
 \node[above] at (axis cs: 7,0.06) {10\%};
-\draw[very thick] (axis cs: 5.109,0) -- (axis cs: 5.109,0.25) node[above] {5.109};
+\draw[very thick] (axis cs: 5.109,0) -- (axis cs: 5.109,0.32) node[above] {5.109};
 \end{axis}
 \end{tikzpicture}\\
 
@@ -15573,7 +15575,7 @@ Note that the \(\chi^{\text{2}}\) distributions displayed in the example solutio
 \addcontentsline{toc}{subsubsection}{{Exercise 12.1}}
 
 \begin{enumerate}
-    \item A fair, tetrahedral die with faces numbered 1 to 4 is rolled 24 times. The results obtained are:
+    \item A tetrahedral die with faces numbered 1 to 4 is rolled 24 times. The results obtained are:
 \begin{center}
 \begin{tabular}{| c | c c c c |} 
   \hline
@@ -15602,7 +15604,7 @@ Perform a non-parametric test at the 10\% significance level to assess whether t
 
 \section{Combining Columns}\label{combining-columns}
 
-For each goodness-of-fit test encountered so far, the conditions for the \textbf{expected frequencies}, \(E_i\), have been satisfied:
+For each goodness-of-fit test met so far, the conditions for the \textbf{expected frequencies}, \(E_i\), have been satisfied:
 
 \begin{center}
 ``At least 80\% of the $E_i$ should be at least 5 and none should be less than 1.''
@@ -15990,7 +15992,7 @@ This could be used to check if the number of broken eggs per box fits \emph{any}
     \end{center}
     \begin{enumerate}
         \item Perform a chi-squared test to assess whether the binomial distribution may be suitable, at the 5\% significance level.
-        \item If the proportion of faulty tyres had not been known, and an estimate had instead been obtained using the data, explain how this would affect the calculation of the degrees of freedom,$\nu$ , for the test.
+        \item If the proportion of faulty tyres had not been known, and an estimate had instead been obtained using the data, explain how this would affect the calculation of the degrees of freedom, $\nu$, for the test.
     \end{enumerate}
 \end{enumerate}
 
@@ -16029,7 +16031,7 @@ Perform a non-parametric test at the 1\% level of significance to assess whether
     \end{array}
 \end{math}\\
 
-Total observations$ =\text{46}$.\\
+$\text{Total observations}=\text{46}$.\\
 $\text{P}(X=\text{0})=\text{0.0821}$\\
 Expected frequency for 0 goals $=\text{0.0821}\times\text{46}=\text{3.777}$
 
