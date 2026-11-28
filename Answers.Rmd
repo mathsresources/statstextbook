@@ -3002,17 +3002,16 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 
 #### Chapter 12 - Chi-Squared Goodness-of-Fit Test {-}
 
-
-
-
 []{#ex121a}
 
 #### [Exercise 12.1](#ex121q) {-}
 
 \begin{enumerate}
-    \item $6.333<7.815$, do not reject $\text{H}_0$
-    \item $7.143<10.645$, do not reject $\text{H}_0$
-    \item $13.88>9.210$, reject $\text{H}_0$
+    \item Since $\chi^2=\text{6.333}<\text{7.815}$, do not reject $\text{H}_0$ at the 5\% level of significance. There is insufficient evidence to suggest that the tetrahedral die is biased.
+
+    \item Since $\chi^2=\text{7.143}<\text{10.645}$, do not reject $\text{H}_0$ at the 10\% level of significance. There is insufficient evidence against the textbook's statement that a person is equally likely to be born on any day of the week.
+
+    \item Since $\chi^2=\text{13.880}>\text{9.210}$, reject $\text{H}_0$ at the 1\% level of significance. There is sufficient evidence to suggest that the distribution of cars among the three engine types has changed from the previously observed ratio of $\text{5}:\text{2}:\text{1}$.
 \end{enumerate}
 
 []{#ex122a}
@@ -3020,9 +3019,26 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 #### [Exercise 12.2](#ex122q) {-}
 
 \begin{enumerate}
-    \item $7.779<9.488$, do not reject $\text{H}_0$
-    \item $3.049<11.345$, do not reject $\text{H}_0$
-    \item $14.906>7.815$, reject $\text{H}_0$
+    \item The expected frequencies are
+    \[
+    \text{10.667},\quad \text{13.333},\quad \text{8.000},\quad
+    \text{5.333},\quad \text{2.667}.
+    \]
+    None is less than 1 and four of the five expected frequencies are at least 5, so the conditions are satisfied without combining categories.\newline
+    Since $\chi^2=\text{8.919}>\text{7.779}$, reject $\text{H}_0$ at the 10\% level of significance. There is sufficient evidence to suggest that the distribution of grades has changed from the historical ratio.
+
+    \item The expected frequency for the \textit{Other} category is less than 1, so the \textit{Green} and \textit{Other} categories are combined.\newline
+    Since $\chi^2=\text{0.799}<\text{11.345}$, do not reject $\text{H}_0$ at the 1\% level of significance. There is insufficient evidence to suggest that the distribution of eye colours in San Francisco differs from the stated distribution for the USA.
+
+    \item The expected frequencies for flat whites and americanos are both less than 5, so these categories are combined.\newline
+    Since $\chi^2=\text{14.906}>\text{7.815}$, reject $\text{H}_0$ at the 5\% level of significance. There is sufficient evidence to suggest that the historical proportions of the five types of coffee sold are no longer accurate.
+
+    \item
+    \begin{enumerate}
+        \item $n\geqslant\text{50}$.
+
+        \item $\text{17}\leqslant n\leqslant\text{49}$, after combining the two categories with the smallest expected frequencies.
+    \end{enumerate}
 \end{enumerate}
 
 []{#ex123a}
@@ -3030,30 +3046,61 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 #### [Exercise 12.3](#ex123q) {-}
 
 \begin{enumerate}
-    \item 
-    \begin{enumerate}
-        \item $X\sim \text{B}(4,0.2)$
-        \item
-        \begin{enumerate}
-            \item $0.4096$
-            \item $0.4096$
-            \item $0.1536$
-            \item $0.0256$
-            \item $0.0016$
-        \end{enumerate}
-        \item $6.266>4.605$, reject $\text{H}_0$
-    \end{enumerate}
     \item
     \begin{enumerate}
-        \item $X\sim \text{B}(5,0.25)$
-        \item $257.862>9.488$, reject $\text{H}_0$ at the 5\% level
+        \item $X\sim\text{B}(\text{4},\text{0.2})$.
+
+        \item
+        \begin{enumerate}
+            \item $\text{P}(X=\text{0})=\text{0.4096}$
+            \item $\text{P}(X=\text{1})=\text{0.4096}$
+            \item $\text{P}(X=\text{2})=\text{0.1536}$
+            \item $\text{P}(X=\text{3})=\text{0.0256}$
+            \item $\text{P}(X=\text{4})=\text{0.0016}$
+        \end{enumerate}
+
+        \item The categories for two, three and four faulty crackers are combined to satisfy the expected-frequency conditions.\newline
+        Since $\chi^2=\text{6.264}>\text{4.605}$, reject $\text{H}_0$ at the 10\% level of significance. There is sufficient evidence to suggest that the number of faulty crackers in a box does not follow a $\text{B}(\text{4},\text{0.2})$ distribution.
     \end{enumerate}
-    \item 
+
+    \item
     \begin{enumerate}
-        \item $3.144<5.991$, do not reject $\text{H}_0$
-        \item An additional $1$ must be subtracted from the number of categories to obtain the degrees of freedom.
+        \item $X\sim\text{B}(\text{5},\text{0.25})$.
+
+        \item The binomial probabilities, to four decimal places, are:
+        \[
+        \text{0.2373},\quad
+        \text{0.3955},\quad
+        \text{0.2637},\quad
+        \text{0.0879},\quad
+        \text{0.0146},\quad
+        \text{0.0010}.
+        \]
+        The categories for three, four and five correct answers are combined to satisfy the expected-frequency conditions.\newline
+        Assuming a 5\% significance level, since $\chi^2=\text{167.183}>\text{7.815}$, reject $\text{H}_0$. There is sufficient evidence to suggest that the numbers of correct answers do not follow a $\text{B}(\text{5},\text{0.25})$ distribution. The data therefore do not support the teachers' suspicion that the students are guessing every answer independently at random.
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item The binomial probabilities, to four decimal places, are:
+        \[
+        \text{0.5220},\quad
+        \text{0.3685},\quad
+        \text{0.0975},\quad
+        \text{0.0115},\quad
+        \text{0.0005}.
+        \]
+        The categories for two, three and four tyres are combined to satisfy the expected-frequency conditions.\newline
+        Since $\chi^2=\text{3.150}<\text{5.991}$, do not reject $\text{H}_0$ at the 5\% level of significance. There is insufficient evidence to suggest that the number of tyres requiring replacement does not follow a $\text{B}(\text{4},\text{0.15})$ distribution.
+
+        \item Estimating $p$ from the observed data would use one model parameter. An additional 1 would therefore be subtracted when calculating the degrees of freedom:
+        \[
+        \nu=c-\text{1}-\text{1}.
+        \]
+        For the three final combined categories, this would reduce the degrees of freedom from 2 to 1.
     \end{enumerate}
 \end{enumerate}
+
 
 []{#ex124a}
 
@@ -3064,45 +3111,112 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \begin{enumerate}
         \item
         \begin{enumerate}
-            \item $0.3679$
-            \item $0.3679$
-            \item $0.1839$
-            \item $0.0803$
+            \item $\text{P}(X=\text{0})=\text{0.3679}$
+            \item $\text{P}(X=\text{1})=\text{0.3679}$
+            \item $\text{P}(X=\text{2})=\text{0.1839}$
+            \item $\text{P}(X\geqslant\text{3})=\text{0.0803}$
         \end{enumerate}
-        \item $9.173>7.815$, reject $\text{H}_0$
+
+        \item Since $\chi^2=\text{9.170}>\text{7.815}$, reject $\text{H}_0$ at the 5\% level of significance. There is sufficient evidence to suggest that the number of shooting stars seen per hour does not follow a $\text{Po}(\text{1})$ distribution.
     \end{enumerate}
-    \item 
-    \begin{enumerate}
-        \item $\lambda=2$
-        \item $14.839>11.345$, reject $\text{H}_0$
-    \end{enumerate}
+
     \item
     \begin{enumerate}
-        \item $98.443>14.067$, reject $\text{H}_0$ at the 5\% level
-        \item $\lambda=3.28$
+        \item
+        \[
+        \hat{\lambda}
+        =\frac{\text{0}(\text{2})+\text{1}(\text{13})
+        +\text{2}(\text{19})+\text{3}(\text{15})
+        +\text{4}(\text{1})}{\text{50}}
+        =\text{2}.
+        \]
+
+        \item Using $\hat{\lambda}=\text{2}$, the Poisson probabilities for zero, one, two, three, and four or more bottles, to four decimal places, are:
+        \[
+        \text{0.1353},\quad
+        \text{0.2707},\quad
+        \text{0.2707},\quad
+        \text{0.1804},\quad
+        \text{0.1429}.
+        \]
+        Since $\lambda$ was estimated from the data, $\nu=\text{5}-\text{1}-\text{1}=\text{3}$.\newline
+        Since $\chi^2=\text{14.834}>\text{11.345}$, reject $\text{H}_0$ at the 1\% level of significance. There is sufficient evidence to suggest that a Poisson distribution is no longer an appropriate model for the number of bottles of wine sold per night.
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item The Poisson probabilities, to four decimal places, are:
+        \[
+        \begin{array}{c|cccccccccc}
+        x & 0&1&2&3&4&5&6&7&8&9+\\
+        \hline
+        \text{P}(X=x)
+        &0.0821&0.2052&0.2565&0.2138&0.1336&
+        0.0668&0.0278&0.0099&0.0031&0.0011
+        \end{array}
+        \]
+        The categories for six or more goals are combined to satisfy the expected-frequency conditions.\newline
+        Since $\chi^2=\text{98.533}>\text{12.592}$, reject $\text{H}_0$ at the 5\% level of significance. There is sufficient evidence to suggest that the number of goals per game does not follow a $\text{Po}(\text{2.5})$ distribution.
+
+        \item $\hat{\lambda}=\text{3.28}$.
     \end{enumerate}
 \end{enumerate}
+
 
 []{#re12a}
 
 #### [Chapter 12 Review Exercise](#re12q) {-}
 
 \begin{enumerate}
-    \item $3.759<5.991$, do not reject $\text{H}_0$
-    \item 
-    \begin{enumerate}
-        \item $9.790>4.605$, reject $\text{H}_0$
-        \item Some players being better penalty takers than others would mean the probability of success for each trial (penalty attempt) would not be equal, and hence a binomial distribution would not be appropriate.
-    \end{enumerate}
+    \item The missing observed frequency for Wales is 10. The expected frequency for Northern Ireland is less than 5, so the Wales and Northern Ireland categories are combined.\newline
+    Since $\chi^2=\text{3.759}<\text{5.991}$, do not reject $\text{H}_0$ at the 5\% level of significance. There is insufficient evidence to suggest that the distribution of applicants across the countries of the UK differs from the distribution of the wider UK population.
+
     \item
     \begin{enumerate}
-        \item $\lambda=1.5$
-        \item $25.10,0.45$
-        \item $1.553<11.345$, do not reject $\text{H}_0$
-        \item The test statistic would still be $1.553$, whilst the critical value would instead be $13.277$
+        \item The binomial probabilities, to four decimal places, are:
+        \[
+        \text{0.4437},\quad
+        \text{0.3915},\quad
+        \text{0.1382},\quad
+        \text{0.0244},\quad
+        \text{0.0022},\quad
+        \text{0.0001}.
+        \]
+        The categories for two or more failed attempts are combined to satisfy the expected-frequency conditions.\newline
+        Since $\chi^2=\text{9.783}>\text{4.605}$, reject $\text{H}_0$ at the 10\% level of significance. There is sufficient evidence to suggest that the number of failed attempts in each set of five penalties does not follow a $\text{B}(\text{5},\text{0.15})$ distribution.
+
+        \item If some players are better penalty takers than others, the probability of failure will not be the same for every penalty attempt. The constant-probability condition required for a binomial distribution would therefore not be satisfied.
+    \end{enumerate}
+
+    \item
+    \begin{enumerate}
+        \item $\lambda=\text{1.5}$.
+
+        \item The missing expected frequencies are $\text{25.10}$ for two incidents and $\text{0.45}$ for six or more incidents.
+
+        \item Using $\lambda=\text{1.5}$, the Poisson probabilities for zero, one, two, three, four, five, and six or more incidents, to four decimal places, are:
+        \[
+        \text{0.2231},\quad
+        \text{0.3347},\quad
+        \text{0.2510},\quad
+        \text{0.1255},\quad
+        \text{0.0471},\quad
+        \text{0.0141},\quad
+        \text{0.0045}.
+        \]
+        The categories for four or more incidents are combined to satisfy the expected-frequency conditions. Since $\lambda$ was estimated from the data,
+        \[
+        \nu=\text{5}-\text{1}-\text{1}=\text{3}.
+        \]
+        Since $\chi^2=\text{1.553}<\text{11.345}$, do not reject $\text{H}_0$ at the 1\% level of significance. There is insufficient evidence to suggest that a Poisson distribution is not an appropriate model for the number of shoplifting incidents recorded per day.
+
+        \item The test statistic would remain $\chi^2=\text{1.553}$. Since no parameter would have been estimated from the data, the degrees of freedom would increase to
+        \[
+        \nu=\text{5}-\text{1}=\text{4},
+        \]
+        giving a critical value of $\text{13.277}$ at the 1\% level of significance.
     \end{enumerate}
 \end{enumerate}
-
 
 
 #### Chapter 13 - Control Charts {-}
