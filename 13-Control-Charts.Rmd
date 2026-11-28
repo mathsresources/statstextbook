@@ -66,8 +66,10 @@ In either case, random samples from the process are taken at regular intervals a
 
 The 3-sigma (3$\sigma$) limits are often referred to as the *upper* and *lower control limits*, with the other limits called *warning lines*. The diagram below indicates the probability that a sample statistic falls within each set of limits, assuming the process is *in control* and certain conditions are met.
 
+Note that the 1$\sigma$, 2$\sigma$ and 3$\sigma$ limits are located one, two and three *standard errors of the sample statistic* from the centre line. Here, $\sigma$ does not represent the population standard deviation of individual observations.
+
 \begin{center}
-\begin{tikzpicture}[scale=0.9,declare function={gaussy(\x,\y,\z)=1/(\y*sqrt(2*pi))*exp(-((\x-\z)^2)/(2*\y^2));}]
+\begin{tikzpicture}[scale=0.8,declare function={gaussy(\x,\y,\z)=1/(\y*sqrt(2*pi))*exp(-((\x-\z)^2)/(2*\y^2));}]
 \draw[smooth,domain=-4.8:4.8]  plot ({25*gaussy(\x,1.5,0)+11.2},\x);
     \draw[very thick] (0,0) -- (9,0);
     \node[above right] at (0,0) {$\mathbf{CL}$};
@@ -504,7 +506,7 @@ A control chart is created with horizontal lines indicating the population mean 
 
 \begin{enumerate}
     \item[(a)] $\text{2}\sigma$ limits: $\mu \text{ }\pm \text{ } \text{2}\dfrac{\sigma}{\sqrt{n}}=\text{300}\text{ }\pm\text{ }\text{2}\times\dfrac{\text{5}}{\sqrt{\text{4}}}=\text{300}\text{ }\pm\text{ }\text{5}$, so $\text{295}$ and 305.
-    \item[(b)] The process is out of statistical control, which can be identified at sample 6 when the sample mean first falls below the lower control limit ($-$3$\sigma$ limit). The process should be stopped and investigated.
+    \item[(b)] The process is out of statistical control, which can be identified at sample 6 when the sample mean first falls below the lower control limit ($-$3$\sigma$ limit). The process should be investigated in accordance with the organisation’s control procedure.
 \end{enumerate}
 
 \end{tcolorbox}
