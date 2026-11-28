@@ -2912,7 +2912,7 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \item Assuming that the population of pH levels in lakes in England is normally distributed, the 95\% confidence interval is $(\text{6.88},\text{7.87})$.
 
     \item $(\text{4048.5},\text{4714.3})$ mAh.\newline
-    Since 4500 mAh lies within the confidence interval, there is insufficient evidence to suggest that the population mean capacity differs from that stated for genuine EnergyPower batteries. The interval does not support the store's concern that the batteries are not genuine.
+    Since 4500 mAh lies within the confidence interval, there is insufficient evidence to suggest that the population mean capacity differs from 4500 mAh. The confidence interval therefore does not support the store's concern on the basis of mean capacity.
 
     \item $(\text{960.0},\text{1024.0})$ hours.
 
@@ -2924,13 +2924,8 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
         Since 4.5 kilograms lies outwith the confidence interval, there is sufficient evidence to suggest that the population mean mass the tripods can withstand before failure differs from 4.5 kilograms.
     \end{enumerate}
 
-    \item
-    \begin{enumerate}
-        \item $(\text{2.760},\text{4.740})$ grams per 100 grams.\newline
+    \item $(\text{2.760},\text{4.740})$ grams per 100 grams.\newline
         Since 5 grams lies outwith the confidence interval, there is sufficient evidence to suggest that the population mean sugar content per 100 grams of frozen pizza differs from 5 grams.
-
-        \item The required minimum sample size is $n=\text{89}$.
-    \end{enumerate}
 \end{enumerate}
 
 []{#ex114a}
@@ -2945,10 +2940,11 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
     \begin{enumerate}
         \item Assume that the pupils form a random sample from the school.
 
-        \item $(\text{0.133},\text{0.427})$.
-
         \item $n\hat{p}=\text{7}>5$ and $n\hat{q}=\text{18}>5$, so a normal approximation is appropriate.
+        
+        \item $(\text{0.133},\text{0.427})$.
     \end{enumerate}
+    
 
     \item $(\text{0.613},\text{0.673})$.
 
@@ -2969,7 +2965,7 @@ $\text{P}(\text{pass})=\tfrac{33}{40}\text{ or 0.825}$
 
         \item $(\text{0.264},\text{0.446})$.
 
-        \item Since $\dfrac{1}{3}$ lies within the confidence interval, there is insufficient evidence to suggest that the population proportion of guitars listed on the forum that are vintage differs from one-third. The confidence interval therefore supports the website's claim.
+        \item Since $\dfrac{1}{3}$ lies within the confidence interval, there is insufficient evidence to suggest that the population proportion of guitars listed on the forum that are vintage differs from one-third. The confidence interval therefore does not provide evidence against the website's claim.
     \end{enumerate}
 \end{enumerate}
 
